@@ -51,6 +51,7 @@ import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
@@ -128,7 +129,7 @@ class ITOtelT3Tracing {
       assertThat(t3Span.getKind()).isEqualTo(SpanKind.INTERNAL);
       assertThat(t3Span.getName()).isNotEmpty();
       assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(io.opentelemetry.api.trace.StatusCode.UNSET);
+          .isEqualTo(StatusCode.UNSET);
       assertThat(
               t3Span
                   .getAttributes()
@@ -198,7 +199,7 @@ class ITOtelT3Tracing {
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
       assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
+          .isEqualTo(StatusCode.ERROR);
       assertThat(
               t3Span
                   .getAttributes()
@@ -249,7 +250,7 @@ class ITOtelT3Tracing {
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
       assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
+          .isEqualTo(StatusCode.ERROR);
       // In GAX, client timeout ApiException maps to HTTP 504
       assertThat(
               t3Span
@@ -303,7 +304,7 @@ class ITOtelT3Tracing {
       assertThat(t3Span.getKind()).isEqualTo(SpanKind.INTERNAL);
       assertThat(t3Span.getName()).isEqualTo("google.showcase.v1beta1.Echo/Echo");
       assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(io.opentelemetry.api.trace.StatusCode.UNSET);
+          .isEqualTo(StatusCode.UNSET);
       assertThat(
               t3Span
                   .getAttributes()
@@ -369,7 +370,7 @@ class ITOtelT3Tracing {
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
       assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
+          .isEqualTo(StatusCode.ERROR);
       assertThat(
               t3Span
                   .getAttributes()
@@ -420,7 +421,7 @@ class ITOtelT3Tracing {
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
       assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
+          .isEqualTo(StatusCode.ERROR);
       assertThat(
               t3Span
                   .getAttributes()
