@@ -243,7 +243,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
     // End lingering previous attempt outside the lock to avoid holding the lock during callbacks.
     if (oldSpan != null) {
-      endSpan(oldSpan, new CancellationException("Attempt superseded by retry"));
+      endSpan(oldSpan, null);
     }
   }
 
