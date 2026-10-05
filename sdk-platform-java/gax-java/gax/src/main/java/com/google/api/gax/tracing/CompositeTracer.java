@@ -116,13 +116,17 @@ class CompositeTracer extends BaseApiTracer {
     public void close() {
       Throwable firstException = null;
       for (int i = count - 1; i >= 0; i--) {
-        try {
-          scopes[i].close();
-        } catch (Throwable t) {
-          if (firstException == null) {
-            firstException = t;
-          } else if (firstException != t) {
-            firstException.addSuppressed(t);
+        Scope scope = scopes[i];
+        if (scope != null) {
+          scopes[i] = null;
+          try {
+            scope.close();
+          } catch (Throwable t) {
+            if (firstException == null) {
+              firstException = t;
+            } else if (firstException != t) {
+              firstException.addSuppressed(t);
+            }
           }
         }
       }

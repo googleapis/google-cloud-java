@@ -35,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -123,6 +124,26 @@ class CompositeTracerTest {
     InOrder inOrder = inOrder(scope2, scope1);
     inOrder.verify(scope2).close();
     inOrder.verify(scope1).close();
+  }
+
+  @Test
+  void testInScope_compositeScopeClose_isIdempotent() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
+    ApiTracer.Scope compositeScope = compositeTracer.inScope();
+
+    compositeScope.close();
+    // Subsequent close should be idempotent and not invoke underlying scopes again
+    compositeScope.close();
+
+    verify(scope2, times(1)).close();
+    verify(scope1, times(1)).close();
   }
 
   @Test
