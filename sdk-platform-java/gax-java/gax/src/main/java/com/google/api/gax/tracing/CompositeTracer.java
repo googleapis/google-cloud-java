@@ -45,11 +45,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 class CompositeTracer extends BaseApiTracer {
-  private static final Scope NO_OP_SCOPE =
-      new Scope() {
-        @Override
-        public void close() {}
-      };
+  private static final Scope NO_OP_SCOPE = () -> {};
 
   private final List<ApiTracer> children;
 
@@ -140,7 +136,7 @@ class CompositeTracer extends BaseApiTracer {
   private Scope enterScope() {
     try {
       return inScope();
-    } catch (Throwable t) {
+    } catch (RuntimeException e) {
       // Ignore to prevent disrupting the lifecycle notification
       return NO_OP_SCOPE;
     }
