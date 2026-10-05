@@ -76,6 +76,12 @@ class CompositeTracer extends BaseApiTracer {
           childScopes.add(scope);
         }
       }
+      if (childScopes.isEmpty()) {
+        return NO_OP_SCOPE;
+      }
+      if (childScopes.size() == 1) {
+        return childScopes.get(0);
+      }
     } catch (RuntimeException | Error e) {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
@@ -113,9 +119,6 @@ class CompositeTracer extends BaseApiTracer {
    * notifications.
    */
   private Scope enterScope() {
-    if (children.isEmpty()) {
-      return NO_OP_SCOPE;
-    }
     try {
       return inScope();
     } catch (RuntimeException e) {
