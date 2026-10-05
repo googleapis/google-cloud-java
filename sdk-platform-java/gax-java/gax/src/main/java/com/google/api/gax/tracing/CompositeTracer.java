@@ -93,15 +93,25 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * An aggregate {@link Scope} that encapsulates and closes multiple child scopes in reverse order.
+   */
   private static class CompositeScope implements Scope {
     private final Scope[] scopes;
     private final int count;
 
+    /**
+     * Constructs a {@code CompositeScope} managing the given array of active child scopes.
+     *
+     * @param scopes the array containing active child scopes
+     * @param count the number of valid scopes in the array
+     */
     CompositeScope(Scope[] scopes, int count) {
       this.scopes = scopes;
       this.count = count;
     }
 
+    /** Closes all managed child scopes in reverse order, suppressing secondary exceptions. */
     @Override
     public void close() {
       Throwable firstException = null;
@@ -122,6 +132,12 @@ class CompositeTracer extends BaseApiTracer {
     }
   }
 
+  /**
+   * Rethrows or wraps a {@link Throwable} without losing runtime exception or error fidelity.
+   *
+   * @param t the throwable to rethrow or wrap
+   * @return a {@link RuntimeException} wrapping {@code t} if {@code t} is a checked exception
+   */
   private static RuntimeException throwException(Throwable t) {
     if (t instanceof RuntimeException) {
       return (RuntimeException) t;
@@ -136,6 +152,10 @@ class CompositeTracer extends BaseApiTracer {
    * Enters the tracer's ambient scope safely, returning a no-op {@link Scope} if entering fails.
    * This avoids allocating runnables, throwing exceptions, or returning null during lifecycle
    * notifications.
+   *
+   * <p>Entering the ambient scope ensures active trace span context is present on the thread so
+   * that OpenTelemetry metric measurements recorded in lifecycle callbacks attach exemplars
+   * pointing to the active span.
    */
   private Scope enterScope() {
     try {
