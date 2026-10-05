@@ -59,6 +59,14 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public Scope inScope() {
+    if (children.isEmpty()) {
+      return NO_OP_SCOPE;
+    }
+    if (children.size() == 1) {
+      Scope scope = children.get(0).inScope();
+      return scope != null ? scope : NO_OP_SCOPE;
+    }
+
     final List<Scope> childScopes = new ArrayList<>(children.size());
 
     try {
