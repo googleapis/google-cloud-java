@@ -221,7 +221,7 @@ class ITOtelT3Tracing {
   void testT3ClientFailure_httpjson() throws Exception {
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(true);
-    // Configure 50ms timeout for blockCallable
+    // Configure 1000ms timeout for blockCallable
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
@@ -390,6 +390,7 @@ class ITOtelT3Tracing {
   void testT3ClientFailure_grpc() throws Exception {
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(false);
+    // Configure 1000ms timeout for blockCallable
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
