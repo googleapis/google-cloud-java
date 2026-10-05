@@ -59,7 +59,6 @@ import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -235,7 +234,7 @@ class ITOtelT3Tracing {
               .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(5).build())
               .build();
 
-      assertThrows(Exception.class, () -> client.block(request));
+      assertThrows(ApiException.class, () -> client.block(request));
 
       List<SpanData> spans = waitAndCollectSpans(2);
       assertThat(spans).isNotEmpty();
@@ -404,7 +403,7 @@ class ITOtelT3Tracing {
               .setResponseDelay(com.google.protobuf.Duration.newBuilder().setSeconds(5).build())
               .build();
 
-      assertThrows(Exception.class, () -> client.block(request));
+      assertThrows(ApiException.class, () -> client.block(request));
 
       List<SpanData> spans = waitAndCollectSpans(2);
       assertThat(spans).isNotEmpty();
@@ -438,7 +437,7 @@ class ITOtelT3Tracing {
 
   private List<SpanData> waitAndCollectSpans(int minSpans) {
     Awaitility.await()
-        .atMost(5, TimeUnit.SECONDS)
+        .atMost(Duration.ofSeconds(5))
         .until(() -> spanExporter.getFinishedSpanItems().size() >= minSpans);
     return spanExporter.getFinishedSpanItems();
   }

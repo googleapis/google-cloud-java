@@ -58,7 +58,6 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -144,7 +143,7 @@ class ITOtelT3MetricsExemplar {
                     durationMetric.getHistogramData().getPoints();
                 assertThat(points).isNotEmpty();
                 HistogramPointData point = points.iterator().next();
-                List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
+                List<? extends ExemplarData> exemplars = point.getExemplars();
                 assertThat(exemplars).isNotEmpty();
 
                 ExemplarData exemplar = exemplars.get(0);
@@ -187,7 +186,7 @@ class ITOtelT3MetricsExemplar {
                     durationMetric.getHistogramData().getPoints();
                 assertThat(points).isNotEmpty();
                 HistogramPointData point = points.iterator().next();
-                List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
+                List<? extends ExemplarData> exemplars = point.getExemplars();
                 assertThat(exemplars).isNotEmpty();
 
                 ExemplarData exemplar = exemplars.get(0);
