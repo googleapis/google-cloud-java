@@ -91,8 +91,7 @@ class CompositeTracer extends BaseApiTracer {
           t.addSuppressed(suppressed);
         }
       }
-      throwException(t);
-      return NO_OP_SCOPE;
+      throw throwException(t);
     }
   }
 
@@ -118,12 +117,12 @@ class CompositeTracer extends BaseApiTracer {
         }
       }
       if (firstException != null) {
-        throwException(firstException);
+        throw throwException(firstException);
       }
     }
   }
 
-  private static void throwException(Throwable t) {
+  private static RuntimeException throwException(Throwable t) {
     if (t instanceof RuntimeException) {
       throw (RuntimeException) t;
     } else if (t instanceof Error) {
@@ -141,7 +140,7 @@ class CompositeTracer extends BaseApiTracer {
   private Scope enterScope() {
     try {
       return inScope();
-    } catch (RuntimeException | Error e) {
+    } catch (Throwable t) {
       // Ignore to prevent disrupting the lifecycle notification
       return NO_OP_SCOPE;
     }
