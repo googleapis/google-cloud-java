@@ -98,21 +98,19 @@ class CompositeTracer extends BaseApiTracer {
       for (int i = childScopes.size() - 1; i >= 0; i--) {
         try {
           childScopes.get(i).close();
-        } catch (Throwable t) {
+        } catch (RuntimeException | Error e) {
           if (exception == null) {
-            exception = t;
+            exception = e;
           } else {
-            exception.addSuppressed(t);
+            exception.addSuppressed(e);
           }
         }
       }
       if (exception != null) {
         if (exception instanceof RuntimeException) {
           throw (RuntimeException) exception;
-        } else if (exception instanceof Error) {
-          throw (Error) exception;
         } else {
-          throw new RuntimeException(exception);
+          throw (Error) exception;
         }
       }
     };
