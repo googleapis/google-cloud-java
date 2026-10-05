@@ -50,6 +50,7 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -723,7 +724,7 @@ class OpenTelemetryTracingTracerTest {
 
     verify(span).setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, "operation failed");
     verify(span).end();
-    verify(operationSpan).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
+    verify(operationSpan).setStatus(StatusCode.ERROR);
     verify(operationSpan).end();
   }
 
@@ -735,7 +736,7 @@ class OpenTelemetryTracingTracerTest {
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
     verify(span).end();
-    verify(operationSpan).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
+    verify(operationSpan).setStatus(StatusCode.ERROR);
     verify(operationSpan).end();
 
     assertThat(attrsCaptor.getValue().asMap())
@@ -800,7 +801,7 @@ class OpenTelemetryTracingTracerTest {
 
     // Start a second attempt before the first attempt was ended
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
-    verify(span1).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
+    verify(span1).setStatus(StatusCode.ERROR);
     verify(span1).end();
     verify(span2, never()).end();
 
