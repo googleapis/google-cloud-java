@@ -456,7 +456,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         writeApiExecutionBuilder
             .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
-        throw new InterruptedException("Interrupted during Write API batch", e);
+        throw new BigQueryJdbcException(e);
       } catch (DescriptorValidationException | IOException e) {
         writeApiExecutionBuilder
             .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
@@ -657,7 +657,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
         "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
 
-    return null;
     return BigQueryResultSetMetadata.of(this.resultSchema.getFields(), this);
   }
 
