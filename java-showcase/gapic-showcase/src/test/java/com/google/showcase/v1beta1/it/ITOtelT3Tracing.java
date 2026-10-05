@@ -97,6 +97,8 @@ class ITOtelT3Tracing {
   // F1.1: HTTP no traces emitted unless enabled.
   @Test
   void testTracingDisabled_httpjson() throws Exception {
+    // Verifies that when OpenTelemetry tracing is not configured on the client settings,
+    // no spans are recorded for HTTP/JSON calls.
     EchoSettings settings = createEchoSettings(true);
     try (EchoClient client = EchoClient.create(settings)) {
       client.echo(EchoRequest.newBuilder().setContent("test-f1-1").build());
@@ -108,6 +110,10 @@ class ITOtelT3Tracing {
   // F1.2: HTTP T3 success case name and attributes conform to requirements.
   @Test
   void testT3Success_httpjson() throws Exception {
+    // Verifies that a successful HTTP/JSON call produces a T3 INTERNAL span with proper
+    // semantic convention attributes (http rpc.system, server.address, server.port, 200
+    // http.response.status_code,
+    // url.template) and UNSET status.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(true);
     EchoStub stub = createStubWithServiceName(settings, tracingFactory);
@@ -170,6 +176,8 @@ class ITOtelT3Tracing {
   // F1.3: HTTP T3 server failures case name and attributes conform to requirements.
   @Test
   void testT3ServerFailure_httpjson() throws Exception {
+    // Verifies that a server-side error on HTTP/JSON produces a T3 INTERNAL span with ERROR status,
+    // 400 http.response.status_code, and error.type.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(true);
     EchoStub stub = createStubWithServiceName(settings, tracingFactory);
@@ -218,6 +226,9 @@ class ITOtelT3Tracing {
   // F1.4: HTTP T3 client failures case name and attributes conform to requirements.
   @Test
   void testT3ClientFailure_httpjson() throws Exception {
+    // Verifies that a client-side timeout on HTTP/JSON produces a T3 INTERNAL span with ERROR
+    // status,
+    // 504 http.response.status_code, and error.type.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(true);
     // Configure 1000ms timeout for blockCallable
@@ -269,6 +280,8 @@ class ITOtelT3Tracing {
   // F1.5: gRPC no traces emitted unless enabled.
   @Test
   void testTracingDisabled_grpc() throws Exception {
+    // Verifies that when OpenTelemetry tracing is not configured on the client settings,
+    // no spans are recorded for gRPC calls.
     EchoSettings settings = createEchoSettings(false);
     try (EchoClient client = EchoClient.create(settings)) {
       client.echo(EchoRequest.newBuilder().setContent("test-f1-5").build());
@@ -280,6 +293,10 @@ class ITOtelT3Tracing {
   // F1.6: gRPC T3 success case name and attributes conform to requirements.
   @Test
   void testT3Success_grpc() throws Exception {
+    // Verifies that a successful gRPC call produces a T3 INTERNAL span with proper
+    // semantic convention attributes (grpc rpc.system, server.address, server.port, OK
+    // rpc.response.status_code)
+    // and UNSET status.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(false);
     EchoStub stub = createStubWithServiceName(settings, tracingFactory);
@@ -338,6 +355,8 @@ class ITOtelT3Tracing {
   // F1.7: gRPC T3 server failures case name and attributes conform to requirements.
   @Test
   void testT3ServerFailure_grpc() throws Exception {
+    // Verifies that a server-side error on gRPC produces a T3 INTERNAL span with ERROR status,
+    // INVALID_ARGUMENT rpc.response.status_code, and error.type.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(false);
     EchoStub stub = createStubWithServiceName(settings, tracingFactory);
@@ -387,6 +406,8 @@ class ITOtelT3Tracing {
   // F1.8: gRPC T3 client failures case name and attributes conform to requirements.
   @Test
   void testT3ClientFailure_grpc() throws Exception {
+    // Verifies that a client-side timeout on gRPC produces a T3 INTERNAL span with ERROR status,
+    // DEADLINE_EXCEEDED rpc.response.status_code, and error.type.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoSettings settings = createEchoSettings(false);
     // Configure 1000ms timeout for blockCallable
@@ -435,6 +456,12 @@ class ITOtelT3Tracing {
     }
   }
 
+  /**
+   * Waits until the in-memory span exporter records at least {@code minSpans} completed spans.
+   *
+   * @param minSpans the minimum number of spans expected
+   * @return the list of completed {@link SpanData} items
+   */
   private List<SpanData> waitAndCollectSpans(int minSpans) {
     Awaitility.await()
         .atMost(Duration.ofSeconds(5))
@@ -442,6 +469,13 @@ class ITOtelT3Tracing {
     return spanExporter.getFinishedSpanItems();
   }
 
+  /**
+   * Constructs {@link EchoSettings} configured for the local Showcase test server.
+   *
+   * @param isHttpJson {@code true} for HTTP/JSON transport; {@code false} for gRPC transport
+   * @return the configured {@link EchoSettings}
+   * @throws Exception if transport provider initialization fails
+   */
   private EchoSettings createEchoSettings(boolean isHttpJson) throws Exception {
     if (isHttpJson) {
       return EchoSettings.newHttpJsonBuilder()
@@ -464,6 +498,14 @@ class ITOtelT3Tracing {
     }
   }
 
+  /**
+   * Instantiates an {@link EchoStub} with custom service name and tracer factory.
+   *
+   * @param settings the client settings to base the stub on
+   * @param tracingFactory the tracer factory to register with the stub
+   * @return the initialized {@link EchoStub}
+   * @throws IOException if stub creation fails
+   */
   private EchoStub createStubWithServiceName(
       EchoSettings settings, OpenTelemetryTracingFactory tracingFactory) throws IOException {
     EchoStubSettings.Builder builder =
@@ -472,7 +514,14 @@ class ITOtelT3Tracing {
     return new ExtendedEchoStubSettings(builder).createStub();
   }
 
+  /** Extended {@link EchoStubSettings} that overrides {@link #getServiceName()} for testing. */
   private static class ExtendedEchoStubSettings extends EchoStubSettings {
+    /**
+     * Constructs settings wrapping the specified builder.
+     *
+     * @param builder the settings builder
+     * @throws IOException if base settings construction fails
+     */
     protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
       super(builder);
     }

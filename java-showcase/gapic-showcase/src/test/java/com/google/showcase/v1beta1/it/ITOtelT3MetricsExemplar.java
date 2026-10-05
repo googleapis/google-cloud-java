@@ -113,6 +113,8 @@ class ITOtelT3MetricsExemplar {
   // F3.1: HTTP M3 metric records T3 span as exemplar
   @Test
   void testHttpJson_m3ExemplarMatchesT3Span() throws Exception {
+    // Verifies that for HTTP/JSON, client request duration metrics attach exemplars
+    // pointing directly to the overall T3 operation span (traceId and spanId match).
     ApiTracerFactory compositeTracerFactory = createCompositeTracerFactory();
     EchoSettings settings = createEchoSettings(true);
     EchoStub stub = createStubWithServiceName(settings, compositeTracerFactory);
@@ -156,6 +158,8 @@ class ITOtelT3MetricsExemplar {
   // F3.2: gRPC M3 metric records T3 span as exemplar
   @Test
   void testGrpc_m3ExemplarMatchesT3Span() throws Exception {
+    // Verifies that for gRPC, client request duration metrics attach exemplars
+    // pointing directly to the overall T3 operation span (traceId and spanId match).
     ApiTracerFactory compositeTracerFactory = createCompositeTracerFactory();
     EchoSettings settings = createEchoSettings(false);
     EchoStub stub = createStubWithServiceName(settings, compositeTracerFactory);
@@ -196,12 +200,23 @@ class ITOtelT3MetricsExemplar {
     }
   }
 
+  /**
+   * Creates a composite tracer factory combining both OpenTelemetry tracing and metrics factories.
+   *
+   * @return the configured {@link CompositeTracerFactory}
+   */
   private CompositeTracerFactory createCompositeTracerFactory() {
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     OpenTelemetryMetricsFactory metricsFactory = new OpenTelemetryMetricsFactory(openTelemetrySdk);
     return new CompositeTracerFactory(Arrays.asList(tracingFactory, metricsFactory));
   }
 
+  /**
+   * Waits until the in-memory span exporter records at least {@code minSpans} completed spans.
+   *
+   * @param minSpans the minimum number of spans expected
+   * @return the list of completed {@link SpanData} items
+   */
   private List<SpanData> waitAndCollectSpans(int minSpans) {
     Awaitility.await()
         .atMost(Duration.ofSeconds(5))
@@ -209,6 +224,13 @@ class ITOtelT3MetricsExemplar {
     return spanExporter.getFinishedSpanItems();
   }
 
+  /**
+   * Constructs {@link EchoSettings} configured for the local Showcase test server.
+   *
+   * @param isHttpJson {@code true} for HTTP/JSON transport; {@code false} for gRPC transport
+   * @return the configured {@link EchoSettings}
+   * @throws Exception if transport provider initialization fails
+   */
   private EchoSettings createEchoSettings(boolean isHttpJson) throws Exception {
     if (isHttpJson) {
       return EchoSettings.newHttpJsonBuilder()
@@ -231,6 +253,14 @@ class ITOtelT3MetricsExemplar {
     }
   }
 
+  /**
+   * Instantiates an {@link EchoStub} with custom service name and tracer factory.
+   *
+   * @param settings the client settings to base the stub on
+   * @param tracerFactory the tracer factory to register with the stub
+   * @return the initialized {@link EchoStub}
+   * @throws IOException if stub creation fails
+   */
   private EchoStub createStubWithServiceName(EchoSettings settings, ApiTracerFactory tracerFactory)
       throws IOException {
     EchoStubSettings.Builder builder =
@@ -239,7 +269,14 @@ class ITOtelT3MetricsExemplar {
     return new ExtendedEchoStubSettings(builder).createStub();
   }
 
+  /** Extended {@link EchoStubSettings} that overrides {@link #getServiceName()} for testing. */
   private static class ExtendedEchoStubSettings extends EchoStubSettings {
+    /**
+     * Constructs settings wrapping the specified builder.
+     *
+     * @param builder the settings builder
+     * @throws IOException if base settings construction fails
+     */
     protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
       super(builder);
     }

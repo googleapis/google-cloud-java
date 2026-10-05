@@ -113,6 +113,12 @@ class ITOtelT3T4Hierarchy {
   // F2.1: HTTP T3/T4 retry succeeds (1 T3 span, 2 T4 child spans)
   @Test
   void testHttpJson_retrySucceeds() throws Exception {
+    // Verifies HTTP/JSON retry behavior: transient failure on attempt 0 is retried and succeeds on
+    // attempt 1.
+    // Asserts:
+    // 1. Exactly one overall INTERNAL operation span (T3).
+    // 2. Both attempt spans (T4) have parent_span_id == T3.span_id.
+    // 3. T3 operation span aggregates the successful status (OK) and 200 HTTP code.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     // Sequence: attempt 1 -> UNAVAILABLE, attempt 2 -> OK
@@ -203,6 +209,11 @@ class ITOtelT3T4Hierarchy {
   // F2.2: HTTP T3/T4 retries exhausted
   @Test
   void testHttpJson_retriesExhausted() throws Exception {
+    // Verifies HTTP/JSON behavior when retries are exhausted after repeated failures.
+    // Asserts:
+    // 1. Exactly one overall INTERNAL operation span (T3).
+    // 2. All attempt spans (T4) are linked to the T3 span as parent.
+    // 3. T3 operation span aggregates ERROR status, 503 HTTP status, and UNAVAILABLE RPC status.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     // Sequence: 3 UNAVAILABLE responses
@@ -300,6 +311,12 @@ class ITOtelT3T4Hierarchy {
   // F2.3: gRPC T3/T4 retry succeeds
   @Test
   void testGrpc_retrySucceeds() throws Exception {
+    // Verifies gRPC retry behavior: transient failure on attempt 0 is retried and succeeds on
+    // attempt 1.
+    // Asserts:
+    // 1. Exactly one overall INTERNAL operation span (T3).
+    // 2. Both attempt spans (T4) have parent_span_id == T3.span_id.
+    // 3. T3 operation span aggregates the successful status (OK).
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     // Sequence: attempt 1 -> UNAVAILABLE, attempt 2 -> OK
@@ -378,6 +395,11 @@ class ITOtelT3T4Hierarchy {
   // F2.4: gRPC T3/T4 retries exhausted
   @Test
   void testGrpc_retriesExhausted() throws Exception {
+    // Verifies gRPC behavior when retries are exhausted after repeated failures.
+    // Asserts:
+    // 1. Exactly one overall INTERNAL operation span (T3).
+    // 2. All attempt spans (T4) are linked to the T3 span as parent.
+    // 3. T3 operation span aggregates ERROR status and UNAVAILABLE RPC status.
     OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     // Sequence: 3 UNAVAILABLE responses
@@ -466,6 +488,12 @@ class ITOtelT3T4Hierarchy {
     }
   }
 
+  /**
+   * Waits until the in-memory span exporter records at least {@code minSpans} completed spans.
+   *
+   * @param minSpans the minimum number of spans expected
+   * @return the list of completed {@link SpanData} items
+   */
   private List<SpanData> waitAndCollectSpans(int minSpans) {
     Awaitility.await()
         .atMost(Duration.ofSeconds(5))
@@ -473,6 +501,16 @@ class ITOtelT3T4Hierarchy {
     return spanExporter.getFinishedSpanItems();
   }
 
+  /**
+   * Constructs a {@link SequenceServiceClient} configured with custom retry settings and tracing.
+   *
+   * @param isHttpJson {@code true} for HTTP/JSON transport; {@code false} for gRPC transport
+   * @param tracingFactory the tracer factory to register with the client
+   * @param retrySettings the custom retry settings to apply to attemptSequence
+   * @param retryableCodes the set of status codes considered retryable
+   * @return the configured {@link SequenceServiceClient}
+   * @throws Exception if client initialization fails
+   */
   private SequenceServiceClient createSequenceClient(
       boolean isHttpJson,
       OpenTelemetryTracingFactory tracingFactory,
@@ -514,7 +552,17 @@ class ITOtelT3T4Hierarchy {
         new ExtendedSequenceServiceStubSettings(stubSettingsBuilder).createStub());
   }
 
+  /**
+   * Extended {@link SequenceServiceStubSettings} that overrides {@link #getServiceName()} for
+   * testing.
+   */
   private static class ExtendedSequenceServiceStubSettings extends SequenceServiceStubSettings {
+    /**
+     * Constructs settings wrapping the specified builder.
+     *
+     * @param builder the settings builder
+     * @throws IOException if base settings construction fails
+     */
     protected ExtendedSequenceServiceStubSettings(SequenceServiceStubSettings.Builder builder)
         throws IOException {
       super(builder);
