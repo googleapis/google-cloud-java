@@ -68,7 +68,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private volatile @Nullable Span attemptSpan;
 
   @Override
-  public void injectTraceContext(java.util.Map<String, String> carrier) {
+  public void injectTraceContext(Map<String, String> carrier) {
     Span currentAttempt = attemptSpan;
     Span spanToInject = currentAttempt != null ? currentAttempt : operationSpan;
     if (spanToInject != null) {
@@ -317,7 +317,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   @Override
-  public void responseHeadersReceived(java.util.Map<String, Object> headers) {
+  public void responseHeadersReceived(Map<String, Object> headers) {
     // Snapshot to a local variable to prevent race conditions if another thread
     // clears attemptSpan concurrently.
     Span currentSpan = attemptSpan;

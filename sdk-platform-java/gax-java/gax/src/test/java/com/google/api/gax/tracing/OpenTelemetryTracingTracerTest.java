@@ -53,6 +53,7 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -780,7 +781,7 @@ class OpenTelemetryTracingTracerTest {
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
 
-    Map<String, String> carrier = new java.util.HashMap<>();
+    Map<String, String> carrier = new HashMap<>();
     openTelemetryTracingTracer.injectTraceContext(carrier);
 
     assertThat(carrier).containsKey("traceparent");
