@@ -431,6 +431,55 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
+  void refresh_concurrentRefreshWhileWaitingForLock_skipsWithoutReadingDisk() throws Exception {
+    CountDownLatch refreshStarted = new CountDownLatch(1);
+    CountDownLatch releaseRefresh = new CountDownLatch(1);
+    transportFactory =
+        () -> {
+          if (transportFactoryCount.incrementAndGet() == 2) {
+            refreshStarted.countDown();
+            try {
+              releaseRefresh.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          }
+          return new MockHttpTransport();
+        };
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    rotateCertificate(channel);
+
+    Thread refreshingThread = new Thread(channel::refresh);
+    Thread waitingThread = new Thread(channel::refresh);
+    try {
+      refreshingThread.start();
+      assertTrue(refreshStarted.await(5, TimeUnit.SECONDS));
+      waitingThread.start();
+      long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+      while (waitingThread.getState() != Thread.State.BLOCKED) {
+        assertTrue(System.nanoTime() < deadline);
+        Thread.sleep(1);
+      }
+      // Rotate again before the first refresh completes. A waiter that re-read the certificate
+      // would see this fingerprint and refresh a second time.
+      testFingerprint = "fingerprint3";
+    } finally {
+      releaseRefresh.countDown();
+    }
+    refreshingThread.join(5000);
+    waitingThread.join(5000);
+    assertFalse(refreshingThread.isAlive());
+    assertFalse(waitingThread.isAlive());
+
+    // Only the initial transport and the concurrent refresh created transports; the waiter skipped.
+    assertEquals(2, transportFactoryCount.get());
+    assertEquals(1, channel.getGeneration());
+    // The second rotation is still detected for the next UNAUTHENTICATED failure.
+    channel.invalidateDiskFingerprintCache();
+    assertTrue(channel.shouldRefresh());
+  }
+
+  @Test
   void testRefreshFactoryExceptionDoesNotWedgeFingerprint() {
     RefreshingHttpJsonChannel channel = createTestChannel();
     HttpTransport initialTransport = channel.getHttpTransport();

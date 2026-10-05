@@ -466,9 +466,18 @@ class ChannelPool extends ManagedChannel {
    */
   private void refreshSafely() {
     try {
+      // See refresh(): a generation change while waiting for the lock means a concurrent refresh
+      // just recreated every channel on a new certificate.
+      long generationBeforeLock = generation.get();
       synchronized (entryWriteLock) {
         if (workloadCertPath == null) {
           refreshAll();
+          return;
+        }
+        if (generation.get() != generationBeforeLock) {
+          LOG.fine(
+              "Skipping pre-emptive channel refresh: channels were just recreated by a concurrent"
+                  + " refresh");
           return;
         }
         String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
@@ -513,6 +522,9 @@ class ChannelPool extends ManagedChannel {
    */
   @InternalApi("Visible for testing")
   void refresh() {
+    // A generation change while waiting for the lock means a concurrent refresh already switched
+    // every channel to a new certificate, so there is no need to read the certificate again.
+    long generationBeforeLock = generation.get();
     // Note: synchronization is necessary in case refresh is called concurrently:
     // - thread1 fails to replace a single entry
     // - thread2 succeeds replacing an entry
@@ -525,6 +537,12 @@ class ChannelPool extends ManagedChannel {
       }
       if (workloadCertPath == null) {
         refreshAll();
+        return;
+      }
+      if (generation.get() != generationBeforeLock) {
+        LOG.fine(
+            "Channel pool was already refreshed by a concurrent thread, skipping duplicate"
+                + " refresh");
         return;
       }
       String currentDiskFingerprint = rotationTracker.readDiskFingerprint();

@@ -1219,6 +1219,95 @@ class ChannelPoolTest {
     Mockito.verify(executor, Mockito.never()).execute(Mockito.any(Runnable.class));
   }
 
+  /** Waits until {@code thread} is blocked waiting for a monitor lock. */
+  private static void awaitBlocked(Thread thread) throws InterruptedException {
+    long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+    while (thread.getState() != Thread.State.BLOCKED) {
+      assertThat(System.nanoTime()).isLessThan(deadline);
+      Thread.sleep(1);
+    }
+  }
+
+  /**
+   * Starts a reactive refresh that holds the pool lock while it recreates the channel on the
+   * rotated certificate, runs {@code waiter} on another thread until it blocks on the lock, and
+   * rotates the certificate again before letting the first refresh complete. A waiter that re-read
+   * the certificate would see the second rotation and refresh again.
+   */
+  private void runWhileConcurrentSwitchHoldsLock(
+      CountDownLatch switchStarted, CountDownLatch releaseSwitch, Runnable waiter)
+      throws Exception {
+    Thread switchingThread = new Thread(pool::refresh);
+    Thread waitingThread = new Thread(waiter);
+    try {
+      switchingThread.start();
+      assertThat(switchStarted.await(5, TimeUnit.SECONDS)).isTrue();
+      waitingThread.start();
+      awaitBlocked(waitingThread);
+      writeCert("client_cert.pem");
+    } finally {
+      releaseSwitch.countDown();
+    }
+    switchingThread.join(5000);
+    waitingThread.join(5000);
+    assertThat(switchingThread.isAlive()).isFalse();
+    assertThat(waitingThread.isAlive()).isFalse();
+  }
+
+  @Test
+  void refresh_concurrentSwitchWhileWaitingForLock_skipsWithoutReadingDisk() throws Exception {
+    CountDownLatch switchStarted = new CountDownLatch(1);
+    CountDownLatch releaseSwitch = new CountDownLatch(1);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(Mockito.mock(ManagedChannel.class))
+        .thenAnswer(
+            invocation -> {
+              switchStarted.countDown();
+              releaseSwitch.await();
+              return Mockito.mock(ManagedChannel.class);
+            })
+        .thenReturn(Mockito.mock(ManagedChannel.class));
+    createMtlsPoolAndRotateCert(
+        ChannelPoolSettings.staticallySized(1), channelFactory, mockExecutor());
+
+    runWhileConcurrentSwitchHoldsLock(switchStarted, releaseSwitch, pool::refresh);
+
+    // Only the initial channel and the concurrent switch created channels; the waiter skipped.
+    Mockito.verify(channelFactory, Mockito.times(2)).createSingleChannel();
+    assertThat(pool.getGeneration()).isEqualTo(1);
+    // The second rotation is still detected for the next UNAUTHENTICATED failure.
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isTrue();
+  }
+
+  @Test
+  void preemptiveRefresh_concurrentSwitchWhileWaitingForLock_skipsRefresh() throws Exception {
+    CountDownLatch switchStarted = new CountDownLatch(1);
+    CountDownLatch releaseSwitch = new CountDownLatch(1);
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(Mockito.mock(ManagedChannel.class))
+        .thenAnswer(
+            invocation -> {
+              switchStarted.countDown();
+              releaseSwitch.await();
+              return Mockito.mock(ManagedChannel.class);
+            })
+        .thenReturn(Mockito.mock(ManagedChannel.class));
+    Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(1, channelFactory);
+    pool.invalidateDiskFingerprintCache();
+    writeCert("root_cert.pem");
+
+    runWhileConcurrentSwitchHoldsLock(switchStarted, releaseSwitch, preemptiveRefresh);
+
+    // The channels were just recreated by the concurrent switch, so the periodic refresh skipped.
+    Mockito.verify(channelFactory, Mockito.times(2)).createSingleChannel();
+    assertThat(pool.getGeneration()).isEqualTo(1);
+    pool.invalidateDiskFingerprintCache();
+    assertThat(pool.shouldRefresh()).isTrue();
+  }
+
   @Test
   void refresh_whenCertUnchanged_noOpsAndDoesNotIncrementGeneration() throws IOException {
     ChannelFactory channelFactory = mockChannelFactory();

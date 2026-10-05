@@ -98,8 +98,17 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   /** {@inheritDoc} */
   @Override
   public void refresh() {
+    // A generation change while waiting for the lock means a concurrent refresh already swapped in
+    // a transport with a new certificate, so there is no need to read the certificate again.
+    long generationBeforeLock = generation.get();
     synchronized (refreshLock) {
       if (isShutdown()) {
+        return;
+      }
+      if (generation.get() != generationBeforeLock) {
+        LOG.fine(
+            "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate"
+                + " refresh");
         return;
       }
       String currentDiskFingerprint = rotationTracker.readDiskFingerprint();
