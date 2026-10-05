@@ -37,6 +37,8 @@ import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
+import io.opentelemetry.context.Context;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
@@ -57,9 +59,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final ApiTracerContext apiTracerContext;
   // Captures the active trace context from the calling thread at RPC initiation.
   // This allows the operation span and attempt spans to link back to the caller's trace.
-  private final io.opentelemetry.context.Context parentContext;
+  private final Context parentContext;
   // Trace context containing the operationSpan, serving as the parent for attempt spans.
-  private final io.opentelemetry.context.Context operationContext;
+  private final Context operationContext;
   // Lock coordinates attempt transitions and operation completion across threads.
   private final ReentrantLock lock = new ReentrantLock();
   private boolean operationCompleted;
@@ -72,9 +74,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     Span currentAttempt = attemptSpan;
     Span spanToInject = currentAttempt != null ? currentAttempt : operationSpan;
     if (spanToInject != null) {
-      io.opentelemetry.context.Context context =
-          io.opentelemetry.context.Context.current().with(spanToInject);
-      io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator.getInstance()
+      Context context = Context.current().with(spanToInject);
+      W3CTraceContextPropagator.getInstance()
           .inject(
               context,
               carrier,
@@ -142,7 +143,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.attemptSpanName =
         operationSpanName.equals(attemptSpanName) ? attemptSpanName + "/attempt" : attemptSpanName;
     this.attemptAttributes = new HashMap<>();
-    this.parentContext = io.opentelemetry.context.Context.current();
+    this.parentContext = Context.current();
     buildAttributes();
     this.operationSpan = startOperationSpan();
     this.operationContext = parentContext.with(this.operationSpan);
