@@ -138,8 +138,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       String operationSpanName) {
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
-    this.attemptSpanName = attemptSpanName;
     this.operationSpanName = operationSpanName;
+    this.attemptSpanName =
+        attemptSpanName.equals(operationSpanName) ? attemptSpanName + "/attempt" : attemptSpanName;
     this.attemptAttributes = new HashMap<>();
     this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
@@ -242,7 +243,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
     // End lingering previous attempt outside the lock to avoid holding the lock during callbacks.
     if (oldSpan != null) {
-      endAttemptSpan(oldSpan, null);
+      endSpan(oldSpan, null);
     }
   }
 
@@ -304,24 +305,10 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
 
     if (localAttemptSpan != null) {
-      endAttemptSpan(localAttemptSpan, error);
+      endSpan(localAttemptSpan, error);
     }
 
-    Map<String, Object> responseAttributes =
-        ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
-    if (!responseAttributes.isEmpty()) {
-      localOperationSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
-    }
-
-    if (error != null) {
-      localOperationSpan.setStatus(StatusCode.ERROR);
-      if (!Strings.isNullOrEmpty(error.getMessage())) {
-        localOperationSpan.setAttribute(
-            ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
-      }
-    }
-
-    localOperationSpan.end();
+    endSpan(localOperationSpan, error);
   }
 
   @Override
@@ -412,31 +399,33 @@ class OpenTelemetryTracingTracer implements ApiTracer {
       lock.unlock();
     }
 
-    endAttemptSpan(localAttemptSpan, error);
+    endSpan(localAttemptSpan, error);
   }
 
   /**
-   * Attaches response status attributes and error messages to the attempt span and ends it.
+   * Attaches response status attributes and error messages to the span and ends it.
    *
    * <p>This method runs outside of synchronization locks to avoid blocking threads during
    * OpenTelemetry span completion callbacks.
    *
-   * @param localAttemptSpan the attempt span to finish
-   * @param error the exception that caused the attempt to end, or {@code null} if successful
+   * @param span the span to finish
+   * @param error the exception that caused the span to end, or {@code null} if successful
    */
-  private void endAttemptSpan(Span localAttemptSpan, @Nullable Throwable error) {
+  private void endSpan(Span span, @Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
     if (!responseAttributes.isEmpty()) {
-      localAttemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
+      span.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
-    if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
-      localAttemptSpan.setAttribute(
-          ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+    if (error != null) {
+      span.setStatus(StatusCode.ERROR);
+      if (!Strings.isNullOrEmpty(error.getMessage())) {
+        span.setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+      }
     }
 
-    localAttemptSpan.end();
+    span.end();
   }
 
   @Override
