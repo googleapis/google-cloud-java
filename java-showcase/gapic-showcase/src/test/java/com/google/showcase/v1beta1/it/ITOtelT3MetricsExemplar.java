@@ -130,20 +130,27 @@ class ITOtelT3MetricsExemplar {
               .findFirst()
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
-      Collection<MetricData> metrics = waitAndCollectMetrics();
-      MetricData durationMetric =
-          metrics.stream()
-              .filter(m -> m.getName().equals("gcp.client.request.duration"))
-              .findFirst()
-              .orElseThrow(() -> new AssertionError("Duration metric not found in: " + metrics));
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .untilAsserted(
+              () -> {
+                Collection<MetricData> metrics = metricReader.collectAllMetrics();
+                MetricData durationMetric =
+                    metrics.stream()
+                        .filter(m -> m.getName().equals("gcp.client.request.duration"))
+                        .findFirst()
+                        .orElseThrow(
+                            () -> new AssertionError("Duration metric not found in: " + metrics));
 
-      HistogramPointData point = durationMetric.getHistogramData().getPoints().iterator().next();
-      List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
-      assertThat(exemplars).isNotEmpty();
+                HistogramPointData point =
+                    durationMetric.getHistogramData().getPoints().iterator().next();
+                List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
+                assertThat(exemplars).isNotEmpty();
 
-      ExemplarData exemplar = exemplars.get(0);
-      assertThat(exemplar.getSpanContext().getTraceId()).isEqualTo(t3Span.getTraceId());
-      assertThat(exemplar.getSpanContext().getSpanId()).isEqualTo(t3Span.getSpanId());
+                ExemplarData exemplar = exemplars.get(0);
+                assertThat(exemplar.getSpanContext().getTraceId()).isEqualTo(t3Span.getTraceId());
+                assertThat(exemplar.getSpanContext().getSpanId()).isEqualTo(t3Span.getSpanId());
+              });
     }
   }
 
@@ -164,20 +171,27 @@ class ITOtelT3MetricsExemplar {
               .findFirst()
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
-      Collection<MetricData> metrics = waitAndCollectMetrics();
-      MetricData durationMetric =
-          metrics.stream()
-              .filter(m -> m.getName().equals("gcp.client.request.duration"))
-              .findFirst()
-              .orElseThrow(() -> new AssertionError("Duration metric not found in: " + metrics));
+      Awaitility.await()
+          .atMost(Duration.ofSeconds(5))
+          .untilAsserted(
+              () -> {
+                Collection<MetricData> metrics = metricReader.collectAllMetrics();
+                MetricData durationMetric =
+                    metrics.stream()
+                        .filter(m -> m.getName().equals("gcp.client.request.duration"))
+                        .findFirst()
+                        .orElseThrow(
+                            () -> new AssertionError("Duration metric not found in: " + metrics));
 
-      HistogramPointData point = durationMetric.getHistogramData().getPoints().iterator().next();
-      List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
-      assertThat(exemplars).isNotEmpty();
+                HistogramPointData point =
+                    durationMetric.getHistogramData().getPoints().iterator().next();
+                List<ExemplarData> exemplars = new ArrayList<>(point.getExemplars());
+                assertThat(exemplars).isNotEmpty();
 
-      ExemplarData exemplar = exemplars.get(0);
-      assertThat(exemplar.getSpanContext().getTraceId()).isEqualTo(t3Span.getTraceId());
-      assertThat(exemplar.getSpanContext().getSpanId()).isEqualTo(t3Span.getSpanId());
+                ExemplarData exemplar = exemplars.get(0);
+                assertThat(exemplar.getSpanContext().getTraceId()).isEqualTo(t3Span.getTraceId());
+                assertThat(exemplar.getSpanContext().getSpanId()).isEqualTo(t3Span.getSpanId());
+              });
     }
   }
 
@@ -192,32 +206,6 @@ class ITOtelT3MetricsExemplar {
         .atMost(Duration.ofSeconds(5))
         .until(() -> spanExporter.getFinishedSpanItems().size() >= minSpans);
     return spanExporter.getFinishedSpanItems();
-  }
-
-  private Collection<MetricData> waitAndCollectMetrics() {
-    java.util.concurrent.atomic.AtomicReference<Collection<MetricData>> holder =
-        new java.util.concurrent.atomic.AtomicReference<>();
-    Awaitility.await()
-        .atMost(Duration.ofSeconds(5))
-        .until(
-            () -> {
-              Collection<MetricData> metrics = metricReader.collectAllMetrics();
-              if (metrics.isEmpty()) {
-                return false;
-              }
-              for (MetricData md : metrics) {
-                if (md.getName().equals("gcp.client.request.duration")) {
-                  for (HistogramPointData p : md.getHistogramData().getPoints()) {
-                    if (!p.getExemplars().isEmpty()) {
-                      holder.set(metrics);
-                      return true;
-                    }
-                  }
-                }
-              }
-              return false;
-            });
-    return holder.get();
   }
 
   private EchoSettings createEchoSettings(boolean isHttpJson) throws Exception {

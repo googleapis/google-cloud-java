@@ -59,6 +59,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.util.List;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -128,8 +129,7 @@ class ITOtelT3Tracing {
 
       assertThat(t3Span.getKind()).isEqualTo(SpanKind.INTERNAL);
       assertThat(t3Span.getName()).isNotEmpty();
-      assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(StatusCode.UNSET);
+      assertThat(t3Span.getStatus().getStatusCode()).isEqualTo(StatusCode.UNSET);
       assertThat(
               t3Span
                   .getAttributes()
@@ -198,8 +198,7 @@ class ITOtelT3Tracing {
               .findFirst()
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
-      assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(StatusCode.ERROR);
+      assertThat(t3Span.getStatus().getStatusCode()).isEqualTo(StatusCode.ERROR);
       assertThat(
               t3Span
                   .getAttributes()
@@ -249,8 +248,7 @@ class ITOtelT3Tracing {
               .findFirst()
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
-      assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(StatusCode.ERROR);
+      assertThat(t3Span.getStatus().getStatusCode()).isEqualTo(StatusCode.ERROR);
       // In GAX, client timeout ApiException maps to HTTP 504
       assertThat(
               t3Span
@@ -303,8 +301,7 @@ class ITOtelT3Tracing {
 
       assertThat(t3Span.getKind()).isEqualTo(SpanKind.INTERNAL);
       assertThat(t3Span.getName()).isEqualTo("google.showcase.v1beta1.Echo/Echo");
-      assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(StatusCode.UNSET);
+      assertThat(t3Span.getStatus().getStatusCode()).isEqualTo(StatusCode.UNSET);
       assertThat(
               t3Span
                   .getAttributes()
@@ -369,8 +366,7 @@ class ITOtelT3Tracing {
               .findFirst()
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
-      assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(StatusCode.ERROR);
+      assertThat(t3Span.getStatus().getStatusCode()).isEqualTo(StatusCode.ERROR);
       assertThat(
               t3Span
                   .getAttributes()
@@ -420,8 +416,7 @@ class ITOtelT3Tracing {
               .findFirst()
               .orElseThrow(() -> new AssertionError("T3 INTERNAL span not found in: " + spans));
 
-      assertThat(t3Span.getStatus().getStatusCode())
-          .isEqualTo(StatusCode.ERROR);
+      assertThat(t3Span.getStatus().getStatusCode()).isEqualTo(StatusCode.ERROR);
       assertThat(
               t3Span
                   .getAttributes()
@@ -443,7 +438,7 @@ class ITOtelT3Tracing {
   }
 
   private List<SpanData> waitAndCollectSpans(int minSpans) {
-    org.awaitility.Awaitility.await()
+    Awaitility.await()
         .atMost(java.time.Duration.ofSeconds(5))
         .until(() -> spanExporter.getFinishedSpanItems().size() >= minSpans);
     return spanExporter.getFinishedSpanItems();

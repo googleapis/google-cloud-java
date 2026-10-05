@@ -65,6 +65,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -485,7 +486,7 @@ class ITOtelT3T4Hierarchy {
   }
 
   private List<SpanData> waitAndCollectSpans(int minSpans) {
-    org.awaitility.Awaitility.await()
+    Awaitility.await()
         .atMost(Duration.ofSeconds(5))
         .until(() -> spanExporter.getFinishedSpanItems().size() >= minSpans);
     return spanExporter.getFinishedSpanItems();
