@@ -46,34 +46,35 @@ import org.jspecify.annotations.Nullable;
 @AutoValue
 public abstract class ChunkUploadResponse<ResponseT> {
 
-  /** Whether the overall resumable upload stream has finalized and completed on the server. */
-  public abstract boolean isComplete();
-
   /**
    * The response object returned by the server upon final completion (e.g. metadata of the uploaded
    * resource), or {@code null} if the upload is still in progress.
    */
   public abstract @Nullable ResponseT getResponse();
 
+  /** Returns the status of the upload session returned by the server. */
+  public abstract ResumableUploadStatus getUploadStatus();
+
   public abstract Builder<ResponseT> toBuilder();
 
   public static <ResponseT> Builder<ResponseT> newBuilder() {
-    return new AutoValue_ChunkUploadResponse.Builder<ResponseT>().setComplete(false);
+    return new AutoValue_ChunkUploadResponse.Builder<ResponseT>()
+        .setUploadStatus(ResumableUploadStatus.ACTIVE);
   }
 
   public static <ResponseT> ChunkUploadResponse<ResponseT> create(
-      boolean isComplete, @Nullable ResponseT response) {
+      ResumableUploadStatus uploadStatus, @Nullable ResponseT response) {
     return new AutoValue_ChunkUploadResponse.Builder<ResponseT>()
-        .setComplete(isComplete)
+        .setUploadStatus(uploadStatus)
         .setResponse(response)
         .build();
   }
 
   @AutoValue.Builder
   public abstract static class Builder<ResponseT> {
-    public abstract Builder<ResponseT> setComplete(boolean isComplete);
-
     public abstract Builder<ResponseT> setResponse(@Nullable ResponseT response);
+
+    public abstract Builder<ResponseT> setUploadStatus(ResumableUploadStatus uploadStatus);
 
     public abstract ChunkUploadResponse<ResponseT> build();
   }

@@ -19,6 +19,8 @@ package com.google.cloud.parametermanager.v1;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParameterVersionsPagedResponse;
 import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListParametersPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplateVersionsPagedResponse;
+import static com.google.cloud.parametermanager.v1.ParameterManagerClient.ListTemplatesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -162,6 +164,70 @@ public class ParameterManagerSettings extends ClientSettings<ParameterManagerSet
   /** Returns the object with the settings used for calls to deleteParameterVersion. */
   public UnaryCallSettings<DeleteParameterVersionRequest, Empty> deleteParameterVersionSettings() {
     return ((ParameterManagerStubSettings) getStubSettings()).deleteParameterVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTemplates. */
+  public PagedCallSettings<ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+      listTemplatesSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).listTemplatesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTemplate. */
+  public UnaryCallSettings<GetTemplateRequest, Template> getTemplateSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).getTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTemplate. */
+  public UnaryCallSettings<CreateTemplateRequest, Template> createTemplateSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).createTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTemplate. */
+  public UnaryCallSettings<UpdateTemplateRequest, Template> updateTemplateSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).updateTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTemplate. */
+  public UnaryCallSettings<DeleteTemplateRequest, Empty> deleteTemplateSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).deleteTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTemplateVersions. */
+  public PagedCallSettings<
+          ListTemplateVersionsRequest,
+          ListTemplateVersionsResponse,
+          ListTemplateVersionsPagedResponse>
+      listTemplateVersionsSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).listTemplateVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTemplateVersion. */
+  public UnaryCallSettings<GetTemplateVersionRequest, TemplateVersion>
+      getTemplateVersionSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).getTemplateVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createTemplateVersion. */
+  public UnaryCallSettings<CreateTemplateVersionRequest, TemplateVersion>
+      createTemplateVersionSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).createTemplateVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateTemplateVersion. */
+  public UnaryCallSettings<UpdateTemplateVersionRequest, TemplateVersion>
+      updateTemplateVersionSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).updateTemplateVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTemplateVersion. */
+  public UnaryCallSettings<DeleteTemplateVersionRequest, Empty> deleteTemplateVersionSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).deleteTemplateVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to renderTemplateVersion. */
+  public UnaryCallSettings<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+      renderTemplateVersionSettings() {
+    return ((ParameterManagerStubSettings) getStubSettings()).renderTemplateVersionSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -351,6 +417,72 @@ public class ParameterManagerSettings extends ClientSettings<ParameterManagerSet
     public UnaryCallSettings.Builder<DeleteParameterVersionRequest, Empty>
         deleteParameterVersionSettings() {
       return getStubSettingsBuilder().deleteParameterVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTemplates. */
+    public PagedCallSettings.Builder<
+            ListTemplatesRequest, ListTemplatesResponse, ListTemplatesPagedResponse>
+        listTemplatesSettings() {
+      return getStubSettingsBuilder().listTemplatesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTemplate. */
+    public UnaryCallSettings.Builder<GetTemplateRequest, Template> getTemplateSettings() {
+      return getStubSettingsBuilder().getTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTemplate. */
+    public UnaryCallSettings.Builder<CreateTemplateRequest, Template> createTemplateSettings() {
+      return getStubSettingsBuilder().createTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTemplate. */
+    public UnaryCallSettings.Builder<UpdateTemplateRequest, Template> updateTemplateSettings() {
+      return getStubSettingsBuilder().updateTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTemplate. */
+    public UnaryCallSettings.Builder<DeleteTemplateRequest, Empty> deleteTemplateSettings() {
+      return getStubSettingsBuilder().deleteTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTemplateVersions. */
+    public PagedCallSettings.Builder<
+            ListTemplateVersionsRequest,
+            ListTemplateVersionsResponse,
+            ListTemplateVersionsPagedResponse>
+        listTemplateVersionsSettings() {
+      return getStubSettingsBuilder().listTemplateVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTemplateVersion. */
+    public UnaryCallSettings.Builder<GetTemplateVersionRequest, TemplateVersion>
+        getTemplateVersionSettings() {
+      return getStubSettingsBuilder().getTemplateVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createTemplateVersion. */
+    public UnaryCallSettings.Builder<CreateTemplateVersionRequest, TemplateVersion>
+        createTemplateVersionSettings() {
+      return getStubSettingsBuilder().createTemplateVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTemplateVersion. */
+    public UnaryCallSettings.Builder<UpdateTemplateVersionRequest, TemplateVersion>
+        updateTemplateVersionSettings() {
+      return getStubSettingsBuilder().updateTemplateVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTemplateVersion. */
+    public UnaryCallSettings.Builder<DeleteTemplateVersionRequest, Empty>
+        deleteTemplateVersionSettings() {
+      return getStubSettingsBuilder().deleteTemplateVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to renderTemplateVersion. */
+    public UnaryCallSettings.Builder<RenderTemplateVersionRequest, RenderTemplateVersionResponse>
+        renderTemplateVersionSettings() {
+      return getStubSettingsBuilder().renderTemplateVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

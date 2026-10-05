@@ -250,6 +250,7 @@ public class ITBatchReadTest {
   @Test
   public void dataBoostRead() {
     assumeFalse("data boost is not supported on Spanner Omni yet", isSpannerOmni());
+    assumeFalse("Skipping the test due to a known bug b/557058207", env.isCloudDevelOrStaging());
     BitSet seenRows = new BitSet(numRows);
     TimestampBound bound = getRandomBound();
     PartitionOptions partitionParams = getRandomPartitionOptions();
@@ -303,6 +304,7 @@ public class ITBatchReadTest {
   @Test
   public void dataBoostQuery() {
     assumeFalse("data boost is not supported on Spanner Omni yet", isSpannerOmni());
+    assumeFalse("Skipping the test due to a known bug b/557058207", env.isCloudDevelOrStaging());
     BitSet seenRows = new BitSet(numRows);
     TimestampBound bound = getRandomBound();
     PartitionOptions partitionParams = getRandomPartitionOptions();

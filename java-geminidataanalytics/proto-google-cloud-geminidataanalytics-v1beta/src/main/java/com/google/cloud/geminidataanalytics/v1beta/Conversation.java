@@ -54,6 +54,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
   private Conversation() {
     name_ = "";
     agents_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    title_ = "";
     kmsKey_ = "";
   }
 
@@ -470,6 +471,59 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int TITLE_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object title_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name for the conversation (max 63 chars).
+   * </pre>
+   *
+   * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The title.
+   */
+  @java.lang.Override
+  public java.lang.String getTitle() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      title_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name for the conversation (max 63 chars).
+   * </pre>
+   *
+   * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for title.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTitleBytes() {
+    java.lang.Object ref = title_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      title_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int KMS_KEY_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -560,41 +614,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int MEMORY_PAUSED_FIELD_NUMBER = 11;
-  private boolean memoryPaused_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether memory is paused for this conversation.
-   * </pre>
-   *
-   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return Whether the memoryPaused field is set.
-   */
-  @java.lang.Override
-  public boolean hasMemoryPaused() {
-    return ((bitField0_ & 0x00000008) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether memory is paused for this conversation.
-   * </pre>
-   *
-   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The memoryPaused.
-   */
-  @java.lang.Override
-  public boolean getMemoryPaused() {
-    return memoryPaused_;
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -621,13 +640,13 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getLastUsedTime());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, title_);
+    }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, kmsKey_);
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeBool(11, memoryPaused_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -655,6 +674,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getLastUsedTime());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, title_);
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -667,9 +689,6 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, kmsKey_);
-    }
-    if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, memoryPaused_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -698,13 +717,10 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       if (!getLastUsedTime().equals(other.getLastUsedTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getTitle().equals(other.getTitle())) return false;
     if (hasKmsKey() != other.hasKmsKey()) return false;
     if (hasKmsKey()) {
       if (!getKmsKey().equals(other.getKmsKey())) return false;
-    }
-    if (hasMemoryPaused() != other.hasMemoryPaused()) return false;
-    if (hasMemoryPaused()) {
-      if (getMemoryPaused() != other.getMemoryPaused()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -735,13 +751,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getTitle().hashCode();
     if (hasKmsKey()) {
       hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKmsKey().hashCode();
-    }
-    if (hasMemoryPaused()) {
-      hash = (37 * hash) + MEMORY_PAUSED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMemoryPaused());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -929,8 +943,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         lastUsedTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      title_ = "";
       kmsKey_ = "";
-      memoryPaused_ = false;
       return this;
     }
 
@@ -989,12 +1003,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         result.labels_.makeImmutable();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.kmsKey_ = kmsKey_;
-        to_bitField0_ |= 0x00000004;
+        result.title_ = title_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.memoryPaused_ = memoryPaused_;
-        to_bitField0_ |= 0x00000008;
+        result.kmsKey_ = kmsKey_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1035,13 +1048,15 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000010;
-      if (other.hasKmsKey()) {
-        kmsKey_ = other.kmsKey_;
+      if (!other.getTitle().isEmpty()) {
+        title_ = other.title_;
         bitField0_ |= 0x00000020;
         onChanged();
       }
-      if (other.hasMemoryPaused()) {
-        setMemoryPaused(other.getMemoryPaused());
+      if (other.hasKmsKey()) {
+        kmsKey_ = other.kmsKey_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1096,6 +1111,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 50:
+              {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             case 74:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
@@ -1111,15 +1132,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
             case 82:
               {
                 kmsKey_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 82
-            case 88:
-              {
-                memoryPaused_ = input.readBool();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 88
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2135,6 +2150,117 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object title_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name for the conversation (max 63 chars).
+     * </pre>
+     *
+     * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The title.
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name for the conversation (max 63 chars).
+     * </pre>
+     *
+     * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for title.
+     */
+    public com.google.protobuf.ByteString getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name for the conversation (max 63 chars).
+     * </pre>
+     *
+     * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      title_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name for the conversation (max 63 chars).
+     * </pre>
+     *
+     * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTitle() {
+      title_ = getDefaultInstance().getTitle();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The display name for the conversation (max 63 chars).
+     * </pre>
+     *
+     * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for title to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      title_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object kmsKey_ = "";
 
     /**
@@ -2156,7 +2282,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * @return Whether the kmsKey field is set.
      */
     public boolean hasKmsKey() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2243,7 +2369,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kmsKey_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2268,7 +2394,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKmsKey() {
       kmsKey_ = getDefaultInstance().getKmsKey();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2298,79 +2424,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kmsKey_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    private boolean memoryPaused_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether memory is paused for this conversation.
-     * </pre>
-     *
-     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return Whether the memoryPaused field is set.
-     */
-    @java.lang.Override
-    public boolean hasMemoryPaused() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether memory is paused for this conversation.
-     * </pre>
-     *
-     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The memoryPaused.
-     */
-    @java.lang.Override
-    public boolean getMemoryPaused() {
-      return memoryPaused_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether memory is paused for this conversation.
-     * </pre>
-     *
-     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The memoryPaused to set.
-     * @return This builder for chaining.
-     */
-    public Builder setMemoryPaused(boolean value) {
-
-      memoryPaused_ = value;
       bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Whether memory is paused for this conversation.
-     * </pre>
-     *
-     * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearMemoryPaused() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      memoryPaused_ = false;
       onChanged();
       return this;
     }

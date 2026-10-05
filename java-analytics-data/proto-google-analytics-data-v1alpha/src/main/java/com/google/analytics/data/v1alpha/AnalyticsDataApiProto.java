@@ -165,6 +165,14 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_ListReportTasksResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_ChatRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_ChatRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1alpha_ChatResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_analytics_data_v1alpha_ChatResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1alpha_RunReportRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_analytics_data_v1alpha_RunReportRequest_fieldAccessorTable;
@@ -434,23 +442,35 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
           + "\014report_tasks\030\001 \003"
           + "(\0132).google.analytics.data.v1alpha.ReportTask\022\034\n"
           + "\017next_page_token\030\002 \001(\tH\000\210\001\001B\022\n"
-          + "\020_next_page_token\"\374\006\n"
+          + "\020_next_page_token\"\271\001\n"
+          + "\013ChatRequest\022@\n"
+          + "\010property\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&analyticsadmin.googleapis.com/Property\022\027\n\n"
+          + "user_query\030\002 \001(\tB\003\340A\002\022\034\n\n"
+          + "session_id\030\003 \001(\tB\003\340A\001H\000\210\001\001\022\"\n"
+          + "\025return_property_quota\030\004 \001(\010B\003\340A\001B\r\n"
+          + "\013_session_id\"\252\001\n"
+          + "\014ChatResponse\022\022\n\n"
+          + "session_id\030\001 \001(\t\022<\n"
+          + "\006blocks\030\002 \003(\0132,.google.analytics.data.v1alpha.ResponseBlock\022H\n"
+          + "\016property_quota\030\003"
+          + " \001(\01320.google.analytics.data.v1alpha.PropertyChatQuota\"\374\006\n"
           + "\020RunReportRequest\022\025\n"
           + "\010property\030\001 \001(\tB\003\340A\002\022A\n\n"
-          + "dimensions\030\002 \003(\0132"
-          + "(.google.analytics.data.v1alpha.DimensionB\003\340A\001\022;\n"
+          + "dimensions\030\002 \003(\013"
+          + "2(.google.analytics.data.v1alpha.DimensionB\003\340A\001\022;\n"
           + "\007metrics\030\003"
           + " \003(\0132%.google.analytics.data.v1alpha.MetricB\003\340A\001\022B\n"
           + "\013date_ranges\030\004"
           + " \003(\0132(.google.analytics.data.v1alpha.DateRangeB\003\340A\001\022N\n"
-          + "\020dimension_filter\030\005 \001("
-          + "\0132/.google.analytics.data.v1alpha.FilterExpressionB\003\340A\001\022K\n\r"
-          + "metric_filter\030\006 \001(\0132/"
-          + ".google.analytics.data.v1alpha.FilterExpressionB\003\340A\001\022\023\n"
+          + "\020dimension_filter\030\005 \001"
+          + "(\0132/.google.analytics.data.v1alpha.FilterExpressionB\003\340A\001\022K\n\r"
+          + "metric_filter\030\006 \001(\0132"
+          + "/.google.analytics.data.v1alpha.FilterExpressionB\003\340A\001\022\023\n"
           + "\006offset\030\007 \001(\003B\003\340A\001\022\022\n"
           + "\005limit\030\010 \001(\003B\003\340A\001\022R\n"
-          + "\023metric_aggregations\030\t \003"
-          + "(\01620.google.analytics.data.v1alpha.MetricAggregationB\003\340A\001\022>\n"
+          + "\023metric_aggregations\030\t "
+          + "\003(\01620.google.analytics.data.v1alpha.MetricAggregationB\003\340A\001\022>\n"
           + "\torder_bys\030\n"
           + " \003(\0132&.google.analytics.data.v1alpha.OrderByB\003\340A\001\022\032\n\r"
           + "currency_code\030\013 \001(\tB\003\340A\001\022C\n"
@@ -464,8 +484,8 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
           + "\017conversion_spec\030\020"
           + " \001(\0132-.google.analytics.data.v1alpha.ConversionSpecB\003\340A\001\"\321\004\n"
           + "\021RunReportResponse\022I\n"
-          + "\021dimension_headers\030\001 \003(\0132"
-          + "..google.analytics.data.v1alpha.DimensionHeader\022C\n"
+          + "\021dimension_headers\030\001 \003(\013"
+          + "2..google.analytics.data.v1alpha.DimensionHeader\022C\n"
           + "\016metric_headers\030\002"
           + " \003(\0132+.google.analytics.data.v1alpha.MetricHeader\0220\n"
           + "\004rows\030\003 \003(\0132\".google.analytics.data.v1alpha.Row\0222\n"
@@ -474,8 +494,8 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
           + "\010minimums\030\006 \003(\0132\".google.analytics.data.v1alpha.Row\022\021\n"
           + "\trow_count\030\007 \001(\005\022A\n"
           + "\010metadata\030\010 \001(\0132/.google.analytics.data.v1alpha.ResponseMetaData\022D\n"
-          + "\016property_quota\030\t \001(\0132,.g"
-          + "oogle.analytics.data.v1alpha.PropertyQuota\022\014\n"
+          + "\016property_quota\030\t \001(\0132,."
+          + "google.analytics.data.v1alpha.PropertyQuota\022\014\n"
           + "\004kind\030\n"
           + " \001(\t\022\034\n"
           + "\017next_page_token\030\013 \001(\tH\000\210\001\001B\022\n"
@@ -489,73 +509,77 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
           + "\007metrics\030\002 \003(\0132-.google.analytics.data.v1alpha.MetricMetadata\022F\n"
           + "\013comparisons\030\004"
           + " \003(\01321.google.analytics.data.v1alpha.ComparisonMetadata\022F\n"
-          + "\013conversions\030\005 "
-          + "\003(\01321.google.analytics.data.v1alpha.ConversionMetadata:J\352AG\n"
-          + "%analyticsdata.googl"
-          + "eapis.com/Metadata\022\036properties/{property}/metadata2\250\031\n"
+          + "\013conversions\030\005"
+          + " \003(\01321.google.analytics.data.v1alpha.ConversionMetadata:J\352AG\n"
+          + "%analyticsdata.goog"
+          + "leapis.com/Metadata\022\036properties/{property}/metadata2\365\032\n"
           + "\022AlphaAnalyticsData\022\275\001\n"
-          + "\017RunFunnelReport\0225.google.analytics.data.v1"
-          + "alpha.RunFunnelReportRequest\0326.google.analytics.data.v1alpha.RunFunnelReportResp"
-          + "onse\";\202\323\344\223\0025\"0/v1alpha/{property=properties/*}:runFunnelReport:\001*\022\361\001\n"
-          + "\022CreateAudienceList\0228.google.analytics.data.v1alpha"
-          + ".CreateAudienceListRequest\032\035.google.longrunning.Operation\"\201\001\312A$\n"
-          + "\014AudienceList\022\024AudienceListMetadata\332A\024parent,audience_li"
-          + "st\202\323\344\223\002=\",/v1alpha/{parent=properties/*}/audienceLists:\r"
+          + "\017RunFunnelReport\0225.google.analytics.data.v"
+          + "1alpha.RunFunnelReportRequest\0326.google.analytics.data.v1alpha.RunFunnelReportRes"
+          + "ponse\";\202\323\344\223\0025\"0/v1alpha/{property=properties/*}:runFunnelReport:\001*\022\361\001\n"
+          + "\022CreateAudienceList\0228.google.analytics.data.v1alph"
+          + "a.CreateAudienceListRequest\032\035.google.longrunning.Operation\"\201\001\312A$\n"
+          + "\014AudienceList\022\024AudienceListMetadata\332A\024parent,audience_l"
+          + "ist\202\323\344\223\002=\",/v1alpha/{parent=properties/*}/audienceLists:\r"
           + "audience_list\022\314\001\n"
-          + "\021QueryAudienceList\0227.google.analytics.data.v1al"
-          + "pha.QueryAudienceListRequest\0328.google.analytics.data.v1alpha.QueryAudienceListRe"
-          + "sponse\"D\332A\004name\202\323\344\223\0027\"2/v1alpha/{name=properties/*/audienceLists/*}:query:\001*\022\262\001\n"
-          + "\017GetAudienceList\0225.google.analytics.data"
-          + ".v1alpha.GetAudienceListRequest\032+.google"
-          + ".analytics.data.v1alpha.AudienceList\";\332A"
-          + "\004name\202\323\344\223\002.\022,/v1alpha/{name=properties/*/audienceLists/*}\022\305\001\n"
-          + "\021ListAudienceLists\0227.google.analytics.data.v1alpha.ListAudi"
-          + "enceListsRequest\0328.google.analytics.data"
-          + ".v1alpha.ListAudienceListsResponse\"=\332A\006p"
-          + "arent\202\323\344\223\002.\022,/v1alpha/{parent=properties/*}/audienceLists\022\217\002\n"
-          + "\033CreateRecurringAudienceList\022A.google.analytics.data.v1alph"
-          + "a.CreateRecurringAudienceListRequest\0324.google.analytics.data.v1alpha.RecurringAu"
-          + "dienceList\"w\332A\036parent,recurring_audience"
-          + "_list\202\323\344\223\002P\"5/v1alpha/{parent=properties"
-          + "/*}/recurringAudienceLists:\027recurring_audience_list\022\326\001\n"
-          + "\030GetRecurringAudienceList\022>.google.analytics.data.v1alpha.GetRecu"
-          + "rringAudienceListRequest\0324.google.analytics.data.v1alpha.RecurringAudienceList\"D"
-          + "\332A\004name\202\323\344\223\0027\0225/v1alpha/{name=properties/*/recurringAudienceLists/*}\022\351\001\n"
-          + "\032ListRecurringAudienceLists\022@.google.analytics.d"
-          + "ata.v1alpha.ListRecurringAudienceListsRequest\032A.google.analytics.data.v1alpha.Li"
-          + "stRecurringAudienceListsResponse\"F\332A\006par"
-          + "ent\202\323\344\223\0027\0225/v1alpha/{parent=properties/*}/recurringAudienceLists\022\327\001\n"
-          + "\031GetPropertyQuotasSnapshot\022?.google.analytics.data.v"
-          + "1alpha.GetPropertyQuotasSnapshotRequest\0325.google.analytics.data.v1alpha.Property"
-          + "QuotasSnapshot\"B\332A\004name\202\323\344\223\0025\0223/v1alpha/"
-          + "{name=properties/*/propertyQuotasSnapshot}\022\342\001\n"
-          + "\020CreateReportTask\0226.google.analyti"
-          + "cs.data.v1alpha.CreateReportTaskRequest\032\035.google.longrunning.Operation\"w\312A"
+          + "\021QueryAudienceList\0227.google.analytics.data.v1a"
+          + "lpha.QueryAudienceListRequest\0328.google.analytics.data.v1alpha.QueryAudienceListR"
+          + "esponse\"D\332A\004name\202\323\344\223\0027\"2/v1alpha/{name=p"
+          + "roperties/*/audienceLists/*}:query:\001*\022\262\001\n"
+          + "\017GetAudienceList\0225.google.analytics.dat"
+          + "a.v1alpha.GetAudienceListRequest\032+.googl"
+          + "e.analytics.data.v1alpha.AudienceList\";\332"
+          + "A\004name\202\323\344\223\002.\022,/v1alpha/{name=properties/*/audienceLists/*}\022\305\001\n"
+          + "\021ListAudienceLists\0227.google.analytics.data.v1alpha.ListAud"
+          + "ienceListsRequest\0328.google.analytics.dat"
+          + "a.v1alpha.ListAudienceListsResponse\"=\332A\006"
+          + "parent\202\323\344\223\002.\022,/v1alpha/{parent=properties/*}/audienceLists\022\217\002\n"
+          + "\033CreateRecurringAudienceList\022A.google.analytics.data.v1alp"
+          + "ha.CreateRecurringAudienceListRequest\0324.google.analytics.data.v1alpha.RecurringA"
+          + "udienceList\"w\332A\036parent,recurring_audienc"
+          + "e_list\202\323\344\223\002P\"5/v1alpha/{parent=propertie"
+          + "s/*}/recurringAudienceLists:\027recurring_audience_list\022\326\001\n"
+          + "\030GetRecurringAudienceList\022>.google.analytics.data.v1alpha.GetRec"
+          + "urringAudienceListRequest\0324.google.analytics.data.v1alpha.RecurringAudienceList\""
+          + "D\332A\004name\202\323\344\223\0027\0225/v1alpha/{name=properties/*/recurringAudienceLists/*}\022\351\001\n"
+          + "\032ListRecurringAudienceLists\022@.google.analytics."
+          + "data.v1alpha.ListRecurringAudienceListsRequest\032A.google.analytics.data.v1alpha.L"
+          + "istRecurringAudienceListsResponse\"F\332A\006pa"
+          + "rent\202\323\344\223\0027\0225/v1alpha/{parent=properties/*}/recurringAudienceLists\022\327\001\n"
+          + "\031GetPropertyQuotasSnapshot\022?.google.analytics.data."
+          + "v1alpha.GetPropertyQuotasSnapshotRequest\0325.google.analytics.data.v1alpha.Propert"
+          + "yQuotasSnapshot\"B\332A\004name\202\323\344\223\0025\0223/v1alpha"
+          + "/{name=properties/*/propertyQuotasSnapshot}\022\342\001\n"
+          + "\020CreateReportTask\0226.google.analyt"
+          + "ics.data.v1alpha.CreateReportTaskRequest\032\035.google.longrunning.Operation\"w\312A"
           + " \n\n"
-          + "ReportTask\022\022ReportTaskMetadata\332A\022parent,rep"
-          + "ort_task\202\323\344\223\0029\"*/v1alpha/{parent=properties/*}/reportTasks:\013report_task\022\304\001\n"
-          + "\017QueryReportTask\0225.google.analytics.data.v1al"
-          + "pha.QueryReportTaskRequest\0326.google.analytics.data.v1alpha.QueryReportTaskRespon"
-          + "se\"B\332A\004name\202\323\344\223\0025\"0/v1alpha/{name=properties/*/reportTasks/*}:query:\001*\022\252\001\n\r"
-          + "GetReportTask\0223.google.analytics.data.v1alpha"
-          + ".GetReportTaskRequest\032).google.analytics"
-          + ".data.v1alpha.ReportTask\"9\332A\004name\202\323\344\223\002,\022"
-          + "*/v1alpha/{name=properties/*/reportTasks/*}\022\275\001\n"
-          + "\017ListReportTasks\0225.google.analytics.data.v1alpha.ListReportTasksRequest\0326"
-          + ".google.analytics.data.v1alpha.ListRepor"
-          + "tTasksResponse\";\332A\006parent\202\323\344\223\002,\022*/v1alpha/{parent=properties/*}/reportTasks\022\245\001\n"
-          + "\tRunReport\022/.google.analytics.data.v1alph"
-          + "a.RunReportRequest\0320.google.analytics.da"
-          + "ta.v1alpha.RunReportResponse\"5\202\323\344\223\002/\"*/v"
-          + "1alpha/{property=properties/*}:runReport:\001*\022\237\001\n"
-          + "\013GetMetadata\0221.google.analytics.data.v1alpha.GetMetadataRequest\032\'.google."
-          + "analytics.data.v1alpha.Metadata\"4\332A\004name"
-          + "\202\323\344\223\002\'\022%/v1alpha/{name=properties/*/meta"
-          + "data}\032~\312A\034analyticsdata.googleapis.com\322A"
-          + "\\https://www.googleapis.com/auth/analyti"
-          + "cs,https://www.googleapis.com/auth/analytics.readonlyB\301\001\n"
-          + "!com.google.analytics.data.v1alphaB\025AnalyticsDataApiProtoP\001ZAgo"
-          + "ogle.golang.org/genproto/googleapis/analytics/data/v1alpha;data\352A?\n"
+          + "ReportTask\022\022ReportTaskMetadata\332A\022parent,re"
+          + "port_task\202\323\344\223\0029\"*/v1alpha/{parent=properties/*}/reportTasks:\013report_task\022\304\001\n"
+          + "\017QueryReportTask\0225.google.analytics.data.v1a"
+          + "lpha.QueryReportTaskRequest\0326.google.analytics.data.v1alpha.QueryReportTaskRespo"
+          + "nse\"B\332A\004name\202\323\344\223\0025\"0/v1alpha/{name=properties/*/reportTasks/*}:query:\001*\022\252\001\n\r"
+          + "GetReportTask\0223.google.analytics.data.v1alph"
+          + "a.GetReportTaskRequest\032).google.analytic"
+          + "s.data.v1alpha.ReportTask\"9\332A\004name\202\323\344\223\002,"
+          + "\022*/v1alpha/{name=properties/*/reportTasks/*}\022\275\001\n"
+          + "\017ListReportTasks\0225.google.analytics.data.v1alpha.ListReportTasksRequest\032"
+          + "6.google.analytics.data.v1alpha.ListRepo"
+          + "rtTasksResponse\";\332A\006parent\202\323\344\223\002,\022*/v1alpha/{parent=properties/*}/reportTasks\022\221\001\n"
+          + "\004Chat\022*.google.analytics.data.v1alpha.Ch"
+          + "atRequest\032+.google.analytics.data.v1alph"
+          + "a.ChatResponse\"0\202\323\344\223\002*\"%/v1alpha/{property=properties/*}:chat:\001*\022\245\001\n"
+          + "\tRunReport\022/.google.analytics.data.v1alpha.RunReport"
+          + "Request\0320.google.analytics.data.v1alpha."
+          + "RunReportResponse\"5\202\323\344\223\002/\"*/v1alpha/{property=properties/*}:runReport:\001*\022\237\001\n"
+          + "\013GetMetadata\0221.google.analytics.data.v1alpha"
+          + ".GetMetadataRequest\032\'.google.analytics.d"
+          + "ata.v1alpha.Metadata\"4\332A\004name\202\323\344\223\002\'\022%/v1"
+          + "alpha/{name=properties/*/metadata}\032\266\001\312A\034"
+          + "analyticsdata.googleapis.com\322A\223\001https://"
+          + "www.googleapis.com/auth/analytics,https://www.googleapis.com/auth/analytics.chat"
+          + "bot.read,https://www.googleapis.com/auth/analytics.readonlyB\301\001\n"
+          + "!com.google.analytics.data.v1alphaB\025AnalyticsDataApiProto"
+          + "P\001ZAgoogle.golang.org/genproto/googleapis/analytics/data/v1alpha;data\352A?\n"
           + "&analyticsadmin.googleapis.com/Property\022\025properties/{property}b\006proto3"
     };
     descriptor =
@@ -864,8 +888,24 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {
               "ReportTasks", "NextPageToken",
             });
-    internal_static_google_analytics_data_v1alpha_RunReportRequest_descriptor =
+    internal_static_google_analytics_data_v1alpha_ChatRequest_descriptor =
         getDescriptor().getMessageType(29);
+    internal_static_google_analytics_data_v1alpha_ChatRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_ChatRequest_descriptor,
+            new java.lang.String[] {
+              "Property", "UserQuery", "SessionId", "ReturnPropertyQuota",
+            });
+    internal_static_google_analytics_data_v1alpha_ChatResponse_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_analytics_data_v1alpha_ChatResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_analytics_data_v1alpha_ChatResponse_descriptor,
+            new java.lang.String[] {
+              "SessionId", "Blocks", "PropertyQuota",
+            });
+    internal_static_google_analytics_data_v1alpha_RunReportRequest_descriptor =
+        getDescriptor().getMessageType(31);
     internal_static_google_analytics_data_v1alpha_RunReportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_RunReportRequest_descriptor,
@@ -888,7 +928,7 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
               "ConversionSpec",
             });
     internal_static_google_analytics_data_v1alpha_RunReportResponse_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(32);
     internal_static_google_analytics_data_v1alpha_RunReportResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_RunReportResponse_descriptor,
@@ -906,7 +946,7 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
               "NextPageToken",
             });
     internal_static_google_analytics_data_v1alpha_GetMetadataRequest_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(33);
     internal_static_google_analytics_data_v1alpha_GetMetadataRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_GetMetadataRequest_descriptor,
@@ -914,7 +954,7 @@ public final class AnalyticsDataApiProto extends com.google.protobuf.GeneratedFi
               "Name",
             });
     internal_static_google_analytics_data_v1alpha_Metadata_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(34);
     internal_static_google_analytics_data_v1alpha_Metadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_analytics_data_v1alpha_Metadata_descriptor,

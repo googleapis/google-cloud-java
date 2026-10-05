@@ -234,7 +234,7 @@ class HttpJsonServiceStubClassComposerTest {
     Service service = context.services().get(0);
     GapicClass clazz = composer.generate(context, service);
 
-    Assert.assertGoldenClass(this.getClass(), clazz, "HttpJsonResumableUploadServiceStub.golden");
+    Assert.assertGoldenClass(this.getClass(), clazz, "HttpJsonMediaServiceStub.golden");
     Assert.assertEmptySamples(clazz.samples());
   }
 }

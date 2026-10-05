@@ -42,7 +42,6 @@ public class SyncList {
               .setPageToken("pageToken873572522")
               .setParentName("parentName-244870571")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .setZone("zone3744684")
               .build();
       for (ReservationSlot element : reservationSlotsClient.list(request).iterateAll()) {

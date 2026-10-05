@@ -321,10 +321,10 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
     } catch (MutateRowsException e) {
       MutateRowsResult.Builder resultBuilder = MutateRowsResult.newBuilder();
       com.google.rpc.Status topLevelStatus =
-        com.google.rpc.Status.newBuilder()
-          .setCode(e.getStatusCode().getCode().ordinal())
-          .setMessage(e.getMessage())
-          .build();
+          com.google.rpc.Status.newBuilder()
+              .setCode(e.getStatusCode().getCode().ordinal())
+              .setMessage(e.getMessage())
+              .build();
       for (MutateRowsException.FailedMutation failed : e.getFailedMutations()) {
         resultBuilder
             .addEntriesBuilder()
@@ -335,15 +335,13 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                     .setMessage(failed.getError().getMessage())
                     .build());
 
-        topLevelStatus = com.google.rpc.Status.newBuilder()
-          .setCode(failed.getError().getStatusCode().getCode().ordinal())
-          .setMessage(failed.getError().getMessage())
-          .build();
+        topLevelStatus =
+            com.google.rpc.Status.newBuilder()
+                .setCode(failed.getError().getStatusCode().getCode().ordinal())
+                .setMessage(failed.getError().getMessage())
+                .build();
       }
-      responseObserver.onNext(
-          resultBuilder
-              .setStatus(topLevelStatus)
-              .build());
+      responseObserver.onNext(resultBuilder.setStatus(topLevelStatus).build());
       responseObserver.onCompleted();
       return;
     } catch (ApiException e) {

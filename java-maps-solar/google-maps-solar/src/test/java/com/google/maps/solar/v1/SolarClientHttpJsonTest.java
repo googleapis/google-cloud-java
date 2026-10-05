@@ -91,6 +91,7 @@ public class SolarClientHttpJsonTest {
             .setRegionCode("regionCode-1991004415")
             .setSolarPotential(SolarPotential.newBuilder().build())
             .setImageryQuality(ImageryQuality.forNumber(0))
+            .setDetectedArrays(BuildingInsights.DetectedArrays.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -100,6 +101,7 @@ public class SolarClientHttpJsonTest {
             .setRequiredQuality(ImageryQuality.forNumber(0))
             .setExactQualityRequired(true)
             .addAllExperiments(new ArrayList<Experiment>())
+            .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
             .build();
 
     BuildingInsights actualResponse = client.findClosestBuildingInsights(request);
@@ -134,6 +136,7 @@ public class SolarClientHttpJsonTest {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setExactQualityRequired(true)
               .addAllExperiments(new ArrayList<Experiment>())
+              .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
               .build();
       client.findClosestBuildingInsights(request);
       Assert.fail("No exception raised");

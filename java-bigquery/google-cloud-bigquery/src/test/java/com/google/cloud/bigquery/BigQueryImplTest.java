@@ -3284,6 +3284,24 @@ public class BigQueryImplTest {
       schemaBytes = out.toByteArray();
     }
 
+    // Prepare page 1 Arrow batch for initial response with 1 row
+    byte[] page1BatchBytes;
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE);
+        BigIntVector idVector = new BigIntVector("id", allocator)) {
+      idVector.allocateNew(1);
+      idVector.set(0, 1L);
+      idVector.setValueCount(1);
+      try (VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(idVector))) {
+        VectorUnloader unloader = new VectorUnloader(root);
+        try (ArrowRecordBatch recordBatch = unloader.getRecordBatch();
+            ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+          WriteChannel channel = new WriteChannel(Channels.newChannel(out));
+          MessageSerializer.serialize(channel, recordBatch);
+          page1BatchBytes = out.toByteArray();
+        }
+      }
+    }
+
     // Prepare page 2 Arrow batch for streaming with 2 rows
     byte[] page2BatchBytes;
     try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE);
@@ -3310,10 +3328,13 @@ public class BigQueryImplTest {
             .setJobComplete(true)
             .setJobReference(queryJob.toPb())
             .setTotalRows(BigInteger.valueOf(3L))
-            .setPageToken("1")
+            .setPageToken("BG4QSSWFUAAQAAASA4EAAEEAQCAAKGQIBAABB7X7777QOIFQVYKQ====")
             .setArrowSchema(
                 new com.google.api.services.bigquery.model.ArrowSchema()
-                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
+                    .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)))
+            .setArrowRecordBatch(
+                new com.google.api.services.bigquery.model.ArrowRecordBatch()
+                    .setSerializedRecordBatch(BaseEncoding.base64().encode(page1BatchBytes)));
 
     when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), any(QueryRequest.class)))
         .thenReturn(queryResponsePb);
@@ -3333,7 +3354,8 @@ public class BigQueryImplTest {
             .build();
     ReadRowsResponse streamResponse =
         ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
-    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(streamResponse).iterator());
+    when(mockServerStream.iterator())
+        .thenAnswer(invocation -> ImmutableList.of(streamResponse).iterator());
 
     BigQueryReadClient mockReadClient =
         mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
@@ -3354,16 +3376,15 @@ public class BigQueryImplTest {
     Page<FieldValueList> page2 = result.getNextPage();
     assertNotNull(page2);
     List<FieldValueList> page2Rows = ImmutableList.copyOf(page2.getValues());
-    // Since maxResults is 2 and initialRowOffset is 1, page2 should only contain 1 row even though
-    // stream returned 2 rows
-    assertEquals(1, page2Rows.size());
+    // Since maxResults configures the page size (2 rows), page2 contains the 2 rows from the stream
+    assertEquals(2, page2Rows.size());
     assertEquals("2", page2Rows.get(0).get(0).getStringValue());
-    // Since totalRowsReturned == maxResults, hasNextPage must be false
+    assertEquals("3", page2Rows.get(1).get(0).getStringValue());
+    // End of stream reached (total 3 rows read across pages 1 and 2), hasNextPage must be false
     assertFalse(page2.hasNextPage());
     assertNull(page2.getNextPage());
 
-    // When maxResults is 1, initialRowOffset (1) already reaches maxResults, so hasNextPage is
-    // false immediately
+    // When maxResults is 1, page token is still preserved for subsequent pages
     QueryJobConfiguration configMax1 =
         QueryJobConfiguration.newBuilder("SELECT id FROM test")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
@@ -3371,8 +3392,12 @@ public class BigQueryImplTest {
             .build();
     TableResult resultMax1 = bigquery.query(configMax1);
     assertNotNull(resultMax1);
-    assertFalse(resultMax1.hasNextPage());
-    assertNull(resultMax1.getNextPage());
+    assertTrue(resultMax1.hasNextPage());
+    Page<FieldValueList> page2Max1 = resultMax1.getNextPage();
+    assertNotNull(page2Max1);
+    List<FieldValueList> page2Max1Rows = ImmutableList.copyOf(page2Max1.getValues());
+    assertEquals(1, page2Max1Rows.size());
+    assertEquals("2", page2Max1Rows.get(0).get(0).getStringValue());
   }
 
   @Test
@@ -3632,7 +3657,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  void testQueryWithArrowFormatInvalidPageToken() throws Exception {
+  void testQueryWithArrowFormatOpaquePageToken() throws Exception {
     org.apache.arrow.vector.types.pojo.Schema arrowSchema =
         new org.apache.arrow.vector.types.pojo.Schema(
             ImmutableList.of(
@@ -3648,11 +3673,11 @@ public class BigQueryImplTest {
     JobId queryJob = JobId.of(PROJECT, JOB).toBuilder().setLocation(LOCATION).build();
     com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
         new com.google.api.services.bigquery.model.QueryResponse()
-            .setQueryId("q-arrow-invalid-token")
+            .setQueryId("q-arrow-opaque-token")
             .setJobComplete(true)
             .setJobReference(queryJob.toPb())
             .setTotalRows(BigInteger.valueOf(2L))
-            .setPageToken("invalid-non-numeric-token")
+            .setPageToken("BG4QSSWFUAAQAAASA4EAAEEAQCAAKGQIBAABB7X7777QOIFQVYKQ====")
             .setArrowSchema(
                 new com.google.api.services.bigquery.model.ArrowSchema()
                     .setSerializedSchema(BaseEncoding.base64().encode(schemaBytes)));
@@ -3666,8 +3691,11 @@ public class BigQueryImplTest {
         QueryJobConfiguration.newBuilder("SELECT id FROM test")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .build();
-    BigQueryException e = assertThrows(BigQueryException.class, () -> bigquery.query(config));
-    assertTrue(e.getMessage().contains("Unable to parse page token 'invalid-non-numeric-token'"));
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertTrue(result.hasNextPage());
+    assertEquals(
+        "BG4QSSWFUAAQAAASA4EAAEEAQCAAKGQIBAABB7X7777QOIFQVYKQ====", result.getNextPageToken());
   }
 
   @Test
@@ -4318,5 +4346,71 @@ public class BigQueryImplTest {
     verify(bigqueryRpcMock)
         .testIamPermissionsSkipExceptionTranslation(
             resourceId, checkedPermissions, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
+  void testCloseClosesBigQueryReadClient() {
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    bigquery.close();
+
+    verify(mockReadClient, times(1)).close();
+  }
+
+  @Test
+  void testCloseIsIdempotent() {
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient(mockReadClient);
+
+    bigquery.close();
+    bigquery.close();
+
+    verify(mockReadClient, times(1)).close();
+  }
+
+  @Test
+  void testCloseWithoutReadClientDoesNotThrow() {
+    bigquery = options.getService();
+    bigquery.close();
+  }
+
+  @Test
+  void testTryWithResources() {
+    BigQueryReadClient mockReadClient =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    try (BigQuery bq = options.getService()) {
+      ((BigQueryImpl) bq).setBigQueryReadClient(mockReadClient);
+      assertNotNull(bq);
+    }
+    verify(mockReadClient, times(1)).close();
+  }
+
+  @Test
+  void testGetBigQueryReadClientAfterCloseThrows() {
+    bigquery = options.getService();
+    bigquery.close();
+    assertThrows(
+        IllegalStateException.class, () -> ((BigQueryImpl) bigquery).getBigQueryReadClient());
+  }
+
+  @Test
+  void testCloseClosesAllRegionalBigQueryReadClients() {
+    BigQueryReadClient mockReadClientUs =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    BigQueryReadClient mockReadClientEu =
+        mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
+    bigquery = options.getService();
+    ((BigQueryImpl) bigquery).setBigQueryReadClient("us", mockReadClientUs);
+    ((BigQueryImpl) bigquery).setBigQueryReadClient("eu", mockReadClientEu);
+
+    bigquery.close();
+
+    verify(mockReadClientUs, times(1)).close();
+    verify(mockReadClientEu, times(1)).close();
   }
 }

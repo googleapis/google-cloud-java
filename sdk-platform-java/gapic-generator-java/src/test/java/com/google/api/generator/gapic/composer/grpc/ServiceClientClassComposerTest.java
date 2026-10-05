@@ -66,7 +66,7 @@ class ServiceClientClassComposerTest {
             "v1beta1",
             1),
         Arguments.of(
-            "ResumableUploadServiceClient",
+            "MediaServiceClient",
             GrpcTestProtoLoader.instance().parseShowcaseResumableUpload(),
             "localhost:7469",
             "v1beta1",

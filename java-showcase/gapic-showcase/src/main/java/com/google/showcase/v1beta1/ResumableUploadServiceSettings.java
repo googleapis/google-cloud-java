@@ -63,7 +63,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of uploadMedia:
+ * of getLocation:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -74,10 +74,10 @@ import org.jspecify.annotations.Nullable;
  * ResumableUploadServiceSettings.Builder resumableUploadServiceSettingsBuilder =
  *     ResumableUploadServiceSettings.newBuilder();
  * resumableUploadServiceSettingsBuilder
- *     .uploadMediaSettings()
+ *     .getLocationSettings()
  *     .setRetrySettings(
  *         resumableUploadServiceSettingsBuilder
- *             .uploadMediaSettings()
+ *             .getLocationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))

@@ -21,6 +21,7 @@ import static com.google.showcase.v1beta1.ResumableUploadServiceClient.ListLocat
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -35,6 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
@@ -84,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of uploadMedia:
+ * of getLocation:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -95,10 +97,10 @@ import org.jspecify.annotations.Nullable;
  * ResumableUploadServiceStubSettings.Builder resumableUploadServiceSettingsBuilder =
  *     ResumableUploadServiceStubSettings.newBuilder();
  * resumableUploadServiceSettingsBuilder
- *     .uploadMediaSettings()
+ *     .getLocationSettings()
  *     .setRetrySettings(
  *         resumableUploadServiceSettingsBuilder
- *             .uploadMediaSettings()
+ *             .getLocationSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -485,6 +487,13 @@ public class ResumableUploadServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       return builder;
+    }
+
+    /** Sets the internal HeaderProvider for HTTP/JSON. Does not change the transport. */
+    @InternalApi
+    protected Builder setHttpJsonInternalHeaderProvider(
+        HeaderProvider httpJsonInternalHeaderProvider) {
+      return setInternalHeaderProvider(httpJsonInternalHeaderProvider);
     }
 
     /**

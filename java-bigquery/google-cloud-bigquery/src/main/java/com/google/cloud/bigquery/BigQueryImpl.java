@@ -67,7 +67,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.common.primitives.Longs;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.context.Scope;
@@ -75,6 +74,7 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -505,6 +505,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   private transient ConcurrentHashMap<String, BigQueryReadClient> bqReadClients;
   private transient boolean isGlobalClientUserProvided;
+  private transient volatile boolean closed = false;
 
   /**
    * Lazily creates or retrieves the shared {@link BigQueryReadClient} instance used for streaming
@@ -528,6 +529,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
    * @throws BigQueryException if initializing the storage read client fails
    */
   BigQueryReadClient getBigQueryReadClient(String location) {
+    if (closed) {
+      throw new IllegalStateException("BigQuery service has been closed");
+    }
     String cacheKey = location != null ? location.toLowerCase() : "global";
     if (bqReadClients == null) {
       synchronized (this) {
@@ -544,6 +548,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return client;
     }
     synchronized (this) {
+      if (closed) {
+        throw new IllegalStateException("BigQuery service has been closed");
+      }
       client = bqReadClients.get(cacheKey);
       if (client == null && isGlobalClientUserProvided) {
         client = bqReadClients.get("global");
@@ -553,6 +560,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         configureReadSettings(settingsBuilder, getOptions());
         try {
           client = BigQueryReadClient.create(settingsBuilder.build());
+          if (closed) {
+            client.close();
+            throw new IllegalStateException("BigQuery service has been closed");
+          }
           if (bqReadClients.size() < MAX_CACHED_READ_CLIENTS) {
             bqReadClients.put(cacheKey, client);
           }
@@ -581,6 +592,30 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     bqReadClients.put(cacheKey, client);
     if ("global".equals(cacheKey)) {
       isGlobalClientUserProvided = true;
+    }
+  }
+
+  /**
+   * Closes any background resources and transport channels held by this {@link BigQueryImpl},
+   * including the underlying {@link BigQueryReadClient} instances used for Arrow query streaming.
+   */
+  @Override
+  public void close() {
+    synchronized (this) {
+      if (closed) {
+        return;
+      }
+      closed = true;
+    }
+    if (bqReadClients != null) {
+      for (BigQueryReadClient client : bqReadClients.values()) {
+        try {
+          client.close();
+        } catch (Exception e) {
+          // Ignore exceptions during teardown
+        }
+      }
+      bqReadClients.clear();
     }
   }
 
@@ -2620,23 +2655,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     // Calculate row offset and determine if subsequent pages exist.
     boolean hasMorePages = results.getPageToken() != null;
-    long initialRowOffset = 0L;
-    if (hasMorePages) {
-      Long parsedOffset = Longs.tryParse(results.getPageToken());
-      if (parsedOffset == null) {
-        throw new BigQueryException(
-            0,
-            String.format(
-                "Unable to parse page token '%s' as a numeric row offset for Arrow query pagination",
-                results.getPageToken()));
-      }
-      initialRowOffset = parsedOffset;
-      if (content.getMaxResults() != null
-          && (initialRowOffset >= content.getMaxResults()
-              || firstPageRows.size() >= content.getMaxResults())) {
-        hasMorePages = false;
-      }
-    }
+    long initialRowOffset = (long) firstPageRows.size();
 
     // Multi-page results: configure ArrowQueryPageFetcher for subsequent tabledata.list calls.
     if (hasMorePages) {
@@ -2646,6 +2665,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
+      Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
+      if (content.getMaxResults() != null
+          && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+        fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, content.getMaxResults());
+      }
       NextPageFetcher<FieldValueList> pageFetcher =
           new ArrowQueryPageFetcher(
               jobId,
@@ -2654,8 +2678,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               arrowSchemaPojo,
               getOptions(),
               initialRowOffset,
-              content.getMaxResults(),
-              optionMap(options));
+              null,
+              fetcherOptions);
 
       return newTableResultBuilder(results)
           .setSchema(schema)
@@ -3167,6 +3191,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
 
     // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
+    Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
+    if (maxResults != null && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+      fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    }
     ArrowQueryPageFetcher pageFetcher =
         new ArrowQueryPageFetcher(
             completedJob.getJobId(),
@@ -3176,8 +3204,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             arrowSchemaPojo,
             getOptions(),
             0L,
-            maxResults,
-            optionMap(options));
+            null,
+            fetcherOptions);
 
     Page<FieldValueList> firstPage = pageFetcher.getNextPage();
     List<FieldValueList> firstPageRows =

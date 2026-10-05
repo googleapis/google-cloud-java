@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The SslPolicies API.
  *
+ * <p>This client uses SslPolicies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -349,7 +351,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, SslPoliciesScopedList> element :
@@ -392,7 +393,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, SslPoliciesScopedList>> future =
@@ -434,7 +434,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -841,7 +840,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (SslPolicy element : sslPoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -876,7 +874,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<SslPolicy> future = sslPoliciesClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -910,7 +907,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     SslPoliciesList response = sslPoliciesClient.listCallable().call(request);
@@ -979,7 +975,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   SslPoliciesListAvailableFeaturesResponse response =
    *       sslPoliciesClient.listAvailableFeatures(request);
@@ -1014,7 +1009,6 @@ public class SslPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<SslPoliciesListAvailableFeaturesResponse> future =
    *       sslPoliciesClient.listAvailableFeaturesCallable().futureCall(request);

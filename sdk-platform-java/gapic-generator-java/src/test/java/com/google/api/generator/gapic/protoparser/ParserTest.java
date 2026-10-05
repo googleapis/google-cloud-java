@@ -55,7 +55,7 @@ import com.google.protobuf.Descriptors.ServiceDescriptor;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.selective.generate.v1beta1.SelectiveApiGenerationOuterClass;
 import com.google.showcase.v1beta1.EchoOuterClass;
-import com.google.showcase.v1beta1.ResumableUpload;
+import com.google.showcase.v1beta1.MediaProto;
 import com.google.showcase.v1beta1.TestingOuterClass;
 import com.google.testgapic.v1beta1.LockerProto;
 import java.nio.file.Path;
@@ -67,7 +67,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
@@ -208,7 +207,7 @@ class ParserTest {
 
   @Test
   void parseMethods_resumableUpload() {
-    FileDescriptor resumableUploadFileDescriptor = ResumableUpload.getDescriptor();
+    FileDescriptor resumableUploadFileDescriptor = MediaProto.getDescriptor();
     ServiceDescriptor resumableUploadService = resumableUploadFileDescriptor.getServices().get(0);
     Map<String, Message> messageTypes = Parser.parseMessages(resumableUploadFileDescriptor);
     Map<String, ResourceName> resourceNames =
@@ -228,43 +227,23 @@ class ParserTest {
             outputResourceNames,
             Transport.GRPC);
 
-    assertEquals(1, methods.size());
+    assertThat(methods).hasSize(2);
     Method uploadMethod = methods.get(0);
-    assertEquals("UploadMedia", uploadMethod.name());
-    assertFalse(uploadMethod.isResumableUpload());
+    assertThat(uploadMethod.name()).isEqualTo("UploadMedia");
+    assertThat(uploadMethod.isResumableUpload()).isTrue();
+    Method metadataMethod = methods.get(1);
+    assertThat(metadataMethod.name()).isEqualTo("GetMediaMetadata");
+    assertThat(metadataMethod.isResumableUpload()).isFalse();
   }
 
   @Test
-  void parseMethods_resumableUpload_withConfiguredAllowlist() {
-    FileDescriptor resumableUploadFileDescriptor = ResumableUpload.getDescriptor();
-    ServiceDescriptor resumableUploadService = resumableUploadFileDescriptor.getServices().get(0);
-    Map<String, Message> messageTypes = Parser.parseMessages(resumableUploadFileDescriptor);
-    Map<String, ResourceName> resourceNames =
-        Parser.parseResourceNames(resumableUploadFileDescriptor);
-    Set<ResourceName> outputResourceNames = new HashSet<>();
-    String protoPackage = resumableUploadFileDescriptor.getPackage();
-    String servicePackage = TypeParser.getPackage(resumableUploadFileDescriptor);
-    List<Pattern> allowlist =
-        Arrays.asList(
-            Pattern.compile(
-                "^google\\.showcase\\.v1beta1\\.ResumableUploadService\\.UploadMedia$"));
-    List<Method> methods =
-        Parser.parseMethods(
-            resumableUploadService,
-            protoPackage,
-            servicePackage,
-            messageTypes,
-            resourceNames,
-            Optional.empty(),
-            Optional.empty(),
-            outputResourceNames,
-            Transport.GRPC,
-            allowlist);
-
-    assertEquals(1, methods.size());
-    Method uploadMethod = methods.get(0);
-    assertEquals("UploadMedia", uploadMethod.name());
-    assertTrue(uploadMethod.isResumableUpload());
+  void parseMethods_resumableUploadAllowlist_matchesGoogleAds() {
+    String googleAdsMethod =
+        "google.ads.googleads.v19.services.YouTubeVideoUploadService.CreateYouTubeVideoUpload";
+    assertThat(
+            Parser.RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS.stream()
+                .anyMatch(p -> p.matcher(googleAdsMethod).matches()))
+        .isTrue();
   }
 
   @Test

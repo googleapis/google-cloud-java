@@ -232,7 +232,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "F_DIGITS\020\003\022\033\n\027END_OF_SINGLE_UTTERANCE\020\002\022"
           + "\027\n\023PARTIAL_DTMF_DIGITS\020\004\022\031\n\025SPEECH_ACTIV"
           + "ITY_BEGIN\020\005\022\027\n\023SPEECH_ACTIVITY_END\020\006\":\n\t"
-          + "TextInput\022\021\n\004text\030\001 \001(\tB\003\340A\002\022\032\n\rlanguage"
+          + "TextInput\022\021\n\004text\030\001 \001(\tB\003\340A\001\022\032\n\rlanguage"
           + "_code\030\002 \001(\tB\003\340A\002\"h\n\nEventInput\022\021\n\004name\030\001"
           + " \001(\tB\003\340A\002\022+\n\nparameters\030\002 \001(\0132\027.google.p"
           + "rotobuf.Struct\022\032\n\rlanguage_code\030\003 \001(\tB\003\340"

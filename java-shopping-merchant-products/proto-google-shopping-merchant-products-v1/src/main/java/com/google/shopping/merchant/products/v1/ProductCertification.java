@@ -59,6 +59,8 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
     certificationName_ = 0;
     certificationCode_ = "";
     certificationValue_ = "";
+    certificationDocumentLink_ = "";
+    certificationLabelLink_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -342,6 +344,177 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int CERTIFICATION_DOCUMENT_LINK_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificationDocumentLink_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. URL to the certification document (eg.
+   * `https://www.example.com/document`), for example, the product data sheet or
+   * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+   * characters. For more information, see
+   * [Certification](https://support.google.com/merchants/answer/13528839).
+   * </pre>
+   *
+   * <code>
+   * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the certificationDocumentLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasCertificationDocumentLink() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. URL to the certification document (eg.
+   * `https://www.example.com/document`), for example, the product data sheet or
+   * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+   * characters. For more information, see
+   * [Certification](https://support.google.com/merchants/answer/13528839).
+   * </pre>
+   *
+   * <code>
+   * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The certificationDocumentLink.
+   */
+  @java.lang.Override
+  public java.lang.String getCertificationDocumentLink() {
+    java.lang.Object ref = certificationDocumentLink_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      certificationDocumentLink_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. URL to the certification document (eg.
+   * `https://www.example.com/document`), for example, the product data sheet or
+   * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+   * characters. For more information, see
+   * [Certification](https://support.google.com/merchants/answer/13528839).
+   * </pre>
+   *
+   * <code>
+   * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for certificationDocumentLink.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCertificationDocumentLinkBytes() {
+    java.lang.Object ref = certificationDocumentLink_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      certificationDocumentLink_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CERTIFICATION_LABEL_LINK_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object certificationLabelLink_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. URL to the certification label (eg.
+   * `https://www.example.com/label`), for example, the energy efficiency label
+   * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+   * For more information, see
+   * [Certification](https://support.google.com/merchants/answer/13528839).
+   * </pre>
+   *
+   * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the certificationLabelLink field is set.
+   */
+  @java.lang.Override
+  public boolean hasCertificationLabelLink() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. URL to the certification label (eg.
+   * `https://www.example.com/label`), for example, the energy efficiency label
+   * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+   * For more information, see
+   * [Certification](https://support.google.com/merchants/answer/13528839).
+   * </pre>
+   *
+   * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The certificationLabelLink.
+   */
+  @java.lang.Override
+  public java.lang.String getCertificationLabelLink() {
+    java.lang.Object ref = certificationLabelLink_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      certificationLabelLink_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. URL to the certification label (eg.
+   * `https://www.example.com/label`), for example, the energy efficiency label
+   * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+   * For more information, see
+   * [Certification](https://support.google.com/merchants/answer/13528839).
+   * </pre>
+   *
+   * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for certificationLabelLink.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCertificationLabelLinkBytes() {
+    java.lang.Object ref = certificationLabelLink_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      certificationLabelLink_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -368,6 +541,12 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, certificationValue_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, certificationDocumentLink_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, certificationLabelLink_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -388,6 +567,12 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, certificationValue_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, certificationDocumentLink_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, certificationLabelLink_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -421,6 +606,15 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
     if (hasCertificationValue()) {
       if (!getCertificationValue().equals(other.getCertificationValue())) return false;
     }
+    if (hasCertificationDocumentLink() != other.hasCertificationDocumentLink()) return false;
+    if (hasCertificationDocumentLink()) {
+      if (!getCertificationDocumentLink().equals(other.getCertificationDocumentLink()))
+        return false;
+    }
+    if (hasCertificationLabelLink() != other.hasCertificationLabelLink()) return false;
+    if (hasCertificationLabelLink()) {
+      if (!getCertificationLabelLink().equals(other.getCertificationLabelLink())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -447,6 +641,14 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
     if (hasCertificationValue()) {
       hash = (37 * hash) + CERTIFICATION_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getCertificationValue().hashCode();
+    }
+    if (hasCertificationDocumentLink()) {
+      hash = (37 * hash) + CERTIFICATION_DOCUMENT_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getCertificationDocumentLink().hashCode();
+    }
+    if (hasCertificationLabelLink()) {
+      hash = (37 * hash) + CERTIFICATION_LABEL_LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getCertificationLabelLink().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -596,6 +798,8 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
       certificationName_ = 0;
       certificationCode_ = "";
       certificationValue_ = "";
+      certificationDocumentLink_ = "";
+      certificationLabelLink_ = "";
       return this;
     }
 
@@ -651,6 +855,14 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
         result.certificationValue_ = certificationValue_;
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.certificationDocumentLink_ = certificationDocumentLink_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.certificationLabelLink_ = certificationLabelLink_;
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -682,6 +894,16 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
       if (other.hasCertificationValue()) {
         certificationValue_ = other.certificationValue_;
         bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasCertificationDocumentLink()) {
+        certificationDocumentLink_ = other.certificationDocumentLink_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasCertificationLabelLink()) {
+        certificationLabelLink_ = other.certificationLabelLink_;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -734,6 +956,18 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                certificationDocumentLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                certificationLabelLink_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1267,6 +1501,324 @@ public final class ProductCertification extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       certificationValue_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object certificationDocumentLink_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification document (eg.
+     * `https://www.example.com/document`), for example, the product data sheet or
+     * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+     * characters. For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>
+     * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the certificationDocumentLink field is set.
+     */
+    public boolean hasCertificationDocumentLink() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification document (eg.
+     * `https://www.example.com/document`), for example, the product data sheet or
+     * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+     * characters. For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>
+     * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The certificationDocumentLink.
+     */
+    public java.lang.String getCertificationDocumentLink() {
+      java.lang.Object ref = certificationDocumentLink_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        certificationDocumentLink_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification document (eg.
+     * `https://www.example.com/document`), for example, the product data sheet or
+     * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+     * characters. For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>
+     * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for certificationDocumentLink.
+     */
+    public com.google.protobuf.ByteString getCertificationDocumentLinkBytes() {
+      java.lang.Object ref = certificationDocumentLink_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        certificationDocumentLink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification document (eg.
+     * `https://www.example.com/document`), for example, the product data sheet or
+     * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+     * characters. For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>
+     * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The certificationDocumentLink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificationDocumentLink(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      certificationDocumentLink_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification document (eg.
+     * `https://www.example.com/document`), for example, the product data sheet or
+     * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+     * characters. For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>
+     * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCertificationDocumentLink() {
+      certificationDocumentLink_ = getDefaultInstance().getCertificationDocumentLink();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification document (eg.
+     * `https://www.example.com/document`), for example, the product data sheet or
+     * fiche required by UK's DESNZ or EU's EPREL. Maximum length is 2000
+     * characters. For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>
+     * optional string certification_document_link = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for certificationDocumentLink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificationDocumentLinkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      certificationDocumentLink_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object certificationLabelLink_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification label (eg.
+     * `https://www.example.com/label`), for example, the energy efficiency label
+     * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+     * For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the certificationLabelLink field is set.
+     */
+    public boolean hasCertificationLabelLink() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification label (eg.
+     * `https://www.example.com/label`), for example, the energy efficiency label
+     * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+     * For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The certificationLabelLink.
+     */
+    public java.lang.String getCertificationLabelLink() {
+      java.lang.Object ref = certificationLabelLink_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        certificationLabelLink_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification label (eg.
+     * `https://www.example.com/label`), for example, the energy efficiency label
+     * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+     * For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for certificationLabelLink.
+     */
+    public com.google.protobuf.ByteString getCertificationLabelLinkBytes() {
+      java.lang.Object ref = certificationLabelLink_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        certificationLabelLink_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification label (eg.
+     * `https://www.example.com/label`), for example, the energy efficiency label
+     * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+     * For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The certificationLabelLink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificationLabelLink(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      certificationLabelLink_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification label (eg.
+     * `https://www.example.com/label`), for example, the energy efficiency label
+     * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+     * For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCertificationLabelLink() {
+      certificationLabelLink_ = getDefaultInstance().getCertificationLabelLink();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. URL to the certification label (eg.
+     * `https://www.example.com/label`), for example, the energy efficiency label
+     * required by UK's DESNZ or EU's EPREL. Maximum length is 2000 characters.
+     * For more information, see
+     * [Certification](https://support.google.com/merchants/answer/13528839).
+     * </pre>
+     *
+     * <code>optional string certification_label_link = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for certificationLabelLink to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertificationLabelLinkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      certificationLabelLink_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

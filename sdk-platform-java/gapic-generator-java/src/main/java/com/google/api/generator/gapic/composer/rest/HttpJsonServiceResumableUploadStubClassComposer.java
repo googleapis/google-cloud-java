@@ -270,7 +270,7 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
             .setPackageString(pakkage)
             .setHeaderCommentStatements(createClassHeaderComments(service))
             .setAnnotations(createClassAnnotations(service))
-            .setScope(ScopeNode.PUBLIC)
+            .setScope(ScopeNode.LOCAL)
             .setName(className)
             .setImplementsTypes(
                 Arrays.asList(FIXED_TYPESTORE.get(BackgroundResource.class.getSimpleName())))

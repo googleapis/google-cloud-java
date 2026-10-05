@@ -68,7 +68,7 @@ public interface DailyOxygenSaturationOrBuilder
    *
    * <pre>
    * Required. The average value of the oxygen saturation samples during the
-   * sleep.
+   * sleep. Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -82,7 +82,7 @@ public interface DailyOxygenSaturationOrBuilder
    *
    * <pre>
    * Required. The average value of the oxygen saturation samples during the
-   * sleep.
+   * sleep. Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double average_percentage = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -97,6 +97,7 @@ public interface DailyOxygenSaturationOrBuilder
    * <pre>
    * Required. The lower bound of the confidence interval of oxygen saturation
    * samples during sleep.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -112,6 +113,7 @@ public interface DailyOxygenSaturationOrBuilder
    * <pre>
    * Required. The lower bound of the confidence interval of oxygen saturation
    * samples during sleep.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double lower_bound_percentage = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -127,6 +129,7 @@ public interface DailyOxygenSaturationOrBuilder
    * <pre>
    * Required. The upper bound of the confidence interval of oxygen saturation
    * samples during sleep.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
@@ -142,6 +145,7 @@ public interface DailyOxygenSaturationOrBuilder
    * <pre>
    * Required. The upper bound of the confidence interval of oxygen saturation
    * samples during sleep.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double upper_bound_percentage = 4 [(.google.api.field_behavior) = REQUIRED];
