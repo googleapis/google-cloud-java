@@ -285,25 +285,8 @@ class OpenTelemetryTracingTracerIntegrationTest {
     apiTracer.attemptSucceeded();
     apiTracer.operationSucceeded();
 
-    List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
-    assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, operation
-
-    List<SpanData> internalSpans =
-        finishedSpans.stream()
-            .filter(s -> s.getKind() == SpanKind.INTERNAL)
-            .collect(Collectors.toList());
-    assertThat(internalSpans).hasSize(1);
-    SpanData operationSpan = internalSpans.get(0);
-
-    List<SpanData> attemptSpans =
-        finishedSpans.stream()
-            .filter(s -> s.getKind() == SpanKind.CLIENT)
-            .collect(Collectors.toList());
-    assertThat(attemptSpans).hasSize(2);
-
-    for (SpanData attempt : attemptSpans) {
-      assertThat(attempt.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
-    }
+    SpanData operationSpan =
+        verifySpanHierarchyAndGetOperationSpan(spanExporter.getFinishedSpanItems());
 
     assertThat(operationSpan.getStatus().getStatusCode())
         .isEqualTo(io.opentelemetry.api.trace.StatusCode.UNSET);
@@ -337,8 +320,32 @@ class OpenTelemetryTracingTracerIntegrationTest {
     apiTracer.attemptFailedRetriesExhausted(finalError);
     apiTracer.operationFailed(finalError);
 
-    List<SpanData> finishedSpans = spanExporter.getFinishedSpanItems();
-    assertThat(finishedSpans).hasSize(3); // attempt 0, attempt 1, operation
+    SpanData operationSpan =
+        verifySpanHierarchyAndGetOperationSpan(spanExporter.getFinishedSpanItems());
+
+    assertThat(operationSpan.getStatus().getStatusCode())
+        .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
+    assertThat(
+            operationSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+        .isEqualTo("unavailable: retries exhausted");
+    assertThat(
+            operationSpan
+                .getAttributes()
+                .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+        .isNotNull();
+  }
+
+  /**
+   * Verifies that exactly one internal operation span and two client attempt spans exist in the
+   * finished spans, and that each attempt span has the operation span as its parent.
+   *
+   * @param finishedSpans the list of recorded finished spans
+   * @return the verified operation {@link SpanData}
+   */
+  private SpanData verifySpanHierarchyAndGetOperationSpan(List<SpanData> finishedSpans) {
+    assertThat(finishedSpans).hasSize(3);
 
     List<SpanData> internalSpans =
         finishedSpans.stream()
@@ -356,18 +363,6 @@ class OpenTelemetryTracingTracerIntegrationTest {
     for (SpanData attempt : attemptSpans) {
       assertThat(attempt.getParentSpanId()).isEqualTo(operationSpan.getSpanContext().getSpanId());
     }
-
-    assertThat(operationSpan.getStatus().getStatusCode())
-        .isEqualTo(io.opentelemetry.api.trace.StatusCode.ERROR);
-    assertThat(
-            operationSpan
-                .getAttributes()
-                .get(AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
-        .isEqualTo("unavailable: retries exhausted");
-    assertThat(
-            operationSpan
-                .getAttributes()
-                .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
-        .isNotNull();
+    return operationSpan;
   }
 }
