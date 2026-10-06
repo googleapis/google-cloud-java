@@ -31,16 +31,19 @@
 package com.google.api.gax.tracing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ErrorDetails;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.protobuf.Any;
 import com.google.rpc.ErrorInfo;
 import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
@@ -212,6 +215,28 @@ class LoggingTracerTest {
         "INVALID_ARGUMENT",
         attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
     assertEquals(400L, attributesMap.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE));
+  }
+
+  @Test
+  void testRecordActionableError_withSharedContextAttemptSpan_activatesSpanDuringLogging() {
+    AtomicBoolean scopeOpened = new AtomicBoolean(false);
+    AtomicBoolean scopeClosed = new AtomicBoolean(false);
+
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
+    context
+        .sharedContext()
+        .setAttemptScopeProvider(
+            () -> {
+              scopeOpened.set(true);
+              return () -> scopeClosed.set(true);
+            });
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    tracer.recordActionableError(new RuntimeException("test error"));
+
+    assertTrue(scopeOpened.get(), "Scope should have been opened");
+    assertTrue(scopeClosed.get(), "Scope should have been closed");
   }
 
   private Map<String, ?> getAttributesMap() {

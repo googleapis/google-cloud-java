@@ -82,16 +82,27 @@ class CompositeTracerFactoryTest {
     ApiTracer tracer1 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer2 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
 
-    when(childFactory1.newTracer(parent, context)).thenReturn(tracer1);
-    when(childFactory2.newTracer(parent, context)).thenReturn(tracer2);
+    org.mockito.ArgumentCaptor<ApiTracerContext> captor1 =
+        org.mockito.ArgumentCaptor.forClass(ApiTracerContext.class);
+    org.mockito.ArgumentCaptor<ApiTracerContext> captor2 =
+        org.mockito.ArgumentCaptor.forClass(ApiTracerContext.class);
+
+    when(childFactory1.newTracer(org.mockito.ArgumentMatchers.eq(parent), captor1.capture()))
+        .thenReturn(tracer1);
+    when(childFactory2.newTracer(org.mockito.ArgumentMatchers.eq(parent), captor2.capture()))
+        .thenReturn(tracer2);
 
     ApiTracer compositeTracer = compositeFactory.newTracer(parent, context);
 
     // Verify that the composite delegates correctly
     compositeTracer.operationSucceeded();
 
-    verify(childFactory1).newTracer(parent, context);
-    verify(childFactory2).newTracer(parent, context);
+    // Sibling tracers within the composite share the exact same fresh SharedContext instance
+    com.google.common.truth.Truth.assertThat(captor1.getValue().sharedContext())
+        .isSameInstanceAs(captor2.getValue().sharedContext());
+    com.google.common.truth.Truth.assertThat(captor1.getValue().sharedContext())
+        .isNotSameInstanceAs(context.sharedContext());
+
     verify(tracer1).operationSucceeded();
     verify(tracer2).operationSucceeded();
   }
@@ -118,16 +129,28 @@ class CompositeTracerFactoryTest {
     ApiTracer tracer1 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer2 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
 
-    when(contextualizedFactory1.newTracer(parent, tracerContext)).thenReturn(tracer1);
-    when(contextualizedFactory2.newTracer(parent, tracerContext)).thenReturn(tracer2);
+    when(contextualizedFactory1.newTracer(
+            org.mockito.ArgumentMatchers.eq(parent),
+            org.mockito.ArgumentMatchers.any(ApiTracerContext.class)))
+        .thenReturn(tracer1);
+    when(contextualizedFactory2.newTracer(
+            org.mockito.ArgumentMatchers.eq(parent),
+            org.mockito.ArgumentMatchers.any(ApiTracerContext.class)))
+        .thenReturn(tracer2);
 
     ApiTracer compositeTracer = newCompositeFactory.newTracer(parent, tracerContext);
     compositeTracer.operationSucceeded();
 
     verify(childFactory1).withContext(context);
     verify(childFactory2).withContext(context);
-    verify(contextualizedFactory1).newTracer(parent, tracerContext);
-    verify(contextualizedFactory2).newTracer(parent, tracerContext);
+    verify(contextualizedFactory1)
+        .newTracer(
+            org.mockito.ArgumentMatchers.eq(parent),
+            org.mockito.ArgumentMatchers.any(ApiTracerContext.class));
+    verify(contextualizedFactory2)
+        .newTracer(
+            org.mockito.ArgumentMatchers.eq(parent),
+            org.mockito.ArgumentMatchers.any(ApiTracerContext.class));
     verify(tracer1).operationSucceeded();
     verify(tracer2).operationSucceeded();
   }

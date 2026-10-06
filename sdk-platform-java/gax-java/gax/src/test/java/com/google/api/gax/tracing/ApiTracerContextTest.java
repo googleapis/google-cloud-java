@@ -529,4 +529,98 @@ class ApiTracerContextTest {
     assertThat(result.destinationResourceId()).isEqualTo("extracted-id-2");
     assertThat(counter[0]).isEqualTo(2);
   }
+
+  @Test
+  void testSharedContext_defaultNonNullAndMerge() {
+    ApiTracerContext context1 = ApiTracerContext.empty();
+    assertThat(context1.sharedContext()).isNotNull();
+    assertThat(context1.sharedContext().hasAttemptScope()).isFalse();
+
+    ApiTracerContext.SharedContext shared = new ApiTracerContext.SharedContext();
+    ApiTracerContext context2 =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(shared)
+            .build();
+    assertThat(context2.sharedContext()).isSameInstanceAs(shared);
+
+    ApiTracerContext merged = context1.merge(context2);
+    assertThat(merged.sharedContext()).isSameInstanceAs(shared);
+
+    ApiTracerContext merged2 = context2.merge(context1);
+    assertThat(merged2.sharedContext()).isSameInstanceAs(shared);
+
+    // Verify active scope provider preservation during merge
+    java.util.concurrent.atomic.AtomicBoolean scopeClosed =
+        new java.util.concurrent.atomic.AtomicBoolean(false);
+    ApiTracerContext.SharedContext activeShared = new ApiTracerContext.SharedContext();
+    activeShared.setAttemptScopeProvider(() -> () -> scopeClosed.set(true));
+    ApiTracerContext activeContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(activeShared)
+            .build();
+
+    ApiTracerContext.SharedContext inactiveShared = new ApiTracerContext.SharedContext();
+    ApiTracerContext inactiveContext =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(inactiveShared)
+            .build();
+
+    // Active context in 'this' should be preserved in the merged context, without mutating the
+    // original
+    ApiTracerContext mergedActive1 = activeContext.merge(inactiveContext);
+    assertThat(mergedActive1.sharedContext()).isSameInstanceAs(activeShared);
+    assertThat(mergedActive1.sharedContext().hasAttemptScope()).isTrue();
+    assertThat(inactiveContext.sharedContext().hasAttemptScope()).isFalse();
+
+    // Active context in 'other' should be reused in the merged context, without mutating the
+    // original
+    ApiTracerContext mergedActive2 = inactiveContext.merge(activeContext);
+    assertThat(mergedActive2.sharedContext()).isSameInstanceAs(activeShared);
+    assertThat(mergedActive2.sharedContext().hasAttemptScope()).isTrue();
+    assertThat(inactiveContext.sharedContext().hasAttemptScope()).isFalse();
+
+    // When both contexts share the same non-empty SharedContext instance, reuse it directly
+    ApiTracerContext context3 =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(shared)
+            .build();
+    ApiTracerContext mergedSame = context2.merge(context3);
+    assertThat(mergedSame.sharedContext()).isSameInstanceAs(shared);
+
+    // When both contexts have distinct SharedContext and neither has an active attempt span,
+    // merge prefers 'this' context over 'other'
+    ApiTracerContext inactiveContext2 =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setSharedContext(new ApiTracerContext.SharedContext())
+            .build();
+    ApiTracerContext mergedInactive = inactiveContext.merge(inactiveContext2);
+    assertThat(mergedInactive.sharedContext()).isSameInstanceAs(inactiveShared);
+
+    // toBuilder on an empty context creates a fresh non-empty SharedContext
+    ApiTracerContext builtFromEmpty = ApiTracerContext.empty().toBuilder().build();
+    assertThat(builtFromEmpty.sharedContext())
+        .isNotSameInstanceAs(ApiTracerContext.SharedContext.EMPTY);
+    assertThat(builtFromEmpty.sharedContext().hasAttemptScope()).isFalse();
+
+    // toBuilder on an initialized context preserves the shared context reference for callable
+    // wrapping
+    ApiTracerContext copied = context2.toBuilder().build();
+    assertThat(copied.sharedContext()).isSameInstanceAs(shared);
+
+    // withNewSharedContext instantiates a fresh SharedContext to avoid race conditions across
+    // distinct operations or attempts
+    ApiTracerContext freshContext = context2.withNewSharedContext();
+    assertThat(freshContext.sharedContext()).isNotSameInstanceAs(shared);
+    assertThat(freshContext.sharedContext().hasAttemptScope()).isFalse();
+
+    // SharedContext relies on reference equality, so distinct SharedContext instances are not equal
+    assertThat(new ApiTracerContext.SharedContext())
+        .isNotEqualTo(new ApiTracerContext.SharedContext());
+    assertThat(context2).isNotEqualTo(freshContext);
+  }
 }
