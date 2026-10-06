@@ -800,8 +800,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
         fallbackEndpoint = serviceAddress + ":" + port;
         if (fallbackMtlsEndpoint != null
             && fallbackMtlsEndpoint.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
-          fallbackMtlsEndpoint =
-              fallbackMtlsEndpoint.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
+          fallbackMtlsEndpoint = fallbackMtlsEndpoint.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
         }
       }
       ChannelCredentials channelCredentials;

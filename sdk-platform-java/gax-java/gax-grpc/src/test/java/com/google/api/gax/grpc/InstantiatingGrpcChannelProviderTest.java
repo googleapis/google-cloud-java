@@ -1007,7 +1007,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     Truth.assertThat(provider.canUseDirectPath()).isFalse();
   }
 
-
   @Test
   public void getTransportChannel_storageTarget_withInterconnect()
       throws IOException, InterruptedException {
