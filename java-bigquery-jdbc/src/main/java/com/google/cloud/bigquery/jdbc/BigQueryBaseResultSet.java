@@ -115,6 +115,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return queryStatistics;
   }
 
+  public void setQueryStatistics(QueryStatistics queryStatistics) {
+    this.queryStatistics = queryStatistics;
+  }
+
   public void setJobId(JobId jobId) {
     this.jobId = jobId;
   }

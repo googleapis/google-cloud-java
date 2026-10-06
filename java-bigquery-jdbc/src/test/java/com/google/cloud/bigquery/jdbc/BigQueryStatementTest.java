@@ -1270,4 +1270,49 @@ public class BigQueryStatementTest {
     BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
     assertTrue(statement.isEnableTimestampPicos());
   }
+
+  @Test
+  public void testJoblessQueryPopulatesQueryStatistics() throws Exception {
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    BigQueryStatement joblessStatement = new BigQueryStatement(bigQueryConnection);
+
+    Schema expectedSchema = Schema.of(fieldList);
+    SessionInfo expectedSessionInfo = mock(SessionInfo.class);
+    doReturn("session_abc").when(expectedSessionInfo).getSessionId();
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn("stateless-query-id").when(tableResultMock).getQueryId();
+    doReturn(null).when(tableResultMock).getJobId();
+    doReturn(expectedSchema).when(tableResultMock).getSchema();
+    doReturn(1L).when(tableResultMock).getTotalRows();
+    doReturn(ImmutableList.<FieldValueList>of()).when(tableResultMock).getValues();
+    doReturn(StatementType.SELECT).when(tableResultMock).getStatementType();
+    doReturn(10485760L).when(tableResultMock).getTotalBytesProcessed();
+    doReturn(10485760L).when(tableResultMock).getTotalBytesBilled();
+    doReturn(320L).when(tableResultMock).getTotalSlotMs();
+    doReturn(false).when(tableResultMock).getCacheHit();
+    doReturn(expectedSessionInfo).when(tableResultMock).getSessionInfo();
+    Mockito.when(tableResultMock.extractQueryStatistics()).thenCallRealMethod();
+
+    doReturn(tableResultMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    ResultSet rs = joblessStatement.executeQuery("SELECT * FROM test");
+    assertNotNull(rs);
+    BigQueryResultSet bqRs = rs.unwrap(BigQueryResultSet.class);
+    assertNull(bqRs.getJobId());
+    assertEquals("stateless-query-id", bqRs.getQueryId());
+
+    QueryStatistics stats = bqRs.getQueryStatistics();
+    assertNotNull(stats);
+    assertEquals(10485760L, stats.getTotalBytesProcessed().longValue());
+    assertEquals(10485760L, stats.getTotalBytesBilled().longValue());
+    assertEquals(320L, stats.getTotalSlotMs().longValue());
+    assertFalse(stats.getCacheHit());
+    assertEquals(StatementType.SELECT, stats.getStatementType());
+    assertEquals(expectedSessionInfo, stats.getSessionInfo());
+    assertEquals(expectedSchema, stats.getSchema());
+
+    verify(bigquery, Mockito.never()).getJob(any(JobId.class));
+  }
 }
