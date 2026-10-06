@@ -48,6 +48,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
@@ -550,11 +552,9 @@ class RefreshingHttpJsonChannelTest {
   void testConcurrentNewCallDuringRefresh() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
     int threadCount = 10;
-    java.util.concurrent.ExecutorService executorService =
-        java.util.concurrent.Executors.newFixedThreadPool(threadCount);
-    java.util.concurrent.CountDownLatch start = new java.util.concurrent.CountDownLatch(1);
-    java.util.concurrent.CountDownLatch latch =
-        new java.util.concurrent.CountDownLatch(threadCount);
+    ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
+    CountDownLatch start = new CountDownLatch(1);
+    CountDownLatch latch = new CountDownLatch(threadCount);
     AtomicInteger successCount = new AtomicInteger(0);
 
     for (int i = 0; i < threadCount; i++) {

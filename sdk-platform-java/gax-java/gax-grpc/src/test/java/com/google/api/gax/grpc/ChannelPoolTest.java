@@ -62,13 +62,20 @@ import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import io.grpc.stub.ClientCalls;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -86,7 +93,7 @@ import org.mockito.stubbing.Answer;
 class ChannelPoolTest {
   private static final int DEFAULT_AWAIT_TERMINATION_SEC = 10;
   private ChannelPool pool;
-  private java.nio.file.Path tempCert;
+  private Path tempCert;
 
   @AfterEach
   void cleanup() throws InterruptedException, IOException {
@@ -95,7 +102,7 @@ class ChannelPoolTest {
       pool.awaitTermination(DEFAULT_AWAIT_TERMINATION_SEC, TimeUnit.SECONDS);
     }
     if (tempCert != null) {
-      java.nio.file.Files.deleteIfExists(tempCert);
+      Files.deleteIfExists(tempCert);
       tempCert = null;
     }
   }
@@ -470,12 +477,10 @@ class ChannelPoolTest {
         new FakeChannelFactory(ImmutableList.of(underlyingChannel1, underlyingChannel2));
 
     // Create a temp file to act as the cert
-    tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
+    tempCert = Files.createTempFile("cert", ".pem");
 
-    java.nio.file.Path clientCert =
-        java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
-    java.nio.file.Files.copy(
-        clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path clientCert = Paths.get("src", "test", "resources", "client_cert.pem");
+    Files.copy(clientCert, tempCert, StandardCopyOption.REPLACE_EXISTING);
 
     ChannelPoolSettings channelPoolSettings =
         ChannelPoolSettings.builder().setInitialChannelCount(1).build();
@@ -498,9 +503,8 @@ class ChannelPoolTest {
     // The ChannelPool caches fingerprints for 1000ms, wait for it to expire
     pool.invalidateDiskFingerprintCache();
 
-    java.nio.file.Path rootCert =
-        java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
-    java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path rootCert = Paths.get("src", "test", "resources", "root_cert.pem");
+    Files.copy(rootCert, tempCert, StandardCopyOption.REPLACE_EXISTING);
 
     // Try a reactive refresh *with* a changed cert content (should swap channels)
     pool.refresh();
@@ -526,11 +530,9 @@ class ChannelPoolTest {
         .thenThrow(new IOException("Transient channel creation error"))
         .thenReturn(channel2);
 
-    tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
-    java.nio.file.Path clientCert =
-        java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
-    java.nio.file.Files.copy(
-        clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    tempCert = Files.createTempFile("cert", ".pem");
+    Path clientCert = Paths.get("src", "test", "resources", "client_cert.pem");
+    Files.copy(clientCert, tempCert, StandardCopyOption.REPLACE_EXISTING);
 
     ChannelPoolSettings channelPoolSettings =
         ChannelPoolSettings.builder().setInitialChannelCount(1).build();
@@ -544,9 +546,8 @@ class ChannelPoolTest {
 
     // Rotate cert on disk
     pool.invalidateDiskFingerprintCache();
-    java.nio.file.Path rootCert =
-        java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
-    java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path rootCert = Paths.get("src", "test", "resources", "root_cert.pem");
+    Files.copy(rootCert, tempCert, StandardCopyOption.REPLACE_EXISTING);
 
     // Refresh attempt 1: createSingleChannel throws IOException.
     // Refresh should fail to replace channel and MUST NOT record the new cert fingerprint as
@@ -573,12 +574,12 @@ class ChannelPoolTest {
 
   private void writeCert(String resourceName) throws IOException {
     if (tempCert == null) {
-      tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
+      tempCert = Files.createTempFile("cert", ".pem");
     }
-    java.nio.file.Files.copy(
-        java.nio.file.Paths.get("src", "test", "resources", resourceName),
+    Files.copy(
+        Paths.get("src", "test", "resources", resourceName),
         tempCert,
-        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        StandardCopyOption.REPLACE_EXISTING);
   }
 
   /** Creates an mTLS pool backed by {@code executor} and then rotates the certificate on disk. */
@@ -1009,7 +1010,7 @@ class ChannelPoolTest {
 
     // Case 2: Error on channel 1 after creating channel 0 -> aborts, finally block must shut down
     // createdBeforeError
-    org.junit.jupiter.api.Assertions.assertThrows(AssertionError.class, () -> pool.refreshAll());
+    assertThrows(AssertionError.class, () -> pool.refreshAll());
     Mockito.verify(createdBeforeError).shutdown();
   }
 
@@ -1145,7 +1146,7 @@ class ChannelPoolTest {
     Runnable preemptiveRefresh = createPreemptiveRefreshMtlsPool(1, channelFactory);
 
     // An empty certificate file is what a reader sees while the certificate is being rewritten.
-    java.nio.file.Files.write(tempCert, new byte[0]);
+    Files.write(tempCert, new byte[0]);
     FakeLogHandler logHandler = new FakeLogHandler();
     Level originalLevel = ChannelPool.LOG.getLevel();
     ChannelPool.LOG.setLevel(Level.FINE);
@@ -1436,7 +1437,7 @@ class ChannelPoolTest {
       assertThat(refreshStarted.await(5, TimeUnit.SECONDS)).isTrue();
 
       // The refresh holds the pool's write lock; shutdown must interrupt it rather than wait.
-      Assertions.assertTimeoutPreemptively(java.time.Duration.ofSeconds(5), () -> pool.shutdown());
+      Assertions.assertTimeoutPreemptively(Duration.ofSeconds(5), () -> pool.shutdown());
 
       assertThat(refreshInterrupted.get()).isTrue();
       assertThat(pool.isShutdown()).isTrue();
@@ -1994,11 +1995,9 @@ class ChannelPoolTest {
         Mockito.mock(ChannelFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(channelFactory.createSingleChannel()).thenReturn(initial, rotated);
 
-    tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
-    java.nio.file.Path clientCert =
-        java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
-    java.nio.file.Files.copy(
-        clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    tempCert = Files.createTempFile("cert", ".pem");
+    Path clientCert = Paths.get("src", "test", "resources", "client_cert.pem");
+    Files.copy(clientCert, tempCert, StandardCopyOption.REPLACE_EXISTING);
 
     pool =
         ChannelPool.create(
@@ -2008,9 +2007,8 @@ class ChannelPoolTest {
     assertThat(pool.shouldRefresh()).isFalse();
 
     // Immediately rotate cert on disk WITHOUT invalidating the 1-second cache
-    java.nio.file.Path rootCert =
-        java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
-    java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+    Path rootCert = Paths.get("src", "test", "resources", "root_cert.pem");
+    Files.copy(rootCert, tempCert, StandardCopyOption.REPLACE_EXISTING);
 
     // Must immediately detect rotation because negative/unchanged disk checks are not cached for 1s
     assertThat(pool.shouldRefresh()).isTrue();
@@ -2064,7 +2062,7 @@ class ChannelPoolTest {
     // Calling start() throws Error, which must release the retained entry and trigger shutdown
     assertThrows(
         AssertionError.class,
-        () -> call.start(new ClientCall.Listener<Money>() {}, new io.grpc.Metadata()));
+        () -> call.start(new ClientCall.Listener<Money>() {}, new Metadata()));
     Mockito.verify(initial).shutdown();
   }
 
@@ -2111,10 +2109,10 @@ class ChannelPoolTest {
 
                   @Override
                   public synchronized void start(
-                      Listener<Money> responseListener, io.grpc.Metadata headers) {
+                      Listener<Money> responseListener, Metadata headers) {
                     this.listener = responseListener;
                     if (cancelled) {
-                      responseListener.onClose(io.grpc.Status.CANCELLED, new io.grpc.Metadata());
+                      responseListener.onClose(Status.CANCELLED, new Metadata());
                     }
                   }
 
@@ -2122,7 +2120,7 @@ class ChannelPoolTest {
                   public synchronized void cancel(String message, Throwable cause) {
                     cancelled = true;
                     if (listener != null) {
-                      listener.onClose(io.grpc.Status.CANCELLED, new io.grpc.Metadata());
+                      listener.onClose(Status.CANCELLED, new Metadata());
                     }
                   }
 
@@ -2139,22 +2137,21 @@ class ChannelPoolTest {
     pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
 
     int iterations = 100;
-    java.util.concurrent.ExecutorService executor =
-        java.util.concurrent.Executors.newFixedThreadPool(2);
+    ExecutorService executor = Executors.newFixedThreadPool(2);
     try {
       for (int i = 0; i < iterations; i++) {
         ClientCall<Color, Money> call = pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT);
-        java.util.concurrent.CyclicBarrier barrier = new java.util.concurrent.CyclicBarrier(2);
-        java.util.concurrent.Future<?> f1 =
+        CyclicBarrier barrier = new CyclicBarrier(2);
+        Future<?> f1 =
             executor.submit(
                 () -> {
                   try {
                     barrier.await();
-                    call.start(new ClientCall.Listener<Money>() {}, new io.grpc.Metadata());
+                    call.start(new ClientCall.Listener<Money>() {}, new Metadata());
                   } catch (Exception ignored) {
                   }
                 });
-        java.util.concurrent.Future<?> f2 =
+        Future<?> f2 =
             executor.submit(
                 () -> {
                   try {
@@ -2163,8 +2160,8 @@ class ChannelPoolTest {
                   } catch (Exception ignored) {
                   }
                 });
-        f1.get(5, java.util.concurrent.TimeUnit.SECONDS);
-        f2.get(5, java.util.concurrent.TimeUnit.SECONDS);
+        f1.get(5, TimeUnit.SECONDS);
+        f2.get(5, TimeUnit.SECONDS);
       }
     } finally {
       executor.shutdownNow();
@@ -2196,8 +2193,7 @@ class ChannelPoolTest {
     Mockito.when(initial.newCall(Mockito.eq(METHOD_RECOGNIZE), Mockito.any()))
         .thenReturn(delegateCall);
 
-    java.util.concurrent.atomic.AtomicInteger createCount =
-        new java.util.concurrent.atomic.AtomicInteger(0);
+    AtomicInteger createCount = new AtomicInteger(0);
     pool =
         new ChannelPool(
             ChannelPoolSettings.staticallySized(1),
@@ -2234,8 +2230,7 @@ class ChannelPoolTest {
     Mockito.when(initial.newCall(Mockito.eq(METHOD_RECOGNIZE), Mockito.any()))
         .thenReturn(delegateCall);
 
-    java.util.concurrent.atomic.AtomicInteger createCount =
-        new java.util.concurrent.atomic.AtomicInteger(0);
+    AtomicInteger createCount = new AtomicInteger(0);
     pool =
         new ChannelPool(
             ChannelPoolSettings.staticallySized(1),

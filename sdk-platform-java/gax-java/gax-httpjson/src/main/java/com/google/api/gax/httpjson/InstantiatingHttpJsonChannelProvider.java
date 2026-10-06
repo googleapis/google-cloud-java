@@ -50,6 +50,7 @@ import java.security.Provider;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.SSLContext;
@@ -271,12 +272,12 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
 
     ManagedHttpJsonChannel baseChannel;
     if (workloadCertPath != null) {
-      java.util.function.Supplier<HttpTransport> transportFactory =
+      Supplier<HttpTransport> transportFactory =
           () -> {
             try {
               return createChannelHttpTransport();
             } catch (IOException | GeneralSecurityException e) {
-              throw new java.lang.RuntimeException("Failed to create mTLS HttpTransport", e);
+              throw new RuntimeException("Failed to create mTLS HttpTransport", e);
             }
           };
       // RefreshingHttpJsonChannel records the baseline certificate fingerprint before creating the

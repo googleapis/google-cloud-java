@@ -31,6 +31,7 @@ package com.google.api.gax.grpc;
 
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
@@ -52,6 +53,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.Metadata.Key;
 import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -213,16 +215,14 @@ class GrpcCallContextTest {
   @Test
   void testWithNullOrZeroTimeoutClearsExistingTimeout() {
     GrpcCallContext ctxWithTimeout =
-        GrpcCallContext.createDefault().withTimeoutDuration(java.time.Duration.ofSeconds(5));
+        GrpcCallContext.createDefault().withTimeoutDuration(Duration.ofSeconds(5));
 
     // Sanity check
-    Truth.assertThat(ctxWithTimeout.getTimeoutDuration())
-        .isEqualTo(java.time.Duration.ofSeconds(5));
+    Truth.assertThat(ctxWithTimeout.getTimeoutDuration()).isEqualTo(Duration.ofSeconds(5));
 
-    java.time.Duration nullTimeout = null;
+    Duration nullTimeout = null;
     Truth.assertThat(ctxWithTimeout.withTimeoutDuration(nullTimeout).getTimeoutDuration()).isNull();
-    Truth.assertThat(
-            ctxWithTimeout.withTimeoutDuration(java.time.Duration.ZERO).getTimeoutDuration())
+    Truth.assertThat(ctxWithTimeout.withTimeoutDuration(Duration.ZERO).getTimeoutDuration())
         .isNull();
   }
 
@@ -513,8 +513,8 @@ class GrpcCallContextTest {
 
   @Test
   public void testEqualsAndHashCode() {
-    ManagedChannel managedChannel1 = org.mockito.Mockito.mock(ManagedChannel.class);
-    ManagedChannel managedChannel2 = org.mockito.Mockito.mock(ManagedChannel.class);
+    ManagedChannel managedChannel1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel managedChannel2 = Mockito.mock(ManagedChannel.class);
 
     GrpcTransportChannel transportChannel1 = GrpcTransportChannel.create(managedChannel1);
     GrpcTransportChannel transportChannel2 = GrpcTransportChannel.create(managedChannel2);
@@ -526,16 +526,16 @@ class GrpcCallContextTest {
     GrpcCallContext context3 =
         GrpcCallContext.createDefault().withTransportChannel(transportChannel2);
 
-    org.junit.jupiter.api.Assertions.assertEquals(context1, context2);
-    org.junit.jupiter.api.Assertions.assertEquals(context1.hashCode(), context2.hashCode());
+    assertEquals(context1, context2);
+    assertEquals(context1.hashCode(), context2.hashCode());
 
-    org.junit.jupiter.api.Assertions.assertNotEquals(context1, context3);
+    assertNotEquals(context1, context3);
   }
 
   @Test
   public void testMergeWithCustomChannelClearsTransportChannel() {
-    ManagedChannel defaultChannel = org.mockito.Mockito.mock(ManagedChannel.class);
-    ManagedChannel customChannel = org.mockito.Mockito.mock(ManagedChannel.class);
+    ManagedChannel defaultChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel customChannel = Mockito.mock(ManagedChannel.class);
     GrpcTransportChannel transportChannel = GrpcTransportChannel.create(defaultChannel);
 
     GrpcCallContext baseContext =
@@ -549,8 +549,8 @@ class GrpcCallContextTest {
 
   @Test
   public void testWithChannelWithCustomChannelClearsTransportChannel() {
-    ManagedChannel defaultChannel = org.mockito.Mockito.mock(ManagedChannel.class);
-    ManagedChannel customChannel = org.mockito.Mockito.mock(ManagedChannel.class);
+    ManagedChannel defaultChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel customChannel = Mockito.mock(ManagedChannel.class);
     GrpcTransportChannel transportChannel = GrpcTransportChannel.create(defaultChannel);
 
     GrpcCallContext baseContext =

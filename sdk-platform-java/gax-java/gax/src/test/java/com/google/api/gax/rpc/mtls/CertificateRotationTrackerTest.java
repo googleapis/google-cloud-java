@@ -37,33 +37,287 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 
 class CertificateRotationTrackerTest {
+
+  private static final String CERT_PATH = "/fake/cert/path";
+
+  /** Fingerprint reader backed by {@link #fingerprint} that counts disk reads. */
+  private final AtomicReference<String> fingerprint = new AtomicReference<>("F1");
+
+  private final AtomicInteger reads = new AtomicInteger();
+  private final Function<String, String> reader =
+      path -> {
+        assertEquals(CERT_PATH, path);
+        reads.incrementAndGet();
+        return fingerprint.get();
+      };
+
+  private CertificateRotationTracker newTracker() {
+    return new CertificateRotationTracker(() -> CERT_PATH, reader);
+  }
+
+  @Test
+  void constructor_readsBaselineFingerprint() {
+    CertificateRotationTracker tracker = newTracker();
+
+    assertEquals("F1", tracker.getActiveCertFingerprint());
+    assertEquals(1, reads.get());
+  }
+
+  @Test
+  void constructor_withoutCertPath_hasEmptyFingerprintAndNeverReadsDisk() {
+    CertificateRotationTracker tracker = new CertificateRotationTracker(() -> null, reader);
+
+    assertEquals("", tracker.getActiveCertFingerprint());
+    assertFalse(tracker.shouldRefresh());
+    assertEquals("", tracker.readDiskFingerprint());
+    assertEquals(0, reads.get());
+  }
+
+  @Test
+  void constructor_withUnreadableCert_hasEmptyFingerprint() {
+    fingerprint.set(null);
+
+    assertEquals("", newTracker().getActiveCertFingerprint());
+  }
+
+  @Test
+  void shouldRefresh_whenCertUnchanged_returnsFalse() {
+    assertFalse(newTracker().shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_whenCertChanged_returnsTrue() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("F2");
+
+    assertTrue(tracker.shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_comparesFingerprintsCaseInsensitively() {
+    fingerprint.set("abcdef");
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("ABCDEF");
+
+    assertFalse(tracker.shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_whenCertUnreadable_returnsFalse() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("");
+
+    assertFalse(tracker.shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_cachesDetectedRotation() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("F2");
+
+    assertTrue(tracker.shouldRefresh());
+    assertTrue(tracker.shouldRefresh());
+    // One baseline read plus one disk check; the second call is served from the cache.
+    assertEquals(2, reads.get());
+  }
+
+  @Test
+  void shouldRefresh_doesNotCacheUnchangedResult() {
+    CertificateRotationTracker tracker = newTracker();
+
+    assertFalse(tracker.shouldRefresh());
+    fingerprint.set("F2");
+
+    // The rotation is detected immediately rather than after a cache TTL.
+    assertTrue(tracker.shouldRefresh());
+    assertEquals(3, reads.get());
+  }
+
+  @Test
+  void readDiskFingerprint_bypassesCache() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("F2");
+    assertTrue(tracker.shouldRefresh());
+    fingerprint.set("F3");
+
+    assertEquals("F3", tracker.readDiskFingerprint());
+  }
+
+  @Test
+  void readDiskFingerprint_whenCertUnreadable_returnsEmpty() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set(null);
+
+    assertEquals("", tracker.readDiskFingerprint());
+  }
+
+  @Test
+  void markRefreshed_updatesActiveFingerprintAndClearsCachedRotation() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("F2");
+    assertTrue(tracker.shouldRefresh());
+
+    tracker.markRefreshed("F2");
+
+    assertEquals("F2", tracker.getActiveCertFingerprint());
+    assertTrue(tracker.isAlreadyActive("F2"));
+    assertFalse(tracker.shouldRefresh());
+  }
+
+  @Test
+  void markRefreshed_ignoresNullAndEmptyFingerprints() {
+    CertificateRotationTracker tracker = newTracker();
+
+    tracker.markRefreshed(null);
+    tracker.markRefreshed("");
+
+    assertEquals("F1", tracker.getActiveCertFingerprint());
+  }
+
+  @Test
+  void isAlreadyActive_matchesActiveFingerprintCaseInsensitively() {
+    fingerprint.set("abcdef");
+    CertificateRotationTracker tracker = newTracker();
+
+    assertTrue(tracker.isAlreadyActive("abcdef"));
+    assertTrue(tracker.isAlreadyActive("ABCDEF"));
+    assertFalse(tracker.isAlreadyActive("other"));
+    assertFalse(tracker.isAlreadyActive(null));
+  }
+
+  @Test
+  void invalidateCache_forcesNextCheckToReadDisk() {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("F2");
+    assertTrue(tracker.shouldRefresh());
+    // The certificate is rolled back while the rotation is cached.
+    fingerprint.set("F1");
+    assertTrue(tracker.shouldRefresh());
+
+    tracker.invalidateCache();
+
+    assertFalse(tracker.shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_rereadsDiskOnceCachedRotationExpires() throws InterruptedException {
+    CertificateRotationTracker tracker = newTracker();
+    fingerprint.set("F2");
+    assertTrue(tracker.shouldRefresh());
+    // The certificate becomes unreadable while the rotation is cached; the cached rotation is
+    // still reported until it expires.
+    fingerprint.set("");
+    assertTrue(tracker.shouldRefresh());
+
+    // Wait past the 1 second cache TTL.
+    Thread.sleep(1100);
+
+    // The expired entry is not used: the disk is read again, and an unreadable certificate is not
+    // reported as a rotation.
+    assertFalse(tracker.shouldRefresh());
+    fingerprint.set("F1");
+    assertFalse(tracker.shouldRefresh());
+  }
+
+  @Test
+  void shouldRefresh_whenCertBecomesReadableAfterUnreadableBaseline_detectsRotation() {
+    // For example, the certificate had not been written yet when the channel was created.
+    fingerprint.set("");
+    CertificateRotationTracker tracker = newTracker();
+    assertEquals("", tracker.getActiveCertFingerprint());
+    assertFalse(tracker.shouldRefresh());
+
+    fingerprint.set("F1");
+
+    assertTrue(tracker.shouldRefresh());
+    tracker.markRefreshed("F1");
+    assertFalse(tracker.shouldRefresh());
+  }
+
+  @Test
+  void stringConstructor_withNullOrMissingCert_hasEmptyFingerprintAndNoRotation() {
+    for (String certPath : new String[] {null, "/nonexistent/workload-cert.pem"}) {
+      CertificateRotationTracker tracker = new CertificateRotationTracker(certPath);
+
+      assertEquals("", tracker.getActiveCertFingerprint());
+      assertEquals("", tracker.readDiskFingerprint());
+      assertFalse(tracker.shouldRefresh());
+    }
+  }
+
+  /**
+   * Creates a tracker whose first disk check after the constructor's baseline read blocks, after
+   * reading the current fingerprint, until {@code releaseRead} is counted down.
+   */
+  private CertificateRotationTracker newTrackerWithBlockingDiskCheck(
+      CountDownLatch readStarted, CountDownLatch releaseRead) {
+    return new CertificateRotationTracker(
+        () -> CERT_PATH,
+        path -> {
+          String read = reader.apply(path);
+          if (reads.get() == 2) {
+            readStarted.countDown();
+            try {
+              releaseRead.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          }
+          return read;
+        });
+  }
+
+  /** Waits until {@code thread} is parked waiting for a lock, or has finished. */
+  private static void awaitWaitingOrTerminated(Thread thread) throws InterruptedException {
+    long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
+    while (thread.getState() != Thread.State.WAITING
+        && thread.getState() != Thread.State.TERMINATED) {
+      assertTrue(System.nanoTime() < deadline);
+      Thread.sleep(1);
+    }
+  }
+
+  @Test
+  void shouldRefresh_concurrentCallersShareOneDiskReadOfRotation() throws Exception {
+    CountDownLatch readStarted = new CountDownLatch(1);
+    CountDownLatch releaseRead = new CountDownLatch(1);
+    CertificateRotationTracker tracker = newTrackerWithBlockingDiskCheck(readStarted, releaseRead);
+    fingerprint.set("F2");
+    AtomicReference<Boolean> firstResult = new AtomicReference<>();
+    AtomicReference<Boolean> secondResult = new AtomicReference<>();
+
+    Thread first = new Thread(() -> firstResult.set(tracker.shouldRefresh()));
+    Thread second = new Thread(() -> secondResult.set(tracker.shouldRefresh()));
+    try {
+      first.start();
+      assertTrue(readStarted.await(5, TimeUnit.SECONDS));
+      // Another failing RPC checks for a rotation while the first disk check is in progress.
+      second.start();
+      awaitWaitingOrTerminated(second);
+    } finally {
+      releaseRead.countDown();
+    }
+    first.join(5000);
+    second.join(5000);
+    assertFalse(first.isAlive());
+    assertFalse(second.isAlive());
+
+    assertEquals(Boolean.TRUE, firstResult.get());
+    assertEquals(Boolean.TRUE, secondResult.get());
+    // One baseline read plus a single disk check shared by both callers.
+    assertEquals(2, reads.get());
+  }
 
   @Test
   void markRefreshed_duringInProgressDiskCheck_doesNotLeaveStaleCachedFingerprint()
       throws Exception {
     CountDownLatch readStarted = new CountDownLatch(1);
     CountDownLatch releaseRead = new CountDownLatch(1);
-    AtomicInteger reads = new AtomicInteger();
-    AtomicReference<String> diskFingerprint = new AtomicReference<>("F1");
-    CertificateRotationTracker tracker =
-        new CertificateRotationTracker(
-            () -> "/fake/cert/path",
-            path -> {
-              String fingerprint = diskFingerprint.get();
-              // The first read after the constructor's baseline read blocks after reading F1.
-              if (reads.incrementAndGet() == 2) {
-                readStarted.countDown();
-                try {
-                  releaseRead.await();
-                } catch (InterruptedException e) {
-                  Thread.currentThread().interrupt();
-                }
-              }
-              return fingerprint;
-            });
+    CertificateRotationTracker tracker = newTrackerWithBlockingDiskCheck(readStarted, releaseRead);
 
     Thread diskCheckThread = new Thread(tracker::shouldRefresh);
     Thread markThread = new Thread(() -> tracker.markRefreshed("F2"));
@@ -72,14 +326,9 @@ class CertificateRotationTrackerTest {
       assertTrue(readStarted.await(5, TimeUnit.SECONDS));
       // The certificate rotates and a refresh switches to it while the disk check that read the
       // old certificate is still in progress.
-      diskFingerprint.set("F2");
+      fingerprint.set("F2");
       markThread.start();
-      long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(5);
-      while (markThread.getState() != Thread.State.WAITING
-          && markThread.getState() != Thread.State.TERMINATED) {
-        assertTrue(System.nanoTime() < deadline);
-        Thread.sleep(1);
-      }
+      awaitWaitingOrTerminated(markThread);
     } finally {
       releaseRead.countDown();
     }

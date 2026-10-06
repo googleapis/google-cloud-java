@@ -36,6 +36,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.File;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -148,14 +151,13 @@ class CertificateBasedAccessTest {
 
   @Test
   void testWorkloadCertificateUtilsEmptyFileReturnsEmptyString() throws Exception {
-    java.io.File tempFile = java.io.File.createTempFile("test-cert-empty", ".pem");
+    File tempFile = File.createTempFile("test-cert-empty", ".pem");
     tempFile.deleteOnExit();
     // 0-byte truncated file mid-write should return empty string rather than SHA-256 of empty bytes
     assertEquals(
         "", WorkloadCertificateUtils.getCertificateFingerprint(tempFile.getAbsolutePath()));
 
-    java.nio.file.Files.write(
-        tempFile.toPath(), "test-cert-content".getBytes(java.nio.charset.StandardCharsets.UTF_8));
+    Files.write(tempFile.toPath(), "test-cert-content".getBytes(StandardCharsets.UTF_8));
     String fp = WorkloadCertificateUtils.getCertificateFingerprint(tempFile.getAbsolutePath());
     assertFalse(fp.isEmpty());
   }

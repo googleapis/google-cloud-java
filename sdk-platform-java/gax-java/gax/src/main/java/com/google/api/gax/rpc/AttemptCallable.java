@@ -34,6 +34,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.retrying.NonCancellableFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.Callable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -124,7 +125,7 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
                 }
                 throw unauthenticatedException;
               },
-              com.google.common.util.concurrent.MoreExecutors.directExecutor());
+              MoreExecutors.directExecutor());
 
       externalFuture.setAttemptFuture(mappedFuture);
     } catch (Throwable e) {

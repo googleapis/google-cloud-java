@@ -33,6 +33,7 @@ import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingContext;
 import com.google.api.gax.retrying.TimedAttemptSettings;
+import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -63,8 +64,8 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
       }
       return previousSettings.toBuilder()
           .setGlobalSettings(globalSettings)
-          .setRetryDelayDuration(java.time.Duration.ZERO)
-          .setRandomizedRetryDelayDuration(java.time.Duration.ZERO)
+          .setRetryDelayDuration(Duration.ZERO)
+          .setRandomizedRetryDelayDuration(Duration.ZERO)
           .setAttemptCount(previousSettings.getAttemptCount())
           .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
           .build();

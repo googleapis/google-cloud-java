@@ -34,10 +34,15 @@ import static org.mockito.Mockito.mock;
 
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.NanoClock;
+import com.google.api.gax.core.FakeApiClock;
+import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
+import com.google.api.gax.retrying.SimpleStreamResumptionStrategy;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
+import com.google.api.gax.retrying.StreamingRetryAlgorithm;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeApiException;
@@ -50,10 +55,13 @@ import com.google.api.gax.rpc.testing.MockStreamingApi.MockServerStreamingCallab
 import com.google.api.gax.tracing.BaseApiTracer;
 import com.google.common.collect.Queues;
 import com.google.common.truth.Truth;
+import java.time.Duration;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -261,7 +269,7 @@ class ServerStreamingAttemptCallableTest {
     ApiCallContext context = Mockito.mock(ApiCallContext.class);
     Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
     Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
-    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+    Mockito.when(context.getTimeoutDuration()).thenReturn(Duration.ofHours(5));
 
     resumptionStrategy = new MyStreamResumptionStrategy();
     ServerStreamingAttemptCallable<String, String> callable = createCallable(context);
@@ -271,11 +279,7 @@ class ServerStreamingAttemptCallableTest {
 
     // Send initial error
     UnauthenticatedException initialError =
-        new UnauthenticatedException(
-            "test",
-            null,
-            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
-            false);
+        new UnauthenticatedException("test", null, FakeStatusCode.of(Code.UNAUTHENTICATED), false);
     call.getController().getObserver().onError(initialError);
 
     // Should notify the outer future
@@ -298,8 +302,7 @@ class ServerStreamingAttemptCallableTest {
   @SuppressWarnings("ConstantConditions")
   void testUnauthenticatedRefreshWithGenerationAdvance_flagsChannelRefreshed() {
     TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
-    java.util.concurrent.atomic.AtomicLong generation =
-        new java.util.concurrent.atomic.AtomicLong(0);
+    AtomicLong generation = new AtomicLong(0);
     Mockito.when(transportChannel.getGeneration()).thenAnswer(inv -> generation.get());
     Mockito.when(transportChannel.shouldRefresh()).thenReturn(true);
     Mockito.doAnswer(
@@ -313,7 +316,7 @@ class ServerStreamingAttemptCallableTest {
     ApiCallContext context = Mockito.mock(ApiCallContext.class);
     Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
     Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
-    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+    Mockito.when(context.getTimeoutDuration()).thenReturn(Duration.ofHours(5));
 
     resumptionStrategy = new MyStreamResumptionStrategy();
     ServerStreamingAttemptCallable<String, String> callable = createCallable(context);
@@ -322,11 +325,7 @@ class ServerStreamingAttemptCallableTest {
     MockServerStreamingCall<String, String> call = innerCallable.popLastCall();
 
     UnauthenticatedException initialError =
-        new UnauthenticatedException(
-            "test",
-            null,
-            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
-            false);
+        new UnauthenticatedException("test", null, FakeStatusCode.of(Code.UNAUTHENTICATED), false);
     call.getController().getObserver().onError(initialError);
 
     ExecutionException ee =
@@ -343,11 +342,10 @@ class ServerStreamingAttemptCallableTest {
     Truth.assertThat(((UnauthenticatedException) outerError.getCause()).isRetryable()).isFalse();
     Truth.assertThat(outerError.getCause().getStackTrace()).isEqualTo(initialError.getStackTrace());
     // A fixed clock keeps the fake attempt (started at t=0) within its total timeout.
-    com.google.api.gax.retrying.StreamingRetryAlgorithm<String> retryAlgorithm =
-        new com.google.api.gax.retrying.StreamingRetryAlgorithm<>(
+    StreamingRetryAlgorithm<String> retryAlgorithm =
+        new StreamingRetryAlgorithm<>(
             new ApiResultRetryAlgorithm<>(),
-            new com.google.api.gax.retrying.ExponentialRetryAlgorithm(
-                RetrySettings.newBuilder().build(), new com.google.api.gax.core.FakeApiClock(0)));
+            new ExponentialRetryAlgorithm(RetrySettings.newBuilder().build(), new FakeApiClock(0)));
     // Mirror the retry executor: compute the next attempt, then ask whether to run it.
     TimedAttemptSettings nextAttempt =
         retryAlgorithm.createNextAttempt(outerError, null, fakeRetryingFuture.getAttemptSettings());
@@ -364,8 +362,7 @@ class ServerStreamingAttemptCallableTest {
   @SuppressWarnings("ConstantConditions")
   void testUnauthenticatedRefreshWithNonResumableStreamDoesNotRetry() {
     TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
-    java.util.concurrent.atomic.AtomicLong generation =
-        new java.util.concurrent.atomic.AtomicLong(0);
+    AtomicLong generation = new AtomicLong(0);
     Mockito.when(transportChannel.getGeneration()).thenAnswer(inv -> generation.get());
     Mockito.when(transportChannel.shouldRefresh()).thenReturn(true);
     Mockito.doAnswer(
@@ -379,10 +376,10 @@ class ServerStreamingAttemptCallableTest {
     ApiCallContext context = Mockito.mock(ApiCallContext.class);
     Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
     Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
-    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+    Mockito.when(context.getTimeoutDuration()).thenReturn(Duration.ofHours(5));
 
     // SimpleStreamResumptionStrategy cannot resume once a response has been received
-    resumptionStrategy = new com.google.api.gax.retrying.SimpleStreamResumptionStrategy<>();
+    resumptionStrategy = new SimpleStreamResumptionStrategy<>();
     ServerStreamingAttemptCallable<String, String> callable = createCallable(context);
     callable.start();
 
@@ -390,11 +387,7 @@ class ServerStreamingAttemptCallableTest {
     call.getController().getObserver().onResponse("response1");
 
     UnauthenticatedException initialError =
-        new UnauthenticatedException(
-            "test",
-            null,
-            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
-            false);
+        new UnauthenticatedException("test", null, FakeStatusCode.of(Code.UNAUTHENTICATED), false);
     call.getController().getObserver().onError(initialError);
 
     ExecutionException ee =
@@ -409,11 +402,10 @@ class ServerStreamingAttemptCallableTest {
     Truth.assertThat(((UnauthenticatedException) attemptEx.getCause()).isChannelRefreshed())
         .isTrue();
     Truth.assertThat(
-            new com.google.api.gax.retrying.StreamingRetryAlgorithm<>(
+            new StreamingRetryAlgorithm<>(
                     new ApiResultRetryAlgorithm<>(),
-                    new com.google.api.gax.retrying.ExponentialRetryAlgorithm(
-                        RetrySettings.newBuilder().build(),
-                        com.google.api.core.NanoClock.getDefaultClock()))
+                    new ExponentialRetryAlgorithm(
+                        RetrySettings.newBuilder().build(), NanoClock.getDefaultClock()))
                 .shouldRetry(attemptEx, null, fakeRetryingFuture.getAttemptSettings()))
         .isFalse();
   }
@@ -428,7 +420,7 @@ class ServerStreamingAttemptCallableTest {
     ApiCallContext context = Mockito.mock(ApiCallContext.class);
     Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
     Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
-    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+    Mockito.when(context.getTimeoutDuration()).thenReturn(Duration.ofHours(5));
 
     resumptionStrategy = new MyStreamResumptionStrategy();
     ServerStreamingAttemptCallable<String, String> callable = createCallable(context);
@@ -437,11 +429,7 @@ class ServerStreamingAttemptCallableTest {
     MockServerStreamingCall<String, String> call = innerCallable.popLastCall();
 
     UnauthenticatedException initialError =
-        new UnauthenticatedException(
-            "test",
-            null,
-            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
-            false);
+        new UnauthenticatedException("test", null, FakeStatusCode.of(Code.UNAUTHENTICATED), false);
     call.getController().getObserver().onError(initialError);
 
     ExecutionException ee =
@@ -639,8 +627,7 @@ class ServerStreamingAttemptCallableTest {
 
   @Test
   void testUnauthenticatedException_whenChannelRefreshFails_notFlagged() throws Exception {
-    java.util.concurrent.atomic.AtomicInteger refreshCalls =
-        new java.util.concurrent.atomic.AtomicInteger();
+    AtomicInteger refreshCalls = new AtomicInteger();
     FakeChannel fakeChannel =
         new FakeChannel() {
           @Override
@@ -679,14 +666,13 @@ class ServerStreamingAttemptCallableTest {
   void testUnauthenticated_generationAlreadyAdvanced_flaggedWithoutCheckingShouldRefresh()
       throws Exception {
     TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
-    java.util.concurrent.atomic.AtomicLong generation =
-        new java.util.concurrent.atomic.AtomicLong(0);
+    AtomicLong generation = new AtomicLong(0);
     Mockito.when(transportChannel.getGeneration()).thenAnswer(inv -> generation.get());
 
     ApiCallContext context = Mockito.mock(ApiCallContext.class);
     Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
     Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
-    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+    Mockito.when(context.getTimeoutDuration()).thenReturn(Duration.ofHours(5));
 
     resumptionStrategy = new MyStreamResumptionStrategy();
     ServerStreamingAttemptCallable<String, String> callable = createCallable(context);

@@ -47,6 +47,7 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.truth.Truth;
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -210,15 +211,14 @@ class HttpJsonCallContextTest {
   @Test
   void testWithNullOrZeroTimeoutClearsExistingTimeout() {
     HttpJsonCallContext ctxWithTimeout =
-        HttpJsonCallContext.createDefault().withTimeoutDuration(java.time.Duration.ofSeconds(5));
+        HttpJsonCallContext.createDefault().withTimeoutDuration(Duration.ofSeconds(5));
 
     // Sanity check
-    Truth.assertThat(ctxWithTimeout.getTimeoutDuration())
-        .isEqualTo(java.time.Duration.ofSeconds(5));
+    Truth.assertThat(ctxWithTimeout.getTimeoutDuration()).isEqualTo(Duration.ofSeconds(5));
 
-    java.time.Duration nullTimeout = null;
+    Duration nullTimeout = null;
     assertNull(ctxWithTimeout.withTimeoutDuration(nullTimeout).getTimeoutDuration());
-    assertNull(ctxWithTimeout.withTimeoutDuration(java.time.Duration.ZERO).getTimeoutDuration());
+    assertNull(ctxWithTimeout.withTimeoutDuration(Duration.ZERO).getTimeoutDuration());
   }
 
   @Test

@@ -76,11 +76,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = false;
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -98,11 +97,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -120,11 +118,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -142,11 +139,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -163,11 +159,10 @@ class EndpointContextTest {
     boolean throwExceptionForGetKeyStore = false;
     MtlsProvider mtlsProvider = new FakeMtlsProvider(null, "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(false);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(false);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -183,11 +178,10 @@ class EndpointContextTest {
     boolean throwExceptionForGetKeyStore = true;
     MtlsProvider mtlsProvider = new FakeMtlsProvider(null, "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     assertThrows(
         IOException.class,
         () ->
@@ -283,11 +277,10 @@ class EndpointContextTest {
   void endpointContextBuild_mtlsConfigured_GDU() throws IOException {
     MtlsProvider mtlsProvider =
         new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     EndpointContext endpointContext =
         defaultEndpointContextBuilder
             .setClientSettingsEndpoint(null)
@@ -306,11 +299,10 @@ class EndpointContextTest {
       throws IOException {
     MtlsProvider mtlsProvider =
         new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
-    CertificateBasedAccess certificateBasedAccess =
-        org.mockito.Mockito.mock(CertificateBasedAccess.class);
-    org.mockito.Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
         .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS);
-    org.mockito.Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     EndpointContext.Builder endpointContextBuilder =
         defaultEndpointContextBuilder
             .setUniverseDomain("random.com")
