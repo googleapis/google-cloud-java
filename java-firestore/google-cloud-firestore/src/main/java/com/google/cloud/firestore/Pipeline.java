@@ -1215,7 +1215,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline delete() {
     return append(new Delete());
   }
@@ -1254,7 +1253,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update() {
     return append(new Update());
   }
@@ -1278,7 +1276,6 @@ public final class Pipeline {
    * @param transformedFields The transformations to apply.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update(Selectable... transformedFields) {
     return append(new Update().withTransformedFields(transformedFields));
   }
@@ -1304,22 +1301,18 @@ public final class Pipeline {
    * @param update The {@code Update} stage to append.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update(Update update) {
     return append(update);
   }
 
-  @BetaApi
   public Pipeline insert(Insert insert) {
     return append(insert);
   }
 
-  @BetaApi
   public Pipeline upsert(Upsert upsert) {
     return append(upsert);
   }
 
-  @BetaApi
   public Pipeline upsert(Selectable... additionalFields) {
     return append(new Upsert(additionalFields));
   }

@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
@@ -48,12 +47,10 @@ public final class Upsert extends Stage {
     this.documentIdExpression = documentIdExpression;
   }
 
-  @BetaApi
   public Upsert() {
     this((ImmutableList<Selectable>) null, null, null, InternalOptions.EMPTY);
   }
 
-  @BetaApi
   public Upsert(Selectable... additionalFields) {
     this(
         additionalFields != null ? ImmutableList.copyOf(additionalFields) : null,
@@ -62,7 +59,6 @@ public final class Upsert extends Stage {
         InternalOptions.EMPTY);
   }
 
-  @BetaApi
   public Upsert withAdditionalFields(Selectable... additionalFields) {
     return new Upsert(
         ImmutableList.copyOf(additionalFields),
@@ -71,7 +67,6 @@ public final class Upsert extends Stage {
         this.options);
   }
 
-  @BetaApi
   public Upsert withAdditionalFields(List<Selectable> additionalFields) {
     return new Upsert(
         ImmutableList.copyOf(additionalFields),
@@ -80,29 +75,24 @@ public final class Upsert extends Stage {
         this.options);
   }
 
-  @BetaApi
   public Upsert withTransformedFields(Selectable... transformedFields) {
     return withAdditionalFields(transformedFields);
   }
 
-  @BetaApi
   public Upsert withTransformedFields(List<Selectable> transformedFields) {
     return withAdditionalFields(transformedFields);
   }
 
-  @BetaApi
   public Upsert withCollection(String collectionPath) {
     return new Upsert(
         this.additionalFields, collectionPath, this.documentIdExpression, this.options);
   }
 
-  @BetaApi
   public Upsert withDocumentIdExpression(Expression documentIdExpression) {
     return new Upsert(
         this.additionalFields, this.collectionPath, documentIdExpression, this.options);
   }
 
-  @BetaApi
   public Upsert withDocumentId(Expression documentIdExpression) {
     return withDocumentIdExpression(documentIdExpression);
   }

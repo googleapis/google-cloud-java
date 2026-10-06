@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
@@ -42,22 +41,18 @@ public final class Insert extends Stage {
     this.documentIdExpression = documentIdExpression;
   }
 
-  @BetaApi
   public Insert() {
     this(null, null, InternalOptions.EMPTY);
   }
 
-  @BetaApi
   public Insert withCollection(String collectionPath) {
     return new Insert(collectionPath, this.documentIdExpression, this.options);
   }
 
-  @BetaApi
   public Insert withDocumentIdExpression(Expression documentIdExpression) {
     return new Insert(this.collectionPath, documentIdExpression, this.options);
   }
 
-  @BetaApi
   public Insert withDocumentId(Expression documentIdExpression) {
     return withDocumentIdExpression(documentIdExpression);
   }
