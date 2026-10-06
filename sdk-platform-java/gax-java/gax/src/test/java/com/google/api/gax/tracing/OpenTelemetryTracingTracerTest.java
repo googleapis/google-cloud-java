@@ -720,13 +720,4 @@ class OpenTelemetryTracingTracerTest {
             AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE),
             "CANCELLED");
   }
-
-  @Test
-  void testAttemptStarted_afterOperationCompleted_doesNotStartNewSpan() {
-    openTelemetryTracingTracer.operationSucceeded();
-
-    // Attempting to start a new attempt after operation completion should be a no-op
-    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
-    verify(spanBuilder, never()).startSpan();
-  }
 }

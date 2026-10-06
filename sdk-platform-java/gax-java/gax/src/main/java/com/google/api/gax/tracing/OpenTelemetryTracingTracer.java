@@ -39,7 +39,6 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
-import java.util.concurrent.locks.ReentrantLock;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -57,11 +56,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   // This allows attempt spans—including retries dispatched on background threads—to
   // link back to the original parent trace.
   private final io.opentelemetry.context.Context parentContext;
-  // Lock coordinates attempt transitions and operation completion across threads.
-  private final ReentrantLock lock = new ReentrantLock();
-  private boolean operationCompleted;
-  // attemptSpan is volatile to ensure fresh reads for thread-safe snapshotting.
-  private volatile @Nullable Span attemptSpan;
+  private @Nullable Span attemptSpan;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -135,74 +130,63 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void attemptStarted(Object request, int attemptNumber) {
-    lock.lock();
-    try {
-      // Prevent creating new attempt spans if the overall operation has already concluded.
-      if (operationCompleted) {
-        return;
+    Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
+
+    if (attemptNumber > 0) {
+      ApiTracerContext.Transport transport = apiTracerContext.transport();
+      if (transport == ApiTracerContext.Transport.GRPC) {
+        currentAttemptAttributes.put(
+            ObservabilityAttributes.GRPC_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
+      } else if (transport == ApiTracerContext.Transport.HTTP) {
+        currentAttemptAttributes.put(
+            ObservabilityAttributes.HTTP_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
       }
-      Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
-
-      if (attemptNumber > 0) {
-        ApiTracerContext.Transport transport = apiTracerContext.transport();
-        if (transport == ApiTracerContext.Transport.GRPC) {
-          currentAttemptAttributes.put(
-              ObservabilityAttributes.GRPC_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
-        } else if (transport == ApiTracerContext.Transport.HTTP) {
-          currentAttemptAttributes.put(
-              ObservabilityAttributes.HTTP_RESEND_COUNT_ATTRIBUTE, (long) attemptNumber);
-        }
-      }
-
-      SpanBuilder spanBuilder = tracer.spanBuilder(attemptSpanName);
-
-      // Attempt spans are of the CLIENT kind
-      spanBuilder.setSpanKind(SpanKind.CLIENT);
-
-      // Link attempt span to parent context
-      spanBuilder.setParent(parentContext);
-
-      // Pass the combined attributes to the new SpanBuilder method
-      spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
-
-      this.attemptSpan = spanBuilder.startSpan();
-    } finally {
-      lock.unlock();
     }
+
+    SpanBuilder spanBuilder = tracer.spanBuilder(attemptSpanName);
+
+    // Attempt spans are of the CLIENT kind
+    spanBuilder.setSpanKind(SpanKind.CLIENT);
+
+    // Link attempt span to parent context
+    spanBuilder.setParent(parentContext);
+
+    // Pass the combined attributes to the new SpanBuilder method
+    spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
+
+    this.attemptSpan = spanBuilder.startSpan();
   }
 
   /**
    * Signals that the overall logical operation succeeded.
    *
-   * <p>Marks the operation as complete and closes any remaining in-flight attempt span.
+   * <p>Closes any remaining in-flight attempt span.
    */
   @Override
   public void operationSucceeded() {
-    recordErrorAndEndAttempt(null, true);
+    recordErrorAndEndAttempt(null);
   }
 
   /**
    * Signals that the overall logical operation was cancelled.
    *
-   * <p>Marks the operation as complete and closes any remaining in-flight attempt span with a
-   * {@link CancellationException}.
+   * <p>Closes any remaining in-flight attempt span with a {@link CancellationException}.
    */
   @Override
   public void operationCancelled() {
-    recordErrorAndEndAttempt(new CancellationException(), true);
+    recordErrorAndEndAttempt(new CancellationException());
   }
 
   /**
    * Signals that the overall logical operation failed permanently.
    *
-   * <p>Marks the operation as complete and closes any remaining in-flight attempt span with the
-   * provided error details.
+   * <p>Closes any remaining in-flight attempt span with the provided error details.
    *
    * @param error the cause of the operation failure
    */
   @Override
   public void operationFailed(Throwable error) {
-    recordErrorAndEndAttempt(error, true);
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
@@ -212,15 +196,12 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void responseHeadersReceived(java.util.Map<String, Object> headers) {
-    // Snapshot to a local variable to prevent race conditions if another thread
-    // clears attemptSpan concurrently.
-    Span currentSpan = attemptSpan;
-    if (currentSpan == null) {
+    if (attemptSpan == null) {
       return;
     }
     long contentLength = extractContentLength(headers);
     if (contentLength >= 0) {
-      currentSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
+      attemptSpan.setAttribute(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE, contentLength);
     }
   }
 
@@ -275,72 +256,40 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(error);
   }
 
-  private void recordErrorAndEndAttempt(@Nullable Throwable error) {
-    recordErrorAndEndAttempt(error, false);
-  }
-
   /**
-   * Records error details and ends the current attempt span in a thread-safe manner.
+   * Records error details and ends the current attempt span.
    *
    * @param error the exception associated with the attempt failure, or {@code null} if successful
-   * @param isOperationComplete {@code true} if this call marks the end of the entire logical
-   *     operation, preventing subsequent retry attempts from starting
    */
-  private void recordErrorAndEndAttempt(@Nullable Throwable error, boolean isOperationComplete) {
-    Span localAttemptSpan;
-    lock.lock();
-    try {
-      if (isOperationComplete) {
-        operationCompleted = true;
-      }
-      localAttemptSpan = attemptSpan;
-      if (localAttemptSpan == null) {
-        return;
-      }
-      attemptSpan = null;
-    } finally {
-      lock.unlock();
+  private void recordErrorAndEndAttempt(@Nullable Throwable error) {
+    if (attemptSpan == null) {
+      return;
     }
 
-    endAttemptSpan(localAttemptSpan, error);
-  }
-
-  /**
-   * Attaches response status attributes and error messages to the attempt span and ends it.
-   *
-   * <p>This method runs outside of synchronization locks to avoid blocking threads during
-   * OpenTelemetry span completion callbacks.
-   *
-   * @param localAttemptSpan the attempt span to finish
-   * @param error the exception that caused the attempt to end, or {@code null} if successful
-   */
-  private void endAttemptSpan(Span localAttemptSpan, @Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
     if (!responseAttributes.isEmpty()) {
-      localAttemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
+      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
     if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
-      localAttemptSpan.setAttribute(
+      attemptSpan.setAttribute(
           ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
     }
 
-    localAttemptSpan.end();
+    attemptSpan.end();
+    attemptSpan = null;
   }
 
   @Override
   public void requestUrlResolved(String url) {
-    // Snapshot to a local variable to prevent race conditions if another thread
-    // clears attemptSpan concurrently.
-    Span currentSpan = attemptSpan;
-    if (currentSpan == null) {
+    if (attemptSpan == null) {
       return;
     }
     String sanitizedUrlString = ObservabilityUtils.sanitizeUrlFull(url);
     if (sanitizedUrlString.isEmpty()) {
       return;
     }
-    currentSpan.setAttribute(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
+    attemptSpan.setAttribute(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE, sanitizedUrlString);
   }
 }
