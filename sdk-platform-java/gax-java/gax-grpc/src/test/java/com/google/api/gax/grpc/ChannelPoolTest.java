@@ -850,6 +850,43 @@ class ChannelPoolTest {
   }
 
   @Test
+  void resize_afterShutdown_createsNoChannels() throws IOException {
+    ScheduledExecutorService executor = mockExecutor();
+    ChannelFactory channelFactory = mockChannelFactory();
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class),
+            Mockito.mock(ManagedChannel.class))
+        .thenThrow(new IOException("Transient failure on second sub-channel"))
+        .thenReturn(Mockito.mock(ManagedChannel.class));
+    createMtlsPoolAndRotateCert(
+        ChannelPoolSettings.builder()
+            .setInitialChannelCount(2)
+            .setMinChannelCount(2)
+            .setMaxChannelCount(4)
+            .setMinRpcsPerChannel(1)
+            .setMaxRpcsPerChannel(2)
+            .build(),
+        channelFactory,
+        executor);
+    ArgumentCaptor<Runnable> resizeTask = ArgumentCaptor.forClass(Runnable.class);
+    Mockito.verify(executor)
+        .scheduleAtFixedRate(
+            resizeTask.capture(), Mockito.anyLong(), Mockito.anyLong(), Mockito.any());
+    // Drop the pool below its minimum size, so that resize() would expand it.
+    pool.refresh();
+    assertThat(pool.entries.get()).hasSize(1);
+
+    // A resize run that was already waiting for the lock when the pool was shut down.
+    pool.shutdown();
+    resizeTask.getValue().run();
+
+    assertThat(pool.entries.get()).hasSize(1);
+    Mockito.verify(channelFactory, Mockito.times(4)).createSingleChannel();
+  }
+
+  @Test
   void refill_channelCreationFailure_isLoggedAndDoesNotThrow() throws IOException {
     ScheduledExecutorService executor = mockExecutor();
     ChannelFactory channelFactory = mockChannelFactory();

@@ -177,11 +177,19 @@ public class CertificateRotationTracker {
   /**
    * Updates the active certificate fingerprint after a successful channel refresh and clears any
    * cached disk check result.
+   *
+   * <p>This holds {@code diskCheckLock} so that a disk check already in progress cannot write its
+   * (possibly old) result back to the cache after the switch.
    */
   public void markRefreshed(String newFingerprint) {
     if (newFingerprint != null && !newFingerprint.isEmpty()) {
-      this.activeCertFingerprint = newFingerprint;
-      this.lastDiskCheck = null;
+      diskCheckLock.lock();
+      try {
+        this.activeCertFingerprint = newFingerprint;
+        this.lastDiskCheck = null;
+      } finally {
+        diskCheckLock.unlock();
+      }
     }
   }
 

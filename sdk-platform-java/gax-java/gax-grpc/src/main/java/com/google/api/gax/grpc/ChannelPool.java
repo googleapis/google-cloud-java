@@ -303,6 +303,11 @@ class ChannelPool extends ManagedChannel {
   private void resizeSafely() {
     try {
       synchronized (entryWriteLock) {
+        // shutdown() cancels this task, but cancel(true) does not interrupt a run that is already
+        // waiting for entryWriteLock, so it must not create channels once the pool is shut down.
+        if (isShutdown) {
+          return;
+        }
         resize();
       }
     } catch (Exception e) {
