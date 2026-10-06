@@ -30,7 +30,6 @@
 package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpResponse;
@@ -62,6 +61,7 @@ import javax.net.ssl.X509TrustManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.io.TempDir;
 import org.mockito.Mockito;
 
@@ -80,6 +80,9 @@ import org.mockito.Mockito;
  * javax.net.ssl.trustStore} at a temporary store containing only the test CA, and restores the
  * previous value afterwards.
  */
+@EnabledIf(
+    value = "isConscryptAndTls13Available",
+    disabledReason = "Conscrypt native library or TLS 1.3 is unavailable on this platform")
 class InstantiatingHttpJsonChannelProviderTls13Test {
 
   private static final String RESOURCE_DIR = "com/google/api/gax/httpjson/";
@@ -93,13 +96,13 @@ class InstantiatingHttpJsonChannelProviderTls13Test {
   private String previousTrustStorePassword;
   private ExecutorService serverExecutor;
 
+  /** Condition for {@link EnabledIf}; must be static because it is used at class level. */
+  static boolean isConscryptAndTls13Available() {
+    return HttpJsonConscryptUtils.getConscryptProvider() != null && isTls13Supported();
+  }
+
   @BeforeEach
   void setUp() throws Exception {
-    assumeTrue(
-        HttpJsonConscryptUtils.getConscryptProvider() != null,
-        "Conscrypt native library is unavailable on this platform");
-    assumeTrue(isTls13Supported(), "TLS 1.3 is unavailable on this JDK");
-
     previousTrustStore = System.getProperty(TRUST_STORE_PROPERTY);
     previousTrustStorePassword = System.getProperty(TRUST_STORE_PASSWORD_PROPERTY);
     File trustStoreFile = writeTrustStoreWithTestCa();
