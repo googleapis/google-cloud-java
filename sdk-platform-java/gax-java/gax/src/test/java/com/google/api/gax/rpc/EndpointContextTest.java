@@ -76,9 +76,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = false;
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -96,9 +97,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -116,9 +118,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "always" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -136,9 +139,10 @@ class EndpointContextTest {
         new FakeMtlsProvider(
             FakeMtlsProvider.createTestMtlsKeyStore(), "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "never" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -155,9 +159,10 @@ class EndpointContextTest {
     boolean throwExceptionForGetKeyStore = false;
     MtlsProvider mtlsProvider = new FakeMtlsProvider(null, "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "false");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(false);
     Truth.assertThat(
             defaultEndpointContextBuilder.mtlsEndpointResolver(
                 DEFAULT_ENDPOINT,
@@ -173,9 +178,10 @@ class EndpointContextTest {
     boolean throwExceptionForGetKeyStore = true;
     MtlsProvider mtlsProvider = new FakeMtlsProvider(null, "", throwExceptionForGetKeyStore);
     boolean switchToMtlsEndpointAllowed = true;
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     assertThrows(
         IOException.class,
         () ->
@@ -271,9 +277,10 @@ class EndpointContextTest {
   void endpointContextBuild_mtlsConfigured_GDU() throws IOException {
     MtlsProvider mtlsProvider =
         new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "always" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     EndpointContext endpointContext =
         defaultEndpointContextBuilder
             .setClientSettingsEndpoint(null)
@@ -292,9 +299,10 @@ class EndpointContextTest {
       throws IOException {
     MtlsProvider mtlsProvider =
         new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "always" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     EndpointContext.Builder endpointContextBuilder =
         defaultEndpointContextBuilder
             .setUniverseDomain("random.com")

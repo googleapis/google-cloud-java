@@ -51,12 +51,35 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
   private final Executor executor;
   private final boolean usingDefaultExecutor;
   private final String endpoint;
-  private final HttpTransport httpTransport;
+  private volatile HttpTransport httpTransport;
+  private final boolean usingDefaultTransport;
   private final ScheduledExecutorService deadlineScheduledExecutorService;
   private boolean isTransportShutdown;
 
   protected ManagedHttpJsonChannel() {
-    this(null, true, null, null);
+    this(null, true, null, null, true);
+  }
+
+  /**
+   * Constructor for subclasses that delegate all calls to a wrapped channel. The argument is
+   * unused; it only distinguishes this overload from {@link #ManagedHttpJsonChannel()}, which would
+   * otherwise allocate a transport and executor that the wrapper never uses or shuts down.
+   */
+  ManagedHttpJsonChannel(boolean isDelegatingWrapper) {
+    this.executor = null;
+    this.usingDefaultExecutor = false;
+    this.endpoint = null;
+    this.httpTransport = null;
+    this.usingDefaultTransport = false;
+    this.deadlineScheduledExecutorService = null;
+  }
+
+  /**
+   * Returns a monotonic generation counter tracking the number of successful refreshes or channel
+   * rotations performed by this channel. Always {@code 0} for channels that do not refresh.
+   */
+  public long getGeneration() {
+    return 0;
   }
 
   String getEndpoint() {
@@ -68,11 +91,20 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     return httpTransport;
   }
 
+  /**
+   * Replaces the transport used by calls created after this method returns. Calls that were already
+   * created keep using the transport they were created with.
+   */
+  void setHttpTransport(HttpTransport httpTransport) {
+    this.httpTransport = httpTransport;
+  }
+
   private ManagedHttpJsonChannel(
       @Nullable Executor executor,
       boolean usingDefaultExecutor,
       @Nullable String endpoint,
-      @Nullable HttpTransport httpTransport) {
+      @Nullable HttpTransport httpTransport,
+      boolean usingDefaultTransport) {
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;
     this.endpoint = endpoint;
@@ -82,6 +114,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
                     new NetHttpTransport.Builder())
                 .build()
             : httpTransport;
+    this.usingDefaultTransport = usingDefaultTransport || httpTransport == null;
     this.deadlineScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
@@ -96,6 +129,22 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         httpTransport,
         executor,
         deadlineScheduledExecutorService);
+  }
+
+  /**
+   * Refreshes or recreates the underlying transport of this channel if a certificate rotation has
+   * been detected. By default, this is a no-op.
+   */
+  public void refresh() {
+    // No-op: this channel has no certificate to rotate. Overridden by RefreshingHttpJsonChannel.
+  }
+
+  /**
+   * Returns true if a certificate rotation has been detected on disk and this channel should be
+   * refreshed, or false otherwise. Always {@code false} for channels that do not refresh.
+   */
+  public boolean shouldRefresh() {
+    return false;
   }
 
   @VisibleForTesting
@@ -116,7 +165,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         ((ExecutorService) executor).shutdown();
       }
       deadlineScheduledExecutorService.shutdown();
-      httpTransport.shutdown();
+      if (usingDefaultTransport) {
+        httpTransport.shutdown();
+      }
       isTransportShutdown = true;
     } catch (IOException e) {
       // TODO: Log this scenario once we implemented the Cloud SDK logging.
@@ -158,7 +209,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         ((ExecutorService) executor).shutdownNow();
       }
       deadlineScheduledExecutorService.shutdownNow();
-      httpTransport.shutdown();
+      if (usingDefaultTransport) {
+        httpTransport.shutdown();
+      }
       isTransportShutdown = true;
     } catch (IOException e) {
       // TODO: Log this scenario once we implemented the Cloud SDK logging.
@@ -205,9 +258,11 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     private String endpoint;
     private HttpTransport httpTransport;
     private boolean usingDefaultExecutor;
+    private boolean usingDefaultTransport;
 
     private Builder() {
       this.usingDefaultExecutor = false;
+      this.usingDefaultTransport = false;
     }
 
     public Builder setExecutor(Executor executor) {
@@ -225,6 +280,11 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
       return this;
     }
 
+    Builder setManageHttpTransport(boolean manageHttpTransport) {
+      this.usingDefaultTransport = manageHttpTransport;
+      return this;
+    }
+
     public ManagedHttpJsonChannel build() {
       Preconditions.checkNotNull(endpoint);
 
@@ -237,14 +297,8 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         usingDefaultExecutor = true;
       }
 
-      if (httpTransport == null) {
-        httpTransport =
-            HttpJsonConscryptUtils.configureConscryptSecurityProvider(
-                    new NetHttpTransport.Builder())
-                .build();
-      }
-
-      return new ManagedHttpJsonChannel(executor, usingDefaultExecutor, endpoint, httpTransport);
+      return new ManagedHttpJsonChannel(
+          executor, usingDefaultExecutor, endpoint, httpTransport, usingDefaultTransport);
     }
   }
 }

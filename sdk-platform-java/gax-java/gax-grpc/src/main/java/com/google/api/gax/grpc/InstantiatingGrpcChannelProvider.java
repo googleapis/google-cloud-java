@@ -401,12 +401,21 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   }
 
   private TransportChannel createChannel() throws IOException {
+    // Only track the workload certificate for rotation when the pool's channels actually present
+    // it, mirroring the credential selection in createSingleChannel(): DirectPath channels use
+    // GoogleDefaultChannelCredentials (ALTS) rather than the client certificate, and without an
+    // mtlsProvider there is no client certificate KeyStore (S2A or plain TLS is used instead).
+    String workloadCertPath =
+        !this.canUseDirectPath() && mtlsProvider != null
+            ? certificateBasedAccess.getWorkloadCertPath()
+            : null;
     return GrpcTransportChannel.newBuilder()
         .setManagedChannel(
             ChannelPool.create(
                 channelPoolSettings,
                 InstantiatingGrpcChannelProvider.this::createSingleChannel,
-                backgroundExecutor))
+                backgroundExecutor,
+                workloadCertPath))
         .setDirectPath(this.canUseDirectPath())
         .build();
   }
@@ -465,8 +474,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             level,
             "Env var "
                 + DIRECT_PATH_ENV_ENABLE_XDS
-                + " was found and set to TRUE, but DirectPath was not enabled for this client. If this is intended for "
-                + "this client, please note that this is a misconfiguration and set the attemptDirectPath option as well.");
+                + " was found and set to TRUE, but DirectPath was not enabled for this client. If"
+                + " this is intended for this client, please note that this is a misconfiguration"
+                + " and set the attemptDirectPath option as well.");
       }
       // Case 2: Direct Path xDS was enabled via Builder. Direct Path Traffic Director must be set
       // (enabled with `setAttemptDirectPath(true)`) along with xDS.
@@ -474,7 +484,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       else if (isDirectPathXdsEnabledViaBuilderOption()) {
         LOG.log(
             level,
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
       }
     } else {
       // Case 3: credential is not correctly set
@@ -666,7 +678,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
           // Fallback to plaintext connection to S2A.
           LOG.log(
               Level.INFO,
-              "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return a mtls address to reach S2A.");
+              "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not"
+                  + " return a mtls address to reach S2A.");
           s2aChannelCredentials = createPlaintextToS2AChannelCredentials(plaintextAddress);
           return s2aChannelCredentials;
         }
@@ -685,7 +698,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             // Fallback to plaintext-to-S2A connection on error.
             LOG.log(
                 Level.WARNING,
-                "Cannot establish an mTLS connection to S2A due to error creating MTLS to MDS TlsChannelCredentials credentials, falling back to plaintext connection to S2A: "
+                "Cannot establish an mTLS connection to S2A due to error creating MTLS to MDS"
+                    + " TlsChannelCredentials credentials, falling back to plaintext connection to"
+                    + " S2A: "
                     + ignore.getMessage());
             s2aChannelCredentials = createPlaintextToS2AChannelCredentials(plaintextAddress);
             return s2aChannelCredentials;
@@ -755,6 +770,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       if (channelCredentials != null) {
         // Create the channel using channel credentials created via DCA.
         builder = Grpc.newChannelBuilder(endpoint, channelCredentials);
+      } else if (mtlsProvider != null && certificateBasedAccess.useMtlsClientCertificate()) {
+        throw new IOException("Failed to initialize mTLS channel credentials");
       } else {
         // Could not create channel credentials via DCA. In accordance with
         // https://google.aip.dev/auth/4115, if credentials not available through
@@ -1403,7 +1420,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
                 "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
             LOG.log(
                 Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
+                "mTLS configuration was detected on the device, but mTLS failed to initialize."
+                    + " Falling back to non-mTLS channel.");
           }
         }
       }

@@ -31,6 +31,7 @@ package com.google.api.gax.grpc;
 
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
@@ -52,6 +53,7 @@ import io.grpc.ManagedChannel;
 import io.grpc.Metadata.Key;
 import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -208,6 +210,20 @@ class GrpcCallContextTest {
         ctxWithShortTimeout.withTimeoutDuration(java.time.Duration.ofSeconds(10));
     Truth.assertThat(ctxWithUnchangedTimeout.getTimeoutDuration())
         .isEqualTo(java.time.Duration.ofSeconds(5));
+  }
+
+  @Test
+  void testWithNullOrZeroTimeoutClearsExistingTimeout() {
+    GrpcCallContext ctxWithTimeout =
+        GrpcCallContext.createDefault().withTimeoutDuration(Duration.ofSeconds(5));
+
+    // Sanity check
+    Truth.assertThat(ctxWithTimeout.getTimeoutDuration()).isEqualTo(Duration.ofSeconds(5));
+
+    Duration nullTimeout = null;
+    Truth.assertThat(ctxWithTimeout.withTimeoutDuration(nullTimeout).getTimeoutDuration()).isNull();
+    Truth.assertThat(ctxWithTimeout.withTimeoutDuration(Duration.ZERO).getTimeoutDuration())
+        .isNull();
   }
 
   @Test
@@ -493,5 +509,65 @@ class GrpcCallContextTest {
       extraHeaders.get(key).add(value);
     }
     return extraHeaders;
+  }
+
+  @Test
+  public void testEqualsAndHashCode() {
+    ManagedChannel managedChannel1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel managedChannel2 = Mockito.mock(ManagedChannel.class);
+
+    GrpcTransportChannel transportChannel1 = GrpcTransportChannel.create(managedChannel1);
+    GrpcTransportChannel transportChannel2 = GrpcTransportChannel.create(managedChannel2);
+
+    GrpcCallContext context1 =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel1);
+    GrpcCallContext context2 =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel1);
+    GrpcCallContext context3 =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel2);
+
+    assertEquals(context1, context2);
+    assertEquals(context1.hashCode(), context2.hashCode());
+
+    assertNotEquals(context1, context3);
+  }
+
+  @Test
+  public void testMergeWithCustomChannelClearsTransportChannel() {
+    ManagedChannel defaultChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel customChannel = Mockito.mock(ManagedChannel.class);
+    GrpcTransportChannel transportChannel = GrpcTransportChannel.create(defaultChannel);
+
+    GrpcCallContext baseContext =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel);
+    GrpcCallContext overrideContext = GrpcCallContext.of(customChannel, CallOptions.DEFAULT);
+
+    GrpcCallContext mergedContext = (GrpcCallContext) baseContext.merge(overrideContext);
+    assertEquals(customChannel, mergedContext.getChannel());
+    assertNull(mergedContext.getTransportChannel());
+  }
+
+  @Test
+  public void testWithChannelWithCustomChannelClearsTransportChannel() {
+    ManagedChannel defaultChannel = Mockito.mock(ManagedChannel.class);
+    ManagedChannel customChannel = Mockito.mock(ManagedChannel.class);
+    GrpcTransportChannel transportChannel = GrpcTransportChannel.create(defaultChannel);
+
+    GrpcCallContext baseContext =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel);
+    GrpcCallContext updatedContext = baseContext.withChannel(customChannel);
+
+    assertEquals(customChannel, updatedContext.getChannel());
+    assertNull(updatedContext.getTransportChannel());
+
+    // Clearing channel via withChannel(null) also clears transportChannel
+    GrpcCallContext nullChannelContext = baseContext.withChannel(null);
+    assertNull(nullChannelContext.getChannel());
+    assertNull(nullChannelContext.getTransportChannel());
+
+    // Merging a cleared context into defaultContext falls back to defaultContext's transportChannel
+    GrpcCallContext mergedWithNullChannel = (GrpcCallContext) baseContext.merge(nullChannelContext);
+    assertEquals(defaultChannel, mergedWithNullChannel.getChannel());
+    assertEquals(transportChannel, mergedWithNullChannel.getTransportChannel());
   }
 }
