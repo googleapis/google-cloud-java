@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -362,6 +363,37 @@ public class AppHubSettings extends ClientSettings<AppHubSettings> {
   public OperationCallSettings<DeleteApplicationRequest, Empty, OperationMetadata>
       deleteApplicationOperationSettings() {
     return ((AppHubStubSettings) getStubSettings()).deleteApplicationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBoundary. */
+  public UnaryCallSettings<GetBoundaryRequest, Boundary> getBoundarySettings() {
+    return ((AppHubStubSettings) getStubSettings()).getBoundarySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBoundary. */
+  public UnaryCallSettings<UpdateBoundaryRequest, Operation> updateBoundarySettings() {
+    return ((AppHubStubSettings) getStubSettings()).updateBoundarySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBoundary. */
+  public OperationCallSettings<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationSettings() {
+    return ((AppHubStubSettings) getStubSettings()).updateBoundaryOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getExtendedMetadataSchema. */
+  public UnaryCallSettings<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaSettings() {
+    return ((AppHubStubSettings) getStubSettings()).getExtendedMetadataSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listExtendedMetadataSchemas. */
+  public PagedCallSettings<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasSettings() {
+    return ((AppHubStubSettings) getStubSettings()).listExtendedMetadataSchemasSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -737,6 +769,37 @@ public class AppHubSettings extends ClientSettings<AppHubSettings> {
     public OperationCallSettings.Builder<DeleteApplicationRequest, Empty, OperationMetadata>
         deleteApplicationOperationSettings() {
       return getStubSettingsBuilder().deleteApplicationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBoundary. */
+    public UnaryCallSettings.Builder<GetBoundaryRequest, Boundary> getBoundarySettings() {
+      return getStubSettingsBuilder().getBoundarySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBoundary. */
+    public UnaryCallSettings.Builder<UpdateBoundaryRequest, Operation> updateBoundarySettings() {
+      return getStubSettingsBuilder().updateBoundarySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBoundary. */
+    public OperationCallSettings.Builder<UpdateBoundaryRequest, Boundary, OperationMetadata>
+        updateBoundaryOperationSettings() {
+      return getStubSettingsBuilder().updateBoundaryOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getExtendedMetadataSchema. */
+    public UnaryCallSettings.Builder<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+        getExtendedMetadataSchemaSettings() {
+      return getStubSettingsBuilder().getExtendedMetadataSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listExtendedMetadataSchemas. */
+    public PagedCallSettings.Builder<
+            ListExtendedMetadataSchemasRequest,
+            ListExtendedMetadataSchemasResponse,
+            ListExtendedMetadataSchemasPagedResponse>
+        listExtendedMetadataSchemasSettings() {
+      return getStubSettingsBuilder().listExtendedMetadataSchemasSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1.stub;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -41,6 +42,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apphub.v1.Application;
+import com.google.cloud.apphub.v1.Boundary;
 import com.google.cloud.apphub.v1.CreateApplicationRequest;
 import com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.CreateServiceRequest;
@@ -53,9 +55,12 @@ import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse;
 import com.google.cloud.apphub.v1.DiscoveredService;
 import com.google.cloud.apphub.v1.DiscoveredWorkload;
+import com.google.cloud.apphub.v1.ExtendedMetadataSchema;
 import com.google.cloud.apphub.v1.GetApplicationRequest;
+import com.google.cloud.apphub.v1.GetBoundaryRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredServiceRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest;
+import com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest;
 import com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.GetServiceRequest;
 import com.google.cloud.apphub.v1.GetWorkloadRequest;
@@ -65,6 +70,8 @@ import com.google.cloud.apphub.v1.ListDiscoveredServicesRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredServicesResponse;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse;
 import com.google.cloud.apphub.v1.ListServicesRequest;
@@ -81,6 +88,7 @@ import com.google.cloud.apphub.v1.OperationMetadata;
 import com.google.cloud.apphub.v1.Service;
 import com.google.cloud.apphub.v1.ServiceProjectAttachment;
 import com.google.cloud.apphub.v1.UpdateApplicationRequest;
+import com.google.cloud.apphub.v1.UpdateBoundaryRequest;
 import com.google.cloud.apphub.v1.UpdateServiceRequest;
 import com.google.cloud.apphub.v1.UpdateWorkloadRequest;
 import com.google.cloud.apphub.v1.Workload;
@@ -122,6 +130,7 @@ public class HttpJsonAppHubStub extends AppHubStub {
           .add(Application.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Service.getDescriptor())
+          .add(Boundary.getDescriptor())
           .add(Workload.getDescriptor())
           .build();
 
@@ -1175,6 +1184,155 @@ public class HttpJsonAppHubStub extends AppHubStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GetBoundaryRequest, Boundary>
+      getBoundaryMethodDescriptor =
+          ApiMethodDescriptor.<GetBoundaryRequest, Boundary>newBuilder()
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/GetBoundary")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetBoundaryRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/boundary}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBoundaryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetBoundaryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Boundary>newBuilder()
+                      .setDefaultInstance(Boundary.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBoundaryRequest, Operation>
+      updateBoundaryMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBoundaryRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/UpdateBoundary")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBoundaryRequest>newBuilder()
+                      .setPath(
+                          "/v1/{boundary.name=projects/*/locations/*/boundary}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBoundaryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "boundary.name", request.getBoundary().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBoundaryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("boundary", request.getBoundary(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBoundaryRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaMethodDescriptor =
+          ApiMethodDescriptor.<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>newBuilder()
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/GetExtendedMetadataSchema")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetExtendedMetadataSchemaRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/extendedMetadataSchemas/**}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetExtendedMetadataSchemaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetExtendedMetadataSchemaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExtendedMetadataSchema>newBuilder()
+                      .setDefaultInstance(ExtendedMetadataSchema.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>newBuilder()
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/ListExtendedMetadataSchemas")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListExtendedMetadataSchemasRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/extendedMetadataSchemas",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListExtendedMetadataSchemasRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListExtendedMetadataSchemasRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListExtendedMetadataSchemasResponse>newBuilder()
+                      .setDefaultInstance(ListExtendedMetadataSchemasResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1430,6 +1588,18 @@ public class HttpJsonAppHubStub extends AppHubStub {
   private final UnaryCallable<DeleteApplicationRequest, Operation> deleteApplicationCallable;
   private final OperationCallable<DeleteApplicationRequest, Empty, OperationMetadata>
       deleteApplicationOperationCallable;
+  private final UnaryCallable<GetBoundaryRequest, Boundary> getBoundaryCallable;
+  private final UnaryCallable<UpdateBoundaryRequest, Operation> updateBoundaryCallable;
+  private final OperationCallable<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationCallable;
+  private final UnaryCallable<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaCallable;
+  private final UnaryCallable<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasCallable;
+  private final UnaryCallable<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1856,6 +2026,58 @@ public class HttpJsonAppHubStub extends AppHubStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GetBoundaryRequest, Boundary> getBoundaryTransportSettings =
+        HttpJsonCallSettings.<GetBoundaryRequest, Boundary>newBuilder()
+            .setMethodDescriptor(getBoundaryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateBoundaryRequest, Operation> updateBoundaryTransportSettings =
+        HttpJsonCallSettings.<UpdateBoundaryRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBoundaryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("boundary.name", String.valueOf(request.getBoundary().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+        getExtendedMetadataSchemaTransportSettings =
+            HttpJsonCallSettings
+                .<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>newBuilder()
+                .setMethodDescriptor(getExtendedMetadataSchemaMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+        listExtendedMetadataSchemasTransportSettings =
+            HttpJsonCallSettings
+                .<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+                    newBuilder()
+                .setMethodDescriptor(listExtendedMetadataSchemasMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2118,6 +2340,33 @@ public class HttpJsonAppHubStub extends AppHubStub {
             settings.deleteApplicationOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.getBoundaryCallable =
+        callableFactory.createUnaryCallable(
+            getBoundaryTransportSettings, settings.getBoundarySettings(), clientContext);
+    this.updateBoundaryCallable =
+        callableFactory.createUnaryCallable(
+            updateBoundaryTransportSettings, settings.updateBoundarySettings(), clientContext);
+    this.updateBoundaryOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBoundaryTransportSettings,
+            settings.updateBoundaryOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getExtendedMetadataSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getExtendedMetadataSchemaTransportSettings,
+            settings.getExtendedMetadataSchemaSettings(),
+            clientContext);
+    this.listExtendedMetadataSchemasCallable =
+        callableFactory.createUnaryCallable(
+            listExtendedMetadataSchemasTransportSettings,
+            settings.listExtendedMetadataSchemasSettings(),
+            clientContext);
+    this.listExtendedMetadataSchemasPagedCallable =
+        callableFactory.createPagedCallable(
+            listExtendedMetadataSchemasTransportSettings,
+            settings.listExtendedMetadataSchemasSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2173,6 +2422,10 @@ public class HttpJsonAppHubStub extends AppHubStub {
     methodDescriptors.add(getApplicationMethodDescriptor);
     methodDescriptors.add(updateApplicationMethodDescriptor);
     methodDescriptors.add(deleteApplicationMethodDescriptor);
+    methodDescriptors.add(getBoundaryMethodDescriptor);
+    methodDescriptors.add(updateBoundaryMethodDescriptor);
+    methodDescriptors.add(getExtendedMetadataSchemaMethodDescriptor);
+    methodDescriptors.add(listExtendedMetadataSchemasMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -2436,6 +2689,40 @@ public class HttpJsonAppHubStub extends AppHubStub {
   public OperationCallable<DeleteApplicationRequest, Empty, OperationMetadata>
       deleteApplicationOperationCallable() {
     return deleteApplicationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBoundaryRequest, Boundary> getBoundaryCallable() {
+    return getBoundaryCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBoundaryRequest, Operation> updateBoundaryCallable() {
+    return updateBoundaryCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationCallable() {
+    return updateBoundaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaCallable() {
+    return getExtendedMetadataSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasCallable() {
+    return listExtendedMetadataSchemasCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasPagedCallable() {
+    return listExtendedMetadataSchemasPagedCallable;
   }
 
   @Override

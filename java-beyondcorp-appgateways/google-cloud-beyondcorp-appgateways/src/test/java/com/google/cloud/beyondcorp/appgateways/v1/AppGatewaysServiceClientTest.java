@@ -206,6 +206,8 @@ public class AppGatewaysServiceClientTest {
             .setUid("uid115792")
             .setUri("uri116076")
             .addAllAllocatedConnections(new ArrayList<AppGateway.AllocatedConnection>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAppGatewaysService.addResponse(expectedResponse);
 
@@ -251,6 +253,8 @@ public class AppGatewaysServiceClientTest {
             .setUid("uid115792")
             .setUri("uri116076")
             .addAllAllocatedConnections(new ArrayList<AppGateway.AllocatedConnection>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAppGatewaysService.addResponse(expectedResponse);
 
@@ -296,6 +300,8 @@ public class AppGatewaysServiceClientTest {
             .setUid("uid115792")
             .setUri("uri116076")
             .addAllAllocatedConnections(new ArrayList<AppGateway.AllocatedConnection>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -356,6 +362,8 @@ public class AppGatewaysServiceClientTest {
             .setUid("uid115792")
             .setUri("uri116076")
             .addAllAllocatedConnections(new ArrayList<AppGateway.AllocatedConnection>())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

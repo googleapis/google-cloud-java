@@ -109,4 +109,180 @@ public interface WorkloadPropertiesOrBuilder
    * @return The bytes for zone.
    */
   com.google.protobuf.ByteString getZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the functionalType field is set.
+   */
+  boolean hasFunctionalType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The functionalType.
+   */
+  com.google.cloud.apphub.v1.FunctionalType getFunctionalType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apphub.v1.FunctionalTypeOrBuilder getFunctionalTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getExtendedMetadataCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsExtendedMetadata(java.lang.String key);
+
+  /** Use {@link #getExtendedMetadataMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+      getExtendedMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+      getExtendedMetadataMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.apphub.v1.ExtendedMetadata getExtendedMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.apphub.v1.ExtendedMetadata defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apphub.v1.ExtendedMetadata getExtendedMetadataOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity associated with the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the identity field is set.
+   */
+  boolean hasIdentity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity associated with the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The identity.
+   */
+  com.google.cloud.apphub.v1.Identity getIdentity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity associated with the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apphub.v1.IdentityOrBuilder getIdentityOrBuilder();
 }

@@ -30,6 +30,8 @@ import com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest;
 import com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest;
 import com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse;
 import com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest;
+import com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest;
+import com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse;
 import com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -52,8 +54,11 @@ import org.jspecify.annotations.Nullable;
  * Base stub class for the AppConnectorsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class AppConnectorsServiceStub implements BackgroundResource {
 
@@ -61,55 +66,72 @@ public abstract class AppConnectorsServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAppConnectorsRequest, ListAppConnectorsPagedResponse>
       listAppConnectorsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAppConnectorsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAppConnectorsRequest, ListAppConnectorsResponse>
       listAppConnectorsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAppConnectorsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAppConnectorRequest, AppConnector> getAppConnectorCallable() {
     throw new UnsupportedOperationException("Not implemented: getAppConnectorCallable()");
   }
 
+  @Deprecated
   public OperationCallable<CreateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
       createAppConnectorOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createAppConnectorOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateAppConnectorRequest, Operation> createAppConnectorCallable() {
     throw new UnsupportedOperationException("Not implemented: createAppConnectorCallable()");
   }
 
+  @Deprecated
   public OperationCallable<UpdateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
       updateAppConnectorOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateAppConnectorOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateAppConnectorRequest, Operation> updateAppConnectorCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAppConnectorCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DeleteAppConnectorRequest, Empty, AppConnectorOperationMetadata>
       deleteAppConnectorOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteAppConnectorOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteAppConnectorRequest, Operation> deleteAppConnectorCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAppConnectorCallable()");
   }
 
+  @Deprecated
+  public UnaryCallable<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+      resolveInstanceConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: resolveInstanceConfigCallable()");
+  }
+
+  @Deprecated
   public OperationCallable<ReportStatusRequest, AppConnector, AppConnectorOperationMetadata>
       reportStatusOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: reportStatusOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ReportStatusRequest, Operation> reportStatusCallable() {
     throw new UnsupportedOperationException("Not implemented: reportStatusCallable()");
   }
