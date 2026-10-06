@@ -1687,6 +1687,11 @@ public abstract class JobStatistics implements Serializable {
       return self();
     }
 
+    B setSessionInfo(SessionInfo sessionInfo) {
+      this.sessionInfo = sessionInfo;
+      return self();
+    }
+
     abstract T build();
   }
 
