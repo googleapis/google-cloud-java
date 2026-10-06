@@ -252,10 +252,8 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
     headers.put(
         SpannerMetadataProvider.REQUEST_PARAMS_HEADER_KEY,
         requestParamsPrefix + urlEncode(sessionName));
-    // The pool invokes prime() once per attempt, so every attempt gets a fresh request id with
-    // attempt number 1. The header is written directly and the request id is deliberately not set
-    // as a call option: the RequestIdInterceptor on the delegate channel only acts on the call
-    // option, so this never produces a duplicate header.
+    // Write a fresh request id (attempt 1) directly as a header rather than a call option so
+    // RequestIdInterceptor on the delegate channel does not duplicate it.
     XGoogSpannerRequestId requestId = requestIdCreator.nextRequestId(REQUEST_ID_CHANNEL);
     requestId.incrementAttempt();
     headers.put(XGoogSpannerRequestId.REQUEST_ID_HEADER_KEY, requestId.getHeaderValue());

@@ -19,12 +19,14 @@ package com.google.cloud.spanner.spi.v1;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
 import io.grpc.Attributes;
+import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -48,6 +50,7 @@ import java.net.URLEncoder;
 import java.time.Duration;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 import javax.net.ssl.SSLSession;
@@ -146,7 +149,8 @@ public class GcpFallbackProberTest {
     server.awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  private GcpFallbackProber newProber(Duration rpcDeadline) {
+  private GcpFallbackProber newProber(
+      @Nullable CallCredentialsProvider callCredentialsProvider, Duration rpcDeadline) {
     return new GcpFallbackProber(
         registry,
         SpannerMetadataProvider.create(
@@ -154,14 +158,19 @@ public class GcpFallbackProberTest {
             RESOURCE_HEADER_KEY),
         PROJECT_NAME,
         new RequestIdCreatorImpl(),
+        callCredentialsProvider,
         rpcDeadline);
+  }
+
+  private GcpFallbackProber newProber(Duration rpcDeadline) {
+    return newProber(/* callCredentialsProvider= */ null, rpcDeadline);
   }
 
   private GcpFallbackProber newProber() {
     return newProber(GcpFallbackProber.DEFAULT_PROBE_DEADLINE);
   }
 
-  private Channel channelWithAttributes(Attributes attributes) {
+  private Channel channelWithAttributes(@Nullable Attributes attributes) {
     return new Channel() {
       @Override
       public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
@@ -185,8 +194,7 @@ public class GcpFallbackProberTest {
   public void probeWaitsForASessionAndThenCallsGetSessionWithPerCallHeaders() throws Exception {
     GcpFallbackProber prober = newProber();
 
-    assertThat(prober.apply(channel))
-        .isEqualTo(GcpFallbackProber.RESULT_WAITING_FOR_SESSION);
+    assertThat(prober.apply(channel)).isEqualTo(GcpFallbackProber.RESULT_WAITING_FOR_SESSION);
     assertThat(service.requests).isEmpty();
 
     registry.register(new FixedSessionSource(SESSION_NAME));
@@ -199,6 +207,38 @@ public class GcpFallbackProberTest {
     assertThat(headers.get(REQUEST_PARAMS_KEY))
         .isEqualTo("name=" + URLEncoder.encode(SESSION_NAME, "UTF-8"));
     assertThat(headers.get(REQUEST_ID_KEY)).isNotEmpty();
+  }
+
+  @Test
+  public void probeAttachesCallCredentialsWhenConfigured() {
+    Metadata.Key<String> authHeaderKey =
+        Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER);
+    CallCredentials callCredentials =
+        new CallCredentials() {
+          @Override
+          public void applyRequestMetadata(
+              RequestInfo requestInfo, Executor appExecutor, MetadataApplier applier) {
+            Metadata headers = new Metadata();
+            headers.put(authHeaderKey, "Bearer test-token");
+            applier.apply(headers);
+          }
+        };
+    GcpFallbackProber prober =
+        newProber(() -> callCredentials, GcpFallbackProber.DEFAULT_PROBE_DEADLINE);
+    registry.register(new FixedSessionSource(SESSION_NAME));
+
+    assertThat(prober.apply(channel)).isEqualTo(GcpFallbackProber.RESULT_SUCCESS);
+    assertThat(service.headers).hasSize(1);
+    assertThat(service.headers.get(0).get(authHeaderKey)).isEqualTo("Bearer test-token");
+  }
+
+  @Test
+  public void probeSucceedsWhenCallAttributesAreNull() {
+    GcpFallbackProber prober = newProber();
+    registry.register(new FixedSessionSource(SESSION_NAME));
+
+    assertThat(prober.apply(channelWithAttributes(null)))
+        .isEqualTo(GcpFallbackProber.RESULT_SUCCESS);
   }
 
   @Test

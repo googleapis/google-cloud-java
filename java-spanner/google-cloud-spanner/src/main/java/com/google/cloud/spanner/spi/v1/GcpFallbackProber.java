@@ -16,11 +16,14 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.XGoogSpannerRequestId.RequestIdCreator;
 import com.google.common.base.Preconditions;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
+import io.grpc.Attributes;
+import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -33,6 +36,7 @@ import io.grpc.stub.MetadataUtils;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import javax.annotation.Nullable;
 
 /**
  * Probes a primary channel during DirectPath fallback recovery using {@code GetSession} and
@@ -50,6 +54,7 @@ final class GcpFallbackProber implements Function<Channel, String> {
   private final SpannerMetadataProvider metadataProvider;
   private final String projectName;
   private final RequestIdCreator requestIdCreator;
+  @Nullable private final CallCredentialsProvider callCredentialsProvider;
   private final Duration rpcDeadline;
 
   GcpFallbackProber(
@@ -57,11 +62,13 @@ final class GcpFallbackProber implements Function<Channel, String> {
       SpannerMetadataProvider metadataProvider,
       String projectName,
       RequestIdCreator requestIdCreator,
+      @Nullable CallCredentialsProvider callCredentialsProvider,
       Duration rpcDeadline) {
     this.sessionRegistry = Preconditions.checkNotNull(sessionRegistry);
     this.metadataProvider = Preconditions.checkNotNull(metadataProvider);
     this.projectName = Preconditions.checkNotNull(projectName);
     this.requestIdCreator = Preconditions.checkNotNull(requestIdCreator);
+    this.callCredentialsProvider = callCredentialsProvider;
     this.rpcDeadline = Preconditions.checkNotNull(rpcDeadline);
   }
 
@@ -75,18 +82,25 @@ final class GcpFallbackProber implements Function<Channel, String> {
     Metadata headers =
         DynamicChannelPoolPrimer.newCallHeaders(
             metadataProvider, projectName, requestIdCreator, sessionName, "name=");
+    CallOptions callOptions =
+        CallOptions.DEFAULT.withDeadlineAfter(rpcDeadline.toNanos(), TimeUnit.NANOSECONDS);
+    if (callCredentialsProvider != null) {
+      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
+      if (callCredentials != null) {
+        callOptions = callOptions.withCallCredentials(callCredentials);
+      }
+    }
     ClientCall<GetSessionRequest, Session> call =
         ClientInterceptors.intercept(channel, MetadataUtils.newAttachHeadersInterceptor(headers))
-            .newCall(
-                SpannerGrpc.getGetSessionMethod(),
-                CallOptions.DEFAULT.withDeadlineAfter(rpcDeadline.toNanos(), TimeUnit.NANOSECONDS));
+            .newCall(SpannerGrpc.getGetSessionMethod(), callOptions);
     try {
       ClientCalls.blockingUnaryCall(
           call, GetSessionRequest.newBuilder().setName(sessionName).build());
     } catch (StatusRuntimeException e) {
       return e.getStatus().getCode().name();
     }
-    return call.getAttributes().get(Grpc.TRANSPORT_ATTR_SSL_SESSION) != null
+    Attributes attributes = call.getAttributes();
+    return attributes != null && attributes.get(Grpc.TRANSPORT_ATTR_SSL_SESSION) != null
         ? RESULT_NOT_DIRECTPATH
         : RESULT_SUCCESS;
   }

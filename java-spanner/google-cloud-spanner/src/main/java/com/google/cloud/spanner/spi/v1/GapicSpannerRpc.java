@@ -928,8 +928,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Nullable
-  private GcpFallbackProber createFallbackProber(
-      SpannerOptions options, boolean useGcpFallback) {
+  private GcpFallbackProber createFallbackProber(SpannerOptions options, boolean useGcpFallback) {
     if (!useGcpFallback || !options.isEnableGcpFallbackRecovery()) {
       return null;
     }
@@ -938,6 +937,7 @@ public class GapicSpannerRpc implements SpannerRpc {
         metadataProvider,
         projectName,
         requestIdCreator,
+        callCredentialsProvider,
         GcpFallbackProber.DEFAULT_PROBE_DEADLINE);
   }
 
