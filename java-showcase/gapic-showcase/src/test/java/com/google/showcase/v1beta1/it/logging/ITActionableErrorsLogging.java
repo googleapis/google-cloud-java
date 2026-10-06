@@ -204,10 +204,8 @@ public class ITActionableErrorsLogging {
               ObservabilityAttributes.ERROR_METADATA_ATTRIBUTE_PREFIX + "mock_key", "mock_value");
     } finally {
       mockHttpJsonClient.close();
-      stub.close();
       mockHttpJsonClient.awaitTermination(
           TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
-      stub.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }
 
@@ -241,9 +239,7 @@ public class ITActionableErrorsLogging {
       assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "http");
     } finally {
       client.shutdownNow();
-      stub.shutdownNow();
       client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
-      stub.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }
 
@@ -302,9 +298,7 @@ public class ITActionableErrorsLogging {
       assertThat(kvps).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "grpc");
     } finally {
       client.shutdownNow();
-      stub.shutdownNow();
       client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
-      stub.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }
 }
