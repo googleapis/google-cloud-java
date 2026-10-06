@@ -105,7 +105,6 @@ public class TableAsync implements AutoCloseable, Closeable {
     return base.getSessionPool();
   }
 
-  // TODO: get deadline from compatibility layer
   // Currently these are the deadlines from gax:
   // ApiCallContext#timeout (attempt timeout)
   // ApiCallContext#RetrySettings#totalTimeout
@@ -120,7 +119,6 @@ public class TableAsync implements AutoCloseable, Closeable {
     return f;
   }
 
-  // TODO: get deadline from compatibility layer
   public CompletableFuture<SessionMutateRowResponse> mutateRow(
       SessionMutateRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionMutateRowResponse> f = new UnaryResponseFuture<>();
@@ -128,7 +126,6 @@ public class TableAsync implements AutoCloseable, Closeable {
     return f;
   }
 
-  // TODO: get deadline from compatibility layer
   public CompletableFuture<SessionCheckAndMutateRowResponse> checkAndMutateRow(
       SessionCheckAndMutateRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionCheckAndMutateRowResponse> f = new UnaryResponseFuture<>();

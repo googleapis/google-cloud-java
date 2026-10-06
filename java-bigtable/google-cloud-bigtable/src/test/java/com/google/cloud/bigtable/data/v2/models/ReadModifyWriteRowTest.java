@@ -248,8 +248,7 @@ public class ReadModifyWriteRowTest {
     assertThat(tableMutation.getTargetId()).isEqualTo(TABLE_ID);
 
     AuthorizedViewId authorizedViewId = AuthorizedViewId.of(TABLE_ID, "fake-authorized-view");
-    ReadModifyWriteRow authViewMutation =
-        ReadModifyWriteRow.create(authorizedViewId, "fake-key");
+    ReadModifyWriteRow authViewMutation = ReadModifyWriteRow.create(authorizedViewId, "fake-key");
     assertThat(authViewMutation.getTargetId()).isEqualTo(authorizedViewId);
   }
 
