@@ -53,6 +53,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 import org.jspecify.annotations.NullMarked;
@@ -229,13 +230,17 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     // trust manager rejects for CA-issued server certificates that carry a KeyUsage extension
     // (e.g. Google front ends), failing the handshake with "Unknown authType: GENERIC".
     // Conscrypt's trust manager loads the same default trust store as the JDK.
+    // The KeyManagerFactory must also come from Conscrypt: since JDK 26 (JDK-8359956) the JDK's
+    // SunX509 key manager applies algorithm constraints to the client certificate, and when called
+    // from a Conscrypt handshake it rejects valid certificates (e.g. SHA256withRSA), so no client
+    // certificate is sent.
     SslUtils.initSslContext(
         sslContext,
         null,
         TrustManagerFactory.getInstance("PKIX", conscryptProvider),
         mtlsKeyStore,
         "",
-        SslUtils.getDefaultKeyManagerFactory());
+        KeyManagerFactory.getInstance("PKIX", conscryptProvider));
     builder.setSslSocketFactory(sslContext.getSocketFactory());
     return builder;
   }
