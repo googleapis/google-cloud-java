@@ -52,6 +52,7 @@ import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackChannelOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackOpenTelemetry;
+import com.google.cloud.grpc.fallback.GcpFallbackState;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.Dialect;
@@ -2693,6 +2694,36 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testDirectPathFallbackRecoveryWrapsFallbackChannelsInGrpcGcpPool() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGcpFallbackRecovery() {
+            return true;
+          }
+        });
+    GapicSpannerRpc rpc = null;
+    try {
+      SpannerOptions options = createDirectPathFallbackObjectCountOptions().build();
+      assumeTrue(
+          "GCP fallback must be enabled for this DirectPath fallback test",
+          options.isEnableGcpFallback());
+      GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
+      rpc = new GapicSpannerRpc(options);
+      GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
+      assertEquals(counts.debugString(), 3, counts.gcpManagedChannels);
+      assertEquals(counts.debugString(), 24, counts.channelRefs);
+      // One fallback state per pool.
+      assertEquals(3, new HashSet<>(rpc.getFallbackStates()).size());
+    } finally {
+      if (rpc != null) {
+        rpc.shutdown();
+      }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
   public void testDirectPathFallbackWithGaxChannelPoolDoesNotCreateGrpcGcpChannelRefs() {
     SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     GapicSpannerRpc rpc = null;
@@ -2846,11 +2877,12 @@ public class GapicSpannerRpcTest {
 
     @Override
     GcpFallbackChannelOptions createFallbackChannelOptions(
-        GcpFallbackOpenTelemetry fallbackTelemetry, int minFailedCalls) {
+        GcpFallbackOpenTelemetry fallbackTelemetry,
+        int minFailedCalls,
+        @Nullable GcpFallbackState fallbackState) {
       // Override default 1-minute period to 10ms for instant testing
       return GcpFallbackChannelOptions.newBuilder()
-          .setPrimaryChannelName("directpath")
-          .setFallbackChannelName("cloudpath")
+          .setSharedState(fallbackState)
           .setMinFailedCalls(10)
           .setPeriod(Duration.ofMillis(5))
           .setGcpFallbackOpenTelemetry(fallbackTelemetry)
@@ -2925,11 +2957,12 @@ public class GapicSpannerRpcTest {
 
     @Override
     GcpFallbackChannelOptions createFallbackChannelOptions(
-        GcpFallbackOpenTelemetry fallbackTelemetry, int minFailedCalls) {
+        GcpFallbackOpenTelemetry fallbackTelemetry,
+        int minFailedCalls,
+        @Nullable GcpFallbackState fallbackState) {
       // Override default 1-minute period to 10ms for instant testing
       return GcpFallbackChannelOptions.newBuilder()
-          .setPrimaryChannelName("directpath")
-          .setFallbackChannelName("cloudpath")
+          .setSharedState(fallbackState)
           .setMinFailedCalls(1)
           .setPeriod(Duration.ofMillis(5))
           .setGcpFallbackOpenTelemetry(fallbackTelemetry)
