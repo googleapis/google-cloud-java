@@ -1387,6 +1387,99 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void idTokenWithAudience_bindIdTokenFalse_requestsUnboundToken() throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    IdToken token =
+        credentials.idTokenWithAudience(
+            "https://foo.bar", Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE));
+
+    assertNotNull(token);
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    assertEquals("GET", transportFactory.transport.getRequestMethod());
+    assertTrue(request.getUrl().contains("audience=https://foo.bar"));
+    assertFalse(request.getUrl().contains("format=full"));
+    assertNull(request.getStreamingContent());
+  }
+
+  @Test
+  void idTokenWithAudience_bindIdTokenFalseWithFormatFull_requestsUnboundFullToken()
+      throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setIdToken(FULL_ID_TOKEN);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.idTokenWithAudience(
+        "https://foo.bar",
+        Arrays.asList(
+            IdTokenProvider.Option.FORMAT_FULL, IdTokenProvider.Option.BIND_ID_TOKEN_FALSE));
+
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    assertEquals("GET", transportFactory.transport.getRequestMethod());
+    assertTrue(request.getUrl().contains("format=full"));
+    assertNull(request.getStreamingContent());
+  }
+
+  @Test
+  void idTokenWithAudience_bindIdTokenFalse_skipsCertificateLookup() throws IOException {
+    // The certificate config points to a missing file, which fails a bound token request. With
+    // BIND_ID_TOKEN_FALSE the certificate is never looked up, so the unbound request succeeds.
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
+        tempDir.resolve("missing_config.json").toAbsolutePath().toString());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    AgentIdentityUtils.setTimeService(millis -> {});
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    assertThrows(IOException.class, () -> credentials.idTokenWithAudience("https://foo.bar", null));
+
+    IdToken token =
+        credentials.idTokenWithAudience(
+            "https://foo.bar", Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE));
+    assertNotNull(token);
+    assertEquals("GET", transportFactory.transport.getRequestMethod());
+  }
+
+  @Test
+  void idTokenCredentials_withBindIdTokenFalseOption_requestsUnboundToken() throws IOException {
+    setupCertAndKeyConfig();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    IdTokenCredentials idTokenCredentials =
+        IdTokenCredentials.newBuilder()
+            .setIdTokenProvider(credentials)
+            .setTargetAudience("https://foo.bar")
+            .setOptions(Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE))
+            .build();
+    idTokenCredentials.refresh();
+
+    MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
+    assertEquals("GET", transportFactory.transport.getRequestMethod());
+    assertTrue(request.getUrl().contains("audience=https://foo.bar"));
+    assertNull(request.getStreamingContent());
+  }
+
+  @Test
   void refreshAccessToken_boundToken404_throwsEndpointDoesNotSupportBoundTokensMessage()
       throws IOException {
     setupCertAndKeyConfig();

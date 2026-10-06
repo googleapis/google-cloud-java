@@ -490,6 +490,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
    *     <br>
    *     IdTokenProvider.Option.FORMAT_FULL<br>
    *     IdTokenProvider.Option.LICENSES_TRUE<br>
+   *     IdTokenProvider.Option.BIND_ID_TOKEN_FALSE (request an ID token that is not bound to the
+   *     agent identity certificate)<br>
    *     If no options are set, the defaults are "&amp;format=standard&amp;licenses=false"
    * @throws IOException if the attempt to get an IdToken failed
    * @return IdToken object which includes the raw id_token, JsonWebSignature
@@ -497,7 +499,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
       throws IOException {
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
+    // Checked before getBoundTokenPayload() so an opted-out target skips the certificate lookup.
+    boolean bindIdToken =
+        options == null || !options.contains(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE);
+    String boundTokenPayload = bindIdToken ? AgentIdentityUtils.getBoundTokenPayload() : null;
     GenericUrl documentUrl = new GenericUrl(getIdentityDocumentUrl());
     if (boundTokenPayload != null) {
       documentUrl.set("format", "full");

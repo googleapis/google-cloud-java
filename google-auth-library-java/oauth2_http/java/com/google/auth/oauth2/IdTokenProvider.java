@@ -47,6 +47,7 @@ public interface IdTokenProvider {
    * <ul>
    *   <li>FORMAT_FULL
    *   <li>LICENSES_TRUE
+   *   <li>BIND_ID_TOKEN_FALSE
    * </ul>
    *
    * <br>
@@ -59,7 +60,22 @@ public interface IdTokenProvider {
   public enum Option {
     FORMAT_FULL("formatFull"),
     LICENSES_TRUE("licensesTrue"),
-    INCLUDE_EMAIL("includeEmail");
+    INCLUDE_EMAIL("includeEmail"),
+    /**
+     * Requests an ID token that is not bound to the workload's agent identity certificate.
+     *
+     * <p>When an agent identity certificate is available, {@link ComputeEngineCredentials} requests
+     * certificate-bound ID tokens by default. A bound ID token is only accepted by targets that
+     * authenticate the caller over mTLS with the same certificate. Pass this option for targets
+     * that are called over standard (non-mTLS) HTTPS, for example a Cloud Run service reached
+     * through its {@code *.run.app} URL or a custom domain.
+     *
+     * <p>If this option is not set, the library decides whether to bind the ID token; it is
+     * currently bound whenever an agent identity certificate is available and token binding is not
+     * disabled by {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}. Credential types that do not
+     * request bound ID tokens ignore this option.
+     */
+    BIND_ID_TOKEN_FALSE("bindIdTokenFalse");
 
     private final String option;
 
