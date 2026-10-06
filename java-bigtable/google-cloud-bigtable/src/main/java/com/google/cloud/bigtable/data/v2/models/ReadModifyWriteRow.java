@@ -19,6 +19,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRule;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.common.base.Preconditions;
@@ -153,6 +154,32 @@ public final class ReadModifyWriteRow implements Serializable {
 
     builder.addRules(rule);
     return this;
+  }
+
+  /**
+   * Internal representation of target.
+   *
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
+   */
+  @InternalApi
+  public TargetId getTargetId() {
+    return targetId;
+  }
+
+  /**
+   * Creates the {@link SessionReadModifyWriteRowRequest} protobuf used by the session-based data
+   * path.
+   *
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
+   */
+  @InternalApi
+  public SessionReadModifyWriteRowRequest toSessionProto() {
+    return SessionReadModifyWriteRowRequest.newBuilder()
+        .setKey(builder.getRowKey())
+        .addAllRules(builder.getRulesList())
+        .build();
   }
 
   @InternalApi

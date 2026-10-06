@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRule;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
@@ -239,5 +240,34 @@ public class ReadModifyWriteRowTest {
     assertThat(overriddenRequest.getAuthorizedViewName())
         .matches(NameUtil.formatAuthorizedViewName(projectId, instanceId, AUTHORIZED_VIEW_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
+
+  @Test
+  public void getTargetIdTest() {
+    ReadModifyWriteRow tableMutation = ReadModifyWriteRow.create(TABLE_ID, "fake-key");
+    assertThat(tableMutation.getTargetId()).isEqualTo(TABLE_ID);
+
+    AuthorizedViewId authorizedViewId = AuthorizedViewId.of(TABLE_ID, "fake-authorized-view");
+    ReadModifyWriteRow authViewMutation =
+        ReadModifyWriteRow.create(authorizedViewId, "fake-key");
+    assertThat(authViewMutation.getTargetId()).isEqualTo(authorizedViewId);
+  }
+
+  @Test
+  public void toSessionProtoTest() {
+    ReadModifyWriteRow mutation =
+        ReadModifyWriteRow.create(TABLE_ID, "fake-key")
+            .append("fake-family", "fake-qualifier", "fake-value")
+            .increment("fake-family", "fake-qualifier-str", 2);
+
+    ReadModifyWriteRowRequest proto = mutation.toProto(REQUEST_CONTEXT);
+
+    SessionReadModifyWriteRowRequest expected =
+        SessionReadModifyWriteRowRequest.newBuilder()
+            .setKey(ByteString.copyFromUtf8("fake-key"))
+            .addAllRules(proto.getRulesList())
+            .build();
+
+    assertThat(mutation.toSessionProto()).isEqualTo(expected);
   }
 }
