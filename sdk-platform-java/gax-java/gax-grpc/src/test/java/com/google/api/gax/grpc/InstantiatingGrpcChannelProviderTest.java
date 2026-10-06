@@ -1007,47 +1007,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     Truth.assertThat(provider.canUseDirectPath()).isFalse();
   }
 
-  @Test
-  public void getTransportChannel_dnsTarget_noRewrite() throws IOException, InterruptedException {
-    System.setProperty("os.name", "Not Linux");
-    EnvironmentProvider envProvider =
-        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
-    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
-        .thenReturn("false");
-    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
-    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
-        new java.util.concurrent.atomic.AtomicReference<>();
-    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
-        channelBuilder -> {
-          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
-          return channelBuilder;
-        };
-
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setCertificateBasedAccess(certificateBasedAccess)
-            .setAttemptDirectPath(false)
-            .setAttemptDirectPathXdsOverInterconnect(false)
-            .setCredentials(credentials)
-            .setEndpoint("dns:///localhost:8080")
-            .setEnvProvider(envProvider)
-            .setChannelConfigurator(channelConfigurator);
-
-    InstantiatingGrpcChannelProvider provider =
-        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
-
-    InstantiatingGrpcChannelProvider configuredProvider =
-        (InstantiatingGrpcChannelProvider)
-            provider
-                .withHeaders(Collections.<String, String>emptyMap())
-                .withEndpoint("dns:///localhost:8080");
-
-    TransportChannel transportChannel = configuredProvider.getTransportChannel();
-    transportChannel.shutdownNow();
-    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
-
-    Truth.assertThat(capturedTarget.get()).contains("dns:///localhost:8080");
-  }
 
   @Test
   public void getTransportChannel_storageTarget_withInterconnect()
@@ -1156,8 +1115,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
-            .setAttemptDirectPath(false)
-            .setAttemptDirectPathXdsOverInterconnect(false)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
             .setCredentials(credentials)
             .setEndpoint("google-c2p:///storage-direct.googleapis.com?force-xds")
             .setEnvProvider(envProvider)

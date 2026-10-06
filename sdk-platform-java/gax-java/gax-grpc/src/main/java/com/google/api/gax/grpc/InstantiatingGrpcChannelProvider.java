@@ -149,14 +149,14 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   private final java.time.@Nullable Duration keepAliveTimeout;
   private final @Nullable Boolean keepAliveWithoutCalls;
   private final ChannelPoolSettings channelPoolSettings;
-  @Nullable private final Credentials credentials;
-  @Nullable private final CallCredentials altsCallCredentials;
-  @Nullable private final CallCredentials mtlsS2ACallCredentials;
-  @Nullable private final ChannelPrimer channelPrimer;
-  @Nullable private final Boolean attemptDirectPath;
-  @Nullable private final Boolean attemptDirectPathXds;
-  @Nullable private final Boolean attemptDirectPathXdsOverInterconnect;
-  @Nullable private final Boolean allowNonDefaultServiceAccount;
+  private final @Nullable Credentials credentials;
+  private final @Nullable CallCredentials altsCallCredentials;
+  private final @Nullable CallCredentials mtlsS2ACallCredentials;
+  private final @Nullable ChannelPrimer channelPrimer;
+  private final @Nullable Boolean attemptDirectPath;
+  private final @Nullable Boolean attemptDirectPathXds;
+  private final @Nullable Boolean attemptDirectPathXdsOverInterconnect;
+  private final @Nullable Boolean allowNonDefaultServiceAccount;
   @VisibleForTesting final ImmutableMap<String, ?> directPathServiceConfig;
   private final @Nullable MtlsProvider mtlsProvider;
   private final CertificateBasedAccess certificateBasedAccess;
@@ -398,7 +398,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     } else if (needsEndpoint()) {
       throw new IllegalStateException("getTransportChannel() called when needsEndpoint() is true");
     } else {
-      validateDirectPathState();
+      logDirectPathMisconfig();
       return createChannel();
     }
   }
@@ -436,8 +436,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return Boolean.parseBoolean(directPathXdsEnv);
   }
 
-  @InternalApi
-  public boolean isAttemptDirectPathXdsOverInterconnect() {
+  private boolean isAttemptDirectPathXdsOverInterconnect() {
     return Boolean.TRUE.equals(attemptDirectPathXdsOverInterconnect);
   }
 
@@ -458,8 +457,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   // This method should be called once per client initialization, hence can not be called in the
   // builder or createSingleChannel, only in getTransportChannel which creates the first channel
   // for a client.
-  @InternalApi
-  public void validateDirectPathState() {
+  private void logDirectPathMisconfig() {
     Level level = isOnComputeEngine() ? Level.WARNING : Level.FINE;
 
     if (!isDirectPathEnabled()) {
@@ -471,9 +469,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             level,
             "Env var "
                 + DIRECT_PATH_ENV_ENABLE_XDS
-                + " was found and set to TRUE, but DirectPath was not enabled for this client. If"
-                + " this is intended for this client, please note that this is a misconfiguration"
-                + " and set the attemptDirectPath option as well.");
+                + " was found and set to TRUE, but DirectPath was not enabled for this client. If this is intended for "
+                + "this client, please note that this is a misconfiguration and set the attemptDirectPath option as well.");
       }
       // Case 2: Direct Path xDS was enabled via Builder. Direct Path Traffic Director must be set
       // (enabled with `setAttemptDirectPath(true)`) along with xDS.
@@ -481,9 +478,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       else if (isDirectPathXdsEnabledViaBuilderOption()) {
         LOG.log(
             level,
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
-                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
-                + " attemptDirectPathXds options.");
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
       }
     } else {
       // Case 3: DirectPath is enabled, but xDS is not.
@@ -685,8 +680,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
           // Fallback to plaintext connection to S2A.
           LOG.log(
               Level.INFO,
-              "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not"
-                  + " return a mtls address to reach S2A.");
+              "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return a mtls address to reach S2A.");
           s2aChannelCredentials = createPlaintextToS2AChannelCredentials(plaintextAddress);
           return s2aChannelCredentials;
         }
@@ -705,9 +699,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             // Fallback to plaintext-to-S2A connection on error.
             LOG.log(
                 Level.WARNING,
-                "Cannot establish an mTLS connection to S2A due to error creating MTLS to MDS"
-                    + " TlsChannelCredentials credentials, falling back to plaintext connection to"
-                    + " S2A: "
+                "Cannot establish an mTLS connection to S2A due to error creating MTLS to MDS TlsChannelCredentials credentials, falling back to plaintext connection to S2A: "
                     + ignore.getMessage());
             s2aChannelCredentials = createPlaintextToS2AChannelCredentials(plaintextAddress);
             return s2aChannelCredentials;
@@ -729,35 +721,64 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return s2aChannelCredentials;
   }
 
-  private ChannelCredentials getGoogleDefaultChannelCredentials() {
-    GoogleDefaultChannelCredentials.Builder builder = GoogleDefaultChannelCredentials.newBuilder();
-    if (credentials != null) {
-      builder.callCredentials(MoreCallCredentials.from(credentials));
-    }
-    if (altsCallCredentials != null) {
-      builder.altsCallCredentials(altsCallCredentials);
-    }
-    return builder.build();
-  }
-
   @InternalApi("For internal use by google-cloud-java clients only")
   public ManagedChannelBuilder<?> createChannelBuilder() throws IOException {
     ManagedChannelBuilder<?> builder;
-    boolean useDirectPathXds = false;
-    String resolvedTarget;
 
-    // If the endpoint is already a custom URI scheme target (e.g. google-c2p:///), use it directly.
-    if (endpoint.contains(":///")) {
-      ChannelCredentials channelCreds = getGoogleDefaultChannelCredentials();
-      builder = Grpc.newChannelBuilder(endpoint, channelCreds);
-      resolvedTarget = endpoint;
-      if (endpoint.startsWith("google-c2p:///")) {
-        useDirectPathXds = true;
-        // Set default keepAliveTime and keepAliveTimeout when directpath environment is enabled.
-        // Will be overridden by user defined values if any.
-        builder.keepAliveTime(DIRECT_PATH_KEEP_ALIVE_TIME_SECONDS, TimeUnit.SECONDS);
-        builder.keepAliveTimeout(DIRECT_PATH_KEEP_ALIVE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+    // Check DirectPath traffic.
+    boolean useDirectPathXds = false;
+    if (canUseDirectPath()) {
+      GoogleDefaultChannelCredentials.Builder credsBuilder =
+          GoogleDefaultChannelCredentials.newBuilder();
+      if (credentials != null) {
+        credsBuilder.callCredentials(MoreCallCredentials.from(credentials));
       }
+      if (altsCallCredentials != null) {
+        credsBuilder.altsCallCredentials(altsCallCredentials);
+      }
+      ChannelCredentials channelCreds = credsBuilder.build();
+      useDirectPathXds = isDirectPathXdsEnabled();
+      if (useDirectPathXds) {
+        // google-c2p: CloudToProd(C2P) Directpath. This scheme is defined in
+        // io.grpc.googleapis.GoogleCloudToProdNameResolverProvider.
+        // This resolver target must not have a port number.
+        String target;
+        String serviceAddress;
+        if (endpoint.startsWith("google-c2p:///")) {
+          target = endpoint;
+          int queryIdx = endpoint.indexOf('?');
+          serviceAddress =
+              queryIdx > 0
+                  ? endpoint.substring("google-c2p:///".length(), queryIdx)
+                  : endpoint.substring("google-c2p:///".length());
+        } else {
+          int colon = endpoint.lastIndexOf(':');
+          serviceAddress = colon >= 0 ? endpoint.substring(0, colon) : endpoint;
+          target = "google-c2p:///" + serviceAddress;
+          if (isAttemptDirectPathXdsOverInterconnect()) {
+            target += "?force-xds";
+          }
+        }
+        builder = Grpc.newChannelBuilder(target, channelCreds);
+        if (isAttemptDirectPathXdsOverInterconnect()
+            && serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+          builder.overrideAuthority(serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, "."));
+        }
+      } else {
+        int colon = endpoint.lastIndexOf(':');
+        if (colon < 0) {
+          throw new IllegalStateException(
+              "invalid endpoint - should have been validated: " + endpoint);
+        }
+        int port = Integer.parseInt(endpoint.substring(colon + 1));
+        String serviceAddress = endpoint.substring(0, colon);
+        builder = Grpc.newChannelBuilderForAddress(serviceAddress, port, channelCreds);
+        builder.defaultServiceConfig(directPathServiceConfig);
+      }
+      // Set default keepAliveTime and keepAliveTimeout when directpath environment is enabled.
+      // Will be overridden by user defined values if any.
+      builder.keepAliveTime(DIRECT_PATH_KEEP_ALIVE_TIME_SECONDS, TimeUnit.SECONDS);
+      builder.keepAliveTimeout(DIRECT_PATH_KEEP_ALIVE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     } else {
       int colon = endpoint.lastIndexOf(':');
       if (colon < 0) {
@@ -767,85 +788,53 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       int port = Integer.parseInt(endpoint.substring(colon + 1));
       String serviceAddress = endpoint.substring(0, colon);
 
-      // Check DirectPath traffic.
-      if (canUseDirectPath()) {
-        ChannelCredentials channelCreds = getGoogleDefaultChannelCredentials();
-        useDirectPathXds = isDirectPathXdsEnabled() || isAttemptDirectPathXdsOverInterconnect();
-        if (useDirectPathXds) {
-          // google-c2p: CloudToProd(C2P) Directpath. This scheme is defined in
-          // io.grpc.googleapis.GoogleCloudToProdNameResolverProvider.
-          // This resolver target must not have a port number.
-          String target = "google-c2p:///" + serviceAddress;
-          if (isAttemptDirectPathXdsOverInterconnect()) {
-            target += "?force-xds";
-          }
-          builder = Grpc.newChannelBuilder(target, channelCreds);
-          if (isAttemptDirectPathXdsOverInterconnect()
-              && serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
-            builder.overrideAuthority(serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, "."));
-          }
-          resolvedTarget = target;
-        } else {
-          builder = Grpc.newChannelBuilderForAddress(serviceAddress, port, channelCreds);
-          builder.defaultServiceConfig(directPathServiceConfig);
-          resolvedTarget = serviceAddress + ":" + port;
+      if (isDirectPathEnabled() || isAttemptDirectPathXdsOverInterconnect()) {
+        LOG.log(
+            Level.WARNING,
+            "DirectPath was requested but is not available. Falling back to CloudPath.");
+      }
+      String fallbackEndpoint = endpoint;
+      String fallbackMtlsEndpoint = mtlsEndpoint;
+      if (serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+        serviceAddress = serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
+        fallbackEndpoint = serviceAddress + ":" + port;
+        if (fallbackMtlsEndpoint != null
+            && fallbackMtlsEndpoint.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+          fallbackMtlsEndpoint =
+              fallbackMtlsEndpoint.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
         }
-        // Set default keepAliveTime and keepAliveTimeout when directpath environment is enabled.
-        // Will be overridden by user defined values if any.
-        builder.keepAliveTime(DIRECT_PATH_KEEP_ALIVE_TIME_SECONDS, TimeUnit.SECONDS);
-        builder.keepAliveTimeout(DIRECT_PATH_KEEP_ALIVE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+      }
+      ChannelCredentials channelCredentials;
+      try {
+        // Try and create credentials via DCA. See https://google.aip.dev/auth/4114.
+        channelCredentials = createMtlsChannelCredentials();
+      } catch (GeneralSecurityException e) {
+        throw new IOException(e);
+      }
+      if (channelCredentials != null) {
+        // Create the channel using channel credentials created via DCA.
+        builder = Grpc.newChannelBuilder(fallbackEndpoint, channelCredentials);
       } else {
-        if (isDirectPathEnabled() || isAttemptDirectPathXdsOverInterconnect()) {
-          LOG.log(
-              Level.WARNING,
-              "DirectPath was requested but is not available. Falling back to CloudPath.");
-        }
-        String fallbackEndpoint = endpoint;
-        String fallbackMtlsEndpoint = mtlsEndpoint;
-        if (serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
-          serviceAddress = serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
-          fallbackEndpoint = serviceAddress + ":" + port;
-          if (fallbackMtlsEndpoint != null
-              && fallbackMtlsEndpoint.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
-            fallbackMtlsEndpoint =
-                fallbackMtlsEndpoint.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
-          }
-        }
-        ChannelCredentials channelCredentials;
-        try {
-          // Try and create credentials via DCA. See https://google.aip.dev/auth/4114.
-          channelCredentials = createMtlsChannelCredentials();
-        } catch (GeneralSecurityException e) {
-          throw new IOException(e);
+        // Could not create channel credentials via DCA. In accordance with
+        // https://google.aip.dev/auth/4115, if credentials not available through
+        // DCA, try mTLS with credentials held by the S2A (Secure Session Agent).
+        if (useS2A) {
+          channelCredentials = createS2ASecuredChannelCredentials();
         }
         if (channelCredentials != null) {
-          // Create the channel using channel credentials created via DCA.
-          builder = Grpc.newChannelBuilder(fallbackEndpoint, channelCredentials);
-          resolvedTarget = fallbackEndpoint;
+          // Create the channel using S2A-secured channel credentials.
+          if (mtlsS2ACallCredentials != null) {
+            // Set {@code mtlsS2ACallCredentials} to be per-RPC call credentials,
+            // which will be used to fetch MTLS_S2A hard bound tokens from the metdata server.
+            channelCredentials =
+                CompositeChannelCredentials.create(channelCredentials, mtlsS2ACallCredentials);
+          }
+          // Connect to the MTLS endpoint when using S2A because S2A is used to perform an MTLS
+          // handshake.
+          builder = Grpc.newChannelBuilder(fallbackMtlsEndpoint, channelCredentials);
         } else {
-          // Could not create channel credentials via DCA. In accordance with
-          // https://google.aip.dev/auth/4115, if credentials not available through
-          // DCA, try mTLS with credentials held by the S2A (Secure Session Agent).
-          if (useS2A) {
-            channelCredentials = createS2ASecuredChannelCredentials();
-          }
-          if (channelCredentials != null) {
-            // Create the channel using S2A-secured channel credentials.
-            if (mtlsS2ACallCredentials != null) {
-              // Set {@code mtlsS2ACallCredentials} to be per-RPC call credentials,
-              // which will be used to fetch MTLS_S2A hard bound tokens from the metdata server.
-              channelCredentials =
-                  CompositeChannelCredentials.create(channelCredentials, mtlsS2ACallCredentials);
-            }
-            // Connect to the MTLS endpoint when using S2A because S2A is used to perform an MTLS
-            // handshake.
-            builder = Grpc.newChannelBuilder(fallbackMtlsEndpoint, channelCredentials);
-            resolvedTarget = fallbackMtlsEndpoint;
-          } else {
-            // Use default if we cannot initialize channel credentials via DCA or S2A.
-            builder = ManagedChannelBuilder.forAddress(serviceAddress, port);
-            resolvedTarget = serviceAddress + ":" + port;
-          }
+          // Use default if we cannot initialize channel credentials via DCA or S2A.
+          builder = ManagedChannelBuilder.forAddress(serviceAddress, port);
         }
       }
     }
@@ -854,7 +843,6 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       // See https://github.com/googleapis/gapic-generator/issues/2816
       builder.disableServiceConfigLookUp();
     }
-    LOG.log(Level.INFO, "Channel initialized with target {0}", resolvedTarget);
     return builder;
   }
 
@@ -1041,11 +1029,11 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     private @Nullable CallCredentials mtlsS2ACallCredentials;
     private @Nullable ChannelPrimer channelPrimer;
     private ChannelPoolSettings channelPoolSettings;
-    @Nullable private Boolean attemptDirectPath;
-    @Nullable private Boolean attemptDirectPathXds;
-    @Nullable private Boolean attemptDirectPathXdsOverInterconnect;
-    @Nullable private Boolean allowNonDefaultServiceAccount;
-    @Nullable private ImmutableMap<String, ?> directPathServiceConfig;
+    private @Nullable Boolean attemptDirectPath;
+    private @Nullable Boolean attemptDirectPathXds;
+    private @Nullable Boolean attemptDirectPathXdsOverInterconnect;
+    private @Nullable Boolean allowNonDefaultServiceAccount;
+    private @Nullable ImmutableMap<String, ?> directPathServiceConfig;
     private List<HardBoundTokenTypes> allowedHardBoundTokenTypes;
 
     private Builder() {
@@ -1488,8 +1476,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
                 "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
             LOG.log(
                 Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize."
-                    + " Falling back to non-mTLS channel.");
+                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
           }
         }
       }
@@ -1558,12 +1545,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     }
     int colon = endpoint.lastIndexOf(':');
     if (colon < 0) {
-      throw new IllegalArgumentException("invalid endpoint, expecting \"<host>:<port>\"");
+      throw new IllegalArgumentException(
+          String.format("invalid endpoint, expecting \"<host>:<port>\""));
     }
-    try {
-      Integer.parseInt(endpoint.substring(colon + 1));
-    } catch (NumberFormatException e) {
-      throw new IllegalArgumentException("invalid endpoint, expecting \"<host>:<port>\"", e);
-    }
+    Integer.parseInt(endpoint.substring(colon + 1));
   }
 }

@@ -91,7 +91,6 @@ public final class StorageOptionsBuilderTest {
     com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
         (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
 
-    assertThat(provider.isAttemptDirectPathXdsOverInterconnect()).isTrue();
     com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
         configurator = provider.toBuilder().getChannelConfigurator();
     if (configurator != null) {
