@@ -46,6 +46,10 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-health-v4</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-health-v4beta</artifactId>
+    </dependency>
     <!-- {x-generated-proto-dependencies-end} -->
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -93,6 +97,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-health-v4</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-health-v4beta</artifactId>
       <scope>test</scope>
     </dependency>
     <!-- {x-generated-grpc-dependencies-end} -->

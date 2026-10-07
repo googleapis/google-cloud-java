@@ -2220,6 +2220,7 @@ libraries:
     version: 0.8.0
     apis:
       - path: google/devicesandservices/health/v4
+      - path: google/devicesandservices/health/v4beta
     java:
       api_id_override: health.googleapis.com
       api_description_override: The Google Health API lets you view and manage health and fitness metrics and measurement data.
