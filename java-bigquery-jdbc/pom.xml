@@ -81,6 +81,7 @@
         <configuration>
             <ignoredUsedUndeclaredDependencies>
                 <ignoredUsedUndeclaredDependency>com.google.*:*</ignoredUsedUndeclaredDependency>
+                <ignoredUsedUndeclaredDependency>org.conscrypt:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>org.apache.arrow:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents.*:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
@@ -169,6 +170,9 @@
                     <relocation>
                       <pattern>io.grpc</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.io.grpc</shadedPattern>
+                      <excludes>
+                        <exclude>io.grpc.netty.shaded.**</exclude>
+                      </excludes>
                     </relocation>
                     <relocation>
                       <pattern>io.netty</pattern>

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.46.0
+version: v0.47.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -49,7 +49,7 @@ default:
       google/analytics: com.google.analytics
       google/maps: com.google.maps
       google/shopping: com.google.shopping
-    libraries_bom_version: 26.86.0
+    libraries_bom_version: 26.90.0
     min_java_version: 8
 libraries:
   - name: accessapproval
