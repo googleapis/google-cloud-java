@@ -39,9 +39,11 @@ import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -97,6 +99,25 @@ public class ITActionableErrorsLogging {
       logger.detachAppender(testAppender);
       testAppender.clearEvents();
     }
+  }
+
+  /**
+   * Polls asynchronously until an ERROR logging event is appended or timeout is reached.
+   *
+   * <p>Logging of operation failure in TraceFinisher occurs asynchronously on a background executor
+   * thread, so Awaitility is used to prevent test flakiness and race conditions.
+   *
+   * @return the first {@link ILoggingEvent} with ERROR level
+   */
+  private ILoggingEvent getErrorLoggingEvent() {
+    Awaitility.await()
+        .atMost(Duration.ofSeconds(5))
+        .until(() -> testAppender.events.stream().anyMatch(e -> e.getLevel() == Level.ERROR));
+    return testAppender.events.stream()
+        .filter(event -> event.getLevel() == Level.ERROR)
+        .findFirst()
+        .orElseThrow(
+            () -> new AssertionError("Expected an ERROR log event in: " + testAppender.events));
   }
 
   private Map<String, Object> getKvps(ILoggingEvent loggingEvent) {
@@ -182,14 +203,7 @@ public class ITActionableErrorsLogging {
       EchoRequest request = EchoRequest.newBuilder().build();
       assertThrows(ApiException.class, () -> mockHttpJsonClient.echo(request));
 
-      assertThat(testAppender.events.size()).isAtLeast(1);
-      ILoggingEvent loggingEvent =
-          testAppender.events.stream()
-              .filter(event -> event.getLevel() == Level.ERROR)
-              .findFirst()
-              .orElseThrow(
-                  () ->
-                      new AssertionError("Expected an ERROR log event in: " + testAppender.events));
+      ILoggingEvent loggingEvent = getErrorLoggingEvent();
       assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
 
       assertThat(loggingEvent.getMessage())
@@ -240,14 +254,7 @@ public class ITActionableErrorsLogging {
     EchoClient client = EchoClient.create(stub);
     try {
       assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
-      assertThat(testAppender.events.size()).isAtLeast(1);
-      ILoggingEvent loggingEvent =
-          testAppender.events.stream()
-              .filter(event -> event.getLevel() == Level.ERROR)
-              .findFirst()
-              .orElseThrow(
-                  () ->
-                      new AssertionError("Expected an ERROR log event in: " + testAppender.events));
+      ILoggingEvent loggingEvent = getErrorLoggingEvent();
       assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
       assertThat(loggingEvent.getMessage()).isNotEmpty();
       Map<String, Object> kvps = getKvps(loggingEvent);
@@ -263,13 +270,7 @@ public class ITActionableErrorsLogging {
     EchoRequest request = buildErrorRequest();
     assertThrows(ApiException.class, () -> grpcClient.echo(request));
 
-    assertThat(testAppender.events.size()).isAtLeast(1);
-    ILoggingEvent loggingEvent =
-        testAppender.events.stream()
-            .filter(event -> event.getLevel() == Level.ERROR)
-            .findFirst()
-            .orElseThrow(
-                () -> new AssertionError("Expected an ERROR log event in: " + testAppender.events));
+    ILoggingEvent loggingEvent = getErrorLoggingEvent();
     assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
     assertThat(loggingEvent.getMessage()).contains("This is a test error");
 
@@ -313,14 +314,7 @@ public class ITActionableErrorsLogging {
     EchoClient client = EchoClient.create(stub);
     try {
       assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
-      assertThat(testAppender.events.size()).isAtLeast(1);
-      ILoggingEvent loggingEvent =
-          testAppender.events.stream()
-              .filter(event -> event.getLevel() == Level.ERROR)
-              .findFirst()
-              .orElseThrow(
-                  () ->
-                      new AssertionError("Expected an ERROR log event in: " + testAppender.events));
+      ILoggingEvent loggingEvent = getErrorLoggingEvent();
       assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
       assertThat(loggingEvent.getMessage()).isNotEmpty();
       Map<String, Object> kvps = getKvps(loggingEvent);
