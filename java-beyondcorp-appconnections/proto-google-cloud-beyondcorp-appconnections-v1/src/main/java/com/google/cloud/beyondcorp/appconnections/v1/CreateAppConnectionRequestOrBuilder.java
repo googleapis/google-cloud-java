@@ -142,9 +142,9 @@ public interface CreateAppConnectionRequestOrBuilder
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
    *
-   * For example, consider a situation where you make an initial request and t
-   * he request times out. If you make the request again with the same request
-   * ID, the server can check if original operation with the same request ID
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
+   * ID, the server can check if the original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
    *
@@ -167,9 +167,9 @@ public interface CreateAppConnectionRequestOrBuilder
    * ignore the request if it has already been completed. The server will
    * guarantee that for at least 60 minutes since the first request.
    *
-   * For example, consider a situation where you make an initial request and t
-   * he request times out. If you make the request again with the same request
-   * ID, the server can check if original operation with the same request ID
+   * For example, consider a situation where you make an initial request and
+   * the request times out. If you make the request again with the same request
+   * ID, the server can check if the original operation with the same request ID
    * was received, and if so, will ignore the second request. This prevents
    * clients from accidentally creating duplicate commitments.
    *

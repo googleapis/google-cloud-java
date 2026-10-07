@@ -84,7 +84,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-   * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+   * attribute is optional and defaults to
+   * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
    * Indicates whether video ads are allowed for this slot, or if the decision
    * is deferred to alower-priority ad rule.
    * </pre>
@@ -105,7 +106,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-   * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+   * attribute is optional and defaults to
+   * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
    * Indicates whether video ads are allowed for this slot, or if the decision
    * is deferred to alower-priority ad rule.
    * </pre>
@@ -126,7 +128,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-   * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+   * attribute is optional and defaults to
+   * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
    * Indicates whether video ads are allowed for this slot, or if the decision
    * is deferred to alower-priority ad rule.
    * </pre>
@@ -218,7 +221,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The frequency type for video ads in this ad rule slot. This
    * attribute is required for mid-rolls, but if this is not a mid-roll, the
-   * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+   * value is set to
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
    * </pre>
    *
    * <code>
@@ -238,7 +242,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The frequency type for video ads in this ad rule slot. This
    * attribute is required for mid-rolls, but if this is not a mid-roll, the
-   * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+   * value is set to
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
    * </pre>
    *
    * <code>
@@ -258,7 +263,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The frequency type for video ads in this ad rule slot. This
    * attribute is required for mid-rolls, but if this is not a mid-roll, the
-   * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+   * value is set to
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
    * </pre>
    *
    * <code>
@@ -292,12 +298,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The mid-roll frequency of this ad rule slot for video ads. This
    * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-   * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-   * example, if this slot has a frequency type of
-   * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-   * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-   *
-   * seconds."
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+   * this value should be ignored. For example, if this slot has a frequency
+   * type of
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+   * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+   * 60 seconds."
    * </pre>
    *
    * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -316,12 +322,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The mid-roll frequency of this ad rule slot for video ads. This
    * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-   * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-   * example, if this slot has a frequency type of
-   * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-   * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-   *
-   * seconds."
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+   * this value should be ignored. For example, if this slot has a frequency
+   * type of
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+   * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+   * 60 seconds."
    * </pre>
    *
    * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -348,12 +354,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. The mid-roll frequency of this ad rule slot for video ads. This
    * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-   * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-   * example, if this slot has a frequency type of
-   * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-   * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-   *
-   * seconds."
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+   * this value should be ignored. For example, if this slot has a frequency
+   * type of
+   * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+   * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+   * 60 seconds."
    * </pre>
    *
    * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -382,7 +388,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-   * and defaults to [AdRuleSlotBumper.NONE][].
+   * and defaults to
+   * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
    * </pre>
    *
    * <code>
@@ -401,7 +408,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-   * and defaults to [AdRuleSlotBumper.NONE][].
+   * and defaults to
+   * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
    * </pre>
    *
    * <code>
@@ -420,7 +428,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-   * and defaults to [AdRuleSlotBumper.NONE][].
+   * and defaults to
+   * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
    * </pre>
    *
    * <code>
@@ -1153,7 +1162,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-     * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+     * attribute is optional and defaults to
+     * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
      * Indicates whether video ads are allowed for this slot, or if the decision
      * is deferred to alower-priority ad rule.
      * </pre>
@@ -1174,7 +1184,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-     * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+     * attribute is optional and defaults to
+     * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
      * Indicates whether video ads are allowed for this slot, or if the decision
      * is deferred to alower-priority ad rule.
      * </pre>
@@ -1195,7 +1206,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-     * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+     * attribute is optional and defaults to
+     * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
      * Indicates whether video ads are allowed for this slot, or if the decision
      * is deferred to alower-priority ad rule.
      * </pre>
@@ -1219,7 +1231,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-     * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+     * attribute is optional and defaults to
+     * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
      * Indicates whether video ads are allowed for this slot, or if the decision
      * is deferred to alower-priority ad rule.
      * </pre>
@@ -1245,7 +1258,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-     * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+     * attribute is optional and defaults to
+     * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
      * Indicates whether video ads are allowed for this slot, or if the decision
      * is deferred to alower-priority ad rule.
      * </pre>
@@ -1273,7 +1287,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBehavior for video ads for this slot. This
-     * attribute is optional and defaults to [AdRuleSlotBehavior.DEFER][].
+     * attribute is optional and defaults to
+     * [AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER][google.ads.admanager.v1.AdRuleSlotBehaviorEnum.AdRuleSlotBehavior.DEFER].
      * Indicates whether video ads are allowed for this slot, or if the decision
      * is deferred to alower-priority ad rule.
      * </pre>
@@ -1520,7 +1535,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The frequency type for video ads in this ad rule slot. This
      * attribute is required for mid-rolls, but if this is not a mid-roll, the
-     * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+     * value is set to
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
      * </pre>
      *
      * <code>
@@ -1540,7 +1556,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The frequency type for video ads in this ad rule slot. This
      * attribute is required for mid-rolls, but if this is not a mid-roll, the
-     * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+     * value is set to
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
      * </pre>
      *
      * <code>
@@ -1560,7 +1577,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The frequency type for video ads in this ad rule slot. This
      * attribute is required for mid-rolls, but if this is not a mid-roll, the
-     * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+     * value is set to
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
      * </pre>
      *
      * <code>
@@ -1583,7 +1601,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The frequency type for video ads in this ad rule slot. This
      * attribute is required for mid-rolls, but if this is not a mid-roll, the
-     * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+     * value is set to
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
      * </pre>
      *
      * <code>
@@ -1612,7 +1631,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The frequency type for video ads in this ad rule slot. This
      * attribute is required for mid-rolls, but if this is not a mid-roll, the
-     * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+     * value is set to
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
      * </pre>
      *
      * <code>
@@ -1641,7 +1661,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The frequency type for video ads in this ad rule slot. This
      * attribute is required for mid-rolls, but if this is not a mid-roll, the
-     * value is set to [AdRuleSlotMidrollFrequencyType.NONE][].
+     * value is set to
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE].
      * </pre>
      *
      * <code>
@@ -1665,12 +1686,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The mid-roll frequency of this ad rule slot for video ads. This
      * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-     * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-     * example, if this slot has a frequency type of
-     * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-     * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-     *
-     * seconds."
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+     * this value should be ignored. For example, if this slot has a frequency
+     * type of
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+     * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+     * 60 seconds."
      * </pre>
      *
      * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1688,12 +1709,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The mid-roll frequency of this ad rule slot for video ads. This
      * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-     * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-     * example, if this slot has a frequency type of
-     * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-     * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-     *
-     * seconds."
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+     * this value should be ignored. For example, if this slot has a frequency
+     * type of
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+     * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+     * 60 seconds."
      * </pre>
      *
      * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1719,12 +1740,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The mid-roll frequency of this ad rule slot for video ads. This
      * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-     * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-     * example, if this slot has a frequency type of
-     * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-     * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-     *
-     * seconds."
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+     * this value should be ignored. For example, if this slot has a frequency
+     * type of
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+     * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+     * 60 seconds."
      * </pre>
      *
      * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1750,12 +1771,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The mid-roll frequency of this ad rule slot for video ads. This
      * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-     * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-     * example, if this slot has a frequency type of
-     * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-     * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-     *
-     * seconds."
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+     * this value should be ignored. For example, if this slot has a frequency
+     * type of
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+     * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+     * 60 seconds."
      * </pre>
      *
      * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1780,12 +1801,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The mid-roll frequency of this ad rule slot for video ads. This
      * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-     * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-     * example, if this slot has a frequency type of
-     * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-     * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-     *
-     * seconds."
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+     * this value should be ignored. For example, if this slot has a frequency
+     * type of
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+     * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+     * 60 seconds."
      * </pre>
      *
      * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1806,12 +1827,12 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. The mid-roll frequency of this ad rule slot for video ads. This
      * attribute is required for mid-rolls, but if MidrollFrequencyType is set to
-     * [AdRuleSlotMidrollFrequencyType.NONE][], this value should be ignored. For
-     * example, if this slot has a frequency type of
-     * [AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][] and
-     * # videoMidrollFrequency = "60", this would mean "play a mid-roll every 60
-     *
-     * seconds."
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.NONE],
+     * this value should be ignored. For example, if this slot has a frequency
+     * type of
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.EVERY_N_SECONDS]
+     * and #videoMidrollFrequency = "60", this would mean "play a mid-roll every
+     * 60 seconds."
      * </pre>
      *
      * <code>optional string video_midroll_frequency = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -1838,7 +1859,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-     * and defaults to [AdRuleSlotBumper.NONE][].
+     * and defaults to
+     * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
      * </pre>
      *
      * <code>
@@ -1857,7 +1879,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-     * and defaults to [AdRuleSlotBumper.NONE][].
+     * and defaults to
+     * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
      * </pre>
      *
      * <code>
@@ -1876,7 +1899,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-     * and defaults to [AdRuleSlotBumper.NONE][].
+     * and defaults to
+     * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
      * </pre>
      *
      * <code>
@@ -1898,7 +1922,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-     * and defaults to [AdRuleSlotBumper.NONE][].
+     * and defaults to
+     * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
      * </pre>
      *
      * <code>
@@ -1921,7 +1946,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-     * and defaults to [AdRuleSlotBumper.NONE][].
+     * and defaults to
+     * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
      * </pre>
      *
      * <code>
@@ -1947,7 +1973,8 @@ public final class AdRuleSlot extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The AdRuleSlotBumper for this slot. This attribute is optional
-     * and defaults to [AdRuleSlotBumper.NONE][].
+     * and defaults to
+     * [AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE][google.ads.admanager.v1.AdRuleSlotBumperEnum.AdRuleSlotBumper.NONE].
      * </pre>
      *
      * <code>

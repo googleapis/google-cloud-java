@@ -16,6 +16,7 @@
 
 package com.google.cloud.apptopology.v1.stub;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
@@ -27,6 +28,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apptopology.v1.Domain;
+import com.google.cloud.apptopology.v1.ExploreSchemaRequest;
+import com.google.cloud.apptopology.v1.ExploreSchemaResponse;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyRequest;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyResponse;
 import com.google.cloud.apptopology.v1.GetDomainRequest;
@@ -83,6 +86,18 @@ public class GrpcAppTopologyStub extends AppTopologyStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<ExploreSchemaRequest, ExploreSchemaResponse>
+      exploreSchemaMethodDescriptor =
+          MethodDescriptor.<ExploreSchemaRequest, ExploreSchemaResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.apptopology.v1.AppTopology/ExploreSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExploreSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExploreSchemaResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetDomainRequest, Domain> getDomainMethodDescriptor =
       MethodDescriptor.<GetDomainRequest, Domain>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -128,6 +143,9 @@ public class GrpcAppTopologyStub extends AppTopologyStub {
           GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
       generateDiscoveredResourcesTopologyCallable;
   private final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable;
+  private final UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaCallable;
+  private final UnaryCallable<ExploreSchemaRequest, ExploreSchemaPagedResponse>
+      exploreSchemaPagedCallable;
   private final UnaryCallable<GetDomainRequest, Domain> getDomainCallable;
   private final UnaryCallable<ListDomainsRequest, ListDomainsResponse> listDomainsCallable;
   private final UnaryCallable<ListDomainsRequest, ListDomainsPagedResponse>
@@ -206,6 +224,17 @@ public class GrpcAppTopologyStub extends AppTopologyStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaTransportSettings =
+        GrpcCallSettings.<ExploreSchemaRequest, ExploreSchemaResponse>newBuilder()
+            .setMethodDescriptor(exploreSchemaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<GetDomainRequest, Domain> getDomainTransportSettings =
         GrpcCallSettings.<GetDomainRequest, Domain>newBuilder()
             .setMethodDescriptor(getDomainMethodDescriptor)
@@ -257,6 +286,12 @@ public class GrpcAppTopologyStub extends AppTopologyStub {
     this.getSchemaCallable =
         callableFactory.createUnaryCallable(
             getSchemaTransportSettings, settings.getSchemaSettings(), clientContext);
+    this.exploreSchemaCallable =
+        callableFactory.createUnaryCallable(
+            exploreSchemaTransportSettings, settings.exploreSchemaSettings(), clientContext);
+    this.exploreSchemaPagedCallable =
+        callableFactory.createPagedCallable(
+            exploreSchemaTransportSettings, settings.exploreSchemaSettings(), clientContext);
     this.getDomainCallable =
         callableFactory.createUnaryCallable(
             getDomainTransportSettings, settings.getDomainSettings(), clientContext);
@@ -294,6 +329,17 @@ public class GrpcAppTopologyStub extends AppTopologyStub {
   @Override
   public UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
     return getSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaCallable() {
+    return exploreSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExploreSchemaRequest, ExploreSchemaPagedResponse>
+      exploreSchemaPagedCallable() {
+    return exploreSchemaPagedCallable;
   }
 
   @Override

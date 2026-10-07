@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [BatchCreateCompanies][] method.
+ * Response object for `BatchCreateCompanies` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchCreateCompaniesResponse}
@@ -313,7 +313,7 @@ public final class BatchCreateCompaniesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response object for [BatchCreateCompanies][] method.
+   * Response object for `BatchCreateCompanies` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchCreateCompaniesResponse}

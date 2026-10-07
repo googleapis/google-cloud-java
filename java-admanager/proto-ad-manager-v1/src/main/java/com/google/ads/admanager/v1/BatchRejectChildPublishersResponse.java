@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response message for [BatchRejectChildPublishers][] method.
+ * Response message for `BatchRejectChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchRejectChildPublishersResponse}
@@ -225,7 +225,7 @@ public final class BatchRejectChildPublishersResponse extends com.google.protobu
    *
    *
    * <pre>
-   * Response message for [BatchRejectChildPublishers][] method.
+   * Response message for `BatchRejectChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchRejectChildPublishersResponse}
