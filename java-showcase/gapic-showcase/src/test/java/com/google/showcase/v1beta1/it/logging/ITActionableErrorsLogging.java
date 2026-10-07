@@ -183,7 +183,13 @@ public class ITActionableErrorsLogging {
       assertThrows(ApiException.class, () -> mockHttpJsonClient.echo(request));
 
       assertThat(testAppender.events.size()).isAtLeast(1);
-      ILoggingEvent loggingEvent = testAppender.events.get(testAppender.events.size() - 1);
+      ILoggingEvent loggingEvent =
+          testAppender.events.stream()
+              .filter(event -> event.getLevel() == Level.ERROR)
+              .findFirst()
+              .orElseThrow(
+                  () ->
+                      new AssertionError("Expected an ERROR log event in: " + testAppender.events));
       assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
 
       assertThat(loggingEvent.getMessage())
@@ -235,7 +241,13 @@ public class ITActionableErrorsLogging {
     try {
       assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
       assertThat(testAppender.events.size()).isAtLeast(1);
-      ILoggingEvent loggingEvent = testAppender.events.get(testAppender.events.size() - 1);
+      ILoggingEvent loggingEvent =
+          testAppender.events.stream()
+              .filter(event -> event.getLevel() == Level.ERROR)
+              .findFirst()
+              .orElseThrow(
+                  () ->
+                      new AssertionError("Expected an ERROR log event in: " + testAppender.events));
       assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
       assertThat(loggingEvent.getMessage()).isNotEmpty();
       Map<String, Object> kvps = getKvps(loggingEvent);
@@ -252,7 +264,12 @@ public class ITActionableErrorsLogging {
     assertThrows(ApiException.class, () -> grpcClient.echo(request));
 
     assertThat(testAppender.events.size()).isAtLeast(1);
-    ILoggingEvent loggingEvent = testAppender.events.get(testAppender.events.size() - 1);
+    ILoggingEvent loggingEvent =
+        testAppender.events.stream()
+            .filter(event -> event.getLevel() == Level.ERROR)
+            .findFirst()
+            .orElseThrow(
+                () -> new AssertionError("Expected an ERROR log event in: " + testAppender.events));
     assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
     assertThat(loggingEvent.getMessage()).contains("This is a test error");
 
@@ -297,7 +314,13 @@ public class ITActionableErrorsLogging {
     try {
       assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
       assertThat(testAppender.events.size()).isAtLeast(1);
-      ILoggingEvent loggingEvent = testAppender.events.get(testAppender.events.size() - 1);
+      ILoggingEvent loggingEvent =
+          testAppender.events.stream()
+              .filter(event -> event.getLevel() == Level.ERROR)
+              .findFirst()
+              .orElseThrow(
+                  () ->
+                      new AssertionError("Expected an ERROR log event in: " + testAppender.events));
       assertThat(loggingEvent.getLevel()).isEqualTo(Level.ERROR);
       assertThat(loggingEvent.getMessage()).isNotEmpty();
       Map<String, Object> kvps = getKvps(loggingEvent);
