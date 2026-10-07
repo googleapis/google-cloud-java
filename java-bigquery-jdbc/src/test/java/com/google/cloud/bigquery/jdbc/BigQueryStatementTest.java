@@ -1286,12 +1286,15 @@ public class BigQueryStatementTest {
     doReturn(1L).when(tableResultMock).getTotalRows();
     doReturn(ImmutableList.<FieldValueList>of()).when(tableResultMock).getValues();
     doReturn(StatementType.SELECT).when(tableResultMock).getStatementType();
-    doReturn(10485760L).when(tableResultMock).getTotalBytesProcessed();
-    doReturn(10485760L).when(tableResultMock).getTotalBytesBilled();
-    doReturn(320L).when(tableResultMock).getTotalSlotMs();
-    doReturn(false).when(tableResultMock).getCacheHit();
-    doReturn(expectedSessionInfo).when(tableResultMock).getSessionInfo();
-    Mockito.when(tableResultMock.extractQueryStatistics()).thenCallRealMethod();
+    QueryStatistics expectedStats = mock(QueryStatistics.class);
+    doReturn(10485760L).when(expectedStats).getTotalBytesProcessed();
+    doReturn(10485760L).when(expectedStats).getTotalBytesBilled();
+    doReturn(320L).when(expectedStats).getTotalSlotMs();
+    doReturn(false).when(expectedStats).getCacheHit();
+    doReturn(StatementType.SELECT).when(expectedStats).getStatementType();
+    doReturn(expectedSessionInfo).when(expectedStats).getSessionInfo();
+    doReturn(expectedSchema).when(expectedStats).getSchema();
+    doReturn(expectedStats).when(tableResultMock).extractQueryStatistics();
 
     doReturn(tableResultMock)
         .when(bigquery)
