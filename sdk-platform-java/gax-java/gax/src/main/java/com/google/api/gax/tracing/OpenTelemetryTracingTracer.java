@@ -39,6 +39,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -52,7 +53,9 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
-  private @Nullable Span attemptSpan;
+  private volatile @Nullable Span attemptSpan;
+  private final AtomicReference<io.opentelemetry.context.@Nullable Scope> scope =
+      new AtomicReference<>();
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -123,6 +126,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   @Override
+  @SuppressWarnings("MustBeClosedChecker")
   public void attemptStarted(Object request, int attemptNumber) {
     Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
 
@@ -146,6 +150,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
+    // Make the span active on the current thread so logs can capture the trace ID.
+    this.scope.set(attemptSpan.makeCurrent());
   }
 
   @Override
@@ -234,12 +240,20 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   private void endAttempt() {
-    if (attemptSpan == null) {
-      return;
-    }
+    Span currentSpan = this.attemptSpan;
+    this.attemptSpan = null;
 
-    attemptSpan.end();
-    attemptSpan = null;
+    io.opentelemetry.context.Scope currentScope = this.scope.getAndSet(null);
+    // Remove the span from the current thread before closing the span.
+    try {
+      if (currentScope != null) {
+        currentScope.close();
+      }
+    } finally {
+      if (currentSpan != null) {
+        currentSpan.end();
+      }
+    }
   }
 
   @Override
