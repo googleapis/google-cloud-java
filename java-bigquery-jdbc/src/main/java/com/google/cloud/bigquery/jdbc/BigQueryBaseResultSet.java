@@ -115,7 +115,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return queryStatistics;
   }
 
-  public void setQueryStatistics(QueryStatistics queryStatistics) {
+  protected void setQueryStatistics(QueryStatistics queryStatistics) {
     this.queryStatistics = queryStatistics;
   }
 
