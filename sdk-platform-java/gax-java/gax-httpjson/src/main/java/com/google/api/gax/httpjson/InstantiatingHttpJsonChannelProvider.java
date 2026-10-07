@@ -220,10 +220,11 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
       // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
       return builder;
     }
-    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
-    // key managers
-    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
-    // key exchange).
+    // NetHttpTransport.Builder.trustCertificates() in google-http-client initializes with the
+    // default SunX509 KeyManagerFactory (via SslUtils.getDefaultKeyManagerFactory()), which is not
+    // supported by Conscrypt. Explicitly initialize SSLContext with the Conscrypt provider so that
+    // the client certificate key managers and trust manager factory (TMF) are bound to Conscrypt's
+    // TLS implementation (supporting PQC key exchange).
     SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
     // The TrustManagerFactory must come from the same provider as the SSLContext. On TLS 1.3,
     // Conscrypt passes authType "GENERIC" to the trust manager, which the JDK (SunJSSE) PKIX

@@ -153,6 +153,7 @@ class InstantiatingHttpJsonChannelProviderTls13Test {
       } finally {
         response.disconnect();
       }
+      // execute() is synchronous so the server task is already done; timeout guards against hangs.
       assertThat(clientCertificatePresented.get(10, TimeUnit.SECONDS)).isTrue();
     } finally {
       serverSocket.close();
