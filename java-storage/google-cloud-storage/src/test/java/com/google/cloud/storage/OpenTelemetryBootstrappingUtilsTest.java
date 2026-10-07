@@ -22,6 +22,9 @@ import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
 import io.grpc.ManagedChannelBuilder;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
@@ -118,5 +121,59 @@ public final class OpenTelemetryBootstrappingUtilsTest {
     io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder returned =
         OpenTelemetryBootstrappingUtils.registerClientViews(builder);
     assertThat(returned).isSameInstanceAs(builder);
+  }
+
+  @Test
+  public void createClientMeterProvider_attachesApiAttribute() {
+    Attributes detectedAttributes = Attributes.empty();
+
+    try (SdkMeterProvider defaultProvider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true)) {
+      assertThat(defaultProvider.toString()).contains("api=\"grpc\"");
+    }
+
+    try (SdkMeterProvider grpcProvider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "grpc")) {
+      assertThat(grpcProvider.toString()).contains("api=\"grpc\"");
+    }
+
+    try (SdkMeterProvider jsonProvider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "json")) {
+      assertThat(jsonProvider.toString()).contains("api=\"json\"");
+    }
+
+    try (SdkMeterProvider nullApiProvider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            null)) {
+      assertThat(nullApiProvider.toString()).contains("api=\"grpc\"");
+    }
+
+    try (SdkMeterProvider legacyProvider =
+        OpenTelemetryBootstrappingUtils.createMeterProvider(
+            "monitoring.googleapis.com:443", "test-project", detectedAttributes, true)) {
+      assertThat(legacyProvider.toString()).contains("api=\"grpc\"");
+    }
   }
 }

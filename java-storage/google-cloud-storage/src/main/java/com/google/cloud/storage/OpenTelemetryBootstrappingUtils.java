@@ -223,6 +223,8 @@ final class OpenTelemetryBootstrappingUtils {
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED);
 
+  private static final String DEFAULT_API = "grpc";
+
   @VisibleForTesting
   static SdkMeterProvider createMeterProvider(
       String metricServiceEndpoint,
@@ -235,9 +237,14 @@ final class OpenTelemetryBootstrappingUtils {
         detectedAttributes,
         Duration.ofSeconds(60),
         shouldSuppressExceptions,
-        "grpc");
+        DEFAULT_API);
   }
 
+  /**
+   * Creates an {@link SdkMeterProvider} configured for the {@code storage.googleapis.com/Client}
+   * monitored resource with client metric views and Cloud Monitoring exporter, defaulting the
+   * {@code api} resource label to {@code "grpc"}.
+   */
   @VisibleForTesting
   static SdkMeterProvider createClientMeterProvider(
       String metricServiceEndpoint,
@@ -251,9 +258,23 @@ final class OpenTelemetryBootstrappingUtils {
         detectedAttributes,
         metricInterval,
         shouldSuppressExceptions,
-        "storage");
+        DEFAULT_API);
   }
 
+  /**
+   * Creates an {@link SdkMeterProvider} configured for the {@code storage.googleapis.com/Client}
+   * monitored resource with client metric views and Cloud Monitoring exporter.
+   *
+   * @param metricServiceEndpoint the Cloud Monitoring service endpoint to export metrics to
+   * @param projectIdToUse the GCP project ID to associate with the monitored resource
+   * @param detectedAttributes environment-detected resource attributes
+   * @param metricInterval export interval for the periodic metric reader
+   * @param shouldSuppressExceptions whether exporter exceptions should be suppressed
+   * @param api the transport/API protocol distinguishing the client in Cloud Monitoring (e.g.,
+   *     {@code "grpc"} for gRPC transport or {@code "json"} for HTTP/JSON transport). Defaults to
+   *     {@code "grpc"} if null.
+   * @return the configured {@link SdkMeterProvider}
+   */
   @VisibleForTesting
   static SdkMeterProvider createClientMeterProvider(
       String metricServiceEndpoint,
@@ -261,7 +282,7 @@ final class OpenTelemetryBootstrappingUtils {
       Attributes detectedAttributes,
       Duration metricInterval,
       boolean shouldSuppressExceptions,
-      String api) {
+      @Nullable String api) {
 
     MonitoredResourceDescription monitoredResourceDescription =
         new MonitoredResourceDescription(
@@ -315,7 +336,7 @@ final class OpenTelemetryBootstrappingUtils {
             .put("gcp.resource_type", "storage.googleapis.com/Client")
             .put("project_id", projectIdToUse)
             .put("instance_id", UUID.randomUUID().toString())
-            .put("api", api != null ? api : "storage");
+            .put("api", api != null ? api : DEFAULT_API);
     String detectedLocation = detectedAttributes.get(AttributeKey.stringKey("cloud.region"));
     if (detectedLocation != null) {
       attributesBuilder.put("location", detectedLocation);
