@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionAutoscalers API.
  *
+ * <p>This client uses RegionAutoscalers version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -700,7 +702,6 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Autoscaler element : regionAutoscalersClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -736,7 +737,6 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Autoscaler> future =
    *       regionAutoscalersClient.listPagedCallable().futureCall(request);
@@ -772,7 +772,6 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionAutoscalerList response = regionAutoscalersClient.listCallable().call(request);

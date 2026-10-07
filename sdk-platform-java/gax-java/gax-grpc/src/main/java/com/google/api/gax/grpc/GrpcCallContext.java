@@ -64,7 +64,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -413,7 +412,7 @@ public final class GrpcCallContext implements ApiCallContext {
   }
 
   @Override
-  public RetrySettings getRetrySettings() {
+  public @Nullable RetrySettings getRetrySettings() {
     return retrySettings;
   }
 
@@ -436,7 +435,7 @@ public final class GrpcCallContext implements ApiCallContext {
   }
 
   @Override
-  public Set<StatusCode.Code> getRetryableCodes() {
+  public @Nullable Set<StatusCode.Code> getRetryableCodes() {
     return retryableCodes;
   }
 
@@ -665,7 +664,6 @@ public final class GrpcCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  @Nonnull
   public ApiTracer getTracer() {
     ApiTracer tracer = callOptions.getOption(TRACER_KEY);
     if (tracer == null) {
@@ -676,7 +674,7 @@ public final class GrpcCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  public GrpcCallContext withTracer(@Nonnull ApiTracer tracer) {
+  public GrpcCallContext withTracer(ApiTracer tracer) {
     Preconditions.checkNotNull(tracer);
     return withCallOptions(callOptions.withOption(TRACER_KEY, tracer));
   }

@@ -78,6 +78,7 @@ public class HttpJsonSqlOperationsServiceStub extends SqlOperationsServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<SqlOperationsGetRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(fields, "location", request.getLocation());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -113,6 +114,7 @@ public class HttpJsonSqlOperationsServiceStub extends SqlOperationsServiceStub {
                             ProtoRestSerializer<SqlOperationsListRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "instance", request.getInstance());
+                            serializer.putQueryParam(fields, "location", request.getLocation());
                             serializer.putQueryParam(fields, "maxResults", request.getMaxResults());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -150,6 +152,7 @@ public class HttpJsonSqlOperationsServiceStub extends SqlOperationsServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SqlOperationsCancelRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "location", request.getLocation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

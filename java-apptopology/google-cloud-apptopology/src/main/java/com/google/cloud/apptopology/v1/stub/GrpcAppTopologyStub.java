@@ -1,0 +1,365 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.apptopology.v1.stub;
+
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.apptopology.v1.Domain;
+import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyRequest;
+import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyResponse;
+import com.google.cloud.apptopology.v1.GetDomainRequest;
+import com.google.cloud.apptopology.v1.GetSchemaRequest;
+import com.google.cloud.apptopology.v1.ListDomainsRequest;
+import com.google.cloud.apptopology.v1.ListDomainsResponse;
+import com.google.cloud.apptopology.v1.Schema;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the AppTopology service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@NullMarked
+@Generated("by gapic-generator-java")
+public class GrpcAppTopologyStub extends AppTopologyStub {
+  private static final MethodDescriptor<
+          GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
+      generateDiscoveredResourcesTopologyMethodDescriptor =
+          MethodDescriptor
+              .<GenerateDiscoveredResourcesTopologyRequest,
+                  GenerateDiscoveredResourcesTopologyResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.apptopology.v1.AppTopology/GenerateDiscoveredResourcesTopology")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateDiscoveredResourcesTopologyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateDiscoveredResourcesTopologyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetSchemaRequest, Schema> getSchemaMethodDescriptor =
+      MethodDescriptor.<GetSchemaRequest, Schema>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.apptopology.v1.AppTopology/GetSchema")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSchemaRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Schema.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetDomainRequest, Domain> getDomainMethodDescriptor =
+      MethodDescriptor.<GetDomainRequest, Domain>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.apptopology.v1.AppTopology/GetDomain")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetDomainRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Domain.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<ListDomainsRequest, ListDomainsResponse>
+      listDomainsMethodDescriptor =
+          MethodDescriptor.<ListDomainsRequest, ListDomainsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.apptopology.v1.AppTopology/ListDomains")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListDomainsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDomainsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
+      MethodDescriptor.<GetLocationRequest, Location>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.location.Locations/GetLocation")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private final UnaryCallable<
+          GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
+      generateDiscoveredResourcesTopologyCallable;
+  private final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable;
+  private final UnaryCallable<GetDomainRequest, Domain> getDomainCallable;
+  private final UnaryCallable<ListDomainsRequest, ListDomainsResponse> listDomainsCallable;
+  private final UnaryCallable<ListDomainsRequest, ListDomainsPagedResponse>
+      listDomainsPagedCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcAppTopologyStub create(AppTopologyStubSettings settings)
+      throws IOException {
+    return new GrpcAppTopologyStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcAppTopologyStub create(ClientContext clientContext) throws IOException {
+    return new GrpcAppTopologyStub(AppTopologyStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcAppTopologyStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcAppTopologyStub(
+        AppTopologyStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcAppTopologyStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcAppTopologyStub(AppTopologyStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcAppTopologyCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcAppTopologyStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcAppTopologyStub(
+      AppTopologyStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<
+            GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
+        generateDiscoveredResourcesTopologyTransportSettings =
+            GrpcCallSettings
+                .<GenerateDiscoveredResourcesTopologyRequest,
+                    GenerateDiscoveredResourcesTopologyResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateDiscoveredResourcesTopologyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetSchemaRequest, Schema> getSchemaTransportSettings =
+        GrpcCallSettings.<GetSchemaRequest, Schema>newBuilder()
+            .setMethodDescriptor(getSchemaMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetDomainRequest, Domain> getDomainTransportSettings =
+        GrpcCallSettings.<GetDomainRequest, Domain>newBuilder()
+            .setMethodDescriptor(getDomainMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListDomainsRequest, ListDomainsResponse> listDomainsTransportSettings =
+        GrpcCallSettings.<ListDomainsRequest, ListDomainsResponse>newBuilder()
+            .setMethodDescriptor(listDomainsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
+        GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+            .setMethodDescriptor(listLocationsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+
+    this.generateDiscoveredResourcesTopologyCallable =
+        callableFactory.createUnaryCallable(
+            generateDiscoveredResourcesTopologyTransportSettings,
+            settings.generateDiscoveredResourcesTopologySettings(),
+            clientContext);
+    this.getSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getSchemaTransportSettings, settings.getSchemaSettings(), clientContext);
+    this.getDomainCallable =
+        callableFactory.createUnaryCallable(
+            getDomainTransportSettings, settings.getDomainSettings(), clientContext);
+    this.listDomainsCallable =
+        callableFactory.createUnaryCallable(
+            listDomainsTransportSettings, settings.listDomainsSettings(), clientContext);
+    this.listDomainsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDomainsTransportSettings, settings.listDomainsSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<
+          GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
+      generateDiscoveredResourcesTopologyCallable() {
+    return generateDiscoveredResourcesTopologyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
+    return getSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDomainRequest, Domain> getDomainCallable() {
+    return getDomainCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDomainsRequest, ListDomainsResponse> listDomainsCallable() {
+    return listDomainsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDomainsRequest, ListDomainsPagedResponse> listDomainsPagedCallable() {
+    return listDomainsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

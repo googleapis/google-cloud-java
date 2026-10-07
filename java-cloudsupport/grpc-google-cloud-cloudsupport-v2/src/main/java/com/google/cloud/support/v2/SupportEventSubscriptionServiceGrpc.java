@@ -351,6 +351,58 @@ public final class SupportEventSubscriptionServiceGrpc {
     return getUndeleteSupportEventSubscriptionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest,
+          com.google.protobuf.Empty>
+      getExpungeSupportEventSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExpungeSupportEventSubscription",
+      requestType = com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest,
+          com.google.protobuf.Empty>
+      getExpungeSupportEventSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest,
+            com.google.protobuf.Empty>
+        getExpungeSupportEventSubscriptionMethod;
+    if ((getExpungeSupportEventSubscriptionMethod =
+            SupportEventSubscriptionServiceGrpc.getExpungeSupportEventSubscriptionMethod)
+        == null) {
+      synchronized (SupportEventSubscriptionServiceGrpc.class) {
+        if ((getExpungeSupportEventSubscriptionMethod =
+                SupportEventSubscriptionServiceGrpc.getExpungeSupportEventSubscriptionMethod)
+            == null) {
+          SupportEventSubscriptionServiceGrpc.getExpungeSupportEventSubscriptionMethod =
+              getExpungeSupportEventSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ExpungeSupportEventSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SupportEventSubscriptionServiceMethodDescriptorSupplier(
+                              "ExpungeSupportEventSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getExpungeSupportEventSubscriptionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SupportEventSubscriptionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SupportEventSubscriptionServiceStub> factory =
@@ -450,7 +502,7 @@ public final class SupportEventSubscriptionServiceGrpc {
      *
      *
      * <pre>
-     * Lists support event subscriptions.
+     * Lists support event subscriptions for an organization.
      * </pre>
      */
     default void listSupportEventSubscriptions(
@@ -505,6 +557,43 @@ public final class SupportEventSubscriptionServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUndeleteSupportEventSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Expunges a support event subscription.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * curl &#92;
+     *   --request POST &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.supportEventSubscriptions().expunge(
+     *     name="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    default void expungeSupportEventSubscription(
+        com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExpungeSupportEventSubscriptionMethod(), responseObserver);
     }
   }
 
@@ -583,7 +672,7 @@ public final class SupportEventSubscriptionServiceGrpc {
      *
      *
      * <pre>
-     * Lists support event subscriptions.
+     * Lists support event subscriptions for an organization.
      * </pre>
      */
     public void listSupportEventSubscriptions(
@@ -647,6 +736,45 @@ public final class SupportEventSubscriptionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Expunges a support event subscription.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * curl &#92;
+     *   --request POST &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.supportEventSubscriptions().expunge(
+     *     name="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public void expungeSupportEventSubscription(
+        com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExpungeSupportEventSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -701,7 +829,7 @@ public final class SupportEventSubscriptionServiceGrpc {
      *
      *
      * <pre>
-     * Lists support event subscriptions.
+     * Lists support event subscriptions for an organization.
      * </pre>
      */
     public com.google.cloud.support.v2.ListSupportEventSubscriptionsResponse
@@ -752,6 +880,43 @@ public final class SupportEventSubscriptionServiceGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteSupportEventSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Expunges a support event subscription.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * curl &#92;
+     *   --request POST &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.supportEventSubscriptions().expunge(
+     *     name="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.protobuf.Empty expungeSupportEventSubscription(
+        com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExpungeSupportEventSubscriptionMethod(), getCallOptions(), request);
     }
   }
 
@@ -806,7 +971,7 @@ public final class SupportEventSubscriptionServiceGrpc {
      *
      *
      * <pre>
-     * Lists support event subscriptions.
+     * Lists support event subscriptions for an organization.
      * </pre>
      */
     public com.google.cloud.support.v2.ListSupportEventSubscriptionsResponse
@@ -853,6 +1018,42 @@ public final class SupportEventSubscriptionServiceGrpc {
         com.google.cloud.support.v2.UndeleteSupportEventSubscriptionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUndeleteSupportEventSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Expunges a support event subscription.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * curl &#92;
+     *   --request POST &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.supportEventSubscriptions().expunge(
+     *     name="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.protobuf.Empty expungeSupportEventSubscription(
+        com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExpungeSupportEventSubscriptionMethod(), getCallOptions(), request);
     }
   }
 
@@ -912,7 +1113,7 @@ public final class SupportEventSubscriptionServiceGrpc {
      *
      *
      * <pre>
-     * Lists support event subscriptions.
+     * Lists support event subscriptions for an organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -971,6 +1172,44 @@ public final class SupportEventSubscriptionServiceGrpc {
           getChannel().newCall(getUndeleteSupportEventSubscriptionMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Expunges a support event subscription.
+     * EXAMPLES:
+     * cURL:
+     * ```shell
+     * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * curl &#92;
+     *   --request POST &#92;
+     *   --header "Authorization: Bearer $(gcloud auth print-access-token)" &#92;
+     *   "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge"
+     * ```
+     * Python:
+     * ```python
+     * import googleapiclient.discovery
+     * api_version = "v2"
+     * supportApiService = googleapiclient.discovery.build(
+     *     serviceName="cloudsupport",
+     *     version=api_version,
+     *     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+     * )
+     * request = supportApiService.supportEventSubscriptions().expunge(
+     *     name="organizations/123456789/supportEventSubscriptions/abcdef123456"
+     * )
+     * print(request.execute())
+     * ```
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        expungeSupportEventSubscription(
+            com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExpungeSupportEventSubscriptionMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_CREATE_SUPPORT_EVENT_SUBSCRIPTION = 0;
@@ -979,6 +1218,7 @@ public final class SupportEventSubscriptionServiceGrpc {
   private static final int METHODID_UPDATE_SUPPORT_EVENT_SUBSCRIPTION = 3;
   private static final int METHODID_DELETE_SUPPORT_EVENT_SUBSCRIPTION = 4;
   private static final int METHODID_UNDELETE_SUPPORT_EVENT_SUBSCRIPTION = 5;
+  private static final int METHODID_EXPUNGE_SUPPORT_EVENT_SUBSCRIPTION = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1033,6 +1273,11 @@ public final class SupportEventSubscriptionServiceGrpc {
               (com.google.cloud.support.v2.UndeleteSupportEventSubscriptionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.support.v2.SupportEventSubscription>)
                   responseObserver);
+          break;
+        case METHODID_EXPUNGE_SUPPORT_EVENT_SUBSCRIPTION:
+          serviceImpl.expungeSupportEventSubscription(
+              (com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1094,6 +1339,13 @@ public final class SupportEventSubscriptionServiceGrpc {
                     com.google.cloud.support.v2.UndeleteSupportEventSubscriptionRequest,
                     com.google.cloud.support.v2.SupportEventSubscription>(
                     service, METHODID_UNDELETE_SUPPORT_EVENT_SUBSCRIPTION)))
+        .addMethod(
+            getExpungeSupportEventSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_EXPUNGE_SUPPORT_EVENT_SUBSCRIPTION)))
         .build();
   }
 
@@ -1152,6 +1404,7 @@ public final class SupportEventSubscriptionServiceGrpc {
                       .addMethod(getUpdateSupportEventSubscriptionMethod())
                       .addMethod(getDeleteSupportEventSubscriptionMethod())
                       .addMethod(getUndeleteSupportEventSubscriptionMethod())
+                      .addMethod(getExpungeSupportEventSubscriptionMethod())
                       .build();
         }
       }

@@ -822,6 +822,7 @@ public class SqlInstancesServiceClientTest {
             .setNodeCount(1539922066)
             .addAllNodes(new ArrayList<DatabaseInstance.PoolNodeConfig>())
             .addAllDnsNames(new ArrayList<DnsNameMapping>())
+            .setDatabaseCenterIntegrationEnabled(BoolValue.newBuilder().build())
             .build();
     mockSqlInstancesService.addResponse(expectedResponse);
 

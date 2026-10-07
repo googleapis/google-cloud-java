@@ -70,6 +70,9 @@
             "PublishPrivateOffer": {
               "methods": ["publishPrivateOffer", "publishPrivateOffer", "publishPrivateOffer", "publishPrivateOfferCallable"]
             },
+            "ResolveAmendmentTarget": {
+              "methods": ["resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTarget", "resolveAmendmentTargetCallable"]
+            },
             "UpdatePrivateOffer": {
               "methods": ["updatePrivateOffer", "updatePrivateOffer", "updatePrivateOfferCallable"]
             },

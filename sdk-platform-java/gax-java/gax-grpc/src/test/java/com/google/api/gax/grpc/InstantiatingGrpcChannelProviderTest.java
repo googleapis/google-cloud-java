@@ -81,7 +81,7 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -560,8 +560,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(lbConfig.keySet()).containsExactly("pick_first");
   }
 
-  @Nullable
-  private static Map<String, ?> getAsObject(Map<String, ?> json, String key) {
+  private static @Nullable Map<String, ?> getAsObject(Map<String, ?> json, String key) {
     Object mapObject = json.get(key);
     if (mapObject == null) {
       return null;

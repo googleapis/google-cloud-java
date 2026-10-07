@@ -41,7 +41,6 @@ import com.google.common.base.Preconditions;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -175,7 +174,6 @@ public interface ApiCallContext extends RetryingContext {
    * events like retries.
    */
   @BetaApi("The surface for tracing is not stable yet and may change in the future")
-  @Nonnull
   ApiTracer getTracer();
 
   /**
@@ -187,7 +185,7 @@ public interface ApiCallContext extends RetryingContext {
    * @param tracer the {@link ApiTracer} to set.
    */
   @BetaApi("The surface for tracing is not stable yet and may change in the future")
-  ApiCallContext withTracer(@Nonnull ApiTracer tracer);
+  ApiCallContext withTracer(ApiTracer tracer);
 
   /**
    * Returns a new ApiCallContext with the given {@link RetrySettings} set.

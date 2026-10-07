@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/export_evaluated_data_items_config.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -30,7 +30,7 @@ public final class ExportEvaluatedDataItemsConfigProto extends com.google.protob
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
         /* minor= */ 33,
-        /* patch= */ 2,
+        /* patch= */ 6,
         /* suffix= */ "",
         "ExportEvaluatedDataItemsConfigProto");
   }

@@ -337,6 +337,7 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
     Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertEquals(request.getPlatformType(), actualRequest.getPlatformType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

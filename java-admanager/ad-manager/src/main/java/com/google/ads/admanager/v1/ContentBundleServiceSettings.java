@@ -102,6 +102,21 @@ public class ContentBundleServiceSettings extends ClientSettings<ContentBundleSe
     return ((ContentBundleServiceStubSettings) getStubSettings()).listContentBundlesSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchActivateContentBundles. */
+  public UnaryCallSettings<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesSettings() {
+    return ((ContentBundleServiceStubSettings) getStubSettings())
+        .batchActivateContentBundlesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateContentBundles. */
+  public UnaryCallSettings<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesSettings() {
+    return ((ContentBundleServiceStubSettings) getStubSettings())
+        .batchDeactivateContentBundlesSettings();
+  }
+
   public static final ContentBundleServiceSettings create(ContentBundleServiceStubSettings stub)
       throws IOException {
     return new ContentBundleServiceSettings.Builder(stub.toBuilder()).build();
@@ -211,6 +226,20 @@ public class ContentBundleServiceSettings extends ClientSettings<ContentBundleSe
             ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
         listContentBundlesSettings() {
       return getStubSettingsBuilder().listContentBundlesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateContentBundles. */
+    public UnaryCallSettings.Builder<
+            BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+        batchActivateContentBundlesSettings() {
+      return getStubSettingsBuilder().batchActivateContentBundlesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateContentBundles. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+        batchDeactivateContentBundlesSettings() {
+      return getStubSettingsBuilder().batchDeactivateContentBundlesSettings();
     }
 
     @Override

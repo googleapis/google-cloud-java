@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetContact</td>
- *      <td><p> API to retrieve a `Contact` object.</td>
+ *      <td><p> Retrieves a `Contact` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListContacts</td>
- *      <td><p> API to retrieve a list of `Contact` objects.</td>
+ *      <td><p> Lists `Contact` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateContact</td>
- *      <td><p> API to create a `Contact` object.</td>
+ *      <td><p> Creates a `Contact` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +124,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateContacts</td>
- *      <td><p> API to batch create `Contact` objects.</td>
+ *      <td><p> Creates `Contact` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +140,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateContact</td>
- *      <td><p> API to update a `Contact` object.</td>
+ *      <td><p> Updates a `Contact` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +158,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateContacts</td>
- *      <td><p> API to batch update `Contact` objects.</td>
+ *      <td><p> Batch updates `Contact` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -266,7 +266,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Contact` object.
+   * Retrieves a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -294,7 +294,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Contact` object.
+   * Retrieves a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -321,7 +321,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Contact` object.
+   * Retrieves a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -349,7 +349,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Contact` object.
+   * Retrieves a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -376,7 +376,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Contact` objects.
+   * Lists `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -408,7 +408,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Contact` objects.
+   * Lists `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -437,7 +437,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Contact` objects.
+   * Lists `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -472,7 +472,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Contact` objects.
+   * Lists `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -508,7 +508,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Contact` objects.
+   * Lists `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -549,7 +549,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Contact` object.
+   * Creates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -582,7 +582,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Contact` object.
+   * Creates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -612,7 +612,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Contact` object.
+   * Creates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -641,7 +641,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Contact` object.
+   * Creates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -669,7 +669,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Contact` objects.
+   * Creates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -706,7 +706,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Contact` objects.
+   * Creates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -740,7 +740,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Contact` objects.
+   * Creates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -769,7 +769,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Contact` objects.
+   * Creates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -799,7 +799,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Contact` object.
+   * Updates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -829,7 +829,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Contact` object.
+   * Updates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -858,7 +858,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Contact` object.
+   * Updates a `Contact` object.
    *
    * <p>Sample code:
    *
@@ -886,7 +886,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Contact` objects.
+   * Batch updates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -923,7 +923,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Contact` objects.
+   * Batch updates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -957,7 +957,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Contact` objects.
+   * Batch updates `Contact` objects.
    *
    * <p>Sample code:
    *
@@ -986,7 +986,7 @@ public class ContactServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Contact` objects.
+   * Batch updates `Contact` objects.
    *
    * <p>Sample code:
    *

@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -53,6 +54,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
+import com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
 import com.google.cloud.dataform.v1beta1.CommitWorkspaceChangesRequest;
@@ -69,6 +71,8 @@ import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
 import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
 import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
@@ -82,6 +86,8 @@ import com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffRequest;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest;
@@ -92,6 +98,8 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -160,6 +168,8 @@ import com.google.cloud.dataform.v1beta1.SearchFilesRequest;
 import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersRequest;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse;
 import com.google.cloud.dataform.v1beta1.TeamFolder;
 import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateFolderRequest;
@@ -1493,6 +1503,193 @@ public class HttpJsonDataformStub extends DataformStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<PullGitCommitsResponse>newBuilder()
                       .setDefaultInstance(PullGitCommitsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsMethodDescriptor =
+          ApiMethodDescriptor.<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/SyncWorkspaceRefs")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SyncWorkspaceRefsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*/workspaces/*}:syncWorkspaceRefs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncWorkspaceRefsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SyncWorkspaceRefsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SyncWorkspaceRefsResponse>newBuilder()
+                      .setDefaultInstance(SyncWorkspaceRefsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/FetchWorkspaceBranches")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchWorkspaceBranchesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*/workspaces/*}:fetchBranches",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchWorkspaceBranchesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchWorkspaceBranchesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilterValue());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchWorkspaceBranchesResponse>newBuilder()
+                      .setDefaultInstance(FetchWorkspaceBranchesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteBranchRequest, DeleteBranchResponse>
+      deleteBranchMethodDescriptor =
+          ApiMethodDescriptor.<DeleteBranchRequest, DeleteBranchResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/DeleteBranch")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteBranchRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*/workspaces/*}:deleteBranch",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBranchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteBranchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DeleteBranchResponse>newBuilder()
+                      .setDefaultInstance(DeleteBranchResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchMethodDescriptor =
+          ApiMethodDescriptor.<CheckoutWorkspaceBranchRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.dataform.v1beta1.Dataform/CheckoutWorkspaceBranch")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CheckoutWorkspaceBranchRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*/workspaces/*}:checkout",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CheckoutWorkspaceBranchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CheckoutWorkspaceBranchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.dataform.v1beta1.Dataform/FetchCurrentWorkspaceBranch")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchCurrentWorkspaceBranchRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/repositories/*/workspaces/*}:fetchCurrentBranch",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchCurrentWorkspaceBranchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchCurrentWorkspaceBranchRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchCurrentWorkspaceBranchResponse>newBuilder()
+                      .setDefaultInstance(FetchCurrentWorkspaceBranchResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -3140,6 +3337,18 @@ public class HttpJsonDataformStub extends DataformStub {
   private final UnaryCallable<InstallNpmPackagesRequest, InstallNpmPackagesResponse>
       installNpmPackagesCallable;
   private final UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable;
+  private final UnaryCallable<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsCallable;
+  private final UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesCallable;
+  private final UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesPagedCallable;
+  private final UnaryCallable<DeleteBranchRequest, DeleteBranchResponse> deleteBranchCallable;
+  private final UnaryCallable<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchCallable;
+  private final UnaryCallable<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchCallable;
   private final UnaryCallable<PushGitCommitsRequest, PushGitCommitsResponse> pushGitCommitsCallable;
   private final UnaryCallable<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
       fetchFileGitStatusesCallable;
@@ -3723,6 +3932,73 @@ public class HttpJsonDataformStub extends DataformStub {
         pullGitCommitsTransportSettings =
             HttpJsonCallSettings.<PullGitCommitsRequest, PullGitCommitsResponse>newBuilder()
                 .setMethodDescriptor(pullGitCommitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsTransportSettings =
+            HttpJsonCallSettings.<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>newBuilder()
+                .setMethodDescriptor(syncWorkspaceRefsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+        fetchWorkspaceBranchesTransportSettings =
+            HttpJsonCallSettings
+                .<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>newBuilder()
+                .setMethodDescriptor(fetchWorkspaceBranchesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchTransportSettings =
+        HttpJsonCallSettings.<DeleteBranchRequest, DeleteBranchResponse>newBuilder()
+            .setMethodDescriptor(deleteBranchMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchTransportSettings =
+            HttpJsonCallSettings.<CheckoutWorkspaceBranchRequest, Empty>newBuilder()
+                .setMethodDescriptor(checkoutWorkspaceBranchMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchTransportSettings =
+            HttpJsonCallSettings
+                .<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchCurrentWorkspaceBranchMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -4474,6 +4750,34 @@ public class HttpJsonDataformStub extends DataformStub {
     this.pullGitCommitsCallable =
         callableFactory.createUnaryCallable(
             pullGitCommitsTransportSettings, settings.pullGitCommitsSettings(), clientContext);
+    this.syncWorkspaceRefsCallable =
+        callableFactory.createUnaryCallable(
+            syncWorkspaceRefsTransportSettings,
+            settings.syncWorkspaceRefsSettings(),
+            clientContext);
+    this.fetchWorkspaceBranchesCallable =
+        callableFactory.createUnaryCallable(
+            fetchWorkspaceBranchesTransportSettings,
+            settings.fetchWorkspaceBranchesSettings(),
+            clientContext);
+    this.fetchWorkspaceBranchesPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchWorkspaceBranchesTransportSettings,
+            settings.fetchWorkspaceBranchesSettings(),
+            clientContext);
+    this.deleteBranchCallable =
+        callableFactory.createUnaryCallable(
+            deleteBranchTransportSettings, settings.deleteBranchSettings(), clientContext);
+    this.checkoutWorkspaceBranchCallable =
+        callableFactory.createUnaryCallable(
+            checkoutWorkspaceBranchTransportSettings,
+            settings.checkoutWorkspaceBranchSettings(),
+            clientContext);
+    this.fetchCurrentWorkspaceBranchCallable =
+        callableFactory.createUnaryCallable(
+            fetchCurrentWorkspaceBranchTransportSettings,
+            settings.fetchCurrentWorkspaceBranchSettings(),
+            clientContext);
     this.pushGitCommitsCallable =
         callableFactory.createUnaryCallable(
             pushGitCommitsTransportSettings, settings.pushGitCommitsSettings(), clientContext);
@@ -4733,6 +5037,11 @@ public class HttpJsonDataformStub extends DataformStub {
     methodDescriptors.add(deleteWorkspaceMethodDescriptor);
     methodDescriptors.add(installNpmPackagesMethodDescriptor);
     methodDescriptors.add(pullGitCommitsMethodDescriptor);
+    methodDescriptors.add(syncWorkspaceRefsMethodDescriptor);
+    methodDescriptors.add(fetchWorkspaceBranchesMethodDescriptor);
+    methodDescriptors.add(deleteBranchMethodDescriptor);
+    methodDescriptors.add(checkoutWorkspaceBranchMethodDescriptor);
+    methodDescriptors.add(fetchCurrentWorkspaceBranchMethodDescriptor);
     methodDescriptors.add(pushGitCommitsMethodDescriptor);
     methodDescriptors.add(fetchFileGitStatusesMethodDescriptor);
     methodDescriptors.add(fetchGitAheadBehindMethodDescriptor);
@@ -5047,6 +5356,40 @@ public class HttpJsonDataformStub extends DataformStub {
   @Override
   public UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsCallable() {
     return pullGitCommitsCallable;
+  }
+
+  @Override
+  public UnaryCallable<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsCallable() {
+    return syncWorkspaceRefsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesCallable() {
+    return fetchWorkspaceBranchesCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesPagedCallable() {
+    return fetchWorkspaceBranchesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBranchRequest, DeleteBranchResponse> deleteBranchCallable() {
+    return deleteBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<CheckoutWorkspaceBranchRequest, Empty> checkoutWorkspaceBranchCallable() {
+    return checkoutWorkspaceBranchCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchCallable() {
+    return fetchCurrentWorkspaceBranchCallable;
   }
 
   @Override

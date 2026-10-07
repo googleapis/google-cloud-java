@@ -18,10 +18,14 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
 
+import com.google.ads.admanager.v1.DefaultThirdPartyDataDeclaration;
+import com.google.ads.admanager.v1.GetDefaultThirdPartyDataDeclarationRequest;
 import com.google.ads.admanager.v1.GetNetworkRequest;
 import com.google.ads.admanager.v1.ListNetworksRequest;
 import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
+import com.google.ads.admanager.v1.ProvisionTestNetworkRequest;
+import com.google.ads.admanager.v1.UpdateNetworkRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -124,10 +128,129 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateNetworkRequest, Network>
+      updateNetworkMethodDescriptor =
+          ApiMethodDescriptor.<UpdateNetworkRequest, Network>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.NetworkService/UpdateNetwork")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateNetworkRequest>newBuilder()
+                      .setPath(
+                          "/v1/{network.name=networks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "network.name", request.getNetwork().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("network", request.getNetwork(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Network>newBuilder()
+                      .setDefaultInstance(Network.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ProvisionTestNetworkRequest, Network>
+      provisionTestNetworkMethodDescriptor =
+          ApiMethodDescriptor.<ProvisionTestNetworkRequest, Network>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.NetworkService/ProvisionTestNetwork")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ProvisionTestNetworkRequest>newBuilder()
+                      .setPath(
+                          "/v1/networks:provisionTestNetwork",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ProvisionTestNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ProvisionTestNetworkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Network>newBuilder()
+                      .setDefaultInstance(Network.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.NetworkService/GetDefaultThirdPartyDataDeclaration")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetDefaultThirdPartyDataDeclarationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=networks/*/defaultThirdPartyDataDeclaration}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDefaultThirdPartyDataDeclarationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetDefaultThirdPartyDataDeclarationRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DefaultThirdPartyDataDeclaration>newBuilder()
+                      .setDefaultInstance(DefaultThirdPartyDataDeclaration.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetNetworkRequest, Network> getNetworkCallable;
   private final UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable;
   private final UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse>
       listNetworksPagedCallable;
+  private final UnaryCallable<UpdateNetworkRequest, Network> updateNetworkCallable;
+  private final UnaryCallable<ProvisionTestNetworkRequest, Network> provisionTestNetworkCallable;
+  private final UnaryCallable<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -188,6 +311,39 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
             .setMethodDescriptor(listNetworksMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<UpdateNetworkRequest, Network> updateNetworkTransportSettings =
+        HttpJsonCallSettings.<UpdateNetworkRequest, Network>newBuilder()
+            .setMethodDescriptor(updateNetworkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("network.name", String.valueOf(request.getNetwork().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ProvisionTestNetworkRequest, Network>
+        provisionTestNetworkTransportSettings =
+            HttpJsonCallSettings.<ProvisionTestNetworkRequest, Network>newBuilder()
+                .setMethodDescriptor(provisionTestNetworkMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<
+            GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+        getDefaultThirdPartyDataDeclarationTransportSettings =
+            HttpJsonCallSettings
+                .<GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+                    newBuilder()
+                .setMethodDescriptor(getDefaultThirdPartyDataDeclarationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.getNetworkCallable =
         callableFactory.createUnaryCallable(
@@ -198,6 +354,19 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
     this.listNetworksPagedCallable =
         callableFactory.createPagedCallable(
             listNetworksTransportSettings, settings.listNetworksSettings(), clientContext);
+    this.updateNetworkCallable =
+        callableFactory.createUnaryCallable(
+            updateNetworkTransportSettings, settings.updateNetworkSettings(), clientContext);
+    this.provisionTestNetworkCallable =
+        callableFactory.createUnaryCallable(
+            provisionTestNetworkTransportSettings,
+            settings.provisionTestNetworkSettings(),
+            clientContext);
+    this.getDefaultThirdPartyDataDeclarationCallable =
+        callableFactory.createUnaryCallable(
+            getDefaultThirdPartyDataDeclarationTransportSettings,
+            settings.getDefaultThirdPartyDataDeclarationSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -208,6 +377,9 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getNetworkMethodDescriptor);
     methodDescriptors.add(listNetworksMethodDescriptor);
+    methodDescriptors.add(updateNetworkMethodDescriptor);
+    methodDescriptors.add(provisionTestNetworkMethodDescriptor);
+    methodDescriptors.add(getDefaultThirdPartyDataDeclarationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -224,6 +396,22 @@ public class HttpJsonNetworkServiceStub extends NetworkServiceStub {
   @Override
   public UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse> listNetworksPagedCallable() {
     return listNetworksPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateNetworkRequest, Network> updateNetworkCallable() {
+    return updateNetworkCallable;
+  }
+
+  @Override
+  public UnaryCallable<ProvisionTestNetworkRequest, Network> provisionTestNetworkCallable() {
+    return provisionTestNetworkCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationCallable() {
+    return getDefaultThirdPartyDataDeclarationCallable;
   }
 
   @Override

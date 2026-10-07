@@ -80,9 +80,10 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   private transient Method getExpirationTime;
   private transient Method signForApp;
   private transient Method getSignature;
-  private transient String account;
+  private transient @Nullable String account;
 
-  AppEngineCredentials(Collection<String> scopes, Collection<String> defaultScopes)
+  AppEngineCredentials(
+      @Nullable Collection<String> scopes, @Nullable Collection<String> defaultScopes)
       throws IOException {
     // Use defaultScopes only when scopes don't exist.
     if (scopes == null || scopes.isEmpty()) {
@@ -96,7 +97,7 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   }
 
   AppEngineCredentials(
-      Collection<String> scopes,
+      @Nullable Collection<String> scopes,
       @Nullable Collection<String> defaultScopes,
       AppEngineCredentials unscoped) {
     this.appIdentityService = unscoped.appIdentityService;
@@ -164,13 +165,13 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   }
 
   @Override
-  public GoogleCredentials createScoped(Collection<String> scopes) {
+  public GoogleCredentials createScoped(@Nullable Collection<String> scopes) {
     return new AppEngineCredentials(scopes, null, this);
   }
 
   @Override
   public GoogleCredentials createScoped(
-      Collection<String> scopes, Collection<String> defaultScopes) {
+      @Nullable Collection<String> scopes, @Nullable Collection<String> defaultScopes) {
     return new AppEngineCredentials(scopes, defaultScopes, this);
   }
 

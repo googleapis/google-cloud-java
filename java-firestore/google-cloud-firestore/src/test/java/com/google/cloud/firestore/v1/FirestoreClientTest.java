@@ -61,6 +61,7 @@ import com.google.firestore.v1.ListenRequest;
 import com.google.firestore.v1.ListenResponse;
 import com.google.firestore.v1.PartitionQueryRequest;
 import com.google.firestore.v1.PartitionQueryResponse;
+import com.google.firestore.v1.RequestOptions;
 import com.google.firestore.v1.RollbackRequest;
 import com.google.firestore.v1.RunAggregationQueryRequest;
 import com.google.firestore.v1.RunAggregationQueryResponse;
@@ -149,6 +150,7 @@ public class FirestoreClientTest {
         GetDocumentRequest.newBuilder()
             .setName("name3373707")
             .setMask(DocumentMask.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     Document actualResponse = client.getDocument(request);
@@ -162,6 +164,7 @@ public class FirestoreClientTest {
     Assert.assertEquals(request.getMask(), actualRequest.getMask());
     Assert.assertEquals(request.getTransaction(), actualRequest.getTransaction());
     Assert.assertEquals(request.getReadTime(), actualRequest.getReadTime());
+    Assert.assertEquals(request.getRequestOptions(), actualRequest.getRequestOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -178,6 +181,7 @@ public class FirestoreClientTest {
           GetDocumentRequest.newBuilder()
               .setName("name3373707")
               .setMask(DocumentMask.newBuilder().build())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.getDocument(request);
       Assert.fail("No exception raised");
@@ -205,6 +209,7 @@ public class FirestoreClientTest {
             .setOrderBy("orderBy-1207110587")
             .setMask(DocumentMask.newBuilder().build())
             .setShowMissing(true)
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     ListDocumentsPagedResponse pagedListResponse = client.listDocuments(request);
@@ -227,6 +232,7 @@ public class FirestoreClientTest {
     Assert.assertEquals(request.getTransaction(), actualRequest.getTransaction());
     Assert.assertEquals(request.getReadTime(), actualRequest.getReadTime());
     Assert.assertEquals(request.getShowMissing(), actualRequest.getShowMissing());
+    Assert.assertEquals(request.getRequestOptions(), actualRequest.getRequestOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -248,6 +254,7 @@ public class FirestoreClientTest {
               .setOrderBy("orderBy-1207110587")
               .setMask(DocumentMask.newBuilder().build())
               .setShowMissing(true)
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.listDocuments(request);
       Assert.fail("No exception raised");
@@ -347,6 +354,7 @@ public class FirestoreClientTest {
             .setDatabase("database1789464955")
             .addAllDocuments(new ArrayList<String>())
             .setMask(DocumentMask.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<BatchGetDocumentsResponse> responseObserver = new MockStreamObserver<>();
@@ -369,6 +377,7 @@ public class FirestoreClientTest {
             .setDatabase("database1789464955")
             .addAllDocuments(new ArrayList<String>())
             .setMask(DocumentMask.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<BatchGetDocumentsResponse> responseObserver = new MockStreamObserver<>();
@@ -517,6 +526,7 @@ public class FirestoreClientTest {
         RunQueryRequest.newBuilder()
             .setParent("parent-995424086")
             .setExplainOptions(ExplainOptions.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<RunQueryResponse> responseObserver = new MockStreamObserver<>();
@@ -537,6 +547,7 @@ public class FirestoreClientTest {
         RunQueryRequest.newBuilder()
             .setParent("parent-995424086")
             .setExplainOptions(ExplainOptions.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<RunQueryResponse> responseObserver = new MockStreamObserver<>();
@@ -568,6 +579,7 @@ public class FirestoreClientTest {
         ExecutePipelineRequest.newBuilder()
             .setDatabase("database1789464955")
             .setAutoCommitTransaction(true)
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<ExecutePipelineResponse> responseObserver = new MockStreamObserver<>();
@@ -589,6 +601,7 @@ public class FirestoreClientTest {
         ExecutePipelineRequest.newBuilder()
             .setDatabase("database1789464955")
             .setAutoCommitTransaction(true)
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<ExecutePipelineResponse> responseObserver = new MockStreamObserver<>();
@@ -621,6 +634,7 @@ public class FirestoreClientTest {
         RunAggregationQueryRequest.newBuilder()
             .setParent("parent-995424086")
             .setExplainOptions(ExplainOptions.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<RunAggregationQueryResponse> responseObserver = new MockStreamObserver<>();
@@ -642,6 +656,7 @@ public class FirestoreClientTest {
         RunAggregationQueryRequest.newBuilder()
             .setParent("parent-995424086")
             .setExplainOptions(ExplainOptions.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<RunAggregationQueryResponse> responseObserver = new MockStreamObserver<>();
@@ -676,6 +691,7 @@ public class FirestoreClientTest {
             .setPartitionCount(-1738969222)
             .setPageToken("pageToken873572522")
             .setPageSize(883849137)
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     PartitionQueryPagedResponse pagedListResponse = client.partitionQuery(request);
@@ -695,6 +711,7 @@ public class FirestoreClientTest {
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getReadTime(), actualRequest.getReadTime());
+    Assert.assertEquals(request.getRequestOptions(), actualRequest.getRequestOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -713,6 +730,7 @@ public class FirestoreClientTest {
               .setPartitionCount(-1738969222)
               .setPageToken("pageToken873572522")
               .setPageSize(883849137)
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.partitionQuery(request);
       Assert.fail("No exception raised");
@@ -738,6 +756,7 @@ public class FirestoreClientTest {
             .addAllWrites(new ArrayList<Write>())
             .setStreamToken(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<WriteResponse> responseObserver = new MockStreamObserver<>();
@@ -764,6 +783,7 @@ public class FirestoreClientTest {
             .addAllWrites(new ArrayList<Write>())
             .setStreamToken(ByteString.EMPTY)
             .putAllLabels(new HashMap<String, String>())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<WriteResponse> responseObserver = new MockStreamObserver<>();
@@ -791,6 +811,7 @@ public class FirestoreClientTest {
         ListenRequest.newBuilder()
             .setDatabase("database1789464955")
             .putAllLabels(new HashMap<String, String>())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<ListenResponse> responseObserver = new MockStreamObserver<>();
@@ -814,6 +835,7 @@ public class FirestoreClientTest {
         ListenRequest.newBuilder()
             .setDatabase("database1789464955")
             .putAllLabels(new HashMap<String, String>())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     MockStreamObserver<ListenResponse> responseObserver = new MockStreamObserver<>();
@@ -891,6 +913,7 @@ public class FirestoreClientTest {
             .setDatabase("database1789464955")
             .addAllWrites(new ArrayList<Write>())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     BatchWriteResponse actualResponse = client.batchWrite(request);
@@ -903,6 +926,7 @@ public class FirestoreClientTest {
     Assert.assertEquals(request.getDatabase(), actualRequest.getDatabase());
     Assert.assertEquals(request.getWritesList(), actualRequest.getWritesList());
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
+    Assert.assertEquals(request.getRequestOptions(), actualRequest.getRequestOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -920,6 +944,7 @@ public class FirestoreClientTest {
               .setDatabase("database1789464955")
               .addAllWrites(new ArrayList<Write>())
               .putAllLabels(new HashMap<String, String>())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.batchWrite(request);
       Assert.fail("No exception raised");
@@ -946,6 +971,7 @@ public class FirestoreClientTest {
             .setDocumentId("documentId-814940266")
             .setDocument(Document.newBuilder().build())
             .setMask(DocumentMask.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     Document actualResponse = client.createDocument(request);
@@ -960,6 +986,7 @@ public class FirestoreClientTest {
     Assert.assertEquals(request.getDocumentId(), actualRequest.getDocumentId());
     Assert.assertEquals(request.getDocument(), actualRequest.getDocument());
     Assert.assertEquals(request.getMask(), actualRequest.getMask());
+    Assert.assertEquals(request.getRequestOptions(), actualRequest.getRequestOptions());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -979,6 +1006,7 @@ public class FirestoreClientTest {
               .setDocumentId("documentId-814940266")
               .setDocument(Document.newBuilder().build())
               .setMask(DocumentMask.newBuilder().build())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.createDocument(request);
       Assert.fail("No exception raised");

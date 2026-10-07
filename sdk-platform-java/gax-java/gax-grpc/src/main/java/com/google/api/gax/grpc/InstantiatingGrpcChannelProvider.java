@@ -266,9 +266,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return executor == null;
   }
 
-  @Nullable
   @Override
-  public Executor getExecutor() {
+  public @Nullable Executor getExecutor() {
     return executor;
   }
 
@@ -541,9 +540,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return endpoint.contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
   }
 
-  @Nullable
   @VisibleForTesting
-  ChannelCredentials createMtlsChannelCredentials() throws IOException, GeneralSecurityException {
+  @Nullable ChannelCredentials createMtlsChannelCredentials()
+      throws IOException, GeneralSecurityException {
     if (mtlsProvider == null) {
       return null;
     }
@@ -609,9 +608,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
    * @return {@link ChannelCredentials} to use to create an mtls connection between client and S2A
    * @throws IOException on error
    */
-  @Nullable
   @VisibleForTesting
-  ChannelCredentials createMtlsToS2AChannelCredentials(
+  @Nullable ChannelCredentials createMtlsToS2AChannelCredentials(
       File trustBundle, File privateKey, File certChain) throws IOException {
     if (trustBundle == null || privateKey == null || certChain == null) {
       return null;

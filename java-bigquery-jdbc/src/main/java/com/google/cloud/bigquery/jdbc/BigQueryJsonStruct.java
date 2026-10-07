@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import java.lang.reflect.Array;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -30,18 +31,20 @@ import java.util.List;
  */
 @InternalApi
 class BigQueryJsonStruct extends BigQueryBaseStruct {
-  private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
-      BigQueryTypeCoercionUtility.INSTANCE;
 
   private final FieldList schema;
   private final List<FieldValue> values;
 
   public BigQueryJsonStruct(FieldList schema, FieldValue values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
+    this(schema, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonStruct.class));
   }
 
-  public BigQueryJsonStruct(FieldList schema, FieldValue values, BigQueryJdbcResultSetLogger log) {
-    super(log);
+  public BigQueryJsonStruct(
+      FieldList schema,
+      FieldValue values,
+      boolean enableTimestampPicos,
+      BigQueryJdbcResultSetLogger log) {
+    super(enableTimestampPicos, log);
     this.schema = schema;
     this.values = (values == null || values.isNull()) ? null : values.getRecordValue();
   }
@@ -52,7 +55,7 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
   }
 
   @Override
-  public Object[] getAttributes() {
+  public Object[] getAttributes() throws SQLException {
     LOG.finestTrace("getAttributes");
     int size = schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
@@ -66,18 +69,29 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
     return attributes;
   }
 
-  private Object getValue(Field currentSchema, FieldValue currentValue) {
+  private Object getValue(Field currentSchema, FieldValue currentValue) throws SQLException {
     LOG.finestTrace("getValue");
-    if (isArray(currentSchema)) {
-      return new BigQueryJsonArray(currentSchema, currentValue, this.LOG.getJsonArrayLogger());
-    } else if (isStruct(currentSchema)) {
-      return new BigQueryJsonStruct(
-          currentSchema.getSubFields(), currentValue, this.LOG.getJsonStructLogger());
-    } else {
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              currentSchema.getType().getStandardType());
-      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue, this.LOG);
+    if (currentValue == null || currentValue.isNull()) {
+      return null;
     }
+    if (isArray(currentSchema)) {
+      return new BigQueryJsonArray(
+          currentSchema, currentValue, this.enableTimestampPicos, this.LOG.getJsonArrayLogger());
+    }
+    if (isStruct(currentSchema)) {
+      return new BigQueryJsonStruct(
+          currentSchema.getSubFields(),
+          currentValue,
+          this.enableTimestampPicos,
+          this.LOG.getJsonStructLogger());
+    }
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(currentSchema)) {
+      return BigQueryTemporalUtility.formatTimestampValue(currentValue.getStringValue(), true);
+    }
+    if (this.enableTimestampPicos && BigQueryJsonResultSet.isRangeTimestamp(currentSchema)) {
+      return BigQueryJsonResultSet.formatRangeTimestamp(currentValue);
+    }
+    return BigQueryTypeRegistry.convert(
+        currentValue, currentSchema.getType().getStandardType(), null);
   }
 }

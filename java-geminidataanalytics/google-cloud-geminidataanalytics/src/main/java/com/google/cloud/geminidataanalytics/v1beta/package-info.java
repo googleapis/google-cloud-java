@@ -19,6 +19,26 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= DataA2AServiceClient =======================
+ *
+ * <p>Service Description: DataA2AService defines the Agent-to-Agent (A2A) protocol service for
+ * Gemini Data Analytics.
+ *
+ * <p>Sample for DataA2AServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataA2AServiceClient dataA2AServiceClient = DataA2AServiceClient.create()) {
+ *   String tenant = "tenant-877336406";
+ *   A2AMessage message = A2AMessage.newBuilder().build();
+ *   SendMessageResponse response = dataA2AServiceClient.sendMessage(tenant, message);
+ * }
+ * }</pre>
+ *
  * <p>======================= DataAgentServiceClient =======================
  *
  * <p>Service Description: Service describing handlers for resources.

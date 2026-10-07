@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.auth.Credentials;
@@ -85,9 +86,25 @@ class ITGdch {
 
   @AfterEach
   void tearDown() throws InterruptedException {
-    if (client != null) {
-      client.close();
-      client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    try {
+      if (client != null) {
+        client.close();
+        client.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+      }
+    } finally {
+      if (context != null) {
+        // EchoStubSettings.newBuilder(context) configures a FixedTransportChannelProvider using the
+        // channel from ClientContext. FixedTransportChannelProvider disables auto-closing
+        // (shouldAutoClose() == false), so closing the client does not close the channel. We must
+        // manually shut down the background resources owned by ClientContext.
+        for (BackgroundResource resource : context.getBackgroundResources()) {
+          resource.shutdown();
+        }
+        for (BackgroundResource resource : context.getBackgroundResources()) {
+          resource.awaitTermination(
+              TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+        }
+      }
     }
   }
 

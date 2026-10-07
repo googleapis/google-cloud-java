@@ -40,6 +40,7 @@ public class AsyncGet {
           SqlOperationsGetRequest.newBuilder()
               .setOperation("operation1662702951")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       ApiFuture<Operation> future = sqlOperationsServiceClient.getCallable().futureCall(request);
       // Do something.

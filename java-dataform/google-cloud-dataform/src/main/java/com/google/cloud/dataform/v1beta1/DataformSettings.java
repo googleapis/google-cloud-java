@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -377,6 +378,38 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
   /** Returns the object with the settings used for calls to pullGitCommits. */
   public UnaryCallSettings<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsSettings() {
     return ((DataformStubSettings) getStubSettings()).pullGitCommitsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to syncWorkspaceRefs. */
+  public UnaryCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsSettings() {
+    return ((DataformStubSettings) getStubSettings()).syncWorkspaceRefsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchWorkspaceBranches. */
+  public PagedCallSettings<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesSettings() {
+    return ((DataformStubSettings) getStubSettings()).fetchWorkspaceBranchesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranch. */
+  public UnaryCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchSettings() {
+    return ((DataformStubSettings) getStubSettings()).deleteBranchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to checkoutWorkspaceBranch. */
+  public UnaryCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchSettings() {
+    return ((DataformStubSettings) getStubSettings()).checkoutWorkspaceBranchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchCurrentWorkspaceBranch. */
+  public UnaryCallSettings<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchSettings() {
+    return ((DataformStubSettings) getStubSettings()).fetchCurrentWorkspaceBranchSettings();
   }
 
   /** Returns the object with the settings used for calls to pushGitCommits. */
@@ -987,6 +1020,40 @@ public class DataformSettings extends ClientSettings<DataformSettings> {
     public UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsSettings() {
       return getStubSettingsBuilder().pullGitCommitsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to syncWorkspaceRefs. */
+    public UnaryCallSettings.Builder<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsSettings() {
+      return getStubSettingsBuilder().syncWorkspaceRefsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchWorkspaceBranches. */
+    public PagedCallSettings.Builder<
+            FetchWorkspaceBranchesRequest,
+            FetchWorkspaceBranchesResponse,
+            FetchWorkspaceBranchesPagedResponse>
+        fetchWorkspaceBranchesSettings() {
+      return getStubSettingsBuilder().fetchWorkspaceBranchesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranch. */
+    public UnaryCallSettings.Builder<DeleteBranchRequest, DeleteBranchResponse>
+        deleteBranchSettings() {
+      return getStubSettingsBuilder().deleteBranchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkoutWorkspaceBranch. */
+    public UnaryCallSettings.Builder<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchSettings() {
+      return getStubSettingsBuilder().checkoutWorkspaceBranchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchCurrentWorkspaceBranch. */
+    public UnaryCallSettings.Builder<
+            FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchSettings() {
+      return getStubSettingsBuilder().fetchCurrentWorkspaceBranchSettings();
     }
 
     /** Returns the builder for the settings used for calls to pushGitCommits. */

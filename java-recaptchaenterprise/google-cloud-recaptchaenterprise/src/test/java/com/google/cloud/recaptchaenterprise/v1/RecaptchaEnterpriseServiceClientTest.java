@@ -46,6 +46,8 @@ import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.AssessmentEnvironment;
 import com.google.recaptchaenterprise.v1.AssessmentName;
 import com.google.recaptchaenterprise.v1.ChallengeMetrics;
+import com.google.recaptchaenterprise.v1.ChallengeRuleGroup;
+import com.google.recaptchaenterprise.v1.ClientSettings;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
@@ -61,6 +63,7 @@ import com.google.recaptchaenterprise.v1.FraudSignals;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
@@ -78,6 +81,9 @@ import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
 import com.google.recaptchaenterprise.v1.PhoneFraudAssessment;
+import com.google.recaptchaenterprise.v1.Policy;
+import com.google.recaptchaenterprise.v1.PolicyEvaluation;
+import com.google.recaptchaenterprise.v1.PolicyName;
 import com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
@@ -97,6 +103,7 @@ import com.google.recaptchaenterprise.v1.TestingOptions;
 import com.google.recaptchaenterprise.v1.TokenProperties;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import com.google.recaptchaenterprise.v1.WafSettings;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -169,6 +176,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFraudSignals(FraudSignals.newBuilder().build())
             .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
             .setAssessmentEnvironment(AssessmentEnvironment.newBuilder().build())
+            .setPolicyEvaluation(PolicyEvaluation.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -222,6 +230,7 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setFraudSignals(FraudSignals.newBuilder().build())
             .setPhoneFraudAssessment(PhoneFraudAssessment.newBuilder().build())
             .setAssessmentEnvironment(AssessmentEnvironment.newBuilder().build())
+            .setPolicyEvaluation(PolicyEvaluation.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -1164,6 +1173,129 @@ public class RecaptchaEnterpriseServiceClientTest {
     try {
       String name = "name3373707";
       client.getMetrics(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+            .setClientSettings(ClientSettings.newBuilder().build())
+            .addAllChallengeRuleGroups(new ArrayList<ChallengeRuleGroup>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    PolicyName name = PolicyName.of("[PROJECT]", "[KEY]");
+
+    Policy actualResponse = client.getPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPolicyRequest actualRequest = ((GetPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      PolicyName name = PolicyName.of("[PROJECT]", "[KEY]");
+      client.getPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+            .setClientSettings(ClientSettings.newBuilder().build())
+            .addAllChallengeRuleGroups(new ArrayList<ChallengeRuleGroup>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Policy actualResponse = client.getPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetPolicyRequest actualRequest = ((GetPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updatePolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+            .setClientSettings(ClientSettings.newBuilder().build())
+            .addAllChallengeRuleGroups(new ArrayList<ChallengeRuleGroup>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    Policy policy = Policy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Policy actualResponse = client.updatePolicy(policy, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePolicyRequest actualRequest = ((UpdatePolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      Policy policy = Policy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePolicy(policy, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

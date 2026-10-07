@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -452,6 +453,158 @@ public class TargetingPresetServiceClientTest {
       String parent = "networks/network-5450";
       List<CreateTargetingPresetRequest> requests = new ArrayList<>();
       client.batchCreateTargetingPresets(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateTargetingPresetTest() throws Exception {
+    TargetingPreset expectedResponse =
+        TargetingPreset.newBuilder()
+            .setName(TargetingPresetName.of("[NETWORK_CODE]", "[TARGETING_PRESET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setTargeting(Targeting.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TargetingPreset targetingPreset =
+        TargetingPreset.newBuilder()
+            .setName(TargetingPresetName.of("[NETWORK_CODE]", "[TARGETING_PRESET]").toString())
+            .setDisplayName("displayName1714148973")
+            .setTargeting(Targeting.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    TargetingPreset actualResponse = client.updateTargetingPreset(targetingPreset, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateTargetingPresetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TargetingPreset targetingPreset =
+          TargetingPreset.newBuilder()
+              .setName(TargetingPresetName.of("[NETWORK_CODE]", "[TARGETING_PRESET]").toString())
+              .setDisplayName("displayName1714148973")
+              .setTargeting(Targeting.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateTargetingPreset(targetingPreset, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateTargetingPresetsTest() throws Exception {
+    BatchUpdateTargetingPresetsResponse expectedResponse =
+        BatchUpdateTargetingPresetsResponse.newBuilder()
+            .addAllTargetingPresets(new ArrayList<TargetingPreset>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateTargetingPresetRequest> requests = new ArrayList<>();
+
+    BatchUpdateTargetingPresetsResponse actualResponse =
+        client.batchUpdateTargetingPresets(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateTargetingPresetsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateTargetingPresetRequest> requests = new ArrayList<>();
+      client.batchUpdateTargetingPresets(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateTargetingPresetsTest2() throws Exception {
+    BatchUpdateTargetingPresetsResponse expectedResponse =
+        BatchUpdateTargetingPresetsResponse.newBuilder()
+            .addAllTargetingPresets(new ArrayList<TargetingPreset>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateTargetingPresetRequest> requests = new ArrayList<>();
+
+    BatchUpdateTargetingPresetsResponse actualResponse =
+        client.batchUpdateTargetingPresets(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateTargetingPresetsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateTargetingPresetRequest> requests = new ArrayList<>();
+      client.batchUpdateTargetingPresets(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

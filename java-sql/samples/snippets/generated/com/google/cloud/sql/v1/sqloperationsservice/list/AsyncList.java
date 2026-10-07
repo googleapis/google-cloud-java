@@ -42,6 +42,7 @@ public class AsyncList {
               .setMaxResults(1128457243)
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       ApiFuture<OperationsListResponse> future =
           sqlOperationsServiceClient.listCallable().futureCall(request);

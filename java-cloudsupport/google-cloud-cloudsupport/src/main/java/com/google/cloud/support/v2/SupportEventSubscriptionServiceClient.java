@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.stub.SupportEventSubscriptionServiceStub;
 import com.google.cloud.support.v2.stub.SupportEventSubscriptionServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
@@ -110,7 +111,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListSupportEventSubscriptions</td>
- *      <td><p> Lists support event subscriptions.</td>
+ *      <td><p> Lists support event subscriptions for an organization.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -176,6 +177,32 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> undeleteSupportEventSubscriptionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExpungeSupportEventSubscription</td>
+ *      <td><p> Expunges a support event subscription.
+ * <p>  EXAMPLES:
+ * <p>  cURL:
+ * <p>  ```shell support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456" curl \\\\   --request POST \\\\   --header "Authorization: Bearer $(gcloud auth print-access-token)" \\\\   "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge" ```
+ * <p>  Python:
+ * <p>  ```python import googleapiclient.discovery
+ * <p>  api_version = "v2" supportApiService = googleapiclient.discovery.build(     serviceName="cloudsupport",     version=api_version,     discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", )
+ * <p>  request = supportApiService.supportEventSubscriptions().expunge(     name="organizations/123456789/supportEventSubscriptions/abcdef123456" ) print(request.execute()) ```</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> expungeSupportEventSubscription(ExpungeSupportEventSubscriptionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> expungeSupportEventSubscription(SupportEventSubscriptionName name)
+ *           <li><p> expungeSupportEventSubscription(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> expungeSupportEventSubscriptionCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -569,7 +596,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists support event subscriptions.
+   * Lists support event subscriptions for an organization.
    *
    * <p>Sample code:
    *
@@ -606,7 +633,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists support event subscriptions.
+   * Lists support event subscriptions for an organization.
    *
    * <p>Sample code:
    *
@@ -641,7 +668,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists support event subscriptions.
+   * Lists support event subscriptions for an organization.
    *
    * <p>Sample code:
    *
@@ -680,7 +707,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists support event subscriptions.
+   * Lists support event subscriptions for an organization.
    *
    * <p>Sample code:
    *
@@ -719,7 +746,7 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists support event subscriptions.
+   * Lists support event subscriptions for an organization.
    *
    * <p>Sample code:
    *
@@ -1065,6 +1092,227 @@ public class SupportEventSubscriptionServiceClient implements BackgroundResource
   public final UnaryCallable<UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
       undeleteSupportEventSubscriptionCallable() {
     return stub.undeleteSupportEventSubscriptionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Expunges a support event subscription.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell
+   * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+   * curl \\\\ --request POST \\\\ --header "Authorization: Bearer $(gcloud auth
+   * print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.supportEventSubscriptions().expunge(
+   * name="organizations/123456789/supportEventSubscriptions/abcdef123456" )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SupportEventSubscriptionServiceClient supportEventSubscriptionServiceClient =
+   *     SupportEventSubscriptionServiceClient.create()) {
+   *   SupportEventSubscriptionName name =
+   *       SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]");
+   *   supportEventSubscriptionServiceClient.expungeSupportEventSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the support event subscription to expunge. Format:
+   *     organizations/{organization_id}/supportEventSubscriptions/{subscription_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void expungeSupportEventSubscription(@Nullable SupportEventSubscriptionName name) {
+    ExpungeSupportEventSubscriptionRequest request =
+        ExpungeSupportEventSubscriptionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    expungeSupportEventSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Expunges a support event subscription.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell
+   * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+   * curl \\\\ --request POST \\\\ --header "Authorization: Bearer $(gcloud auth
+   * print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.supportEventSubscriptions().expunge(
+   * name="organizations/123456789/supportEventSubscriptions/abcdef123456" )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SupportEventSubscriptionServiceClient supportEventSubscriptionServiceClient =
+   *     SupportEventSubscriptionServiceClient.create()) {
+   *   String name =
+   *       SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]")
+   *           .toString();
+   *   supportEventSubscriptionServiceClient.expungeSupportEventSubscription(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the support event subscription to expunge. Format:
+   *     organizations/{organization_id}/supportEventSubscriptions/{subscription_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void expungeSupportEventSubscription(String name) {
+    ExpungeSupportEventSubscriptionRequest request =
+        ExpungeSupportEventSubscriptionRequest.newBuilder().setName(name).build();
+    expungeSupportEventSubscription(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Expunges a support event subscription.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell
+   * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+   * curl \\\\ --request POST \\\\ --header "Authorization: Bearer $(gcloud auth
+   * print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.supportEventSubscriptions().expunge(
+   * name="organizations/123456789/supportEventSubscriptions/abcdef123456" )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SupportEventSubscriptionServiceClient supportEventSubscriptionServiceClient =
+   *     SupportEventSubscriptionServiceClient.create()) {
+   *   ExpungeSupportEventSubscriptionRequest request =
+   *       ExpungeSupportEventSubscriptionRequest.newBuilder()
+   *           .setName(
+   *               SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]")
+   *                   .toString())
+   *           .build();
+   *   supportEventSubscriptionServiceClient.expungeSupportEventSubscription(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void expungeSupportEventSubscription(
+      ExpungeSupportEventSubscriptionRequest request) {
+    expungeSupportEventSubscriptionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Expunges a support event subscription.
+   *
+   * <p>EXAMPLES:
+   *
+   * <p>cURL:
+   *
+   * <p>```shell
+   * support_event_subscription="organizations/123456789/supportEventSubscriptions/abcdef123456"
+   * curl \\\\ --request POST \\\\ --header "Authorization: Bearer $(gcloud auth
+   * print-access-token)" \\\\
+   * "https://cloudsupport.googleapis.com/v2/$support_event_subscription:expunge" ```
+   *
+   * <p>Python:
+   *
+   * <p>```python import googleapiclient.discovery
+   *
+   * <p>api_version = "v2" supportApiService = googleapiclient.discovery.build(
+   * serviceName="cloudsupport", version=api_version,
+   * discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}",
+   * )
+   *
+   * <p>request = supportApiService.supportEventSubscriptions().expunge(
+   * name="organizations/123456789/supportEventSubscriptions/abcdef123456" )
+   * print(request.execute()) ```
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SupportEventSubscriptionServiceClient supportEventSubscriptionServiceClient =
+   *     SupportEventSubscriptionServiceClient.create()) {
+   *   ExpungeSupportEventSubscriptionRequest request =
+   *       ExpungeSupportEventSubscriptionRequest.newBuilder()
+   *           .setName(
+   *               SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       supportEventSubscriptionServiceClient
+   *           .expungeSupportEventSubscriptionCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable() {
+    return stub.expungeSupportEventSubscriptionCallable();
   }
 
   @Override

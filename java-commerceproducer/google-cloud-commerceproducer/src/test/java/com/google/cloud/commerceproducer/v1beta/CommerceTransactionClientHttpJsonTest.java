@@ -198,6 +198,7 @@ public class CommerceTransactionClientHttpJsonTest {
         Service.newBuilder()
             .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
             .setTitle("title110371416")
+            .setDocumentRequirement(Service.DocumentRequirement.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -243,6 +244,7 @@ public class CommerceTransactionClientHttpJsonTest {
         Service.newBuilder()
             .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
             .setTitle("title110371416")
+            .setDocumentRequirement(Service.DocumentRequirement.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -498,6 +500,390 @@ public class CommerceTransactionClientHttpJsonTest {
     try {
       String name = "projects/project-1888/locations/location-1888/privateOffers/privateOffer-1888";
       client.getPrivateOffer(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest2() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest3() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest4() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest5() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest5() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest6() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest6() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest7() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest7() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest8() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest8() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

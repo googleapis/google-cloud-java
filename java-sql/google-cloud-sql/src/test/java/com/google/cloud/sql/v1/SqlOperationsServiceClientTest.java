@@ -111,6 +111,7 @@ public class SqlOperationsServiceClientTest {
         SqlOperationsGetRequest.newBuilder()
             .setOperation("operation1662702951")
             .setProject("project-309310695")
+            .setLocation("location1901043637")
             .build();
 
     Operation actualResponse = client.get(request);
@@ -122,6 +123,7 @@ public class SqlOperationsServiceClientTest {
 
     Assert.assertEquals(request.getOperation(), actualRequest.getOperation());
     Assert.assertEquals(request.getProject(), actualRequest.getProject());
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -138,6 +140,7 @@ public class SqlOperationsServiceClientTest {
           SqlOperationsGetRequest.newBuilder()
               .setOperation("operation1662702951")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       client.get(request);
       Assert.fail("No exception raised");
@@ -162,6 +165,7 @@ public class SqlOperationsServiceClientTest {
             .setMaxResults(1128457243)
             .setPageToken("pageToken873572522")
             .setProject("project-309310695")
+            .setLocation("location1901043637")
             .build();
 
     OperationsListResponse actualResponse = client.list(request);
@@ -175,6 +179,7 @@ public class SqlOperationsServiceClientTest {
     Assert.assertEquals(request.getMaxResults(), actualRequest.getMaxResults());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getProject(), actualRequest.getProject());
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -193,6 +198,7 @@ public class SqlOperationsServiceClientTest {
               .setMaxResults(1128457243)
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       client.list(request);
       Assert.fail("No exception raised");
@@ -210,6 +216,7 @@ public class SqlOperationsServiceClientTest {
         SqlOperationsCancelRequest.newBuilder()
             .setOperation("operation1662702951")
             .setProject("project-309310695")
+            .setLocation("location1901043637")
             .build();
 
     client.cancel(request);
@@ -220,6 +227,7 @@ public class SqlOperationsServiceClientTest {
 
     Assert.assertEquals(request.getOperation(), actualRequest.getOperation());
     Assert.assertEquals(request.getProject(), actualRequest.getProject());
+    Assert.assertEquals(request.getLocation(), actualRequest.getLocation());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -236,6 +244,7 @@ public class SqlOperationsServiceClientTest {
           SqlOperationsCancelRequest.newBuilder()
               .setOperation("operation1662702951")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       client.cancel(request);
       Assert.fail("No exception raised");

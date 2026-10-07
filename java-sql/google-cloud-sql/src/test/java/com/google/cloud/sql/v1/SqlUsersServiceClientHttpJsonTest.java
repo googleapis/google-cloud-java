@@ -161,6 +161,7 @@ public class SqlUsersServiceClientHttpJsonTest {
             .setIamEmail("iamEmail1687646791")
             .setPasswordPolicy(UserPasswordValidationPolicy.newBuilder().build())
             .addAllDatabaseRoles(new ArrayList<String>())
+            .addAllServerRoles(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -372,6 +373,8 @@ public class SqlUsersServiceClientHttpJsonTest {
             .setProject("project-6911")
             .addAllDatabaseRoles(new ArrayList<String>())
             .setRevokeExistingRoles(true)
+            .addAllServerRoles(new ArrayList<String>())
+            .setRevokeExistingServerRoles(true)
             .setBody(User.newBuilder().build())
             .build();
 
@@ -409,6 +412,8 @@ public class SqlUsersServiceClientHttpJsonTest {
               .setProject("project-6911")
               .addAllDatabaseRoles(new ArrayList<String>())
               .setRevokeExistingRoles(true)
+              .addAllServerRoles(new ArrayList<String>())
+              .setRevokeExistingServerRoles(true)
               .setBody(User.newBuilder().build())
               .build();
       client.update(request);

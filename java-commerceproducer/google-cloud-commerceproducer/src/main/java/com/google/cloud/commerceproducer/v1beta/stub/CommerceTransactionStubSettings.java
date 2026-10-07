@@ -77,6 +77,8 @@ import com.google.cloud.commerceproducer.v1beta.ListStandardOffersResponse;
 import com.google.cloud.commerceproducer.v1beta.PrivateOffer;
 import com.google.cloud.commerceproducer.v1beta.PrivateOfferDocument;
 import com.google.cloud.commerceproducer.v1beta.PublishPrivateOfferRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse;
 import com.google.cloud.commerceproducer.v1beta.Service;
 import com.google.cloud.commerceproducer.v1beta.Sku;
 import com.google.cloud.commerceproducer.v1beta.SkuGroup;
@@ -168,6 +170,8 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
           ListPrivateOffersRequest, ListPrivateOffersResponse, ListPrivateOffersPagedResponse>
       listPrivateOffersSettings;
   private final UnaryCallSettings<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferSettings;
+  private final UnaryCallSettings<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetSettings;
   private final UnaryCallSettings<CreatePrivateOfferRequest, PrivateOffer>
       createPrivateOfferSettings;
   private final UnaryCallSettings<UpdatePrivateOfferRequest, PrivateOffer>
@@ -623,6 +627,12 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
     return getPrivateOfferSettings;
   }
 
+  /** Returns the object with the settings used for calls to resolveAmendmentTarget. */
+  public UnaryCallSettings<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetSettings() {
+    return resolveAmendmentTargetSettings;
+  }
+
   /** Returns the object with the settings used for calls to createPrivateOffer. */
   public UnaryCallSettings<CreatePrivateOfferRequest, PrivateOffer> createPrivateOfferSettings() {
     return createPrivateOfferSettings;
@@ -841,6 +851,7 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
     getServiceSettings = settingsBuilder.getServiceSettings().build();
     listPrivateOffersSettings = settingsBuilder.listPrivateOffersSettings().build();
     getPrivateOfferSettings = settingsBuilder.getPrivateOfferSettings().build();
+    resolveAmendmentTargetSettings = settingsBuilder.resolveAmendmentTargetSettings().build();
     createPrivateOfferSettings = settingsBuilder.createPrivateOfferSettings().build();
     updatePrivateOfferSettings = settingsBuilder.updatePrivateOfferSettings().build();
     publishPrivateOfferSettings = settingsBuilder.publishPrivateOfferSettings().build();
@@ -886,6 +897,9 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
         listPrivateOffersSettings;
     private final UnaryCallSettings.Builder<GetPrivateOfferRequest, PrivateOffer>
         getPrivateOfferSettings;
+    private final UnaryCallSettings.Builder<
+            ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+        resolveAmendmentTargetSettings;
     private final UnaryCallSettings.Builder<CreatePrivateOfferRequest, PrivateOffer>
         createPrivateOfferSettings;
     private final UnaryCallSettings.Builder<UpdatePrivateOfferRequest, PrivateOffer>
@@ -981,6 +995,7 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
       getServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listPrivateOffersSettings = PagedCallSettings.newBuilder(LIST_PRIVATE_OFFERS_PAGE_STR_FACT);
       getPrivateOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resolveAmendmentTargetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createPrivateOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updatePrivateOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       publishPrivateOfferSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1007,6 +1022,7 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
               getServiceSettings,
               listPrivateOffersSettings,
               getPrivateOfferSettings,
+              resolveAmendmentTargetSettings,
               createPrivateOfferSettings,
               updatePrivateOfferSettings,
               publishPrivateOfferSettings,
@@ -1035,6 +1051,7 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
       getServiceSettings = settings.getServiceSettings.toBuilder();
       listPrivateOffersSettings = settings.listPrivateOffersSettings.toBuilder();
       getPrivateOfferSettings = settings.getPrivateOfferSettings.toBuilder();
+      resolveAmendmentTargetSettings = settings.resolveAmendmentTargetSettings.toBuilder();
       createPrivateOfferSettings = settings.createPrivateOfferSettings.toBuilder();
       updatePrivateOfferSettings = settings.updatePrivateOfferSettings.toBuilder();
       publishPrivateOfferSettings = settings.publishPrivateOfferSettings.toBuilder();
@@ -1060,6 +1077,7 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
               getServiceSettings,
               listPrivateOffersSettings,
               getPrivateOfferSettings,
+              resolveAmendmentTargetSettings,
               createPrivateOfferSettings,
               updatePrivateOfferSettings,
               publishPrivateOfferSettings,
@@ -1124,6 +1142,11 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
           .getPrivateOfferSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .resolveAmendmentTargetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .createPrivateOfferSettings()
@@ -1256,6 +1279,12 @@ public class CommerceTransactionStubSettings extends StubSettings<CommerceTransa
     public UnaryCallSettings.Builder<GetPrivateOfferRequest, PrivateOffer>
         getPrivateOfferSettings() {
       return getPrivateOfferSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to resolveAmendmentTarget. */
+    public UnaryCallSettings.Builder<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+        resolveAmendmentTargetSettings() {
+      return resolveAmendmentTargetSettings;
     }
 
     /** Returns the builder for the settings used for calls to createPrivateOffer. */

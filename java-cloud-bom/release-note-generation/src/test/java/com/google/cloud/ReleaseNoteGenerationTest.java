@@ -44,11 +44,11 @@ public class ReleaseNoteGenerationTest {
     ImmutableMap<String, String> versionLessCoordinatesToKey =
         ReleaseNoteGeneration.createVersionLessCoordinatesToKey(bom);
 
-    // google-cloud-apigee-registry represents the libraries from google-cloud-java
+    // google-cloud-accessapproval represents the libraries from google-cloud-java
     // google-cloud-bigtable represents the libraries from handwritten repositories
     Truth.assertThat(versionLessCoordinatesToKey)
         .containsAtLeast(
-            "com.google.cloud:google-cloud-apigee-registry", "0.6.0",
+            "com.google.cloud:google-cloud-accessapproval", "2.7.0",
             "com.google.cloud:google-cloud-bigtable", "2.16.0");
   }
 

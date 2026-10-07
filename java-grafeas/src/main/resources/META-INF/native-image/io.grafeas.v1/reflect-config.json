@@ -1746,6 +1746,15 @@
     "allPublicClasses": true
   },
   {
+    "name": "io.grafeas.v1.CVSS$AttackRequirements",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "io.grafeas.v1.CVSS$AttackVector",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
@@ -1765,6 +1774,15 @@
   },
   {
     "name": "io.grafeas.v1.CVSS$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "io.grafeas.v1.CVSS$ExploitMaturity",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,
     "queryAllDeclaredMethods": true,

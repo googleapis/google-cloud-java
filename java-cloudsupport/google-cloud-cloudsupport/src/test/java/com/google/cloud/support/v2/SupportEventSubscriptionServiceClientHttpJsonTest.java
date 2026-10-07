@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.support.v2.stub.HttpJsonSupportEventSubscriptionServiceStub;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
@@ -148,7 +149,7 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "parent-4715/parent-4715";
+    String parent = "organizations/organization-8287";
     SupportEventSubscription supportEventSubscription =
         SupportEventSubscription.newBuilder().build();
 
@@ -179,7 +180,7 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "parent-4715/parent-4715";
+      String parent = "organizations/organization-8287";
       SupportEventSubscription supportEventSubscription =
           SupportEventSubscription.newBuilder().build();
       client.createSupportEventSubscription(parent, supportEventSubscription);
@@ -257,7 +258,8 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "name-3007/name-3007/supportEventSubscriptions/supportEventSubscription-3007";
+    String name =
+        "organizations/organization-823/supportEventSubscriptions/supportEventSubscription-823";
 
     SupportEventSubscription actualResponse = client.getSupportEventSubscription(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -285,7 +287,8 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name = "name-3007/name-3007/supportEventSubscriptions/supportEventSubscription-3007";
+      String name =
+          "organizations/organization-823/supportEventSubscriptions/supportEventSubscription-823";
       client.getSupportEventSubscription(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -355,7 +358,7 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parent = "parent-4715/parent-4715";
+    String parent = "organizations/organization-8287";
 
     ListSupportEventSubscriptionsPagedResponse pagedListResponse =
         client.listSupportEventSubscriptions(parent);
@@ -389,7 +392,7 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String parent = "parent-4715/parent-4715";
+      String parent = "organizations/organization-8287";
       client.listSupportEventSubscriptions(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -539,7 +542,8 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String name = "name-3007/name-3007/supportEventSubscriptions/supportEventSubscription-3007";
+    String name =
+        "organizations/organization-823/supportEventSubscriptions/supportEventSubscription-823";
 
     SupportEventSubscription actualResponse = client.deleteSupportEventSubscription(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -567,7 +571,8 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      String name = "name-3007/name-3007/supportEventSubscriptions/supportEventSubscription-3007";
+      String name =
+          "organizations/organization-823/supportEventSubscriptions/supportEventSubscription-823";
       client.deleteSupportEventSubscription(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -630,6 +635,90 @@ public class SupportEventSubscriptionServiceClientHttpJsonTest {
                       .toString())
               .build();
       client.undeleteSupportEventSubscription(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SupportEventSubscriptionName name =
+        SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]");
+
+    client.expungeSupportEventSubscription(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SupportEventSubscriptionName name =
+          SupportEventSubscriptionName.of("[ORGANIZATION]", "[SUPPORT_EVENT_SUBSCRIPTION]");
+      client.expungeSupportEventSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "organizations/organization-823/supportEventSubscriptions/supportEventSubscription-823";
+
+    client.expungeSupportEventSubscription(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void expungeSupportEventSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "organizations/organization-823/supportEventSubscriptions/supportEventSubscription-823";
+      client.expungeSupportEventSubscription(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

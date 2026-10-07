@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 

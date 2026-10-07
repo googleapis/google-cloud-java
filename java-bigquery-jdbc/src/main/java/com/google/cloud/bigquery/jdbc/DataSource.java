@@ -58,6 +58,7 @@ public class DataSource implements javax.sql.DataSource {
   private Map<String, String> queryProperties;
   private String logLevel;
   private Boolean enableSession;
+  private Boolean enableTimestampPicos;
   private String logPath;
   private String gcpTelemetryProjectId;
   private String gcpTelemetryCredentials;
@@ -180,6 +181,12 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setEnableSession(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableTimestampPicos(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME)))
           .put(BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME, DataSource::setLogLevel)
           .put(BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME, DataSource::setLogPath)
           .put(
@@ -489,6 +496,11 @@ public class DataSource implements javax.sql.DataSource {
     if (this.enableSession != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME, String.valueOf(this.enableSession));
+    }
+    if (this.enableTimestampPicos != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME,
+          String.valueOf(this.enableTimestampPicos));
     }
     if (this.logLevel != null) {
       connectionProperties.setProperty(
@@ -933,6 +945,16 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setEnableSession(Boolean enableSession) {
     this.enableSession = enableSession;
+  }
+
+  public Boolean getEnableTimestampPicos() {
+    return enableTimestampPicos != null
+        ? enableTimestampPicos
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE;
+  }
+
+  public void setEnableTimestampPicos(Boolean enableTimestampPicos) {
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   public String getLogLevel() {

@@ -501,6 +501,8 @@ public class SqlUsersServiceClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .addAllDatabaseRoles(new ArrayList<String>())
    *           .setRevokeExistingRoles(true)
+   *           .addAllServerRoles(new ArrayList<String>())
+   *           .setRevokeExistingServerRoles(true)
    *           .setBody(User.newBuilder().build())
    *           .build();
    *   Operation response = sqlUsersServiceClient.update(request);
@@ -535,6 +537,8 @@ public class SqlUsersServiceClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .addAllDatabaseRoles(new ArrayList<String>())
    *           .setRevokeExistingRoles(true)
+   *           .addAllServerRoles(new ArrayList<String>())
+   *           .setRevokeExistingServerRoles(true)
    *           .setBody(User.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = sqlUsersServiceClient.updateCallable().futureCall(request);

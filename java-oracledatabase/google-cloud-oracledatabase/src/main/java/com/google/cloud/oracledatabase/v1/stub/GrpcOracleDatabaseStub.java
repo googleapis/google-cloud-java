@@ -60,6 +60,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
+import com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
 import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
@@ -92,6 +93,7 @@ import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
+import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
@@ -170,6 +172,7 @@ import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
 import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
@@ -594,6 +597,35 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FailoverAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseMethodDescriptor =
+          MethodDescriptor.<RefreshAutonomousDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/RefreshAutonomousDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RefreshAutonomousDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesMethodDescriptor =
+          MethodDescriptor
+              .<GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetAutonomousDatabaseRefreshableClones")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetAutonomousDatabaseRefreshableClonesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutonomousDatabaseRefreshableClones.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1373,6 +1405,14 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable;
+  private final OperationCallable<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable;
   private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse>
       listOdbNetworksCallable;
   private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>
@@ -1969,6 +2009,34 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         failoverAutonomousDatabaseTransportSettings =
             GrpcCallSettings.<FailoverAutonomousDatabaseRequest, Operation>newBuilder()
                 .setMethodDescriptor(failoverAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseTransportSettings =
+            GrpcCallSettings.<RefreshAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(refreshAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesTransportSettings =
+            GrpcCallSettings
+                .<GetAutonomousDatabaseRefreshableClonesRequest,
+                    AutonomousDatabaseRefreshableClones>
+                    newBuilder()
+                .setMethodDescriptor(getAutonomousDatabaseRefreshableClonesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2868,6 +2936,22 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.failoverAutonomousDatabaseOperationSettings(),
             clientContext,
             operationsStub);
+    this.refreshAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            refreshAutonomousDatabaseTransportSettings,
+            settings.refreshAutonomousDatabaseSettings(),
+            clientContext);
+    this.refreshAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            refreshAutonomousDatabaseTransportSettings,
+            settings.refreshAutonomousDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getAutonomousDatabaseRefreshableClonesCallable =
+        callableFactory.createUnaryCallable(
+            getAutonomousDatabaseRefreshableClonesTransportSettings,
+            settings.getAutonomousDatabaseRefreshableClonesSettings(),
+            clientContext);
     this.listOdbNetworksCallable =
         callableFactory.createUnaryCallable(
             listOdbNetworksTransportSettings, settings.listOdbNetworksSettings(), clientContext);
@@ -3629,6 +3713,25 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationCallable() {
     return failoverAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable() {
+    return refreshAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable() {
+    return refreshAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable() {
+    return getAutonomousDatabaseRefreshableClonesCallable;
   }
 
   @Override

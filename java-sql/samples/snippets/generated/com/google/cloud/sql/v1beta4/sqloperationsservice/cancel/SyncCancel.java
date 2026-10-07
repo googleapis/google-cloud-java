@@ -39,6 +39,7 @@ public class SyncCancel {
           SqlOperationsCancelRequest.newBuilder()
               .setOperation("operation1662702951")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       sqlOperationsServiceClient.cancel(request);
     }

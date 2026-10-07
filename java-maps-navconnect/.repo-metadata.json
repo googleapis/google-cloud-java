@@ -1,0 +1,15 @@
+{
+  "api_shortname": "navigationconnect",
+  "name_pretty": "Navigation Connect",
+  "product_documentation": "https://developers.google.com/maps/documentation/navigation/connect",
+  "api_description": "Navigation Connect API.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-navconnect/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-maps-navconnect",
+  "distribution_name": "com.google.maps:google-maps-navconnect",
+  "api_id": "navigationconnect.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}

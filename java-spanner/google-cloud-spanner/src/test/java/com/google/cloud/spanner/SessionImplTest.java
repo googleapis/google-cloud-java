@@ -71,6 +71,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.junit.Before;
@@ -817,21 +818,41 @@ public class SessionImplTest {
   @Test
   public void multiUseReadOnlyTransactionCanUseInlineBeginForReadAsync() throws Exception {
     PartialResultSet resultSet = inlineBeginResultSet("async-inline-tx");
-    final ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
+    final ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumerCaptor =
         ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
-    final ArgumentCaptor<ReadRequest> request = ArgumentCaptor.forClass(ReadRequest.class);
-    Mockito.when(rpc.read(request.capture(), consumer.capture(), anyMap(), any(), eq(false)))
+    final ArgumentCaptor<ReadRequest> requestCaptor = ArgumentCaptor.forClass(ReadRequest.class);
+
+    Mockito.when(
+            rpc.read(requestCaptor.capture(), consumerCaptor.capture(), anyMap(), any(), eq(false)))
         .then(
             invocation -> {
-              consumer.getValue().onPartialResultSet(resultSet);
-              consumer.getValue().onCompleted();
-              return new NoOpStreamingCall();
+              SpannerRpc.ResultStreamConsumer consumer = invocation.getArgument(1);
+              return new SpannerRpc.StreamingCall() {
+                private final AtomicBoolean requested = new AtomicBoolean();
+
+                @Override
+                public ApiCallContext getCallContext() {
+                  return GrpcCallContext.createDefault();
+                }
+
+                @Override
+                public void request(int numMessages) {
+                  if (requested.compareAndSet(false, true)) {
+                    consumer.onPartialResultSet(resultSet);
+                    consumer.onCompleted();
+                  }
+                }
+
+                @Override
+                public void cancel(@Nullable String message) {}
+              };
             });
 
-    try (ReadOnlyTransaction txn = inlineReadOnlyTransaction()) {
-      try (AsyncResultSet rs =
-          txn.readAsync("Dummy", KeySet.all(), Collections.singletonList("C"))) {
-        rs.setCallback(
+    try (ReadOnlyTransaction transaction = inlineReadOnlyTransaction()) {
+      try (AsyncResultSet resultSetAsync =
+          transaction.readAsync("Dummy", KeySet.all(), Collections.singletonList("C"))) {
+        resultSetAsync
+            .setCallback(
                 Runnable::run,
                 asyncResultSet -> {
                   while (asyncResultSet.tryNext() == AsyncResultSet.CursorState.OK) {}
@@ -841,12 +862,12 @@ public class SessionImplTest {
       }
       assertEquals(
           Timestamp.fromProto(Timestamps.parse("2015-10-01T10:54:20.021Z")),
-          txn.getReadTimestamp());
+          transaction.getReadTimestamp());
     }
 
     Mockito.verify(rpc, Mockito.never()).beginTransaction(Mockito.any(), anyMap(), eq(false));
-    assertEquals(1, request.getAllValues().size());
-    assertThat(request.getValue().getTransaction().hasBegin()).isTrue();
+    assertEquals(1, requestCaptor.getAllValues().size());
+    assertThat(requestCaptor.getValue().getTransaction().hasBegin()).isTrue();
   }
 
   @Test

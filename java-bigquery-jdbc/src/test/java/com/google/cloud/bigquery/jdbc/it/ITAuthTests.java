@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -29,12 +28,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -46,14 +45,8 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    int totalRows = 0;
-    while (jsonResultSet.next()) {
-      totalRows += 1;
-    }
-    assertEquals(totalRows, 850);
+    validateStatement(statement, 850);
     connection.close();
   }
 
@@ -110,6 +103,7 @@ public class ITAuthTests extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testValidServiceAccountAuthenticationViaEmailAndPkcs8Key()
       throws SQLException, IOException {
     final JsonObject authJson = getAuthJson();
@@ -175,11 +169,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -202,11 +192,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -225,11 +211,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -259,11 +241,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -272,6 +250,8 @@ public class ITAuthTests extends ITBase {
     "https://www.googleapis.com/auth/bigquery.readonly, true",
     "https://www.googleapis.com/auth/bigquery, false"
   })
+  @Tag("advanced")
+  @Tag("disable_tpc")
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();
@@ -313,11 +293,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -335,6 +311,7 @@ public class ITAuthTests extends ITBase {
   // It requires account to have 'tokenCreator' permission, see
   // https://cloud.google.com/docs/authentication/use-service-account-impersonation#required-roles
   @Test
+  @Tag("advanced")
   public void testServiceAccountAuthenticationWithImpersonation() throws IOException, SQLException {
     final JsonObject authJson = getAuthJson();
 
@@ -350,6 +327,7 @@ public class ITAuthTests extends ITBase {
   // This test uses the same client email for the main authorization and a chain of impersonations.
   // It requires the account to have 'tokenCreator' permission on itself.
   @Test
+  @Tag("advanced")
   public void testServiceAccountAuthenticationWithChainedImpersonation()
       throws IOException, SQLException {
     final JsonObject authJson = getAuthJson();

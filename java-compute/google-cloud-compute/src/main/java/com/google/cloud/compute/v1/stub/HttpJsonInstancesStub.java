@@ -334,12 +334,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             if (request.hasServiceProjectNumber()) {
                               serializer.putQueryParam(
                                   fields,
@@ -498,6 +492,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -1056,12 +1054,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -1109,12 +1101,6 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             }
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })
@@ -2395,6 +2381,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                         if (request.hasDiscardLocalSsd()) {
                           serializer.putQueryParam(
                               fields, "discardLocalSsd", request.getDiscardLocalSsd());
+                        }
+                        if (request.hasNoGracefulShutdown()) {
+                          serializer.putQueryParam(
+                              fields, "noGracefulShutdown", request.getNoGracefulShutdown());
                         }
                         if (request.hasRequestId()) {
                           serializer.putQueryParam(fields, "requestId", request.getRequestId());

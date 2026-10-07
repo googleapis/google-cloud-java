@@ -99,6 +99,144 @@ public class OrderServiceSettings extends ClientSettings<OrderServiceSettings> {
     return ((OrderServiceStubSettings) getStubSettings()).listOrdersSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchCreateOrders. */
+  public UnaryCallSettings<BatchCreateOrdersRequest, BatchCreateOrdersResponse>
+      batchCreateOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchCreateOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateOrders. */
+  public UnaryCallSettings<BatchUpdateOrdersRequest, BatchUpdateOrdersResponse>
+      batchUpdateOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchUpdateOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchApproveOrders. */
+  public UnaryCallSettings<BatchApproveOrdersRequest, BatchApproveOrdersResponse>
+      batchApproveOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchApproveOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchApproveAndOverbookOrders. */
+  public UnaryCallSettings<
+          BatchApproveAndOverbookOrdersRequest, BatchApproveAndOverbookOrdersResponse>
+      batchApproveAndOverbookOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchApproveAndOverbookOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchSubmitOrdersForApproval. */
+  public UnaryCallSettings<
+          BatchSubmitOrdersForApprovalRequest, BatchSubmitOrdersForApprovalResponse>
+      batchSubmitOrdersForApprovalSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchSubmitOrdersForApprovalSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchSubmitOrdersForApprovalAndOverbook.
+   */
+  public UnaryCallSettings<
+          BatchSubmitOrdersForApprovalAndOverbookRequest,
+          BatchSubmitOrdersForApprovalAndOverbookResponse>
+      batchSubmitOrdersForApprovalAndOverbookSettings() {
+    return ((OrderServiceStubSettings) getStubSettings())
+        .batchSubmitOrdersForApprovalAndOverbookSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchSubmitOrdersForApprovalWithoutReservationChanges.
+   */
+  public UnaryCallSettings<
+          BatchSubmitOrdersForApprovalWithoutReservationChangesRequest,
+          BatchSubmitOrdersForApprovalWithoutReservationChangesResponse>
+      batchSubmitOrdersForApprovalWithoutReservationChangesSettings() {
+    return ((OrderServiceStubSettings) getStubSettings())
+        .batchSubmitOrdersForApprovalWithoutReservationChangesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchPauseOrders. */
+  public UnaryCallSettings<BatchPauseOrdersRequest, BatchPauseOrdersResponse>
+      batchPauseOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchPauseOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeOrders. */
+  public UnaryCallSettings<BatchResumeOrdersRequest, BatchResumeOrdersResponse>
+      batchResumeOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchResumeOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeAndOverbookOrders. */
+  public UnaryCallSettings<
+          BatchResumeAndOverbookOrdersRequest, BatchResumeAndOverbookOrdersResponse>
+      batchResumeAndOverbookOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchResumeAndOverbookOrdersSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchApproveOrdersWithoutReservation.
+   */
+  public UnaryCallSettings<
+          BatchApproveOrdersWithoutReservationRequest, BatchApproveOrdersWithoutReservationResponse>
+      batchApproveOrdersWithoutReservationSettings() {
+    return ((OrderServiceStubSettings) getStubSettings())
+        .batchApproveOrdersWithoutReservationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveOrders. */
+  public UnaryCallSettings<BatchArchiveOrdersRequest, BatchArchiveOrdersResponse>
+      batchArchiveOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchArchiveOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUnarchiveOrders. */
+  public UnaryCallSettings<BatchUnarchiveOrdersRequest, BatchUnarchiveOrdersResponse>
+      batchUnarchiveOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchUnarchiveOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteOrders. */
+  public UnaryCallSettings<BatchDeleteOrdersRequest, BatchDeleteOrdersResponse>
+      batchDeleteOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchDeleteOrdersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDisapproveOrders. */
+  public UnaryCallSettings<BatchDisapproveOrdersRequest, BatchDisapproveOrdersResponse>
+      batchDisapproveOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchDisapproveOrdersSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchDisapproveOrdersWithoutReservationChanges.
+   */
+  public UnaryCallSettings<
+          BatchDisapproveOrdersWithoutReservationChangesRequest,
+          BatchDisapproveOrdersWithoutReservationChangesResponse>
+      batchDisapproveOrdersWithoutReservationChangesSettings() {
+    return ((OrderServiceStubSettings) getStubSettings())
+        .batchDisapproveOrdersWithoutReservationChangesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchRetractOrders. */
+  public UnaryCallSettings<BatchRetractOrdersRequest, BatchRetractOrdersResponse>
+      batchRetractOrdersSettings() {
+    return ((OrderServiceStubSettings) getStubSettings()).batchRetractOrdersSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchRetractOrdersWithoutReservationChanges.
+   */
+  public UnaryCallSettings<
+          BatchRetractOrdersWithoutReservationChangesRequest,
+          BatchRetractOrdersWithoutReservationChangesResponse>
+      batchRetractOrdersWithoutReservationChangesSettings() {
+    return ((OrderServiceStubSettings) getStubSettings())
+        .batchRetractOrdersWithoutReservationChangesSettings();
+  }
+
   public static final OrderServiceSettings create(OrderServiceStubSettings stub)
       throws IOException {
     return new OrderServiceSettings.Builder(stub.toBuilder()).build();
@@ -205,6 +343,142 @@ public class OrderServiceSettings extends ClientSettings<OrderServiceSettings> {
     public PagedCallSettings.Builder<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
         listOrdersSettings() {
       return getStubSettingsBuilder().listOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateOrders. */
+    public UnaryCallSettings.Builder<BatchCreateOrdersRequest, BatchCreateOrdersResponse>
+        batchCreateOrdersSettings() {
+      return getStubSettingsBuilder().batchCreateOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateOrders. */
+    public UnaryCallSettings.Builder<BatchUpdateOrdersRequest, BatchUpdateOrdersResponse>
+        batchUpdateOrdersSettings() {
+      return getStubSettingsBuilder().batchUpdateOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchApproveOrders. */
+    public UnaryCallSettings.Builder<BatchApproveOrdersRequest, BatchApproveOrdersResponse>
+        batchApproveOrdersSettings() {
+      return getStubSettingsBuilder().batchApproveOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchApproveAndOverbookOrders. */
+    public UnaryCallSettings.Builder<
+            BatchApproveAndOverbookOrdersRequest, BatchApproveAndOverbookOrdersResponse>
+        batchApproveAndOverbookOrdersSettings() {
+      return getStubSettingsBuilder().batchApproveAndOverbookOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchSubmitOrdersForApproval. */
+    public UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalRequest, BatchSubmitOrdersForApprovalResponse>
+        batchSubmitOrdersForApprovalSettings() {
+      return getStubSettingsBuilder().batchSubmitOrdersForApprovalSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchSubmitOrdersForApprovalAndOverbook.
+     */
+    public UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalAndOverbookRequest,
+            BatchSubmitOrdersForApprovalAndOverbookResponse>
+        batchSubmitOrdersForApprovalAndOverbookSettings() {
+      return getStubSettingsBuilder().batchSubmitOrdersForApprovalAndOverbookSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchSubmitOrdersForApprovalWithoutReservationChanges.
+     */
+    public UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalWithoutReservationChangesRequest,
+            BatchSubmitOrdersForApprovalWithoutReservationChangesResponse>
+        batchSubmitOrdersForApprovalWithoutReservationChangesSettings() {
+      return getStubSettingsBuilder()
+          .batchSubmitOrdersForApprovalWithoutReservationChangesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchPauseOrders. */
+    public UnaryCallSettings.Builder<BatchPauseOrdersRequest, BatchPauseOrdersResponse>
+        batchPauseOrdersSettings() {
+      return getStubSettingsBuilder().batchPauseOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeOrders. */
+    public UnaryCallSettings.Builder<BatchResumeOrdersRequest, BatchResumeOrdersResponse>
+        batchResumeOrdersSettings() {
+      return getStubSettingsBuilder().batchResumeOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeAndOverbookOrders. */
+    public UnaryCallSettings.Builder<
+            BatchResumeAndOverbookOrdersRequest, BatchResumeAndOverbookOrdersResponse>
+        batchResumeAndOverbookOrdersSettings() {
+      return getStubSettingsBuilder().batchResumeAndOverbookOrdersSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchApproveOrdersWithoutReservation.
+     */
+    public UnaryCallSettings.Builder<
+            BatchApproveOrdersWithoutReservationRequest,
+            BatchApproveOrdersWithoutReservationResponse>
+        batchApproveOrdersWithoutReservationSettings() {
+      return getStubSettingsBuilder().batchApproveOrdersWithoutReservationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveOrders. */
+    public UnaryCallSettings.Builder<BatchArchiveOrdersRequest, BatchArchiveOrdersResponse>
+        batchArchiveOrdersSettings() {
+      return getStubSettingsBuilder().batchArchiveOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUnarchiveOrders. */
+    public UnaryCallSettings.Builder<BatchUnarchiveOrdersRequest, BatchUnarchiveOrdersResponse>
+        batchUnarchiveOrdersSettings() {
+      return getStubSettingsBuilder().batchUnarchiveOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteOrders. */
+    public UnaryCallSettings.Builder<BatchDeleteOrdersRequest, BatchDeleteOrdersResponse>
+        batchDeleteOrdersSettings() {
+      return getStubSettingsBuilder().batchDeleteOrdersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDisapproveOrders. */
+    public UnaryCallSettings.Builder<BatchDisapproveOrdersRequest, BatchDisapproveOrdersResponse>
+        batchDisapproveOrdersSettings() {
+      return getStubSettingsBuilder().batchDisapproveOrdersSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchDisapproveOrdersWithoutReservationChanges.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDisapproveOrdersWithoutReservationChangesRequest,
+            BatchDisapproveOrdersWithoutReservationChangesResponse>
+        batchDisapproveOrdersWithoutReservationChangesSettings() {
+      return getStubSettingsBuilder().batchDisapproveOrdersWithoutReservationChangesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchRetractOrders. */
+    public UnaryCallSettings.Builder<BatchRetractOrdersRequest, BatchRetractOrdersResponse>
+        batchRetractOrdersSettings() {
+      return getStubSettingsBuilder().batchRetractOrdersSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchRetractOrdersWithoutReservationChanges.
+     */
+    public UnaryCallSettings.Builder<
+            BatchRetractOrdersWithoutReservationChangesRequest,
+            BatchRetractOrdersWithoutReservationChangesResponse>
+        batchRetractOrdersWithoutReservationChangesSettings() {
+      return getStubSettingsBuilder().batchRetractOrdersWithoutReservationChangesSettings();
     }
 
     @Override

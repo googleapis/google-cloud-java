@@ -164,6 +164,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= FeedsServiceClient =======================
+ *
+ * <p>Service Description: FeedsService contains procedures for managing Chronicle third-party
+ * feeds.
+ *
+ * <p>Sample for FeedsServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeedsServiceClient feedsServiceClient = FeedsServiceClient.create()) {
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   FeedServiceAccount response = feedsServiceClient.fetchServiceAccountForCustomer(parent);
+ * }
+ * }</pre>
+ *
  * <p>======================= FindingsRefinementServiceClient =======================
  *
  * <p>Service Description: FindingsRefinementService provides an interface for filtering out

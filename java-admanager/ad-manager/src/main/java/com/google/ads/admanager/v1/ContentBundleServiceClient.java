@@ -104,6 +104,44 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> BatchActivateContentBundles</td>
+ *      <td><p> Activate a list of `ContentBundle` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchActivateContentBundles(BatchActivateContentBundlesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchActivateContentBundles(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchActivateContentBundles(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchActivateContentBundlesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeactivateContentBundles</td>
+ *      <td><p> Deactivates a list of `ContentBundle` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateContentBundles(BatchDeactivateContentBundlesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateContentBundles(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeactivateContentBundles(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateContentBundlesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -496,6 +534,282 @@ public class ContentBundleServiceClient implements BackgroundResource {
   public final UnaryCallable<ListContentBundlesRequest, ListContentBundlesResponse>
       listContentBundlesCallable() {
     return stub.listContentBundlesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateContentBundlesResponse response =
+   *       contentBundleServiceClient.batchActivateContentBundles(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `ContentBundles` will be activated. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The resource names of the `ContentBundle`s to activate. Format:
+   *     `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateContentBundlesResponse batchActivateContentBundles(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchActivateContentBundlesRequest request =
+        BatchActivateContentBundlesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchActivateContentBundles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateContentBundlesResponse response =
+   *       contentBundleServiceClient.batchActivateContentBundles(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `ContentBundles` will be activated. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The resource names of the `ContentBundle`s to activate. Format:
+   *     `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateContentBundlesResponse batchActivateContentBundles(
+      String parent, List<String> names) {
+    BatchActivateContentBundlesRequest request =
+        BatchActivateContentBundlesRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchActivateContentBundles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   BatchActivateContentBundlesRequest request =
+   *       BatchActivateContentBundlesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchActivateContentBundlesResponse response =
+   *       contentBundleServiceClient.batchActivateContentBundles(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateContentBundlesResponse batchActivateContentBundles(
+      BatchActivateContentBundlesRequest request) {
+    return batchActivateContentBundlesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activate a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   BatchActivateContentBundlesRequest request =
+   *       BatchActivateContentBundlesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchActivateContentBundlesResponse> future =
+   *       contentBundleServiceClient.batchActivateContentBundlesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchActivateContentBundlesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesCallable() {
+    return stub.batchActivateContentBundlesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateContentBundlesResponse response =
+   *       contentBundleServiceClient.batchDeactivateContentBundles(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `ContentBundles` will be deactivated. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The resource names of the `ContentBundle`s to deactivate. Format:
+   *     `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateContentBundlesResponse batchDeactivateContentBundles(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchDeactivateContentBundlesRequest request =
+        BatchDeactivateContentBundlesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeactivateContentBundles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateContentBundlesResponse response =
+   *       contentBundleServiceClient.batchDeactivateContentBundles(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `ContentBundles` will be deactivated. Format:
+   *     `networks/{network_code}`
+   * @param names Required. The resource names of the `ContentBundle`s to deactivate. Format:
+   *     `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateContentBundlesResponse batchDeactivateContentBundles(
+      String parent, List<String> names) {
+    BatchDeactivateContentBundlesRequest request =
+        BatchDeactivateContentBundlesRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchDeactivateContentBundles(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   BatchDeactivateContentBundlesRequest request =
+   *       BatchDeactivateContentBundlesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeactivateContentBundlesResponse response =
+   *       contentBundleServiceClient.batchDeactivateContentBundles(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateContentBundlesResponse batchDeactivateContentBundles(
+      BatchDeactivateContentBundlesRequest request) {
+    return batchDeactivateContentBundlesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates a list of `ContentBundle` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ContentBundleServiceClient contentBundleServiceClient =
+   *     ContentBundleServiceClient.create()) {
+   *   BatchDeactivateContentBundlesRequest request =
+   *       BatchDeactivateContentBundlesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchDeactivateContentBundlesResponse> future =
+   *       contentBundleServiceClient.batchDeactivateContentBundlesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchDeactivateContentBundlesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesCallable() {
+    return stub.batchDeactivateContentBundlesCallable();
   }
 
   @Override

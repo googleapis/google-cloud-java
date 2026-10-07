@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import java.sql.Array;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -36,9 +35,9 @@ import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITConnectionTest {
@@ -56,12 +55,8 @@ public class ITConnectionTest {
     ITBase.setUpProcedure(DATASET, TABLE_NAME);
   }
 
-  @AfterAll
-  public static void afterClass() throws InterruptedException {
-    // Shared dataset cleanup is handled by shutdown hook
-  }
-
   @Test
+  @Tag("advanced")
   public void testGetMetaData() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertFalse(connection.isClosed());
@@ -225,26 +220,26 @@ public class ITConnectionTest {
     Statement statement1 = connection1.createStatement();
     statement.execute(
         String.format(
-            "CREATE TABLE IF NOT EXISTS %s.%s.autocommit_test_table (id INT)",
+            "CREATE TABLE IF NOT EXISTS `%s.%s.autocommit_test_table` (id INT)",
             DEFAULT_CATALOG, DATASET));
     connection1.commit();
 
     statement1.executeUpdate(
         String.format(
-            "INSERT INTO %s.%s.autocommit_test_table (id) VALUES (1)", DEFAULT_CATALOG, DATASET));
+            "INSERT INTO `%s.%s.autocommit_test_table` (id) VALUES (1)", DEFAULT_CATALOG, DATASET));
     connection1.rollback();
 
     ResultSet resultSet =
         statement1.executeQuery(
             String.format(
-                "SELECT COUNT(*) FROM %s.%s.autocommit_test_table", DEFAULT_CATALOG, DATASET));
+                "SELECT COUNT(*) FROM `%s.%s.autocommit_test_table`", DEFAULT_CATALOG, DATASET));
     resultSet.next();
     assertEquals(0, resultSet.getInt(1)); // Table should be empty due to rollback
 
     connection1.setAutoCommit(true);
     statement1.executeUpdate(
         String.format(
-            "DROP TABLE IF EXISTS %s.%s.autocommit_test_table", DEFAULT_CATALOG, DATASET));
+            "DROP TABLE IF EXISTS `%s.%s.autocommit_test_table`", DEFAULT_CATALOG, DATASET));
     statement1.close();
     connection1.close();
     statement.close();
@@ -339,17 +334,12 @@ public class ITConnectionTest {
   }
 
   @Test
+  @Tag("advanced")
   public void testCreateArray() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
-    try {
-      Array array = connection.createArrayOf("INTEGER", new Object[] {1, 2, 3});
-      assertNotNull(array);
-
-      array.free(); // Remember to free resources
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
-    connection.close();
+    assertThrows(
+        SQLFeatureNotSupportedException.class,
+        () -> connection.createArrayOf("INTEGER", new Object[] {1, 2, 3}));
   }
 
   @Test
@@ -439,5 +429,20 @@ public class ITConnectionTest {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     assertTrue(connection.isValid(0)); // 0 seconds timeout
     connection.close();
+  }
+
+  @Test
+  public void testDefaultDatasetColonDelimiter() throws SQLException {
+    String urlWithColon =
+        ITBase.connectionUrl + ";DefaultDataset=" + DEFAULT_CATALOG + ":" + DATASET + ";";
+    try (Connection connection = DriverManager.getConnection(urlWithColon)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      try (Statement stmt = connection.createStatement();
+          ResultSet rs = stmt.executeQuery("SELECT * FROM " + TABLE_NAME)) {
+        assertTrue(rs.next());
+        assertTrue(rs.getMetaData().getColumnCount() > 0);
+      }
+    }
   }
 }

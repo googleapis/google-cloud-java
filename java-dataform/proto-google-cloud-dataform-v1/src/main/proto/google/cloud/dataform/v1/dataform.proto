@@ -921,6 +921,12 @@ message Repository {
     string table_prefix = 3 [(google.api.field_behavior) = OPTIONAL];
   }
 
+  // Includes configuration options for repository end user authentication.
+  message EndUserAuthConfig {
+    // Optional. OAuth configuration for repository end user authentication.
+    OAuthConfig oauth_config = 1 [(google.api.field_behavior) = OPTIONAL];
+  }
+
   // Identifier. The repository's name.
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
@@ -1003,6 +1009,19 @@ message Repository {
   // format of this field is a JSON string.
   optional string internal_metadata = 15
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. Includes configuration options for end user authentication.
+  EndUserAuthConfig end_user_auth_config = 28
+      [(google.api.field_behavior) = OPTIONAL];
+}
+
+// OAuth configuration for end user authentication.
+message OAuthConfig {
+  // Optional. Additional OAuth scopes to use for BigQuery executions.
+  // Scopes always in use:
+  // `https://www.googleapis.com/auth/bigquery`
+  repeated string additional_oauth_scopes = 1
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Metadata used to identify if a resource is user scoped.
@@ -1963,6 +1982,10 @@ message InstallNpmPackagesRequest {
       type: "dataform.googleapis.com/Workspace"
     }
   ];
+
+  // Optional. The pipeline options which defines the pipeline type and path
+  // within the Git repository.
+  PipelineConfig pipeline_config = 3 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // `InstallNpmPackages` response message.
@@ -2019,9 +2042,9 @@ message ReleaseConfig {
   string cron_schedule = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Specifies the time zone to be used when interpreting
-  // cron_schedule. Must be a time zone name from the time zone database
-  // (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-  // unspecified, the default is UTC.
+  // cron_schedule. Must be a time zone name from the [time zone
+  // database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+  // left unspecified, the default is `UTC`.
   string time_zone = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. Records of the 10 most recent scheduled release attempts,
@@ -2237,6 +2260,11 @@ message CompilationResult {
   // from a workspace.
   PrivateResourceMetadata private_resource_metadata = 12
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. Metadata about the repository snapshot used by scheduled
+  // notebooks.
+  GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // Configures various aspects of Dataform code compilation.
@@ -2277,6 +2305,38 @@ message CodeCompilationConfig {
   // Optional. The default notebook runtime options.
   NotebookRuntimeOptions default_notebook_runtime_options = 9
       [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The pipeline options which defines the pipeline type and path
+  // within the Git repository.
+  PipelineConfig pipeline_config = 12 [(google.api.field_behavior) = OPTIONAL];
+
+  // Output only. Whether OpenLineage events are emitted for actions in this
+  // workflow. Reflects the `lineage.enabled` setting from
+  // `workflow_settings.yaml`.
+  optional bool lineage_enabled = 14
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Metadata about a repository snapshot stored in Google Cloud Storage.
+message GcsRepositorySnapshotMetadata {
+  // Output only. The Google Cloud Storage URI of the repository snapshot.
+  string repository_snapshot_uri = 1
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The crc32c checksum of the repository snapshot, big-endian
+  // base64 encoded.
+  string crc32c_checksum = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The generation number of the Cloud Storage object. See
+  // https://cloud.google.com/storage/docs/metadata#generation-number.
+  int64 generation = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// Configures the destination for a repository snapshot.
+message GcsRepositorySnapshotDestination {
+  // Optional. The Google Cloud Storage destination to upload the repository
+  // snapshot to. Format: `gs://bucket-name/path/`.
+  string repository_snapshot_uri = 1 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Configures various aspects of Dataform notebook runtime.
@@ -2286,6 +2346,16 @@ message NotebookRuntimeOptions {
     // Optional. The Google Cloud Storage location to upload the result to.
     // Format: `gs://bucket-name`.
     string gcs_output_bucket = 1 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // The destination of the snapshot of repository files to be available for
+  // read-only access inside a notebook runtime
+  oneof repository_snapshot_storage {
+    // Optional. The Google Cloud Storage destination to upload the snapshot to.
+    // For empty URI it defaults to the provided gcs_output_bucket.
+    // Format: `gs://bucket-name/path/`.
+    GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3
+        [(google.api.field_behavior) = OPTIONAL];
   }
 
   // Optional. The resource name of the [Colab runtime template]
@@ -2298,6 +2368,33 @@ message NotebookRuntimeOptions {
       type: "aiplatform.googleapis.com/NotebookRuntimeTemplate"
     }
   ];
+}
+
+// Defines the pipeline type and path within the Git repository.
+message PipelineConfig {
+  // The type of the pipeline. This may be extended in the future.
+  // In case of UNSPECIFIED, the error will be thrown.
+  enum PipelineType {
+    // Default value. This value is unused.
+    PIPELINE_TYPE_UNSPECIFIED = 0;
+
+    // Regular Dataform pipeline.
+    DATAFORM = 1;
+
+    // SQL single file asset.
+    SQL = 3;
+
+    // Notebook single file asset.
+    NOTEBOOK = 4;
+  }
+
+  // Required. The type of the pipeline.
+  PipelineType pipeline_type = 1 [(google.api.field_behavior) = REQUIRED];
+
+  // Required. The relative path within the Git repository where the pipeline is
+  // defined. For example, for a Dataform pipeline, it is a path to the folder
+  // where `workflow_settings.yaml` or `dataform.json` is located.
+  string path = 2 [(google.api.field_behavior) = REQUIRED];
 }
 
 // `ListCompilationResults` request message.
@@ -2823,9 +2920,9 @@ message WorkflowConfig {
   string cron_schedule = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Specifies the time zone to be used when interpreting
-  // cron_schedule. Must be a time zone name from the time zone database
-  // (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left
-  // unspecified, the default is UTC.
+  // cron_schedule. Must be a time zone name from the [time zone
+  // database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If
+  // left unspecified, the default is `UTC`.
   string time_zone = 7 [(google.api.field_behavior) = OPTIONAL];
 
   // Output only. Records of the 10 most recent scheduled execution attempts,
@@ -2856,6 +2953,15 @@ message WorkflowConfig {
 // If both `included_targets` and `included_tags` are unset, all actions
 // will be included.
 message InvocationConfig {
+  // Includes configuration options for end user authentication.
+  message EndUserAuthenticationConfig {
+    // Output only. Email address of the user to run workflow invocations under.
+    string user_email = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Optional. OAuth configuration for end user authentication.
+    OAuthConfig oauth_config = 4 [(google.api.field_behavior) = OPTIONAL];
+  }
+
   // Types of priority for query execution in BigQuery.
   enum QueryPriority {
     // Default value. This value is unused.
@@ -2894,6 +3000,11 @@ message InvocationConfig {
 
   // Optional. The service account to run workflow invocations under.
   string service_account = 6 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. Configuration for end user authentication.
+  // Note that this should not be set when `service_account` is used.
+  EndUserAuthenticationConfig end_user_auth_config = 7
+      [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Specifies the priority for query execution in BigQuery.
   // More information can be found at
@@ -3084,6 +3195,11 @@ message WorkflowInvocation {
   // from a compilation result and the compilation result is user-scoped.
   PrivateResourceMetadata private_resource_metadata = 10
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. The pipeline options which defines the pipeline type and path
+  // within the Git repository.
+  PipelineConfig pipeline_config = 11
+      [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // `ListWorkflowInvocations` request message.
@@ -3206,6 +3322,9 @@ message WorkflowInvocationAction {
     // created in Google Cloud Storage buckets. Only set once the job has
     // started to run.
     string job_id = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+    // Output only. The path to the notebook file in the repository.
+    string file_path = 3 [(google.api.field_behavior) = OUTPUT_ONLY];
   }
 
   // Represents a workflow action that will run a Data Preparation.

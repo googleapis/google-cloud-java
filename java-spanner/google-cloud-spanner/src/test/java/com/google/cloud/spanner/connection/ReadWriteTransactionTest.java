@@ -24,8 +24,12 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.doThrow;
@@ -67,6 +71,8 @@ import io.opentelemetry.api.trace.Span;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ScheduledFuture;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -158,12 +164,21 @@ public class ReadWriteTransactionTest {
     return createSubject(CommitBehavior.SUCCEED, false);
   }
 
+  private ReadWriteTransaction createSubject(boolean keepTransactionAlive) {
+    return createSubject(CommitBehavior.SUCCEED, false, keepTransactionAlive);
+  }
+
   private ReadWriteTransaction createSubject(CommitBehavior commitBehavior) {
-    return createSubject(commitBehavior, false);
+    return createSubject(commitBehavior, false, false);
   }
 
   private ReadWriteTransaction createSubject(
       final CommitBehavior commitBehavior, boolean withRetry) {
+    return createSubject(commitBehavior, withRetry, false);
+  }
+
+  private ReadWriteTransaction createSubject(
+      final CommitBehavior commitBehavior, boolean withRetry, boolean keepTransactionAlive) {
     DatabaseClient client = mock(DatabaseClient.class);
     when(client.transactionManager())
         .thenAnswer(
@@ -179,6 +194,7 @@ public class ReadWriteTransactionTest {
             });
     return ReadWriteTransaction.newBuilder()
         .setDatabaseClient(client)
+        .setKeepTransactionAlive(keepTransactionAlive)
         .setRetryAbortsInternally(withRetry)
         .setIsolationLevel(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED)
         .setSavepointSupport(SavepointSupport.FAIL_AFTER_ROLLBACK)
@@ -855,6 +871,173 @@ public class ReadWriteTransactionTest {
 
     assertNotNull(transaction.getCommitResponse());
     assertNotNull(transaction.getCommitResponseOrNull());
+  }
+
+  @Test
+  public void testKeepAliveTaskRemovedFromQueueOnCancel() {
+    ParsedStatement parsedStatement = mock(ParsedStatement.class);
+    when(parsedStatement.getType()).thenReturn(StatementType.UPDATE);
+    when(parsedStatement.isUpdate()).thenReturn(true);
+    Statement statement = Statement.of("UPDATE FOO SET BAR=1 WHERE ID=2");
+    when(parsedStatement.getStatement()).thenReturn(statement);
+
+    ReadWriteTransaction transaction = createSubject(/* keepTransactionAlive= */ true);
+    get(transaction.executeUpdateAsync(CallType.SYNC, parsedStatement));
+
+    ScheduledFuture<?> future = waitForKeepAliveFuture(transaction);
+    assertNotNull(future);
+    assertTrue(ReadWriteTransaction.getKeepAliveService().getQueue().contains(future));
+
+    get(transaction.commitAsync(CallType.SYNC, NoopEndTransactionCallback.INSTANCE));
+    assertFalse(ReadWriteTransaction.getKeepAliveService().getQueue().contains(future));
+  }
+
+  @Test
+  public void testKeepAliveWeakReference() {
+    ReadWriteTransaction transaction = createSubject(/* keepTransactionAlive= */ true);
+    ReadWriteTransaction.KeepAliveRunnable runnable =
+        new ReadWriteTransaction.KeepAliveRunnable(transaction);
+
+    assertNotNull(runnable.transactionRef);
+    assertSame(transaction, runnable.transactionRef.get());
+  }
+
+  @Test
+  public void testKeepAliveRescheduledWhenLockBusy() {
+    ParsedStatement parsedStatement = mock(ParsedStatement.class);
+    when(parsedStatement.getType()).thenReturn(StatementType.UPDATE);
+    when(parsedStatement.isUpdate()).thenReturn(true);
+    Statement statement = Statement.of("UPDATE FOO SET BAR=1 WHERE ID=2");
+    when(parsedStatement.getStatement()).thenReturn(statement);
+
+    ReadWriteTransaction transaction = createSubject(/* keepTransactionAlive= */ true);
+    get(transaction.executeUpdateAsync(CallType.SYNC, parsedStatement));
+
+    ScheduledFuture<?> future1 = waitForKeepAliveFuture(transaction);
+    assertNotNull(future1);
+
+    CountDownLatch latch = new CountDownLatch(1);
+    CountDownLatch lockAcquired = new CountDownLatch(1);
+    Thread lockHoldingThread =
+        new Thread(
+            () -> {
+              transaction.abortedLock.lock();
+              try {
+                lockAcquired.countDown();
+                latch.await();
+              } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+              } finally {
+                transaction.abortedLock.unlock();
+              }
+            });
+    lockHoldingThread.start();
+    try {
+      lockAcquired.await();
+      ReadWriteTransaction.KeepAliveRunnable runnable =
+          new ReadWriteTransaction.KeepAliveRunnable(transaction);
+      runnable.run();
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      fail("Test interrupted");
+    } finally {
+      latch.countDown();
+      try {
+        lockHoldingThread.join();
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      }
+    }
+
+    ScheduledFuture<?> future2 = transaction.getKeepAliveFuture();
+    assertNotSame(future1, future2);
+    assertNotNull(future2);
+  }
+
+  @Test
+  public void testKeepAliveFutureNullifiedOnCancel() {
+    ParsedStatement parsedStatement = mock(ParsedStatement.class);
+    when(parsedStatement.getType()).thenReturn(StatementType.UPDATE);
+    when(parsedStatement.isUpdate()).thenReturn(true);
+    Statement statement = Statement.of("UPDATE FOO SET BAR=1 WHERE ID=2");
+    when(parsedStatement.getStatement()).thenReturn(statement);
+
+    ReadWriteTransaction transaction = createSubject(/* keepTransactionAlive= */ true);
+    get(transaction.executeUpdateAsync(CallType.SYNC, parsedStatement));
+
+    assertNotNull(waitForKeepAliveFuture(transaction));
+
+    get(transaction.commitAsync(CallType.SYNC, NoopEndTransactionCallback.INSTANCE));
+
+    assertNull(transaction.getKeepAliveFuture());
+  }
+
+  private static ScheduledFuture<?> waitForKeepAliveFuture(ReadWriteTransaction transaction) {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < deadline) {
+      ScheduledFuture<?> future = transaction.getKeepAliveFuture();
+      if (future != null) {
+        return future;
+      }
+      try {
+        Thread.sleep(1);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        break;
+      }
+    }
+    fail("Keep-alive future was not populated within 5 seconds");
+    return null;
+  }
+
+  @Test
+  public void testKeepAliveRunnableHandlesSynchronousException() {
+    DatabaseClient client = mock(DatabaseClient.class);
+    when(client.transactionManager())
+        .thenAnswer(
+            invocation -> {
+              TransactionContext txContext = mock(TransactionContext.class);
+              when(txContext.executeQuery(any(Statement.class)))
+                  .thenThrow(new RuntimeException("Simulated synchronous execution error"));
+              return new SimpleTransactionManager(txContext, CommitBehavior.SUCCEED);
+            });
+
+    ReadWriteTransaction transaction =
+        ReadWriteTransaction.newBuilder()
+            .setDatabaseClient(client)
+            .setKeepTransactionAlive(true)
+            .setRetryAbortsInternally(false)
+            .setIsolationLevel(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED)
+            .setSavepointSupport(SavepointSupport.FAIL_AFTER_ROLLBACK)
+            .setTransactionRetryListeners(Collections.emptyList())
+            .withStatementExecutor(new StatementExecutor())
+            .setSpan(Span.getInvalid())
+            .build();
+
+    ReadWriteTransaction.KeepAliveRunnable runnable =
+        new ReadWriteTransaction.KeepAliveRunnable(transaction);
+
+    runnable.run();
+
+    assertFalse(transaction.abortedLock.isLocked());
+    assertNotNull(waitForKeepAliveFuture(transaction));
+  }
+
+  @Test
+  public void testKeepAliveNotScheduledIfTransactionClosed() {
+    ParsedStatement parsedStatement = mock(ParsedStatement.class);
+    when(parsedStatement.getType()).thenReturn(StatementType.UPDATE);
+    when(parsedStatement.isUpdate()).thenReturn(true);
+    Statement statement = Statement.of("UPDATE FOO SET BAR=1 WHERE ID=2");
+    when(parsedStatement.getStatement()).thenReturn(statement);
+
+    ReadWriteTransaction transaction = createSubject(/* keepTransactionAlive= */ true);
+    get(transaction.executeUpdateAsync(CallType.SYNC, parsedStatement));
+    get(transaction.commitAsync(CallType.SYNC, NoopEndTransactionCallback.INSTANCE));
+
+    transaction.maybeScheduleKeepAlivePing();
+
+    assertNull(transaction.getKeepAliveFuture());
   }
 
   private static StatusRuntimeException createAbortedExceptionWithMinimalRetry() {

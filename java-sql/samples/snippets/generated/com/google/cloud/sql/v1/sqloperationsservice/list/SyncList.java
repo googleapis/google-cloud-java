@@ -41,6 +41,7 @@ public class SyncList {
               .setMaxResults(1128457243)
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
+              .setLocation("location1901043637")
               .build();
       OperationsListResponse response = sqlOperationsServiceClient.list(request);
     }

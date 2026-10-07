@@ -15,8 +15,6 @@ google-cloud-analyticshub: https://cloud.google.com/bigquery/TBD, Analytics Hub 
 google-cloud-api-gateway: https://cloud.google.com/api-gateway/docs, API Gateway
 google-cloud-apigee-connect: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/,
   Apigee Connect
-google-cloud-apigee-registry: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api,
-  Registry API
 google-cloud-apikeys: https://cloud.google.com/api-keys/, API Keys API
 google-cloud-appengine-admin: https://cloud.google.com/appengine/docs/admin-api/,
   App Engine Admin API
@@ -26,7 +24,6 @@ google-cloud-asset: https://cloud.google.com/resource-manager/docs/cloud-asset-i
   Cloud Asset Inventory
 google-cloud-assured-workloads: https://cloud.google.com/assured-workloads/, Assured
   Workloads for Government
-google-cloud-automl: https://cloud.google.com/automl/docs/, Cloud Auto ML
 google-cloud-bare-metal-solution: https://cloud.google.com/bare-metal/docs, Bare Metal
   Solution
 google-cloud-batch: https://cloud.google.com/, Cloud Batch
@@ -82,11 +79,8 @@ google-cloud-contentwarehouse: https://cloud.google.com/document-warehouse/docs/
   Document AI Warehouse
 google-cloud-core: n/a, Google Cloud Core
 google-cloud-data-fusion: https://cloud.google.com/data-fusion/docs, Cloud Data Fusion
-google-cloud-datacatalog: https://cloud.google.com/data-catalog, Data Catalog
 google-cloud-dataflow: https://cloud.google.com/dataflow/docs, Dataflow
 google-cloud-dataform: https://cloud.google.com/dataform/docs, Cloud Dataform
-google-cloud-datalabeling: https://cloud.google.com/ai-platform/data-labeling/docs/,
-  Data Labeling
 google-cloud-datalineage: https://cloud.google.com/data-catalog/docs/data-lineage/,
   Data Lineage
 google-cloud-dataplex: https://cloud.google.com/dataplex, Cloud Dataplex

@@ -90,6 +90,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Timestamps;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import com.google.spanner.admin.instance.v1.Instance.Edition;
 import com.google.spanner.admin.instance.v1.Instance.State;
 import com.google.spanner.executor.v1.AdminAction;
 import com.google.spanner.executor.v1.AdminResult;
@@ -788,7 +789,8 @@ public class CloudClientExecutor extends CloudExecutor {
               if (finishMode == Mode.COMMIT && rwTxn.runner.getCommitResponse() != null) {
                 com.google.cloud.spanner.CommitResponse commitResponse =
                     rwTxn.runner.getCommitResponse();
-                if (commitResponse.getSnapshotTimestamp() != null) {
+                if ((rwTxn.repeatableRead || rwTxn.optimistic)
+                    && commitResponse.getSnapshotTimestamp() != null) {
                   outcomeBuilder.setSnapshotIsolationTxnReadTimestamp(
                       Timestamps.toMicros(commitResponse.getSnapshotTimestamp().toProto()));
                 }
@@ -1284,6 +1286,13 @@ public class CloudClientExecutor extends CloudExecutor {
       if (action.hasProcessingUnits()) {
         builder.setProcessingUnits(action.getProcessingUnits());
       }
+      if (action.hasAutoscalingConfig()) {
+        builder.setAutoscalingConfig(action.getAutoscalingConfig());
+      }
+      if (action.getEdition() != Edition.EDITION_UNSPECIFIED
+          && action.getEdition() != Edition.UNRECOGNIZED) {
+        builder.setEdition(action.getEdition());
+      }
       final InstanceInfo request = builder.build();
       instanceAdminClient.createInstance(request).get();
     } catch (ExecutionException | InterruptedException ex) {
@@ -1328,6 +1337,15 @@ public class CloudClientExecutor extends CloudExecutor {
       if (action.hasProcessingUnits()) {
         fieldsToUpdate.add(InstanceInfo.InstanceField.PROCESSING_UNITS);
         builder.setProcessingUnits(action.getProcessingUnits());
+      }
+      if (action.hasAutoscalingConfig()) {
+        fieldsToUpdate.add(InstanceInfo.InstanceField.AUTOSCALING_CONFIG);
+        builder.setAutoscalingConfig(action.getAutoscalingConfig());
+      }
+      if (action.getEdition() != Edition.EDITION_UNSPECIFIED
+          && action.getEdition() != Edition.UNRECOGNIZED) {
+        fieldsToUpdate.add(InstanceInfo.InstanceField.EDITION);
+        builder.setEdition(action.getEdition());
       }
       Map<String, String> labels = action.getLabelsMap();
       if (!labels.isEmpty()) {
@@ -2462,14 +2480,10 @@ public class CloudClientExecutor extends CloudExecutor {
       // For initial partition query (no partition token) we simulate precision of the timestamp
       // in nanoseconds as that's closer inlined with the production client code.
 
-      String startTime =
-          timestampToString(
-              !action.hasPartitionToken(), Timestamps.toMicros(action.getStartTime()));
+      String startTime = timestampToString(false, Timestamps.toMicros(action.getStartTime()));
       String endTime = "null";
       if (action.hasEndTime()) {
-        endTime =
-            timestampToString(
-                !action.hasPartitionToken(), Timestamps.toMicros(action.getEndTime()));
+        endTime = timestampToString(false, Timestamps.toMicros(action.getEndTime()));
       }
       String heartbeat = "null";
       if (action.hasHeartbeatMilliseconds()) {

@@ -118,6 +118,19 @@ public class TargetingPresetServiceSettings extends ClientSettings<TargetingPres
         .batchCreateTargetingPresetsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateTargetingPreset. */
+  public UnaryCallSettings<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetSettings() {
+    return ((TargetingPresetServiceStubSettings) getStubSettings()).updateTargetingPresetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateTargetingPresets. */
+  public UnaryCallSettings<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsSettings() {
+    return ((TargetingPresetServiceStubSettings) getStubSettings())
+        .batchUpdateTargetingPresetsSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchDeactivateTargetingPresets. */
   public UnaryCallSettings<
           BatchDeactivateTargetingPresetsRequest, BatchDeactivateTargetingPresetsResponse>
@@ -250,6 +263,19 @@ public class TargetingPresetServiceSettings extends ClientSettings<TargetingPres
             BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
         batchCreateTargetingPresetsSettings() {
       return getStubSettingsBuilder().batchCreateTargetingPresetsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateTargetingPreset. */
+    public UnaryCallSettings.Builder<UpdateTargetingPresetRequest, TargetingPreset>
+        updateTargetingPresetSettings() {
+      return getStubSettingsBuilder().updateTargetingPresetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateTargetingPresets. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+        batchUpdateTargetingPresetsSettings() {
+      return getStubSettingsBuilder().batchUpdateTargetingPresetsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchDeactivateTargetingPresets. */

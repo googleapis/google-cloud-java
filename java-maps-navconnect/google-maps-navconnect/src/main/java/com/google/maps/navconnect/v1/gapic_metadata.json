@@ -1,0 +1,24 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.navconnect.v1",
+  "libraryPackage": "com.google.maps.navconnect.v1",
+  "services": {
+    "NavConnectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NavConnectServiceClient",
+          "rpcs": {
+            "CreateTrip": {
+              "methods": ["createTrip", "createTrip", "createTripCallable"]
+            },
+            "GetTrip": {
+              "methods": ["getTrip", "getTrip", "getTrip", "getTripCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

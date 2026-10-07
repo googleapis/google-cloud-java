@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
@@ -43,7 +43,7 @@ public final class UpdateClientConnectorServiceRequest extends com.google.protob
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
         /* minor= */ 33,
-        /* patch= */ 2,
+        /* patch= */ 6,
         /* suffix= */ "",
         "UpdateClientConnectorServiceRequest");
   }

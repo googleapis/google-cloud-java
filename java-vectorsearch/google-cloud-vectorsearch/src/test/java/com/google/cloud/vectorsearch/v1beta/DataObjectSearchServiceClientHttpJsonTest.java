@@ -276,6 +276,8 @@ public class DataObjectSearchServiceClientHttpJsonTest {
             .setParent(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
             .addAllSearches(new ArrayList<Search>())
             .setCombine(BatchSearchDataObjectsRequest.CombineResultsOptions.newBuilder().build())
+            .setMetadataOptions(
+                BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.newBuilder().build())
             .build();
 
     BatchSearchDataObjectsResponse actualResponse = client.batchSearchDataObjects(request);
@@ -309,6 +311,8 @@ public class DataObjectSearchServiceClientHttpJsonTest {
               .setParent(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
               .addAllSearches(new ArrayList<Search>())
               .setCombine(BatchSearchDataObjectsRequest.CombineResultsOptions.newBuilder().build())
+              .setMetadataOptions(
+                  BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.newBuilder().build())
               .build();
       client.batchSearchDataObjects(request);
       Assert.fail("No exception raised");

@@ -30,7 +30,9 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -38,8 +40,10 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.grpc.GcpChannelPrimer;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.spanner.SpannerOptions.Builder.DefaultReadWriteTransactionOptions;
+import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.SpannerOptions.FixedCloseableExecutorProvider;
 import com.google.cloud.spanner.SpannerOptions.SpannerCallContextTimeoutConfigurator;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
@@ -47,6 +51,7 @@ import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings
 import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Strings;
+import com.google.common.util.concurrent.Futures;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
@@ -66,6 +71,9 @@ import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.MethodDescriptor;
+import io.grpc.netty.shaded.io.netty.handler.ssl.util.SelfSignedCertificate;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -618,6 +626,39 @@ public class SpannerOptionsTest {
             .build();
     assertThat(options.getHost()).isEqualTo("http://localhost:1234");
     assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithEmulatorHostWithoutProtocol() {
+    // The builder prepends "http://" to the host, but not to the emulator host. The emulator
+    // gate must still detect that the emulator is being used.
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("localhost:1234")
+            .build();
+    assertTrue(options.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithEmulatorHostWithProtocol() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("http://localhost:1234")
+            .build();
+    assertTrue(options.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithoutEmulatorHost() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setHost("http://localhost:1234")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertFalse(options.isEmulatorEnabled());
   }
 
   @Test
@@ -1356,6 +1397,55 @@ public class SpannerOptionsTest {
     assertEquals(2, SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_CHANNELS);
     assertEquals(Duration.ofMinutes(10), SpannerOptions.DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME);
     assertEquals(Duration.ofMinutes(1), SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL);
+    assertEquals(Duration.ofSeconds(10), SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT);
+    assertEquals(3, SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS);
+  }
+
+  @Test
+  public void testDynamicChannelPoolPrimeSettingsDefaultsAndUserValues() {
+    GcpChannelPoolOptions defaults = SpannerOptions.createDefaultDynamicChannelPoolOptions();
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT,
+        defaults.getChannelPrimeTimeout());
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS,
+        defaults.getChannelPrimeMaxAttempts());
+    // The options themselves never register a primer; the Spanner client does that when the pool
+    // is created, unless the user supplied one.
+    assertNull(defaults.getChannelPrimer());
+
+    // Prime settings that the user left unset are filled in from the defaults.
+    SpannerOptions merged =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(GcpChannelPoolOptions.newBuilder().setMaxSize(6).build())
+            .build();
+    assertEquals(6, merged.getGcpChannelPoolOptions().getMaxSize());
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT,
+        merged.getGcpChannelPoolOptions().getChannelPrimeTimeout());
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS,
+        merged.getGcpChannelPoolOptions().getChannelPrimeMaxAttempts());
+    assertNull(merged.getGcpChannelPoolOptions().getChannelPrimer());
+
+    // A user-provided primer, timeout, and attempt count are preserved.
+    GcpChannelPrimer userPrimer = channel -> Futures.immediateFuture(null);
+    SpannerOptions custom =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setChannelPrimer(userPrimer)
+                    .setChannelPrimeTimeout(Duration.ofSeconds(2))
+                    .setChannelPrimeMaxAttempts(5)
+                    .build())
+            .build();
+    assertSame(userPrimer, custom.getGcpChannelPoolOptions().getChannelPrimer());
+    assertEquals(Duration.ofSeconds(2), custom.getGcpChannelPoolOptions().getChannelPrimeTimeout());
+    assertEquals(5, custom.getGcpChannelPoolOptions().getChannelPrimeMaxAttempts());
   }
 
   @Test
@@ -1452,6 +1542,39 @@ public class SpannerOptionsTest {
   }
 
   @Test
+  public void enableGrpcMetricsKeepsOneArgOverloadForCompatibility() throws Exception {
+    assertNotNull(
+        SpannerOptions.class.getMethod(
+            "enablegRPCMetrics", InstantiatingGrpcChannelProvider.Builder.class));
+  }
+
+  @Test
+  public void testCustomProviderKeepsCloudMonitoringSinkOnNonOmni() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      CustomOpenTelemetryMetricsProvider provider =
+          CustomOpenTelemetryMetricsProvider.create(OpenTelemetry.noop());
+      // Additive semantics: a custom sink on a non-OMNI client leaves the Cloud Monitoring sink on.
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("some-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setClientMetricsProvider(provider)
+              .build();
+      assertSame(provider, options.getClientMetricsProvider());
+      assertTrue(options.isEnableBuiltInMetrics());
+
+      // Disabling the built-in flag turns off only the Cloud Monitoring sink; the custom sink
+      // stays.
+      SpannerOptions customOnly = options.toBuilder().setBuiltInMetricsEnabled(false).build();
+      assertSame(provider, customOnly.getClientMetricsProvider());
+      assertFalse(customOnly.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
   public void testLogin() {
     SpannerOptions.Builder builder =
         SpannerOptions.newBuilder()
@@ -1530,5 +1653,221 @@ public class SpannerOptionsTest {
     assertThrows(
         IllegalArgumentException.class,
         () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(Duration.ofSeconds(-10)));
+  }
+
+  @Test
+  public void testCallContextConfigurator() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getCallContextConfigurator());
+
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return null;
+          }
+        };
+    SpannerOptions customOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setCallContextConfigurator(configurator)
+            .build();
+    assertSame(configurator, customOptions.getCallContextConfigurator());
+
+    SpannerOptions optionsFromBuilder = customOptions.toBuilder().build();
+    assertSame(configurator, optionsFromBuilder.getCallContextConfigurator());
+
+    SpannerOptions clearedOptions =
+        customOptions.toBuilder().setCallContextConfigurator(null).build();
+    assertNull(clearedOptions.getCallContextConfigurator());
+  }
+
+  @Test
+  public void testUseClientCertAndTrustCertificate() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test");
+    SelfSignedCertificate ca = new SelfSignedCertificate("spanner.ca");
+
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+      String caPath = ca.certificate().getAbsolutePath();
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setCaCertificate(caPath)
+              .build();
+
+      assertNotNull(options.getChannelConfigurator());
+      assertEquals(certPath, options.getClientCertificate());
+      assertEquals(keyPath, options.getClientCertificateKey());
+      assertEquals(caPath, options.getCaCertificate());
+
+      SpannerOptions fromBuilder = options.toBuilder().build();
+      assertNotNull(fromBuilder.getChannelConfigurator());
+      assertEquals(certPath, fromBuilder.getClientCertificate());
+      assertEquals(keyPath, fromBuilder.getClientCertificateKey());
+      assertEquals(caPath, fromBuilder.getCaCertificate());
+
+      // Test standalone setCaCertificate
+      SpannerOptions caOnlyOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .setCaCertificate(caPath)
+              .build();
+
+      assertNotNull(caOnlyOptions.getChannelConfigurator());
+      assertNull(caOnlyOptions.getClientCertificate());
+      assertNull(caOnlyOptions.getClientCertificateKey());
+      assertEquals(caPath, caOnlyOptions.getCaCertificate());
+
+      // Test setCaCertificate combined with login (username/password)
+      SpannerOptions loginWithCaOptions =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setType(SpannerOptions.InstanceType.OMNI)
+              .setHost("https://localhost:1234")
+              .setCaCertificate(caPath)
+              .login("test-user", "test-pass".toCharArray())
+              .build();
+
+      assertTrue(loginWithCaOptions.getCredentials() instanceof SpannerOmniCredentials);
+      assertNotNull(loginWithCaOptions.getChannelConfigurator());
+      assertEquals(caPath, loginWithCaOptions.getCaCertificate());
+
+      SpannerOptions loginFromBuilder = loginWithCaOptions.toBuilder().build();
+      assertTrue(loginFromBuilder.getCredentials() instanceof SpannerOmniCredentials);
+      assertNotNull(loginFromBuilder.getChannelConfigurator());
+      assertEquals(caPath, loginFromBuilder.getCaCertificate());
+    } finally {
+      ssc.delete();
+      ca.delete();
+    }
+  }
+
+  @Test
+  public void testUseClientCertAndCaCertificateEmptyValidation() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("", "/path/to/key"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("/path/to/cert", ""));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert(null, "key"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().useClientCert("cert", null));
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(""));
+    assertThrows(
+        IllegalArgumentException.class, () -> SpannerOptions.newBuilder().setCaCertificate(null));
+  }
+
+  @Test
+  public void testToBuilderPreservesChannelConfiguratorWithoutChaining() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.configurator");
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+
+      final int[] configuratorCallCount = new int[] {0};
+      @SuppressWarnings("rawtypes")
+      ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> customConfigurator =
+          builder -> {
+            configuratorCallCount[0]++;
+            return builder;
+          };
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setChannelConfigurator(customConfigurator)
+              .build();
+
+      // Repeated toBuilder().build()
+      SpannerOptions options2 = options.toBuilder().build();
+      SpannerOptions options3 = options2.toBuilder().build();
+
+      ManagedChannelBuilder<?> dummyBuilder = mock(ManagedChannelBuilder.class);
+      options3.getChannelConfigurator().apply(dummyBuilder);
+      // The custom configurator should only be called once, not 3 times due to redundant nesting
+      assertEquals(1, configuratorCallCount[0]);
+    } finally {
+      ssc.delete();
+    }
+  }
+
+  @Test
+  public void testUnwrapsOmniSslChannelConfiguratorWhenOmniSslContextNull() throws Exception {
+    SelfSignedCertificate ssc = new SelfSignedCertificate("spanner.test.unwrap");
+    try {
+      String certPath = ssc.certificate().getAbsolutePath();
+      String keyPath = ssc.privateKey().getAbsolutePath();
+
+      final int[] configuratorCallCount = new int[] {0};
+      @SuppressWarnings("rawtypes")
+      ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> customConfigurator =
+          builder -> {
+            configuratorCallCount[0]++;
+            return builder;
+          };
+
+      SpannerOptions optionsWithCert =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .useClientCert(certPath, keyPath)
+              .setChannelConfigurator(customConfigurator)
+              .build();
+
+      // Create new options without certs but with previous channel configurator
+      SpannerOptions optionsWithoutCert =
+          SpannerOptions.newBuilder()
+              .setProjectId("test-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setHost("https://localhost:1234")
+              .setChannelConfigurator(optionsWithCert.getChannelConfigurator())
+              .build();
+
+      ManagedChannelBuilder<?> dummyBuilder = mock(ManagedChannelBuilder.class);
+      optionsWithoutCert.getChannelConfigurator().apply(dummyBuilder);
+      assertEquals(1, configuratorCallCount[0]);
+    } finally {
+      ssc.delete();
+    }
+  }
+
+  @Test
+  public void testToBuilderPreservesInstanceTypeAndUsePlainText() throws Exception {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setHost("localhost:1234")
+            .setType(SpannerOptions.InstanceType.OMNI)
+            .usePlainText()
+            .build();
+
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isUsePlainText());
+
+    SpannerOptions fromBuilder = options.toBuilder().build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, fromBuilder.getInstanceType());
+    assertTrue(fromBuilder.isUsePlainText());
   }
 }

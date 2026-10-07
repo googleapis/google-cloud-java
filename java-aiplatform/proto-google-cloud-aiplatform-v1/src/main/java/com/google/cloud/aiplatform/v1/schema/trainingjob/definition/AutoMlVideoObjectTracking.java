@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_object_tracking.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
@@ -43,7 +43,7 @@ public final class AutoMlVideoObjectTracking extends com.google.protobuf.Generat
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
         /* minor= */ 33,
-        /* patch= */ 2,
+        /* patch= */ 6,
         /* suffix= */ "",
         "AutoMlVideoObjectTracking");
   }

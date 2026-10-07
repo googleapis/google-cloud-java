@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.BigQueryDriver;
 import com.google.cloud.bigquery.jdbc.DataSource;
+import com.google.cloud.bigquery.jdbc.OpenTelemetryJulHandler;
 import com.google.common.collect.ImmutableMap;
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +54,10 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
@@ -62,6 +66,7 @@ import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITBigQueryJDBCTest extends ITBase {
@@ -101,6 +106,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -127,8 +133,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(123.456789, resultSet.getDouble(5), 0.0);
     assertEquals("testString", resultSet.getString(6));
     assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    Timestamp expectedTimestamp = Timestamp.from(Instant.parse("2020-04-27T18:07:25.356Z"));
+    assertEquals(expectedTimestamp, resultSet.getObject(10));
+    assertEquals(expectedTimestamp, resultSet.getTimestamp(10));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
     assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
@@ -141,7 +148,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testFastQueryPathSmall() throws SQLException {
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 850))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
@@ -149,20 +156,17 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     Connection connection =
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     Statement bigQueryStatement = connection.createStatement();
-    ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
-    assertEquals(0, resultSetRowCount(jsonResultSet));
+    validateStatement(bigQueryStatement, 0);
     connection.close();
   }
 
   @Test
   public void testSmallSelectAndVerifyResults() throws SQLException {
     String query =
-        "SELECT word FROM `bigquery-public-data.samples.shakespeare` WHERE"
-            + " word LIKE 'X%' LIMIT 10";
+        "SELECT CONCAT('X', cast(word as STRING)) FROM UNNEST(GENERATE_ARRAY(1, 10)) AS word LIMIT 10";
 
     ResultSet resultSet = bigQueryStatement.executeQuery(query);
     int rowCount = 0;
@@ -176,6 +180,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   // reads without using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
+  @Tag("disable_tpc")
   public void testIterateOrderJsonMultiThread_NoReadApi() throws SQLException {
     int expectedCnt = 10000;
     String query = String.format(BASE_QUERY, expectedCnt);
@@ -194,6 +199,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
+  @Tag("disable_tpc")
   public void testIterateOrderArrowMultiThread() throws SQLException {
     int expectedCnt = 200000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
@@ -214,6 +220,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -233,6 +240,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -251,6 +259,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -276,14 +285,9 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     Statement statement = connectionUseStateless.createStatement();
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertEquals(850, resultSetRowCount(jsonResultSet));
+    validateStatement(statement, 850);
 
-    String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
-    ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
-    assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
+    validateStatement(statement, 0);
     connectionUseStateless.close();
   }
 
@@ -309,8 +313,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
     assertNotNull(connection);
     Statement st = connection.createStatement();
-    boolean rs = st.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
-    assertTrue(rs);
+    validateStatement(st, 180);
     connection.close();
   }
 
@@ -341,7 +344,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDefaultDatasetWithProject() throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ".testDataset";
+        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ":testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
@@ -355,6 +358,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testLocation() throws SQLException {
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=EU";
 
@@ -367,10 +371,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     // Query a dataset in the EU
-    String query =
-        "SELECT name FROM `bigquery-public-data.covid19_italy_eu.data_by_province` LIMIT 100";
-    ResultSet resultSet = statement.executeQuery(query);
-    assertEquals(100, resultSetRowCount(resultSet));
+    validateStatement(statement, 100);
 
     String connection_uri_null_location = ITBigQueryJDBCTest.connection_uri;
 
@@ -384,6 +385,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIncorrectLocation() throws SQLException {
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=europe-west3";
 
@@ -394,9 +396,12 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     // Query a dataset in the US
     Statement statement = connection.createStatement();
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
     BigQueryJdbcException ex =
-        assertThrows(BigQueryJdbcException.class, () -> statement.executeQuery(query));
+        assertThrows(
+            BigQueryJdbcException.class,
+            () ->
+                statement.executeQuery(
+                    "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180"));
     BigQueryError error = ex.getBigQueryException().getError();
     assertNotNull(error);
     assertEquals("accessDenied", error.getReason());
@@ -930,15 +935,14 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testExecuteQueryWithMultipleReturns() throws SQLException {
-    String query = String.format("SELECT * FROM bigquery-public-data.samples.shakespeare LIMIT 1;");
+    String query = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1));");
 
     assertThrows(BigQueryJdbcException.class, () -> bigQueryStatement.executeQuery(query + query));
   }
 
   @Test
   public void testExecuteUpdateWithSelect() throws SQLException {
-    String selectQuery =
-        String.format("SELECT * FROM bigquery-public-data.samples.shakespeare LIMIT 1;");
+    String selectQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1));");
 
     assertThrows(BigQueryJdbcException.class, () -> bigQueryStatement.executeUpdate(selectQuery));
   }
@@ -1018,7 +1022,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     insertStmt.setShort(10, (short) 34);
     insertStmt.setBytes(11, new byte[] {0x3, 0x4});
     insertStmt.setObject(12, 6.28d);
-    insertStmt.setObject(13, false);
+    // calling setObject with null value without Type should now work with inferred Types.
+    insertStmt.setObject(13, null);
     insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
@@ -1039,6 +1044,91 @@ public class ITBigQueryJDBCTest extends ITBase {
     updateStmt.setInt(2, 222);
     boolean updateStatus = updateStmt.execute();
     assertFalse(updateStatus);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
+  public void testPreparedQueryWithExtraPositionalParameterCharacter() throws SQLException {
+    String TABLE_NAME = "JDBC_PREPARED_EXTRA_PARAM_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+
+    // This query would report an incorrect parameter count if dryRun is not used to infer parameter
+    // count
+    String selectQuery =
+        String.format("SELECT 'Hello, ?World!' AS message, ? FROM %s.%s", DATASET, TABLE_NAME);
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement selectStmt = bigQueryConnection.prepareStatement(selectQuery);
+
+    // Tests that parameter Metadata is populated before query execution and setter.
+    ParameterMetaData parameterMetaData = selectStmt.getParameterMetaData();
+    assertNotNull(parameterMetaData);
+    assertEquals(1, parameterMetaData.getParameterCount());
+
+    // Tests that ResultSet Schema is populated before query execution
+    ResultSetMetaData resultSetMetaData = selectStmt.getMetaData();
+    assertEquals("message", resultSetMetaData.getColumnName(1));
+    assertEquals(Types.NVARCHAR, resultSetMetaData.getColumnType(1));
+
+    selectStmt.setString(1, "StringField");
+    ResultSet selectResult2 = selectStmt.executeQuery();
+    assertNotNull(selectResult2);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
+  public void testPreparedInferredParameterTypes() throws SQLException {
+
+    String TABLE_NAME = "JDBC_PREPARED_PARAMETER_INFER_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NumericField` NUMERIC, "
+                + "`BigNumericField` BIGNUMERIC, `DateField` DATE, `TimeField` TIME, `DateTimeField` DATETIME, `TimestampField` TIMESTAMP, `ArrayField` ARRAY<STRING>, `StructField` STRUCT<subField STRING>, "
+                + "`JsonField` JSON, `GeographyField` GEOGRAPHY, `IntervalField` INTERVAL, `RangeField` RANGE<DATE>);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, BytesField, DoubleField, BooleanField, NumericField, BigNumericField, "
+                + "DateField, TimeField, DateTimeField, TimestampField, ArrayField, StructField, JsonField, GeographyField, IntervalField, RangeField) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+    int[] expectedValues = {
+      -9, -5, -3, 8, 16, 2, 2, 91, 92, 93, 93, 2003, 2002, 1111, 1111, 1111, 1111
+    };
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+    ParameterMetaData parameterMetaData = insertStmt.getParameterMetaData();
+    for (int i = 0; i < parameterMetaData.getParameterCount(); i++) {
+      assertEquals(expectedValues[i], parameterMetaData.getParameterType(i + 1));
+    }
+
+    // Testing an Exception is thrown if not all values are set.
+    insertStmt.setString(1, "String1");
+    insertStmt.setInt(2, 111);
+    insertStmt.setObject(4, 1.5);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    assertThrows(BigQueryJdbcException.class, insertStmt::execute);
 
     boolean dropStatus = bigQueryStatement.execute(dropQuery);
     assertFalse(dropStatus);
@@ -1098,9 +1188,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testExecuteBatchQueryTypeSelectThrowsUnsupported() throws SQLException {
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
-    String query =
-        "SELECT word FROM `bigquery-public-data.samples.shakespeare` WHERE"
-            + " word LIKE 'X%' LIMIT 10";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10));";
     Statement statement = connection.createStatement();
 
     assertThrows(IllegalArgumentException.class, () -> statement.addBatch(query));
@@ -1271,6 +1359,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testUnsupportedHTAPIFallbacksToStandardQueriesWithRange() throws SQLException {
     String selectQuery = "select * from `DATATYPERANGETEST.RangeIntervalTestTable` LIMIT 5000;";
     String connection_uri =
@@ -1295,6 +1384,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIntervalDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
@@ -1320,6 +1410,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIntervalDataTypeWithJsonResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 10 ;";
@@ -1345,6 +1436,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidLEPEndpointQuery() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1377,6 +1469,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testLEPEndpointDataNotFoundThrows() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1393,6 +1486,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidREPEndpointQuery() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1427,7 +1521,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseStatement() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))";
     Statement statement = bigQueryConnection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertEquals(10, resultSetRowCount(jsonResultSet));
@@ -1437,7 +1531,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementSingleResult() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1449,7 +1543,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementMultiResult() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10;";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10));";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1467,7 +1561,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementMultiResultExplicitClose() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10;";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10));";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1514,7 +1608,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementSmallSelect() throws SQLException {
     String query =
-        "SELECT * FROM `bigquery-public-data.samples.shakespeare` where corpus=? LIMIT 1000";
+        "SELECT num FROM UNNEST(GENERATE_ARRAY(1, 1000)) AS num WHERE CAST(? AS STRING) = 'hamlet'";
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "hamlet");
 
@@ -1680,6 +1774,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidDestinationTableSavesQueriesWithLegacySQL() throws SQLException {
     // setup
     String connection_uri =
@@ -1724,6 +1819,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testUseLegacySQLWithLargeResultsNotAllowedQueries() throws SQLException {
     // setup
     String connection_uri =
@@ -1742,6 +1838,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -1771,6 +1868,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDestinationTableAndDestinationDatasetThatDoesNotExistsCreates()
       throws SQLException {
     // setup
@@ -1805,6 +1903,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testUseLegacySQLWithLargeResultsAllowedWithNoDestinationTableDefaults()
       throws SQLException {
     // setup
@@ -1824,6 +1923,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDestinationTableWithMissingDestinationDatasetDefaults() throws SQLException {
     // setup
     String connection_uri =
@@ -1955,6 +2055,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testRangeDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
@@ -2063,7 +2164,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testQueryPropertyTimeZoneQueries() throws SQLException {
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri + "QueryProperties=time_zone=America/New_York;";
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 180))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -2078,6 +2179,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testQueryPropertySessionIdSetsStatementSession()
       throws SQLException, InterruptedException {
     String sessionId = getSessionId();
@@ -2104,9 +2206,12 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testEncryptedTableWithKmsQueries() throws SQLException {
     // setup
-    String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
+    org.junit.jupiter.api.Assumptions.assumeTrue(
+        System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing");
+    String KMSKeyName = System.getenv("KMS_RESOURCE_PATH");
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery = "SELECT * FROM `JDBC_INTEGRATION_DATASET.KMS_Test_table`;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -2124,8 +2229,11 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIncorrectKmsThrows() throws SQLException {
-    String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
+    org.junit.jupiter.api.Assumptions.assumeTrue(
+        System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing");
+    String KMSKeyName = System.getenv("KMS_RESOURCE_PATH");
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery =
         "INSERT INTO `bigquery-devtools-drivers.JDBC_INTEGRATION_DATASET.No_KMS_Test_table` (id,"
@@ -2140,6 +2248,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testQueryPropertyServiceAccountFollowsIamPermission() throws SQLException {
     final String SERVICE_ACCOUNT_EMAIL = requireEnvVar("SA_EMAIL");
     String connection_uri =
@@ -2161,6 +2270,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidLegacySQLStatement() throws SQLException {
     String legacyJoinQuery =
         "SELECT\n"
@@ -2487,8 +2597,62 @@ public class ITBigQueryJDBCTest extends ITBase {
     }
   }
 
+  private void validateNull(
+      String method,
+      BiFunction<ResultSet, Integer, Object> getter,
+      ImmutableMap<String, Object> expectedResult,
+      Object expectedDefaultValue)
+      throws Exception {
+
+    try (Connection connection = DriverManager.getConnection(connection_uri);
+        Connection connectionHTAPI =
+            DriverManager.getConnection(
+                connection_uri
+                    + ";HighThroughputMinTableSize=0;HighThroughputActivationRatio=0;EnableHighThroughputAPI=1;");
+        Statement statement = connection.createStatement();
+        Statement statementHTAPI = connectionHTAPI.createStatement()) {
+
+      String query =
+          String.format(
+              "SELECT * FROM `%s.%s.all_bq_types` WHERE stringField is null", PROJECT_ID, DATASET);
+      ResultSet resultSetRegular = statement.executeQuery(query);
+      ResultSet resultSetArrow = statementHTAPI.executeQuery(query);
+      resultSetRegular.next();
+      resultSetArrow.next();
+
+      for (int i = 1; i <= resultSetRegular.getMetaData().getColumnCount(); i++) {
+        String columnName = resultSetRegular.getMetaData().getColumnName(i);
+        if (!columnName.contains("array") && expectedResult.containsKey(columnName)) {
+          String regularApiLabel =
+              String.format(
+                  "[Method: %s] [Column: %s] [API: Regular] [Null Scenario]", method, columnName);
+          String htapiApiLabel =
+              String.format(
+                  "[Method: %s] [Column: %s] [API: HTAPI] [Null Scenario]", method, columnName);
+
+          assertEquals(expectedDefaultValue, getter.apply(resultSetRegular, i), regularApiLabel);
+          assertTrue(resultSetRegular.wasNull(), regularApiLabel + " wasNull should be true");
+
+          assertEquals(expectedDefaultValue, getter.apply(resultSetArrow, i), htapiApiLabel);
+          assertTrue(resultSetArrow.wasNull(), htapiApiLabel + " wasNull should be true");
+        }
+      }
+    }
+  }
+
   @Test
   public void validateGetString() throws Exception {
+    DateTimeFormatter timestampFormatter =
+        DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+    String expectedTimestampString =
+        timestampFormatter.format(
+            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalDateTime());
+    String expectedArrayTimestamp =
+        String.format(
+            "[%s, %s]",
+            Timestamp.from(Instant.parse("2023-01-01T01:00:00Z")),
+            Timestamp.from(Instant.parse("2023-01-01T02:00:00Z")));
+
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
             .put("stringField", "StringValue")
@@ -2498,7 +2662,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("numericField", "12345.67")
             .put("bigNumericField", "98765432109876543210.123456789")
             .put("booleanField", "true")
-            .put("timestampFiled", "2023-07-28 12:30:00.000000")
+            .put("timestampFiled", expectedTimestampString)
             .put("dateField", "2023-07-28")
             .put("timeField", "12:30:00.000")
             .put("dateTimeField", "2023-07-28 12:30:00.000000")
@@ -2515,7 +2679,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("arrayNumeric", "[10.5, 20.5]")
             .put("arrayBignumeric", "[100.1, 200.2]")
             .put("arrayBoolean", "[true, false]")
-            .put("arrayTimestamp", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
+            .put("arrayTimestamp", expectedArrayTimestamp)
             .put("arrayDate", "[2023-01-01, 2023-01-02]")
             .put("arrayTime", "[01:00:00, 02:00:00]")
             .put("arrayDatetime", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
@@ -2533,6 +2697,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getString", getter, stringResults);
+    validateNull("getString", getter, stringResults, null);
   }
 
   @Test
@@ -2553,6 +2718,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getInt", getter, result);
+    validateNull("getInt", getter, result, 0);
   }
 
   @Test
@@ -2573,6 +2739,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getLong", getter, result);
+    validateNull("getLong", getter, result, 0L);
   }
 
   @Test
@@ -2595,6 +2762,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getBool", getter, result);
+    validateNull("getBool", getter, result, false);
   }
 
   @Test
@@ -2616,6 +2784,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getFloat", getter, result);
+    validateNull("getFloat", getter, result, 0.0f);
   }
 
   @Test
@@ -2637,6 +2806,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getDouble", getter, result);
+    validateNull("getDouble", getter, result, 0.0d);
   }
 
   @Test
@@ -2657,15 +2827,18 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getShort", getter, result);
+    validateNull("getShort", getter, result, (short) 0);
   }
 
   @Test
   public void validateGetTime() throws Exception {
+    LocalTime expectedTimestampLocalTime =
+        Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalTime();
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Time.valueOf("12:30:00"))
             .put("dateTimeField", Time.valueOf("12:30:00"))
-            .put("timestampFiled", Time.valueOf("12:30:00"))
+            .put("timestampFiled", Time.valueOf(expectedTimestampLocalTime))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {
@@ -2676,6 +2849,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTime", getter, result);
+    validateNull("getTime", getter, result, null);
   }
 
   @Test
@@ -2695,6 +2869,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getDate", getter, result);
+    validateNull("getDate", getter, result, null);
   }
 
   @Test
@@ -2704,7 +2879,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("timeField", Timestamp.valueOf("1970-01-01 12:30:00"))
             .put("dateField", Timestamp.valueOf("2023-07-28 00:00:00"))
             .put("dateTimeField", Timestamp.valueOf("2023-07-28 12:30:00"))
-            .put("timestampFiled", Timestamp.valueOf("2023-07-28 12:30:00"))
+            .put("timestampFiled", Timestamp.from(Instant.parse("2023-07-28T12:30:00Z")))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {
@@ -2715,6 +2890,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTimestamp", getter, result);
+    validateNull("getTimestamp", getter, result, null);
   }
 
   @Test
@@ -2734,6 +2910,7 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getByte", getter, result);
+    validateNull("getByte", getter, result, (byte) 0);
   }
 
   @Test
@@ -2803,8 +2980,10 @@ public class ITBigQueryJDBCTest extends ITBase {
       java.util.logging.Logger bqLogger =
           java.util.logging.Logger.getLogger("com.google.cloud.bigquery");
       for (java.util.logging.Handler h : bqLogger.getHandlers()) {
-        h.close();
-        bqLogger.removeHandler(h);
+        if (!(h instanceof OpenTelemetryJulHandler)) {
+          h.close();
+          bqLogger.removeHandler(h);
+        }
       }
 
       // Verify physical connection-specific log file creation
@@ -2839,6 +3018,32 @@ public class ITBigQueryJDBCTest extends ITBase {
         for (File f : remaining) {
           f.delete();
         }
+      }
+    }
+  }
+
+  @Test
+  public void testSessionAbortedOnConnectionClose() throws SQLException {
+    String sessionId;
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      try (Statement statement = connection.createStatement()) {
+        statement.execute("CREATE TEMP TABLE session_temp_table (id INT64);");
+      }
+      BigQueryConnection bqConn = connection.unwrap(BigQueryConnection.class);
+      assertNotNull(bqConn.getSessionInfoConnectionProperty());
+      sessionId = bqConn.getSessionInfoConnectionProperty().getValue();
+      assertNotNull(sessionId);
+    }
+
+    // After connection is closed, the session is aborted on the BigQuery server.
+    // Attaching to the same session_id in a new connection should fail when running a query.
+    String urlWithAbortedSession =
+        connection_uri + "EnableSession=1;QueryProperties=session_id=" + sessionId + ";";
+    try (Connection newConnection = DriverManager.getConnection(urlWithAbortedSession)) {
+      try (Statement statement = newConnection.createStatement()) {
+        SQLException ex =
+            assertThrows(
+                SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
       }
     }
   }

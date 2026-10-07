@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/securitycenter/v1/event_threat_detection_custom_module_validation_errors.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.securitycenter.v1;
 
@@ -42,7 +42,7 @@ public final class Position extends com.google.protobuf.GeneratedMessage
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
         /* minor= */ 33,
-        /* patch= */ 2,
+        /* patch= */ 6,
         /* suffix= */ "",
         "Position");
   }

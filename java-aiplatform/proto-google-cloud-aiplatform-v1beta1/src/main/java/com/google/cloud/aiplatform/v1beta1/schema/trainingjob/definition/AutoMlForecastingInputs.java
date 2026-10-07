@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto
-// Protobuf Java Version: 4.33.2
+// Protobuf Java Version: 4.33.6
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -37,7 +37,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
         /* minor= */ 33,
-        /* patch= */ 2,
+        /* patch= */ 6,
         /* suffix= */ "",
         "AutoMlForecastingInputs");
   }
@@ -249,7 +249,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
           /* minor= */ 33,
-          /* patch= */ 2,
+          /* patch= */ 6,
           /* suffix= */ "",
           "Transformation");
     }
@@ -322,7 +322,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "AutoTransformation");
       }
@@ -969,7 +969,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "NumericTransformation");
       }
@@ -1625,7 +1625,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "CategoricalTransformation");
       }
@@ -2341,7 +2341,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "TimestampTransformation");
       }
@@ -3304,7 +3304,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
             /* minor= */ 33,
-            /* patch= */ 2,
+            /* patch= */ 6,
             /* suffix= */ "",
             "TextTransformation");
       }
@@ -6070,7 +6070,7 @@ public final class AutoMlForecastingInputs extends com.google.protobuf.Generated
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
           /* minor= */ 33,
-          /* patch= */ 2,
+          /* patch= */ 6,
           /* suffix= */ "",
           "Granularity");
     }

@@ -1453,6 +1453,57 @@ public final class ReservationServiceGrpc {
     return getListReservationGroupsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest,
+          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+      getUpdateReservationGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReservationGroup",
+      requestType = com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest.class,
+      responseType = com.google.cloud.bigquery.reservation.v1.ReservationGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest,
+          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+      getUpdateReservationGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest,
+            com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+        getUpdateReservationGroupMethod;
+    if ((getUpdateReservationGroupMethod = ReservationServiceGrpc.getUpdateReservationGroupMethod)
+        == null) {
+      synchronized (ReservationServiceGrpc.class) {
+        if ((getUpdateReservationGroupMethod =
+                ReservationServiceGrpc.getUpdateReservationGroupMethod)
+            == null) {
+          ReservationServiceGrpc.getUpdateReservationGroupMethod =
+              getUpdateReservationGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest,
+                          com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateReservationGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.reservation.v1.ReservationGroup
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReservationServiceMethodDescriptorSupplier("UpdateReservationGroup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateReservationGroupMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ReservationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ReservationServiceStub> factory =
@@ -2096,6 +2147,21 @@ public final class ReservationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListReservationGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation group resource.
+     * </pre>
+     */
+    default void updateReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReservationGroupMethod(), responseObserver);
     }
   }
 
@@ -2785,6 +2851,23 @@ public final class ReservationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation group resource.
+     * </pre>
+     */
+    public void updateReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReservationGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3359,6 +3442,20 @@ public final class ReservationServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReservationGroupsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation group resource.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ReservationGroup updateReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateReservationGroupMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3904,6 +4001,19 @@ public final class ReservationServiceGrpc {
             com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListReservationGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation group resource.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.reservation.v1.ReservationGroup updateReservationGroup(
+        com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReservationGroupMethod(), getCallOptions(), request);
     }
   }
 
@@ -4489,6 +4599,21 @@ public final class ReservationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListReservationGroupsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing reservation group resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.reservation.v1.ReservationGroup>
+        updateReservationGroup(
+            com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReservationGroupMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_RESERVATION = 0;
@@ -4520,6 +4645,7 @@ public final class ReservationServiceGrpc {
   private static final int METHODID_GET_RESERVATION_GROUP = 26;
   private static final int METHODID_DELETE_RESERVATION_GROUP = 27;
   private static final int METHODID_LIST_RESERVATION_GROUPS = 28;
+  private static final int METHODID_UPDATE_RESERVATION_GROUP = 29;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4717,6 +4843,13 @@ public final class ReservationServiceGrpc {
               (com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_RESERVATION_GROUP:
+          serviceImpl.updateReservationGroup(
+              (com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.reservation.v1.ReservationGroup>)
                   responseObserver);
           break;
         default:
@@ -4932,6 +5065,13 @@ public final class ReservationServiceGrpc {
                     com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest,
                     com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse>(
                     service, METHODID_LIST_RESERVATION_GROUPS)))
+        .addMethod(
+            getUpdateReservationGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest,
+                    com.google.cloud.bigquery.reservation.v1.ReservationGroup>(
+                    service, METHODID_UPDATE_RESERVATION_GROUP)))
         .build();
   }
 
@@ -5012,6 +5152,7 @@ public final class ReservationServiceGrpc {
                       .addMethod(getGetReservationGroupMethod())
                       .addMethod(getDeleteReservationGroupMethod())
                       .addMethod(getListReservationGroupsMethod())
+                      .addMethod(getUpdateReservationGroupMethod())
                       .build();
         }
       }

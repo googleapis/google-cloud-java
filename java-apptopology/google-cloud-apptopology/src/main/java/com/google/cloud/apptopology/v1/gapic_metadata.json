@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.apptopology.v1",
+  "libraryPackage": "com.google.cloud.apptopology.v1",
+  "services": {
+    "AppTopology": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AppTopologyClient",
+          "rpcs": {
+            "GenerateDiscoveredResourcesTopology": {
+              "methods": ["generateDiscoveredResourcesTopology", "generateDiscoveredResourcesTopology", "generateDiscoveredResourcesTopology", "generateDiscoveredResourcesTopologyCallable"]
+            },
+            "GetDomain": {
+              "methods": ["getDomain", "getDomain", "getDomain", "getDomainCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetSchema": {
+              "methods": ["getSchema", "getSchema", "getSchema", "getSchemaCallable"]
+            },
+            "ListDomains": {
+              "methods": ["listDomains", "listDomains", "listDomains", "listDomainsPagedCallable", "listDomainsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

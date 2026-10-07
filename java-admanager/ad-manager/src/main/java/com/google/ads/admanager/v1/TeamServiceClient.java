@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetTeam</td>
- *      <td><p> API to retrieve a `Team` object.</td>
+ *      <td><p> Retrieves a `Team` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListTeams</td>
- *      <td><p> API to retrieve a list of `Team` objects.</td>
+ *      <td><p> Lists `Team` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateTeam</td>
- *      <td><p> API to create a `Team` object.</td>
+ *      <td><p> Creates a `Team` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +124,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateTeams</td>
- *      <td><p> API to batch create `Team` objects.</td>
+ *      <td><p> Creates `Team` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +140,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateTeam</td>
- *      <td><p> API to update a `Team` object.</td>
+ *      <td><p> Updates a `Team` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +158,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateTeams</td>
- *      <td><p> API to batch update `Team` objects.</td>
+ *      <td><p> Batch updates `Team` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -174,7 +174,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateTeams</td>
- *      <td><p> API to batch activate `Team` objects.</td>
+ *      <td><p> Batch activates `Team` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -193,7 +193,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateTeams</td>
- *      <td><p> API to batch deactivate `Team` objects.</td>
+ *      <td><p> Batch deactivates `Team` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -303,7 +303,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Team` object.
+   * Retrieves a `Team` object.
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Team` object.
+   * Retrieves a `Team` object.
    *
    * <p>Sample code:
    *
@@ -358,7 +358,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Team` object.
+   * Retrieves a `Team` object.
    *
    * <p>Sample code:
    *
@@ -386,7 +386,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Team` object.
+   * Retrieves a `Team` object.
    *
    * <p>Sample code:
    *
@@ -413,7 +413,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Team` objects.
+   * Lists `Team` objects.
    *
    * <p>Sample code:
    *
@@ -443,7 +443,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Team` objects.
+   * Lists `Team` objects.
    *
    * <p>Sample code:
    *
@@ -472,7 +472,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Team` objects.
+   * Lists `Team` objects.
    *
    * <p>Sample code:
    *
@@ -507,7 +507,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Team` objects.
+   * Lists `Team` objects.
    *
    * <p>Sample code:
    *
@@ -541,7 +541,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Team` objects.
+   * Lists `Team` objects.
    *
    * <p>Sample code:
    *
@@ -582,7 +582,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Team` object.
+   * Creates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -615,7 +615,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Team` object.
+   * Creates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -645,7 +645,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Team` object.
+   * Creates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -674,7 +674,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Team` object.
+   * Creates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -702,7 +702,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Team` objects.
+   * Creates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -737,7 +737,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Team` objects.
+   * Creates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -769,7 +769,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Team` objects.
+   * Creates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -798,7 +798,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Team` objects.
+   * Creates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -828,7 +828,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Team` object.
+   * Updates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -858,7 +858,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Team` object.
+   * Updates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -887,7 +887,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Team` object.
+   * Updates a `Team` object.
    *
    * <p>Sample code:
    *
@@ -915,7 +915,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Team` objects.
+   * Batch updates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -950,7 +950,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Team` objects.
+   * Batch updates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -982,7 +982,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Team` objects.
+   * Batch updates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1011,7 +1011,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Team` objects.
+   * Batch updates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1041,7 +1041,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `Team` objects.
+   * Batch activates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1075,7 +1075,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `Team` objects.
+   * Batch activates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1105,7 +1105,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `Team` objects.
+   * Batch activates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1134,7 +1134,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `Team` objects.
+   * Batch activates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1164,7 +1164,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch deactivate `Team` objects.
+   * Batch deactivates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1198,7 +1198,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch deactivate `Team` objects.
+   * Batch deactivates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1229,7 +1229,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch deactivate `Team` objects.
+   * Batch deactivates `Team` objects.
    *
    * <p>Sample code:
    *
@@ -1259,7 +1259,7 @@ public class TeamServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch deactivate `Team` objects.
+   * Batch deactivates `Team` objects.
    *
    * <p>Sample code:
    *

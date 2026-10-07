@@ -18,6 +18,42 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.OrderServiceClient.ListOrdersPagedResponse;
 
+import com.google.ads.admanager.v1.BatchApproveAndOverbookOrdersRequest;
+import com.google.ads.admanager.v1.BatchApproveAndOverbookOrdersResponse;
+import com.google.ads.admanager.v1.BatchApproveOrdersRequest;
+import com.google.ads.admanager.v1.BatchApproveOrdersResponse;
+import com.google.ads.admanager.v1.BatchApproveOrdersWithoutReservationRequest;
+import com.google.ads.admanager.v1.BatchApproveOrdersWithoutReservationResponse;
+import com.google.ads.admanager.v1.BatchArchiveOrdersRequest;
+import com.google.ads.admanager.v1.BatchArchiveOrdersResponse;
+import com.google.ads.admanager.v1.BatchCreateOrdersRequest;
+import com.google.ads.admanager.v1.BatchCreateOrdersResponse;
+import com.google.ads.admanager.v1.BatchDeleteOrdersRequest;
+import com.google.ads.admanager.v1.BatchDeleteOrdersResponse;
+import com.google.ads.admanager.v1.BatchDisapproveOrdersRequest;
+import com.google.ads.admanager.v1.BatchDisapproveOrdersResponse;
+import com.google.ads.admanager.v1.BatchDisapproveOrdersWithoutReservationChangesRequest;
+import com.google.ads.admanager.v1.BatchDisapproveOrdersWithoutReservationChangesResponse;
+import com.google.ads.admanager.v1.BatchPauseOrdersRequest;
+import com.google.ads.admanager.v1.BatchPauseOrdersResponse;
+import com.google.ads.admanager.v1.BatchResumeAndOverbookOrdersRequest;
+import com.google.ads.admanager.v1.BatchResumeAndOverbookOrdersResponse;
+import com.google.ads.admanager.v1.BatchResumeOrdersRequest;
+import com.google.ads.admanager.v1.BatchResumeOrdersResponse;
+import com.google.ads.admanager.v1.BatchRetractOrdersRequest;
+import com.google.ads.admanager.v1.BatchRetractOrdersResponse;
+import com.google.ads.admanager.v1.BatchRetractOrdersWithoutReservationChangesRequest;
+import com.google.ads.admanager.v1.BatchRetractOrdersWithoutReservationChangesResponse;
+import com.google.ads.admanager.v1.BatchSubmitOrdersForApprovalAndOverbookRequest;
+import com.google.ads.admanager.v1.BatchSubmitOrdersForApprovalAndOverbookResponse;
+import com.google.ads.admanager.v1.BatchSubmitOrdersForApprovalRequest;
+import com.google.ads.admanager.v1.BatchSubmitOrdersForApprovalResponse;
+import com.google.ads.admanager.v1.BatchSubmitOrdersForApprovalWithoutReservationChangesRequest;
+import com.google.ads.admanager.v1.BatchSubmitOrdersForApprovalWithoutReservationChangesResponse;
+import com.google.ads.admanager.v1.BatchUnarchiveOrdersRequest;
+import com.google.ads.admanager.v1.BatchUnarchiveOrdersResponse;
+import com.google.ads.admanager.v1.BatchUpdateOrdersRequest;
+import com.google.ads.admanager.v1.BatchUpdateOrdersResponse;
 import com.google.ads.admanager.v1.GetOrderRequest;
 import com.google.ads.admanager.v1.ListOrdersRequest;
 import com.google.ads.admanager.v1.ListOrdersResponse;
@@ -120,6 +156,54 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
   private final UnaryCallSettings<GetOrderRequest, Order> getOrderSettings;
   private final PagedCallSettings<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
       listOrdersSettings;
+  private final UnaryCallSettings<BatchCreateOrdersRequest, BatchCreateOrdersResponse>
+      batchCreateOrdersSettings;
+  private final UnaryCallSettings<BatchUpdateOrdersRequest, BatchUpdateOrdersResponse>
+      batchUpdateOrdersSettings;
+  private final UnaryCallSettings<BatchApproveOrdersRequest, BatchApproveOrdersResponse>
+      batchApproveOrdersSettings;
+  private final UnaryCallSettings<
+          BatchApproveAndOverbookOrdersRequest, BatchApproveAndOverbookOrdersResponse>
+      batchApproveAndOverbookOrdersSettings;
+  private final UnaryCallSettings<
+          BatchSubmitOrdersForApprovalRequest, BatchSubmitOrdersForApprovalResponse>
+      batchSubmitOrdersForApprovalSettings;
+  private final UnaryCallSettings<
+          BatchSubmitOrdersForApprovalAndOverbookRequest,
+          BatchSubmitOrdersForApprovalAndOverbookResponse>
+      batchSubmitOrdersForApprovalAndOverbookSettings;
+  private final UnaryCallSettings<
+          BatchSubmitOrdersForApprovalWithoutReservationChangesRequest,
+          BatchSubmitOrdersForApprovalWithoutReservationChangesResponse>
+      batchSubmitOrdersForApprovalWithoutReservationChangesSettings;
+  private final UnaryCallSettings<BatchPauseOrdersRequest, BatchPauseOrdersResponse>
+      batchPauseOrdersSettings;
+  private final UnaryCallSettings<BatchResumeOrdersRequest, BatchResumeOrdersResponse>
+      batchResumeOrdersSettings;
+  private final UnaryCallSettings<
+          BatchResumeAndOverbookOrdersRequest, BatchResumeAndOverbookOrdersResponse>
+      batchResumeAndOverbookOrdersSettings;
+  private final UnaryCallSettings<
+          BatchApproveOrdersWithoutReservationRequest, BatchApproveOrdersWithoutReservationResponse>
+      batchApproveOrdersWithoutReservationSettings;
+  private final UnaryCallSettings<BatchArchiveOrdersRequest, BatchArchiveOrdersResponse>
+      batchArchiveOrdersSettings;
+  private final UnaryCallSettings<BatchUnarchiveOrdersRequest, BatchUnarchiveOrdersResponse>
+      batchUnarchiveOrdersSettings;
+  private final UnaryCallSettings<BatchDeleteOrdersRequest, BatchDeleteOrdersResponse>
+      batchDeleteOrdersSettings;
+  private final UnaryCallSettings<BatchDisapproveOrdersRequest, BatchDisapproveOrdersResponse>
+      batchDisapproveOrdersSettings;
+  private final UnaryCallSettings<
+          BatchDisapproveOrdersWithoutReservationChangesRequest,
+          BatchDisapproveOrdersWithoutReservationChangesResponse>
+      batchDisapproveOrdersWithoutReservationChangesSettings;
+  private final UnaryCallSettings<BatchRetractOrdersRequest, BatchRetractOrdersResponse>
+      batchRetractOrdersSettings;
+  private final UnaryCallSettings<
+          BatchRetractOrdersWithoutReservationChangesRequest,
+          BatchRetractOrdersWithoutReservationChangesResponse>
+      batchRetractOrdersWithoutReservationChangesSettings;
 
   private static final PagedListDescriptor<ListOrdersRequest, ListOrdersResponse, Order>
       LIST_ORDERS_PAGE_STR_DESC =
@@ -181,6 +265,139 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
   public PagedCallSettings<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
       listOrdersSettings() {
     return listOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateOrders. */
+  public UnaryCallSettings<BatchCreateOrdersRequest, BatchCreateOrdersResponse>
+      batchCreateOrdersSettings() {
+    return batchCreateOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateOrders. */
+  public UnaryCallSettings<BatchUpdateOrdersRequest, BatchUpdateOrdersResponse>
+      batchUpdateOrdersSettings() {
+    return batchUpdateOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchApproveOrders. */
+  public UnaryCallSettings<BatchApproveOrdersRequest, BatchApproveOrdersResponse>
+      batchApproveOrdersSettings() {
+    return batchApproveOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchApproveAndOverbookOrders. */
+  public UnaryCallSettings<
+          BatchApproveAndOverbookOrdersRequest, BatchApproveAndOverbookOrdersResponse>
+      batchApproveAndOverbookOrdersSettings() {
+    return batchApproveAndOverbookOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchSubmitOrdersForApproval. */
+  public UnaryCallSettings<
+          BatchSubmitOrdersForApprovalRequest, BatchSubmitOrdersForApprovalResponse>
+      batchSubmitOrdersForApprovalSettings() {
+    return batchSubmitOrdersForApprovalSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchSubmitOrdersForApprovalAndOverbook.
+   */
+  public UnaryCallSettings<
+          BatchSubmitOrdersForApprovalAndOverbookRequest,
+          BatchSubmitOrdersForApprovalAndOverbookResponse>
+      batchSubmitOrdersForApprovalAndOverbookSettings() {
+    return batchSubmitOrdersForApprovalAndOverbookSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchSubmitOrdersForApprovalWithoutReservationChanges.
+   */
+  public UnaryCallSettings<
+          BatchSubmitOrdersForApprovalWithoutReservationChangesRequest,
+          BatchSubmitOrdersForApprovalWithoutReservationChangesResponse>
+      batchSubmitOrdersForApprovalWithoutReservationChangesSettings() {
+    return batchSubmitOrdersForApprovalWithoutReservationChangesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchPauseOrders. */
+  public UnaryCallSettings<BatchPauseOrdersRequest, BatchPauseOrdersResponse>
+      batchPauseOrdersSettings() {
+    return batchPauseOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeOrders. */
+  public UnaryCallSettings<BatchResumeOrdersRequest, BatchResumeOrdersResponse>
+      batchResumeOrdersSettings() {
+    return batchResumeOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeAndOverbookOrders. */
+  public UnaryCallSettings<
+          BatchResumeAndOverbookOrdersRequest, BatchResumeAndOverbookOrdersResponse>
+      batchResumeAndOverbookOrdersSettings() {
+    return batchResumeAndOverbookOrdersSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchApproveOrdersWithoutReservation.
+   */
+  public UnaryCallSettings<
+          BatchApproveOrdersWithoutReservationRequest, BatchApproveOrdersWithoutReservationResponse>
+      batchApproveOrdersWithoutReservationSettings() {
+    return batchApproveOrdersWithoutReservationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveOrders. */
+  public UnaryCallSettings<BatchArchiveOrdersRequest, BatchArchiveOrdersResponse>
+      batchArchiveOrdersSettings() {
+    return batchArchiveOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUnarchiveOrders. */
+  public UnaryCallSettings<BatchUnarchiveOrdersRequest, BatchUnarchiveOrdersResponse>
+      batchUnarchiveOrdersSettings() {
+    return batchUnarchiveOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteOrders. */
+  public UnaryCallSettings<BatchDeleteOrdersRequest, BatchDeleteOrdersResponse>
+      batchDeleteOrdersSettings() {
+    return batchDeleteOrdersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDisapproveOrders. */
+  public UnaryCallSettings<BatchDisapproveOrdersRequest, BatchDisapproveOrdersResponse>
+      batchDisapproveOrdersSettings() {
+    return batchDisapproveOrdersSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchDisapproveOrdersWithoutReservationChanges.
+   */
+  public UnaryCallSettings<
+          BatchDisapproveOrdersWithoutReservationChangesRequest,
+          BatchDisapproveOrdersWithoutReservationChangesResponse>
+      batchDisapproveOrdersWithoutReservationChangesSettings() {
+    return batchDisapproveOrdersWithoutReservationChangesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchRetractOrders. */
+  public UnaryCallSettings<BatchRetractOrdersRequest, BatchRetractOrdersResponse>
+      batchRetractOrdersSettings() {
+    return batchRetractOrdersSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchRetractOrdersWithoutReservationChanges.
+   */
+  public UnaryCallSettings<
+          BatchRetractOrdersWithoutReservationChangesRequest,
+          BatchRetractOrdersWithoutReservationChangesResponse>
+      batchRetractOrdersWithoutReservationChangesSettings() {
+    return batchRetractOrdersWithoutReservationChangesSettings;
   }
 
   public OrderServiceStub createStub() throws IOException {
@@ -267,6 +484,32 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
 
     getOrderSettings = settingsBuilder.getOrderSettings().build();
     listOrdersSettings = settingsBuilder.listOrdersSettings().build();
+    batchCreateOrdersSettings = settingsBuilder.batchCreateOrdersSettings().build();
+    batchUpdateOrdersSettings = settingsBuilder.batchUpdateOrdersSettings().build();
+    batchApproveOrdersSettings = settingsBuilder.batchApproveOrdersSettings().build();
+    batchApproveAndOverbookOrdersSettings =
+        settingsBuilder.batchApproveAndOverbookOrdersSettings().build();
+    batchSubmitOrdersForApprovalSettings =
+        settingsBuilder.batchSubmitOrdersForApprovalSettings().build();
+    batchSubmitOrdersForApprovalAndOverbookSettings =
+        settingsBuilder.batchSubmitOrdersForApprovalAndOverbookSettings().build();
+    batchSubmitOrdersForApprovalWithoutReservationChangesSettings =
+        settingsBuilder.batchSubmitOrdersForApprovalWithoutReservationChangesSettings().build();
+    batchPauseOrdersSettings = settingsBuilder.batchPauseOrdersSettings().build();
+    batchResumeOrdersSettings = settingsBuilder.batchResumeOrdersSettings().build();
+    batchResumeAndOverbookOrdersSettings =
+        settingsBuilder.batchResumeAndOverbookOrdersSettings().build();
+    batchApproveOrdersWithoutReservationSettings =
+        settingsBuilder.batchApproveOrdersWithoutReservationSettings().build();
+    batchArchiveOrdersSettings = settingsBuilder.batchArchiveOrdersSettings().build();
+    batchUnarchiveOrdersSettings = settingsBuilder.batchUnarchiveOrdersSettings().build();
+    batchDeleteOrdersSettings = settingsBuilder.batchDeleteOrdersSettings().build();
+    batchDisapproveOrdersSettings = settingsBuilder.batchDisapproveOrdersSettings().build();
+    batchDisapproveOrdersWithoutReservationChangesSettings =
+        settingsBuilder.batchDisapproveOrdersWithoutReservationChangesSettings().build();
+    batchRetractOrdersSettings = settingsBuilder.batchRetractOrdersSettings().build();
+    batchRetractOrdersWithoutReservationChangesSettings =
+        settingsBuilder.batchRetractOrdersWithoutReservationChangesSettings().build();
   }
 
   @Override
@@ -285,6 +528,57 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
     private final PagedCallSettings.Builder<
             ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
         listOrdersSettings;
+    private final UnaryCallSettings.Builder<BatchCreateOrdersRequest, BatchCreateOrdersResponse>
+        batchCreateOrdersSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateOrdersRequest, BatchUpdateOrdersResponse>
+        batchUpdateOrdersSettings;
+    private final UnaryCallSettings.Builder<BatchApproveOrdersRequest, BatchApproveOrdersResponse>
+        batchApproveOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchApproveAndOverbookOrdersRequest, BatchApproveAndOverbookOrdersResponse>
+        batchApproveAndOverbookOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalRequest, BatchSubmitOrdersForApprovalResponse>
+        batchSubmitOrdersForApprovalSettings;
+    private final UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalAndOverbookRequest,
+            BatchSubmitOrdersForApprovalAndOverbookResponse>
+        batchSubmitOrdersForApprovalAndOverbookSettings;
+    private final UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalWithoutReservationChangesRequest,
+            BatchSubmitOrdersForApprovalWithoutReservationChangesResponse>
+        batchSubmitOrdersForApprovalWithoutReservationChangesSettings;
+    private final UnaryCallSettings.Builder<BatchPauseOrdersRequest, BatchPauseOrdersResponse>
+        batchPauseOrdersSettings;
+    private final UnaryCallSettings.Builder<BatchResumeOrdersRequest, BatchResumeOrdersResponse>
+        batchResumeOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchResumeAndOverbookOrdersRequest, BatchResumeAndOverbookOrdersResponse>
+        batchResumeAndOverbookOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchApproveOrdersWithoutReservationRequest,
+            BatchApproveOrdersWithoutReservationResponse>
+        batchApproveOrdersWithoutReservationSettings;
+    private final UnaryCallSettings.Builder<BatchArchiveOrdersRequest, BatchArchiveOrdersResponse>
+        batchArchiveOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUnarchiveOrdersRequest, BatchUnarchiveOrdersResponse>
+        batchUnarchiveOrdersSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteOrdersRequest, BatchDeleteOrdersResponse>
+        batchDeleteOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDisapproveOrdersRequest, BatchDisapproveOrdersResponse>
+        batchDisapproveOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDisapproveOrdersWithoutReservationChangesRequest,
+            BatchDisapproveOrdersWithoutReservationChangesResponse>
+        batchDisapproveOrdersWithoutReservationChangesSettings;
+    private final UnaryCallSettings.Builder<BatchRetractOrdersRequest, BatchRetractOrdersResponse>
+        batchRetractOrdersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchRetractOrdersWithoutReservationChangesRequest,
+            BatchRetractOrdersWithoutReservationChangesResponse>
+        batchRetractOrdersWithoutReservationChangesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -325,9 +619,52 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
 
       getOrderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listOrdersSettings = PagedCallSettings.newBuilder(LIST_ORDERS_PAGE_STR_FACT);
+      batchCreateOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchApproveOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchApproveAndOverbookOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchSubmitOrdersForApprovalSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchSubmitOrdersForApprovalAndOverbookSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchSubmitOrdersForApprovalWithoutReservationChangesSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchPauseOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchResumeOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchResumeAndOverbookOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchApproveOrdersWithoutReservationSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchArchiveOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUnarchiveOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDisapproveOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDisapproveOrdersWithoutReservationChangesSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchRetractOrdersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchRetractOrdersWithoutReservationChangesSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getOrderSettings, listOrdersSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getOrderSettings,
+              listOrdersSettings,
+              batchCreateOrdersSettings,
+              batchUpdateOrdersSettings,
+              batchApproveOrdersSettings,
+              batchApproveAndOverbookOrdersSettings,
+              batchSubmitOrdersForApprovalSettings,
+              batchSubmitOrdersForApprovalAndOverbookSettings,
+              batchSubmitOrdersForApprovalWithoutReservationChangesSettings,
+              batchPauseOrdersSettings,
+              batchResumeOrdersSettings,
+              batchResumeAndOverbookOrdersSettings,
+              batchApproveOrdersWithoutReservationSettings,
+              batchArchiveOrdersSettings,
+              batchUnarchiveOrdersSettings,
+              batchDeleteOrdersSettings,
+              batchDisapproveOrdersSettings,
+              batchDisapproveOrdersWithoutReservationChangesSettings,
+              batchRetractOrdersSettings,
+              batchRetractOrdersWithoutReservationChangesSettings);
       initDefaults(this);
     }
 
@@ -336,9 +673,55 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
 
       getOrderSettings = settings.getOrderSettings.toBuilder();
       listOrdersSettings = settings.listOrdersSettings.toBuilder();
+      batchCreateOrdersSettings = settings.batchCreateOrdersSettings.toBuilder();
+      batchUpdateOrdersSettings = settings.batchUpdateOrdersSettings.toBuilder();
+      batchApproveOrdersSettings = settings.batchApproveOrdersSettings.toBuilder();
+      batchApproveAndOverbookOrdersSettings =
+          settings.batchApproveAndOverbookOrdersSettings.toBuilder();
+      batchSubmitOrdersForApprovalSettings =
+          settings.batchSubmitOrdersForApprovalSettings.toBuilder();
+      batchSubmitOrdersForApprovalAndOverbookSettings =
+          settings.batchSubmitOrdersForApprovalAndOverbookSettings.toBuilder();
+      batchSubmitOrdersForApprovalWithoutReservationChangesSettings =
+          settings.batchSubmitOrdersForApprovalWithoutReservationChangesSettings.toBuilder();
+      batchPauseOrdersSettings = settings.batchPauseOrdersSettings.toBuilder();
+      batchResumeOrdersSettings = settings.batchResumeOrdersSettings.toBuilder();
+      batchResumeAndOverbookOrdersSettings =
+          settings.batchResumeAndOverbookOrdersSettings.toBuilder();
+      batchApproveOrdersWithoutReservationSettings =
+          settings.batchApproveOrdersWithoutReservationSettings.toBuilder();
+      batchArchiveOrdersSettings = settings.batchArchiveOrdersSettings.toBuilder();
+      batchUnarchiveOrdersSettings = settings.batchUnarchiveOrdersSettings.toBuilder();
+      batchDeleteOrdersSettings = settings.batchDeleteOrdersSettings.toBuilder();
+      batchDisapproveOrdersSettings = settings.batchDisapproveOrdersSettings.toBuilder();
+      batchDisapproveOrdersWithoutReservationChangesSettings =
+          settings.batchDisapproveOrdersWithoutReservationChangesSettings.toBuilder();
+      batchRetractOrdersSettings = settings.batchRetractOrdersSettings.toBuilder();
+      batchRetractOrdersWithoutReservationChangesSettings =
+          settings.batchRetractOrdersWithoutReservationChangesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getOrderSettings, listOrdersSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getOrderSettings,
+              listOrdersSettings,
+              batchCreateOrdersSettings,
+              batchUpdateOrdersSettings,
+              batchApproveOrdersSettings,
+              batchApproveAndOverbookOrdersSettings,
+              batchSubmitOrdersForApprovalSettings,
+              batchSubmitOrdersForApprovalAndOverbookSettings,
+              batchSubmitOrdersForApprovalWithoutReservationChangesSettings,
+              batchPauseOrdersSettings,
+              batchResumeOrdersSettings,
+              batchResumeAndOverbookOrdersSettings,
+              batchApproveOrdersWithoutReservationSettings,
+              batchArchiveOrdersSettings,
+              batchUnarchiveOrdersSettings,
+              batchDeleteOrdersSettings,
+              batchDisapproveOrdersSettings,
+              batchDisapproveOrdersWithoutReservationChangesSettings,
+              batchRetractOrdersSettings,
+              batchRetractOrdersWithoutReservationChangesSettings);
     }
 
     private static Builder createDefault() {
@@ -361,6 +744,96 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
 
       builder
           .listOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchCreateOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchUpdateOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchApproveOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchApproveAndOverbookOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchSubmitOrdersForApprovalSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchSubmitOrdersForApprovalAndOverbookSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchSubmitOrdersForApprovalWithoutReservationChangesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchPauseOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchResumeOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchResumeAndOverbookOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchApproveOrdersWithoutReservationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchArchiveOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchUnarchiveOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDeleteOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDisapproveOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDisapproveOrdersWithoutReservationChangesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchRetractOrdersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchRetractOrdersWithoutReservationChangesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -391,6 +864,141 @@ public class OrderServiceStubSettings extends StubSettings<OrderServiceStubSetti
     public PagedCallSettings.Builder<ListOrdersRequest, ListOrdersResponse, ListOrdersPagedResponse>
         listOrdersSettings() {
       return listOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateOrders. */
+    public UnaryCallSettings.Builder<BatchCreateOrdersRequest, BatchCreateOrdersResponse>
+        batchCreateOrdersSettings() {
+      return batchCreateOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateOrders. */
+    public UnaryCallSettings.Builder<BatchUpdateOrdersRequest, BatchUpdateOrdersResponse>
+        batchUpdateOrdersSettings() {
+      return batchUpdateOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchApproveOrders. */
+    public UnaryCallSettings.Builder<BatchApproveOrdersRequest, BatchApproveOrdersResponse>
+        batchApproveOrdersSettings() {
+      return batchApproveOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchApproveAndOverbookOrders. */
+    public UnaryCallSettings.Builder<
+            BatchApproveAndOverbookOrdersRequest, BatchApproveAndOverbookOrdersResponse>
+        batchApproveAndOverbookOrdersSettings() {
+      return batchApproveAndOverbookOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchSubmitOrdersForApproval. */
+    public UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalRequest, BatchSubmitOrdersForApprovalResponse>
+        batchSubmitOrdersForApprovalSettings() {
+      return batchSubmitOrdersForApprovalSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchSubmitOrdersForApprovalAndOverbook.
+     */
+    public UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalAndOverbookRequest,
+            BatchSubmitOrdersForApprovalAndOverbookResponse>
+        batchSubmitOrdersForApprovalAndOverbookSettings() {
+      return batchSubmitOrdersForApprovalAndOverbookSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchSubmitOrdersForApprovalWithoutReservationChanges.
+     */
+    public UnaryCallSettings.Builder<
+            BatchSubmitOrdersForApprovalWithoutReservationChangesRequest,
+            BatchSubmitOrdersForApprovalWithoutReservationChangesResponse>
+        batchSubmitOrdersForApprovalWithoutReservationChangesSettings() {
+      return batchSubmitOrdersForApprovalWithoutReservationChangesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchPauseOrders. */
+    public UnaryCallSettings.Builder<BatchPauseOrdersRequest, BatchPauseOrdersResponse>
+        batchPauseOrdersSettings() {
+      return batchPauseOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeOrders. */
+    public UnaryCallSettings.Builder<BatchResumeOrdersRequest, BatchResumeOrdersResponse>
+        batchResumeOrdersSettings() {
+      return batchResumeOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeAndOverbookOrders. */
+    public UnaryCallSettings.Builder<
+            BatchResumeAndOverbookOrdersRequest, BatchResumeAndOverbookOrdersResponse>
+        batchResumeAndOverbookOrdersSettings() {
+      return batchResumeAndOverbookOrdersSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchApproveOrdersWithoutReservation.
+     */
+    public UnaryCallSettings.Builder<
+            BatchApproveOrdersWithoutReservationRequest,
+            BatchApproveOrdersWithoutReservationResponse>
+        batchApproveOrdersWithoutReservationSettings() {
+      return batchApproveOrdersWithoutReservationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveOrders. */
+    public UnaryCallSettings.Builder<BatchArchiveOrdersRequest, BatchArchiveOrdersResponse>
+        batchArchiveOrdersSettings() {
+      return batchArchiveOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUnarchiveOrders. */
+    public UnaryCallSettings.Builder<BatchUnarchiveOrdersRequest, BatchUnarchiveOrdersResponse>
+        batchUnarchiveOrdersSettings() {
+      return batchUnarchiveOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteOrders. */
+    public UnaryCallSettings.Builder<BatchDeleteOrdersRequest, BatchDeleteOrdersResponse>
+        batchDeleteOrdersSettings() {
+      return batchDeleteOrdersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDisapproveOrders. */
+    public UnaryCallSettings.Builder<BatchDisapproveOrdersRequest, BatchDisapproveOrdersResponse>
+        batchDisapproveOrdersSettings() {
+      return batchDisapproveOrdersSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchDisapproveOrdersWithoutReservationChanges.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDisapproveOrdersWithoutReservationChangesRequest,
+            BatchDisapproveOrdersWithoutReservationChangesResponse>
+        batchDisapproveOrdersWithoutReservationChangesSettings() {
+      return batchDisapproveOrdersWithoutReservationChangesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchRetractOrders. */
+    public UnaryCallSettings.Builder<BatchRetractOrdersRequest, BatchRetractOrdersResponse>
+        batchRetractOrdersSettings() {
+      return batchRetractOrdersSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchRetractOrdersWithoutReservationChanges.
+     */
+    public UnaryCallSettings.Builder<
+            BatchRetractOrdersWithoutReservationChangesRequest,
+            BatchRetractOrdersWithoutReservationChangesResponse>
+        batchRetractOrdersWithoutReservationChangesSettings() {
+      return batchRetractOrdersWithoutReservationChangesSettings;
     }
 
     @Override

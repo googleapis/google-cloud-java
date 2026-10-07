@@ -30,10 +30,10 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.*;
-import com.google.cloud.bigquery.BigQuery.RoutineListOption;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import com.google.cloud.bigquery.jdbc.BigQueryTypeRegistry.ColumnTypeInfo;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.context.Context;
@@ -49,11 +49,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
@@ -464,6 +461,67 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
+  public void testMapBigQueryTypeToJdbc_timestampPicos_whenEnabled() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(true);
+    Field fieldTimestampPicos =
+        Field.newBuilder("picos_ts", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldTimestampPicos);
+    assertEquals(Types.VARCHAR, info.jdbcType);
+    assertEquals(BigQueryTemporalUtility.TIMESTAMP_PICOSECONDS_TYPE_NAME, info.typeName);
+    assertEquals(Integer.valueOf(32), info.columnSize);
+    assertEquals(Integer.valueOf(12), info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
+  public void testMapBigQueryTypeToJdbc_timestampPicos_whenDisabled() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(false);
+    Field fieldTimestampPicos =
+        Field.newBuilder("picos_ts", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldTimestampPicos);
+    assertEquals(Types.TIMESTAMP, info.jdbcType);
+    assertEquals("TIMESTAMP", info.typeName);
+    assertEquals(Integer.valueOf(26), info.columnSize);
+    assertEquals(Integer.valueOf(6), info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
+  public void testMapBigQueryTypeToJdbc_repeatedTimestampPicos_remainsArray() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(true);
+    Field fieldRepeatedTimestampPicos =
+        Field.newBuilder("picos_array", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldRepeatedTimestampPicos);
+    assertEquals(Types.ARRAY, info.jdbcType);
+    assertEquals("ARRAY", info.typeName);
+    assertNull(info.columnSize);
+    assertNull(info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
+  public void testMapBigQueryTypeToJdbc_standardTimestamp_whenPicosEnabled() {
+    when(bigQueryConnection.isEnableTimestampPicos()).thenReturn(true);
+    Field fieldStandardTimestamp =
+        Field.newBuilder("standard_ts", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(6L)
+            .build();
+    ColumnTypeInfo info = dbMetadata.mapBigQueryTypeToJdbc(fieldStandardTimestamp);
+    assertEquals(Types.TIMESTAMP, info.jdbcType);
+    assertEquals("TIMESTAMP", info.typeName);
+    assertEquals(Integer.valueOf(26), info.columnSize);
+    assertEquals(Integer.valueOf(6), info.decimalDigits);
+    assertNull(info.numPrecRadix);
+  }
+
+  @Test
   public void testCreateColumnRow() {
     Field realField =
         Field.newBuilder("user_name", StandardSQLTypeName.STRING)
@@ -761,7 +819,7 @@ public class BigQueryDatabaseMetaDataTest {
     String schemaName = "dataset_beta";
     Dataset dataset = mockBigQueryDataset(catalog, schemaName);
 
-    dbMetadata.processSchemaInfo(dataset, collectedResults, resultSchemaFields);
+    dbMetadata.processSchemaInfo(dataset.getDatasetId(), collectedResults, resultSchemaFields);
 
     assertEquals(1, collectedResults.size());
     FieldValueList row = collectedResults.get(0);
@@ -1612,96 +1670,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("proc_1", results.get(4).get("PROCEDURE_NAME").getStringValue());
     assertEquals("proc_1_spec", results.get(4).get("SPECIFIC_NAME").getStringValue());
     assertEquals("param_a", results.get(4).get("COLUMN_NAME").getStringValue());
-  }
-
-  @Test
-  public void testListMatchingProcedureIdsFromDatasets() throws Exception {
-    String catalog = "test-proj";
-    String schema1Name = "dataset1";
-    String schema2Name = "dataset2";
-    Dataset dataset1 = mockBigQueryDataset(catalog, schema1Name);
-    Dataset dataset2 = mockBigQueryDataset(catalog, schema2Name);
-    List<Dataset> datasetsToScan = Arrays.asList(dataset1, dataset2);
-
-    Routine proc1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "proc_a", "PROCEDURE", "desc a");
-    Routine func1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "func_b", "FUNCTION", "desc b");
-    Routine proc2_ds2 = mockBigQueryRoutine(catalog, schema2Name, "proc_c", "PROCEDURE", "desc c");
-
-    Page<Routine> page1 = mock(Page.class, withSettings().withoutAnnotations());
-    when(page1.iterateAll()).thenReturn(Arrays.asList(proc1_ds1, func1_ds1));
-    when(bigqueryClient.listRoutines(eq(dataset1.getDatasetId()), any(RoutineListOption.class)))
-        .thenReturn(page1);
-
-    Page<Routine> page2 = mock(Page.class, withSettings().withoutAnnotations());
-    when(page2.iterateAll()).thenReturn(Collections.singletonList(proc2_ds2));
-    when(bigqueryClient.listRoutines(eq(dataset2.getDatasetId()), any(RoutineListOption.class)))
-        .thenReturn(page2);
-
-    ExecutorService mockExecutor = mock(ExecutorService.class);
-    doAnswer(
-            invocation -> {
-              Callable<?> callable = invocation.getArgument(0);
-              @SuppressWarnings("unchecked") // Suppress warning for raw Future mock
-              Future<Object> mockedFuture = mock(Future.class);
-
-              try {
-                Object result = callable.call();
-                doReturn(result).when(mockedFuture).get();
-              } catch (InterruptedException interruptedException) {
-                doThrow(interruptedException).when(mockedFuture).get();
-              } catch (Exception e) {
-                doThrow(new ExecutionException(e)).when(mockedFuture).get();
-              }
-              return mockedFuture;
-            })
-        .when(mockExecutor)
-        .submit(any(Callable.class));
-
-    List<RoutineId> resultIds =
-        dbMetadata.listMatchingProcedureIdsFromDatasets(
-            datasetsToScan, null, null, mockExecutor, catalog, dbMetadata.LOG);
-
-    assertEquals(2, resultIds.size());
-    assertTrue(resultIds.contains(proc1_ds1.getRoutineId()));
-    assertTrue(resultIds.contains(proc2_ds2.getRoutineId()));
-    assertFalse(resultIds.contains(func1_ds1.getRoutineId())); // Should not contain functions
-
-    verify(mockExecutor, times(2)).submit(any(Callable.class));
-  }
-
-  @Test
-  public void testProcessProcedureArgumentsSequentially_Basic() throws InterruptedException {
-    String catalog = "p";
-    String schemaName = "d";
-    RoutineArgument arg1 = mockRoutineArgument("arg1_name", StandardSQLTypeName.STRING, "IN");
-    Routine proc1 =
-        mockBigQueryRoutineWithArgs(
-            catalog, schemaName, "proc1", "PROCEDURE", "desc1", Collections.singletonList(arg1));
-    Routine func1 =
-        mockBigQueryRoutineWithArgs(
-            catalog,
-            schemaName,
-            "func1",
-            "FUNCTION",
-            "desc_func",
-            Collections.emptyList()); // Should be skipped
-    Routine proc2 =
-        mockBigQueryRoutineWithArgs(
-            catalog, schemaName, "proc2", "PROCEDURE", "desc2", Collections.emptyList());
-
-    List<Routine> fullRoutines = Arrays.asList(proc1, func1, proc2);
-    Pattern columnNameRegex = null;
-    List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
-    FieldList resultSchemaFields = resultSchema.getFields();
-
-    dbMetadata.processProcedureArgumentsSequentially(
-        fullRoutines, columnNameRegex, collectedResults, resultSchemaFields, dbMetadata.LOG);
-
-    // Only proc1 has arguments, so collectedResults should contain 1 row.
-    assertEquals(1, collectedResults.size());
-    FieldValueList row = collectedResults.get(0);
-    assertEquals("arg1_name", row.get("COLUMN_NAME").getStringValue());
   }
 
   @Test
@@ -3374,7 +3342,7 @@ public class BigQueryDatabaseMetaDataTest {
     }
 
     ColumnTypeInfo metadataTypeInfo = dbMetadata.mapBigQueryTypeToJdbc(field);
-    Integer resultSetType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(type);
+    Integer resultSetType = BigQueryTypeRegistry.toJdbcType(type);
 
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(
@@ -3790,5 +3758,47 @@ public class BigQueryDatabaseMetaDataTest {
             "test-project", "dataset_p", "pk_table", "test-project", "dataset_p", "fk_table")) {
       assertFalse(rs.next());
     }
+  }
+
+  @Test
+  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetProject() {
+    when(bigQueryConnection.isFilterTablesOnDefaultDataset()).thenReturn(true);
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.getDefaultDataset())
+        .thenReturn(DatasetId.of("custom-project", "warehouse.namespace"));
+
+    dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+    Tuple<String, String> result = dbMetadata.determineEffectiveCatalogAndSchema(null, null);
+
+    assertEquals("custom-project", result.x());
+    assertEquals("warehouse.namespace", result.y());
+  }
+
+  @Test
+  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetNoProject() {
+    when(bigQueryConnection.isFilterTablesOnDefaultDataset()).thenReturn(true);
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.getDefaultDataset()).thenReturn(DatasetId.of("my_dataset"));
+
+    dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+    Tuple<String, String> result = dbMetadata.determineEffectiveCatalogAndSchema(null, null);
+
+    assertEquals("primary-project", result.x());
+    assertEquals("my_dataset", result.y());
+  }
+
+  @Test
+  public void testGetAccessibleCatalogNames_includesDefaultDatasetProject() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.getDefaultDataset())
+        .thenReturn(DatasetId.of("pcnt-warehouse", "pcnt_ns"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("extra-proj1,extra-proj2");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+
+    dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+    List<String> catalogs = dbMetadata.getAccessibleCatalogNames();
+
+    assertEquals(
+        Arrays.asList("extra-proj1", "extra-proj2", "pcnt-warehouse", "primary-project"), catalogs);
   }
 }
