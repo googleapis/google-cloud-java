@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [UpdateChildPublisher][] method.
+ * Request object for `UpdateChildPublisher` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.UpdateChildPublisherRequest}
@@ -379,7 +379,7 @@ public final class UpdateChildPublisherRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request object for [UpdateChildPublisher][] method.
+   * Request object for `UpdateChildPublisher` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.UpdateChildPublisherRequest}

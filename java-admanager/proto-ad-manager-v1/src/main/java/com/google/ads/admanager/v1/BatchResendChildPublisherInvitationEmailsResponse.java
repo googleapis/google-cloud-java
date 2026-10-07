@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response message for [BatchResendChildPublisherInvitationEmails][] method.
+ * Response message for `BatchResendChildPublisherInvitationEmails` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsResponse}
@@ -234,7 +234,7 @@ public final class BatchResendChildPublisherInvitationEmailsResponse
    *
    *
    * <pre>
-   * Response message for [BatchResendChildPublisherInvitationEmails][] method.
+   * Response message for `BatchResendChildPublisherInvitationEmails` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsResponse}

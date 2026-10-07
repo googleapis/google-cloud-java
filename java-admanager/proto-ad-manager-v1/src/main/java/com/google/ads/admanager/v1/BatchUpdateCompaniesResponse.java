@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [BatchUpdateCompanies][] method.
+ * Response object for `BatchUpdateCompanies` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchUpdateCompaniesResponse}
@@ -313,7 +313,7 @@ public final class BatchUpdateCompaniesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Response object for [BatchUpdateCompanies][] method.
+   * Response object for `BatchUpdateCompanies` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchUpdateCompaniesResponse}

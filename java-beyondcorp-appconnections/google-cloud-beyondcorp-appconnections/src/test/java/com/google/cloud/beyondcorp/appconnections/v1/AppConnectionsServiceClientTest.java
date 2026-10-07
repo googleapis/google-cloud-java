@@ -209,6 +209,8 @@ public class AppConnectionsServiceClientTest {
             .setApplicationEndpoint(AppConnection.ApplicationEndpoint.newBuilder().build())
             .addAllConnectors(new ArrayList<String>())
             .setGateway(AppConnection.Gateway.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAppConnectionsService.addResponse(expectedResponse);
 
@@ -255,6 +257,8 @@ public class AppConnectionsServiceClientTest {
             .setApplicationEndpoint(AppConnection.ApplicationEndpoint.newBuilder().build())
             .addAllConnectors(new ArrayList<String>())
             .setGateway(AppConnection.Gateway.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     mockAppConnectionsService.addResponse(expectedResponse);
 
@@ -301,6 +305,8 @@ public class AppConnectionsServiceClientTest {
             .setApplicationEndpoint(AppConnection.ApplicationEndpoint.newBuilder().build())
             .addAllConnectors(new ArrayList<String>())
             .setGateway(AppConnection.Gateway.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -362,6 +368,8 @@ public class AppConnectionsServiceClientTest {
             .setApplicationEndpoint(AppConnection.ApplicationEndpoint.newBuilder().build())
             .addAllConnectors(new ArrayList<String>())
             .setGateway(AppConnection.Gateway.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -423,6 +431,8 @@ public class AppConnectionsServiceClientTest {
             .setApplicationEndpoint(AppConnection.ApplicationEndpoint.newBuilder().build())
             .addAllConnectors(new ArrayList<String>())
             .setGateway(AppConnection.Gateway.newBuilder().build())
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
