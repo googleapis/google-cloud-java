@@ -179,9 +179,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
    *     the credentials.
    * @param transportFactory HTTP transport factory that creates the transport used to get access
    *     tokens.
-   * @param quotaProjectId the project used for quota and billing purposes. Should be null unless
-   *     the caller wants to use a project different from the one that owns the impersonated
-   *     credential for billing/quota purposes.
+   * @param quotaProjectId the project used for quota and billing purposes on downstream requests
+   *     made with the impersonated credentials. Should be null unless the caller wants to use a
+   *     project different from the one that owns the impersonated credential for billing/quota
+   *     purposes. Note that this does not apply to the IAM Credentials API requests used to mint
+   *     tokens ({@code generateAccessToken} or {@code generateIdToken}); to specify a quota project
+   *     for those calls, set the quota project ID on {@code sourceCredentials}.
    * @return new credentials
    */
   public static ImpersonatedCredentials create(
@@ -223,9 +226,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
    *     the credentials.
    * @param transportFactory HTTP transport factory that creates the transport used to get access
    *     tokens.
-   * @param quotaProjectId the project used for quota and billing purposes. Should be null unless
-   *     the caller wants to use a project different from the one that owns the impersonated
-   *     credential for billing/quota purposes.
+   * @param quotaProjectId the project used for quota and billing purposes on downstream requests
+   *     made with the impersonated credentials. Should be null unless the caller wants to use a
+   *     project different from the one that owns the impersonated credential for billing/quota
+   *     purposes. Note that this does not apply to the IAM Credentials API requests used to mint
+   *     tokens ({@code generateAccessToken} or {@code generateIdToken}); to specify a quota project
+   *     for those calls, set the quota project ID on {@code sourceCredentials}.
    * @param iamEndpointOverride The full IAM endpoint override with the target_principal embedded.
    *     This is useful when supporting impersonation with regional endpoints.
    * @return new credentials
@@ -675,8 +681,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
   /**
    * Returns an IdToken for the current Credential.
    *
+   * <p>The {@code generateIdToken} request to the IAM Credentials API is authenticated using {@link
+   * #getSourceCredentials() sourceCredentials}. To specify a quota project ({@code
+   * x-goog-user-project} header) for the {@code generateIdToken} call itself, configure the quota
+   * project ID on {@code sourceCredentials} rather than on this {@code ImpersonatedCredentials}
+   * instance.
+   *
    * @param targetAudience the audience field for the issued ID token
-   * @param options credential specific options for for the token. For example, an ID token for an
+   * @param options credential specific options for the token. For example, an ID token for an
    *     ImpersonatedCredentials can return the email address within the token claims if
    *     "ImpersonatedCredentials.INCLUDE_EMAIL" is provided as a list option.<br>
    *     Only one option value is supported: "ImpersonatedCredentials.INCLUDE_EMAIL" If no options
@@ -867,6 +879,19 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return transportFactory;
     }
 
+    /**
+     * Sets the quota project ID applied to downstream API requests made with the impersonated
+     * credentials (sent via the {@code x-goog-user-project} header).
+     *
+     * <p>Note: This quota project ID is not sent on the IAM Credentials API calls ({@code
+     * generateAccessToken} or {@code generateIdToken}) used to mint tokens, because those requests
+     * are authenticated using {@code sourceCredentials}. To specify a quota project for the IAM
+     * Credentials API requests, set the quota project ID on {@code sourceCredentials} instead.
+     *
+     * @param quotaProjectId the project ID used for quota and billing purposes on downstream
+     *     requests
+     * @return the builder
+     */
     @Override
     @CanIgnoreReturnValue
     public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
