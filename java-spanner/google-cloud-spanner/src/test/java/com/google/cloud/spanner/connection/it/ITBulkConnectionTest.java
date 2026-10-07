@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -65,22 +66,30 @@ public class ITBulkConnectionTest extends ITAbstractSpannerTest {
   }
 
   @Test
-  public void testBulkCreateConnectionsMultiThreaded() throws InterruptedException {
+  public void testBulkCreateConnectionsMultiThreaded() throws Exception {
     ExecutorService executor = Executors.newFixedThreadPool(50);
+    List<Future<?>> futures = new ArrayList<>(NUMBER_OF_TEST_CONNECTIONS);
     for (int i = 0; i < NUMBER_OF_TEST_CONNECTIONS; i++) {
-      executor.submit(
-          () -> {
-            try (ITConnection connection = createConnection()) {
-              try (ResultSet rs = connection.executeQuery(Statement.of("select 1"))) {
-                assertThat(rs.next(), is(true));
-                assertThat(connection.getReadTimestamp(), is(notNullValue()));
-              }
-            }
-            return null;
-          });
+      futures.add(
+          executor.submit(
+              () -> {
+                try (ITConnection connection = createConnection()) {
+                  try (ResultSet rs = connection.executeQuery(Statement.of("select 1"))) {
+                    assertThat(rs.next(), is(true));
+                    assertThat(connection.getReadTimestamp(), is(notNullValue()));
+                  }
+                }
+                return null;
+              }));
     }
     executor.shutdown();
-    executor.awaitTermination(10L, TimeUnit.SECONDS);
+    assertThat(
+        "Executor failed to terminate within timeout",
+        executor.awaitTermination(120L, TimeUnit.SECONDS),
+        is(true));
+    for (Future<?> future : futures) {
+      future.get();
+    }
     // close Spanner instances explicitly. This method will throw an exception if there are any
     // connections still open in the pool
     closeSpanner();
