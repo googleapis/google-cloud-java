@@ -118,6 +118,19 @@ public class AudienceSegmentServiceSettings extends ClientSettings<AudienceSegme
         .batchCreateAudienceSegmentsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateAudienceSegment. */
+  public UnaryCallSettings<UpdateAudienceSegmentRequest, AudienceSegment>
+      updateAudienceSegmentSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings()).updateAudienceSegmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAudienceSegments. */
+  public UnaryCallSettings<BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+      batchUpdateAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchUpdateAudienceSegmentsSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchActivateAudienceSegments. */
   public UnaryCallSettings<
           BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
@@ -281,6 +294,19 @@ public class AudienceSegmentServiceSettings extends ClientSettings<AudienceSegme
             BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
         batchCreateAudienceSegmentsSettings() {
       return getStubSettingsBuilder().batchCreateAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAudienceSegment. */
+    public UnaryCallSettings.Builder<UpdateAudienceSegmentRequest, AudienceSegment>
+        updateAudienceSegmentSettings() {
+      return getStubSettingsBuilder().updateAudienceSegmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+        batchUpdateAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchUpdateAudienceSegmentsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchActivateAudienceSegments. */

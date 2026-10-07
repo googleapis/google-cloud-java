@@ -495,7 +495,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The maximum allowed duration for ads in the `AdSpot`. This field
    * is required and must be greater than
-   * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+   * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
    * </pre>
    *
    * <code>
@@ -515,7 +515,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The maximum allowed duration for ads in the `AdSpot`. This field
    * is required and must be greater than
-   * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+   * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
    * </pre>
    *
    * <code>
@@ -537,7 +537,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The maximum allowed duration for ads in the `AdSpot`. This field
    * is required and must be greater than
-   * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+   * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
    * </pre>
    *
    * <code>
@@ -2597,7 +2597,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2616,7 +2616,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2641,7 +2641,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2668,7 +2668,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2692,7 +2692,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2724,7 +2724,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2748,7 +2748,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2767,7 +2767,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>
@@ -2790,7 +2790,7 @@ public final class AdSpot extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The maximum allowed duration for ads in the `AdSpot`. This field
      * is required and must be greater than
-     * [min_ad_duration][google.ads.admanager.v1.AdSpot.min_ad_duration].
+     * [minAdDuration][google.ads.admanager.v1.AdSpot.min_ad_duration].
      * </pre>
      *
      * <code>

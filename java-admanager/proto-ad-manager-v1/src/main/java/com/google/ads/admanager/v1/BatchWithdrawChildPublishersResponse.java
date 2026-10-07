@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response message for [BatchWithdrawChildPublishers][] method.
+ * Response message for `BatchWithdrawChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchWithdrawChildPublishersResponse}
@@ -225,7 +225,7 @@ public final class BatchWithdrawChildPublishersResponse extends com.google.proto
    *
    *
    * <pre>
-   * Response message for [BatchWithdrawChildPublishers][] method.
+   * Response message for `BatchWithdrawChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchWithdrawChildPublishersResponse}
