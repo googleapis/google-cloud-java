@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.api.core.InternalApi;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
