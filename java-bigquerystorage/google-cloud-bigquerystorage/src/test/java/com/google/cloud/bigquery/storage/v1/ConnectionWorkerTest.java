@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -518,6 +519,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -578,6 +580,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -650,6 +653,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -686,6 +690,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -750,7 +755,8 @@ class ConnectionWorkerTest {
         maxBytes,
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
-        TEST_TRACE_ID,
+        "java-streamwriter",
+        traceId,
         null,
         client.getSettings(),
         retrySettings,
@@ -927,6 +933,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -996,6 +1003,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1074,6 +1082,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1121,6 +1130,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             null,
             null,
             client.getSettings(),
@@ -1163,6 +1173,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             traceId,
             null,
             client.getSettings(),
@@ -1234,6 +1245,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofMillis(1), // very small maxRetryDuration
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1267,6 +1279,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1342,6 +1355,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1446,6 +1460,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1533,6 +1548,7 @@ class ConnectionWorkerTest {
         100000,
         Duration.ofSeconds(100),
         FlowController.LimitExceededBehavior.Block,
+        "java-streamwriter",
         TEST_TRACE_ID,
         null,
         client.getSettings(),
@@ -1559,6 +1575,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1723,5 +1740,67 @@ class ConnectionWorkerTest {
       // Once exhausted, state should be null
       assertThat(connectionWorker.getEarliestSendTime()).isNull();
     }
+  }
+
+  @Test
+  void testTraceIdContainsWriterId() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .setTraceId(TEST_TRACE_ID)
+            .build();
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+
+    try (ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            6,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ false)) {
+
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), 0);
+      future.get();
+
+      String writerId = connectionWorker.getWriterId();
+      assertThat(testBigQueryWrite.getAppendRequests()).hasSize(1);
+      AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(0);
+
+      String expectedTraceId =
+          "java-streamwriter:"
+              + GaxProperties.getLibraryVersion(StreamWriter.class)
+              + ":"
+              + writerId
+              + " "
+              + TEST_TRACE_ID;
+      assertThat(serverRequest.getTraceId()).isEqualTo(expectedTraceId);
+    }
+  }
+
+  @Test
+  void testGetFullTraceId() {
+    String version = GaxProperties.getLibraryVersion(StreamWriter.class);
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "writer-123", TEST_TRACE_ID))
+        .isEqualTo("java-streamwriter:" + version + ":writer-123 " + TEST_TRACE_ID);
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "writer-123", ""))
+        .isEqualTo("java-streamwriter:" + version + ":writer-123");
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "writer-123", null))
+        .isEqualTo("java-streamwriter:" + version + ":writer-123");
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "", null))
+        .isEqualTo("java-streamwriter:" + version + ":");
   }
 }
