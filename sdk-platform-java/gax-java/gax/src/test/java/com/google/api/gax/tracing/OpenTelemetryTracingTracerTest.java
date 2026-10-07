@@ -30,10 +30,12 @@
 package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
+import static io.opentelemetry.api.trace.StatusCode.ERROR;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -52,6 +54,7 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -65,6 +68,8 @@ class OpenTelemetryTracingTracerTest {
   @Mock private Tracer tracer;
   @Mock private SpanBuilder spanBuilder;
   @Mock private Span span;
+  @Mock private SpanBuilder operationSpanBuilder;
+  @Mock private Span operationSpan;
   private OpenTelemetryTracingTracer openTelemetryTracingTracer;
   private static final String ATTEMPT_SPAN_NAME = "Service/Method/attempt";
 
@@ -75,6 +80,20 @@ class OpenTelemetryTracingTracerTest {
     lenient().when(spanBuilder.setParent(any())).thenReturn(spanBuilder);
     lenient().when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     lenient().when(spanBuilder.startSpan()).thenReturn(span);
+
+    lenient()
+        .when(operationSpanBuilder.setSpanKind(any(SpanKind.class)))
+        .thenReturn(operationSpanBuilder);
+    lenient().when(operationSpanBuilder.setParent(any())).thenReturn(operationSpanBuilder);
+    lenient()
+        .when(operationSpanBuilder.setAllAttributes(any(Attributes.class)))
+        .thenReturn(operationSpanBuilder);
+    lenient().when(operationSpanBuilder.startSpan()).thenReturn(operationSpan);
+    lenient()
+        .when(operationSpan.storeInContext(any(io.opentelemetry.context.Context.class)))
+        .thenAnswer(invocation -> invocation.getArgument(0));
+    lenient().when(tracer.spanBuilder("Service/Method")).thenReturn(operationSpanBuilder);
+
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
   }
@@ -695,6 +714,7 @@ class OpenTelemetryTracingTracerTest {
     openTelemetryTracingTracer.operationSucceeded();
 
     verify(span).end();
+    verify(operationSpan).end();
   }
 
   @Test
@@ -704,6 +724,8 @@ class OpenTelemetryTracingTracerTest {
 
     verify(span).setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, "operation failed");
     verify(span).end();
+    verify(operationSpan).setStatus(ERROR);
+    verify(operationSpan).end();
   }
 
   @Test
@@ -714,10 +736,93 @@ class OpenTelemetryTracingTracerTest {
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
     verify(span).end();
+    verify(operationSpan).setStatus(ERROR);
+    verify(operationSpan).end();
 
     assertThat(attrsCaptor.getValue().asMap())
         .containsEntry(
             AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE),
             "CANCELLED");
+  }
+
+  @Test
+  void testInScope_withAttemptSpan() {
+    // Verifies that inScope() activates the current attempt span if an attempt is currently active.
+    io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
+    when(span.makeCurrent()).thenReturn(mockScope);
+
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+      verify(span).makeCurrent();
+    }
+    verify(mockScope).close();
+  }
+
+  @Test
+  void testInScope_withOperationSpanFallback() {
+    // Verifies that inScope() falls back to activating the operation span when no attempt span is
+    // active.
+    io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
+    when(operationSpan.makeCurrent()).thenReturn(mockScope);
+
+    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
+      verify(operationSpan).makeCurrent();
+    }
+    verify(mockScope).close();
+  }
+
+  @Test
+  void testInjectTraceContext_withOperationSpanFallback() {
+    // Verifies that injectTraceContext() injects the operation span context into the carrier
+    // when between attempts so that context propagation doesn't drop trace state.
+    io.opentelemetry.api.trace.SpanContext mockSpanContext =
+        io.opentelemetry.api.trace.SpanContext.create(
+            "00000000000000000000000000000003",
+            "0000000000000004",
+            io.opentelemetry.api.trace.TraceFlags.getSampled(),
+            io.opentelemetry.api.trace.TraceState.getDefault());
+    Span realSpan = Span.wrap(mockSpanContext);
+    when(operationSpanBuilder.startSpan()).thenReturn(realSpan);
+
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+
+    Map<String, String> carrier = new HashMap<>();
+    openTelemetryTracingTracer.injectTraceContext(carrier);
+
+    assertThat(carrier).containsKey("traceparent");
+    assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000003");
+    assertThat(carrier.get("traceparent")).contains("0000000000000004");
+  }
+
+  @Test
+  void testAttemptStarted_whenPreviousAttemptActive_closesOldSpan() {
+    // Verifies that starting a new retry attempt cleanly closes any lingering previous attempt
+    // span.
+    Span span1 = mock(Span.class);
+    Span span2 = mock(Span.class);
+
+    when(spanBuilder.startSpan()).thenReturn(span1, span2);
+
+    openTelemetryTracingTracer.attemptStarted(new Object(), 0);
+
+    // Start a second attempt before the first attempt was ended
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    verify(span1).end();
+    verify(span2, never()).end();
+
+    // Now complete the second attempt
+    openTelemetryTracingTracer.attemptSucceeded();
+    verify(span2).end();
+  }
+
+  @Test
+  void testAttemptStarted_afterOperationCompleted_doesNotStartNewSpan() {
+    // Verifies that after operation completion, late callbacks cannot spawn new attempt spans.
+    openTelemetryTracingTracer.operationSucceeded();
+
+    // Attempting to start a new attempt after operation completion should be a no-op
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    verify(spanBuilder, never()).startSpan();
   }
 }
