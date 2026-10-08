@@ -133,7 +133,6 @@ public class TableAsync implements AutoCloseable, Closeable {
     return f;
   }
 
-  // TODO: get deadline from compatibility layer
   public CompletableFuture<SessionReadModifyWriteRowResponse> readModifyWriteRow(
       SessionReadModifyWriteRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionReadModifyWriteRowResponse> f = new UnaryResponseFuture<>();

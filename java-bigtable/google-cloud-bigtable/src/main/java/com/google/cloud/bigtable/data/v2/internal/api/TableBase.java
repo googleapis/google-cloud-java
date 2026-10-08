@@ -181,7 +181,7 @@ class TableBase implements AutoCloseable {
         new RetryingVRpc<>(() -> sessionPool.newCall(checkAndMutateRowDescriptor), timer);
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), checkAndMutateRowDescriptor, deadline);
-    // CheckAndMutateRow is not idempotent and must never be retried.
+    // CheckAndMutateRow is not idempotent and should not be retried unless directed by server.
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
         .start(req, listener);
   }
@@ -194,7 +194,7 @@ class TableBase implements AutoCloseable {
         new RetryingVRpc<>(() -> sessionPool.newCall(readModifyWriteRowDescriptor), timer);
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), readModifyWriteRowDescriptor, deadline);
-    // ReadModifyWriteRow is not idempotent and must never be retried.
+    // ReadModifyWriteRow is not idempotent and should not be retried unless directed by server.
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
         .start(req, listener);
   }

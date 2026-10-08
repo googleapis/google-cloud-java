@@ -15,9 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
-import com.google.bigtable.v2.Cell;
-import com.google.bigtable.v2.Column;
-import com.google.bigtable.v2.Family;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -68,24 +65,6 @@ public class ReadModifyWriteRowShim<RowT> implements UnaryShim<ReadModifyWriteRo
     if (!input.hasRow()) {
       return null;
     }
-    com.google.bigtable.v2.Row protoRow = input.getRow();
-
-    adapter.startRow(protoRow.getKey());
-
-    for (Family family : protoRow.getFamiliesList()) {
-      for (Column column : family.getColumnsList()) {
-        for (Cell cell : column.getCellsList()) {
-          adapter.startCell(
-              family.getName(),
-              column.getQualifier(),
-              cell.getTimestampMicros(),
-              cell.getLabelsList(),
-              0);
-          adapter.cellValue(cell.getValue());
-          adapter.finishCell();
-        }
-      }
-    }
-    return adapter.finishRow();
+    return RowConverter.buildRow(adapter, input.getRow());
   }
 }
