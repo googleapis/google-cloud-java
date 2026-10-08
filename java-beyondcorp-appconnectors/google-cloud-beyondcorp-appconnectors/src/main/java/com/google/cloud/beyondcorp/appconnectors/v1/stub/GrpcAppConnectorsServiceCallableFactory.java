@@ -41,8 +41,11 @@ import org.jspecify.annotations.NullMarked;
  * gRPC callable factory implementation for the AppConnectorsService service API.
  *
  * <p>This class is for advanced usage.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcAppConnectorsServiceCallableFactory implements GrpcStubCallableFactory {
 

@@ -79,7 +79,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+     * The custom_field_option_id, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
      * </pre>
      *
      * <code>int64 dropdown_value = 1;</code>
@@ -92,7 +94,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+     * The custom_field_option_id, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
      * </pre>
      *
      * <code>int64 dropdown_value = 1;</code>
@@ -105,7 +109,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is STRING.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
      * </pre>
      *
      * <code>string string_value = 2;</code>
@@ -118,7 +125,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is STRING.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
      * </pre>
      *
      * <code>string string_value = 2;</code>
@@ -131,7 +141,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is STRING.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
      * </pre>
      *
      * <code>string string_value = 2;</code>
@@ -144,7 +157,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is NUMBER.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
      * </pre>
      *
      * <code>double number_value = 3;</code>
@@ -157,7 +173,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is NUMBER.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
      * </pre>
      *
      * <code>double number_value = 3;</code>
@@ -170,7 +189,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is TOGGLE.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
      * </pre>
      *
      * <code>bool toggle_value = 4;</code>
@@ -183,7 +205,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is TOGGLE.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
      * </pre>
      *
      * <code>bool toggle_value = 4;</code>
@@ -304,7 +329,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+     * The custom_field_option_id, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
      * </pre>
      *
      * <code>int64 dropdown_value = 1;</code>
@@ -320,7 +347,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+     * The custom_field_option_id, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
      * </pre>
      *
      * <code>int64 dropdown_value = 1;</code>
@@ -341,7 +370,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is STRING.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
      * </pre>
      *
      * <code>string string_value = 2;</code>
@@ -356,7 +388,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is STRING.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
      * </pre>
      *
      * <code>string string_value = 2;</code>
@@ -384,7 +419,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is STRING.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
      * </pre>
      *
      * <code>string string_value = 2;</code>
@@ -414,7 +452,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is NUMBER.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
      * </pre>
      *
      * <code>double number_value = 3;</code>
@@ -430,7 +471,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is NUMBER.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
      * </pre>
      *
      * <code>double number_value = 3;</code>
@@ -451,7 +495,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is TOGGLE.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
      * </pre>
      *
      * <code>bool toggle_value = 4;</code>
@@ -467,7 +514,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The value, if the CustomFieldDataType is TOGGLE.
+     * The value, if the
+     * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+     * is
+     * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
      * </pre>
      *
      * <code>bool toggle_value = 4;</code>
@@ -918,7 +968,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+       * The custom_field_option_id, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
        * </pre>
        *
        * <code>int64 dropdown_value = 1;</code>
@@ -933,7 +985,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+       * The custom_field_option_id, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
        * </pre>
        *
        * <code>int64 dropdown_value = 1;</code>
@@ -951,7 +1005,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+       * The custom_field_option_id, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
        * </pre>
        *
        * <code>int64 dropdown_value = 1;</code>
@@ -971,7 +1027,9 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The custom_field_option_id, if the CustomFieldDataType is DROPDOWN.
+       * The custom_field_option_id, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is [DROPDOWN][CustomFieldDataTypeEnum.CustomFieldDataType.DROPDOWN].
        * </pre>
        *
        * <code>int64 dropdown_value = 1;</code>
@@ -991,7 +1049,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is STRING.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
        * </pre>
        *
        * <code>string string_value = 2;</code>
@@ -1007,7 +1068,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is STRING.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
        * </pre>
        *
        * <code>string string_value = 2;</code>
@@ -1036,7 +1100,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is STRING.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
        * </pre>
        *
        * <code>string string_value = 2;</code>
@@ -1065,7 +1132,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is STRING.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
        * </pre>
        *
        * <code>string string_value = 2;</code>
@@ -1087,7 +1157,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is STRING.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
        * </pre>
        *
        * <code>string string_value = 2;</code>
@@ -1107,7 +1180,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is STRING.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [STRING][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.STRING].
        * </pre>
        *
        * <code>string string_value = 2;</code>
@@ -1130,7 +1206,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is NUMBER.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
        * </pre>
        *
        * <code>double number_value = 3;</code>
@@ -1145,7 +1224,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is NUMBER.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
        * </pre>
        *
        * <code>double number_value = 3;</code>
@@ -1163,7 +1245,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is NUMBER.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
        * </pre>
        *
        * <code>double number_value = 3;</code>
@@ -1183,7 +1268,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is NUMBER.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [NUMBER][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.NUMBER].
        * </pre>
        *
        * <code>double number_value = 3;</code>
@@ -1203,7 +1291,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is TOGGLE.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
        * </pre>
        *
        * <code>bool toggle_value = 4;</code>
@@ -1218,7 +1309,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is TOGGLE.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
        * </pre>
        *
        * <code>bool toggle_value = 4;</code>
@@ -1236,7 +1330,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is TOGGLE.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
        * </pre>
        *
        * <code>bool toggle_value = 4;</code>
@@ -1256,7 +1353,10 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The value, if the CustomFieldDataType is TOGGLE.
+       * The value, if the
+       * [CustomFieldDataType][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType]
+       * is
+       * [TOGGLE][google.ads.admanager.v1.CustomFieldDataTypeEnum.CustomFieldDataType.TOGGLE].
        * </pre>
        *
        * <code>bool toggle_value = 4;</code>

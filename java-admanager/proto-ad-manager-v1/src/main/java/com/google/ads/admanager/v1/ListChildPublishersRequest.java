@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [ListChildPublishers][] method.
+ * Request object for `ListChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ListChildPublishersRequest}
@@ -83,7 +83,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent, which owns this collection of
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
    * `networks/{network_code}`
    * </pre>
    *
@@ -111,7 +111,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent, which owns this collection of
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
    * `networks/{network_code}`
    * </pre>
    *
@@ -142,9 +142,9 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Optional. The maximum number of
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to return. The
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to return. The
    * service may return fewer than this value. If unspecified, at most 50
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be returned.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be returned.
    * The maximum value is 1000; values greater than 1000 will be coerced to
    * 1000.
    * </pre>
@@ -167,10 +167,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous [ListChildPublishers][]
+   * Optional. A page token, received from a previous `ListChildPublishers`
    * call. Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to [ListChildPublishers][]
+   * When paginating, all other parameters provided to `ListChildPublishers`
    * must match the call that provided the page token.
    * </pre>
    *
@@ -195,10 +195,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous [ListChildPublishers][]
+   * Optional. A page token, received from a previous `ListChildPublishers`
    * call. Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to [ListChildPublishers][]
+   * When paginating, all other parameters provided to `ListChildPublishers`
    * must match the call that provided the page token.
    * </pre>
    *
@@ -598,7 +598,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request object for [ListChildPublishers][] method.
+   * Request object for `ListChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ListChildPublishersRequest}
@@ -822,7 +822,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -849,7 +849,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -876,7 +876,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -902,7 +902,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -924,7 +924,7 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -953,9 +953,9 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Optional. The maximum number of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to return. The
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to return. The
      * service may return fewer than this value. If unspecified, at most 50
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be returned.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be returned.
      * The maximum value is 1000; values greater than 1000 will be coerced to
      * 1000.
      * </pre>
@@ -974,9 +974,9 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Optional. The maximum number of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to return. The
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to return. The
      * service may return fewer than this value. If unspecified, at most 50
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be returned.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be returned.
      * The maximum value is 1000; values greater than 1000 will be coerced to
      * 1000.
      * </pre>
@@ -999,9 +999,9 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Optional. The maximum number of
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to return. The
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to return. The
      * service may return fewer than this value. If unspecified, at most 50
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be returned.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be returned.
      * The maximum value is 1000; values greater than 1000 will be coerced to
      * 1000.
      * </pre>
@@ -1023,10 +1023,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListChildPublishers][]
+     * Optional. A page token, received from a previous `ListChildPublishers`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListChildPublishers][]
+     * When paginating, all other parameters provided to `ListChildPublishers`
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1050,10 +1050,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListChildPublishers][]
+     * Optional. A page token, received from a previous `ListChildPublishers`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListChildPublishers][]
+     * When paginating, all other parameters provided to `ListChildPublishers`
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1077,10 +1077,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListChildPublishers][]
+     * Optional. A page token, received from a previous `ListChildPublishers`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListChildPublishers][]
+     * When paginating, all other parameters provided to `ListChildPublishers`
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1103,10 +1103,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListChildPublishers][]
+     * Optional. A page token, received from a previous `ListChildPublishers`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListChildPublishers][]
+     * When paginating, all other parameters provided to `ListChildPublishers`
      * must match the call that provided the page token.
      * </pre>
      *
@@ -1125,10 +1125,10 @@ public final class ListChildPublishersRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListChildPublishers][]
+     * Optional. A page token, received from a previous `ListChildPublishers`
      * call. Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListChildPublishers][]
+     * When paginating, all other parameters provided to `ListChildPublishers`
      * must match the call that provided the page token.
      * </pre>
      *
