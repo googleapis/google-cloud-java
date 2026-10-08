@@ -342,7 +342,8 @@ public final class StorageOptionsTest {
 
     assertThat(deserializedHttp).isNotNull();
     assertThat(deserializedHttp.isEnableOtelMetrics()).isTrue();
-    // Transient meterProvider does not carry over; falls back to openTelemetry.getMeterProvider() without NPE
+    // Transient meterProvider does not carry over; falls back to openTelemetry.getMeterProvider()
+    // without NPE
     assertThat(deserializedHttp.getMeterProvider()).isNotNull();
     assertThat(deserializedHttp.getMeterProvider()).isNotSameInstanceAs(customMeterProvider);
     assertThat(deserializedHttp.getMeterProvider())
