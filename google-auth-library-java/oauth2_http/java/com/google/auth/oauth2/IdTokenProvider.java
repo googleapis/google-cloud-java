@@ -76,9 +76,10 @@ public interface IdTokenProvider {
      * <p>Unlike the {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false} environment variable, which
      * globally disables certificate-bound access tokens and ID tokens across the entire process,
      * this option applies per call (or per {@link IdTokenCredentials} instance) and leaves access
-     * tokens and other ID token requests bound. If this option is not set, the library binds the ID
-     * token whenever an agent identity certificate is available and token binding is not globally
-     * disabled by {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}.
+     * tokens and other ID token requests bound. If this option is not set, the library decides
+     * whether to bind the ID token. Currently, it is bound whenever an agent identity certificate
+     * is available and token binding is not globally disabled by {@code
+     * GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}.
      */
     DISABLE_BOUND_ID_TOKEN("disableBoundIdToken");
 
