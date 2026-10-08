@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
@@ -112,6 +113,12 @@ public final class OpenTelemetryBootstrappingUtilsTest {
     for (int i = 1; i < sizeBoundaries.size(); i++) {
       assertThat(sizeBoundaries.get(i)).isGreaterThan(sizeBoundaries.get(i - 1));
     }
+
+    List<Long> sizeLongBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramLongBoundaries();
+    assertThat(sizeLongBoundaries).hasSize(sizeBoundaries.size());
+    for (int i = 1; i < sizeLongBoundaries.size(); i++) {
+      assertThat(sizeLongBoundaries.get(i)).isGreaterThan(sizeLongBoundaries.get(i - 1));
+    }
   }
 
   @Test
@@ -126,16 +133,6 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   @Test
   public void createClientMeterProvider_attachesApiAttribute() {
     Attributes detectedAttributes = Attributes.empty();
-
-    try (SdkMeterProvider defaultProvider =
-        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-            "monitoring.googleapis.com:443",
-            "test-project",
-            detectedAttributes,
-            Duration.ofSeconds(60),
-            true)) {
-      assertThat(defaultProvider.toString()).contains("api=\"grpc\"");
-    }
 
     try (SdkMeterProvider grpcProvider =
         OpenTelemetryBootstrappingUtils.createClientMeterProvider(
@@ -159,16 +156,16 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       assertThat(jsonProvider.toString()).contains("api=\"json\"");
     }
 
-    try (SdkMeterProvider nullApiProvider =
-        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
-            "monitoring.googleapis.com:443",
-            "test-project",
-            detectedAttributes,
-            Duration.ofSeconds(60),
-            true,
-            null)) {
-      assertThat(nullApiProvider.toString()).contains("api=\"grpc\"");
-    }
+    assertThrows(
+        NullPointerException.class,
+        () ->
+            OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+                "monitoring.googleapis.com:443",
+                "test-project",
+                detectedAttributes,
+                Duration.ofSeconds(60),
+                true,
+                null));
 
     try (SdkMeterProvider legacyProvider =
         OpenTelemetryBootstrappingUtils.createMeterProvider(

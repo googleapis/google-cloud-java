@@ -16,17 +16,39 @@
 
 package com.google.cloud.storage;
 
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.LongUpDownCounter;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
+import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Package-private instrument registry for OpenTelemetry client metrics. */
 final class StorageClientMetrics {
   static final String METER_NAME = "com.google.cloud.storage";
+
+  // Standard client attribute keys and values
+  static final AttributeKey<String> KEY_GCP_CLIENT_VERSION =
+      AttributeKey.stringKey("gcp.client.version");
+  static final AttributeKey<String> KEY_GCP_CLIENT_SERVICE =
+      AttributeKey.stringKey("gcp.client.service");
+  static final AttributeKey<String> KEY_GCP_CLIENT_ARTIFACT =
+      AttributeKey.stringKey("gcp.client.artifact");
+  static final AttributeKey<String> KEY_GCP_CLIENT_INSTANCE_ID =
+      AttributeKey.stringKey("gcp.client.instance_id");
+
+  static final String ATTRIBUTE_GCP_CLIENT_VERSION = "gcp.client.version";
+  static final String ATTRIBUTE_GCP_CLIENT_SERVICE = "gcp.client.service";
+  static final String ATTRIBUTE_GCP_CLIENT_ARTIFACT = "gcp.client.artifact";
+  static final String ATTRIBUTE_GCP_CLIENT_INSTANCE_ID = "gcp.client.instance_id";
+
+  static final String SERVICE_STORAGE = "storage";
+  static final String ARTIFACT_STORAGE = "com.google.cloud:google-cloud-storage";
 
   // Standard metric names
   static final String METRIC_RPC_CLIENT_CALL_DURATION = "rpc.client.call.duration";
@@ -45,9 +67,10 @@ final class StorageClientMetrics {
   // Debug metric names
   static final String METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE =
       "gcp.storage.client.request.active";
-  static final String METRIC_GCP_STORAGE_CLIENT_GFE_DURATION = "gcp.storage.client.gfe.duration";
-  static final String METRIC_GCP_STORAGE_CLIENT_GFE_HEADER_MISSING =
-      "gcp.storage.client.gfe.header_missing";
+  static final String METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION =
+      "gcp.storage.client.server.duration";
+  static final String METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED =
+      "gcp.storage.client.server.unreached";
   static final String METRIC_GCP_STORAGE_CLIENT_STALL_DURATION =
       "gcp.storage.client.stall.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT =
@@ -68,40 +91,73 @@ final class StorageClientMetrics {
   private final LongHistogram responseBodySize;
 
   @Nullable private final LongUpDownCounter requestActive;
-  @Nullable private final DoubleHistogram gfeDuration;
-  @Nullable private final LongCounter gfeHeaderMissing;
+  @Nullable private final DoubleHistogram serverDuration;
+  @Nullable private final LongCounter serverUnreached;
   @Nullable private final DoubleHistogram stallDuration;
-  @Nullable private final LongHistogram networkBytesSent;
-  @Nullable private final LongHistogram networkBytesReceived;
+  @Nullable private final LongCounter networkBytesSent;
+  @Nullable private final LongCounter networkBytesReceived;
   @Nullable private final DoubleHistogram credentialRefreshDuration;
 
+  private final Attributes clientAttributes;
+
   static StorageClientMetrics create(MeterProvider meterProvider, boolean enableOtelDebugMetrics) {
+    return create(meterProvider, UUID.randomUUID().toString(), enableOtelDebugMetrics);
+  }
+
+  static StorageClientMetrics create(
+      MeterProvider meterProvider, String instanceId, boolean enableOtelDebugMetrics) {
     Meter meter =
         meterProvider
             .meterBuilder(METER_NAME)
             .setInstrumentationVersion(StorageOptions.version())
             .build();
-    return new StorageClientMetrics(meter, enableOtelDebugMetrics);
+    Attributes clientAttributes =
+        Attributes.builder()
+            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
+            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
+            .put(KEY_GCP_CLIENT_INSTANCE_ID, instanceId)
+            .build();
+    return new StorageClientMetrics(meter, clientAttributes, enableOtelDebugMetrics);
   }
 
   StorageClientMetrics(Meter meter, boolean enableOtelDebugMetrics) {
+    this(
+        meter,
+        Attributes.builder()
+            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
+            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
+            .put(KEY_GCP_CLIENT_INSTANCE_ID, UUID.randomUUID().toString())
+            .build(),
+        enableOtelDebugMetrics);
+  }
+
+  StorageClientMetrics(Meter meter, Attributes clientAttributes, boolean enableOtelDebugMetrics) {
+    this.clientAttributes = clientAttributes;
     this.rpcClientCallDuration =
         meter
             .histogramBuilder(METRIC_RPC_CLIENT_CALL_DURATION)
             .setDescription("Duration of one gRPC request. Retries not included (Otel)")
             .setUnit("s")
+            .setExplicitBucketBoundariesAdvice(
+                OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
             .build();
     this.httpClientRequestDuration =
         meter
             .histogramBuilder(METRIC_HTTP_CLIENT_REQUEST_DURATION)
             .setDescription("Duration of one HTTP client request. Retries not included (Otel)")
             .setUnit("s")
+            .setExplicitBucketBoundariesAdvice(
+                OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
             .build();
     this.gcpClientRequestDuration =
         meter
             .histogramBuilder(METRIC_GCP_CLIENT_REQUEST_DURATION)
-            .setDescription("Latency of a client operation")
+            .setDescription("Latency of a client operation, including all retries.")
             .setUnit("s")
+            .setExplicitBucketBoundariesAdvice(
+                OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
             .build();
     this.operations =
         meter
@@ -112,34 +168,48 @@ final class StorageClientMetrics {
     this.attempts =
         meter
             .counterBuilder(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)
-            .setDescription("Number of GCS client attempts")
+            .setDescription(
+                "Number of GCS client attempts (individual HTTP requests or gRPC calls), including"
+                    + " retries, resumable upload chunks and list pages.")
             .setUnit("1")
             .build();
     this.errors =
         meter
             .counterBuilder(METRIC_GCP_STORAGE_CLIENT_ERRORS)
-            .setDescription("Number of GCS client errors")
+            .setDescription("Number of failed GCS client attempts, by error.type.")
             .setUnit("1")
             .build();
     this.operationTtfb =
         meter
             .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_OPERATION_TTFB)
-            .setDescription("Time to first byte of GCS client operations")
+            .setDescription(
+                "Time from the start of an attempt until the first byte of the response was"
+                    + " received. Not recorded for attempts that received no response.")
             .setUnit("s")
+            .setExplicitBucketBoundariesAdvice(
+                OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
             .build();
     this.requestBodySize =
         meter
             .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE)
             .ofLongs()
-            .setDescription("Size of GCS client request body")
+            .setDescription(
+                "Number of object bytes written by an upload operation (recorded once per"
+                    + " operation, including empty objects).")
             .setUnit("By")
+            .setExplicitBucketBoundariesAdvice(
+                OpenTelemetryBootstrappingUtils.sizeHistogramLongBoundaries())
             .build();
     this.responseBodySize =
         meter
             .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE)
             .ofLongs()
-            .setDescription("Size of GCS client response body")
+            .setDescription(
+                "Number of object bytes delivered to the application by a download operation"
+                    + " (recorded once per operation).")
             .setUnit("By")
+            .setExplicitBucketBoundariesAdvice(
+                OpenTelemetryBootstrappingUtils.sizeHistogramLongBoundaries())
             .build();
 
     if (enableOtelDebugMetrics) {
@@ -149,56 +219,81 @@ final class StorageClientMetrics {
               .setDescription("Number of active GCS client requests")
               .setUnit("1")
               .build();
-      this.gfeDuration =
+      this.serverDuration =
           meter
-              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_GFE_DURATION)
-              .setDescription("GFE proxy processing time")
-              .setUnit("s")
-              .build();
-      this.gfeHeaderMissing =
-          meter
-              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_GFE_HEADER_MISSING)
+              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION)
               .setDescription(
-                  "Number of GCS requests where the X-Goog-Gfe-Service-Time header was missing")
+                  "Server elapsed processing time for gRPC requests, decoded from"
+                      + " grpc-server-stats-bin response trailer (gRPC only).")
+              .setUnit("s")
+              .setExplicitBucketBoundariesAdvice(
+                  OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
+              .build();
+      this.serverUnreached =
+          meter
+              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED)
+              .setDescription(
+                  "Number of attempts that received no response from a GCS server (gRPC:"
+                      + " grpc-server-stats-bin trailer absent; HTTP: X-GUploader-UploadID header"
+                      + " absent).")
               .setUnit("1")
               .build();
       this.stallDuration =
           meter
               .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_STALL_DURATION)
-              .setDescription("Duration of client stall")
+              .setDescription(
+                  "Stall timeout after which a read attempt was aborted while waiting for the"
+                      + " initial response.")
               .setUnit("s")
+              .setExplicitBucketBoundariesAdvice(
+                  OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
               .build();
       this.networkBytesSent =
           meter
-              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT)
-              .ofLongs()
-              .setDescription("Number of wire bytes sent on the network")
+              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT)
+              .setDescription("Total bytes sent on the wire (gRPC only).")
               .setUnit("By")
               .build();
       this.networkBytesReceived =
           meter
-              .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED)
-              .ofLongs()
-              .setDescription("Number of wire bytes received from the network")
+              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED)
+              .setDescription("Total bytes received on the wire (gRPC only).")
               .setUnit("By")
               .build();
       this.credentialRefreshDuration =
           meter
               .histogramBuilder(METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION)
               .setDescription(
-                  "Duration of the background API/network calls made to refresh OAuth2/JWT access"
-                      + " credentials.")
+                  "Time a request was blocked obtaining an access token. Tokens served from the"
+                      + " credential cache are not recorded.")
               .setUnit("s")
+              .setExplicitBucketBoundariesAdvice(
+                  OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
               .build();
     } else {
       this.requestActive = null;
-      this.gfeDuration = null;
-      this.gfeHeaderMissing = null;
+      this.serverDuration = null;
+      this.serverUnreached = null;
       this.stallDuration = null;
       this.networkBytesSent = null;
       this.networkBytesReceived = null;
       this.credentialRefreshDuration = null;
     }
+  }
+
+  Attributes getClientAttributes() {
+    return clientAttributes;
+  }
+
+  AttributesBuilder clientAttributesBuilder() {
+    return clientAttributes.toBuilder();
+  }
+
+  Attributes attachClientAttributes(@Nullable Attributes other) {
+    if (other == null || other.isEmpty()) {
+      return clientAttributes;
+    }
+    return clientAttributes.toBuilder().putAll(other).build();
   }
 
   DoubleHistogram getRpcClientCallDuration() {
@@ -241,23 +336,23 @@ final class StorageClientMetrics {
     return requestActive;
   }
 
-  @Nullable DoubleHistogram getGfeDuration() {
-    return gfeDuration;
+  @Nullable DoubleHistogram getServerDuration() {
+    return serverDuration;
   }
 
-  @Nullable LongCounter getGfeHeaderMissing() {
-    return gfeHeaderMissing;
+  @Nullable LongCounter getServerUnreached() {
+    return serverUnreached;
   }
 
   @Nullable DoubleHistogram getStallDuration() {
     return stallDuration;
   }
 
-  @Nullable LongHistogram getNetworkBytesSent() {
+  @Nullable LongCounter getNetworkBytesSent() {
     return networkBytesSent;
   }
 
-  @Nullable LongHistogram getNetworkBytesReceived() {
+  @Nullable LongCounter getNetworkBytesReceived() {
     return networkBytesReceived;
   }
 
