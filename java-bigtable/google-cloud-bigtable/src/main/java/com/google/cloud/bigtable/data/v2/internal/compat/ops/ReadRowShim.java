@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
 import com.google.bigtable.v2.SessionReadRowResponse;
+import com.google.cloud.bigtable.data.v2.internal.compat.Util;
 import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -64,6 +65,6 @@ public class ReadRowShim<RowT> implements UnaryShim<Query, RowT> {
     if (!input.hasRow()) {
       return null;
     }
-    return RowConverter.buildRow(adapter, input.getRow());
+    return Util.buildRow(adapter, input.getRow());
   }
 }

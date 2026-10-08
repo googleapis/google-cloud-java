@@ -34,8 +34,10 @@ import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.Configure
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
@@ -88,6 +90,8 @@ public class ShimImpl implements Shim {
 
   private final ReadRowShimInner readRowShimInner;
   private final MutateRowShim mutateRowShim;
+  private final CheckAndMutateRowShim checkAndMutateRowShim;
+  private final ReadModifyWriteRowShimInner readModifyWriteRowShimInner;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -203,6 +207,8 @@ public class ShimImpl implements Shim {
 
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
+    this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
+    this.readModifyWriteRowShimInner = new ReadModifyWriteRowShimInner(client);
   }
 
   /**
@@ -381,7 +387,7 @@ public class ShimImpl implements Shim {
   @Override
   public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
-    // TODO: enable session routing once diversion by method is added
+    // TODO: enable once diversion by method is supported
     return classic;
   }
 
@@ -390,7 +396,7 @@ public class ShimImpl implements Shim {
       UnaryCallable<ReadModifyWriteRow, RowT> classic,
       RowAdapter<RowT> rowAdapter,
       UnaryCallSettings<?, ?> settings) {
-    // TODO: enable session routing once server-side changes are rolled out
+    // TODO: enable once diversion by method is supported
     return classic;
   }
 }

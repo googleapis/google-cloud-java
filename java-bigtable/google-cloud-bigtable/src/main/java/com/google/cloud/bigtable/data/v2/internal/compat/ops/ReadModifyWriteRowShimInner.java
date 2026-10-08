@@ -22,6 +22,8 @@ import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
+import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
+import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.TableId;
@@ -58,8 +60,18 @@ public class ReadModifyWriteRowShimInner
 
   @Override
   public boolean supports(ReadModifyWriteRow request) {
-    // TODO: enable when server side changes is rolled out
-    return false;
+    TargetId targetId = request.getTargetId();
+    SessionPool<?> pool;
+    if (targetId instanceof TableId) {
+      pool = tables.get((TableId) targetId).getSessionPool();
+    } else if (targetId instanceof AuthorizedViewId) {
+      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
+    } else {
+      return false;
+    }
+    return pool.getConsecutiveUnimplementedFailures()
+            < ShimImpl.MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES
+        || pool.hasSession();
   }
 
   @Override
