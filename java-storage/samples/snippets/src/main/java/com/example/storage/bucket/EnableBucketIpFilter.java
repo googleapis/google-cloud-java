@@ -19,107 +19,29 @@ package com.example.storage.bucket;
 // [START storage_enable_ip_filtering]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo.IpFilter;
-import com.google.cloud.storage.BucketInfo.IpFilter.PublicNetworkSource;
-import com.google.cloud.storage.BucketInfo.IpFilter.VpcNetworkSource;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class EnableBucketIpFilter {
-  public static Bucket enableBucketIpFilter(
-      String projectId,
-      String bucketName,
-      String publicRange,
-      String vpcNetworkName,
-      String vpcRange) {
+  public static Bucket enableBucketIpFilter(String projectId, String bucketName) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
-    // The public IPv4/IPv6 CIDR range to allow
-    // String publicRange = "192.0.2.0/24";
-
-    // The VPC network name in the format: projects/PROJECT_ID/global/networks/NETWORK_NAME
-    // String vpcNetworkName = "projects/my-project/global/networks/my-vpc";
-
-    // The VPC IPv4/IPv6 CIDR range to allow
-    // String vpcRange = "10.0.0.0/24";
-
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
 
-    List<String> publicRanges = new ArrayList<>();
-    List<VpcNetworkSource> vpcSources = new ArrayList<>();
-
-    IpFilter existingIpFilter = bucket.getIpFilter();
-    if (existingIpFilter != null) {
-      if (existingIpFilter.getPublicNetworkSource() != null
-          && existingIpFilter.getPublicNetworkSource().getAllowedIpCidrRanges() != null) {
-        publicRanges.addAll(existingIpFilter.getPublicNetworkSource().getAllowedIpCidrRanges());
-      }
-      if (existingIpFilter.getVpcNetworkSources() != null) {
-        vpcSources.addAll(existingIpFilter.getVpcNetworkSources());
-      }
+    if (bucket.getIpFilter() == null) {
+      System.out.println("Bucket " + bucketName + " has no IP Filter configured.");
+      return bucket;
     }
 
-    if (publicRange != null && !publicRanges.contains(publicRange)) {
-      publicRanges.add(publicRange);
-    }
+    IpFilter enabledIpFilter = bucket.getIpFilter().toBuilder().setMode("Enabled").build();
+    Bucket updatedBucket = storage.update(bucket.toBuilder().setIpFilter(enabledIpFilter).build());
 
-    if (vpcNetworkName != null && vpcRange != null) {
-      boolean found = false;
-      for (int i = 0; i < vpcSources.size(); i++) {
-        VpcNetworkSource vpcSource = vpcSources.get(i);
-        if (vpcNetworkName.equals(vpcSource.getNetwork())) {
-          found = true;
-          List<String> ranges = new ArrayList<>();
-          if (vpcSource.getAllowedIpCidrRanges() != null) {
-            ranges.addAll(vpcSource.getAllowedIpCidrRanges());
-          }
-          if (!ranges.contains(vpcRange)) {
-            ranges.add(vpcRange);
-          }
-          vpcSources.set(i, vpcSource.toBuilder().setAllowedIpCidrRanges(ranges).build());
-          break;
-        }
-      }
-      if (!found) {
-        vpcSources.add(
-            VpcNetworkSource.newBuilder()
-                .setNetwork(vpcNetworkName)
-                .setAllowedIpCidrRanges(Collections.singletonList(vpcRange))
-                .build());
-      }
-    }
-
-    IpFilter.Builder ipFilterBuilder =
-        IpFilter.newBuilder()
-            .setMode("Enabled")
-            .setAllowAllServiceAgentAccess(true)
-            .setAllowCrossOrgVpcs(true);
-
-    if (!publicRanges.isEmpty()) {
-      ipFilterBuilder.setPublicNetworkSource(PublicNetworkSource.of(publicRanges));
-    }
-    if (!vpcSources.isEmpty()) {
-      ipFilterBuilder.setVpcNetworkSources(vpcSources);
-    }
-
-    IpFilter newIpFilter = ipFilterBuilder.build();
-    Bucket updatedBucket = storage.update(bucket.toBuilder().setIpFilter(newIpFilter).build());
-
-    System.out.println(
-        "Enabled IP filtering for bucket "
-            + bucketName
-            + ", allowed public CIDRs: "
-            + publicRanges
-            + ", VPC sources: "
-            + vpcSources);
-
+    System.out.println("IP filtering enabled for bucket " + bucketName);
     return updatedBucket;
   }
 }

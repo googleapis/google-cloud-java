@@ -51,38 +51,40 @@ public class DeleteBucketIpFilter {
     }
 
     boolean modified = false;
-    List<String> publicRanges = new ArrayList<>();
-    if (ipFilter.getPublicNetworkSource() != null
-        && ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges() != null) {
-      publicRanges.addAll(ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges());
-    }
+    List<String> publicRanges =
+        (ipFilter.getPublicNetworkSource() != null
+                && ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges() != null)
+            ? new ArrayList<>(ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges())
+            : new ArrayList<>();
     if (publicRangeToDelete != null && publicRanges.remove(publicRangeToDelete)) {
       modified = true;
     }
 
-    List<VpcNetworkSource> vpcSources = new ArrayList<>();
-    if (ipFilter.getVpcNetworkSources() != null) {
-      vpcSources.addAll(ipFilter.getVpcNetworkSources());
-    }
+    List<VpcNetworkSource> vpcSources =
+        ipFilter.getVpcNetworkSources() != null
+            ? new ArrayList<>(ipFilter.getVpcNetworkSources())
+            : new ArrayList<>();
     if (vpcNetworkToDelete != null
         && vpcSources.removeIf(source -> vpcNetworkToDelete.equals(source.getNetwork()))) {
       modified = true;
     }
 
     if (modified) {
-      IpFilter.Builder updatedIpFilterBuilder = ipFilter.toBuilder();
-      updatedIpFilterBuilder.setPublicNetworkSource(
-          publicRanges.isEmpty() ? null : PublicNetworkSource.of(publicRanges));
-      updatedIpFilterBuilder.setVpcNetworkSources(vpcSources.isEmpty() ? null : vpcSources);
+      IpFilter updatedIpFilter =
+          ipFilter.toBuilder()
+              .setPublicNetworkSource(
+                  publicRanges.isEmpty() ? null : PublicNetworkSource.of(publicRanges))
+              .setVpcNetworkSources(vpcSources.isEmpty() ? null : vpcSources)
+              .build();
 
       Bucket updatedBucket =
-          storage.update(bucket.toBuilder().setIpFilter(updatedIpFilterBuilder.build()).build());
+          storage.update(bucket.toBuilder().setIpFilter(updatedIpFilter).build());
       System.out.println("Deleted specified IP filtering rules for bucket " + bucketName);
       return updatedBucket;
-    } else {
-      System.out.println("No matching IP filtering rules found to delete for bucket " + bucketName);
-      return bucket;
     }
+
+    System.out.println("No matching IP filtering rules found to delete for bucket " + bucketName);
+    return bucket;
   }
 }
 // [END storage_delete_ip_filtering_rules]

@@ -19,7 +19,6 @@ package com.example.storage.bucket;
 // [START storage_get_ip_filtering]
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo.IpFilter;
-import com.google.cloud.storage.BucketInfo.IpFilter.VpcNetworkSource;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
@@ -40,27 +39,7 @@ public class GetBucketIpFilter {
       return null;
     }
 
-    System.out.println("IP Filter Mode: " + ipFilter.getMode());
-    System.out.println(
-        "Allow All Service Agent Access: " + ipFilter.getAllowAllServiceAgentAccess());
-    System.out.println("Allow Cross Org VPCs: " + ipFilter.getAllowCrossOrgVpcs());
-
-    if (ipFilter.getPublicNetworkSource() != null) {
-      System.out.println(
-          "Allowed Public CIDR Blocks: "
-              + ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges());
-    }
-
-    if (ipFilter.getVpcNetworkSources() != null) {
-      for (VpcNetworkSource vpcSource : ipFilter.getVpcNetworkSources()) {
-        System.out.println(
-            "VPC Network: "
-                + vpcSource.getNetwork()
-                + ", Allowed CIDR Ranges: "
-                + vpcSource.getAllowedIpCidrRanges());
-      }
-    }
-
+    System.out.println("Bucket " + bucketName + " IP filter configuration: " + ipFilter);
     return ipFilter;
   }
 }
