@@ -578,4 +578,40 @@ public class PipelineProtoTest {
     Stage stage = firestore.pipeline().literals(withNull).toProto().getStages(0);
     assertThat(stage.getArgs(0).getMapValue().getFieldsMap().get("n").hasNullValue()).isTrue();
   }
+
+  @Test
+  public void testListOverloadsProtoEncoding() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> doc1 = new java.util.HashMap<>();
+    doc1.put("title", "Book 1");
+    java.util.Map<String, Object> doc2 = new java.util.HashMap<>();
+    doc2.put("title", "Book 2");
+
+    // literals(List) encodes the same as literals(Map...).
+    assertThat(firestore.pipeline().literals(java.util.Arrays.asList(doc1, doc2)).toProto())
+        .isEqualTo(firestore.pipeline().literals(doc1, doc2).toProto());
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> firestore.pipeline().literals(java.util.Collections.emptyList()));
+
+    // Update.withTransformedFields(List) encodes the same as the varargs overload.
+    com.google.cloud.firestore.pipeline.stages.Update fromList =
+        new com.google.cloud.firestore.pipeline.stages.Update()
+            .withTransformedFields(
+                java.util.Arrays.asList(
+                    constant("Updated").as("status"),
+                    add(field("count"), constant(1)).as("count")));
+    com.google.cloud.firestore.pipeline.stages.Update fromVarargs =
+        new com.google.cloud.firestore.pipeline.stages.Update()
+            .withTransformedFields(
+                constant("Updated").as("status"), add(field("count"), constant(1)).as("count"));
+    assertThat(firestore.pipeline().collection("books").update(fromList).toProto())
+        .isEqualTo(firestore.pipeline().collection("books").update(fromVarargs).toProto());
+  }
 }
