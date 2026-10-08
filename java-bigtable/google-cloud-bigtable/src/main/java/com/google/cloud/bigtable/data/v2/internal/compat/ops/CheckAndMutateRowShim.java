@@ -68,6 +68,11 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
     } else {
       return false;
     }
+    // Circuit-breaker: stop routing to the session path if the server has repeatedly indicated
+    // it doesn't support this RPC (UNIMPLEMENTED). Still allow through if there is already an
+    // active session, since an open session proves the server supports it for this connection.
+    // Currently this will only fallback in case RLS is misconfigured. If the AFE pool is
+    // unavailable, it'll be controlled by ClientConfiguration.
     return pool.getConsecutiveUnimplementedFailures()
             < ShimImpl.MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES
         || pool.hasSession();

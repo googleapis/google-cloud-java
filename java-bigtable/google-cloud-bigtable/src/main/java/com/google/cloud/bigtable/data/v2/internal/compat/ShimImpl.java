@@ -37,6 +37,7 @@ import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
@@ -387,8 +388,15 @@ public class ShimImpl implements Shim {
   @Override
   public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
-    // TODO: enable once diversion by method is supported
-    return classic;
+    if (!WipFeatures.CHECK_AND_MUTATE_ROW_ENABLED) {
+      return classic;
+    }
+    return new DivertingUnaryCallable<>(
+        configManager,
+        classic,
+        checkAndMutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer);
   }
 
   @Override
@@ -396,7 +404,14 @@ public class ShimImpl implements Shim {
       UnaryCallable<ReadModifyWriteRow, RowT> classic,
       RowAdapter<RowT> rowAdapter,
       UnaryCallSettings<?, ?> settings) {
-    // TODO: enable once diversion by method is supported
-    return classic;
+    if (!WipFeatures.READ_MODIFY_WRITE_ROW_ENABLED) {
+      return classic;
+    }
+    return new DivertingUnaryCallable<>(
+        configManager,
+        classic,
+        new ReadModifyWriteRowShim<>(readModifyWriteRowShimInner, rowAdapter),
+        Util.extractTimeout(settings),
+        debugTagTracer);
   }
 }

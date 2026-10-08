@@ -68,11 +68,9 @@ public class MaterializedViewAsync implements AutoCloseable, Closeable {
             openReq,
             VRpcDescriptor.MATERIALIZED_VIEW_SESSION,
             VRpcDescriptor.READ_ROW_MAT_VIEW,
-            // Materialized views are read-only, so mutateRow, checkAndMutateRow, and
-            // readModifyWriteRow don't apply.
-            null,
-            null,
-            null,
+            /* mutateRowDescriptor= */ null, // Materialized views are read-only
+            /* checkAndMutateRowDescriptor= */ null,
+            /* readModifyWriteRowDescriptor= */ null,
             featureFlags,
             clientInfo,
             configManager,

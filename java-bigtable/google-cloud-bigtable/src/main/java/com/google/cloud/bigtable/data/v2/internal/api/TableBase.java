@@ -177,11 +177,13 @@ class TableBase implements AutoCloseable {
       SessionCheckAndMutateRowRequest req,
       VRpcListener<SessionCheckAndMutateRowResponse> listener,
       Deadline deadline) {
+    // RetryingVRpc is still needed even for non-idempotent ops: the idempotent=false flag prevents
+    // client-initiated retries on application-level errors, but the server may still direct a retry
+    // via response status.
     RetryingVRpc<SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse> retry =
         new RetryingVRpc<>(() -> sessionPool.newCall(checkAndMutateRowDescriptor), timer);
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), checkAndMutateRowDescriptor, deadline);
-    // CheckAndMutateRow is not idempotent and should not be retried unless directed by server.
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
         .start(req, listener);
   }
@@ -190,11 +192,13 @@ class TableBase implements AutoCloseable {
       SessionReadModifyWriteRowRequest req,
       VRpcListener<SessionReadModifyWriteRowResponse> listener,
       Deadline deadline) {
+    // RetryingVRpc is still needed even for non-idempotent ops: the idempotent=false flag prevents
+    // client-initiated retries on application-level errors, but the server may still direct a retry
+    // via response status.
     RetryingVRpc<SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse> retry =
         new RetryingVRpc<>(() -> sessionPool.newCall(readModifyWriteRowDescriptor), timer);
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), readModifyWriteRowDescriptor, deadline);
-    // ReadModifyWriteRow is not idempotent and should not be retried unless directed by server.
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
         .start(req, listener);
   }

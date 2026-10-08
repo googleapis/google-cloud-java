@@ -21,7 +21,6 @@ import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
-import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import io.grpc.Deadline;
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
@@ -54,18 +53,12 @@ public class ReadModifyWriteRowShim<RowT> implements UnaryShim<ReadModifyWriteRo
   @Override
   public CompletableFuture<RowT> call(ReadModifyWriteRow request, Deadline deadline) {
     CompletableFuture<SessionReadModifyWriteRowResponse> f = inner.call(request, deadline);
-    return f.thenApply(r -> buildRow(adapter.createRowBuilder(), r));
+    return f.thenApply(
+        r -> r.hasRow() ? Util.buildRow(adapter.createRowBuilder(), r.getRow()) : null);
   }
 
   @Override
   public void close() throws IOException {
     inner.close();
-  }
-
-  private static <T> T buildRow(RowBuilder<T> adapter, SessionReadModifyWriteRowResponse input) {
-    if (!input.hasRow()) {
-      return null;
-    }
-    return Util.buildRow(adapter, input.getRow());
   }
 }
