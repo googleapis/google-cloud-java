@@ -45,10 +45,32 @@ public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecut
     return with("index_mode", indexMode);
   }
 
+  /**
+   * Sets whether the pipeline is executed atomically.
+   *
+   * <p>When {@code true}, the pipeline runs in a single read-write transaction that is committed
+   * automatically after the pipeline has executed, so either all of its writes (from {@code
+   * insert}, {@code upsert}, {@code update} and {@code delete} stages) are applied or none are. The
+   * default is {@code false}.
+   *
+   * <p>Atomic execution cannot be used with {@link
+   * com.google.cloud.firestore.Transaction#execute(com.google.cloud.firestore.Pipeline,
+   * PipelineExecuteOptions)}, because the enclosing transaction already makes the writes atomic, or
+   * in a read-only transaction with a read time. Executing such a pipeline throws {@link
+   * IllegalArgumentException}.
+   *
+   * @param atomic Whether to execute the pipeline atomically.
+   * @return A new {@code PipelineExecuteOptions} with the atomic setting applied.
+   */
   public PipelineExecuteOptions withAtomic(boolean atomic) {
     return new PipelineExecuteOptions(this.options, atomic);
   }
 
+  /**
+   * Returns whether the pipeline is executed atomically. The default is {@code false}.
+   *
+   * @see #withAtomic(boolean)
+   */
   public boolean isAtomic() {
     return this.atomic;
   }

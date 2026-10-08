@@ -154,7 +154,11 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
   /**
    * Executes the provided pipeline with specified options, within the transaction context.
    *
+   * <p>The pipeline's writes are part of the transaction, so {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} must not be set.
+   *
    * @return The result of the execution.
+   * @throws IllegalArgumentException if {@code options} enables atomic execution.
    */
   @Nonnull
   public abstract ApiFuture<Pipeline.Snapshot> execute(

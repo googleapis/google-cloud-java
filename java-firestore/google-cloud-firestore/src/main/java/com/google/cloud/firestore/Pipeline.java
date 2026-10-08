@@ -1201,6 +1201,12 @@ public final class Pipeline {
   /**
    * Performs a delete operation on documents from previous stages.
    *
+   * <p>Each document produced by the previous stages is deleted from the database. The result
+   * contains a single document with a {@code documents_modified} field.
+   *
+   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   *
    * <p>Example:
    *
    * <pre>{@code
@@ -1236,6 +1242,14 @@ public final class Pipeline {
    *
    * <p>This method updates the documents in place based on the data flowing through the pipeline.
    * To specify transformations, use {@link #update(Selectable...)}.
+   *
+   * <p>Each document is written back to its existing path. The stored document is replaced by the
+   * pipeline document, so fields removed by earlier stages (for example, with {@link
+   * #removeFields(String, String...)}) are also removed from the stored document. This stage does
+   * not create documents: documents that don't exist are skipped.
+   *
+   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
    *
    * <p>Example 1: Update a collection's schema by adding a new field and removing an old one.
    *
@@ -1317,25 +1331,126 @@ public final class Pipeline {
     return append(update);
   }
 
+  /**
+   * Inserts each document produced by the previous stages at its own path.
+   *
+   * <p>This is equivalent to {@code insert(new Insert())}. Because documents read from the database
+   * already exist at their own path, this is mainly useful with a {@link
+   * PipelineSource#literals(java.util.Map...) literals} source whose documents set a {@code
+   * __name__} field. To insert into another collection or under another ID, use {@link
+   * #insert(Insert)}.
+   *
+   * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists.
+   *
+   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   *
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
   public Pipeline insert() {
     return append(new Insert());
   }
 
+  /**
+   * Inserts each document produced by the previous stages as a new document, using a configured
+   * {@link Insert} stage.
+   *
+   * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists. The target
+   * path of each document is determined as follows:
+   *
+   * <ul>
+   *   <li>With neither a collection nor a document ID expression, the input document's own path is
+   *       reused, so inserting documents read from the database fails.
+   *   <li>With only {@link Insert#withCollection(String) withCollection}, the document is written
+   *       to that collection under the input document's ID (or a generated ID if it has none).
+   *   <li>With only {@link Insert#withDocumentIdExpression(Expression) withDocumentIdExpression},
+   *       the document is written to the input document's parent collection.
+   *   <li>With both, the document is written to the collection under the evaluated ID.
+   * </ul>
+   *
+   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * Map<String, Object> book = new HashMap<>();
+   * book.put("title", "Dune");
+   *
+   * firestore.pipeline()
+   *     .literals(book)
+   *     .insert(new Insert().withCollection("books"))
+   *     .execute(new PipelineExecuteOptions().withAtomic(true))
+   *     .get();
+   * }</pre>
+   *
+   * @param insert The {@code Insert} stage to append.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
   public Pipeline insert(Insert insert) {
     return append(insert);
   }
 
+  /**
+   * Writes each document produced by the previous stages, using a configured {@link Upsert} stage.
+   * The target document is created if it doesn't exist and replaced if it does; stored fields are
+   * not merged.
+   *
+   * <p>The target path follows the same rules as {@link #insert(Insert)}: by default each document
+   * is written back to its own path; {@link Upsert#withCollection(String) withCollection} and
+   * {@link Upsert#withDocumentIdExpression(Expression) withDocumentIdExpression} change the target
+   * collection and ID.
+   *
+   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .where(field("title").equal("Dune"))
+   *     .upsert(new Upsert().withCollection("archive"))
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @param upsert The {@code Upsert} stage to append.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
   public Pipeline upsert(Upsert upsert) {
     return append(upsert);
   }
 
+  /**
+   * Writes each document produced by the previous stages back to its own path, after adding the
+   * given fields. The document is created if it doesn't exist and replaced if it does; stored
+   * fields are not merged.
+   *
+   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
+   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .where(field("rating").greaterThan(4))
+   *     .upsert(constant("Featured").as("status"))
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @param additionalFields Fields to add to each input document before it is written. A field with
+   *     the same name as an existing input field overwrites that field.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
   public Pipeline upsert(Selectable... additionalFields) {
     return append(new Upsert(additionalFields));
   }
 
   /**
-   * Performs an insert operation using documents from previous stages. Adds a generic stage to the
-   * pipeline.
+   * Adds a generic stage to the pipeline.
    *
    * <p>This method provides a flexible way to extend the pipeline's functionality by adding custom
    * stages. Each generic stage is defined by a unique `name` and a set of `params` that control its

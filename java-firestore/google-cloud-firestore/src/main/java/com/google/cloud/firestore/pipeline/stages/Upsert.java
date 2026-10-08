@@ -28,6 +28,42 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+/**
+ * A pipeline stage that writes each document produced by the previous stages, creating the target
+ * document if it doesn't exist and replacing it if it does.
+ *
+ * <p>Upsert replaces the whole target document; it does not merge with the stored fields. Stored
+ * fields that are not in the pipeline document are removed.
+ *
+ * <p>The target path of each document is determined as follows:
+ *
+ * <ul>
+ *   <li>With neither a collection nor a document ID expression, the input document's own path is
+ *       reused.
+ *   <li>With only a collection, the document is written to that collection under the input
+ *       document's ID. If the input document has no ID (for example, a literal document without a
+ *       {@code __name__} field, or a document whose {@code __name__} field was removed), an ID is
+ *       generated.
+ *   <li>With only a document ID expression, the document is written to the input document's parent
+ *       collection under the ID that the expression evaluates to.
+ *   <li>With both, the document is written to the collection under the ID that the expression
+ *       evaluates to.
+ * </ul>
+ *
+ * <p>Example:
+ *
+ * <pre>{@code
+ * // Set "status" on each matching document and write it back to its own path.
+ * firestore.pipeline()
+ *     .collection("books")
+ *     .where(field("rating").greaterThan(4))
+ *     .upsert(new Upsert().withAdditionalFields(constant("Featured").as("status")))
+ *     .execute()
+ *     .get();
+ * }</pre>
+ *
+ * @see com.google.cloud.firestore.Pipeline#upsert(Upsert)
+ */
 public final class Upsert extends Stage {
 
   @Nullable private final ImmutableList<Selectable> additionalFields;
@@ -45,10 +81,21 @@ public final class Upsert extends Stage {
     this.documentIdExpression = documentIdExpression;
   }
 
+  /**
+   * Creates an upsert stage with no additional fields, no target collection and no document ID
+   * expression, so each document is written back to its own path.
+   */
   public Upsert() {
     this((ImmutableList<Selectable>) null, null, null, InternalOptions.EMPTY);
   }
 
+  /**
+   * Creates an upsert stage that adds the given fields to each input document before it is written
+   * back to its own path.
+   *
+   * @param additionalFields Fields to add to each input document. A field with the same name as an
+   *     existing input field overwrites that field.
+   */
   public Upsert(Selectable... additionalFields) {
     this(
         additionalFields != null ? ImmutableList.copyOf(additionalFields) : null,
@@ -57,6 +104,13 @@ public final class Upsert extends Stage {
         InternalOptions.EMPTY);
   }
 
+  /**
+   * Sets the fields to add to each input document before it is written.
+   *
+   * @param additionalFields Fields to add to each input document. A field with the same name as an
+   *     existing input field overwrites that field.
+   * @return A new {@code Upsert} stage with the additional fields set.
+   */
   public Upsert withAdditionalFields(Selectable... additionalFields) {
     return new Upsert(
         ImmutableList.copyOf(additionalFields),
@@ -65,6 +119,13 @@ public final class Upsert extends Stage {
         this.options);
   }
 
+  /**
+   * Sets the fields to add to each input document before it is written.
+   *
+   * @param additionalFields Fields to add to each input document. A field with the same name as an
+   *     existing input field overwrites that field.
+   * @return A new {@code Upsert} stage with the additional fields set.
+   */
   public Upsert withAdditionalFields(List<Selectable> additionalFields) {
     return new Upsert(
         ImmutableList.copyOf(additionalFields),
@@ -73,11 +134,26 @@ public final class Upsert extends Stage {
         this.options);
   }
 
+  /**
+   * Sets the collection that documents are written to.
+   *
+   * @param collectionPath The path of the target collection, for example {@code "books"} or {@code
+   *     "users/alice/books"}.
+   * @return A new {@code Upsert} stage with the target collection set.
+   */
   public Upsert withCollection(String collectionPath) {
     return new Upsert(
         this.additionalFields, collectionPath, this.documentIdExpression, this.options);
   }
 
+  /**
+   * Sets the expression that produces the ID of each target document.
+   *
+   * @param documentIdExpression An expression that is evaluated against each input document and
+   *     must evaluate to a document ID (not a document path). Use {@code constant("id")} for a
+   *     fixed ID.
+   * @return A new {@code Upsert} stage with the document ID expression set.
+   */
   public Upsert withDocumentIdExpression(Expression documentIdExpression) {
     return new Upsert(
         this.additionalFields, this.collectionPath, documentIdExpression, this.options);

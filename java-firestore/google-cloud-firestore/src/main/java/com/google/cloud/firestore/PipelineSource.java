@@ -152,6 +152,14 @@ public final class PipelineSource {
   /**
    * Creates a new {@link Pipeline} that operates on a static set of documents represented as Maps.
    *
+   * <p>Each map becomes one input document. At least one document is required. Field values can be
+   * constants or {@link com.google.cloud.firestore.pipeline.expressions.Expression}s; expressions
+   * are evaluated, including expressions nested inside map or list values. {@link FieldValue}
+   * sentinels (for example, {@code FieldValue.serverTimestamp()}) are not supported and are
+   * rejected; use an expression such as {@code currentTimestamp()} instead. To give a document a
+   * path (for example, for an in-place {@code insert()}, {@code upsert()} or {@code update()}), set
+   * its {@code __name__} field to a {@link DocumentReference}.
+   *
    * <p>Example:
    *
    * <pre>{@code
@@ -168,6 +176,8 @@ public final class PipelineSource {
    *
    * @param data The Maps representing documents to include in the pipeline.
    * @return A new {@code Pipeline} instance with a literals source.
+   * @throws IllegalArgumentException if no documents are given or a value contains a {@link
+   *     FieldValue} sentinel.
    */
   @Nonnull
   public final Pipeline literals(java.util.Map<String, Object>... data) {
@@ -180,8 +190,18 @@ public final class PipelineSource {
    * <p>This is equivalent to {@link #literals(java.util.Map...)}, taking the documents as a {@link
    * java.util.List}.
    *
+   * <p>Each map becomes one input document. At least one document is required. Field values can be
+   * constants or {@link com.google.cloud.firestore.pipeline.expressions.Expression}s; expressions
+   * are evaluated, including expressions nested inside map or list values. {@link FieldValue}
+   * sentinels (for example, {@code FieldValue.serverTimestamp()}) are not supported and are
+   * rejected; use an expression such as {@code currentTimestamp()} instead. To give a document a
+   * path (for example, for an in-place {@code insert()}, {@code upsert()} or {@code update()}), set
+   * its {@code __name__} field to a {@link DocumentReference}.
+   *
    * @param data The Maps representing documents to include in the pipeline.
    * @return A new {@code Pipeline} instance with a literals source.
+   * @throws IllegalArgumentException if no documents are given or a value contains a {@link
+   *     FieldValue} sentinel.
    */
   @Nonnull
   @SuppressWarnings("unchecked")

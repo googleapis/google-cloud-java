@@ -25,6 +25,42 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nullable;
 
+/**
+ * A pipeline stage that inserts each document produced by the previous stages as a new document.
+ *
+ * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists. Because
+ * documents read from the database keep their path, inserting them without a collection or document
+ * ID expression (or into their own collection under their own ID) fails.
+ *
+ * <p>The target path of each document is determined as follows:
+ *
+ * <ul>
+ *   <li>With neither a collection nor a document ID expression, the input document's own path is
+ *       reused.
+ *   <li>With only a collection, the document is written to that collection under the input
+ *       document's ID. If the input document has no ID (for example, a literal document without a
+ *       {@code __name__} field, or a document whose {@code __name__} field was removed), an ID is
+ *       generated.
+ *   <li>With only a document ID expression, the document is written to the input document's parent
+ *       collection under the ID that the expression evaluates to.
+ *   <li>With both, the document is written to the collection under the ID that the expression
+ *       evaluates to.
+ * </ul>
+ *
+ * <p>Example:
+ *
+ * <pre>{@code
+ * // Copy a document into another collection under a new ID.
+ * firestore.pipeline()
+ *     .collection("books")
+ *     .where(field("title").equal("Dune"))
+ *     .insert(new Insert().withCollection("archive").withDocumentIdExpression(constant("dune")))
+ *     .execute()
+ *     .get();
+ * }</pre>
+ *
+ * @see com.google.cloud.firestore.Pipeline#insert(Insert)
+ */
 public final class Insert extends Stage {
 
   @Nullable private final String collectionPath;
@@ -39,14 +75,33 @@ public final class Insert extends Stage {
     this.documentIdExpression = documentIdExpression;
   }
 
+  /**
+   * Creates an insert stage with no target collection and no document ID expression, so each
+   * document is inserted at the input document's own path.
+   */
   public Insert() {
     this(null, null, InternalOptions.EMPTY);
   }
 
+  /**
+   * Sets the collection that documents are inserted into.
+   *
+   * @param collectionPath The path of the target collection, for example {@code "books"} or {@code
+   *     "users/alice/books"}.
+   * @return A new {@code Insert} stage with the target collection set.
+   */
   public Insert withCollection(String collectionPath) {
     return new Insert(collectionPath, this.documentIdExpression, this.options);
   }
 
+  /**
+   * Sets the expression that produces the ID of each inserted document.
+   *
+   * @param documentIdExpression An expression that is evaluated against each input document and
+   *     must evaluate to a document ID (not a document path). Use {@code constant("id")} for a
+   *     fixed ID.
+   * @return A new {@code Insert} stage with the document ID expression set.
+   */
   public Insert withDocumentIdExpression(Expression documentIdExpression) {
     return new Insert(this.collectionPath, documentIdExpression, this.options);
   }
