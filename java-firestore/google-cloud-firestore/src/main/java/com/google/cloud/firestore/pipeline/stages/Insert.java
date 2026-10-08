@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.common.collect.ImmutableMap;
@@ -26,7 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-@InternalApi
 public final class Insert extends Stage {
 
   @Nullable private final String collectionPath;

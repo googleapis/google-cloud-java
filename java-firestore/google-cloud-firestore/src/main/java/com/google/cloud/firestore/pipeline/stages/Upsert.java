@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.Selectable;
@@ -29,7 +28,6 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-@InternalApi
 public final class Upsert extends Stage {
 
   @Nullable private final ImmutableList<Selectable> additionalFields;

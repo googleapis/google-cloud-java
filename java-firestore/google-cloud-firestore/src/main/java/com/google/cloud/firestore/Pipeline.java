@@ -1220,6 +1220,18 @@ public final class Pipeline {
   }
 
   /**
+   * Performs a delete operation on documents from previous stages using a {@link Delete} stage.
+   *
+   * <p>This is equivalent to {@link #delete()}.
+   *
+   * @param delete The {@code Delete} stage to append.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline delete(Delete delete) {
+    return append(delete);
+  }
+
+  /**
    * Performs an update operation using documents from previous stages.
    *
    * <p>This method updates the documents in place based on the data flowing through the pipeline.
@@ -1303,6 +1315,10 @@ public final class Pipeline {
    */
   public Pipeline update(Update update) {
     return append(update);
+  }
+
+  public Pipeline insert() {
+    return append(new Insert());
   }
 
   public Pipeline insert(Insert insert) {

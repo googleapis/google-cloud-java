@@ -614,4 +614,31 @@ public class PipelineProtoTest {
     assertThat(firestore.pipeline().collection("books").update(fromList).toProto())
         .isEqualTo(firestore.pipeline().collection("books").update(fromVarargs).toProto());
   }
+
+  @Test
+  public void testInsertAndDeleteConvenienceOverloadsProtoEncoding() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    // insert() is equivalent to insert(new Insert()).
+    com.google.firestore.v1.Pipeline insertProto =
+        firestore.pipeline().collection("books").insert().toProto();
+    assertThat(insertProto)
+        .isEqualTo(firestore.pipeline().collection("books").insert(new Insert()).toProto());
+    assertThat(insertProto.getStages(1).getName()).isEqualTo("insert");
+
+    // delete(new Delete()) is equivalent to delete().
+    com.google.firestore.v1.Pipeline deleteProto =
+        firestore
+            .pipeline()
+            .collection("books")
+            .delete(new com.google.cloud.firestore.pipeline.stages.Delete())
+            .toProto();
+    assertThat(deleteProto).isEqualTo(firestore.pipeline().collection("books").delete().toProto());
+    assertThat(deleteProto.getStages(1).getName()).isEqualTo("delete");
+  }
 }

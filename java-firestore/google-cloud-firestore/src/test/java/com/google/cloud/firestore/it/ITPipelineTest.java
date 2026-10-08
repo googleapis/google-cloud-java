@@ -5094,6 +5094,28 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
+  public void testInsertInPlaceFromLiterals() throws Exception {
+    CollectionReference dmlCol = firestore.collection(LocalFirestoreHelper.autoId());
+    DocumentReference target = dmlCol.document("literal_doc");
+    Map<String, Object> doc = new HashMap<>();
+    doc.put("__name__", target);
+    doc.put("title", "Inserted In Place");
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .literals(doc)
+            .insert()
+            .execute(new PipelineExecuteOptions().withAtomic(true))
+            .get()
+            .getResults();
+
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
+    assertThat(target.get().get().getString("title")).isEqualTo("Inserted In Place");
+  }
+
+  @Test
   public void testUpsertInPlaceWithVarargs() throws Exception {
     CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
     List<PipelineResult> results =
