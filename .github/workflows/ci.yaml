@@ -56,8 +56,8 @@ jobs:
           workflows:
             - '.github/workflows/**'
           src:
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-cloud-bom|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-shared-config|java-showcase|java-spanner|java-storage)/**/*.java'
-            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-cloud-bom|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-shared-config|java-showcase|java-spanner|java-storage)/**/pom.xml'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-cloud-bom|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-showcase|java-spanner|java-storage)/**/*.java'
+            - '!(google-auth-library-java|grpc-gcp-java|java-bigquery|java-bigquery-jdbc|java-bigquerystorage|java-bigtable|java-cloud-bom|java-datastore|java-firestore|java-logging|java-logging-logback|java-pubsub|java-showcase|java-spanner|java-storage)/**/pom.xml'
             - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
@@ -138,6 +138,7 @@ jobs:
             - 'google-auth-library-java/**'
           grpc-gcp-java:
             - 'grpc-gcp-java/**'
+            - 'java-shared-config/**/pom.xml'
           java-bigquery:
             - 'java-bigquery/**'
             - 'google-auth-library-java/**/*.java'
@@ -147,6 +148,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-bigquerystorage:
             - 'java-bigquerystorage/**'
@@ -157,6 +159,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-datastore:
             - 'java-datastore/**'
@@ -167,6 +170,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-logging-logback:
             - 'java-logging-logback/**'
@@ -177,6 +181,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-logging:
             - 'java-logging/**'
@@ -187,6 +192,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-spanner:
             - 'java-spanner/**'
@@ -198,6 +204,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-storage:
             - 'java-storage/**'
@@ -208,6 +215,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-pubsub:
             - 'java-pubsub/**'
@@ -218,6 +226,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-bigtable:
             - 'java-bigtable/**'
@@ -228,6 +237,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-firestore:
             - 'java-firestore/**'
@@ -238,6 +248,7 @@ jobs:
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
             - 'google-cloud-jar-parent/pom.xml'
             - 'google-cloud-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
             - 'pom.xml'
           java-shared-config:
             - 'java-shared-config/**'
