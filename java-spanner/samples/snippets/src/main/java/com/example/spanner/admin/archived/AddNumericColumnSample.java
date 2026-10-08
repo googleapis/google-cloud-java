@@ -47,7 +47,7 @@ class AddNumericColumnSample {
         adminClient.updateDatabaseDdl(
             instanceId,
             databaseId,
-            ImmutableList.of("ALTER TABLE Venues ADD COLUMN Revenue NUMERIC"),
+            ImmutableList.of("ALTER TABLE Venues ADD COLUMN IF NOT EXISTS Revenue NUMERIC"),
             null);
     // Wait for the operation to finish.
     // This will throw an ExecutionException if the operation fails.

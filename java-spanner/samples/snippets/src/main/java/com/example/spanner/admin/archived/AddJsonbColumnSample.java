@@ -46,7 +46,7 @@ class AddJsonbColumnSample {
         adminClient.updateDatabaseDdl(
             instanceId,
             databaseId,
-            ImmutableList.of("ALTER TABLE Venues ADD COLUMN VenueDetails JSONB"),
+            ImmutableList.of("ALTER TABLE Venues ADD COLUMN IF NOT EXISTS VenueDetails JSONB"),
             null);
     // Wait for the operation to finish.
     // This will throw an ExecutionException if the operation fails.

@@ -48,7 +48,7 @@ class AddNumericColumnSample {
       // This will throw an ExecutionException if the operation fails.
       databaseAdminClient.updateDatabaseDdlAsync(
           DatabaseName.of(projectId, instanceId, databaseId),
-          ImmutableList.of("ALTER TABLE Venues ADD COLUMN Revenue NUMERIC")).get();
+          ImmutableList.of("ALTER TABLE Venues ADD COLUMN IF NOT EXISTS Revenue NUMERIC")).get();
       System.out.printf("Successfully added column `Revenue`%n");
     }
   }
