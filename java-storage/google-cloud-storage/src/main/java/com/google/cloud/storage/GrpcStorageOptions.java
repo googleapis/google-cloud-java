@@ -177,8 +177,7 @@ public final class GrpcStorageOptions extends StorageOptions
     this.openTelemetry = builder.openTelemetry;
     this.rawEnableOtelMetrics = builder.enableOtelMetrics;
     this.rawEnableOtelDebugMetrics = builder.enableOtelDebugMetrics;
-    this.enableOtelMetrics =
-        StorageMetricsConfig.isEnableOtelMetrics(builder.enableOtelMetrics);
+    this.enableOtelMetrics = StorageMetricsConfig.isEnableOtelMetrics(builder.enableOtelMetrics);
     this.enableOtelDebugMetrics =
         StorageMetricsConfig.isEnableOtelDebugMetrics(builder.enableOtelDebugMetrics);
     this.meterProvider = builder.meterProvider;
@@ -873,9 +872,9 @@ public final class GrpcStorageOptions extends StorageOptions
     /**
      * Set the metric export interval for periodic metric reading.
      *
-     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60
-     * seconds (1 minute). Intervals less than 60 seconds are permitted only when a custom
-     * {@link MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)}.
+     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60 seconds
+     * (1 minute). Intervals less than 60 seconds are permitted only when a custom {@link
+     * MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)}.
      *
      * @param metricInterval interval duration
      * @since 2.50.0 This new api is in preview and is subject to breaking changes.
