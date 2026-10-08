@@ -1993,6 +1993,44 @@ class AgentIdentityUtilsTest {
     assertSame(first, AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
+  private void writeDefaultGcloudCertificateConfig() throws Exception {
+    Path gcloudDir = tempDir.resolve("home").resolve(".config").resolve("gcloud");
+    Files.createDirectories(gcloudDir);
+    Files.write(gcloudDir.resolve("certificate_config.json"), "{}".getBytes());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundleRemovedAfterCaching_configAppears_doesNotUseCache()
+      throws Exception {
+    Path bundle = writeAgentGkeBundle();
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    // The bundle is transiently missing and a certificate config now exists, so the transport
+    // presents the config's certificate; the cached GKE credential must not be reused.
+    Files.delete(bundle);
+    writeDefaultGcloudCertificateConfig();
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_gkeBundleRemovedAfterCaching_configAppears_explicit_doesNotUseCache()
+          throws Exception {
+    Path bundle = writeAgentGkeBundle();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    Files.delete(bundle);
+    writeDefaultGcloudCertificateConfig();
+
+    // No other well-known files exist and the cached GKE credential is not allowed anymore.
+    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
   private String resourcePath(String resource) throws Exception {
     URL url = getClass().getClassLoader().getResource(resource);
     assertNotNull(url, "Test resource " + resource + " not found");

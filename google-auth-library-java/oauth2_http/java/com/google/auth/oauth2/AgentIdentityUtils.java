@@ -793,7 +793,11 @@ final class AgentIdentityUtils {
     if (fallbackCached != null
         && fallbackCached.configMetadata == null
         && fallbackCached.certMetadata != null
-        && fallbackCached.keyMetadata != null) {
+        && fallbackCached.keyMetadata != null
+        // A cached GKE credential is only reused while the GKE bundle is still allowed (no
+        // certificate configuration exists), matching the certificate the transport presents.
+        && (!isGkeCredentialBundle(fallbackCached.certMetadata.getPath())
+            || isGkeCredentialBundleAllowed())) {
       return new ResolvedCertAndKeyPaths(
           fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }
@@ -820,11 +824,14 @@ final class AgentIdentityUtils {
    */
   private static ResolvedCertAndKeyPaths getGkeCredentialBundlePathIfPresent(
       final @Nullable CachedAgentIdentityInfo initialCached) {
+    // Checked first so that neither a fresh nor a cached GKE credential is used once a certificate
+    // configuration exists (the transport would then present that configuration's certificate).
+    if (!isGkeCredentialBundleAllowed()) {
+      return new ResolvedCertAndKeyPaths(null, null, false);
+    }
     String gkeBundlePath = getGkeCredentialBundlePath();
     if (isGkeCredentialBundleReady(gkeBundlePath)) {
-      return isGkeCredentialBundleAllowed()
-          ? new ResolvedCertAndKeyPaths(gkeBundlePath, gkeBundlePath, false)
-          : new ResolvedCertAndKeyPaths(null, null, false);
+      return new ResolvedCertAndKeyPaths(gkeBundlePath, gkeBundlePath, false);
     }
     CachedAgentIdentityInfo fallbackCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
