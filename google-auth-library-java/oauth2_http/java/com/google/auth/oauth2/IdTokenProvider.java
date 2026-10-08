@@ -47,7 +47,7 @@ public interface IdTokenProvider {
    * <ul>
    *   <li>FORMAT_FULL
    *   <li>LICENSES_TRUE
-   *   <li>BIND_ID_TOKEN_FALSE
+   *   <li>DISABLE_BOUND_ID_TOKEN
    * </ul>
    *
    * <br>
@@ -64,18 +64,23 @@ public interface IdTokenProvider {
     /**
      * Requests an ID token that is not bound to the workload's agent identity certificate.
      *
+     * <p>This option is only supported by {@link ComputeEngineCredentials}; other {@link
+     * IdTokenProvider} implementations do not request bound ID tokens and ignore this option.
+     *
      * <p>When an agent identity certificate is available, {@link ComputeEngineCredentials} requests
      * certificate-bound ID tokens by default. A bound ID token is only accepted by targets that
      * authenticate the caller over mTLS with the same certificate. Pass this option for targets
      * that are called over standard (non-mTLS) HTTPS, for example a Cloud Run service reached
      * through its {@code *.run.app} URL or a custom domain.
      *
-     * <p>If this option is not set, the library decides whether to bind the ID token; it is
-     * currently bound whenever an agent identity certificate is available and token binding is not
-     * disabled by {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}. Credential types that do not
-     * request bound ID tokens ignore this option.
+     * <p>Unlike the {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false} environment variable, which
+     * globally disables certificate-bound access tokens and ID tokens across the entire process,
+     * this option applies per call (or per {@link IdTokenCredentials} instance) and leaves access
+     * tokens and other ID token requests bound. If this option is not set, the library binds the ID
+     * token whenever an agent identity certificate is available and token binding is not globally
+     * disabled by {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}.
      */
-    BIND_ID_TOKEN_FALSE("bindIdTokenFalse");
+    DISABLE_BOUND_ID_TOKEN("disableBoundIdToken");
 
     private final String option;
 

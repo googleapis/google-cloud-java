@@ -1387,7 +1387,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void idTokenWithAudience_bindIdTokenFalse_requestsUnboundToken() throws IOException {
+  void idTokenWithAudience_disableBoundIdToken_requestsUnboundToken() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
@@ -1398,7 +1398,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     IdToken token =
         credentials.idTokenWithAudience(
-            "https://foo.bar", Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE));
+            "https://foo.bar", Arrays.asList(IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN));
 
     assertNotNull(token);
     MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
@@ -1409,7 +1409,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void idTokenWithAudience_bindIdTokenFalseWithFormatFull_requestsUnboundFullToken()
+  void idTokenWithAudience_disableBoundIdTokenWithFormatFull_requestsUnboundFullToken()
       throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
@@ -1422,7 +1422,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     credentials.idTokenWithAudience(
         "https://foo.bar",
         Arrays.asList(
-            IdTokenProvider.Option.FORMAT_FULL, IdTokenProvider.Option.BIND_ID_TOKEN_FALSE));
+            IdTokenProvider.Option.FORMAT_FULL, IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN));
 
     MockLowLevelHttpRequest request = transportFactory.transport.getRequest();
     assertEquals("GET", transportFactory.transport.getRequestMethod());
@@ -1431,9 +1431,9 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void idTokenWithAudience_bindIdTokenFalse_skipsCertificateLookup() throws IOException {
+  void idTokenWithAudience_disableBoundIdToken_skipsCertificateLookup() throws IOException {
     // The certificate config points to a missing file, which fails a bound token request. With
-    // BIND_ID_TOKEN_FALSE the certificate is never looked up, so the unbound request succeeds.
+    // DISABLE_BOUND_ID_TOKEN the certificate is never looked up, so the unbound request succeeds.
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     envProvider.setEnv(
         AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
@@ -1450,13 +1450,13 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     IdToken token =
         credentials.idTokenWithAudience(
-            "https://foo.bar", Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE));
+            "https://foo.bar", Arrays.asList(IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN));
     assertNotNull(token);
     assertEquals("GET", transportFactory.transport.getRequestMethod());
   }
 
   @Test
-  void idTokenCredentials_withBindIdTokenFalseOption_requestsUnboundToken() throws IOException {
+  void idTokenCredentials_withDisableBoundIdTokenOption_requestsUnboundToken() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
@@ -1469,7 +1469,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         IdTokenCredentials.newBuilder()
             .setIdTokenProvider(credentials)
             .setTargetAudience("https://foo.bar")
-            .setOptions(Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE))
+            .setOptions(Arrays.asList(IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN))
             .build();
     idTokenCredentials.refresh();
 
