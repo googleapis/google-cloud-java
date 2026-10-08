@@ -34,6 +34,9 @@
             "ReportStatus": {
               "methods": ["reportStatusAsync", "reportStatusAsync", "reportStatusAsync", "reportStatusOperationCallable", "reportStatusCallable"]
             },
+            "ResolveInstanceConfig": {
+              "methods": ["resolveInstanceConfig", "resolveInstanceConfig", "resolveInstanceConfig", "resolveInstanceConfigCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

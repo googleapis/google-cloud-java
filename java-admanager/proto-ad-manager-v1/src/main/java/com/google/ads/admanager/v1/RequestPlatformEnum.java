@@ -24,7 +24,8 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Wrapper message for [RequestPlatform].
+ * Wrapper message for
+ * [RequestPlatform][google.ads.admanager.v1.RequestPlatformEnum.RequestPlatform].
  *
  * Describes the platform from which a request is made and on which the ad is
  * rendered. In the event of multiple platforms, the platform that ultimately
@@ -424,7 +425,8 @@ public final class RequestPlatformEnum extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Wrapper message for [RequestPlatform].
+   * Wrapper message for
+   * [RequestPlatform][google.ads.admanager.v1.RequestPlatformEnum.RequestPlatform].
    *
    * Describes the platform from which a request is made and on which the ad is
    * rendered. In the event of multiple platforms, the platform that ultimately

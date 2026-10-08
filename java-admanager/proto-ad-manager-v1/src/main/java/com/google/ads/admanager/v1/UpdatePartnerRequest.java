@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [UpdatePartner][] method.
+ * Request object for `UpdatePartner` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.UpdatePartnerRequest}
@@ -365,7 +365,7 @@ public final class UpdatePartnerRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request object for [UpdatePartner][] method.
+   * Request object for `UpdatePartner` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.UpdatePartnerRequest}

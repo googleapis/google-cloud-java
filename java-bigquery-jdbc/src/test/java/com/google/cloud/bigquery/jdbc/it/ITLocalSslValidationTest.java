@@ -54,7 +54,8 @@ public class ITLocalSslValidationTest {
   private static final String TRUSTSTORE_RESOURCE = "/localhost-truststore.jks";
   private static final String SUCCESS_MARKER = "SUBPROCESS_RESULT: SUCCESS";
   private static final String FAILURE_MARKER_PREFIX = "SUBPROCESS_RESULT: FAILURE - ";
-  private static final String PKIX_ERROR_MSG = "PKIX path building failed";
+  private static final String TRUST_ANCHOR_ERROR_MSG =
+      "Trust anchor for certification path not found";
 
   private static MockHttpsServer mockServer;
   private static int port;
@@ -238,7 +239,7 @@ public class ITLocalSslValidationTest {
   public void testDefaultSslFailsForSelfSigned() throws Exception {
     ProcessResult result = runSubprocess(null, null, true, null);
     assertEquals(1, result.exitCode, "Subprocess should fail. Output:\n" + result.stdout);
-    assertTrue(result.stdout.contains(PKIX_ERROR_MSG));
+    assertTrue(result.stdout.contains(TRUST_ANCHOR_ERROR_MSG));
   }
 
   private String getTrustStorePath() throws Exception {
@@ -257,7 +258,7 @@ public class ITLocalSslValidationTest {
     assertEquals(0, result.exitCode, "Subprocess failed. Output:\n" + result.stdout);
     assertTrue(result.stdout.contains(SUCCESS_MARKER));
     assertFalse(
-        result.stdout.contains(PKIX_ERROR_MSG),
+        result.stdout.contains(TRUST_ANCHOR_ERROR_MSG),
         "Handshake failed with SSL error: " + result.stdout);
   }
 
@@ -268,7 +269,7 @@ public class ITLocalSslValidationTest {
     assertEquals(0, result.exitCode, "Subprocess failed. Output:\n" + result.stdout);
     assertTrue(result.stdout.contains(SUCCESS_MARKER));
     assertFalse(
-        result.stdout.contains(PKIX_ERROR_MSG),
+        result.stdout.contains(TRUST_ANCHOR_ERROR_MSG),
         "Handshake failed with SSL error: " + result.stdout);
   }
 

@@ -38,6 +38,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The GlobalOrganizationOperations API.
  *
+ * <p>This client uses GlobalOrganizationOperations version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -453,7 +455,6 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Operation element : globalOrganizationOperationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -489,7 +490,6 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       globalOrganizationOperationsClient.listPagedCallable().futureCall(request);
@@ -526,7 +526,6 @@ public class GlobalOrganizationOperationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     OperationList response = globalOrganizationOperationsClient.listCallable().call(request);

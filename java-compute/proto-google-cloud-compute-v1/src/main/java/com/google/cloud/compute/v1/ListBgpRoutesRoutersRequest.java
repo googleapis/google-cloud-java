@@ -1186,51 +1186,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return Whether the returnPartialSuccess field is set.
-   */
-  @java.lang.Override
-  public boolean hasReturnPartialSuccess() {
-    return ((bitField0_ & 0x00000100) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return The returnPartialSuccess.
-   */
-  @java.lang.Override
-  public boolean getReturnPartialSuccess() {
-    return returnPartialSuccess_;
-  }
-
   public static final int ROUTE_TYPE_FIELD_NUMBER = 375888752;
 
   @SuppressWarnings("serial")
@@ -1251,7 +1206,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
    */
   @java.lang.Override
   public boolean hasRouteType() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1405,14 +1360,11 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 336120696, filter_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(379464304, policyApplied_);
-    }
-    if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeBool(517198390, returnPartialSuccess_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1453,15 +1405,11 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(336120696, filter_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(379464304, policyApplied_);
-    }
-    if (((bitField0_ & 0x00000100) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1513,10 +1461,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
-    if (hasReturnPartialSuccess()) {
-      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
-    }
     if (hasRouteType() != other.hasRouteType()) return false;
     if (hasRouteType()) {
       if (!getRouteType().equals(other.getRouteType())) return false;
@@ -1569,10 +1513,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    if (hasReturnPartialSuccess()) {
-      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
-    }
     if (hasRouteType()) {
       hash = (37 * hash) + ROUTE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRouteType().hashCode();
@@ -1730,7 +1670,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       policyApplied_ = false;
       project_ = "";
       region_ = "";
-      returnPartialSuccess_ = false;
       routeType_ = "";
       router_ = "";
       return this;
@@ -1809,14 +1748,10 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         result.region_ = region_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.returnPartialSuccess_ = returnPartialSuccess_;
+        result.routeType_ = routeType_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.routeType_ = routeType_;
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.router_ = router_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1881,17 +1816,14 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         bitField0_ |= 0x00000200;
         onChanged();
       }
-      if (other.hasReturnPartialSuccess()) {
-        setReturnPartialSuccess(other.getReturnPartialSuccess());
-      }
       if (other.hasRouteType()) {
         routeType_ = other.routeType_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getRouter().isEmpty()) {
         router_ = other.router_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1947,7 +1879,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
             case 1188870730:
               {
                 router_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1188870730
             case 1284503362:
@@ -1983,7 +1915,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
             case -1287857278:
               {
                 routeType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1287857278
             case -1259252864:
@@ -1992,12 +1924,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000080;
                 break;
               } // case -1259252864
-            case -157380176:
-              {
-                returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case -157380176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3585,98 +3511,6 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       return this;
     }
 
-    private boolean returnPartialSuccess_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return Whether the returnPartialSuccess field is set.
-     */
-    @java.lang.Override
-    public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return The returnPartialSuccess.
-     */
-    @java.lang.Override
-    public boolean getReturnPartialSuccess() {
-      return returnPartialSuccess_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @param value The returnPartialSuccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReturnPartialSuccess(boolean value) {
-
-      returnPartialSuccess_ = value;
-      bitField0_ |= 0x00000400;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      returnPartialSuccess_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object routeType_ = "";
 
     /**
@@ -3693,7 +3527,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
      * @return Whether the routeType field is set.
      */
     public boolean hasRouteType() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3765,7 +3599,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       routeType_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3785,7 +3619,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
      */
     public Builder clearRouteType() {
       routeType_ = getDefaultInstance().getRouteType();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3810,7 +3644,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       }
       checkByteStringIsUtf8(value);
       routeType_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3883,7 +3717,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
         throw new NullPointerException();
       }
       router_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3902,7 +3736,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
      */
     public Builder clearRouter() {
       router_ = getDefaultInstance().getRouter();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -3926,7 +3760,7 @@ public final class ListBgpRoutesRoutersRequest extends com.google.protobuf.Gener
       }
       checkByteStringIsUtf8(value);
       router_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

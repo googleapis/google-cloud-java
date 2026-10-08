@@ -28,10 +28,12 @@ import com.google.ads.admanager.v1.BatchDeactivateNativeStylesRequest;
 import com.google.ads.admanager.v1.BatchDeactivateNativeStylesResponse;
 import com.google.ads.admanager.v1.BatchUpdateNativeStylesRequest;
 import com.google.ads.admanager.v1.BatchUpdateNativeStylesResponse;
+import com.google.ads.admanager.v1.CreateNativeStyleRequest;
 import com.google.ads.admanager.v1.GetNativeStyleRequest;
 import com.google.ads.admanager.v1.ListNativeStylesRequest;
 import com.google.ads.admanager.v1.ListNativeStylesResponse;
 import com.google.ads.admanager.v1.NativeStyle;
+import com.google.ads.admanager.v1.UpdateNativeStyleRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -131,8 +133,10 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
   private final PagedCallSettings<
           ListNativeStylesRequest, ListNativeStylesResponse, ListNativeStylesPagedResponse>
       listNativeStylesSettings;
+  private final UnaryCallSettings<CreateNativeStyleRequest, NativeStyle> createNativeStyleSettings;
   private final UnaryCallSettings<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesSettings;
+  private final UnaryCallSettings<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleSettings;
   private final UnaryCallSettings<BatchUpdateNativeStylesRequest, BatchUpdateNativeStylesResponse>
       batchUpdateNativeStylesSettings;
   private final UnaryCallSettings<
@@ -213,10 +217,20 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
     return listNativeStylesSettings;
   }
 
+  /** Returns the object with the settings used for calls to createNativeStyle. */
+  public UnaryCallSettings<CreateNativeStyleRequest, NativeStyle> createNativeStyleSettings() {
+    return createNativeStyleSettings;
+  }
+
   /** Returns the object with the settings used for calls to batchCreateNativeStyles. */
   public UnaryCallSettings<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesSettings() {
     return batchCreateNativeStylesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNativeStyle. */
+  public UnaryCallSettings<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleSettings() {
+    return updateNativeStyleSettings;
   }
 
   /** Returns the object with the settings used for calls to batchUpdateNativeStyles. */
@@ -327,7 +341,9 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
 
     getNativeStyleSettings = settingsBuilder.getNativeStyleSettings().build();
     listNativeStylesSettings = settingsBuilder.listNativeStylesSettings().build();
+    createNativeStyleSettings = settingsBuilder.createNativeStyleSettings().build();
     batchCreateNativeStylesSettings = settingsBuilder.batchCreateNativeStylesSettings().build();
+    updateNativeStyleSettings = settingsBuilder.updateNativeStyleSettings().build();
     batchUpdateNativeStylesSettings = settingsBuilder.batchUpdateNativeStylesSettings().build();
     batchActivateNativeStylesSettings = settingsBuilder.batchActivateNativeStylesSettings().build();
     batchDeactivateNativeStylesSettings =
@@ -353,9 +369,13 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
     private final PagedCallSettings.Builder<
             ListNativeStylesRequest, ListNativeStylesResponse, ListNativeStylesPagedResponse>
         listNativeStylesSettings;
+    private final UnaryCallSettings.Builder<CreateNativeStyleRequest, NativeStyle>
+        createNativeStyleSettings;
     private final UnaryCallSettings.Builder<
             BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
         batchCreateNativeStylesSettings;
+    private final UnaryCallSettings.Builder<UpdateNativeStyleRequest, NativeStyle>
+        updateNativeStyleSettings;
     private final UnaryCallSettings.Builder<
             BatchUpdateNativeStylesRequest, BatchUpdateNativeStylesResponse>
         batchUpdateNativeStylesSettings;
@@ -397,7 +417,9 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
 
       getNativeStyleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listNativeStylesSettings = PagedCallSettings.newBuilder(LIST_NATIVE_STYLES_PAGE_STR_FACT);
+      createNativeStyleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchCreateNativeStylesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateNativeStyleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchUpdateNativeStylesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchActivateNativeStylesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeactivateNativeStylesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -407,7 +429,9 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getNativeStyleSettings,
               listNativeStylesSettings,
+              createNativeStyleSettings,
               batchCreateNativeStylesSettings,
+              updateNativeStyleSettings,
               batchUpdateNativeStylesSettings,
               batchActivateNativeStylesSettings,
               batchDeactivateNativeStylesSettings,
@@ -420,7 +444,9 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
 
       getNativeStyleSettings = settings.getNativeStyleSettings.toBuilder();
       listNativeStylesSettings = settings.listNativeStylesSettings.toBuilder();
+      createNativeStyleSettings = settings.createNativeStyleSettings.toBuilder();
       batchCreateNativeStylesSettings = settings.batchCreateNativeStylesSettings.toBuilder();
+      updateNativeStyleSettings = settings.updateNativeStyleSettings.toBuilder();
       batchUpdateNativeStylesSettings = settings.batchUpdateNativeStylesSettings.toBuilder();
       batchActivateNativeStylesSettings = settings.batchActivateNativeStylesSettings.toBuilder();
       batchDeactivateNativeStylesSettings =
@@ -431,7 +457,9 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getNativeStyleSettings,
               listNativeStylesSettings,
+              createNativeStyleSettings,
               batchCreateNativeStylesSettings,
+              updateNativeStyleSettings,
               batchUpdateNativeStylesSettings,
               batchActivateNativeStylesSettings,
               batchDeactivateNativeStylesSettings,
@@ -462,7 +490,17 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .createNativeStyleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .batchCreateNativeStylesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateNativeStyleSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -516,11 +554,23 @@ public class NativeStyleServiceStubSettings extends StubSettings<NativeStyleServ
       return listNativeStylesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createNativeStyle. */
+    public UnaryCallSettings.Builder<CreateNativeStyleRequest, NativeStyle>
+        createNativeStyleSettings() {
+      return createNativeStyleSettings;
+    }
+
     /** Returns the builder for the settings used for calls to batchCreateNativeStyles. */
     public UnaryCallSettings.Builder<
             BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
         batchCreateNativeStylesSettings() {
       return batchCreateNativeStylesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNativeStyle. */
+    public UnaryCallSettings.Builder<UpdateNativeStyleRequest, NativeStyle>
+        updateNativeStyleSettings() {
+      return updateNativeStyleSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateNativeStyles. */

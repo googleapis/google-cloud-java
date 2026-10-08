@@ -588,6 +588,7 @@ public class NetworkFirewallPoliciesClientTest {
             .setDisplayName("displayName1714148973")
             .setFirewallPolicyId("firewallPolicyId672926477")
             .setName("name3373707")
+            .setPriority(-1165461084)
             .setShortName("shortName-2028219097")
             .build();
     mockService.addResponse(expectedResponse);
@@ -637,7 +638,6 @@ public class NetworkFirewallPoliciesClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -1392,7 +1392,6 @@ public class NetworkFirewallPoliciesClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

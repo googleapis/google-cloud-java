@@ -384,12 +384,6 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

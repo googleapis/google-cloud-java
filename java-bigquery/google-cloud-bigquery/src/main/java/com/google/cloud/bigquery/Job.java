@@ -427,6 +427,7 @@ public class Job extends JobInfo {
       Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
       Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
       SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
+      Boolean cacheHit = stats != null ? stats.getCacheHit() : null;
 
       // If there are no rows in the result, this may have been a DDL query.
       // Listing table data might fail, such as with CREATE VIEW queries.
@@ -445,6 +446,7 @@ public class Job extends JobInfo {
                 .setTotalSlotMs(totalSlotMs)
                 .setNumDmlAffectedRows(numDmlAffectedRows)
                 .setSessionInfo(sessionInfo)
+                .setCacheHit(cacheHit)
                 .build();
         return emptyTableResult;
       }
@@ -465,6 +467,7 @@ public class Job extends JobInfo {
               .setTotalSlotMs(totalSlotMs)
               .setNumDmlAffectedRows(numDmlAffectedRows)
               .setSessionInfo(sessionInfo)
+              .setCacheHit(cacheHit)
               .build();
       return tableResultWithJobId;
     } finally {
