@@ -92,7 +92,8 @@ public interface ContentBundleOrBuilder
    * <pre>
    * Output only. The ContentBundleStatus of the
    * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
-   * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+   * read-only and defaults to
+   * [ContentBundleStatusEnum.ContentBundleStatus.INACTIVE][google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus.INACTIVE].
    * </pre>
    *
    * <code>
@@ -109,7 +110,8 @@ public interface ContentBundleOrBuilder
    * <pre>
    * Output only. The ContentBundleStatus of the
    * [ContentBundle][google.ads.admanager.v1.ContentBundle]. This attribute is
-   * read-only and defaults to [ContentBundleStatus.INACTIVE][].
+   * read-only and defaults to
+   * [ContentBundleStatusEnum.ContentBundleStatus.INACTIVE][google.ads.admanager.v1.ContentBundleStatusEnum.ContentBundleStatus.INACTIVE].
    * </pre>
    *
    * <code>

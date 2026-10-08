@@ -66,6 +66,9 @@ import org.jspecify.annotations.Nullable;
  * <p>The AppGatewaysService service provides methods to manage (create/read/update/delete)
  * BeyondCorp AppGateways.
  *
+ * <p>Deprecated: App Connector is deprecated and creation of new App Connector resources is no
+ * longer permitted. Use Security Gateway instead.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -173,7 +176,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -286,8 +291,11 @@ import org.jspecify.annotations.Nullable;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AppGatewaysServiceClient implements BackgroundResource {
   private final @Nullable AppGatewaysServiceSettings settings;
@@ -372,7 +380,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the AppGateway location using the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAppGatewaysPagedResponse listAppGateways(@Nullable LocationName parent) {
     ListAppGatewaysRequest request =
         ListAppGatewaysRequest.newBuilder()
@@ -404,7 +414,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the AppGateway location using the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAppGatewaysPagedResponse listAppGateways(String parent) {
     ListAppGatewaysRequest request = ListAppGatewaysRequest.newBuilder().setParent(parent).build();
     return listAppGateways(request);
@@ -439,7 +451,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAppGatewaysPagedResponse listAppGateways(ListAppGatewaysRequest request) {
     return listAppGatewaysPagedCallable().call(request);
   }
@@ -473,7 +487,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAppGatewaysRequest, ListAppGatewaysPagedResponse>
       listAppGatewaysPagedCallable() {
     return stub.listAppGatewaysPagedCallable();
@@ -515,7 +532,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAppGatewaysRequest, ListAppGatewaysResponse>
       listAppGatewaysCallable() {
     return stub.listAppGatewaysCallable();
@@ -542,7 +562,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp AppGateway name using the form:
    *     `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AppGateway getAppGateway(@Nullable AppGatewayName name) {
     GetAppGatewayRequest request =
         GetAppGatewayRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -570,7 +592,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp AppGateway name using the form:
    *     `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AppGateway getAppGateway(String name) {
     GetAppGatewayRequest request = GetAppGatewayRequest.newBuilder().setName(name).build();
     return getAppGateway(request);
@@ -599,7 +623,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AppGateway getAppGateway(GetAppGatewayRequest request) {
     return getAppGatewayCallable().call(request);
   }
@@ -627,7 +653,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   AppGateway response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAppGatewayRequest, AppGateway> getAppGatewayCallable() {
     return stub.getAppGatewayCallable();
   }
@@ -660,7 +689,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *     letter. &#42; Must contain between 4-63 characters from `/[a-z][0-9]-/`. &#42; Must end
    *     with a number or a letter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppGateway, AppGatewayOperationMetadata> createAppGatewayAsync(
       @Nullable LocationName parent, AppGateway appGateway, String appGatewayId) {
     CreateAppGatewayRequest request =
@@ -700,7 +731,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *     letter. &#42; Must contain between 4-63 characters from `/[a-z][0-9]-/`. &#42; Must end
    *     with a number or a letter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppGateway, AppGatewayOperationMetadata> createAppGatewayAsync(
       String parent, AppGateway appGateway, String appGatewayId) {
     CreateAppGatewayRequest request =
@@ -739,7 +772,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppGateway, AppGatewayOperationMetadata> createAppGatewayAsync(
       CreateAppGatewayRequest request) {
     return createAppGatewayOperationCallable().futureCall(request);
@@ -772,7 +807,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   AppGateway response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<CreateAppGatewayRequest, AppGateway, AppGatewayOperationMetadata>
       createAppGatewayOperationCallable() {
     return stub.createAppGatewayOperationCallable();
@@ -805,7 +843,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAppGatewayRequest, Operation> createAppGatewayCallable() {
     return stub.createAppGatewayCallable();
   }
@@ -831,7 +872,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp AppGateway name using the form:
    *     `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, AppGatewayOperationMetadata> deleteAppGatewayAsync(
       @Nullable AppGatewayName name) {
     DeleteAppGatewayRequest request =
@@ -860,7 +903,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp AppGateway name using the form:
    *     `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, AppGatewayOperationMetadata> deleteAppGatewayAsync(
       String name) {
     DeleteAppGatewayRequest request = DeleteAppGatewayRequest.newBuilder().setName(name).build();
@@ -892,7 +937,9 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, AppGatewayOperationMetadata> deleteAppGatewayAsync(
       DeleteAppGatewayRequest request) {
     return deleteAppGatewayOperationCallable().futureCall(request);
@@ -923,7 +970,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAppGatewayRequest, Empty, AppGatewayOperationMetadata>
       deleteAppGatewayOperationCallable() {
     return stub.deleteAppGatewayOperationCallable();
@@ -954,7 +1004,10 @@ public class AppGatewaysServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAppGatewayRequest, Operation> deleteAppGatewayCallable() {
     return stub.deleteAppGatewayCallable();
   }
@@ -962,6 +1015,18 @@ public class AppGatewaysServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -996,6 +1061,18 @@ public class AppGatewaysServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1029,6 +1106,18 @@ public class AppGatewaysServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

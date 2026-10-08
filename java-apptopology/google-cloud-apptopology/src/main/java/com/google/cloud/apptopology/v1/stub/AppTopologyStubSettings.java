@@ -16,6 +16,7 @@
 
 package com.google.cloud.apptopology.v1.stub;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
@@ -47,12 +48,15 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apptopology.v1.Domain;
+import com.google.cloud.apptopology.v1.ExploreSchemaRequest;
+import com.google.cloud.apptopology.v1.ExploreSchemaResponse;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyRequest;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyResponse;
 import com.google.cloud.apptopology.v1.GetDomainRequest;
 import com.google.cloud.apptopology.v1.GetSchemaRequest;
 import com.google.cloud.apptopology.v1.ListDomainsRequest;
 import com.google.cloud.apptopology.v1.ListDomainsResponse;
+import com.google.cloud.apptopology.v1.NodeType;
 import com.google.cloud.apptopology.v1.Schema;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -135,6 +139,9 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
           GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
       generateDiscoveredResourcesTopologySettings;
   private final UnaryCallSettings<GetSchemaRequest, Schema> getSchemaSettings;
+  private final PagedCallSettings<
+          ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+      exploreSchemaSettings;
   private final UnaryCallSettings<GetDomainRequest, Domain> getDomainSettings;
   private final PagedCallSettings<ListDomainsRequest, ListDomainsResponse, ListDomainsPagedResponse>
       listDomainsSettings;
@@ -142,6 +149,40 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+
+  private static final PagedListDescriptor<ExploreSchemaRequest, ExploreSchemaResponse, NodeType>
+      EXPLORE_SCHEMA_PAGE_STR_DESC =
+          new PagedListDescriptor<ExploreSchemaRequest, ExploreSchemaResponse, NodeType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ExploreSchemaRequest injectToken(ExploreSchemaRequest payload, String token) {
+              return ExploreSchemaRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ExploreSchemaRequest injectPageSize(ExploreSchemaRequest payload, int pageSize) {
+              return ExploreSchemaRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ExploreSchemaRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ExploreSchemaResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NodeType> extractResources(ExploreSchemaResponse payload) {
+              return payload.getNodeTypesList();
+            }
+          };
 
   private static final PagedListDescriptor<ListDomainsRequest, ListDomainsResponse, Domain>
       LIST_DOMAINS_PAGE_STR_DESC =
@@ -212,6 +253,23 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+      EXPLORE_SCHEMA_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>() {
+            @Override
+            public ApiFuture<ExploreSchemaPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> callable,
+                ExploreSchemaRequest request,
+                ApiCallContext context,
+                ApiFuture<ExploreSchemaResponse> futureResponse) {
+              PageContext<ExploreSchemaRequest, ExploreSchemaResponse, NodeType> pageContext =
+                  PageContext.create(callable, EXPLORE_SCHEMA_PAGE_STR_DESC, request, context);
+              return ExploreSchemaPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListDomainsRequest, ListDomainsResponse, ListDomainsPagedResponse>
       LIST_DOMAINS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -255,6 +313,12 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
   /** Returns the object with the settings used for calls to getSchema. */
   public UnaryCallSettings<GetSchemaRequest, Schema> getSchemaSettings() {
     return getSchemaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exploreSchema. */
+  public PagedCallSettings<ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+      exploreSchemaSettings() {
+    return exploreSchemaSettings;
   }
 
   /** Returns the object with the settings used for calls to getDomain. */
@@ -393,6 +457,7 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
     generateDiscoveredResourcesTopologySettings =
         settingsBuilder.generateDiscoveredResourcesTopologySettings().build();
     getSchemaSettings = settingsBuilder.getSchemaSettings().build();
+    exploreSchemaSettings = settingsBuilder.exploreSchemaSettings().build();
     getDomainSettings = settingsBuilder.getDomainSettings().build();
     listDomainsSettings = settingsBuilder.listDomainsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -415,6 +480,9 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
             GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
         generateDiscoveredResourcesTopologySettings;
     private final UnaryCallSettings.Builder<GetSchemaRequest, Schema> getSchemaSettings;
+    private final PagedCallSettings.Builder<
+            ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+        exploreSchemaSettings;
     private final UnaryCallSettings.Builder<GetDomainRequest, Domain> getDomainSettings;
     private final PagedCallSettings.Builder<
             ListDomainsRequest, ListDomainsResponse, ListDomainsPagedResponse>
@@ -476,6 +544,7 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
 
       generateDiscoveredResourcesTopologySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exploreSchemaSettings = PagedCallSettings.newBuilder(EXPLORE_SCHEMA_PAGE_STR_FACT);
       getDomainSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listDomainsSettings = PagedCallSettings.newBuilder(LIST_DOMAINS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -485,6 +554,7 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               generateDiscoveredResourcesTopologySettings,
               getSchemaSettings,
+              exploreSchemaSettings,
               getDomainSettings,
               listDomainsSettings,
               listLocationsSettings,
@@ -498,6 +568,7 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
       generateDiscoveredResourcesTopologySettings =
           settings.generateDiscoveredResourcesTopologySettings.toBuilder();
       getSchemaSettings = settings.getSchemaSettings.toBuilder();
+      exploreSchemaSettings = settings.exploreSchemaSettings.toBuilder();
       getDomainSettings = settings.getDomainSettings.toBuilder();
       listDomainsSettings = settings.listDomainsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -507,6 +578,7 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               generateDiscoveredResourcesTopologySettings,
               getSchemaSettings,
+              exploreSchemaSettings,
               getDomainSettings,
               listDomainsSettings,
               listLocationsSettings,
@@ -545,6 +617,11 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
 
       builder
           .getSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .exploreSchemaSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -598,6 +675,13 @@ public class AppTopologyStubSettings extends StubSettings<AppTopologyStubSetting
     /** Returns the builder for the settings used for calls to getSchema. */
     public UnaryCallSettings.Builder<GetSchemaRequest, Schema> getSchemaSettings() {
       return getSchemaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exploreSchema. */
+    public PagedCallSettings.Builder<
+            ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+        exploreSchemaSettings() {
+      return exploreSchemaSettings;
     }
 
     /** Returns the builder for the settings used for calls to getDomain. */
