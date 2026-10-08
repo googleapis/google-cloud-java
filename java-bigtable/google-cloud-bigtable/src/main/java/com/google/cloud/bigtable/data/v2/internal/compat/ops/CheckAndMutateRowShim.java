@@ -21,7 +21,6 @@ import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
-import com.google.cloud.bigtable.data.v2.internal.compat.ShimImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -73,9 +72,7 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
     // active session, since an open session proves the server supports it for this connection.
     // Currently this will only fallback in case RLS is misconfigured. If the AFE pool is
     // unavailable, it'll be controlled by ClientConfiguration.
-    return pool.getConsecutiveUnimplementedFailures()
-            < ShimImpl.MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES
-        || pool.hasSession();
+    return UnaryShim.shouldRouteToSession(pool);
   }
 
   @Override

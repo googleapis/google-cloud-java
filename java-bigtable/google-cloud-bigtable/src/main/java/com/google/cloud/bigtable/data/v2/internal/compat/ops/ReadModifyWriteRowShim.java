@@ -15,50 +15,84 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
+import com.google.bigtable.v2.OpenAuthorizedViewRequest;
+import com.google.bigtable.v2.OpenTableRequest.Permission;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
-import com.google.cloud.bigtable.data.v2.internal.compat.Util;
-import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
+import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
+import com.google.cloud.bigtable.data.v2.internal.api.Client;
+import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
+import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
-import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowAdapter;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.models.TargetId;
 import io.grpc.Deadline;
-import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Stateless wrapper around {@link ReadModifyWriteRowShimInner}. Its primary purpose is to pair a
- * {@link RowAdapter} with a stateful {@link ReadModifyWriteRowShimInner}.
- */
-public class ReadModifyWriteRowShim<RowT> implements UnaryShim<ReadModifyWriteRow, RowT> {
+public class ReadModifyWriteRowShim
+    implements UnaryShim<ReadModifyWriteRow, SessionReadModifyWriteRowResponse> {
 
-  private static final RowAdapter<Row> DEFAULT_ADAPTER = new DefaultRowAdapter();
+  private final SessionPoolMap<TableId, TableAsync> tables;
+  private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
 
-  private final ReadModifyWriteRowShimInner inner;
-  private final RowAdapter<RowT> adapter;
-
-  public static ReadModifyWriteRowShim<Row> createDefault(ReadModifyWriteRowShimInner inner) {
-    return new ReadModifyWriteRowShim<>(inner, DEFAULT_ADAPTER);
+  public ReadModifyWriteRowShim(Client client) {
+    // ReadModifyWriteRow reads and modifies cells and returns the row, so it needs
+    // read + write access on the session.
+    tables =
+        new SessionPoolMap<>(
+            k -> client.openTableAsync(k.getTableId(), Permission.PERMISSION_READ_WRITE));
+    authViews =
+        new SessionPoolMap<>(
+            k ->
+                client.openAuthorizedViewAsync(
+                    k.getTableId(),
+                    k.getAuthorizedViewId(),
+                    OpenAuthorizedViewRequest.Permission.PERMISSION_READ_WRITE));
   }
 
-  public ReadModifyWriteRowShim(ReadModifyWriteRowShimInner inner, RowAdapter<RowT> adapter) {
-    this.inner = inner;
-    this.adapter = adapter;
+  @Override
+  public void close() {
+    tables.invalidateAll();
+    authViews.invalidateAll();
   }
 
   @Override
   public boolean supports(ReadModifyWriteRow request) {
-    return inner.supports(request);
+    TargetId targetId = request.getTargetId();
+    SessionPool<?> pool;
+    if (targetId instanceof TableId) {
+      pool = tables.get((TableId) targetId).getSessionPool();
+    } else if (targetId instanceof AuthorizedViewId) {
+      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
+    } else {
+      return false;
+    }
+    // Circuit-breaker: stop routing to the session path if the server has repeatedly indicated
+    // it doesn't support this RPC (UNIMPLEMENTED). Still allow through if there is already an
+    // active session, since an open session proves the server supports it for this connection.
+    // Currently this will only fallback in case RLS is misconfigured. If the AFE pool is
+    // unavailable, it'll be controlled by ClientConfiguration.
+    return UnaryShim.shouldRouteToSession(pool);
   }
 
   @Override
-  public CompletableFuture<RowT> call(ReadModifyWriteRow request, Deadline deadline) {
-    CompletableFuture<SessionReadModifyWriteRowResponse> f = inner.call(request, deadline);
-    return f.thenApply(
-        r -> r.hasRow() ? Util.buildRow(adapter.createRowBuilder(), r.getRow()) : null);
-  }
+  public CompletableFuture<SessionReadModifyWriteRowResponse> call(
+      ReadModifyWriteRow request, Deadline deadline) {
+    TargetId targetId = request.getTargetId();
+    SessionReadModifyWriteRowRequest innerReq = request.toSessionProto();
 
-  @Override
-  public void close() throws IOException {
-    inner.close();
+    if (targetId instanceof TableId) {
+      return tables.apply((TableId) targetId, t -> t.readModifyWriteRow(innerReq, deadline));
+    }
+    if (targetId instanceof AuthorizedViewId) {
+      return authViews.apply(
+          (AuthorizedViewId) targetId, v -> v.readModifyWriteRow(innerReq, deadline));
+    }
+
+    CompletableFuture<SessionReadModifyWriteRowResponse> f = new CompletableFuture<>();
+    f.completeExceptionally(
+        new UnsupportedOperationException("Unsupported targetId type: " + targetId));
+    return f;
   }
 }

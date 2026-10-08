@@ -18,11 +18,6 @@ package com.google.cloud.bigtable.data.v2.internal.compat;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
-import com.google.bigtable.v2.Cell;
-import com.google.bigtable.v2.Column;
-import com.google.bigtable.v2.Family;
-import com.google.bigtable.v2.Row;
-import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -101,25 +96,5 @@ public class Util {
       effectiveDeadline = Deadline.after(defaultDeadline.toMillis(), TimeUnit.MILLISECONDS);
     }
     return effectiveDeadline;
-  }
-
-  public static <T> T buildRow(RowBuilder<T> builder, Row protoRow) {
-    builder.startRow(protoRow.getKey());
-
-    for (Family family : protoRow.getFamiliesList()) {
-      for (Column column : family.getColumnsList()) {
-        for (Cell cell : column.getCellsList()) {
-          builder.startCell(
-              family.getName(),
-              column.getQualifier(),
-              cell.getTimestampMicros(),
-              cell.getLabelsList(),
-              0);
-          builder.cellValue(cell.getValue());
-          builder.finishCell();
-        }
-      }
-    }
-    return builder.finishRow();
   }
 }

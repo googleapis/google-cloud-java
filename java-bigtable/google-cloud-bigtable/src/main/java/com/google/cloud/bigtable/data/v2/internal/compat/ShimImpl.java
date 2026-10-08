@@ -38,9 +38,8 @@ import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowSh
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
-import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
-import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.RowBuilderShim;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
@@ -80,8 +79,6 @@ import javax.annotation.Nullable;
 public class ShimImpl implements Shim {
   private static final Logger logger = Logger.getLogger(ShimImpl.class.getName());
 
-  // TODO: this should be a client config
-  public static final int MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES = 30;
   private static final Duration DA_CHECK_TIMEOUT = Duration.ofSeconds(5);
 
   private final ClientConfigurationManager configManager;
@@ -89,10 +86,10 @@ public class ShimImpl implements Shim {
   private final Client client;
   private final DebugTagTracer debugTagTracer;
 
-  private final ReadRowShimInner readRowShimInner;
+  private final ReadRowShim readRowShim;
   private final MutateRowShim mutateRowShim;
   private final CheckAndMutateRowShim checkAndMutateRowShim;
-  private final ReadModifyWriteRowShimInner readModifyWriteRowShimInner;
+  private final ReadModifyWriteRowShim readModifyWriteRowShim;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -206,10 +203,10 @@ public class ShimImpl implements Shim {
     this.client = client;
     this.debugTagTracer = debugTagTracer;
 
-    this.readRowShimInner = new ReadRowShimInner(client);
+    this.readRowShim = new ReadRowShim(client);
     this.mutateRowShim = new MutateRowShim(client);
     this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
-    this.readModifyWriteRowShimInner = new ReadModifyWriteRowShimInner(client);
+    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(client);
   }
 
   /**
@@ -373,7 +370,7 @@ public class ShimImpl implements Shim {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        new ReadRowShim<>(readRowShimInner, rowAdapter),
+        new RowBuilderShim<>(readRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
         debugTagTracer);
   }
@@ -410,7 +407,8 @@ public class ShimImpl implements Shim {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        new ReadModifyWriteRowShim<>(readModifyWriteRowShimInner, rowAdapter),
+        new RowBuilderShim<>(
+            readModifyWriteRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
         debugTagTracer);
   }
