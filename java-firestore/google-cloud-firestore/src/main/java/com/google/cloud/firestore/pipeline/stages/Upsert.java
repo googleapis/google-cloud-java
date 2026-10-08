@@ -73,14 +73,6 @@ public final class Upsert extends Stage {
         this.options);
   }
 
-  public Upsert withTransformedFields(Selectable... transformedFields) {
-    return withAdditionalFields(transformedFields);
-  }
-
-  public Upsert withTransformedFields(List<Selectable> transformedFields) {
-    return withAdditionalFields(transformedFields);
-  }
-
   public Upsert withCollection(String collectionPath) {
     return new Upsert(
         this.additionalFields, collectionPath, this.documentIdExpression, this.options);
@@ -89,10 +81,6 @@ public final class Upsert extends Stage {
   public Upsert withDocumentIdExpression(Expression documentIdExpression) {
     return new Upsert(
         this.additionalFields, this.collectionPath, documentIdExpression, this.options);
-  }
-
-  public Upsert withDocumentId(Expression documentIdExpression) {
-    return withDocumentIdExpression(documentIdExpression);
   }
 
   private static InternalOptions buildOptions(

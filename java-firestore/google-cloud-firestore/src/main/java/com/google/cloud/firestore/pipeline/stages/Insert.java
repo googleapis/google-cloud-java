@@ -51,10 +51,6 @@ public final class Insert extends Stage {
     return new Insert(this.collectionPath, documentIdExpression, this.options);
   }
 
-  public Insert withDocumentId(Expression documentIdExpression) {
-    return withDocumentIdExpression(documentIdExpression);
-  }
-
   private static InternalOptions buildOptions(
       @Nullable String collectionPath,
       @Nullable Expression documentIdExpression,
