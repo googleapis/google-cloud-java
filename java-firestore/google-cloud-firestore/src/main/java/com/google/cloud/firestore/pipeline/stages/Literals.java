@@ -36,9 +36,9 @@ public final class Literals extends Stage {
 
   public Literals(Map<String, Object>... data) {
     super("literals", InternalOptions.EMPTY);
-    Preconditions.checkNotNull(data, "Function literals() requires at least one document.");
-    Preconditions.checkArgument(
-        data.length > 0, "Function literals() requires at least one document.");
+    // An empty set of documents is rejected by the backend when the pipeline is executed.
+    Preconditions.checkNotNull(
+        data, "Function literals() called with invalid data. Documents must not be null.");
     for (int i = 0; i < data.length; i++) {
       Preconditions.checkNotNull(
           data[i], "Function literals() called with invalid data. Document %s is null.", i);

@@ -479,15 +479,19 @@ public class PipelineProtoTest {
             .build();
     Firestore firestore = options.getService();
 
-    // At least one document is required.
-    IllegalArgumentException empty =
-        assertThrows(IllegalArgumentException.class, () -> firestore.pipeline().literals());
-    assertThat(empty)
+    // An empty set of documents is not rejected client-side; the backend rejects it on execute.
+    Stage emptyStage = firestore.pipeline().literals().toProto().getStages(0);
+    assertThat(emptyStage.getName()).isEqualTo("literals");
+    assertThat(emptyStage.getArgsCount()).isEqualTo(0);
+
+    // A null documents array is rejected with a clear message.
+    NullPointerException nullArray =
+        assertThrows(
+            NullPointerException.class,
+            () -> firestore.pipeline().literals((java.util.Map<String, Object>[]) null));
+    assertThat(nullArray)
         .hasMessageThat()
-        .isEqualTo("Function literals() requires at least one document.");
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> firestore.pipeline().literals(new java.util.HashMap[0]));
+        .isEqualTo("Function literals() called with invalid data. Documents must not be null.");
 
     // A null document is rejected with a clear message.
     NullPointerException nullDoc =
@@ -550,9 +554,8 @@ public class PipelineProtoTest {
     // literals(List) encodes the same as literals(Map...).
     assertThat(firestore.pipeline().literals(java.util.Arrays.asList(doc1, doc2)).toProto())
         .isEqualTo(firestore.pipeline().literals(doc1, doc2).toProto());
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> firestore.pipeline().literals(java.util.Collections.emptyList()));
+    assertThat(firestore.pipeline().literals(java.util.Collections.emptyList()).toProto())
+        .isEqualTo(firestore.pipeline().literals().toProto());
 
     // Update.withTransformedFields(List) encodes the same as the varargs overload.
     com.google.cloud.firestore.pipeline.stages.Update fromList =
