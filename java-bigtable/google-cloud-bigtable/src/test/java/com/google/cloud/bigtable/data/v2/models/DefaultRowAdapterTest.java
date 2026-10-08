@@ -173,6 +173,67 @@ public class DefaultRowAdapterTest {
   }
 
   @Test
+  public void buildRowFromProto_nullInput_returnsNull() {
+    assertThat(adapter.buildRowFromProto(null)).isNull();
+  }
+
+  @Test
+  public void buildRowFromProto_emptyRow_returnsEmptyRow() {
+    com.google.bigtable.v2.Row proto =
+        com.google.bigtable.v2.Row.newBuilder().setKey(ByteString.copyFromUtf8("key")).build();
+
+    Row row = adapter.buildRowFromProto(proto);
+
+    assertThat(row).isEqualTo(Row.create(ByteString.copyFromUtf8("key"), ImmutableList.of()));
+  }
+
+  @Test
+  public void buildRowFromProto_multipleFamiliesAndCells_roundTrips() {
+    ByteString key = ByteString.copyFromUtf8("key");
+    ByteString col = ByteString.copyFromUtf8("col");
+    ByteString val1 = ByteString.copyFromUtf8("val1");
+    ByteString val2 = ByteString.copyFromUtf8("val2");
+    List<String> labels = ImmutableList.of("lbl");
+
+    com.google.bigtable.v2.Row proto =
+        com.google.bigtable.v2.Row.newBuilder()
+            .setKey(key)
+            .addFamilies(
+                com.google.bigtable.v2.Family.newBuilder()
+                    .setName("f1")
+                    .addColumns(
+                        com.google.bigtable.v2.Column.newBuilder()
+                            .setQualifier(col)
+                            .addCells(
+                                com.google.bigtable.v2.Cell.newBuilder()
+                                    .setTimestampMicros(1_000)
+                                    .setValue(val1)
+                                    .addLabels("lbl"))))
+            .addFamilies(
+                com.google.bigtable.v2.Family.newBuilder()
+                    .setName("f2")
+                    .addColumns(
+                        com.google.bigtable.v2.Column.newBuilder()
+                            .setQualifier(col)
+                            .addCells(
+                                com.google.bigtable.v2.Cell.newBuilder()
+                                    .setTimestampMicros(2_000)
+                                    .setValue(val2)
+                                    .addLabels("lbl"))))
+            .build();
+
+    Row row = adapter.buildRowFromProto(proto);
+
+    assertThat(row)
+        .isEqualTo(
+            Row.create(
+                key,
+                ImmutableList.of(
+                    RowCell.create("f1", col, 1_000, labels, val1),
+                    RowCell.create("f2", col, 2_000, labels, val2))));
+  }
+
+  @Test
   public void protoTest() {
     ByteString key = ByteString.copyFromUtf8("key");
 
