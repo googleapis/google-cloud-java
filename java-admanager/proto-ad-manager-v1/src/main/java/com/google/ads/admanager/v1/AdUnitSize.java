@@ -199,7 +199,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The companions for this ad unit size. Companions are only valid if the
    * environment is
-   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -215,7 +215,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The companions for this ad unit size. Companions are only valid if the
    * environment is
-   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -232,7 +232,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The companions for this ad unit size. Companions are only valid if the
    * environment is
-   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -248,7 +248,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The companions for this ad unit size. Companions are only valid if the
    * environment is
-   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -264,7 +264,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The companions for this ad unit size. Companions are only valid if the
    * environment is
-   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+   * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1057,7 +1057,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1076,7 +1076,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1095,7 +1095,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1114,7 +1114,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1139,7 +1139,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1162,7 +1162,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1187,7 +1187,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1212,7 +1212,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1234,7 +1234,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1257,7 +1257,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1280,7 +1280,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1302,7 +1302,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1324,7 +1324,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1339,7 +1339,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1358,7 +1358,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1378,7 +1378,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1394,7 +1394,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>
@@ -1410,7 +1410,7 @@ public final class AdUnitSize extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The companions for this ad unit size. Companions are only valid if the
      * environment is
-     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType].
+     * [VIDEO_PLAYER][google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.VIDEO_PLAYER].
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Size companions = 3;</code>

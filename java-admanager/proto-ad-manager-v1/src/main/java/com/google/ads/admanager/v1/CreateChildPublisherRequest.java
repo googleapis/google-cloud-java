@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [CreateChildPublisher][] method.
+ * Request object for `CreateChildPublisher` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.CreateChildPublisherRequest}
@@ -373,7 +373,7 @@ public final class CreateChildPublisherRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request object for [CreateChildPublisher][] method.
+   * Request object for `CreateChildPublisher` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.CreateChildPublisherRequest}

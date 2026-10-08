@@ -24,9 +24,8 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for
- * [ListPartnersRequest][google.ads.admanager.v1.ListPartnersRequest] containing
- * matching [Partner][google.ads.admanager.v1.Partner] objects.
+ * Response object for `ListPartnersRequest` containing matching
+ * [Partner][google.ads.admanager.v1.Partner] objects.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ListPartnersResponse}
@@ -422,9 +421,8 @@ public final class ListPartnersResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Response object for
-   * [ListPartnersRequest][google.ads.admanager.v1.ListPartnersRequest] containing
-   * matching [Partner][google.ads.admanager.v1.Partner] objects.
+   * Response object for `ListPartnersRequest` containing matching
+   * [Partner][google.ads.admanager.v1.Partner] objects.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ListPartnersResponse}

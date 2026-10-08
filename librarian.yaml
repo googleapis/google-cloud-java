@@ -16,8 +16,8 @@ version: v0.47.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: b29d17037e889281b718bfffdeea534aed00d36f
-    sha256: 737d608b0666e083fa8301bf7524875508addc13c929e592ed0ce47c2d692f58
+    commit: ab5c1b0777e6f1f7c89bd0eb55b05532d97b68e0
+    sha256: a49e9e9a4078980c4681b821f705f1fb4b8b459ca80df42b696d128a70a92724
   showcase:
     commit: 5158967e8a41c751b15776142d190428ddb7e99f
     sha256: a31271ff2cdeb7cce91e93a4d58a66dcaaac574c51cc14bd74577ab1eafd3ccd
@@ -2220,6 +2220,7 @@ libraries:
     version: 0.8.0
     apis:
       - path: google/devicesandservices/health/v4
+      - path: google/devicesandservices/health/v4beta
     java:
       api_id_override: health.googleapis.com
       api_description_override: The Google Health API lets you view and manage health and fitness metrics and measurement data.

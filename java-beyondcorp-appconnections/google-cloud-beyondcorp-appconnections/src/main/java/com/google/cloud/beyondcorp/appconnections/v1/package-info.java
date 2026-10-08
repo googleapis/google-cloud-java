@@ -37,6 +37,9 @@
  * <p>The AppConnectionsService service provides methods to manage (create/read/update/delete)
  * BeyondCorp AppConnections.
  *
+ * <p>Deprecated: App Connector is deprecated and creation of new App Connector resources is no
+ * longer permitted. Use Security Gateway instead.
+ *
  * <p>Sample for AppConnectionsServiceClient:
  *
  * <pre>{@code

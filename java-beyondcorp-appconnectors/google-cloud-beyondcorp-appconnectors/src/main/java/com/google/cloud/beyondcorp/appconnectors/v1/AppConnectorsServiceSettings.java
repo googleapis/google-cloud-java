@@ -124,29 +124,52 @@ import org.jspecify.annotations.Nullable;
  *     .setPollingAlgorithm(timedRetryAlgorithm)
  *     .build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AppConnectorsServiceSettings extends ClientSettings<AppConnectorsServiceSettings> {
 
-  /** Returns the object with the settings used for calls to listAppConnectors. */
+  /**
+   * Returns the object with the settings used for calls to listAppConnectors.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAppConnectorsRequest, ListAppConnectorsResponse, ListAppConnectorsPagedResponse>
       listAppConnectorsSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).listAppConnectorsSettings();
   }
 
-  /** Returns the object with the settings used for calls to getAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to getAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAppConnectorRequest, AppConnector> getAppConnectorSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).getAppConnectorSettings();
   }
 
-  /** Returns the object with the settings used for calls to createAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to createAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAppConnectorRequest, Operation> createAppConnectorSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).createAppConnectorSettings();
   }
 
-  /** Returns the object with the settings used for calls to createAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to createAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<
           CreateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
       createAppConnectorOperationSettings() {
@@ -154,12 +177,22 @@ public class AppConnectorsServiceSettings extends ClientSettings<AppConnectorsSe
         .createAppConnectorOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to updateAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAppConnectorRequest, Operation> updateAppConnectorSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).updateAppConnectorSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to updateAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<
           UpdateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
       updateAppConnectorOperationSettings() {
@@ -167,24 +200,55 @@ public class AppConnectorsServiceSettings extends ClientSettings<AppConnectorsSe
         .updateAppConnectorOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to deleteAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAppConnectorRequest, Operation> deleteAppConnectorSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).deleteAppConnectorSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAppConnector. */
+  /**
+   * Returns the object with the settings used for calls to deleteAppConnector.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<DeleteAppConnectorRequest, Empty, AppConnectorOperationMetadata>
       deleteAppConnectorOperationSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings())
         .deleteAppConnectorOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to reportStatus. */
+  /**
+   * Returns the object with the settings used for calls to resolveInstanceConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
+  public UnaryCallSettings<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+      resolveInstanceConfigSettings() {
+    return ((AppConnectorsServiceStubSettings) getStubSettings()).resolveInstanceConfigSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to reportStatus.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<ReportStatusRequest, Operation> reportStatusSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).reportStatusSettings();
   }
 
-  /** Returns the object with the settings used for calls to reportStatus. */
+  /**
+   * Returns the object with the settings used for calls to reportStatus.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<ReportStatusRequest, AppConnector, AppConnectorOperationMetadata>
       reportStatusOperationSettings() {
     return ((AppConnectorsServiceStubSettings) getStubSettings()).reportStatusOperationSettings();
@@ -314,64 +378,125 @@ public class AppConnectorsServiceSettings extends ClientSettings<AppConnectorsSe
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to listAppConnectors. */
+    /**
+     * Returns the builder for the settings used for calls to listAppConnectors.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAppConnectorsRequest, ListAppConnectorsResponse, ListAppConnectorsPagedResponse>
         listAppConnectorsSettings() {
       return getStubSettingsBuilder().listAppConnectorsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to getAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAppConnectorRequest, AppConnector>
         getAppConnectorSettings() {
       return getStubSettingsBuilder().getAppConnectorSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to createAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAppConnectorRequest, Operation>
         createAppConnectorSettings() {
       return getStubSettingsBuilder().createAppConnectorSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to createAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             CreateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
         createAppConnectorOperationSettings() {
       return getStubSettingsBuilder().createAppConnectorOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to updateAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAppConnectorRequest, Operation>
         updateAppConnectorSettings() {
       return getStubSettingsBuilder().updateAppConnectorSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to updateAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             UpdateAppConnectorRequest, AppConnector, AppConnectorOperationMetadata>
         updateAppConnectorOperationSettings() {
       return getStubSettingsBuilder().updateAppConnectorOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAppConnectorRequest, Operation>
         deleteAppConnectorSettings() {
       return getStubSettingsBuilder().deleteAppConnectorSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAppConnector. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAppConnector.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             DeleteAppConnectorRequest, Empty, AppConnectorOperationMetadata>
         deleteAppConnectorOperationSettings() {
       return getStubSettingsBuilder().deleteAppConnectorOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to reportStatus. */
+    /**
+     * Returns the builder for the settings used for calls to resolveInstanceConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
+    public UnaryCallSettings.Builder<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+        resolveInstanceConfigSettings() {
+      return getStubSettingsBuilder().resolveInstanceConfigSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to reportStatus.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<ReportStatusRequest, Operation> reportStatusSettings() {
       return getStubSettingsBuilder().reportStatusSettings();
     }
 
-    /** Returns the builder for the settings used for calls to reportStatus. */
+    /**
+     * Returns the builder for the settings used for calls to reportStatus.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             ReportStatusRequest, AppConnector, AppConnectorOperationMetadata>
         reportStatusOperationSettings() {

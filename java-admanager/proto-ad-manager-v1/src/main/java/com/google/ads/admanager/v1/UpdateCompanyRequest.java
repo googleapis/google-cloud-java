@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [UpdateCompany][] method.
+ * Request object for `UpdateCompany` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.UpdateCompanyRequest}
@@ -365,7 +365,7 @@ public final class UpdateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request object for [UpdateCompany][] method.
+   * Request object for `UpdateCompany` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.UpdateCompanyRequest}

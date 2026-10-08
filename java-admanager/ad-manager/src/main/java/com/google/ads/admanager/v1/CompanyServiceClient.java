@@ -395,8 +395,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of [Companies][]. Format:
-   *     `networks/{network_code}`
+   * @param parent Required. The parent, which owns this collection of
+   *     [Companies][google.ads.admanager.v1.Company]. Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCompaniesPagedResponse listCompanies(@Nullable NetworkName parent) {
@@ -427,8 +427,8 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of [Companies][]. Format:
-   *     `networks/{network_code}`
+   * @param parent Required. The parent, which owns this collection of
+   *     [Companies][google.ads.admanager.v1.Company]. Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCompaniesPagedResponse listCompanies(String parent) {
@@ -690,9 +690,9 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource where [Companies][] will be created. Format:
-   *     `networks/{network_code}` The parent field in the CreateCompanyRequest must match this
-   *     field.
+   * @param parent Required. The parent resource where [Companies][google.ads.admanager.v1.Company]
+   *     will be created. Format: `networks/{network_code}` The parent field in the
+   *     CreateCompanyRequest must match this field.
    * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to create. A
    *     maximum of 100 objects can be created in a batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -727,9 +727,9 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource where [Companies][] will be created. Format:
-   *     `networks/{network_code}` The parent field in the CreateCompanyRequest must match this
-   *     field.
+   * @param parent Required. The parent resource where [Companies][google.ads.admanager.v1.Company]
+   *     will be created. Format: `networks/{network_code}` The parent field in the
+   *     CreateCompanyRequest must match this field.
    * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to create. A
    *     maximum of 100 objects can be created in a batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -909,9 +909,9 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource where [Companies][] will be updated. Format:
-   *     `networks/{network_code}` The parent field in the UpdateCompanyRequest must match this
-   *     field.
+   * @param parent Required. The parent resource where [Companies][google.ads.admanager.v1.Company]
+   *     will be updated. Format: `networks/{network_code}` The parent field in the
+   *     UpdateCompanyRequest must match this field.
    * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to update. A
    *     maximum of 100 objects can be updated in a batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -946,9 +946,9 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource where [Companies][] will be updated. Format:
-   *     `networks/{network_code}` The parent field in the UpdateCompanyRequest must match this
-   *     field.
+   * @param parent Required. The parent resource where [Companies][google.ads.admanager.v1.Company]
+   *     will be updated. Format: `networks/{network_code}` The parent field in the
+   *     UpdateCompanyRequest must match this field.
    * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to update. A
    *     maximum of 100 objects can be updated in a batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

@@ -38,7 +38,7 @@ public interface BigQueryResultSet {
 
   /*
    * Returns com.google.cloud.bigquery.JobStatistics.QueryStatistics object with statistics for the
-   * completed Job for non-low latency queries.
+   * completed query.
    *
    * @return QueryStatistics object or null.
    */
