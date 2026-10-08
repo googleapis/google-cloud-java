@@ -595,4 +595,54 @@ public class PipelineProtoTest {
     assertThat(deleteProto).isEqualTo(firestore.pipeline().collection("books").delete().toProto());
     assertThat(deleteProto.getStages(1).getName()).isEqualTo("delete");
   }
+
+  @Test
+  public void testAtomicExecutionRejectedWithTransactionOrReadTime() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Atomic Book");
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(
+                new com.google.cloud.firestore.pipeline.stages.Insert()
+                    .withCollection("books")
+                    .withDocumentIdExpression(constant("book1")));
+
+    PipelineExecuteOptions atomic = new PipelineExecuteOptions().withAtomic(true);
+    com.google.protobuf.ByteString transactionId =
+        com.google.protobuf.ByteString.copyFromUtf8("txn");
+    com.google.protobuf.Timestamp readTime =
+        com.google.protobuf.Timestamp.newBuilder().setSeconds(1).build();
+
+    IllegalArgumentException inTransaction =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> pipeline.toExecutePipelineRequest(atomic, transactionId, null));
+    assertThat(inTransaction).hasMessageThat().contains("inside a transaction");
+
+    IllegalArgumentException withReadTime =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> pipeline.toExecutePipelineRequest(atomic, null, readTime));
+    assertThat(withReadTime).hasMessageThat().contains("read time");
+
+    // Non-atomic execution inside a transaction or at a read time is unaffected.
+    PipelineExecuteOptions nonAtomic = new PipelineExecuteOptions();
+    ExecutePipelineRequest txRequest =
+        pipeline.toExecutePipelineRequest(nonAtomic, transactionId, null);
+    assertThat(txRequest.getTransaction()).isEqualTo(transactionId);
+    assertThat(txRequest.hasNewTransaction()).isFalse();
+    assertThat(txRequest.getAutoCommitTransaction()).isFalse();
+    ExecutePipelineRequest readTimeRequest =
+        pipeline.toExecutePipelineRequest(nonAtomic, null, readTime);
+    assertThat(readTimeRequest.getReadTime()).isEqualTo(readTime);
+  }
 }

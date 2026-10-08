@@ -1540,6 +1540,18 @@ public final class Pipeline {
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
       @Nullable com.google.protobuf.Timestamp readTime) {
+    if (options.isAtomic()) {
+      if (transactionId != null) {
+        throw new IllegalArgumentException(
+            "Atomic pipeline execution cannot be used inside a transaction. The transaction"
+                + " already makes its writes atomic; remove withAtomic(true).");
+      }
+      if (readTime != null) {
+        throw new IllegalArgumentException(
+            "Atomic pipeline execution cannot be combined with a read time.");
+      }
+    }
+
     java.util.Map<String, com.google.firestore.v1.Value> optionsMap =
         new java.util.HashMap<>(StageUtils.toMap(options));
     optionsMap.remove("atomic");
