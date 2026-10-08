@@ -21,17 +21,32 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.http.HttpTransportOptions;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLSocket;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryJdbcProxyUtilityTest {
@@ -418,5 +433,82 @@ public class BigQueryJdbcProxyUtilityTest {
                     null,
                     "TestClass"));
     assertThat(exception.getCause()).isInstanceOf(java.security.NoSuchProviderException.class);
+  }
+
+  @Test
+  public void testGetHttpTransportOptions_withProxyAndNoTrustStore_usesConscryptTrustManager()
+      throws Exception {
+    KeyStore serverKeyStore = KeyStore.getInstance("JKS");
+    try (InputStream ksStream = getClass().getResourceAsStream("/localhost-keystore.jks")) {
+      serverKeyStore.load(ksStream, "changeit".toCharArray());
+    }
+    KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+    kmf.init(serverKeyStore, "changeit".toCharArray());
+    SSLContext serverSslContext = SSLContext.getInstance("TLS");
+    serverSslContext.init(kmf.getKeyManagers(), null, null);
+
+    try (ServerSocket proxyServer = new ServerSocket(0, 1, InetAddress.getLoopbackAddress())) {
+      Thread serverThread =
+          new Thread(
+              () -> {
+                try (Socket clientSocket = proxyServer.accept()) {
+                  BufferedReader reader =
+                      new BufferedReader(
+                          new InputStreamReader(
+                              clientSocket.getInputStream(), StandardCharsets.US_ASCII));
+                  String line;
+                  while ((line = reader.readLine()) != null && !line.isEmpty()) {
+                    // Read HTTP CONNECT request headers
+                  }
+                  OutputStream out = clientSocket.getOutputStream();
+                  out.write(
+                      "HTTP/1.1 200 Connection Established\r\n\r\n"
+                          .getBytes(StandardCharsets.US_ASCII));
+                  out.flush();
+
+                  try (SSLSocket sslSocket =
+                      (SSLSocket)
+                          serverSslContext
+                              .getSocketFactory()
+                              .createSocket(
+                                  clientSocket,
+                                  clientSocket.getInetAddress().getHostAddress(),
+                                  clientSocket.getPort(),
+                                  true)) {
+                    sslSocket.setUseClientMode(false);
+                    sslSocket.startHandshake();
+                  }
+                } catch (IOException ignored) {
+                  // Expected when client rejects self-signed server cert
+                }
+              });
+      serverThread.setDaemon(true);
+      serverThread.start();
+
+      Map<String, String> proxyProperties = new HashMap<>();
+      proxyProperties.put(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME, "127.0.0.1");
+      proxyProperties.put(
+          BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME,
+          String.valueOf(proxyServer.getLocalPort()));
+
+      HttpTransportOptions options =
+          BigQueryJdbcProxyUtility.getHttpTransportOptions(
+              proxyProperties, null, null, null, null, null, null, "TestClass");
+      HttpTransport transport = options.getHttpTransportFactory().create();
+
+      SSLHandshakeException ex =
+          assertThrows(
+              SSLHandshakeException.class,
+              () ->
+                  transport
+                      .createRequestFactory()
+                      .buildGetRequest(new GenericUrl("https://localhost:8443/"))
+                      .execute());
+
+      // Conscrypt's TrustManagerImpl reports "Trust anchor for certification path not found",
+      // whereas falling back to JDK's SunJSSE X509TrustManagerImpl reports "PKIX path building
+      // failed" (and fails TLS 1.3 handshakes with "Unknown authType: GENERIC").
+      assertThat(ex.getMessage()).contains("Trust anchor for certification path not found");
+    }
   }
 }
