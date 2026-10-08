@@ -61,7 +61,7 @@ public interface BatchWithdrawChildPublishersRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -78,7 +78,7 @@ public interface BatchWithdrawChildPublishersRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface BatchWithdrawChildPublishersRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -113,7 +113,7 @@ public interface BatchWithdrawChildPublishersRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *

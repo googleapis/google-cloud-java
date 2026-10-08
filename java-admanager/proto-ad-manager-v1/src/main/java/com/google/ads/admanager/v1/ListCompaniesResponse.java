@@ -24,9 +24,8 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for
- * [ListCompaniesRequest][google.ads.admanager.v1.ListCompaniesRequest]
- * containing matching [Company][google.ads.admanager.v1.Company] objects.
+ * Response object for `ListCompaniesRequest` containing matching
+ * [Company][google.ads.admanager.v1.Company] objects.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ListCompaniesResponse}
@@ -422,9 +421,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response object for
-   * [ListCompaniesRequest][google.ads.admanager.v1.ListCompaniesRequest]
-   * containing matching [Company][google.ads.admanager.v1.Company] objects.
+   * Response object for `ListCompaniesRequest` containing matching
+   * [Company][google.ads.admanager.v1.Company] objects.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ListCompaniesResponse}

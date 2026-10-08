@@ -336,7 +336,7 @@ public interface AppConnectionOrBuilder
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -350,7 +350,7 @@ public interface AppConnectionOrBuilder
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -364,7 +364,7 @@ public interface AppConnectionOrBuilder
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -379,7 +379,7 @@ public interface AppConnectionOrBuilder
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -462,4 +462,56 @@ public interface AppConnectionOrBuilder
    */
   com.google.cloud.beyondcorp.appconnections.v1.AppConnection.GatewayOrBuilder
       getGatewayOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 }

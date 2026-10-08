@@ -72,6 +72,30 @@ public final class AdReviewCenterAdServiceProto extends com.google.protobuf.Gene
       internal_static_google_ads_admanager_v1_BatchAdReviewCenterAdsOperationMetadata_FailedRequestsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_BatchAdReviewCenterAdsOperationMetadata_FailedRequestsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_CustomLabel_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_CustomLabel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_BatchLabelAction_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_BatchLabelAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -81,79 +105,121 @@ public final class AdReviewCenterAdServiceProto extends com.google.protobuf.Gene
 
   static {
     java.lang.String[] descriptorData = {
-      "\n9google/ads/admanager/v1/ad_review_cent"
-          + "er_ad_service.proto\022\027google.ads.admanage"
-          + "r.v1\0327google/ads/admanager/v1/ad_review_"
-          + "center_ad_enums.proto\032:google/ads/admana"
+      "\n"
+          + "9google/ads/admanager/v1/ad_review_center_ad_service.proto\022\027google.ads.admanage"
+          + "r.v1\0327google/ads/admanager/v1/ad_review_center_ad_enums.proto\032:google/ads/admana"
           + "ger/v1/ad_review_center_ad_messages.prot"
           + "o\032\034google/api/annotations.proto\032\027google/"
           + "api/client.proto\032\037google/api/field_behav"
           + "ior.proto\032\031google/api/resource.proto\032#go"
           + "ogle/longrunning/operations.proto\032\027googl"
-          + "e/rpc/status.proto\032\032google/type/interval"
-          + ".proto\"\226\004\n\036SearchAdReviewCenterAdsReques"
-          + "t\022a\n\006status\030\004 \001(\0162J.google.ads.admanager"
-          + ".v1.AdReviewCenterAdStatusEnum.AdReviewC"
-          + "enterAdStatusB\003\340A\001H\000\022{\n\024manual_review_st"
-          + "atus\030\t \001(\0162V.google.ads.admanager.v1.Man"
-          + "ualAdReviewCenterAdStatusEnum.ManualAdRe"
-          + "viewCenterAdStatusB\003\340A\001H\000\022<\n\006parent\030\001 \001("
-          + "\tB,\340A\002\372A&\n$admanager.googleapis.com/WebP"
-          + "roperty\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_"
-          + "token\030\003 \001(\tB\003\340A\001\022#\n\026ad_review_center_ad_"
-          + "id\030\005 \003(\tB\003\340A\001\0223\n\017date_time_range\030\006 \001(\0132\025"
-          + ".google.type.IntervalB\003\340A\001\022\030\n\013search_tex"
-          + "t\030\007 \003(\tB\003\340A\001\022\035\n\020buyer_account_id\030\010 \003(\003B\003"
-          + "\340A\001B\022\n\020ad_review_status\"\203\001\n\037SearchAdRevi"
-          + "ewCenterAdsResponse\022G\n\024ad_review_center_"
-          + "ads\030\001 \003(\0132).google.ads.admanager.v1.AdRe"
-          + "viewCenterAd\022\027\n\017next_page_token\030\002 \001(\t\"\244\001"
-          + "\n\"BatchAllowAdReviewCenterAdsRequest\022<\n\006"
-          + "parent\030\001 \001(\tB,\340A\002\372A&\n$admanager.googleap"
-          + "is.com/WebProperty\022@\n\005names\030\002 \003(\tB1\340A\002\372A"
-          + "+\n)admanager.googleapis.com/AdReviewCent"
-          + "erAd\"%\n#BatchAllowAdReviewCenterAdsRespo"
-          + "nse\"\244\001\n\"BatchBlockAdReviewCenterAdsReque"
-          + "st\022<\n\006parent\030\001 \001(\tB,\340A\002\372A&\n$admanager.go"
-          + "ogleapis.com/WebProperty\022@\n\005names\030\002 \003(\tB"
-          + "1\340A\002\372A+\n)admanager.googleapis.com/AdRevi"
-          + "ewCenterAd\"%\n#BatchBlockAdReviewCenterAd"
-          + "sResponse\"\343\001\n\'BatchAdReviewCenterAdsOper"
-          + "ationMetadata\022m\n\017failed_requests\030\001 \003(\0132T"
-          + ".google.ads.admanager.v1.BatchAdReviewCe"
-          + "nterAdsOperationMetadata.FailedRequestsE"
-          + "ntry\032I\n\023FailedRequestsEntry\022\013\n\003key\030\001 \001(\005"
-          + "\022!\n\005value\030\002 \001(\0132\022.google.rpc.Status:\0028\0012"
-          + "\307\007\n\027AdReviewCenterAdService\022\337\001\n\027SearchAd"
-          + "ReviewCenterAds\0227.google.ads.admanager.v"
-          + "1.SearchAdReviewCenterAdsRequest\0328.googl"
-          + "e.ads.admanager.v1.SearchAdReviewCenterA"
-          + "dsResponse\"Q\332A\006parent\202\323\344\223\002B\022@/v1/{parent"
-          + "=networks/*/webProperties/*}/adReviewCen"
-          + "terAds:search\022\245\002\n\033BatchAllowAdReviewCent"
-          + "erAds\022;.google.ads.admanager.v1.BatchAll"
-          + "owAdReviewCenterAdsRequest\032\035.google.long"
-          + "running.Operation\"\251\001\312AN\n#BatchAllowAdRev"
-          + "iewCenterAdsResponse\022\'BatchAdReviewCente"
-          + "rAdsOperationMetadata\332A\006parent\202\323\344\223\002I\"D/v"
-          + "1/{parent=networks/*/webProperties/*}/ad"
-          + "ReviewCenterAds:batchAllow:\001*\022\245\002\n\033BatchB"
-          + "lockAdReviewCenterAds\022;.google.ads.adman"
-          + "ager.v1.BatchBlockAdReviewCenterAdsReque"
-          + "st\032\035.google.longrunning.Operation\"\251\001\312AN\n"
-          + "#BatchBlockAdReviewCenterAdsResponse\022\'Ba"
-          + "tchAdReviewCenterAdsOperationMetadata\332A\006"
-          + "parent\202\323\344\223\002I\"D/v1/{parent=networks/*/web"
-          + "Properties/*}/adReviewCenterAds:batchBlo"
-          + "ck:\001*\032z\312A\030admanager.googleapis.com\322A\\htt"
-          + "ps://www.googleapis.com/auth/admanager,h"
-          + "ttps://www.googleapis.com/auth/admanager"
-          + ".readonlyB\320\001\n\033com.google.ads.admanager.v"
-          + "1B\034AdReviewCenterAdServiceProtoP\001Z@googl"
-          + "e.golang.org/genproto/googleapis/ads/adm"
-          + "anager/v1;admanager\252\002\027Google.Ads.AdManag"
-          + "er.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google"
-          + "::Ads::AdManager::V1b\006proto3"
+          + "e/rpc/status.proto\032\032google/type/interval.proto\"\372\006\n"
+          + "\036SearchAdReviewCenterAdsRequest\022a\n"
+          + "\006status\030\004 \001(\0162J.google.ads.admanager"
+          + ".v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatusB\003\340A\001H\000\022{\n"
+          + "\024manual_review_status\030\t \001(\0162V.google.ads.admanager.v1.Man"
+          + "ualAdReviewCenterAdStatusEnum.ManualAdReviewCenterAdStatusB\003\340A\001H\000\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/WebProperty\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022#\n"
+          + "\026ad_review_center_ad_id\030\005 \003(\tB\003\340A\001\0223\n"
+          + "\017date_time_range\030\006"
+          + " \001(\0132\025.google.type.IntervalB\003\340A\001\022\030\n"
+          + "\013search_text\030\007 \003(\tB\003\340A\001\022\035\n"
+          + "\020buyer_account_id\030\010 \003(\003B\003\340A\001\022\033\n"
+          + "\016ad_response_id\030\n"
+          + " \003(\tB\003\340A\001\022%\n"
+          + "\030advertiser_display_names\030\013 \003(\tB\003\340A\001\022\033\n"
+          + "\016language_codes\030\014 \003(\tB\003\340A\001\022\031\n"
+          + "\014region_codes\030\r"
+          + " \003(\tB\003\340A\001\022W\n"
+          + "\010ad_types\030\016 \003(\0162@.google.ads.a"
+          + "dmanager.v1.ArcCreativeFormatEnum.ArcCreativeFormatB\003\340A\001\022\034\n"
+          + "\017advertiser_apps\030\017 \003(\tB\003\340A\001\022\036\n"
+          + "\021publisher_domains\030\020 \003(\tB\003\340A\001\022\"\n"
+          + "\020new_in_last_days\030\021 \001(\005B\003\340A\001H\001\210\001\001\022\026\n"
+          + "\tlabel_ids\030\022 \003(\tB\003\340A\001B\022\n"
+          + "\020ad_review_statusB\023\n"
+          + "\021_new_in_last_days\"\203\001\n"
+          + "\037SearchAdReviewCenterAdsResponse\022G\n"
+          + "\024ad_review_center_ads\030\001"
+          + " \003(\0132).google.ads.admanager.v1.AdReviewCenterAd\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\244\001\n"
+          + "\"BatchAllowAdReviewCenterAdsRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/WebProperty\022@\n"
+          + "\005names\030\002 \003(\tB1\340A\002\372A+\n"
+          + ")admanager.googleapis.com/AdReviewCenterAd\"%\n"
+          + "#BatchAllowAdReviewCenterAdsResponse\"\244\001\n"
+          + "\"BatchBlockAdReviewCenterAdsRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/WebProperty\022@\n"
+          + "\005names\030\002 \003(\tB1\340A\002\372A+\n"
+          + ")admanager.googleapis.com/AdReviewCenterAd\"%\n"
+          + "#BatchBlockAdReviewCenterAdsResponse\"\343\001\n"
+          + "\'BatchAdReviewCenterAdsOperationMetadata\022m\n"
+          + "\017failed_requests\030\001 \003(\0132T.google.ads.admanager.v1.BatchAdReviewCenter"
+          + "AdsOperationMetadata.FailedRequestsEntry\032I\n"
+          + "\023FailedRequestsEntry\022\013\n"
+          + "\003key\030\001 \001(\005\022!\n"
+          + "\005value\030\002 \001(\0132\022.google.rpc.Status:\0028\001\"f\n"
+          + "&FetchAdReviewCenterCustomLabelsRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/WebProperty\"\324\001\n"
+          + "\'FetchAdReviewCenterCustomLabelsResponse\022h\n\r"
+          + "custom_labels\030\001 \003(\0132L.google.ads.admanager.v1.FetchAd"
+          + "ReviewCenterCustomLabelsResponse.CustomLabelB\003\340A\003\032?\n"
+          + "\013CustomLabel\022\025\n"
+          + "\010label_id\030\001 \001(\tB\003\340A\003\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\003\"\347\003\n"
+          + "+BatchApplyAdReviewCenterCustomLabelsRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$admanager.googleapis.com/WebProperty\022s\n\n"
+          + "add_labels\030\002 \001(\0132U.google.ads.admanager.v1.BatchAppl"
+          + "yAdReviewCenterCustomLabelsRequest.BatchLabelActionB\003\340A\001H\000\210\001\001\022v\n\r"
+          + "remove_labels\030\003 \001(\0132U.google.ads.admanager.v1.BatchAppl"
+          + "yAdReviewCenterCustomLabelsRequest.BatchLabelActionB\003\340A\001H\001\210\001\001\032l\n"
+          + "\020BatchLabelAction\022@\n"
+          + "\005names\030\001 \003(\tB1\340A\002\372A+\n"
+          + ")admanager.googleapis.com/AdReviewCenterAd\022\026\n"
+          + "\tlabel_ids\030\002 \003(\tB\003\340A\002B\r\n"
+          + "\013_add_labelsB\020\n"
+          + "\016_remove_labels\".\n"
+          + ",BatchApplyAdReviewCenterCustomLabelsResponse2\350\013\n"
+          + "\027AdReviewCenterAdService\022\337\001\n"
+          + "\027SearchAdReviewCenterAds\0227.google.ads.admanager.v1.SearchAdReviewCenterAdsRe"
+          + "quest\0328.google.ads.admanager.v1.SearchAd"
+          + "ReviewCenterAdsResponse\"Q\332A\006parent\202\323\344\223\002B"
+          + "\022@/v1/{parent=networks/*/webProperties/*}/adReviewCenterAds:search\022\245\002\n"
+          + "\033BatchAllowAdReviewCenterAds\022;.google.ads.admanage"
+          + "r.v1.BatchAllowAdReviewCenterAdsRequest\032\035.google.longrunning.Operation\"\251\001\312AN\n"
+          + "#BatchAllowAdReviewCenterAdsResponse\022\'Batch"
+          + "AdReviewCenterAdsOperationMetadata\332A\006par"
+          + "ent\202\323\344\223\002I\"D/v1/{parent=networks/*/webPro"
+          + "perties/*}/adReviewCenterAds:batchAllow:\001*\022\245\002\n"
+          + "\033BatchBlockAdReviewCenterAds\022;.google.ads.admanager.v1.BatchBlockAdReviewC"
+          + "enterAdsRequest\032\035.google.longrunning.Operation\"\251\001\312AN\n"
+          + "#BatchBlockAdReviewCenterAdsResponse\022\'BatchAdReviewCenterAdsOperati"
+          + "onMetadata\332A\006parent\202\323\344\223\002I\"D/v1/{parent=n"
+          + "etworks/*/webProperties/*}/adReviewCenterAds:batchBlock:\001*\022\202\002\n"
+          + "\037FetchAdReviewCenterCustomLabels\022?.google.ads.admanager.v1"
+          + ".FetchAdReviewCenterCustomLabelsRequest\032@.google.ads.admanager.v1.FetchAdReviewC"
+          + "enterCustomLabelsResponse\"\\\332A\006parent\202\323\344\223"
+          + "\002M\022K/v1/{parent=networks/*/webProperties"
+          + "/*}/adReviewCenterAds:fetchCustomLabels\022\231\002\n"
+          + "$BatchApplyAdReviewCenterCustomLabels\022D.google.ads.admanager.v1.BatchApplyAdR"
+          + "eviewCenterCustomLabelsRequest\032E.google.ads.admanager.v1.BatchApplyAdReviewCente"
+          + "rCustomLabelsResponse\"d\332A\006parent\202\323\344\223\002U\"P"
+          + "/v1/{parent=networks/*/webProperties/*}/adReviewCenterAds:batchApplyCustomLabels"
+          + ":\001*\032z\312A\030admanager.googleapis.com\322A\\https"
+          + "://www.googleapis.com/auth/admanager,htt"
+          + "ps://www.googleapis.com/auth/admanager.readonlyB\320\001\n"
+          + "\033com.google.ads.admanager.v1B\034AdReviewCenterAdServiceProtoP\001Z@google."
+          + "golang.org/genproto/googleapis/ads/adman"
+          + "ager/v1;admanager\252\002\027Google.Ads.AdManager"
+          + ".V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::"
+          + "Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,6 +250,15 @@ public final class AdReviewCenterAdServiceProto extends com.google.protobuf.Gene
               "DateTimeRange",
               "SearchText",
               "BuyerAccountId",
+              "AdResponseId",
+              "AdvertiserDisplayNames",
+              "LanguageCodes",
+              "RegionCodes",
+              "AdTypes",
+              "AdvertiserApps",
+              "PublisherDomains",
+              "NewInLastDays",
+              "LabelIds",
               "AdReviewStatus",
             });
     internal_static_google_ads_admanager_v1_SearchAdReviewCenterAdsResponse_descriptor =
@@ -239,6 +314,54 @@ public final class AdReviewCenterAdServiceProto extends com.google.protobuf.Gene
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent",
+            });
+    internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_descriptor,
+            new java.lang.String[] {
+              "CustomLabels",
+            });
+    internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_CustomLabel_descriptor =
+        internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_descriptor
+            .getNestedType(0);
+    internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_CustomLabel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_FetchAdReviewCenterCustomLabelsResponse_CustomLabel_descriptor,
+            new java.lang.String[] {
+              "LabelId", "DisplayName",
+            });
+    internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "AddLabels", "RemoveLabels",
+            });
+    internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_BatchLabelAction_descriptor =
+        internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_BatchLabelAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsRequest_BatchLabelAction_descriptor,
+            new java.lang.String[] {
+              "Names", "LabelIds",
+            });
+    internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsResponse_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApplyAdReviewCenterCustomLabelsResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.AdReviewCenterAdEnumsProto.getDescriptor();
     com.google.ads.admanager.v1.AdReviewCenterAdMessagesProto.getDescriptor();

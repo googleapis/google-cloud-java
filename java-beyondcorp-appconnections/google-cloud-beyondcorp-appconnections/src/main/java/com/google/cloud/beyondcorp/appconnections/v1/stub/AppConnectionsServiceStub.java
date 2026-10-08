@@ -54,8 +54,11 @@ import org.jspecify.annotations.Nullable;
  * Base stub class for the AppConnectionsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class AppConnectionsServiceStub implements BackgroundResource {
 
@@ -63,20 +66,24 @@ public abstract class AppConnectionsServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAppConnectionsRequest, ListAppConnectionsPagedResponse>
       listAppConnectionsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAppConnectionsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAppConnectionsRequest, ListAppConnectionsResponse>
       listAppConnectionsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAppConnectionsCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAppConnectionRequest, AppConnection> getAppConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: getAppConnectionCallable()");
   }
 
+  @Deprecated
   public OperationCallable<
           CreateAppConnectionRequest, AppConnection, AppConnectionOperationMetadata>
       createAppConnectionOperationCallable() {
@@ -84,10 +91,12 @@ public abstract class AppConnectionsServiceStub implements BackgroundResource {
         "Not implemented: createAppConnectionOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateAppConnectionRequest, Operation> createAppConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: createAppConnectionCallable()");
   }
 
+  @Deprecated
   public OperationCallable<
           UpdateAppConnectionRequest, AppConnection, AppConnectionOperationMetadata>
       updateAppConnectionOperationCallable() {
@@ -95,26 +104,31 @@ public abstract class AppConnectionsServiceStub implements BackgroundResource {
         "Not implemented: updateAppConnectionOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<UpdateAppConnectionRequest, Operation> updateAppConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAppConnectionCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DeleteAppConnectionRequest, Empty, AppConnectionOperationMetadata>
       deleteAppConnectionOperationCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: deleteAppConnectionOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteAppConnectionRequest, Operation> deleteAppConnectionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAppConnectionCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ResolveAppConnectionsRequest, ResolveAppConnectionsPagedResponse>
       resolveAppConnectionsPagedCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: resolveAppConnectionsPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ResolveAppConnectionsRequest, ResolveAppConnectionsResponse>
       resolveAppConnectionsCallable() {
     throw new UnsupportedOperationException("Not implemented: resolveAppConnectionsCallable()");

@@ -135,7 +135,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetDefaultThirdPartyDataDeclaration</td>
- *      <td><p> Returns the [DefaultThirdPartyDataDeclaration] for this network.</td>
+ *      <td><p> Returns the [DefaultThirdPartyDataDeclaration][google.ads.admanager.v1.DefaultThirdPartyDataDeclaration] for this network.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -616,7 +616,9 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   * Returns the
+   * [DefaultThirdPartyDataDeclaration][google.ads.admanager.v1.DefaultThirdPartyDataDeclaration]
+   * for this network.
    *
    * <p>Sample code:
    *
@@ -649,7 +651,9 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   * Returns the
+   * [DefaultThirdPartyDataDeclaration][google.ads.admanager.v1.DefaultThirdPartyDataDeclaration]
+   * for this network.
    *
    * <p>Sample code:
    *
@@ -678,7 +682,9 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   * Returns the
+   * [DefaultThirdPartyDataDeclaration][google.ads.admanager.v1.DefaultThirdPartyDataDeclaration]
+   * for this network.
    *
    * <p>Sample code:
    *
@@ -708,7 +714,9 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   * Returns the
+   * [DefaultThirdPartyDataDeclaration][google.ads.admanager.v1.DefaultThirdPartyDataDeclaration]
+   * for this network.
    *
    * <p>Sample code:
    *

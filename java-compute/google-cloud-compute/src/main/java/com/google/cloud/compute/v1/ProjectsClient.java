@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Projects API.
  *
+ * <p>This client uses Projects version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1149,7 +1151,6 @@ public class ProjectsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (XpnResourceId element : projectsClient.getXpnResources(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1185,7 +1186,6 @@ public class ProjectsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<XpnResourceId> future =
    *       projectsClient.getXpnResourcesPagedCallable().futureCall(request);
@@ -1221,7 +1221,6 @@ public class ProjectsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ProjectsGetXpnResources response = projectsClient.getXpnResourcesCallable().call(request);
@@ -1302,7 +1301,6 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setProjectsListXpnHostsRequestResource(
    *               ProjectsListXpnHostsRequest.newBuilder().build())
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Project element : projectsClient.listXpnHosts(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1339,7 +1337,6 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setProjectsListXpnHostsRequestResource(
    *               ProjectsListXpnHostsRequest.newBuilder().build())
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Project> future = projectsClient.listXpnHostsPagedCallable().futureCall(request);
    *   // Do something.
@@ -1376,7 +1373,6 @@ public class ProjectsClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setProjectsListXpnHostsRequestResource(
    *               ProjectsListXpnHostsRequest.newBuilder().build())
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     XpnHostList response = projectsClient.listXpnHostsCallable().call(request);

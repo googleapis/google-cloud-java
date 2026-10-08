@@ -31,10 +31,13 @@ import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchUpdateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchUpdateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.CreateAudienceSegmentRequest;
 import com.google.ads.admanager.v1.GetAudienceSegmentRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.UpdateAudienceSegmentRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -73,6 +76,17 @@ public abstract class AudienceSegmentServiceStub implements BackgroundResource {
       batchCreateAudienceSegmentsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: batchCreateAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<UpdateAudienceSegmentRequest, AudienceSegment>
+      updateAudienceSegmentCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAudienceSegmentCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+      batchUpdateAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchUpdateAudienceSegmentsCallable()");
   }
 
   public UnaryCallable<BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>

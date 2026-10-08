@@ -411,6 +411,86 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
        * @return The enableStreamingSynthesize.
        */
       boolean getEnableStreamingSynthesize();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for using Gemini ASR models served via Vertex
+       * AI.
+       * This field is only used when `use_gemini_asr` is true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the geminiAsrConfig field is set.
+       */
+      boolean hasGeminiAsrConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for using Gemini ASR models served via Vertex
+       * AI.
+       * This field is only used when `use_gemini_asr` is true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The geminiAsrConfig.
+       */
+      com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for using Gemini ASR models served via Vertex
+       * AI.
+       * This field is only used when `use_gemini_asr` is true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+          getGeminiAsrConfigOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, Gemini ASR will be used for transcription instead of
+       * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+       * If unset, this setting is inherited from the ConversationProfile.
+       * </pre>
+       *
+       * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the useGeminiAsr field is set.
+       */
+      boolean hasUseGeminiAsr();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, Gemini ASR will be used for transcription instead of
+       * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+       * If unset, this setting is inherited from the ConversationProfile.
+       * </pre>
+       *
+       * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The useGeminiAsr.
+       */
+      boolean getUseGeminiAsr();
     }
 
     /**
@@ -466,6 +546,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
                     .VoiceSessionConfig.Builder.class);
       }
 
+      private int bitField0_;
       public static final int INPUT_AUDIO_ENCODING_FIELD_NUMBER = 1;
       private int inputAudioEncoding_ = 0;
 
@@ -633,6 +714,115 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         return enableStreamingSynthesize_;
       }
 
+      public static final int GEMINI_ASR_CONFIG_FIELD_NUMBER = 24;
+      private com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+          geminiAsrConfig_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for using Gemini ASR models served via Vertex
+       * AI.
+       * This field is only used when `use_gemini_asr` is true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the geminiAsrConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasGeminiAsrConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for using Gemini ASR models served via Vertex
+       * AI.
+       * This field is only used when `use_gemini_asr` is true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The geminiAsrConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+          getGeminiAsrConfig() {
+        return geminiAsrConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+                .getDefaultInstance()
+            : geminiAsrConfig_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for using Gemini ASR models served via Vertex
+       * AI.
+       * This field is only used when `use_gemini_asr` is true.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+          getGeminiAsrConfigOrBuilder() {
+        return geminiAsrConfig_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+                .getDefaultInstance()
+            : geminiAsrConfig_;
+      }
+
+      public static final int USE_GEMINI_ASR_FIELD_NUMBER = 25;
+      private boolean useGeminiAsr_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, Gemini ASR will be used for transcription instead of
+       * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+       * If unset, this setting is inherited from the ConversationProfile.
+       * </pre>
+       *
+       * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the useGeminiAsr field is set.
+       */
+      @java.lang.Override
+      public boolean hasUseGeminiAsr() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, Gemini ASR will be used for transcription instead of
+       * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+       * If unset, this setting is inherited from the ConversationProfile.
+       * </pre>
+       *
+       * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The useGeminiAsr.
+       */
+      @java.lang.Override
+      public boolean getUseGeminiAsr() {
+        return useGeminiAsr_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -669,6 +859,12 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         }
         if (enableStreamingSynthesize_ != false) {
           output.writeBool(23, enableStreamingSynthesize_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(24, getGeminiAsrConfig());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeBool(25, useGeminiAsr_);
         }
         getUnknownFields().writeTo(output);
       }
@@ -708,6 +904,13 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           size +=
               com.google.protobuf.CodedOutputStream.computeBoolSize(23, enableStreamingSynthesize_);
         }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(24, getGeminiAsrConfig());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, useGeminiAsr_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -738,6 +941,14 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         if (getEnableCxProactiveProcessing() != other.getEnableCxProactiveProcessing())
           return false;
         if (getEnableStreamingSynthesize() != other.getEnableStreamingSynthesize()) return false;
+        if (hasGeminiAsrConfig() != other.hasGeminiAsrConfig()) return false;
+        if (hasGeminiAsrConfig()) {
+          if (!getGeminiAsrConfig().equals(other.getGeminiAsrConfig())) return false;
+        }
+        if (hasUseGeminiAsr() != other.hasUseGeminiAsr()) return false;
+        if (hasUseGeminiAsr()) {
+          if (getUseGeminiAsr() != other.getUseGeminiAsr()) return false;
+        }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -764,6 +975,14 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         hash = (37 * hash) + ENABLE_STREAMING_SYNTHESIZE_FIELD_NUMBER;
         hash =
             (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStreamingSynthesize());
+        if (hasGeminiAsrConfig()) {
+          hash = (37 * hash) + GEMINI_ASR_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getGeminiAsrConfig().hashCode();
+        }
+        if (hasUseGeminiAsr()) {
+          hash = (37 * hash) + USE_GEMINI_ASR_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseGeminiAsr());
+        }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -924,10 +1143,19 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
 
         // Construct using
         // com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest.Config.VoiceSessionConfig.newBuilder()
-        private Builder() {}
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
 
         private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetGeminiAsrConfigFieldBuilder();
+          }
         }
 
         @java.lang.Override
@@ -940,6 +1168,12 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           outputAudioSampleRateHertz_ = 0;
           enableCxProactiveProcessing_ = false;
           enableStreamingSynthesize_ = false;
+          geminiAsrConfig_ = null;
+          if (geminiAsrConfigBuilder_ != null) {
+            geminiAsrConfigBuilder_.dispose();
+            geminiAsrConfigBuilder_ = null;
+          }
+          useGeminiAsr_ = false;
           return this;
         }
 
@@ -1009,6 +1243,19 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           if (((from_bitField0_ & 0x00000020) != 0)) {
             result.enableStreamingSynthesize_ = enableStreamingSynthesize_;
           }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.geminiAsrConfig_ =
+                geminiAsrConfigBuilder_ == null
+                    ? geminiAsrConfig_
+                    : geminiAsrConfigBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000080) != 0)) {
+            result.useGeminiAsr_ = useGeminiAsr_;
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -1051,6 +1298,12 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           }
           if (other.getEnableStreamingSynthesize() != false) {
             setEnableStreamingSynthesize(other.getEnableStreamingSynthesize());
+          }
+          if (other.hasGeminiAsrConfig()) {
+            mergeGeminiAsrConfig(other.getGeminiAsrConfig());
+          }
+          if (other.hasUseGeminiAsr()) {
+            setUseGeminiAsr(other.getUseGeminiAsr());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -1114,6 +1367,19 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
                     bitField0_ |= 0x00000020;
                     break;
                   } // case 184
+                case 194:
+                  {
+                    input.readMessage(
+                        internalGetGeminiAsrConfigFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 194
+                case 200:
+                  {
+                    useGeminiAsr_ = input.readBool();
+                    bitField0_ |= 0x00000080;
+                    break;
+                  } // case 200
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1585,6 +1851,329 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         public Builder clearEnableStreamingSynthesize() {
           bitField0_ = (bitField0_ & ~0x00000020);
           enableStreamingSynthesize_ = false;
+          onChanged();
+          return this;
+        }
+
+        private com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+            geminiAsrConfig_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig,
+                com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig.Builder,
+                com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfigOrBuilder>
+            geminiAsrConfigBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the geminiAsrConfig field is set.
+         */
+        public boolean hasGeminiAsrConfig() {
+          return ((bitField0_ & 0x00000040) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The geminiAsrConfig.
+         */
+        public com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+            getGeminiAsrConfig() {
+          if (geminiAsrConfigBuilder_ == null) {
+            return geminiAsrConfig_ == null
+                ? com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+                    .getDefaultInstance()
+                : geminiAsrConfig_;
+          } else {
+            return geminiAsrConfigBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setGeminiAsrConfig(
+            com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig value) {
+          if (geminiAsrConfigBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            geminiAsrConfig_ = value;
+          } else {
+            geminiAsrConfigBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setGeminiAsrConfig(
+            com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig.Builder
+                builderForValue) {
+          if (geminiAsrConfigBuilder_ == null) {
+            geminiAsrConfig_ = builderForValue.build();
+          } else {
+            geminiAsrConfigBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeGeminiAsrConfig(
+            com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig value) {
+          if (geminiAsrConfigBuilder_ == null) {
+            if (((bitField0_ & 0x00000040) != 0)
+                && geminiAsrConfig_ != null
+                && geminiAsrConfig_
+                    != com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+                        .getDefaultInstance()) {
+              getGeminiAsrConfigBuilder().mergeFrom(value);
+            } else {
+              geminiAsrConfig_ = value;
+            }
+          } else {
+            geminiAsrConfigBuilder_.mergeFrom(value);
+          }
+          if (geminiAsrConfig_ != null) {
+            bitField0_ |= 0x00000040;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearGeminiAsrConfig() {
+          bitField0_ = (bitField0_ & ~0x00000040);
+          geminiAsrConfig_ = null;
+          if (geminiAsrConfigBuilder_ != null) {
+            geminiAsrConfigBuilder_.dispose();
+            geminiAsrConfigBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig.Builder
+            getGeminiAsrConfigBuilder() {
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return internalGetGeminiAsrConfigFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+            getGeminiAsrConfigOrBuilder() {
+          if (geminiAsrConfigBuilder_ != null) {
+            return geminiAsrConfigBuilder_.getMessageOrBuilder();
+          } else {
+            return geminiAsrConfig_ == null
+                ? com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig
+                    .getDefaultInstance()
+                : geminiAsrConfig_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Configuration for using Gemini ASR models served via Vertex
+         * AI.
+         * This field is only used when `use_gemini_asr` is true.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 24 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig,
+                com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig.Builder,
+                com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfigOrBuilder>
+            internalGetGeminiAsrConfigFieldBuilder() {
+          if (geminiAsrConfigBuilder_ == null) {
+            geminiAsrConfigBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig,
+                    com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfig.Builder,
+                    com.google.cloud.dialogflow.v2beta1.SpeechToTextConfig
+                        .GeminiAsrConfigOrBuilder>(
+                    getGeminiAsrConfig(), getParentForChildren(), isClean());
+            geminiAsrConfig_ = null;
+          }
+          return geminiAsrConfigBuilder_;
+        }
+
+        private boolean useGeminiAsr_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, Gemini ASR will be used for transcription instead of
+         * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+         * If unset, this setting is inherited from the ConversationProfile.
+         * </pre>
+         *
+         * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the useGeminiAsr field is set.
+         */
+        @java.lang.Override
+        public boolean hasUseGeminiAsr() {
+          return ((bitField0_ & 0x00000080) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, Gemini ASR will be used for transcription instead of
+         * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+         * If unset, this setting is inherited from the ConversationProfile.
+         * </pre>
+         *
+         * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The useGeminiAsr.
+         */
+        @java.lang.Override
+        public boolean getUseGeminiAsr() {
+          return useGeminiAsr_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, Gemini ASR will be used for transcription instead of
+         * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+         * If unset, this setting is inherited from the ConversationProfile.
+         * </pre>
+         *
+         * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The useGeminiAsr to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUseGeminiAsr(boolean value) {
+
+          useGeminiAsr_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, Gemini ASR will be used for transcription instead of
+         * Cloud Speech-to-Text. If false, Cloud Speech-to-Text will be used.
+         * If unset, this setting is inherited from the ConversationProfile.
+         * </pre>
+         *
+         * <code>optional bool use_gemini_asr = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUseGeminiAsr() {
+          bitField0_ = (bitField0_ & ~0x00000080);
+          useGeminiAsr_ = false;
           onChanged();
           return this;
         }
@@ -3468,6 +4057,49 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
      *
      *
      * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the suggestionInput field is set.
+     */
+    boolean hasSuggestionInput();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The suggestionInput.
+     */
+    com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder getSuggestionInputOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Parameters to be passed to the virtual agent.
      * </pre>
      *
@@ -3574,6 +4206,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
       TEXT(1),
       INTENT(2),
       EVENT(3),
+      SUGGESTION_INPUT(6),
       MAINCONTENT_NOT_SET(0);
       private final int value;
 
@@ -3599,6 +4232,8 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
             return INTENT;
           case 3:
             return EVENT;
+          case 6:
+            return SUGGESTION_INPUT;
           case 0:
             return MAINCONTENT_NOT_SET;
           default:
@@ -3852,6 +4487,67 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
       }
     }
 
+    public static final int SUGGESTION_INPUT_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the suggestionInput field is set.
+     */
+    @java.lang.Override
+    public boolean hasSuggestionInput() {
+      return mainContentCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The suggestionInput.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput() {
+      if (mainContentCase_ == 6) {
+        return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input for confirming, revising, or canceling a suggestion.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder
+        getSuggestionInputOrBuilder() {
+      if (mainContentCase_ == 6) {
+        return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_;
+      }
+      return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+    }
+
     public static final int VIRTUAL_AGENT_PARAMETERS_FIELD_NUMBER = 4;
     private com.google.protobuf.Struct virtualAgentParameters_;
 
@@ -3937,6 +4633,9 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(4, getVirtualAgentParameters());
       }
+      if (mainContentCase_ == 6) {
+        output.writeMessage(6, (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3959,6 +4658,11 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, getVirtualAgentParameters());
+      }
+      if (mainContentCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3993,6 +4697,9 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         case 3:
           if (!getEvent().equals(other.getEvent())) return false;
           break;
+        case 6:
+          if (!getSuggestionInput().equals(other.getSuggestionInput())) return false;
+          break;
         case 0:
         default:
       }
@@ -4023,6 +4730,10 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         case 3:
           hash = (37 * hash) + EVENT_FIELD_NUMBER;
           hash = (53 * hash) + getEvent().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + SUGGESTION_INPUT_FIELD_NUMBER;
+          hash = (53 * hash) + getSuggestionInput().hashCode();
           break;
         case 0:
         default:
@@ -4188,6 +4899,9 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        if (suggestionInputBuilder_ != null) {
+          suggestionInputBuilder_.clear();
+        }
         virtualAgentParameters_ = null;
         if (virtualAgentParametersBuilder_ != null) {
           virtualAgentParametersBuilder_.dispose();
@@ -4240,7 +4954,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest.TurnInput result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.virtualAgentParameters_ =
               virtualAgentParametersBuilder_ == null
                   ? virtualAgentParameters_
@@ -4254,6 +4968,9 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           com.google.cloud.dialogflow.v2beta1.BidiStreamingAnalyzeContentRequest.TurnInput result) {
         result.mainContentCase_ = mainContentCase_;
         result.mainContent_ = this.mainContent_;
+        if (mainContentCase_ == 6 && suggestionInputBuilder_ != null) {
+          result.mainContent_ = suggestionInputBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4298,6 +5015,11 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
               mainContentCase_ = 3;
               mainContent_ = other.mainContent_;
               onChanged();
+              break;
+            }
+          case SUGGESTION_INPUT:
+            {
+              mergeSuggestionInput(other.getSuggestionInput());
               break;
             }
           case MAINCONTENT_NOT_SET:
@@ -4357,9 +5079,16 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
                   input.readMessage(
                       internalGetVirtualAgentParametersFieldBuilder().getBuilder(),
                       extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 34
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetSuggestionInputFieldBuilder().getBuilder(), extensionRegistry);
+                  mainContentCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4846,6 +5575,246 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         return this;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2beta1.SuggestionInput,
+              com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder,
+              com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder>
+          suggestionInputBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the suggestionInput field is set.
+       */
+      @java.lang.Override
+      public boolean hasSuggestionInput() {
+        return mainContentCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The suggestionInput.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.SuggestionInput getSuggestionInput() {
+        if (suggestionInputBuilder_ == null) {
+          if (mainContentCase_ == 6) {
+            return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+        } else {
+          if (mainContentCase_ == 6) {
+            return suggestionInputBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSuggestionInput(com.google.cloud.dialogflow.v2beta1.SuggestionInput value) {
+        if (suggestionInputBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mainContent_ = value;
+          onChanged();
+        } else {
+          suggestionInputBuilder_.setMessage(value);
+        }
+        mainContentCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSuggestionInput(
+          com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder builderForValue) {
+        if (suggestionInputBuilder_ == null) {
+          mainContent_ = builderForValue.build();
+          onChanged();
+        } else {
+          suggestionInputBuilder_.setMessage(builderForValue.build());
+        }
+        mainContentCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSuggestionInput(
+          com.google.cloud.dialogflow.v2beta1.SuggestionInput value) {
+        if (suggestionInputBuilder_ == null) {
+          if (mainContentCase_ == 6
+              && mainContent_
+                  != com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance()) {
+            mainContent_ =
+                com.google.cloud.dialogflow.v2beta1.SuggestionInput.newBuilder(
+                        (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            mainContent_ = value;
+          }
+          onChanged();
+        } else {
+          if (mainContentCase_ == 6) {
+            suggestionInputBuilder_.mergeFrom(value);
+          } else {
+            suggestionInputBuilder_.setMessage(value);
+          }
+        }
+        mainContentCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSuggestionInput() {
+        if (suggestionInputBuilder_ == null) {
+          if (mainContentCase_ == 6) {
+            mainContentCase_ = 0;
+            mainContent_ = null;
+            onChanged();
+          }
+        } else {
+          if (mainContentCase_ == 6) {
+            mainContentCase_ = 0;
+            mainContent_ = null;
+          }
+          suggestionInputBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder
+          getSuggestionInputBuilder() {
+        return internalGetSuggestionInputFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder
+          getSuggestionInputOrBuilder() {
+        if ((mainContentCase_ == 6) && (suggestionInputBuilder_ != null)) {
+          return suggestionInputBuilder_.getMessageOrBuilder();
+        } else {
+          if (mainContentCase_ == 6) {
+            return (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_;
+          }
+          return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Input for confirming, revising, or canceling a suggestion.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.SuggestionInput suggestion_input = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dialogflow.v2beta1.SuggestionInput,
+              com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder,
+              com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder>
+          internalGetSuggestionInputFieldBuilder() {
+        if (suggestionInputBuilder_ == null) {
+          if (!(mainContentCase_ == 6)) {
+            mainContent_ = com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDefaultInstance();
+          }
+          suggestionInputBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dialogflow.v2beta1.SuggestionInput,
+                  com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder,
+                  com.google.cloud.dialogflow.v2beta1.SuggestionInputOrBuilder>(
+                  (com.google.cloud.dialogflow.v2beta1.SuggestionInput) mainContent_,
+                  getParentForChildren(),
+                  isClean());
+          mainContent_ = null;
+        }
+        mainContentCase_ = 6;
+        onChanged();
+        return suggestionInputBuilder_;
+      }
+
       private com.google.protobuf.Struct virtualAgentParameters_;
       private com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Struct,
@@ -4867,7 +5836,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
        * @return Whether the virtualAgentParameters field is set.
        */
       public boolean hasVirtualAgentParameters() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
 
       /**
@@ -4913,7 +5882,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         } else {
           virtualAgentParametersBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4935,7 +5904,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
         } else {
           virtualAgentParametersBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -4953,7 +5922,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
        */
       public Builder mergeVirtualAgentParameters(com.google.protobuf.Struct value) {
         if (virtualAgentParametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && virtualAgentParameters_ != null
               && virtualAgentParameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
             getVirtualAgentParametersBuilder().mergeFrom(value);
@@ -4964,7 +5933,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
           virtualAgentParametersBuilder_.mergeFrom(value);
         }
         if (virtualAgentParameters_ != null) {
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
@@ -4982,7 +5951,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
        * </code>
        */
       public Builder clearVirtualAgentParameters() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         virtualAgentParameters_ = null;
         if (virtualAgentParametersBuilder_ != null) {
           virtualAgentParametersBuilder_.dispose();
@@ -5004,7 +5973,7 @@ public final class BidiStreamingAnalyzeContentRequest extends com.google.protobu
        * </code>
        */
       public com.google.protobuf.Struct.Builder getVirtualAgentParametersBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return internalGetVirtualAgentParametersFieldBuilder().getBuilder();
       }

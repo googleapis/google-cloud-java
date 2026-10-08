@@ -407,25 +407,4 @@ public interface NetworkProfileOrBuilder
    * @return The bytes for selfLinkWithId.
    */
   com.google.protobuf.ByteString getSelfLinkWithIdBytes();
-
-  /**
-   * <code>optional string zone = 3744684;</code>
-   *
-   * @return Whether the zone field is set.
-   */
-  boolean hasZone();
-
-  /**
-   * <code>optional string zone = 3744684;</code>
-   *
-   * @return The zone.
-   */
-  java.lang.String getZone();
-
-  /**
-   * <code>optional string zone = 3744684;</code>
-   *
-   * @return The bytes for zone.
-   */
-  com.google.protobuf.ByteString getZoneBytes();
 }

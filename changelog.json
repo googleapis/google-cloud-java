@@ -4,6 +4,171 @@
     {
       "changes": [
         {
+          "type": "feat",
+          "sha": "675f639a99646f06f0f5ade145d2efe7495e4b97",
+          "message": "Add shared fallback state and probing recovery options to GcpFallbackChannel",
+          "issues": [
+            "14013"
+          ],
+          "scope": "grpc-gcp"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:grpc-gcp",
+      "id": "5848a189-c0a0-4173-8703-e16ca07cfe0c",
+      "createTime": "2026-09-30T01:08:11.331Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "4b6a671193315a8af14ce1e827d82a7ae4ac31cb",
+          "message": "add publish start time to client telemetry header",
+          "issues": [
+            "14496"
+          ],
+          "scope": "pubsub"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-pubsub",
+      "id": "ff025efc-351d-4be5-bffa-33329efdc04d",
+      "createTime": "2026-09-30T01:08:11.159Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "df062901ee5fb5082f1cb4e29387a5b883760fe4",
+          "message": "pre-warm writer pool channels with flush() after open()",
+          "issues": [
+            "14537"
+          ],
+          "scope": "samples"
+        },
+        {
+          "type": "docs",
+          "sha": "32e6f87158d29b151ba500797a41086ba5e6118d",
+          "message": "add zonal bucket pre-warmed writer pool sample",
+          "issues": [
+            "14517"
+          ],
+          "scope": "samples"
+        },
+        {
+          "type": "fix",
+          "sha": "0f6f9b519762ef629aef80d3528319f15922a1e6",
+          "message": "add App Hub storage.googleapis.com prefix to destination.id",
+          "issues": [
+            "14527"
+          ],
+          "scope": "storage"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "c7614da8-1e74-4161-b9c6-037ed0d579c9",
+      "createTime": "2026-09-30T01:08:11.014Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3c797300b9c165cc242746072b06180a59501af9",
+          "message": "replace InputStream with InputStreamSupplier in resumable upload public surfaces",
+          "issues": [
+            "14521"
+          ],
+          "scope": "gax"
+        },
+        {
+          "type": "feat",
+          "sha": "98c20738afa067da5eed015f5caa219a3ac247ef",
+          "message": "retry start upload call and rename ResumableUploadCallSettings to ResumableUploadOptions",
+          "issues": [
+            "14511"
+          ],
+          "scope": "gax,gapic-generator-java"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:gapic-showcase",
+      "id": "4e397a46-cb73-4adb-8993-9800ab321b12",
+      "createTime": "2026-09-30T01:08:10.869Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "668fd184e6800022c6bf74414a6f3dda550f26fd",
+          "message": "exclude javax.annotation-api from api-common dependency",
+          "issues": [
+            "14538",
+            "12363"
+          ],
+          "scope": "auth"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "7b963eb1-208b-42f2-a356-dac29faf5f0d",
+      "createTime": "2026-09-30T01:08:10.690Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e989a72718f9e3280215064204a31f7a1d49b473",
+          "message": "infer undeclared fields in PreparedStatement",
+          "issues": [
+            "14400"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "5bd45202ce46f66177e76d1bb5b48ad39b100522",
+          "message": "abort session when connection is closed",
+          "issues": [
+            "14273",
+            "13922"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "d311b6da-219a-4be1-a77d-33456d411676",
+      "createTime": "2026-09-30T01:08:10.547Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "6f13a1d026e4df5b61ebfed4226d7d8a87847f2b",
+          "message": "remove java-automl library",
+          "issues": [
+            "14540"
+          ],
+          "scope": "automl",
+          "breakingChangeNote": "remove java-automl library ([#14540](https://github.com/googleapis/google-cloud-java/issues/14540))"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bom",
+      "id": "28eaede1-1daa-4780-95fb-e176ad9fde7f",
+      "createTime": "2026-09-30T01:08:10.386Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "beea42fa450e3d13d78bd0345db90eaf72f66d36",
           "message": "restore transportFactory upon deserialization in InternalAwsSecurityCredentialsSupplier",
@@ -372447,5 +372612,5 @@
       "createTime": "2026-02-25T17:30:12.355Z"
     }
   ],
-  "updateTime": "2026-09-23T19:21:44.299Z"
+  "updateTime": "2026-09-30T01:08:11.331Z"
 }

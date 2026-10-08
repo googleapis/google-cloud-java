@@ -401,7 +401,8 @@ public class SslCertificatesStubSettings extends StubSettings<SslCertificatesStu
             "gapic", GaxProperties.getLibraryVersion(SslCertificatesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

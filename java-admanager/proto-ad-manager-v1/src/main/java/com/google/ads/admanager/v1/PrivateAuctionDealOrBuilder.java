@@ -97,7 +97,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Immutable. The ID of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -111,7 +111,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Immutable. The ID of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -125,7 +125,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -141,7 +141,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -157,7 +157,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>

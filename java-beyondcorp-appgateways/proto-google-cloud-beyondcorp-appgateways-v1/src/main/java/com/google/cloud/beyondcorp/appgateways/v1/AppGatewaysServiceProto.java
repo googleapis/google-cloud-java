@@ -91,7 +91,8 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
           + "annotations.proto\032\027google/api/client.pro"
           + "to\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032#google/longrunni"
-          + "ng/operations.proto\032\037google/protobuf/timestamp.proto\"\263\001\n"
+          + "ng/operations.proto\032\033google/protobuf/emp"
+          + "ty.proto\032\037google/protobuf/timestamp.proto\"\263\001\n"
           + "\026ListAppGatewaysRequest\022<\n"
           + "\006parent\030\001 \001("
           + "\tB,\340A\002\372A&\022$beyondcorp.googleapis.com/AppGateway\022\026\n"
@@ -100,8 +101,8 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\221\001\n"
           + "\027ListAppGatewaysResponse\022H\n"
-          + "\014app_gateways\030\001"
-          + " \003(\01322.google.cloud.beyondcorp.appgateways.v1.AppGateway\022\027\n"
+          + "\014app_gateways\030\001 \003(\01322.goog"
+          + "le.cloud.beyondcorp.appgateways.v1.AppGateway\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"R\n"
           + "\024GetAppGatewayRequest\022:\n"
@@ -111,33 +112,37 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
           + "\006parent\030\001 \001("
           + "\tB,\340A\002\372A&\022$beyondcorp.googleapis.com/AppGateway\022\033\n"
           + "\016app_gateway_id\030\002 \001(\tB\003\340A\001\022L\n"
-          + "\013app_gateway\030\003"
-          + " \001(\01322.google.cloud.beyondcorp.appgateways.v1.AppGatewayB\003\340A\002\022\027\n\n"
-          + "request_id\030\004 \001(\tB\003\340A\001\022\032\n\r"
+          + "\013app_gateway\030\003 \001(\01322.go"
+          + "ogle.cloud.beyondcorp.appgateways.v1.AppGatewayB\003\340A\002\022\027\n\n"
+          + "request_id\030\004 \001(\tB\003\340A\001\022\032\n"
+          + "\r"
           + "validate_only\030\005 \001(\010B\003\340A\001\"\212\001\n"
           + "\027DeleteAppGatewayRequest\022:\n"
           + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
           + "$beyondcorp.googleapis.com/AppGateway\022\027\n\n"
           + "request_id\030\002 \001(\tB\003\340A\001\022\032\n\r"
-          + "validate_only\030\003 \001(\010B\003\340A\001\"\252\010\n\n"
+          + "validate_only\030\003 \001(\010B\003\340A\001\"\220\t\n\n"
           + "AppGateway\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022S\n"
-          + "\006labels\030\004 \003(\0132>.google.cloud.beyondcor"
-          + "p.appgateways.v1.AppGateway.LabelsEntryB\003\340A\001\022\031\n"
+          + "\006labels\030\004"
+          + " \003(\0132>.google.cloud.beyondcorp.appgateways.v1.AppGateway.LabelsEntryB\003\340A\001\022\031\n"
           + "\014display_name\030\005 \001(\tB\003\340A\001\022\020\n"
           + "\003uid\030\006 \001(\tB\003\340A\003\022J\n"
-          + "\004type\030\007 \001(\01627.google.cloud.b"
-          + "eyondcorp.appgateways.v1.AppGateway.TypeB\003\340A\002\022L\n"
-          + "\005state\030\010 \001(\01628.google.cloud.beyo"
-          + "ndcorp.appgateways.v1.AppGateway.StateB\003\340A\003\022\020\n"
+          + "\004type\030\007"
+          + " \001(\01627.google.cloud.beyondcorp.appgateways.v1.AppGateway.TypeB\003\340A\002\022L\n"
+          + "\005state\030\010"
+          + " \001(\01628.google.cloud.beyondcorp.appgateways.v1.AppGateway.StateB\003\340A\003\022\020\n"
           + "\003uri\030\t \001(\tB\003\340A\003\022j\n"
           + "\025allocated_connections\030\n"
-          + " \003(\0132F.google.cloud.beyondcorp.a"
-          + "ppgateways.v1.AppGateway.AllocatedConnectionB\003\340A\003\022S\n"
-          + "\thost_type\030\013 \001(\0162;.google.cl"
-          + "oud.beyondcorp.appgateways.v1.AppGateway.HostTypeB\003\340A\002\032F\n"
+          + " \003(\0132F.google.cloud.beyondcorp.appgateways."
+          + "v1.AppGateway.AllocatedConnectionB\003\340A\003\022S\n"
+          + "\thost_type\030\013 \001(\0162;.google.cloud.beyondc"
+          + "orp.appgateways.v1.AppGateway.HostTypeB\003\340A\002\022\037\n\r"
+          + "satisfies_pzs\030\014 \001(\010B\003\340A\003H\000\210\001\001\022\037\n\r"
+          + "satisfies_pzi\030\r"
+          + " \001(\010B\003\340A\003H\001\210\001\001\032F\n"
           + "\023AllocatedConnection\022\024\n"
           + "\007psc_uri\030\001 \001(\tB\003\340A\002\022\031\n"
           + "\014ingress_port\030\002 \001(\005B\003\340A\002\032-\n"
@@ -157,8 +162,10 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
           + "\010HostType\022\031\n"
           + "\025HOST_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020GCP_REGIONAL_MIG\020\001:l\352Ai\n"
-          + "$beyondcorp.googleapis.com/AppGateway\022Aprojects/{project}/"
-          + "locations/{location}/appGateways/{app_gateway}\"\212\002\n"
+          + "$beyondcorp.googleapis.com/AppGateway\022Aproj"
+          + "ects/{project}/locations/{location}/appGateways/{app_gateway}B\020\n"
+          + "\016_satisfies_pzsB\020\n"
+          + "\016_satisfies_pzi\"\212\002\n"
           + "\033AppGatewayOperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
@@ -166,30 +173,33 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\0032\366\007\n"
-          + "\022AppGatewaysService\022\324\001\n"
-          + "\017ListAppGateways\022>.google.cloud.beyondcorp.appgateways.v1."
-          + "ListAppGatewaysRequest\032?.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysR"
-          + "esponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/appGateways\022\301\001\n\r"
-          + "GetAppGateway\022<.google.cloud.beyondcorp.ap"
-          + "pgateways.v1.GetAppGatewayRequest\0322.google.cloud.beyondcorp.appgateways.v1.AppGa"
-          + "teway\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/appGateways/*}\022\211\002\n"
-          + "\020CreateAppGateway\022?.google.cloud.beyondcorp.app"
-          + "gateways.v1.CreateAppGatewayRequest\032\035.google.longrunning.Operation\"\224\001\312A)\n\n"
-          + "AppGateway\022\033AppGatewayOperationMetadata\332A!pare"
-          + "nt,app_gateway,app_gateway_id\202\323\344\223\002>\"//v1"
-          + "/{parent=projects/*/locations/*}/appGateways:\013app_gateway\022\351\001\n"
-          + "\020DeleteAppGateway\022?.google.cloud.beyondcorp.appgateways.v1."
-          + "DeleteAppGatewayRequest\032\035.google.longrunning.Operation\"u\312A4\n"
-          + "\025google.protobuf.Empty\022\033AppGatewayOperationMetadata\332A\004name\202\323"
-          + "\344\223\0021*//v1/{name=projects/*/locations/*/a"
-          + "ppGateways/*}\032M\312A\031beyondcorp.googleapis."
-          + "com\322A.https://www.googleapis.com/auth/cloud-platformB\224\002\n"
-          + "*com.google.cloud.beyondcorp.appgateways.v1B\027AppGatewaysServiceP"
-          + "rotoP\001ZLcloud.google.com/go/beyondcorp/appgateways/apiv1/appgatewayspb;appgatewa"
-          + "yspb\252\002&Google.Cloud.BeyondCorp.AppGatewa"
-          + "ys.V1\312\002&Google\\Cloud\\BeyondCorp\\AppGatew"
-          + "ays\\V1\352\002*Google::Cloud::BeyondCorp::AppGateways::V1b\006proto3"
+          + "\013api_version\030\007 \001(\tB\003\340A\0032\205\010\n"
+          + "\022AppGatewaysService\022\327\001\n"
+          + "\017ListAppGateways\022>.google.cloud.beyondcorp.appg"
+          + "ateways.v1.ListAppGatewaysRequest\032?.google.cloud.beyondcorp.appgateways.v1.ListA"
+          + "ppGatewaysResponse\"C\210\002\001\332A\006parent\202\323\344\223\0021\022/"
+          + "/v1/{parent=projects/*/locations/*}/appGateways\022\304\001\n\r"
+          + "GetAppGateway\022<.google.cloud.beyondcorp.appgateways.v1.GetAppGateway"
+          + "Request\0322.google.cloud.beyondcorp.appgat"
+          + "eways.v1.AppGateway\"A\210\002\001\332A\004name\202\323\344\223\0021\022//"
+          + "v1/{name=projects/*/locations/*/appGateways/*}\022\214\002\n"
+          + "\020CreateAppGateway\022?.google.cloud.beyondcorp.appgateways.v1.CreateAppGa"
+          + "tewayRequest\032\035.google.longrunning.Operation\"\227\001\210\002\001\312A)\n\n"
+          + "AppGateway\022\033AppGatewayOperationMetadata\332A!parent,app_gateway,app_g"
+          + "ateway_id\202\323\344\223\002>\"//v1/{parent=projects/*/"
+          + "locations/*}/appGateways:\013app_gateway\022\354\001\n"
+          + "\020DeleteAppGateway\022?.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequ"
+          + "est\032\035.google.longrunning.Operation\"x\210\002\001\312A4\n"
+          + "\025google.protobuf.Empty\022\033AppGatewayOpe"
+          + "rationMetadata\332A\004name\202\323\344\223\0021*//v1/{name=p"
+          + "rojects/*/locations/*/appGateways/*}\032P\210\002"
+          + "\001\312A\031beyondcorp.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\224\002\n"
+          + "*com.google.cloud.beyondcorp.appgateways.v1B\027AppGatewaysServiceProtoP\001ZLcloud."
+          + "google.com/go/beyondcorp/appgateways/apiv1/appgatewayspb;appgatewayspb\252\002&Google."
+          + "Cloud.BeyondCorp.AppGateways.V1\312\002&Google"
+          + "\\Cloud\\BeyondCorp\\AppGateways\\V1\352\002*Googl"
+          + "e::Cloud::BeyondCorp::AppGateways::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -200,6 +210,7 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_beyondcorp_appgateways_v1_ListAppGatewaysRequest_descriptor =
@@ -259,6 +270,8 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
               "Uri",
               "AllocatedConnections",
               "HostType",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
             });
     internal_static_google_cloud_beyondcorp_appgateways_v1_AppGateway_AllocatedConnection_descriptor =
         internal_static_google_cloud_beyondcorp_appgateways_v1_AppGateway_descriptor.getNestedType(
@@ -298,6 +311,7 @@ public final class AppGatewaysServiceProto extends com.google.protobuf.Generated
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

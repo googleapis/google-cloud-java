@@ -146,6 +146,49 @@ public interface ReportOrBuilder
    *
    *
    * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the draftReportDefinition field is set.
+   */
+  boolean hasDraftReportDefinition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The draftReportDefinition.
+   */
+  com.google.ads.admanager.v1.ReportDefinition getDraftReportDefinition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ReportDefinitionOrBuilder getDraftReportDefinitionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Display name for the report.
    * </pre>
    *

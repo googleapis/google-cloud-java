@@ -49,7 +49,6 @@ public class AsyncListInstancesPaged {
               .setRegion("region-934795532")
               .setRegionInstanceGroupsListInstancesRequestResource(
                   RegionInstanceGroupsListInstancesRequest.newBuilder().build())
-              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         RegionInstanceGroupsListInstances response =

@@ -1,0 +1,96 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are
+ * met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ * notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above
+ * copyright notice, this list of conditions and the following disclaimer
+ * in the documentation and/or other materials provided with the
+ * distribution.
+ *     * Neither the name of Google LLC nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+package com.google.api.gax.rpc;
+
+import com.google.api.core.BetaApi;
+import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+/** Progress snapshot of an ongoing or completed resumable upload session. */
+@BetaApi
+@NullMarked
+@AutoValue
+public abstract class ResumableUploadProgress {
+
+  ResumableUploadProgress() {}
+
+  static final String STATE_STARTING = "STARTING";
+  static final String STATE_STARTED = "STARTED";
+  static final String STATE_UPLOADING = "UPLOADING";
+  static final String STATE_RECOVERING = "RECOVERING";
+  static final String STATE_OFFSET_RECEIVED = "OFFSET_RECEIVED";
+  static final String STATE_FINALIZED = "FINALIZED";
+  static final String STATE_FAILED = "FAILED";
+
+  /**
+   * Returns the negotiated upload session URI, or {@code null} if session initiation is pending.
+   */
+  public abstract @Nullable String getUploadUrl();
+
+  /** Returns the number of bytes confirmed as uploaded to the server so far. */
+  public abstract long getBytesUploaded();
+
+  /**
+   * Returns the current state of the upload session. Additional values may be added in the future.
+   *
+   * <ul>
+   *   <li>{@code "STARTING"}: Session initiation is in progress (acquiring upload session URL).
+   *   <li>{@code "STARTED"}: The session initiation completed successfully.
+   *   <li>{@code "UPLOADING"}: Transmitting chunk payloads to the server.
+   *   <li>{@code "RECOVERING"}: A recoverable error occurred; querying server status and
+   *       resynchronizing offset.
+   *   <li>{@code "OFFSET_RECEIVED"}: The server query status succeeded and the committed offset was
+   *       received.
+   *   <li>{@code "FINALIZED"}: The upload was successfully finalized by the server.
+   *   <li>{@code "FAILED"}: The upload failed unrecoverably or was canceled.
+   * </ul>
+   */
+  public abstract String getState();
+
+  abstract Builder toBuilder();
+
+  static Builder newBuilder() {
+    return new AutoValue_ResumableUploadProgress.Builder()
+        .setBytesUploaded(0L)
+        .setState(STATE_STARTING);
+  }
+
+  @AutoValue.Builder
+  abstract static class Builder {
+    abstract Builder setUploadUrl(@Nullable String uploadUrl);
+
+    abstract Builder setBytesUploaded(long bytesUploaded);
+
+    abstract Builder setState(String state);
+
+    abstract ResumableUploadProgress build();
+  }
+}

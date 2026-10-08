@@ -511,7 +511,8 @@ public class NetworksStubSettings extends StubSettings<NetworksStubSettings> {
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(NetworksStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

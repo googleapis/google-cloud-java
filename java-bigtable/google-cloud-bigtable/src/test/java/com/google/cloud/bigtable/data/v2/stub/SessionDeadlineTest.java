@@ -20,6 +20,7 @@ import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
@@ -30,7 +31,9 @@ import com.google.bigtable.v2.SessionResponse;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
+import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.protobuf.util.Durations;
 import io.grpc.Context;
 import io.grpc.ForwardingServerCall;
 import io.grpc.Metadata;
@@ -42,6 +45,8 @@ import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.Base64;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -49,6 +54,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class SessionDeadlineTest {
 
@@ -146,8 +152,96 @@ public class SessionDeadlineTest {
     }
   }
 
+  @Test
+  public void testRetrySettingsDeadlinePropagatedToSessionChannel() throws Exception {
+    RetrySettings readRowRetrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(Duration.ofSeconds(1))
+            .setInitialRpcTimeout(Duration.ofMillis(10))
+            .setMaxRpcTimeout(Duration.ofMillis(10))
+            .setInitialRetryDelay(Duration.ofMillis(10))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxAttempts(1)
+            .build();
+    RetrySettings readRowsRetrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(Duration.ofSeconds(1))
+            .setInitialRpcTimeout(Duration.ofMillis(10))
+            .setMaxRpcTimeout(Duration.ofMillis(10))
+            .setInitialRetryDelay(Duration.ofMillis(10))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxAttempts(1)
+            .build();
+    RetrySettings mutateRowRetrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(Duration.ofSeconds(1))
+            .setInitialRpcTimeout(Duration.ofMillis(10))
+            .setMaxRpcTimeout(Duration.ofMillis(10))
+            .setInitialRetryDelay(Duration.ofMillis(10))
+            .setRetryDelayMultiplier(2.0)
+            .setMaxRetryDelay(Duration.ofMinutes(1))
+            .setMaxAttempts(1)
+            .build();
+    EnhancedBigtableStubSettings.Builder settingsBuilder =
+        defaultSettings.toBuilder().setSessionsEnabled(true);
+    settingsBuilder.readRowSettings().setRetrySettings(readRowRetrySettings);
+    settingsBuilder.mutateRowSettings().setRetrySettings(mutateRowRetrySettings);
+    settingsBuilder.readRowsSettings().setRetrySettings(readRowsRetrySettings);
+    EnhancedBigtableStubSettings settings = settingsBuilder.build();
+
+    try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(settings)) {
+      try {
+        stub.readRowCallable().futureCall(Query.create("fake-table").rowKey("row-key")).get();
+      } catch (Exception e) {
+        // client would throw missed heartbeat exception which is expected.
+        // but the deadline should still be captured.
+      }
+
+      assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
+      com.google.protobuf.Duration captured = fakeDataService.capturedDeadlines.poll();
+      assertThat(captured).isNotNull();
+      assertThat(Durations.toMillis(captured))
+          .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
+      assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+
+      try {
+        stub.mutateRowCallable()
+            .call(RowMutation.create("fake-table", "row-key").setCell("cf", "q", "v"));
+      } catch (Exception e) {
+        // client would throw missed heartbeat exception which is expected.
+        // but the deadline should still be captured.
+      }
+
+      assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
+      captured = fakeDataService.capturedDeadlines.poll();
+      assertThat(captured).isNotNull();
+      assertThat(Durations.toMillis(captured))
+          .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
+      assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+
+      try {
+        stub.readRowsCallable().call(Query.create("fake-table").rowKey("row-key")).stream()
+            .iterator()
+            .next();
+      } catch (Exception e) {
+        // client would throw missed heartbeat exception which is expected.
+        // but the deadline should still be captured.
+      }
+
+      assertThat(fakeDataService.capturedDeadlines).isNotEmpty();
+      captured = fakeDataService.capturedDeadlines.poll();
+      assertThat(captured).isNotNull();
+      assertThat(Durations.toMillis(captured))
+          .isAtMost(java.time.Duration.ofSeconds(10).toMillis());
+      assertThat(Durations.toMillis(captured)).isGreaterThan(10);
+    }
+  }
+
   private static class FakeDataService extends BigtableGrpc.BigtableImplBase {
     private final ScheduledExecutorService serverExecutor = Executors.newScheduledThreadPool(4);
+    private Queue<com.google.protobuf.Duration> capturedDeadlines = new LinkedList<>();
 
     public void shutdown() {
       serverExecutor.shutdownNow();
@@ -179,7 +273,8 @@ public class SessionDeadlineTest {
                     .setOpenSession(OpenSessionResponse.getDefaultInstance())
                     .build());
           } else if (sessionRequest.hasVirtualRpc()) {
-            // Server hangs
+            // server captures deadline and hangs
+            capturedDeadlines.add(sessionRequest.getVirtualRpc().getDeadline());
           }
         }
 

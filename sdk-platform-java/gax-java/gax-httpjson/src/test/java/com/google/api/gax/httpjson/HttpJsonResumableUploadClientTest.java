@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
@@ -46,16 +47,20 @@ import com.google.api.gax.resumable.QueryStatusRequest;
 import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.ResumableUploadStatus;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Strings;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -63,6 +68,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -241,6 +247,70 @@ class HttpJsonResumableUploadClientTest {
   }
 
   @Test
+  void startUpload_retriesOnRetryableError_succeeds() {
+    AtomicInteger attemptCount = new AtomicInteger(0);
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                int attempt = attemptCount.incrementAndGet();
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                if (attempt == 1) {
+                  response.setStatusCode(503);
+                  response.setContent("{\"error\":{\"message\":\"Service Unavailable\"}}");
+                } else {
+                  response.setStatusCode(200);
+                  response.addHeader("X-Goog-Upload-URL", TEST_UPLOAD_URL);
+                }
+                return response;
+              }
+            };
+          }
+        };
+
+    ManagedHttpJsonChannel channel =
+        ManagedHttpJsonChannel.newBuilder()
+            .setEndpoint("test.googleapis.com")
+            .setExecutor(executorService)
+            .setHttpTransport(transport)
+            .build();
+
+    ClientContext clientContext =
+        ClientContext.newBuilder()
+            .setTransportChannel(HttpJsonTransportChannel.create(channel))
+            .setDefaultCallContext(HttpJsonCallContext.createDefault().withChannel(channel))
+            .build();
+
+    UnaryCallSettings<TestRequest, String> callSettings =
+        UnaryCallSettings.<TestRequest, String>newUnaryCallSettingsBuilder()
+            .setRetryableCodes(StatusCode.Code.UNAVAILABLE)
+            .setRetrySettings(
+                RetrySettings.newBuilder()
+                    .setInitialRetryDelayDuration(Duration.ofMillis(1))
+                    .setRetryDelayMultiplier(1.0)
+                    .setMaxRetryDelayDuration(Duration.ofMillis(5))
+                    .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
+                    .setRpcTimeoutMultiplier(1.0)
+                    .setMaxRpcTimeoutDuration(Duration.ofSeconds(5))
+                    .setTotalTimeoutDuration(Duration.ofSeconds(10))
+                    .setMaxAttempts(3)
+                    .build())
+            .build();
+
+    HttpJsonResumableUploadClient<TestRequest, String> client =
+        HttpJsonResumableUploadClient.create(clientContext, TEST_METHOD_DESCRIPTOR, callSettings);
+    TestRequest request = new TestRequest("upload/v1/resources");
+
+    ResumableUploadSession session = client.startUploadCallable().call(request);
+
+    assertThat(attemptCount.get()).isEqualTo(2);
+    assertThat(session.getUploadUrl()).isEqualTo(TEST_UPLOAD_URL);
+  }
+
+  @Test
   void uploadChunk_intermediateChunk_sendsUploadCommandAndReturnsActiveStatus() {
     MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
     httpResponse.setStatusCode(200);
@@ -376,6 +446,33 @@ class HttpJsonResumableUploadClientTest {
     assertThat(exception.getCause()).isInstanceOf(AbortedException.class);
     AbortedException abortedException = (AbortedException) exception.getCause();
     assertThat(abortedException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+  }
+
+  @Test
+  void uploadChunk_serverRejection_preservesUploadStatusHeaderOnCause() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(400);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+    httpResponse.setContent("{\"error\":{\"code\":400,\"message\":\"Invalid chunk\"}}");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .build();
+
+    ApiException ex =
+        assertThrows(ApiException.class, () -> client.uploadChunkCallable().call(request));
+
+    // ResumableUploadErrorClassifier reads the upload status from the cause's headers.
+    assertThat(ex.getCause()).isInstanceOf(HttpResponseException.class);
+    assertThat(
+            ((HttpResponseException) ex.getCause())
+                .getHeaders()
+                .getFirstHeaderStringValue("X-Goog-Upload-Status"))
+        .isEqualTo("final");
   }
 
   @Test
@@ -531,7 +628,10 @@ class HttpJsonResumableUploadClientTest {
             .setDefaultCallContext(HttpJsonCallContext.createDefault().withChannel(channel))
             .build();
 
-    return HttpJsonResumableUploadClient.create(clientContext, TEST_METHOD_DESCRIPTOR);
+    return HttpJsonResumableUploadClient.create(
+        clientContext,
+        TEST_METHOD_DESCRIPTOR,
+        UnaryCallSettings.<TestRequest, String>newUnaryCallSettingsBuilder().build());
   }
 
   private static HttpJsonResumableUploadClient<TestRequest, String> createClient(
