@@ -465,4 +465,53 @@ public class PipelineProtoTest {
     assertThat(doc2Fields.get("title").getStringValue()).isEqualTo("Book 2");
     assertThat(doc2Fields.get("calc").getIntegerValue()).isEqualTo(42L);
   }
+
+  @Test
+  public void testLiteralsWithNestedExpressionsProtoEncoding() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> inner = new java.util.HashMap<>();
+    inner.put("sum", add(constant(1), constant(2)));
+    inner.put("plain", 1);
+    java.util.Map<String, Object> constantMap = new java.util.HashMap<>();
+    constantMap.put("stringValue", "abc");
+
+    java.util.Map<String, Object> doc = new java.util.HashMap<>();
+    doc.put("top", add(constant(1), constant(1)));
+    doc.put("nestedMap", inner);
+    doc.put("nestedList", java.util.Arrays.asList(1, add(constant(2), constant(3))));
+    doc.put("constantMap", constantMap);
+    doc.put("constantList", java.util.Arrays.asList(1, 2));
+
+    Stage literalsStage = firestore.pipeline().literals(doc).toProto().getStages(0);
+    java.util.Map<String, Value> fields = literalsStage.getArgs(0).getMapValue().getFieldsMap();
+
+    // Top-level expressions are encoded as is.
+    assertThat(fields.get("top").getFunctionValue().getName()).isEqualTo("add");
+
+    // A map or list containing a nested expression is wrapped in a map(...) / array(...)
+    // expression, so the backend evaluates the nested expression.
+    assertThat(fields.get("nestedMap").getFunctionValue().getName()).isEqualTo("map");
+    assertThat(fields.get("nestedList").getFunctionValue().getName()).isEqualTo("array");
+    java.util.List<Value> listArgs = fields.get("nestedList").getFunctionValue().getArgsList();
+    assertThat(listArgs.get(0).getIntegerValue()).isEqualTo(1L);
+    assertThat(listArgs.get(1).getFunctionValue().getName()).isEqualTo("add");
+
+    // Values without expressions keep their existing encoding.
+    assertThat(fields.get("constantMap").hasMapValue()).isTrue();
+    assertThat(
+            fields
+                .get("constantMap")
+                .getMapValue()
+                .getFieldsMap()
+                .get("stringValue")
+                .getStringValue())
+        .isEqualTo("abc");
+    assertThat(fields.get("constantList").getArrayValue().getValuesCount()).isEqualTo(2);
+  }
 }

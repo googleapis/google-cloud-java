@@ -5185,4 +5185,31 @@ public class ITPipelineTest extends ITBaseTest {
 
     assertThat(dmlCol.document("book1").get().get().get("status")).isEqualTo("TxUpsert");
   }
+
+  @Test
+  public void testLiteralsWithNestedExpressions() throws Exception {
+    java.util.Map<String, Object> deepest = new java.util.HashMap<>();
+    deepest.put("product", multiply(constant(2), constant(3)));
+    java.util.Map<String, Object> nested = new java.util.HashMap<>();
+    nested.put("sum", add(constant(1), constant(2)));
+    nested.put("plain", "value");
+    nested.put("deeper", deepest);
+
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("nestedMap", nested);
+    data.put("nestedList", java.util.Arrays.asList(1L, add(constant(1), constant(2))));
+
+    List<PipelineResult> results = firestore.pipeline().literals(data).execute().get().getResults();
+
+    assertThat(results).hasSize(1);
+    java.util.Map<String, Object> expectedDeepest = new java.util.HashMap<>();
+    expectedDeepest.put("product", 6L);
+    java.util.Map<String, Object> expectedNested = new java.util.HashMap<>();
+    expectedNested.put("sum", 3L);
+    expectedNested.put("plain", "value");
+    expectedNested.put("deeper", expectedDeepest);
+    assertThat(results.get(0).getData().get("nestedMap")).isEqualTo(expectedNested);
+    assertThat(results.get(0).getData().get("nestedList"))
+        .isEqualTo(java.util.Arrays.asList(1L, 3L));
+  }
 }
