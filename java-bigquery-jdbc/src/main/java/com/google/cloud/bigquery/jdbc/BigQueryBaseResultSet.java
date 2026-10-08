@@ -839,4 +839,11 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.warnings = null;
     this.warningsLoaded = true;
   }
+
+  static BigQueryJdbcException backgroundFetchError(Exception cause) {
+    String msg = "Error occurred while fetching query results";
+    return cause instanceof BigQueryException
+        ? new BigQueryJdbcException(msg, (BigQueryException) cause)
+        : new BigQueryJdbcException(msg, cause);
+  }
 }

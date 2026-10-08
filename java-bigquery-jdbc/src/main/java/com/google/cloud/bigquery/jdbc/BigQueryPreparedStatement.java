@@ -27,7 +27,6 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
@@ -85,7 +84,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   Schema insertSchema = null; // Feeds the Storage Write API.
   private TableName insertTableName = null;
 
-  BigQueryPreparedStatement(BigQueryConnection connection, String query) {
+  BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
     super(connection);
     this.currentQuery = query;
     QueryStatistics queryStatistics = describeQueryQuietly();
@@ -438,7 +437,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
-        throw new BigQueryJdbcRuntimeException("Interrupted during Write API batch", e);
+        throw new BigQueryJdbcException("Interrupted during Write API batch", e);
       } catch (DescriptorValidationException | IOException e) {
         throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       }
@@ -467,9 +466,6 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
           i++;
         }
         return result;
-      } catch (InterruptedException ex) {
-        Thread.currentThread().interrupt();
-        throw new BigQueryJdbcRuntimeException("Interrupted during individual INSERT batch", ex);
       } catch (SQLException e) {
         throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
       }
