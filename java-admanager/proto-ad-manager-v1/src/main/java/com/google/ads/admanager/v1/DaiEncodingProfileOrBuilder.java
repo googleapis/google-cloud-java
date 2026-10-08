@@ -111,7 +111,8 @@ public interface DaiEncodingProfileOrBuilder
    * Output only. The status of this DaiEncodingProfile.
    *
    * DAI encoding profiles are created in the
-   * [DaiEncodingProfileStatus.ACTIVE][] state by default.
+   * [DaiEncodingProfileStatusEnum.DaiEncodingProfileStatus.ACTIVE][google.ads.admanager.v1.DaiEncodingProfileStatusEnum.DaiEncodingProfileStatus.ACTIVE]
+   * state by default.
    *
    * Only active profiles will be allowed to be associated with live streams.
    * </pre>
@@ -131,7 +132,8 @@ public interface DaiEncodingProfileOrBuilder
    * Output only. The status of this DaiEncodingProfile.
    *
    * DAI encoding profiles are created in the
-   * [DaiEncodingProfileStatus.ACTIVE][] state by default.
+   * [DaiEncodingProfileStatusEnum.DaiEncodingProfileStatus.ACTIVE][google.ads.admanager.v1.DaiEncodingProfileStatusEnum.DaiEncodingProfileStatus.ACTIVE]
+   * state by default.
    *
    * Only active profiles will be allowed to be associated with live streams.
    * </pre>
@@ -151,7 +153,8 @@ public interface DaiEncodingProfileOrBuilder
    * Output only. The status of this DaiEncodingProfile.
    *
    * DAI encoding profiles are created in the
-   * [DaiEncodingProfileStatus.ACTIVE][] state by default.
+   * [DaiEncodingProfileStatusEnum.DaiEncodingProfileStatus.ACTIVE][google.ads.admanager.v1.DaiEncodingProfileStatusEnum.DaiEncodingProfileStatus.ACTIVE]
+   * state by default.
    *
    * Only active profiles will be allowed to be associated with live streams.
    * </pre>

@@ -31,10 +31,13 @@ import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchUpdateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchUpdateAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.CreateAudienceSegmentRequest;
 import com.google.ads.admanager.v1.GetAudienceSegmentRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.UpdateAudienceSegmentRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -143,6 +146,11 @@ public class AudienceSegmentServiceStubSettings
   private final UnaryCallSettings<
           BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
       batchCreateAudienceSegmentsSettings;
+  private final UnaryCallSettings<UpdateAudienceSegmentRequest, AudienceSegment>
+      updateAudienceSegmentSettings;
+  private final UnaryCallSettings<
+          BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+      batchUpdateAudienceSegmentsSettings;
   private final UnaryCallSettings<
           BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
       batchActivateAudienceSegmentsSettings;
@@ -247,6 +255,18 @@ public class AudienceSegmentServiceStubSettings
   public UnaryCallSettings<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
       batchCreateAudienceSegmentsSettings() {
     return batchCreateAudienceSegmentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAudienceSegment. */
+  public UnaryCallSettings<UpdateAudienceSegmentRequest, AudienceSegment>
+      updateAudienceSegmentSettings() {
+    return updateAudienceSegmentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAudienceSegments. */
+  public UnaryCallSettings<BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+      batchUpdateAudienceSegmentsSettings() {
+    return batchUpdateAudienceSegmentsSettings;
   }
 
   /** Returns the object with the settings used for calls to batchActivateAudienceSegments. */
@@ -370,6 +390,9 @@ public class AudienceSegmentServiceStubSettings
     createAudienceSegmentSettings = settingsBuilder.createAudienceSegmentSettings().build();
     batchCreateAudienceSegmentsSettings =
         settingsBuilder.batchCreateAudienceSegmentsSettings().build();
+    updateAudienceSegmentSettings = settingsBuilder.updateAudienceSegmentSettings().build();
+    batchUpdateAudienceSegmentsSettings =
+        settingsBuilder.batchUpdateAudienceSegmentsSettings().build();
     batchActivateAudienceSegmentsSettings =
         settingsBuilder.batchActivateAudienceSegmentsSettings().build();
     batchDeactivateAudienceSegmentsSettings =
@@ -407,6 +430,11 @@ public class AudienceSegmentServiceStubSettings
     private final UnaryCallSettings.Builder<
             BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
         batchCreateAudienceSegmentsSettings;
+    private final UnaryCallSettings.Builder<UpdateAudienceSegmentRequest, AudienceSegment>
+        updateAudienceSegmentSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+        batchUpdateAudienceSegmentsSettings;
     private final UnaryCallSettings.Builder<
             BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
         batchActivateAudienceSegmentsSettings;
@@ -454,6 +482,8 @@ public class AudienceSegmentServiceStubSettings
           PagedCallSettings.newBuilder(LIST_AUDIENCE_SEGMENTS_PAGE_STR_FACT);
       createAudienceSegmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchCreateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAudienceSegmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchActivateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeactivateAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchApproveAudienceSegmentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -466,6 +496,8 @@ public class AudienceSegmentServiceStubSettings
               listAudienceSegmentsSettings,
               createAudienceSegmentSettings,
               batchCreateAudienceSegmentsSettings,
+              updateAudienceSegmentSettings,
+              batchUpdateAudienceSegmentsSettings,
               batchActivateAudienceSegmentsSettings,
               batchDeactivateAudienceSegmentsSettings,
               batchApproveAudienceSegmentsSettings,
@@ -482,6 +514,9 @@ public class AudienceSegmentServiceStubSettings
       createAudienceSegmentSettings = settings.createAudienceSegmentSettings.toBuilder();
       batchCreateAudienceSegmentsSettings =
           settings.batchCreateAudienceSegmentsSettings.toBuilder();
+      updateAudienceSegmentSettings = settings.updateAudienceSegmentSettings.toBuilder();
+      batchUpdateAudienceSegmentsSettings =
+          settings.batchUpdateAudienceSegmentsSettings.toBuilder();
       batchActivateAudienceSegmentsSettings =
           settings.batchActivateAudienceSegmentsSettings.toBuilder();
       batchDeactivateAudienceSegmentsSettings =
@@ -499,6 +534,8 @@ public class AudienceSegmentServiceStubSettings
               listAudienceSegmentsSettings,
               createAudienceSegmentSettings,
               batchCreateAudienceSegmentsSettings,
+              updateAudienceSegmentSettings,
+              batchUpdateAudienceSegmentsSettings,
               batchActivateAudienceSegmentsSettings,
               batchDeactivateAudienceSegmentsSettings,
               batchApproveAudienceSegmentsSettings,
@@ -536,6 +573,16 @@ public class AudienceSegmentServiceStubSettings
 
       builder
           .batchCreateAudienceSegmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateAudienceSegmentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateAudienceSegmentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -608,6 +655,19 @@ public class AudienceSegmentServiceStubSettings
             BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
         batchCreateAudienceSegmentsSettings() {
       return batchCreateAudienceSegmentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAudienceSegment. */
+    public UnaryCallSettings.Builder<UpdateAudienceSegmentRequest, AudienceSegment>
+        updateAudienceSegmentSettings() {
+      return updateAudienceSegmentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+        batchUpdateAudienceSegmentsSettings() {
+      return batchUpdateAudienceSegmentsSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchActivateAudienceSegments. */

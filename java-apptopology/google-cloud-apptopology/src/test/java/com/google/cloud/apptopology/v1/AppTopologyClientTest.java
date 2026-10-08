@@ -16,6 +16,7 @@
 
 package com.google.cloud.apptopology.v1;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
@@ -255,6 +256,94 @@ public class AppTopologyClientTest {
     try {
       String name = "name3373707";
       client.getSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exploreSchemaTest() throws Exception {
+    NodeType responsesElement = NodeType.newBuilder().build();
+    ExploreSchemaResponse expectedResponse =
+        ExploreSchemaResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodeTypes(Arrays.asList(responsesElement))
+            .build();
+    mockAppTopology.addResponse(expectedResponse);
+
+    SchemaName name = SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+
+    ExploreSchemaPagedResponse pagedListResponse = client.exploreSchema(name);
+
+    List<NodeType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodeTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAppTopology.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExploreSchemaRequest actualRequest = ((ExploreSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exploreSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppTopology.addException(exception);
+
+    try {
+      SchemaName name = SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+      client.exploreSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exploreSchemaTest2() throws Exception {
+    NodeType responsesElement = NodeType.newBuilder().build();
+    ExploreSchemaResponse expectedResponse =
+        ExploreSchemaResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodeTypes(Arrays.asList(responsesElement))
+            .build();
+    mockAppTopology.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ExploreSchemaPagedResponse pagedListResponse = client.exploreSchema(name);
+
+    List<NodeType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodeTypesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAppTopology.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExploreSchemaRequest actualRequest = ((ExploreSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exploreSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppTopology.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.exploreSchema(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

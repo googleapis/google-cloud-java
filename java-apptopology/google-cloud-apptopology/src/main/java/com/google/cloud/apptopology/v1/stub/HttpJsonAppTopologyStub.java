@@ -16,6 +16,7 @@
 
 package com.google.cloud.apptopology.v1.stub;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
@@ -32,6 +33,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apptopology.v1.Domain;
+import com.google.cloud.apptopology.v1.ExploreSchemaRequest;
+import com.google.cloud.apptopology.v1.ExploreSchemaResponse;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyRequest;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyResponse;
 import com.google.cloud.apptopology.v1.GetDomainRequest;
@@ -141,6 +144,43 @@ public class HttpJsonAppTopologyStub extends AppTopologyStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<ExploreSchemaRequest, ExploreSchemaResponse>
+      exploreSchemaMethodDescriptor =
+          ApiMethodDescriptor.<ExploreSchemaRequest, ExploreSchemaResponse>newBuilder()
+              .setFullMethodName("google.cloud.apptopology.v1.AppTopology/ExploreSchema")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExploreSchemaRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/domains/*/schema}:explore",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExploreSchemaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExploreSchemaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ExploreSchemaResponse>newBuilder()
+                      .setDefaultInstance(ExploreSchemaResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<GetDomainRequest, Domain> getDomainMethodDescriptor =
       ApiMethodDescriptor.<GetDomainRequest, Domain>newBuilder()
@@ -283,6 +323,9 @@ public class HttpJsonAppTopologyStub extends AppTopologyStub {
           GenerateDiscoveredResourcesTopologyRequest, GenerateDiscoveredResourcesTopologyResponse>
       generateDiscoveredResourcesTopologyCallable;
   private final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable;
+  private final UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaCallable;
+  private final UnaryCallable<ExploreSchemaRequest, ExploreSchemaPagedResponse>
+      exploreSchemaPagedCallable;
   private final UnaryCallable<GetDomainRequest, Domain> getDomainCallable;
   private final UnaryCallable<ListDomainsRequest, ListDomainsResponse> listDomainsCallable;
   private final UnaryCallable<ListDomainsRequest, ListDomainsPagedResponse>
@@ -363,6 +406,19 @@ public class HttpJsonAppTopologyStub extends AppTopologyStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ExploreSchemaRequest, ExploreSchemaResponse>
+        exploreSchemaTransportSettings =
+            HttpJsonCallSettings.<ExploreSchemaRequest, ExploreSchemaResponse>newBuilder()
+                .setMethodDescriptor(exploreSchemaMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<GetDomainRequest, Domain> getDomainTransportSettings =
         HttpJsonCallSettings.<GetDomainRequest, Domain>newBuilder()
             .setMethodDescriptor(getDomainMethodDescriptor)
@@ -419,6 +475,12 @@ public class HttpJsonAppTopologyStub extends AppTopologyStub {
     this.getSchemaCallable =
         callableFactory.createUnaryCallable(
             getSchemaTransportSettings, settings.getSchemaSettings(), clientContext);
+    this.exploreSchemaCallable =
+        callableFactory.createUnaryCallable(
+            exploreSchemaTransportSettings, settings.exploreSchemaSettings(), clientContext);
+    this.exploreSchemaPagedCallable =
+        callableFactory.createPagedCallable(
+            exploreSchemaTransportSettings, settings.exploreSchemaSettings(), clientContext);
     this.getDomainCallable =
         callableFactory.createUnaryCallable(
             getDomainTransportSettings, settings.getDomainSettings(), clientContext);
@@ -447,6 +509,7 @@ public class HttpJsonAppTopologyStub extends AppTopologyStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(generateDiscoveredResourcesTopologyMethodDescriptor);
     methodDescriptors.add(getSchemaMethodDescriptor);
+    methodDescriptors.add(exploreSchemaMethodDescriptor);
     methodDescriptors.add(getDomainMethodDescriptor);
     methodDescriptors.add(listDomainsMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -464,6 +527,17 @@ public class HttpJsonAppTopologyStub extends AppTopologyStub {
   @Override
   public UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
     return getSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaCallable() {
+    return exploreSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExploreSchemaRequest, ExploreSchemaPagedResponse>
+      exploreSchemaPagedCallable() {
+    return exploreSchemaPagedCallable;
   }
 
   @Override

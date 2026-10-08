@@ -361,7 +361,7 @@ public class PartnerServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of
-   *     [Partner][google.ads.admanager.v1.Partner]s. Format: `networks/{network_code}`
+   *     [Partners][google.ads.admanager.v1.Partner]. Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPartnersPagedResponse listPartners(@Nullable NetworkName parent) {
@@ -393,7 +393,7 @@ public class PartnerServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of
-   *     [Partner][google.ads.admanager.v1.Partner]s. Format: `networks/{network_code}`
+   *     [Partners][google.ads.admanager.v1.Partner]. Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPartnersPagedResponse listPartners(String parent) {
@@ -621,9 +621,9 @@ public class PartnerServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource where [Partner][google.ads.admanager.v1.Partner]s
+   * @param parent Required. The parent resource where [Partners][google.ads.admanager.v1.Partner]
    *     will be updated. Format: `networks/{network_code}` The parent field in the
-   *     [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must match this field.
+   *     `UpdatePartnerRequest` must match this field.
    * @param requests Required. The [Partner][google.ads.admanager.v1.Partner] objects to update. A
    *     maximum of 100 objects can be updated in a batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -658,9 +658,9 @@ public class PartnerServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource where [Partner][google.ads.admanager.v1.Partner]s
+   * @param parent Required. The parent resource where [Partners][google.ads.admanager.v1.Partner]
    *     will be updated. Format: `networks/{network_code}` The parent field in the
-   *     [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must match this field.
+   *     `UpdatePartnerRequest` must match this field.
    * @param requests Required. The [Partner][google.ads.admanager.v1.Partner] objects to update. A
    *     maximum of 100 objects can be updated in a batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

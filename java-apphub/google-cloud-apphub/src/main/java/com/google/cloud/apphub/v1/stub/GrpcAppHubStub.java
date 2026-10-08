@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1.stub;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -33,6 +34,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apphub.v1.Application;
+import com.google.cloud.apphub.v1.Boundary;
 import com.google.cloud.apphub.v1.CreateApplicationRequest;
 import com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.CreateServiceRequest;
@@ -45,9 +47,12 @@ import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse;
 import com.google.cloud.apphub.v1.DiscoveredService;
 import com.google.cloud.apphub.v1.DiscoveredWorkload;
+import com.google.cloud.apphub.v1.ExtendedMetadataSchema;
 import com.google.cloud.apphub.v1.GetApplicationRequest;
+import com.google.cloud.apphub.v1.GetBoundaryRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredServiceRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest;
+import com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest;
 import com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.GetServiceRequest;
 import com.google.cloud.apphub.v1.GetWorkloadRequest;
@@ -57,6 +62,8 @@ import com.google.cloud.apphub.v1.ListDiscoveredServicesRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredServicesResponse;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse;
 import com.google.cloud.apphub.v1.ListServicesRequest;
@@ -73,6 +80,7 @@ import com.google.cloud.apphub.v1.OperationMetadata;
 import com.google.cloud.apphub.v1.Service;
 import com.google.cloud.apphub.v1.ServiceProjectAttachment;
 import com.google.cloud.apphub.v1.UpdateApplicationRequest;
+import com.google.cloud.apphub.v1.UpdateBoundaryRequest;
 import com.google.cloud.apphub.v1.UpdateServiceRequest;
 import com.google.cloud.apphub.v1.UpdateWorkloadRequest;
 import com.google.cloud.apphub.v1.Workload;
@@ -428,6 +436,52 @@ public class GrpcAppHubStub extends AppHubStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetBoundaryRequest, Boundary> getBoundaryMethodDescriptor =
+      MethodDescriptor.<GetBoundaryRequest, Boundary>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.apphub.v1.AppHub/GetBoundary")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBoundaryRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Boundary.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<UpdateBoundaryRequest, Operation>
+      updateBoundaryMethodDescriptor =
+          MethodDescriptor.<UpdateBoundaryRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/UpdateBoundary")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBoundaryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaMethodDescriptor =
+          MethodDescriptor.<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/GetExtendedMetadataSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetExtendedMetadataSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExtendedMetadataSchema.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasMethodDescriptor =
+          MethodDescriptor
+              .<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.apphub.v1.AppHub/ListExtendedMetadataSchemas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListExtendedMetadataSchemasRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListExtendedMetadataSchemasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -558,6 +612,18 @@ public class GrpcAppHubStub extends AppHubStub {
   private final UnaryCallable<DeleteApplicationRequest, Operation> deleteApplicationCallable;
   private final OperationCallable<DeleteApplicationRequest, Empty, OperationMetadata>
       deleteApplicationOperationCallable;
+  private final UnaryCallable<GetBoundaryRequest, Boundary> getBoundaryCallable;
+  private final UnaryCallable<UpdateBoundaryRequest, Operation> updateBoundaryCallable;
+  private final OperationCallable<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationCallable;
+  private final UnaryCallable<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaCallable;
+  private final UnaryCallable<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasCallable;
+  private final UnaryCallable<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -925,6 +991,53 @@ public class GrpcAppHubStub extends AppHubStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<GetBoundaryRequest, Boundary> getBoundaryTransportSettings =
+        GrpcCallSettings.<GetBoundaryRequest, Boundary>newBuilder()
+            .setMethodDescriptor(getBoundaryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateBoundaryRequest, Operation> updateBoundaryTransportSettings =
+        GrpcCallSettings.<UpdateBoundaryRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBoundaryMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("boundary.name", String.valueOf(request.getBoundary().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+        getExtendedMetadataSchemaTransportSettings =
+            GrpcCallSettings.<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>newBuilder()
+                .setMethodDescriptor(getExtendedMetadataSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+        listExtendedMetadataSchemasTransportSettings =
+            GrpcCallSettings
+                .<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+                    newBuilder()
+                .setMethodDescriptor(listExtendedMetadataSchemasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1181,6 +1294,33 @@ public class GrpcAppHubStub extends AppHubStub {
             settings.deleteApplicationOperationSettings(),
             clientContext,
             operationsStub);
+    this.getBoundaryCallable =
+        callableFactory.createUnaryCallable(
+            getBoundaryTransportSettings, settings.getBoundarySettings(), clientContext);
+    this.updateBoundaryCallable =
+        callableFactory.createUnaryCallable(
+            updateBoundaryTransportSettings, settings.updateBoundarySettings(), clientContext);
+    this.updateBoundaryOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBoundaryTransportSettings,
+            settings.updateBoundaryOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getExtendedMetadataSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getExtendedMetadataSchemaTransportSettings,
+            settings.getExtendedMetadataSchemaSettings(),
+            clientContext);
+    this.listExtendedMetadataSchemasCallable =
+        callableFactory.createUnaryCallable(
+            listExtendedMetadataSchemasTransportSettings,
+            settings.listExtendedMetadataSchemasSettings(),
+            clientContext);
+    this.listExtendedMetadataSchemasPagedCallable =
+        callableFactory.createPagedCallable(
+            listExtendedMetadataSchemasTransportSettings,
+            settings.listExtendedMetadataSchemasSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1461,6 +1601,40 @@ public class GrpcAppHubStub extends AppHubStub {
   public OperationCallable<DeleteApplicationRequest, Empty, OperationMetadata>
       deleteApplicationOperationCallable() {
     return deleteApplicationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBoundaryRequest, Boundary> getBoundaryCallable() {
+    return getBoundaryCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBoundaryRequest, Operation> updateBoundaryCallable() {
+    return updateBoundaryCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationCallable() {
+    return updateBoundaryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaCallable() {
+    return getExtendedMetadataSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasCallable() {
+    return listExtendedMetadataSchemasCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasPagedCallable() {
+    return listExtendedMetadataSchemasPagedCallable;
   }
 
   @Override

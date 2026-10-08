@@ -30,9 +30,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
  * The AppConnectionsService service provides methods to manage
  * (create/read/update/delete) BeyondCorp AppConnections.
+ * Deprecated: App Connector is deprecated and creation of new App Connector
+ * resources is no longer permitted. Use Security Gateway instead.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class AppConnectionsServiceGrpc {
 
   private AppConnectionsServiceGrpc() {}
@@ -407,8 +410,11 @@ public final class AppConnectionsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
    * The AppConnectionsService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnections.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -418,6 +424,7 @@ public final class AppConnectionsServiceGrpc {
      * Lists AppConnections in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAppConnections(
         com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request,
         io.grpc.stub.StreamObserver<
@@ -434,6 +441,7 @@ public final class AppConnectionsServiceGrpc {
      * Gets details of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appconnections.v1.AppConnection>
@@ -449,6 +457,7 @@ public final class AppConnectionsServiceGrpc {
      * Creates a new AppConnection in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -463,6 +472,7 @@ public final class AppConnectionsServiceGrpc {
      * Updates the parameters of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -477,6 +487,7 @@ public final class AppConnectionsServiceGrpc {
      * Deletes a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -493,6 +504,7 @@ public final class AppConnectionsServiceGrpc {
      * to.
      * </pre>
      */
+    @java.lang.Deprecated
     default void resolveAppConnections(
         com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request,
         io.grpc.stub.StreamObserver<
@@ -516,8 +528,11 @@ public final class AppConnectionsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
    * The AppConnectionsService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnections.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class AppConnectionsServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -540,8 +555,11 @@ public final class AppConnectionsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
    * The AppConnectionsService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnections.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectionsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<AppConnectionsServiceStub> {
     private AppConnectionsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -561,6 +579,7 @@ public final class AppConnectionsServiceGrpc {
      * Lists AppConnections in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAppConnections(
         com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request,
         io.grpc.stub.StreamObserver<
@@ -579,6 +598,7 @@ public final class AppConnectionsServiceGrpc {
      * Gets details of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appconnections.v1.AppConnection>
@@ -596,6 +616,7 @@ public final class AppConnectionsServiceGrpc {
      * Creates a new AppConnection in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -612,6 +633,7 @@ public final class AppConnectionsServiceGrpc {
      * Updates the parameters of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -628,6 +650,7 @@ public final class AppConnectionsServiceGrpc {
      * Deletes a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -646,6 +669,7 @@ public final class AppConnectionsServiceGrpc {
      * to.
      * </pre>
      */
+    @java.lang.Deprecated
     public void resolveAppConnections(
         com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request,
         io.grpc.stub.StreamObserver<
@@ -671,8 +695,11 @@ public final class AppConnectionsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
    * The AppConnectionsService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnections.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectionsServiceBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<AppConnectionsServiceBlockingV2Stub> {
     private AppConnectionsServiceBlockingV2Stub(
@@ -693,6 +720,7 @@ public final class AppConnectionsServiceGrpc {
      * Lists AppConnections in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse
         listAppConnections(
             com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request)
@@ -708,6 +736,7 @@ public final class AppConnectionsServiceGrpc {
      * Gets details of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection getAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request)
         throws io.grpc.StatusException {
@@ -722,6 +751,7 @@ public final class AppConnectionsServiceGrpc {
      * Creates a new AppConnection in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request)
         throws io.grpc.StatusException {
@@ -736,6 +766,7 @@ public final class AppConnectionsServiceGrpc {
      * Updates the parameters of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request)
         throws io.grpc.StatusException {
@@ -750,6 +781,7 @@ public final class AppConnectionsServiceGrpc {
      * Deletes a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request)
         throws io.grpc.StatusException {
@@ -766,6 +798,7 @@ public final class AppConnectionsServiceGrpc {
      * to.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
         resolveAppConnections(
             com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request)
@@ -788,8 +821,11 @@ public final class AppConnectionsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
    * The AppConnectionsService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnections.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectionsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AppConnectionsServiceBlockingStub> {
     private AppConnectionsServiceBlockingStub(
@@ -810,6 +846,7 @@ public final class AppConnectionsServiceGrpc {
      * Lists AppConnections in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse
         listAppConnections(
             com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsRequest request) {
@@ -824,6 +861,7 @@ public final class AppConnectionsServiceGrpc {
      * Gets details of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnections.v1.AppConnection getAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.GetAppConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -837,6 +875,7 @@ public final class AppConnectionsServiceGrpc {
      * Creates a new AppConnection in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -850,6 +889,7 @@ public final class AppConnectionsServiceGrpc {
      * Updates the parameters of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -863,6 +903,7 @@ public final class AppConnectionsServiceGrpc {
      * Deletes a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAppConnection(
         com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -878,6 +919,7 @@ public final class AppConnectionsServiceGrpc {
      * to.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse
         resolveAppConnections(
             com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsRequest request) {
@@ -900,8 +942,11 @@ public final class AppConnectionsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`.
    * The AppConnectionsService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnections.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectionsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<AppConnectionsServiceFutureStub> {
     private AppConnectionsServiceFutureStub(
@@ -922,6 +967,7 @@ public final class AppConnectionsServiceGrpc {
      * Lists AppConnections in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appconnections.v1.ListAppConnectionsResponse>
         listAppConnections(
@@ -937,6 +983,7 @@ public final class AppConnectionsServiceGrpc {
      * Gets details of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appconnections.v1.AppConnection>
         getAppConnection(
@@ -952,6 +999,7 @@ public final class AppConnectionsServiceGrpc {
      * Creates a new AppConnection in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAppConnection(
             com.google.cloud.beyondcorp.appconnections.v1.CreateAppConnectionRequest request) {
@@ -966,6 +1014,7 @@ public final class AppConnectionsServiceGrpc {
      * Updates the parameters of a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateAppConnection(
             com.google.cloud.beyondcorp.appconnections.v1.UpdateAppConnectionRequest request) {
@@ -980,6 +1029,7 @@ public final class AppConnectionsServiceGrpc {
      * Deletes a single AppConnection.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAppConnection(
             com.google.cloud.beyondcorp.appconnections.v1.DeleteAppConnectionRequest request) {
@@ -996,6 +1046,7 @@ public final class AppConnectionsServiceGrpc {
      * to.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appconnections.v1.ResolveAppConnectionsResponse>
         resolveAppConnections(

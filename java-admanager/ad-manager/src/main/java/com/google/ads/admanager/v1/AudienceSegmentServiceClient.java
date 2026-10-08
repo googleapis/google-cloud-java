@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -136,6 +137,40 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> batchCreateAudienceSegmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAudienceSegment</td>
+ *      <td><p> Updates an `AudienceSegment` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAudienceSegment(UpdateAudienceSegmentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAudienceSegment(AudienceSegment audienceSegment, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAudienceSegmentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateAudienceSegments</td>
+ *      <td><p> Batch updates `AudienceSegment` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateAudienceSegments(NetworkName parent, List&lt;UpdateAudienceSegmentRequest&gt; requests)
+ *           <li><p> batchUpdateAudienceSegments(String parent, List&lt;UpdateAudienceSegmentRequest&gt; requests)
+ *           <li><p> batchUpdateAudienceSegments(BatchUpdateAudienceSegmentsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateAudienceSegmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -907,6 +942,242 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
           BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
       batchCreateAudienceSegmentsCallable() {
     return stub.batchCreateAudienceSegmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an `AudienceSegment` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   AudienceSegment audienceSegment = AudienceSegment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AudienceSegment response =
+   *       audienceSegmentServiceClient.updateAudienceSegment(audienceSegment, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param audienceSegment Required. The `AudienceSegment` to update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AudienceSegment updateAudienceSegment(
+      AudienceSegment audienceSegment, FieldMask updateMask) {
+    UpdateAudienceSegmentRequest request =
+        UpdateAudienceSegmentRequest.newBuilder()
+            .setAudienceSegment(audienceSegment)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAudienceSegment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an `AudienceSegment` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   UpdateAudienceSegmentRequest request =
+   *       UpdateAudienceSegmentRequest.newBuilder()
+   *           .setAudienceSegment(AudienceSegment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AudienceSegment response = audienceSegmentServiceClient.updateAudienceSegment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AudienceSegment updateAudienceSegment(UpdateAudienceSegmentRequest request) {
+    return updateAudienceSegmentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an `AudienceSegment` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   UpdateAudienceSegmentRequest request =
+   *       UpdateAudienceSegmentRequest.newBuilder()
+   *           .setAudienceSegment(AudienceSegment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AudienceSegment> future =
+   *       audienceSegmentServiceClient.updateAudienceSegmentCallable().futureCall(request);
+   *   // Do something.
+   *   AudienceSegment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAudienceSegmentRequest, AudienceSegment>
+      updateAudienceSegmentCallable() {
+    return stub.updateAudienceSegmentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdateAudienceSegmentRequest> requests = new ArrayList<>();
+   *   BatchUpdateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchUpdateAudienceSegments(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `AudienceSegments` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the
+   *     UpdateAudienceSegmentRequest.audienceSegment must match this field.
+   * @param requests Required. The `AudienceSegment` objects to update. A maximum of 100 objects can
+   *     be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateAudienceSegmentsResponse batchUpdateAudienceSegments(
+      @Nullable NetworkName parent, List<UpdateAudienceSegmentRequest> requests) {
+    BatchUpdateAudienceSegmentsRequest request =
+        BatchUpdateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdateAudienceSegmentRequest> requests = new ArrayList<>();
+   *   BatchUpdateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchUpdateAudienceSegments(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `AudienceSegments` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the
+   *     UpdateAudienceSegmentRequest.audienceSegment must match this field.
+   * @param requests Required. The `AudienceSegment` objects to update. A maximum of 100 objects can
+   *     be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateAudienceSegmentsResponse batchUpdateAudienceSegments(
+      String parent, List<UpdateAudienceSegmentRequest> requests) {
+    BatchUpdateAudienceSegmentsRequest request =
+        BatchUpdateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchUpdateAudienceSegmentsRequest request =
+   *       BatchUpdateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateAudienceSegmentRequest>())
+   *           .build();
+   *   BatchUpdateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchUpdateAudienceSegments(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateAudienceSegmentsResponse batchUpdateAudienceSegments(
+      BatchUpdateAudienceSegmentsRequest request) {
+    return batchUpdateAudienceSegmentsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchUpdateAudienceSegmentsRequest request =
+   *       BatchUpdateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateAudienceSegmentRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateAudienceSegmentsResponse> future =
+   *       audienceSegmentServiceClient.batchUpdateAudienceSegmentsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateAudienceSegmentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+      batchUpdateAudienceSegmentsCallable() {
+    return stub.batchUpdateAudienceSegmentsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

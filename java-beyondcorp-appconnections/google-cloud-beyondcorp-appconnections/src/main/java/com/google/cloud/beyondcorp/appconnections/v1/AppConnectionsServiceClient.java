@@ -67,6 +67,9 @@ import org.jspecify.annotations.Nullable;
  * <p>The AppConnectionsService service provides methods to manage (create/read/update/delete)
  * BeyondCorp AppConnections.
  *
+ * <p>Deprecated: App Connector is deprecated and creation of new App Connector resources is no
+ * longer permitted. Use Security Gateway instead.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -214,7 +217,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -327,8 +332,11 @@ import org.jspecify.annotations.Nullable;
  * }</pre>
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AppConnectionsServiceClient implements BackgroundResource {
   private final @Nullable AppConnectionsServiceSettings settings;
@@ -415,7 +423,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the AppConnection location using the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAppConnectionsPagedResponse listAppConnections(@Nullable LocationName parent) {
     ListAppConnectionsRequest request =
         ListAppConnectionsRequest.newBuilder()
@@ -449,7 +459,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the AppConnection location using the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAppConnectionsPagedResponse listAppConnections(String parent) {
     ListAppConnectionsRequest request =
         ListAppConnectionsRequest.newBuilder().setParent(parent).build();
@@ -487,7 +499,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ListAppConnectionsPagedResponse listAppConnections(
       ListAppConnectionsRequest request) {
     return listAppConnectionsPagedCallable().call(request);
@@ -523,7 +537,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAppConnectionsRequest, ListAppConnectionsPagedResponse>
       listAppConnectionsPagedCallable() {
     return stub.listAppConnectionsPagedCallable();
@@ -566,7 +583,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ListAppConnectionsRequest, ListAppConnectionsResponse>
       listAppConnectionsCallable() {
     return stub.listAppConnectionsCallable();
@@ -594,7 +614,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp AppConnection name using the form:
    *     `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AppConnection getAppConnection(@Nullable AppConnectionName name) {
     GetAppConnectionRequest request =
         GetAppConnectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
@@ -623,7 +645,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp AppConnection name using the form:
    *     `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AppConnection getAppConnection(String name) {
     GetAppConnectionRequest request = GetAppConnectionRequest.newBuilder().setName(name).build();
     return getAppConnection(request);
@@ -654,7 +678,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final AppConnection getAppConnection(GetAppConnectionRequest request) {
     return getAppConnectionCallable().call(request);
   }
@@ -684,7 +710,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   AppConnection response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<GetAppConnectionRequest, AppConnection> getAppConnectionCallable() {
     return stub.getAppConnectionCallable();
   }
@@ -720,7 +749,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *     a letter. &#42; Must contain between 4-63 characters from `/[a-z][0-9]-/`. &#42; Must end
    *     with a number or a letter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppConnection, AppConnectionOperationMetadata>
       createAppConnectionAsync(
           @Nullable LocationName parent, AppConnection appConnection, String appConnectionId) {
@@ -764,7 +795,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *     a letter. &#42; Must contain between 4-63 characters from `/[a-z][0-9]-/`. &#42; Must end
    *     with a number or a letter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppConnection, AppConnectionOperationMetadata>
       createAppConnectionAsync(String parent, AppConnection appConnection, String appConnectionId) {
     CreateAppConnectionRequest request =
@@ -804,7 +837,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppConnection, AppConnectionOperationMetadata>
       createAppConnectionAsync(CreateAppConnectionRequest request) {
     return createAppConnectionOperationCallable().futureCall(request);
@@ -838,7 +873,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   AppConnection response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<
           CreateAppConnectionRequest, AppConnection, AppConnectionOperationMetadata>
       createAppConnectionOperationCallable() {
@@ -873,7 +911,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<CreateAppConnectionRequest, Operation> createAppConnectionCallable() {
     return stub.createAppConnectionCallable();
   }
@@ -912,7 +953,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppConnection, AppConnectionOperationMetadata>
       updateAppConnectionAsync(AppConnection appConnection, FieldMask updateMask) {
     UpdateAppConnectionRequest request =
@@ -951,7 +994,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<AppConnection, AppConnectionOperationMetadata>
       updateAppConnectionAsync(UpdateAppConnectionRequest request) {
     return updateAppConnectionOperationCallable().futureCall(request);
@@ -985,7 +1030,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   AppConnection response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<
           UpdateAppConnectionRequest, AppConnection, AppConnectionOperationMetadata>
       updateAppConnectionOperationCallable() {
@@ -1020,7 +1068,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   Operation response = future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<UpdateAppConnectionRequest, Operation> updateAppConnectionCallable() {
     return stub.updateAppConnectionCallable();
   }
@@ -1047,7 +1098,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp Connector name using the form:
    *     `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, AppConnectionOperationMetadata> deleteAppConnectionAsync(
       @Nullable AppConnectionName name) {
     DeleteAppConnectionRequest request =
@@ -1079,7 +1132,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param name Required. BeyondCorp Connector name using the form:
    *     `projects/{project_id}/locations/{location_id}/appConnections/{app_connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, AppConnectionOperationMetadata> deleteAppConnectionAsync(
       String name) {
     DeleteAppConnectionRequest request =
@@ -1114,7 +1169,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationFuture<Empty, AppConnectionOperationMetadata> deleteAppConnectionAsync(
       DeleteAppConnectionRequest request) {
     return deleteAppConnectionOperationCallable().futureCall(request);
@@ -1147,7 +1204,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final OperationCallable<DeleteAppConnectionRequest, Empty, AppConnectionOperationMetadata>
       deleteAppConnectionOperationCallable() {
     return stub.deleteAppConnectionOperationCallable();
@@ -1180,7 +1240,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   future.get();
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<DeleteAppConnectionRequest, Operation> deleteAppConnectionCallable() {
     return stub.deleteAppConnectionCallable();
   }
@@ -1211,7 +1274,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the AppConnection location using the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ResolveAppConnectionsPagedResponse resolveAppConnections(
       @Nullable LocationName parent) {
     ResolveAppConnectionsRequest request =
@@ -1247,7 +1312,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the AppConnection location using the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ResolveAppConnectionsPagedResponse resolveAppConnections(String parent) {
     ResolveAppConnectionsRequest request =
         ResolveAppConnectionsRequest.newBuilder().setParent(parent).build();
@@ -1286,7 +1353,9 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final ResolveAppConnectionsPagedResponse resolveAppConnections(
       ResolveAppConnectionsRequest request) {
     return resolveAppConnectionsPagedCallable().call(request);
@@ -1323,7 +1392,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ResolveAppConnectionsRequest, ResolveAppConnectionsPagedResponse>
       resolveAppConnectionsPagedCallable() {
     return stub.resolveAppConnectionsPagedCallable();
@@ -1368,7 +1440,10 @@ public class AppConnectionsServiceClient implements BackgroundResource {
    *   }
    * }
    * }</pre>
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
    */
+  @Deprecated
   public final UnaryCallable<ResolveAppConnectionsRequest, ResolveAppConnectionsResponse>
       resolveAppConnectionsCallable() {
     return stub.resolveAppConnectionsCallable();
@@ -1377,6 +1452,18 @@ public class AppConnectionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1412,6 +1499,18 @@ public class AppConnectionsServiceClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1446,6 +1545,18 @@ public class AppConnectionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

@@ -340,4 +340,93 @@ public interface ApplicationOrBuilder
    * @return The state.
    */
   com.google.cloud.apphub.v1.Application.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Properties of an underlying cloud resource that can comprise
+   * an Application.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.ApplicationProperties application_properties = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationProperties field is set.
+   */
+  boolean hasApplicationProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Properties of an underlying cloud resource that can comprise
+   * an Application.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.ApplicationProperties application_properties = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationProperties.
+   */
+  com.google.cloud.apphub.v1.ApplicationProperties getApplicationProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Properties of an underlying cloud resource that can comprise
+   * an Application.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.ApplicationProperties application_properties = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apphub.v1.ApplicationPropertiesOrBuilder getApplicationPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Application type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.ApplicationType application_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the applicationType field is set.
+   */
+  boolean hasApplicationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Application type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.ApplicationType application_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The applicationType.
+   */
+  com.google.cloud.apphub.v1.ApplicationType getApplicationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Application type.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.ApplicationType application_type = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apphub.v1.ApplicationTypeOrBuilder getApplicationTypeOrBuilder();
 }
