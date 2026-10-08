@@ -28,7 +28,7 @@ import java.util.List;
 
 public class DeleteBucketIpFilter {
   public static Bucket deleteBucketIpFilterRules(
-      String projectId, String bucketName, String publicRangeToDelete, String vpcNetworkToDelete) {
+      String projectId, String bucketName, String publicRange, String vpcNetwork) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -36,55 +36,37 @@ public class DeleteBucketIpFilter {
     // String bucketName = "your-unique-bucket-name";
 
     // The public IPv4/IPv6 CIDR range to remove
-    // String publicRangeToDelete = "192.0.2.0/24";
+    // String publicRange = "192.0.2.0/24";
 
     // The VPC network name to remove
-    // String vpcNetworkToDelete = "projects/my-project/global/networks/my-vpc";
+    // String vpcNetwork = "projects/my-project/global/networks/my-vpc";
 
     Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
     Bucket bucket = storage.get(bucketName);
-    IpFilter ipFilter = bucket.getIpFilter();
+    IpFilter filter = bucket.getIpFilter();
 
-    if (ipFilter == null) {
+    if (filter == null) {
       System.out.println("Bucket " + bucketName + " has no IP Filter configured.");
       return bucket;
     }
 
-    boolean modified = false;
-    List<String> publicRanges =
-        (ipFilter.getPublicNetworkSource() != null
-                && ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges() != null)
-            ? new ArrayList<>(ipFilter.getPublicNetworkSource().getAllowedIpCidrRanges())
-            : new ArrayList<>();
-    if (publicRangeToDelete != null && publicRanges.remove(publicRangeToDelete)) {
-      modified = true;
+    IpFilter.Builder builder = filter.toBuilder();
+    if (publicRange != null && filter.getPublicNetworkSource() != null) {
+      List<String> ranges =
+          new ArrayList<>(filter.getPublicNetworkSource().getAllowedIpCidrRanges());
+      ranges.remove(publicRange);
+      builder.setPublicNetworkSource(ranges.isEmpty() ? null : PublicNetworkSource.of(ranges));
     }
 
-    List<VpcNetworkSource> vpcSources =
-        ipFilter.getVpcNetworkSources() != null
-            ? new ArrayList<>(ipFilter.getVpcNetworkSources())
-            : new ArrayList<>();
-    if (vpcNetworkToDelete != null
-        && vpcSources.removeIf(source -> vpcNetworkToDelete.equals(source.getNetwork()))) {
-      modified = true;
+    if (vpcNetwork != null && filter.getVpcNetworkSources() != null) {
+      List<VpcNetworkSource> vpcs = new ArrayList<>(filter.getVpcNetworkSources());
+      vpcs.removeIf(source -> vpcNetwork.equals(source.getNetwork()));
+      builder.setVpcNetworkSources(vpcs.isEmpty() ? null : vpcs);
     }
 
-    if (modified) {
-      IpFilter updatedIpFilter =
-          ipFilter.toBuilder()
-              .setPublicNetworkSource(
-                  publicRanges.isEmpty() ? null : PublicNetworkSource.of(publicRanges))
-              .setVpcNetworkSources(vpcSources.isEmpty() ? null : vpcSources)
-              .build();
-
-      Bucket updatedBucket =
-          storage.update(bucket.toBuilder().setIpFilter(updatedIpFilter).build());
-      System.out.println("Deleted specified IP filtering rules for bucket " + bucketName);
-      return updatedBucket;
-    }
-
-    System.out.println("No matching IP filtering rules found to delete for bucket " + bucketName);
-    return bucket;
+    Bucket updatedBucket = storage.update(bucket.toBuilder().setIpFilter(builder.build()).build());
+    System.out.println("Deleted specified IP filtering rules for bucket " + bucketName);
+    return updatedBucket;
   }
 }
 // [END storage_delete_ip_filtering_rules]
