@@ -1118,3 +1118,5 @@ grpc-google-cloud-backupdr-v1beta:0.58.0:0.58.0
 grpc-google-cloud-networkservices-v1beta1:0.55.0:0.55.0
 proto-google-cloud-backupdr-v1beta:0.58.0:0.58.0
 proto-google-cloud-networkservices-v1beta1:0.55.0:0.55.0
+grpc-google-cloud-health-v4beta:0.8.0:0.8.0
+proto-google-cloud-health-v4beta:0.8.0:0.8.0

@@ -143,8 +143,8 @@ public final class ListAppConnectorsRequest extends com.google.protobuf.Generate
    * If not specified, a default value of 50 will be used by the service.
    * Regardless of the page_size value, the response may include a partial list
    * and a caller should only rely on response's
-   * [next_page_token][BeyondCorp.ListAppConnectorsResponse.next_page_token] to
-   * determine if there are more instances left to be queried.
+   * [next_page_token][google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse.next_page_token]
+   * to determine if there are more instances left to be queried.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -872,8 +872,8 @@ public final class ListAppConnectorsRequest extends com.google.protobuf.Generate
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
-     * [next_page_token][BeyondCorp.ListAppConnectorsResponse.next_page_token] to
-     * determine if there are more instances left to be queried.
+     * [next_page_token][google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse.next_page_token]
+     * to determine if there are more instances left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,8 +893,8 @@ public final class ListAppConnectorsRequest extends com.google.protobuf.Generate
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
-     * [next_page_token][BeyondCorp.ListAppConnectorsResponse.next_page_token] to
-     * determine if there are more instances left to be queried.
+     * [next_page_token][google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse.next_page_token]
+     * to determine if there are more instances left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -918,8 +918,8 @@ public final class ListAppConnectorsRequest extends com.google.protobuf.Generate
      * If not specified, a default value of 50 will be used by the service.
      * Regardless of the page_size value, the response may include a partial list
      * and a caller should only rely on response's
-     * [next_page_token][BeyondCorp.ListAppConnectorsResponse.next_page_token] to
-     * determine if there are more instances left to be queried.
+     * [next_page_token][google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse.next_page_token]
+     * to determine if there are more instances left to be queried.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

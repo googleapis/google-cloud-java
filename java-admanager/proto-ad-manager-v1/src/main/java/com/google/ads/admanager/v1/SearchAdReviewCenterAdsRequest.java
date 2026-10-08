@@ -57,6 +57,14 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     adReviewCenterAdId_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchText_ = com.google.protobuf.LazyStringArrayList.emptyList();
     buyerAccountId_ = emptyLongList();
+    adResponseId_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    advertiserDisplayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    adTypes_ = emptyIntList();
+    advertiserApps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    publisherDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    labelIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -132,6 +140,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. Only return ads with the given status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+   * enabled.
    * </pre>
    *
    * <code>
@@ -149,6 +160,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. Only return ads with the given status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+   * enabled.
    * </pre>
    *
    * <code>
@@ -169,6 +183,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. Only return ads with the given status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+   * enabled.
    * </pre>
    *
    * <code>
@@ -197,10 +214,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Only return ads with the given manual review status. Only
-   * available for networks with Manual Creative Review enabled. For more
-   * information, see
-   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * Optional. Only return ads with the given manual review status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
    * </pre>
    *
    * <code>
@@ -217,10 +233,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Only return ads with the given manual review status. Only
-   * available for networks with Manual Creative Review enabled. For more
-   * information, see
-   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * Optional. Only return ads with the given manual review status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
    * </pre>
    *
    * <code>
@@ -240,10 +255,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Only return ads with the given manual review status. Only
-   * available for networks with Manual Creative Review enabled. For more
-   * information, see
-   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * Optional. Only return ads with the given manual review status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
    * </pre>
    *
    * <code>
@@ -512,9 +526,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. If provided, only return ads that served within the given date
-   * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days. This filter does not
-   * apply to the PENDING manual review status.
+   * range (inclusive). The date range must be within the last 30 days. If not
+   * provided, the date range will be the last 30 days.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -532,9 +545,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. If provided, only return ads that served within the given date
-   * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days. This filter does not
-   * apply to the PENDING manual review status.
+   * range (inclusive). The date range must be within the last 30 days. If not
+   * provided, the date range will be the last 30 days.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -552,9 +564,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Optional. If provided, only return ads that served within the given date
-   * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days. This filter does not
-   * apply to the PENDING manual review status.
+   * range (inclusive). The date range must be within the last 30 days. If not
+   * provided, the date range will be the last 30 days.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -709,6 +720,680 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
 
   private int buyerAccountIdMemoizedSerializedSize = -1;
 
+  public static final int AD_RESPONSE_ID_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList adResponseId_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the adResponseId.
+   */
+  public com.google.protobuf.ProtocolStringList getAdResponseIdList() {
+    return adResponseId_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of adResponseId.
+   */
+  public int getAdResponseIdCount() {
+    return adResponseId_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The adResponseId at the given index.
+   */
+  public java.lang.String getAdResponseId(int index) {
+    return adResponseId_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the adResponseId at the given index.
+   */
+  public com.google.protobuf.ByteString getAdResponseIdBytes(int index) {
+    return adResponseId_.getByteString(index);
+  }
+
+  public static final int ADVERTISER_DISPLAY_NAMES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList advertiserDisplayNames_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the advertiserDisplayNames.
+   */
+  public com.google.protobuf.ProtocolStringList getAdvertiserDisplayNamesList() {
+    return advertiserDisplayNames_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of advertiserDisplayNames.
+   */
+  public int getAdvertiserDisplayNamesCount() {
+    return advertiserDisplayNames_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The advertiserDisplayNames at the given index.
+   */
+  public java.lang.String getAdvertiserDisplayNames(int index) {
+    return advertiserDisplayNames_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advertiserDisplayNames at the given index.
+   */
+  public com.google.protobuf.ByteString getAdvertiserDisplayNamesBytes(int index) {
+    return advertiserDisplayNames_.getByteString(index);
+  }
+
+  public static final int LANGUAGE_CODES_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList languageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the languageCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
+    return languageCodes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of languageCodes.
+   */
+  public int getLanguageCodesCount() {
+    return languageCodes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
+   */
+  public java.lang.String getLanguageCodes(int index) {
+    return languageCodes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
+    return languageCodes_.getByteString(index);
+  }
+
+  public static final int REGION_CODES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList regionCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the regionCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getRegionCodesList() {
+    return regionCodes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of regionCodes.
+   */
+  public int getRegionCodesCount() {
+    return regionCodes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regionCodes at the given index.
+   */
+  public java.lang.String getRegionCodes(int index) {
+    return regionCodes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regionCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getRegionCodesBytes(int index) {
+    return regionCodes_.getByteString(index);
+  }
+
+  public static final int AD_TYPES_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList adTypes_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+      adTypes_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>() {
+            public com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat convert(
+                int from) {
+              com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat result =
+                  com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat.forNumber(
+                      from);
+              return result == null
+                  ? com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the adTypes.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+      getAdTypesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>(
+        adTypes_, adTypes_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of adTypes.
+   */
+  @java.lang.Override
+  public int getAdTypesCount() {
+    return adTypes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The adTypes at the given index.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat getAdTypes(int index) {
+    return adTypes_converter_.convert(adTypes_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for adTypes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAdTypesValueList() {
+    return adTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of adTypes at the given index.
+   */
+  @java.lang.Override
+  public int getAdTypesValue(int index) {
+    return adTypes_.getInt(index);
+  }
+
+  private int adTypesMemoizedSerializedSize;
+
+  public static final int ADVERTISER_APPS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList advertiserApps_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the advertiserApps.
+   */
+  public com.google.protobuf.ProtocolStringList getAdvertiserAppsList() {
+    return advertiserApps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of advertiserApps.
+   */
+  public int getAdvertiserAppsCount() {
+    return advertiserApps_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The advertiserApps at the given index.
+   */
+  public java.lang.String getAdvertiserApps(int index) {
+    return advertiserApps_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advertiserApps at the given index.
+   */
+  public com.google.protobuf.ByteString getAdvertiserAppsBytes(int index) {
+    return advertiserApps_.getByteString(index);
+  }
+
+  public static final int PUBLISHER_DOMAINS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList publisherDomains_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the publisherDomains.
+   */
+  public com.google.protobuf.ProtocolStringList getPublisherDomainsList() {
+    return publisherDomains_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of publisherDomains.
+   */
+  public int getPublisherDomainsCount() {
+    return publisherDomains_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The publisherDomains at the given index.
+   */
+  public java.lang.String getPublisherDomains(int index) {
+    return publisherDomains_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the publisherDomains at the given index.
+   */
+  public com.google.protobuf.ByteString getPublisherDomainsBytes(int index) {
+    return publisherDomains_.getByteString(index);
+  }
+
+  public static final int NEW_IN_LAST_DAYS_FIELD_NUMBER = 17;
+  private int newInLastDays_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives which appeared for
+   * the first time within the past X days. Must be within the last 30 days (1
+   * to 30, inclusive).
+   * </pre>
+   *
+   * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the newInLastDays field is set.
+   */
+  @java.lang.Override
+  public boolean hasNewInLastDays() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives which appeared for
+   * the first time within the past X days. Must be within the last 30 days (1
+   * to 30, inclusive).
+   * </pre>
+   *
+   * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The newInLastDays.
+   */
+  @java.lang.Override
+  public int getNewInLastDays() {
+    return newInLastDays_;
+  }
+
+  public static final int LABEL_IDS_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList labelIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the labelIds.
+   */
+  public com.google.protobuf.ProtocolStringList getLabelIdsList() {
+    return labelIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of labelIds.
+   */
+  public int getLabelIdsCount() {
+    return labelIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labelIds at the given index.
+   */
+  public java.lang.String getLabelIds(int index) {
+    return labelIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labelIds at the given index.
+   */
+  public com.google.protobuf.ByteString getLabelIdsBytes(int index) {
+    return labelIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -754,6 +1439,38 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     }
     if (adReviewStatusCase_ == 9) {
       output.writeEnum(9, ((java.lang.Integer) adReviewStatus_));
+    }
+    for (int i = 0; i < adResponseId_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, adResponseId_.getRaw(i));
+    }
+    for (int i = 0; i < advertiserDisplayNames_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 11, advertiserDisplayNames_.getRaw(i));
+    }
+    for (int i = 0; i < languageCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, languageCodes_.getRaw(i));
+    }
+    for (int i = 0; i < regionCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, regionCodes_.getRaw(i));
+    }
+    if (getAdTypesList().size() > 0) {
+      output.writeUInt32NoTag(114);
+      output.writeUInt32NoTag(adTypesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < adTypes_.size(); i++) {
+      output.writeEnumNoTag(adTypes_.getInt(i));
+    }
+    for (int i = 0; i < advertiserApps_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, advertiserApps_.getRaw(i));
+    }
+    for (int i = 0; i < publisherDomains_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, publisherDomains_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt32(17, newInLastDays_);
+    }
+    for (int i = 0; i < labelIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 18, labelIds_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -815,6 +1532,77 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               9, ((java.lang.Integer) adReviewStatus_));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < adResponseId_.size(); i++) {
+        dataSize += computeStringSizeNoTag(adResponseId_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdResponseIdList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < advertiserDisplayNames_.size(); i++) {
+        dataSize += computeStringSizeNoTag(advertiserDisplayNames_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdvertiserDisplayNamesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < languageCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(languageCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLanguageCodesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < regionCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(regionCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRegionCodesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < adTypes_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(adTypes_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAdTypesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      adTypesMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < advertiserApps_.size(); i++) {
+        dataSize += computeStringSizeNoTag(advertiserApps_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAdvertiserAppsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < publisherDomains_.size(); i++) {
+        dataSize += computeStringSizeNoTag(publisherDomains_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getPublisherDomainsList().size();
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(17, newInLastDays_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < labelIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(labelIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getLabelIdsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -841,6 +1629,19 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     }
     if (!getSearchTextList().equals(other.getSearchTextList())) return false;
     if (!getBuyerAccountIdList().equals(other.getBuyerAccountIdList())) return false;
+    if (!getAdResponseIdList().equals(other.getAdResponseIdList())) return false;
+    if (!getAdvertiserDisplayNamesList().equals(other.getAdvertiserDisplayNamesList()))
+      return false;
+    if (!getLanguageCodesList().equals(other.getLanguageCodesList())) return false;
+    if (!getRegionCodesList().equals(other.getRegionCodesList())) return false;
+    if (!adTypes_.equals(other.adTypes_)) return false;
+    if (!getAdvertiserAppsList().equals(other.getAdvertiserAppsList())) return false;
+    if (!getPublisherDomainsList().equals(other.getPublisherDomainsList())) return false;
+    if (hasNewInLastDays() != other.hasNewInLastDays()) return false;
+    if (hasNewInLastDays()) {
+      if (getNewInLastDays() != other.getNewInLastDays()) return false;
+    }
+    if (!getLabelIdsList().equals(other.getLabelIdsList())) return false;
     if (!getAdReviewStatusCase().equals(other.getAdReviewStatusCase())) return false;
     switch (adReviewStatusCase_) {
       case 4:
@@ -884,6 +1685,42 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     if (getBuyerAccountIdCount() > 0) {
       hash = (37 * hash) + BUYER_ACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBuyerAccountIdList().hashCode();
+    }
+    if (getAdResponseIdCount() > 0) {
+      hash = (37 * hash) + AD_RESPONSE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAdResponseIdList().hashCode();
+    }
+    if (getAdvertiserDisplayNamesCount() > 0) {
+      hash = (37 * hash) + ADVERTISER_DISPLAY_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertiserDisplayNamesList().hashCode();
+    }
+    if (getLanguageCodesCount() > 0) {
+      hash = (37 * hash) + LANGUAGE_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCodesList().hashCode();
+    }
+    if (getRegionCodesCount() > 0) {
+      hash = (37 * hash) + REGION_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionCodesList().hashCode();
+    }
+    if (getAdTypesCount() > 0) {
+      hash = (37 * hash) + AD_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + adTypes_.hashCode();
+    }
+    if (getAdvertiserAppsCount() > 0) {
+      hash = (37 * hash) + ADVERTISER_APPS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertiserAppsList().hashCode();
+    }
+    if (getPublisherDomainsCount() > 0) {
+      hash = (37 * hash) + PUBLISHER_DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getPublisherDomainsList().hashCode();
+    }
+    if (hasNewInLastDays()) {
+      hash = (37 * hash) + NEW_IN_LAST_DAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getNewInLastDays();
+    }
+    if (getLabelIdsCount() > 0) {
+      hash = (37 * hash) + LABEL_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelIdsList().hashCode();
     }
     switch (adReviewStatusCase_) {
       case 4:
@@ -1058,6 +1895,15 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       }
       searchText_ = com.google.protobuf.LazyStringArrayList.emptyList();
       buyerAccountId_ = emptyLongList();
+      adResponseId_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      advertiserDisplayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      adTypes_ = emptyIntList();
+      advertiserApps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      publisherDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      newInLastDays_ = 0;
+      labelIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       adReviewStatusCase_ = 0;
       adReviewStatus_ = null;
       return this;
@@ -1123,6 +1969,42 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00000100) != 0)) {
         buyerAccountId_.makeImmutable();
         result.buyerAccountId_ = buyerAccountId_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        adResponseId_.makeImmutable();
+        result.adResponseId_ = adResponseId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        advertiserDisplayNames_.makeImmutable();
+        result.advertiserDisplayNames_ = advertiserDisplayNames_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        languageCodes_.makeImmutable();
+        result.languageCodes_ = languageCodes_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        regionCodes_.makeImmutable();
+        result.regionCodes_ = regionCodes_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        adTypes_.makeImmutable();
+        result.adTypes_ = adTypes_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        advertiserApps_.makeImmutable();
+        result.advertiserApps_ = advertiserApps_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        publisherDomains_.makeImmutable();
+        result.publisherDomains_ = publisherDomains_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.newInLastDays_ = newInLastDays_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        labelIds_.makeImmutable();
+        result.labelIds_ = labelIds_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1190,6 +2072,90 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
         } else {
           ensureBuyerAccountIdIsMutable();
           buyerAccountId_.addAll(other.buyerAccountId_);
+        }
+        onChanged();
+      }
+      if (!other.adResponseId_.isEmpty()) {
+        if (adResponseId_.isEmpty()) {
+          adResponseId_ = other.adResponseId_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureAdResponseIdIsMutable();
+          adResponseId_.addAll(other.adResponseId_);
+        }
+        onChanged();
+      }
+      if (!other.advertiserDisplayNames_.isEmpty()) {
+        if (advertiserDisplayNames_.isEmpty()) {
+          advertiserDisplayNames_ = other.advertiserDisplayNames_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureAdvertiserDisplayNamesIsMutable();
+          advertiserDisplayNames_.addAll(other.advertiserDisplayNames_);
+        }
+        onChanged();
+      }
+      if (!other.languageCodes_.isEmpty()) {
+        if (languageCodes_.isEmpty()) {
+          languageCodes_ = other.languageCodes_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureLanguageCodesIsMutable();
+          languageCodes_.addAll(other.languageCodes_);
+        }
+        onChanged();
+      }
+      if (!other.regionCodes_.isEmpty()) {
+        if (regionCodes_.isEmpty()) {
+          regionCodes_ = other.regionCodes_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureRegionCodesIsMutable();
+          regionCodes_.addAll(other.regionCodes_);
+        }
+        onChanged();
+      }
+      if (!other.adTypes_.isEmpty()) {
+        if (adTypes_.isEmpty()) {
+          adTypes_ = other.adTypes_;
+          adTypes_.makeImmutable();
+          bitField0_ |= 0x00002000;
+        } else {
+          ensureAdTypesIsMutable();
+          adTypes_.addAll(other.adTypes_);
+        }
+        onChanged();
+      }
+      if (!other.advertiserApps_.isEmpty()) {
+        if (advertiserApps_.isEmpty()) {
+          advertiserApps_ = other.advertiserApps_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureAdvertiserAppsIsMutable();
+          advertiserApps_.addAll(other.advertiserApps_);
+        }
+        onChanged();
+      }
+      if (!other.publisherDomains_.isEmpty()) {
+        if (publisherDomains_.isEmpty()) {
+          publisherDomains_ = other.publisherDomains_;
+          bitField0_ |= 0x00008000;
+        } else {
+          ensurePublisherDomainsIsMutable();
+          publisherDomains_.addAll(other.publisherDomains_);
+        }
+        onChanged();
+      }
+      if (other.hasNewInLastDays()) {
+        setNewInLastDays(other.getNewInLastDays());
+      }
+      if (!other.labelIds_.isEmpty()) {
+        if (labelIds_.isEmpty()) {
+          labelIds_ = other.labelIds_;
+          bitField0_ |= 0x00020000;
+        } else {
+          ensureLabelIdsIsMutable();
+          labelIds_.addAll(other.labelIds_);
         }
         onChanged();
       }
@@ -1306,6 +2272,79 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
                 adReviewStatus_ = rawValue;
                 break;
               } // case 72
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdResponseIdIsMutable();
+                adResponseId_.add(s);
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdvertiserDisplayNamesIsMutable();
+                advertiserDisplayNames_.add(s);
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLanguageCodesIsMutable();
+                languageCodes_.add(s);
+                break;
+              } // case 98
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRegionCodesIsMutable();
+                regionCodes_.add(s);
+                break;
+              } // case 106
+            case 112:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAdTypesIsMutable();
+                adTypes_.addInt(tmpRaw);
+                break;
+              } // case 112
+            case 114:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAdTypesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  adTypes_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdvertiserAppsIsMutable();
+                advertiserApps_.add(s);
+                break;
+              } // case 122
+            case 130:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePublisherDomainsIsMutable();
+                publisherDomains_.add(s);
+                break;
+              } // case 130
+            case 136:
+              {
+                newInLastDays_ = input.readInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 136
+            case 146:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLabelIdsIsMutable();
+                labelIds_.add(s);
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1344,6 +2383,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Only return ads with the given status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1362,6 +2404,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Only return ads with the given status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1383,6 +2428,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Only return ads with the given status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1404,6 +2452,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Only return ads with the given status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1433,6 +2484,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Only return ads with the given status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1458,6 +2512,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. Only return ads with the given status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1479,10 +2536,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only return ads with the given manual review status. Only
-     * available for networks with Manual Creative Review enabled. For more
-     * information, see
-     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * Optional. Only return ads with the given manual review status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
      * </pre>
      *
      * <code>
@@ -1500,10 +2556,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only return ads with the given manual review status. Only
-     * available for networks with Manual Creative Review enabled. For more
-     * information, see
-     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * Optional. Only return ads with the given manual review status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
      * </pre>
      *
      * <code>
@@ -1524,10 +2579,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only return ads with the given manual review status. Only
-     * available for networks with Manual Creative Review enabled. For more
-     * information, see
-     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * Optional. Only return ads with the given manual review status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
      * </pre>
      *
      * <code>
@@ -1548,10 +2602,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only return ads with the given manual review status. Only
-     * available for networks with Manual Creative Review enabled. For more
-     * information, see
-     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * Optional. Only return ads with the given manual review status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
      * </pre>
      *
      * <code>
@@ -1581,10 +2634,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only return ads with the given manual review status. Only
-     * available for networks with Manual Creative Review enabled. For more
-     * information, see
-     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * Optional. Only return ads with the given manual review status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
      * </pre>
      *
      * <code>
@@ -1610,10 +2662,9 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Only return ads with the given manual review status. Only
-     * available for networks with Manual Creative Review enabled. For more
-     * information, see
-     * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+     * Optional. Only return ads with the given manual review status.
+     * Use this filter for web properties where [Manual Creative Review
+     * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
      * </pre>
      *
      * <code>
@@ -2211,9 +3262,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2230,9 +3280,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2255,9 +3304,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2282,9 +3330,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2306,9 +3353,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2338,9 +3384,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2362,9 +3407,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2381,9 +3425,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2404,9 +3447,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Optional. If provided, only return ads that served within the given date
-     * range (inclusive). The  date range must be within the last 30 days. If not
-     * provided, the date range will be the last 30 days. This filter does not
-     * apply to the PENDING manual review status.
+     * range (inclusive). The date range must be within the last 30 days. If not
+     * provided, the date range will be the last 30 days.
      * </pre>
      *
      * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -2795,6 +3837,1743 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
     public Builder clearBuyerAccountId() {
       buyerAccountId_ = emptyLongList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList adResponseId_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAdResponseIdIsMutable() {
+      if (!adResponseId_.isModifiable()) {
+        adResponseId_ = new com.google.protobuf.LazyStringArrayList(adResponseId_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the adResponseId.
+     */
+    public com.google.protobuf.ProtocolStringList getAdResponseIdList() {
+      adResponseId_.makeImmutable();
+      return adResponseId_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of adResponseId.
+     */
+    public int getAdResponseIdCount() {
+      return adResponseId_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The adResponseId at the given index.
+     */
+    public java.lang.String getAdResponseId(int index) {
+      return adResponseId_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the adResponseId at the given index.
+     */
+    public com.google.protobuf.ByteString getAdResponseIdBytes(int index) {
+      return adResponseId_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The adResponseId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdResponseId(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdResponseIdIsMutable();
+      adResponseId_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The adResponseId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdResponseId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdResponseIdIsMutable();
+      adResponseId_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The adResponseId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdResponseId(java.lang.Iterable<java.lang.String> values) {
+      ensureAdResponseIdIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, adResponseId_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdResponseId() {
+      adResponseId_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, only return ads with the given ad response IDs.
+     * This filter is exclusive and cannot be combined with any other filters.
+     * Maximum of 10 IDs can be specified.
+     * </pre>
+     *
+     * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the adResponseId to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdResponseIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdResponseIdIsMutable();
+      adResponseId_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList advertiserDisplayNames_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAdvertiserDisplayNamesIsMutable() {
+      if (!advertiserDisplayNames_.isModifiable()) {
+        advertiserDisplayNames_ =
+            new com.google.protobuf.LazyStringArrayList(advertiserDisplayNames_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the advertiserDisplayNames.
+     */
+    public com.google.protobuf.ProtocolStringList getAdvertiserDisplayNamesList() {
+      advertiserDisplayNames_.makeImmutable();
+      return advertiserDisplayNames_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of advertiserDisplayNames.
+     */
+    public int getAdvertiserDisplayNamesCount() {
+      return advertiserDisplayNames_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The advertiserDisplayNames at the given index.
+     */
+    public java.lang.String getAdvertiserDisplayNames(int index) {
+      return advertiserDisplayNames_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the advertiserDisplayNames at the given index.
+     */
+    public com.google.protobuf.ByteString getAdvertiserDisplayNamesBytes(int index) {
+      return advertiserDisplayNames_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The advertiserDisplayNames to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiserDisplayNames(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvertiserDisplayNamesIsMutable();
+      advertiserDisplayNames_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The advertiserDisplayNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvertiserDisplayNames(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvertiserDisplayNamesIsMutable();
+      advertiserDisplayNames_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The advertiserDisplayNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdvertiserDisplayNames(java.lang.Iterable<java.lang.String> values) {
+      ensureAdvertiserDisplayNamesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advertiserDisplayNames_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertiserDisplayNames() {
+      advertiserDisplayNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given
+     * advertiser names.
+     * </pre>
+     *
+     * <code>
+     * repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the advertiserDisplayNames to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvertiserDisplayNamesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdvertiserDisplayNamesIsMutable();
+      advertiserDisplayNames_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList languageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureLanguageCodesIsMutable() {
+      if (!languageCodes_.isModifiable()) {
+        languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the languageCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
+      languageCodes_.makeImmutable();
+      return languageCodes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of languageCodes.
+     */
+    public int getLanguageCodesCount() {
+      return languageCodes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
+     */
+    public java.lang.String getLanguageCodes(int index) {
+      return languageCodes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
+      return languageCodes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLanguageCodesIsMutable();
+      languageCodes_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguageCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLanguageCodesIsMutable();
+      languageCodes_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureLanguageCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageCodes_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCodes() {
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given language codes.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLanguageCodesIsMutable();
+      languageCodes_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList regionCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRegionCodesIsMutable() {
+      if (!regionCodes_.isModifiable()) {
+        regionCodes_ = new com.google.protobuf.LazyStringArrayList(regionCodes_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the regionCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getRegionCodesList() {
+      regionCodes_.makeImmutable();
+      return regionCodes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of regionCodes.
+     */
+    public int getRegionCodesCount() {
+      return regionCodes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regionCodes at the given index.
+     */
+    public java.lang.String getRegionCodes(int index) {
+      return regionCodes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the regionCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getRegionCodesBytes(int index) {
+      return regionCodes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The regionCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRegionCodesIsMutable();
+      regionCodes_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The regionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRegionCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRegionCodesIsMutable();
+      regionCodes_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The regionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRegionCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureRegionCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regionCodes_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegionCodes() {
+      regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives serving in the
+     * given region codes.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the regionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRegionCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRegionCodesIsMutable();
+      regionCodes_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList adTypes_ = emptyIntList();
+
+    private void ensureAdTypesIsMutable() {
+      if (!adTypes_.isModifiable()) {
+        adTypes_ = makeMutableCopy(adTypes_);
+      }
+      bitField0_ |= 0x00002000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the adTypes.
+     */
+    public java.util.List<com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+        getAdTypesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>(
+          adTypes_, adTypes_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of adTypes.
+     */
+    public int getAdTypesCount() {
+      return adTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The adTypes at the given index.
+     */
+    public com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat getAdTypes(
+        int index) {
+      return adTypes_converter_.convert(adTypes_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The adTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdTypes(
+        int index, com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdTypesIsMutable();
+      adTypes_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdTypes(
+        com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdTypesIsMutable();
+      adTypes_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdTypes(
+        java.lang.Iterable<
+                ? extends com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+            values) {
+      ensureAdTypesIsMutable();
+      for (com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat value : values) {
+        adTypes_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdTypes() {
+      adTypes_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for adTypes.
+     */
+    public java.util.List<java.lang.Integer> getAdTypesValueList() {
+      adTypes_.makeImmutable();
+      return adTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of adTypes at the given index.
+     */
+    public int getAdTypesValue(int index) {
+      return adTypes_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for adTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdTypesValue(int index, int value) {
+      ensureAdTypesIsMutable();
+      adTypes_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdTypesValue(int value) {
+      ensureAdTypesIsMutable();
+      adTypes_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives with the given ad
+     * types.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureAdTypesIsMutable();
+      for (int value : values) {
+        adTypes_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList advertiserApps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAdvertiserAppsIsMutable() {
+      if (!advertiserApps_.isModifiable()) {
+        advertiserApps_ = new com.google.protobuf.LazyStringArrayList(advertiserApps_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the advertiserApps.
+     */
+    public com.google.protobuf.ProtocolStringList getAdvertiserAppsList() {
+      advertiserApps_.makeImmutable();
+      return advertiserApps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of advertiserApps.
+     */
+    public int getAdvertiserAppsCount() {
+      return advertiserApps_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The advertiserApps at the given index.
+     */
+    public java.lang.String getAdvertiserApps(int index) {
+      return advertiserApps_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the advertiserApps at the given index.
+     */
+    public com.google.protobuf.ByteString getAdvertiserAppsBytes(int index) {
+      return advertiserApps_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The advertiserApps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiserApps(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvertiserAppsIsMutable();
+      advertiserApps_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The advertiserApps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvertiserApps(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdvertiserAppsIsMutable();
+      advertiserApps_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The advertiserApps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdvertiserApps(java.lang.Iterable<java.lang.String> values) {
+      ensureAdvertiserAppsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, advertiserApps_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertiserApps() {
+      advertiserApps_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives promoting the given
+     * app.
+     * </pre>
+     *
+     * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the advertiserApps to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvertiserAppsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdvertiserAppsIsMutable();
+      advertiserApps_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList publisherDomains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensurePublisherDomainsIsMutable() {
+      if (!publisherDomains_.isModifiable()) {
+        publisherDomains_ = new com.google.protobuf.LazyStringArrayList(publisherDomains_);
+      }
+      bitField0_ |= 0x00008000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the publisherDomains.
+     */
+    public com.google.protobuf.ProtocolStringList getPublisherDomainsList() {
+      publisherDomains_.makeImmutable();
+      return publisherDomains_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of publisherDomains.
+     */
+    public int getPublisherDomainsCount() {
+      return publisherDomains_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The publisherDomains at the given index.
+     */
+    public java.lang.String getPublisherDomains(int index) {
+      return publisherDomains_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the publisherDomains at the given index.
+     */
+    public com.google.protobuf.ByteString getPublisherDomainsBytes(int index) {
+      return publisherDomains_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The publisherDomains to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublisherDomains(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePublisherDomainsIsMutable();
+      publisherDomains_.set(index, value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The publisherDomains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPublisherDomains(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePublisherDomainsIsMutable();
+      publisherDomains_.add(value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The publisherDomains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPublisherDomains(java.lang.Iterable<java.lang.String> values) {
+      ensurePublisherDomainsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, publisherDomains_);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublisherDomains() {
+      publisherDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives belonging to the
+     * given publisher domain.
+     * </pre>
+     *
+     * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the publisherDomains to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPublisherDomainsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensurePublisherDomainsIsMutable();
+      publisherDomains_.add(value);
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private int newInLastDays_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives which appeared for
+     * the first time within the past X days. Must be within the last 30 days (1
+     * to 30, inclusive).
+     * </pre>
+     *
+     * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the newInLastDays field is set.
+     */
+    @java.lang.Override
+    public boolean hasNewInLastDays() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives which appeared for
+     * the first time within the past X days. Must be within the last 30 days (1
+     * to 30, inclusive).
+     * </pre>
+     *
+     * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The newInLastDays.
+     */
+    @java.lang.Override
+    public int getNewInLastDays() {
+      return newInLastDays_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives which appeared for
+     * the first time within the past X days. Must be within the last 30 days (1
+     * to 30, inclusive).
+     * </pre>
+     *
+     * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The newInLastDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNewInLastDays(int value) {
+
+      newInLastDays_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives which appeared for
+     * the first time within the past X days. Must be within the last 30 days (1
+     * to 30, inclusive).
+     * </pre>
+     *
+     * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNewInLastDays() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      newInLastDays_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList labelIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureLabelIdsIsMutable() {
+      if (!labelIds_.isModifiable()) {
+        labelIds_ = new com.google.protobuf.LazyStringArrayList(labelIds_);
+      }
+      bitField0_ |= 0x00020000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the labelIds.
+     */
+    public com.google.protobuf.ProtocolStringList getLabelIdsList() {
+      labelIds_.makeImmutable();
+      return labelIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of labelIds.
+     */
+    public int getLabelIdsCount() {
+      return labelIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The labelIds at the given index.
+     */
+    public java.lang.String getLabelIds(int index) {
+      return labelIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the labelIds at the given index.
+     */
+    public com.google.protobuf.ByteString getLabelIdsBytes(int index) {
+      return labelIds_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The labelIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLabelIdsIsMutable();
+      labelIds_.set(index, value);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The labelIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLabelIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLabelIdsIsMutable();
+      labelIds_.add(value);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The labelIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLabelIds(java.lang.Iterable<java.lang.String> values) {
+      ensureLabelIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labelIds_);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLabelIds() {
+      labelIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If provided, restrict the search to creatives associated with the
+     * given custom label IDs.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the labelIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLabelIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLabelIdsIsMutable();
+      labelIds_.add(value);
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

@@ -965,7 +965,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The pending onboarding tasks that must be completed by the
    * child publisher before Google's policy compliance (i.e.
-   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+   * can be verified.
    * </pre>
    *
    * <code>
@@ -989,7 +990,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The pending onboarding tasks that must be completed by the
    * child publisher before Google's policy compliance (i.e.
-   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+   * can be verified.
    * </pre>
    *
    * <code>
@@ -1009,7 +1011,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The pending onboarding tasks that must be completed by the
    * child publisher before Google's policy compliance (i.e.
-   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+   * can be verified.
    * </pre>
    *
    * <code>
@@ -1031,7 +1034,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The pending onboarding tasks that must be completed by the
    * child publisher before Google's policy compliance (i.e.
-   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+   * can be verified.
    * </pre>
    *
    * <code>
@@ -1051,7 +1055,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The pending onboarding tasks that must be completed by the
    * child publisher before Google's policy compliance (i.e.
-   * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+   * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+   * can be verified.
    * </pre>
    *
    * <code>
@@ -3628,7 +3633,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3653,7 +3659,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3672,7 +3679,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3693,7 +3701,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3723,7 +3732,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3751,7 +3761,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3782,7 +3793,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3804,7 +3816,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3824,7 +3837,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3844,7 +3858,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3868,7 +3883,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>
@@ -3891,7 +3907,8 @@ public final class ChildPublisher extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The pending onboarding tasks that must be completed by the
      * child publisher before Google's policy compliance (i.e.
-     * [DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][]) can be verified.
+     * [DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL][google.ads.admanager.v1.DelegationApprovalStatusEnum.DelegationApprovalStatus.PENDING_GOOGLE_APPROVAL])
+     * can be verified.
      * </pre>
      *
      * <code>

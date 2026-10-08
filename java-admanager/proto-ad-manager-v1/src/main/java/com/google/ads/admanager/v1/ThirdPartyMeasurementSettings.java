@@ -92,8 +92,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of ViewabilityPartner. This field
-   * default is NONE.
+   * Optional. A field to determine the type of
+   * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
    * </pre>
    *
    * <code>
@@ -111,8 +113,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of ViewabilityPartner. This field
-   * default is NONE.
+   * Optional. A field to determine the type of
+   * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
    * </pre>
    *
    * <code>
@@ -130,8 +134,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of ViewabilityPartner. This field
-   * default is NONE.
+   * Optional. A field to determine the type of
+   * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
    * </pre>
    *
    * <code>
@@ -305,8 +311,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of publisher's viewability partner.
-   * This field default is NONE.
+   * Optional. A field to determine the type of publisher's
+   * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
    * </pre>
    *
    * <code>
@@ -324,8 +332,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of publisher's viewability partner.
-   * This field default is NONE.
+   * Optional. A field to determine the type of publisher's
+   * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
    * </pre>
    *
    * <code>
@@ -343,8 +353,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of publisher's viewability partner.
-   * This field default is NONE.
+   * Optional. A field to determine the type of publisher's
+   * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
    * </pre>
    *
    * <code>
@@ -527,8 +539,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of BrandLiftPartner. This field
-   * default is NONE.
+   * Optional. A field to determine the type of
+   * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
    * </pre>
    *
    * <code>
@@ -546,8 +560,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of BrandLiftPartner. This field
-   * default is NONE.
+   * Optional. A field to determine the type of
+   * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
    * </pre>
    *
    * <code>
@@ -565,8 +581,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of BrandLiftPartner. This field
-   * default is NONE.
+   * Optional. A field to determine the type of
+   * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+   * This field default is
+   * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
    * </pre>
    *
    * <code>
@@ -739,8 +757,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of advertiser's ReachPartner. This
-   * field default is UNKNOWN.
+   * Optional. A field to determine the type of advertiser's
+   * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+   * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
    * </pre>
    *
    * <code>
@@ -758,8 +777,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of advertiser's ReachPartner. This
-   * field default is UNKNOWN.
+   * Optional. A field to determine the type of advertiser's
+   * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+   * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
    * </pre>
    *
    * <code>
@@ -777,8 +797,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of advertiser's ReachPartner. This
-   * field default is UNKNOWN.
+   * Optional. A field to determine the type of advertiser's
+   * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+   * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
    * </pre>
    *
    * <code>
@@ -947,8 +968,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of publisher's ReachPartner. This
-   * field default is UNKNOWN.
+   * Optional. A field to determine the type of publisher's
+   * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+   * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
    * </pre>
    *
    * <code>
@@ -966,8 +988,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of publisher's ReachPartner. This
-   * field default is UNKNOWN.
+   * Optional. A field to determine the type of publisher's
+   * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+   * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
    * </pre>
    *
    * <code>
@@ -985,8 +1008,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. A field to determine the type of publisher's ReachPartner. This
-   * field default is UNKNOWN.
+   * Optional. A field to determine the type of publisher's
+   * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+   * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
    * </pre>
    *
    * <code>
@@ -1901,8 +1925,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of ViewabilityPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -1920,8 +1946,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of ViewabilityPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -1939,8 +1967,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of ViewabilityPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -1961,8 +1991,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of ViewabilityPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -1986,8 +2018,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of ViewabilityPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2012,8 +2046,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of ViewabilityPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2305,8 +2341,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's viewability partner.
-     * This field default is NONE.
+     * Optional. A field to determine the type of publisher's
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2324,8 +2362,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's viewability partner.
-     * This field default is NONE.
+     * Optional. A field to determine the type of publisher's
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2343,8 +2383,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's viewability partner.
-     * This field default is NONE.
+     * Optional. A field to determine the type of publisher's
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2365,8 +2407,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's viewability partner.
-     * This field default is NONE.
+     * Optional. A field to determine the type of publisher's
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2390,8 +2434,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's viewability partner.
-     * This field default is NONE.
+     * Optional. A field to determine the type of publisher's
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2416,8 +2462,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's viewability partner.
-     * This field default is NONE.
+     * Optional. A field to determine the type of publisher's
+     * [ViewabilityPartner][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.ViewabilityPartnerEnum.ViewabilityPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2727,8 +2775,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of BrandLiftPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2746,8 +2796,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of BrandLiftPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2765,8 +2817,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of BrandLiftPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2787,8 +2841,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of BrandLiftPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2811,8 +2867,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of BrandLiftPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
      * </pre>
      *
      * <code>
@@ -2837,8 +2895,10 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of BrandLiftPartner. This field
-     * default is NONE.
+     * Optional. A field to determine the type of
+     * [BrandLiftPartner][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner].
+     * This field default is
+     * [NONE][google.ads.admanager.v1.BrandLiftPartnerEnum.BrandLiftPartner.NONE].
      * </pre>
      *
      * <code>
@@ -3130,8 +3190,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of advertiser's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of advertiser's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3149,8 +3210,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of advertiser's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of advertiser's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3168,8 +3230,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of advertiser's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of advertiser's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3190,8 +3253,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of advertiser's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of advertiser's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3213,8 +3277,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of advertiser's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of advertiser's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3239,8 +3304,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of advertiser's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of advertiser's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3532,8 +3598,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of publisher's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3551,8 +3618,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of publisher's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3570,8 +3638,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of publisher's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3592,8 +3661,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of publisher's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3616,8 +3686,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of publisher's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>
@@ -3642,8 +3713,9 @@ public final class ThirdPartyMeasurementSettings extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. A field to determine the type of publisher's ReachPartner. This
-     * field default is UNKNOWN.
+     * Optional. A field to determine the type of publisher's
+     * [ReachPartner][google.ads.admanager.v1.ReachPartnerEnum.ReachPartner]. This
+     * field default is [UNKNOWN][ReachPartnerEnum.ReachPartner.UNKNOWN].
      * </pre>
      *
      * <code>

@@ -76,6 +76,18 @@ public final class SipTrunkProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_dialogflow_v2_Connection_ErrorDetails_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_Connection_ErrorDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SipHostname_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SipHostname_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_SipHostname_HostnameErrorDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_SipHostname_HostnameErrorDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_ProbeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_ProbeDetails_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -85,90 +97,151 @@ public final class SipTrunkProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n*google/cloud/dialogflow/v2/sip_trunk.p"
+      "\n"
+          + "*google/cloud/dialogflow/v2/sip_trunk.p"
           + "roto\022\032google.cloud.dialogflow.v2\032\034google"
           + "/api/annotations.proto\032\027google/api/clien"
           + "t.proto\032\037google/api/field_behavior.proto"
-          + "\032\031google/api/resource.proto\032\033google/prot"
-          + "obuf/empty.proto\032 google/protobuf/field_"
-          + "mask.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\221\001\n\025CreateSipTrunkRequest\022:\n\006parent\030"
-          + "\001 \001(\tB*\340A\002\372A$\022\"dialogflow.googleapis.com"
-          + "/SipTrunk\022<\n\tsip_trunk\030\002 \001(\0132$.google.cl"
-          + "oud.dialogflow.v2.SipTrunkB\003\340A\002\"Q\n\025Delet"
-          + "eSipTrunkRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$\n\""
-          + "dialogflow.googleapis.com/SipTrunk\"\203\001\n\024L"
-          + "istSipTrunksRequest\022:\n\006parent\030\001 \001(\tB*\340A\002"
-          + "\372A$\022\"dialogflow.googleapis.com/SipTrunk\022"
-          + "\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 "
-          + "\001(\tB\003\340A\001\"j\n\025ListSipTrunksResponse\0228\n\nsip"
-          + "_trunks\030\001 \003(\0132$.google.cloud.dialogflow."
-          + "v2.SipTrunk\022\027\n\017next_page_token\030\002 \001(\t\"N\n\022"
-          + "GetSipTrunkRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372A$"
-          + "\n\"dialogflow.googleapis.com/SipTrunk\"\213\001\n"
-          + "\025UpdateSipTrunkRequest\022<\n\tsip_trunk\030\001 \001("
-          + "\0132$.google.cloud.dialogflow.v2.SipTrunkB"
-          + "\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.google.proto"
-          + "buf.FieldMaskB\003\340A\001\"\226\002\n\010SipTrunk\022\021\n\004name\030"
-          + "\001 \001(\tB\003\340A\010\022\036\n\021expected_hostname\030\002 \003(\tB\003\340"
-          + "A\002\022@\n\013connections\030\003 \003(\0132&.google.cloud.d"
-          + "ialogflow.v2.ConnectionB\003\340A\003\022\031\n\014display_"
-          + "name\030\004 \001(\tB\003\340A\001:z\352Aw\n\"dialogflow.googlea"
-          + "pis.com/SipTrunk\022<projects/{project}/loc"
-          + "ations/{location}/sipTrunks/{siptrunk}*\t"
-          + "sipTrunks2\010sipTrunk\"\361\006\n\nConnection\022\032\n\rco"
-          + "nnection_id\030\001 \001(\tB\003\340A\003\022@\n\005state\030\002 \001(\0162,."
-          + "google.cloud.dialogflow.v2.Connection.St"
-          + "ateB\003\340A\003\0229\n\013update_time\030\003 \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\003\340A\003H\000\210\001\001\022T\n\rerror_det"
-          + "ails\030\004 \001(\01323.google.cloud.dialogflow.v2."
-          + "Connection.ErrorDetailsB\003\340A\003H\001\210\001\001\032\260\001\n\014Er"
-          + "rorDetails\022\\\n\021certificate_state\030\001 \001(\01627."
-          + "google.cloud.dialogflow.v2.Connection.Ce"
-          + "rtificateStateB\003\340A\003H\000\210\001\001\022\032\n\rerror_messag"
-          + "e\030\002 \001(\tH\001\210\001\001B\024\n\022_certificate_stateB\020\n\016_e"
-          + "rror_message\"i\n\005State\022\025\n\021STATE_UNSPECIFI"
-          + "ED\020\000\022\r\n\tCONNECTED\020\001\022\020\n\014DISCONNECTED\020\002\022\031\n"
-          + "\025AUTHENTICATION_FAILED\020\003\022\r\n\tKEEPALIVE\020\004\""
-          + "\263\002\n\020CertificateState\022!\n\035CERTIFICATE_STAT"
-          + "E_UNSPECIFIED\020\000\022\025\n\021CERTIFICATE_VALID\020\001\022\027"
-          + "\n\023CERTIFICATE_INVALID\020\002\022\027\n\023CERTIFICATE_E"
-          + "XPIRED\020\003\022\"\n\036CERTIFICATE_HOSTNAME_NOT_FOU"
-          + "ND\020\004\022\037\n\033CERTIFICATE_UNAUTHENTICATED\020\005\022%\n"
-          + "!CERTIFICATE_TRUST_STORE_NOT_FOUND\020\006\022\'\n#"
-          + "CERTIFICATE_HOSTNAME_INVALID_FORMAT\020\007\022\036\n"
-          + "\032CERTIFICATE_QUOTA_EXCEEDED\020\010B\016\n\014_update"
-          + "_timeB\020\n\016_error_details2\215\010\n\tSipTrunks\022\276\001"
-          + "\n\016CreateSipTrunk\0221.google.cloud.dialogfl"
-          + "ow.v2.CreateSipTrunkRequest\032$.google.clo"
-          + "ud.dialogflow.v2.SipTrunk\"S\332A\020parent,sip"
-          + "_trunk\202\323\344\223\002:\"-/v2/{parent=projects/*/loc"
-          + "ations/*}/sipTrunks:\tsip_trunk\022\231\001\n\016Delet"
-          + "eSipTrunk\0221.google.cloud.dialogflow.v2.D"
-          + "eleteSipTrunkRequest\032\026.google.protobuf.E"
-          + "mpty\"<\332A\004name\202\323\344\223\002/*-/v2/{name=projects/"
-          + "*/locations/*/sipTrunks/*}\022\264\001\n\rListSipTr"
-          + "unks\0220.google.cloud.dialogflow.v2.ListSi"
-          + "pTrunksRequest\0321.google.cloud.dialogflow"
-          + ".v2.ListSipTrunksResponse\">\332A\006parent\202\323\344\223"
-          + "\002/\022-/v2/{parent=projects/*/locations/*}/"
-          + "sipTrunks\022\241\001\n\013GetSipTrunk\022..google.cloud"
-          + ".dialogflow.v2.GetSipTrunkRequest\032$.goog"
-          + "le.cloud.dialogflow.v2.SipTrunk\"<\332A\004name"
-          + "\202\323\344\223\002/\022-/v2/{name=projects/*/locations/*"
-          + "/sipTrunks/*}\022\315\001\n\016UpdateSipTrunk\0221.googl"
-          + "e.cloud.dialogflow.v2.UpdateSipTrunkRequ"
-          + "est\032$.google.cloud.dialogflow.v2.SipTrun"
-          + "k\"b\332A\025sip_trunk,update_mask\202\323\344\223\002D27/v2/{"
-          + "sip_trunk.name=projects/*/locations/*/si"
-          + "pTrunks/*}:\tsip_trunk\032x\312A\031dialogflow.goo"
-          + "gleapis.com\322AYhttps://www.googleapis.com"
-          + "/auth/cloud-platform,https://www.googlea"
-          + "pis.com/auth/dialogflowB\223\001\n\036com.google.c"
-          + "loud.dialogflow.v2B\rSipTrunkProtoP\001Z>clo"
-          + "ud.google.com/go/dialogflow/apiv2/dialog"
-          + "flowpb;dialogflowpb\242\002\002DF\252\002\032Google.Cloud."
-          + "Dialogflow.V2b\006proto3"
+          + "\032\031google/api/resource.proto\032\036google/prot"
+          + "obuf/duration.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\221\001\n"
+          + "\025CreateSipTrunkRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\340"
+          + "A\002\372A$\022\"dialogflow.googleapis.com/SipTrunk\022<\n"
+          + "\tsip_trunk\030\002 \001(\0132$.google.cloud.dialogflow.v2.SipTrunkB\003\340A\002\"Q\n"
+          + "\025DeleteSipTrunkRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"dialogflow.googleapis.com/SipTrunk\"\203\001\n"
+          + "\024ListSipTrunksRequest\022:\n"
+          + "\006parent\030\001 \001("
+          + "\tB*\340A\002\372A$\022\"dialogflow.googleapis.com/SipTrunk\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"j\n"
+          + "\025ListSipTrunksResponse\0228\n\n"
+          + "sip_trunks\030\001 \003(\0132$.google.cloud.dialogflow.v2.SipTrunk\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"N\n"
+          + "\022GetSipTrunkRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"dialogflow.googleapis.com/SipTrunk\"\213\001\n"
+          + "\025UpdateSipTrunkRequest\022<\n"
+          + "\tsip_trunk\030\001"
+          + " \001(\0132$.google.cloud.dialogflow.v2.SipTrunkB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\203\004\n"
+          + "\010SipTrunk\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
+          + "\021expected_hostname\030\002 \003(\tB\003\340A\002\022@\n"
+          + "\013connections\030\003"
+          + " \003(\0132&.google.cloud.dialogflow.v2.ConnectionB\003\340A\003\022\031\n"
+          + "\014display_name\030\004 \001(\tB\003\340A\001\022D\n"
+          + "\016peer_hostnames\030\010"
+          + " \003(\0132\'.google.cloud.dialogflow.v2.SipHostnameB\003\340A\002\022[\n"
+          + "\025google_root_cert_file\030\t \001(\01627.google.cl"
+          + "oud.dialogflow.v2.SipTrunk.GoogleRootCertFileB\003\340A\001\"H\n"
+          + "\022GoogleRootCertFile\022\031\n"
+          + "\025CERT_FILE_UNSPECIFIED\020\000\022\027\n"
+          + "\023EXTERNAL_PRIVATE_CA\020\005:z\352Aw\n"
+          + "\"dialogflow.googleapis.com/Sip"
+          + "Trunk\022<projects/{project}/locations/{location}/sipTrunks/{siptrunk}*"
+          + "\tsipTrunks2\010sipTrunk\"\361\006\n\n"
+          + "Connection\022\032\n\r"
+          + "connection_id\030\001 \001(\tB\003\340A\003\022@\n"
+          + "\005state\030\002"
+          + " \001(\0162,.google.cloud.dialogflow.v2.Connection.StateB\003\340A\003\0229\n"
+          + "\013update_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\000\210\001\001\022T\n\r"
+          + "error_details\030\004 \001(\0132"
+          + "3.google.cloud.dialogflow.v2.Connection.ErrorDetailsB\003\340A\003H\001\210\001\001\032\260\001\n"
+          + "\014ErrorDetails\022\\\n"
+          + "\021certificate_state\030\001 \001(\01627.google.clou"
+          + "d.dialogflow.v2.Connection.CertificateStateB\003\340A\003H\000\210\001\001\022\032\n\r"
+          + "error_message\030\002 \001(\tH\001\210\001\001B\024\n"
+          + "\022_certificate_stateB\020\n"
+          + "\016_error_message\"i\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\r\n"
+          + "\tCONNECTED\020\001\022\020\n"
+          + "\014DISCONNECTED\020\002\022\031\n"
+          + "\025AUTHENTICATION_FAILED\020\003\022\r\n"
+          + "\tKEEPALIVE\020\004\"\263\002\n"
+          + "\020CertificateState\022!\n"
+          + "\035CERTIFICATE_STATE_UNSPECIFIED\020\000\022\025\n"
+          + "\021CERTIFICATE_VALID\020\001\022\027\n"
+          + "\023CERTIFICATE_INVALID\020\002\022\027\n"
+          + "\023CERTIFICATE_EXPIRED\020\003\022\"\n"
+          + "\036CERTIFICATE_HOSTNAME_NOT_FOUND\020\004\022\037\n"
+          + "\033CERTIFICATE_UNAUTHENTICATED\020\005\022%\n"
+          + "!CERTIFICATE_TRUST_STORE_NOT_FOUND\020\006\022\'\n"
+          + "#CERTIFICATE_HOSTNAME_INVALID_FORMAT\020\007\022\036\n"
+          + "\032CERTIFICATE_QUOTA_EXCEEDED\020\010B\016\n"
+          + "\014_update_timeB\020\n"
+          + "\016_error_details\"\227\007\n"
+          + "\013SipHostname\022\032\n\r"
+          + "peer_hostname\030\001 \001(\tB\003\340A\002\022\035\n"
+          + "\020enabled_sip_ping\030\002 \001(\010B\003\340A\003\0225\n\r"
+          + "ping_interval\030\003 \001(\0132\031.google.protobuf.DurationB\003\340A\003\022 \n"
+          + "\023peer_socket_address\030\004 \001(\tB\003\340A\003\022D\n\r"
+          + "probe_details\030\005 \001(\0132"
+          + "(.google.cloud.dialogflow.v2.ProbeDetailsB\003\340A\003\022V\n"
+          + "\020connection_state\030\006 \001(\01627.googl"
+          + "e.cloud.dialogflow.v2.SipHostname.ConnectionStateB\003\340A\003\022X\n\r"
+          + "error_details\030\007 \001(\0132<."
+          + "google.cloud.dialogflow.v2.SipHostname.HostnameErrorDetailsB\003\340A\003\032\224\001\n"
+          + "\024HostnameErrorDetails\022`\n"
+          + "\021certificate_state\030\001 \001(\0162@.g"
+          + "oogle.cloud.dialogflow.v2.SipHostname.HostnameCertificateStateB\003\340A\003\022\032\n\r"
+          + "error_message\030\002 \001(\tB\003\340A\003\"~\n"
+          + "\017ConnectionState\022 \n"
+          + "\034CONNECTION_STATE_UNSPECIFIED\020\000\022\r\n"
+          + "\tCONNECTED\020\001\022\020\n"
+          + "\014DISCONNECTED\020\002\022\031\n"
+          + "\025AUTHENTICATION_FAILED\020\003\022\r\n"
+          + "\tKEEPALIVE\020\004\"\344\001\n"
+          + "\030HostnameCertificateState\022*\n"
+          + "&HOSTNAME_CERTIFICATE_STATE_UNSPECIFIED\020\000\022\t\n"
+          + "\005VALID\020\001\022\013\n"
+          + "\007INVALID\020\002\022\013\n"
+          + "\007EXPIRED\020\003\022\026\n"
+          + "\022HOSTNAME_NOT_FOUND\020\004\022\023\n"
+          + "\017UNAUTHENTICATED\020\005\022\031\n"
+          + "\025TRUST_STORE_NOT_FOUND\020\006\022\033\n"
+          + "\027HOSTNAME_INVALID_FORMAT\020\007\022\022\n"
+          + "\016QUOTA_EXCEEDED\020\010\"\254\002\n"
+          + "\014ProbeDetails\0227\n"
+          + "\017options_latency\030\001"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\003\022O\n"
+          + "\014probe_status\030\002 \001(\01624.google."
+          + "cloud.dialogflow.v2.ProbeDetails.ProbeStatusB\003\340A\003\0222\n"
+          + "\tinit_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"^\n"
+          + "\013ProbeStatus\022\034\n"
+          + "\030PROBE_STATUS_UNSPECIFIED\020\000\022\030\n"
+          + "\024PROBE_STATUS_SUCCESS\020\001\022\027\n"
+          + "\023PROBE_STATUS_FAILED\020\0022\215\010\n"
+          + "\tSipTrunks\022\276\001\n"
+          + "\016CreateSipTrunk\0221.google.cloud.dialogflow.v2.CreateSipTrunkReques"
+          + "t\032$.google.cloud.dialogflow.v2.SipTrunk\""
+          + "S\332A\020parent,sip_trunk\202\323\344\223\002:\"-/v2/{parent=projects/*/locations/*}/sipTrunks:"
+          + "\tsip_trunk\022\231\001\n"
+          + "\016DeleteSipTrunk\0221.google.cloud.dialogflow.v2.DeleteSipTrunkRequest\032\026.goo"
+          + "gle.protobuf.Empty\"<\332A\004name\202\323\344\223\002/*-/v2/{"
+          + "name=projects/*/locations/*/sipTrunks/*}\022\264\001\n\r"
+          + "ListSipTrunks\0220.google.cloud.dialogflow.v2.ListSipTrunksRequest\0321.google.cl"
+          + "oud.dialogflow.v2.ListSipTrunksResponse\""
+          + ">\332A\006parent\202\323\344\223\002/\022-/v2/{parent=projects/*/locations/*}/sipTrunks\022\241\001\n"
+          + "\013GetSipTrunk\022..google.cloud.dialogflow.v2.GetSipTrunk"
+          + "Request\032$.google.cloud.dialogflow.v2.Sip"
+          + "Trunk\"<\332A\004name\202\323\344\223\002/\022-/v2/{name=projects/*/locations/*/sipTrunks/*}\022\315\001\n"
+          + "\016UpdateSipTrunk\0221.google.cloud.dialogflow.v2.Upda"
+          + "teSipTrunkRequest\032$.google.cloud.dialogf"
+          + "low.v2.SipTrunk\"b\332A\025sip_trunk,update_mas"
+          + "k\202\323\344\223\002D27/v2/{sip_trunk.name=projects/*/locations/*/sipTrunks/*}:"
+          + "\tsip_trunk\032x\312A\031dialogflow.googleapis.com\322AYhttps://www."
+          + "googleapis.com/auth/cloud-platform,https"
+          + "://www.googleapis.com/auth/dialogflowB\223\001\n"
+          + "\036com.google.cloud.dialogflow.v2B\r"
+          + "SipTrunkProtoP\001Z>cloud.google.com/go/dialogflo"
+          + "w/apiv2/dialogflowpb;dialogflowpb\242\002\002DF\252\002"
+          + "\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -178,6 +251,7 @@ public final class SipTrunkProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -236,7 +310,12 @@ public final class SipTrunkProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_SipTrunk_descriptor,
             new java.lang.String[] {
-              "Name", "ExpectedHostname", "Connections", "DisplayName",
+              "Name",
+              "ExpectedHostname",
+              "Connections",
+              "DisplayName",
+              "PeerHostnames",
+              "GoogleRootCertFile",
             });
     internal_static_google_cloud_dialogflow_v2_Connection_descriptor =
         getDescriptor().getMessageType(7);
@@ -254,11 +333,42 @@ public final class SipTrunkProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "CertificateState", "ErrorMessage",
             });
+    internal_static_google_cloud_dialogflow_v2_SipHostname_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_cloud_dialogflow_v2_SipHostname_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SipHostname_descriptor,
+            new java.lang.String[] {
+              "PeerHostname",
+              "EnabledSipPing",
+              "PingInterval",
+              "PeerSocketAddress",
+              "ProbeDetails",
+              "ConnectionState",
+              "ErrorDetails",
+            });
+    internal_static_google_cloud_dialogflow_v2_SipHostname_HostnameErrorDetails_descriptor =
+        internal_static_google_cloud_dialogflow_v2_SipHostname_descriptor.getNestedType(0);
+    internal_static_google_cloud_dialogflow_v2_SipHostname_HostnameErrorDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_SipHostname_HostnameErrorDetails_descriptor,
+            new java.lang.String[] {
+              "CertificateState", "ErrorMessage",
+            });
+    internal_static_google_cloud_dialogflow_v2_ProbeDetails_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_dialogflow_v2_ProbeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_ProbeDetails_descriptor,
+            new java.lang.String[] {
+              "OptionsLatency", "ProbeStatus", "InitTime",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

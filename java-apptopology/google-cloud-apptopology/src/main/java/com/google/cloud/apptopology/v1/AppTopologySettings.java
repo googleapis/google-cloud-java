@@ -16,6 +16,7 @@
 
 package com.google.cloud.apptopology.v1;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
@@ -106,6 +107,12 @@ public class AppTopologySettings extends ClientSettings<AppTopologySettings> {
   /** Returns the object with the settings used for calls to getSchema. */
   public UnaryCallSettings<GetSchemaRequest, Schema> getSchemaSettings() {
     return ((AppTopologyStubSettings) getStubSettings()).getSchemaSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exploreSchema. */
+  public PagedCallSettings<ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+      exploreSchemaSettings() {
+    return ((AppTopologyStubSettings) getStubSettings()).exploreSchemaSettings();
   }
 
   /** Returns the object with the settings used for calls to getDomain. */
@@ -253,6 +260,13 @@ public class AppTopologySettings extends ClientSettings<AppTopologySettings> {
     /** Returns the builder for the settings used for calls to getSchema. */
     public UnaryCallSettings.Builder<GetSchemaRequest, Schema> getSchemaSettings() {
       return getStubSettingsBuilder().getSchemaSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exploreSchema. */
+    public PagedCallSettings.Builder<
+            ExploreSchemaRequest, ExploreSchemaResponse, ExploreSchemaPagedResponse>
+        exploreSchemaSettings() {
+      return getStubSettingsBuilder().exploreSchemaSettings();
     }
 
     /** Returns the builder for the settings used for calls to getDomain. */

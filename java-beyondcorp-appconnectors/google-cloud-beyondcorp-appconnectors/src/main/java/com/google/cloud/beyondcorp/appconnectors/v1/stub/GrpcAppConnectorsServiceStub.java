@@ -35,6 +35,8 @@ import com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest;
 import com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest;
 import com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse;
 import com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest;
+import com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest;
+import com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse;
 import com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -60,8 +62,11 @@ import org.jspecify.annotations.NullMarked;
  * gRPC stub implementation for the AppConnectorsService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
   private static final MethodDescriptor<ListAppConnectorsRequest, ListAppConnectorsResponse>
@@ -122,6 +127,19 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAppConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+      resolveInstanceConfigMethodDescriptor =
+          MethodDescriptor.<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.beyondcorp.appconnectors.v1.AppConnectorsService/ResolveInstanceConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ResolveInstanceConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ResolveInstanceConfigResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -203,6 +221,8 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
   private final UnaryCallable<DeleteAppConnectorRequest, Operation> deleteAppConnectorCallable;
   private final OperationCallable<DeleteAppConnectorRequest, Empty, AppConnectorOperationMetadata>
       deleteAppConnectorOperationCallable;
+  private final UnaryCallable<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+      resolveInstanceConfigCallable;
   private final UnaryCallable<ReportStatusRequest, Operation> reportStatusCallable;
   private final OperationCallable<ReportStatusRequest, AppConnector, AppConnectorOperationMetadata>
       reportStatusOperationCallable;
@@ -315,6 +335,19 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+        resolveInstanceConfigTransportSettings =
+            GrpcCallSettings
+                .<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>newBuilder()
+                .setMethodDescriptor(resolveInstanceConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("app_connector", String.valueOf(request.getAppConnector()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getAppConnector())
+                .build();
     GrpcCallSettings<ReportStatusRequest, Operation> reportStatusTransportSettings =
         GrpcCallSettings.<ReportStatusRequest, Operation>newBuilder()
             .setMethodDescriptor(reportStatusMethodDescriptor)
@@ -427,6 +460,11 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
             settings.deleteAppConnectorOperationSettings(),
             clientContext,
             operationsStub);
+    this.resolveInstanceConfigCallable =
+        callableFactory.createUnaryCallable(
+            resolveInstanceConfigTransportSettings,
+            settings.resolveInstanceConfigSettings(),
+            clientContext);
     this.reportStatusCallable =
         callableFactory.createUnaryCallable(
             reportStatusTransportSettings, settings.reportStatusSettings(), clientContext);
@@ -513,6 +551,12 @@ public class GrpcAppConnectorsServiceStub extends AppConnectorsServiceStub {
   public OperationCallable<DeleteAppConnectorRequest, Empty, AppConnectorOperationMetadata>
       deleteAppConnectorOperationCallable() {
     return deleteAppConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResolveInstanceConfigRequest, ResolveInstanceConfigResponse>
+      resolveInstanceConfigCallable() {
+    return resolveInstanceConfigCallable;
   }
 
   @Override
