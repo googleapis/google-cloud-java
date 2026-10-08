@@ -55,6 +55,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
@@ -212,18 +213,14 @@ final class OpenTelemetryBootstrappingUtils {
           StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION,
           StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATION_TTFB,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_GFE_DURATION,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION);
 
   static final ImmutableList<String> CLIENT_SIZE_HISTOGRAMS =
       ImmutableList.of(
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_SENT,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_BYTES_RECEIVED);
-
-  private static final String DEFAULT_API = "grpc";
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE);
 
   @VisibleForTesting
   static SdkMeterProvider createMeterProvider(
@@ -231,58 +228,6 @@ final class OpenTelemetryBootstrappingUtils {
       String projectIdToUse,
       Attributes detectedAttributes,
       boolean shouldSuppressExceptions) {
-    return createClientMeterProvider(
-        metricServiceEndpoint,
-        projectIdToUse,
-        detectedAttributes,
-        Duration.ofSeconds(60),
-        shouldSuppressExceptions,
-        DEFAULT_API);
-  }
-
-  /**
-   * Creates an {@link SdkMeterProvider} configured for the {@code storage.googleapis.com/Client}
-   * monitored resource with client metric views and Cloud Monitoring exporter, defaulting the
-   * {@code api} resource label to {@code "grpc"}.
-   */
-  @VisibleForTesting
-  static SdkMeterProvider createClientMeterProvider(
-      String metricServiceEndpoint,
-      String projectIdToUse,
-      Attributes detectedAttributes,
-      Duration metricInterval,
-      boolean shouldSuppressExceptions) {
-    return createClientMeterProvider(
-        metricServiceEndpoint,
-        projectIdToUse,
-        detectedAttributes,
-        metricInterval,
-        shouldSuppressExceptions,
-        DEFAULT_API);
-  }
-
-  /**
-   * Creates an {@link SdkMeterProvider} configured for the {@code storage.googleapis.com/Client}
-   * monitored resource with client metric views and Cloud Monitoring exporter.
-   *
-   * @param metricServiceEndpoint the Cloud Monitoring service endpoint to export metrics to
-   * @param projectIdToUse the GCP project ID to associate with the monitored resource
-   * @param detectedAttributes environment-detected resource attributes
-   * @param metricInterval export interval for the periodic metric reader
-   * @param shouldSuppressExceptions whether exporter exceptions should be suppressed
-   * @param api the transport/API protocol distinguishing the client in Cloud Monitoring (e.g.,
-   *     {@code "grpc"} for gRPC transport or {@code "json"} for HTTP/JSON transport). Defaults to
-   *     {@code "grpc"} if null.
-   * @return the configured {@link SdkMeterProvider}
-   */
-  @VisibleForTesting
-  static SdkMeterProvider createClientMeterProvider(
-      String metricServiceEndpoint,
-      String projectIdToUse,
-      Attributes detectedAttributes,
-      Duration metricInterval,
-      boolean shouldSuppressExceptions,
-      @Nullable String api) {
 
     MonitoredResourceDescription monitoredResourceDescription =
         new MonitoredResourceDescription(
@@ -324,6 +269,100 @@ final class OpenTelemetryBootstrappingUtils {
         "grpc/client/attempt/sent_total_compressed_message_size",
         "By");
 
+    MetricExporter exporter =
+        shouldSuppressExceptions
+            ? new PermissionDeniedSingleReportMetricsExporter(cloudMonitoringExporter)
+            : cloudMonitoringExporter;
+    AttributesBuilder attributesBuilder =
+        Attributes.builder()
+            .put("gcp.resource_type", "storage.googleapis.com/Client")
+            .put("project_id", projectIdToUse)
+            .put("instance_id", UUID.randomUUID().toString())
+            .put("api", "grpc");
+    String detectedLocation = detectedAttributes.get(AttributeKey.stringKey("cloud.region"));
+    if (detectedLocation != null) {
+      attributesBuilder.put("location", detectedLocation);
+    } else {
+      attributesBuilder.put("location", "global");
+    }
+    String detectedCloudPlatform = detectedAttributes.get(AttributeKey.stringKey("cloud.platform"));
+    if (detectedCloudPlatform != null) {
+      attributesBuilder.put("cloud_platform", detectedCloudPlatform);
+    } else {
+      attributesBuilder.put("cloud_platform", "unknown");
+    }
+    String detectedHostId = detectedAttributes.get(AttributeKey.stringKey("host.id"));
+    if (detectedHostId != null) {
+      attributesBuilder.put("host_id", detectedHostId);
+    } else {
+      attributesBuilder.put("host_id", "unknown");
+    }
+    providerBuilder
+        .registerMetricReader(
+            PeriodicMetricReader.builder(exporter).setInterval(Duration.ofSeconds(60)).build())
+        .setResource(Resource.create(attributesBuilder.build()));
+
+    return providerBuilder.build();
+  }
+
+  @VisibleForTesting
+  static SdkMeterProvider createClientMeterProvider(
+      String metricServiceEndpoint,
+      String projectIdToUse,
+      Attributes detectedAttributes,
+      boolean shouldSuppressExceptions,
+      String api) {
+    return createClientMeterProvider(
+        metricServiceEndpoint,
+        projectIdToUse,
+        detectedAttributes,
+        Duration.ofSeconds(60),
+        shouldSuppressExceptions,
+        api);
+  }
+
+  /**
+   * Creates an {@link SdkMeterProvider} configured for the {@code storage.googleapis.com/Client}
+   * monitored resource with client metric views and Cloud Monitoring exporter.
+   *
+   * @param metricServiceEndpoint the Cloud Monitoring service endpoint to export metrics to
+   * @param projectIdToUse the GCP project ID to associate with the monitored resource
+   * @param detectedAttributes environment-detected resource attributes
+   * @param metricInterval export interval for the periodic metric reader
+   * @param shouldSuppressExceptions whether exporter exceptions should be suppressed
+   * @param api the transport/API protocol distinguishing the client in Cloud Monitoring (e.g.,
+   *     {@code "grpc"} for gRPC transport or {@code "json"} for HTTP/JSON transport).
+   * @return the configured {@link SdkMeterProvider}
+   */
+  @VisibleForTesting
+  static SdkMeterProvider createClientMeterProvider(
+      String metricServiceEndpoint,
+      String projectIdToUse,
+      Attributes detectedAttributes,
+      Duration metricInterval,
+      boolean shouldSuppressExceptions,
+      String api) {
+    Objects.requireNonNull(api, "api must not be null");
+
+    MonitoredResourceDescription monitoredResourceDescription =
+        new MonitoredResourceDescription(
+            "storage.googleapis.com/Client",
+            ImmutableSet.of(
+                "project_id", "location", "cloud_platform", "host_id", "instance_id", "api"));
+
+    MetricExporter cloudMonitoringExporter =
+        GoogleCloudMetricExporter.createWithConfiguration(
+            MetricConfiguration.builder()
+                .setMonitoredResourceDescription(monitoredResourceDescription)
+                .setInstrumentationLibraryLabelsEnabled(false)
+                .setMetricServiceEndpoint(metricServiceEndpoint)
+                .setPrefix("storage.googleapis.com/client")
+                .setUseServiceTimeSeries(true)
+                .setProjectId(projectIdToUse)
+                .build());
+
+    SdkMeterProviderBuilder providerBuilder = SdkMeterProvider.builder();
+
     // Register views for client histograms
     registerClientViews(providerBuilder);
 
@@ -336,7 +375,7 @@ final class OpenTelemetryBootstrappingUtils {
             .put("gcp.resource_type", "storage.googleapis.com/Client")
             .put("project_id", projectIdToUse)
             .put("instance_id", UUID.randomUUID().toString())
-            .put("api", api != null ? api : DEFAULT_API);
+            .put("api", api);
     String detectedLocation = detectedAttributes.get(AttributeKey.stringKey("cloud.region"));
     if (detectedLocation != null) {
       attributesBuilder.put("location", detectedLocation);
@@ -379,10 +418,14 @@ final class OpenTelemetryBootstrappingUtils {
   private static void addClientHistogramView(
       SdkMeterProviderBuilder provider, List<Double> boundaries, String name) {
     InstrumentSelector instrumentSelector =
-        InstrumentSelector.builder().setType(InstrumentType.HISTOGRAM).setName(name).build();
+        InstrumentSelector.builder()
+            .setType(InstrumentType.HISTOGRAM)
+            .setMeterName(StorageClientMetrics.METER_NAME)
+            .setName(name)
+            .build();
     View view =
         View.builder()
-            .setName(name)
+            .setName(name.replace(".", "/"))
             .setAggregation(Aggregation.explicitBucketHistogram(boundaries))
             .build();
     provider.registerView(instrumentSelector, view);
@@ -455,6 +498,10 @@ final class OpenTelemetryBootstrappingUtils {
       }
     }
     return boundaries;
+  }
+
+  static List<Long> sizeHistogramLongBoundaries() {
+    return sizeHistogramBoundaries().stream().map(Double::longValue).collect(Collectors.toList());
   }
 
   private static final class PermissionDeniedSingleReportMetricsExporter implements MetricExporter {
