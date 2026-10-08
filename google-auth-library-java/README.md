@@ -67,7 +67,7 @@ A bound ID token is only accepted by a target that authenticates the caller over
 same certificate, such as a Cloud Run service called through its `*.mtls.run.app` URL. Targets
 reached over standard HTTPS, such as a Cloud Run service's `*.run.app` URL or a custom domain,
 reject bound ID tokens with `401 Unauthorized`. For those targets, pass
-`IdTokenProvider.Option.BIND_ID_TOKEN_FALSE` to request an unbound ID token for that target only:
+`IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN` to request an unbound ID token for that target only:
 
 ```java
 GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
@@ -75,13 +75,13 @@ IdTokenCredentials idTokenCredentials =
     IdTokenCredentials.newBuilder()
         .setIdTokenProvider((IdTokenProvider) credentials)
         .setTargetAudience("https://my-service-12345.us-central1.run.app")
-        .setOptions(Arrays.asList(IdTokenProvider.Option.BIND_ID_TOKEN_FALSE))
+        .setOptions(Arrays.asList(IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN))
         .build();
 ```
 
-Access tokens and ID tokens for other targets are still bound. Credential types that don't request
-bound ID tokens ignore this option, so the same code also works outside agent identity
-environments.
+Access tokens and ID tokens for other targets are still bound. This option is only supported by
+`ComputeEngineCredentials`; other `IdTokenProvider` implementations don't request bound ID tokens
+and ignore this option, so the same code also works outside agent identity environments.
 
 ### Known limitations
 

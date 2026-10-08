@@ -100,8 +100,8 @@ import org.jspecify.annotations.Nullable;
  * <p>A bound ID token is rejected by targets that are called over standard HTTPS rather than mTLS,
  * such as a Cloud Run service reached through its {@code *.run.app} URL or a custom domain. To
  * request an unbound ID token for such a target only, pass {@code
- * IdTokenProvider.Option.BIND_ID_TOKEN_FALSE} to {@link #idTokenWithAudience(String, List)} or to
- * {@link IdTokenCredentials.Builder#setOptions(List)}.
+ * IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN} to {@link #idTokenWithAudience(String, List)} or
+ * to {@link IdTokenCredentials.Builder#setOptions(List)}.
  *
  * <p>Token binding is on by default. It can be turned off for the whole process with the following
  * environment variables. Values are case-insensitive, and only {@code false} turns binding off:
