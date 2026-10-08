@@ -20,7 +20,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
-import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 
@@ -50,8 +49,10 @@ public class DisabledShim implements Shim {
   }
 
   @Override
-  public UnaryCallable<ReadModifyWriteRow, Row> decorateReadModifyWriteRow(
-      UnaryCallable<ReadModifyWriteRow, Row> classic, UnaryCallSettings<?, ?> settings) {
+  public <RowT> UnaryCallable<ReadModifyWriteRow, RowT> decorateReadModifyWriteRow(
+      UnaryCallable<ReadModifyWriteRow, RowT> classic,
+      RowAdapter<RowT> rowAdapter,
+      UnaryCallSettings<?, ?> settings) {
     return classic;
   }
 }

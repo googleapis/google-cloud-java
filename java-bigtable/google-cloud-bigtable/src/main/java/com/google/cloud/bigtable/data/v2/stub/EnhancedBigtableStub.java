@@ -968,7 +968,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateReadModifyWriteRow(classic, perOpSettings.readModifyWriteRowSettings);
+        .decorateReadModifyWriteRow(classic, rowAdapter, perOpSettings.readModifyWriteRowSettings);
   }
 
   /**

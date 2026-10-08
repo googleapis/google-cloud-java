@@ -38,6 +38,7 @@ import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowSh
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
@@ -49,7 +50,6 @@ import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManage
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
-import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
@@ -92,7 +92,7 @@ public class ShimImpl implements Shim {
   private final ReadRowShimInner readRowShimInner;
   private final MutateRowShim mutateRowShim;
   private final CheckAndMutateRowShim checkAndMutateRowShim;
-  private final ReadModifyWriteRowShim readModifyWriteRowShim;
+  private final ReadModifyWriteRowShimInner readModifyWriteRowShimInner;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -209,7 +209,7 @@ public class ShimImpl implements Shim {
     this.readRowShimInner = new ReadRowShimInner(client);
     this.mutateRowShim = new MutateRowShim(client);
     this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
-    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(client);
+    this.readModifyWriteRowShimInner = new ReadModifyWriteRowShimInner(client);
   }
 
   /**
@@ -397,12 +397,14 @@ public class ShimImpl implements Shim {
   }
 
   @Override
-  public UnaryCallable<ReadModifyWriteRow, Row> decorateReadModifyWriteRow(
-      UnaryCallable<ReadModifyWriteRow, Row> classic, UnaryCallSettings<?, ?> settings) {
+  public <RowT> UnaryCallable<ReadModifyWriteRow, RowT> decorateReadModifyWriteRow(
+      UnaryCallable<ReadModifyWriteRow, RowT> classic,
+      RowAdapter<RowT> rowAdapter,
+      UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        readModifyWriteRowShim,
+        new ReadModifyWriteRowShim<>(readModifyWriteRowShimInner, rowAdapter),
         Util.extractTimeout(settings),
         debugTagTracer);
   }
