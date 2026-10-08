@@ -255,8 +255,8 @@ function get_modified_files() {
 #
 # Monorepo-wide testing is triggered under four conditions:
 # 1. TEST_ALL_MODULES is set to "true" (used by nightly and scheduled CI builds).
-# 2. Root parent POMs (google-cloud-jar-parent or google-cloud-pom-parent) are modified,
-#    as changes to parent POMs affect shared dependency versions and compiler/build plugins.
+# 2. Root parent POMs (google-cloud-jar-parent, google-cloud-pom-parent, or java-shared-config)
+#    are modified, as changes to parent POMs affect shared dependency versions and compiler/build plugins.
 # 3. Core SDK platform libraries (sdk-platform-java) are modified, as gax, generators,
 #    and core transport changes can break downstream client library integration tests.
 # 4. Core authentication libraries (google-auth-library-java) are modified, as auth/credential
@@ -269,6 +269,7 @@ function should_test_all_modules() {
   # stdin of grep, avoiding an external subshell pipeline (like 'echo "$var" | grep').
   if [[ "${TEST_ALL_MODULES}" == "true" ]] || \
      grep -q -E '^google-cloud-(pom|jar)-parent/pom.xml$' <<< "${files}" || \
+     grep -q -E '^java-shared-config/' <<< "${files}" || \
      grep -q -E '^sdk-platform-java/' <<< "${files}" || \
      grep -q -E '^google-auth-library-java/' <<< "${files}"; then
     return 0

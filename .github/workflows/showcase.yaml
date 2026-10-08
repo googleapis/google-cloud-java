@@ -23,6 +23,7 @@ jobs:
           library:
             - 'sdk-platform-java/**'
             - 'google-auth-library-java/**'
+            - 'java-shared-config/**'
             - 'java-showcase/**'
             - '.github/workflows/showcase.yaml'
 

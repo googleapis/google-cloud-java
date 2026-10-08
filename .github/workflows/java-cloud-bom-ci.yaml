@@ -42,6 +42,7 @@ jobs:
             - 'java-cloud-bom/**'
             - 'sdk-platform-java/**'
             - 'google-auth-library-java/**'
+            - 'java-shared-config/**'
   dependencies:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
