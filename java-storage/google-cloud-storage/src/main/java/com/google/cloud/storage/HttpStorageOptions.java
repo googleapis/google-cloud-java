@@ -50,6 +50,7 @@ import java.time.Clock;
 import java.time.Duration;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -61,6 +62,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public class HttpStorageOptions extends StorageOptions {
 
   private static final long serialVersionUID = -5302637952911052045L;
+  private static final Logger LOGGER = Logger.getLogger(HttpStorageOptions.class.getName());
   private static final String API_SHORT_NAME = "Storage";
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
@@ -71,8 +73,11 @@ public class HttpStorageOptions extends StorageOptions {
   private transient OpenTelemetry openTelemetry;
   private final boolean enableOtelMetrics;
   private final boolean enableOtelDebugMetrics;
+  @Nullable private final Boolean rawEnableOtelMetrics;
+  @Nullable private final Boolean rawEnableOtelDebugMetrics;
   private transient MeterProvider meterProvider;
   private final Duration metricInterval;
+  private final boolean customMeterProviderConfigured;
 
   private HttpStorageOptions(Builder builder, StorageDefaults serviceDefaults) {
     super(builder, serviceDefaults);
@@ -83,16 +88,20 @@ public class HttpStorageOptions extends StorageOptions {
     retryDepsAdapter = new RetryDependenciesAdapter();
     blobWriteSessionConfig = builder.blobWriteSessionConfig;
     openTelemetry = builder.openTelemetry;
+    this.rawEnableOtelMetrics = builder.enableOtelMetrics;
+    this.rawEnableOtelDebugMetrics = builder.enableOtelDebugMetrics;
     this.enableOtelMetrics =
-        builder.enableOtelMetrics != null
-            ? builder.enableOtelMetrics
-            : StorageMetricsConfig.isEnableOtelMetrics();
+        StorageMetricsConfig.isEnableOtelMetrics(builder.enableOtelMetrics);
     this.enableOtelDebugMetrics =
-        builder.enableOtelDebugMetrics != null
-            ? builder.enableOtelDebugMetrics
-            : StorageMetricsConfig.isEnableOtelDebugMetrics();
+        StorageMetricsConfig.isEnableOtelDebugMetrics(builder.enableOtelDebugMetrics);
     this.meterProvider = builder.meterProvider;
+    this.customMeterProviderConfigured = builder.meterProvider != null;
     this.metricInterval = builder.metricInterval;
+    if (this.meterProvider == null && this.metricInterval != null) {
+      checkArgument(
+          this.metricInterval.compareTo(Duration.ofSeconds(60)) >= 0,
+          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring exporter");
+    }
   }
 
   @Override
@@ -199,6 +208,10 @@ public class HttpStorageOptions extends StorageOptions {
     in.defaultReadObject();
     this.retryDepsAdapter = new RetryDependenciesAdapter();
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
+    if (this.customMeterProviderConfigured || this.meterProvider != null) {
+      LOGGER.warning(
+          "Custom MeterProvider is transient and cannot be serialized across workers; falling back to default provider.");
+    }
   }
 
   public static HttpStorageOptions.Builder newBuilder() {
@@ -237,8 +250,8 @@ public class HttpStorageOptions extends StorageOptions {
       this.storageRetryStrategy = hso.retryAlgorithmManager.retryStrategy;
       this.blobWriteSessionConfig = hso.blobWriteSessionConfig;
       this.openTelemetry = hso.getOpenTelemetry();
-      this.enableOtelMetrics = hso.isEnableOtelMetrics();
-      this.enableOtelDebugMetrics = hso.isEnableOtelDebugMetrics();
+      this.enableOtelMetrics = hso.rawEnableOtelMetrics;
+      this.enableOtelDebugMetrics = hso.rawEnableOtelDebugMetrics;
       this.meterProvider = hso.meterProvider;
       this.metricInterval = hso.getMetricInterval();
     }
@@ -434,6 +447,10 @@ public class HttpStorageOptions extends StorageOptions {
 
     /**
      * Set the metric export interval for periodic metric reading.
+     *
+     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60
+     * seconds (1 minute). Intervals less than 60 seconds are permitted only when a custom
+     * {@link MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)}.
      *
      * @param metricInterval interval duration
      * @since 2.50.0 This new api is in preview and is subject to breaking changes.

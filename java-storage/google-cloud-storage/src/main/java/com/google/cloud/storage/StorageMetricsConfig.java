@@ -17,71 +17,93 @@
 package com.google.cloud.storage;
 
 import com.google.common.annotations.VisibleForTesting;
+import java.util.Locale;
 import java.util.function.Function;
+import java.util.logging.Logger;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class StorageMetricsConfig {
-  static final String SYS_PROP_ENABLE_OTEL_METRICS = "com.google.cloud.storage.enable_otel_metrics";
-  static final String SYS_PROP_ENABLE_OTEL_DEBUG_METRICS =
-      "com.google.cloud.storage.enable_otel_debug_metrics";
+  private static final Logger LOGGER = Logger.getLogger(StorageMetricsConfig.class.getName());
+
   static final String ENV_ENABLE_OTEL_METRICS_JAVA = "GCP_STORAGE_JAVA_ENABLE_OTEL_METRICS";
-  static final String ENV_ENABLE_OTEL_METRICS_FALLBACK = "GCP_STORAGE_ENABLE_OTEL_METRICS";
   static final String ENV_ENABLE_OTEL_DEBUG_METRICS = "GCP_STORAGE_JAVA_ENABLE_OTEL_DEBUG_METRICS";
 
-  private static volatile Function<String, String> sysPropResolver = System::getProperty;
   private static volatile Function<String, String> envResolver = System::getenv;
 
   private StorageMetricsConfig() {}
 
   static boolean isEnableOtelMetrics() {
-    return isEnableOtelMetrics(sysPropResolver, envResolver);
+    return isEnableOtelMetrics(null);
   }
 
   static boolean isEnableOtelDebugMetrics() {
-    return isEnableOtelDebugMetrics(sysPropResolver, envResolver);
+    return isEnableOtelDebugMetrics(null);
+  }
+
+  static boolean isEnableOtelMetrics(@Nullable Boolean builderSetting) {
+    return isEnableOtelMetrics(envResolver, builderSetting);
+  }
+
+  static boolean isEnableOtelDebugMetrics(@Nullable Boolean builderSetting) {
+    return isEnableOtelDebugMetrics(envResolver, builderSetting);
   }
 
   @VisibleForTesting
   static boolean isEnableOtelMetrics(
-      Function<String, String> sysProps, Function<String, String> env) {
-    String sysProp = sysProps.apply(SYS_PROP_ENABLE_OTEL_METRICS);
-    if (sysProp != null) {
-      return Boolean.parseBoolean(sysProp);
-    }
+      Function<String, String> env, @Nullable Boolean builderSetting) {
     String javaEnv = env.apply(ENV_ENABLE_OTEL_METRICS_JAVA);
-    if (javaEnv != null) {
-      return Boolean.parseBoolean(javaEnv);
+    Boolean parsed = parseBooleanValue(javaEnv, ENV_ENABLE_OTEL_METRICS_JAVA);
+    if (parsed != null) {
+      return parsed;
     }
-    String fallbackEnv = env.apply(ENV_ENABLE_OTEL_METRICS_FALLBACK);
-    if (fallbackEnv != null) {
-      return Boolean.parseBoolean(fallbackEnv);
-    }
-    return false;
+    return builderSetting != null ? builderSetting : false;
   }
 
   @VisibleForTesting
   static boolean isEnableOtelDebugMetrics(
-      Function<String, String> sysProps, Function<String, String> env) {
-    String sysProp = sysProps.apply(SYS_PROP_ENABLE_OTEL_DEBUG_METRICS);
-    if (sysProp != null) {
-      return Boolean.parseBoolean(sysProp);
-    }
+      Function<String, String> env, @Nullable Boolean builderSetting) {
     String javaEnv = env.apply(ENV_ENABLE_OTEL_DEBUG_METRICS);
-    if (javaEnv != null) {
-      return Boolean.parseBoolean(javaEnv);
+    Boolean parsed = parseBooleanValue(javaEnv, ENV_ENABLE_OTEL_DEBUG_METRICS);
+    if (parsed != null) {
+      return parsed;
     }
-    return false;
+    return builderSetting != null ? builderSetting : false;
+  }
+
+  @Nullable
+  @VisibleForTesting
+  static Boolean parseBooleanValue(@Nullable String val, String varName) {
+    if (val == null) {
+      return null;
+    }
+    String normalized = val.trim().toLowerCase(Locale.ENGLISH);
+    switch (normalized) {
+      case "1":
+      case "t":
+      case "true":
+        return Boolean.TRUE;
+      case "0":
+      case "f":
+      case "false":
+        return Boolean.FALSE;
+      default:
+        LOGGER.warning(
+            "Unrecognized boolean value '"
+                + val
+                + "' for "
+                + varName
+                + "; ignoring and falling back to builder/default");
+        return null;
+    }
   }
 
   @VisibleForTesting
-  static void setResolversForTesting(
-      Function<String, String> testSysProps, Function<String, String> testEnv) {
-    sysPropResolver = testSysProps != null ? testSysProps : System::getProperty;
+  static void setEnvResolverForTesting(Function<String, String> testEnv) {
     envResolver = testEnv != null ? testEnv : System::getenv;
   }
 
   @VisibleForTesting
   static void resetResolversForTesting() {
-    sysPropResolver = System::getProperty;
     envResolver = System::getenv;
   }
 }
