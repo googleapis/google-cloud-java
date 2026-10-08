@@ -19,6 +19,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.core.GaxProperties;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
@@ -33,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.generator.engine.ast.AnnotationNode;
 import com.google.api.generator.engine.ast.AssignmentExpr;
+import com.google.api.generator.engine.ast.CastExpr;
 import com.google.api.generator.engine.ast.ClassDefinition;
 import com.google.api.generator.engine.ast.CommentStatement;
 import com.google.api.generator.engine.ast.ConcreteReference;
@@ -40,6 +42,7 @@ import com.google.api.generator.engine.ast.EmptyLineStatement;
 import com.google.api.generator.engine.ast.Expr;
 import com.google.api.generator.engine.ast.ExprStatement;
 import com.google.api.generator.engine.ast.IfStatement;
+import com.google.api.generator.engine.ast.InstanceofExpr;
 import com.google.api.generator.engine.ast.JavaDocComment;
 import com.google.api.generator.engine.ast.MethodDefinition;
 import com.google.api.generator.engine.ast.MethodInvocationExpr;
@@ -63,6 +66,7 @@ import com.google.api.generator.gapic.model.GapicClass.Kind;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.Method;
 import com.google.api.generator.gapic.model.Service;
+import com.google.api.generator.gapic.model.Transport;
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -102,6 +106,7 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
           HttpJsonCallSettings.class,
           HttpJsonCallableFactory.class,
           HttpJsonTransportChannel.class,
+          InstantiatingGrpcChannelProvider.class,
           InstantiatingHttpJsonChannelProvider.class,
           InternalApi.class,
           InterruptedException.class,
@@ -252,7 +257,8 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
 
     // Methods
     List<MethodDefinition> methodDefinitions = new ArrayList<>();
-    methodDefinitions.addAll(createStaticCreatorMethods(service, typeStore, className));
+    methodDefinitions.addAll(
+        createStaticCreatorMethods(service, typeStore, className, context.transport()));
     methodDefinitions.addAll(
         createConstructorMethods(
             service,
@@ -282,7 +288,7 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
   }
 
   private static List<MethodDefinition> createStaticCreatorMethods(
-      Service service, TypeStore typeStore, String className) {
+      Service service, TypeStore typeStore, String className, Transport transport) {
     TypeNode thisClassType = typeStore.get(className);
     TypeNode clientContextType = FIXED_TYPESTORE.get(ClientContext.class.getSimpleName());
     TypeNode transportChannelType =
@@ -363,11 +369,15 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
 
     return Arrays.asList(
         createMethod,
-        createDeriveHttpJsonClientContextMethod(service, stubSettingsType, settingsVarExpr));
+        createDeriveHttpJsonClientContextMethod(
+            service, stubSettingsType, settingsVarExpr, transport));
   }
 
   private static MethodDefinition createDeriveHttpJsonClientContextMethod(
-      Service service, TypeNode stubSettingsType, VariableExpr settingsVarExpr) {
+      Service service,
+      TypeNode stubSettingsType,
+      VariableExpr settingsVarExpr,
+      Transport transport) {
     TypeNode clientContextType = FIXED_TYPESTORE.get(ClientContext.class.getSimpleName());
 
     TypeNode gaxHttpJsonPropertiesType =
@@ -433,6 +443,71 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
                 FIXED_TYPESTORE.get(InstantiatingHttpJsonChannelProvider.class.getSimpleName()))
             .setMethodName(NEW_BUILDER_METHOD_NAME)
             .build();
+    List<Statement> bodyStatements = new ArrayList<>();
+    if (transport != Transport.REST) {
+      // Carry over the endpoint and headers explicitly set on the client's gRPC channel provider,
+      // which would otherwise be dropped for resumable uploads.
+      TypeNode grpcChannelProviderType =
+          FIXED_TYPESTORE.get(InstantiatingGrpcChannelProvider.class.getSimpleName());
+      // Object return types avoid emitting unused imports.
+      Expr sourceChannelProviderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(settingsVarExpr)
+              .setMethodName("getTransportChannelProvider")
+              .setReturnType(TypeNode.OBJECT)
+              .build();
+      VariableExpr channelProviderBuilderVarExpr =
+          VariableExpr.withVariable(
+              Variable.builder()
+                  .setName("channelProviderBuilder")
+                  .setType(
+                      TypeNode.withReference(
+                          ConcreteReference.withClazz(
+                              InstantiatingHttpJsonChannelProvider.Builder.class)))
+                  .build());
+      bodyStatements.add(
+          ExprStatement.withExpr(
+              AssignmentExpr.builder()
+                  .setVariableExpr(
+                      channelProviderBuilderVarExpr.toBuilder().setIsDecl(true).build())
+                  .setValueExpr(
+                      MethodInvocationExpr.builder()
+                          .setExprReferenceExpr(channelProviderExpr)
+                          .setMethodName("setEndpoint")
+                          .setArguments(
+                              MethodInvocationExpr.builder()
+                                  .setExprReferenceExpr(sourceChannelProviderExpr)
+                                  .setMethodName("getEndpoint")
+                                  .build())
+                          .setReturnType(channelProviderBuilderVarExpr.type())
+                          .build())
+                  .build()));
+      bodyStatements.add(
+          IfStatement.builder()
+              .setConditionExpr(
+                  InstanceofExpr.builder()
+                      .setExpr(sourceChannelProviderExpr)
+                      .setCheckType(grpcChannelProviderType)
+                      .build())
+              .setBody(
+                  Arrays.asList(
+                      ExprStatement.withExpr(
+                          MethodInvocationExpr.builder()
+                              .setExprReferenceExpr(channelProviderBuilderVarExpr)
+                              .setMethodName("setHeaderProvider")
+                              .setArguments(
+                                  MethodInvocationExpr.builder()
+                                      .setExprReferenceExpr(
+                                          CastExpr.builder()
+                                              .setType(grpcChannelProviderType)
+                                              .setExpr(sourceChannelProviderExpr)
+                                              .build())
+                                      .setMethodName("getHeaderProvider")
+                                      .build())
+                              .build())))
+              .build());
+      channelProviderExpr = channelProviderBuilderVarExpr;
+    }
     channelProviderExpr =
         MethodInvocationExpr.builder()
             .setExprReferenceExpr(channelProviderExpr)
@@ -478,6 +553,7 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
         .setName(DERIVE_CLIENT_CONTEXT_METHOD_NAME)
         .setThrowsExceptions(Arrays.asList(FIXED_TYPESTORE.get(IOException.class.getSimpleName())))
         .setArguments(Arrays.asList(settingsVarExpr.toBuilder().setIsDecl(true).build()))
+        .setBody(bodyStatements)
         .setReturnExpr(returnExpr)
         .build();
   }

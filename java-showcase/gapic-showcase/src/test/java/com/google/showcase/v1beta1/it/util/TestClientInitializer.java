@@ -18,10 +18,12 @@ package com.google.showcase.v1beta1.it.util;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.httpjson.HttpJsonClientInterceptor;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -41,6 +43,7 @@ import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ClientInterceptor;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.List;
@@ -556,16 +559,13 @@ public class TestClientInitializer {
     return ResumableUploadServiceClient.create(settingsBuilder.build());
   }
 
-  public static ResumableUploadServiceClient createGrpcResumableUploadClient(int chunkSize)
-      throws Exception {
+  public static ResumableUploadServiceClient createGrpcResumableUploadClient(
+      ManagedChannel channel, int chunkSize) throws Exception {
     ResumableUploadServiceSettings.Builder settingsBuilder =
         ResumableUploadServiceSettings.newBuilder()
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
-                ResumableUploadServiceSettings.defaultGrpcTransportProviderBuilder()
-                    .setEndpoint(DEFAULT_GRPC_ENDPOINT)
-                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                    .build())
+                FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel)))
             .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT);
     return ResumableUploadServiceClient.create(settingsBuilder.build());
   }
