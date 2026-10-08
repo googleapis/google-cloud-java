@@ -754,10 +754,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Volume full name of this backup belongs to.
-   * Either source_volume or ontap_source should be provided.
-   * Format:
-   * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+   * The resource name of the volume that this backup belongs to. You must
+   * provide either `source_volume` or `ontap_source`. Format:
+   * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * </pre>
    *
    * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -781,10 +780,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Volume full name of this backup belongs to.
-   * Either source_volume or ontap_source should be provided.
-   * Format:
-   * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+   * The resource name of the volume that this backup belongs to. You must
+   * provide either `source_volume` or `ontap_source`. Format:
+   * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * </pre>
    *
    * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -1276,6 +1274,68 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
         : enforcedRetentionEndTime_;
   }
 
+  public static final int ONTAP_SOURCE_FIELD_NUMBER = 16;
+  private com.google.cloud.netapp.v1.OntapSource ontapSource_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents source details for ONTAP backups.
+   * Either source_volume or ontap_source should be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ontapSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasOntapSource() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents source details for ONTAP backups.
+   * Either source_volume or ontap_source should be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ontapSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.OntapSource getOntapSource() {
+    return ontapSource_ == null
+        ? com.google.cloud.netapp.v1.OntapSource.getDefaultInstance()
+        : ontapSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents source details for ONTAP backups.
+   * Either source_volume or ontap_source should be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.OntapSourceOrBuilder getOntapSourceOrBuilder() {
+    return ontapSource_ == null
+        ? com.google.cloud.netapp.v1.OntapSource.getDefaultInstance()
+        : ontapSource_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1333,6 +1393,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(15, getEnforcedRetentionEndTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(16, getOntapSource());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1397,6 +1460,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               15, getEnforcedRetentionEndTime());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getOntapSource());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1435,6 +1501,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
     if (hasEnforcedRetentionEndTime() != other.hasEnforcedRetentionEndTime()) return false;
     if (hasEnforcedRetentionEndTime()) {
       if (!getEnforcedRetentionEndTime().equals(other.getEnforcedRetentionEndTime())) return false;
+    }
+    if (hasOntapSource() != other.hasOntapSource()) return false;
+    if (hasOntapSource()) {
+      if (!getOntapSource().equals(other.getOntapSource())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1484,6 +1554,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
     if (hasEnforcedRetentionEndTime()) {
       hash = (37 * hash) + ENFORCED_RETENTION_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEnforcedRetentionEndTime().hashCode();
+    }
+    if (hasOntapSource()) {
+      hash = (37 * hash) + ONTAP_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getOntapSource().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1649,6 +1723,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetEnforcedRetentionEndTimeFieldBuilder();
+        internalGetOntapSourceFieldBuilder();
       }
     }
 
@@ -1678,6 +1753,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       if (enforcedRetentionEndTimeBuilder_ != null) {
         enforcedRetentionEndTimeBuilder_.dispose();
         enforcedRetentionEndTimeBuilder_ = null;
+      }
+      ontapSource_ = null;
+      if (ontapSourceBuilder_ != null) {
+        ontapSourceBuilder_.dispose();
+        ontapSourceBuilder_ = null;
       }
       return this;
     }
@@ -1767,6 +1847,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
                 : enforcedRetentionEndTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.ontapSource_ =
+            ontapSourceBuilder_ == null ? ontapSource_ : ontapSourceBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1837,6 +1922,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEnforcedRetentionEndTime()) {
         mergeEnforcedRetentionEndTime(other.getEnforcedRetentionEndTime());
+      }
+      if (other.hasOntapSource()) {
+        mergeOntapSource(other.getOntapSource());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1963,6 +2051,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00004000;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    internalGetOntapSourceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2502,10 +2597,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Volume full name of this backup belongs to.
-     * Either source_volume or ontap_source should be provided.
-     * Format:
-     * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+     * The resource name of the volume that this backup belongs to. You must
+     * provide either `source_volume` or `ontap_source`. Format:
+     * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
      *
      * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2528,10 +2622,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Volume full name of this backup belongs to.
-     * Either source_volume or ontap_source should be provided.
-     * Format:
-     * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+     * The resource name of the volume that this backup belongs to. You must
+     * provide either `source_volume` or `ontap_source`. Format:
+     * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
      *
      * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2554,10 +2647,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Volume full name of this backup belongs to.
-     * Either source_volume or ontap_source should be provided.
-     * Format:
-     * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+     * The resource name of the volume that this backup belongs to. You must
+     * provide either `source_volume` or `ontap_source`. Format:
+     * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
      *
      * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2579,10 +2671,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Volume full name of this backup belongs to.
-     * Either source_volume or ontap_source should be provided.
-     * Format:
-     * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+     * The resource name of the volume that this backup belongs to. You must
+     * provide either `source_volume` or `ontap_source`. Format:
+     * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
      *
      * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -2600,10 +2691,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Volume full name of this backup belongs to.
-     * Either source_volume or ontap_source should be provided.
-     * Format:
-     * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+     * The resource name of the volume that this backup belongs to. You must
+     * provide either `source_volume` or `ontap_source`. Format:
+     * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
      * </pre>
      *
      * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -3784,6 +3874,227 @@ public final class Backup extends com.google.protobuf.GeneratedMessage
         enforcedRetentionEndTime_ = null;
       }
       return enforcedRetentionEndTimeBuilder_;
+    }
+
+    private com.google.cloud.netapp.v1.OntapSource ontapSource_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.netapp.v1.OntapSource,
+            com.google.cloud.netapp.v1.OntapSource.Builder,
+            com.google.cloud.netapp.v1.OntapSourceOrBuilder>
+        ontapSourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ontapSource field is set.
+     */
+    public boolean hasOntapSource() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ontapSource.
+     */
+    public com.google.cloud.netapp.v1.OntapSource getOntapSource() {
+      if (ontapSourceBuilder_ == null) {
+        return ontapSource_ == null
+            ? com.google.cloud.netapp.v1.OntapSource.getDefaultInstance()
+            : ontapSource_;
+      } else {
+        return ontapSourceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOntapSource(com.google.cloud.netapp.v1.OntapSource value) {
+      if (ontapSourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ontapSource_ = value;
+      } else {
+        ontapSourceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setOntapSource(com.google.cloud.netapp.v1.OntapSource.Builder builderForValue) {
+      if (ontapSourceBuilder_ == null) {
+        ontapSource_ = builderForValue.build();
+      } else {
+        ontapSourceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeOntapSource(com.google.cloud.netapp.v1.OntapSource value) {
+      if (ontapSourceBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && ontapSource_ != null
+            && ontapSource_ != com.google.cloud.netapp.v1.OntapSource.getDefaultInstance()) {
+          getOntapSourceBuilder().mergeFrom(value);
+        } else {
+          ontapSource_ = value;
+        }
+      } else {
+        ontapSourceBuilder_.mergeFrom(value);
+      }
+      if (ontapSource_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearOntapSource() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      ontapSource_ = null;
+      if (ontapSourceBuilder_ != null) {
+        ontapSourceBuilder_.dispose();
+        ontapSourceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.OntapSource.Builder getOntapSourceBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetOntapSourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.OntapSourceOrBuilder getOntapSourceOrBuilder() {
+      if (ontapSourceBuilder_ != null) {
+        return ontapSourceBuilder_.getMessageOrBuilder();
+      } else {
+        return ontapSource_ == null
+            ? com.google.cloud.netapp.v1.OntapSource.getDefaultInstance()
+            : ontapSource_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents source details for ONTAP backups.
+     * Either source_volume or ontap_source should be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.netapp.v1.OntapSource,
+            com.google.cloud.netapp.v1.OntapSource.Builder,
+            com.google.cloud.netapp.v1.OntapSourceOrBuilder>
+        internalGetOntapSourceFieldBuilder() {
+      if (ontapSourceBuilder_ == null) {
+        ontapSourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.netapp.v1.OntapSource,
+                com.google.cloud.netapp.v1.OntapSource.Builder,
+                com.google.cloud.netapp.v1.OntapSourceOrBuilder>(
+                getOntapSource(), getParentForChildren(), isClean());
+        ontapSource_ = null;
+      }
+      return ontapSourceBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.netapp.v1.Backup)

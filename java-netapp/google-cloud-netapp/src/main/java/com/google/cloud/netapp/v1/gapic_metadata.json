@@ -127,6 +127,9 @@
             "GetSnapshot": {
               "methods": ["getSnapshot", "getSnapshot", "getSnapshot", "getSnapshotCallable"]
             },
+            "GetSplitStatus": {
+              "methods": ["getSplitStatus", "getSplitStatus", "getSplitStatus", "getSplitStatusCallable"]
+            },
             "GetStoragePool": {
               "methods": ["getStoragePool", "getStoragePool", "getStoragePool", "getStoragePoolCallable"]
             },
@@ -135,6 +138,9 @@
             },
             "ListActiveDirectories": {
               "methods": ["listActiveDirectories", "listActiveDirectories", "listActiveDirectories", "listActiveDirectoriesPagedCallable", "listActiveDirectoriesCallable"]
+            },
+            "ListBackupConfigs": {
+              "methods": ["listBackupConfigs", "listBackupConfigs", "listBackupConfigs", "listBackupConfigsPagedCallable", "listBackupConfigsCallable"]
             },
             "ListBackupPolicies": {
               "methods": ["listBackupPolicies", "listBackupPolicies", "listBackupPolicies", "listBackupPoliciesPagedCallable", "listBackupPoliciesCallable"]
@@ -172,6 +178,9 @@
             "RestoreBackupFiles": {
               "methods": ["restoreBackupFilesAsync", "restoreBackupFilesOperationCallable", "restoreBackupFilesCallable"]
             },
+            "RestoreVolume": {
+              "methods": ["restoreVolumeAsync", "restoreVolumeAsync", "restoreVolumeAsync", "restoreVolumeOperationCallable", "restoreVolumeCallable"]
+            },
             "ResumeReplication": {
               "methods": ["resumeReplicationAsync", "resumeReplicationOperationCallable", "resumeReplicationCallable"]
             },
@@ -180,6 +189,9 @@
             },
             "RevertVolume": {
               "methods": ["revertVolumeAsync", "revertVolumeOperationCallable", "revertVolumeCallable"]
+            },
+            "StartSplit": {
+              "methods": ["startSplitAsync", "startSplitAsync", "startSplitAsync", "startSplitOperationCallable", "startSplitCallable"]
             },
             "StopReplication": {
               "methods": ["stopReplicationAsync", "stopReplicationOperationCallable", "stopReplicationCallable"]
@@ -195,6 +207,9 @@
             },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]
+            },
+            "UpdateBackupConfig": {
+              "methods": ["updateBackupConfigAsync", "updateBackupConfigAsync", "updateBackupConfigAsync", "updateBackupConfigOperationCallable", "updateBackupConfigCallable"]
             },
             "UpdateBackupPolicy": {
               "methods": ["updateBackupPolicyAsync", "updateBackupPolicyAsync", "updateBackupPolicyOperationCallable", "updateBackupPolicyCallable"]

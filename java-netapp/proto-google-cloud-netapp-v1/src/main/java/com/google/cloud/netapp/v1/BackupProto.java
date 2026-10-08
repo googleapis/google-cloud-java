@@ -72,6 +72,10 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_netapp_v1_UpdateBackupRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_UpdateBackupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_OntapSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_OntapSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -85,7 +89,7 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
           + "#google/cloud/netapp/v1/backup.proto\022\026g"
           + "oogle.cloud.netapp.v1\032\037google/api/field_"
           + "behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\324\010\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\224\t\n"
           + "\006Backup\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0228\n"
           + "\005state\030\002"
@@ -110,7 +114,9 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
           + "backup_region\030\016 \001(\tB)\340A\003\372A#\n"
           + "!locations.googleapis.com/Location\022D\n"
           + "\033enforced_retention_end_time\030\017"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032-\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022>\n"
+          + "\014ontap_source\030\020"
+          + " \001(\0132#.google.cloud.netapp.v1.OntapSourceB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"m\n"
@@ -126,9 +132,8 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
           + "\020TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006MANUAL\020\001\022\r\n"
           + "\tSCHEDULED\020\002:\211\001\352A\205\001\n"
-          + "\034netapp.googleapis.com/Backup\022Tprojects/{project}/loc"
-          + "ations/{location}/backupVaults/{backup_v"
-          + "ault}/backups/{backup}*\007backups2\006backupB\022\n"
+          + "\034netapp.googleapis.com/Backup\022Tprojects/{project}/locations/{location"
+          + "}/backupVaults/{backup_vault}/backups/{backup}*\007backups2\006backupB\022\n"
           + "\020_source_snapshot\"\223\001\n"
           + "\022ListBackupsRequest\0224\n"
           + "\006parent\030\001 \001("
@@ -154,12 +159,18 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
           + "\034netapp.googleapis.com/Backup\"\200\001\n"
           + "\023UpdateBackupRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\0223\n"
-          + "\006backup\030\002 "
-          + "\001(\0132\036.google.cloud.netapp.v1.BackupB\003\340A\002B\255\001\n"
-          + "\032com.google.cloud.netapp.v1B\013BackupProtoP\001Z2cloud.google.com/go/netapp/apiv1"
-          + "/netapppb;netapppb\252\002\026Google.Cloud.NetApp"
-          + ".V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google::C"
-          + "loud::NetApp::V1b\006proto3"
+          + "\006backup\030\002"
+          + " \001(\0132\036.google.cloud.netapp.v1.BackupB\003\340A\002\"\232\001\n"
+          + "\013OntapSource\022D\n"
+          + "\014storage_pool\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!netapp.googleapis.com/StoragePoolH\000\210\001\001\022\030\n"
+          + "\013volume_uuid\030\002 \001(\tB\003\340A\002\022\032\n\r"
+          + "snapshot_uuid\030\003 \001(\tB\003\340A\001B\017\n\r"
+          + "_storage_poolB\255\001\n"
+          + "\032com.google.cloud.netapp.v1B\013BackupProtoP\001Z2cloud.googl"
+          + "e.com/go/netapp/apiv1/netapppb;netapppb\252"
+          + "\002\026Google.Cloud.NetApp.V1\312\002\026Google\\Cloud\\"
+          + "NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,6 +201,7 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
               "VolumeRegion",
               "BackupRegion",
               "EnforcedRetentionEndTime",
+              "OntapSource",
             });
     internal_static_google_cloud_netapp_v1_Backup_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_Backup_descriptor.getNestedType(0);
@@ -246,6 +258,14 @@ public final class BackupProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_netapp_v1_UpdateBackupRequest_descriptor,
             new java.lang.String[] {
               "UpdateMask", "Backup",
+            });
+    internal_static_google_cloud_netapp_v1_OntapSource_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_netapp_v1_OntapSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_OntapSource_descriptor,
+            new java.lang.String[] {
+              "StoragePool", "VolumeUuid", "SnapshotUuid",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

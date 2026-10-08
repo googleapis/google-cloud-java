@@ -165,10 +165,9 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Volume full name of this backup belongs to.
-   * Either source_volume or ontap_source should be provided.
-   * Format:
-   * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+   * The resource name of the volume that this backup belongs to. You must
+   * provide either `source_volume` or `ontap_source`. Format:
+   * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * </pre>
    *
    * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -181,10 +180,9 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
-   * Volume full name of this backup belongs to.
-   * Either source_volume or ontap_source should be provided.
-   * Format:
-   * `projects/{projects_id}/locations/{location}/volumes/{volume_id}`
+   * The resource name of the volume that this backup belongs to. You must
+   * provide either `source_volume` or `ontap_source`. Format:
+   * `projects/{project_id}/locations/{location}/volumes/{volume_id}`
    * </pre>
    *
    * <code>string source_volume = 6 [(.google.api.resource_reference) = { ... }</code>
@@ -490,4 +488,50 @@ public interface BackupOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEnforcedRetentionEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents source details for ONTAP backups.
+   * Either source_volume or ontap_source should be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ontapSource field is set.
+   */
+  boolean hasOntapSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents source details for ONTAP backups.
+   * Either source_volume or ontap_source should be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ontapSource.
+   */
+  com.google.cloud.netapp.v1.OntapSource getOntapSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents source details for ONTAP backups.
+   * Either source_volume or ontap_source should be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.OntapSource ontap_source = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.OntapSourceOrBuilder getOntapSourceOrBuilder();
 }

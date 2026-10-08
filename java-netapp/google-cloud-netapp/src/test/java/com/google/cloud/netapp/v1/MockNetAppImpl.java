@@ -334,6 +334,47 @@ public class MockNetAppImpl extends NetAppImplBase {
   }
 
   @Override
+  public void startSplit(StartSplitRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartSplit, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getSplitStatus(
+      GetSplitStatusRequest request, StreamObserver<SplitStatus> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SplitStatus) {
+      requests.add(request);
+      responseObserver.onNext(((SplitStatus) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSplitStatus, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SplitStatus.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void establishVolumePeering(
       EstablishVolumePeeringRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -1555,6 +1596,70 @@ public class MockNetAppImpl extends NetAppImplBase {
                   "Unrecognized response type %s for method ExecuteOntapPatch, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ExecuteOntapPatchResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void restoreVolume(
+      RestoreVolumeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreVolume, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBackupConfigs(
+      ListBackupConfigsRequest request,
+      StreamObserver<ListBackupConfigsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBackupConfigsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBackupConfigsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBackupConfigs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBackupConfigsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateBackupConfig(
+      UpdateBackupConfigRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBackupConfig, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

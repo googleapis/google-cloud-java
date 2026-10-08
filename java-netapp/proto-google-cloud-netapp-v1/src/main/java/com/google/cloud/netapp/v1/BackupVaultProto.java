@@ -101,7 +101,7 @@ public final class BackupVaultProto extends com.google.protobuf.GeneratedFile {
           + "\021backup_vault_type\030\006"
           + " \001(\01623.google.cloud.netapp.v1.BackupVault.BackupVaultTypeB\003\340A\001\022@\n"
           + "\r"
-          + "source_region\030\007 \001(\tB)\340A\003\372A#\n"
+          + "source_region\030\007 \001(\tB)\340A\001\372A#\n"
           + "!locations.googleapis.com/Location\022@\n\r"
           + "backup_region\030\010 \001(\tB)\340A\001\372A#\n"
           + "!locations.googleapis.com/Location\022F\n"

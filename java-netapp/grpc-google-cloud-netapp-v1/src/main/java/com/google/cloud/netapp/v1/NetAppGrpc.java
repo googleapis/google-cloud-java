@@ -594,6 +594,90 @@ public final class NetAppGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.StartSplitRequest, com.google.longrunning.Operation>
+      getStartSplitMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartSplit",
+      requestType = com.google.cloud.netapp.v1.StartSplitRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.StartSplitRequest, com.google.longrunning.Operation>
+      getStartSplitMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.StartSplitRequest, com.google.longrunning.Operation>
+        getStartSplitMethod;
+    if ((getStartSplitMethod = NetAppGrpc.getStartSplitMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getStartSplitMethod = NetAppGrpc.getStartSplitMethod) == null) {
+          NetAppGrpc.getStartSplitMethod =
+              getStartSplitMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.StartSplitRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartSplit"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.StartSplitRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("StartSplit"))
+                      .build();
+        }
+      }
+    }
+    return getStartSplitMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetSplitStatusRequest, com.google.cloud.netapp.v1.SplitStatus>
+      getGetSplitStatusMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSplitStatus",
+      requestType = com.google.cloud.netapp.v1.GetSplitStatusRequest.class,
+      responseType = com.google.cloud.netapp.v1.SplitStatus.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.GetSplitStatusRequest, com.google.cloud.netapp.v1.SplitStatus>
+      getGetSplitStatusMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.GetSplitStatusRequest,
+            com.google.cloud.netapp.v1.SplitStatus>
+        getGetSplitStatusMethod;
+    if ((getGetSplitStatusMethod = NetAppGrpc.getGetSplitStatusMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getGetSplitStatusMethod = NetAppGrpc.getGetSplitStatusMethod) == null) {
+          NetAppGrpc.getGetSplitStatusMethod =
+              getGetSplitStatusMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.GetSplitStatusRequest,
+                          com.google.cloud.netapp.v1.SplitStatus>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSplitStatus"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.GetSplitStatusRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.SplitStatus.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("GetSplitStatus"))
+                      .build();
+        }
+      }
+    }
+    return getGetSplitStatusMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.netapp.v1.EstablishVolumePeeringRequest,
           com.google.longrunning.Operation>
       getEstablishVolumePeeringMethod;
@@ -3106,6 +3190,135 @@ public final class NetAppGrpc {
     return getExecuteOntapPatchMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.RestoreVolumeRequest, com.google.longrunning.Operation>
+      getRestoreVolumeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreVolume",
+      requestType = com.google.cloud.netapp.v1.RestoreVolumeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.RestoreVolumeRequest, com.google.longrunning.Operation>
+      getRestoreVolumeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.RestoreVolumeRequest, com.google.longrunning.Operation>
+        getRestoreVolumeMethod;
+    if ((getRestoreVolumeMethod = NetAppGrpc.getRestoreVolumeMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getRestoreVolumeMethod = NetAppGrpc.getRestoreVolumeMethod) == null) {
+          NetAppGrpc.getRestoreVolumeMethod =
+              getRestoreVolumeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.RestoreVolumeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RestoreVolume"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.RestoreVolumeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("RestoreVolume"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreVolumeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupConfigsRequest,
+          com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+      getListBackupConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBackupConfigs",
+      requestType = com.google.cloud.netapp.v1.ListBackupConfigsRequest.class,
+      responseType = com.google.cloud.netapp.v1.ListBackupConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.ListBackupConfigsRequest,
+          com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+      getListBackupConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.ListBackupConfigsRequest,
+            com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+        getListBackupConfigsMethod;
+    if ((getListBackupConfigsMethod = NetAppGrpc.getListBackupConfigsMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getListBackupConfigsMethod = NetAppGrpc.getListBackupConfigsMethod) == null) {
+          NetAppGrpc.getListBackupConfigsMethod =
+              getListBackupConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.ListBackupConfigsRequest,
+                          com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListBackupConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.ListBackupConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("ListBackupConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupConfigRequest, com.google.longrunning.Operation>
+      getUpdateBackupConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBackupConfig",
+      requestType = com.google.cloud.netapp.v1.UpdateBackupConfigRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.netapp.v1.UpdateBackupConfigRequest, com.google.longrunning.Operation>
+      getUpdateBackupConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.netapp.v1.UpdateBackupConfigRequest, com.google.longrunning.Operation>
+        getUpdateBackupConfigMethod;
+    if ((getUpdateBackupConfigMethod = NetAppGrpc.getUpdateBackupConfigMethod) == null) {
+      synchronized (NetAppGrpc.class) {
+        if ((getUpdateBackupConfigMethod = NetAppGrpc.getUpdateBackupConfigMethod) == null) {
+          NetAppGrpc.getUpdateBackupConfigMethod =
+              getUpdateBackupConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.netapp.v1.UpdateBackupConfigRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBackupConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.netapp.v1.UpdateBackupConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new NetAppMethodDescriptorSupplier("UpdateBackupConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupConfigMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static NetAppStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<NetAppStub> factory =
@@ -3353,6 +3566,38 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getRevertVolumeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits a clone volume from its source volume.
+     * This operation will only work for volumes which have clone_details
+     * set(clones).
+     * For volumes that are not clones, this operation will return an error.
+     * </pre>
+     */
+    default void startSplit(
+        com.google.cloud.netapp.v1.StartSplitRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStartSplitMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the current state, progress, and details of a split operation for
+     * a volume. This method is relevant when the volume is a clone. For volumes
+     * that are not clones, this method will return an error.
+     * </pre>
+     */
+    default void getSplitStatus(
+        com.google.cloud.netapp.v1.GetSplitStatusRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.SplitStatus> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSplitStatusMethod(), responseObserver);
     }
 
     /**
@@ -4133,7 +4378,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the
+     * `ExecuteOntapPost` sends the ONTAP `POST` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -4149,7 +4394,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the
+     * `ExecuteOntapGet` sends the ONTAP `GET` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -4165,7 +4410,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the
+     * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -4181,7 +4426,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the
+     * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -4191,6 +4436,49 @@ public final class NetAppGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExecuteOntapPatchMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a backup to an ONTAP-mode volume.
+     * </pre>
+     */
+    default void restoreVolume(
+        com.google.cloud.netapp.v1.RestoreVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreVolumeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+     * </pre>
+     */
+    default void listBackupConfigs(
+        com.google.cloud.netapp.v1.ListBackupConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBackupConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the backup configuration for an ONTAP-mode volume.
+     * </pre>
+     */
+    default void updateBackupConfig(
+        com.google.cloud.netapp.v1.UpdateBackupConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBackupConfigMethod(), responseObserver);
     }
   }
 
@@ -4434,6 +4722,41 @@ public final class NetAppGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRevertVolumeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits a clone volume from its source volume.
+     * This operation will only work for volumes which have clone_details
+     * set(clones).
+     * For volumes that are not clones, this operation will return an error.
+     * </pre>
+     */
+    public void startSplit(
+        com.google.cloud.netapp.v1.StartSplitRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartSplitMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the current state, progress, and details of a split operation for
+     * a volume. This method is relevant when the volume is a clone. For volumes
+     * that are not clones, this method will return an error.
+     * </pre>
+     */
+    public void getSplitStatus(
+        com.google.cloud.netapp.v1.GetSplitStatusRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.SplitStatus> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSplitStatusMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -5323,7 +5646,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the
+     * `ExecuteOntapPost` sends the ONTAP `POST` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -5341,7 +5664,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the
+     * `ExecuteOntapGet` sends the ONTAP `GET` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -5359,7 +5682,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the
+     * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -5377,7 +5700,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the
+     * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -5387,6 +5710,55 @@ public final class NetAppGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getExecuteOntapPatchMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a backup to an ONTAP-mode volume.
+     * </pre>
+     */
+    public void restoreVolume(
+        com.google.cloud.netapp.v1.RestoreVolumeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestoreVolumeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+     * </pre>
+     */
+    public void listBackupConfigs(
+        com.google.cloud.netapp.v1.ListBackupConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBackupConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the backup configuration for an ONTAP-mode volume.
+     * </pre>
+     */
+    public void updateBackupConfig(
+        com.google.cloud.netapp.v1.UpdateBackupConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupConfigMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -5586,6 +5958,37 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.RevertVolumeRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRevertVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits a clone volume from its source volume.
+     * This operation will only work for volumes which have clone_details
+     * set(clones).
+     * For volumes that are not clones, this operation will return an error.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startSplit(
+        com.google.cloud.netapp.v1.StartSplitRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartSplitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the current state, progress, and details of a split operation for
+     * a volume. This method is relevant when the volume is a clone. For volumes
+     * that are not clones, this method will return an error.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.SplitStatus getSplitStatus(
+        com.google.cloud.netapp.v1.GetSplitStatusRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetSplitStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6322,7 +6725,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the
+     * `ExecuteOntapPost` sends the ONTAP `POST` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -6336,7 +6739,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the
+     * `ExecuteOntapGet` sends the ONTAP `GET` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -6350,7 +6753,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the
+     * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -6365,7 +6768,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the
+     * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -6374,6 +6777,47 @@ public final class NetAppGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExecuteOntapPatchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a backup to an ONTAP-mode volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreVolume(
+        com.google.cloud.netapp.v1.RestoreVolumeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRestoreVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupConfigsResponse listBackupConfigs(
+        com.google.cloud.netapp.v1.ListBackupConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBackupConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the backup configuration for an ONTAP-mode volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupConfig(
+        com.google.cloud.netapp.v1.UpdateBackupConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateBackupConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -6566,6 +7010,37 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.RevertVolumeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRevertVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits a clone volume from its source volume.
+     * This operation will only work for volumes which have clone_details
+     * set(clones).
+     * For volumes that are not clones, this operation will return an error.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startSplit(
+        com.google.cloud.netapp.v1.StartSplitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartSplitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the current state, progress, and details of a split operation for
+     * a volume. This method is relevant when the volume is a clone. For volumes
+     * that are not clones, this method will return an error.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.SplitStatus getSplitStatus(
+        com.google.cloud.netapp.v1.GetSplitStatusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSplitStatusMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7283,7 +7758,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the
+     * `ExecuteOntapPost` sends the ONTAP `POST` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -7297,7 +7772,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the
+     * `ExecuteOntapGet` sends the ONTAP `GET` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -7311,7 +7786,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the
+     * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -7325,7 +7800,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the
+     * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -7333,6 +7808,45 @@ public final class NetAppGrpc {
         com.google.cloud.netapp.v1.ExecuteOntapPatchRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getExecuteOntapPatchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a backup to an ONTAP-mode volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreVolume(
+        com.google.cloud.netapp.v1.RestoreVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreVolumeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+     * </pre>
+     */
+    public com.google.cloud.netapp.v1.ListBackupConfigsResponse listBackupConfigs(
+        com.google.cloud.netapp.v1.ListBackupConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the backup configuration for an ONTAP-mode volume.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupConfig(
+        com.google.cloud.netapp.v1.UpdateBackupConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -7529,6 +8043,38 @@ public final class NetAppGrpc {
         revertVolume(com.google.cloud.netapp.v1.RevertVolumeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRevertVolumeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits a clone volume from its source volume.
+     * This operation will only work for volumes which have clone_details
+     * set(clones).
+     * For volumes that are not clones, this operation will return an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        startSplit(com.google.cloud.netapp.v1.StartSplitRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartSplitMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the current state, progress, and details of a split operation for
+     * a volume. This method is relevant when the volume is a clone. For volumes
+     * that are not clones, this method will return an error.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.SplitStatus>
+        getSplitStatus(com.google.cloud.netapp.v1.GetSplitStatusRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSplitStatusMethod(), getCallOptions()), request);
     }
 
     /**
@@ -8261,7 +8807,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the
+     * `ExecuteOntapPost` sends the ONTAP `POST` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -8276,7 +8822,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the
+     * `ExecuteOntapGet` sends the ONTAP `GET` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -8291,7 +8837,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the
+     * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -8306,7 +8852,7 @@ public final class NetAppGrpc {
      *
      *
      * <pre>
-     * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the
+     * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the
      * `StoragePool` cluster.
      * </pre>
      */
@@ -8315,6 +8861,46 @@ public final class NetAppGrpc {
         executeOntapPatch(com.google.cloud.netapp.v1.ExecuteOntapPatchRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getExecuteOntapPatchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a backup to an ONTAP-mode volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        restoreVolume(com.google.cloud.netapp.v1.RestoreVolumeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestoreVolumeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.netapp.v1.ListBackupConfigsResponse>
+        listBackupConfigs(com.google.cloud.netapp.v1.ListBackupConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBackupConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the backup configuration for an ONTAP-mode volume.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBackupConfig(com.google.cloud.netapp.v1.UpdateBackupConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBackupConfigMethod(), getCallOptions()), request);
     }
   }
 
@@ -8331,64 +8917,69 @@ public final class NetAppGrpc {
   private static final int METHODID_UPDATE_VOLUME = 10;
   private static final int METHODID_DELETE_VOLUME = 11;
   private static final int METHODID_REVERT_VOLUME = 12;
-  private static final int METHODID_ESTABLISH_VOLUME_PEERING = 13;
-  private static final int METHODID_LIST_SNAPSHOTS = 14;
-  private static final int METHODID_GET_SNAPSHOT = 15;
-  private static final int METHODID_CREATE_SNAPSHOT = 16;
-  private static final int METHODID_DELETE_SNAPSHOT = 17;
-  private static final int METHODID_UPDATE_SNAPSHOT = 18;
-  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 19;
-  private static final int METHODID_GET_ACTIVE_DIRECTORY = 20;
-  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 21;
-  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 22;
-  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 23;
-  private static final int METHODID_LIST_KMS_CONFIGS = 24;
-  private static final int METHODID_CREATE_KMS_CONFIG = 25;
-  private static final int METHODID_GET_KMS_CONFIG = 26;
-  private static final int METHODID_UPDATE_KMS_CONFIG = 27;
-  private static final int METHODID_ENCRYPT_VOLUMES = 28;
-  private static final int METHODID_VERIFY_KMS_CONFIG = 29;
-  private static final int METHODID_DELETE_KMS_CONFIG = 30;
-  private static final int METHODID_LIST_REPLICATIONS = 31;
-  private static final int METHODID_GET_REPLICATION = 32;
-  private static final int METHODID_CREATE_REPLICATION = 33;
-  private static final int METHODID_DELETE_REPLICATION = 34;
-  private static final int METHODID_UPDATE_REPLICATION = 35;
-  private static final int METHODID_STOP_REPLICATION = 36;
-  private static final int METHODID_RESUME_REPLICATION = 37;
-  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 38;
-  private static final int METHODID_ESTABLISH_PEERING = 39;
-  private static final int METHODID_SYNC_REPLICATION = 40;
-  private static final int METHODID_CREATE_BACKUP_VAULT = 41;
-  private static final int METHODID_GET_BACKUP_VAULT = 42;
-  private static final int METHODID_LIST_BACKUP_VAULTS = 43;
-  private static final int METHODID_UPDATE_BACKUP_VAULT = 44;
-  private static final int METHODID_DELETE_BACKUP_VAULT = 45;
-  private static final int METHODID_CREATE_BACKUP = 46;
-  private static final int METHODID_GET_BACKUP = 47;
-  private static final int METHODID_LIST_BACKUPS = 48;
-  private static final int METHODID_DELETE_BACKUP = 49;
-  private static final int METHODID_UPDATE_BACKUP = 50;
-  private static final int METHODID_CREATE_BACKUP_POLICY = 51;
-  private static final int METHODID_GET_BACKUP_POLICY = 52;
-  private static final int METHODID_LIST_BACKUP_POLICIES = 53;
-  private static final int METHODID_UPDATE_BACKUP_POLICY = 54;
-  private static final int METHODID_DELETE_BACKUP_POLICY = 55;
-  private static final int METHODID_LIST_QUOTA_RULES = 56;
-  private static final int METHODID_GET_QUOTA_RULE = 57;
-  private static final int METHODID_CREATE_QUOTA_RULE = 58;
-  private static final int METHODID_UPDATE_QUOTA_RULE = 59;
-  private static final int METHODID_DELETE_QUOTA_RULE = 60;
-  private static final int METHODID_RESTORE_BACKUP_FILES = 61;
-  private static final int METHODID_LIST_HOST_GROUPS = 62;
-  private static final int METHODID_GET_HOST_GROUP = 63;
-  private static final int METHODID_CREATE_HOST_GROUP = 64;
-  private static final int METHODID_UPDATE_HOST_GROUP = 65;
-  private static final int METHODID_DELETE_HOST_GROUP = 66;
-  private static final int METHODID_EXECUTE_ONTAP_POST = 67;
-  private static final int METHODID_EXECUTE_ONTAP_GET = 68;
-  private static final int METHODID_EXECUTE_ONTAP_DELETE = 69;
-  private static final int METHODID_EXECUTE_ONTAP_PATCH = 70;
+  private static final int METHODID_START_SPLIT = 13;
+  private static final int METHODID_GET_SPLIT_STATUS = 14;
+  private static final int METHODID_ESTABLISH_VOLUME_PEERING = 15;
+  private static final int METHODID_LIST_SNAPSHOTS = 16;
+  private static final int METHODID_GET_SNAPSHOT = 17;
+  private static final int METHODID_CREATE_SNAPSHOT = 18;
+  private static final int METHODID_DELETE_SNAPSHOT = 19;
+  private static final int METHODID_UPDATE_SNAPSHOT = 20;
+  private static final int METHODID_LIST_ACTIVE_DIRECTORIES = 21;
+  private static final int METHODID_GET_ACTIVE_DIRECTORY = 22;
+  private static final int METHODID_CREATE_ACTIVE_DIRECTORY = 23;
+  private static final int METHODID_UPDATE_ACTIVE_DIRECTORY = 24;
+  private static final int METHODID_DELETE_ACTIVE_DIRECTORY = 25;
+  private static final int METHODID_LIST_KMS_CONFIGS = 26;
+  private static final int METHODID_CREATE_KMS_CONFIG = 27;
+  private static final int METHODID_GET_KMS_CONFIG = 28;
+  private static final int METHODID_UPDATE_KMS_CONFIG = 29;
+  private static final int METHODID_ENCRYPT_VOLUMES = 30;
+  private static final int METHODID_VERIFY_KMS_CONFIG = 31;
+  private static final int METHODID_DELETE_KMS_CONFIG = 32;
+  private static final int METHODID_LIST_REPLICATIONS = 33;
+  private static final int METHODID_GET_REPLICATION = 34;
+  private static final int METHODID_CREATE_REPLICATION = 35;
+  private static final int METHODID_DELETE_REPLICATION = 36;
+  private static final int METHODID_UPDATE_REPLICATION = 37;
+  private static final int METHODID_STOP_REPLICATION = 38;
+  private static final int METHODID_RESUME_REPLICATION = 39;
+  private static final int METHODID_REVERSE_REPLICATION_DIRECTION = 40;
+  private static final int METHODID_ESTABLISH_PEERING = 41;
+  private static final int METHODID_SYNC_REPLICATION = 42;
+  private static final int METHODID_CREATE_BACKUP_VAULT = 43;
+  private static final int METHODID_GET_BACKUP_VAULT = 44;
+  private static final int METHODID_LIST_BACKUP_VAULTS = 45;
+  private static final int METHODID_UPDATE_BACKUP_VAULT = 46;
+  private static final int METHODID_DELETE_BACKUP_VAULT = 47;
+  private static final int METHODID_CREATE_BACKUP = 48;
+  private static final int METHODID_GET_BACKUP = 49;
+  private static final int METHODID_LIST_BACKUPS = 50;
+  private static final int METHODID_DELETE_BACKUP = 51;
+  private static final int METHODID_UPDATE_BACKUP = 52;
+  private static final int METHODID_CREATE_BACKUP_POLICY = 53;
+  private static final int METHODID_GET_BACKUP_POLICY = 54;
+  private static final int METHODID_LIST_BACKUP_POLICIES = 55;
+  private static final int METHODID_UPDATE_BACKUP_POLICY = 56;
+  private static final int METHODID_DELETE_BACKUP_POLICY = 57;
+  private static final int METHODID_LIST_QUOTA_RULES = 58;
+  private static final int METHODID_GET_QUOTA_RULE = 59;
+  private static final int METHODID_CREATE_QUOTA_RULE = 60;
+  private static final int METHODID_UPDATE_QUOTA_RULE = 61;
+  private static final int METHODID_DELETE_QUOTA_RULE = 62;
+  private static final int METHODID_RESTORE_BACKUP_FILES = 63;
+  private static final int METHODID_LIST_HOST_GROUPS = 64;
+  private static final int METHODID_GET_HOST_GROUP = 65;
+  private static final int METHODID_CREATE_HOST_GROUP = 66;
+  private static final int METHODID_UPDATE_HOST_GROUP = 67;
+  private static final int METHODID_DELETE_HOST_GROUP = 68;
+  private static final int METHODID_EXECUTE_ONTAP_POST = 69;
+  private static final int METHODID_EXECUTE_ONTAP_GET = 70;
+  private static final int METHODID_EXECUTE_ONTAP_DELETE = 71;
+  private static final int METHODID_EXECUTE_ONTAP_PATCH = 72;
+  private static final int METHODID_RESTORE_VOLUME = 73;
+  private static final int METHODID_LIST_BACKUP_CONFIGS = 74;
+  private static final int METHODID_UPDATE_BACKUP_CONFIG = 75;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8474,6 +9065,17 @@ public final class NetAppGrpc {
           serviceImpl.revertVolume(
               (com.google.cloud.netapp.v1.RevertVolumeRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_START_SPLIT:
+          serviceImpl.startSplit(
+              (com.google.cloud.netapp.v1.StartSplitRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_SPLIT_STATUS:
+          serviceImpl.getSplitStatus(
+              (com.google.cloud.netapp.v1.GetSplitStatusRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.SplitStatus>)
+                  responseObserver);
           break;
         case METHODID_ESTABLISH_VOLUME_PEERING:
           serviceImpl.establishVolumePeering(
@@ -8784,6 +9386,22 @@ public final class NetAppGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ExecuteOntapPatchResponse>)
                   responseObserver);
           break;
+        case METHODID_RESTORE_VOLUME:
+          serviceImpl.restoreVolume(
+              (com.google.cloud.netapp.v1.RestoreVolumeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_CONFIGS:
+          serviceImpl.listBackupConfigs(
+              (com.google.cloud.netapp.v1.ListBackupConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.netapp.v1.ListBackupConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP_CONFIG:
+          serviceImpl.updateBackupConfig(
+              (com.google.cloud.netapp.v1.UpdateBackupConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -8884,6 +9502,18 @@ public final class NetAppGrpc {
                 new MethodHandlers<
                     com.google.cloud.netapp.v1.RevertVolumeRequest,
                     com.google.longrunning.Operation>(service, METHODID_REVERT_VOLUME)))
+        .addMethod(
+            getStartSplitMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.StartSplitRequest, com.google.longrunning.Operation>(
+                    service, METHODID_START_SPLIT)))
+        .addMethod(
+            getGetSplitStatusMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.GetSplitStatusRequest,
+                    com.google.cloud.netapp.v1.SplitStatus>(service, METHODID_GET_SPLIT_STATUS)))
         .addMethod(
             getEstablishVolumePeeringMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -9248,6 +9878,25 @@ public final class NetAppGrpc {
                     com.google.cloud.netapp.v1.ExecuteOntapPatchRequest,
                     com.google.cloud.netapp.v1.ExecuteOntapPatchResponse>(
                     service, METHODID_EXECUTE_ONTAP_PATCH)))
+        .addMethod(
+            getRestoreVolumeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.RestoreVolumeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_VOLUME)))
+        .addMethod(
+            getListBackupConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.ListBackupConfigsRequest,
+                    com.google.cloud.netapp.v1.ListBackupConfigsResponse>(
+                    service, METHODID_LIST_BACKUP_CONFIGS)))
+        .addMethod(
+            getUpdateBackupConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.netapp.v1.UpdateBackupConfigRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BACKUP_CONFIG)))
         .build();
   }
 
@@ -9310,6 +9959,8 @@ public final class NetAppGrpc {
                       .addMethod(getUpdateVolumeMethod())
                       .addMethod(getDeleteVolumeMethod())
                       .addMethod(getRevertVolumeMethod())
+                      .addMethod(getStartSplitMethod())
+                      .addMethod(getGetSplitStatusMethod())
                       .addMethod(getEstablishVolumePeeringMethod())
                       .addMethod(getListSnapshotsMethod())
                       .addMethod(getGetSnapshotMethod())
@@ -9368,6 +10019,9 @@ public final class NetAppGrpc {
                       .addMethod(getExecuteOntapGetMethod())
                       .addMethod(getExecuteOntapDeleteMethod())
                       .addMethod(getExecuteOntapPatchMethod())
+                      .addMethod(getRestoreVolumeMethod())
+                      .addMethod(getListBackupConfigsMethod())
+                      .addMethod(getUpdateBackupConfigMethod())
                       .build();
         }
       }
