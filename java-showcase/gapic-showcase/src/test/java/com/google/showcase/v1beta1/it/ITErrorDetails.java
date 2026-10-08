@@ -187,16 +187,12 @@ class ITErrorDetails {
         assertThrows(ApiException.class, () -> httpjsonClient.failEchoWithDetails(request));
     assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
 
-    // GAX HTTP/JSON parser limitation: Because the response contains a custom/unregistered type
-    // (PoetryError) in the Any details list, HttpJsonErrorParser fails to parse the status payload,
-    // resulting in empty ErrorDetails (where getErrorInfo() returns null).
-    // Note: Standard Google Cloud services follow AIP-193 error details (ErrorInfo, RetryInfo,
-    // etc.)
-    // and do not use custom error payload types like PoetryError.
+    // The response contains a custom/unregistered type (PoetryError) in the Any details list.
+    // HttpJsonErrorParser filters out unrecognized details so standard ones (e.g. ErrorInfo) are
+    // still parsed.
     ErrorDetails errorDetails = exception.getErrorDetails();
-    if (errorDetails != null) {
-      assertThat(errorDetails.getErrorInfo()).isNull();
-    }
+    assertThat(errorDetails).isNotNull();
+    assertThat(errorDetails.getErrorInfo()).isNotNull();
 
     // Workaround REST limitation: Parse the raw HTTP JSON error response manually using a custom
     // TypeRegistry that registers standard types plus the showcase-specific PoetryError type.

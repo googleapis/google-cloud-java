@@ -135,4 +135,40 @@ class HttpJsonErrorParserTest {
     assertThat(HttpJsonErrorParser.parseStatus(payload))
         .isEqualTo(com.google.rpc.Status.getDefaultInstance());
   }
+
+  @Test
+  void parseStatus_unrecognizedOrMalformedDetails_ignoresAndPreservesOthers() {
+    String payload =
+        "{\n"
+            + "  \"error\": {\n"
+            + "    \"code\": 400,\n"
+            + "    \"message\": \"Invalid request payload.\",\n"
+            + "    \"details\": [\n"
+            + "      \"not-an-object\",\n"
+            + "      {\n"
+            + "        \"customField\": \"missingAtType\"\n"
+            + "      },\n"
+            + "      {\n"
+            + "        \"@type\": \"malformed-type-url-without-slash\"\n"
+            + "      },\n"
+            + "      {\n"
+            + "        \"@type\": \"type.googleapis.com/custom.UnrecognizedErrorDetail\",\n"
+            + "        \"customField\": \"customValue\"\n"
+            + "      },\n"
+            + "      {\n"
+            + "        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\"\n"
+            + "      }\n"
+            + "    ]\n"
+            + "  }\n"
+            + "}";
+
+    com.google.rpc.Status status = HttpJsonErrorParser.parseStatus(payload);
+    assertThat(status.getCode()).isEqualTo(400);
+    assertThat(status.getMessage()).isEqualTo("Invalid request payload.");
+    assertThat(status.getDetailsCount()).isEqualTo(1);
+
+    ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(status.getDetailsList()).build();
+    assertThat(errorDetails.getRetryInfo()).isNotNull();
+  }
 }
