@@ -359,8 +359,13 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
 
+    /**
+     * Sets the fully qualified Java client class name (e.g.
+     * "com.google.cloud.secretmanager.v1.SecretManagerServiceClient").
+     */
     public abstract Builder setJavaClientName(@Nullable String javaClientName);
 
+    /** Sets the Java method name of the RPC (e.g. "accessSecretVersion"). */
     public abstract Builder setJavaMethodName(@Nullable String javaMethodName);
 
     abstract Builder setDestinationResourceIdSupplier(

@@ -246,6 +246,10 @@ public class HttpJsonCallableFactory {
     return Callables.resumableUpload(uploadClient, callSettings, clientContext);
   }
 
+  /**
+   * Builds an {@link ApiTracerContext} from the given {@link HttpJsonCallSettings}, including the
+   * method descriptor and Java method name.
+   */
   @VisibleForTesting
   static ApiTracerContext getApiTracerContext(HttpJsonCallSettings<?, ?> httpJsonCallSettings) {
     return getApiTracerContextBuilder(httpJsonCallSettings.getMethodDescriptor())
@@ -253,11 +257,16 @@ public class HttpJsonCallableFactory {
         .build();
   }
 
+  /** Builds an {@link ApiTracerContext} from the given HTTP/JSON {@link ApiMethodDescriptor}. */
   @VisibleForTesting
   static ApiTracerContext getApiTracerContext(ApiMethodDescriptor<?, ?> methodDescriptor) {
     return getApiTracerContextBuilder(methodDescriptor).build();
   }
 
+  /**
+   * Creates an {@link ApiTracerContext.Builder} populated with common HTTP/JSON transport and
+   * method descriptor fields.
+   */
   private static ApiTracerContext.Builder getApiTracerContextBuilder(
       ApiMethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()

@@ -322,17 +322,26 @@ public class GrpcCallableFactory {
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
+  /**
+   * Builds an {@link ApiTracerContext} from the given {@link GrpcCallSettings}, including the
+   * method descriptor and Java method name.
+   */
   static ApiTracerContext getApiTracerContext(GrpcCallSettings<?, ?> grpcCallSettings) {
     return getApiTracerContextBuilder(grpcCallSettings.getMethodDescriptor())
         .setJavaMethodName(grpcCallSettings.getJavaMethodName())
         .build();
   }
 
+  /** Builds an {@link ApiTracerContext} from the given gRPC {@link MethodDescriptor}. */
   @VisibleForTesting
   static ApiTracerContext getApiTracerContext(MethodDescriptor<?, ?> methodDescriptor) {
     return getApiTracerContextBuilder(methodDescriptor).build();
   }
 
+  /**
+   * Creates an {@link ApiTracerContext.Builder} populated with common gRPC transport and method
+   * descriptor fields.
+   */
   private static ApiTracerContext.Builder getApiTracerContextBuilder(
       MethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
