@@ -56,7 +56,7 @@ public final class BigQueryExportProto extends com.google.protobuf.GeneratedFile
       "\n"
           + "4google/cloud/securitycenter/v2/bigquery_export.proto\022\036google.cloud.securitycen"
           + "ter.v2\032\037google/api/field_behavior.proto\032"
-          + "\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\242\004\n"
+          + "\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\317\004\n"
           + "\016BigQueryExport\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\023\n"
           + "\013description\030\002 \001(\t\022\016\n"
@@ -66,16 +66,18 @@ public final class BigQueryExportProto extends com.google.protobuf.GeneratedFile
           + "\013update_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\037\n"
           + "\022most_recent_editor\030\007 \001(\tB\003\340A\003\022\026\n"
-          + "\tprincipal\030\010 \001(\tB\003\340A\003:\241\002\352A\235\002\n"
-          + ",securitycenter.googleapis.com/BigQueryExport\022Jorganizations/{organization}/"
-          + "locations/{location}/bigQueryExports/{export}\022>folders/{folder}/locations/{locat"
-          + "ion}/bigQueryExports/{export}\022@projects/{project}/locations/{location}/bigQueryE"
-          + "xports/{export}*\017bigQueryExports2\016bigQueryExportB\355\001\n"
-          + "\"com.google.cloud.securitycenter.v2B\023BigQueryExportProtoP\001ZJcloud.go"
-          + "ogle.com/go/securitycenter/apiv2/securit"
-          + "ycenterpb;securitycenterpb\252\002\036Google.Clou"
-          + "d.SecurityCenter.V2\312\002\036Google\\Cloud\\Secur"
-          + "ityCenter\\V2\352\002!Google::Cloud::SecurityCenter::V2b\006proto3"
+          + "\tprincipal\030\010 \001(\tB\003\340A\003\022+\n"
+          + "\036deletion_notifications_enabled\030\n"
+          + " \001(\010B\003\340A\001:\241\002\352A\235\002\n"
+          + ",securitycenter.googleapis.com/BigQueryExport\022Jorganizations/{organizat"
+          + "ion}/locations/{location}/bigQueryExports/{export}\022>folders/{folder}/locations/{"
+          + "location}/bigQueryExports/{export}\022@projects/{project}/locations/{location}/bigQ"
+          + "ueryExports/{export}*\017bigQueryExports2\016bigQueryExportB\355\001\n"
+          + "\"com.google.cloud.securitycenter.v2B\023BigQueryExportProtoP\001ZJclo"
+          + "ud.google.com/go/securitycenter/apiv2/se"
+          + "curitycenterpb;securitycenterpb\252\002\036Google"
+          + ".Cloud.SecurityCenter.V2\312\002\036Google\\Cloud\\"
+          + "SecurityCenter\\V2\352\002!Google::Cloud::SecurityCenter::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -99,6 +101,7 @@ public final class BigQueryExportProto extends com.google.protobuf.GeneratedFile
               "UpdateTime",
               "MostRecentEditor",
               "Principal",
+              "DeletionNotificationsEnabled",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

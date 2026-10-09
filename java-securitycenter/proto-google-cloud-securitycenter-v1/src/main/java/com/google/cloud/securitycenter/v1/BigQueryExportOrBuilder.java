@@ -337,4 +337,19 @@ public interface BigQueryExportOrBuilder
    * @return The bytes for principal.
    */
   com.google.protobuf.ByteString getPrincipalBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the notifications will be sent for deleted
+   * findings. When enabled, the filter is still respected when sending deletion
+   * notifications.
+   * </pre>
+   *
+   * <code>bool deletion_notifications_enabled = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionNotificationsEnabled.
+   */
+  boolean getDeletionNotificationsEnabled();
 }

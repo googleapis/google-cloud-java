@@ -159,7 +159,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The resource path of the ONTAP resource.
+   * Required. The path of the ONTAP resource.
    * Format:
    * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
    * For example:
@@ -187,7 +187,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The resource path of the ONTAP resource.
+   * Required. The path of the ONTAP resource.
    * Format:
    * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
    * For example:
@@ -849,7 +849,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The resource path of the ONTAP resource.
+     * Required. The path of the ONTAP resource.
      * Format:
      * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
      * For example:
@@ -876,7 +876,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The resource path of the ONTAP resource.
+     * Required. The path of the ONTAP resource.
      * Format:
      * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
      * For example:
@@ -903,7 +903,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The resource path of the ONTAP resource.
+     * Required. The path of the ONTAP resource.
      * Format:
      * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
      * For example:
@@ -929,7 +929,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The resource path of the ONTAP resource.
+     * Required. The path of the ONTAP resource.
      * Format:
      * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
      * For example:
@@ -951,7 +951,7 @@ public final class ExecuteOntapPostRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The resource path of the ONTAP resource.
+     * Required. The path of the ONTAP resource.
      * Format:
      * `projects/{project_number}/locations/{location_id}/storagePools/{storage_pool_id}/ontap/{ontap_resource_path}`.
      * For example:

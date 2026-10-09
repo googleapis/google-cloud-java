@@ -146,6 +146,56 @@ public interface BigtableConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration that allows writing row keys and/or columns based
+   * on fields in the input message. The input message format must be JSON if
+   * this field is set.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the columnFamilyMapping field is set.
+   */
+  boolean hasColumnFamilyMapping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration that allows writing row keys and/or columns based
+   * on fields in the input message. The input message format must be JSON if
+   * this field is set.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The columnFamilyMapping.
+   */
+  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping getColumnFamilyMapping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration that allows writing row keys and/or columns based
+   * on fields in the input message. The input message format must be JSON if
+   * this field is set.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder
+      getColumnFamilyMappingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. An output-only field that indicates whether or not the
    * subscription can receive messages.
    * </pre>
@@ -173,4 +223,6 @@ public interface BigtableConfigOrBuilder
    * @return The state.
    */
   com.google.pubsub.v1.BigtableConfig.State getState();
+
+  com.google.pubsub.v1.BigtableConfig.MessageMappingCase getMessageMappingCase();
 }

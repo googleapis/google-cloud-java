@@ -1335,6 +1335,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1383,6 +1384,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1431,6 +1433,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1479,6 +1482,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1527,6 +1531,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1579,6 +1584,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1631,6 +1637,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1683,6 +1690,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2130,6 +2138,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2179,6 +2188,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2401,6 +2411,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -2450,6 +2461,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5019,6 +5031,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5064,6 +5077,7 @@ public class SecurityCenterClientTest {
             .setDescription("description-1724546052")
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5298,6 +5312,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5353,6 +5368,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5408,6 +5424,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5463,6 +5480,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -5590,6 +5608,7 @@ public class SecurityCenterClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

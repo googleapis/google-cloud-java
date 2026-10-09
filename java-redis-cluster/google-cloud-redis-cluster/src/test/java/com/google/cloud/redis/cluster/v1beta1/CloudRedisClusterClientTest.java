@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1beta1;
 
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
@@ -186,6 +188,94 @@ public class CloudRedisClusterClientTest {
   }
 
   @Test
+  public void listAclPoliciesTest() throws Exception {
+    AclPolicy responsesElement = AclPolicy.newBuilder().build();
+    ListAclPoliciesResponse expectedResponse =
+        ListAclPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAclPoliciesPagedResponse pagedListResponse = client.listAclPolicies(parent);
+
+    List<AclPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAclPoliciesRequest actualRequest = ((ListAclPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAclPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAclPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclPoliciesTest2() throws Exception {
+    AclPolicy responsesElement = AclPolicy.newBuilder().build();
+    ListAclPoliciesResponse expectedResponse =
+        ListAclPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAclPoliciesPagedResponse pagedListResponse = client.listAclPolicies(parent);
+
+    List<AclPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAclPoliciesRequest actualRequest = ((ListAclPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAclPoliciesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAclPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getClusterTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -222,6 +312,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     mockCloudRedisCluster.addResponse(expectedResponse);
 
@@ -292,6 +384,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     mockCloudRedisCluster.addResponse(expectedResponse);
 
@@ -319,6 +413,92 @@ public class CloudRedisClusterClientTest {
     try {
       String name = "name3373707";
       client.getCluster(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclPolicyTest() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllClusterAclPolicyAttachments(new ArrayList<ClusterAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+
+    AclPolicy actualResponse = client.getAclPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAclPolicyRequest actualRequest = ((GetAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAclPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+      client.getAclPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclPolicyTest2() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllClusterAclPolicyAttachments(new ArrayList<ClusterAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AclPolicy actualResponse = client.getAclPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAclPolicyRequest actualRequest = ((GetAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAclPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAclPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -362,6 +542,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -398,6 +580,60 @@ public class CloudRedisClusterClientTest {
       Cluster cluster = Cluster.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateClusterAsync(cluster, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateAclPolicyTest() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllClusterAclPolicyAttachments(new ArrayList<ClusterAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAclPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedisCluster.addResponse(resultOperation);
+
+    AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AclPolicy actualResponse = client.updateAclPolicyAsync(aclPolicy, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAclPolicyRequest actualRequest = ((UpdateAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(aclPolicy, actualRequest.getAclPolicy());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAclPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAclPolicyAsync(aclPolicy, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -491,6 +727,272 @@ public class CloudRedisClusterClientTest {
   }
 
   @Test
+  public void deleteAclPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAclPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedisCluster.addResponse(resultOperation);
+
+    AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+
+    client.deleteAclPolicyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAclPolicyRequest actualRequest = ((DeleteAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAclPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+      client.deleteAclPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAclPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAclPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudRedisCluster.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAclPolicyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAclPolicyRequest actualRequest = ((DeleteAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAclPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAclPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getAclPolicyRevisionTest() throws Exception {
+    AclPolicyRevision expectedResponse =
+        AclPolicyRevision.newBuilder()
+            .setName(
+                AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+                    .toString())
+            .setRevisionNumber(-1651923923)
+            .setSnapshot(AclPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAttachedClusters(new ArrayList<String>())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    AclPolicyRevisionName name =
+        AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]");
+
+    AclPolicyRevision actualResponse = client.getAclPolicyRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAclPolicyRevisionRequest actualRequest =
+        ((GetAclPolicyRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAclPolicyRevisionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      AclPolicyRevisionName name =
+          AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]");
+      client.getAclPolicyRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclPolicyRevisionTest2() throws Exception {
+    AclPolicyRevision expectedResponse =
+        AclPolicyRevision.newBuilder()
+            .setName(
+                AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+                    .toString())
+            .setRevisionNumber(-1651923923)
+            .setSnapshot(AclPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAttachedClusters(new ArrayList<String>())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AclPolicyRevision actualResponse = client.getAclPolicyRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAclPolicyRevisionRequest actualRequest =
+        ((GetAclPolicyRevisionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAclPolicyRevisionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAclPolicyRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclPolicyRevisionsTest() throws Exception {
+    AclPolicyRevision responsesElement = AclPolicyRevision.newBuilder().build();
+    ListAclPolicyRevisionsResponse expectedResponse =
+        ListAclPolicyRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicyRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    AclPolicyName parent = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+
+    ListAclPolicyRevisionsPagedResponse pagedListResponse = client.listAclPolicyRevisions(parent);
+
+    List<AclPolicyRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPolicyRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAclPolicyRevisionsRequest actualRequest =
+        ((ListAclPolicyRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAclPolicyRevisionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      AclPolicyName parent = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+      client.listAclPolicyRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclPolicyRevisionsTest2() throws Exception {
+    AclPolicyRevision responsesElement = AclPolicyRevision.newBuilder().build();
+    ListAclPolicyRevisionsResponse expectedResponse =
+        ListAclPolicyRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicyRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAclPolicyRevisionsPagedResponse pagedListResponse = client.listAclPolicyRevisions(parent);
+
+    List<AclPolicyRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPolicyRevisionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAclPolicyRevisionsRequest actualRequest =
+        ((ListAclPolicyRevisionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAclPolicyRevisionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAclPolicyRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createClusterTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -527,6 +1029,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -611,6 +1115,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -655,6 +1161,104 @@ public class CloudRedisClusterClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAclPolicyTest() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllClusterAclPolicyAttachments(new ArrayList<ClusterAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+    String aclPolicyId = "aclPolicyId-1805591401";
+
+    AclPolicy actualResponse = client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAclPolicyRequest actualRequest = ((CreateAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(aclPolicy, actualRequest.getAclPolicy());
+    Assert.assertEquals(aclPolicyId, actualRequest.getAclPolicyId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAclPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+      String aclPolicyId = "aclPolicyId-1805591401";
+      client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclPolicyTest2() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllClusterAclPolicyAttachments(new ArrayList<ClusterAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+    String aclPolicyId = "aclPolicyId-1805591401";
+
+    AclPolicy actualResponse = client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAclPolicyRequest actualRequest = ((CreateAclPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(aclPolicy, actualRequest.getAclPolicy());
+    Assert.assertEquals(aclPolicyId, actualRequest.getAclPolicyId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAclPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+      String aclPolicyId = "aclPolicyId-1805591401";
+      client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -859,6 +1463,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -947,6 +1553,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1564,6 +2172,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1642,6 +2252,8 @@ public class CloudRedisClusterClientTest {
             .setServerCaMode(ServerCaMode.forNumber(0))
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

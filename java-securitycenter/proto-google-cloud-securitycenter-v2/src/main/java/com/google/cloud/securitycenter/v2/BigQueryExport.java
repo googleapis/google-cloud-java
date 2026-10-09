@@ -582,6 +582,28 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DELETION_NOTIFICATIONS_ENABLED_FIELD_NUMBER = 10;
+  private boolean deletionNotificationsEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the notifications will be sent for deleted
+   * findings. When enabled, the filter is still respected when sending deletion
+   * notifications.
+   * </pre>
+   *
+   * <code>bool deletion_notifications_enabled = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The deletionNotificationsEnabled.
+   */
+  @java.lang.Override
+  public boolean getDeletionNotificationsEnabled() {
+    return deletionNotificationsEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -620,6 +642,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(principal_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, principal_);
     }
+    if (deletionNotificationsEnabled_ != false) {
+      output.writeBool(10, deletionNotificationsEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -653,6 +678,10 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(principal_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, principal_);
     }
+    if (deletionNotificationsEnabled_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(10, deletionNotificationsEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -683,6 +712,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
     }
     if (!getMostRecentEditor().equals(other.getMostRecentEditor())) return false;
     if (!getPrincipal().equals(other.getPrincipal())) return false;
+    if (getDeletionNotificationsEnabled() != other.getDeletionNotificationsEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -714,6 +744,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getMostRecentEditor().hashCode();
     hash = (37 * hash) + PRINCIPAL_FIELD_NUMBER;
     hash = (53 * hash) + getPrincipal().hashCode();
+    hash = (37 * hash) + DELETION_NOTIFICATIONS_ENABLED_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionNotificationsEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -880,6 +913,7 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
       }
       mostRecentEditor_ = "";
       principal_ = "";
+      deletionNotificationsEnabled_ = false;
       return this;
     }
 
@@ -943,6 +977,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.principal_ = principal_;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.deletionNotificationsEnabled_ = deletionNotificationsEnabled_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -994,6 +1031,9 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
         principal_ = other.principal_;
         bitField0_ |= 0x00000080;
         onChanged();
+      }
+      if (other.getDeletionNotificationsEnabled() != false) {
+        setDeletionNotificationsEnabled(other.getDeletionNotificationsEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1071,6 +1111,12 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 80:
+              {
+                deletionNotificationsEnabled_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2392,6 +2438,71 @@ public final class BigQueryExport extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       principal_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private boolean deletionNotificationsEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the notifications will be sent for deleted
+     * findings. When enabled, the filter is still respected when sending deletion
+     * notifications.
+     * </pre>
+     *
+     * <code>bool deletion_notifications_enabled = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deletionNotificationsEnabled.
+     */
+    @java.lang.Override
+    public boolean getDeletionNotificationsEnabled() {
+      return deletionNotificationsEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the notifications will be sent for deleted
+     * findings. When enabled, the filter is still respected when sending deletion
+     * notifications.
+     * </pre>
+     *
+     * <code>bool deletion_notifications_enabled = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deletionNotificationsEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionNotificationsEnabled(boolean value) {
+
+      deletionNotificationsEnabled_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the notifications will be sent for deleted
+     * findings. When enabled, the filter is still respected when sending deletion
+     * notifications.
+     * </pre>
+     *
+     * <code>bool deletion_notifications_enabled = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionNotificationsEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      deletionNotificationsEnabled_ = false;
       onChanged();
       return this;
     }

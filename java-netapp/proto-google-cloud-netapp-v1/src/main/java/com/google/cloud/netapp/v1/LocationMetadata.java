@@ -55,6 +55,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
   private LocationMetadata() {
     supportedServiceLevels_ = emptyIntList();
     supportedFlexPerformance_ = emptyIntList();
+    flexPerformanceTier_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +71,155 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.netapp.v1.LocationMetadata.class,
             com.google.cloud.netapp.v1.LocationMetadata.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The flex performance tier of this location.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier}
+   */
+  public enum FlexPerformanceTier implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified flex performance tier.
+     * </pre>
+     *
+     * <code>FLEX_PERFORMANCE_TIER_UNSPECIFIED = 0;</code>
+     */
+    FLEX_PERFORMANCE_TIER_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Flex performance tier is limited.
+     * </pre>
+     *
+     * <code>LIMITED = 1;</code>
+     */
+    LIMITED(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "FlexPerformanceTier");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified flex performance tier.
+     * </pre>
+     *
+     * <code>FLEX_PERFORMANCE_TIER_UNSPECIFIED = 0;</code>
+     */
+    public static final int FLEX_PERFORMANCE_TIER_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Flex performance tier is limited.
+     * </pre>
+     *
+     * <code>LIMITED = 1;</code>
+     */
+    public static final int LIMITED_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FlexPerformanceTier valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FlexPerformanceTier forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FLEX_PERFORMANCE_TIER_UNSPECIFIED;
+        case 1:
+          return LIMITED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FlexPerformanceTier>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FlexPerformanceTier>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<FlexPerformanceTier>() {
+              public FlexPerformanceTier findValueByNumber(int number) {
+                return FlexPerformanceTier.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.LocationMetadata.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final FlexPerformanceTier[] VALUES = values();
+
+    public static FlexPerformanceTier valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FlexPerformanceTier(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier)
   }
 
   public static final int SUPPORTED_SERVICE_LEVELS_FIELD_NUMBER = 1;
@@ -338,6 +488,50 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     return hasOntapProxy_;
   }
 
+  public static final int FLEX_PERFORMANCE_TIER_FIELD_NUMBER = 5;
+  private int flexPerformanceTier_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the flex performance tier of this location.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for flexPerformanceTier.
+   */
+  @java.lang.Override
+  public int getFlexPerformanceTierValue() {
+    return flexPerformanceTier_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the flex performance tier of this location.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The flexPerformanceTier.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier getFlexPerformanceTier() {
+    com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier result =
+        com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier.forNumber(
+            flexPerformanceTier_);
+    return result == null
+        ? com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -372,6 +566,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     if (hasOntapProxy_ != false) {
       output.writeBool(4, hasOntapProxy_);
+    }
+    if (flexPerformanceTier_
+        != com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier
+            .FLEX_PERFORMANCE_TIER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, flexPerformanceTier_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -416,6 +616,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (hasOntapProxy_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, hasOntapProxy_);
     }
+    if (flexPerformanceTier_
+        != com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier
+            .FLEX_PERFORMANCE_TIER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, flexPerformanceTier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -436,6 +642,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     if (!supportedFlexPerformance_.equals(other.supportedFlexPerformance_)) return false;
     if (getHasVcp() != other.getHasVcp()) return false;
     if (getHasOntapProxy() != other.getHasOntapProxy()) return false;
+    if (flexPerformanceTier_ != other.flexPerformanceTier_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -459,6 +666,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasVcp());
     hash = (37 * hash) + HAS_ONTAP_PROXY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasOntapProxy());
+    hash = (37 * hash) + FLEX_PERFORMANCE_TIER_FIELD_NUMBER;
+    hash = (53 * hash) + flexPerformanceTier_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -604,6 +813,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       supportedFlexPerformance_ = emptyIntList();
       hasVcp_ = false;
       hasOntapProxy_ = false;
+      flexPerformanceTier_ = 0;
       return this;
     }
 
@@ -654,6 +864,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.hasOntapProxy_ = hasOntapProxy_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.flexPerformanceTier_ = flexPerformanceTier_;
+      }
     }
 
     @java.lang.Override
@@ -695,6 +908,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       if (other.getHasOntapProxy() != false) {
         setHasOntapProxy(other.getHasOntapProxy());
+      }
+      if (other.flexPerformanceTier_ != 0) {
+        setFlexPerformanceTierValue(other.getFlexPerformanceTierValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -770,6 +986,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                flexPerformanceTier_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1417,6 +1639,116 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public Builder clearHasOntapProxy() {
       bitField0_ = (bitField0_ & ~0x00000008);
       hasOntapProxy_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int flexPerformanceTier_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the flex performance tier of this location.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for flexPerformanceTier.
+     */
+    @java.lang.Override
+    public int getFlexPerformanceTierValue() {
+      return flexPerformanceTier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the flex performance tier of this location.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for flexPerformanceTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlexPerformanceTierValue(int value) {
+      flexPerformanceTier_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the flex performance tier of this location.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The flexPerformanceTier.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier
+        getFlexPerformanceTier() {
+      com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier result =
+          com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier.forNumber(
+              flexPerformanceTier_);
+      return result == null
+          ? com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the flex performance tier of this location.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The flexPerformanceTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFlexPerformanceTier(
+        com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      flexPerformanceTier_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates the flex performance tier of this location.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFlexPerformanceTier() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      flexPerformanceTier_ = 0;
       onChanged();
       return this;
     }

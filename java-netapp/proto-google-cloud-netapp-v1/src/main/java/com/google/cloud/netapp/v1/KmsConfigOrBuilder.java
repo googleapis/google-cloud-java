@@ -30,7 +30,7 @@ public interface KmsConfigOrBuilder
    *
    *
    * <pre>
-   * Identifier. Name of the KmsConfig.
+   * Identifier. Name of the `KmsConfig`.
    * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface KmsConfigOrBuilder
    *
    *
    * <pre>
-   * Identifier. Name of the KmsConfig.
+   * Identifier. Name of the `KmsConfig`.
    * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
    * </pre>
    *
@@ -62,7 +62,9 @@ public interface KmsConfigOrBuilder
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
    * </pre>
    *
-   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cryptoKeyName.
    */
@@ -76,7 +78,9 @@ public interface KmsConfigOrBuilder
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
    * </pre>
    *
-   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for cryptoKeyName.
    */
