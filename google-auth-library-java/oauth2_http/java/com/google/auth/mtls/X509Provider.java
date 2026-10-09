@@ -142,7 +142,8 @@ public class X509Provider implements MtlsProvider {
    *       which contains both the certificate chain and the private key.
    * </ul>
    *
-   * @return a KeyStore containing the X.509 certificate specified by the certificate configuration.
+   * @return a KeyStore containing the X.509 certificate chain and private key from the certificate
+   *     source above.
    * @throws CertificateSourceUnavailableException if the certificate source is unavailable (ex.
    *     missing configuration file)
    * @throws IOException if a general I/O error occurs while creating the KeyStore

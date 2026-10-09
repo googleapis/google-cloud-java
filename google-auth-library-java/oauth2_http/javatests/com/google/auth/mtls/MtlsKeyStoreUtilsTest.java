@@ -41,6 +41,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Signature;
@@ -64,10 +65,7 @@ class MtlsKeyStoreUtilsTest {
     KeyStore keyStore =
         MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH)));
 
-    Certificate[] chain = keyStore.getCertificateChain(onlyAlias(keyStore));
-    assertEquals(2, chain.length);
-    assertEquals("CN=Test Leaf", subject(chain[0]));
-    assertEquals("CN=Test Intermediate CA", subject(chain[1]));
+    assertLeafThenIntermediate(keyStore);
   }
 
   @Test
@@ -75,10 +73,18 @@ class MtlsKeyStoreUtilsTest {
     KeyStore keyStore =
         MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_KEY_PATH), read(CHAIN_CERT_PATH)));
 
-    Certificate[] chain = keyStore.getCertificateChain(onlyAlias(keyStore));
-    assertEquals(2, chain.length);
-    assertEquals("CN=Test Leaf", subject(chain[0]));
-    assertEquals("CN=Test Intermediate CA", subject(chain[1]));
+    assertLeafThenIntermediate(keyStore);
+  }
+
+  @Test
+  void upstreamCreateMtlsKeyStore_keepsOnlyLeaf() throws Exception {
+    // Documents why MtlsKeyStoreUtils exists. If google-http-client starts keeping the full chain,
+    // this fails and the helper can be replaced by the upstream method again.
+    KeyStore keyStore =
+        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
+            stream(read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH)));
+
+    assertEquals(1, keyStore.getCertificateChain(onlyAlias(keyStore)).length);
   }
 
   @Test
@@ -130,13 +136,46 @@ class MtlsKeyStoreUtilsTest {
   }
 
   @Test
-  void createMtlsKeyStore_severalPrivateKeys_usesFirst() throws Exception {
-    // The leaf key is EC; the second key (RSA) must not be used.
-    KeyStore keyStore =
-        MtlsKeyStoreUtils.createMtlsKeyStore(
-            stream(read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH), read(SINGLE_KEY_PATH)));
+  void createMtlsKeyStore_keysBeforeCertificate_usesLastKeyLikeUpstream() throws Exception {
+    // RSA key, then the leaf's EC key, then the certificates: the key just before the first
+    // certificate is used.
+    String input =
+        String.join("\n", read(SINGLE_KEY_PATH), read(CHAIN_KEY_PATH), read(CHAIN_CERT_PATH));
+
+    KeyStore keyStore = MtlsKeyStoreUtils.createMtlsKeyStore(stream(input));
+    KeyStore upstream = com.google.api.client.util.SecurityUtils.createMtlsKeyStore(stream(input));
 
     assertEquals("EC", keyStore.getKey(onlyAlias(keyStore), new char[] {}).getAlgorithm());
+    assertEquals("EC", upstream.getKey(onlyAlias(upstream), new char[] {}).getAlgorithm());
+    assertLeafThenIntermediate(keyStore);
+  }
+
+  @Test
+  void createMtlsKeyStore_keysBeforeCertificate_lastKeyDoesNotMatch_throwsLikeUpstream()
+      throws Exception {
+    // The leaf's EC key, then an RSA key, then the certificates: the RSA key is chosen and cannot
+    // be read as an EC key, in both implementations.
+    String input =
+        String.join("\n", read(CHAIN_KEY_PATH), read(SINGLE_KEY_PATH), read(CHAIN_CERT_PATH));
+
+    assertThrows(
+        GeneralSecurityException.class, () -> MtlsKeyStoreUtils.createMtlsKeyStore(stream(input)));
+    assertThrows(
+        GeneralSecurityException.class,
+        () -> com.google.api.client.util.SecurityUtils.createMtlsKeyStore(stream(input)));
+  }
+
+  @Test
+  void createMtlsKeyStore_keysAfterCertificate_usesFirstKeyLikeUpstream() throws Exception {
+    String input =
+        String.join("\n", read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH), read(SINGLE_KEY_PATH));
+
+    KeyStore keyStore = MtlsKeyStoreUtils.createMtlsKeyStore(stream(input));
+    KeyStore upstream = com.google.api.client.util.SecurityUtils.createMtlsKeyStore(stream(input));
+
+    assertEquals("EC", keyStore.getKey(onlyAlias(keyStore), new char[] {}).getAlgorithm());
+    assertEquals("EC", upstream.getKey(onlyAlias(upstream), new char[] {}).getAlgorithm());
+    assertLeafThenIntermediate(keyStore);
   }
 
   @Test
@@ -153,16 +192,14 @@ class MtlsKeyStoreUtilsTest {
 
   @Test
   void createMtlsKeyStore_unparsableExtraCertificate_leftOut() throws Exception {
-    String[] leafAndIntermediate = read(CHAIN_CERT_PATH).split("(?<=-----END CERTIFICATE-----)\n");
+    String[] leafAndIntermediate =
+        read(CHAIN_CERT_PATH).split("(?<=-----END CERTIFICATE-----)\r?\n");
     String bad = "-----BEGIN CERTIFICATE-----\nAAAA\n-----END CERTIFICATE-----";
     KeyStore keyStore =
         MtlsKeyStoreUtils.createMtlsKeyStore(
             stream(leafAndIntermediate[0], bad, leafAndIntermediate[1], read(CHAIN_KEY_PATH)));
 
-    Certificate[] chain = keyStore.getCertificateChain(onlyAlias(keyStore));
-    assertEquals(2, chain.length);
-    assertEquals("CN=Test Leaf", subject(chain[0]));
-    assertEquals("CN=Test Intermediate CA", subject(chain[1]));
+    assertLeafThenIntermediate(keyStore);
   }
 
   @Test

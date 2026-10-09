@@ -270,6 +270,28 @@ class X509ProviderTest {
   }
 
   @Test
+  void x509Provider_keyFirstGkeCredentialBundleWithIntermediate_keepsFullChain(
+      @TempDir Path tempDir) throws Exception {
+    // GKE pod certificate bundles put the private key before the certificate chain.
+    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
+    Files.write(
+        bundle,
+        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH)
+                + "\n"
+                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH))
+            .getBytes(UTF_8));
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(testProvider.getKeyStore());
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
   void x509Provider_certFileWithIntermediate_keepsFullChain(@TempDir Path tempDir)
       throws Exception {
     Path config = tempDir.resolve("certificate_config.json");
