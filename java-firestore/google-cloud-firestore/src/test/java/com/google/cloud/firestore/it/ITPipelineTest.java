@@ -4975,7 +4975,7 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(exception.getCause()).isInstanceOf(IllegalArgumentException.class);
     assertThat(exception.getCause()).hasMessageThat().contains("inside a transaction");
 
-    // The pipeline was rejected client-side, so nothing was deleted.
+    // The pipeline is rejected before it is sent, so nothing is deleted.
     assertThat(dmlCol.document("book1").get().get().exists()).isTrue();
   }
 

@@ -36,7 +36,6 @@ public final class Literals extends Stage {
 
   public Literals(Map<String, Object>... data) {
     super("literals", InternalOptions.EMPTY);
-    // An empty set of documents is rejected by the backend when the pipeline is executed.
     Preconditions.checkNotNull(
         data, "Function literals() called with invalid data. Documents must not be null.");
     for (int i = 0; i < data.length; i++) {
@@ -48,8 +47,8 @@ public final class Literals extends Stage {
   }
 
   /**
-   * Rejects {@link FieldValue} sentinels anywhere in a literal value. Literal documents are not
-   * written with set() or update(), so there is no pipeline representation for field transforms.
+   * Throws if {@code value} contains a {@link FieldValue} sentinel at any depth. Sentinels are
+   * field transforms of set() and update() and have no pipeline encoding.
    */
   private static void validateNoSentinels(Object value, List<String> path) {
     if (value instanceof FieldValue) {

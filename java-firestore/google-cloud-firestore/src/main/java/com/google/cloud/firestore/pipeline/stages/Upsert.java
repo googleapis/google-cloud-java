@@ -32,14 +32,15 @@ import javax.annotation.Nullable;
  * A pipeline stage that writes each document produced by the previous stages, creating the target
  * document if it doesn't exist and replacing it if it does.
  *
- * <p>Upsert replaces the whole target document; it does not merge with the stored fields. Stored
- * fields that are not in the pipeline document are removed.
+ * <p>The whole target document is replaced, not merged: stored fields that are not in the pipeline
+ * document are removed.
  *
  * <p>The target path of each document is determined as follows:
  *
  * <ul>
- *   <li>With neither a collection nor a document ID expression, the input document's own path is
- *       reused.
+ *   <li>With neither a collection nor a document ID expression, the input document's own path (its
+ *       {@code __name__} field) is used. A document without a {@code __name__} field fails with
+ *       {@code INVALID_ARGUMENT}.
  *   <li>With only a collection, the document is written to that collection under the input
  *       document's ID. If the input document has no ID (for example, a literal document without a
  *       {@code __name__} field, or a document whose {@code __name__} field was removed), an ID is

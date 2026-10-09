@@ -28,15 +28,15 @@ import javax.annotation.Nullable;
 /**
  * A pipeline stage that inserts each document produced by the previous stages as a new document.
  *
- * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists. Because
- * documents read from the database keep their path, inserting them without a collection or document
- * ID expression (or into their own collection under their own ID) fails.
+ * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists.
  *
  * <p>The target path of each document is determined as follows:
  *
  * <ul>
- *   <li>With neither a collection nor a document ID expression, the input document's own path is
- *       reused.
+ *   <li>With neither a collection nor a document ID expression, the input document's own path (its
+ *       {@code __name__} field) is used, so inserting documents read from the database fails with
+ *       {@code ALREADY_EXISTS}, and a document without a {@code __name__} field fails with {@code
+ *       INVALID_ARGUMENT}.
  *   <li>With only a collection, the document is written to that collection under the input
  *       document's ID. If the input document has no ID (for example, a literal document without a
  *       {@code __name__} field, or a document whose {@code __name__} field was removed), an ID is

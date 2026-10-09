@@ -446,18 +446,15 @@ public class PipelineProtoTest {
     Stage literalsStage = firestore.pipeline().literals(doc).toProto().getStages(0);
     java.util.Map<String, Value> fields = literalsStage.getArgs(0).getMapValue().getFieldsMap();
 
-    // Top-level expressions are encoded as is.
     assertThat(fields.get("top").getFunctionValue().getName()).isEqualTo("add");
 
-    // A map or list containing a nested expression is wrapped in a map(...) / array(...)
-    // expression, so the backend evaluates the nested expression.
     assertThat(fields.get("nestedMap").getFunctionValue().getName()).isEqualTo("map");
     assertThat(fields.get("nestedList").getFunctionValue().getName()).isEqualTo("array");
     java.util.List<Value> listArgs = fields.get("nestedList").getFunctionValue().getArgsList();
     assertThat(listArgs.get(0).getIntegerValue()).isEqualTo(1L);
     assertThat(listArgs.get(1).getFunctionValue().getName()).isEqualTo("add");
 
-    // Values without expressions keep their existing encoding.
+    // Maps and lists without expressions are encoded as plain map and array values.
     assertThat(fields.get("constantMap").hasMapValue()).isTrue();
     assertThat(
             fields
@@ -479,12 +476,10 @@ public class PipelineProtoTest {
             .build();
     Firestore firestore = options.getService();
 
-    // An empty set of documents is not rejected client-side; the backend rejects it on execute.
     Stage emptyStage = firestore.pipeline().literals().toProto().getStages(0);
     assertThat(emptyStage.getName()).isEqualTo("literals");
     assertThat(emptyStage.getArgsCount()).isEqualTo(0);
 
-    // A null documents array is rejected with a clear message.
     NullPointerException nullArray =
         assertThrows(
             NullPointerException.class,
@@ -493,7 +488,6 @@ public class PipelineProtoTest {
         .hasMessageThat()
         .isEqualTo("Function literals() called with invalid data. Documents must not be null.");
 
-    // A null document is rejected with a clear message.
     NullPointerException nullDoc =
         assertThrows(
             NullPointerException.class,
@@ -502,7 +496,6 @@ public class PipelineProtoTest {
         .hasMessageThat()
         .isEqualTo("Function literals() called with invalid data. Document 0 is null.");
 
-    // FieldValue sentinels are rejected with the field path, including nested ones.
     java.util.Map<String, Object> nested = new java.util.HashMap<>();
     nested.put("b", FieldValue.serverTimestamp());
     java.util.Map<String, Object> doc = new java.util.HashMap<>();
@@ -530,7 +523,7 @@ public class PipelineProtoTest {
     assertThat(delete).hasMessageThat().contains("FieldValue.delete()");
     assertThat(delete).hasMessageThat().contains("(found in field `a.b`)");
 
-    // null values are allowed.
+    // Null field values are allowed.
     java.util.Map<String, Object> withNull = new java.util.HashMap<>();
     withNull.put("n", null);
     Stage stage = firestore.pipeline().literals(withNull).toProto().getStages(0);
@@ -551,13 +544,11 @@ public class PipelineProtoTest {
     java.util.Map<String, Object> doc2 = new java.util.HashMap<>();
     doc2.put("title", "Book 2");
 
-    // literals(List) encodes the same as literals(Map...).
     assertThat(firestore.pipeline().literals(java.util.Arrays.asList(doc1, doc2)).toProto())
         .isEqualTo(firestore.pipeline().literals(doc1, doc2).toProto());
     assertThat(firestore.pipeline().literals(java.util.Collections.emptyList()).toProto())
         .isEqualTo(firestore.pipeline().literals().toProto());
 
-    // Update.withTransformedFields(List) encodes the same as the varargs overload.
     com.google.cloud.firestore.pipeline.stages.Update fromList =
         new com.google.cloud.firestore.pipeline.stages.Update()
             .withTransformedFields(
@@ -581,14 +572,12 @@ public class PipelineProtoTest {
             .build();
     Firestore firestore = options.getService();
 
-    // insert() is equivalent to insert(new Insert()).
     com.google.firestore.v1.Pipeline insertProto =
         firestore.pipeline().collection("books").insert().toProto();
     assertThat(insertProto)
         .isEqualTo(firestore.pipeline().collection("books").insert(new Insert()).toProto());
     assertThat(insertProto.getStages(1).getName()).isEqualTo("insert");
 
-    // delete(new Delete()) is equivalent to delete().
     com.google.firestore.v1.Pipeline deleteProto =
         firestore
             .pipeline()
@@ -637,7 +626,7 @@ public class PipelineProtoTest {
             () -> pipeline.toExecutePipelineRequest(atomic, null, readTime));
     assertThat(withReadTime).hasMessageThat().contains("read time");
 
-    // Non-atomic execution inside a transaction or at a read time is unaffected.
+    // Non-atomic execution is allowed in a transaction and at a read time.
     PipelineExecuteOptions nonAtomic = new PipelineExecuteOptions();
     ExecutePipelineRequest txRequest =
         pipeline.toExecutePipelineRequest(nonAtomic, transactionId, null);

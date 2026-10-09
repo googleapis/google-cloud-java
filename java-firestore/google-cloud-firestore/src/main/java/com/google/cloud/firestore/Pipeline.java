@@ -1332,13 +1332,14 @@ public final class Pipeline {
   }
 
   /**
-   * Inserts each document produced by the previous stages at its own path.
+   * Inserts each document produced by the previous stages at its own path, given by its {@code
+   * __name__} field.
    *
-   * <p>This is equivalent to {@code insert(new Insert())}. Because documents read from the database
-   * already exist at their own path, this is mainly useful with a {@link
-   * PipelineSource#literals(java.util.Map...) literals} source whose documents set a {@code
-   * __name__} field. To insert into another collection or under another ID, use {@link
-   * #insert(Insert)}.
+   * <p>This is equivalent to {@code insert(new Insert())}. It is mainly useful with a {@link
+   * PipelineSource#literals(java.util.Map...) literals} source whose documents set {@code __name__}
+   * to a {@link DocumentReference}: documents read from the database already exist, and a document
+   * without a {@code __name__} field fails with {@code INVALID_ARGUMENT}. To insert into another
+   * collection or under another ID, use {@link #insert(Insert)}.
    *
    * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists.
    *
@@ -1360,7 +1361,8 @@ public final class Pipeline {
    *
    * <ul>
    *   <li>With neither a collection nor a document ID expression, the input document's own path is
-   *       reused, so inserting documents read from the database fails.
+   *       used, so inserting documents read from the database fails with {@code ALREADY_EXISTS},
+   *       and a document without a {@code __name__} field fails with {@code INVALID_ARGUMENT}.
    *   <li>With only {@link Insert#withCollection(String) withCollection}, the document is written
    *       to that collection under the input document's ID (or a generated ID if it has none).
    *   <li>With only {@link Insert#withDocumentIdExpression(Expression) withDocumentIdExpression},
@@ -1425,7 +1427,8 @@ public final class Pipeline {
   /**
    * Writes each document produced by the previous stages back to its own path, after adding the
    * given fields. The document is created if it doesn't exist and replaced if it does; stored
-   * fields are not merged.
+   * fields are not merged. A document without a {@code __name__} field fails with {@code
+   * INVALID_ARGUMENT}.
    *
    * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
    * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
