@@ -59,6 +59,8 @@ class CompositeTracerFactoryTest {
 
     ApiTracer tracer1 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer2 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    when(tracer1.inScope()).thenReturn(() -> {});
+    when(tracer2.inScope()).thenReturn(() -> {});
 
     when(childFactory1.newTracer(parent, spanName, operationType)).thenReturn(tracer1);
     when(childFactory2.newTracer(parent, spanName, operationType)).thenReturn(tracer2);
@@ -81,6 +83,8 @@ class CompositeTracerFactoryTest {
 
     ApiTracer tracer1 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer2 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    when(tracer1.inScope()).thenReturn(() -> {});
+    when(tracer2.inScope()).thenReturn(() -> {});
 
     when(childFactory1.newTracer(parent, context)).thenReturn(tracer1);
     when(childFactory2.newTracer(parent, context)).thenReturn(tracer2);
@@ -117,6 +121,8 @@ class CompositeTracerFactoryTest {
 
     ApiTracer tracer1 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     ApiTracer tracer2 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    when(tracer1.inScope()).thenReturn(() -> {});
+    when(tracer2.inScope()).thenReturn(() -> {});
 
     when(contextualizedFactory1.newTracer(parent, tracerContext)).thenReturn(tracer1);
     when(contextualizedFactory2.newTracer(parent, tracerContext)).thenReturn(tracer2);

@@ -91,22 +91,31 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void operationSucceeded() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationSucceeded();
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationSucceeded();
+      }
     }
   }
 
   @Override
   public void operationCancelled() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationCancelled();
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationCancelled();
+      }
     }
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).operationFailed(error);
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).operationFailed(error);
+      }
     }
   }
 
@@ -134,43 +143,61 @@ class CompositeTracer extends BaseApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptSucceeded();
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptSucceeded();
+      }
     }
   }
 
   @Override
   public void attemptCancelled() {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptCancelled();
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptCancelled();
+      }
     }
   }
 
   @Override
   public void attemptFailed(Throwable error, org.threeten.bp.Duration delay) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailed(error, delay);
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailed(error, delay);
+      }
     }
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailedDuration(error, delay);
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailedDuration(error, delay);
+      }
     }
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptFailedRetriesExhausted(error);
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptFailedRetriesExhausted(error);
+      }
     }
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    for (int i = children.size() - 1; i >= 0; i--) {
-      children.get(i).attemptPermanentFailure(error);
+    // Activate ambient span context so child tracers (e.g. metrics) can sample trace exemplars
+    try (Scope ignored = inScope()) {
+      for (int i = children.size() - 1; i >= 0; i--) {
+        children.get(i).attemptPermanentFailure(error);
+      }
     }
   }
 
