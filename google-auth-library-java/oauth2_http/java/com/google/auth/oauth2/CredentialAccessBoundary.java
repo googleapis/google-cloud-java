@@ -39,6 +39,7 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -111,6 +112,20 @@ public final class CredentialAccessBoundary implements Serializable {
 
   public List<AccessBoundaryRule> getAccessBoundaryRules() {
     return accessBoundaryRules;
+  }
+
+  @Override
+  public boolean equals(@Nullable Object obj) {
+    if (!(obj instanceof CredentialAccessBoundary)) {
+      return false;
+    }
+    CredentialAccessBoundary other = (CredentialAccessBoundary) obj;
+    return Objects.equals(this.accessBoundaryRules, other.accessBoundaryRules);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(accessBoundaryRules);
   }
 
   public static Builder newBuilder() {
@@ -205,6 +220,22 @@ public final class CredentialAccessBoundary implements Serializable {
     @Nullable
     public AvailabilityCondition getAvailabilityCondition() {
       return availabilityCondition;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+      if (!(obj instanceof AccessBoundaryRule)) {
+        return false;
+      }
+      AccessBoundaryRule other = (AccessBoundaryRule) obj;
+      return Objects.equals(this.availableResource, other.availableResource)
+          && Objects.equals(this.availablePermissions, other.availablePermissions)
+          && Objects.equals(this.availabilityCondition, other.availabilityCondition);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(availableResource, availablePermissions, availabilityCondition);
     }
 
     public static Builder newBuilder() {
@@ -328,6 +359,22 @@ public final class CredentialAccessBoundary implements Serializable {
       @Nullable
       public String getDescription() {
         return description;
+      }
+
+      @Override
+      public boolean equals(@Nullable Object obj) {
+        if (!(obj instanceof AvailabilityCondition)) {
+          return false;
+        }
+        AvailabilityCondition other = (AvailabilityCondition) obj;
+        return Objects.equals(this.expression, other.expression)
+            && Objects.equals(this.title, other.title)
+            && Objects.equals(this.description, other.description);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(expression, title, description);
       }
 
       public static Builder newBuilder() {

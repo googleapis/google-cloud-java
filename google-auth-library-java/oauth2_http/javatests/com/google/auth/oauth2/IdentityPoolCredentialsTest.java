@@ -1027,13 +1027,19 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
             .setHttpTransportFactory(transportFactory)
             .setCredentialSource(
-                buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
+                buildUrlBasedCredentialSource(
+                    StatefulMockExternalAccountCredentialsTransportFactory.transport
+                        .getMetadataUrl()))
             .build();
 
     // Verify deserialization recreates the transient HTTP transport factory inside
     // UrlIdentityPoolSubjectTokenSupplier so subject token retrieval and token refresh succeed.
     IdentityPoolCredentials deserializedCredentials = serializeAndDeserialize(testCredentials);
     assertEquals(testCredentials, deserializedCredentials);
+    UrlIdentityPoolSubjectTokenSupplier deserializedSupplier =
+        (UrlIdentityPoolSubjectTokenSupplier)
+            deserializedCredentials.getIdentityPoolSubjectTokenSupplier();
+    assertNotNull(deserializedSupplier.getTransportFactory());
 
     // In-memory mock transport serves both the metadata server subject token and the STS exchange
     // response without network calls.
@@ -1049,7 +1055,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         new StatefulMockExternalAccountCredentialsTransportFactory();
 
     IdentityPoolCredentialSource credentialSource =
-        buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl());
+        buildUrlBasedCredentialSource(
+            StatefulMockExternalAccountCredentialsTransportFactory.transport.getMetadataUrl());
     UrlIdentityPoolSubjectTokenSupplier supplier =
         new UrlIdentityPoolSubjectTokenSupplier(credentialSource, transportFactory);
 

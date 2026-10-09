@@ -311,6 +311,8 @@ class CredentialAccessBoundaryTest extends BaseSerializationTest {
     // deserialized
     // so downscoped credentials containing them do not throw NotSerializableException.
     CredentialAccessBoundary deserialized = serializeAndDeserialize(cab);
+    assertEquals(cab, deserialized);
+    assertEquals(cab.hashCode(), deserialized.hashCode());
     assertEquals(cab.toJson(), deserialized.toJson());
   }
 }

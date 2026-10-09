@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.FileIdentityPoolSubjectTokenSupplier.parseToken;
+import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
@@ -72,7 +73,10 @@ class UrlIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSup
       @Nullable HttpTransportFactory transportFactory) {
     this.credentialSource = credentialSource;
     this.transportFactory =
-        transportFactory != null ? transportFactory : OAuth2Utils.HTTP_TRANSPORT_FACTORY;
+        firstNonNull(
+            transportFactory,
+            OAuth2Credentials.getFromServiceLoader(
+                HttpTransportFactory.class, OAuth2Utils.HTTP_TRANSPORT_FACTORY));
     this.transportFactoryClassName = this.transportFactory.getClass().getName();
   }
 
