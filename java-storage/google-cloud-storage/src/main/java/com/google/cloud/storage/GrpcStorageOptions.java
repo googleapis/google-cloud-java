@@ -100,6 +100,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,6 +123,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @since 2.14.0
@@ -131,6 +133,7 @@ public final class GrpcStorageOptions extends StorageOptions
     implements Retrying.RetryingDependencies {
 
   private static final long serialVersionUID = -4499446543857945349L;
+  private static final Logger LOGGER = Logger.getLogger(GrpcStorageOptions.class.getName());
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_HOST = "https://storage.googleapis.com";
@@ -148,6 +151,13 @@ public final class GrpcStorageOptions extends StorageOptions
   private final GrpcInterceptorProvider grpcInterceptorProvider;
   private final BlobWriteSessionConfig blobWriteSessionConfig;
   private transient OpenTelemetry openTelemetry;
+  private final boolean enableOtelMetrics;
+  private final boolean enableOtelDebugMetrics;
+  @Nullable private final Boolean rawEnableOtelMetrics;
+  @Nullable private final Boolean rawEnableOtelDebugMetrics;
+  private transient MeterProvider meterProvider;
+  private final Duration metricInterval;
+  private final boolean customMeterProviderConfigured;
 
   private GrpcStorageOptions(Builder builder, GrpcStorageDefaults serviceDefaults) {
     super(builder, serviceDefaults);
@@ -165,6 +175,19 @@ public final class GrpcStorageOptions extends StorageOptions
     this.grpcInterceptorProvider = builder.grpcInterceptorProvider;
     this.blobWriteSessionConfig = builder.blobWriteSessionConfig;
     this.openTelemetry = builder.openTelemetry;
+    this.rawEnableOtelMetrics = builder.enableOtelMetrics;
+    this.rawEnableOtelDebugMetrics = builder.enableOtelDebugMetrics;
+    this.enableOtelMetrics = StorageMetricsConfig.isEnableOtelMetrics(builder.enableOtelMetrics);
+    this.enableOtelDebugMetrics =
+        StorageMetricsConfig.isEnableOtelDebugMetrics(builder.enableOtelDebugMetrics);
+    this.meterProvider = builder.meterProvider;
+    this.customMeterProviderConfigured = builder.meterProvider != null;
+    this.metricInterval = builder.metricInterval;
+    if (this.meterProvider == null && this.metricInterval != null) {
+      checkArgument(
+          this.metricInterval.compareTo(Duration.ofSeconds(60)) >= 0,
+          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring exporter");
+    }
   }
 
   @Override
@@ -178,7 +201,7 @@ public final class GrpcStorageOptions extends StorageOptions
   }
 
   @InternalApi
-  java.time.Duration getTerminationAwaitDuration() {
+  Duration getTerminationAwaitDuration() {
     return terminationAwaitDuration;
   }
 
@@ -195,6 +218,10 @@ public final class GrpcStorageOptions extends StorageOptions
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
+    if (this.customMeterProviderConfigured || this.meterProvider != null) {
+      LOGGER.warning(
+          "Custom MeterProvider is transient and cannot be serialized across workers; falling back to default provider.");
+    }
   }
 
   /**
@@ -363,9 +390,9 @@ public final class GrpcStorageOptions extends StorageOptions
             // seconds.
             // To allow read streams to have longer lifespans, crank up their timeouts, instead rely
             // on idleTimeout below.
-            .setLogicalTimeout(java.time.Duration.ofDays(28))
+            .setLogicalTimeout(Duration.ofDays(28))
             .build();
-    java.time.Duration totalTimeout = baseRetrySettings.getTotalTimeoutDuration();
+    Duration totalTimeout = baseRetrySettings.getTotalTimeoutDuration();
 
     // retries for unary methods are generally handled at a different level, except
     // StartResumableWrite
@@ -415,6 +442,45 @@ public final class GrpcStorageOptions extends StorageOptions
   }
 
   /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public boolean isEnableOtelMetrics() {
+    return enableOtelMetrics;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public boolean isEnableOtelDebugMetrics() {
+    return enableOtelDebugMetrics;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public @Nullable MeterProvider getMeterProvider() {
+    if (meterProvider == null && openTelemetry != null) {
+      return openTelemetry.getMeterProvider();
+    }
+    return meterProvider;
+  }
+
+  /**
+   * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @Override
+  public Duration getMetricInterval() {
+    return metricInterval != null ? metricInterval : Duration.ofSeconds(60);
+  }
+
+  /**
    * @since 2.14.0
    */
   @Override
@@ -432,6 +498,10 @@ public final class GrpcStorageOptions extends StorageOptions
         grpcInterceptorProvider,
         blobWriteSessionConfig,
         openTelemetry,
+        enableOtelMetrics,
+        enableOtelDebugMetrics,
+        getMeterProvider(),
+        getMetricInterval(),
         baseHashCode());
   }
 
@@ -446,11 +516,15 @@ public final class GrpcStorageOptions extends StorageOptions
     GrpcStorageOptions that = (GrpcStorageOptions) o;
     return attemptDirectPath == that.attemptDirectPath
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
+        && enableOtelMetrics == that.enableOtelMetrics
+        && enableOtelDebugMetrics == that.enableOtelDebugMetrics
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(terminationAwaitDuration, that.terminationAwaitDuration)
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
+        && Objects.equals(getMeterProvider(), that.getMeterProvider())
+        && Objects.equals(getMetricInterval(), that.getMetricInterval())
         && this.baseEquals(that);
   }
 
@@ -492,7 +566,7 @@ public final class GrpcStorageOptions extends StorageOptions
   public static final class Builder extends StorageOptions.Builder {
 
     private StorageRetryStrategy storageRetryStrategy;
-    private java.time.Duration terminationAwaitDuration;
+    private Duration terminationAwaitDuration;
     private boolean attemptDirectPath = GrpcStorageDefaults.INSTANCE.isAttemptDirectPath();
     private boolean enableGrpcClientMetrics =
         GrpcStorageDefaults.INSTANCE.isEnableGrpcClientMetrics();
@@ -501,6 +575,10 @@ public final class GrpcStorageOptions extends StorageOptions
     private BlobWriteSessionConfig blobWriteSessionConfig =
         GrpcStorageDefaults.INSTANCE.getDefaultStorageWriterConfig();
     private OpenTelemetry openTelemetry = GrpcStorageDefaults.INSTANCE.getDefaultOpenTelemetry();
+    private Boolean enableOtelMetrics = null;
+    private Boolean enableOtelDebugMetrics = null;
+    private MeterProvider meterProvider = null;
+    private Duration metricInterval = Duration.ofSeconds(60);
 
     private boolean grpcMetricsManuallyEnabled = false;
 
@@ -516,13 +594,16 @@ public final class GrpcStorageOptions extends StorageOptions
       this.grpcInterceptorProvider = gso.grpcInterceptorProvider;
       this.blobWriteSessionConfig = gso.blobWriteSessionConfig;
       this.openTelemetry = gso.openTelemetry;
+      this.enableOtelMetrics = gso.rawEnableOtelMetrics;
+      this.enableOtelDebugMetrics = gso.rawEnableOtelDebugMetrics;
+      this.meterProvider = gso.meterProvider;
+      this.metricInterval = gso.getMetricInterval();
     }
 
     /**
-     * This method is obsolete. Use {@link #setTerminationAwaitJavaTimeDuration(java.time.Duration)}
-     * instead.
+     * This method is obsolete. Use {@link #setTerminationAwaitJavaTimeDuration(Duration)} instead.
      */
-    @ObsoleteApi("Use setTerminationAwaitJavaTimeDuration(java.time.Duration) instead")
+    @ObsoleteApi("Use setTerminationAwaitJavaTimeDuration(Duration) instead")
     public Builder setTerminationAwaitDuration(org.threeten.bp.Duration terminationAwaitDuration) {
       return setTerminationAwaitJavaTimeDuration(toJavaTimeDuration(terminationAwaitDuration));
     }
@@ -535,8 +616,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * @return the builder
      * @since 2.14.0
      */
-    public Builder setTerminationAwaitJavaTimeDuration(
-        java.time.Duration terminationAwaitDuration) {
+    public Builder setTerminationAwaitJavaTimeDuration(Duration terminationAwaitDuration) {
       this.terminationAwaitDuration =
           requireNonNull(terminationAwaitDuration, "terminationAwaitDuration must be non null");
       return this;
@@ -751,6 +831,65 @@ public final class GrpcStorageOptions extends StorageOptions
     }
 
     /**
+     * Enable or disable OpenTelemetry client metrics.
+     *
+     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
+      this.enableOtelMetrics = enableOtelMetrics;
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry debug client metrics.
+     *
+     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
+      this.enableOtelDebugMetrics = enableOtelDebugMetrics;
+      return this;
+    }
+
+    /**
+     * Set a custom {@link MeterProvider} for recording client metrics.
+     *
+     * @param meterProvider custom MeterProvider to use, or null to use the default
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider) {
+      this.meterProvider = meterProvider;
+      return this;
+    }
+
+    /**
+     * Set the metric export interval for periodic metric reading.
+     *
+     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60 seconds
+     * (1 minute). Intervals less than 60 seconds are permitted only when a custom {@link
+     * MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)}.
+     *
+     * @param metricInterval interval duration
+     * @since 2.50.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMetricInterval(Duration metricInterval) {
+      checkArgument(
+          metricInterval != null && !metricInterval.isNegative() && !metricInterval.isZero(),
+          "metricInterval must be positive");
+      this.metricInterval = metricInterval;
+      return this;
+    }
+
+    /**
      * @since 2.14.0
      */
     @Override
@@ -817,8 +956,8 @@ public final class GrpcStorageOptions extends StorageOptions
     /**
      * @since 2.14.0
      */
-    public java.time.Duration getTerminationAwaitDurationJavaTime() {
-      return java.time.Duration.ofMinutes(1);
+    public Duration getTerminationAwaitDurationJavaTime() {
+      return Duration.ofMinutes(1);
     }
 
     /**
