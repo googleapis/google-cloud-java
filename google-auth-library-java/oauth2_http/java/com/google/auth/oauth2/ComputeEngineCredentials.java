@@ -81,47 +81,13 @@ import org.jspecify.annotations.Nullable;
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
  *
- * <p>Fetches access tokens from the Google Compute Engine metadata server.
+ * <p>Fetches access tokens from the Google Compute Engine metadata server. When a workload
+ * certificate for an agent identity is available, requests certificate-bound access tokens and ID
+ * tokens by default (see {@code IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN} and the <a
+ * href="https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library">Google
+ * Auth Library guide</a>).
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
- *
- * <p><b>Certificate-bound tokens for agent identities.</b> When a workload certificate for an agent
- * identity is available (for example, on Cloud Run with an agent identity), {@link
- * #refreshAccessToken()} and {@link #idTokenWithAudience(String, List)} request tokens that are
- * bound to that certificate. The certificate is located through the file named by the {@code
- * GOOGLE_API_CERTIFICATE_CONFIG} environment variable or, if that is unset, in the default workload
- * credentials directory. A bound token is only requested when the certificate's SPIFFE ID belongs
- * to an agent identity trust domain; otherwise these credentials return unbound tokens as before.
- *
- * <p>A bound token is only accepted when it is sent over mutual TLS (mTLS) using the same
- * certificate. Google Cloud client libraries that are built on GAX configure mTLS automatically.
- * Callers that send the token with their own HTTP client must configure mTLS themselves.
- *
- * <p>A bound ID token is rejected by targets that are called over standard HTTPS rather than mTLS,
- * such as a Cloud Run service reached through its {@code *.run.app} URL or a custom domain. To
- * request an unbound ID token for such a target only, pass {@code
- * IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN} to {@link #idTokenWithAudience(String, List)} or
- * to {@link IdTokenCredentials.Builder#setOptions(List)}.
- *
- * <p>Token binding is on by default. It can be turned off for the whole process with the following
- * environment variables. Values are case-insensitive, and only {@code false} turns binding off:
- *
- * <ul>
- *   <li>{@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN=false}: request unbound tokens. Takes
- *       precedence over the legacy variable.
- *   <li>{@code GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES=false}: legacy variable,
- *       only read when {@code GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN} is unset or empty.
- *   <li>{@code GOOGLE_API_USE_CLIENT_CERTIFICATE=false}: turns off mTLS, which also turns off token
- *       binding.
- * </ul>
- *
- * <p>Turning off token binding is strongly discouraged, because bound tokens protect against
- * credential theft. One known reason to turn it off is the Agent Development Kit (ADK) for Java,
- * which doesn't yet use mTLS when it calls Google APIs.
- *
- * <p>If a certificate configuration file is present but the certificate files it points to are
- * missing, or if the metadata server doesn't support bound tokens, token requests fail with an
- * {@link IOException} rather than silently falling back to unbound tokens.
  */
 @NullMarked
 public class ComputeEngineCredentials extends GoogleCredentials
