@@ -1204,9 +1204,6 @@ public final class Pipeline {
    * <p>Each document produced by the previous stages is deleted from the database. The result
    * contains a single document with a {@code documents_modified} field.
    *
-   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
-   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
-   *
    * <p>Example:
    *
    * <pre>{@code
@@ -1247,9 +1244,6 @@ public final class Pipeline {
    * pipeline document, so fields removed by earlier stages (for example, with {@link
    * #removeFields(String, String...)}) are also removed from the stored document. This stage does
    * not create documents: documents that don't exist are skipped.
-   *
-   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
-   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
    *
    * <p>Example 1: Update a collection's schema by adding a new field and removing an old one.
    *
@@ -1335,16 +1329,10 @@ public final class Pipeline {
    * Inserts each document produced by the previous stages at its own path, given by its {@code
    * __name__} field.
    *
-   * <p>This is equivalent to {@code insert(new Insert())}. It is mainly useful with a {@link
-   * PipelineSource#literals(java.util.Map...) literals} source whose documents set {@code __name__}
-   * to a {@link DocumentReference}: documents read from the database already exist, and a document
-   * without a {@code __name__} field fails with {@code INVALID_ARGUMENT}. To insert into another
-   * collection or under another ID, use {@link #insert(Insert)}.
+   * <p>This is equivalent to {@code insert(new Insert())}. A document without a {@code __name__}
+   * field fails with {@code INVALID_ARGUMENT}.
    *
    * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists.
-   *
-   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
-   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
@@ -1356,22 +1344,8 @@ public final class Pipeline {
    * Inserts each document produced by the previous stages as a new document, using a configured
    * {@link Insert} stage.
    *
-   * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists. The target
-   * path of each document is determined as follows:
-   *
-   * <ul>
-   *   <li>With neither a collection nor a document ID expression, the input document's own path is
-   *       used, so inserting documents read from the database fails with {@code ALREADY_EXISTS},
-   *       and a document without a {@code __name__} field fails with {@code INVALID_ARGUMENT}.
-   *   <li>With only {@link Insert#withCollection(String) withCollection}, the document is written
-   *       to that collection under the input document's ID (or a generated ID if it has none).
-   *   <li>With only {@link Insert#withDocumentIdExpression(Expression) withDocumentIdExpression},
-   *       the document is written to the input document's parent collection.
-   *   <li>With both, the document is written to the collection under the evaluated ID.
-   * </ul>
-   *
-   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
-   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists. See {@link
+   * Insert} for how the target path of each document is determined.
    *
    * <p>Example:
    *
@@ -1398,13 +1372,7 @@ public final class Pipeline {
    * The target document is created if it doesn't exist and replaced if it does; stored fields are
    * not merged.
    *
-   * <p>The target path follows the same rules as {@link #insert(Insert)}: by default each document
-   * is written back to its own path; {@link Upsert#withCollection(String) withCollection} and
-   * {@link Upsert#withDocumentIdExpression(Expression) withDocumentIdExpression} change the target
-   * collection and ID.
-   *
-   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
-   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
+   * <p>See {@link Upsert} for how the target path of each document is determined.
    *
    * <p>Example:
    *
@@ -1429,9 +1397,6 @@ public final class Pipeline {
    * given fields. The document is created if it doesn't exist and replaced if it does; stored
    * fields are not merged. A document without a {@code __name__} field fails with {@code
    * INVALID_ARGUMENT}.
-   *
-   * <p>Writes are applied atomically (all or none) only if the pipeline is executed with {@link
-   * PipelineExecuteOptions#withAtomic(boolean) withAtomic(true)} or inside a transaction.
    *
    * <p>Example:
    *

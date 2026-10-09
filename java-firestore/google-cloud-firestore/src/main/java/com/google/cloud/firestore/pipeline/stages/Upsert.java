@@ -30,10 +30,7 @@ import javax.annotation.Nullable;
 
 /**
  * A pipeline stage that writes each document produced by the previous stages, creating the target
- * document if it doesn't exist and replacing it if it does.
- *
- * <p>The whole target document is replaced, not merged: stored fields that are not in the pipeline
- * document are removed.
+ * document if it doesn't exist and replacing it if it does. Stored fields are not merged.
  *
  * <p>The target path of each document is determined as follows:
  *
@@ -42,9 +39,7 @@ import javax.annotation.Nullable;
  *       {@code __name__} field) is used. A document without a {@code __name__} field fails with
  *       {@code INVALID_ARGUMENT}.
  *   <li>With only a collection, the document is written to that collection under the input
- *       document's ID. If the input document has no ID (for example, a literal document without a
- *       {@code __name__} field, or a document whose {@code __name__} field was removed), an ID is
- *       generated.
+ *       document's ID, or under a generated ID if the input document has no {@code __name__}.
  *   <li>With only a document ID expression, the document is written to the input document's parent
  *       collection under the ID that the expression evaluates to.
  *   <li>With both, the document is written to the collection under the ID that the expression

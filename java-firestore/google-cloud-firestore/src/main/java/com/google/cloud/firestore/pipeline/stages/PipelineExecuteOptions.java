@@ -53,12 +53,6 @@ public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecut
    * insert}, {@code upsert}, {@code update} and {@code delete} stages) are applied or none are. The
    * default is {@code false}.
    *
-   * <p>Atomic execution cannot be used with {@link
-   * com.google.cloud.firestore.Transaction#execute(com.google.cloud.firestore.Pipeline,
-   * PipelineExecuteOptions)}, because the enclosing transaction already makes the writes atomic, or
-   * in a read-only transaction with a read time. Executing such a pipeline throws {@link
-   * IllegalArgumentException}.
-   *
    * @param atomic Whether to execute the pipeline atomically.
    * @return A new {@code PipelineExecuteOptions} with the atomic setting applied.
    */
