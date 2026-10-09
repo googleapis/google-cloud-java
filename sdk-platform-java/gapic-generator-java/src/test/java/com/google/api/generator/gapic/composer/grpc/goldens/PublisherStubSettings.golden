@@ -528,6 +528,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.pubsub.v1.PublisherClient";
+  }
+
   /** Builder for PublisherStubSettings. */
   public static class Builder extends StubSettings.Builder<PublisherStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

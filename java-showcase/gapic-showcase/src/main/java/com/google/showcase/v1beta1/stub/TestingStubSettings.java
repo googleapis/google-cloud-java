@@ -509,6 +509,11 @@ public class TestingStubSettings extends StubSettings<TestingStubSettings> {
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.TestingClient";
+  }
+
   /** Builder for TestingStubSettings. */
   public static class Builder extends StubSettings.Builder<TestingStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

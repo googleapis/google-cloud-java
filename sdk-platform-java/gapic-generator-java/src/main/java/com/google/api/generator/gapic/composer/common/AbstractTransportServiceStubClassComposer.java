@@ -381,6 +381,15 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     callSettingsBuilderExpr =
         MethodInvocationExpr.builder()
             .setExprReferenceExpr(callSettingsBuilderExpr)
+            .setMethodName("setJavaMethodName")
+            .setArguments(
+                ValueExpr.withValue(
+                    StringObjectValue.withValue(JavaStyle.toLowerCamelCase(method.name()))))
+            .build();
+
+    callSettingsBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(callSettingsBuilderExpr)
             .setMethodName("build")
             .setReturnType(transportSettingsVarExpr.type())
             .build();

@@ -448,6 +448,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getFoo")
             .build();
     HttpJsonCallSettings<GetBarRequest, Bar> getBarTransportSettings =
         HttpJsonCallSettings.<GetBarRequest, Bar>newBuilder()
@@ -465,6 +466,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   resourceNameSegments.put("bar", String.valueOf(request.getBar()));
                   return GET_BAR_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("getBar")
             .build();
     HttpJsonCallSettings<GetHeuristicRequest, Heuristic> getHeuristicTransportSettings =
         HttpJsonCallSettings.<GetHeuristicRequest, Heuristic>newBuilder()
@@ -486,6 +488,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   resourceNameSegments.put("project", String.valueOf(request.getProject()));
                   return GET_HEURISTIC_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("getHeuristic")
             .build();
     HttpJsonCallSettings<ListFoosRequest, ListFoosResponse> listFoosTransportSettings =
         HttpJsonCallSettings.<ListFoosRequest, ListFoosResponse>newBuilder()
@@ -498,6 +501,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listFoos")
             .build();
     HttpJsonCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic> getTransportSettings =
         HttpJsonCallSettings.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
@@ -521,6 +525,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   resourceNameSegments.put("project", String.valueOf(request.getProject()));
                   return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("get")
             .build();
     HttpJsonCallSettings<ListHeuristicsRequest, ListHeuristicsResponse> listTransportSettings =
         HttpJsonCallSettings.<ListHeuristicsRequest, ListHeuristicsResponse>newBuilder()
@@ -540,6 +545,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                   resourceNameSegments.put("project", String.valueOf(request.getProject()));
                   return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("list")
             .build();
     HttpJsonCallSettings<GetHeuristicWithResourceReferenceRequest, Heuristic>
         getHeuristicWithResourceReferenceTransportSettings =
@@ -555,6 +561,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getFoo())
+                .setJavaMethodName("getHeuristicWithResourceReference")
                 .build();
     HttpJsonCallSettings<GetHeuristicWithNestedFieldsRequest, Heuristic>
         getHeuristicWithNestedFieldsTransportSettings =
@@ -580,6 +587,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                       return GET_HEURISTIC_WITH_NESTED_FIELDS_RESOURCE_NAME_TEMPLATE.instantiate(
                           resourceNameSegments);
                     })
+                .setJavaMethodName("getHeuristicWithNestedFields")
                 .build();
     HttpJsonCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic>
         getHeuristicWithNamedBindingTransportSettings =
@@ -606,6 +614,7 @@ public class HttpJsonResourceNameExtractorTestingStub extends ResourceNameExtrac
                       return GET_HEURISTIC_WITH_NAMED_BINDING_RESOURCE_NAME_TEMPLATE.instantiate(
                           resourceNameSegments);
                     })
+                .setJavaMethodName("getHeuristicWithNamedBinding")
                 .build();
 
     this.getFooCallable =

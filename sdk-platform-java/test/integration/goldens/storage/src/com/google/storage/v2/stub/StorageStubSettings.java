@@ -705,6 +705,11 @@ public class StorageStubSettings extends StubSettings<StorageStubSettings> {
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.storage.v2.StorageClient";
+  }
+
   /** Builder for StorageStubSettings. */
   public static class Builder extends StubSettings.Builder<StorageStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

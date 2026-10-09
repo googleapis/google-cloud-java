@@ -94,6 +94,7 @@ public class GrpcTetherStub extends TetherStub {
     GrpcCallSettings<EgressResponse, EgressRequest> egressTransportSettings =
         GrpcCallSettings.<EgressResponse, EgressRequest>newBuilder()
             .setMethodDescriptor(egressMethodDescriptor)
+            .setJavaMethodName("egress")
             .build();
 
     this.egressCallable =

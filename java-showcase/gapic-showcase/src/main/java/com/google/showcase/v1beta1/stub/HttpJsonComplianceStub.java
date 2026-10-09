@@ -768,16 +768,19 @@ public class HttpJsonComplianceStub extends ComplianceStub {
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataBody")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyInfoTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyInfoMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataBodyInfo")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataQueryTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataQueryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataQuery")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataSimplePathTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
@@ -794,6 +797,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                   return builder.build();
                 })
+            .setJavaMethodName("repeatDataSimplePath")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataPathResourceTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
@@ -809,6 +813,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                   return builder.build();
                 })
+            .setJavaMethodName("repeatDataPathResource")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse>
         repeatDataPathTrailingResourceTransportSettings =
@@ -824,26 +829,31 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                       builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                       return builder.build();
                     })
+                .setJavaMethodName("repeatDataPathTrailingResource")
                 .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyPutTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyPutMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataBodyPut")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyPatchTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyPatchMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataBodyPatch")
             .build();
     HttpJsonCallSettings<EnumRequest, EnumResponse> getEnumTransportSettings =
         HttpJsonCallSettings.<EnumRequest, EnumResponse>newBuilder()
             .setMethodDescriptor(getEnumMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("getEnum")
             .build();
     HttpJsonCallSettings<EnumResponse, EnumResponse> verifyEnumTransportSettings =
         HttpJsonCallSettings.<EnumResponse, EnumResponse>newBuilder()
             .setMethodDescriptor(verifyEnumMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("verifyEnum")
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -856,6 +866,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setJavaMethodName("listLocations")
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -867,6 +878,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -879,6 +891,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -891,6 +904,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -904,6 +918,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.repeatDataBodyCallable =
