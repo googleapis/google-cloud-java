@@ -30,11 +30,13 @@
 package com.google.api.gax.httpjson;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.RequestMutator;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.protobuf.TypeRegistry;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** HTTP-specific settings for creating callables. */
 @NullMarked
@@ -45,6 +47,7 @@ public class HttpJsonCallSettings<RequestT, ResponseT> {
 
   private final RequestMutator<RequestT> requestMutator;
   private final TypeRegistry typeRegistry;
+  private final @Nullable String javaMethodName;
 
   private HttpJsonCallSettings(Builder<RequestT, ResponseT> builder) {
     this.methodDescriptor = builder.methodDescriptor;
@@ -52,6 +55,7 @@ public class HttpJsonCallSettings<RequestT, ResponseT> {
     this.resourceNameExtractor = builder.resourceNameExtractor;
     this.requestMutator = builder.requestMutator;
     this.typeRegistry = builder.typeRegistry;
+    this.javaMethodName = builder.javaMethodName;
   }
 
   public ApiMethodDescriptor<RequestT, ResponseT> getMethodDescriptor() {
@@ -68,6 +72,11 @@ public class HttpJsonCallSettings<RequestT, ResponseT> {
   @BetaApi
   ResourceNameExtractor<RequestT> getResourceNameExtractor() {
     return resourceNameExtractor;
+  }
+
+  /** Gets the Java method name of the RPC (e.g. "accessSecretVersion"). */
+  @Nullable String getJavaMethodName() {
+    return javaMethodName;
   }
 
   public RequestMutator<RequestT> getRequestMutator() {
@@ -100,6 +109,7 @@ public class HttpJsonCallSettings<RequestT, ResponseT> {
     private RequestParamsExtractor<RequestT> paramsExtractor;
     private ResourceNameExtractor<RequestT> resourceNameExtractor;
     private TypeRegistry typeRegistry;
+    private @Nullable String javaMethodName;
 
     private Builder() {}
 
@@ -109,6 +119,7 @@ public class HttpJsonCallSettings<RequestT, ResponseT> {
       this.resourceNameExtractor = settings.resourceNameExtractor;
       this.requestMutator = settings.requestMutator;
       this.typeRegistry = settings.typeRegistry;
+      this.javaMethodName = settings.javaMethodName;
     }
 
     public Builder<RequestT, ResponseT> setMethodDescriptor(
@@ -129,6 +140,13 @@ public class HttpJsonCallSettings<RequestT, ResponseT> {
     public Builder<RequestT, ResponseT> setResourceNameExtractor(
         ResourceNameExtractor<RequestT> resourceNameExtractor) {
       this.resourceNameExtractor = resourceNameExtractor;
+      return this;
+    }
+
+    /** Sets the Java method name of the RPC (e.g. "accessSecretVersion"). */
+    @InternalApi
+    public Builder<RequestT, ResponseT> setJavaMethodName(@Nullable String javaMethodName) {
+      this.javaMethodName = javaMethodName;
       return this;
     }
 

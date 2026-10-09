@@ -30,11 +30,13 @@
 package com.google.api.gax.grpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.RequestMutator;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ResourceNameExtractor;
 import io.grpc.MethodDescriptor;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Grpc-specific settings for creating callables. */
 @NullMarked
@@ -44,6 +46,7 @@ public class GrpcCallSettings<RequestT, ResponseT> {
   private final ResourceNameExtractor<RequestT> resourceNameExtractor;
   private final RequestMutator<RequestT> requestMutator;
   private final boolean alwaysAwaitTrailers;
+  private final @Nullable String javaMethodName;
 
   private GrpcCallSettings(Builder<RequestT, ResponseT> builder) {
     this.methodDescriptor = builder.methodDescriptor;
@@ -51,6 +54,7 @@ public class GrpcCallSettings<RequestT, ResponseT> {
     this.resourceNameExtractor = builder.resourceNameExtractor;
     this.requestMutator = builder.requestMutator;
     this.alwaysAwaitTrailers = builder.shouldAwaitTrailers;
+    this.javaMethodName = builder.javaMethodName;
   }
 
   public MethodDescriptor<RequestT, ResponseT> getMethodDescriptor() {
@@ -78,6 +82,11 @@ public class GrpcCallSettings<RequestT, ResponseT> {
     return alwaysAwaitTrailers;
   }
 
+  /** Gets the Java method name of the RPC (e.g. "accessSecretVersion"). */
+  @Nullable String getJavaMethodName() {
+    return javaMethodName;
+  }
+
   public static <RequestT, ResponseT> Builder<RequestT, ResponseT> newBuilder() {
     return new Builder<RequestT, ResponseT>().setShouldAwaitTrailers(true);
   }
@@ -100,6 +109,7 @@ public class GrpcCallSettings<RequestT, ResponseT> {
 
     private RequestMutator<RequestT> requestMutator;
     private boolean shouldAwaitTrailers;
+    private @Nullable String javaMethodName;
 
     private Builder() {}
 
@@ -109,6 +119,7 @@ public class GrpcCallSettings<RequestT, ResponseT> {
       this.resourceNameExtractor = settings.resourceNameExtractor;
       this.requestMutator = settings.requestMutator;
       this.shouldAwaitTrailers = settings.alwaysAwaitTrailers;
+      this.javaMethodName = settings.javaMethodName;
     }
 
     public Builder<RequestT, ResponseT> setMethodDescriptor(
@@ -141,6 +152,13 @@ public class GrpcCallSettings<RequestT, ResponseT> {
     @BetaApi
     public Builder<RequestT, ResponseT> setShouldAwaitTrailers(boolean b) {
       this.shouldAwaitTrailers = b;
+      return this;
+    }
+
+    /** Sets the Java method name of the RPC (e.g. "accessSecretVersion"). */
+    @InternalApi
+    public Builder<RequestT, ResponseT> setJavaMethodName(@Nullable String javaMethodName) {
+      this.javaMethodName = javaMethodName;
       return this;
     }
 

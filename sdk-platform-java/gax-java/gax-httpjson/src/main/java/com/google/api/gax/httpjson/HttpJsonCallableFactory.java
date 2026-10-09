@@ -85,7 +85,7 @@ public class HttpJsonCallableFactory {
         new TracedUnaryCallable<>(
             callable,
             clientContext.getTracerFactory(),
-            getApiTracerContext(httpJsonCallSettings.getMethodDescriptor()),
+            getApiTracerContext(httpJsonCallSettings),
             httpJsonCallSettings.getResourceNameExtractor());
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -245,13 +245,23 @@ public class HttpJsonCallableFactory {
     return Callables.resumableUpload(uploadClient, callSettings, clientContext);
   }
 
+  static ApiTracerContext getApiTracerContext(HttpJsonCallSettings<?, ?> httpJsonCallSettings) {
+    return getApiTracerContextBuilder(httpJsonCallSettings.getMethodDescriptor())
+        .setJavaMethodName(httpJsonCallSettings.getJavaMethodName())
+        .build();
+  }
+
   static ApiTracerContext getApiTracerContext(ApiMethodDescriptor<?, ?> methodDescriptor) {
+    return getApiTracerContextBuilder(methodDescriptor).build();
+  }
+
+  private static ApiTracerContext.Builder getApiTracerContextBuilder(
+      ApiMethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
         .setFullMethodName(methodDescriptor.getFullMethodName())
         .setHttpMethod(methodDescriptor.getHttpMethod())
         .setHttpPathTemplate(methodDescriptor.getRequestFormatter().getPathTemplate().toRawString())
         .setTransport(ApiTracerContext.Transport.HTTP)
-        .setLibraryMetadata(LibraryMetadata.empty())
-        .build();
+        .setLibraryMetadata(LibraryMetadata.empty());
   }
 }
