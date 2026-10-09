@@ -78,8 +78,6 @@ public class ReadRowShim implements UnaryShim<Query, SessionReadRowResponse> {
     } else {
       return false;
     }
-    // Currently this will only fallback in case RLS is misconfigured. If the AFE
-    // pool is unavailable, it'll be controlled by ClientConfiguration.
     return UnaryShim.shouldRouteToSession(pool);
   }
 
