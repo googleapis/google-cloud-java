@@ -44,6 +44,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.DatabaseRootName;
+import com.google.firestore.v1.RequestOptions;
 import com.google.protobuf.ByteString;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -201,16 +202,43 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
 
   @Nonnull
   @Override
+  public Iterable<CollectionReference> listCollections(
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    DocumentReference rootDocument = new DocumentReference(this, this.databasePath);
+    return rootDocument.listCollections(executionOptions);
+  }
+
+  @Nonnull
+  @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference... documentReferences) {
-    return this.getAll(documentReferences, null, (ByteString) null);
+    return this.getAll(
+        documentReferences, null, (ByteString) null, null, (FirestoreExecutionOptions) null);
   }
 
   @Nonnull
   @Override
   public ApiFuture<List<DocumentSnapshot>> getAll(
       @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
-    return this.getAll(documentReferences, fieldMask, (ByteString) null);
+    return this.getAll(
+        documentReferences, fieldMask, (ByteString) null, null, (FirestoreExecutionOptions) null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return this.getAll(documentReferences, null, (ByteString) null, null, executionOptions);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return this.getAll(documentReferences, fieldMask, (ByteString) null, null, executionOptions);
   }
 
   @Override
@@ -218,7 +246,16 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
       final @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
       @Nonnull final ApiStreamObserver<DocumentSnapshot> apiStreamObserver) {
-    this.getAll(documentReferences, fieldMask, null, null, apiStreamObserver);
+    this.getAll(documentReferences, fieldMask, null, null, null, apiStreamObserver);
+  }
+
+  @Override
+  public void getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nonnull final ApiStreamObserver<DocumentSnapshot> apiStreamObserver,
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    this.getAll(documentReferences, fieldMask, null, null, executionOptions, apiStreamObserver);
   }
 
   void getAll(
@@ -226,6 +263,16 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
       @Nullable FieldMask fieldMask,
       @Nullable ByteString transactionId,
       @Nullable com.google.protobuf.Timestamp readTime,
+      final ApiStreamObserver<DocumentSnapshot> apiStreamObserver) {
+    getAll(documentReferences, fieldMask, transactionId, readTime, null, apiStreamObserver);
+  }
+
+  void getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      @Nullable FirestoreExecutionOptions executionOptions,
       final ApiStreamObserver<DocumentSnapshot> apiStreamObserver) {
     // To reduce the size of traces, we only register one event for every 100 responses
     // that we receive from the server.
@@ -353,6 +400,12 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
       request.addDocuments(docRef.getName());
     }
 
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      request.setRequestOptions(requestOptions);
+    }
+
     streamRequest(request.build(), responseObserver, firestoreClient.batchGetDocumentsCallable());
   }
 
@@ -360,14 +413,23 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
       final @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
       @Nullable com.google.protobuf.Timestamp readTime) {
-    return getAll(documentReferences, fieldMask, null, readTime);
+    return getAll(documentReferences, fieldMask, null, readTime, (FirestoreExecutionOptions) null);
+  }
+
+  final ApiFuture<List<DocumentSnapshot>> getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      @Nullable FirestoreExecutionOptions executionOptions) {
+    return getAll(documentReferences, fieldMask, null, readTime, executionOptions);
   }
 
   private ApiFuture<List<DocumentSnapshot>> getAll(
       final @Nonnull DocumentReference[] documentReferences,
       @Nullable FieldMask fieldMask,
       @Nullable ByteString transactionId) {
-    return getAll(documentReferences, fieldMask, transactionId, null);
+    return getAll(
+        documentReferences, fieldMask, transactionId, null, (FirestoreExecutionOptions) null);
   }
 
   /** Internal getAll() method that accepts an optional transaction id. */
@@ -376,6 +438,17 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
       @Nullable FieldMask fieldMask,
       @Nullable ByteString transactionId,
       @Nullable com.google.protobuf.Timestamp readTime) {
+    return getAll(
+        documentReferences, fieldMask, transactionId, readTime, (FirestoreExecutionOptions) null);
+  }
+
+  /** Internal getAll() method that accepts an optional transaction id and execution options. */
+  ApiFuture<List<DocumentSnapshot>> getAll(
+      final @Nonnull DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     final SettableApiFuture<List<DocumentSnapshot>> futureList = SettableApiFuture.create();
     final Map<DocumentReference, DocumentSnapshot> documentSnapshotMap = new HashMap<>();
     getAll(
@@ -383,6 +456,7 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
         fieldMask,
         transactionId,
         readTime,
+        executionOptions,
         new ApiStreamObserver<DocumentSnapshot>() {
           @Override
           public void onNext(DocumentSnapshot documentSnapshot) {
@@ -426,7 +500,18 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
   @Override
   public <T> ApiFuture<T> runTransaction(@Nonnull final Transaction.Function<T> updateFunction) {
     return runAsyncTransaction(
-        new TransactionAsyncAdapter<>(updateFunction), TransactionOptions.create());
+        new TransactionAsyncAdapter<>(updateFunction), TransactionOptions.create(), null);
+  }
+
+  @Nonnull
+  @Override
+  public <T> ApiFuture<T> runTransaction(
+      @Nonnull final Transaction.Function<T> updateFunction,
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return runAsyncTransaction(
+        new TransactionAsyncAdapter<>(updateFunction),
+        TransactionOptions.create(),
+        executionOptions);
   }
 
   @Nonnull
@@ -434,14 +519,33 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
   public <T> ApiFuture<T> runTransaction(
       @Nonnull final Transaction.Function<T> updateFunction,
       @Nonnull TransactionOptions transactionOptions) {
-    return runAsyncTransaction(new TransactionAsyncAdapter<>(updateFunction), transactionOptions);
+    return runAsyncTransaction(
+        new TransactionAsyncAdapter<>(updateFunction), transactionOptions, null);
+  }
+
+  @Nonnull
+  @Override
+  public <T> ApiFuture<T> runTransaction(
+      @Nonnull final Transaction.Function<T> updateFunction,
+      @Nonnull TransactionOptions transactionOptions,
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return runAsyncTransaction(
+        new TransactionAsyncAdapter<>(updateFunction), transactionOptions, executionOptions);
   }
 
   @Nonnull
   @Override
   public <T> ApiFuture<T> runAsyncTransaction(
       @Nonnull final Transaction.AsyncFunction<T> updateFunction) {
-    return runAsyncTransaction(updateFunction, TransactionOptions.create());
+    return runAsyncTransaction(updateFunction, TransactionOptions.create(), null);
+  }
+
+  @Nonnull
+  @Override
+  public <T> ApiFuture<T> runAsyncTransaction(
+      @Nonnull final Transaction.AsyncFunction<T> updateFunction,
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return runAsyncTransaction(updateFunction, TransactionOptions.create(), executionOptions);
   }
 
   @Nonnull
@@ -449,6 +553,15 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
   public <T> ApiFuture<T> runAsyncTransaction(
       @Nonnull final Transaction.AsyncFunction<T> updateFunction,
       @Nonnull TransactionOptions transactionOptions) {
+    return runAsyncTransaction(updateFunction, transactionOptions, null);
+  }
+
+  @Nonnull
+  @Override
+  public <T> ApiFuture<T> runAsyncTransaction(
+      @Nonnull final Transaction.AsyncFunction<T> updateFunction,
+      @Nonnull TransactionOptions transactionOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
 
     MetricsContext metricsContext =
         getOptions()
@@ -466,7 +579,10 @@ class FirestoreImpl implements Firestore, FirestoreRpcContext<FirestoreImpl> {
       } else {
         // For READ_ONLY transactions without readTime, there is still strong consistency applied,
         // that cannot be tracked client side.
-        result = new ServerSideTransactionRunner<>(this, updateFunction, transactionOptions).run();
+        result =
+            new ServerSideTransactionRunner<>(
+                    this, updateFunction, transactionOptions, executionOptions)
+                .run();
       }
       metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
     } catch (Exception error) {

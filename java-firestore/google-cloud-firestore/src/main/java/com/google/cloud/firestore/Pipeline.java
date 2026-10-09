@@ -75,6 +75,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.ExecutePipelineRequest;
 import com.google.firestore.v1.ExecutePipelineResponse;
+import com.google.firestore.v1.RequestOptions;
 import com.google.firestore.v1.StructuredPipeline;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
@@ -1364,11 +1365,35 @@ public final class Pipeline {
    * @return An {@link ApiFuture} representing the asynchronous pipeline execution.
    */
   public ApiFuture<Snapshot> execute() {
-    return execute(new PipelineExecuteOptions(), null, null);
+    return execute(new PipelineExecuteOptions(), null, null, null);
+  }
+
+  /**
+   * Executes this pipeline with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An {@link ApiFuture} representing the asynchronous pipeline execution.
+   */
+  @BetaApi
+  public ApiFuture<Snapshot> execute(@Nonnull FirestoreExecutionOptions executionOptions) {
+    return execute(new PipelineExecuteOptions(), null, null, executionOptions);
   }
 
   public ApiFuture<Snapshot> execute(PipelineExecuteOptions options) {
-    return execute(options, null, null);
+    return execute(options, null, null, null);
+  }
+
+  /**
+   * Executes this pipeline with pipeline execute options and execution options.
+   *
+   * @param options The options for pipeline execution.
+   * @param executionOptions Options for executing the request.
+   * @return An {@link ApiFuture} representing the asynchronous pipeline execution.
+   */
+  @BetaApi
+  public ApiFuture<Snapshot> execute(
+      PipelineExecuteOptions options, @Nullable FirestoreExecutionOptions executionOptions) {
+    return execute(options, null, null, executionOptions);
   }
 
   MetricsContext createMetricsContext(String methodName) {
@@ -1421,6 +1446,36 @@ public final class Pipeline {
    * @param observer The {@link ApiStreamObserver} to receive pipeline results and events.
    */
   public void execute(ApiStreamObserver<PipelineResult> observer) {
+    execute(observer, null);
+  }
+
+  /**
+   * Executes this pipeline with execution options, providing results to the given {@link
+   * ApiStreamObserver} as they become available.
+   *
+   * @param observer The {@link ApiStreamObserver} to receive pipeline results and events.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  public void execute(
+      ApiStreamObserver<PipelineResult> observer,
+      @Nullable FirestoreExecutionOptions executionOptions) {
+    execute(new PipelineExecuteOptions(), observer, executionOptions);
+  }
+
+  /**
+   * Executes this pipeline with options and execution options, providing results to the given
+   * {@link ApiStreamObserver} as they become available.
+   *
+   * @param options Options for pipeline execution.
+   * @param observer The {@link ApiStreamObserver} to receive pipeline results and events.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  public void execute(
+      PipelineExecuteOptions options,
+      ApiStreamObserver<PipelineResult> observer,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     if (this.rpcContext == null) {
       throw new IllegalStateException(
           "This pipeline was created without a database (e.g., as a subcollection pipeline) and"
@@ -1430,9 +1485,10 @@ public final class Pipeline {
         createMetricsContext(TelemetryConstants.METHOD_NAME_EXECUTE_PIPELINE_EXECUTE);
 
     executeInternal(
-        new PipelineExecuteOptions(),
+        options,
         null,
         null,
+        executionOptions,
         new PipelineResultObserver() {
           @Override
           public void onNext(PipelineResult result) {
@@ -1456,6 +1512,14 @@ public final class Pipeline {
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
       @Nullable com.google.protobuf.Timestamp readTime) {
+    return execute(options, transactionId, readTime, null);
+  }
+
+  ApiFuture<Snapshot> execute(
+      @Nonnull PipelineExecuteOptions options,
+      @Nullable final ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     if (this.rpcContext == null) {
       throw new IllegalStateException(
           "This pipeline was created without a database (e.g., as a subcollection pipeline) and"
@@ -1479,6 +1543,7 @@ public final class Pipeline {
           options,
           transactionId,
           readTime,
+          executionOptions,
           new PipelineResultObserver() {
             final List<PipelineResult> results = new ArrayList<>();
 
@@ -1513,6 +1578,7 @@ public final class Pipeline {
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
       @Nullable com.google.protobuf.Timestamp readTime,
+      @Nullable FirestoreExecutionOptions executionOptions,
       PipelineResultObserver observer,
       MetricsContext metricsContext) {
     ExecutePipelineRequest.Builder request =
@@ -1530,6 +1596,13 @@ public final class Pipeline {
 
     if (readTime != null) {
       request.setReadTime(readTime);
+    }
+
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(
+            rpcContext.getFirestore().getOptions(), executionOptions);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      request.setRequestOptions(requestOptions);
     }
 
     pipelineInternalStream(
