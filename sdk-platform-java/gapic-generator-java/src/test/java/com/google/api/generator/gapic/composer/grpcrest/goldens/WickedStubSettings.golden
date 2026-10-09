@@ -198,6 +198,11 @@ public class WickedStubSettings extends StubSettings<WickedStubSettings> {
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.WickedClient";
+  }
+
   /** Builder for WickedStubSettings. */
   public static class Builder extends StubSettings.Builder<WickedStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

@@ -352,6 +352,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("createSubscription")
             .build();
     GrpcCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         GrpcCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -363,6 +364,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("getSubscription")
             .build();
     GrpcCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionTransportSettings =
         GrpcCallSettings.<UpdateSubscriptionRequest, Subscription>newBuilder()
@@ -374,6 +376,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                       "subscription.name", String.valueOf(request.getSubscription().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateSubscription")
             .build();
     GrpcCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
         listSubscriptionsTransportSettings =
@@ -386,6 +389,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getProject())
+                .setJavaMethodName("listSubscriptions")
                 .build();
     GrpcCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
         GrpcCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
@@ -397,6 +401,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("deleteSubscription")
             .build();
     GrpcCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineTransportSettings =
         GrpcCallSettings.<ModifyAckDeadlineRequest, Empty>newBuilder()
@@ -408,6 +413,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("modifyAckDeadline")
             .build();
     GrpcCallSettings<AcknowledgeRequest, Empty> acknowledgeTransportSettings =
         GrpcCallSettings.<AcknowledgeRequest, Empty>newBuilder()
@@ -419,6 +425,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("acknowledge")
             .build();
     GrpcCallSettings<PullRequest, PullResponse> pullTransportSettings =
         GrpcCallSettings.<PullRequest, PullResponse>newBuilder()
@@ -430,11 +437,13 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("pull")
             .build();
     GrpcCallSettings<StreamingPullRequest, StreamingPullResponse> streamingPullTransportSettings =
         GrpcCallSettings.<StreamingPullRequest, StreamingPullResponse>newBuilder()
             .setMethodDescriptor(streamingPullMethodDescriptor)
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("streamingPull")
             .build();
     GrpcCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigTransportSettings =
         GrpcCallSettings.<ModifyPushConfigRequest, Empty>newBuilder()
@@ -446,6 +455,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("modifyPushConfig")
             .build();
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -457,6 +467,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSnapshot())
+            .setJavaMethodName("getSnapshot")
             .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
@@ -468,6 +479,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getProject())
+            .setJavaMethodName("listSnapshots")
             .build();
     GrpcCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotTransportSettings =
         GrpcCallSettings.<CreateSnapshotRequest, Snapshot>newBuilder()
@@ -479,6 +491,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("createSnapshot")
             .build();
     GrpcCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotTransportSettings =
         GrpcCallSettings.<UpdateSnapshotRequest, Snapshot>newBuilder()
@@ -489,6 +502,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("snapshot.name", String.valueOf(request.getSnapshot().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateSnapshot")
             .build();
     GrpcCallSettings<DeleteSnapshotRequest, Empty> deleteSnapshotTransportSettings =
         GrpcCallSettings.<DeleteSnapshotRequest, Empty>newBuilder()
@@ -500,6 +514,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSnapshot())
+            .setJavaMethodName("deleteSnapshot")
             .build();
     GrpcCallSettings<SeekRequest, SeekResponse> seekTransportSettings =
         GrpcCallSettings.<SeekRequest, SeekResponse>newBuilder()
@@ -511,6 +526,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getSubscription())
+            .setJavaMethodName("seek")
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -522,6 +538,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -533,6 +550,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -545,6 +563,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createSubscriptionCallable =

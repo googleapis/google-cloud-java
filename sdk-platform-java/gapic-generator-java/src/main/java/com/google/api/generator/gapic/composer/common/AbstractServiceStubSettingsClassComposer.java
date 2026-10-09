@@ -1070,6 +1070,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     javaMethods.addAll(createBuilderHelperMethods(service, typeStore));
     javaMethods.add(createClassConstructor(service, methodSettingsMemberVarExprs, typeStore));
     javaMethods.add(createGetLibraryMetadataMethod(context, service));
+    javaMethods.add(createGetJavaClientNameMethod(service));
     return javaMethods;
   }
 
@@ -2215,6 +2216,22 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
         .setReturnType(returnType)
         .setName("getLibraryMetadata")
         .setReturnExpr(returnExpr)
+        .build();
+  }
+
+  /**
+   * Generates the {@code getJavaClientName()} override returning the fully qualified Java client
+   * class name for the given service.
+   */
+  private MethodDefinition createGetJavaClientNameMethod(Service service) {
+    String javaClientName =
+        String.format("%s.%s", service.pakkage(), ClassNames.getServiceClientClassName(service));
+    return MethodDefinition.builder()
+        .setIsOverride(true)
+        .setScope(ScopeNode.PROTECTED)
+        .setReturnType(TypeNode.STRING)
+        .setName("getJavaClientName")
+        .setReturnExpr(ValueExpr.withValue(StringObjectValue.withValue(javaClientName)))
         .build();
   }
 

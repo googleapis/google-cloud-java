@@ -220,6 +220,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                   resourceNameSegments.put("region", String.valueOf(request.getRegion()));
                   return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("get")
             .build();
     HttpJsonCallSettings<WaitRegionOperationRequest, Operation> waitTransportSettings =
         HttpJsonCallSettings.<WaitRegionOperationRequest, Operation>newBuilder()
@@ -241,6 +242,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                   resourceNameSegments.put("region", String.valueOf(request.getRegion()));
                   return WAIT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("wait")
             .build();
 
     this.getCallable =

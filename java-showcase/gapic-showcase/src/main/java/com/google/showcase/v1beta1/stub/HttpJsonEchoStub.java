@@ -713,12 +713,14 @@ public class HttpJsonEchoStub extends EchoStub {
                   }
                   return requestBuilder.build();
                 })
+            .setJavaMethodName("echo")
             .build();
     HttpJsonCallSettings<EchoErrorDetailsRequest, EchoErrorDetailsResponse>
         echoErrorDetailsTransportSettings =
             HttpJsonCallSettings.<EchoErrorDetailsRequest, EchoErrorDetailsResponse>newBuilder()
                 .setMethodDescriptor(echoErrorDetailsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("echoErrorDetails")
                 .build();
     HttpJsonCallSettings<FailEchoWithDetailsRequest, FailEchoWithDetailsResponse>
         failEchoWithDetailsTransportSettings =
@@ -726,38 +728,45 @@ public class HttpJsonEchoStub extends EchoStub {
                 .<FailEchoWithDetailsRequest, FailEchoWithDetailsResponse>newBuilder()
                 .setMethodDescriptor(failEchoWithDetailsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("failEchoWithDetails")
                 .build();
     HttpJsonCallSettings<ExpandRequest, EchoResponse> expandTransportSettings =
         HttpJsonCallSettings.<ExpandRequest, EchoResponse>newBuilder()
             .setMethodDescriptor(expandMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("expand")
             .build();
     HttpJsonCallSettings<PagedExpandRequest, PagedExpandResponse> pagedExpandTransportSettings =
         HttpJsonCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
             .setMethodDescriptor(pagedExpandMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("pagedExpand")
             .build();
     HttpJsonCallSettings<PagedExpandLegacyRequest, PagedExpandResponse>
         pagedExpandLegacyTransportSettings =
             HttpJsonCallSettings.<PagedExpandLegacyRequest, PagedExpandResponse>newBuilder()
                 .setMethodDescriptor(pagedExpandLegacyMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("pagedExpandLegacy")
                 .build();
     HttpJsonCallSettings<PagedExpandRequest, PagedExpandLegacyMappedResponse>
         pagedExpandLegacyMappedTransportSettings =
             HttpJsonCallSettings.<PagedExpandRequest, PagedExpandLegacyMappedResponse>newBuilder()
                 .setMethodDescriptor(pagedExpandLegacyMappedMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("pagedExpandLegacyMapped")
                 .build();
     HttpJsonCallSettings<WaitRequest, Operation> waitTransportSettings =
         HttpJsonCallSettings.<WaitRequest, Operation>newBuilder()
             .setMethodDescriptor(waitMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("wait")
             .build();
     HttpJsonCallSettings<BlockRequest, BlockResponse> blockTransportSettings =
         HttpJsonCallSettings.<BlockRequest, BlockResponse>newBuilder()
             .setMethodDescriptor(blockMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("block")
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -770,6 +779,7 @@ public class HttpJsonEchoStub extends EchoStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setJavaMethodName("listLocations")
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -781,6 +791,7 @@ public class HttpJsonEchoStub extends EchoStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -793,6 +804,7 @@ public class HttpJsonEchoStub extends EchoStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -805,6 +817,7 @@ public class HttpJsonEchoStub extends EchoStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -818,6 +831,7 @@ public class HttpJsonEchoStub extends EchoStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.echoCallable =

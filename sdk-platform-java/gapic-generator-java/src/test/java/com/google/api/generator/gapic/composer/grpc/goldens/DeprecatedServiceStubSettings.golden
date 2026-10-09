@@ -193,6 +193,11 @@ public class DeprecatedServiceStubSettings extends StubSettings<DeprecatedServic
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.testdata.v1.DeprecatedServiceClient";
+  }
+
   /** Builder for DeprecatedServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<DeprecatedServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

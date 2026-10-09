@@ -601,6 +601,11 @@ public class MessagingStubSettings extends StubSettings<MessagingStubSettings> {
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.MessagingClient";
+  }
+
   /** Builder for MessagingStubSettings. */
   public static class Builder extends StubSettings.Builder<MessagingStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

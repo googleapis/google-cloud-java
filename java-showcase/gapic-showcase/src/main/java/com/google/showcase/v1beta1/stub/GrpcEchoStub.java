@@ -350,50 +350,61 @@ public class GrpcEchoStub extends EchoStub {
                   }
                   return requestBuilder.build();
                 })
+            .setJavaMethodName("echo")
             .build();
     GrpcCallSettings<EchoErrorDetailsRequest, EchoErrorDetailsResponse>
         echoErrorDetailsTransportSettings =
             GrpcCallSettings.<EchoErrorDetailsRequest, EchoErrorDetailsResponse>newBuilder()
                 .setMethodDescriptor(echoErrorDetailsMethodDescriptor)
+                .setJavaMethodName("echoErrorDetails")
                 .build();
     GrpcCallSettings<FailEchoWithDetailsRequest, FailEchoWithDetailsResponse>
         failEchoWithDetailsTransportSettings =
             GrpcCallSettings.<FailEchoWithDetailsRequest, FailEchoWithDetailsResponse>newBuilder()
                 .setMethodDescriptor(failEchoWithDetailsMethodDescriptor)
+                .setJavaMethodName("failEchoWithDetails")
                 .build();
     GrpcCallSettings<ExpandRequest, EchoResponse> expandTransportSettings =
         GrpcCallSettings.<ExpandRequest, EchoResponse>newBuilder()
             .setMethodDescriptor(expandMethodDescriptor)
+            .setJavaMethodName("expand")
             .build();
     GrpcCallSettings<EchoRequest, EchoResponse> collectTransportSettings =
         GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
             .setMethodDescriptor(collectMethodDescriptor)
+            .setJavaMethodName("collect")
             .build();
     GrpcCallSettings<EchoRequest, EchoResponse> chatTransportSettings =
         GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
             .setMethodDescriptor(chatMethodDescriptor)
+            .setJavaMethodName("chat")
             .build();
     GrpcCallSettings<PagedExpandRequest, PagedExpandResponse> pagedExpandTransportSettings =
         GrpcCallSettings.<PagedExpandRequest, PagedExpandResponse>newBuilder()
             .setMethodDescriptor(pagedExpandMethodDescriptor)
+            .setJavaMethodName("pagedExpand")
             .build();
     GrpcCallSettings<PagedExpandLegacyRequest, PagedExpandResponse>
         pagedExpandLegacyTransportSettings =
             GrpcCallSettings.<PagedExpandLegacyRequest, PagedExpandResponse>newBuilder()
                 .setMethodDescriptor(pagedExpandLegacyMethodDescriptor)
+                .setJavaMethodName("pagedExpandLegacy")
                 .build();
     GrpcCallSettings<PagedExpandRequest, PagedExpandLegacyMappedResponse>
         pagedExpandLegacyMappedTransportSettings =
             GrpcCallSettings.<PagedExpandRequest, PagedExpandLegacyMappedResponse>newBuilder()
                 .setMethodDescriptor(pagedExpandLegacyMappedMethodDescriptor)
+                .setJavaMethodName("pagedExpandLegacyMapped")
                 .build();
     GrpcCallSettings<WaitRequest, Operation> waitTransportSettings =
         GrpcCallSettings.<WaitRequest, Operation>newBuilder()
             .setMethodDescriptor(waitMethodDescriptor)
+            .setJavaMethodName("wait")
             .build();
     GrpcCallSettings<BlockRequest, BlockResponse> blockTransportSettings =
         GrpcCallSettings.<BlockRequest, BlockResponse>newBuilder()
             .setMethodDescriptor(blockMethodDescriptor)
+            .setJavaMethodName("block")
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -404,6 +415,7 @@ public class GrpcEchoStub extends EchoStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("listLocations")
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -414,6 +426,7 @@ public class GrpcEchoStub extends EchoStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -425,6 +438,7 @@ public class GrpcEchoStub extends EchoStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -436,6 +450,7 @@ public class GrpcEchoStub extends EchoStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -448,6 +463,7 @@ public class GrpcEchoStub extends EchoStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.echoCallable =

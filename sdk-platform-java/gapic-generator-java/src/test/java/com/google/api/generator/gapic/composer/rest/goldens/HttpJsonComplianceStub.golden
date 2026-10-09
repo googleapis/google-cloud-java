@@ -541,16 +541,19 @@ public class HttpJsonComplianceStub extends ComplianceStub {
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataBody")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataBodyInfoTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataBodyInfoMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataBodyInfo")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataQueryTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
             .setMethodDescriptor(repeatDataQueryMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("repeatDataQuery")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataSimplePathTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
@@ -567,6 +570,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                   return builder.build();
                 })
+            .setJavaMethodName("repeatDataSimplePath")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse> repeatDataPathResourceTransportSettings =
         HttpJsonCallSettings.<RepeatRequest, RepeatResponse>newBuilder()
@@ -582,6 +586,7 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                   return builder.build();
                 })
+            .setJavaMethodName("repeatDataPathResource")
             .build();
     HttpJsonCallSettings<RepeatRequest, RepeatResponse>
         repeatDataPathTrailingResourceTransportSettings =
@@ -597,16 +602,19 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                       builder.add("info.f_string", String.valueOf(request.getInfo().getFString()));
                       return builder.build();
                     })
+                .setJavaMethodName("repeatDataPathTrailingResource")
                 .build();
     HttpJsonCallSettings<EnumRequest, EnumResponse> getEnumTransportSettings =
         HttpJsonCallSettings.<EnumRequest, EnumResponse>newBuilder()
             .setMethodDescriptor(getEnumMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("getEnum")
             .build();
     HttpJsonCallSettings<EnumResponse, EnumResponse> verifyEnumTransportSettings =
         HttpJsonCallSettings.<EnumResponse, EnumResponse>newBuilder()
             .setMethodDescriptor(verifyEnumMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("verifyEnum")
             .build();
     HttpJsonCallSettings<CustomBindingRequest, RepeatResponse>
         repeatDataCustomPathTransportSettings =
@@ -621,18 +629,21 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                           String.valueOf(request.getInfo().getCustomPathField()));
                       return builder.build();
                     })
+                .setJavaMethodName("repeatDataCustomPath")
                 .build();
     HttpJsonCallSettings<CustomBindingRequest, RepeatResponse>
         repeatDataBodyCustomMessageTransportSettings =
             HttpJsonCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
                 .setMethodDescriptor(repeatDataBodyCustomMessageMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("repeatDataBodyCustomMessage")
                 .build();
     HttpJsonCallSettings<CustomBindingRequest, RepeatResponse>
         repeatDataCustomQueryTransportSettings =
             HttpJsonCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
                 .setMethodDescriptor(repeatDataCustomQueryMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("repeatDataCustomQuery")
                 .build();
 
     this.repeatDataBodyCallable =

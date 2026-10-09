@@ -216,6 +216,11 @@ public class IAMPolicyStubSettings extends StubSettings<IAMPolicyStubSettings> {
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.iam.v1.IAMPolicyClient";
+  }
+
   /** Builder for IAMPolicyStubSettings. */
   public static class Builder extends StubSettings.Builder<IAMPolicyStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
