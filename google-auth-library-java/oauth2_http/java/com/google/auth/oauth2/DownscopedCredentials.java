@@ -40,6 +40,8 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -99,11 +101,14 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 public final class DownscopedCredentials extends OAuth2Credentials {
 
+  private static final long serialVersionUID = 3159528426501345486L;
+
   private final GoogleCredentials sourceCredential;
   private final CredentialAccessBoundary credentialAccessBoundary;
   private final String universeDomain;
+  private final String transportFactoryClassName;
 
-  private final transient HttpTransportFactory transportFactory;
+  private transient HttpTransportFactory transportFactory;
 
   private final String tokenExchangeEndpoint;
 
@@ -113,6 +118,7 @@ public final class DownscopedCredentials extends OAuth2Credentials {
         firstNonNull(
             builder.transportFactory,
             getFromServiceLoader(HttpTransportFactory.class, OAuth2Utils.HTTP_TRANSPORT_FACTORY));
+    this.transportFactoryClassName = this.transportFactory.getClass().getName();
     this.sourceCredential = checkNotNull(builder.sourceCredential);
     this.credentialAccessBoundary = checkNotNull(builder.credentialAccessBoundary);
 
@@ -197,6 +203,36 @@ public final class DownscopedCredentials extends OAuth2Credentials {
   @VisibleForTesting
   HttpTransportFactory getTransportFactory() {
     return transportFactory;
+  }
+
+  @Override
+  public boolean equals(@Nullable Object obj) {
+    if (!(obj instanceof DownscopedCredentials)) {
+      return false;
+    }
+    DownscopedCredentials other = (DownscopedCredentials) obj;
+    return super.equals(other)
+        && Objects.equals(this.sourceCredential, other.sourceCredential)
+        && Objects.equals(this.credentialAccessBoundary, other.credentialAccessBoundary)
+        && Objects.equals(this.universeDomain, other.universeDomain)
+        && Objects.equals(this.transportFactoryClassName, other.transportFactoryClassName)
+        && Objects.equals(this.tokenExchangeEndpoint, other.tokenExchangeEndpoint);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        super.hashCode(),
+        sourceCredential,
+        credentialAccessBoundary,
+        universeDomain,
+        transportFactoryClassName,
+        tokenExchangeEndpoint);
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    transportFactory = OAuth2Credentials.newInstance(transportFactoryClassName);
   }
 
   public static Builder newBuilder() {

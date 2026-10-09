@@ -36,8 +36,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.json.GenericJson;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -49,7 +51,9 @@ import org.jspecify.annotations.Nullable;
  * information.</a>
  */
 @NullMarked
-public final class CredentialAccessBoundary {
+public final class CredentialAccessBoundary implements Serializable {
+
+  private static final long serialVersionUID = 1L;
 
   private static final int RULES_SIZE_LIMIT = 10;
 
@@ -63,7 +67,7 @@ public final class CredentialAccessBoundary {
         accessBoundaryRules.size() < RULES_SIZE_LIMIT,
         String.format(
             "The provided list has more than %s access boundary rules.", RULES_SIZE_LIMIT));
-    this.accessBoundaryRules = accessBoundaryRules;
+    this.accessBoundaryRules = new ArrayList<>(accessBoundaryRules);
   }
 
   /**
@@ -108,6 +112,20 @@ public final class CredentialAccessBoundary {
 
   public List<AccessBoundaryRule> getAccessBoundaryRules() {
     return accessBoundaryRules;
+  }
+
+  @Override
+  public boolean equals(@Nullable Object obj) {
+    if (!(obj instanceof CredentialAccessBoundary)) {
+      return false;
+    }
+    CredentialAccessBoundary other = (CredentialAccessBoundary) obj;
+    return Objects.equals(this.accessBoundaryRules, other.accessBoundaryRules);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(accessBoundaryRules);
   }
 
   public static Builder newBuilder() {
@@ -161,7 +179,9 @@ public final class CredentialAccessBoundary {
    *   .build();
    * </code></pre>
    */
-  public static final class AccessBoundaryRule {
+  public static final class AccessBoundaryRule implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private final String availableResource;
     private final List<String> availablePermissions;
@@ -200,6 +220,22 @@ public final class CredentialAccessBoundary {
     @Nullable
     public AvailabilityCondition getAvailabilityCondition() {
       return availabilityCondition;
+    }
+
+    @Override
+    public boolean equals(@Nullable Object obj) {
+      if (!(obj instanceof AccessBoundaryRule)) {
+        return false;
+      }
+      AccessBoundaryRule other = (AccessBoundaryRule) obj;
+      return Objects.equals(this.availableResource, other.availableResource)
+          && Objects.equals(this.availablePermissions, other.availablePermissions)
+          && Objects.equals(this.availabilityCondition, other.availabilityCondition);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(availableResource, availablePermissions, availabilityCondition);
     }
 
     public static Builder newBuilder() {
@@ -293,7 +329,10 @@ public final class CredentialAccessBoundary {
      *   .build();
      * </code></pre>
      */
-    public static final class AvailabilityCondition {
+    public static final class AvailabilityCondition implements Serializable {
+
+      private static final long serialVersionUID = 1L;
+
       private final String expression;
 
       @Nullable private final String title;
@@ -320,6 +359,22 @@ public final class CredentialAccessBoundary {
       @Nullable
       public String getDescription() {
         return description;
+      }
+
+      @Override
+      public boolean equals(@Nullable Object obj) {
+        if (!(obj instanceof AvailabilityCondition)) {
+          return false;
+        }
+        AvailabilityCondition other = (AvailabilityCondition) obj;
+        return Objects.equals(this.expression, other.expression)
+            && Objects.equals(this.title, other.title)
+            && Objects.equals(this.description, other.description);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(expression, title, description);
       }
 
       public static Builder newBuilder() {

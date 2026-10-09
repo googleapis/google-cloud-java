@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.FileIdentityPoolSubjectTokenSupplier.parseToken;
+import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;
@@ -39,8 +40,11 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Provider for retrieving the subject tokens for {@link IdentityPoolCredentials} to exchange for
@@ -55,7 +59,8 @@ class UrlIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSup
   private static final long serialVersionUID = 4964578313468011844L;
 
   private final IdentityPoolCredentialSource credentialSource;
-  private final transient HttpTransportFactory transportFactory;
+  private final String transportFactoryClassName;
+  private transient HttpTransportFactory transportFactory;
 
   /**
    * Constructor for UrlIdentityPoolSubjectTokenProvider.
@@ -64,9 +69,15 @@ class UrlIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSup
    * @param transportFactory the transport factory to use for calling the URL.
    */
   UrlIdentityPoolSubjectTokenSupplier(
-      IdentityPoolCredentialSource credentialSource, HttpTransportFactory transportFactory) {
+      IdentityPoolCredentialSource credentialSource,
+      @Nullable HttpTransportFactory transportFactory) {
     this.credentialSource = credentialSource;
-    this.transportFactory = transportFactory;
+    this.transportFactory =
+        firstNonNull(
+            transportFactory,
+            OAuth2Credentials.getFromServiceLoader(
+                HttpTransportFactory.class, OAuth2Utils.HTTP_TRANSPORT_FACTORY));
+    this.transportFactoryClassName = this.transportFactory.getClass().getName();
   }
 
   @Override
@@ -99,5 +110,15 @@ class UrlIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSup
       throw new IOException(
           String.format("Error getting subject token from metadata server: %s", e.getMessage()), e);
     }
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    transportFactory = OAuth2Credentials.newInstance(transportFactoryClassName);
+  }
+
+  @VisibleForTesting
+  HttpTransportFactory getTransportFactory() {
+    return transportFactory;
   }
 }
