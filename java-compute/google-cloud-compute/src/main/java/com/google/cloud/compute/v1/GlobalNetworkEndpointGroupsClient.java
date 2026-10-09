@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The GlobalNetworkEndpointGroups API.
  *
+ * <p>This client uses GlobalNetworkEndpointGroups version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1061,7 +1063,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (NetworkEndpointGroup element :
    *       globalNetworkEndpointGroupsClient.list(request).iterateAll()) {
@@ -1098,7 +1099,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<NetworkEndpointGroup> future =
    *       globalNetworkEndpointGroupsClient.listPagedCallable().futureCall(request);
@@ -1135,7 +1135,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     NetworkEndpointGroupList response =
@@ -1220,7 +1219,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (NetworkEndpointWithHealthStatus element :
    *       globalNetworkEndpointGroupsClient.listNetworkEndpoints(request).iterateAll()) {
@@ -1259,7 +1257,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<NetworkEndpointWithHealthStatus> future =
    *       globalNetworkEndpointGroupsClient.listNetworkEndpointsPagedCallable().futureCall(request);
@@ -1298,7 +1295,6 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     NetworkEndpointGroupsListNetworkEndpoints response =

@@ -44,8 +44,8 @@ import com.google.pubsub.v1.PubsubProto;
 import com.google.selective.generate.v1beta1.SelectiveApiGenerationOuterClass;
 import com.google.showcase.v1beta1.EchoOuterClass;
 import com.google.showcase.v1beta1.IdentityOuterClass;
+import com.google.showcase.v1beta1.MediaProto;
 import com.google.showcase.v1beta1.MessagingOuterClass;
-import com.google.showcase.v1beta1.ResumableUpload;
 import com.google.showcase.v1beta1.TestingOuterClass;
 import com.google.test.callablenamingtype.CallableNameType;
 import com.google.testdata.v1.DeprecatedServiceOuterClass;
@@ -280,9 +280,9 @@ public class TestProtoLoader {
   }
 
   public GapicContext parseShowcaseResumableUpload() {
-    FileDescriptor fileDescriptor = ResumableUpload.getDescriptor();
+    FileDescriptor fileDescriptor = MediaProto.getDescriptor();
     ServiceDescriptor serviceDescriptor = fileDescriptor.getServices().get(0);
-    assertEquals("ResumableUploadService", serviceDescriptor.getName());
+    assertEquals("MediaService", serviceDescriptor.getName());
 
     Map<String, Message> messageTypes = Parser.parseMessages(fileDescriptor);
     Map<String, ResourceName> resourceNames = Parser.parseResourceNames(fileDescriptor);
@@ -294,29 +294,11 @@ public class TestProtoLoader {
     return GapicContext.builder()
         .setMessages(messageTypes)
         .setResourceNames(resourceNames)
-        .setServices(adaptShowcaseResumableUploadForTest(services))
+        .setServices(services)
         .setHelperResourceNames(outputResourceNames)
         .setTransport(transport)
         .setServiceConfig(GapicServiceConfig.create(Optional.empty()))
         .build();
-  }
-
-  // Temporary test scaffolding; removed in PR #14325 once allowlist patterns are activated.
-  private static List<Service> adaptShowcaseResumableUploadForTest(List<Service> services) {
-    return services.stream()
-        .map(
-            s ->
-                s.toBuilder()
-                    .setMethods(
-                        s.methods().stream()
-                            .map(
-                                m ->
-                                    m.name().equals("UploadMedia")
-                                        ? m.toBuilder().setIsResumableUpload(true).build()
-                                        : m)
-                            .collect(Collectors.toList()))
-                    .build())
-        .collect(Collectors.toList());
   }
 
   public GapicContext parseExplicitDynamicRoutingHeaderTesting() {

@@ -601,6 +601,49 @@ public final class CloudTasksGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.BatchCreateTasksRequest, com.google.longrunning.Operation>
+      getBatchCreateTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateTasks",
+      requestType = com.google.cloud.tasks.v2.BatchCreateTasksRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.BatchCreateTasksRequest, com.google.longrunning.Operation>
+      getBatchCreateTasksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tasks.v2.BatchCreateTasksRequest, com.google.longrunning.Operation>
+        getBatchCreateTasksMethod;
+    if ((getBatchCreateTasksMethod = CloudTasksGrpc.getBatchCreateTasksMethod) == null) {
+      synchronized (CloudTasksGrpc.class) {
+        if ((getBatchCreateTasksMethod = CloudTasksGrpc.getBatchCreateTasksMethod) == null) {
+          CloudTasksGrpc.getBatchCreateTasksMethod =
+              getBatchCreateTasksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tasks.v2.BatchCreateTasksRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateTasks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2.BatchCreateTasksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudTasksMethodDescriptorSupplier("BatchCreateTasks"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateTasksMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.tasks.v2.DeleteTaskRequest, com.google.protobuf.Empty>
       getDeleteTaskMethod;
 
@@ -637,6 +680,49 @@ public final class CloudTasksGrpc {
       }
     }
     return getDeleteTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.BatchDeleteTasksRequest, com.google.longrunning.Operation>
+      getBatchDeleteTasksMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteTasks",
+      requestType = com.google.cloud.tasks.v2.BatchDeleteTasksRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.BatchDeleteTasksRequest, com.google.longrunning.Operation>
+      getBatchDeleteTasksMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tasks.v2.BatchDeleteTasksRequest, com.google.longrunning.Operation>
+        getBatchDeleteTasksMethod;
+    if ((getBatchDeleteTasksMethod = CloudTasksGrpc.getBatchDeleteTasksMethod) == null) {
+      synchronized (CloudTasksGrpc.class) {
+        if ((getBatchDeleteTasksMethod = CloudTasksGrpc.getBatchDeleteTasksMethod) == null) {
+          CloudTasksGrpc.getBatchDeleteTasksMethod =
+              getBatchDeleteTasksMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tasks.v2.BatchDeleteTasksRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteTasks"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2.BatchDeleteTasksRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudTasksMethodDescriptorSupplier("BatchDeleteTasks"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteTasksMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -677,6 +763,90 @@ public final class CloudTasksGrpc {
       }
     }
     return getRunTaskMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.UpdateCmekConfigRequest, com.google.cloud.tasks.v2.CmekConfig>
+      getUpdateCmekConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateCmekConfig",
+      requestType = com.google.cloud.tasks.v2.UpdateCmekConfigRequest.class,
+      responseType = com.google.cloud.tasks.v2.CmekConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.UpdateCmekConfigRequest, com.google.cloud.tasks.v2.CmekConfig>
+      getUpdateCmekConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tasks.v2.UpdateCmekConfigRequest, com.google.cloud.tasks.v2.CmekConfig>
+        getUpdateCmekConfigMethod;
+    if ((getUpdateCmekConfigMethod = CloudTasksGrpc.getUpdateCmekConfigMethod) == null) {
+      synchronized (CloudTasksGrpc.class) {
+        if ((getUpdateCmekConfigMethod = CloudTasksGrpc.getUpdateCmekConfigMethod) == null) {
+          CloudTasksGrpc.getUpdateCmekConfigMethod =
+              getUpdateCmekConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tasks.v2.UpdateCmekConfigRequest,
+                          com.google.cloud.tasks.v2.CmekConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateCmekConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2.UpdateCmekConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2.CmekConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudTasksMethodDescriptorSupplier("UpdateCmekConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateCmekConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.GetCmekConfigRequest, com.google.cloud.tasks.v2.CmekConfig>
+      getGetCmekConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetCmekConfig",
+      requestType = com.google.cloud.tasks.v2.GetCmekConfigRequest.class,
+      responseType = com.google.cloud.tasks.v2.CmekConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2.GetCmekConfigRequest, com.google.cloud.tasks.v2.CmekConfig>
+      getGetCmekConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tasks.v2.GetCmekConfigRequest, com.google.cloud.tasks.v2.CmekConfig>
+        getGetCmekConfigMethod;
+    if ((getGetCmekConfigMethod = CloudTasksGrpc.getGetCmekConfigMethod) == null) {
+      synchronized (CloudTasksGrpc.class) {
+        if ((getGetCmekConfigMethod = CloudTasksGrpc.getGetCmekConfigMethod) == null) {
+          CloudTasksGrpc.getGetCmekConfigMethod =
+              getGetCmekConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tasks.v2.GetCmekConfigRequest,
+                          com.google.cloud.tasks.v2.CmekConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetCmekConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2.GetCmekConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2.CmekConfig.getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudTasksMethodDescriptorSupplier("GetCmekConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetCmekConfigMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -824,8 +994,15 @@ public final class CloudTasksGrpc {
      * <pre>
      * Deletes a queue.
      * This command will delete the queue even if it has tasks in it.
-     * Note: If you delete a queue, a queue with the same name can't be created
-     * for 7 days.
+     * Note: If you delete a queue, you may be prevented from creating a new queue
+     * with the same name as the deleted queue for a tombstone window of up to
+     * 3 days. During this window, the CreateQueue operation may appear to
+     * recreate the queue, but this can be misleading. If you attempt to create
+     * a queue with the same name as one that is in the tombstone window, run
+     * GetQueue to confirm that the queue creation was successful. If GetQueue
+     * returns 200 response code, your queue was successfully created with the
+     * name of the previously deleted queue. Otherwise, your queue did not
+     * successfully recreate.
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
@@ -987,6 +1164,9 @@ public final class CloudTasksGrpc {
      *
      * <pre>
      * Gets a task.
+     * After a task is successfully executed or has exhausted its retry attempts,
+     * the task is deleted. A `GetTask` request for a deleted task returns a
+     * `NOT_FOUND` error.
      * </pre>
      */
     default void getTask(
@@ -1014,6 +1194,22 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Creates a batch of tasks and adds them to a queue.
+     * All tasks must be for the same queue.
+     * A maximum of 100 tasks can be created in a single batch.
+     * </pre>
+     */
+    default void batchCreateTasks(
+        com.google.cloud.tasks.v2.BatchCreateTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateTasksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a task.
      * A task can be deleted if it is scheduled or dispatched. A task
      * cannot be deleted if it has executed successfully or permanently
@@ -1030,6 +1226,24 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Deletes a batch of tasks.
+     * This is a non-atomic operation: if deletion fails for some tasks, it
+     * can still succeed for others. The metadata field of
+     * google.longrunning.Operation contains details of failed deletions.
+     * A maximum of 1000 tasks can be deleted in a batch.
+     * </pre>
+     */
+    default void batchDeleteTasks(
+        com.google.cloud.tasks.v2.BatchDeleteTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteTasksMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Forces a task to run now.
      * When this method is called, Cloud Tasks will dispatch the task, even if
      * the task is already running, the queue has reached its
@@ -1039,9 +1253,6 @@ public final class CloudTasksGrpc {
      * example, [RunTask][google.cloud.tasks.v2.CloudTasks.RunTask] can be used to
      * retry a failed task after a fix has been made or to manually force a task
      * to be dispatched now.
-     * The dispatched task is returned. That is, the task that is returned
-     * contains the [status][Task.status] after the task is dispatched but
-     * before the task is received by its target.
      * If Cloud Tasks receives a successful response from the task's
      * target, then the task will be deleted; otherwise the task's
      * [schedule_time][google.cloud.tasks.v2.Task.schedule_time] will be reset to
@@ -1057,6 +1268,40 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2.RunTaskRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or Updates a CMEK config.
+     * Updates the Customer Managed Encryption Key associated with the Cloud Tasks
+     * location (Creates if the key does not already exist). All new tasks created
+     * in the location will be encrypted at-rest with the KMS-key provided in the
+     * config.
+     * </pre>
+     */
+    default void updateCmekConfig(
+        com.google.cloud.tasks.v2.UpdateCmekConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.CmekConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateCmekConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the CMEK config.
+     * Gets the Customer Managed Encryption Key configured with the Cloud Tasks
+     * location. By default there is no kms_key configured.
+     * </pre>
+     */
+    default void getCmekConfig(
+        com.google.cloud.tasks.v2.GetCmekConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.CmekConfig> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetCmekConfigMethod(), responseObserver);
     }
   }
 
@@ -1182,8 +1427,15 @@ public final class CloudTasksGrpc {
      * <pre>
      * Deletes a queue.
      * This command will delete the queue even if it has tasks in it.
-     * Note: If you delete a queue, a queue with the same name can't be created
-     * for 7 days.
+     * Note: If you delete a queue, you may be prevented from creating a new queue
+     * with the same name as the deleted queue for a tombstone window of up to
+     * 3 days. During this window, the CreateQueue operation may appear to
+     * recreate the queue, but this can be misleading. If you attempt to create
+     * a queue with the same name as one that is in the tombstone window, run
+     * GetQueue to confirm that the queue creation was successful. If GetQueue
+     * returns 200 response code, your queue was successfully created with the
+     * name of the previously deleted queue. Otherwise, your queue did not
+     * successfully recreate.
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
@@ -1358,6 +1610,9 @@ public final class CloudTasksGrpc {
      *
      * <pre>
      * Gets a task.
+     * After a task is successfully executed or has exhausted its retry attempts,
+     * the task is deleted. A `GetTask` request for a deleted task returns a
+     * `NOT_FOUND` error.
      * </pre>
      */
     public void getTask(
@@ -1387,6 +1642,24 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Creates a batch of tasks and adds them to a queue.
+     * All tasks must be for the same queue.
+     * A maximum of 100 tasks can be created in a single batch.
+     * </pre>
+     */
+    public void batchCreateTasks(
+        com.google.cloud.tasks.v2.BatchCreateTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateTasksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a task.
      * A task can be deleted if it is scheduled or dispatched. A task
      * cannot be deleted if it has executed successfully or permanently
@@ -1404,6 +1677,26 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Deletes a batch of tasks.
+     * This is a non-atomic operation: if deletion fails for some tasks, it
+     * can still succeed for others. The metadata field of
+     * google.longrunning.Operation contains details of failed deletions.
+     * A maximum of 1000 tasks can be deleted in a batch.
+     * </pre>
+     */
+    public void batchDeleteTasks(
+        com.google.cloud.tasks.v2.BatchDeleteTasksRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteTasksMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Forces a task to run now.
      * When this method is called, Cloud Tasks will dispatch the task, even if
      * the task is already running, the queue has reached its
@@ -1413,9 +1706,6 @@ public final class CloudTasksGrpc {
      * example, [RunTask][google.cloud.tasks.v2.CloudTasks.RunTask] can be used to
      * retry a failed task after a fix has been made or to manually force a task
      * to be dispatched now.
-     * The dispatched task is returned. That is, the task that is returned
-     * contains the [status][Task.status] after the task is dispatched but
-     * before the task is received by its target.
      * If Cloud Tasks receives a successful response from the task's
      * target, then the task will be deleted; otherwise the task's
      * [schedule_time][google.cloud.tasks.v2.Task.schedule_time] will be reset to
@@ -1432,6 +1722,44 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.Task> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or Updates a CMEK config.
+     * Updates the Customer Managed Encryption Key associated with the Cloud Tasks
+     * location (Creates if the key does not already exist). All new tasks created
+     * in the location will be encrypted at-rest with the KMS-key provided in the
+     * config.
+     * </pre>
+     */
+    public void updateCmekConfig(
+        com.google.cloud.tasks.v2.UpdateCmekConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.CmekConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateCmekConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the CMEK config.
+     * Gets the Customer Managed Encryption Key configured with the Cloud Tasks
+     * location. By default there is no kms_key configured.
+     * </pre>
+     */
+    public void getCmekConfig(
+        com.google.cloud.tasks.v2.GetCmekConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.CmekConfig> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetCmekConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
@@ -1534,8 +1862,15 @@ public final class CloudTasksGrpc {
      * <pre>
      * Deletes a queue.
      * This command will delete the queue even if it has tasks in it.
-     * Note: If you delete a queue, a queue with the same name can't be created
-     * for 7 days.
+     * Note: If you delete a queue, you may be prevented from creating a new queue
+     * with the same name as the deleted queue for a tombstone window of up to
+     * 3 days. During this window, the CreateQueue operation may appear to
+     * recreate the queue, but this can be misleading. If you attempt to create
+     * a queue with the same name as one that is in the tombstone window, run
+     * GetQueue to confirm that the queue creation was successful. If GetQueue
+     * returns 200 response code, your queue was successfully created with the
+     * name of the previously deleted queue. Otherwise, your queue did not
+     * successfully recreate.
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
@@ -1691,6 +2026,9 @@ public final class CloudTasksGrpc {
      *
      * <pre>
      * Gets a task.
+     * After a task is successfully executed or has exhausted its retry attempts,
+     * the task is deleted. A `GetTask` request for a deleted task returns a
+     * `NOT_FOUND` error.
      * </pre>
      */
     public com.google.cloud.tasks.v2.Task getTask(com.google.cloud.tasks.v2.GetTaskRequest request)
@@ -1718,6 +2056,21 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Creates a batch of tasks and adds them to a queue.
+     * All tasks must be for the same queue.
+     * A maximum of 100 tasks can be created in a single batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateTasks(
+        com.google.cloud.tasks.v2.BatchCreateTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchCreateTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a task.
      * A task can be deleted if it is scheduled or dispatched. A task
      * cannot be deleted if it has executed successfully or permanently
@@ -1734,6 +2087,23 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Deletes a batch of tasks.
+     * This is a non-atomic operation: if deletion fails for some tasks, it
+     * can still succeed for others. The metadata field of
+     * google.longrunning.Operation contains details of failed deletions.
+     * A maximum of 1000 tasks can be deleted in a batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteTasks(
+        com.google.cloud.tasks.v2.BatchDeleteTasksRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getBatchDeleteTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Forces a task to run now.
      * When this method is called, Cloud Tasks will dispatch the task, even if
      * the task is already running, the queue has reached its
@@ -1743,9 +2113,6 @@ public final class CloudTasksGrpc {
      * example, [RunTask][google.cloud.tasks.v2.CloudTasks.RunTask] can be used to
      * retry a failed task after a fix has been made or to manually force a task
      * to be dispatched now.
-     * The dispatched task is returned. That is, the task that is returned
-     * contains the [status][Task.status] after the task is dispatched but
-     * before the task is received by its target.
      * If Cloud Tasks receives a successful response from the task's
      * target, then the task will be deleted; otherwise the task's
      * [schedule_time][google.cloud.tasks.v2.Task.schedule_time] will be reset to
@@ -1761,6 +2128,38 @@ public final class CloudTasksGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or Updates a CMEK config.
+     * Updates the Customer Managed Encryption Key associated with the Cloud Tasks
+     * location (Creates if the key does not already exist). All new tasks created
+     * in the location will be encrypted at-rest with the KMS-key provided in the
+     * config.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2.CmekConfig updateCmekConfig(
+        com.google.cloud.tasks.v2.UpdateCmekConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateCmekConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the CMEK config.
+     * Gets the Customer Managed Encryption Key configured with the Cloud Tasks
+     * location. By default there is no kms_key configured.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2.CmekConfig getCmekConfig(
+        com.google.cloud.tasks.v2.GetCmekConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetCmekConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -1863,8 +2262,15 @@ public final class CloudTasksGrpc {
      * <pre>
      * Deletes a queue.
      * This command will delete the queue even if it has tasks in it.
-     * Note: If you delete a queue, a queue with the same name can't be created
-     * for 7 days.
+     * Note: If you delete a queue, you may be prevented from creating a new queue
+     * with the same name as the deleted queue for a tombstone window of up to
+     * 3 days. During this window, the CreateQueue operation may appear to
+     * recreate the queue, but this can be misleading. If you attempt to create
+     * a queue with the same name as one that is in the tombstone window, run
+     * GetQueue to confirm that the queue creation was successful. If GetQueue
+     * returns 200 response code, your queue was successfully created with the
+     * name of the previously deleted queue. Otherwise, your queue did not
+     * successfully recreate.
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
@@ -2018,6 +2424,9 @@ public final class CloudTasksGrpc {
      *
      * <pre>
      * Gets a task.
+     * After a task is successfully executed or has exhausted its retry attempts,
+     * the task is deleted. A `GetTask` request for a deleted task returns a
+     * `NOT_FOUND` error.
      * </pre>
      */
     public com.google.cloud.tasks.v2.Task getTask(
@@ -2045,6 +2454,21 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Creates a batch of tasks and adds them to a queue.
+     * All tasks must be for the same queue.
+     * A maximum of 100 tasks can be created in a single batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchCreateTasks(
+        com.google.cloud.tasks.v2.BatchCreateTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a task.
      * A task can be deleted if it is scheduled or dispatched. A task
      * cannot be deleted if it has executed successfully or permanently
@@ -2061,6 +2485,23 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Deletes a batch of tasks.
+     * This is a non-atomic operation: if deletion fails for some tasks, it
+     * can still succeed for others. The metadata field of
+     * google.longrunning.Operation contains details of failed deletions.
+     * A maximum of 1000 tasks can be deleted in a batch.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteTasks(
+        com.google.cloud.tasks.v2.BatchDeleteTasksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Forces a task to run now.
      * When this method is called, Cloud Tasks will dispatch the task, even if
      * the task is already running, the queue has reached its
@@ -2070,9 +2511,6 @@ public final class CloudTasksGrpc {
      * example, [RunTask][google.cloud.tasks.v2.CloudTasks.RunTask] can be used to
      * retry a failed task after a fix has been made or to manually force a task
      * to be dispatched now.
-     * The dispatched task is returned. That is, the task that is returned
-     * contains the [status][Task.status] after the task is dispatched but
-     * before the task is received by its target.
      * If Cloud Tasks receives a successful response from the task's
      * target, then the task will be deleted; otherwise the task's
      * [schedule_time][google.cloud.tasks.v2.Task.schedule_time] will be reset to
@@ -2088,6 +2526,38 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2.RunTaskRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or Updates a CMEK config.
+     * Updates the Customer Managed Encryption Key associated with the Cloud Tasks
+     * location (Creates if the key does not already exist). All new tasks created
+     * in the location will be encrypted at-rest with the KMS-key provided in the
+     * config.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2.CmekConfig updateCmekConfig(
+        com.google.cloud.tasks.v2.UpdateCmekConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCmekConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the CMEK config.
+     * Gets the Customer Managed Encryption Key configured with the Cloud Tasks
+     * location. By default there is no kms_key configured.
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2.CmekConfig getCmekConfig(
+        com.google.cloud.tasks.v2.GetCmekConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCmekConfigMethod(), getCallOptions(), request);
     }
   }
 
@@ -2190,8 +2660,15 @@ public final class CloudTasksGrpc {
      * <pre>
      * Deletes a queue.
      * This command will delete the queue even if it has tasks in it.
-     * Note: If you delete a queue, a queue with the same name can't be created
-     * for 7 days.
+     * Note: If you delete a queue, you may be prevented from creating a new queue
+     * with the same name as the deleted queue for a tombstone window of up to
+     * 3 days. During this window, the CreateQueue operation may appear to
+     * recreate the queue, but this can be misleading. If you attempt to create
+     * a queue with the same name as one that is in the tombstone window, run
+     * GetQueue to confirm that the queue creation was successful. If GetQueue
+     * returns 200 response code, your queue was successfully created with the
+     * name of the previously deleted queue. Otherwise, your queue did not
+     * successfully recreate.
      * WARNING: Using this method may have unintended side effects if you are
      * using an App Engine `queue.yaml` or `queue.xml` file to manage your queues.
      * Read
@@ -2349,6 +2826,9 @@ public final class CloudTasksGrpc {
      *
      * <pre>
      * Gets a task.
+     * After a task is successfully executed or has exhausted its retry attempts,
+     * the task is deleted. A `GetTask` request for a deleted task returns a
+     * `NOT_FOUND` error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.Task>
@@ -2376,6 +2856,21 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Creates a batch of tasks and adds them to a queue.
+     * All tasks must be for the same queue.
+     * A maximum of 100 tasks can be created in a single batch.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchCreateTasks(com.google.cloud.tasks.v2.BatchCreateTasksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a task.
      * A task can be deleted if it is scheduled or dispatched. A task
      * cannot be deleted if it has executed successfully or permanently
@@ -2392,6 +2887,23 @@ public final class CloudTasksGrpc {
      *
      *
      * <pre>
+     * Deletes a batch of tasks.
+     * This is a non-atomic operation: if deletion fails for some tasks, it
+     * can still succeed for others. The metadata field of
+     * google.longrunning.Operation contains details of failed deletions.
+     * A maximum of 1000 tasks can be deleted in a batch.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchDeleteTasks(com.google.cloud.tasks.v2.BatchDeleteTasksRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteTasksMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Forces a task to run now.
      * When this method is called, Cloud Tasks will dispatch the task, even if
      * the task is already running, the queue has reached its
@@ -2401,9 +2913,6 @@ public final class CloudTasksGrpc {
      * example, [RunTask][google.cloud.tasks.v2.CloudTasks.RunTask] can be used to
      * retry a failed task after a fix has been made or to manually force a task
      * to be dispatched now.
-     * The dispatched task is returned. That is, the task that is returned
-     * contains the [status][Task.status] after the task is dispatched but
-     * before the task is received by its target.
      * If Cloud Tasks receives a successful response from the task's
      * target, then the task will be deleted; otherwise the task's
      * [schedule_time][google.cloud.tasks.v2.Task.schedule_time] will be reset to
@@ -2419,6 +2928,38 @@ public final class CloudTasksGrpc {
         runTask(com.google.cloud.tasks.v2.RunTaskRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or Updates a CMEK config.
+     * Updates the Customer Managed Encryption Key associated with the Cloud Tasks
+     * location (Creates if the key does not already exist). All new tasks created
+     * in the location will be encrypted at-rest with the KMS-key provided in the
+     * config.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.CmekConfig>
+        updateCmekConfig(com.google.cloud.tasks.v2.UpdateCmekConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateCmekConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the CMEK config.
+     * Gets the Customer Managed Encryption Key configured with the Cloud Tasks
+     * location. By default there is no kms_key configured.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.tasks.v2.CmekConfig>
+        getCmekConfig(com.google.cloud.tasks.v2.GetCmekConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetCmekConfigMethod(), getCallOptions()), request);
     }
   }
 
@@ -2436,8 +2977,12 @@ public final class CloudTasksGrpc {
   private static final int METHODID_LIST_TASKS = 11;
   private static final int METHODID_GET_TASK = 12;
   private static final int METHODID_CREATE_TASK = 13;
-  private static final int METHODID_DELETE_TASK = 14;
-  private static final int METHODID_RUN_TASK = 15;
+  private static final int METHODID_BATCH_CREATE_TASKS = 14;
+  private static final int METHODID_DELETE_TASK = 15;
+  private static final int METHODID_BATCH_DELETE_TASKS = 16;
+  private static final int METHODID_RUN_TASK = 17;
+  private static final int METHODID_UPDATE_CMEK_CONFIG = 18;
+  private static final int METHODID_GET_CMEK_CONFIG = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2529,15 +3074,35 @@ public final class CloudTasksGrpc {
               (com.google.cloud.tasks.v2.CreateTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.Task>) responseObserver);
           break;
+        case METHODID_BATCH_CREATE_TASKS:
+          serviceImpl.batchCreateTasks(
+              (com.google.cloud.tasks.v2.BatchCreateTasksRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_TASK:
           serviceImpl.deleteTask(
               (com.google.cloud.tasks.v2.DeleteTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
+        case METHODID_BATCH_DELETE_TASKS:
+          serviceImpl.batchDeleteTasks(
+              (com.google.cloud.tasks.v2.BatchDeleteTasksRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_RUN_TASK:
           serviceImpl.runTask(
               (com.google.cloud.tasks.v2.RunTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.Task>) responseObserver);
+          break;
+        case METHODID_UPDATE_CMEK_CONFIG:
+          serviceImpl.updateCmekConfig(
+              (com.google.cloud.tasks.v2.UpdateCmekConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.CmekConfig>) responseObserver);
+          break;
+        case METHODID_GET_CMEK_CONFIG:
+          serviceImpl.getCmekConfig(
+              (com.google.cloud.tasks.v2.GetCmekConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2.CmekConfig>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2641,17 +3206,41 @@ public final class CloudTasksGrpc {
                     com.google.cloud.tasks.v2.CreateTaskRequest, com.google.cloud.tasks.v2.Task>(
                     service, METHODID_CREATE_TASK)))
         .addMethod(
+            getBatchCreateTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2.BatchCreateTasksRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_CREATE_TASKS)))
+        .addMethod(
             getDeleteTaskMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.tasks.v2.DeleteTaskRequest, com.google.protobuf.Empty>(
                     service, METHODID_DELETE_TASK)))
         .addMethod(
+            getBatchDeleteTasksMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2.BatchDeleteTasksRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_TASKS)))
+        .addMethod(
             getRunTaskMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.tasks.v2.RunTaskRequest, com.google.cloud.tasks.v2.Task>(
                     service, METHODID_RUN_TASK)))
+        .addMethod(
+            getUpdateCmekConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2.UpdateCmekConfigRequest,
+                    com.google.cloud.tasks.v2.CmekConfig>(service, METHODID_UPDATE_CMEK_CONFIG)))
+        .addMethod(
+            getGetCmekConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2.GetCmekConfigRequest,
+                    com.google.cloud.tasks.v2.CmekConfig>(service, METHODID_GET_CMEK_CONFIG)))
         .build();
   }
 
@@ -2717,8 +3306,12 @@ public final class CloudTasksGrpc {
                       .addMethod(getListTasksMethod())
                       .addMethod(getGetTaskMethod())
                       .addMethod(getCreateTaskMethod())
+                      .addMethod(getBatchCreateTasksMethod())
                       .addMethod(getDeleteTaskMethod())
+                      .addMethod(getBatchDeleteTasksMethod())
                       .addMethod(getRunTaskMethod())
+                      .addMethod(getUpdateCmekConfigMethod())
+                      .addMethod(getGetCmekConfigMethod())
                       .build();
         }
       }

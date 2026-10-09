@@ -319,9 +319,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. This end time of the AdRule. This attribute is required
    * unless
-   * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+   * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
    * set to true. If specified, it must be after the
-   * [start_time][google.ads.admanager.v1.AdRule.start_time].
+   * [startTime][google.ads.admanager.v1.AdRule.start_time].
    * </pre>
    *
    * <code>
@@ -341,9 +341,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. This end time of the AdRule. This attribute is required
    * unless
-   * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+   * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
    * set to true. If specified, it must be after the
-   * [start_time][google.ads.admanager.v1.AdRule.start_time].
+   * [startTime][google.ads.admanager.v1.AdRule.start_time].
    * </pre>
    *
    * <code>
@@ -363,9 +363,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Optional. This end time of the AdRule. This attribute is required
    * unless
-   * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+   * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
    * set to true. If specified, it must be after the
-   * [start_time][google.ads.admanager.v1.AdRule.start_time].
+   * [startTime][google.ads.admanager.v1.AdRule.start_time].
    * </pre>
    *
    * <code>
@@ -422,7 +422,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-   * and defaults to [AdRuleStatus.INACTIVE][].
+   * and defaults to
+   * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
    * </pre>
    *
    * <code>
@@ -441,7 +442,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-   * and defaults to [AdRuleStatus.INACTIVE][].
+   * and defaults to
+   * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
    * </pre>
    *
    * <code>
@@ -460,7 +462,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-   * and defaults to [AdRuleStatus.INACTIVE][].
+   * and defaults to
+   * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
    * </pre>
    *
    * <code>
@@ -486,7 +489,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-   * optional and defaults to [FrequencyCapBehavior.DEFER][].
+   * optional and defaults to
+   * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
    * </pre>
    *
    * <code>
@@ -505,7 +509,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-   * optional and defaults to [FrequencyCapBehavior.DEFER][].
+   * optional and defaults to
+   * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
    * </pre>
    *
    * <code>
@@ -524,7 +529,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-   * optional and defaults to [FrequencyCapBehavior.DEFER][].
+   * optional and defaults to
+   * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
    * </pre>
    *
    * <code>
@@ -2236,9 +2242,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2257,9 +2263,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2282,9 +2288,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2311,9 +2317,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2337,9 +2343,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2371,9 +2377,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2397,9 +2403,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2418,9 +2424,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2441,9 +2447,9 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Optional. This end time of the AdRule. This attribute is required
      * unless
-     * [end_time_unlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
+     * [endTimeUnlimited][google.ads.admanager.v1.AdRule.end_time_unlimited] is
      * set to true. If specified, it must be after the
-     * [start_time][google.ads.admanager.v1.AdRule.start_time].
+     * [startTime][google.ads.admanager.v1.AdRule.start_time].
      * </pre>
      *
      * <code>
@@ -2550,7 +2556,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-     * and defaults to [AdRuleStatus.INACTIVE][].
+     * and defaults to
+     * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
      * </pre>
      *
      * <code>
@@ -2569,7 +2576,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-     * and defaults to [AdRuleStatus.INACTIVE][].
+     * and defaults to
+     * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
      * </pre>
      *
      * <code>
@@ -2588,7 +2596,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-     * and defaults to [AdRuleStatus.INACTIVE][].
+     * and defaults to
+     * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
      * </pre>
      *
      * <code>
@@ -2610,7 +2619,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-     * and defaults to [AdRuleStatus.INACTIVE][].
+     * and defaults to
+     * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
      * </pre>
      *
      * <code>
@@ -2633,7 +2643,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-     * and defaults to [AdRuleStatus.INACTIVE][].
+     * and defaults to
+     * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
      * </pre>
      *
      * <code>
@@ -2658,7 +2669,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The AdRuleStatus of the AdRule. This attribute is read-only
-     * and defaults to [AdRuleStatus.INACTIVE][].
+     * and defaults to
+     * [AdRuleStatusEnum.AdRuleStatus.INACTIVE][google.ads.admanager.v1.AdRuleStatusEnum.AdRuleStatus.INACTIVE].
      * </pre>
      *
      * <code>
@@ -2681,7 +2693,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-     * optional and defaults to [FrequencyCapBehavior.DEFER][].
+     * optional and defaults to
+     * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
      * </pre>
      *
      * <code>
@@ -2700,7 +2713,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-     * optional and defaults to [FrequencyCapBehavior.DEFER][].
+     * optional and defaults to
+     * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
      * </pre>
      *
      * <code>
@@ -2719,7 +2733,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-     * optional and defaults to [FrequencyCapBehavior.DEFER][].
+     * optional and defaults to
+     * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
      * </pre>
      *
      * <code>
@@ -2741,7 +2756,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-     * optional and defaults to [FrequencyCapBehavior.DEFER][].
+     * optional and defaults to
+     * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
      * </pre>
      *
      * <code>
@@ -2767,7 +2783,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-     * optional and defaults to [FrequencyCapBehavior.DEFER][].
+     * optional and defaults to
+     * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
      * </pre>
      *
      * <code>
@@ -2794,7 +2811,8 @@ public final class AdRule extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. The FrequencyCapBehavior of the AdRule. This attribute is
-     * optional and defaults to [FrequencyCapBehavior.DEFER][].
+     * optional and defaults to
+     * [AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER][google.ads.admanager.v1.AdRuleFrequencyCapBehaviorEnum.AdRuleFrequencyCapBehavior.DEFER].
      * </pre>
      *
      * <code>

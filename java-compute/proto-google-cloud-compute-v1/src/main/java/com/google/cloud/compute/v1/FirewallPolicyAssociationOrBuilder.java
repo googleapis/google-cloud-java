@@ -189,6 +189,42 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
+   * An integer indicating the priority of an association. The priority
+   * must be a positive value between 1 and 2147483647.
+   * Firewall Policies are evaluated from highest to lowest priority where 1
+   * is the highest priority and 2147483647 is the lowest priority.
+   * The default value is `1000`. If two associations have the same priority
+   * then lexicographical order on association names is applied.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * An integer indicating the priority of an association. The priority
+   * must be a positive value between 1 and 2147483647.
+   * Firewall Policies are evaluated from highest to lowest priority where 1
+   * is the highest priority and 2147483647 is the lowest priority.
+   * The default value is `1000`. If two associations have the same priority
+   * then lexicographical order on association names is applied.
+   * </pre>
+   *
+   * <code>optional int32 priority = 445151652;</code>
+   *
+   * @return The priority.
+   */
+  int getPriority();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *

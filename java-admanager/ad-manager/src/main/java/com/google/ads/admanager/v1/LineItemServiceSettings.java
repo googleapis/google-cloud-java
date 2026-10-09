@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -98,6 +99,91 @@ public class LineItemServiceSettings extends ClientSettings<LineItemServiceSetti
   public PagedCallSettings<ListLineItemsRequest, ListLineItemsResponse, ListLineItemsPagedResponse>
       listLineItemsSettings() {
     return ((LineItemServiceStubSettings) getStubSettings()).listLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLineItem. */
+  public UnaryCallSettings<CreateLineItemRequest, LineItem> createLineItemSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).createLineItemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateLineItems. */
+  public UnaryCallSettings<BatchCreateLineItemsRequest, BatchCreateLineItemsResponse>
+      batchCreateLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchCreateLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLineItem. */
+  public UnaryCallSettings<UpdateLineItemRequest, LineItem> updateLineItemSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).updateLineItemSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateLineItems. */
+  public UnaryCallSettings<BatchUpdateLineItemsRequest, BatchUpdateLineItemsResponse>
+      batchUpdateLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchUpdateLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateLineItems. */
+  public UnaryCallSettings<BatchActivateLineItemsRequest, BatchActivateLineItemsResponse>
+      batchActivateLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchActivateLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchPauseLineItems. */
+  public UnaryCallSettings<BatchPauseLineItemsRequest, BatchPauseLineItemsResponse>
+      batchPauseLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchPauseLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeLineItems. */
+  public UnaryCallSettings<BatchResumeLineItemsRequest, BatchResumeLineItemsResponse>
+      batchResumeLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchResumeLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeAndOverbookLineItems. */
+  public UnaryCallSettings<
+          BatchResumeAndOverbookLineItemsRequest, BatchResumeAndOverbookLineItemsResponse>
+      batchResumeAndOverbookLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings())
+        .batchResumeAndOverbookLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteLineItems. */
+  public UnaryCallSettings<BatchDeleteLineItemsRequest, Empty> batchDeleteLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchDeleteLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchReserveLineItems. */
+  public UnaryCallSettings<BatchReserveLineItemsRequest, BatchReserveLineItemsResponse>
+      batchReserveLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchReserveLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchReserveAndOverbookLineItems. */
+  public UnaryCallSettings<
+          BatchReserveAndOverbookLineItemsRequest, BatchReserveAndOverbookLineItemsResponse>
+      batchReserveAndOverbookLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings())
+        .batchReserveAndOverbookLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchReleaseLineItems. */
+  public UnaryCallSettings<BatchReleaseLineItemsRequest, BatchReleaseLineItemsResponse>
+      batchReleaseLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchReleaseLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveLineItems. */
+  public UnaryCallSettings<BatchArchiveLineItemsRequest, BatchArchiveLineItemsResponse>
+      batchArchiveLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchArchiveLineItemsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUnarchiveLineItems. */
+  public UnaryCallSettings<BatchUnarchiveLineItemsRequest, BatchUnarchiveLineItemsResponse>
+      batchUnarchiveLineItemsSettings() {
+    return ((LineItemServiceStubSettings) getStubSettings()).batchUnarchiveLineItemsSettings();
   }
 
   public static final LineItemServiceSettings create(LineItemServiceStubSettings stub)
@@ -207,6 +293,91 @@ public class LineItemServiceSettings extends ClientSettings<LineItemServiceSetti
             ListLineItemsRequest, ListLineItemsResponse, ListLineItemsPagedResponse>
         listLineItemsSettings() {
       return getStubSettingsBuilder().listLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLineItem. */
+    public UnaryCallSettings.Builder<CreateLineItemRequest, LineItem> createLineItemSettings() {
+      return getStubSettingsBuilder().createLineItemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateLineItems. */
+    public UnaryCallSettings.Builder<BatchCreateLineItemsRequest, BatchCreateLineItemsResponse>
+        batchCreateLineItemsSettings() {
+      return getStubSettingsBuilder().batchCreateLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLineItem. */
+    public UnaryCallSettings.Builder<UpdateLineItemRequest, LineItem> updateLineItemSettings() {
+      return getStubSettingsBuilder().updateLineItemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateLineItems. */
+    public UnaryCallSettings.Builder<BatchUpdateLineItemsRequest, BatchUpdateLineItemsResponse>
+        batchUpdateLineItemsSettings() {
+      return getStubSettingsBuilder().batchUpdateLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateLineItems. */
+    public UnaryCallSettings.Builder<BatchActivateLineItemsRequest, BatchActivateLineItemsResponse>
+        batchActivateLineItemsSettings() {
+      return getStubSettingsBuilder().batchActivateLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchPauseLineItems. */
+    public UnaryCallSettings.Builder<BatchPauseLineItemsRequest, BatchPauseLineItemsResponse>
+        batchPauseLineItemsSettings() {
+      return getStubSettingsBuilder().batchPauseLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeLineItems. */
+    public UnaryCallSettings.Builder<BatchResumeLineItemsRequest, BatchResumeLineItemsResponse>
+        batchResumeLineItemsSettings() {
+      return getStubSettingsBuilder().batchResumeLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeAndOverbookLineItems. */
+    public UnaryCallSettings.Builder<
+            BatchResumeAndOverbookLineItemsRequest, BatchResumeAndOverbookLineItemsResponse>
+        batchResumeAndOverbookLineItemsSettings() {
+      return getStubSettingsBuilder().batchResumeAndOverbookLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteLineItems. */
+    public UnaryCallSettings.Builder<BatchDeleteLineItemsRequest, Empty>
+        batchDeleteLineItemsSettings() {
+      return getStubSettingsBuilder().batchDeleteLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchReserveLineItems. */
+    public UnaryCallSettings.Builder<BatchReserveLineItemsRequest, BatchReserveLineItemsResponse>
+        batchReserveLineItemsSettings() {
+      return getStubSettingsBuilder().batchReserveLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchReserveAndOverbookLineItems. */
+    public UnaryCallSettings.Builder<
+            BatchReserveAndOverbookLineItemsRequest, BatchReserveAndOverbookLineItemsResponse>
+        batchReserveAndOverbookLineItemsSettings() {
+      return getStubSettingsBuilder().batchReserveAndOverbookLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchReleaseLineItems. */
+    public UnaryCallSettings.Builder<BatchReleaseLineItemsRequest, BatchReleaseLineItemsResponse>
+        batchReleaseLineItemsSettings() {
+      return getStubSettingsBuilder().batchReleaseLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveLineItems. */
+    public UnaryCallSettings.Builder<BatchArchiveLineItemsRequest, BatchArchiveLineItemsResponse>
+        batchArchiveLineItemsSettings() {
+      return getStubSettingsBuilder().batchArchiveLineItemsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUnarchiveLineItems. */
+    public UnaryCallSettings.Builder<
+            BatchUnarchiveLineItemsRequest, BatchUnarchiveLineItemsResponse>
+        batchUnarchiveLineItemsSettings() {
+      return getStubSettingsBuilder().batchUnarchiveLineItemsSettings();
     }
 
     @Override

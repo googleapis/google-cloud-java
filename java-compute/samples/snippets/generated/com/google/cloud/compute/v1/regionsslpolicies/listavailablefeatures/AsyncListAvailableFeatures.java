@@ -43,7 +43,6 @@ public class AsyncListAvailableFeatures {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<SslPoliciesListAvailableFeaturesResponse> future =
           regionSslPoliciesClient.listAvailableFeaturesCallable().futureCall(request);

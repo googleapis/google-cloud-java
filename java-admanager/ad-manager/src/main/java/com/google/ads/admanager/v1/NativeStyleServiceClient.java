@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -104,6 +105,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateNativeStyle</td>
+ *      <td><p> Creates a `NativeStyle` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createNativeStyle(CreateNativeStyleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createNativeStyle(NetworkName parent, NativeStyle nativeStyle)
+ *           <li><p> createNativeStyle(String parent, NativeStyle nativeStyle)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createNativeStyleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> BatchCreateNativeStyles</td>
  *      <td><p> Creates `NativeStyle` objects.</td>
  *      <td>
@@ -116,6 +136,24 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> batchCreateNativeStylesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNativeStyle</td>
+ *      <td><p> Updates a `NativeStyle` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNativeStyle(UpdateNativeStyleRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateNativeStyle(NativeStyle nativeStyle, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNativeStyleCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -575,6 +613,128 @@ public class NativeStyleServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+   *   NativeStyle response = nativeStyleServiceClient.createNativeStyle(parent, nativeStyle);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `NativeStyle` will be created. Format:
+   *     `networks/{network_code}`
+   * @param nativeStyle Required. The `NativeStyle` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NativeStyle createNativeStyle(
+      @Nullable NetworkName parent, NativeStyle nativeStyle) {
+    CreateNativeStyleRequest request =
+        CreateNativeStyleRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setNativeStyle(nativeStyle)
+            .build();
+    return createNativeStyle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+   *   NativeStyle response = nativeStyleServiceClient.createNativeStyle(parent, nativeStyle);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this `NativeStyle` will be created. Format:
+   *     `networks/{network_code}`
+   * @param nativeStyle Required. The `NativeStyle` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NativeStyle createNativeStyle(String parent, NativeStyle nativeStyle) {
+    CreateNativeStyleRequest request =
+        CreateNativeStyleRequest.newBuilder().setParent(parent).setNativeStyle(nativeStyle).build();
+    return createNativeStyle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   CreateNativeStyleRequest request =
+   *       CreateNativeStyleRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setNativeStyle(NativeStyle.newBuilder().build())
+   *           .build();
+   *   NativeStyle response = nativeStyleServiceClient.createNativeStyle(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NativeStyle createNativeStyle(CreateNativeStyleRequest request) {
+    return createNativeStyleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   CreateNativeStyleRequest request =
+   *       CreateNativeStyleRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setNativeStyle(NativeStyle.newBuilder().build())
+   *           .build();
+   *   ApiFuture<NativeStyle> future =
+   *       nativeStyleServiceClient.createNativeStyleCallable().futureCall(request);
+   *   // Do something.
+   *   NativeStyle response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateNativeStyleRequest, NativeStyle> createNativeStyleCallable() {
+    return stub.createNativeStyleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates `NativeStyle` objects.
    *
    * <p>Sample code:
@@ -706,6 +866,97 @@ public class NativeStyleServiceClient implements BackgroundResource {
   public final UnaryCallable<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesCallable() {
     return stub.batchCreateNativeStylesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   NativeStyle response = nativeStyleServiceClient.updateNativeStyle(nativeStyle, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param nativeStyle Required. The `NativeStyle` to update.
+   *     <p>The `NativeStyle`'s `name` is used to identify the `NativeStyle` to update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NativeStyle updateNativeStyle(NativeStyle nativeStyle, FieldMask updateMask) {
+    UpdateNativeStyleRequest request =
+        UpdateNativeStyleRequest.newBuilder()
+            .setNativeStyle(nativeStyle)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateNativeStyle(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   UpdateNativeStyleRequest request =
+   *       UpdateNativeStyleRequest.newBuilder()
+   *           .setNativeStyle(NativeStyle.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   NativeStyle response = nativeStyleServiceClient.updateNativeStyle(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final NativeStyle updateNativeStyle(UpdateNativeStyleRequest request) {
+    return updateNativeStyleCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `NativeStyle` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+   *   UpdateNativeStyleRequest request =
+   *       UpdateNativeStyleRequest.newBuilder()
+   *           .setNativeStyle(NativeStyle.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<NativeStyle> future =
+   *       nativeStyleServiceClient.updateNativeStyleCallable().futureCall(request);
+   *   // Do something.
+   *   NativeStyle response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleCallable() {
+    return stub.updateNativeStyleCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

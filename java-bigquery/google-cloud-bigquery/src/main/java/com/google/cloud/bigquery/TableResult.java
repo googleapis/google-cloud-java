@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import com.google.api.gax.paging.Page;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.common.base.Function;
@@ -64,6 +65,8 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
     abstract TableResult.Builder setNumDmlAffectedRows(@Nullable Long numDmlAffectedRows);
 
     abstract TableResult.Builder setSessionInfo(@Nullable SessionInfo sessionInfo);
+
+    abstract TableResult.Builder setCacheHit(@Nullable Boolean cacheHit);
 
     /** Creates a @code TableResult} object. */
     public abstract TableResult build();
@@ -140,6 +143,33 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
    */
   public abstract @Nullable SessionInfo getSessionInfo();
 
+  /**
+   * Returns whether the query result was fetched from the query cache.
+   *
+   * @return {@code true} if the query result was fetched from the cache, {@code false} otherwise,
+   *     or {@code null} if not populated by the service
+   */
+  public abstract @Nullable Boolean getCacheHit();
+
+  /**
+   * Extracts a {@link QueryStatistics} instance populated with the execution statistics available
+   * on this {@code TableResult}.
+   *
+   * @return query statistics populated from this result
+   */
+  public QueryStatistics extractQueryStatistics() {
+    return QueryStatistics.newBuilder()
+        .setStatementType(getStatementType())
+        .setTotalBytesBilled(getTotalBytesBilled())
+        .setTotalBytesProcessed(getTotalBytesProcessed())
+        .setTotalSlotMs(getTotalSlotMs())
+        .setNumDmlAffectedRows(getNumDmlAffectedRows())
+        .setCacheHit(getCacheHit())
+        .setSessionInfo(getSessionInfo())
+        .setSchema(getSchema())
+        .build();
+  }
+
   @Override
   public boolean hasNextPage() {
     return getPageNoSchema().hasNextPage();
@@ -168,6 +198,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
           .setTotalSlotMs(getTotalSlotMs())
           .setNumDmlAffectedRows(getNumDmlAffectedRows())
           .setSessionInfo(getSessionInfo())
+          .setCacheHit(getCacheHit())
           .build();
     }
     return null;
@@ -212,6 +243,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         .add("totalSlotMs", getTotalSlotMs())
         .add("numDmlAffectedRows", getNumDmlAffectedRows())
         .add("sessionInfo", getSessionInfo())
+        .add("cacheHit", getCacheHit())
         .toString();
   }
 
@@ -228,7 +260,8 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         getTotalBytesProcessed(),
         getTotalSlotMs(),
         getNumDmlAffectedRows(),
-        getSessionInfo());
+        getSessionInfo(),
+        getCacheHit());
   }
 
   @Override
@@ -251,6 +284,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         && Objects.equals(getTotalBytesProcessed(), response.getTotalBytesProcessed())
         && Objects.equals(getTotalSlotMs(), response.getTotalSlotMs())
         && Objects.equals(getNumDmlAffectedRows(), response.getNumDmlAffectedRows())
-        && Objects.equals(getSessionInfo(), response.getSessionInfo());
+        && Objects.equals(getSessionInfo(), response.getSessionInfo())
+        && Objects.equals(getCacheHit(), response.getCacheHit());
   }
 }

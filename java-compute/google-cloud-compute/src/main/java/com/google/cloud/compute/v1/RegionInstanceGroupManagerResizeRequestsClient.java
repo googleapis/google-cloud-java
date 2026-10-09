@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionInstanceGroupManagerResizeRequests API.
  *
+ * <p>This client uses RegionInstanceGroupManagerResizeRequests version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -938,7 +940,6 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstanceGroupManagerResizeRequest element :
    *       regionInstanceGroupManagerResizeRequestsClient.list(request).iterateAll()) {
@@ -978,7 +979,6 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstanceGroupManagerResizeRequest> future =
    *       regionInstanceGroupManagerResizeRequestsClient.listPagedCallable().futureCall(request);
@@ -1018,7 +1018,6 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupManagerResizeRequestsListResponse response =

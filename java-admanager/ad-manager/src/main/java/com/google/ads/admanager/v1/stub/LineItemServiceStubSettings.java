@@ -18,10 +18,35 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.LineItemServiceClient.ListLineItemsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateLineItemsRequest;
+import com.google.ads.admanager.v1.BatchActivateLineItemsResponse;
+import com.google.ads.admanager.v1.BatchArchiveLineItemsRequest;
+import com.google.ads.admanager.v1.BatchArchiveLineItemsResponse;
+import com.google.ads.admanager.v1.BatchCreateLineItemsRequest;
+import com.google.ads.admanager.v1.BatchCreateLineItemsResponse;
+import com.google.ads.admanager.v1.BatchDeleteLineItemsRequest;
+import com.google.ads.admanager.v1.BatchPauseLineItemsRequest;
+import com.google.ads.admanager.v1.BatchPauseLineItemsResponse;
+import com.google.ads.admanager.v1.BatchReleaseLineItemsRequest;
+import com.google.ads.admanager.v1.BatchReleaseLineItemsResponse;
+import com.google.ads.admanager.v1.BatchReserveAndOverbookLineItemsRequest;
+import com.google.ads.admanager.v1.BatchReserveAndOverbookLineItemsResponse;
+import com.google.ads.admanager.v1.BatchReserveLineItemsRequest;
+import com.google.ads.admanager.v1.BatchReserveLineItemsResponse;
+import com.google.ads.admanager.v1.BatchResumeAndOverbookLineItemsRequest;
+import com.google.ads.admanager.v1.BatchResumeAndOverbookLineItemsResponse;
+import com.google.ads.admanager.v1.BatchResumeLineItemsRequest;
+import com.google.ads.admanager.v1.BatchResumeLineItemsResponse;
+import com.google.ads.admanager.v1.BatchUnarchiveLineItemsRequest;
+import com.google.ads.admanager.v1.BatchUnarchiveLineItemsResponse;
+import com.google.ads.admanager.v1.BatchUpdateLineItemsRequest;
+import com.google.ads.admanager.v1.BatchUpdateLineItemsResponse;
+import com.google.ads.admanager.v1.CreateLineItemRequest;
 import com.google.ads.admanager.v1.GetLineItemRequest;
 import com.google.ads.admanager.v1.LineItem;
 import com.google.ads.admanager.v1.ListLineItemsRequest;
 import com.google.ads.admanager.v1.ListLineItemsResponse;
+import com.google.ads.admanager.v1.UpdateLineItemRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -49,6 +74,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -120,6 +146,33 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
   private final PagedCallSettings<
           ListLineItemsRequest, ListLineItemsResponse, ListLineItemsPagedResponse>
       listLineItemsSettings;
+  private final UnaryCallSettings<CreateLineItemRequest, LineItem> createLineItemSettings;
+  private final UnaryCallSettings<BatchCreateLineItemsRequest, BatchCreateLineItemsResponse>
+      batchCreateLineItemsSettings;
+  private final UnaryCallSettings<UpdateLineItemRequest, LineItem> updateLineItemSettings;
+  private final UnaryCallSettings<BatchUpdateLineItemsRequest, BatchUpdateLineItemsResponse>
+      batchUpdateLineItemsSettings;
+  private final UnaryCallSettings<BatchActivateLineItemsRequest, BatchActivateLineItemsResponse>
+      batchActivateLineItemsSettings;
+  private final UnaryCallSettings<BatchPauseLineItemsRequest, BatchPauseLineItemsResponse>
+      batchPauseLineItemsSettings;
+  private final UnaryCallSettings<BatchResumeLineItemsRequest, BatchResumeLineItemsResponse>
+      batchResumeLineItemsSettings;
+  private final UnaryCallSettings<
+          BatchResumeAndOverbookLineItemsRequest, BatchResumeAndOverbookLineItemsResponse>
+      batchResumeAndOverbookLineItemsSettings;
+  private final UnaryCallSettings<BatchDeleteLineItemsRequest, Empty> batchDeleteLineItemsSettings;
+  private final UnaryCallSettings<BatchReserveLineItemsRequest, BatchReserveLineItemsResponse>
+      batchReserveLineItemsSettings;
+  private final UnaryCallSettings<
+          BatchReserveAndOverbookLineItemsRequest, BatchReserveAndOverbookLineItemsResponse>
+      batchReserveAndOverbookLineItemsSettings;
+  private final UnaryCallSettings<BatchReleaseLineItemsRequest, BatchReleaseLineItemsResponse>
+      batchReleaseLineItemsSettings;
+  private final UnaryCallSettings<BatchArchiveLineItemsRequest, BatchArchiveLineItemsResponse>
+      batchArchiveLineItemsSettings;
+  private final UnaryCallSettings<BatchUnarchiveLineItemsRequest, BatchUnarchiveLineItemsResponse>
+      batchUnarchiveLineItemsSettings;
 
   private static final PagedListDescriptor<ListLineItemsRequest, ListLineItemsResponse, LineItem>
       LIST_LINE_ITEMS_PAGE_STR_DESC =
@@ -181,6 +234,89 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
   public PagedCallSettings<ListLineItemsRequest, ListLineItemsResponse, ListLineItemsPagedResponse>
       listLineItemsSettings() {
     return listLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createLineItem. */
+  public UnaryCallSettings<CreateLineItemRequest, LineItem> createLineItemSettings() {
+    return createLineItemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateLineItems. */
+  public UnaryCallSettings<BatchCreateLineItemsRequest, BatchCreateLineItemsResponse>
+      batchCreateLineItemsSettings() {
+    return batchCreateLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateLineItem. */
+  public UnaryCallSettings<UpdateLineItemRequest, LineItem> updateLineItemSettings() {
+    return updateLineItemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateLineItems. */
+  public UnaryCallSettings<BatchUpdateLineItemsRequest, BatchUpdateLineItemsResponse>
+      batchUpdateLineItemsSettings() {
+    return batchUpdateLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateLineItems. */
+  public UnaryCallSettings<BatchActivateLineItemsRequest, BatchActivateLineItemsResponse>
+      batchActivateLineItemsSettings() {
+    return batchActivateLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchPauseLineItems. */
+  public UnaryCallSettings<BatchPauseLineItemsRequest, BatchPauseLineItemsResponse>
+      batchPauseLineItemsSettings() {
+    return batchPauseLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeLineItems. */
+  public UnaryCallSettings<BatchResumeLineItemsRequest, BatchResumeLineItemsResponse>
+      batchResumeLineItemsSettings() {
+    return batchResumeLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchResumeAndOverbookLineItems. */
+  public UnaryCallSettings<
+          BatchResumeAndOverbookLineItemsRequest, BatchResumeAndOverbookLineItemsResponse>
+      batchResumeAndOverbookLineItemsSettings() {
+    return batchResumeAndOverbookLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteLineItems. */
+  public UnaryCallSettings<BatchDeleteLineItemsRequest, Empty> batchDeleteLineItemsSettings() {
+    return batchDeleteLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchReserveLineItems. */
+  public UnaryCallSettings<BatchReserveLineItemsRequest, BatchReserveLineItemsResponse>
+      batchReserveLineItemsSettings() {
+    return batchReserveLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchReserveAndOverbookLineItems. */
+  public UnaryCallSettings<
+          BatchReserveAndOverbookLineItemsRequest, BatchReserveAndOverbookLineItemsResponse>
+      batchReserveAndOverbookLineItemsSettings() {
+    return batchReserveAndOverbookLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchReleaseLineItems. */
+  public UnaryCallSettings<BatchReleaseLineItemsRequest, BatchReleaseLineItemsResponse>
+      batchReleaseLineItemsSettings() {
+    return batchReleaseLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchArchiveLineItems. */
+  public UnaryCallSettings<BatchArchiveLineItemsRequest, BatchArchiveLineItemsResponse>
+      batchArchiveLineItemsSettings() {
+    return batchArchiveLineItemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUnarchiveLineItems. */
+  public UnaryCallSettings<BatchUnarchiveLineItemsRequest, BatchUnarchiveLineItemsResponse>
+      batchUnarchiveLineItemsSettings() {
+    return batchUnarchiveLineItemsSettings;
   }
 
   public LineItemServiceStub createStub() throws IOException {
@@ -267,6 +403,22 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
 
     getLineItemSettings = settingsBuilder.getLineItemSettings().build();
     listLineItemsSettings = settingsBuilder.listLineItemsSettings().build();
+    createLineItemSettings = settingsBuilder.createLineItemSettings().build();
+    batchCreateLineItemsSettings = settingsBuilder.batchCreateLineItemsSettings().build();
+    updateLineItemSettings = settingsBuilder.updateLineItemSettings().build();
+    batchUpdateLineItemsSettings = settingsBuilder.batchUpdateLineItemsSettings().build();
+    batchActivateLineItemsSettings = settingsBuilder.batchActivateLineItemsSettings().build();
+    batchPauseLineItemsSettings = settingsBuilder.batchPauseLineItemsSettings().build();
+    batchResumeLineItemsSettings = settingsBuilder.batchResumeLineItemsSettings().build();
+    batchResumeAndOverbookLineItemsSettings =
+        settingsBuilder.batchResumeAndOverbookLineItemsSettings().build();
+    batchDeleteLineItemsSettings = settingsBuilder.batchDeleteLineItemsSettings().build();
+    batchReserveLineItemsSettings = settingsBuilder.batchReserveLineItemsSettings().build();
+    batchReserveAndOverbookLineItemsSettings =
+        settingsBuilder.batchReserveAndOverbookLineItemsSettings().build();
+    batchReleaseLineItemsSettings = settingsBuilder.batchReleaseLineItemsSettings().build();
+    batchArchiveLineItemsSettings = settingsBuilder.batchArchiveLineItemsSettings().build();
+    batchUnarchiveLineItemsSettings = settingsBuilder.batchUnarchiveLineItemsSettings().build();
   }
 
   @Override
@@ -285,6 +437,42 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
     private final PagedCallSettings.Builder<
             ListLineItemsRequest, ListLineItemsResponse, ListLineItemsPagedResponse>
         listLineItemsSettings;
+    private final UnaryCallSettings.Builder<CreateLineItemRequest, LineItem> createLineItemSettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateLineItemsRequest, BatchCreateLineItemsResponse>
+        batchCreateLineItemsSettings;
+    private final UnaryCallSettings.Builder<UpdateLineItemRequest, LineItem> updateLineItemSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateLineItemsRequest, BatchUpdateLineItemsResponse>
+        batchUpdateLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateLineItemsRequest, BatchActivateLineItemsResponse>
+        batchActivateLineItemsSettings;
+    private final UnaryCallSettings.Builder<BatchPauseLineItemsRequest, BatchPauseLineItemsResponse>
+        batchPauseLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchResumeLineItemsRequest, BatchResumeLineItemsResponse>
+        batchResumeLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchResumeAndOverbookLineItemsRequest, BatchResumeAndOverbookLineItemsResponse>
+        batchResumeAndOverbookLineItemsSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteLineItemsRequest, Empty>
+        batchDeleteLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchReserveLineItemsRequest, BatchReserveLineItemsResponse>
+        batchReserveLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchReserveAndOverbookLineItemsRequest, BatchReserveAndOverbookLineItemsResponse>
+        batchReserveAndOverbookLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchReleaseLineItemsRequest, BatchReleaseLineItemsResponse>
+        batchReleaseLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchArchiveLineItemsRequest, BatchArchiveLineItemsResponse>
+        batchArchiveLineItemsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUnarchiveLineItemsRequest, BatchUnarchiveLineItemsResponse>
+        batchUnarchiveLineItemsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -314,10 +502,39 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
 
       getLineItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLineItemsSettings = PagedCallSettings.newBuilder(LIST_LINE_ITEMS_PAGE_STR_FACT);
+      createLineItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateLineItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchPauseLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchResumeLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchResumeAndOverbookLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchReserveLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchReserveAndOverbookLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchReleaseLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchArchiveLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUnarchiveLineItemsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getLineItemSettings, listLineItemsSettings);
+              getLineItemSettings,
+              listLineItemsSettings,
+              createLineItemSettings,
+              batchCreateLineItemsSettings,
+              updateLineItemSettings,
+              batchUpdateLineItemsSettings,
+              batchActivateLineItemsSettings,
+              batchPauseLineItemsSettings,
+              batchResumeLineItemsSettings,
+              batchResumeAndOverbookLineItemsSettings,
+              batchDeleteLineItemsSettings,
+              batchReserveLineItemsSettings,
+              batchReserveAndOverbookLineItemsSettings,
+              batchReleaseLineItemsSettings,
+              batchArchiveLineItemsSettings,
+              batchUnarchiveLineItemsSettings);
       initDefaults(this);
     }
 
@@ -326,10 +543,41 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
 
       getLineItemSettings = settings.getLineItemSettings.toBuilder();
       listLineItemsSettings = settings.listLineItemsSettings.toBuilder();
+      createLineItemSettings = settings.createLineItemSettings.toBuilder();
+      batchCreateLineItemsSettings = settings.batchCreateLineItemsSettings.toBuilder();
+      updateLineItemSettings = settings.updateLineItemSettings.toBuilder();
+      batchUpdateLineItemsSettings = settings.batchUpdateLineItemsSettings.toBuilder();
+      batchActivateLineItemsSettings = settings.batchActivateLineItemsSettings.toBuilder();
+      batchPauseLineItemsSettings = settings.batchPauseLineItemsSettings.toBuilder();
+      batchResumeLineItemsSettings = settings.batchResumeLineItemsSettings.toBuilder();
+      batchResumeAndOverbookLineItemsSettings =
+          settings.batchResumeAndOverbookLineItemsSettings.toBuilder();
+      batchDeleteLineItemsSettings = settings.batchDeleteLineItemsSettings.toBuilder();
+      batchReserveLineItemsSettings = settings.batchReserveLineItemsSettings.toBuilder();
+      batchReserveAndOverbookLineItemsSettings =
+          settings.batchReserveAndOverbookLineItemsSettings.toBuilder();
+      batchReleaseLineItemsSettings = settings.batchReleaseLineItemsSettings.toBuilder();
+      batchArchiveLineItemsSettings = settings.batchArchiveLineItemsSettings.toBuilder();
+      batchUnarchiveLineItemsSettings = settings.batchUnarchiveLineItemsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getLineItemSettings, listLineItemsSettings);
+              getLineItemSettings,
+              listLineItemsSettings,
+              createLineItemSettings,
+              batchCreateLineItemsSettings,
+              updateLineItemSettings,
+              batchUpdateLineItemsSettings,
+              batchActivateLineItemsSettings,
+              batchPauseLineItemsSettings,
+              batchResumeLineItemsSettings,
+              batchResumeAndOverbookLineItemsSettings,
+              batchDeleteLineItemsSettings,
+              batchReserveLineItemsSettings,
+              batchReserveAndOverbookLineItemsSettings,
+              batchReleaseLineItemsSettings,
+              batchArchiveLineItemsSettings,
+              batchUnarchiveLineItemsSettings);
     }
 
     private static Builder createDefault() {
@@ -352,6 +600,76 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
 
       builder
           .listLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createLineItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateLineItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchPauseLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchResumeLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchResumeAndOverbookLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeleteLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchReserveLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchReserveAndOverbookLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchReleaseLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchArchiveLineItemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUnarchiveLineItemsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -383,6 +701,91 @@ public class LineItemServiceStubSettings extends StubSettings<LineItemServiceStu
             ListLineItemsRequest, ListLineItemsResponse, ListLineItemsPagedResponse>
         listLineItemsSettings() {
       return listLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createLineItem. */
+    public UnaryCallSettings.Builder<CreateLineItemRequest, LineItem> createLineItemSettings() {
+      return createLineItemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateLineItems. */
+    public UnaryCallSettings.Builder<BatchCreateLineItemsRequest, BatchCreateLineItemsResponse>
+        batchCreateLineItemsSettings() {
+      return batchCreateLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLineItem. */
+    public UnaryCallSettings.Builder<UpdateLineItemRequest, LineItem> updateLineItemSettings() {
+      return updateLineItemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateLineItems. */
+    public UnaryCallSettings.Builder<BatchUpdateLineItemsRequest, BatchUpdateLineItemsResponse>
+        batchUpdateLineItemsSettings() {
+      return batchUpdateLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateLineItems. */
+    public UnaryCallSettings.Builder<BatchActivateLineItemsRequest, BatchActivateLineItemsResponse>
+        batchActivateLineItemsSettings() {
+      return batchActivateLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchPauseLineItems. */
+    public UnaryCallSettings.Builder<BatchPauseLineItemsRequest, BatchPauseLineItemsResponse>
+        batchPauseLineItemsSettings() {
+      return batchPauseLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeLineItems. */
+    public UnaryCallSettings.Builder<BatchResumeLineItemsRequest, BatchResumeLineItemsResponse>
+        batchResumeLineItemsSettings() {
+      return batchResumeLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchResumeAndOverbookLineItems. */
+    public UnaryCallSettings.Builder<
+            BatchResumeAndOverbookLineItemsRequest, BatchResumeAndOverbookLineItemsResponse>
+        batchResumeAndOverbookLineItemsSettings() {
+      return batchResumeAndOverbookLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteLineItems. */
+    public UnaryCallSettings.Builder<BatchDeleteLineItemsRequest, Empty>
+        batchDeleteLineItemsSettings() {
+      return batchDeleteLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchReserveLineItems. */
+    public UnaryCallSettings.Builder<BatchReserveLineItemsRequest, BatchReserveLineItemsResponse>
+        batchReserveLineItemsSettings() {
+      return batchReserveLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchReserveAndOverbookLineItems. */
+    public UnaryCallSettings.Builder<
+            BatchReserveAndOverbookLineItemsRequest, BatchReserveAndOverbookLineItemsResponse>
+        batchReserveAndOverbookLineItemsSettings() {
+      return batchReserveAndOverbookLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchReleaseLineItems. */
+    public UnaryCallSettings.Builder<BatchReleaseLineItemsRequest, BatchReleaseLineItemsResponse>
+        batchReleaseLineItemsSettings() {
+      return batchReleaseLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchArchiveLineItems. */
+    public UnaryCallSettings.Builder<BatchArchiveLineItemsRequest, BatchArchiveLineItemsResponse>
+        batchArchiveLineItemsSettings() {
+      return batchArchiveLineItemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUnarchiveLineItems. */
+    public UnaryCallSettings.Builder<
+            BatchUnarchiveLineItemsRequest, BatchUnarchiveLineItemsResponse>
+        batchUnarchiveLineItemsSettings() {
+      return batchUnarchiveLineItemsSettings;
     }
 
     @Override

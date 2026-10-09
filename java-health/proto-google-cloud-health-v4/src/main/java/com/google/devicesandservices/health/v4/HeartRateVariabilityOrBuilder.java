@@ -75,7 +75,7 @@ public interface HeartRateVariabilityOrBuilder
    * <pre>
    * Optional. The root mean square of successive differences between normal
    * heartbeats. This is a measure of heart rate variability used by Google
-   * Health.
+   * Health. Must be in the range `[1, 200]`.
    * </pre>
    *
    * <code>
@@ -92,7 +92,7 @@ public interface HeartRateVariabilityOrBuilder
    * <pre>
    * Optional. The root mean square of successive differences between normal
    * heartbeats. This is a measure of heart rate variability used by Google
-   * Health.
+   * Health. Must be in the range `[1, 200]`.
    * </pre>
    *
    * <code>
@@ -132,4 +132,52 @@ public interface HeartRateVariabilityOrBuilder
    * @return The standardDeviationMilliseconds.
    */
   double getStandardDeviationMilliseconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional information about the heart rate variability
+   * measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.HeartRateVariability.HeartRateVariabilityMetadata metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the metadata field is set.
+   */
+  boolean hasMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional information about the heart rate variability
+   * measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.HeartRateVariability.HeartRateVariabilityMetadata metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The metadata.
+   */
+  com.google.devicesandservices.health.v4.HeartRateVariability.HeartRateVariabilityMetadata
+      getMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional information about the heart rate variability
+   * measurement.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.HeartRateVariability.HeartRateVariabilityMetadata metadata = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.HeartRateVariability.HeartRateVariabilityMetadataOrBuilder
+      getMetadataOrBuilder();
 }

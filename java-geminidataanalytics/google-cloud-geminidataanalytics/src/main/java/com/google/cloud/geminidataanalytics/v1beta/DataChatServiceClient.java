@@ -34,6 +34,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -121,6 +122,24 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteConversationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateConversation</td>
+ *      <td><p> Updates a conversation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateConversation(UpdateConversationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateConversation(Conversation conversation, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateConversationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -628,6 +647,103 @@ public class DataChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
     return stub.deleteConversationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   Conversation conversation = Conversation.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Conversation response = dataChatServiceClient.updateConversation(conversation, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param conversation Required. The resource being updated.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Conversation resource by the update. The fields specified in the update_mask are relative
+   *     to the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields with non-default values present in the
+   *     request will be overwritten. If a wildcard mask is provided, all fields will be
+   *     overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Conversation updateConversation(Conversation conversation, FieldMask updateMask) {
+    UpdateConversationRequest request =
+        UpdateConversationRequest.newBuilder()
+            .setConversation(conversation)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateConversation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   UpdateConversationRequest request =
+   *       UpdateConversationRequest.newBuilder()
+   *           .setConversation(Conversation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Conversation response = dataChatServiceClient.updateConversation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Conversation updateConversation(UpdateConversationRequest request) {
+    return updateConversationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataChatServiceClient dataChatServiceClient = DataChatServiceClient.create()) {
+   *   UpdateConversationRequest request =
+   *       UpdateConversationRequest.newBuilder()
+   *           .setConversation(Conversation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Conversation> future =
+   *       dataChatServiceClient.updateConversationCallable().futureCall(request);
+   *   // Do something.
+   *   Conversation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable() {
+    return stub.updateConversationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

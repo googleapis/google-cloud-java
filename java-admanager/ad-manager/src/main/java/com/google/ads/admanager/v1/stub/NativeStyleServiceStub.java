@@ -28,10 +28,12 @@ import com.google.ads.admanager.v1.BatchDeactivateNativeStylesRequest;
 import com.google.ads.admanager.v1.BatchDeactivateNativeStylesResponse;
 import com.google.ads.admanager.v1.BatchUpdateNativeStylesRequest;
 import com.google.ads.admanager.v1.BatchUpdateNativeStylesResponse;
+import com.google.ads.admanager.v1.CreateNativeStyleRequest;
 import com.google.ads.admanager.v1.GetNativeStyleRequest;
 import com.google.ads.admanager.v1.ListNativeStylesRequest;
 import com.google.ads.admanager.v1.ListNativeStylesResponse;
 import com.google.ads.admanager.v1.NativeStyle;
+import com.google.ads.admanager.v1.UpdateNativeStyleRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -61,9 +63,17 @@ public abstract class NativeStyleServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listNativeStylesCallable()");
   }
 
+  public UnaryCallable<CreateNativeStyleRequest, NativeStyle> createNativeStyleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createNativeStyleCallable()");
+  }
+
   public UnaryCallable<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesCallable() {
     throw new UnsupportedOperationException("Not implemented: batchCreateNativeStylesCallable()");
+  }
+
+  public UnaryCallable<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNativeStyleCallable()");
   }
 
   public UnaryCallable<BatchUpdateNativeStylesRequest, BatchUpdateNativeStylesResponse>

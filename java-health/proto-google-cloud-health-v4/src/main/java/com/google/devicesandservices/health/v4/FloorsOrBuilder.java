@@ -73,7 +73,8 @@ public interface FloorsOrBuilder
    *
    *
    * <pre>
-   * Required. Number of floors in the recorded interval
+   * Required. Number of floors in the recorded interval.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -86,7 +87,8 @@ public interface FloorsOrBuilder
    *
    *
    * <pre>
-   * Required. Number of floors in the recorded interval
+   * Required. Number of floors in the recorded interval.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional int64 count = 4 [(.google.api.field_behavior) = REQUIRED];</code>

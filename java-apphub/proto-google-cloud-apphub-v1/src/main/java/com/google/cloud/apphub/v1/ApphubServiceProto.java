@@ -189,9 +189,29 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_DeleteWorkloadRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_GetBoundaryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_GetBoundaryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_UpdateBoundaryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_UpdateBoundaryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apphub_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_GetExtendedMetadataSchemaRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_GetExtendedMetadataSchemaRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -205,18 +225,20 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "+google/cloud/apphub/v1/apphub_service."
           + "proto\022\026google.cloud.apphub.v1\032\034google/ap"
           + "i/annotations.proto\032\027google/api/client.p"
-          + "roto\032\037google/api/field_behavior.proto\032\031g"
-          + "oogle/api/resource.proto\032(google/cloud/apphub/v1/application.proto\032$google/cloud"
-          + "/apphub/v1/service.proto\0327google/cloud/apphub/v1/service_project_attachment.prot"
-          + "o\032%google/cloud/apphub/v1/workload.proto"
-          + "\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + "roto\032\037google/api/field_behavior.proto\032\033g"
+          + "oogle/api/field_info.proto\032\031google/api/r"
+          + "esource.proto\032(google/cloud/apphub/v1/application.proto\032%google/cloud/apphub/v1/"
+          + "boundary.proto\0325google/cloud/apphub/v1/extended_metadata_schema.proto\032$google/cl"
+          + "oud/apphub/v1/service.proto\0327google/cloud/apphub/v1/service_project_attachment.p"
+          + "roto\032%google/cloud/apphub/v1/workload.pr"
+          + "oto\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"`\n"
           + "%LookupServiceProjectAttachmentRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\"~\n"
           + "&LookupServiceProjectAttachmentResponse\022T\n"
-          + "\032service_project_attachment\030\001 \001(\01320.google.c"
-          + "loud.apphub.v1.ServiceProjectAttachment\"\313\001\n"
+          + "\032service_project_attachment\030\001 \001(\01320.googl"
+          + "e.cloud.apphub.v1.ServiceProjectAttachment\"\313\001\n"
           + "$ListServiceProjectAttachmentsRequest\022F\n"
           + "\006parent\030\001 \001("
           + "\tB6\340A\002\372A0\022.apphub.googleapis.com/ServiceProjectAttachment\022\026\n"
@@ -228,28 +250,28 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\033service_project_attachments\030\001"
           + " \003(\01320.google.cloud.apphub.v1.ServiceProjectAttachment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\217\002\n"
+          + "\013unreachable\030\003 \003(\t\"\227\002\n"
           + "%CreateServiceProjectAttachmentRequest\022F\n"
-          + "\006parent\030\001 \001(\tB6"
-          + "\340A\002\372A0\022.apphub.googleapis.com/ServiceProjectAttachment\022*\n"
+          + "\006parent\030\001 \001("
+          + "\tB6\340A\002\372A0\022.apphub.googleapis.com/ServiceProjectAttachment\022*\n"
           + "\035service_project_attachment_id\030\002 \001(\tB\003\340A\002\022Y\n"
           + "\032service_project_attachment\030\003"
-          + " \001(\01320.google.cloud.apphub.v1.ServiceProjectAttachmentB\003\340A\002\022\027\n\n"
-          + "request_id\030\004 \001(\tB\003\340A\001\"j\n"
+          + " \001(\01320.google.cloud.apphub.v1.ServiceProjectAttachmentB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"j\n"
           + "\"GetServiceProjectAttachmentRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
-          + ".apphub.googleapis.com/ServiceProjectAttachment\"\206\001\n"
+          + ".apphub.googleapis.com/ServiceProjectAttachment\"\216\001\n"
           + "%DeleteServiceProjectAttachmentRequest\022D\n"
           + "\004name\030\001 \001(\tB6\340A\002\372A0\n"
-          + ".apphub.googleapis.com/ServiceProjectAttachment\022\027\n\n"
-          + "request_id\030\002 \001(\tB\003\340A\001\"`\n"
+          + ".apphub.googleapis.com/ServiceProjectAttachment\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"`\n"
           + "%DetachServiceProjectAttachmentRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\"(\n"
           + "&DetachServiceProjectAttachmentResponse\"\251\001\n"
           + "\023ListServicesRequest\0225\n"
-          + "\006parent\030\001 \001(\tB"
-          + "%\340A\002\372A\037\022\035apphub.googleapis.com/Service\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB%\340A\002\372A\037\022\035apphub.googleapis.com/Service\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -269,16 +291,14 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\023discovered_services\030\001"
           + " \003(\0132).google.cloud.apphub.v1.DiscoveredService\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\266\001\n"
+          + "\013unreachable\030\003 \003(\t\"\276\001\n"
           + "\024CreateServiceRequest\0225\n"
           + "\006parent\030\001 \001("
-          + "\tB%\340A\002\372A\037\022\035apphub.googleapis.com/Service\022\027\n"
-          + "\n"
+          + "\tB%\340A\002\372A\037\022\035apphub.googleapis.com/Service\022\027\n\n"
           + "service_id\030\002 \001(\tB\003\340A\002\0225\n"
           + "\007service\030\003"
-          + " \001(\0132\037.google.cloud.apphub.v1.ServiceB\003\340A\002\022\027\n"
-          + "\n"
-          + "request_id\030\004 \001(\tB\003\340A\001\"H\n"
+          + " \001(\0132\037.google.cloud.apphub.v1.ServiceB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"H\n"
           + "\021GetServiceRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
           + "\035apphub.googleapis.com/Service\"\\\n"
@@ -286,24 +306,24 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
           + "\'apphub.googleapis.com/DiscoveredService\"s\n"
           + "\036LookupDiscoveredServiceRequest\022?\n"
-          + "\006parent\030\001 \001(\t"
-          + "B/\340A\002\372A)\022\'apphub.googleapis.com/DiscoveredService\022\020\n"
+          + "\006parent\030\001 \001("
+          + "\tB/\340A\002\372A)\022\'apphub.googleapis.com/DiscoveredService\022\020\n"
           + "\003uri\030\002 \001(\tB\003\340A\002\"h\n"
           + "\037LookupDiscoveredServiceResponse\022E\n"
-          + "\022discovered_service\030\001"
-          + " \001(\0132).google.cloud.apphub.v1.DiscoveredService\"\234\001\n"
+          + "\022discovered_service\030\001 \001(\0132)."
+          + "google.cloud.apphub.v1.DiscoveredService\"\244\001\n"
           + "\024UpdateServiceRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\0225\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0225\n"
           + "\007service\030\002"
-          + " \001(\0132\037.google.cloud.apphub.v1.ServiceB\003\340A\002\022\027\n\n"
-          + "request_id\030\003 \001(\tB\003\340A\001\"d\n"
+          + " \001(\0132\037.google.cloud.apphub.v1.ServiceB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"l\n"
           + "\024DeleteServiceRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
-          + "\035apphub.googleapis.com/Service\022\027\n\n"
-          + "request_id\030\002 \001(\tB\003\340A\001\"\261\001\n"
+          + "\035apphub.googleapis.com/Service\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\261\001\n"
           + "\027ListApplicationsRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)"
-          + "\340A\002\372A#\022!apphub.googleapis.com/Application\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB)\340A\002\372A#\022!apphub.googleapis.com/Application\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -311,26 +331,26 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\030ListApplicationsResponse\0229\n"
           + "\014applications\030\001 \003(\0132#.google.cloud.apphub.v1.Application\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\312\001\n"
+          + "\013unreachable\030\003 \003(\t\"\322\001\n"
           + "\030CreateApplicationRequest\0229\n"
-          + "\006parent\030\001 \001("
-          + "\tB)\340A\002\372A#\022!apphub.googleapis.com/Application\022\033\n"
+          + "\006parent\030\001 \001(\tB)\340A"
+          + "\002\372A#\022!apphub.googleapis.com/Application\022\033\n"
           + "\016application_id\030\002 \001(\tB\003\340A\002\022=\n"
           + "\013application\030\003"
-          + " \001(\0132#.google.cloud.apphub.v1.ApplicationB\003\340A\002\022\027\n\n"
-          + "request_id\030\004 \001(\tB\003\340A\001\"P\n"
+          + " \001(\0132#.google.cloud.apphub.v1.ApplicationB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"P\n"
           + "\025GetApplicationRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!apphub.googleapis.com/Application\"\250\001\n"
+          + "!apphub.googleapis.com/Application\"\260\001\n"
           + "\030UpdateApplicationRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022=\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022=\n"
           + "\013application\030\002"
-          + " \001(\0132#.google.cloud.apphub.v1.ApplicationB\003\340A\002\022\027\n\n"
-          + "request_id\030\003 \001(\tB\003\340A\001\"l\n"
+          + " \001(\0132#.google.cloud.apphub.v1.ApplicationB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"t\n"
           + "\030DeleteApplicationRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!apphub.googleapis.com/Application\022\027\n\n"
-          + "request_id\030\002 \001(\tB\003\340A\001\"\253\001\n"
+          + "!apphub.googleapis.com/Application\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\253\001\n"
           + "\024ListWorkloadsRequest\0226\n"
           + "\006parent\030\001 \001(\tB&\340A\002\372A"
           + " \022\036apphub.googleapis.com/Workload\022\026\n"
@@ -350,17 +370,17 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\231\001\n"
           + "\037ListDiscoveredWorkloadsResponse\022H\n"
-          + "\024discovered_workloads\030\001 \003(\0132*.goo"
-          + "gle.cloud.apphub.v1.DiscoveredWorkload\022\027\n"
+          + "\024discovered_workloads\030\001"
+          + " \003(\0132*.google.cloud.apphub.v1.DiscoveredWorkload\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\273\001\n"
+          + "\013unreachable\030\003 \003(\t\"\303\001\n"
           + "\025CreateWorkloadRequest\0226\n"
           + "\006parent\030\001 \001(\tB&\340A\002\372A"
           + " \022\036apphub.googleapis.com/Workload\022\030\n"
           + "\013workload_id\030\002 \001(\tB\003\340A\002\0227\n"
           + "\010workload\030\003 \001(\0132"
-          + " .google.cloud.apphub.v1.WorkloadB\003\340A\002\022\027\n\n"
-          + "request_id\030\004 \001(\tB\003\340A\001\"J\n"
+          + " .google.cloud.apphub.v1.WorkloadB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"J\n"
           + "\022GetWorkloadRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036apphub.googleapis.com/Workload\"^\n"
@@ -373,16 +393,24 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\003uri\030\002 \001(\tB\003\340A\002\"k\n"
           + " LookupDiscoveredWorkloadResponse\022G\n"
           + "\023discovered_workload\030\001"
-          + " \001(\0132*.google.cloud.apphub.v1.DiscoveredWorkload\"\237\001\n"
+          + " \001(\0132*.google.cloud.apphub.v1.DiscoveredWorkload\"\247\001\n"
           + "\025UpdateWorkloadRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\0227\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0227\n"
           + "\010workload\030\002 \001(\0132"
-          + " .google.cloud.apphub.v1.WorkloadB\003\340A\002\022\027\n\n"
-          + "request_id\030\003 \001(\tB\003\340A\001\"f\n"
+          + " .google.cloud.apphub.v1.WorkloadB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"n\n"
           + "\025DeleteWorkloadRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036apphub.googleapis.com/Workload\022\027\n\n"
-          + "request_id\030\002 \001(\tB\003\340A\001\"\200\002\n"
+          + "\036apphub.googleapis.com/Workload\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"J\n"
+          + "\022GetBoundaryRequest\0224\n"
+          + "\004name\030\001 \001(\tB&\340A\002\372A \n"
+          + "\036apphub.googleapis.com/Boundary\"\247\001\n"
+          + "\025UpdateBoundaryRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\0227\n"
+          + "\010boundary\030\002 \001(\0132"
+          + " .google.cloud.apphub.v1.BoundaryB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\200\002\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
@@ -390,128 +418,155 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\0032\247/\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003\"f\n"
+          + " GetExtendedMetadataSchemaRequest\022B\n"
+          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
+          + ",apphub.googleapis.com/ExtendedMetadataSchema\"\233\001\n"
+          + "\"ListExtendedMetadataSchemasRequest\022D\n"
+          + "\006parent\030\001 \001("
+          + "\tB4\340A\002\372A.\022,apphub.googleapis.com/ExtendedMetadataSchema\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\221\001\n"
+          + "#ListExtendedMetadataSchemasResponse\022Q\n"
+          + "\031extended_metadata_schemas\030\001 \003(\0132..goog"
+          + "le.cloud.apphub.v1.ExtendedMetadataSchema\022\027\n"
+          + "\017next_page_token\030\002 \001(\t2\3335\n"
           + "\006AppHub\022\360\001\n"
-          + "\036LookupServiceProjectAttachment\022=.google.cloud.apphub.v1.LookupSer"
-          + "viceProjectAttachmentRequest\032>.google.cloud.apphub.v1.LookupServiceProjectAttach"
-          + "mentResponse\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=p"
-          + "rojects/*/locations/*}:lookupServiceProjectAttachment\022\354\001\n"
-          + "\035ListServiceProjectAttachments\022<.google.cloud.apphub.v1.ListSer"
-          + "viceProjectAttachmentsRequest\032=.google.cloud.apphub.v1.ListServiceProjectAttachm"
-          + "entsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{pare"
-          + "nt=projects/*/locations/*}/serviceProjectAttachments\022\324\002\n"
-          + "\036CreateServiceProjectAttachment\022=.google.cloud.apphub.v1.CreateS"
-          + "erviceProjectAttachmentRequest\032\035.google.longrunning.Operation\"\323\001\312A-\n"
-          + "\030ServiceProjectAttachment\022\021OperationMetadata\332A?paren"
-          + "t,service_project_attachment,service_pro"
-          + "ject_attachment_id\202\323\344\223\002[\"=/v1/{parent=pr"
-          + "ojects/*/locations/*}/serviceProjectAttachments:\032service_project_attachment\022\331\001\n"
-          + "\033GetServiceProjectAttachment\022:.google.clo"
-          + "ud.apphub.v1.GetServiceProjectAttachmentRequest\0320.google.cloud.apphub.v1.Service"
-          + "ProjectAttachment\"L\332A\004name\202\323\344\223\002?\022=/v1/{n"
-          + "ame=projects/*/locations/*/serviceProjectAttachments/*}\022\371\001\n"
-          + "\036DeleteServiceProjectAttachment\022=.google.cloud.apphub.v1.Dele"
-          + "teServiceProjectAttachmentRequest\032\035.google.longrunning.Operation\"y\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323"
-          + "\344\223\002?*=/v1/{name=projects/*/locations/*/serviceProjectAttachments/*}\022\363\001\n"
-          + "\036DetachServiceProjectAttachment\022=.google.cloud.ap"
-          + "phub.v1.DetachServiceProjectAttachmentRequest\032>.google.cloud.apphub.v1.DetachSer"
-          + "viceProjectAttachmentResponse\"R\332A\004name\202\323"
-          + "\344\223\002E\"@/v1/{name=projects/*/locations/*}:detachServiceProjectAttachment:\001*\022\320\001\n"
-          + "\026ListDiscoveredServices\0225.google.cloud.apph"
-          + "ub.v1.ListDiscoveredServicesRequest\0326.google.cloud.apphub.v1.ListDiscoveredServi"
-          + "cesResponse\"G\332A\006parent\202\323\344\223\0028\0226/v1/{paren"
-          + "t=projects/*/locations/*}/discoveredServices\022\275\001\n"
-          + "\024GetDiscoveredService\0223.google.cloud.apphub.v1.GetDiscoveredServiceReque"
-          + "st\032).google.cloud.apphub.v1.DiscoveredSe"
-          + "rvice\"E\332A\004name\202\323\344\223\0028\0226/v1/{name=projects/*/locations/*/discoveredServices/*}\022\336\001\n"
-          + "\027LookupDiscoveredService\0226.google.cloud.apphub.v1.LookupDiscoveredServiceRequest"
-          + "\0327.google.cloud.apphub.v1.LookupDiscoveredServiceResponse\"R\332A\n"
-          + "parent,uri\202\323\344\223\002?\022="
-          + "/v1/{parent=projects/*/locations/*}/discoveredServices:lookup\022\267\001\n"
-          + "\014ListServices\022+.google.cloud.apphub.v1.ListServicesRequ"
-          + "est\032,.google.cloud.apphub.v1.ListService"
-          + "sResponse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent="
-          + "projects/*/locations/*/applications/*}/services\022\346\001\n\r"
-          + "CreateService\022,.google.cloud"
-          + ".apphub.v1.CreateServiceRequest\032\035.google.longrunning.Operation\"\207\001\312A\034\n"
-          + "\007Service\022\021OperationMetadata\332A\031parent,service,servic"
-          + "e_id\202\323\344\223\002F\";/v1/{parent=projects/*/locat"
-          + "ions/*/applications/*}/services:\007service\022\244\001\n\n"
-          + "GetService\022).google.cloud.apphub.v1.GetServiceRequest\032\037.google.cloud.apphub"
-          + ".v1.Service\"J\332A\004name\202\323\344\223\002=\022;/v1/{name=pr"
-          + "ojects/*/locations/*/applications/*/services/*}\022\350\001\n\r"
-          + "UpdateService\022,.google.cloud"
-          + ".apphub.v1.UpdateServiceRequest\032\035.google.longrunning.Operation\"\211\001\312A\034\n"
-          + "\007Service\022\021OperationMetadata\332A\023service,update_mask\202\323"
-          + "\344\223\002N2C/v1/{service.name=projects/*/locat"
-          + "ions/*/applications/*/services/*}:\007service\022\325\001\n\r"
-          + "DeleteService\022,.google.cloud.apph"
-          + "ub.v1.DeleteServiceRequest\032\035.google.longrunning.Operation\"w\312A*\n"
-          + "\025google.protobuf."
-          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002=*;/"
-          + "v1/{name=projects/*/locations/*/applications/*/services/*}\022\324\001\n"
-          + "\027ListDiscoveredWorkloads\0226.google.cloud.apphub.v1.ListDisc"
-          + "overedWorkloadsRequest\0327.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse\""
-          + "H\332A\006parent\202\323\344\223\0029\0227/v1/{parent=projects/*/locations/*}/discoveredWorkloads\022\301\001\n"
-          + "\025GetDiscoveredWorkload\0224.google.cloud.apphu"
-          + "b.v1.GetDiscoveredWorkloadRequest\032*.goog"
-          + "le.cloud.apphub.v1.DiscoveredWorkload\"F\332"
-          + "A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/discoveredWorkloads/*}\022\342\001\n"
-          + "\030LookupDiscoveredWorkload\0227.google.cloud.apphub"
-          + ".v1.LookupDiscoveredWorkloadRequest\0328.go"
-          + "ogle.cloud.apphub.v1.LookupDiscoveredWorkloadResponse\"S\332A\n"
-          + "parent,uri\202\323\344\223\002@\022>/v1/"
-          + "{parent=projects/*/locations/*}/discoveredWorkloads:lookup\022\273\001\n\r"
-          + "ListWorkloads\022,.google.cloud.apphub.v1.ListWorkloadsReque"
-          + "st\032-.google.cloud.apphub.v1.ListWorkload"
-          + "sResponse\"M\332A\006parent\202\323\344\223\002>\022</v1/{parent="
-          + "projects/*/locations/*/applications/*}/workloads\022\355\001\n"
-          + "\016CreateWorkload\022-.google.clo"
-          + "ud.apphub.v1.CreateWorkloadRequest\032\035.google.longrunning.Operation\"\214\001\312A\035\n"
-          + "\010Workload\022\021OperationMetadata\332A\033parent,workload,w"
-          + "orkload_id\202\323\344\223\002H\"</v1/{parent=projects/*"
-          + "/locations/*/applications/*}/workloads:\010workload\022\250\001\n"
-          + "\013GetWorkload\022*.google.cloud.apphub.v1.GetWorkloadRequest\032 .google.cl"
-          + "oud.apphub.v1.Workload\"K\332A\004name\202\323\344\223\002>\022</"
-          + "v1/{name=projects/*/locations/*/applications/*/workloads/*}\022\357\001\n"
-          + "\016UpdateWorkload\022-.google.cloud.apphub.v1.UpdateWorkloadRe"
-          + "quest\032\035.google.longrunning.Operation\"\216\001\312A\035\n"
-          + "\010Workload\022\021OperationMetadata\332A\024worklo"
-          + "ad,update_mask\202\323\344\223\002Q2E/v1/{workload.name"
-          + "=projects/*/locations/*/applications/*/workloads/*}:\010workload\022\330\001\n"
-          + "\016DeleteWorkload\022-.google.cloud.apphub.v1.DeleteWorkload"
-          + "Request\032\035.google.longrunning.Operation\"x\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\332A\004name\202\323\344\223\002>*</v1/{name=projects/*"
-          + "/locations/*/applications/*/workloads/*}\022\270\001\n"
-          + "\020ListApplications\022/.google.cloud.apphub.v1.ListApplicationsRequest\0320.google."
-          + "cloud.apphub.v1.ListApplicationsResponse"
-          + "\"A\332A\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/locations/*}/applications\022\363\001\n"
-          + "\021CreateApplication\0220.google.cloud.apphub.v1.Creat"
-          + "eApplicationRequest\032\035.google.longrunning.Operation\"\214\001\312A \n"
-          + "\013Application\022\021OperationMetadata\332A!parent,application,applicatio"
-          + "n_id\202\323\344\223\002?\"0/v1/{parent=projects/*/locations/*}/applications:\013application\022\245\001\n"
-          + "\016GetApplication\022-.google.cloud.apphub.v1.Ge"
-          + "tApplicationRequest\032#.google.cloud.apphu"
-          + "b.v1.Application\"?\332A\004name\202\323\344\223\0022\0220/v1/{na"
-          + "me=projects/*/locations/*/applications/*}\022\365\001\n"
-          + "\021UpdateApplication\0220.google.cloud.a"
-          + "pphub.v1.UpdateApplicationRequest\032\035.google.longrunning.Operation\"\216\001\312A"
-          + " \n"
-          + "\013Application\022\021OperationMetadata\332A\027application,upd"
-          + "ate_mask\202\323\344\223\002K2</v1/{application.name=pr"
-          + "ojects/*/locations/*/applications/*}:\013application\022\322\001\n"
-          + "\021DeleteApplication\0220.google"
-          + ".cloud.apphub.v1.DeleteApplicationRequest\032\035.google.longrunning.Operation\"l\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332"
-          + "A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locat"
-          + "ions/*/applications/*}\032I\312A\025apphub.google"
-          + "apis.com\322A.https://www.googleapis.com/auth/cloud-platformB\264\001\n"
-          + "\032com.google.cloud.apphub.v1B\022ApphubServiceProtoP\001Z2cloud.go"
-          + "ogle.com/go/apphub/apiv1/apphubpb;apphub"
-          + "pb\252\002\026Google.Cloud.AppHub.V1\312\002\026Google\\Clo"
-          + "ud\\AppHub\\V1\352\002\031Google::Cloud::AppHub::V1b\006proto3"
+          + "\036LookupServiceProjectAttachment\022=.google.cloud.apphub.v1.LookupServiceProjectAt"
+          + "tachmentRequest\032>.google.cloud.apphub.v1.LookupServiceProjectAttachmentResponse\""
+          + "O\332A\004name\202\323\344\223\002B\022@/v1/{name=projects/*/loc"
+          + "ations/*}:lookupServiceProjectAttachment\022\354\001\n"
+          + "\035ListServiceProjectAttachments\022<.google.cloud.apphub.v1.ListServiceProjectAt"
+          + "tachmentsRequest\032=.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse\""
+          + "N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=projects/*"
+          + "/locations/*}/serviceProjectAttachments\022\324\002\n"
+          + "\036CreateServiceProjectAttachment\022=.google.cloud.apphub.v1.CreateServiceProject"
+          + "AttachmentRequest\032\035.google.longrunning.Operation\"\323\001\312A-\n"
+          + "\030ServiceProjectAttachment\022\021OperationMetadata\332A?parent,service_pro"
+          + "ject_attachment,service_project_attachme"
+          + "nt_id\202\323\344\223\002[\"=/v1/{parent=projects/*/loca"
+          + "tions/*}/serviceProjectAttachments:\032service_project_attachment\022\331\001\n"
+          + "\033GetServiceProjectAttachment\022:.google.cloud.apphub.v1."
+          + "GetServiceProjectAttachmentRequest\0320.google.cloud.apphub.v1.ServiceProjectAttach"
+          + "ment\"L\332A\004name\202\323\344\223\002?\022=/v1/{name=projects/"
+          + "*/locations/*/serviceProjectAttachments/*}\022\371\001\n"
+          + "\036DeleteServiceProjectAttachment\022=.google.cloud.apphub.v1.DeleteServiceProj"
+          + "ectAttachmentRequest\032\035.google.longrunning.Operation\"y\312A*\n"
+          + "\025google.protobuf.Empty\022"
+          + "\021OperationMetadata\332A\004name\202\323\344\223\002?*=/v1/{na"
+          + "me=projects/*/locations/*/serviceProjectAttachments/*}\022\363\001\n"
+          + "\036DetachServiceProjectAttachment\022=.google.cloud.apphub.v1.Detac"
+          + "hServiceProjectAttachmentRequest\032>.google.cloud.apphub.v1.DetachServiceProjectAt"
+          + "tachmentResponse\"R\332A\004name\202\323\344\223\002E\"@/v1/{na"
+          + "me=projects/*/locations/*}:detachServiceProjectAttachment:\001*\022\320\001\n"
+          + "\026ListDiscoveredServices\0225.google.cloud.apphub.v1.ListDis"
+          + "coveredServicesRequest\0326.google.cloud.apphub.v1.ListDiscoveredServicesResponse\"G"
+          + "\332A\006parent\202\323\344\223\0028\0226/v1/{parent=projects/*/locations/*}/discoveredServices\022\275\001\n"
+          + "\024GetDiscoveredService\0223.google.cloud.apphub.v"
+          + "1.GetDiscoveredServiceRequest\032).google.c"
+          + "loud.apphub.v1.DiscoveredService\"E\332A\004nam"
+          + "e\202\323\344\223\0028\0226/v1/{name=projects/*/locations/*/discoveredServices/*}\022\336\001\n"
+          + "\027LookupDiscoveredService\0226.google.cloud.apphub.v1.Loo"
+          + "kupDiscoveredServiceRequest\0327.google.clo"
+          + "ud.apphub.v1.LookupDiscoveredServiceResponse\"R\332A\n"
+          + "parent,uri\202\323\344\223\002?\022=/v1/{parent=p"
+          + "rojects/*/locations/*}/discoveredServices:lookup\022\267\001\n"
+          + "\014ListServices\022+.google.cloud.apphub.v1.ListServicesRequest\032,.google."
+          + "cloud.apphub.v1.ListServicesResponse\"L\332A"
+          + "\006parent\202\323\344\223\002=\022;/v1/{parent=projects/*/locations/*/applications/*}/services\022\346\001\n\r"
+          + "CreateService\022,.google.cloud.apphub.v1.Cr"
+          + "eateServiceRequest\032\035.google.longrunning.Operation\"\207\001\312A\034\n"
+          + "\007Service\022\021OperationMetad"
+          + "ata\332A\031parent,service,service_id\202\323\344\223\002F\";/"
+          + "v1/{parent=projects/*/locations/*/applications/*}/services:\007service\022\244\001\n\n"
+          + "GetService\022).google.cloud.apphub.v1.GetServiceRe"
+          + "quest\032\037.google.cloud.apphub.v1.Service\"J"
+          + "\332A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/locations/*/applications/*/services/*}\022\350\001\n\r"
+          + "UpdateService\022,.google.cloud.apphub.v1.Up"
+          + "dateServiceRequest\032\035.google.longrunning.Operation\"\211\001\312A\034\n"
+          + "\007Service\022\021OperationMetad"
+          + "ata\332A\023service,update_mask\202\323\344\223\002N2C/v1/{se"
+          + "rvice.name=projects/*/locations/*/applications/*/services/*}:\007service\022\325\001\n\r"
+          + "DeleteService\022,.google.cloud.apphub.v1.DeleteS"
+          + "erviceRequest\032\035.google.longrunning.Operation\"w\312A*\n"
+          + "\025google.protobuf.Empty\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\002=*;/v1/{name=proj"
+          + "ects/*/locations/*/applications/*/services/*}\022\324\001\n"
+          + "\027ListDiscoveredWorkloads\0226.google.cloud.apphub.v1.ListDiscoveredWorkloa"
+          + "dsRequest\0327.google.cloud.apphub.v1.ListD"
+          + "iscoveredWorkloadsResponse\"H\332A\006parent\202\323\344"
+          + "\223\0029\0227/v1/{parent=projects/*/locations/*}/discoveredWorkloads\022\301\001\n"
+          + "\025GetDiscoveredWorkload\0224.google.cloud.apphub.v1.GetDisco"
+          + "veredWorkloadRequest\032*.google.cloud.apph"
+          + "ub.v1.DiscoveredWorkload\"F\332A\004name\202\323\344\223\0029\022"
+          + "7/v1/{name=projects/*/locations/*/discoveredWorkloads/*}\022\342\001\n"
+          + "\030LookupDiscoveredWorkload\0227.google.cloud.apphub.v1.LookupDis"
+          + "coveredWorkloadRequest\0328.google.cloud.ap"
+          + "phub.v1.LookupDiscoveredWorkloadResponse\"S\332A\n"
+          + "parent,uri\202\323\344\223\002@\022>/v1/{parent=proje"
+          + "cts/*/locations/*}/discoveredWorkloads:lookup\022\273\001\n\r"
+          + "ListWorkloads\022,.google.cloud.apphub.v1.ListWorkloadsRequest\032-.google.c"
+          + "loud.apphub.v1.ListWorkloadsResponse\"M\332A"
+          + "\006parent\202\323\344\223\002>\022</v1/{parent=projects/*/locations/*/applications/*}/workloads\022\355\001\n"
+          + "\016CreateWorkload\022-.google.cloud.apphub.v1."
+          + "CreateWorkloadRequest\032\035.google.longrunning.Operation\"\214\001\312A\035\n"
+          + "\010Workload\022\021OperationMetadata\332A\033parent,workload,workload_id\202\323\344"
+          + "\223\002H\"</v1/{parent=projects/*/locations/*/applications/*}/workloads:\010workload\022\250\001\n"
+          + "\013GetWorkload\022*.google.cloud.apphub.v1.GetWorkloadRequest\032"
+          + " .google.cloud.apphub.v1"
+          + ".Workload\"K\332A\004name\202\323\344\223\002>\022</v1/{name=proj"
+          + "ects/*/locations/*/applications/*/workloads/*}\022\357\001\n"
+          + "\016UpdateWorkload\022-.google.cloud"
+          + ".apphub.v1.UpdateWorkloadRequest\032\035.google.longrunning.Operation\"\216\001\312A\035\n"
+          + "\010Workload\022\021OperationMetadata\332A\024workload,update_mas"
+          + "k\202\323\344\223\002Q2E/v1/{workload.name=projects/*/l"
+          + "ocations/*/applications/*/workloads/*}:\010workload\022\330\001\n"
+          + "\016DeleteWorkload\022-.google.clo"
+          + "ud.apphub.v1.DeleteWorkloadRequest\032\035.google.longrunning.Operation\"x\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202"
+          + "\323\344\223\002>*</v1/{name=projects/*/locations/*/applications/*/workloads/*}\022\270\001\n"
+          + "\020ListApplications\022/.google.cloud.apphub.v1.ListAp"
+          + "plicationsRequest\0320.google.cloud.apphub."
+          + "v1.ListApplicationsResponse\"A\332A\006parent\202\323"
+          + "\344\223\0022\0220/v1/{parent=projects/*/locations/*}/applications\022\363\001\n"
+          + "\021CreateApplication\0220.google.cloud.apphub.v1.CreateApplicationR"
+          + "equest\032\035.google.longrunning.Operation\"\214\001\312A \n"
+          + "\013Application\022\021OperationMetadata\332A!pa"
+          + "rent,application,application_id\202\323\344\223\002?\"0/"
+          + "v1/{parent=projects/*/locations/*}/applications:\013application\022\245\001\n"
+          + "\016GetApplication\022-.google.cloud.apphub.v1.GetApplicationR"
+          + "equest\032#.google.cloud.apphub.v1.Applicat"
+          + "ion\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/locations/*/applications/*}\022\365\001\n"
+          + "\021UpdateApplication\0220.google.cloud.apphub.v1.Upda"
+          + "teApplicationRequest\032\035.google.longrunning.Operation\"\216\001\312A \n"
+          + "\013Application\022\021Operatio"
+          + "nMetadata\332A\027application,update_mask\202\323\344\223\002"
+          + "K2</v1/{application.name=projects/*/locations/*/applications/*}:\013application\022\322\001\n"
+          + "\021DeleteApplication\0220.google.cloud.apphub"
+          + ".v1.DeleteApplicationRequest\032\035.google.longrunning.Operation\"l\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0022*"
+          + "0/v1/{name=projects/*/locations/*/applications/*}\022\226\001\n"
+          + "\013GetBoundary\022*.google.cloud.apphub.v1.GetBoundaryRequest\032 .google.c"
+          + "loud.apphub.v1.Boundary\"9\332A\004name\202\323\344\223\002,\022*"
+          + "/v1/{name=projects/*/locations/*/boundary}\022\334\001\n"
+          + "\016UpdateBoundary\022-.google.cloud.app"
+          + "hub.v1.UpdateBoundaryRequest\032\035.google.longrunning.Operation\"|\312A\035\n"
+          + "\010Boundary\022\021OperationMetadata\332A\024boundary,update_mask\202\323\344\223"
+          + "\002?23/v1/{boundary.name=projects/*/locations/*/boundary}:\010boundary\022\322\001\n"
+          + "\031GetExtendedMetadataSchema\0228.google.cloud.apphub.v1"
+          + ".GetExtendedMetadataSchemaRequest\032..google.cloud.apphub.v1.ExtendedMetadataSchem"
+          + "a\"K\332A\004name\202\323\344\223\002>\022</v1/{name=projects/*/l"
+          + "ocations/*/extendedMetadataSchemas/**}\022\344\001\n"
+          + "\033ListExtendedMetadataSchemas\022:.google.cloud.apphub.v1.ListExtendedMetadataSche"
+          + "masRequest\032;.google.cloud.apphub.v1.List"
+          + "ExtendedMetadataSchemasResponse\"L\332A\006pare"
+          + "nt\202\323\344\223\002=\022;/v1/{parent=projects/*/locatio"
+          + "ns/*}/extendedMetadataSchemas\032I\312A\025apphub"
+          + ".googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\264\001\n"
+          + "\032com.google.cloud.apphub.v1B\022ApphubServiceProtoP\001Z2c"
+          + "loud.google.com/go/apphub/apiv1/apphubpb"
+          + ";apphubpb\252\002\026Google.Cloud.AppHub.V1\312\002\026Goo"
+          + "gle\\Cloud\\AppHub\\V1\352\002\031Google::Cloud::AppHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -520,8 +575,11 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.apphub.v1.ApplicationProto.getDescriptor(),
+              com.google.cloud.apphub.v1.BoundaryProto.getDescriptor(),
+              com.google.cloud.apphub.v1.ExtendedMetadataSchemaProto.getDescriptor(),
               com.google.cloud.apphub.v1.ServiceProto.getDescriptor(),
               com.google.cloud.apphub.v1.ServiceProjectAttachmentProto.getDescriptor(),
               com.google.cloud.apphub.v1.WorkloadProto.getDescriptor(),
@@ -824,8 +882,24 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "Name", "RequestId",
             });
-    internal_static_google_cloud_apphub_v1_OperationMetadata_descriptor =
+    internal_static_google_cloud_apphub_v1_GetBoundaryRequest_descriptor =
         getDescriptor().getMessageType(37);
+    internal_static_google_cloud_apphub_v1_GetBoundaryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_GetBoundaryRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_apphub_v1_UpdateBoundaryRequest_descriptor =
+        getDescriptor().getMessageType(38);
+    internal_static_google_cloud_apphub_v1_UpdateBoundaryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_UpdateBoundaryRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "Boundary", "RequestId",
+            });
+    internal_static_google_cloud_apphub_v1_OperationMetadata_descriptor =
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_apphub_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apphub_v1_OperationMetadata_descriptor,
@@ -838,12 +912,39 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
               "RequestedCancellation",
               "ApiVersion",
             });
+    internal_static_google_cloud_apphub_v1_GetExtendedMetadataSchemaRequest_descriptor =
+        getDescriptor().getMessageType(40);
+    internal_static_google_cloud_apphub_v1_GetExtendedMetadataSchemaRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_GetExtendedMetadataSchemaRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasRequest_descriptor =
+        getDescriptor().getMessageType(41);
+    internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasResponse_descriptor =
+        getDescriptor().getMessageType(42);
+    internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_ListExtendedMetadataSchemasResponse_descriptor,
+            new java.lang.String[] {
+              "ExtendedMetadataSchemas", "NextPageToken",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.apphub.v1.ApplicationProto.getDescriptor();
+    com.google.cloud.apphub.v1.BoundaryProto.getDescriptor();
+    com.google.cloud.apphub.v1.ExtendedMetadataSchemaProto.getDescriptor();
     com.google.cloud.apphub.v1.ServiceProto.getDescriptor();
     com.google.cloud.apphub.v1.ServiceProjectAttachmentProto.getDescriptor();
     com.google.cloud.apphub.v1.WorkloadProto.getDescriptor();
@@ -855,6 +956,7 @@ public final class ApphubServiceProto extends com.google.protobuf.GeneratedFile 
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);

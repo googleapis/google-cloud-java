@@ -196,7 +196,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setUseQueryCache(this.connection.isUseQueryCache());
     querySettings.setQueryDialect(this.connection.getQueryDialect());
     querySettings.setKmsKeyName(this.connection.getKmsKeyName());
-    querySettings.setQueryProperties(this.connection.getQueryProperties());
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    querySettings.setQueryProperties(snapshot.queryProperties);
     querySettings.setAllowLargeResults(this.connection.isAllowLargeResults());
     if (this.connection.getJobTimeoutInSeconds() > 0) {
       querySettings.setJobTimeoutMs(this.connection.getJobTimeoutInSeconds() * 1000L);
@@ -212,8 +213,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // only create session if enable session and session info is null
     if (this.connection.isSessionEnabled()) {
       querySettings.setEnableSession(this.connection.isSessionEnabled());
-      querySettings.setSessionInfoConnectionProperty(
-          this.connection.getSessionInfoConnectionProperty());
+      querySettings.setSessionInfoConnectionProperty(snapshot.sessionInfo);
     }
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
@@ -614,7 +614,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (tableResult.getSessionInfo() != null) {
       String sessionId = tableResult.getSessionInfo().getSessionId();
       if (sessionId != null && !sessionId.isEmpty()) {
-        this.connection.updateSessionInfo(sessionId);
+        this.connection.initSessionInfo(sessionId);
       }
     }
   }
@@ -918,6 +918,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
       arrowResultSet.setJobId(currentJobId);
       arrowResultSet.setQueryId(results.getQueryId());
+      if (job == null && currentJobId == null) {
+        arrowResultSet.setQueryStatistics(results.extractQueryStatistics());
+      }
       return arrowResultSet;
 
     } catch (Exception | OutOfMemoryError ex) {
@@ -928,16 +931,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         throw new BigQueryJdbcException(
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
             ex);
-      }
-      if (ex instanceof RuntimeException) {
-        throw (ex instanceof BigQueryJdbcRuntimeException)
-            ? (BigQueryJdbcRuntimeException) ex
-            : new BigQueryJdbcRuntimeException(ex);
-      }
-      if (ex instanceof SQLException) {
-        throw (ex instanceof BigQueryJdbcException)
-            ? (BigQueryJdbcException) ex
-            : new BigQueryJdbcException(ex);
       }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
@@ -1218,6 +1211,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             job);
     jsonResultSet.setJobId(jobId);
     jsonResultSet.setQueryId(results.getQueryId());
+    if (job == null && jobId == null) {
+      jsonResultSet.setQueryStatistics(results.extractQueryStatistics());
+    }
     jsonResultSetFinalizers.add(
         new BigQueryResultSetFinalizers.JsonResultSetFinalizer(
             jsonResultSet, referenceQueueJsonRs, jsonWorkers));
@@ -1508,30 +1504,26 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
 
-    ConnectionProperty sessionProperty =
-        this.connection != null
-            ? this.connection.getSessionInfoConnectionProperty()
-            : this.querySettings.getSessionInfoConnectionProperty();
-    boolean isSessionEnabled =
-        this.connection != null
-            ? this.connection.isSessionEnabled()
-            : this.querySettings.isEnableSession();
-    List<ConnectionProperty> queryProperties =
-        this.connection != null
-            ? this.connection.getQueryProperties()
-            : this.querySettings.getQueryProperties();
+    // Only reachable from execute paths, which call checkClosed() first, so this.connection is
+    // non-null here; close() is the only thing that nulls it.
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    ConnectionProperty sessionProperty = snapshot.sessionInfo;
+    boolean isSessionEnabled = this.connection.isSessionEnabled();
+    List<ConnectionProperty> queryProperties = snapshot.queryProperties;
 
     List<ConnectionProperty> props =
         queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();
 
     if (sessionProperty != null) {
       boolean hasSessionId =
-          props.stream().anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey()));
+          props.stream()
+              .anyMatch(cp -> BigQueryConnection.SESSION_ID_KEY.equalsIgnoreCase(cp.getKey()));
       if (!hasSessionId) {
         props.add(sessionProperty);
       }
     } else if (isSessionEnabled) {
       queryConfigBuilder.setCreateSession(true);
+      this.connection.markSessionCreatedByDriver();
     }
 
     if (!props.isEmpty()) {
@@ -1914,5 +1906,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
+  }
+
+  QueryStatistics describePositionalParameterQuery(String query)
+      throws BigQueryJdbcException, BigQueryJdbcSqlSyntaxErrorException {
+    LOG.finer("++enter++");
+    return getQueryStatistics(getJobConfig(query).setParameterMode("POSITIONAL").build());
   }
 }

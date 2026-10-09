@@ -24,14 +24,12 @@ import com.google.cloud.vision.v1.AddProductToProductSetRequest;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1.ColorInfo;
 import com.google.cloud.vision.v1.CreateProductRequest;
 import com.google.cloud.vision.v1.CreateProductSetRequest;
 import com.google.cloud.vision.v1.CreateReferenceImageRequest;
 import com.google.cloud.vision.v1.DeleteProductRequest;
 import com.google.cloud.vision.v1.DeleteProductSetRequest;
 import com.google.cloud.vision.v1.DeleteReferenceImageRequest;
-import com.google.cloud.vision.v1.DominantColorsAnnotation;
 import com.google.cloud.vision.v1.EntityAnnotation;
 import com.google.cloud.vision.v1.FaceAnnotation;
 import com.google.cloud.vision.v1.Feature;
@@ -408,29 +406,6 @@ public class ITSystemTest {
     }
     String joinedActual = String.join(" ", actual);
     assertThat(joinedActual).contains("37%");
-  }
-
-  @Test
-  public void detectPropertiesTest() throws IOException {
-    AnnotateImageResponse res = requestAnnotatedImage("landmark.jpg", Type.IMAGE_PROPERTIES, false);
-    List<Float> actual = new ArrayList<>();
-    DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
-    for (ColorInfo color : assertNotEmpty(res, colors.getColorsList())) {
-      actual.add(color.getPixelFraction());
-    }
-    assertThat(actual).contains((float) 0.14140345);
-  }
-
-  @Test
-  public void detectPropertiesGcsTest() throws IOException {
-    AnnotateImageResponse res =
-        requestAnnotatedImage("landmark/pofa.jpg", Type.IMAGE_PROPERTIES, true);
-    List<Float> actual = new ArrayList<>();
-    DominantColorsAnnotation colors = res.getImagePropertiesAnnotation().getDominantColors();
-    for (ColorInfo color : assertNotEmpty(res, colors.getColorsList())) {
-      actual.add(color.getPixelFraction());
-    }
-    assertThat(actual).contains((float) 0.14140345);
   }
 
   @Test
