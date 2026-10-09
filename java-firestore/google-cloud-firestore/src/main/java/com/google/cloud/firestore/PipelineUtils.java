@@ -53,15 +53,6 @@ public class PipelineUtils {
     return UserDataConverter.encodeValue(FieldPath.empty(), value, UserDataConverter.ARGUMENT);
   }
 
-  /**
-   * Returns the user-facing name of a {@link FieldValue} sentinel, for example {@code
-   * FieldValue.serverTimestamp()}.
-   */
-  @InternalApi
-  public static String fieldValueMethodName(FieldValue fieldValue) {
-    return fieldValue.getMethodName();
-  }
-
   @InternalApi
   public static Value encodeValue(Expression value) {
     return exprToValue(value);

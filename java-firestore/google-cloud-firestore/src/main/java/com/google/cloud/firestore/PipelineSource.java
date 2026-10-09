@@ -152,14 +152,12 @@ public final class PipelineSource {
   /**
    * Creates a new {@link Pipeline} that operates on a static set of documents represented as Maps.
    *
-   * <p>Each map becomes one input document. At least one document is required: executing a pipeline
-   * with no documents fails with {@code INVALID_ARGUMENT}. Field values can be constants or {@link
-   * com.google.cloud.firestore.pipeline.expressions.Expression}s; expressions are evaluated,
-   * including expressions nested inside map or list values. {@link FieldValue} sentinels (for
-   * example, {@code FieldValue.serverTimestamp()}) are not supported; use an expression such as
-   * {@code currentTimestamp()} instead. To give a document a path (for example, for an in-place
-   * {@code insert()}, {@code upsert()} or {@code update()}), set its {@code __name__} field to a
-   * {@link DocumentReference}.
+   * <p>Each map becomes one input document. Field values can be constants or {@link
+   * com.google.cloud.firestore.pipeline.expressions.Expression}s, including expressions nested
+   * inside map or list values. {@link FieldValue} sentinels are not supported; use an expression
+   * such as {@code currentTimestamp()} instead. To give a document a path, set its {@code __name__}
+   * field to a {@link DocumentReference}. Executing a pipeline with no documents fails with {@code
+   * INVALID_ARGUMENT}.
    *
    * <p>Example:
    *
@@ -177,7 +175,6 @@ public final class PipelineSource {
    *
    * @param data The Maps representing documents to include in the pipeline.
    * @return A new {@code Pipeline} instance with a literals source.
-   * @throws IllegalArgumentException if a value contains a {@link FieldValue} sentinel.
    */
   @Nonnull
   public final Pipeline literals(java.util.Map<String, Object>... data) {
@@ -186,28 +183,15 @@ public final class PipelineSource {
 
   /**
    * Creates a new {@link Pipeline} that operates on a static set of documents represented as Maps.
-   *
-   * <p>This is equivalent to {@link #literals(java.util.Map...)}, taking the documents as a {@link
-   * java.util.List}.
-   *
-   * <p>Each map becomes one input document. At least one document is required: executing a pipeline
-   * with no documents fails with {@code INVALID_ARGUMENT}. Field values can be constants or {@link
-   * com.google.cloud.firestore.pipeline.expressions.Expression}s; expressions are evaluated,
-   * including expressions nested inside map or list values. {@link FieldValue} sentinels (for
-   * example, {@code FieldValue.serverTimestamp()}) are not supported; use an expression such as
-   * {@code currentTimestamp()} instead. To give a document a path (for example, for an in-place
-   * {@code insert()}, {@code upsert()} or {@code update()}), set its {@code __name__} field to a
-   * {@link DocumentReference}.
+   * Equivalent to {@link #literals(java.util.Map...)}.
    *
    * @param data The Maps representing documents to include in the pipeline.
    * @return A new {@code Pipeline} instance with a literals source.
-   * @throws IllegalArgumentException if a value contains a {@link FieldValue} sentinel.
    */
   @Nonnull
   @SuppressWarnings("unchecked")
   public Pipeline literals(@Nonnull java.util.List<java.util.Map<String, Object>> data) {
-    Preconditions.checkNotNull(
-        data, "Function literals() called with invalid data. Documents must not be null.");
+    Preconditions.checkNotNull(data, "Documents must not be null.");
     return literals(data.toArray(new java.util.Map[0]));
   }
 

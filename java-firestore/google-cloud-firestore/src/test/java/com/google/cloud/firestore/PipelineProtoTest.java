@@ -484,44 +484,37 @@ public class PipelineProtoTest {
         assertThrows(
             NullPointerException.class,
             () -> firestore.pipeline().literals((java.util.Map<String, Object>[]) null));
-    assertThat(nullArray)
-        .hasMessageThat()
-        .isEqualTo("Function literals() called with invalid data. Documents must not be null.");
+    assertThat(nullArray).hasMessageThat().isEqualTo("Documents must not be null.");
 
     NullPointerException nullDoc =
         assertThrows(
             NullPointerException.class,
             () -> firestore.pipeline().literals((java.util.Map<String, Object>) null));
-    assertThat(nullDoc)
-        .hasMessageThat()
-        .isEqualTo("Function literals() called with invalid data. Document 0 is null.");
+    assertThat(nullDoc).hasMessageThat().isEqualTo("Document 0 must not be null.");
 
     java.util.Map<String, Object> nested = new java.util.HashMap<>();
     nested.put("b", FieldValue.serverTimestamp());
     java.util.Map<String, Object> doc = new java.util.HashMap<>();
     doc.put("a", nested);
     IllegalArgumentException sentinel =
-        assertThrows(IllegalArgumentException.class, () -> firestore.pipeline().literals(doc));
-    assertThat(sentinel)
-        .hasMessageThat()
-        .isEqualTo(
-            "Function literals() called with invalid data. FieldValue.serverTimestamp() can only"
-                + " be used with update() and set() (found in field a.b)");
+        assertThrows(
+            IllegalArgumentException.class, () -> firestore.pipeline().literals(doc).toProto());
+    assertThat(sentinel).hasMessageThat().contains("FieldValue.serverTimestamp()");
 
     java.util.Map<String, Object> inList = new java.util.HashMap<>();
     inList.put("list", java.util.Arrays.asList(1, FieldValue.increment(1)));
     IllegalArgumentException listSentinel =
-        assertThrows(IllegalArgumentException.class, () -> firestore.pipeline().literals(inList));
+        assertThrows(
+            IllegalArgumentException.class, () -> firestore.pipeline().literals(inList).toProto());
     assertThat(listSentinel).hasMessageThat().contains("FieldValue.increment()");
-    assertThat(listSentinel).hasMessageThat().contains("(found in field list)");
 
     java.util.Map<String, Object> deleteDoc = new java.util.HashMap<>();
     deleteDoc.put("a.b", FieldValue.delete());
     IllegalArgumentException delete =
         assertThrows(
-            IllegalArgumentException.class, () -> firestore.pipeline().literals(deleteDoc));
+            IllegalArgumentException.class,
+            () -> firestore.pipeline().literals(deleteDoc).toProto());
     assertThat(delete).hasMessageThat().contains("FieldValue.delete()");
-    assertThat(delete).hasMessageThat().contains("(found in field `a.b`)");
 
     // Null field values are allowed.
     java.util.Map<String, Object> withNull = new java.util.HashMap<>();

@@ -17,8 +17,6 @@
 package com.google.cloud.firestore.pipeline.stages;
 
 import com.google.api.core.InternalApi;
-import com.google.cloud.firestore.FieldPath;
-import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.common.base.Preconditions;
@@ -36,47 +34,11 @@ public final class Literals extends Stage {
 
   public Literals(Map<String, Object>... data) {
     super("literals", InternalOptions.EMPTY);
-    Preconditions.checkNotNull(
-        data, "Function literals() called with invalid data. Documents must not be null.");
+    Preconditions.checkNotNull(data, "Documents must not be null.");
     for (int i = 0; i < data.length; i++) {
-      Preconditions.checkNotNull(
-          data[i], "Function literals() called with invalid data. Document %s is null.", i);
-      validateNoSentinels(data[i], new ArrayList<>());
+      Preconditions.checkNotNull(data[i], "Document %s must not be null.", i);
     }
     this.data = Arrays.asList(data);
-  }
-
-  /**
-   * Throws if {@code value} contains a {@link FieldValue} sentinel at any depth. Sentinels are
-   * field transforms of set() and update() and have no pipeline encoding.
-   */
-  private static void validateNoSentinels(Object value, List<String> path) {
-    if (value instanceof FieldValue) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Function literals() called with invalid data. %s can only be used with update() and"
-                  + " set() (found in field %s)",
-              PipelineUtils.fieldValueMethodName((FieldValue) value), formatPath(path)));
-    } else if (value instanceof Map) {
-      for (Map.Entry<?, ?> entry : ((Map<?, ?>) value).entrySet()) {
-        path.add(String.valueOf(entry.getKey()));
-        validateNoSentinels(entry.getValue(), path);
-        path.remove(path.size() - 1);
-      }
-    } else if (value instanceof List) {
-      for (Object child : (List<?>) value) {
-        validateNoSentinels(child, path);
-      }
-    }
-  }
-
-  private static String formatPath(List<String> path) {
-    try {
-      return FieldPath.of(path.toArray(new String[0])).toString();
-    } catch (IllegalArgumentException e) {
-      // Empty field names cannot be represented as a FieldPath.
-      return String.join(".", path);
-    }
   }
 
   @Override
