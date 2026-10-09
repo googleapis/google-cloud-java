@@ -35,7 +35,10 @@ import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
+import io.opentelemetry.context.Context;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
@@ -51,19 +54,24 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Tracer tracer;
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
+  private final String operationSpanName;
   private final ApiTracerContext apiTracerContext;
   // Captures the active trace context from the calling thread at RPC initiation.
-  // This allows attempt spans—including retries dispatched on background threads—to
-  // link back to the original parent trace.
-  private final io.opentelemetry.context.Context parentContext;
+  // This allows the operation span and attempt spans to link back to the caller's trace.
+  private final Context parentContext;
+  // Trace context containing the operationSpan, serving as the parent for attempt spans.
+  private final Context operationContext;
+  private @Nullable Span operationSpan;
   private @Nullable Span attemptSpan;
 
   @Override
-  public void injectTraceContext(java.util.Map<String, String> carrier) {
-    if (attemptSpan != null) {
-      io.opentelemetry.context.Context context =
-          io.opentelemetry.context.Context.current().with(attemptSpan);
-      io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator.getInstance()
+  public void injectTraceContext(Map<String, String> carrier) {
+    // Prefer the active attempt span so outgoing RPC wire context reflects the specific attempt;
+    // fall back to the overall operation span if no attempt is currently in-flight.
+    Span currentSpan = attemptSpan != null ? attemptSpan : operationSpan;
+    if (currentSpan != null) {
+      Context context = Context.current().with(currentSpan);
+      W3CTraceContextPropagator.getInstance()
           .inject(
               context,
               carrier,
@@ -82,12 +90,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    * @param apiTracerContext the {@link ApiTracerContext} to use for recording spans
    */
   OpenTelemetryTracingTracer(Tracer tracer, ApiTracerContext apiTracerContext) {
-    this.tracer = tracer;
-    this.apiTracerContext = apiTracerContext;
-    this.attemptSpanName = resolveAttemptSpanName(apiTracerContext);
-    this.attemptAttributes = new HashMap<>();
-    this.parentContext = io.opentelemetry.context.Context.current();
-    buildAttributes();
+    this(tracer, apiTracerContext, resolveAttemptSpanName(apiTracerContext));
   }
 
   /**
@@ -102,13 +105,53 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   OpenTelemetryTracingTracer(
       Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
     this.tracer = tracer;
-    this.attemptSpanName = attemptSpanName;
     this.apiTracerContext = apiTracerContext;
+    this.attemptSpanName = attemptSpanName;
+    this.operationSpanName = resolveOperationSpanName(attemptSpanName);
     this.attemptAttributes = new HashMap<>();
-    this.parentContext = io.opentelemetry.context.Context.current();
+    this.parentContext = Context.current();
     buildAttributes();
+    this.operationSpan = startOperationSpan();
+    this.operationContext = parentContext.with(this.operationSpan);
   }
 
+  /**
+   * Starts and initializes the operation-level client request span.
+   *
+   * @return the newly started {@link Span} for the overall operation
+   */
+  private Span startOperationSpan() {
+    SpanBuilder operationSpanBuilder = tracer.spanBuilder(operationSpanName);
+    operationSpanBuilder.setSpanKind(SpanKind.INTERNAL);
+    operationSpanBuilder.setParent(parentContext);
+    operationSpanBuilder.setAllAttributes(
+        ObservabilityUtils.toOtelAttributes(this.apiTracerContext.getOperationAttributes()));
+    return operationSpanBuilder.startSpan();
+  }
+
+  /**
+   * Derives the operation-level span name from the attempt span name.
+   *
+   * @param attemptSpanName the attempt span name
+   * @return the operation span name
+   */
+  private static String resolveOperationSpanName(String attemptSpanName) {
+    if (!Strings.isNullOrEmpty(attemptSpanName)) {
+      if (attemptSpanName.endsWith("/attempt")) {
+        String name = attemptSpanName.substring(0, attemptSpanName.length() - "/attempt".length());
+        return name.isEmpty() ? "operation" : name;
+      }
+      return "attempt".equals(attemptSpanName) ? "operation" : attemptSpanName;
+    }
+    return "operation";
+  }
+
+  /**
+   * Resolves the canonical attempt-level span name based on transport and context.
+   *
+   * @param apiTracerContext the tracer context containing transport and method metadata
+   * @return the attempt span name
+   */
   private static String resolveAttemptSpanName(ApiTracerContext apiTracerContext) {
     if (apiTracerContext.transport() == ApiTracerContext.Transport.GRPC) {
       // gRPC Uses the full method name as span name.
@@ -124,6 +167,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     }
   }
 
+  /** Copies attempt-level attributes from the tracer context into the local attribute cache. */
   private void buildAttributes() {
     this.attemptAttributes.putAll(this.apiTracerContext.getAttemptAttributes());
   }
@@ -148,8 +192,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     // Attempt spans are of the CLIENT kind
     spanBuilder.setSpanKind(SpanKind.CLIENT);
 
-    // Link attempt span to parent context
-    spanBuilder.setParent(parentContext);
+    // Link attempt span to operation context (parent operation span)
+    spanBuilder.setParent(operationContext);
 
     // Pass the combined attributes to the new SpanBuilder method
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
@@ -160,33 +204,51 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   /**
    * Signals that the overall logical operation succeeded.
    *
-   * <p>Closes any remaining in-flight attempt span.
+   * <p>Closes any remaining in-flight attempt span and ends the operation span.
    */
   @Override
   public void operationSucceeded() {
-    recordErrorAndEndAttempt(null);
+    recordErrorAndEndOperation(null);
   }
 
   /**
    * Signals that the overall logical operation was cancelled.
    *
-   * <p>Closes any remaining in-flight attempt span with a {@link CancellationException}.
+   * <p>Closes any remaining in-flight attempt span with a {@link CancellationException} and ends
+   * the operation span with an ERROR status.
    */
   @Override
   public void operationCancelled() {
-    recordErrorAndEndAttempt(new CancellationException());
+    recordErrorAndEndOperation(new CancellationException());
   }
 
   /**
    * Signals that the overall logical operation failed permanently.
    *
-   * <p>Closes any remaining in-flight attempt span with the provided error details.
+   * <p>Closes any remaining in-flight attempt span with the provided error details and ends the
+   * operation span with an ERROR status.
    *
    * @param error the cause of the operation failure
    */
   @Override
   public void operationFailed(Throwable error) {
-    recordErrorAndEndAttempt(error);
+    recordErrorAndEndOperation(error);
+  }
+
+  /**
+   * Records error details and ends both the active attempt span and the operation span.
+   *
+   * @param error the exception associated with the operation failure, or {@code null} if successful
+   */
+  private void recordErrorAndEndOperation(@Nullable Throwable error) {
+    if (attemptSpan != null) {
+      endSpan(attemptSpan, error);
+      attemptSpan = null;
+    }
+    if (operationSpan != null) {
+      endSpan(operationSpan, error);
+      operationSpan = null;
+    }
   }
 
   @Override
@@ -195,7 +257,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   @Override
-  public void responseHeadersReceived(java.util.Map<String, Object> headers) {
+  public void responseHeadersReceived(Map<String, Object> headers) {
     if (attemptSpan == null) {
       return;
     }
@@ -215,7 +277,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    * @param headers the map of response headers.
    * @return the content length in bytes, or -1 if the header is missing or malformed.
    */
-  private long extractContentLength(java.util.Map<String, Object> headers) {
+  private long extractContentLength(Map<String, Object> headers) {
     try {
       if (headers == null || headers.isEmpty()) return -1;
       // google-http-client HttpHeaders uses a case-insensitive map but we copy it for safety
@@ -265,20 +327,31 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     if (attemptSpan == null) {
       return;
     }
+    endSpan(attemptSpan, error);
+    attemptSpan = null;
+  }
 
+  /**
+   * Attaches response status attributes and error messages to the span and ends it.
+   *
+   * @param span the span to finish
+   * @param error the exception that caused the span to end, or {@code null} if successful
+   */
+  private void endSpan(Span span, @Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
     if (!responseAttributes.isEmpty()) {
-      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
+      span.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
-    if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
-      attemptSpan.setAttribute(
-          ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+    if (error != null) {
+      span.setStatus(StatusCode.ERROR);
+      if (!Strings.isNullOrEmpty(error.getMessage())) {
+        span.setAttribute(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+      }
     }
 
-    attemptSpan.end();
-    attemptSpan = null;
+    span.end();
   }
 
   @Override
