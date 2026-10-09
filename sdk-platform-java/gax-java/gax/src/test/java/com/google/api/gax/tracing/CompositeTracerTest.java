@@ -127,27 +127,63 @@ class CompositeTracerTest {
 
   @Test
   void testOperationSucceeded() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     compositeTracer.operationSucceeded();
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).operationSucceeded();
     inOrder.verify(child1).operationSucceeded();
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   void testOperationCancelled() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     compositeTracer.operationCancelled();
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).operationCancelled();
     inOrder.verify(child1).operationCancelled();
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   void testOperationFailed() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     Throwable error = new RuntimeException("test error");
     compositeTracer.operationFailed(error);
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).operationFailed(error);
     inOrder.verify(child1).operationFailed(error);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
@@ -176,57 +212,129 @@ class CompositeTracerTest {
 
   @Test
   void testAttemptSucceeded() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     compositeTracer.attemptSucceeded();
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).attemptSucceeded();
     inOrder.verify(child1).attemptSucceeded();
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   void testAttemptCancelled() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     compositeTracer.attemptCancelled();
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).attemptCancelled();
     inOrder.verify(child1).attemptCancelled();
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   @SuppressWarnings("deprecation")
   void testAttemptFailedDeprecated() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     Throwable error = new RuntimeException("test error");
     org.threeten.bp.Duration delay = org.threeten.bp.Duration.ofSeconds(1);
     compositeTracer.attemptFailed(error, delay);
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).attemptFailed(error, delay);
     inOrder.verify(child1).attemptFailed(error, delay);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   void testAttemptFailedDuration() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     Throwable error = new RuntimeException("test error");
     java.time.Duration delay = java.time.Duration.ofSeconds(1);
     compositeTracer.attemptFailedDuration(error, delay);
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).attemptFailedDuration(error, delay);
     inOrder.verify(child1).attemptFailedDuration(error, delay);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   void testAttemptFailedRetriesExhausted() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     Throwable error = new RuntimeException("test error");
     compositeTracer.attemptFailedRetriesExhausted(error);
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).attemptFailedRetriesExhausted(error);
     inOrder.verify(child1).attemptFailedRetriesExhausted(error);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
   void testAttemptPermanentFailure() {
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    when(child1.inScope()).thenReturn(scope1);
+    when(child2.inScope()).thenReturn(scope2);
+
     Throwable error = new RuntimeException("test error");
     compositeTracer.attemptPermanentFailure(error);
-    InOrder inOrder = inOrder(child2, child1);
+
+    InOrder inOrder = inOrder(child1, child2, scope2, scope1);
+    inOrder.verify(child1).inScope();
+    inOrder.verify(child2).inScope();
     inOrder.verify(child2).attemptPermanentFailure(error);
     inOrder.verify(child1).attemptPermanentFailure(error);
+    inOrder.verify(scope2).close();
+    inOrder.verify(scope1).close();
   }
 
   @Test
