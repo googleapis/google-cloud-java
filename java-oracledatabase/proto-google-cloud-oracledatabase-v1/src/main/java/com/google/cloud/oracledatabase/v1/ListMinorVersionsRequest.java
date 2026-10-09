@@ -218,9 +218,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. An expression for filtering the results of the request.
-   * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-   * `shape_family="{shapeFamily}" AND
+   * Optional. An expression for filtering the results of the request. Only the
+   * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+   * following format: `shape_family="{shape_family}" AND
    * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
    * </pre>
    *
@@ -245,9 +245,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. An expression for filtering the results of the request.
-   * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-   * `shape_family="{shapeFamily}" AND
+   * Optional. An expression for filtering the results of the request. Only the
+   * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+   * following format: `shape_family="{shape_family}" AND
    * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
    * </pre>
    *
@@ -964,9 +964,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An expression for filtering the results of the request.
-     * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-     * `shape_family="{shapeFamily}" AND
+     * Optional. An expression for filtering the results of the request. Only the
+     * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+     * following format: `shape_family="{shape_family}" AND
      * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
      * </pre>
      *
@@ -990,9 +990,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An expression for filtering the results of the request.
-     * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-     * `shape_family="{shapeFamily}" AND
+     * Optional. An expression for filtering the results of the request. Only the
+     * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+     * following format: `shape_family="{shape_family}" AND
      * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
      * </pre>
      *
@@ -1016,9 +1016,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An expression for filtering the results of the request.
-     * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-     * `shape_family="{shapeFamily}" AND
+     * Optional. An expression for filtering the results of the request. Only the
+     * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+     * following format: `shape_family="{shape_family}" AND
      * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
      * </pre>
      *
@@ -1041,9 +1041,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An expression for filtering the results of the request.
-     * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-     * `shape_family="{shapeFamily}" AND
+     * Optional. An expression for filtering the results of the request. Only the
+     * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+     * following format: `shape_family="{shape_family}" AND
      * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
      * </pre>
      *
@@ -1062,9 +1062,9 @@ public final class ListMinorVersionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. An expression for filtering the results of the request.
-     * Only shapeFamily and gcp_oracle_zone_id are supported in this format:
-     * `shape_family="{shapeFamily}" AND
+     * Optional. An expression for filtering the results of the request. Only the
+     * `shape_family` and `gcp_oracle_zone_id` fields are supported in the
+     * following format: `shape_family="{shape_family}" AND
      * gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
      * </pre>
      *

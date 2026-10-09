@@ -30,9 +30,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
  * The AppConnectorsService provides methods to manage
  * (create/read/update/delete) BeyondCorp AppConnectors.
+ * Deprecated: App Connector is deprecated and creation of new App Connector
+ * resources is no longer permitted. Use Security Gateway instead.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class AppConnectorsServiceGrpc {
 
   private AppConnectorsServiceGrpc() {}
@@ -283,6 +286,59 @@ public final class AppConnectorsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest,
+          com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>
+      getResolveInstanceConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResolveInstanceConfig",
+      requestType = com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest.class,
+      responseType =
+          com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest,
+          com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>
+      getResolveInstanceConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest,
+            com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>
+        getResolveInstanceConfigMethod;
+    if ((getResolveInstanceConfigMethod = AppConnectorsServiceGrpc.getResolveInstanceConfigMethod)
+        == null) {
+      synchronized (AppConnectorsServiceGrpc.class) {
+        if ((getResolveInstanceConfigMethod =
+                AppConnectorsServiceGrpc.getResolveInstanceConfigMethod)
+            == null) {
+          AppConnectorsServiceGrpc.getResolveInstanceConfigMethod =
+              getResolveInstanceConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest,
+                          com.google.cloud.beyondcorp.appconnectors.v1
+                              .ResolveInstanceConfigResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ResolveInstanceConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.beyondcorp.appconnectors.v1
+                                  .ResolveInstanceConfigRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.beyondcorp.appconnectors.v1
+                                  .ResolveInstanceConfigResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AppConnectorsServiceMethodDescriptorSupplier("ResolveInstanceConfig"))
+                      .build();
+        }
+      }
+    }
+    return getResolveInstanceConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest,
           com.google.longrunning.Operation>
       getReportStatusMethod;
@@ -395,8 +451,11 @@ public final class AppConnectorsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
    * The AppConnectorsService provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnectors.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -406,6 +465,7 @@ public final class AppConnectorsServiceGrpc {
      * Lists AppConnectors in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAppConnectors(
         com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request,
         io.grpc.stub.StreamObserver<
@@ -422,6 +482,7 @@ public final class AppConnectorsServiceGrpc {
      * Gets details of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appconnectors.v1.AppConnector>
@@ -437,6 +498,7 @@ public final class AppConnectorsServiceGrpc {
      * Creates a new AppConnector in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -451,6 +513,7 @@ public final class AppConnectorsServiceGrpc {
      * Updates the parameters of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -465,6 +528,7 @@ public final class AppConnectorsServiceGrpc {
      * Deletes a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -476,9 +540,28 @@ public final class AppConnectorsServiceGrpc {
      *
      *
      * <pre>
+     * Gets instance configuration for a given AppConnector.
+     * An internal method called by a AppConnector to get its container config.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    default void resolveInstanceConfig(
+        com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResolveInstanceConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report status for a given connector.
      * </pre>
      */
+    @java.lang.Deprecated
     default void reportStatus(
         com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -500,8 +583,11 @@ public final class AppConnectorsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
    * The AppConnectorsService provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnectors.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class AppConnectorsServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -524,8 +610,11 @@ public final class AppConnectorsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
    * The AppConnectorsService provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnectors.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectorsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<AppConnectorsServiceStub> {
     private AppConnectorsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -545,6 +634,7 @@ public final class AppConnectorsServiceGrpc {
      * Lists AppConnectors in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAppConnectors(
         com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request,
         io.grpc.stub.StreamObserver<
@@ -563,6 +653,7 @@ public final class AppConnectorsServiceGrpc {
      * Gets details of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appconnectors.v1.AppConnector>
@@ -580,6 +671,7 @@ public final class AppConnectorsServiceGrpc {
      * Creates a new AppConnector in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -596,6 +688,7 @@ public final class AppConnectorsServiceGrpc {
      * Updates the parameters of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -612,6 +705,7 @@ public final class AppConnectorsServiceGrpc {
      * Deletes a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -625,9 +719,30 @@ public final class AppConnectorsServiceGrpc {
      *
      *
      * <pre>
+     * Gets instance configuration for a given AppConnector.
+     * An internal method called by a AppConnector to get its container config.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public void resolveInstanceConfig(
+        com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResolveInstanceConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report status for a given connector.
      * </pre>
      */
+    @java.lang.Deprecated
     public void reportStatus(
         com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -651,8 +766,11 @@ public final class AppConnectorsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
    * The AppConnectorsService provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnectors.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectorsServiceBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<AppConnectorsServiceBlockingV2Stub> {
     private AppConnectorsServiceBlockingV2Stub(
@@ -673,6 +791,7 @@ public final class AppConnectorsServiceGrpc {
      * Lists AppConnectors in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse listAppConnectors(
         com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request)
         throws io.grpc.StatusException {
@@ -687,6 +806,7 @@ public final class AppConnectorsServiceGrpc {
      * Gets details of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnectors.v1.AppConnector getAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request)
         throws io.grpc.StatusException {
@@ -701,6 +821,7 @@ public final class AppConnectorsServiceGrpc {
      * Creates a new AppConnector in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request)
         throws io.grpc.StatusException {
@@ -715,6 +836,7 @@ public final class AppConnectorsServiceGrpc {
      * Updates the parameters of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request)
         throws io.grpc.StatusException {
@@ -729,6 +851,7 @@ public final class AppConnectorsServiceGrpc {
      * Deletes a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request)
         throws io.grpc.StatusException {
@@ -740,9 +863,27 @@ public final class AppConnectorsServiceGrpc {
      *
      *
      * <pre>
+     * Gets instance configuration for a given AppConnector.
+     * An internal method called by a AppConnector to get its container config.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse
+        resolveInstanceConfig(
+            com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResolveInstanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report status for a given connector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reportStatus(
         com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request)
         throws io.grpc.StatusException {
@@ -764,8 +905,11 @@ public final class AppConnectorsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
    * The AppConnectorsService provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnectors.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectorsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AppConnectorsServiceBlockingStub> {
     private AppConnectorsServiceBlockingStub(
@@ -786,6 +930,7 @@ public final class AppConnectorsServiceGrpc {
      * Lists AppConnectors in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse listAppConnectors(
         com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -799,6 +944,7 @@ public final class AppConnectorsServiceGrpc {
      * Gets details of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appconnectors.v1.AppConnector getAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.GetAppConnectorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -812,6 +958,7 @@ public final class AppConnectorsServiceGrpc {
      * Creates a new AppConnector in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -825,6 +972,7 @@ public final class AppConnectorsServiceGrpc {
      * Updates the parameters of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -838,6 +986,7 @@ public final class AppConnectorsServiceGrpc {
      * Deletes a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAppConnector(
         com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -848,9 +997,26 @@ public final class AppConnectorsServiceGrpc {
      *
      *
      * <pre>
+     * Gets instance configuration for a given AppConnector.
+     * An internal method called by a AppConnector to get its container config.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse
+        resolveInstanceConfig(
+            com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolveInstanceConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report status for a given connector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation reportStatus(
         com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -871,8 +1037,11 @@ public final class AppConnectorsServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appConnectors/{app_connector_id}`.
    * The AppConnectorsService provides methods to manage
    * (create/read/update/delete) BeyondCorp AppConnectors.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppConnectorsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<AppConnectorsServiceFutureStub> {
     private AppConnectorsServiceFutureStub(
@@ -893,6 +1062,7 @@ public final class AppConnectorsServiceGrpc {
      * Lists AppConnectors in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appconnectors.v1.ListAppConnectorsResponse>
         listAppConnectors(
@@ -908,6 +1078,7 @@ public final class AppConnectorsServiceGrpc {
      * Gets details of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appconnectors.v1.AppConnector>
         getAppConnector(
@@ -923,6 +1094,7 @@ public final class AppConnectorsServiceGrpc {
      * Creates a new AppConnector in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAppConnector(
             com.google.cloud.beyondcorp.appconnectors.v1.CreateAppConnectorRequest request) {
@@ -937,6 +1109,7 @@ public final class AppConnectorsServiceGrpc {
      * Updates the parameters of a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateAppConnector(
             com.google.cloud.beyondcorp.appconnectors.v1.UpdateAppConnectorRequest request) {
@@ -951,6 +1124,7 @@ public final class AppConnectorsServiceGrpc {
      * Deletes a single AppConnector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAppConnector(
             com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest request) {
@@ -962,9 +1136,27 @@ public final class AppConnectorsServiceGrpc {
      *
      *
      * <pre>
+     * Gets instance configuration for a given AppConnector.
+     * An internal method called by a AppConnector to get its container config.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>
+        resolveInstanceConfig(
+            com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResolveInstanceConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Report status for a given connector.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         reportStatus(com.google.cloud.beyondcorp.appconnectors.v1.ReportStatusRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -977,7 +1169,8 @@ public final class AppConnectorsServiceGrpc {
   private static final int METHODID_CREATE_APP_CONNECTOR = 2;
   private static final int METHODID_UPDATE_APP_CONNECTOR = 3;
   private static final int METHODID_DELETE_APP_CONNECTOR = 4;
-  private static final int METHODID_REPORT_STATUS = 5;
+  private static final int METHODID_RESOLVE_INSTANCE_CONFIG = 5;
+  private static final int METHODID_REPORT_STATUS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1024,6 +1217,13 @@ public final class AppConnectorsServiceGrpc {
           serviceImpl.deleteAppConnector(
               (com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_RESOLVE_INSTANCE_CONFIG:
+          serviceImpl.resolveInstanceConfig(
+              (com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>)
+                  responseObserver);
           break;
         case METHODID_REPORT_STATUS:
           serviceImpl.reportStatus(
@@ -1080,6 +1280,13 @@ public final class AppConnectorsServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.beyondcorp.appconnectors.v1.DeleteAppConnectorRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_APP_CONNECTOR)))
+        .addMethod(
+            getResolveInstanceConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigRequest,
+                    com.google.cloud.beyondcorp.appconnectors.v1.ResolveInstanceConfigResponse>(
+                    service, METHODID_RESOLVE_INSTANCE_CONFIG)))
         .addMethod(
             getReportStatusMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1142,6 +1349,7 @@ public final class AppConnectorsServiceGrpc {
                       .addMethod(getCreateAppConnectorMethod())
                       .addMethod(getUpdateAppConnectorMethod())
                       .addMethod(getDeleteAppConnectorMethod())
+                      .addMethod(getResolveInstanceConfigMethod())
                       .addMethod(getReportStatusMethod())
                       .build();
         }

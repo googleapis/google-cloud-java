@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.Mutation;
+import com.google.bigtable.v2.Mutation.TimestampOrigin;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
@@ -71,7 +72,8 @@ public class RowMutationEntryTest {
                                 .setFamilyName("fake-family")
                                 .setColumnQualifier(ByteString.copyFromUtf8("qualifier-1"))
                                 .setTimestampMicros(timestamp)
-                                .setValue(ByteString.copyFromUtf8("fake-values"))))
+                                .setValue(ByteString.copyFromUtf8("fake-values")))
+                        .setTimestampOrigin(TimestampOrigin.USER_SPECIFIED))
                 .build());
   }
 
@@ -92,6 +94,7 @@ public class RowMutationEntryTest {
                         .setColumnQualifier(ByteString.copyFromUtf8("qualifier-1"))
                         .setTimestampMicros(10_000L)
                         .setValue(ByteString.copyFromUtf8("fake-values")))
+                .setTimestampOrigin(TimestampOrigin.USER_SPECIFIED)
                 .build(),
             Mutation.newBuilder()
                 .setDeleteFromColumn(
@@ -135,6 +138,7 @@ public class RowMutationEntryTest {
                             .setColumnQualifier(ByteString.copyFromUtf8("qualifier-1"))
                             .setTimestampMicros(10_000L)
                             .setValue(ByteString.copyFromUtf8("fake-values")))
+                    .setTimestampOrigin(TimestampOrigin.USER_SPECIFIED)
                     .build(),
                 Mutation.newBuilder()
                     .setDeleteFromFamily(

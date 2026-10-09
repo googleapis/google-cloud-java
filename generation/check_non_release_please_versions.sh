@@ -4,46 +4,48 @@ set -e
 
 violations=0
 for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
-  if [[ "${pomFile}" =~ .*google-cloud-jar-parent.* ]] || \
-      [[ "${pomFile}" =~ .*google-cloud-pom-parent.* ]] || \
-      [[ "${pomFile}" =~ .*CoverageAggregator.* ]] || \
-      [[ "${pomFile}" =~ .*java-shared-dependencies*. ]] || \
-      [[ "${pomFile}" =~ .*java-bigquerystorage.* ]] || \
-      [[ "${pomFile}" =~ .*java-datastore.* ]] || \
-      [[ "${pomFile}" =~ .*java-logging-logback.* ]] || \
-      [[ "${pomFile}" =~ .*java-bigquery.* ]] || \
-      [[ "${pomFile}" =~ .*sdk-platform-java.* ]] || \
-      [[ "${pomFile}" =~ .*java-common-protos.* ]] || \
-      [[ "${pomFile}" =~ .*java-showcase.* ]] || \
-      [[ "${pomFile}" =~ .*java-iam.* ]] || \
-      [[ "${pomFile}" =~ .*java-spanner.* ]] || \
-      [[ "${pomFile}" =~ .*java-spanner-jdbc.* ]] || \
-      [[ "${pomFile}" =~ .*google-auth-library-java.* ]] || \
-      [[ "${pomFile}" =~ .*grpc-gcp.* ]] || \
-      [[ "${pomFile}" =~ .*java-storage.* ]] || \
-      [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
-      [[ "${pomFile}" =~ .*java-pubsub.* ]] || \
-      [[ "${pomFile}" =~ .*java-bigtable.* ]] || \
-      [[ "${pomFile}" =~ .*java-firestore.* ]] || \
-      [[ "${pomFile}" =~ .*java-cloud-bom.* ]] || \
-      [[ "${pomFile}" =~ .*java-shared-config.* ]] || \
-      [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
-      [[ "${pomFile}" =~ .*java-compute.* ]] || \
-      [[ "${pomFile}" =~ .*.github*. ]]; then
-    continue
-  fi
-  if [[ "${pomFile}" =~ .*owl-bot-postprocessor.* ]]; then
-    # Skip the template files
-    continue
-  fi
-  if [[ "${pomFile}" =~ .*java-samples.* ]]; then
-    echo "Skipping version check for java-samples directory"
-    continue
-  fi
-  if [[ "${pomFile}" =~ .*/samples/.* ]]; then
-    echo "Skipping version check for samples directory"
-    continue
-  fi
+  # Filter out exempt modules and directories using native Bash pattern matching.
+  # Shell glob patterns (*pattern*) evaluate directly in-memory without invoking
+  # an external regex engine.
+  case "${pomFile}" in
+    *google-cloud-jar-parent* | \
+    *google-cloud-pom-parent* | \
+    *CoverageAggregator* | \
+    *java-shared-dependencies* | \
+    *java-bigquerystorage* | \
+    *java-datastore* | \
+    *java-logging-logback* | \
+    *java-bigquery* | \
+    *sdk-platform-java* | \
+    *java-common-protos* | \
+    *java-showcase* | \
+    *java-iam* | \
+    *java-spanner* | \
+    *java-spanner-jdbc* | \
+    *google-auth-library-java* | \
+    *grpc-gcp* | \
+    *java-storage* | \
+    *java-storage-nio* | \
+    *java-pubsub* | \
+    *java-bigtable* | \
+    *java-firestore* | \
+    *java-cloud-bom* | \
+    *java-shared-config* | \
+    *java-vertexai* | \
+    *java-compute* | \
+    *.github* | \
+    *owl-bot-postprocessor*)
+      continue
+      ;;
+    *java-samples*)
+      echo "Skipping version check for java-samples directory"
+      continue
+      ;;
+    */samples/*)
+      echo "Skipping version check for samples directory"
+      continue
+      ;;
+  esac
 
   if grep -n '<version>.*</version>' "$pomFile" | grep -v 'x-version-update'; then
     echo "Found version declaration(s) without x-version-update in: $pomFile"

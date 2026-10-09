@@ -518,7 +518,7 @@ public interface HealthCheckOrBuilder
    * on what other health check fields are supported and what other resources
    * can use this health check:
    *
-   * - SSL, HTTP2, and GRPC protocols are not supported.
+   * - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported.
    * - The TCP request field is not supported.
    * - The proxyHeader field for HTTP, HTTPS, and TCP is not
    * supported.
@@ -545,7 +545,7 @@ public interface HealthCheckOrBuilder
    * on what other health check fields are supported and what other resources
    * can use this health check:
    *
-   * - SSL, HTTP2, and GRPC protocols are not supported.
+   * - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported.
    * - The TCP request field is not supported.
    * - The proxyHeader field for HTTP, HTTPS, and TCP is not
    * supported.
@@ -572,7 +572,7 @@ public interface HealthCheckOrBuilder
    * on what other health check fields are supported and what other resources
    * can use this health check:
    *
-   * - SSL, HTTP2, and GRPC protocols are not supported.
+   * - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported.
    * - The TCP request field is not supported.
    * - The proxyHeader field for HTTP, HTTPS, and TCP is not
    * supported.
@@ -600,7 +600,7 @@ public interface HealthCheckOrBuilder
    * on what other health check fields are supported and what other resources
    * can use this health check:
    *
-   * - SSL, HTTP2, and GRPC protocols are not supported.
+   * - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported.
    * - The TCP request field is not supported.
    * - The proxyHeader field for HTTP, HTTPS, and TCP is not
    * supported.
@@ -684,8 +684,9 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2 or GRPC. Exactly one of the
-   * protocol-specific health check fields must be specified, which must matchtype field.
+   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS.
+   * Exactly one of the protocol-specific health check fields must be specified,
+   * which must match type field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -699,8 +700,9 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2 or GRPC. Exactly one of the
-   * protocol-specific health check fields must be specified, which must matchtype field.
+   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS.
+   * Exactly one of the protocol-specific health check fields must be specified,
+   * which must match type field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -714,8 +716,9 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2 or GRPC. Exactly one of the
-   * protocol-specific health check fields must be specified, which must matchtype field.
+   * Specifies the type of the healthCheck, either TCP,SSL, HTTP, HTTPS,HTTP2, GRPC or GRPC_WITH_TLS.
+   * Exactly one of the protocol-specific health check fields must be specified,
+   * which must match type field.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

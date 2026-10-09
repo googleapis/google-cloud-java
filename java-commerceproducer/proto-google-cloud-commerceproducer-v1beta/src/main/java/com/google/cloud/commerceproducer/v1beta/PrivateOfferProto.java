@@ -113,6 +113,10 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_RevenueShare_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_commerceproducer_v1beta_PrivateOfferDocument_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_commerceproducer_v1beta_PrivateOfferDocument_fieldAccessorTable;
@@ -130,7 +134,7 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "eproducer.v1beta\032\037google/api/field_behav"
           + "ior.proto\032\031google/api/resource.proto\032\037go"
           + "ogle/protobuf/timestamp.proto\032\032google/ty"
-          + "pe/datetime.proto\032\031google/type/decimal.proto\032\027google/type/money.proto\"\364.\n"
+          + "pe/datetime.proto\032\031google/type/decimal.proto\032\027google/type/money.proto\"\2151\n"
           + "\014PrivateOffer\022j\n"
           + "\024single_product_offer\030\014 \001(\0132E.g"
           + "oogle.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOfferB\003\340A\001H\000\022\021\n"
@@ -202,7 +206,7 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\022SCHEDULED_END_TIME\020\002\022\027\n"
           + "\023MATCH_AMENDED_OFFER\020\003B\021\n"
           + "\017end_policy_dataB\t\n"
-          + "\007renewal\032\375\030\n"
+          + "\007renewal\032\226\033\n"
           + "\022SingleProductOffer\022U\n"
           + "\025amended_private_offer\030\003 \001(\tB4\340A\001\372A.\n"
           + ",commerceproducer.googleapis.com/PrivateOfferH\000\022W\n"
@@ -227,17 +231,20 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\016contract_value\030\013 \001(\0132S.google.cloud"
           + ".commerceproducer.v1beta.PrivateOffer.SingleProductOffer.ContractValueB\003\340A\003\022n\n\r"
           + "revenue_share\030\014 \001(\0132R.google.cloud.commer"
-          + "ceproducer.v1beta.PrivateOffer.SingleProductOffer.RevenueShareB\003\340A\003\0328\n"
+          + "ceproducer.v1beta.PrivateOffer.SingleProductOffer.RevenueShareB\003\340A\003\022\205\001\n"
+          + "\031additional_contract_value\030\r"
+          + " \001(\0132].google.cloud.commerceproducer.v1beta.PrivateOffer.Sing"
+          + "leProductOffer.AdditionalContractValueB\003\340A\001\0328\n"
           + "\007Feature\022\031\n"
           + "\014display_name\030\001 \001(\tB\003\340A\001\022\022\n"
           + "\005value\030\002 \001(\tB\003\340A\001\032\210\010\n\n"
           + "PriceModel\022q\n"
-          + "\010flat_fee\030\002 \001(\0132X.google.cloud.commerceproducer.v1beta.Pr"
-          + "ivateOffer.SingleProductOffer.PriceModel.FlatFeeB\003\340A\001H\000\022v\n\n"
-          + "commitment\030\003 \001(\0132[.google.cloud.commerceproducer.v1beta.Priva"
-          + "teOffer.SingleProductOffer.PriceModel.CommitmentB\003\340A\001H\000\022j\n"
-          + "\005usage\030\001 \001(\0132V.google.cloud.commerceproducer.v1beta.PrivateOff"
-          + "er.SingleProductOffer.PriceModel.UsageB\003\340A\001\032\270\001\n"
+          + "\010flat_fee\030\002 \001(\0132X.google.cloud.commercepr"
+          + "oducer.v1beta.PrivateOffer.SingleProductOffer.PriceModel.FlatFeeB\003\340A\001H\000\022v\n\n"
+          + "commitment\030\003 \001(\0132[.google.cloud.commerceprodu"
+          + "cer.v1beta.PrivateOffer.SingleProductOffer.PriceModel.CommitmentB\003\340A\001H\000\022j\n"
+          + "\005usage\030\001 \001(\0132V.google.cloud.commerceproducer.v"
+          + "1beta.PrivateOffer.SingleProductOffer.PriceModel.UsageB\003\340A\001\032\270\001\n"
           + "\013SkuDiscount\022:\n"
           + "\003sku\030\001 \001(\tB+\340A\001\372A%\n"
           + "#commerceproducer.googleapis.com/SkuH\000\022 \n"
@@ -248,9 +255,11 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\010discount\032\276\001\n"
           + "\005Usage\022;\n"
           + "\030default_discount_percent\030\001"
-          + " \001(\0132\024.google.type.DecimalB\003\340A\001\022x\n\r"
-          + "sku_discounts\030\002 \003(\0132\\.google.cloud.commerceproducer.v1b"
-          + "eta.PrivateOffer.SingleProductOffer.PriceModel.SkuDiscountB\003\340A\001\032=\n"
+          + " \001(\0132\024.google.type.DecimalB\003\340A\001\022x\n"
+          + "\r"
+          + "sku_discounts\030\002 \003(\0132\\.google.cloud.comm"
+          + "erceproducer.v1beta.PrivateOffer.SingleP"
+          + "roductOffer.PriceModel.SkuDiscountB\003\340A\001\032=\n"
           + "\007FlatFee\0222\n"
           + "\021flat_fee_override\030\001"
           + " \001(\0132\022.google.type.MoneyB\003\340A\001\032\327\001\n\n"
@@ -261,11 +270,11 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\037discard_previous_credit_balance\030\004 \001(\010B\003\340A\001B\016\n"
           + "\014subscription\032\310\003\n"
           + "\025StandardIntervalPrice\022\214\001\n"
-          + "\021standard_interval\030\001 \001(\0162l.google.cloud.commercepr"
-          + "oducer.v1beta.PrivateOffer.SingleProduct"
-          + "Offer.StandardIntervalPrice.StandardIntervalB\003\340A\001\022j\n"
-          + "\013price_model\030\002 \001(\0132P.google.cloud.commerceproducer.v1beta.PrivateOff"
-          + "er.SingleProductOffer.PriceModelB\003\340A\001\"\263\001\n"
+          + "\021standard_interval\030\001 \001(\0162l.google."
+          + "cloud.commerceproducer.v1beta.PrivateOff"
+          + "er.SingleProductOffer.StandardIntervalPrice.StandardIntervalB\003\340A\001\022j\n"
+          + "\013price_model\030\002 \001(\0132P.google.cloud.commerceproducer.v"
+          + "1beta.PrivateOffer.SingleProductOffer.PriceModelB\003\340A\001\"\263\001\n"
           + "\020StandardInterval\022!\n"
           + "\035STANDARD_INTERVAL_UNSPECIFIED\020\000\022\027\n"
           + "\017MONTHLY_POSTPAY\020\001\032\002\010\001\022\024\n"
@@ -275,11 +284,11 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\023YEARLY_NOT_PRORATED\020\005\032\251\001\n"
           + "\013Installment\022.\n\n"
           + "start_time\030\001 \001(\0132\025.google.type.DateTimeB\003\340A\001\022j\n"
-          + "\013price_model\030\002 \001(\0132P.google.cloud."
-          + "commerceproducer.v1beta.PrivateOffer.SingleProductOffer.PriceModelB\003\340A\001\032\203\001\n"
+          + "\013price_model\030\002 \001(\0132P.google.cloud.commerceproducer.v1beta."
+          + "PrivateOffer.SingleProductOffer.PriceModelB\003\340A\001\032\203\001\n"
           + "\023CustomIntervalPrice\022l\n"
-          + "\014installments\030\001 \003(\0132Q.google.cloud.commerceproducer.v1beta.Pri"
-          + "vateOffer.SingleProductOffer.InstallmentB\003\340A\001\032F\n\r"
+          + "\014installments\030\001 \003(\0132Q.google.cloud.commercepro"
+          + "ducer.v1beta.PrivateOffer.SingleProductOffer.InstallmentB\003\340A\001\032F\n\r"
           + "ContractValue\0225\n"
           + "\024total_contract_value\030\001"
           + " \001(\0132\022.google.type.MoneyB\003\340A\003\032\246\001\n"
@@ -287,7 +296,11 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\'current_term_vendor_net_revenue_percent\030\001"
           + " \001(\0132\024.google.type.DecimalB\003\340A\003\022J\n"
           + "\'renewal_term_vendor_net_revenue_percent\030\002"
-          + " \001(\0132\024.google.type.DecimalB\003\340A\003B\017\n\r"
+          + " \001(\0132\024.google.type.DecimalB\003\340A\003\032\216\001\n"
+          + "\027AdditionalContractValue\022/\n"
+          + "\016contract_value\030\001 \001(\0132\022.google.type.MoneyB\003\340A\001\022B\n\r"
+          + "eligible_skus\030\002 \003(\tB+\340A\001\372A%\n"
+          + "#commerceproducer.googleapis.com/SkuB\017\n\r"
           + "amended_offerB\007\n"
           + "\005price\"}\n"
           + "\005State\022\025\n"
@@ -305,8 +318,8 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\tMIGRATION\020\002\022\022\n"
           + "\016NATIVE_RENEWAL\020\003\022\007\n"
           + "\003NEW\020\004:\226\001\352A\222\001\n"
-          + ",commerceproducer.googleapis.com/Private"
-          + "Offer\022Eprojects/{project}/locations/{location}/privateOffers/{private_offer}*\r"
+          + ",commerceproducer.googleapis.com/Privat"
+          + "eOffer\022Eprojects/{project}/locations/{location}/privateOffers/{private_offer}*\r"
           + "privateOffers2\014privateOfferB\t\n"
           + "\007content\"\310\005\n"
           + "\024PrivateOfferDocument\022\035\n"
@@ -315,8 +328,8 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022c\n\r"
-          + "document_type\030\004 \001(\0162G.google.cloud.commerceproducer.v1bet"
-          + "a.PrivateOfferDocument.DocumentTypeB\003\340A\002\022\026\n"
+          + "document_type\030\004 \001(\0162G.google.cloud.commerceproducer.v1be"
+          + "ta.PrivateOfferDocument.DocumentTypeB\003\340A\002\022\026\n"
           + "\tmime_type\030\005 \001(\tB\003\340A\001\"\303\001\n"
           + "\014DocumentType\022\035\n"
           + "\031DOCUMENT_TYPE_UNSPECIFIED\020\000\022%\n"
@@ -324,14 +337,15 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "\021STATEMENT_OF_WORK\020\002\022*\n"
           + "&STANDARD_END_USER_LICENSE_AGREEMENT_V1\020\003\022*\n"
           + "&STANDARD_END_USER_LICENSE_AGREEMENT_V2\020\004:\303\001\352A\277\001\n"
-          + "4commerceproducer.googleapis.com/PrivateOfferDocum"
-          + "ent\022Zprojects/{project}/locations/{location}/privateOffers/{private_offer}/docum"
-          + "ents/{document}*\025privateOfferDocuments2\024privateOfferDocumentB\t\n"
-          + "\007contentB\346\001\n"
-          + "(com.google.cloud.commerceproducer.v1betaB\021Pr"
-          + "ivateOfferProtoP\001ZTcloud.google.com/go/commerceproducer/apiv1beta/commerceproduc"
-          + "erpb;commerceproducerpb\252\002$Google.Cloud.C"
-          + "ommerceProducer.V1Beta\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
+          + "4commerceproducer.googleapis.com/PrivateOfferDocu"
+          + "ment\022Zprojects/{project}/locations/{location}/privateOffers/{private_offer}/docu"
+          + "ments/{document}*\025privateOfferDocuments2\024privateOfferDocumentB\t\n"
+          + "\007contentB\215\002\n"
+          + "(com.google.cloud.commerceproducer.v1betaB\021P"
+          + "rivateOfferProtoP\001ZTcloud.google.com/go/commerceproducer/apiv1beta/commerceprodu"
+          + "cerpb;commerceproducerpb\252\002$Google.Cloud."
+          + "CommerceProducer.V1Beta\312\002$Google\\Cloud\\C"
+          + "ommerceProducer\\V1beta\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -444,6 +458,7 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
               "EffectiveInstallmentTimeline",
               "ContractValue",
               "RevenueShare",
+              "AdditionalContractValue",
               "AmendedOffer",
               "Price",
             });
@@ -548,6 +563,15 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_RevenueShare_descriptor,
             new java.lang.String[] {
               "CurrentTermVendorNetRevenuePercent", "RenewalTermVendorNetRevenuePercent",
+            });
+    internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_descriptor =
+        internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_descriptor
+            .getNestedType(7);
+    internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_descriptor,
+            new java.lang.String[] {
+              "ContractValue", "EligibleSkus",
             });
     internal_static_google_cloud_commerceproducer_v1beta_PrivateOfferDocument_descriptor =
         getDescriptor().getMessageType(1);

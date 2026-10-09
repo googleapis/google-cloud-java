@@ -2383,6 +2383,71 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         : privateResourceMetadata_;
   }
 
+  public static final int GCS_REPOSITORY_SNAPSHOT_METADATA_FIELD_NUMBER = 13;
+  private com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata
+      gcsRepositorySnapshotMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the repository snapshot used by scheduled
+   * notebooks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcsRepositorySnapshotMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcsRepositorySnapshotMetadata() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the repository snapshot used by scheduled
+   * notebooks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcsRepositorySnapshotMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata
+      getGcsRepositorySnapshotMetadata() {
+    return gcsRepositorySnapshotMetadata_ == null
+        ? com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.getDefaultInstance()
+        : gcsRepositorySnapshotMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the repository snapshot used by scheduled
+   * notebooks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadataOrBuilder
+      getGcsRepositorySnapshotMetadataOrBuilder() {
+    return gcsRepositorySnapshotMetadata_ == null
+        ? com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.getDefaultInstance()
+        : gcsRepositorySnapshotMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2433,6 +2498,9 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(12, getPrivateResourceMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(13, getGcsRepositorySnapshotMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2482,6 +2550,11 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               12, getPrivateResourceMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, getGcsRepositorySnapshotMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2521,6 +2594,12 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (hasPrivateResourceMetadata() != other.hasPrivateResourceMetadata()) return false;
     if (hasPrivateResourceMetadata()) {
       if (!getPrivateResourceMetadata().equals(other.getPrivateResourceMetadata())) return false;
+    }
+    if (hasGcsRepositorySnapshotMetadata() != other.hasGcsRepositorySnapshotMetadata())
+      return false;
+    if (hasGcsRepositorySnapshotMetadata()) {
+      if (!getGcsRepositorySnapshotMetadata().equals(other.getGcsRepositorySnapshotMetadata()))
+        return false;
     }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
@@ -2576,6 +2655,10 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
     if (hasPrivateResourceMetadata()) {
       hash = (37 * hash) + PRIVATE_RESOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateResourceMetadata().hashCode();
+    }
+    if (hasGcsRepositorySnapshotMetadata()) {
+      hash = (37 * hash) + GCS_REPOSITORY_SNAPSHOT_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getGcsRepositorySnapshotMetadata().hashCode();
     }
     switch (sourceCase_) {
       case 2:
@@ -2739,6 +2822,7 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         internalGetDataEncryptionStateFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetPrivateResourceMetadataFieldBuilder();
+        internalGetGcsRepositorySnapshotMetadataFieldBuilder();
       }
     }
 
@@ -2776,6 +2860,11 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       if (privateResourceMetadataBuilder_ != null) {
         privateResourceMetadataBuilder_.dispose();
         privateResourceMetadataBuilder_ = null;
+      }
+      gcsRepositorySnapshotMetadata_ = null;
+      if (gcsRepositorySnapshotMetadataBuilder_ != null) {
+        gcsRepositorySnapshotMetadataBuilder_.dispose();
+        gcsRepositorySnapshotMetadataBuilder_ = null;
       }
       sourceCase_ = 0;
       source_ = null;
@@ -2869,6 +2958,13 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
                 : privateResourceMetadataBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.gcsRepositorySnapshotMetadata_ =
+            gcsRepositorySnapshotMetadataBuilder_ == null
+                ? gcsRepositorySnapshotMetadata_
+                : gcsRepositorySnapshotMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2948,6 +3044,9 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasPrivateResourceMetadata()) {
         mergePrivateResourceMetadata(other.getPrivateResourceMetadata());
+      }
+      if (other.hasGcsRepositorySnapshotMetadata()) {
+        mergeGcsRepositorySnapshotMetadata(other.getGcsRepositorySnapshotMetadata());
       }
       switch (other.getSourceCase()) {
         case GIT_COMMITISH:
@@ -3091,6 +3190,14 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    internalGetGcsRepositorySnapshotMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5406,6 +5513,236 @@ public final class CompilationResult extends com.google.protobuf.GeneratedMessag
         privateResourceMetadata_ = null;
       }
       return privateResourceMetadataBuilder_;
+    }
+
+    private com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata
+        gcsRepositorySnapshotMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata,
+            com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.Builder,
+            com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadataOrBuilder>
+        gcsRepositorySnapshotMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the gcsRepositorySnapshotMetadata field is set.
+     */
+    public boolean hasGcsRepositorySnapshotMetadata() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The gcsRepositorySnapshotMetadata.
+     */
+    public com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata
+        getGcsRepositorySnapshotMetadata() {
+      if (gcsRepositorySnapshotMetadataBuilder_ == null) {
+        return gcsRepositorySnapshotMetadata_ == null
+            ? com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.getDefaultInstance()
+            : gcsRepositorySnapshotMetadata_;
+      } else {
+        return gcsRepositorySnapshotMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGcsRepositorySnapshotMetadata(
+        com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata value) {
+      if (gcsRepositorySnapshotMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcsRepositorySnapshotMetadata_ = value;
+      } else {
+        gcsRepositorySnapshotMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGcsRepositorySnapshotMetadata(
+        com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.Builder builderForValue) {
+      if (gcsRepositorySnapshotMetadataBuilder_ == null) {
+        gcsRepositorySnapshotMetadata_ = builderForValue.build();
+      } else {
+        gcsRepositorySnapshotMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGcsRepositorySnapshotMetadata(
+        com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata value) {
+      if (gcsRepositorySnapshotMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && gcsRepositorySnapshotMetadata_ != null
+            && gcsRepositorySnapshotMetadata_
+                != com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata
+                    .getDefaultInstance()) {
+          getGcsRepositorySnapshotMetadataBuilder().mergeFrom(value);
+        } else {
+          gcsRepositorySnapshotMetadata_ = value;
+        }
+      } else {
+        gcsRepositorySnapshotMetadataBuilder_.mergeFrom(value);
+      }
+      if (gcsRepositorySnapshotMetadata_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGcsRepositorySnapshotMetadata() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      gcsRepositorySnapshotMetadata_ = null;
+      if (gcsRepositorySnapshotMetadataBuilder_ != null) {
+        gcsRepositorySnapshotMetadataBuilder_.dispose();
+        gcsRepositorySnapshotMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.Builder
+        getGcsRepositorySnapshotMetadataBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetGcsRepositorySnapshotMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadataOrBuilder
+        getGcsRepositorySnapshotMetadataOrBuilder() {
+      if (gcsRepositorySnapshotMetadataBuilder_ != null) {
+        return gcsRepositorySnapshotMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return gcsRepositorySnapshotMetadata_ == null
+            ? com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.getDefaultInstance()
+            : gcsRepositorySnapshotMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about the repository snapshot used by scheduled
+     * notebooks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata,
+            com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.Builder,
+            com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadataOrBuilder>
+        internalGetGcsRepositorySnapshotMetadataFieldBuilder() {
+      if (gcsRepositorySnapshotMetadataBuilder_ == null) {
+        gcsRepositorySnapshotMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata,
+                com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadata.Builder,
+                com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotMetadataOrBuilder>(
+                getGcsRepositorySnapshotMetadata(), getParentForChildren(), isClean());
+        gcsRepositorySnapshotMetadata_ = null;
+      }
+      return gcsRepositorySnapshotMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.CompilationResult)

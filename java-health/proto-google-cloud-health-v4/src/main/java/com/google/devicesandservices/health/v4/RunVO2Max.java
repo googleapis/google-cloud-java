@@ -138,6 +138,7 @@ public final class RunVO2Max extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Run VO2 max value in ml/kg/min.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -154,6 +155,7 @@ public final class RunVO2Max extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Run VO2 max value in ml/kg/min.
+   * Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -754,6 +756,7 @@ public final class RunVO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Run VO2 max value in ml/kg/min.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -770,6 +773,7 @@ public final class RunVO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Run VO2 max value in ml/kg/min.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -786,6 +790,7 @@ public final class RunVO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Run VO2 max value in ml/kg/min.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -806,6 +811,7 @@ public final class RunVO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Run VO2 max value in ml/kg/min.
+     * Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double run_vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>

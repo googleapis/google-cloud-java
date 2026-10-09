@@ -39,7 +39,7 @@
  *
  * <p>======================= AdReviewCenterAdServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling AdReviewCenterAd objects.
+ * <p>Service Description: Provides methods for handling `AdReviewCenterAd` objects.
  *
  * <p>Sample for AdReviewCenterAdServiceClient:
  *
@@ -52,10 +52,8 @@
  * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
  *     AdReviewCenterAdServiceClient.create()) {
  *   WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
- *   for (AdReviewCenterAd element :
- *       adReviewCenterAdServiceClient.searchAdReviewCenterAds(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   FetchAdReviewCenterCustomLabelsResponse response =
+ *       adReviewCenterAdServiceClient.fetchAdReviewCenterCustomLabels(parent);
  * }
  * }</pre>
  *
@@ -169,6 +167,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= BreakTemplateServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `BreakTemplate` objects.
+ *
+ * <p>Sample for BreakTemplateServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BreakTemplateServiceClient breakTemplateServiceClient =
+ *     BreakTemplateServiceClient.create()) {
+ *   BreakTemplateName name = BreakTemplateName.of("[NETWORK_CODE]", "[BREAK_TEMPLATE]");
+ *   BreakTemplate response = breakTemplateServiceClient.getBreakTemplate(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= BrowserLanguageServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `BrowserLanguage` objects.
@@ -224,6 +241,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= ChildPublisherServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling
+ * [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects.
+ *
+ * <p>Sample for ChildPublisherServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ChildPublisherServiceClient childPublisherServiceClient =
+ *     ChildPublisherServiceClient.create()) {
+ *   ChildPublisherName name = ChildPublisherName.of("[NETWORK_CODE]", "[CHILD_PUBLISHER]");
+ *   ChildPublisher response = childPublisherServiceClient.getChildPublisher(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CmsMetadataKeyServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `CmsMetadataKey` objects.
@@ -264,7 +301,8 @@
  *
  * <p>======================= CompanyServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling `Company` objects.
+ * <p>Service Description: Provides methods for handling [Company][google.ads.admanager.v1.Company]
+ * objects.
  *
  * <p>Sample for CompanyServiceClient:
  *
@@ -353,6 +391,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= CreativeServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `Creative` objects.
+ *
+ * <p>Sample for CreativeServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+ *   CreativeName name = CreativeName.of("[NETWORK_CODE]", "[CREATIVE]");
+ *   Creative response = creativeServiceClient.getCreative(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CreativeSetServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `CreativeSet` objects.
@@ -387,6 +443,25 @@
  *     CreativeTemplateServiceClient.create()) {
  *   CreativeTemplateName name = CreativeTemplateName.of("[NETWORK_CODE]", "[CREATIVE_TEMPLATE]");
  *   CreativeTemplate response = creativeTemplateServiceClient.getCreativeTemplate(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= CreativeWrapperServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `CreativeWrapper` objects.
+ *
+ * <p>Sample for CreativeWrapperServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CreativeWrapperServiceClient creativeWrapperServiceClient =
+ *     CreativeWrapperServiceClient.create()) {
+ *   CreativeWrapperName name = CreativeWrapperName.of("[NETWORK_CODE]", "[CREATIVE_WRAPPER]");
+ *   CreativeWrapper response = creativeWrapperServiceClient.getCreativeWrapper(name);
  * }
  * }</pre>
  *
@@ -446,6 +521,65 @@
  *       CustomTargetingValueName.of("[NETWORK_CODE]", "[CUSTOM_TARGETING_VALUE]");
  *   CustomTargetingValue response =
  *       customTargetingValueServiceClient.getCustomTargetingValue(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DaiAuthenticationKeyServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `DaiAuthenticationKey` objects.
+ *
+ * <p>Sample for DaiAuthenticationKeyServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DaiAuthenticationKeyServiceClient daiAuthenticationKeyServiceClient =
+ *     DaiAuthenticationKeyServiceClient.create()) {
+ *   DaiAuthenticationKeyName name =
+ *       DaiAuthenticationKeyName.of("[NETWORK_CODE]", "[DAI_AUTHENTICATION_KEY]");
+ *   DaiAuthenticationKey response =
+ *       daiAuthenticationKeyServiceClient.getDaiAuthenticationKey(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DaiEncodingProfileServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `DaiEncodingProfile` objects.
+ *
+ * <p>Sample for DaiEncodingProfileServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DaiEncodingProfileServiceClient daiEncodingProfileServiceClient =
+ *     DaiEncodingProfileServiceClient.create()) {
+ *   DaiEncodingProfileName name =
+ *       DaiEncodingProfileName.of("[NETWORK_CODE]", "[DAI_ENCODING_PROFILE]");
+ *   DaiEncodingProfile response = daiEncodingProfileServiceClient.getDaiEncodingProfile(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= DaiSessionServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `DaiSession` objects.
+ *
+ * <p>Sample for DaiSessionServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DaiSessionServiceClient daiSessionServiceClient = DaiSessionServiceClient.create()) {
+ *   DaiSessionName name = DaiSessionName.of("[NETWORK_CODE]", "[DAI_SESSION]");
+ *   DaiSession response = daiSessionServiceClient.getDaiSession(name);
  * }
  * }</pre>
  *
@@ -528,6 +662,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= ForecastServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling forecasting actions.
+ *
+ * <p>Sample for ForecastServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ForecastServiceClient forecastServiceClient = ForecastServiceClient.create()) {
+ *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+ *   RunAvailabilityForecastResponse response =
+ *       forecastServiceClient.runAvailabilityForecast(parent);
+ * }
+ * }</pre>
+ *
  * <p>======================= GeoTargetServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `GeoTarget` objects.
@@ -564,6 +717,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= LineItemCreativeAssociationServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `LineItemCreativeAssociation` objects.
+ *
+ * <p>Sample for LineItemCreativeAssociationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+ *     LineItemCreativeAssociationServiceClient.create()) {
+ *   LineItemCreativeAssociationName name =
+ *       LineItemCreativeAssociationName.of("[NETWORK_CODE]", "[LINE_ITEM]", "[CREATIVE]");
+ *   LineItemCreativeAssociation response =
+ *       lineItemCreativeAssociationServiceClient.getLineItemCreativeAssociation(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= LineItemServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `LineItem` objects.
@@ -579,6 +753,25 @@
  * try (LineItemServiceClient lineItemServiceClient = LineItemServiceClient.create()) {
  *   LineItemName name = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
  *   LineItem response = lineItemServiceClient.getLineItem(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= LineItemTemplateServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `LineItemTemplate` objects.
+ *
+ * <p>Sample for LineItemTemplateServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LineItemTemplateServiceClient lineItemTemplateServiceClient =
+ *     LineItemTemplateServiceClient.create()) {
+ *   LineItemTemplateName name = LineItemTemplateName.of("[NETWORK_CODE]", "[LINE_ITEM_TEMPLATE]");
+ *   LineItemTemplate response = lineItemTemplateServiceClient.getLineItemTemplate(name);
  * }
  * }</pre>
  *
@@ -696,6 +889,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= NativeStyleServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `NativeStyle` objects.
+ *
+ * <p>Sample for NativeStyleServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (NativeStyleServiceClient nativeStyleServiceClient = NativeStyleServiceClient.create()) {
+ *   NativeStyleName name = NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]");
+ *   NativeStyle response = nativeStyleServiceClient.getNativeStyle(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= NetworkServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `Network` objects.
@@ -769,6 +980,25 @@
  * try (OrderServiceClient orderServiceClient = OrderServiceClient.create()) {
  *   OrderName name = OrderName.of("[NETWORK_CODE]", "[ORDER]");
  *   Order response = orderServiceClient.getOrder(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PartnerServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling [Partner][google.ads.admanager.v1.Partner]
+ * objects.
+ *
+ * <p>Sample for PartnerServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PartnerServiceClient partnerServiceClient = PartnerServiceClient.create()) {
+ *   PartnerName name = PartnerName.of("[NETWORK_CODE]", "[PARTNER]");
+ *   Partner response = partnerServiceClient.getPartner(name);
  * }
  * }</pre>
  *
@@ -1052,6 +1282,27 @@
  * try (UserServiceClient userServiceClient = UserServiceClient.create()) {
  *   UserName name = UserName.of("[NETWORK_CODE]", "[USER]");
  *   User response = userServiceClient.getUser(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ViewabilityProviderServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling
+ * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider] objects.
+ *
+ * <p>Sample for ViewabilityProviderServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ViewabilityProviderServiceClient viewabilityProviderServiceClient =
+ *     ViewabilityProviderServiceClient.create()) {
+ *   ViewabilityProviderName name =
+ *       ViewabilityProviderName.of("[NETWORK_CODE]", "[VIEWABILITY_PROVIDER]");
+ *   ViewabilityProvider response = viewabilityProviderServiceClient.getViewabilityProvider(name);
  * }
  * }</pre>
  */

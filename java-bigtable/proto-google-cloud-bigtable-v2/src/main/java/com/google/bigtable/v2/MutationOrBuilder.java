@@ -248,5 +248,35 @@ public interface MutationOrBuilder
    */
   com.google.bigtable.v2.Mutation.DeleteFromRowOrBuilder getDeleteFromRowOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The origin of the timestamp in this mutation.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.v2.Mutation.TimestampOrigin timestamp_origin = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for timestampOrigin.
+   */
+  int getTimestampOriginValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The origin of the timestamp in this mutation.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.v2.Mutation.TimestampOrigin timestamp_origin = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The timestampOrigin.
+   */
+  com.google.bigtable.v2.Mutation.TimestampOrigin getTimestampOrigin();
+
   com.google.bigtable.v2.Mutation.MutationCase getMutationCase();
 }

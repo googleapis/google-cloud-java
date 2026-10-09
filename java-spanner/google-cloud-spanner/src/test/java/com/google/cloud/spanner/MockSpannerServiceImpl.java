@@ -517,6 +517,19 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
           0, 0, Collections.singletonList(exception), false, Collections.singleton(streamIndex));
     }
 
+    /**
+     * Creates a {@link SimulatedExecutionTime} that throws the given exceptions at the given
+     * indices in the returned stream. The exceptions and stream indices are matched by position:
+     * the first exception is thrown when the first call reaches the first stream index, the second
+     * exception when the next call reaches the second stream index, and so on. The stream index is
+     * reset for each (retried) call.
+     */
+    public static SimulatedExecutionTime ofStreamExceptions(
+        Collection<? extends Exception> exceptions, Collection<Long> streamIndices) {
+      Preconditions.checkArgument(exceptions.size() == streamIndices.size());
+      return new SimulatedExecutionTime(0, 0, exceptions, false, streamIndices);
+    }
+
     public static SimulatedExecutionTime stickyDatabaseNotFoundException(String name) {
       return ofStickyException(
           SpannerExceptionFactoryTest.newStatusDatabaseNotFoundException(name));
@@ -838,7 +851,16 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     freezeAfterNumRequests.set(numRequests);
   }
 
+  private volatile boolean recordRequests = true;
+
+  public void setRecordRequests(boolean recordRequests) {
+    this.recordRequests = recordRequests;
+  }
+
   private void maybeFreezeAndRecordRequest(AbstractMessage request) {
+    if (!recordRequests) {
+      return;
+    }
     synchronized (lock) {
       if (freezeAfterNumRequests.get() >= 0) {
         if (freezeAfterNumRequests.decrementAndGet() == -1) {

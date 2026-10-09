@@ -545,6 +545,86 @@ public class AppConnectorsServiceClientTest {
   }
 
   @Test
+  public void resolveInstanceConfigTest() throws Exception {
+    ResolveInstanceConfigResponse expectedResponse =
+        ResolveInstanceConfigResponse.newBuilder()
+            .setInstanceConfig(AppConnectorInstanceConfig.newBuilder().build())
+            .build();
+    mockAppConnectorsService.addResponse(expectedResponse);
+
+    AppConnectorName appConnector =
+        AppConnectorName.of("[PROJECT]", "[LOCATION]", "[APP_CONNECTOR]");
+
+    ResolveInstanceConfigResponse actualResponse = client.resolveInstanceConfig(appConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppConnectorsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveInstanceConfigRequest actualRequest =
+        ((ResolveInstanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(appConnector.toString(), actualRequest.getAppConnector());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveInstanceConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppConnectorsService.addException(exception);
+
+    try {
+      AppConnectorName appConnector =
+          AppConnectorName.of("[PROJECT]", "[LOCATION]", "[APP_CONNECTOR]");
+      client.resolveInstanceConfig(appConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveInstanceConfigTest2() throws Exception {
+    ResolveInstanceConfigResponse expectedResponse =
+        ResolveInstanceConfigResponse.newBuilder()
+            .setInstanceConfig(AppConnectorInstanceConfig.newBuilder().build())
+            .build();
+    mockAppConnectorsService.addResponse(expectedResponse);
+
+    String appConnector = "appConnector1131114284";
+
+    ResolveInstanceConfigResponse actualResponse = client.resolveInstanceConfig(appConnector);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppConnectorsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveInstanceConfigRequest actualRequest =
+        ((ResolveInstanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(appConnector, actualRequest.getAppConnector());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveInstanceConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppConnectorsService.addException(exception);
+
+    try {
+      String appConnector = "appConnector1131114284";
+      client.resolveInstanceConfig(appConnector);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void reportStatusTest() throws Exception {
     AppConnector expectedResponse =
         AppConnector.newBuilder()

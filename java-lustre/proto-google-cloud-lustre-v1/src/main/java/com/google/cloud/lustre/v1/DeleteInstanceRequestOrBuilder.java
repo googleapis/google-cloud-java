@@ -111,4 +111,19 @@ public interface DeleteInstanceRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, any sub-resources from this instance will also be
+   * deleted. Otherwise, the request will only work if the instance has no
+   * sub-resources.
+   * </pre>
+   *
+   * <code>bool force = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The force.
+   */
+  boolean getForce();
 }

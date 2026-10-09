@@ -195,7 +195,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
    * For a resource to match the tag filters, the resource must have all of the
    * provided tags attached. Tags refer to Resource Manager tags bound to the
    * resource or its ancestors. For more information, see [Manage
-   * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+   * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
    * </pre>
    *
    * <code>
@@ -222,7 +222,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
    * For a resource to match the tag filters, the resource must have all of the
    * provided tags attached. Tags refer to Resource Manager tags bound to the
    * resource or its ancestors. For more information, see [Manage
-   * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+   * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
    * </pre>
    *
    * <code>
@@ -251,7 +251,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
    * For a resource to match the tag filters, the resource must have all of the
    * provided tags attached. Tags refer to Resource Manager tags bound to the
    * resource or its ancestors. For more information, see [Manage
-   * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+   * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
    * </pre>
    *
    * <code>
@@ -930,7 +930,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -956,7 +956,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -988,7 +988,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -1022,7 +1022,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -1053,7 +1053,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -1092,7 +1092,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -1123,7 +1123,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -1149,7 +1149,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>
@@ -1179,7 +1179,7 @@ public final class FileStoreCollection extends com.google.protobuf.GeneratedMess
      * For a resource to match the tag filters, the resource must have all of the
      * provided tags attached. Tags refer to Resource Manager tags bound to the
      * resource or its ancestors. For more information, see [Manage
-     * schedules](https://cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
+     * schedules](https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage#manage-schedules).
      * </pre>
      *
      * <code>

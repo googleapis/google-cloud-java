@@ -5,6 +5,1655 @@
       "changes": [
         {
           "type": "feat",
+          "sha": "675f639a99646f06f0f5ade145d2efe7495e4b97",
+          "message": "Add shared fallback state and probing recovery options to GcpFallbackChannel",
+          "issues": [
+            "14013"
+          ],
+          "scope": "grpc-gcp"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:grpc-gcp",
+      "id": "5848a189-c0a0-4173-8703-e16ca07cfe0c",
+      "createTime": "2026-09-30T01:08:11.331Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "4b6a671193315a8af14ce1e827d82a7ae4ac31cb",
+          "message": "add publish start time to client telemetry header",
+          "issues": [
+            "14496"
+          ],
+          "scope": "pubsub"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-pubsub",
+      "id": "ff025efc-351d-4be5-bffa-33329efdc04d",
+      "createTime": "2026-09-30T01:08:11.159Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "df062901ee5fb5082f1cb4e29387a5b883760fe4",
+          "message": "pre-warm writer pool channels with flush() after open()",
+          "issues": [
+            "14537"
+          ],
+          "scope": "samples"
+        },
+        {
+          "type": "docs",
+          "sha": "32e6f87158d29b151ba500797a41086ba5e6118d",
+          "message": "add zonal bucket pre-warmed writer pool sample",
+          "issues": [
+            "14517"
+          ],
+          "scope": "samples"
+        },
+        {
+          "type": "fix",
+          "sha": "0f6f9b519762ef629aef80d3528319f15922a1e6",
+          "message": "add App Hub storage.googleapis.com prefix to destination.id",
+          "issues": [
+            "14527"
+          ],
+          "scope": "storage"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "c7614da8-1e74-4161-b9c6-037ed0d579c9",
+      "createTime": "2026-09-30T01:08:11.014Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3c797300b9c165cc242746072b06180a59501af9",
+          "message": "replace InputStream with InputStreamSupplier in resumable upload public surfaces",
+          "issues": [
+            "14521"
+          ],
+          "scope": "gax"
+        },
+        {
+          "type": "feat",
+          "sha": "98c20738afa067da5eed015f5caa219a3ac247ef",
+          "message": "retry start upload call and rename ResumableUploadCallSettings to ResumableUploadOptions",
+          "issues": [
+            "14511"
+          ],
+          "scope": "gax,gapic-generator-java"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:gapic-showcase",
+      "id": "4e397a46-cb73-4adb-8993-9800ab321b12",
+      "createTime": "2026-09-30T01:08:10.869Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "668fd184e6800022c6bf74414a6f3dda550f26fd",
+          "message": "exclude javax.annotation-api from api-common dependency",
+          "issues": [
+            "14538",
+            "12363"
+          ],
+          "scope": "auth"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "7b963eb1-208b-42f2-a356-dac29faf5f0d",
+      "createTime": "2026-09-30T01:08:10.690Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e989a72718f9e3280215064204a31f7a1d49b473",
+          "message": "infer undeclared fields in PreparedStatement",
+          "issues": [
+            "14400"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "5bd45202ce46f66177e76d1bb5b48ad39b100522",
+          "message": "abort session when connection is closed",
+          "issues": [
+            "14273",
+            "13922"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "d311b6da-219a-4be1-a77d-33456d411676",
+      "createTime": "2026-09-30T01:08:10.547Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "6f13a1d026e4df5b61ebfed4226d7d8a87847f2b",
+          "message": "remove java-automl library",
+          "issues": [
+            "14540"
+          ],
+          "scope": "automl",
+          "breakingChangeNote": "remove java-automl library ([#14540](https://github.com/googleapis/google-cloud-java/issues/14540))"
+        }
+      ],
+      "version": "1.93.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bom",
+      "id": "28eaede1-1daa-4780-95fb-e176ad9fde7f",
+      "createTime": "2026-09-30T01:08:10.386Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "beea42fa450e3d13d78bd0345db90eaf72f66d36",
+          "message": "restore transportFactory upon deserialization in InternalAwsSecurityCredentialsSupplier",
+          "issues": [
+            "14340"
+          ],
+          "scope": "auth"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "b0352a66-a7e2-42ab-94e9-5fe96e781cdb",
+      "createTime": "2026-09-23T19:21:44.299Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "bc7be5e7edee60d59e7878f170ac2b2673954bb3",
+          "message": "restore google-cloud-spanner-jdbc to libraries-bom",
+          "issues": [
+            "14362",
+            "14347"
+          ],
+          "scope": "bom"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bom",
+      "id": "dfbec31b-ec59-4ffb-9946-885956215c84",
+      "createTime": "2026-09-23T19:21:44.142Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c167ab849c5ece60f6063dc2d841ecd637f4a9fa",
+          "message": "add publish telemetry headers for publish attempt observability",
+          "issues": [
+            "14338"
+          ],
+          "scope": "pubsub"
+        },
+        {
+          "type": "feat",
+          "sha": "b30261580448957aac78023b18f28874411369c1",
+          "message": "implement publish hedging to reduce tail latency",
+          "issues": [
+            "13735"
+          ],
+          "scope": "pubsub"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-pubsub",
+      "id": "77be56e4-9cbf-41f8-aa09-7c8c2e90a72f",
+      "createTime": "2026-09-23T19:21:43.982Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "21c4955fe71d3a6a81f8e3cdb83cb4ebb3e48ee3",
+          "message": "add networkservices",
+          "issues": [
+            "14407"
+          ],
+          "scope": "google/cloud/networkservices/v1beta1"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkservices",
+      "id": "d91a4ae2-b6aa-4293-a9f2-cff73096c96a",
+      "createTime": "2026-09-23T19:21:43.782Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "a4a47da878bbbf989e5fc3b0781c6dd4e0818b1d",
+          "message": "add backupdr",
+          "issues": [
+            "14410"
+          ],
+          "scope": "google/cloud/backupdr/v1beta"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-backupdr",
+      "id": "f09b5f76-84bf-45eb-9c56-ae3cbdd4baa2",
+      "createTime": "2026-09-23T19:21:43.593Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2c01d55e6119b9dfd09c2af133196fa6d1ed8ca1",
+          "message": "add delete folder recursive sample",
+          "issues": [
+            "14397"
+          ],
+          "scope": "storage/control"
+        },
+        {
+          "type": "feat",
+          "sha": "f4b1b46c14fead062e90cc58841b812406fcc1b6",
+          "message": "add delete folder recursive sample",
+          "issues": [
+            "13642"
+          ],
+          "scope": "storage/control"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "82caf52a-7eab-4bb4-826b-fe5288fe399e",
+      "createTime": "2026-09-23T19:21:43.447Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "21e6dc8cd20242c7b7be5e1fc81f33be0d084a7c",
+          "message": "fix htapi fallback due to permission logic",
+          "issues": [
+            "14418"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "c1aac66feb6ac9df6d1366a16e8fc97039279523",
+          "message": "support picosecond in `PreparedStatement` parameters and batching",
+          "issues": [
+            "14373"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "8e464fe3b507a3262415a5f33b61dcc69d84a12e",
+          "message": "handle SQL NULLs in ResultSet primitive getters",
+          "issues": [
+            "14383",
+            "14371"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "43acdd349dddecf233e6c5c8ada9404b6f341911",
+          "message": "support picosecond timestamp in `ResultSetMetaData` and `DatabaseMetaData`",
+          "issues": [
+            "14358"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "dd2c41a0e2ec05d39b93f7d94169d596bb7a5483",
+          "message": "handle null parameters in Storage Write API bulk inserts",
+          "issues": [
+            "14270",
+            "14066"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "15ffe4ac68dec8f968e52296f3258b6adc83286c",
+          "message": "support picosecond  in REST JSON path and nested types",
+          "issues": [
+            "14334"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "b5d9acaf798bd047f02c781c703c3339dbc7f261",
+          "message": "support picosecond timestamps in Arrow Storage Read API and nested types",
+          "issues": [
+            "14332"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "a16f0489f8da34e2d460760d8c0167ae3a7d905a",
+          "message": "ensure row ordering in PCNT IT",
+          "issues": [
+            "14330"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "2a9612a2efc2ca78db04fe351d3083eda96775c6",
+          "message": "implement picosecond temporal math and formatting engine",
+          "issues": [
+            "14286"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "b4aa5ac5834f8de26fe5b71c40097c28d7084c73",
+          "message": "add `EnableTimestampPicos` connection property and its plumbing",
+          "issues": [
+            "14284"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "6e8d6c80b71d50da23b66a7afbfa54936c00d5ca",
+          "message": "support qualified project delimiter in `DefaultDataset` property",
+          "issues": [
+            "14240"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "533ba14512e8123e4ba2e9b63aa76ca1ed8eae85",
+          "message": "fix Timestamp assertions",
+          "issues": [
+            "14290"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "5898b72e-c6ef-41d4-96dc-f1d97d9cf343",
+      "createTime": "2026-09-23T19:21:43.294Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8a123d9745bcfc0c185aff41f468a25f4edb2852",
+          "message": "add support for BSON types",
+          "issues": [
+            "13189"
+          ],
+          "scope": "firestore"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-firestore",
+      "id": "4cce6ac3-68cb-48d8-93b2-653b1b6bfb07",
+      "createTime": "2026-09-23T19:21:43.092Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ffc745c9afc1a4c2ac71cb12db5f41837ef82a16",
+          "message": "Support dynamic TLS certificate and key rotation for Spanner Omni",
+          "issues": [
+            "14456"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "305f47db2a89f8a5b4a9409687528f0ae6588579",
+          "message": "honor maxAttempts and totalTimeout in streaming resume loop",
+          "issues": [
+            "14370"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "perf",
+          "sha": "46108f4945cba74ae417ebae7da9eece64e30746",
+          "message": "stop re-parsing the request id on every RPC",
+          "issues": [
+            "14353"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "54c0d0f843d7bf74bedc69e554b80ce0b8dde4ef",
+          "message": "only set snapshot isolation read timestamp for SI or optimistic txns in CloudClientExecutor",
+          "issues": [
+            "14346"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "d9a8eefc7b564330248d31bf0d40b060aee6da11",
+          "message": "prevent statement cancellation race in AbstractBaseUnitOfWork",
+          "issues": [
+            "14283"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "89a8268f7ce8d4a0f6cee03c40bb8410d1a30c9a",
+          "message": "re-enable ITInstanceAdminTest on cloud-devel and cloud-staging",
+          "issues": [
+            "14281"
+          ],
+          "scope": "spanner"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner",
+      "id": "7955ef93-83d8-466a-95b3-080e26516d34",
+      "createTime": "2026-09-23T19:21:42.931Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "0d4e875eed4f47ab0cdf6feb810a361a5beef47f",
+          "message": "switch resumable upload specialized stubs to package private",
+          "issues": [
+            "14471"
+          ],
+          "scope": "generator"
+        },
+        {
+          "type": "feat",
+          "sha": "f9ebd79d6eb7d20250120f17d4f18ac636304bb1",
+          "message": "enable resumable upload generation for showcase",
+          "issues": [
+            "14325"
+          ],
+          "scope": "generator"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:gapic-showcase",
+      "id": "be9517db-1273-4742-a2df-3a19cebd940e",
+      "createTime": "2026-09-23T19:21:42.766Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "f5601f4ed1f3f9ce141c442e004607e40c8b4073",
+          "message": "preserve page token and paginate correctly in Arrow query when maxResults is set",
+          "issues": [
+            "14469"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "docs",
+          "sha": "bd363f6d6e88cdf49597c0017ab972e2c088d3e6",
+          "message": "add QueryArrow code sample and document JDK 17+ JVM requirements",
+          "issues": [
+            "14437"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "feat",
+          "sha": "00bf3de33ee57d911d07bd5bc1ca77a55af6d49a",
+          "message": "make BigQuery AutoCloseable with default no-op close method",
+          "issues": [
+            "14434"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "fix",
+          "sha": "9d10dd021aeac965bdc879c258909206321cbc1e",
+          "message": "use first page row count for Arrow query pagination offset",
+          "issues": [
+            "14466"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "fix",
+          "sha": "2775eb1ab9652f35c809d2d4ec5d42ca065364c8",
+          "message": "default Arrow pagination stream location to US instead of global",
+          "issues": [
+            "14458"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "feat",
+          "sha": "26e568a413f1c2f0a1ba6960d79ebf7d62ee1266",
+          "message": "add Storage Read API slow-path fallback for row-based query()",
+          "issues": [
+            "14409"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "feat",
+          "sha": "8d12a8f4e2a502404e0008c3643b057d2d9eda6a",
+          "message": "accelerate row-based query() with Arrow wire format",
+          "issues": [
+            "14405"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "feat",
+          "sha": "615409f9ecaf4d67180aed5d3efed9c40e8fdda7",
+          "message": "add ArrowQueryPageFetcher for Arrow query result pagination",
+          "issues": [
+            "14404"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "feat",
+          "sha": "b44ffe8501f16584a997942b19ab1f356a85ecd1",
+          "message": "add zero-copy queryArrow API for Arrow VectorSchemaRoot streaming",
+          "issues": [
+            "14402"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "fix",
+          "sha": "64cf1d3832f2972beb3d5d5630fe41fe31774732",
+          "message": "fix undeclared QueryParameter wiring in QueryStatistics",
+          "issues": [
+            "14401"
+          ],
+          "scope": "biqguery"
+        },
+        {
+          "type": "feat",
+          "sha": "a62fdf8be83a234d0c75b6204f2ca1a5eac6515c",
+          "message": "add ArrowQueryResult and ArrowQueryResultImpl for Arrow result streaming",
+          "issues": [
+            "13944"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "feat",
+          "sha": "d9a298bf6b7f8add6cf29088fa1f619e12b1a1f2",
+          "message": "add ArrowDeserializer helper utility",
+          "issues": [
+            "13943"
+          ],
+          "scope": "bigquery"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery",
+      "id": "eb414fde-009e-4670-89c7-718b89a205a0",
+      "createTime": "2026-09-23T19:21:42.624Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "57bacb006a74b0465d0601abd97536d801b92854",
+          "message": "fall back to classic path when per-RPC CallCredentials are set on session path",
+          "issues": [
+            "14477"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "6361ecddb460882f9ea82e877fca475a7699c087",
+          "message": "fix abnormal session closures and scale-up in session pool",
+          "issues": [
+            "14431"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "4426ccdd45a82e9b10bc8f6f2174cecbcd9254d7",
+          "message": "don't notify config listeners while holding the manager lock",
+          "issues": [
+            "14294"
+          ],
+          "scope": "bigtable"
+        }
+      ],
+      "version": "1.92.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigtable",
+      "id": "b097ffd9-cc6f-4e00-8efd-ccafe61d36fa",
+      "createTime": "2026-09-23T19:21:42.427Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2910f638cdaac419108926fcad009da1cea5ea87",
+          "message": "remove java-datacatalog library",
+          "issues": [
+            "14178"
+          ],
+          "scope": "datacatalog",
+          "breakingChangeNote": "remove java-datacatalog library ([#14178](https://github.com/googleapis/google-cloud-java/issues/14178))"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery",
+      "id": "9aa1b983-0ff1-4c92-91dd-4d0b2ff4a294",
+      "createTime": "2026-09-04T18:01:01.271Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "0cdc69579859c7ec1828a2684ad90b0e02807836",
+          "message": "Upgrade grpc-java to 1.83.0",
+          "issues": [
+            "13967"
+          ]
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastore",
+      "id": "bdca160b-c5df-4fac-8c17-7db2483f97c3",
+      "createTime": "2026-09-04T18:01:01.118Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "b6f73db6937c5f4d9c7fba0cceeed7b107a4ec3f",
+          "message": "temp fix for lint and skip generate",
+          "issues": [
+            "14005"
+          ],
+          "scope": "java-sql"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-sql",
+      "id": "524d8abb-a2ec-473e-9188-35cbe5d8ed68",
+      "createTime": "2026-09-04T18:01:00.960Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "334d35a1012e8b416d1bfc772738dc46786f87d0",
+          "message": "remove java-datalabeling library",
+          "issues": [
+            "14189",
+            "14176"
+          ],
+          "scope": "datalabeling",
+          "breakingChangeNote": "remove java-datalabeling library ([#14189](https://github.com/googleapis/google-cloud-java/issues/14189))"
+        },
+        {
+          "type": "feat",
+          "sha": "2910f638cdaac419108926fcad009da1cea5ea87",
+          "message": "remove java-datacatalog library",
+          "issues": [
+            "14178"
+          ],
+          "scope": "datacatalog",
+          "breakingChangeNote": "remove java-datacatalog library ([#14178](https://github.com/googleapis/google-cloud-java/issues/14178))"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bom",
+      "id": "12d54d2c-b60a-493e-a1b5-a1b90a90ccbd",
+      "createTime": "2026-09-04T18:01:00.798Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "865a15bb14d687f88c23bb3c32cbfbbe8e536c62",
+          "message": "propagate structured LRO error details to ApiException",
+          "issues": [
+            "14022"
+          ],
+          "scope": "gax"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:gapic-showcase",
+      "id": "08486757-4e88-4f7c-b60c-41c379edd790",
+      "createTime": "2026-09-04T18:01:00.649Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f871a072bcee3a5d2c9ae3efae7ac96024162770",
+          "message": "onboard a new library",
+          "issues": [
+            "14204"
+          ],
+          "scope": "apptopology"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-apptopology",
+      "id": "f692fafe-6416-406f-94bf-d12590d9f324",
+      "createTime": "2026-09-04T18:01:00.499Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "perf",
+          "sha": "744a52216e6ab58e90ee0e7c92f273299125a282",
+          "message": "replace mvn help:evaluate with native bash and sed extraction",
+          "issues": [
+            "14218"
+          ],
+          "scope": "ci"
+        },
+        {
+          "type": "deps",
+          "sha": "0cdc69579859c7ec1828a2684ad90b0e02807836",
+          "message": "Upgrade grpc-java to 1.83.0",
+          "issues": [
+            "13967"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "385e1f2bbea67b35cbed78d1e1e7b3ed7c03313d",
+          "message": "refine JSpecify nullability annotations for external account credentials",
+          "issues": [
+            "14164"
+          ],
+          "scope": "auth"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "b61a5606-daef-444f-a547-a50f9f6c06b2",
+      "createTime": "2026-09-04T18:01:00.342Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dd75645240b7738b537d7cb01faf3cc55ceaeb66",
+          "message": "prime scaled channels before publish",
+          "issues": [
+            "14232"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "feat",
+          "sha": "829872e642d690385f685f7766693c93ddb05cdc",
+          "message": "penalize retryable channel errors",
+          "issues": [
+            "14219"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "feat",
+          "sha": "bbbd18ce7e13ef0a8726c52f1ab252b0ee499e06",
+          "message": "drain scaled-down channels",
+          "issues": [
+            "14216"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "feat",
+          "sha": "41f0a2e83651b76a0deca31bf9704af21d566ce9",
+          "message": "move scale-up to background worker",
+          "issues": [
+            "14206"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "fix",
+          "sha": "07a7505d59fb3faeaa90754e28d36c454acc2e05",
+          "message": "prevent hot-channel skew",
+          "issues": [
+            "14198"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "fix",
+          "sha": "3df32bad3301e24e4138410c41b53a4a789ea75b",
+          "message": "correct channel lifecycle bookkeeping",
+          "issues": [
+            "14196"
+          ],
+          "scope": "grpc-gcp"
+        },
+        {
+          "type": "deps",
+          "sha": "0cdc69579859c7ec1828a2684ad90b0e02807836",
+          "message": "Upgrade grpc-java to 1.83.0",
+          "issues": [
+            "13967"
+          ]
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:grpc-gcp",
+      "id": "94b7ca33-a14e-43ec-a968-307ceb605649",
+      "createTime": "2026-09-04T18:01:00.185Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "93e0920de08d98467752b6216407dfbe1a70b842",
+          "message": "resolve GraalVM Native Image test failure for java-storage",
+          "issues": [
+            "14226"
+          ],
+          "scope": "storage"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "905235c7-fe69-41c6-aedf-02aaf312247a",
+      "createTime": "2026-09-04T18:01:00.027Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "94e680fcb47db4fbd008f5b458563fdc733ead3b",
+          "message": "truncate client generated timestamps on the emulator c…",
+          "issues": [
+            "14234"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "feat",
+          "sha": "5b6a97473af68c0556f333836265fe977f4eda5b",
+          "message": "Option to disable direct access fallback",
+          "issues": [
+            "14193"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "deps",
+          "sha": "0cdc69579859c7ec1828a2684ad90b0e02807836",
+          "message": "Upgrade grpc-java to 1.83.0",
+          "issues": [
+            "13967"
+          ]
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigtable",
+      "id": "824697c3-c564-497d-9ccf-20edee38eb11",
+      "createTime": "2026-09-04T18:00:59.873Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "590a51cf658911c8a170ecc96695e0d4ef0b3e4d",
+          "message": "onboard new library",
+          "issues": [
+            "14257"
+          ],
+          "scope": "google/shopping/merchant/loyaltycustomers/v1"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-loyaltycustomers",
+      "id": "41b38ca0-9d21-4a7c-a4cd-3477d371fed6",
+      "createTime": "2026-09-04T18:00:59.721Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "eef74d291f0ca7e90115ca6bebca463363df4970",
+          "message": "add client-level CallContextConfigurator to SpannerOptions",
+          "issues": [
+            "14256"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "feat",
+          "sha": "4d26645014ce053ad6f0b48b9c4ecb87ece024c5",
+          "message": "prime scaled-up dynamic channel pool channels with SELECT 1",
+          "issues": [
+            "14254"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "6383f815968cda69d0186651cffc685bb754449a",
+          "message": "prioritize leader replica for read-write transactions in location-aware routing",
+          "issues": [
+            "14195"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "5e9e3cd03eadc280456b38ac127ba1f58b715616",
+          "message": "route ExecuteBatchDml through transaction affinity endpoint",
+          "issues": [
+            "14192"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "3df32bad3301e24e4138410c41b53a4a789ea75b",
+          "message": "correct channel lifecycle bookkeeping",
+          "issues": [
+            "14196"
+          ],
+          "scope": "grpc-gcp"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner",
+      "id": "81185c72-e2d2-45cd-b976-59f31821c0ee",
+      "createTime": "2026-09-04T18:00:59.582Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "d38d9f0ec623a818c6d0223f124dcac224b5656f",
+          "message": "resolve `statementType` via `getJob` fallback to avoid post-execution dry run for DDL",
+          "issues": [
+            "14265"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "perf",
+          "sha": "ccf12b0607be2f3e3ce6edbd63bdfe5d2ec55e4e",
+          "message": "eliminate sync getJob RPC call",
+          "issues": [
+            "14197"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.91.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "15809734-1f65-4e5d-bd12-762237d9fc0a",
+      "createTime": "2026-09-04T18:00:59.409Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "d94922f68dd56974a1115cfa481233e5a28226ae",
+          "message": "use JsonUtils for StorageObject serialization in resumable writes and read channels",
+          "issues": [
+            "13976"
+          ],
+          "scope": "storage"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "a6cf72aa-bb1b-4cdb-9e23-4c2aca15b603",
+      "createTime": "2026-08-24T18:17:11.558Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.api.grpc:proto-google-iam-v1",
+      "id": "7b02a501-d954-4af8-8196-763a41810e7b",
+      "createTime": "2026-08-24T18:17:11.404Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-iam-policy",
+      "id": "0dffaa90-7379-4713-97f1-b703a9459419",
+      "createTime": "2026-08-24T18:17:11.245Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-firestore",
+      "id": "c7d8716a-8e2b-4d35-a2d6-f25a403a1400",
+      "createTime": "2026-08-24T18:17:11.090Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.api-ads:data-manager",
+      "id": "283cdd56-2d0a-4412-8c99-b6238dc40b8e",
+      "createTime": "2026-08-24T18:17:10.936Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataform",
+      "id": "201b5661-409d-46c6-b651-b5b951da972b",
+      "createTime": "2026-08-24T18:17:10.784Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "9fb30e5d-6a5c-47c1-b766-13a0cdee7568",
+      "createTime": "2026-08-24T18:17:10.625Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-commerceproducer",
+      "id": "7230a09d-2164-4426-909b-040375ec30fe",
+      "createTime": "2026-08-24T18:17:10.440Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-chat",
+      "id": "14bedc19-8387-4984-965c-267cd604692d",
+      "createTime": "2026-08-24T18:17:10.227Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9337a93a7e9f73494d23fbc2fae05df2d4318f11",
+          "message": "update API sources and regenerate",
+          "issues": [
+            "14000"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "b0538515-b58d-466f-9d87-b7d907d7d78c",
+      "createTime": "2026-08-24T18:17:10.055Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b1f6186a85ae9aec1ae1bc3a26031601ad91bfc5",
+          "message": "add support for request tags",
+          "issues": [
+            "13732"
+          ],
+          "scope": "datastore"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastore",
+      "id": "1ef86b3b-09d5-42ee-b7fb-ea262b1229b3",
+      "createTime": "2026-08-24T18:17:09.895Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ab226ee66dce097dc0b259da165976217689e603",
+          "message": "onboard a new library",
+          "issues": [
+            "14060"
+          ],
+          "scope": "workloadidentity"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workloadidentity",
+      "id": "d84796a3-f8fa-4cd1-b269-10affe0b659f",
+      "createTime": "2026-08-24T18:17:09.740Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f41b2d9becf930eb38842e75765d8d800eac4692",
+          "message": "onboard a new library",
+          "issues": [
+            "14068"
+          ],
+          "scope": "ftp"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-ftp",
+      "id": "5508849b-5769-41bf-b9cd-0fa1be1ad173",
+      "createTime": "2026-08-24T18:17:09.584Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "0c482fe9f3db0cdb32e8c54b9f1204547fd66eea",
+          "message": "Upgrade gRPC to v1.82.4",
+          "issues": [
+            "14088"
+          ]
+        },
+        {
+          "type": "deps",
+          "sha": "a7861072d9a61924238a9f6e76a993447350503d",
+          "message": "Update gRPC to v1.82.3",
+          "issues": [
+            "13997"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:grpc-gcp",
+      "id": "dbe16262-af6a-410f-9f72-3f099e59572d",
+      "createTime": "2026-08-24T18:17:09.420Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "57aaf8d00d53b636e68837ddcf8a464fbc3f62de",
+          "message": "enable microsecond timestamps in client",
+          "issues": [
+            "14057"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "ec17637ad7d6825e68c0fa9fe1d6d981d6435d8e",
+          "message": "remove heartbeat miss logging",
+          "issues": [
+            "14054"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "feat",
+          "sha": "a40370311cd2b14d1ecdf4b62c82d570b956c68f",
+          "message": "route single-entry MutateRows through a point-write c…",
+          "issues": [
+            "14028"
+          ],
+          "scope": "bigtable"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigtable",
+      "id": "886eb9f8-5e3f-407b-8a2b-1efef783a7e8",
+      "createTime": "2026-08-24T18:17:09.240Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "2f5481a3590acf7394ac8342741400f8d087996f",
+          "message": "upgrade conscrypt-openjdk-uber to 2.6.2",
+          "issues": [
+            "14117"
+          ],
+          "scope": "gax-httpjson"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:gapic-showcase",
+      "id": "2083a5a3-121d-42a5-8827-f3c10ed15373",
+      "createTime": "2026-08-24T18:17:09.064Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "2f5481a3590acf7394ac8342741400f8d087996f",
+          "message": "upgrade conscrypt-openjdk-uber to 2.6.2",
+          "issues": [
+            "14117"
+          ],
+          "scope": "gax-httpjson"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bom",
+      "id": "1549df8c-c322-411a-8985-977ef0c98773",
+      "createTime": "2026-08-24T18:17:08.910Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "671f892fd970705b59810c188f378cc319c800b3",
+          "message": "add closeAsync to ReadContext and make transaction closing non-blocking",
+          "issues": [
+            "14076"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "perf",
+          "sha": "1eb6aa3931cc97d8a7d6226ca49cf7bada4a6463",
+          "message": "cache commonly used query parameter names",
+          "issues": [
+            "14036"
+          ],
+          "scope": "spanner-jdbc"
+        },
+        {
+          "type": "perf",
+          "sha": "30e031b2896b686486002167e6676b8363bd849b",
+          "message": "cache positional to named param conversion",
+          "issues": [
+            "14034"
+          ],
+          "scope": "spanner-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "f35c5709e6d54daa831bade13cd1a1a103aef9b4",
+          "message": "scope server-timing metrics per call and guard interceptor lifecycle callbacks",
+          "issues": [
+            "14053"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "docs",
+          "sha": "24138115b9f352df12ba9fa05b1713916a8d5404",
+          "message": "update CHANGELOG.md for releases 6.117.0 through 6.120.0",
+          "issues": [
+            "13970"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "feat",
+          "sha": "da74dee5ceb34b5255a0583acbca96d085e65404",
+          "message": "support user-provided OpenTelemetry for client metrics export",
+          "issues": [
+            "13741"
+          ],
+          "scope": "spanner"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner",
+      "id": "4f83ae9b-8ccc-432a-9cc8-611e9de45c83",
+      "createTime": "2026-08-24T18:17:08.754Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7d007261e7a91a7c6a7a186431827cb526558d54",
+          "message": "onboard a new library",
+          "issues": [
+            "14131"
+          ],
+          "scope": "google/maps/mapmanagement/v2"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.maps:google-maps-mapmanagement",
+      "id": "02cc0a54-681e-4ff6-a129-34e901dbee2b",
+      "createTime": "2026-08-24T18:17:08.603Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "perf",
+          "sha": "31c628fcb80ea3b89050073e0740fab97af96b9d",
+          "message": "cache JDBC metadata query strings",
+          "issues": [
+            "14041"
+          ],
+          "scope": "spanner-jdbc"
+        },
+        {
+          "type": "perf",
+          "sha": "1eb6aa3931cc97d8a7d6226ca49cf7bada4a6463",
+          "message": "cache commonly used query parameter names",
+          "issues": [
+            "14036"
+          ],
+          "scope": "spanner-jdbc"
+        },
+        {
+          "type": "docs",
+          "sha": "b576fe8ca98650f9360295b2458b59e3a04cccaa",
+          "message": "update connection_properties.md documentation",
+          "issues": [
+            "14035"
+          ],
+          "scope": "spanner-jdbc"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner-jdbc",
+      "id": "2862b9f3-4ad4-4cff-8fe2-962a04eeb54d",
+      "createTime": "2026-08-24T18:17:08.458Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "650c839937613516dd976ee9454d86cc06662712",
+          "message": "onboard a new library",
+          "issues": [
+            "14130"
+          ],
+          "scope": "google/cloud/biglake/hive/v1"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-biglake-hive",
+      "id": "1cc5f1c3-49e7-4c3d-9e35-3af68867bf1e",
+      "createTime": "2026-08-24T18:17:08.259Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "7d16de84c4eb559dc49fb8ed62f2bbd7c69d061a",
+          "message": "expose `StatementType` and query execution stats on `TableResult`",
+          "issues": [
+            "14145"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "fix",
+          "sha": "1b8f9e3953257e1019c11010e003f9855992dee7",
+          "message": "add retry behavior documentation to insertall interface to clarify the behavior",
+          "issues": [
+            "14058"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "ff03e193f0e35c2da53572fe44dc46d5907dc1ad",
+          "message": "add QueryResultsFormat and ArrowSerializationOptions configurations",
+          "issues": [
+            "13942"
+          ],
+          "scope": "bigquery"
+        },
+        {
+          "type": "fix",
+          "sha": "1fdb4f1ccb4d19f8b6fa976b1f9d3b930d65771b",
+          "message": "add documentation for insertall api that there's no default retry",
+          "issues": [
+            "13953"
+          ]
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery",
+      "id": "a3d74ea3-618b-4d4d-923d-45c4121bb0e1",
+      "createTime": "2026-08-24T18:17:08.092Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "a51bb8da664f0f56294430bb6f7eed5b29b4744a",
+          "message": "fix remaining nullability in UserAuthorizer and Builder",
+          "issues": [
+            "14158"
+          ],
+          "scope": "auth"
+        },
+        {
+          "type": "fix",
+          "sha": "a92925057028b64f65a719d54139232912a4d743",
+          "message": "refine JSpecify nullability for ServiceAccountCredentials and UserCredentials",
+          "issues": [
+            "14159"
+          ],
+          "scope": "auth"
+        },
+        {
+          "type": "fix",
+          "sha": "0d5fac03c020a254a0f8f57a486904cbde718f5a",
+          "message": "fix JSpecify nullability in UserAuthorizer and TokenStore",
+          "issues": [
+            "14150"
+          ],
+          "scope": "auth"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "a593425b-736f-41a4-8815-737ba547d5c8",
+      "createTime": "2026-08-24T18:17:07.943Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "1e74dda8001d3078cd24889556af41af2233b0f6",
+          "message": "session context propagation when session is enabled",
+          "issues": [
+            "14161"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "perf",
+          "sha": "7109ecd6cecc6fa75e934775fe4e95295bb2317c",
+          "message": "eliminate dry run to resolve statement type",
+          "issues": [
+            "14156"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "115b9b38fa4a77d24863f1b8e1d4a0f7217a26dc",
+          "message": "pass connection proxy settings to OpenTelemetry exporters",
+          "issues": [
+            "14011"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "docs",
+          "sha": "2dde172ec9365b528aec315a2a95e8f9058245eb",
+          "message": "add user guide with connection property and custom endpoint reference",
+          "issues": [
+            "13878"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "0557e69149c08c1adcb91249e51cd6cda10b5643",
+          "message": "implement TypeRegistry and TypeDescriptor",
+          "issues": [
+            "13947"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "fa6641b6fb1d3e8e1761d40c55dc683d4cb503e0",
+          "message": "enable ITOpenTelemetryTest",
+          "issues": [
+            "13991"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.90.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "95cb0ef9-5e32-4344-8a1c-bb735cdfb5e6",
+      "createTime": "2026-08-24T18:17:07.784Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
           "sha": "e3e9d0bc11bcd7cf8659c2da4051dada7606c2e8",
           "message": "Add Nullable annotation to generated classes",
           "issues": [
@@ -370963,5 +372612,5 @@
       "createTime": "2026-02-25T17:30:12.355Z"
     }
   ],
-  "updateTime": "2026-07-29T20:37:46.270Z"
+  "updateTime": "2026-09-30T01:08:11.331Z"
 }

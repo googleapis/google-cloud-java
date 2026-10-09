@@ -26,7 +26,7 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Shifts dates by random number of days, with option to be consistent for the
  * same context. See
- * https://cloud.google.com/sensitive-data-protection/docs/concepts-date-shifting
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-date-shifting
  * to learn more.
  * </pre>
  *
@@ -490,7 +490,7 @@ public final class DateShiftConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Shifts dates by random number of days, with option to be consistent for the
    * same context. See
-   * https://cloud.google.com/sensitive-data-protection/docs/concepts-date-shifting
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-date-shifting
    * to learn more.
    * </pre>
    *

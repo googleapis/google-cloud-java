@@ -68,6 +68,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
+import com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
 import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
@@ -100,6 +101,7 @@ import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
+import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
@@ -178,6 +180,7 @@ import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
 import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
@@ -1438,6 +1441,86 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
               .setOperationSnapshotFactory(
                   (FailoverAutonomousDatabaseRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseMethodDescriptor =
+          ApiMethodDescriptor.<RefreshAutonomousDatabaseRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/RefreshAutonomousDatabase")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RefreshAutonomousDatabaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autonomousDatabases/*}:refresh",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RefreshAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RefreshAutonomousDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RefreshAutonomousDatabaseRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetAutonomousDatabaseRefreshableClones")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetAutonomousDatabaseRefreshableClonesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autonomousDatabases/*}:getRefreshableClones",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutonomousDatabaseRefreshableClonesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutonomousDatabaseRefreshableClonesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutonomousDatabaseRefreshableClones>newBuilder()
+                      .setDefaultInstance(AutonomousDatabaseRefreshableClones.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<ListOdbNetworksRequest, ListOdbNetworksResponse>
@@ -3566,6 +3649,14 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable;
+  private final OperationCallable<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable;
   private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse>
       listOdbNetworksCallable;
   private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>
@@ -4223,6 +4314,36 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
         failoverAutonomousDatabaseTransportSettings =
             HttpJsonCallSettings.<FailoverAutonomousDatabaseRequest, Operation>newBuilder()
                 .setMethodDescriptor(failoverAutonomousDatabaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseTransportSettings =
+            HttpJsonCallSettings.<RefreshAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(refreshAutonomousDatabaseMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesTransportSettings =
+            HttpJsonCallSettings
+                .<GetAutonomousDatabaseRefreshableClonesRequest,
+                    AutonomousDatabaseRefreshableClones>
+                    newBuilder()
+                .setMethodDescriptor(getAutonomousDatabaseRefreshableClonesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -5186,6 +5307,22 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.failoverAutonomousDatabaseOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.refreshAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            refreshAutonomousDatabaseTransportSettings,
+            settings.refreshAutonomousDatabaseSettings(),
+            clientContext);
+    this.refreshAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            refreshAutonomousDatabaseTransportSettings,
+            settings.refreshAutonomousDatabaseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAutonomousDatabaseRefreshableClonesCallable =
+        callableFactory.createUnaryCallable(
+            getAutonomousDatabaseRefreshableClonesTransportSettings,
+            settings.getAutonomousDatabaseRefreshableClonesSettings(),
+            clientContext);
     this.listOdbNetworksCallable =
         callableFactory.createUnaryCallable(
             listOdbNetworksTransportSettings, settings.listOdbNetworksSettings(), clientContext);
@@ -5638,6 +5775,8 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(restartAutonomousDatabaseMethodDescriptor);
     methodDescriptors.add(switchoverAutonomousDatabaseMethodDescriptor);
     methodDescriptors.add(failoverAutonomousDatabaseMethodDescriptor);
+    methodDescriptors.add(refreshAutonomousDatabaseMethodDescriptor);
+    methodDescriptors.add(getAutonomousDatabaseRefreshableClonesMethodDescriptor);
     methodDescriptors.add(listOdbNetworksMethodDescriptor);
     methodDescriptors.add(getOdbNetworkMethodDescriptor);
     methodDescriptors.add(createOdbNetworkMethodDescriptor);
@@ -6033,6 +6172,25 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationCallable() {
     return failoverAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable() {
+    return refreshAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable() {
+    return refreshAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable() {
+    return getAutonomousDatabaseRefreshableClonesCallable;
   }
 
   @Override

@@ -84,11 +84,10 @@ public interface CreateTaskRequestOrBuilder
    * a task's ID is identical to that of an existing task or a task
    * that was deleted or executed recently then the call will fail
    * with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS].
-   * If the task's queue was created using Cloud Tasks, then another task with
-   * the same name can't be created for ~1hour after the original task was
-   * deleted or executed. If the task's queue was created using queue.yaml or
-   * queue.xml, then another task with the same name can't be created
-   * for ~9days after the original task was deleted or executed.
+   * The IDs of deleted tasks are not immediately available for reuse.  It can
+   * take up to 24 hours (or 9 days if the task's queue was created using a
+   * queue.yaml or queue.xml) for the task ID to be released and made available
+   * again.
    *
    * Because there is an extra lookup cost to identify duplicate task
    * names, these [CreateTask][google.cloud.tasks.v2.CloudTasks.CreateTask]
@@ -129,11 +128,10 @@ public interface CreateTaskRequestOrBuilder
    * a task's ID is identical to that of an existing task or a task
    * that was deleted or executed recently then the call will fail
    * with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS].
-   * If the task's queue was created using Cloud Tasks, then another task with
-   * the same name can't be created for ~1hour after the original task was
-   * deleted or executed. If the task's queue was created using queue.yaml or
-   * queue.xml, then another task with the same name can't be created
-   * for ~9days after the original task was deleted or executed.
+   * The IDs of deleted tasks are not immediately available for reuse.  It can
+   * take up to 24 hours (or 9 days if the task's queue was created using a
+   * queue.yaml or queue.xml) for the task ID to be released and made available
+   * again.
    *
    * Because there is an extra lookup cost to identify duplicate task
    * names, these [CreateTask][google.cloud.tasks.v2.CloudTasks.CreateTask]
@@ -174,11 +172,10 @@ public interface CreateTaskRequestOrBuilder
    * a task's ID is identical to that of an existing task or a task
    * that was deleted or executed recently then the call will fail
    * with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS].
-   * If the task's queue was created using Cloud Tasks, then another task with
-   * the same name can't be created for ~1hour after the original task was
-   * deleted or executed. If the task's queue was created using queue.yaml or
-   * queue.xml, then another task with the same name can't be created
-   * for ~9days after the original task was deleted or executed.
+   * The IDs of deleted tasks are not immediately available for reuse.  It can
+   * take up to 24 hours (or 9 days if the task's queue was created using a
+   * queue.yaml or queue.xml) for the task ID to be released and made available
+   * again.
    *
    * Because there is an extra lookup cost to identify duplicate task
    * names, these [CreateTask][google.cloud.tasks.v2.CloudTasks.CreateTask]

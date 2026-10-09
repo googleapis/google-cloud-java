@@ -45,6 +45,7 @@ import com.google.firestore.v1.ListDocumentsRequest;
 import com.google.firestore.v1.ListDocumentsResponse;
 import com.google.firestore.v1.PartitionQueryRequest;
 import com.google.firestore.v1.PartitionQueryResponse;
+import com.google.firestore.v1.RequestOptions;
 import com.google.firestore.v1.Value;
 import com.google.firestore.v1.Write;
 import com.google.firestore.v1.WriteResult;
@@ -115,6 +116,7 @@ public class FirestoreClientHttpJsonTest {
             .setName(
                 "projects/project-615/databases/database-615/documents/document-615/document-615")
             .setMask(DocumentMask.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     Document actualResponse = client.getDocument(request);
@@ -148,6 +150,7 @@ public class FirestoreClientHttpJsonTest {
               .setName(
                   "projects/project-615/databases/database-615/documents/document-615/document-615")
               .setMask(DocumentMask.newBuilder().build())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.getDocument(request);
       Assert.fail("No exception raised");
@@ -176,6 +179,7 @@ public class FirestoreClientHttpJsonTest {
             .setOrderBy("orderBy-1207110587")
             .setMask(DocumentMask.newBuilder().build())
             .setShowMissing(true)
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     ListDocumentsPagedResponse pagedListResponse = client.listDocuments(request);
@@ -218,6 +222,7 @@ public class FirestoreClientHttpJsonTest {
               .setOrderBy("orderBy-1207110587")
               .setMask(DocumentMask.newBuilder().build())
               .setShowMissing(true)
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.listDocuments(request);
       Assert.fail("No exception raised");
@@ -521,6 +526,7 @@ public class FirestoreClientHttpJsonTest {
             .setPartitionCount(-1738969222)
             .setPageToken("pageToken873572522")
             .setPageSize(883849137)
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     PartitionQueryPagedResponse pagedListResponse = client.partitionQuery(request);
@@ -559,6 +565,7 @@ public class FirestoreClientHttpJsonTest {
               .setPartitionCount(-1738969222)
               .setPageToken("pageToken873572522")
               .setPageSize(883849137)
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.partitionQuery(request);
       Assert.fail("No exception raised");
@@ -643,6 +650,7 @@ public class FirestoreClientHttpJsonTest {
             .setDatabase("projects/project-4060/databases/database-4060")
             .addAllWrites(new ArrayList<Write>())
             .putAllLabels(new HashMap<String, String>())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     BatchWriteResponse actualResponse = client.batchWrite(request);
@@ -676,6 +684,7 @@ public class FirestoreClientHttpJsonTest {
               .setDatabase("projects/project-4060/databases/database-4060")
               .addAllWrites(new ArrayList<Write>())
               .putAllLabels(new HashMap<String, String>())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.batchWrite(request);
       Assert.fail("No exception raised");
@@ -702,6 +711,7 @@ public class FirestoreClientHttpJsonTest {
             .setDocumentId("documentId-814940266")
             .setDocument(Document.newBuilder().build())
             .setMask(DocumentMask.newBuilder().build())
+            .setRequestOptions(RequestOptions.newBuilder().build())
             .build();
 
     Document actualResponse = client.createDocument(request);
@@ -737,6 +747,7 @@ public class FirestoreClientHttpJsonTest {
               .setDocumentId("documentId-814940266")
               .setDocument(Document.newBuilder().build())
               .setMask(DocumentMask.newBuilder().build())
+              .setRequestOptions(RequestOptions.newBuilder().build())
               .build();
       client.createDocument(request);
       Assert.fail("No exception raised");

@@ -33,6 +33,7 @@ public final class LoggingUtil {
   private static final Logger ackNackLogger = Logger.getLogger("ack-nack");
   private static final Logger publishBatchLogger = Logger.getLogger("publish-batch");
   private static final Logger subscriberStreamsLogger = Logger.getLogger("subscriber-streams");
+  private static final Logger publishHedgedLogger = Logger.getLogger("publish-hedged");
 
   public enum SubSystem {
     SLOW_ACK(slowAckLogger),
@@ -43,7 +44,8 @@ public final class LoggingUtil {
     SUBSCRIBER_FLOW_CONTROL(subscriberFlowControlLogger),
     ACK_NACK(ackNackLogger),
     PUBLISH_BATCH(publishBatchLogger),
-    SUBSCRIBER_STREAMS(subscriberStreamsLogger);
+    SUBSCRIBER_STREAMS(subscriberStreamsLogger),
+    PUBLISH_HEDGED(publishHedgedLogger);
 
     private final Logger logger;
 

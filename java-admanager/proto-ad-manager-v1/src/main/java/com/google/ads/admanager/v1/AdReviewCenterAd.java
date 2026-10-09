@@ -59,6 +59,13 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     status_ = 0;
     manualReviewStatuses_ = emptyIntList();
     previewUrl_ = "";
+    assetPreviewUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    advertiserDisplayName_ = "";
+    languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    adTypes_ = emptyIntList();
+    destinationUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    labelIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -432,8 +439,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
-   * which will present the rendered contents of the ad. (This URL expires 72
-   * hours after being retrieved.).
+   * which will present the rendered contents of the ad. This URL expires 72
+   * hours after being retrieved.
    * </pre>
    *
    * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -450,8 +457,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
-   * which will present the rendered contents of the ad. (This URL expires 72
-   * hours after being retrieved.).
+   * which will present the rendered contents of the ad. This URL expires 72
+   * hours after being retrieved.
    * </pre>
    *
    * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -476,8 +483,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The preview URL that can be embedded or accessed directly
-   * which will present the rendered contents of the ad. (This URL expires 72
-   * hours after being retrieved.).
+   * which will present the rendered contents of the ad. This URL expires 72
+   * hours after being retrieved.
    * </pre>
    *
    * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -495,6 +502,553 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ASSET_PREVIEW_URLS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList assetPreviewUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the assetPreviewUrls.
+   */
+  public com.google.protobuf.ProtocolStringList getAssetPreviewUrlsList() {
+    return assetPreviewUrls_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of assetPreviewUrls.
+   */
+  public int getAssetPreviewUrlsCount() {
+    return assetPreviewUrls_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetPreviewUrls at the given index.
+   */
+  public java.lang.String getAssetPreviewUrls(int index) {
+    return assetPreviewUrls_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetPreviewUrls at the given index.
+   */
+  public com.google.protobuf.ByteString getAssetPreviewUrlsBytes(int index) {
+    return assetPreviewUrls_.getByteString(index);
+  }
+
+  public static final int ADVERTISER_DISPLAY_NAME_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertiserDisplayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+   * detected advertiser for Google Display Network (GDN) ads, and individual
+   * network name for real-time bidding (RTB) ads.
+   * </pre>
+   *
+   * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The advertiserDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getAdvertiserDisplayName() {
+    java.lang.Object ref = advertiserDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      advertiserDisplayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+   * detected advertiser for Google Display Network (GDN) ads, and individual
+   * network name for real-time bidding (RTB) ads.
+   * </pre>
+   *
+   * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for advertiserDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdvertiserDisplayNameBytes() {
+    java.lang.Object ref = advertiserDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      advertiserDisplayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LANGUAGE_CODES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList languageCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the languageCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
+    return languageCodes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of languageCodes.
+   */
+  public int getLanguageCodesCount() {
+    return languageCodes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
+   */
+  public java.lang.String getLanguageCodes(int index) {
+    return languageCodes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
+    return languageCodes_.getByteString(index);
+  }
+
+  public static final int REGION_CODES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList regionCodes_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the regionCodes.
+   */
+  public com.google.protobuf.ProtocolStringList getRegionCodesList() {
+    return regionCodes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of regionCodes.
+   */
+  public int getRegionCodesCount() {
+    return regionCodes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regionCodes at the given index.
+   */
+  public java.lang.String getRegionCodes(int index) {
+    return regionCodes_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regionCodes at the given index.
+   */
+  public com.google.protobuf.ByteString getRegionCodesBytes(int index) {
+    return regionCodes_.getByteString(index);
+  }
+
+  public static final int AD_TYPES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList adTypes_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+      adTypes_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>() {
+            public com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat convert(
+                int from) {
+              com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat result =
+                  com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat.forNumber(
+                      from);
+              return result == null
+                  ? com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the adTypes.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+      getAdTypesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>(
+        adTypes_, adTypes_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of adTypes.
+   */
+  @java.lang.Override
+  public int getAdTypesCount() {
+    return adTypes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The adTypes at the given index.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat getAdTypes(int index) {
+    return adTypes_converter_.convert(adTypes_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for adTypes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAdTypesValueList() {
+    return adTypes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of adTypes at the given index.
+   */
+  @java.lang.Override
+  public int getAdTypesValue(int index) {
+    return adTypes_.getInt(index);
+  }
+
+  private int adTypesMemoizedSerializedSize;
+
+  public static final int DESTINATION_URLS_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList destinationUrls_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the destinationUrls.
+   */
+  public com.google.protobuf.ProtocolStringList getDestinationUrlsList() {
+    return destinationUrls_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of destinationUrls.
+   */
+  public int getDestinationUrlsCount() {
+    return destinationUrls_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The destinationUrls at the given index.
+   */
+  public java.lang.String getDestinationUrls(int index) {
+    return destinationUrls_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destinationUrls at the given index.
+   */
+  public com.google.protobuf.ByteString getDestinationUrlsBytes(int index) {
+    return destinationUrls_.getByteString(index);
+  }
+
+  public static final int LABEL_IDS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList labelIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the labelIds.
+   */
+  public com.google.protobuf.ProtocolStringList getLabelIdsList() {
+    return labelIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of labelIds.
+   */
+  public int getLabelIdsCount() {
+    return labelIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labelIds at the given index.
+   */
+  public java.lang.String getLabelIds(int index) {
+    return labelIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labelIds at the given index.
+   */
+  public com.google.protobuf.ByteString getLabelIdsBytes(int index) {
+    return labelIds_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -540,6 +1094,31 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < manualReviewStatuses_.size(); i++) {
       output.writeEnumNoTag(manualReviewStatuses_.getInt(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(advertiserDisplayName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, advertiserDisplayName_);
+    }
+    for (int i = 0; i < languageCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, languageCodes_.getRaw(i));
+    }
+    for (int i = 0; i < regionCodes_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, regionCodes_.getRaw(i));
+    }
+    if (getAdTypesList().size() > 0) {
+      output.writeUInt32NoTag(82);
+      output.writeUInt32NoTag(adTypesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < adTypes_.size(); i++) {
+      output.writeEnumNoTag(adTypes_.getInt(i));
+    }
+    for (int i = 0; i < destinationUrls_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, destinationUrls_.getRaw(i));
+    }
+    for (int i = 0; i < assetPreviewUrls_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, assetPreviewUrls_.getRaw(i));
+    }
+    for (int i = 0; i < labelIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, labelIds_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -584,6 +1163,61 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       }
       manualReviewStatusesMemoizedSerializedSize = dataSize;
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(advertiserDisplayName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, advertiserDisplayName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < languageCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(languageCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLanguageCodesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < regionCodes_.size(); i++) {
+        dataSize += computeStringSizeNoTag(regionCodes_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRegionCodesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < adTypes_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(adTypes_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAdTypesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      adTypesMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < destinationUrls_.size(); i++) {
+        dataSize += computeStringSizeNoTag(destinationUrls_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDestinationUrlsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < assetPreviewUrls_.size(); i++) {
+        dataSize += computeStringSizeNoTag(assetPreviewUrls_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getAssetPreviewUrlsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < labelIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(labelIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getLabelIdsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -609,6 +1243,13 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     if (hasPreviewUrl()) {
       if (!getPreviewUrl().equals(other.getPreviewUrl())) return false;
     }
+    if (!getAssetPreviewUrlsList().equals(other.getAssetPreviewUrlsList())) return false;
+    if (!getAdvertiserDisplayName().equals(other.getAdvertiserDisplayName())) return false;
+    if (!getLanguageCodesList().equals(other.getLanguageCodesList())) return false;
+    if (!getRegionCodesList().equals(other.getRegionCodesList())) return false;
+    if (!adTypes_.equals(other.adTypes_)) return false;
+    if (!getDestinationUrlsList().equals(other.getDestinationUrlsList())) return false;
+    if (!getLabelIdsList().equals(other.getLabelIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -635,6 +1276,32 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
     if (hasPreviewUrl()) {
       hash = (37 * hash) + PREVIEW_URL_FIELD_NUMBER;
       hash = (53 * hash) + getPreviewUrl().hashCode();
+    }
+    if (getAssetPreviewUrlsCount() > 0) {
+      hash = (37 * hash) + ASSET_PREVIEW_URLS_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetPreviewUrlsList().hashCode();
+    }
+    hash = (37 * hash) + ADVERTISER_DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAdvertiserDisplayName().hashCode();
+    if (getLanguageCodesCount() > 0) {
+      hash = (37 * hash) + LANGUAGE_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCodesList().hashCode();
+    }
+    if (getRegionCodesCount() > 0) {
+      hash = (37 * hash) + REGION_CODES_FIELD_NUMBER;
+      hash = (53 * hash) + getRegionCodesList().hashCode();
+    }
+    if (getAdTypesCount() > 0) {
+      hash = (37 * hash) + AD_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + adTypes_.hashCode();
+    }
+    if (getDestinationUrlsCount() > 0) {
+      hash = (37 * hash) + DESTINATION_URLS_FIELD_NUMBER;
+      hash = (53 * hash) + getDestinationUrlsList().hashCode();
+    }
+    if (getLabelIdsCount() > 0) {
+      hash = (37 * hash) + LABEL_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getLabelIdsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -783,6 +1450,13 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       status_ = 0;
       manualReviewStatuses_ = emptyIntList();
       previewUrl_ = "";
+      assetPreviewUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      advertiserDisplayName_ = "";
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      adTypes_ = emptyIntList();
+      destinationUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      labelIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -840,6 +1514,33 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
         result.previewUrl_ = previewUrl_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        assetPreviewUrls_.makeImmutable();
+        result.assetPreviewUrls_ = assetPreviewUrls_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.advertiserDisplayName_ = advertiserDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        languageCodes_.makeImmutable();
+        result.languageCodes_ = languageCodes_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        regionCodes_.makeImmutable();
+        result.regionCodes_ = regionCodes_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        adTypes_.makeImmutable();
+        result.adTypes_ = adTypes_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        destinationUrls_.makeImmutable();
+        result.destinationUrls_ = destinationUrls_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        labelIds_.makeImmutable();
+        result.labelIds_ = labelIds_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -885,6 +1586,72 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       if (other.hasPreviewUrl()) {
         previewUrl_ = other.previewUrl_;
         bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.assetPreviewUrls_.isEmpty()) {
+        if (assetPreviewUrls_.isEmpty()) {
+          assetPreviewUrls_ = other.assetPreviewUrls_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureAssetPreviewUrlsIsMutable();
+          assetPreviewUrls_.addAll(other.assetPreviewUrls_);
+        }
+        onChanged();
+      }
+      if (!other.getAdvertiserDisplayName().isEmpty()) {
+        advertiserDisplayName_ = other.advertiserDisplayName_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.languageCodes_.isEmpty()) {
+        if (languageCodes_.isEmpty()) {
+          languageCodes_ = other.languageCodes_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureLanguageCodesIsMutable();
+          languageCodes_.addAll(other.languageCodes_);
+        }
+        onChanged();
+      }
+      if (!other.regionCodes_.isEmpty()) {
+        if (regionCodes_.isEmpty()) {
+          regionCodes_ = other.regionCodes_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureRegionCodesIsMutable();
+          regionCodes_.addAll(other.regionCodes_);
+        }
+        onChanged();
+      }
+      if (!other.adTypes_.isEmpty()) {
+        if (adTypes_.isEmpty()) {
+          adTypes_ = other.adTypes_;
+          adTypes_.makeImmutable();
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureAdTypesIsMutable();
+          adTypes_.addAll(other.adTypes_);
+        }
+        onChanged();
+      }
+      if (!other.destinationUrls_.isEmpty()) {
+        if (destinationUrls_.isEmpty()) {
+          destinationUrls_ = other.destinationUrls_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureDestinationUrlsIsMutable();
+          destinationUrls_.addAll(other.destinationUrls_);
+        }
+        onChanged();
+      }
+      if (!other.labelIds_.isEmpty()) {
+        if (labelIds_.isEmpty()) {
+          labelIds_ = other.labelIds_;
+          bitField0_ |= 0x00001000;
+        } else {
+          ensureLabelIdsIsMutable();
+          labelIds_.addAll(other.labelIds_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -961,6 +1728,65 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
                 input.popLimit(limit);
                 break;
               } // case 50
+            case 58:
+              {
+                advertiserDisplayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 58
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLanguageCodesIsMutable();
+                languageCodes_.add(s);
+                break;
+              } // case 66
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRegionCodesIsMutable();
+                regionCodes_.add(s);
+                break;
+              } // case 74
+            case 80:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAdTypesIsMutable();
+                adTypes_.addInt(tmpRaw);
+                break;
+              } // case 80
+            case 82:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAdTypesIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  adTypes_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDestinationUrlsIsMutable();
+                destinationUrls_.add(s);
+                break;
+              } // case 98
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAssetPreviewUrlsIsMutable();
+                assetPreviewUrls_.add(s);
+                break;
+              } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureLabelIdsIsMutable();
+                labelIds_.add(s);
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1763,8 +2589,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1780,8 +2606,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1805,8 +2631,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1830,8 +2656,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1854,8 +2680,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1874,8 +2700,8 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The preview URL that can be embedded or accessed directly
-     * which will present the rendered contents of the ad. (This URL expires 72
-     * hours after being retrieved.).
+     * which will present the rendered contents of the ad. This URL expires 72
+     * hours after being retrieved.
      * </pre>
      *
      * <code>optional string preview_url = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1890,6 +2716,1378 @@ public final class AdReviewCenterAd extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       previewUrl_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList assetPreviewUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAssetPreviewUrlsIsMutable() {
+      if (!assetPreviewUrls_.isModifiable()) {
+        assetPreviewUrls_ = new com.google.protobuf.LazyStringArrayList(assetPreviewUrls_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the assetPreviewUrls.
+     */
+    public com.google.protobuf.ProtocolStringList getAssetPreviewUrlsList() {
+      assetPreviewUrls_.makeImmutable();
+      return assetPreviewUrls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of assetPreviewUrls.
+     */
+    public int getAssetPreviewUrlsCount() {
+      return assetPreviewUrls_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The assetPreviewUrls at the given index.
+     */
+    public java.lang.String getAssetPreviewUrls(int index) {
+      return assetPreviewUrls_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the assetPreviewUrls at the given index.
+     */
+    public com.google.protobuf.ByteString getAssetPreviewUrlsBytes(int index) {
+      return assetPreviewUrls_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The assetPreviewUrls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAssetPreviewUrls(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAssetPreviewUrlsIsMutable();
+      assetPreviewUrls_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The assetPreviewUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAssetPreviewUrls(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAssetPreviewUrlsIsMutable();
+      assetPreviewUrls_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The assetPreviewUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAssetPreviewUrls(java.lang.Iterable<java.lang.String> values) {
+      ensureAssetPreviewUrlsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetPreviewUrls_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAssetPreviewUrls() {
+      assetPreviewUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The preview URLs that can be embedded or accessed directly
+     * which will present the rendered contents of the ad, each with a different
+     * asset. These URLs expire 72 hours after being retrieved.
+     * </pre>
+     *
+     * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the assetPreviewUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAssetPreviewUrlsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAssetPreviewUrlsIsMutable();
+      assetPreviewUrls_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object advertiserDisplayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+     * detected advertiser for Google Display Network (GDN) ads, and individual
+     * network name for real-time bidding (RTB) ads.
+     * </pre>
+     *
+     * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The advertiserDisplayName.
+     */
+    public java.lang.String getAdvertiserDisplayName() {
+      java.lang.Object ref = advertiserDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        advertiserDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+     * detected advertiser for Google Display Network (GDN) ads, and individual
+     * network name for real-time bidding (RTB) ads.
+     * </pre>
+     *
+     * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for advertiserDisplayName.
+     */
+    public com.google.protobuf.ByteString getAdvertiserDisplayNameBytes() {
+      java.lang.Object ref = advertiserDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        advertiserDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+     * detected advertiser for Google Display Network (GDN) ads, and individual
+     * network name for real-time bidding (RTB) ads.
+     * </pre>
+     *
+     * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The advertiserDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiserDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      advertiserDisplayName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+     * detected advertiser for Google Display Network (GDN) ads, and individual
+     * network name for real-time bidding (RTB) ads.
+     * </pre>
+     *
+     * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertiserDisplayName() {
+      advertiserDisplayName_ = getDefaultInstance().getAdvertiserDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+     * detected advertiser for Google Display Network (GDN) ads, and individual
+     * network name for real-time bidding (RTB) ads.
+     * </pre>
+     *
+     * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for advertiserDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiserDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      advertiserDisplayName_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList languageCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureLanguageCodesIsMutable() {
+      if (!languageCodes_.isModifiable()) {
+        languageCodes_ = new com.google.protobuf.LazyStringArrayList(languageCodes_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the languageCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getLanguageCodesList() {
+      languageCodes_.makeImmutable();
+      return languageCodes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of languageCodes.
+     */
+    public int getLanguageCodesCount() {
+      return languageCodes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The languageCodes at the given index.
+     */
+    public java.lang.String getLanguageCodes(int index) {
+      return languageCodes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the languageCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getLanguageCodesBytes(int index) {
+      return languageCodes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The languageCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLanguageCodesIsMutable();
+      languageCodes_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguageCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLanguageCodesIsMutable();
+      languageCodes_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLanguageCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureLanguageCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, languageCodes_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCodes() {
+      languageCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The language codes of the Ad Review Center ad. Languages
+     * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+     * 'es-419', or 'zh-cn'.
+     * </pre>
+     *
+     * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the languageCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLanguageCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLanguageCodesIsMutable();
+      languageCodes_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList regionCodes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRegionCodesIsMutable() {
+      if (!regionCodes_.isModifiable()) {
+        regionCodes_ = new com.google.protobuf.LazyStringArrayList(regionCodes_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the regionCodes.
+     */
+    public com.google.protobuf.ProtocolStringList getRegionCodesList() {
+      regionCodes_.makeImmutable();
+      return regionCodes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of regionCodes.
+     */
+    public int getRegionCodesCount() {
+      return regionCodes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The regionCodes at the given index.
+     */
+    public java.lang.String getRegionCodes(int index) {
+      return regionCodes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the regionCodes at the given index.
+     */
+    public com.google.protobuf.ByteString getRegionCodesBytes(int index) {
+      return regionCodes_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The regionCodes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRegionCodes(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRegionCodesIsMutable();
+      regionCodes_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The regionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRegionCodes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRegionCodesIsMutable();
+      regionCodes_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The regionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRegionCodes(java.lang.Iterable<java.lang.String> values) {
+      ensureRegionCodesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regionCodes_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRegionCodes() {
+      regionCodes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The region codes of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the regionCodes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRegionCodesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRegionCodesIsMutable();
+      regionCodes_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList adTypes_ = emptyIntList();
+
+    private void ensureAdTypesIsMutable() {
+      if (!adTypes_.isModifiable()) {
+        adTypes_ = makeMutableCopy(adTypes_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the adTypes.
+     */
+    public java.util.List<com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+        getAdTypesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>(
+          adTypes_, adTypes_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of adTypes.
+     */
+    public int getAdTypesCount() {
+      return adTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The adTypes at the given index.
+     */
+    public com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat getAdTypes(
+        int index) {
+      return adTypes_converter_.convert(adTypes_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The adTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdTypes(
+        int index, com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdTypesIsMutable();
+      adTypes_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdTypes(
+        com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdTypesIsMutable();
+      adTypes_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdTypes(
+        java.lang.Iterable<
+                ? extends com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+            values) {
+      ensureAdTypesIsMutable();
+      for (com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat value : values) {
+        adTypes_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdTypes() {
+      adTypes_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for adTypes.
+     */
+    public java.util.List<java.lang.Integer> getAdTypesValueList() {
+      adTypes_.makeImmutable();
+      return adTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of adTypes at the given index.
+     */
+    public int getAdTypesValue(int index) {
+      return adTypes_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for adTypes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdTypesValue(int index, int value) {
+      ensureAdTypesIsMutable();
+      adTypes_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdTypesValue(int value) {
+      ensureAdTypesIsMutable();
+      adTypes_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ad types of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for adTypes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureAdTypesIsMutable();
+      for (int value : values) {
+        adTypes_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList destinationUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDestinationUrlsIsMutable() {
+      if (!destinationUrls_.isModifiable()) {
+        destinationUrls_ = new com.google.protobuf.LazyStringArrayList(destinationUrls_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the destinationUrls.
+     */
+    public com.google.protobuf.ProtocolStringList getDestinationUrlsList() {
+      destinationUrls_.makeImmutable();
+      return destinationUrls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of destinationUrls.
+     */
+    public int getDestinationUrlsCount() {
+      return destinationUrls_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The destinationUrls at the given index.
+     */
+    public java.lang.String getDestinationUrls(int index) {
+      return destinationUrls_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the destinationUrls at the given index.
+     */
+    public com.google.protobuf.ByteString getDestinationUrlsBytes(int index) {
+      return destinationUrls_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The destinationUrls to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationUrls(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestinationUrlsIsMutable();
+      destinationUrls_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The destinationUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestinationUrls(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDestinationUrlsIsMutable();
+      destinationUrls_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The destinationUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDestinationUrls(java.lang.Iterable<java.lang.String> values) {
+      ensureDestinationUrlsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destinationUrls_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestinationUrls() {
+      destinationUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The destination URLs of the Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the destinationUrls to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDestinationUrlsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDestinationUrlsIsMutable();
+      destinationUrls_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList labelIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureLabelIdsIsMutable() {
+      if (!labelIds_.isModifiable()) {
+        labelIds_ = new com.google.protobuf.LazyStringArrayList(labelIds_);
+      }
+      bitField0_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the labelIds.
+     */
+    public com.google.protobuf.ProtocolStringList getLabelIdsList() {
+      labelIds_.makeImmutable();
+      return labelIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of labelIds.
+     */
+    public int getLabelIdsCount() {
+      return labelIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The labelIds at the given index.
+     */
+    public java.lang.String getLabelIds(int index) {
+      return labelIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the labelIds at the given index.
+     */
+    public com.google.protobuf.ByteString getLabelIdsBytes(int index) {
+      return labelIds_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The labelIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLabelIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLabelIdsIsMutable();
+      labelIds_.set(index, value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The labelIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLabelIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureLabelIdsIsMutable();
+      labelIds_.add(value);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The labelIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLabelIds(java.lang.Iterable<java.lang.String> values) {
+      ensureLabelIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labelIds_);
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLabelIds() {
+      labelIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The
+     * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+     * associated with this Ad Review Center ad.
+     * </pre>
+     *
+     * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the labelIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLabelIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureLabelIdsIsMutable();
+      labelIds_.add(value);
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }

@@ -40,6 +40,7 @@ import com.google.iam.v1.AuditConfig;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
@@ -51,6 +52,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -199,6 +201,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -248,6 +251,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -297,6 +301,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -348,6 +353,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -399,6 +405,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -410,6 +417,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -447,6 +455,7 @@ public class CloudTasksClientHttpJsonTest {
           Queue.newBuilder()
               .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
               .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+              .setHttpTarget(HttpTarget.newBuilder().build())
               .setRateLimits(RateLimits.newBuilder().build())
               .setRetryConfig(RetryConfig.newBuilder().build())
               .setPurgeTime(Timestamp.newBuilder().build())
@@ -546,6 +555,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -595,6 +605,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -644,6 +655,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -693,6 +705,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -742,6 +755,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -791,6 +805,7 @@ public class CloudTasksClientHttpJsonTest {
         Queue.newBuilder()
             .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
             .setAppEngineRoutingOverride(AppEngineRouting.newBuilder().build())
+            .setHttpTarget(HttpTarget.newBuilder().build())
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
@@ -1226,6 +1241,7 @@ public class CloudTasksClientHttpJsonTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1277,6 +1293,7 @@ public class CloudTasksClientHttpJsonTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1329,6 +1346,7 @@ public class CloudTasksClientHttpJsonTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1382,6 +1400,7 @@ public class CloudTasksClientHttpJsonTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1420,6 +1439,104 @@ public class CloudTasksClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateTasksTest() throws Exception {
+    BatchCreateTasksResponse expectedResponse =
+        BatchCreateTasksResponse.newBuilder().addAllTasks(new ArrayList<Task>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    List<CreateTaskRequest> requests = new ArrayList<>();
+
+    BatchCreateTasksResponse actualResponse = client.batchCreateTasksAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateTasksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      List<CreateTaskRequest> requests = new ArrayList<>();
+      client.batchCreateTasksAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void batchCreateTasksTest2() throws Exception {
+    BatchCreateTasksResponse expectedResponse =
+        BatchCreateTasksResponse.newBuilder().addAllTasks(new ArrayList<Task>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-7117/locations/location-7117/queues/queue-7117";
+    List<CreateTaskRequest> requests = new ArrayList<>();
+
+    BatchCreateTasksResponse actualResponse = client.batchCreateTasksAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateTasksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-7117/locations/location-7117/queues/queue-7117";
+      List<CreateTaskRequest> requests = new ArrayList<>();
+      client.batchCreateTasksAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1505,6 +1622,100 @@ public class CloudTasksClientHttpJsonTest {
   }
 
   @Test
+  public void batchDeleteTasksTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteTasksAsync(parent, names).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeleteTasksExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeleteTasksAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void batchDeleteTasksTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-7117/locations/location-7117/queues/queue-7117";
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteTasksAsync(parent, names).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeleteTasksExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-7117/locations/location-7117/queues/queue-7117";
+      List<String> names = new ArrayList<>();
+      client.batchDeleteTasksAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void runTaskTest() throws Exception {
     Task expectedResponse =
         Task.newBuilder()
@@ -1516,6 +1727,7 @@ public class CloudTasksClientHttpJsonTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1567,6 +1779,7 @@ public class CloudTasksClientHttpJsonTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1601,6 +1814,151 @@ public class CloudTasksClientHttpJsonTest {
       String name =
           "projects/project-3612/locations/location-3612/queues/queue-3612/tasks/task-3612";
       client.runTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCmekConfigTest() throws Exception {
+    CmekConfig expectedResponse =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CmekConfig cmekConfig =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CmekConfig actualResponse = client.updateCmekConfig(cmekConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCmekConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CmekConfig cmekConfig =
+          CmekConfig.newBuilder()
+              .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+              .setKmsKey("kmsKey-1127483058")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCmekConfig(cmekConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCmekConfigTest() throws Exception {
+    CmekConfig expectedResponse =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CmekConfigName name = CmekConfigName.of("[PROJECT]", "[LOCATION]");
+
+    CmekConfig actualResponse = client.getCmekConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCmekConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CmekConfigName name = CmekConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getCmekConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCmekConfigTest2() throws Exception {
+    CmekConfig expectedResponse =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-9943/locations/location-9943/cmekConfig";
+
+    CmekConfig actualResponse = client.getCmekConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getCmekConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9943/locations/location-9943/cmekConfig";
+      client.getCmekConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -41,7 +41,6 @@ public class SyncList {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .build();
       for (HealthCheck element : healthChecksClient.list(request).iterateAll()) {
         // doThingsWith(element);

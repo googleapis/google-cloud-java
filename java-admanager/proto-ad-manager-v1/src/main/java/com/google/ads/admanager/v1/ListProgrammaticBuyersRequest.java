@@ -228,17 +228,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `agency`
+   * * `buyerAccountId`
+   * * `displayName`
+   * * `name`
+   * * `parentAccountId`
+   * * `partnerClientId`
+   * * `preferredDealsEnabled`
+   * * `programmaticGuaranteedEnabled`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -266,17 +265,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `agency`
+   * * `buyerAccountId`
+   * * `displayName`
+   * * `name`
+   * * `parentAccountId`
+   * * `partnerClientId`
+   * * `preferredDealsEnabled`
+   * * `programmaticGuaranteedEnabled`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1131,17 +1129,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `agency`
+     * * `buyerAccountId`
+     * * `displayName`
+     * * `name`
+     * * `parentAccountId`
+     * * `partnerClientId`
+     * * `preferredDealsEnabled`
+     * * `programmaticGuaranteedEnabled`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1168,17 +1165,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `agency`
+     * * `buyerAccountId`
+     * * `displayName`
+     * * `name`
+     * * `parentAccountId`
+     * * `partnerClientId`
+     * * `preferredDealsEnabled`
+     * * `programmaticGuaranteedEnabled`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1205,17 +1201,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `agency`
+     * * `buyerAccountId`
+     * * `displayName`
+     * * `name`
+     * * `parentAccountId`
+     * * `partnerClientId`
+     * * `preferredDealsEnabled`
+     * * `programmaticGuaranteedEnabled`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1241,17 +1236,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `agency`
+     * * `buyerAccountId`
+     * * `displayName`
+     * * `name`
+     * * `parentAccountId`
+     * * `partnerClientId`
+     * * `preferredDealsEnabled`
+     * * `programmaticGuaranteedEnabled`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1273,17 +1267,16 @@ public final class ListProgrammaticBuyersRequest extends com.google.protobuf.Gen
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;agency&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;parentAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;partnerClientId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;preferredDealsEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;programmaticGuaranteedEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `agency`
+     * * `buyerAccountId`
+     * * `displayName`
+     * * `name`
+     * * `parentAccountId`
+     * * `partnerClientId`
+     * * `preferredDealsEnabled`
+     * * `programmaticGuaranteedEnabled`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

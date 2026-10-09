@@ -184,6 +184,26 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BidiStreamingAnalyzeContent</td>
+ *      <td><p> Bidirectional endless streaming version of [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent].</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> bidiStreamingAnalyzeContentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamingReactiveCompanionSuggestions</td>
+ *      <td><p> External streaming API for direct human-agent-to-bot chats.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamingReactiveCompanionSuggestionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SuggestArticles</td>
  *      <td><p> Gets suggested articles for a participant based on specific historical messages.</td>
  *      <td>
@@ -1289,6 +1309,75 @@ public class ParticipantsClient implements BackgroundResource {
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return stub.streamingAnalyzeContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Bidirectional endless streaming version of
+   * [StreamingAnalyzeContent][google.cloud.dialogflow.v2.Participants.StreamingAnalyzeContent].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   BidiStream<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+   *       bidiStream = participantsClient.bidiStreamingAnalyzeContentCallable().call();
+   *   BidiStreamingAnalyzeContentRequest request =
+   *       BidiStreamingAnalyzeContentRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (BidiStreamingAnalyzeContentResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return stub.bidiStreamingAnalyzeContentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * External streaming API for direct human-agent-to-bot chats.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ParticipantsClient participantsClient = ParticipantsClient.create()) {
+   *   BidiStream<
+   *           StreamingReactiveCompanionSuggestionsRequest,
+   *           StreamingReactiveCompanionSuggestionsResponse>
+   *       bidiStream = participantsClient.streamingReactiveCompanionSuggestionsCallable().call();
+   *   StreamingReactiveCompanionSuggestionsRequest request =
+   *       StreamingReactiveCompanionSuggestionsRequest.newBuilder()
+   *           .setParticipant(
+   *               ParticipantName.ofProjectConversationParticipantName(
+   *                       "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+   *                   .toString())
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (StreamingReactiveCompanionSuggestionsResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsCallable() {
+    return stub.streamingReactiveCompanionSuggestionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

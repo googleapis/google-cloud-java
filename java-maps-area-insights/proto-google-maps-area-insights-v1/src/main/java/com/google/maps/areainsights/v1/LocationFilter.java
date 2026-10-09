@@ -1310,7 +1310,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The [place
+     * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+     * of the geographic region. Not all region types are supported; see
+     * documentation for details.
+     *
+     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+     * is the unique identifier of a place. For example:
+     * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1323,7 +1330,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The [place
+     * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+     * of the geographic region. Not all region types are supported; see
+     * documentation for details.
+     *
+     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+     * is the unique identifier of a place. For example:
+     * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1336,7 +1350,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The [place
+     * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+     * of the geographic region. Not all region types are supported; see
+     * documentation for details.
+     *
+     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+     * is the unique identifier of a place. For example:
+     * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1449,7 +1470,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The [place
+     * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+     * of the geographic region. Not all region types are supported; see
+     * documentation for details.
+     *
+     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+     * is the unique identifier of a place. For example:
+     * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1464,7 +1492,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The [place
+     * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+     * of the geographic region. Not all region types are supported; see
+     * documentation for details.
+     *
+     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+     * is the unique identifier of a place. For example:
+     * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1492,7 +1527,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The unique identifier of a specific geographic region.
+     * The [place
+     * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+     * of the geographic region. Not all region types are supported; see
+     * documentation for details.
+     *
+     * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+     * is the unique identifier of a place. For example:
+     * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1873,7 +1915,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The [place
+       * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+       * of the geographic region. Not all region types are supported; see
+       * documentation for details.
+       *
+       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+       * is the unique identifier of a place. For example:
+       * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1889,7 +1938,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The [place
+       * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+       * of the geographic region. Not all region types are supported; see
+       * documentation for details.
+       *
+       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+       * is the unique identifier of a place. For example:
+       * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1918,7 +1974,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The [place
+       * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+       * of the geographic region. Not all region types are supported; see
+       * documentation for details.
+       *
+       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+       * is the unique identifier of a place. For example:
+       * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1947,7 +2010,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The [place
+       * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+       * of the geographic region. Not all region types are supported; see
+       * documentation for details.
+       *
+       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+       * is the unique identifier of a place. For example:
+       * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1969,7 +2039,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The [place
+       * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+       * of the geographic region. Not all region types are supported; see
+       * documentation for details.
+       *
+       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+       * is the unique identifier of a place. For example:
+       * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1989,7 +2066,14 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The unique identifier of a specific geographic region.
+       * The [place
+       * ID](https://developers.google.com/maps/documentation/places/web-service/place-id)
+       * of the geographic region. Not all region types are supported; see
+       * documentation for details.
+       *
+       * **Format:**  Must be in the format `places/PLACE_ID`, where `PLACE_ID`
+       * is the unique identifier of a place. For example:
+       * `places/ChIJPV4oX_65j4ARVW8IJ6IJUYs`.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>

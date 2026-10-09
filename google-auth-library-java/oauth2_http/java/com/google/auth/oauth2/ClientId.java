@@ -96,7 +96,7 @@ public class ClientId {
     @SuppressWarnings("unchecked")
     Map<String, Object> detail = (Map<String, Object>) rawDetail;
     String clientId = OAuth2Utils.validateString(detail, FIELD_CLIENT_ID, JSON_PARSE_ERROR);
-    if (clientId == null || clientId.length() == 0) {
+    if (clientId.isEmpty()) {
       throw new IOException(
           "Unable to parse ClientId. Field '" + FIELD_CLIENT_ID + "' is required.");
     }

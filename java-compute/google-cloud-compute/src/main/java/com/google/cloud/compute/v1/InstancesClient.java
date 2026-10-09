@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Instances API.
  *
+ * <p>This client uses Instances version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1629,7 +1631,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, InstancesScopedList> element :
@@ -1674,7 +1675,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, InstancesScopedList>> future =
@@ -1719,7 +1719,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -2081,6 +2080,7 @@ public class InstancesClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -2112,6 +2112,7 @@ public class InstancesClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -2144,6 +2145,7 @@ public class InstancesClient implements BackgroundResource {
    *   DeleteInstanceRequest request =
    *       DeleteInstanceRequest.newBuilder()
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -3476,7 +3478,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (Instance element : instancesClient.list(request).iterateAll()) {
@@ -3512,7 +3513,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<Instance> future = instancesClient.listPagedCallable().futureCall(request);
@@ -3547,7 +3547,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {
@@ -3634,7 +3633,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (Reference element : instancesClient.listReferrers(request).iterateAll()) {
@@ -3673,7 +3671,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<Reference> future =
@@ -3713,7 +3710,6 @@ public class InstancesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {
@@ -7030,6 +7026,7 @@ public class InstancesClient implements BackgroundResource {
    *       StopInstanceRequest.newBuilder()
    *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -7065,6 +7062,7 @@ public class InstancesClient implements BackgroundResource {
    *       StopInstanceRequest.newBuilder()
    *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")
@@ -7101,6 +7099,7 @@ public class InstancesClient implements BackgroundResource {
    *       StopInstanceRequest.newBuilder()
    *           .setDiscardLocalSsd(true)
    *           .setInstance("instance555127957")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRequestId("requestId693933066")
    *           .setZone("zone3744684")

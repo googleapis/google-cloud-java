@@ -228,21 +228,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `assetKey`
+   * * `createTime`
+   * * `customAssetKey`
+   * * `daiAuthenticationKeys`
+   * * `daiEncodingProfiles`
+   * * `displayName`
+   * * `dynamicAdInsertionType`
+   * * `effectiveAssetKey`
+   * * `endTime`
+   * * `segmentUrlAuthenticationKeys`
+   * * `slate`
+   * * `sourceContentConfigurations`
+   * * `startTime`
+   * * `status`
+   * * `streamingFormat`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -270,21 +273,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `assetKey`
+   * * `createTime`
+   * * `customAssetKey`
+   * * `daiAuthenticationKeys`
+   * * `daiEncodingProfiles`
+   * * `displayName`
+   * * `dynamicAdInsertionType`
+   * * `effectiveAssetKey`
+   * * `endTime`
+   * * `segmentUrlAuthenticationKeys`
+   * * `slate`
+   * * `sourceContentConfigurations`
+   * * `startTime`
+   * * `status`
+   * * `streamingFormat`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1138,21 +1144,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `assetKey`
+     * * `createTime`
+     * * `customAssetKey`
+     * * `daiAuthenticationKeys`
+     * * `daiEncodingProfiles`
+     * * `displayName`
+     * * `dynamicAdInsertionType`
+     * * `effectiveAssetKey`
+     * * `endTime`
+     * * `segmentUrlAuthenticationKeys`
+     * * `slate`
+     * * `sourceContentConfigurations`
+     * * `startTime`
+     * * `status`
+     * * `streamingFormat`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1179,21 +1188,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `assetKey`
+     * * `createTime`
+     * * `customAssetKey`
+     * * `daiAuthenticationKeys`
+     * * `daiEncodingProfiles`
+     * * `displayName`
+     * * `dynamicAdInsertionType`
+     * * `effectiveAssetKey`
+     * * `endTime`
+     * * `segmentUrlAuthenticationKeys`
+     * * `slate`
+     * * `sourceContentConfigurations`
+     * * `startTime`
+     * * `status`
+     * * `streamingFormat`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1220,21 +1232,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `assetKey`
+     * * `createTime`
+     * * `customAssetKey`
+     * * `daiAuthenticationKeys`
+     * * `daiEncodingProfiles`
+     * * `displayName`
+     * * `dynamicAdInsertionType`
+     * * `effectiveAssetKey`
+     * * `endTime`
+     * * `segmentUrlAuthenticationKeys`
+     * * `slate`
+     * * `sourceContentConfigurations`
+     * * `startTime`
+     * * `status`
+     * * `streamingFormat`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1260,21 +1275,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `assetKey`
+     * * `createTime`
+     * * `customAssetKey`
+     * * `daiAuthenticationKeys`
+     * * `daiEncodingProfiles`
+     * * `displayName`
+     * * `dynamicAdInsertionType`
+     * * `effectiveAssetKey`
+     * * `endTime`
+     * * `segmentUrlAuthenticationKeys`
+     * * `slate`
+     * * `sourceContentConfigurations`
+     * * `startTime`
+     * * `status`
+     * * `streamingFormat`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1296,21 +1314,24 @@ public final class ListLiveStreamsRequest extends com.google.protobuf.GeneratedM
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;assetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;dynamicAdInsertionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;effectiveAssetKey&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;sourceContentConfigurations&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;streamingFormat&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `assetKey`
+     * * `createTime`
+     * * `customAssetKey`
+     * * `daiAuthenticationKeys`
+     * * `daiEncodingProfiles`
+     * * `displayName`
+     * * `dynamicAdInsertionType`
+     * * `effectiveAssetKey`
+     * * `endTime`
+     * * `segmentUrlAuthenticationKeys`
+     * * `slate`
+     * * `sourceContentConfigurations`
+     * * `startTime`
+     * * `status`
+     * * `streamingFormat`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

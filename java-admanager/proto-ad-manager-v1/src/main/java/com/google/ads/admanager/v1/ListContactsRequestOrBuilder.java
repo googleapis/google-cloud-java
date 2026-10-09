@@ -116,20 +116,19 @@ public interface ListContactsRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;address&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cellPhone&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;company&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;email&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;fax&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;title&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;workPhone&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `address`
+   * * `cellPhone`
+   * * `comment`
+   * * `company`
+   * * `displayName`
+   * * `email`
+   * * `fax`
+   * * `name`
+   * * `status`
+   * * `title`
+   * * `workPhone`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -146,20 +145,19 @@ public interface ListContactsRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;address&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cellPhone&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;company&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;email&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;fax&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;title&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;workPhone&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `address`
+   * * `cellPhone`
+   * * `comment`
+   * * `company`
+   * * `displayName`
+   * * `email`
+   * * `fax`
+   * * `name`
+   * * `status`
+   * * `title`
+   * * `workPhone`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

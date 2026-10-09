@@ -389,10 +389,6 @@ public class HttpJsonNetworksStub extends NetworksStub {
                         if (request.hasPageToken()) {
                           serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                         }
-                        if (request.hasReturnPartialSuccess()) {
-                          serializer.putQueryParam(
-                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                        }
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -451,12 +447,6 @@ public class HttpJsonNetworksStub extends NetworksStub {
                             }
                             if (request.hasRegion()) {
                               serializer.putQueryParam(fields, "region", request.getRegion());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })

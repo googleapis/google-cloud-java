@@ -277,6 +277,55 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
+   * Output only. Contains standard resource metadata for an AcceleratorType
+   * resource. It is populated for each instance of the AcceleratorType
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   *
+   * @return Whether the resourceMetadata field is set.
+   */
+  boolean hasResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an AcceleratorType
+   * resource. It is populated for each instance of the AcceleratorType
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   *
+   * @return The resourceMetadata.
+   */
+  com.google.cloud.compute.v1.ResourceMetadata getResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an AcceleratorType
+   * resource. It is populated for each instance of the AcceleratorType
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   */
+  com.google.cloud.compute.v1.ResourceMetadataOrBuilder getResourceMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *

@@ -191,6 +191,7 @@ public class BigQueryWriteClientTest {
             .setTraceId("traceId-1067401920")
             .putAllMissingValueInterpretations(
                 new HashMap<String, AppendRowsRequest.MissingValueInterpretation>())
+            .setClientStats(ClientStats.newBuilder().build())
             .build();
 
     MockStreamObserver<AppendRowsResponse> responseObserver = new MockStreamObserver<>();
@@ -220,6 +221,7 @@ public class BigQueryWriteClientTest {
             .setTraceId("traceId-1067401920")
             .putAllMissingValueInterpretations(
                 new HashMap<String, AppendRowsRequest.MissingValueInterpretation>())
+            .setClientStats(ClientStats.newBuilder().build())
             .build();
 
     MockStreamObserver<AppendRowsResponse> responseObserver = new MockStreamObserver<>();

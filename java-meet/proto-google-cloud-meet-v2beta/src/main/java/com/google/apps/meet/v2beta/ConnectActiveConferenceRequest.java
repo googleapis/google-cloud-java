@@ -72,6 +72,831 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
             com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.Builder.class);
   }
 
+  public interface ConnectionConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to wait before a confirmation action is
+     * cancelled. If unset, a default value will be used. The duration cannot
+     * exceed 5 minutes. Larger timeouts and negative durations will result in
+     * RPC failure.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the confirmationTimeout field is set.
+     */
+    boolean hasConfirmationTimeout();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to wait before a confirmation action is
+     * cancelled. If unset, a default value will be used. The duration cannot
+     * exceed 5 minutes. Larger timeouts and negative durations will result in
+     * RPC failure.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confirmationTimeout.
+     */
+    com.google.protobuf.Duration getConfirmationTimeout();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to wait before a confirmation action is
+     * cancelled. If unset, a default value will be used. The duration cannot
+     * exceed 5 minutes. Larger timeouts and negative durations will result in
+     * RPC failure.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getConfirmationTimeoutOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional configuration options for Media API sessions.
+   * </pre>
+   *
+   * Protobuf type {@code google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig}
+   */
+  public static final class ConnectionConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig)
+      ConnectionConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ConnectionConfig");
+    }
+
+    // Use ConnectionConfig.newBuilder() to construct.
+    private ConnectionConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConnectionConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.apps.meet.v2beta.ServiceProto
+          .internal_static_google_apps_meet_v2beta_ConnectActiveConferenceRequest_ConnectionConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.apps.meet.v2beta.ServiceProto
+          .internal_static_google_apps_meet_v2beta_ConnectActiveConferenceRequest_ConnectionConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.class,
+              com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int CONFIRMATION_TIMEOUT_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration confirmationTimeout_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to wait before a confirmation action is
+     * cancelled. If unset, a default value will be used. The duration cannot
+     * exceed 5 minutes. Larger timeouts and negative durations will result in
+     * RPC failure.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the confirmationTimeout field is set.
+     */
+    @java.lang.Override
+    public boolean hasConfirmationTimeout() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to wait before a confirmation action is
+     * cancelled. If unset, a default value will be used. The duration cannot
+     * exceed 5 minutes. Larger timeouts and negative durations will result in
+     * RPC failure.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confirmationTimeout.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getConfirmationTimeout() {
+      return confirmationTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : confirmationTimeout_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The amount of time to wait before a confirmation action is
+     * cancelled. If unset, a default value will be used. The duration cannot
+     * exceed 5 minutes. Larger timeouts and negative durations will result in
+     * RPC failure.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getConfirmationTimeoutOrBuilder() {
+      return confirmationTimeout_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : confirmationTimeout_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getConfirmationTimeout());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getConfirmationTimeout());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig)) {
+        return super.equals(obj);
+      }
+      com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig other =
+          (com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig) obj;
+
+      if (hasConfirmationTimeout() != other.hasConfirmationTimeout()) return false;
+      if (hasConfirmationTimeout()) {
+        if (!getConfirmationTimeout().equals(other.getConfirmationTimeout())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasConfirmationTimeout()) {
+        hash = (37 * hash) + CONFIRMATION_TIMEOUT_FIELD_NUMBER;
+        hash = (53 * hash) + getConfirmationTimeout().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional configuration options for Media API sessions.
+     * </pre>
+     *
+     * Protobuf type {@code google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig)
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.apps.meet.v2beta.ServiceProto
+            .internal_static_google_apps_meet_v2beta_ConnectActiveConferenceRequest_ConnectionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.apps.meet.v2beta.ServiceProto
+            .internal_static_google_apps_meet_v2beta_ConnectActiveConferenceRequest_ConnectionConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.class,
+                com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetConfirmationTimeoutFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        confirmationTimeout_ = null;
+        if (confirmationTimeoutBuilder_ != null) {
+          confirmationTimeoutBuilder_.dispose();
+          confirmationTimeoutBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.apps.meet.v2beta.ServiceProto
+            .internal_static_google_apps_meet_v2beta_ConnectActiveConferenceRequest_ConnectionConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+          getDefaultInstanceForType() {
+        return com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig build() {
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+          buildPartial() {
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig result =
+            new com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.confirmationTimeout_ =
+              confirmationTimeoutBuilder_ == null
+                  ? confirmationTimeout_
+                  : confirmationTimeoutBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig) {
+          return mergeFrom(
+              (com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig other) {
+        if (other
+            == com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+                .getDefaultInstance()) return this;
+        if (other.hasConfirmationTimeout()) {
+          mergeConfirmationTimeout(other.getConfirmationTimeout());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetConfirmationTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration confirmationTimeout_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          confirmationTimeoutBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the confirmationTimeout field is set.
+       */
+      public boolean hasConfirmationTimeout() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The confirmationTimeout.
+       */
+      public com.google.protobuf.Duration getConfirmationTimeout() {
+        if (confirmationTimeoutBuilder_ == null) {
+          return confirmationTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : confirmationTimeout_;
+        } else {
+          return confirmationTimeoutBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setConfirmationTimeout(com.google.protobuf.Duration value) {
+        if (confirmationTimeoutBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          confirmationTimeout_ = value;
+        } else {
+          confirmationTimeoutBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setConfirmationTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+        if (confirmationTimeoutBuilder_ == null) {
+          confirmationTimeout_ = builderForValue.build();
+        } else {
+          confirmationTimeoutBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeConfirmationTimeout(com.google.protobuf.Duration value) {
+        if (confirmationTimeoutBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && confirmationTimeout_ != null
+              && confirmationTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getConfirmationTimeoutBuilder().mergeFrom(value);
+          } else {
+            confirmationTimeout_ = value;
+          }
+        } else {
+          confirmationTimeoutBuilder_.mergeFrom(value);
+        }
+        if (confirmationTimeout_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearConfirmationTimeout() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        confirmationTimeout_ = null;
+        if (confirmationTimeoutBuilder_ != null) {
+          confirmationTimeoutBuilder_.dispose();
+          confirmationTimeoutBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getConfirmationTimeoutBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetConfirmationTimeoutFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getConfirmationTimeoutOrBuilder() {
+        if (confirmationTimeoutBuilder_ != null) {
+          return confirmationTimeoutBuilder_.getMessageOrBuilder();
+        } else {
+          return confirmationTimeout_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : confirmationTimeout_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The amount of time to wait before a confirmation action is
+       * cancelled. If unset, a default value will be used. The duration cannot
+       * exceed 5 minutes. Larger timeouts and negative durations will result in
+       * RPC failure.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration confirmation_timeout = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetConfirmationTimeoutFieldBuilder() {
+        if (confirmationTimeoutBuilder_ == null) {
+          confirmationTimeoutBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getConfirmationTimeout(), getParentForChildren(), isClean());
+          confirmationTimeout_ = null;
+        }
+        return confirmationTimeoutBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig)
+    private static final com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig();
+    }
+
+    public static com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConnectionConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ConnectionConfig>() {
+          @java.lang.Override
+          public ConnectionConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConnectionConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConnectionConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -196,6 +1021,71 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
     }
   }
 
+  public static final int CONFIG_FIELD_NUMBER = 3;
+  private com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional configuration options for a Media API session.
+   * If unset, default values will be provided for the session.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the config field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional configuration options for a Media API session.
+   * If unset, default values will be provided for the session.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The config.
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig getConfig() {
+    return config_ == null
+        ? com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+            .getDefaultInstance()
+        : config_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional configuration options for a Media API session.
+   * If unset, default values will be provided for the session.
+   * </pre>
+   *
+   * <code>
+   * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfigOrBuilder
+      getConfigOrBuilder() {
+    return config_ == null
+        ? com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+            .getDefaultInstance()
+        : config_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -216,6 +1106,9 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(offer_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, offer_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -230,6 +1123,9 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(offer_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, offer_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -249,6 +1145,10 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
 
     if (!getName().equals(other.getName())) return false;
     if (!getOffer().equals(other.getOffer())) return false;
+    if (hasConfig() != other.hasConfig()) return false;
+    if (hasConfig()) {
+      if (!getConfig().equals(other.getConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -264,6 +1164,10 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + OFFER_FIELD_NUMBER;
     hash = (53 * hash) + getOffer().hashCode();
+    if (hasConfig()) {
+      hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -396,10 +1300,19 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
     }
 
     // Construct using com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -408,6 +1321,11 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
       bitField0_ = 0;
       name_ = "";
       offer_ = "";
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
+        configBuilder_ = null;
+      }
       return this;
     }
 
@@ -450,6 +1368,12 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.offer_ = offer_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.config_ = configBuilder_ == null ? config_ : configBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -474,6 +1398,9 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
         offer_ = other.offer_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasConfig()) {
+        mergeConfig(other.getConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -513,6 +1440,12 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(internalGetConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -797,6 +1730,237 @@ public final class ConnectActiveConferenceRequest extends com.google.protobuf.Ge
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig,
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder,
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfigOrBuilder>
+        configBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the config field is set.
+     */
+    public boolean hasConfig() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The config.
+     */
+    public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig getConfig() {
+      if (configBuilder_ == null) {
+        return config_ == null
+            ? com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+                .getDefaultInstance()
+            : config_;
+      } else {
+        return configBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfig(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig value) {
+      if (configBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        config_ = value;
+      } else {
+        configBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfig(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder
+            builderForValue) {
+      if (configBuilder_ == null) {
+        config_ = builderForValue.build();
+      } else {
+        configBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConfig(
+        com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig value) {
+      if (configBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && config_ != null
+            && config_
+                != com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+                    .getDefaultInstance()) {
+          getConfigBuilder().mergeFrom(value);
+        } else {
+          config_ = value;
+        }
+      } else {
+        configBuilder_.mergeFrom(value);
+      }
+      if (config_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConfig() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      config_ = null;
+      if (configBuilder_ != null) {
+        configBuilder_.dispose();
+        configBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder
+        getConfigBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfigOrBuilder
+        getConfigOrBuilder() {
+      if (configBuilder_ != null) {
+        return configBuilder_.getMessageOrBuilder();
+      } else {
+        return config_ == null
+            ? com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig
+                .getDefaultInstance()
+            : config_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional configuration options for a Media API session.
+     * If unset, default values will be provided for the session.
+     * </pre>
+     *
+     * <code>
+     * .google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig config = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig,
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder,
+            com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfigOrBuilder>
+        internalGetConfigFieldBuilder() {
+      if (configBuilder_ == null) {
+        configBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig,
+                com.google.apps.meet.v2beta.ConnectActiveConferenceRequest.ConnectionConfig.Builder,
+                com.google.apps.meet.v2beta.ConnectActiveConferenceRequest
+                    .ConnectionConfigOrBuilder>(getConfig(), getParentForChildren(), isClean());
+        config_ = null;
+      }
+      return configBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.apps.meet.v2beta.ConnectActiveConferenceRequest)

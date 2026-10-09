@@ -355,6 +355,19 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>CONSUMER_NOT_FOUND = 5;</code>
        */
       CONSUMER_NOT_FOUND(5),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 6;</code>
+       */
+      CONFLICTING_REGION_CONSTRAINTS(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -444,6 +457,20 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        */
       public static final int CONSUMER_NOT_FOUND_VALUE = 5;
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 6;</code>
+       */
+      public static final int CONFLICTING_REGION_CONSTRAINTS_VALUE = 6;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -480,6 +507,8 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return STREAM_NOT_FOUND;
           case 5:
             return CONSUMER_NOT_FOUND;
+          case 6:
+            return CONFLICTING_REGION_CONSTRAINTS;
           default:
             return null;
         }
@@ -2272,6 +2301,19 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>TOO_MANY_OBJECTS = 5;</code>
        */
       TOO_MANY_OBJECTS(5),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 8;</code>
+       */
+      CONFLICTING_REGION_CONSTRAINTS(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -2360,6 +2402,20 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        */
       public static final int TOO_MANY_OBJECTS_VALUE = 5;
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 8;</code>
+       */
+      public static final int CONFLICTING_REGION_CONSTRAINTS_VALUE = 8;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -2396,6 +2452,8 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return BUCKET_NOT_FOUND;
           case 5:
             return TOO_MANY_OBJECTS;
+          case 8:
+            return CONFLICTING_REGION_CONSTRAINTS;
           default:
             return null;
         }
@@ -6817,6 +6875,19 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>RESOURCE_GROUP_NOT_FOUND = 7;</code>
        */
       RESOURCE_GROUP_NOT_FOUND(7),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 8;</code>
+       */
+      CONFLICTING_REGION_CONSTRAINTS(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -6920,6 +6991,20 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        */
       public static final int RESOURCE_GROUP_NOT_FOUND_VALUE = 7;
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 8;</code>
+       */
+      public static final int CONFLICTING_REGION_CONSTRAINTS_VALUE = 8;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -6960,6 +7045,8 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return SUBSCRIPTION_NOT_FOUND;
           case 7:
             return RESOURCE_GROUP_NOT_FOUND;
+          case 8:
+            return CONFLICTING_REGION_CONSTRAINTS;
           default:
             return null;
         }
@@ -9167,6 +9254,19 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>TOPIC_NOT_FOUND = 5;</code>
        */
       TOPIC_NOT_FOUND(5),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 6;</code>
+       */
+      CONFLICTING_REGION_CONSTRAINTS(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -9246,6 +9346,20 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        */
       public static final int TOPIC_NOT_FOUND_VALUE = 5;
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 6;</code>
+       */
+      public static final int CONFLICTING_REGION_CONSTRAINTS_VALUE = 6;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -9282,6 +9396,8 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return CLUSTER_NOT_FOUND;
           case 5:
             return TOPIC_NOT_FOUND;
+          case 6:
+            return CONFLICTING_REGION_CONSTRAINTS;
           default:
             return null;
         }
@@ -10985,6 +11101,19 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>TOPIC_NOT_FOUND = 6;</code>
        */
       TOPIC_NOT_FOUND(6),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 7;</code>
+       */
+      CONFLICTING_REGION_CONSTRAINTS(7),
       UNRECOGNIZED(-1),
       ;
 
@@ -11076,6 +11205,20 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        */
       public static final int TOPIC_NOT_FOUND_VALUE = 6;
 
+      /**
+       *
+       *
+       * <pre>
+       * Indicates an error state where the ingestion source cannot be
+       * processed because the selected ingestion region is not permitted
+       * by the Regional Access Boundary (RAB) restrictions on the project's
+       * service account.
+       * </pre>
+       *
+       * <code>CONFLICTING_REGION_CONSTRAINTS = 7;</code>
+       */
+      public static final int CONFLICTING_REGION_CONSTRAINTS_VALUE = 7;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -11114,6 +11257,8 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return CLUSTER_NOT_FOUND;
           case 6:
             return TOPIC_NOT_FOUND;
+          case 7:
+            return CONFLICTING_REGION_CONSTRAINTS;
           default:
             return null;
         }

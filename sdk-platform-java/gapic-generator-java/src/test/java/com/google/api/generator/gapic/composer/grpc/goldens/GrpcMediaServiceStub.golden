@@ -1,0 +1,162 @@
+package com.google.showcase.v1beta1.stub;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.common.collect.ImmutableList;
+import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.showcase.v1beta1.GetMediaMetadataRequest;
+import com.google.showcase.v1beta1.GetMediaMetadataResponse;
+import com.google.showcase.v1beta1.UploadMediaRequest;
+import com.google.showcase.v1beta1.UploadMediaResponse;
+import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * gRPC stub implementation for the MediaService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@NullMarked
+@BetaApi
+@Generated("by gapic-generator-java")
+public class GrpcMediaServiceStub extends MediaServiceStub {
+  private static final MethodDescriptor<GetMediaMetadataRequest, GetMediaMetadataResponse>
+      getMediaMetadataMethodDescriptor =
+          MethodDescriptor.<GetMediaMetadataRequest, GetMediaMetadataResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.MediaService/GetMediaMetadata")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMediaMetadataRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GetMediaMetadataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private final UnaryCallable<GetMediaMetadataRequest, GetMediaMetadataResponse>
+      getMediaMetadataCallable;
+
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
+  private final HttpJsonMediaServiceResumableUploadStub resumableUploadStub;
+  private final GrpcStubCallableFactory callableFactory;
+
+  public static final GrpcMediaServiceStub create(MediaServiceStubSettings settings)
+      throws IOException {
+    return new GrpcMediaServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final GrpcMediaServiceStub create(ClientContext clientContext) throws IOException {
+    return new GrpcMediaServiceStub(MediaServiceStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final GrpcMediaServiceStub create(
+      ClientContext clientContext, GrpcStubCallableFactory callableFactory) throws IOException {
+    return new GrpcMediaServiceStub(
+        MediaServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of GrpcMediaServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcMediaServiceStub(MediaServiceStubSettings settings, ClientContext clientContext)
+      throws IOException {
+    this(settings, clientContext, new GrpcMediaServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of GrpcMediaServiceStub, using the given settings. This is protected so
+   * that it is easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
+   */
+  protected GrpcMediaServiceStub(
+      MediaServiceStubSettings settings,
+      ClientContext clientContext,
+      GrpcStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    GrpcCallSettings<GetMediaMetadataRequest, GetMediaMetadataResponse>
+        getMediaMetadataTransportSettings =
+            GrpcCallSettings.<GetMediaMetadataRequest, GetMediaMetadataResponse>newBuilder()
+                .setMethodDescriptor(getMediaMetadataMethodDescriptor)
+                .build();
+
+    this.getMediaMetadataCallable =
+        callableFactory.createUnaryCallable(
+            getMediaMetadataTransportSettings, settings.getMediaMetadataSettings(), clientContext);
+
+    this.resumableUploadStub = HttpJsonMediaServiceResumableUploadStub.create(settings);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(
+            ImmutableList.<BackgroundResource>builder()
+                .addAll(clientContext.getBackgroundResources())
+                .add(resumableUploadStub)
+                .build());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
+  }
+
+  @Override
+  public UnaryCallable<GetMediaMetadataRequest, GetMediaMetadataResponse>
+      getMediaMetadataCallable() {
+    return getMediaMetadataCallable;
+  }
+
+  @Override
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    return resumableUploadStub.uploadMediaCallable();
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}

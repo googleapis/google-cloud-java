@@ -50,8 +50,11 @@ import org.jspecify.annotations.Nullable;
  * Base stub class for the AppGatewaysService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 public abstract class AppGatewaysServiceStub implements BackgroundResource {
 
@@ -59,33 +62,40 @@ public abstract class AppGatewaysServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAppGatewaysRequest, ListAppGatewaysPagedResponse>
       listAppGatewaysPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listAppGatewaysPagedCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<ListAppGatewaysRequest, ListAppGatewaysResponse> listAppGatewaysCallable() {
     throw new UnsupportedOperationException("Not implemented: listAppGatewaysCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<GetAppGatewayRequest, AppGateway> getAppGatewayCallable() {
     throw new UnsupportedOperationException("Not implemented: getAppGatewayCallable()");
   }
 
+  @Deprecated
   public OperationCallable<CreateAppGatewayRequest, AppGateway, AppGatewayOperationMetadata>
       createAppGatewayOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createAppGatewayOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<CreateAppGatewayRequest, Operation> createAppGatewayCallable() {
     throw new UnsupportedOperationException("Not implemented: createAppGatewayCallable()");
   }
 
+  @Deprecated
   public OperationCallable<DeleteAppGatewayRequest, Empty, AppGatewayOperationMetadata>
       deleteAppGatewayOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAppGatewayOperationCallable()");
   }
 
+  @Deprecated
   public UnaryCallable<DeleteAppGatewayRequest, Operation> deleteAppGatewayCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAppGatewayCallable()");
   }

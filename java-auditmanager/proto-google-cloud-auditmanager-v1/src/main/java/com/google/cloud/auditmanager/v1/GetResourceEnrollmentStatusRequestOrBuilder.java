@@ -30,10 +30,12 @@ public interface GetResourceEnrollmentStatusRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format
-   * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+   * Required. Name of the resource enrollment status, in one of the following
+   * formats:
+   *
+   * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
    * </pre>
    *
    * <code>
@@ -48,10 +50,12 @@ public interface GetResourceEnrollmentStatusRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format
-   * folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   * organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+   * Required. Name of the resource enrollment status, in one of the following
+   * formats:
+   *
+   * * `folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   * * `organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
    * </pre>
    *
    * <code>

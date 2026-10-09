@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.RequestParamsExtractor;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.generator.engine.ast.AnnotationNode;
@@ -49,8 +50,6 @@ import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.ThisObjectValue;
-import com.google.api.generator.engine.ast.ThrowExpr;
-import com.google.api.generator.engine.ast.TryCatchStatement;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
 import com.google.api.generator.engine.ast.VaporReference;
@@ -106,7 +105,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   private static final List<String> AIP_STANDARDS_METHODS =
       ImmutableList.of(
           "Get", "List", "Create", "Delete", "Update", "Patch", "Insert", "AggregatedList");
-  private static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
+  protected static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
 
   private static final String METHOD_DESCRIPTOR_NAME_PATTERN = "%sMethodDescriptor";
   private static final String PAGED_CALLABLE_CLASS_MEMBER_PATTERN = "%sPagedCallable";
@@ -115,6 +114,8 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   private static final String CALLABLE_FACTORY_MEMBER_NAME = "callableFactory";
   protected static final String CALLABLE_CLASS_MEMBER_PATTERN = "%sCallable";
   private static final String OPERATION_CALLABLE_CLASS_MEMBER_PATTERN = "%sOperationCallable";
+  protected static final String RESUMABLE_UPLOAD_STUB_MEMBER_NAME = "resumableUploadStub";
+  protected static final String RESUMABLE_UPLOAD_STUB_PATTERN = "HttpJson%sResumableUploadStub";
 
   private static final ImmutableList<String> HEURISTIC_ENABLED_PACKAGES =
       ImmutableList.of("google.cloud.compute", "google.cloud.sql", "google.cloud.bigquery");
@@ -141,6 +142,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             ClientContext.class,
             ClientStreamingCallable.class,
             Generated.class,
+            ImmutableList.class,
             ImmutableMap.class,
             InterruptedException.class,
             IOException.class,
@@ -153,6 +155,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             TimeUnit.class,
             TypeRegistry.class,
             UnaryCallable.class,
+            ResumableUploadCallable.class,
             UnsupportedOperationException.class,
             NullMarked.class);
     return new TypeStore(concreteClazzes);
@@ -213,6 +216,18 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       }
     }
 
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      TypeNode resumableUploadStubType =
+          typeStore.get(String.format(RESUMABLE_UPLOAD_STUB_PATTERN, service.name()));
+      classMemberVarExprs.put(
+          RESUMABLE_UPLOAD_STUB_MEMBER_NAME,
+          VariableExpr.withVariable(
+              Variable.builder()
+                  .setName(RESUMABLE_UPLOAD_STUB_MEMBER_NAME)
+                  .setType(resumableUploadStubType)
+                  .build()));
+    }
+
     classMemberVarExprs.put(
         CALLABLE_FACTORY_MEMBER_NAME,
         VariableExpr.withVariable(
@@ -240,9 +255,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             callableClassMemberVarExprs,
             protoMethodNameToDescriptorVarExprs,
             classStatements);
-    methodDefinitions.addAll(
-        createStubOverrideMethods(
-            classMemberVarExprs.get(BACKGROUND_RESOURCES_MEMBER_NAME), service));
+    methodDefinitions.addAll(createStubOverrideMethods(classMemberVarExprs, service));
 
     StubCommentComposer commentComposer =
         new StubCommentComposer(getTransportContext().transportNames().get(0));
@@ -425,6 +438,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       boolean restNumericEnumsEnabled) {
     return service.methods().stream()
         .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+        .filter(x -> !x.isResumableUpload())
         .map(
             m ->
                 createMethodDescriptorVariableDecl(
@@ -454,6 +468,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       Service service, Class<?> descriptorClass) {
     return service.methods().stream()
         .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+        .filter(x -> !x.isResumableUpload())
         .collect(
             Collectors.toMap(
                 Method::name,
@@ -486,6 +501,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     // Using a for-loop because the output cardinality is not a 1:1 mapping to the input set.
     for (Method protoMethod : service.methods()) {
       if (!protoMethod.isSupportedByTransport(getTransportContext().transport())) {
+        continue;
+      }
+      if (protoMethod.isResumableUpload()) {
         continue;
       }
       String javaStyleProtoMethodName = JavaStyle.toLowerCamelCase(protoMethod.name());
@@ -592,6 +610,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             service,
             classMemberVarExprs.get(getTransportContext().transportOperationsStubNames().get(0))));
     javaMethods.addAll(createCallableGetterMethods(callableClassMemberVarExprs));
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      javaMethods.addAll(createResumableUploadCallableGetterMethods(service, classMemberVarExprs));
+    }
     return javaMethods;
   }
 
@@ -778,6 +799,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     Map<String, VariableExpr> javaStyleMethodNameToTransportSettingsVarExprs =
         service.methods().stream()
             .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+            .filter(x -> !x.isResumableUpload())
             .collect(
                 Collectors.toMap(
                     m -> JavaStyle.toLowerCamelCase(m.name()),
@@ -803,6 +825,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     secondCtorExprs.addAll(
         service.methods().stream()
             .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+            .filter(x -> !x.isResumableUpload())
             .map(
                 m ->
                     createTransportSettingsInitExpr(
@@ -835,6 +858,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       if (!method.isSupportedByTransport(getTransportContext().transport())) {
         continue;
       }
+      if (method.isResumableUpload()) {
+        continue;
+      }
       secondCtorExprs.addAll(
           createCallableInitExprs(
               context,
@@ -862,20 +888,69 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             .setMethodName("getBackgroundResources")
             .build();
 
-    VariableExpr backgroundResourcesVarExpr = classMemberVarExprs.get("backgroundResources");
-    secondCtorExprs.add(
-        AssignmentExpr.builder()
-            .setVariableExpr(
-                backgroundResourcesVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
-            .setValueExpr(
-                NewObjectExpr.builder()
-                    .setType(FIXED_TYPESTORE.get("BackgroundResourceAggregation"))
-                    .setArguments(Arrays.asList(getBackgroundResourcesMethodExpr))
-                    .build())
-            .build());
-    secondCtorStatements.addAll(
-        secondCtorExprs.stream().map(ExprStatement::withExpr).collect(Collectors.toList()));
-    secondCtorExprs.clear();
+    VariableExpr backgroundResourcesVarExpr =
+        classMemberVarExprs.get(BACKGROUND_RESOURCES_MEMBER_NAME);
+    VariableExpr thisBackgroundResourcesVarExpr =
+        backgroundResourcesVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build();
+
+    Expr standardBackgroundResourceAggregationExpr =
+        NewObjectExpr.builder()
+            .setType(FIXED_TYPESTORE.get("BackgroundResourceAggregation"))
+            .setArguments(Arrays.asList(getBackgroundResourcesMethodExpr))
+            .build();
+
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      MethodInvocationExpr listBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setStaticReferenceType(FIXED_TYPESTORE.get("ImmutableList"))
+              .setGenerics(Arrays.asList(FIXED_TYPESTORE.get("BackgroundResource").reference()))
+              .setMethodName("builder")
+              .build();
+      listBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(listBuilderExpr)
+              .setMethodName("addAll")
+              .setArguments(Arrays.asList(getBackgroundResourcesMethodExpr))
+              .build();
+      listBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(listBuilderExpr)
+              .setMethodName("add")
+              .setArguments(
+                  Arrays.asList(classMemberVarExprs.get(RESUMABLE_UPLOAD_STUB_MEMBER_NAME)))
+              .build();
+      listBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(listBuilderExpr)
+              .setMethodName("build")
+              .build();
+      Expr aggregatedBackgroundResourceExpr =
+          NewObjectExpr.builder()
+              .setType(FIXED_TYPESTORE.get("BackgroundResourceAggregation"))
+              .setArguments(Arrays.asList(listBuilderExpr))
+              .build();
+
+      VariableExpr resumableUploadStubVarExpr =
+          classMemberVarExprs.get(RESUMABLE_UPLOAD_STUB_MEMBER_NAME);
+
+      secondCtorStatements.addAll(
+          createResumableUploadStubInitStatements(
+              service, typeStore, thisExpr, resumableUploadStubVarExpr, settingsVarExpr));
+      secondCtorStatements.add(EMPTY_LINE_STATEMENT);
+      secondCtorStatements.add(
+          ExprStatement.withExpr(
+              AssignmentExpr.builder()
+                  .setVariableExpr(thisBackgroundResourcesVarExpr)
+                  .setValueExpr(aggregatedBackgroundResourceExpr)
+                  .build()));
+    } else {
+      secondCtorStatements.add(
+          ExprStatement.withExpr(
+              AssignmentExpr.builder()
+                  .setVariableExpr(thisBackgroundResourcesVarExpr)
+                  .setValueExpr(standardBackgroundResourceAggregationExpr)
+                  .build()));
+    }
 
     // Second constructor method.
     MethodDefinition secondCtor =
@@ -906,6 +981,30 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
                     .setReturnType(operationsStubClassVarExpr.type())
                     .build())
             .build());
+  }
+
+  /** Emits resumable upload stub initialization statements. */
+  protected List<Statement> createResumableUploadStubInitStatements(
+      Service service,
+      TypeStore typeStore,
+      Expr thisExpr,
+      VariableExpr resumableUploadStubVarExpr,
+      VariableExpr settingsVarExpr) {
+    TypeNode stubType = typeStore.get(String.format(RESUMABLE_UPLOAD_STUB_PATTERN, service.name()));
+    Expr createStubExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(stubType)
+            .setMethodName("create")
+            .setArguments(Arrays.asList(settingsVarExpr))
+            .setReturnType(stubType)
+            .build();
+    return Collections.singletonList(
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(
+                    resumableUploadStubVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
+                .setValueExpr(createStubExpr)
+                .build()));
   }
 
   protected List<Statement> createLongRunningClient(Service service, TypeStore typeStore) {
@@ -1094,143 +1193,46 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
         .collect(Collectors.toList());
   }
 
+  protected List<MethodDefinition> createResumableUploadCallableGetterMethods(
+      Service service, Map<String, VariableExpr> classMemberVarExprs) {
+    VariableExpr resumableUploadStubVarExpr =
+        classMemberVarExprs.get(RESUMABLE_UPLOAD_STUB_MEMBER_NAME);
+    return service.methods().stream()
+        .filter(Method::isResumableUpload)
+        .map(
+            m -> {
+              String javaStyleMethodName = JavaStyle.toLowerCamelCase(m.name());
+              String callableMethodName =
+                  String.format(CALLABLE_CLASS_MEMBER_PATTERN, javaStyleMethodName);
+              TypeNode callableType = getCallableType(m);
+              Expr returnExpr =
+                  MethodInvocationExpr.builder()
+                      .setExprReferenceExpr(resumableUploadStubVarExpr)
+                      .setMethodName(callableMethodName)
+                      .setReturnType(callableType)
+                      .build();
+              return MethodDefinition.builder()
+                  .setIsOverride(true)
+                  .setScope(ScopeNode.PUBLIC)
+                  .setReturnType(callableType)
+                  .setName(callableMethodName)
+                  .setReturnExpr(returnExpr)
+                  .build();
+            })
+        .collect(Collectors.toList());
+  }
+
   private List<MethodDefinition> createStubOverrideMethods(
-      VariableExpr backgroundResourcesVarExpr, Service service) {
-    Function<String, MethodDefinition.Builder> methodMakerStarterFn =
-        methodName ->
-            MethodDefinition.builder()
-                .setIsOverride(true)
-                .setScope(ScopeNode.PUBLIC)
-                .setName(methodName);
-
-    Function<String, MethodDefinition> voidMethodMakerFn =
-        methodName ->
-            methodMakerStarterFn
-                .apply(methodName)
-                .setReturnType(TypeNode.VOID)
-                .setBody(
-                    Arrays.asList(
-                        ExprStatement.withExpr(
-                            MethodInvocationExpr.builder()
-                                .setExprReferenceExpr(backgroundResourcesVarExpr)
-                                .setMethodName(methodName)
-                                .build())))
-                .build();
-
-    Function<String, MethodDefinition> booleanMethodMakerFn =
-        methodName ->
-            methodMakerStarterFn
-                .apply(methodName)
-                .setReturnType(TypeNode.BOOLEAN)
-                .setReturnExpr(
-                    MethodInvocationExpr.builder()
-                        .setExprReferenceExpr(backgroundResourcesVarExpr)
-                        .setMethodName(methodName)
-                        .setReturnType(TypeNode.BOOLEAN)
-                        .build())
-                .build();
-
-    // Generate the close() method:
-    //   @Override
-    //   public final void close() {
-    //     try {
-    //       backgroundResources.close();
-    //     } catch (RuntimeException e) {
-    //       throw e;
-    //     } catch (Exception e) {
-    //       throw new IllegalStateException("Failed to close resource", e);
-    //     }
-    //  }
-
-    VariableExpr catchRuntimeExceptionVarExpr =
-        VariableExpr.builder()
-            .setVariable(
-                Variable.builder()
-                    .setType(TypeNode.withExceptionClazz(RuntimeException.class))
-                    .setName("e")
-                    .build())
-            .build();
-    VariableExpr catchExceptionVarExpr =
-        VariableExpr.builder()
-            .setVariable(
-                Variable.builder()
-                    .setType(TypeNode.withExceptionClazz(Exception.class))
-                    .setName("e")
-                    .build())
-            .build();
+      Map<String, VariableExpr> classMemberVarExprs, Service service) {
+    VariableExpr backgroundResourcesVarExpr =
+        classMemberVarExprs.get(BACKGROUND_RESOURCES_MEMBER_NAME);
     List<MethodDefinition> javaMethods = new ArrayList<>();
     if (service.operationPollingMethod() != null) {
       javaMethods.addAll(createLongRunningClientGetters());
     }
-    javaMethods.add(
-        methodMakerStarterFn
-            .apply("close")
-            .setIsFinal(true)
-            .setReturnType(TypeNode.VOID)
-            .setBody(
-                Arrays.asList(
-                    TryCatchStatement.builder()
-                        .setTryBody(
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    MethodInvocationExpr.builder()
-                                        .setExprReferenceExpr(backgroundResourcesVarExpr)
-                                        .setMethodName("close")
-                                        .build())))
-                        .addCatch(
-                            catchRuntimeExceptionVarExpr.toBuilder().setIsDecl(true).build(),
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    ThrowExpr.builder()
-                                        .setThrowExpr(catchRuntimeExceptionVarExpr)
-                                        .build())))
-                        .addCatch(
-                            catchExceptionVarExpr.toBuilder().setIsDecl(true).build(),
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    ThrowExpr.builder()
-                                        .setType(
-                                            TypeNode.withExceptionClazz(
-                                                IllegalStateException.class))
-                                        .setMessageExpr("Failed to close resource")
-                                        .setCauseExpr(catchExceptionVarExpr)
-                                        .build())))
-                        .build()))
-            .build());
-    javaMethods.add(voidMethodMakerFn.apply("shutdown"));
-    javaMethods.add(booleanMethodMakerFn.apply("isShutdown"));
-    javaMethods.add(booleanMethodMakerFn.apply("isTerminated"));
-    javaMethods.add(voidMethodMakerFn.apply("shutdownNow"));
-
-    List<VariableExpr> awaitTerminationArgs =
-        Arrays.asList(
-            VariableExpr.withVariable(
-                Variable.builder().setName("duration").setType(TypeNode.LONG).build()),
-            VariableExpr.withVariable(
-                Variable.builder()
-                    .setName("unit")
-                    .setType(FIXED_TYPESTORE.get("TimeUnit"))
-                    .build()));
-    javaMethods.add(
-        methodMakerStarterFn
-            .apply("awaitTermination")
-            .setReturnType(TypeNode.BOOLEAN)
-            .setArguments(
-                awaitTerminationArgs.stream()
-                    .map(v -> v.toBuilder().setIsDecl(true).build())
-                    .collect(Collectors.toList()))
-            .setThrowsExceptions(Arrays.asList(FIXED_TYPESTORE.get("InterruptedException")))
-            .setReturnExpr(
-                MethodInvocationExpr.builder()
-                    .setExprReferenceExpr(backgroundResourcesVarExpr)
-                    .setMethodName("awaitTermination")
-                    .setArguments(
-                        awaitTerminationArgs.stream()
-                            .map(v -> (Expr) v)
-                            .collect(Collectors.toList()))
-                    .setReturnType(TypeNode.BOOLEAN)
-                    .build())
-            .build());
+    javaMethods.addAll(
+        BackgroundResourceMethodComposer.createBackgroundResourceMethods(
+            backgroundResourcesVarExpr));
     return javaMethods;
   }
 
@@ -1281,10 +1283,22 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             .collect(Collectors.toList()),
         true,
         getTransportContext().classNames().getServiceClientClassName(service));
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      typeStore.put(stubPakkage, String.format(RESUMABLE_UPLOAD_STUB_PATTERN, service.name()));
+    }
     return typeStore;
   }
 
   protected static TypeNode getCallableType(Method protoMethod) {
+    if (protoMethod.isResumableUpload()) {
+      return TypeNode.withReference(
+          ConcreteReference.builder()
+              .setClazz(ResumableUploadCallable.class)
+              .setGenerics(
+                  Arrays.asList(
+                      protoMethod.inputType().reference(), protoMethod.outputType().reference()))
+              .build());
+    }
     TypeNode callableType = FIXED_TYPESTORE.get("UnaryCallable");
     switch (protoMethod.stream()) {
       case CLIENT:

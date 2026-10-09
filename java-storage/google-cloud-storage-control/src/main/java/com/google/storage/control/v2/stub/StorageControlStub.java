@@ -47,6 +47,8 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
@@ -74,6 +76,7 @@ import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ListRapidCachesRequest;
 import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
+import com.google.storage.control.v2.ObjectFullContext;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
 import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
@@ -90,6 +93,7 @@ import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateRapidCacheMetadata;
 import com.google.storage.control.v2.UpdateRapidCacheRequest;
+import com.google.storage.control.v2.ViewObjectFullContextRequest;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -246,6 +250,16 @@ public abstract class StorageControlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateRapidCacheCallable()");
   }
 
+  public OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableRapidCacheOperationCallable()");
+  }
+
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableRapidCacheCallable()");
+  }
+
   public UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable() {
     throw new UnsupportedOperationException("Not implemented: getRapidCacheCallable()");
   }
@@ -355,6 +369,11 @@ public abstract class StorageControlStub implements BackgroundResource {
       listIntelligenceFindingRevisionsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listIntelligenceFindingRevisionsCallable()");
+  }
+
+  public UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable() {
+    throw new UnsupportedOperationException("Not implemented: viewObjectFullContextCallable()");
   }
 
   @Override

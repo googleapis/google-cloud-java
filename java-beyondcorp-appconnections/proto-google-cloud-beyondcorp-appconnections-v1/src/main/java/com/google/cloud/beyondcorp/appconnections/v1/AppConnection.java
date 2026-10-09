@@ -27,7 +27,7 @@ package com.google.cloud.beyondcorp.appconnections.v1;
  * A BeyondCorp AppConnection resource represents a BeyondCorp protected
  * AppConnection to a remote application. It creates all the necessary GCP
  * components needed for creating a BeyondCorp protected AppConnection. Multiple
- * connectors can be authorised for a single AppConnection.
+ * connectors can be authorized for a single AppConnection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.beyondcorp.appconnections.v1.AppConnection}
@@ -1339,6 +1339,32 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      * @return The bytes for appGateway.
      */
     com.google.protobuf.ByteString getAppGatewayBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. L7 private service connection for this resource.
+     * </pre>
+     *
+     * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The l7psc.
+     */
+    java.lang.String getL7Psc();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. L7 private service connection for this resource.
+     * </pre>
+     *
+     * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for l7psc.
+     */
+    com.google.protobuf.ByteString getL7PscBytes();
   }
 
   /**
@@ -1376,6 +1402,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       type_ = 0;
       uri_ = "";
       appGateway_ = "";
+      l7Psc_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1716,6 +1743,59 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int L7PSC_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object l7Psc_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. L7 private service connection for this resource.
+     * </pre>
+     *
+     * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The l7psc.
+     */
+    @java.lang.Override
+    public java.lang.String getL7Psc() {
+      java.lang.Object ref = l7Psc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        l7Psc_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. L7 private service connection for this resource.
+     * </pre>
+     *
+     * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for l7psc.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getL7PscBytes() {
+      java.lang.Object ref = l7Psc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        l7Psc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1745,6 +1825,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appGateway_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, appGateway_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(l7Psc_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, l7Psc_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1769,6 +1852,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(appGateway_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, appGateway_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(l7Psc_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, l7Psc_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1789,6 +1875,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       if (!getUri().equals(other.getUri())) return false;
       if (getIngressPort() != other.getIngressPort()) return false;
       if (!getAppGateway().equals(other.getAppGateway())) return false;
+      if (!getL7Psc().equals(other.getL7Psc())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1808,6 +1895,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getIngressPort();
       hash = (37 * hash) + APP_GATEWAY_FIELD_NUMBER;
       hash = (53 * hash) + getAppGateway().hashCode();
+      hash = (37 * hash) + L7PSC_FIELD_NUMBER;
+      hash = (53 * hash) + getL7Psc().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1956,6 +2045,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         uri_ = "";
         ingressPort_ = 0;
         appGateway_ = "";
+        l7Psc_ = "";
         return this;
       }
 
@@ -2007,6 +2097,9 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.appGateway_ = appGateway_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.l7Psc_ = l7Psc_;
+        }
       }
 
       @java.lang.Override
@@ -2039,6 +2132,11 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         if (!other.getAppGateway().isEmpty()) {
           appGateway_ = other.appGateway_;
           bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getL7Psc().isEmpty()) {
+          l7Psc_ = other.l7Psc_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -2091,6 +2189,12 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 42
+              case 50:
+                {
+                  l7Psc_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2511,6 +2615,117 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         appGateway_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object l7Psc_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. L7 private service connection for this resource.
+       * </pre>
+       *
+       * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The l7psc.
+       */
+      public java.lang.String getL7Psc() {
+        java.lang.Object ref = l7Psc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          l7Psc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. L7 private service connection for this resource.
+       * </pre>
+       *
+       * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for l7psc.
+       */
+      public com.google.protobuf.ByteString getL7PscBytes() {
+        java.lang.Object ref = l7Psc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          l7Psc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. L7 private service connection for this resource.
+       * </pre>
+       *
+       * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The l7psc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setL7Psc(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        l7Psc_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. L7 private service connection for this resource.
+       * </pre>
+       *
+       * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearL7Psc() {
+        l7Psc_ = getDefaultInstance().getL7Psc();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. L7 private service connection for this resource.
+       * </pre>
+       *
+       * <code>string l7psc = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for l7psc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setL7PscBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        l7Psc_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3068,7 +3283,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3084,7 +3299,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3100,7 +3315,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3117,7 +3332,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-   * authorised to be associated with this AppConnection.
+   * authorized to be associated with this AppConnection.
    * </pre>
    *
    * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3232,6 +3447,76 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         : gateway_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 12;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 13;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3281,6 +3566,12 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(11, getGateway());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(12, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeBool(13, satisfiesPzi_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3340,6 +3631,12 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getGateway());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3378,6 +3675,14 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
     if (hasGateway() != other.hasGateway()) return false;
     if (hasGateway()) {
       if (!getGateway().equals(other.getGateway())) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3423,6 +3728,14 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
     if (hasGateway()) {
       hash = (37 * hash) + GATEWAY_FIELD_NUMBER;
       hash = (53 * hash) + getGateway().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3533,7 +3846,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
    * A BeyondCorp AppConnection resource represents a BeyondCorp protected
    * AppConnection to a remote application. It creates all the necessary GCP
    * components needed for creating a BeyondCorp protected AppConnection. Multiple
-   * connectors can be authorised for a single AppConnection.
+   * connectors can be authorized for a single AppConnection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.beyondcorp.appconnections.v1.AppConnection}
@@ -3629,6 +3942,8 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         gatewayBuilder_.dispose();
         gatewayBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -3708,6 +4023,14 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         result.gateway_ = gatewayBuilder_ == null ? gateway_ : gatewayBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3768,6 +4091,12 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasGateway()) {
         mergeGateway(other.getGateway());
+      }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3871,6 +4200,18 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 96:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 104:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5193,7 +5534,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5210,7 +5551,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5226,7 +5567,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5243,7 +5584,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5260,7 +5601,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5285,7 +5626,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5309,7 +5650,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5330,7 +5671,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5350,7 +5691,7 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. List of [google.cloud.beyondcorp.v1main.Connector.name] that are
-     * authorised to be associated with this AppConnection.
+     * authorized to be associated with this AppConnection.
      * </pre>
      *
      * <code>repeated string connectors = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5698,6 +6039,150 @@ public final class AppConnection extends com.google.protobuf.GeneratedMessage
         gateway_ = null;
       }
       return gatewayBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.appconnections.v1.AppConnection)

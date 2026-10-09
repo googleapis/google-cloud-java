@@ -40,6 +40,7 @@ import java.sql.Statement;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
@@ -70,9 +71,8 @@ public class ITPSCBigQueryTest {
         "APPLICATION_DEFAULT_CREDENTIALS",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    assertThrows(BigQueryException.class, () -> statement.executeQuery(query));
+    assertThrows(BigQueryException.class, () -> ITBase.validateStatement(statement, 850));
   }
 
   @Test
@@ -91,10 +91,8 @@ public class ITPSCBigQueryTest {
         "APPLICATION_DEFAULT_CREDENTIALS",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
     connection.close();
   }
 
@@ -115,10 +113,8 @@ public class ITPSCBigQueryTest {
         "PRE_GENERATED_TOKEN",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
     connection.close();
   }
 
@@ -165,10 +161,8 @@ public class ITPSCBigQueryTest {
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
     connection.close();
   }
 
@@ -205,7 +199,8 @@ public class ITPSCBigQueryTest {
     assertArrayEquals(
         new String[] {"one", "two", "three"}, (String[]) resultSet.getArray(9).getArray());
 
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356456"), resultSet.getObject(10));
+    Timestamp expectedTimestamp = Timestamp.from(Instant.parse("2020-04-27T18:07:25.356456Z"));
+    assertEquals(expectedTimestamp, resultSet.getObject(10));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
     assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
     assertEquals(Timestamp.valueOf("2019-02-17 11:24:00"), resultSet.getObject(13));
@@ -252,8 +247,9 @@ public class ITPSCBigQueryTest {
     assertEquals("{\"v\":{\"f\":[{\"v\":\"Eric\"},{\"v\":\"10\"}]}}", expectedStruct.toString());
     assertArrayEquals(
         new String[] {"one", "two", "three"}, (String[]) resultSet.getArray(9).getArray());
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    Timestamp expectedTimestamp = Timestamp.from(Instant.parse("2020-04-27T18:07:25.356Z"));
+    assertEquals(expectedTimestamp, resultSet.getObject(10));
+    assertEquals(expectedTimestamp, resultSet.getTimestamp(10));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
     assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
@@ -286,11 +282,7 @@ public class ITPSCBigQueryTest {
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertNotNull(resultSet);
+    ITBase.validateStatement(statement, 50);
     connection.close();
   }
 }

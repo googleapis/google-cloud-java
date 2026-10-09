@@ -1073,14 +1073,16 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. List of CES app specs that the generator can choose from.
+   * Optional. Deprecated: Use `ces_tool_specs` instead.
+   * List of CES app specs that the generator can choose from.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.dialogflow.v2beta1.CesAppSpec> getCesAppSpecsList() {
     return cesAppSpecs_;
   }
@@ -1089,14 +1091,16 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. List of CES app specs that the generator can choose from.
+   * Optional. Deprecated: Use `ces_tool_specs` instead.
+   * List of CES app specs that the generator can choose from.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.CesAppSpecOrBuilder>
       getCesAppSpecsOrBuilderList() {
     return cesAppSpecs_;
@@ -1106,14 +1110,16 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. List of CES app specs that the generator can choose from.
+   * Optional. Deprecated: Use `ces_tool_specs` instead.
+   * List of CES app specs that the generator can choose from.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getCesAppSpecsCount() {
     return cesAppSpecs_.size();
   }
@@ -1122,14 +1128,16 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. List of CES app specs that the generator can choose from.
+   * Optional. Deprecated: Use `ces_tool_specs` instead.
+   * List of CES app specs that the generator can choose from.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.dialogflow.v2beta1.CesAppSpec getCesAppSpecs(int index) {
     return cesAppSpecs_.get(index);
   }
@@ -1138,14 +1146,16 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. List of CES app specs that the generator can choose from.
+   * Optional. Deprecated: Use `ces_tool_specs` instead.
+   * List of CES app specs that the generator can choose from.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.dialogflow.v2beta1.CesAppSpecOrBuilder getCesAppSpecsOrBuilder(
       int index) {
     return cesAppSpecs_.get(index);
@@ -5223,13 +5233,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.dialogflow.v2beta1.CesAppSpec> getCesAppSpecsList() {
       if (cesAppSpecsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(cesAppSpecs_);
@@ -5242,13 +5254,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public int getCesAppSpecsCount() {
       if (cesAppSpecsBuilder_ == null) {
         return cesAppSpecs_.size();
@@ -5261,13 +5275,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CesAppSpec getCesAppSpecs(int index) {
       if (cesAppSpecsBuilder_ == null) {
         return cesAppSpecs_.get(index);
@@ -5280,13 +5296,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setCesAppSpecs(int index, com.google.cloud.dialogflow.v2beta1.CesAppSpec value) {
       if (cesAppSpecsBuilder_ == null) {
         if (value == null) {
@@ -5305,13 +5323,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setCesAppSpecs(
         int index, com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder builderForValue) {
       if (cesAppSpecsBuilder_ == null) {
@@ -5328,13 +5348,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addCesAppSpecs(com.google.cloud.dialogflow.v2beta1.CesAppSpec value) {
       if (cesAppSpecsBuilder_ == null) {
         if (value == null) {
@@ -5353,13 +5375,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addCesAppSpecs(int index, com.google.cloud.dialogflow.v2beta1.CesAppSpec value) {
       if (cesAppSpecsBuilder_ == null) {
         if (value == null) {
@@ -5378,13 +5402,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addCesAppSpecs(
         com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder builderForValue) {
       if (cesAppSpecsBuilder_ == null) {
@@ -5401,13 +5427,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addCesAppSpecs(
         int index, com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder builderForValue) {
       if (cesAppSpecsBuilder_ == null) {
@@ -5424,13 +5452,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllCesAppSpecs(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.CesAppSpec> values) {
       if (cesAppSpecsBuilder_ == null) {
@@ -5447,13 +5477,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearCesAppSpecs() {
       if (cesAppSpecsBuilder_ == null) {
         cesAppSpecs_ = java.util.Collections.emptyList();
@@ -5469,13 +5501,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder removeCesAppSpecs(int index) {
       if (cesAppSpecsBuilder_ == null) {
         ensureCesAppSpecsIsMutable();
@@ -5491,13 +5525,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder getCesAppSpecsBuilder(int index) {
       return internalGetCesAppSpecsFieldBuilder().getBuilder(index);
     }
@@ -5506,13 +5542,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CesAppSpecOrBuilder getCesAppSpecsOrBuilder(
         int index) {
       if (cesAppSpecsBuilder_ == null) {
@@ -5526,13 +5564,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.CesAppSpecOrBuilder>
         getCesAppSpecsOrBuilderList() {
       if (cesAppSpecsBuilder_ != null) {
@@ -5546,13 +5586,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder addCesAppSpecsBuilder() {
       return internalGetCesAppSpecsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.v2beta1.CesAppSpec.getDefaultInstance());
@@ -5562,13 +5604,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder addCesAppSpecsBuilder(int index) {
       return internalGetCesAppSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.v2beta1.CesAppSpec.getDefaultInstance());
@@ -5578,13 +5622,15 @@ public final class Generator extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. List of CES app specs that the generator can choose from.
+     * Optional. Deprecated: Use `ces_tool_specs` instead.
+     * List of CES app specs that the generator can choose from.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * repeated .google.cloud.dialogflow.v2beta1.CesAppSpec ces_app_specs = 29 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.dialogflow.v2beta1.CesAppSpec.Builder>
         getCesAppSpecsBuilderList() {
       return internalGetCesAppSpecsFieldBuilder().getBuilderList();

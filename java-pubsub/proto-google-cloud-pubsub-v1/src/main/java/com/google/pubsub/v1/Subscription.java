@@ -24,9 +24,10 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * A subscription resource. If none of `push_config`, `bigquery_config`, or
- * `cloud_storage_config` is set, then the subscriber will pull and ack messages
- * using API methods. At most one of these fields may be set.
+ * A subscription resource. If none of `push_config`, `bigquery_config`,
+ * `cloud_storage_config`, or `bigtable_config` is set, then the subscriber will
+ * pull and ack messages using API methods. At most one of these fields may be
+ * set.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.Subscription}
@@ -2442,8 +2443,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    * resource. For example:
    * "123/environment": "production",
    * "123/costCenter": "marketing"
-   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-   * using tags with Pub/Sub resources.
+   * See
+   * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+   * for more information on using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2473,8 +2475,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    * resource. For example:
    * "123/environment": "production",
    * "123/costCenter": "marketing"
-   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-   * using tags with Pub/Sub resources.
+   * See
+   * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+   * for more information on using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2494,8 +2497,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    * resource. For example:
    * "123/environment": "production",
    * "123/costCenter": "marketing"
-   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-   * using tags with Pub/Sub resources.
+   * See
+   * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+   * for more information on using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2522,8 +2526,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    * resource. For example:
    * "123/environment": "production",
    * "123/costCenter": "marketing"
-   * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-   * using tags with Pub/Sub resources.
+   * See
+   * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+   * for more information on using tags with Pub/Sub resources.
    * </pre>
    *
    * <code>
@@ -2971,9 +2976,10 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A subscription resource. If none of `push_config`, `bigquery_config`, or
-   * `cloud_storage_config` is set, then the subscriber will pull and ack messages
-   * using API methods. At most one of these fields may be set.
+   * A subscription resource. If none of `push_config`, `bigquery_config`,
+   * `cloud_storage_config`, or `bigtable_config` is set, then the subscriber will
+   * pull and ack messages using API methods. At most one of these fields may be
+   * set.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.Subscription}
@@ -7566,8 +7572,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7597,8 +7604,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7618,8 +7626,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7646,8 +7655,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7680,8 +7690,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7711,8 +7722,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>
@@ -7739,8 +7751,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessage
      * resource. For example:
      * "123/environment": "production",
      * "123/costCenter": "marketing"
-     * See https://docs.cloud.google.com/pubsub/docs/tags for more information on
-     * using tags with Pub/Sub resources.
+     * See
+     * https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags
+     * for more information on using tags with Pub/Sub resources.
      * </pre>
      *
      * <code>

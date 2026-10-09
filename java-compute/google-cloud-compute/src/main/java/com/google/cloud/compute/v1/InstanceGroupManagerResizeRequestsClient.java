@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The InstanceGroupManagerResizeRequests API.
  *
+ * <p>This client uses InstanceGroupManagerResizeRequests version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -909,7 +911,6 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (InstanceGroupManagerResizeRequest element :
@@ -948,7 +949,6 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<InstanceGroupManagerResizeRequest> future =
@@ -987,7 +987,6 @@ public class InstanceGroupManagerResizeRequestsClient implements BackgroundResou
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {

@@ -16,12 +16,23 @@
 
 package com.google.apps.meet.v2.stub;
 
+import static com.google.apps.meet.v2.SpacesServiceClient.ListMembersPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2.BatchUpdateMembersRequest;
+import com.google.apps.meet.v2.BatchUpdateMembersResponse;
+import com.google.apps.meet.v2.CreateMemberRequest;
 import com.google.apps.meet.v2.CreateSpaceRequest;
+import com.google.apps.meet.v2.DeleteMemberRequest;
 import com.google.apps.meet.v2.EndActiveConferenceRequest;
+import com.google.apps.meet.v2.GetMemberRequest;
 import com.google.apps.meet.v2.GetSpaceRequest;
+import com.google.apps.meet.v2.ListMembersRequest;
+import com.google.apps.meet.v2.ListMembersResponse;
+import com.google.apps.meet.v2.Member;
 import com.google.apps.meet.v2.Space;
+import com.google.apps.meet.v2.UpdateMemberRequest;
 import com.google.apps.meet.v2.UpdateSpaceRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
@@ -51,6 +62,35 @@ public abstract class SpacesServiceStub implements BackgroundResource {
 
   public UnaryCallable<EndActiveConferenceRequest, Empty> endActiveConferenceCallable() {
     throw new UnsupportedOperationException("Not implemented: endActiveConferenceCallable()");
+  }
+
+  public UnaryCallable<CreateMemberRequest, Member> createMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMemberCallable()");
+  }
+
+  public UnaryCallable<GetMemberRequest, Member> getMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMemberCallable()");
+  }
+
+  public UnaryCallable<ListMembersRequest, ListMembersPagedResponse> listMembersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMembersPagedCallable()");
+  }
+
+  public UnaryCallable<ListMembersRequest, ListMembersResponse> listMembersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMembersCallable()");
+  }
+
+  public UnaryCallable<DeleteMemberRequest, Empty> deleteMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMemberCallable()");
+  }
+
+  public UnaryCallable<UpdateMemberRequest, Member> updateMemberCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateMemberCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateMembersCallable()");
   }
 
   @Override
