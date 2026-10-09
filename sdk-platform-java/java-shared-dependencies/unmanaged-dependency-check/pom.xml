@@ -47,6 +47,12 @@
         </executions>
         <configuration>
           <mainClass>com.google.cloud.UnmanagedDependencyCheck</mainClass>
+          <systemProperties>
+            <systemProperty>
+              <key>guice_custom_class_loading</key>
+              <value>OFF</value>
+            </systemProperty>
+          </systemProperties>
         </configuration>
       </plugin>
     </plugins>
