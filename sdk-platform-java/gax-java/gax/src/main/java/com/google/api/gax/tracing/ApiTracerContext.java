@@ -158,6 +158,15 @@ public abstract class ApiTracerContext {
   /** The url domain of the request (e.g. "pubsub.googleapis.com"). */
   abstract @Nullable String urlDomain();
 
+  /**
+   * The fully qualified Java client class name (e.g.
+   * "com.google.cloud.secretmanager.v1.SecretManagerServiceClient").
+   */
+  abstract @Nullable String javaClientName();
+
+  /** The Java method name of the RPC (e.g. "accessSecretVersion"). */
+  abstract @Nullable String javaMethodName();
+
   protected abstract @Nullable Supplier<String> destinationResourceIdSupplier();
 
   /**
@@ -306,6 +315,12 @@ public abstract class ApiTracerContext {
     if (!Strings.isNullOrEmpty(other.urlDomain())) {
       builder.setUrlDomain(other.urlDomain());
     }
+    if (!Strings.isNullOrEmpty(other.javaClientName())) {
+      builder.setJavaClientName(other.javaClientName());
+    }
+    if (!Strings.isNullOrEmpty(other.javaMethodName())) {
+      builder.setJavaMethodName(other.javaMethodName());
+    }
     if (other.destinationResourceIdSupplier() != null) {
       builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
@@ -343,6 +358,15 @@ public abstract class ApiTracerContext {
     public abstract Builder setServiceName(@Nullable String serviceName);
 
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
+
+    /**
+     * Sets the fully qualified Java client class name (e.g.
+     * "com.google.cloud.secretmanager.v1.SecretManagerServiceClient").
+     */
+    public abstract Builder setJavaClientName(@Nullable String javaClientName);
+
+    /** Sets the Java method name of the RPC (e.g. "accessSecretVersion"). */
+    public abstract Builder setJavaMethodName(@Nullable String javaMethodName);
 
     abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
