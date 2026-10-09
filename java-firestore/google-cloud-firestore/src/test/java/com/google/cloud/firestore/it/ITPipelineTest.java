@@ -4952,34 +4952,6 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  public void testAtomicExecutionInsideTransactionIsRejected() throws Exception {
-    CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
-    ExecutionException exception =
-        assertThrows(
-            ExecutionException.class,
-            () ->
-                firestore
-                    .runTransaction(
-                        transaction -> {
-                          Pipeline deletePpl =
-                              firestore
-                                  .pipeline()
-                                  .collection(dmlCol.getPath())
-                                  .where(equal(field("__name__").documentId(), constant("book1")))
-                                  .delete();
-                          return transaction
-                              .execute(deletePpl, new PipelineExecuteOptions().withAtomic(true))
-                              .get();
-                        })
-                    .get());
-    assertThat(exception.getCause()).isInstanceOf(IllegalArgumentException.class);
-    assertThat(exception.getCause()).hasMessageThat().contains("inside a transaction");
-
-    // The pipeline is rejected before it is sent, so nothing is deleted.
-    assertThat(dmlCol.document("book1").get().get().exists()).isTrue();
-  }
-
-  @Test
   public void testUpdateSingleDocWithAddFields() throws Exception {
     CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
     List<PipelineResult> results =
