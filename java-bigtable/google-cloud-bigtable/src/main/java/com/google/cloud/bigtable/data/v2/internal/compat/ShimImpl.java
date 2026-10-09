@@ -39,6 +39,7 @@ import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCalla
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadWriteSessionPools;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.RowBuilderShim;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
@@ -205,8 +206,9 @@ public class ShimImpl implements Shim {
 
     this.readRowShim = new ReadRowShim(client);
     this.mutateRowShim = new MutateRowShim(client);
-    this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
-    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(client);
+    ReadWriteSessionPools rwPools = new ReadWriteSessionPools(client);
+    this.checkAndMutateRowShim = new CheckAndMutateRowShim(rwPools);
+    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(rwPools);
   }
 
   /**

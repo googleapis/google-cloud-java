@@ -59,7 +59,7 @@ class ReadModifyWriteRowShimTest {
     doReturn(tablePool).when(tableAsync).getSessionPool();
     doReturn(authViewPool).when(authViewAsync).getSessionPool();
 
-    shim = new ReadModifyWriteRowShim(client);
+    shim = new ReadModifyWriteRowShim(new ReadWriteSessionPools(client));
   }
 
   @Test

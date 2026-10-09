@@ -15,58 +15,34 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
-import com.google.bigtable.v2.OpenAuthorizedViewRequest;
-import com.google.bigtable.v2.OpenTableRequest.Permission;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
-import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
-import com.google.cloud.bigtable.data.v2.internal.api.Client;
-import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
 import io.grpc.Deadline;
-import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
 public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, Boolean> {
 
-  private final SessionPoolMap<TableId, TableAsync> tables;
-  private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
+  private final ReadWriteSessionPools pools;
 
-  public CheckAndMutateRowShim(Client client) {
-    // TODO: once the backend confirms the required permission for CheckAndMutateRow, if it is
-    // PERMISSION_READ_WRITE, merge these pools with ReadModifyWriteRowShim's pools into a shared
-    // ReadWriteSessionPools to halve session connections and unify circuit-breaker tracking.
-    // CheckAndMutateRow reads (predicate filter) and conditionally writes, so it needs
-    // read + write access on the session.
-    tables =
-        new SessionPoolMap<>(
-            k -> client.openTableAsync(k.getTableId(), Permission.PERMISSION_READ_WRITE));
-    authViews =
-        new SessionPoolMap<>(
-            k ->
-                client.openAuthorizedViewAsync(
-                    k.getTableId(),
-                    k.getAuthorizedViewId(),
-                    OpenAuthorizedViewRequest.Permission.PERMISSION_READ_WRITE));
+  public CheckAndMutateRowShim(ReadWriteSessionPools pools) {
+    this.pools = pools;
   }
 
   @Override
-  public void close() throws IOException {
-    tables.invalidateAll();
-    authViews.invalidateAll();
-  }
+  public void close() {}
 
   @Override
   public boolean supports(ConditionalRowMutation request) {
     TargetId targetId = request.getTargetId();
     SessionPool<?> pool;
     if (targetId instanceof TableId) {
-      pool = tables.get((TableId) targetId).getSessionPool();
+      pool = pools.tables.get((TableId) targetId).getSessionPool();
     } else if (targetId instanceof AuthorizedViewId) {
-      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
+      pool = pools.authViews.get((AuthorizedViewId) targetId).getSessionPool();
     } else {
       return false;
     }
@@ -76,16 +52,15 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
   @Override
   public CompletableFuture<Boolean> call(ConditionalRowMutation request, Deadline deadline) {
     TargetId targetId = request.getTargetId();
-
     SessionCheckAndMutateRowRequest innerReq = request.toSessionProto();
 
     if (targetId instanceof TableId) {
-      return tables.apply(
+      return pools.tables.apply(
           (TableId) targetId,
           t -> t.checkAndMutateRow(innerReq, deadline).thenApply(r -> r.getPredicateMatched()));
     }
     if (targetId instanceof AuthorizedViewId) {
-      return authViews.apply(
+      return pools.authViews.apply(
           (AuthorizedViewId) targetId,
           v -> v.checkAndMutateRow(innerReq, deadline).thenApply(r -> r.getPredicateMatched()));
     }
