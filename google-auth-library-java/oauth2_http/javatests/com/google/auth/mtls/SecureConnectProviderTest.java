@@ -35,9 +35,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -47,10 +50,16 @@ class SecureConnectProviderTest {
 
     private final boolean runForever;
     private final int exitValue;
+    private final InputStream stdout;
 
     public TestCertProviderCommandProcess(int exitValue, boolean runForever) {
+      this(exitValue, runForever, null);
+    }
+
+    TestCertProviderCommandProcess(int exitValue, boolean runForever, InputStream stdout) {
       this.runForever = runForever;
       this.exitValue = exitValue;
+      this.stdout = stdout;
     }
 
     @Override
@@ -60,7 +69,7 @@ class SecureConnectProviderTest {
 
     @Override
     public InputStream getInputStream() {
-      return null;
+      return stdout;
     }
 
     @Override
@@ -99,6 +108,23 @@ class SecureConnectProviderTest {
     public Process createProcess(InputStream metadata) throws IOException {
       return new TestCertProviderCommandProcess(exitCode, false);
     }
+  }
+
+  @Test
+  void testGetKeyStore_certificateChain_keepsFullChain() throws Exception {
+    byte[] stdout =
+        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
+                + "\n"
+                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH))
+            .getBytes(StandardCharsets.UTF_8);
+    SecureConnectProvider.ProcessProvider processProvider =
+        metadata -> new TestCertProviderCommandProcess(0, false, new ByteArrayInputStream(stdout));
+
+    KeyStore store =
+        SecureConnectProvider.getKeyStore(
+            new ByteArrayInputStream("{}".getBytes(StandardCharsets.UTF_8)), processProvider);
+
+    MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
   }
 
   @Test

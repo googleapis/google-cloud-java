@@ -32,7 +32,6 @@ package com.google.auth.mtls;
 
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.client.util.SecurityUtils;
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
@@ -148,7 +147,7 @@ public class SecureConnectProvider implements MtlsProvider {
     }
 
     // Create mTLS key store with the input certificates from shell command.
-    return SecurityUtils.createMtlsKeyStore(process.getInputStream());
+    return MtlsKeyStoreUtils.createMtlsKeyStore(process.getInputStream());
   }
 
   @VisibleForTesting

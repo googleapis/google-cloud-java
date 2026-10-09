@@ -247,6 +247,48 @@ class X509ProviderTest {
   }
 
   @Test
+  void x509Provider_gkeCredentialBundleWithIntermediate_keepsFullChain(@TempDir Path tempDir)
+      throws Exception {
+    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
+    Files.write(
+        bundle,
+        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
+                + "\n"
+                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH))
+            .getBytes(UTF_8));
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      KeyStore store = testProvider.getKeyStore();
+      // The intermediate is presented too, so peers that only trust the root can verify the leaf.
+      MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_certFileWithIntermediate_keepsFullChain(@TempDir Path tempDir)
+      throws Exception {
+    Path config = tempDir.resolve("certificate_config.json");
+    Files.write(
+        config,
+        ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+                + new File(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH).getAbsolutePath()
+                + "\",\"key_path\":\""
+                + new File(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH).getAbsolutePath()
+                + "\"}}}")
+            .getBytes(UTF_8));
+
+    X509Provider testProvider = new X509Provider(config.toString());
+
+    KeyStore store = testProvider.getKeyStore();
+    MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
+  }
+
+  @Test
   void x509Provider_explicitConfigEnv_takesPrecedenceOverGkeCredentialBundle(@TempDir Path tempDir)
       throws Exception {
     MtlsUtils.setGkeCredentialBundlePathForTesting(
