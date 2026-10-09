@@ -38,7 +38,8 @@ public class SyncGetMemory {
       GetMemoryRequest request =
           GetMemoryRequest.newBuilder()
               .setName(
-                  MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                  MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                          "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                       .toString())
               .build();
       Memory response = memoryBankServiceClient.getMemory(request);

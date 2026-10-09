@@ -271,6 +271,49 @@ public interface RunAggregationQueryRequestOrBuilder
    */
   com.google.firestore.v1.ExplainOptionsOrBuilder getExplainOptionsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  boolean hasRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  com.google.firestore.v1.RequestOptions getRequestOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.firestore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder();
+
   com.google.firestore.v1.RunAggregationQueryRequest.QueryTypeCase getQueryTypeCase();
 
   com.google.firestore.v1.RunAggregationQueryRequest.ConsistencySelectorCase

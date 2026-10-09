@@ -32,6 +32,7 @@ package com.google.auth.oauth2;
 
 import com.google.api.core.InternalApi;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Interface for an environment provider.
@@ -41,5 +42,5 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 public interface EnvironmentProvider {
-  String getEnv(String name);
+  @Nullable String getEnv(String name);
 }

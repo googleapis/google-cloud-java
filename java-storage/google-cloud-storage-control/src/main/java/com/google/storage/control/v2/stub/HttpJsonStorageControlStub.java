@@ -58,6 +58,8 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
@@ -85,6 +87,7 @@ import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ListRapidCachesRequest;
 import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
+import com.google.storage.control.v2.ObjectFullContext;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
 import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
@@ -101,6 +104,7 @@ import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateRapidCacheMetadata;
 import com.google.storage.control.v2.UpdateRapidCacheRequest;
+import com.google.storage.control.v2.ViewObjectFullContextRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -123,6 +127,7 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
+          .add(DisableRapidCacheMetadata.getDescriptor())
           .add(RenameFolderMetadata.getDescriptor())
           .add(CreateRapidCacheMetadata.getDescriptor())
           .add(UpdateRapidCacheMetadata.getDescriptor())
@@ -870,6 +875,42 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextMethodDescriptor =
+          ApiMethodDescriptor.<ViewObjectFullContextRequest, ObjectFullContext>newBuilder()
+              .setFullMethodName("google.storage.control.v2.StorageControl/ViewObjectFullContext")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ViewObjectFullContextRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/buckets/*/objects/**}:viewFullContext",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ViewObjectFullContextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ViewObjectFullContextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "contextKey", request.getContextKey());
+                            serializer.putQueryParam(fields, "generation", request.getGeneration());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ObjectFullContext>newBuilder()
+                      .setDefaultInstance(ObjectFullContext.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
   private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
   private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
@@ -918,6 +959,8 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   private final UnaryCallable<
           ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
       listIntelligenceFindingRevisionsPagedCallable;
+  private final UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -936,6 +979,8 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   private static final PathTemplate DELETE_FOLDER_RECURSIVE_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/**");
   private static final PathTemplate GET_STORAGE_LAYOUT_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate VIEW_OBJECT_FULL_CONTEXT_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/**");
 
   public static final HttpJsonStorageControlStub create(StorageControlStubSettings settings)
@@ -1272,6 +1317,20 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<ViewObjectFullContextRequest, ObjectFullContext>
+        viewObjectFullContextTransportSettings =
+            HttpJsonCallSettings.<ViewObjectFullContextRequest, ObjectFullContext>newBuilder()
+                .setMethodDescriptor(viewObjectFullContextMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(), "bucket", VIEW_OBJECT_FULL_CONTEXT_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createFolderCallable =
         callableFactory.createUnaryCallable(
@@ -1381,6 +1440,11 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
             listIntelligenceFindingRevisionsTransportSettings,
             settings.listIntelligenceFindingRevisionsSettings(),
             clientContext);
+    this.viewObjectFullContextCallable =
+        callableFactory.createUnaryCallable(
+            viewObjectFullContextTransportSettings,
+            settings.viewObjectFullContextSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1407,6 +1471,7 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
     methodDescriptors.add(summarizeIntelligenceFindingsMethodDescriptor);
     methodDescriptors.add(getIntelligenceFindingRevisionMethodDescriptor);
     methodDescriptors.add(listIntelligenceFindingRevisionsMethodDescriptor);
+    methodDescriptors.add(viewObjectFullContextMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1554,6 +1619,12 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   }
 
   @Override
+  public UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable() {
+    return viewObjectFullContextCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateManagedFolderRequest, ManagedFolder> createManagedFolderCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createManagedFolderCallable(). REST transport is not implemented for this"
@@ -1650,6 +1721,13 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
   public UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: updateRapidCacheCallable(). REST transport is not implemented for this"
+            + " method yet.");
+  }
+
+  @Override
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableRapidCacheCallable(). REST transport is not implemented for this"
             + " method yet.");
   }
 

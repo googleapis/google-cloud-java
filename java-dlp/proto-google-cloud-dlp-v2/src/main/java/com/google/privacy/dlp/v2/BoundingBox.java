@@ -24,7 +24,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Bounding box encompassing detected text within an image.
+ * Bounding box encompassing detected text within an image. Coordinates are in
+ * pixels and strictly within the image or frame bounds.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.BoundingBox}
@@ -333,7 +334,8 @@ public final class BoundingBox extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Bounding box encompassing detected text within an image.
+   * Bounding box encompassing detected text within an image. Coordinates are in
+   * pixels and strictly within the image or frame bounds.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.BoundingBox}

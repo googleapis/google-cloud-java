@@ -33,8 +33,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 class HttpJsonOperationSnapshotTest {
@@ -85,5 +89,23 @@ class HttpJsonOperationSnapshotTest {
     assertEquals("no error", testOperationSnapshot.getErrorMessage());
     assertEquals(HttpJsonStatusCode.of(Code.OK), testOperationSnapshot.getErrorCode());
     assertFalse(testOperationSnapshot.isDone());
+  }
+
+  @Test
+  void newBuilderTestWithErrorDetails() {
+    ErrorDetails errorDetails =
+        ErrorDetails.builder()
+            .setRawErrorMessages(Collections.singletonList(Any.pack(Empty.getDefaultInstance())))
+            .build();
+    HttpJsonOperationSnapshot testOperationSnapshot =
+        HttpJsonOperationSnapshot.newBuilder()
+            .setName("snapshot-details")
+            .setMetadata("Dallas")
+            .setDone(true)
+            .setError(400, "Bad Request")
+            .setErrorDetails(errorDetails)
+            .build();
+
+    assertEquals(errorDetails, testOperationSnapshot.getErrorDetails());
   }
 }

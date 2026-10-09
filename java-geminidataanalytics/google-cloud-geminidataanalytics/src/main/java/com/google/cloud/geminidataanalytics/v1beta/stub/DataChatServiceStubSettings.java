@@ -61,6 +61,7 @@ import com.google.cloud.geminidataanalytics.v1beta.Message;
 import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
 import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
 import com.google.cloud.geminidataanalytics.v1beta.StorageMessage;
+import com.google.cloud.geminidataanalytics.v1beta.UpdateConversationRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -141,6 +142,8 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
   private final UnaryCallSettings<CreateConversationRequest, Conversation>
       createConversationSettings;
   private final UnaryCallSettings<DeleteConversationRequest, Empty> deleteConversationSettings;
+  private final UnaryCallSettings<UpdateConversationRequest, Conversation>
+      updateConversationSettings;
   private final UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings;
   private final PagedCallSettings<
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
@@ -331,6 +334,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     return deleteConversationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateConversation. */
+  public UnaryCallSettings<UpdateConversationRequest, Conversation> updateConversationSettings() {
+    return updateConversationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getConversation. */
   public UnaryCallSettings<GetConversationRequest, Conversation> getConversationSettings() {
     return getConversationSettings;
@@ -479,6 +487,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     chatSettings = settingsBuilder.chatSettings().build();
     createConversationSettings = settingsBuilder.createConversationSettings().build();
     deleteConversationSettings = settingsBuilder.deleteConversationSettings().build();
+    updateConversationSettings = settingsBuilder.updateConversationSettings().build();
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
@@ -504,6 +513,8 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
         createConversationSettings;
     private final UnaryCallSettings.Builder<DeleteConversationRequest, Empty>
         deleteConversationSettings;
+    private final UnaryCallSettings.Builder<UpdateConversationRequest, Conversation>
+        updateConversationSettings;
     private final UnaryCallSettings.Builder<GetConversationRequest, Conversation>
         getConversationSettings;
     private final PagedCallSettings.Builder<
@@ -558,6 +569,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
       chatSettings = ServerStreamingCallSettings.newBuilder();
       createConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
@@ -569,6 +581,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConversationSettings,
               deleteConversationSettings,
+              updateConversationSettings,
               getConversationSettings,
               listConversationsSettings,
               listMessagesSettings,
@@ -584,6 +597,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
       chatSettings = settings.chatSettings.toBuilder();
       createConversationSettings = settings.createConversationSettings.toBuilder();
       deleteConversationSettings = settings.deleteConversationSettings.toBuilder();
+      updateConversationSettings = settings.updateConversationSettings.toBuilder();
       getConversationSettings = settings.getConversationSettings.toBuilder();
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
@@ -595,6 +609,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createConversationSettings,
               deleteConversationSettings,
+              updateConversationSettings,
               getConversationSettings,
               listConversationsSettings,
               listMessagesSettings,
@@ -640,6 +655,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
 
       builder
           .deleteConversationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateConversationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -706,6 +726,12 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     public UnaryCallSettings.Builder<DeleteConversationRequest, Empty>
         deleteConversationSettings() {
       return deleteConversationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateConversation. */
+    public UnaryCallSettings.Builder<UpdateConversationRequest, Conversation>
+        updateConversationSettings() {
+      return updateConversationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getConversation. */

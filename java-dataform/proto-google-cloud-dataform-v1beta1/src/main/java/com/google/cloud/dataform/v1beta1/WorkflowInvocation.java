@@ -1010,6 +1010,68 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         : privateResourceMetadata_;
   }
 
+  public static final int PIPELINE_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.dataform.v1beta1.PipelineConfig pipelineConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the pipelineConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPipelineConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pipelineConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.PipelineConfig getPipelineConfig() {
+    return pipelineConfig_ == null
+        ? com.google.cloud.dataform.v1beta1.PipelineConfig.getDefaultInstance()
+        : pipelineConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.PipelineConfigOrBuilder getPipelineConfigOrBuilder() {
+    return pipelineConfig_ == null
+        ? com.google.cloud.dataform.v1beta1.PipelineConfig.getDefaultInstance()
+        : pipelineConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1056,6 +1118,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(10, getPrivateResourceMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(11, getPipelineConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1099,6 +1164,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getPrivateResourceMetadata());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getPipelineConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1137,6 +1205,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasPrivateResourceMetadata() != other.hasPrivateResourceMetadata()) return false;
     if (hasPrivateResourceMetadata()) {
       if (!getPrivateResourceMetadata().equals(other.getPrivateResourceMetadata())) return false;
+    }
+    if (hasPipelineConfig() != other.hasPipelineConfig()) return false;
+    if (hasPipelineConfig()) {
+      if (!getPipelineConfig().equals(other.getPipelineConfig())) return false;
     }
     if (!getCompilationSourceCase().equals(other.getCompilationSourceCase())) return false;
     switch (compilationSourceCase_) {
@@ -1185,6 +1257,10 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
     if (hasPrivateResourceMetadata()) {
       hash = (37 * hash) + PRIVATE_RESOURCE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateResourceMetadata().hashCode();
+    }
+    if (hasPipelineConfig()) {
+      hash = (37 * hash) + PIPELINE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPipelineConfig().hashCode();
     }
     switch (compilationSourceCase_) {
       case 2:
@@ -1343,6 +1419,7 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         internalGetInvocationTimingFieldBuilder();
         internalGetDataEncryptionStateFieldBuilder();
         internalGetPrivateResourceMetadataFieldBuilder();
+        internalGetPipelineConfigFieldBuilder();
       }
     }
 
@@ -1373,6 +1450,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       if (privateResourceMetadataBuilder_ != null) {
         privateResourceMetadataBuilder_.dispose();
         privateResourceMetadataBuilder_ = null;
+      }
+      pipelineConfig_ = null;
+      if (pipelineConfigBuilder_ != null) {
+        pipelineConfigBuilder_.dispose();
+        pipelineConfigBuilder_ = null;
       }
       compilationSourceCase_ = 0;
       compilationSource_ = null;
@@ -1451,6 +1533,11 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
                 : privateResourceMetadataBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.pipelineConfig_ =
+            pipelineConfigBuilder_ == null ? pipelineConfig_ : pipelineConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1501,6 +1588,9 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasPrivateResourceMetadata()) {
         mergePrivateResourceMetadata(other.getPrivateResourceMetadata());
+      }
+      if (other.hasPipelineConfig()) {
+        mergePipelineConfig(other.getPipelineConfig());
       }
       switch (other.getCompilationSourceCase()) {
         case COMPILATION_RESULT:
@@ -1615,6 +1705,13 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetPipelineConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3340,6 +3437,229 @@ public final class WorkflowInvocation extends com.google.protobuf.GeneratedMessa
         privateResourceMetadata_ = null;
       }
       return privateResourceMetadataBuilder_;
+    }
+
+    private com.google.cloud.dataform.v1beta1.PipelineConfig pipelineConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.PipelineConfig,
+            com.google.cloud.dataform.v1beta1.PipelineConfig.Builder,
+            com.google.cloud.dataform.v1beta1.PipelineConfigOrBuilder>
+        pipelineConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the pipelineConfig field is set.
+     */
+    public boolean hasPipelineConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The pipelineConfig.
+     */
+    public com.google.cloud.dataform.v1beta1.PipelineConfig getPipelineConfig() {
+      if (pipelineConfigBuilder_ == null) {
+        return pipelineConfig_ == null
+            ? com.google.cloud.dataform.v1beta1.PipelineConfig.getDefaultInstance()
+            : pipelineConfig_;
+      } else {
+        return pipelineConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPipelineConfig(com.google.cloud.dataform.v1beta1.PipelineConfig value) {
+      if (pipelineConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pipelineConfig_ = value;
+      } else {
+        pipelineConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setPipelineConfig(
+        com.google.cloud.dataform.v1beta1.PipelineConfig.Builder builderForValue) {
+      if (pipelineConfigBuilder_ == null) {
+        pipelineConfig_ = builderForValue.build();
+      } else {
+        pipelineConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergePipelineConfig(com.google.cloud.dataform.v1beta1.PipelineConfig value) {
+      if (pipelineConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && pipelineConfig_ != null
+            && pipelineConfig_
+                != com.google.cloud.dataform.v1beta1.PipelineConfig.getDefaultInstance()) {
+          getPipelineConfigBuilder().mergeFrom(value);
+        } else {
+          pipelineConfig_ = value;
+        }
+      } else {
+        pipelineConfigBuilder_.mergeFrom(value);
+      }
+      if (pipelineConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearPipelineConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      pipelineConfig_ = null;
+      if (pipelineConfigBuilder_ != null) {
+        pipelineConfigBuilder_.dispose();
+        pipelineConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.PipelineConfig.Builder getPipelineConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetPipelineConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.PipelineConfigOrBuilder getPipelineConfigOrBuilder() {
+      if (pipelineConfigBuilder_ != null) {
+        return pipelineConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return pipelineConfig_ == null
+            ? com.google.cloud.dataform.v1beta1.PipelineConfig.getDefaultInstance()
+            : pipelineConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The pipeline options which defines the pipeline type and path
+     * within the Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.PipelineConfig,
+            com.google.cloud.dataform.v1beta1.PipelineConfig.Builder,
+            com.google.cloud.dataform.v1beta1.PipelineConfigOrBuilder>
+        internalGetPipelineConfigFieldBuilder() {
+      if (pipelineConfigBuilder_ == null) {
+        pipelineConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1beta1.PipelineConfig,
+                com.google.cloud.dataform.v1beta1.PipelineConfig.Builder,
+                com.google.cloud.dataform.v1beta1.PipelineConfigOrBuilder>(
+                getPipelineConfig(), getParentForChildren(), isClean());
+        pipelineConfig_ = null;
+      }
+      return pipelineConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.WorkflowInvocation)

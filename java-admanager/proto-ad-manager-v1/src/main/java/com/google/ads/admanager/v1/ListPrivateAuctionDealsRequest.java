@@ -232,22 +232,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `archived`
+   * * `auctionPriorityEnabled`
+   * * `blockOverrideEnabled`
+   * * `buyerAccountId`
+   * * `buyerPermissionType`
+   * * `endTime`
+   * * `externalDealId`
+   * * `floorPrice`
+   * * `name`
+   * * `privateAuctionDealId`
+   * * `privateAuctionDisplayName`
+   * * `privateAuctionId`
+   * * `publisherFloorExempt`
+   * * `status`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -275,22 +276,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `archived`
+   * * `auctionPriorityEnabled`
+   * * `blockOverrideEnabled`
+   * * `buyerAccountId`
+   * * `buyerPermissionType`
+   * * `endTime`
+   * * `externalDealId`
+   * * `floorPrice`
+   * * `name`
+   * * `privateAuctionDealId`
+   * * `privateAuctionDisplayName`
+   * * `privateAuctionId`
+   * * `publisherFloorExempt`
+   * * `status`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1155,22 +1157,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `archived`
+     * * `auctionPriorityEnabled`
+     * * `blockOverrideEnabled`
+     * * `buyerAccountId`
+     * * `buyerPermissionType`
+     * * `endTime`
+     * * `externalDealId`
+     * * `floorPrice`
+     * * `name`
+     * * `privateAuctionDealId`
+     * * `privateAuctionDisplayName`
+     * * `privateAuctionId`
+     * * `publisherFloorExempt`
+     * * `status`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1197,22 +1200,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `archived`
+     * * `auctionPriorityEnabled`
+     * * `blockOverrideEnabled`
+     * * `buyerAccountId`
+     * * `buyerPermissionType`
+     * * `endTime`
+     * * `externalDealId`
+     * * `floorPrice`
+     * * `name`
+     * * `privateAuctionDealId`
+     * * `privateAuctionDisplayName`
+     * * `privateAuctionId`
+     * * `publisherFloorExempt`
+     * * `status`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1239,22 +1243,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `archived`
+     * * `auctionPriorityEnabled`
+     * * `blockOverrideEnabled`
+     * * `buyerAccountId`
+     * * `buyerPermissionType`
+     * * `endTime`
+     * * `externalDealId`
+     * * `floorPrice`
+     * * `name`
+     * * `privateAuctionDealId`
+     * * `privateAuctionDisplayName`
+     * * `privateAuctionId`
+     * * `publisherFloorExempt`
+     * * `status`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1280,22 +1285,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `archived`
+     * * `auctionPriorityEnabled`
+     * * `blockOverrideEnabled`
+     * * `buyerAccountId`
+     * * `buyerPermissionType`
+     * * `endTime`
+     * * `externalDealId`
+     * * `floorPrice`
+     * * `name`
+     * * `privateAuctionDealId`
+     * * `privateAuctionDisplayName`
+     * * `privateAuctionId`
+     * * `publisherFloorExempt`
+     * * `status`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1317,22 +1323,23 @@ public final class ListPrivateAuctionDealsRequest extends com.google.protobuf.Ge
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;auctionPriorityEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;blockOverrideEnabled&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerAccountId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;buyerPermissionType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;externalDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;floorPrice&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDealId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;privateAuctionId&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `archived`
+     * * `auctionPriorityEnabled`
+     * * `blockOverrideEnabled`
+     * * `buyerAccountId`
+     * * `buyerPermissionType`
+     * * `endTime`
+     * * `externalDealId`
+     * * `floorPrice`
+     * * `name`
+     * * `privateAuctionDealId`
+     * * `privateAuctionDisplayName`
+     * * `privateAuctionId`
+     * * `publisherFloorExempt`
+     * * `status`
+     * * `updateTime`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

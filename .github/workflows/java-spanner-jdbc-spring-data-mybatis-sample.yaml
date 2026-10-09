@@ -48,6 +48,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+          cache: maven
       - name: Run GoogleSQL sample tests
         run: mvn test
         working-directory: java-spanner-jdbc/samples/spring-data-mybatis/googlesql

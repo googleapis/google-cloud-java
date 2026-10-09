@@ -110,9 +110,6 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   *
-   * Additional supported values which may be not listed in the enum directly due to technical reasons:
-   * PRIVATE_SERVICE_CONNECT
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkProfileNetworkFeatures.AddressPurposes}
@@ -158,7 +155,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * of subnet/route in the VPC network and its peering networks. After the
      * VLAN attachment is created with the reserved IP address range, when
      * creating a new VPN gateway, its interface IP address is allocated
-     * from the associated VLAN attachment’s IP address range.
+     * from the associated VLAN attachment's IP address range.
      * </pre>
      *
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
@@ -174,7 +171,16 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>NAT_AUTO = 163666477;</code>
      */
     NAT_AUTO(163666477),
-    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be used to configure Private
+     * Service Connect. This purpose can be specified only forGLOBAL addresses of Type INTERNAL
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
     PRIVATE_SERVICE_CONNECT(48134724),
     /**
      *
@@ -263,7 +269,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * of subnet/route in the VPC network and its peering networks. After the
      * VLAN attachment is created with the reserved IP address range, when
      * creating a new VPN gateway, its interface IP address is allocated
-     * from the associated VLAN attachment’s IP address range.
+     * from the associated VLAN attachment's IP address range.
      * </pre>
      *
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
@@ -281,7 +287,16 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      */
     public static final int NAT_AUTO_VALUE = 163666477;
 
-    /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * A private network IP address that can be used to configure Private
+     * Service Connect. This purpose can be specified only forGLOBAL addresses of Type INTERNAL
+     * </pre>
+     *
+     * <code>PRIVATE_SERVICE_CONNECT = 48134724;</code>
+     */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
 
     /**

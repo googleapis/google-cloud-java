@@ -1396,7 +1396,7 @@ public interface ReconciledDataPointOrBuilder
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
    * data][google.devicesandservices.health.v4.DataPoint] union
-   * field, e.g. `total-calories` for the `total_calories` field.
+   * field, e.g. `heart-rate` for the `heart_rate` field.
    *
    * The `{data_point}` ID can be client-provided or system-generated.
    * If client-provided, it must be a string of 4-63 characters,
@@ -1428,7 +1428,7 @@ public interface ReconciledDataPointOrBuilder
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
    * data][google.devicesandservices.health.v4.DataPoint] union
-   * field, e.g. `total-calories` for the `total_calories` field.
+   * field, e.g. `heart-rate` for the `heart_rate` field.
    *
    * The `{data_point}` ID can be client-provided or system-generated.
    * If client-provided, it must be a string of 4-63 characters,

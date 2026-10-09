@@ -126,11 +126,12 @@ public interface SearchDocumentChunksResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Provides a token that can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
+   * Provides a token that can be sent as `page_token` to retrieve the next
+   * page.
+   * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
-   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string next_page_token = 2;</code>
    *
    * @return The nextPageToken.
    */
@@ -140,11 +141,12 @@ public interface SearchDocumentChunksResponseOrBuilder
    *
    *
    * <pre>
-   * Optional. Provides a token that can be sent as `page_token` to retrieve the
-   * next page. If this field is omitted, there are no subsequent pages.
+   * Provides a token that can be sent as `page_token` to retrieve the next
+   * page.
+   * If this field is omitted, there are no subsequent pages.
    * </pre>
    *
-   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string next_page_token = 2;</code>
    *
    * @return The bytes for nextPageToken.
    */

@@ -11,6 +11,5 @@
   "repo_short": "java-errorreporting",
   "distribution_name": "com.google.cloud:google-cloud-errorreporting",
   "api_id": "clouderrorreporting.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/559780"
+  "library_type": "GAPIC_AUTO"
 }

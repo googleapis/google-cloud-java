@@ -1442,10 +1442,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
    *
    *
    * <pre>
-   * Output only. The database server type of the Exadata Infrastructure.
+   * Optional. The database server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The databaseServerType.
    */
@@ -1466,10 +1466,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
    *
    *
    * <pre>
-   * Output only. The database server type of the Exadata Infrastructure.
+   * Optional. The database server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for databaseServerType.
    */
@@ -1495,10 +1495,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
    *
    *
    * <pre>
-   * Output only. The storage server type of the Exadata Infrastructure.
+   * Optional. The storage server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The storageServerType.
    */
@@ -1519,10 +1519,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
    *
    *
    * <pre>
-   * Output only. The storage server type of the Exadata Infrastructure.
+   * Optional. The storage server type of the Exadata Infrastructure.
    * </pre>
    *
-   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for storageServerType.
    */
@@ -5772,10 +5772,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The database server type of the Exadata Infrastructure.
+     * Optional. The database server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The databaseServerType.
      */
@@ -5795,10 +5795,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The database server type of the Exadata Infrastructure.
+     * Optional. The database server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for databaseServerType.
      */
@@ -5818,10 +5818,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The database server type of the Exadata Infrastructure.
+     * Optional. The database server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The databaseServerType to set.
      * @return This builder for chaining.
@@ -5840,10 +5840,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The database server type of the Exadata Infrastructure.
+     * Optional. The database server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5858,10 +5858,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The database server type of the Exadata Infrastructure.
+     * Optional. The database server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string database_server_type = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for databaseServerType to set.
      * @return This builder for chaining.
@@ -5883,10 +5883,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The storage server type of the Exadata Infrastructure.
+     * Optional. The storage server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The storageServerType.
      */
@@ -5906,10 +5906,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The storage server type of the Exadata Infrastructure.
+     * Optional. The storage server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for storageServerType.
      */
@@ -5929,10 +5929,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The storage server type of the Exadata Infrastructure.
+     * Optional. The storage server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The storageServerType to set.
      * @return This builder for chaining.
@@ -5951,10 +5951,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The storage server type of the Exadata Infrastructure.
+     * Optional. The storage server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5969,10 +5969,10 @@ public final class CloudExadataInfrastructureProperties extends com.google.proto
      *
      *
      * <pre>
-     * Output only. The storage server type of the Exadata Infrastructure.
+     * Optional. The storage server type of the Exadata Infrastructure.
      * </pre>
      *
-     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string storage_server_type = 30 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for storageServerType to set.
      * @return This builder for chaining.

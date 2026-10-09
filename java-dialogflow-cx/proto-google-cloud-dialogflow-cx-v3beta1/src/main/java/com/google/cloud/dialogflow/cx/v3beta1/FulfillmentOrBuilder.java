@@ -175,6 +175,36 @@ public interface FulfillmentOrBuilder
    *
    *
    * <pre>
+   * Optional. The name of the code block function to execute, if this is a code
+   * block fulfillment. The code block itself is implied by the fulfillment's
+   * parent, e.g. a playbook.
+   * </pre>
+   *
+   * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The codeBlockFunction.
+   */
+  java.lang.String getCodeBlockFunction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the code block function to execute, if this is a code
+   * block fulfillment. The code block itself is implied by the fulfillment's
+   * parent, e.g. a playbook.
+   * </pre>
+   *
+   * <code>string code_block_function = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for codeBlockFunction.
+   */
+  com.google.protobuf.ByteString getCodeBlockFunctionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Set parameter values before executing the webhook.
    * </pre>
    *

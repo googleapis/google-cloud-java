@@ -283,7 +283,11 @@ public class DeveloperKnowledgeClientTest {
         AnswerQueryResponse.newBuilder().setAnswer(Answer.newBuilder().build()).build();
     mockDeveloperKnowledge.addResponse(expectedResponse);
 
-    AnswerQueryRequest request = AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+    AnswerQueryRequest request =
+        AnswerQueryRequest.newBuilder()
+            .setQuery("query107944136")
+            .setFilter("filter-1274492040")
+            .build();
 
     AnswerQueryResponse actualResponse = client.answerQuery(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -293,6 +297,7 @@ public class DeveloperKnowledgeClientTest {
     AnswerQueryRequest actualRequest = ((AnswerQueryRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -306,7 +311,10 @@ public class DeveloperKnowledgeClientTest {
 
     try {
       AnswerQueryRequest request =
-          AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+          AnswerQueryRequest.newBuilder()
+              .setQuery("query107944136")
+              .setFilter("filter-1274492040")
+              .build();
       client.answerQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

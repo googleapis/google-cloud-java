@@ -141,7 +141,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The [type of
-   * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+   * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
    * that might have been found.
    * </pre>
    *
@@ -159,7 +159,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The [type of
-   * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+   * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
    * that might have been found.
    * </pre>
    *
@@ -177,7 +177,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * The [type of
-   * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+   * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
    * that might have been found.
    * </pre>
    *
@@ -1321,7 +1321,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1338,7 +1338,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1361,7 +1361,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1386,7 +1386,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1408,7 +1408,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1438,7 +1438,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1460,7 +1460,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1477,7 +1477,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *
@@ -1498,7 +1498,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * The [type of
-     * content](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
+     * content](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)
      * that might have been found.
      * </pre>
      *

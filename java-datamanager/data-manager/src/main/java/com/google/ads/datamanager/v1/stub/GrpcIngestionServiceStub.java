@@ -22,8 +22,14 @@ import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
 import com.google.ads.datamanager.v1.IngestEventsResponse;
+import com.google.ads.datamanager.v1.IngestUsersRequest;
+import com.google.ads.datamanager.v1.IngestUsersResponse;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersResponse;
+import com.google.ads.datamanager.v1.RemoveUsersRequest;
+import com.google.ads.datamanager.v1.RemoveUsersResponse;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusRequest;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusResponse;
 import com.google.api.gax.core.BackgroundResource;
@@ -73,6 +79,21 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersMethodDescriptor =
+          MethodDescriptor
+              .<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.ads.datamanager.v1.IngestionService/RemoveAllAudienceMembers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveAllAudienceMembersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveAllAudienceMembersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<IngestEventsRequest, IngestEventsResponse>
       ingestEventsMethodDescriptor =
           MethodDescriptor.<IngestEventsRequest, IngestEventsResponse>newBuilder()
@@ -81,6 +102,28 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(IngestEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(IngestEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<IngestUsersRequest, IngestUsersResponse>
+      ingestUsersMethodDescriptor =
+          MethodDescriptor.<IngestUsersRequest, IngestUsersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.ads.datamanager.v1.IngestionService/IngestUsers")
+              .setRequestMarshaller(ProtoUtils.marshaller(IngestUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IngestUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RemoveUsersRequest, RemoveUsersResponse>
+      removeUsersMethodDescriptor =
+          MethodDescriptor.<RemoveUsersRequest, RemoveUsersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.ads.datamanager.v1.IngestionService/RemoveUsers")
+              .setRequestMarshaller(ProtoUtils.marshaller(RemoveUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RemoveUsersResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -112,7 +155,11 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
       ingestAudienceMembersCallable;
   private final UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable;
+  private final UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable;
   private final UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable;
+  private final UnaryCallable<IngestUsersRequest, IngestUsersResponse> ingestUsersCallable;
+  private final UnaryCallable<RemoveUsersRequest, RemoveUsersResponse> removeUsersCallable;
   private final UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsCallable;
   private final UnaryCallable<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
       retrieveRequestStatusCallable;
@@ -173,9 +220,23 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
                 .<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>newBuilder()
                 .setMethodDescriptor(removeAudienceMembersMethodDescriptor)
                 .build();
+    GrpcCallSettings<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+        removeAllAudienceMembersTransportSettings =
+            GrpcCallSettings
+                .<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>newBuilder()
+                .setMethodDescriptor(removeAllAudienceMembersMethodDescriptor)
+                .build();
     GrpcCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsTransportSettings =
         GrpcCallSettings.<IngestEventsRequest, IngestEventsResponse>newBuilder()
             .setMethodDescriptor(ingestEventsMethodDescriptor)
+            .build();
+    GrpcCallSettings<IngestUsersRequest, IngestUsersResponse> ingestUsersTransportSettings =
+        GrpcCallSettings.<IngestUsersRequest, IngestUsersResponse>newBuilder()
+            .setMethodDescriptor(ingestUsersMethodDescriptor)
+            .build();
+    GrpcCallSettings<RemoveUsersRequest, RemoveUsersResponse> removeUsersTransportSettings =
+        GrpcCallSettings.<RemoveUsersRequest, RemoveUsersResponse>newBuilder()
+            .setMethodDescriptor(removeUsersMethodDescriptor)
             .build();
     GrpcCallSettings<IngestAdEventsRequest, IngestAdEventsResponse>
         ingestAdEventsTransportSettings =
@@ -199,9 +260,20 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
             removeAudienceMembersTransportSettings,
             settings.removeAudienceMembersSettings(),
             clientContext);
+    this.removeAllAudienceMembersCallable =
+        callableFactory.createUnaryCallable(
+            removeAllAudienceMembersTransportSettings,
+            settings.removeAllAudienceMembersSettings(),
+            clientContext);
     this.ingestEventsCallable =
         callableFactory.createUnaryCallable(
             ingestEventsTransportSettings, settings.ingestEventsSettings(), clientContext);
+    this.ingestUsersCallable =
+        callableFactory.createUnaryCallable(
+            ingestUsersTransportSettings, settings.ingestUsersSettings(), clientContext);
+    this.removeUsersCallable =
+        callableFactory.createUnaryCallable(
+            removeUsersTransportSettings, settings.removeUsersSettings(), clientContext);
     this.ingestAdEventsCallable =
         callableFactory.createUnaryCallable(
             ingestAdEventsTransportSettings, settings.ingestAdEventsSettings(), clientContext);
@@ -232,8 +304,24 @@ public class GrpcIngestionServiceStub extends IngestionServiceStub {
   }
 
   @Override
+  public UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable() {
+    return removeAllAudienceMembersCallable;
+  }
+
+  @Override
   public UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable() {
     return ingestEventsCallable;
+  }
+
+  @Override
+  public UnaryCallable<IngestUsersRequest, IngestUsersResponse> ingestUsersCallable() {
+    return ingestUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveUsersRequest, RemoveUsersResponse> removeUsersCallable() {
+    return removeUsersCallable;
   }
 
   @Override

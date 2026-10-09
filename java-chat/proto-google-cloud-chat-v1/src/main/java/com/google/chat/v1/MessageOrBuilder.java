@@ -87,9 +87,11 @@ public interface MessageOrBuilder
    * Output only. The user who created the message.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-   * `name` and `type`.
+   * `name` and `type` fields for both internal and external users, unless they
+   * are members of the space or have a prior affinity, like a direct message
+   * (DM) conversation, with the calling user.
    * </pre>
    *
    * <code>.google.chat.v1.User sender = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -105,9 +107,11 @@ public interface MessageOrBuilder
    * Output only. The user who created the message.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-   * `name` and `type`.
+   * `name` and `type` fields for both internal and external users, unless they
+   * are members of the space or have a prior affinity, like a direct message
+   * (DM) conversation, with the calling user.
    * </pre>
    *
    * <code>.google.chat.v1.User sender = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -123,9 +127,11 @@ public interface MessageOrBuilder
    * Output only. The user who created the message.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-   * `name` and `type`.
+   * `name` and `type` fields for both internal and external users, unless they
+   * are members of the space or have a prior affinity, like a direct message
+   * (DM) conversation, with the calling user.
    * </pre>
    *
    * <code>.google.chat.v1.User sender = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -334,8 +340,8 @@ public interface MessageOrBuilder
    *
    * * [Markup
    * syntax](https://developers.google.com/workspace/chat/format-messages)
-   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-   * list.
+   * for bold, italic, strikethrough, monospace, monospace block, bulleted
+   * list, and block quote.
    *
    * * [User
    * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -371,8 +377,8 @@ public interface MessageOrBuilder
    *
    * * [Markup
    * syntax](https://developers.google.com/workspace/chat/format-messages)
-   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-   * list.
+   * for bold, italic, strikethrough, monospace, monospace block, bulleted
+   * list, and block quote.
    *
    * * [User
    * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -491,9 +497,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -514,9 +525,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -537,9 +553,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -560,9 +581,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -583,9 +609,14 @@ public interface MessageOrBuilder
    * Optional. An array of
    * [cards](https://developers.google.com/workspace/chat/api/reference/rest/v1/cards).
    *
-   * Only Chat apps can create cards. If your Chat app [authenticates as a
+   * Chat apps can create cards with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
+   * As part of the [Developer Preview
+   * Program](https://developers.google.com/workspace/preview), if your Chat app
+   * [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the messages can't contain cards.
+   * it can create card messages. If your Chat app is not part of Developer
+   * Preview Program, it can't create cards with user authentication.
    *
    * To learn how to create a message that contains cards, see [Send a
    * message](https://developers.google.com/workspace/chat/create-messages).
@@ -980,8 +1011,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -996,8 +1027,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -1012,8 +1043,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -1518,4 +1549,36 @@ public interface MessageOrBuilder
    * </code>
    */
   com.google.chat.v1.AccessoryWidgetOrBuilder getAccessoryWidgetsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how the server interprets the message `text` field
+   * content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  int getMarkupSyntaxValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how the server interprets the message `text` field
+   * content.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.MarkupSyntax markup_syntax = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  com.google.chat.v1.MarkupSyntax getMarkupSyntax();
 }

@@ -1,0 +1,60 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.ftp.v1",
+  "libraryPackage": "com.google.cloud.ftp.v1",
+  "services": {
+    "CloudFtp": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudFtpClient",
+          "rpcs": {
+            "CreateServer": {
+              "methods": ["createServerAsync", "createServerAsync", "createServerAsync", "createServerOperationCallable", "createServerCallable"]
+            },
+            "CreateUser": {
+              "methods": ["createUserAsync", "createUserAsync", "createUserAsync", "createUserOperationCallable", "createUserCallable"]
+            },
+            "DeleteServer": {
+              "methods": ["deleteServerAsync", "deleteServerAsync", "deleteServerAsync", "deleteServerOperationCallable", "deleteServerCallable"]
+            },
+            "DeleteUser": {
+              "methods": ["deleteUserAsync", "deleteUserAsync", "deleteUserAsync", "deleteUserOperationCallable", "deleteUserCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetServer": {
+              "methods": ["getServer", "getServer", "getServer", "getServerCallable"]
+            },
+            "GetUser": {
+              "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListServers": {
+              "methods": ["listServers", "listServers", "listServers", "listServersPagedCallable", "listServersCallable"]
+            },
+            "ListUsers": {
+              "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            },
+            "StartServer": {
+              "methods": ["startServerAsync", "startServerAsync", "startServerAsync", "startServerOperationCallable", "startServerCallable"]
+            },
+            "StopServer": {
+              "methods": ["stopServerAsync", "stopServerAsync", "stopServerAsync", "stopServerOperationCallable", "stopServerCallable"]
+            },
+            "UpdateServer": {
+              "methods": ["updateServerAsync", "updateServerAsync", "updateServerOperationCallable", "updateServerCallable"]
+            },
+            "UpdateUser": {
+              "methods": ["updateUserAsync", "updateUserAsync", "updateUserOperationCallable", "updateUserCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

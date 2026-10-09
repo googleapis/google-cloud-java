@@ -17,6 +17,7 @@
 package com.google.cloud.auditmanager.v1;
 
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditReportsPagedResponse;
+import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListAuditSchedulesPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListControlsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListLocationsPagedResponse;
 import static com.google.cloud.auditmanager.v1.AuditManagerClient.ListResourceEnrollmentStatusesPagedResponse;
@@ -37,6 +38,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -93,6 +95,476 @@ public class AuditManagerClientTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+  }
+
+  @Test
+  public void createAuditScheduleTest() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    EnrollmentStatusScopeName parent =
+        EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    String auditScheduleId = "auditScheduleId1594553421";
+
+    AuditSchedule actualResponse =
+        client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuditScheduleRequest actualRequest = ((CreateAuditScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(auditSchedule, actualRequest.getAuditSchedule());
+    Assert.assertEquals(auditScheduleId, actualRequest.getAuditScheduleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuditScheduleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      EnrollmentStatusScopeName parent =
+          EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      String auditScheduleId = "auditScheduleId1594553421";
+      client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAuditScheduleTest2() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    String auditScheduleId = "auditScheduleId1594553421";
+
+    AuditSchedule actualResponse =
+        client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuditScheduleRequest actualRequest = ((CreateAuditScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(auditSchedule, actualRequest.getAuditSchedule());
+    Assert.assertEquals(auditScheduleId, actualRequest.getAuditScheduleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuditScheduleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      String auditScheduleId = "auditScheduleId1594553421";
+      client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAuditScheduleTest3() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    String auditScheduleId = "auditScheduleId1594553421";
+
+    AuditSchedule actualResponse =
+        client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAuditScheduleRequest actualRequest = ((CreateAuditScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(auditSchedule, actualRequest.getAuditSchedule());
+    Assert.assertEquals(auditScheduleId, actualRequest.getAuditScheduleId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAuditScheduleExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      String auditScheduleId = "auditScheduleId1594553421";
+      client.createAuditSchedule(parent, auditSchedule, auditScheduleId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAuditScheduleTest() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AuditSchedule actualResponse = client.updateAuditSchedule(auditSchedule, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAuditScheduleRequest actualRequest = ((UpdateAuditScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(auditSchedule, actualRequest.getAuditSchedule());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAuditScheduleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      AuditSchedule auditSchedule = AuditSchedule.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAuditSchedule(auditSchedule, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuditScheduleTest() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    AuditScheduleName name =
+        AuditScheduleName.ofProjectLocationAuditScheduleName(
+            "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]");
+
+    AuditSchedule actualResponse = client.getAuditSchedule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuditScheduleRequest actualRequest = ((GetAuditScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuditScheduleExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      AuditScheduleName name =
+          AuditScheduleName.ofProjectLocationAuditScheduleName(
+              "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]");
+      client.getAuditSchedule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuditScheduleTest2() throws Exception {
+    AuditSchedule expectedResponse =
+        AuditSchedule.newBuilder()
+            .setName(
+                AuditScheduleName.ofProjectLocationAuditScheduleName(
+                        "[PROJECT]", "[LOCATION]", "[AUDIT_SCHEDULE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcsUri("gcsUri-1251224875")
+            .setComplianceFramework("complianceFramework-1808314333")
+            .setScheduleConfig(ScheduleConfig.newBuilder().build())
+            .setState(ScheduleState.forNumber(0))
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setNextRunTime(Timestamp.newBuilder().build())
+            .setLastTriggerTime(Timestamp.newBuilder().build())
+            .setErrorMessage("errorMessage1203236063")
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AuditSchedule actualResponse = client.getAuditSchedule(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAuditScheduleRequest actualRequest = ((GetAuditScheduleRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAuditScheduleExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAuditSchedule(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuditSchedulesTest() throws Exception {
+    AuditSchedule responsesElement = AuditSchedule.newBuilder().build();
+    ListAuditSchedulesResponse expectedResponse =
+        ListAuditSchedulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuditSchedules(Arrays.asList(responsesElement))
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    EnrollmentStatusScopeName parent =
+        EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+
+    ListAuditSchedulesPagedResponse pagedListResponse = client.listAuditSchedules(parent);
+
+    List<AuditSchedule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuditSchedulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuditSchedulesRequest actualRequest = ((ListAuditSchedulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuditSchedulesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      EnrollmentStatusScopeName parent =
+          EnrollmentStatusScopeName.ofFolderLocationName("[FOLDER]", "[LOCATION]");
+      client.listAuditSchedules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuditSchedulesTest2() throws Exception {
+    AuditSchedule responsesElement = AuditSchedule.newBuilder().build();
+    ListAuditSchedulesResponse expectedResponse =
+        ListAuditSchedulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuditSchedules(Arrays.asList(responsesElement))
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAuditSchedulesPagedResponse pagedListResponse = client.listAuditSchedules(parent);
+
+    List<AuditSchedule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuditSchedulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuditSchedulesRequest actualRequest = ((ListAuditSchedulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuditSchedulesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAuditSchedules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuditSchedulesTest3() throws Exception {
+    AuditSchedule responsesElement = AuditSchedule.newBuilder().build();
+    ListAuditSchedulesResponse expectedResponse =
+        ListAuditSchedulesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuditSchedules(Arrays.asList(responsesElement))
+            .build();
+    mockAuditManager.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAuditSchedulesPagedResponse pagedListResponse = client.listAuditSchedules(parent);
+
+    List<AuditSchedule> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuditSchedulesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAuditManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAuditSchedulesRequest actualRequest = ((ListAuditSchedulesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAuditSchedulesExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAuditManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAuditSchedules(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test

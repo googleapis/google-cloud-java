@@ -135,8 +135,7 @@ class BatcherStats {
   }
 
   /** Calculates and formats the message with request and entry failure count. */
-  @Nullable
-  synchronized BatchingException asException() {
+  synchronized @Nullable BatchingException asException() {
     if (requestExceptionCounts.isEmpty() && requestPartialFailureCount == 0) {
       return null;
     }

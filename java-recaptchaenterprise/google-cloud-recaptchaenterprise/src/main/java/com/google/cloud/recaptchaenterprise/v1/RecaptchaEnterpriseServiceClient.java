@@ -46,6 +46,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicyName;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
@@ -62,6 +63,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.Policy;
+import com.google.recaptchaenterprise.v1.PolicyName;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
@@ -76,6 +79,7 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -363,6 +367,43 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getMetricsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetPolicy</td>
+ *      <td><p> Get the policy for a key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPolicy(GetPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPolicy(PolicyName name)
+ *           <li><p> getPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdatePolicy</td>
+ *      <td><p> Updates the policy for a key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updatePolicy(UpdatePolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updatePolicy(Policy policy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2307,6 +2348,213 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     return stub.getMetricsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   PolicyName name = PolicyName.of("[PROJECT]", "[KEY]");
+   *   Policy response = recaptchaEnterpriseServiceClient.getPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to get, in the format
+   *     `projects/{project}/keys/{key}/policy`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getPolicy(@Nullable PolicyName name) {
+    GetPolicyRequest request =
+        GetPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = PolicyName.of("[PROJECT]", "[KEY]").toString();
+   *   Policy response = recaptchaEnterpriseServiceClient.getPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to get, in the format
+   *     `projects/{project}/keys/{key}/policy`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getPolicy(String name) {
+    GetPolicyRequest request = GetPolicyRequest.newBuilder().setName(name).build();
+    return getPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetPolicyRequest request =
+   *       GetPolicyRequest.newBuilder()
+   *           .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   Policy response = recaptchaEnterpriseServiceClient.getPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getPolicy(GetPolicyRequest request) {
+    return getPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetPolicyRequest request =
+   *       GetPolicyRequest.newBuilder()
+   *           .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       recaptchaEnterpriseServiceClient.getPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPolicyRequest, Policy> getPolicyCallable() {
+    return stub.getPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   Policy policy = Policy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Policy response = recaptchaEnterpriseServiceClient.updatePolicy(policy, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param policy Required. The Policy's name is used to identify the policy to update, in the
+   *     format `projects/{project}/keys/{key}/policy`.
+   * @param updateMask Optional. The mask to control which fields of the policy get updated. If the
+   *     mask is not present, all fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy updatePolicy(Policy policy, FieldMask updateMask) {
+    UpdatePolicyRequest request =
+        UpdatePolicyRequest.newBuilder().setPolicy(policy).setUpdateMask(updateMask).build();
+    return updatePolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   UpdatePolicyRequest request =
+   *       UpdatePolicyRequest.newBuilder()
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = recaptchaEnterpriseServiceClient.updatePolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy updatePolicy(UpdatePolicyRequest request) {
+    return updatePolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   UpdatePolicyRequest request =
+   *       UpdatePolicyRequest.newBuilder()
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       recaptchaEnterpriseServiceClient.updatePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable() {
+    return stub.updatePolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

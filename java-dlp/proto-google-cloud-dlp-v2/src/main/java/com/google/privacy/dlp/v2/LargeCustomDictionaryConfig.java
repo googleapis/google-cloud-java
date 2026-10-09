@@ -26,10 +26,10 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Configuration for a custom dictionary created from a data source of any size
  * up to the maximum size defined in the
- * [limits](https://cloud.google.com/sensitive-data-protection/limits) page. The
- * artifacts of dictionary creation are stored in the specified Cloud Storage
- * location. Consider using `CustomInfoType.Dictionary` for smaller dictionaries
- * that satisfy the size requirements.
+ * [limits](https://docs.cloud.google.com/sensitive-data-protection/limits)
+ * page. The artifacts of dictionary creation are stored in the specified Cloud
+ * Storage location. Consider using `CustomInfoType.Dictionary` for smaller
+ * dictionaries that satisfy the size requirements.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.LargeCustomDictionaryConfig}
@@ -505,10 +505,10 @@ public final class LargeCustomDictionaryConfig extends com.google.protobuf.Gener
    * <pre>
    * Configuration for a custom dictionary created from a data source of any size
    * up to the maximum size defined in the
-   * [limits](https://cloud.google.com/sensitive-data-protection/limits) page. The
-   * artifacts of dictionary creation are stored in the specified Cloud Storage
-   * location. Consider using `CustomInfoType.Dictionary` for smaller dictionaries
-   * that satisfy the size requirements.
+   * [limits](https://docs.cloud.google.com/sensitive-data-protection/limits)
+   * page. The artifacts of dictionary creation are stored in the specified Cloud
+   * Storage location. Consider using `CustomInfoType.Dictionary` for smaller
+   * dictionaries that satisfy the size requirements.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.LargeCustomDictionaryConfig}

@@ -102,6 +102,7 @@ public class BuiltInMetricsBothSinksTest extends AbstractMockServerTest {
     try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1)) {
       assertThat(resultSet.next()).isTrue();
       assertThat(resultSet.getLong(0)).isEqualTo(1L);
+      assertThat(resultSet.next()).isFalse();
     }
   }
 

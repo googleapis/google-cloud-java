@@ -1,0 +1,1270 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.chronicle.v1;
+
+import static com.google.cloud.chronicle.v1.FeedsServiceClient.ListFeedPacksPagedResponse;
+import static com.google.cloud.chronicle.v1.FeedsServiceClient.ListFeedSourceTypeSchemasPagedResponse;
+import static com.google.cloud.chronicle.v1.FeedsServiceClient.ListFeedsPagedResponse;
+import static com.google.cloud.chronicle.v1.FeedsServiceClient.ListLogTypeSchemasPagedResponse;
+
+import com.google.api.HttpBody;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GaxGrpcProperties;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.common.collect.Lists;
+import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
+import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
+import io.grpc.StatusRuntimeException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
+import javax.annotation.Generated;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+@Generated("by gapic-generator-java")
+public class FeedsServiceClientTest {
+  private static MockFeedsService mockFeedsService;
+  private static MockServiceHelper mockServiceHelper;
+  private LocalChannelProvider channelProvider;
+  private FeedsServiceClient client;
+
+  @BeforeClass
+  public static void startStaticServer() {
+    mockFeedsService = new MockFeedsService();
+    mockServiceHelper =
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockFeedsService));
+    mockServiceHelper.start();
+  }
+
+  @AfterClass
+  public static void stopServer() {
+    mockServiceHelper.stop();
+  }
+
+  @Before
+  public void setUp() throws IOException {
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
+    FeedsServiceSettings settings =
+        FeedsServiceSettings.newBuilder()
+            .setTransportChannelProvider(channelProvider)
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .build();
+    client = FeedsServiceClient.create(settings);
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    client.close();
+  }
+
+  @Test
+  public void fetchServiceAccountForCustomerTest() throws Exception {
+    FeedServiceAccount expectedResponse =
+        FeedServiceAccount.newBuilder()
+            .setName(
+                FeedServiceAccountName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_SERVICE_ACCOUNT]")
+                    .toString())
+            .setSubjectId("subjectId258589543")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    FeedServiceAccount actualResponse = client.fetchServiceAccountForCustomer(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchServiceAccountForCustomerRequest actualRequest =
+        ((FetchServiceAccountForCustomerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchServiceAccountForCustomerExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.fetchServiceAccountForCustomer(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchServiceAccountForCustomerTest2() throws Exception {
+    FeedServiceAccount expectedResponse =
+        FeedServiceAccount.newBuilder()
+            .setName(
+                FeedServiceAccountName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_SERVICE_ACCOUNT]")
+                    .toString())
+            .setSubjectId("subjectId258589543")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    FeedServiceAccount actualResponse = client.fetchServiceAccountForCustomer(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchServiceAccountForCustomerRequest actualRequest =
+        ((FetchServiceAccountForCustomerRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchServiceAccountForCustomerExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.fetchServiceAccountForCustomer(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    Feed feed = Feed.newBuilder().build();
+
+    Feed actualResponse = client.createFeed(parent, feed);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeedRequest actualRequest = ((CreateFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(feed, actualRequest.getFeed());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      Feed feed = Feed.newBuilder().build();
+      client.createFeed(parent, feed);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFeedTest2() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Feed feed = Feed.newBuilder().build();
+
+    Feed actualResponse = client.createFeed(parent, feed);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFeedRequest actualRequest = ((CreateFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(feed, actualRequest.getFeed());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Feed feed = Feed.newBuilder().build();
+      client.createFeed(parent, feed);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+
+    Feed actualResponse = client.getFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedRequest actualRequest = ((GetFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+      client.getFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedTest2() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Feed actualResponse = client.getFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedRequest actualRequest = ((GetFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeedTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+
+    client.deleteFeed(name);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeedRequest actualRequest = ((DeleteFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+      client.deleteFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFeedTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFeed(name);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFeedRequest actualRequest = ((DeleteFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+
+    Feed actualResponse = client.enableFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableFeedRequest actualRequest = ((EnableFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+      client.enableFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableFeedTest2() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Feed actualResponse = client.enableFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    EnableFeedRequest actualRequest = ((EnableFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void enableFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.enableFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+
+    Feed actualResponse = client.disableFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableFeedRequest actualRequest = ((DisableFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+      client.disableFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableFeedTest2() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Feed actualResponse = client.disableFeed(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableFeedRequest actualRequest = ((DisableFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableFeedExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.disableFeed(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedsTest() throws Exception {
+    Feed responsesElement = Feed.newBuilder().build();
+    ListFeedsResponse expectedResponse =
+        ListFeedsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeeds(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListFeedsPagedResponse pagedListResponse = client.listFeeds(parent);
+
+    List<Feed> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedsRequest actualRequest = ((ListFeedsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listFeeds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedsTest2() throws Exception {
+    Feed responsesElement = Feed.newBuilder().build();
+    ListFeedsResponse expectedResponse =
+        ListFeedsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeeds(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFeedsPagedResponse pagedListResponse = client.listFeeds(parent);
+
+    List<Feed> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedsRequest actualRequest = ((ListFeedsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFeeds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedPacksTest() throws Exception {
+    FeedPack responsesElement = FeedPack.newBuilder().build();
+    ListFeedPacksResponse expectedResponse =
+        ListFeedPacksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedPacks(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListFeedPacksPagedResponse pagedListResponse = client.listFeedPacks(parent);
+
+    List<FeedPack> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedPacksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedPacksRequest actualRequest = ((ListFeedPacksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedPacksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listFeedPacks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedPacksTest2() throws Exception {
+    FeedPack responsesElement = FeedPack.newBuilder().build();
+    ListFeedPacksResponse expectedResponse =
+        ListFeedPacksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedPacks(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFeedPacksPagedResponse pagedListResponse = client.listFeedPacks(parent);
+
+    List<FeedPack> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedPacksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedPacksRequest actualRequest = ((ListFeedPacksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedPacksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFeedPacks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedPackTest() throws Exception {
+    FeedPack expectedResponse =
+        FeedPack.newBuilder()
+            .setName(
+                FeedPackName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_PACK]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setIcon(ByteString.EMPTY)
+            .addAllCategories(new ArrayList<String>())
+            .addAllPackLogTypes(new ArrayList<PackLogType>())
+            .setHidden(true)
+            .setPackDocumentation("packDocumentation2019598625")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedPackName name = FeedPackName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_PACK]");
+
+    FeedPack actualResponse = client.getFeedPack(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedPackRequest actualRequest = ((GetFeedPackRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedPackExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedPackName name = FeedPackName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_PACK]");
+      client.getFeedPack(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFeedPackTest2() throws Exception {
+    FeedPack expectedResponse =
+        FeedPack.newBuilder()
+            .setName(
+                FeedPackName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_PACK]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setIcon(ByteString.EMPTY)
+            .addAllCategories(new ArrayList<String>())
+            .addAllPackLogTypes(new ArrayList<PackLogType>())
+            .setHidden(true)
+            .setPackDocumentation("packDocumentation2019598625")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FeedPack actualResponse = client.getFeedPack(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFeedPackRequest actualRequest = ((GetFeedPackRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFeedPackExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFeedPack(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateFeedTest() throws Exception {
+    Feed expectedResponse =
+        Feed.newBuilder()
+            .setName(FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]").toString())
+            .setUid("uid115792")
+            .setDisplayName("displayName1714148973")
+            .setDetails(FeedDetails.newBuilder().build())
+            .setFailureMsg("failureMsg1036654999")
+            .setReadOnly(true)
+            .setLastFeedInitiationTime(Timestamp.newBuilder().build())
+            .setFailureDetails(FeedFailureDetails.newBuilder().build())
+            .setReferenceId("referenceId-16211514")
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    Feed feed = Feed.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Feed actualResponse = client.updateFeed(feed, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFeedRequest actualRequest = ((UpdateFeedRequest) actualRequests.get(0));
+
+    Assert.assertEquals(feed, actualRequest.getFeed());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateFeedExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      Feed feed = Feed.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFeed(feed, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedSourceTypeSchemasTest() throws Exception {
+    FeedSourceTypeSchema responsesElement = FeedSourceTypeSchema.newBuilder().build();
+    ListFeedSourceTypeSchemasResponse expectedResponse =
+        ListFeedSourceTypeSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedSourceTypeSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListFeedSourceTypeSchemasPagedResponse pagedListResponse =
+        client.listFeedSourceTypeSchemas(parent);
+
+    List<FeedSourceTypeSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedSourceTypeSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedSourceTypeSchemasRequest actualRequest =
+        ((ListFeedSourceTypeSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedSourceTypeSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listFeedSourceTypeSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFeedSourceTypeSchemasTest2() throws Exception {
+    FeedSourceTypeSchema responsesElement = FeedSourceTypeSchema.newBuilder().build();
+    ListFeedSourceTypeSchemasResponse expectedResponse =
+        ListFeedSourceTypeSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFeedSourceTypeSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFeedSourceTypeSchemasPagedResponse pagedListResponse =
+        client.listFeedSourceTypeSchemas(parent);
+
+    List<FeedSourceTypeSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFeedSourceTypeSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFeedSourceTypeSchemasRequest actualRequest =
+        ((ListFeedSourceTypeSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFeedSourceTypeSchemasExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFeedSourceTypeSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLogTypeSchemasTest() throws Exception {
+    LogTypeSchema responsesElement = LogTypeSchema.newBuilder().build();
+    ListLogTypeSchemasResponse expectedResponse =
+        ListLogTypeSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLogTypeSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedSourceTypeSchemaName parent =
+        FeedSourceTypeSchemaName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_SOURCE_TYPE]");
+
+    ListLogTypeSchemasPagedResponse pagedListResponse = client.listLogTypeSchemas(parent);
+
+    List<LogTypeSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLogTypeSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLogTypeSchemasRequest actualRequest = ((ListLogTypeSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLogTypeSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedSourceTypeSchemaName parent =
+          FeedSourceTypeSchemaName.of(
+              "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED_SOURCE_TYPE]");
+      client.listLogTypeSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLogTypeSchemasTest2() throws Exception {
+    LogTypeSchema responsesElement = LogTypeSchema.newBuilder().build();
+    ListLogTypeSchemasResponse expectedResponse =
+        ListLogTypeSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLogTypeSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListLogTypeSchemasPagedResponse pagedListResponse = client.listLogTypeSchemas(parent);
+
+    List<LogTypeSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLogTypeSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLogTypeSchemasRequest actualRequest = ((ListLogTypeSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLogTypeSchemasExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listLogTypeSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importPushLogsTest() throws Exception {
+    HttpBody expectedResponse =
+        HttpBody.newBuilder()
+            .setContentType("contentType-389131437")
+            .setData(ByteString.EMPTY)
+            .addAllExtensions(new ArrayList<Any>())
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedName parent = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+
+    HttpBody actualResponse = client.importPushLogs(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportPushLogsRequest actualRequest = ((ImportPushLogsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importPushLogsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedName parent = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+      client.importPushLogs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importPushLogsTest2() throws Exception {
+    HttpBody expectedResponse =
+        HttpBody.newBuilder()
+            .setContentType("contentType-389131437")
+            .setData(ByteString.EMPTY)
+            .addAllExtensions(new ArrayList<Any>())
+            .build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    HttpBody actualResponse = client.importPushLogs(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportPushLogsRequest actualRequest = ((ImportPushLogsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importPushLogsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.importPushLogs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateSecretTest() throws Exception {
+    GenerateSecretResponse expectedResponse =
+        GenerateSecretResponse.newBuilder().setSecret("secret-906277200").build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+
+    GenerateSecretResponse actualResponse = client.generateSecret(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateSecretRequest actualRequest = ((GenerateSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateSecretExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      FeedName name = FeedName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[FEED]");
+      client.generateSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateSecretTest2() throws Exception {
+    GenerateSecretResponse expectedResponse =
+        GenerateSecretResponse.newBuilder().setSecret("secret-906277200").build();
+    mockFeedsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    GenerateSecretResponse actualResponse = client.generateSecret(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFeedsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateSecretRequest actualRequest = ((GenerateSecretRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateSecretExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFeedsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.generateSecret(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+}

@@ -823,6 +823,64 @@ public class ReadIT {
     assertThat(found.get()).isTrue();
   }
 
+  @Test
+  public void readSingleRowWithReadRow() throws Exception {
+    String rowKey = prefix + "-readSingleRowWithReadRow";
+    TableId tableId = testEnvRule.env().getTableId();
+    Row expectedRow = writeTestRowAndBuildExpected(tableId, rowKey);
+
+    Row row = testEnvRule.env().getDataClient().readRow(tableId, rowKey);
+    assertThat(row).isEqualTo(expectedRow);
+  }
+
+  @Test
+  public void readSingleRowWithRowKeyQuery() throws Exception {
+    String rowKey = prefix + "-readSingleRowWithRowKeyQuery";
+    TableId tableId = testEnvRule.env().getTableId();
+    Row expectedRow = writeTestRowAndBuildExpected(tableId, rowKey);
+
+    List<Row> rows =
+        Lists.newArrayList(
+            testEnvRule.env().getDataClient().readRows(Query.create(tableId).rowKey(rowKey)));
+    assertThat(rows).containsExactly(expectedRow);
+  }
+
+  @Test
+  public void readSingleRowWithRowRangeQuery() throws Exception {
+    String rowKey = prefix + "-readSingleRowWithRowRangeQuery";
+    TableId tableId = testEnvRule.env().getTableId();
+    Row expectedRow = writeTestRowAndBuildExpected(tableId, rowKey);
+
+    List<Row> rows =
+        Lists.newArrayList(
+            testEnvRule
+                .env()
+                .getDataClient()
+                .readRows(
+                    Query.create(tableId)
+                        .range(ByteStringRange.unbounded().startClosed(rowKey).endClosed(rowKey))));
+    assertThat(rows).containsExactly(expectedRow);
+  }
+
+  private Row writeTestRowAndBuildExpected(TableId tableId, String rowKey) {
+    String familyId = testEnvRule.env().getFamilyId();
+    long timestampMicros = System.currentTimeMillis() * 1_000;
+    testEnvRule
+        .env()
+        .getDataClient()
+        .mutateRow(
+            RowMutation.create(tableId, rowKey).setCell(familyId, "q", timestampMicros, "value"));
+    return Row.create(
+        ByteString.copyFromUtf8(rowKey),
+        ImmutableList.of(
+            RowCell.create(
+                familyId,
+                ByteString.copyFromUtf8("q"),
+                timestampMicros,
+                ImmutableList.of(),
+                ByteString.copyFromUtf8("value"))));
+  }
+
   static class AccumulatingObserver implements ResponseObserver<Row> {
 
     final List<Row> responses = Lists.newArrayList();

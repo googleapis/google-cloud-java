@@ -32,6 +32,7 @@ import java.sql.Statement;
 import java.util.Properties;
 import java.util.Random;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITDriverTest extends ITBase {
@@ -90,6 +91,7 @@ public class ITDriverTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDriverLocation() throws SQLException, InterruptedException {
 
     String datasetUS = "JDBC_DRIVER_US_TEST_DATASET" + random.nextInt(999);

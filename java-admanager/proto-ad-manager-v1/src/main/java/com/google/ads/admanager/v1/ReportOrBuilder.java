@@ -77,7 +77,7 @@ public interface ReportOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.Report.Visibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for visibility.
@@ -92,12 +92,12 @@ public interface ReportOrBuilder
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.Report.Visibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility visibility = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The visibility.
    */
-  com.google.ads.admanager.v1.Report.Visibility getVisibility();
+  com.google.ads.admanager.v1.ReportVisibilityEnum.ReportVisibility getVisibility();
 
   /**
    *
@@ -141,6 +141,49 @@ public interface ReportOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.ReportDefinitionOrBuilder getReportDefinitionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the draftReportDefinition field is set.
+   */
+  boolean hasDraftReportDefinition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The draftReportDefinition.
+   */
+  com.google.ads.admanager.v1.ReportDefinition getDraftReportDefinition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ReportDefinitionOrBuilder getDraftReportDefinitionOrBuilder();
 
   /**
    *

@@ -45,6 +45,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.apps.meet.v2beta.BatchUpdateMembersRequest;
+import com.google.apps.meet.v2beta.BatchUpdateMembersResponse;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceRequest;
 import com.google.apps.meet.v2beta.ConnectActiveConferenceResponse;
 import com.google.apps.meet.v2beta.CreateMemberRequest;
@@ -57,6 +59,7 @@ import com.google.apps.meet.v2beta.ListMembersRequest;
 import com.google.apps.meet.v2beta.ListMembersResponse;
 import com.google.apps.meet.v2beta.Member;
 import com.google.apps.meet.v2beta.Space;
+import com.google.apps.meet.v2beta.UpdateMemberRequest;
 import com.google.apps.meet.v2beta.UpdateSpaceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -147,6 +150,9 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
   private final PagedCallSettings<ListMembersRequest, ListMembersResponse, ListMembersPagedResponse>
       listMembersSettings;
   private final UnaryCallSettings<DeleteMemberRequest, Empty> deleteMemberSettings;
+  private final UnaryCallSettings<UpdateMemberRequest, Member> updateMemberSettings;
+  private final UnaryCallSettings<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersSettings;
 
   private static final PagedListDescriptor<ListMembersRequest, ListMembersResponse, Member>
       LIST_MEMBERS_PAGE_STR_DESC =
@@ -244,6 +250,17 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
   /** Returns the object with the settings used for calls to deleteMember. */
   public UnaryCallSettings<DeleteMemberRequest, Empty> deleteMemberSettings() {
     return deleteMemberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMember. */
+  public UnaryCallSettings<UpdateMemberRequest, Member> updateMemberSettings() {
+    return updateMemberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateMembers. */
+  public UnaryCallSettings<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+      batchUpdateMembersSettings() {
+    return batchUpdateMembersSettings;
   }
 
   public SpacesServiceStub createStub() throws IOException {
@@ -366,6 +383,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
     getMemberSettings = settingsBuilder.getMemberSettings().build();
     listMembersSettings = settingsBuilder.listMembersSettings().build();
     deleteMemberSettings = settingsBuilder.deleteMemberSettings().build();
+    updateMemberSettings = settingsBuilder.updateMemberSettings().build();
+    batchUpdateMembersSettings = settingsBuilder.batchUpdateMembersSettings().build();
   }
 
   @Override
@@ -394,6 +413,9 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
             ListMembersRequest, ListMembersResponse, ListMembersPagedResponse>
         listMembersSettings;
     private final UnaryCallSettings.Builder<DeleteMemberRequest, Empty> deleteMemberSettings;
+    private final UnaryCallSettings.Builder<UpdateMemberRequest, Member> updateMemberSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+        batchUpdateMembersSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -406,6 +428,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -435,6 +459,14 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       definitions.put("retry_policy_0_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(80000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(80000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(80000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -454,6 +486,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       getMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMembersSettings = PagedCallSettings.newBuilder(LIST_MEMBERS_PAGE_STR_FACT);
       deleteMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateMembersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -465,7 +499,9 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
               createMemberSettings,
               getMemberSettings,
               listMembersSettings,
-              deleteMemberSettings);
+              deleteMemberSettings,
+              updateMemberSettings,
+              batchUpdateMembersSettings);
       initDefaults(this);
     }
 
@@ -481,6 +517,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       getMemberSettings = settings.getMemberSettings.toBuilder();
       listMembersSettings = settings.listMembersSettings.toBuilder();
       deleteMemberSettings = settings.deleteMemberSettings.toBuilder();
+      updateMemberSettings = settings.updateMemberSettings.toBuilder();
+      batchUpdateMembersSettings = settings.batchUpdateMembersSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -492,7 +530,9 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
               createMemberSettings,
               getMemberSettings,
               listMembersSettings,
-              deleteMemberSettings);
+              deleteMemberSettings,
+              updateMemberSettings,
+              batchUpdateMembersSettings);
     }
 
     private static Builder createDefault() {
@@ -547,8 +587,8 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
 
       builder
           .createMemberSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .getMemberSettings()
@@ -562,6 +602,16 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
 
       builder
           .deleteMemberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateMemberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .batchUpdateMembersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -631,6 +681,17 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
     /** Returns the builder for the settings used for calls to deleteMember. */
     public UnaryCallSettings.Builder<DeleteMemberRequest, Empty> deleteMemberSettings() {
       return deleteMemberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMember. */
+    public UnaryCallSettings.Builder<UpdateMemberRequest, Member> updateMemberSettings() {
+      return updateMemberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateMembers. */
+    public UnaryCallSettings.Builder<BatchUpdateMembersRequest, BatchUpdateMembersResponse>
+        batchUpdateMembersSettings() {
+      return batchUpdateMembersSettings;
     }
 
     @Override

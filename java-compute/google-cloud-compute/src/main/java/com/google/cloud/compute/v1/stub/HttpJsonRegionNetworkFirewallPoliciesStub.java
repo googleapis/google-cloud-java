@@ -50,6 +50,7 @@ import com.google.cloud.compute.v1.InsertRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListRegionNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PatchAssociationRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -110,6 +111,12 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<AddAssociationRegionNetworkFirewallPolicyRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasAssociatedPolicyToBeReplaced()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "associatedPolicyToBeReplaced",
+                                  request.getAssociatedPolicyToBeReplaced());
+                            }
                             if (request.hasReplaceExistingAssociation()) {
                               serializer.putQueryParam(
                                   fields,
@@ -637,12 +644,6 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -699,6 +700,69 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       .build())
               .setOperationSnapshotFactory(
                   (PatchRegionNetworkFirewallPolicyRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getRegion());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<
+          PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationMethodDescriptor =
+          ApiMethodDescriptor
+              .<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.compute.v1.RegionNetworkFirewallPolicies/PatchAssociation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<PatchAssociationRegionNetworkFirewallPolicyRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/firewallPolicies/{firewallPolicy}/patchAssociation",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchAssociationRegionNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "firewallPolicy", request.getFirewallPolicy());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PatchAssociationRegionNetworkFirewallPolicyRequest>
+                                serializer = ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "firewallPolicyAssociationResource",
+                                      request.getFirewallPolicyAssociationResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (PatchAssociationRegionNetworkFirewallPolicyRequest request,
+                      Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getRegion());
@@ -1019,6 +1083,11 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
   private final UnaryCallable<PatchRegionNetworkFirewallPolicyRequest, Operation> patchCallable;
   private final OperationCallable<PatchRegionNetworkFirewallPolicyRequest, Operation, Operation>
       patchOperationCallable;
+  private final UnaryCallable<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationCallable;
+  private final OperationCallable<
+          PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationCallable;
   private final UnaryCallable<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
       patchRuleCallable;
   private final OperationCallable<PatchRuleRegionNetworkFirewallPolicyRequest, Operation, Operation>
@@ -1066,6 +1135,8 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
   private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/regions/{region}");
   private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate PATCH_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
   private static final PathTemplate PATCH_RULE_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/regions/{region}/firewallPolicies/{firewall_policy}");
@@ -1405,6 +1476,31 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
                       return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
+    HttpJsonCallSettings<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+        patchAssociationTransportSettings =
+            HttpJsonCallSettings
+                .<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchAssociationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return PATCH_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
         patchRuleTransportSettings =
             HttpJsonCallSettings
@@ -1606,6 +1702,15 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
             settings.patchOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.patchAssociationCallable =
+        callableFactory.createUnaryCallable(
+            patchAssociationTransportSettings, settings.patchAssociationSettings(), clientContext);
+    this.patchAssociationOperationCallable =
+        callableFactory.createOperationCallable(
+            patchAssociationTransportSettings,
+            settings.patchAssociationOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.patchRuleCallable =
         callableFactory.createUnaryCallable(
             patchRuleTransportSettings, settings.patchRuleSettings(), clientContext);
@@ -1663,6 +1768,7 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
+    methodDescriptors.add(patchAssociationMethodDescriptor);
     methodDescriptors.add(patchRuleMethodDescriptor);
     methodDescriptors.add(removeAssociationMethodDescriptor);
     methodDescriptors.add(removeRuleMethodDescriptor);
@@ -1780,6 +1886,18 @@ public class HttpJsonRegionNetworkFirewallPoliciesStub extends RegionNetworkFire
   public OperationCallable<PatchRegionNetworkFirewallPolicyRequest, Operation, Operation>
       patchOperationCallable() {
     return patchOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationCallable() {
+    return patchAssociationCallable;
+  }
+
+  @Override
+  public OperationCallable<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationCallable() {
+    return patchAssociationOperationCallable;
   }
 
   @Override

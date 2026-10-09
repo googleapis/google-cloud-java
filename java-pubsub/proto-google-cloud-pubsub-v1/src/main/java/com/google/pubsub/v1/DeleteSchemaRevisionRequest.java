@@ -152,7 +152,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-   *     google/pubsub/v1/schema.proto;l=330
+   *     google/pubsub/v1/schema.proto;l=342
    * @return The revisionId.
    */
   @java.lang.Override
@@ -182,7 +182,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
    * </code>
    *
    * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-   *     google/pubsub/v1/schema.proto;l=330
+   *     google/pubsub/v1/schema.proto;l=342
    * @return The bytes for revisionId.
    */
   @java.lang.Override
@@ -684,7 +684,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-     *     google/pubsub/v1/schema.proto;l=330
+     *     google/pubsub/v1/schema.proto;l=342
      * @return The revisionId.
      */
     @java.lang.Deprecated
@@ -713,7 +713,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-     *     google/pubsub/v1/schema.proto;l=330
+     *     google/pubsub/v1/schema.proto;l=342
      * @return The bytes for revisionId.
      */
     @java.lang.Deprecated
@@ -742,7 +742,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-     *     google/pubsub/v1/schema.proto;l=330
+     *     google/pubsub/v1/schema.proto;l=342
      * @param value The revisionId to set.
      * @return This builder for chaining.
      */
@@ -770,7 +770,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-     *     google/pubsub/v1/schema.proto;l=330
+     *     google/pubsub/v1/schema.proto;l=342
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -794,7 +794,7 @@ public final class DeleteSchemaRevisionRequest extends com.google.protobuf.Gener
      * </code>
      *
      * @deprecated google.pubsub.v1.DeleteSchemaRevisionRequest.revision_id is deprecated. See
-     *     google/pubsub/v1/schema.proto;l=330
+     *     google/pubsub/v1/schema.proto;l=342
      * @param value The bytes for revisionId to set.
      * @return This builder for chaining.
      */

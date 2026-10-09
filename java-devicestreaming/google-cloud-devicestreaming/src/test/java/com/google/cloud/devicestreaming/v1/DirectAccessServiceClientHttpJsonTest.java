@@ -91,6 +91,7 @@ public class DirectAccessServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -146,6 +147,7 @@ public class DirectAccessServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -301,6 +303,7 @@ public class DirectAccessServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -351,6 +354,7 @@ public class DirectAccessServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -447,6 +451,7 @@ public class DirectAccessServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -459,6 +464,7 @@ public class DirectAccessServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -497,6 +503,7 @@ public class DirectAccessServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setActiveStartTime(Timestamp.newBuilder().build())
               .setAndroidDevice(AndroidDevice.newBuilder().build())
+              .setClientInfo(ClientInfo.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeviceSession(deviceSession, updateMask);

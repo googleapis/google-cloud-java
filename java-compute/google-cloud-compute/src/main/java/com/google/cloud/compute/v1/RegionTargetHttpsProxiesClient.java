@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionTargetHttpsProxies API.
  *
+ * <p>This client uses RegionTargetHttpsProxies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -735,7 +737,6 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (TargetHttpsProxy element : regionTargetHttpsProxiesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -773,7 +774,6 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<TargetHttpsProxy> future =
    *       regionTargetHttpsProxiesClient.listPagedCallable().futureCall(request);
@@ -812,7 +812,6 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     TargetHttpsProxyList response = regionTargetHttpsProxiesClient.listCallable().call(request);

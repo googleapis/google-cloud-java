@@ -5336,6 +5336,7 @@ public class DataformClient implements BackgroundResource {
    *           .setWorkspace(
    *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
    *                   .toString())
+   *           .setPipelineConfig(PipelineConfig.newBuilder().build())
    *           .build();
    *   InstallNpmPackagesResponse response = dataformClient.installNpmPackages(request);
    * }
@@ -5366,6 +5367,7 @@ public class DataformClient implements BackgroundResource {
    *           .setWorkspace(
    *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
    *                   .toString())
+   *           .setPipelineConfig(PipelineConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<InstallNpmPackagesResponse> future =
    *       dataformClient.installNpmPackagesCallable().futureCall(request);

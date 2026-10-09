@@ -99,6 +99,7 @@ public class AsyncUpdateNodePool {
               .setNodeDrainConfig(NodePool.NodeDrainConfig.newBuilder().build())
               .setConsolidationDelay(Duration.newBuilder().build())
               .setTaintConfig(TaintConfig.newBuilder().build())
+              .setMaintenancePolicy(NodePool.NodePoolMaintenancePolicy.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

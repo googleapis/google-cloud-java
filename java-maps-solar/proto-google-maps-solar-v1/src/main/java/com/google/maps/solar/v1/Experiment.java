@@ -156,7 +156,7 @@ public enum Experiment implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.maps.solar.v1.SolarServiceProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final Experiment[] VALUES = values();

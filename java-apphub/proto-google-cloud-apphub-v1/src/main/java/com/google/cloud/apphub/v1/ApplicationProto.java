@@ -45,9 +45,21 @@ public final class ApplicationProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_Application_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_ApplicationType_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_ApplicationType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apphub_v1_Scope_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_Scope_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_ApplicationProperties_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_ApplicationProperties_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_ApplicationProperties_ExtendedMetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_ApplicationProperties_ExtendedMetadataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -62,12 +74,12 @@ public final class ApplicationProto extends com.google.protobuf.GeneratedFile {
           + "to\022\026google.cloud.apphub.v1\032\037google/api/f"
           + "ield_behavior.proto\032\033google/api/field_in"
           + "fo.proto\032\031google/api/resource.proto\032\'goo"
-          + "gle/cloud/apphub/v1/attributes.proto\032\037google/protobuf/timestamp.proto\"\336\004\n"
+          + "gle/cloud/apphub/v1/attributes.proto\032\'go"
+          + "ogle/cloud/apphub/v1/properties.proto\032\037google/protobuf/timestamp.proto\"\372\005\n"
           + "\013Application\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
-          + "\013description\030\003 \001(\tB\003\340A\001\022;\n"
-          + "\n"
+          + "\013description\030\003 \001(\tB\003\340A\001\022;\n\n"
           + "attributes\030\004 \001(\0132\".google.cloud.apphub.v1.AttributesB\003\340A\001\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -76,26 +88,40 @@ public final class ApplicationProto extends com.google.protobuf.GeneratedFile {
           + "\003uid\030\n"
           + " \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022=\n"
           + "\005state\030\013"
-          + " \001(\0162).google.cloud.apphub.v1.Application.StateB\003\340A\003\"F\n"
+          + " \001(\0162).google.cloud.apphub.v1.Application.StateB\003\340A\003\022R\n"
+          + "\026application_properties\030\014"
+          + " \001(\0132-.google.cloud.apphub.v1.ApplicationPropertiesB\003\340A\003\022F\n"
+          + "\020application_type\030\r"
+          + " \001(\0132\'.google.cloud.apphub.v1.ApplicationTypeB\003\340A\003\"F\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003:\206\001\352A\202\001\n"
-          + "!apphub.googleapis.com/Application\022Bprojects/{proje"
-          + "ct}/locations/{location}/applications/{a"
-          + "pplication}*\014applications2\013application\"v\n"
+          + "!apphub.googleapis.com/Application\022Bprojects/{project}"
+          + "/locations/{location}/applications/{application}*\014applications2\013application\"\177\n"
+          + "\017ApplicationType\022:\n"
+          + "\004type\030\001 \001(\0162,.google.cloud.apphub.v1.ApplicationType.Type\"0\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\022\n"
+          + "\016AI_APPLICATION\020\001\"v\n"
           + "\005Scope\0225\n"
           + "\004type\030\001 \001(\0162\".google.cloud.apphub.v1.Scope.TypeB\003\340A\002\"6\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010REGIONAL\020\001\022\n\n"
-          + "\006GLOBAL\020\002B\262\001\n"
-          + "\032com.google.cloud.apphub.v1B\020Applicati"
-          + "onProtoP\001Z2cloud.google.com/go/apphub/ap"
-          + "iv1/apphubpb;apphubpb\252\002\026Google.Cloud.App"
-          + "Hub.V1\312\002\026Google\\Cloud\\AppHub\\V1\352\002\031Google"
-          + "::Cloud::AppHub::V1b\006proto3"
+          + "\006GLOBAL\020\002\"\337\001\n"
+          + "\025ApplicationProperties\022c\n"
+          + "\021extended_metadata\030\001 \003(\0132C.google.cloud.apphub."
+          + "v1.ApplicationProperties.ExtendedMetadataEntryB\003\340A\003\032a\n"
+          + "\025ExtendedMetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0227\n"
+          + "\005value\030\002"
+          + " \001(\0132(.google.cloud.apphub.v1.ExtendedMetadata:\0028\001B\262\001\n"
+          + "\032com.google.cloud.apphub.v1B\020ApplicationProtoP"
+          + "\001Z2cloud.google.com/go/apphub/apiv1/apph"
+          + "ubpb;apphubpb\252\002\026Google.Cloud.AppHub.V1\312\002"
+          + "\026Google\\Cloud\\AppHub\\V1\352\002\031Google::Cloud::AppHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,6 +131,7 @@ public final class ApplicationProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.apphub.v1.AttributesProto.getDescriptor(),
+              com.google.cloud.apphub.v1.PropertiesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_apphub_v1_Application_descriptor =
@@ -122,19 +149,46 @@ public final class ApplicationProto extends com.google.protobuf.GeneratedFile {
               "Scope",
               "Uid",
               "State",
+              "ApplicationProperties",
+              "ApplicationType",
             });
-    internal_static_google_cloud_apphub_v1_Scope_descriptor = getDescriptor().getMessageType(1);
+    internal_static_google_cloud_apphub_v1_ApplicationType_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_apphub_v1_ApplicationType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_ApplicationType_descriptor,
+            new java.lang.String[] {
+              "Type",
+            });
+    internal_static_google_cloud_apphub_v1_Scope_descriptor = getDescriptor().getMessageType(2);
     internal_static_google_cloud_apphub_v1_Scope_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apphub_v1_Scope_descriptor,
             new java.lang.String[] {
               "Type",
             });
+    internal_static_google_cloud_apphub_v1_ApplicationProperties_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_apphub_v1_ApplicationProperties_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_ApplicationProperties_descriptor,
+            new java.lang.String[] {
+              "ExtendedMetadata",
+            });
+    internal_static_google_cloud_apphub_v1_ApplicationProperties_ExtendedMetadataEntry_descriptor =
+        internal_static_google_cloud_apphub_v1_ApplicationProperties_descriptor.getNestedType(0);
+    internal_static_google_cloud_apphub_v1_ApplicationProperties_ExtendedMetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_ApplicationProperties_ExtendedMetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.apphub.v1.AttributesProto.getDescriptor();
+    com.google.cloud.apphub.v1.PropertiesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

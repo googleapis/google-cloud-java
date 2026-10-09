@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>2.82.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+  <version>2.85.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Bigtable</name>
   <description>
@@ -11,11 +11,11 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable-parent</artifactId>
-    <version>2.82.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <version>2.85.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
   </parent>
   <properties>
     <!-- The version that will be embedded in the published jar via maven-resources-plugin -->
-    <java-bigtable.version>2.82.0-SNAPSHOT</java-bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
+    <java-bigtable.version>2.85.0</java-bigtable.version><!-- {x-version-update:google-cloud-bigtable:current} -->
 
     <site.installationModule>google-cloud-bigtable</site.installationModule>
 
@@ -39,10 +39,14 @@
     <bigtable.directpath-data-endpoint/>
     <bigtable.directpath-jwt-audience/>
     <bigtable.directpath-admin-endpoint/>
+    <bigtable.session-project/>
+    <bigtable.session-instance/>
+    <bigtable.session-table/>
 
-    <!-- This is used by bigtable-prod-batch-it profile to ensure that tests work on the batch endpoint.
-     Also, this property will be augmented by `internal-bigtable-prod-batch-it-prop-helper` profile -->
-    <bigtable.cfe-data-batch-endpoint>batch-bigtable.googleapis.com:443</bigtable.cfe-data-batch-endpoint>
+    <!-- Number of JVMs used to run the integration tests concurrently. The ITs are almost entirely
+     RPC bound, so this can be raised well above the core count. Override on the commandline via
+     `-Dbigtable.it.fork-count=8`. -->
+    <bigtable.it.fork-count>4</bigtable.it.fork-count>
 
     <!-- These are needed to compile the protobuf used by Changestream merging acceptance test. -->
     <test-protoc-grpc.version>1.76.3</test-protoc-grpc.version>
@@ -54,14 +58,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-        <version>2.82.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>2.85.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigtable-bom</artifactId>
-        <version>2.82.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable:current} -->
+        <version>2.85.0</version><!-- {x-version-update:google-cloud-bigtable:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -491,7 +495,10 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
-              <forkCount>1</forkCount>
+              <!-- Keep in-JVM parallelism off so that the verbose logs of a single fork stay
+               attributable to one test class. Forking across processes is still fine: each fork
+               gets its own JUL config and its own `-output.txt`, so it must not be disabled here
+               (doing so serializes the entire IT suite). -->
               <parallel>none</parallel>
               <redirectTestOutputToFile>true</redirectTestOutputToFile>
             </configuration>
@@ -574,49 +581,38 @@
       </build>
     </profile>
 
-    <!-- internal profile to provide a sensible default for bigtable.cfe-data-batch-endpoint based on
-    bigtable.cfe-data-endpoint -->
     <profile>
-      <id>internal-bigtable-prod-batch-it-prop-helper</id>
-      <activation>
-        <property>
-          <name>bigtable.cfe-data-endpoint</name>
-        </property>
-      </activation>
-      <properties>
-        <bigtable.cfe-data-batch-endpoint>batch-${bigtable.cfe-data-endpoint}</bigtable.cfe-data-batch-endpoint>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>bigtable-prod-batch-it</id>
+      <id>bigtable-session-it</id>
       <build>
         <plugins>
           <plugin>
             <artifactId>maven-failsafe-plugin</artifactId>
             <executions>
               <execution>
-                <id>prod-batch-it</id>
+                <id>session-it</id>
                 <goals>
                   <goal>integration-test</goal>
                   <goal>verify</goal>
                 </goals>
                 <configuration>
                   <skip>false</skip>
-
                   <systemPropertyVariables>
                     <bigtable.env>cloud</bigtable.env>
-                    <bigtable.data-endpoint>${bigtable.cfe-data-batch-endpoint}</bigtable.data-endpoint>
+                    <bigtable.project>${bigtable.session-project}</bigtable.project>
+                    <bigtable.instance>${bigtable.session-instance}</bigtable.instance>
+                    <bigtable.table>${bigtable.session-table}</bigtable.table>
+                    <bigtable.data-endpoint>${bigtable.cfe-data-endpoint}</bigtable.data-endpoint>
                     <bigtable.admin-endpoint>${bigtable.cfe-admin-endpoint}</bigtable.admin-endpoint>
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
-                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/prod-batch-it</bigtable.grpc-log-dir>
+                    <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/session-it</bigtable.grpc-log-dir>
+                    <bigtable.internal.client-config-override>session_configuration { session_load: 1.0 }</bigtable.internal.client-config-override>
                   </systemPropertyVariables>
                   <includes>
-                    <include>com.google.cloud.bigtable.data.v2.it.*IT</include>
+                    <include>com.google.cloud.bigtable.data.v2.it.SessionIT</include>
                   </includes>
-                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-prod-batch-it.xml</summaryFile>
-                  <reportsDirectory>${project.build.directory}/failsafe-reports/prod-batch-it</reportsDirectory>
+                  <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary-session-it.xml</summaryFile>
+                  <reportsDirectory>${project.build.directory}/failsafe-reports/session-it</reportsDirectory>
                 </configuration>
               </execution>
             </executions>
@@ -823,7 +819,7 @@
            enabling metrics collection. It only works with cloud environment and will fail with permission
            denied when running against emulators. Running in different processes make sure the state is
            only set on the process for BuiltinMetricsIT test. -->
-          <forkCount>4</forkCount>
+          <forkCount>${bigtable.it.fork-count}</forkCount>
           <reuseForks>false</reuseForks>
 
           <!-- print full stacktraces by default -->

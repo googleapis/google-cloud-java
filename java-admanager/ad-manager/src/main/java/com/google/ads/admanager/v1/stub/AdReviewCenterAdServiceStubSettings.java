@@ -22,8 +22,12 @@ import com.google.ads.admanager.v1.AdReviewCenterAd;
 import com.google.ads.admanager.v1.BatchAdReviewCenterAdsOperationMetadata;
 import com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsResponse;
+import com.google.ads.admanager.v1.BatchApplyAdReviewCenterCustomLabelsRequest;
+import com.google.ads.admanager.v1.BatchApplyAdReviewCenterCustomLabelsResponse;
 import com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsResponse;
+import com.google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsRequest;
+import com.google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponse;
 import com.google.api.core.ApiFunction;
@@ -82,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of searchAdReviewCenterAds:
+ * of fetchAdReviewCenterCustomLabels:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -93,10 +97,10 @@ import org.jspecify.annotations.Nullable;
  * AdReviewCenterAdServiceStubSettings.Builder adReviewCenterAdServiceSettingsBuilder =
  *     AdReviewCenterAdServiceStubSettings.newBuilder();
  * adReviewCenterAdServiceSettingsBuilder
- *     .searchAdReviewCenterAdsSettings()
+ *     .fetchAdReviewCenterCustomLabelsSettings()
  *     .setRetrySettings(
  *         adReviewCenterAdServiceSettingsBuilder
- *             .searchAdReviewCenterAdsSettings()
+ *             .fetchAdReviewCenterCustomLabelsSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -173,6 +177,12 @@ public class AdReviewCenterAdServiceStubSettings
           BatchBlockAdReviewCenterAdsResponse,
           BatchAdReviewCenterAdsOperationMetadata>
       batchBlockAdReviewCenterAdsOperationSettings;
+  private final UnaryCallSettings<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsSettings;
+  private final UnaryCallSettings<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsSettings;
 
   private static final PagedListDescriptor<
           SearchAdReviewCenterAdsRequest, SearchAdReviewCenterAdsResponse, AdReviewCenterAd>
@@ -281,6 +291,22 @@ public class AdReviewCenterAdServiceStubSettings
     return batchBlockAdReviewCenterAdsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to fetchAdReviewCenterCustomLabels. */
+  public UnaryCallSettings<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsSettings() {
+    return fetchAdReviewCenterCustomLabelsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to batchApplyAdReviewCenterCustomLabels.
+   */
+  public UnaryCallSettings<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsSettings() {
+    return batchApplyAdReviewCenterCustomLabelsSettings;
+  }
+
   public AdReviewCenterAdServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -372,6 +398,10 @@ public class AdReviewCenterAdServiceStubSettings
         settingsBuilder.batchBlockAdReviewCenterAdsSettings().build();
     batchBlockAdReviewCenterAdsOperationSettings =
         settingsBuilder.batchBlockAdReviewCenterAdsOperationSettings().build();
+    fetchAdReviewCenterCustomLabelsSettings =
+        settingsBuilder.fetchAdReviewCenterCustomLabelsSettings().build();
+    batchApplyAdReviewCenterCustomLabelsSettings =
+        settingsBuilder.batchApplyAdReviewCenterCustomLabelsSettings().build();
   }
 
   @Override
@@ -406,6 +436,13 @@ public class AdReviewCenterAdServiceStubSettings
             BatchBlockAdReviewCenterAdsResponse,
             BatchAdReviewCenterAdsOperationMetadata>
         batchBlockAdReviewCenterAdsOperationSettings;
+    private final UnaryCallSettings.Builder<
+            FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+        fetchAdReviewCenterCustomLabelsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchApplyAdReviewCenterCustomLabelsRequest,
+            BatchApplyAdReviewCenterCustomLabelsResponse>
+        batchApplyAdReviewCenterCustomLabelsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -439,12 +476,17 @@ public class AdReviewCenterAdServiceStubSettings
       batchAllowAdReviewCenterAdsOperationSettings = OperationCallSettings.newBuilder();
       batchBlockAdReviewCenterAdsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchBlockAdReviewCenterAdsOperationSettings = OperationCallSettings.newBuilder();
+      fetchAdReviewCenterCustomLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchApplyAdReviewCenterCustomLabelsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               searchAdReviewCenterAdsSettings,
               batchAllowAdReviewCenterAdsSettings,
-              batchBlockAdReviewCenterAdsSettings);
+              batchBlockAdReviewCenterAdsSettings,
+              fetchAdReviewCenterCustomLabelsSettings,
+              batchApplyAdReviewCenterCustomLabelsSettings);
       initDefaults(this);
     }
 
@@ -460,12 +502,18 @@ public class AdReviewCenterAdServiceStubSettings
           settings.batchBlockAdReviewCenterAdsSettings.toBuilder();
       batchBlockAdReviewCenterAdsOperationSettings =
           settings.batchBlockAdReviewCenterAdsOperationSettings.toBuilder();
+      fetchAdReviewCenterCustomLabelsSettings =
+          settings.fetchAdReviewCenterCustomLabelsSettings.toBuilder();
+      batchApplyAdReviewCenterCustomLabelsSettings =
+          settings.batchApplyAdReviewCenterCustomLabelsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               searchAdReviewCenterAdsSettings,
               batchAllowAdReviewCenterAdsSettings,
-              batchBlockAdReviewCenterAdsSettings);
+              batchBlockAdReviewCenterAdsSettings,
+              fetchAdReviewCenterCustomLabelsSettings,
+              batchApplyAdReviewCenterCustomLabelsSettings);
     }
 
     private static Builder createDefault() {
@@ -493,6 +541,16 @@ public class AdReviewCenterAdServiceStubSettings
 
       builder
           .batchBlockAdReviewCenterAdsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchAdReviewCenterCustomLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchApplyAdReviewCenterCustomLabelsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -605,6 +663,23 @@ public class AdReviewCenterAdServiceStubSettings
             BatchAdReviewCenterAdsOperationMetadata>
         batchBlockAdReviewCenterAdsOperationSettings() {
       return batchBlockAdReviewCenterAdsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchAdReviewCenterCustomLabels. */
+    public UnaryCallSettings.Builder<
+            FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+        fetchAdReviewCenterCustomLabelsSettings() {
+      return fetchAdReviewCenterCustomLabelsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchApplyAdReviewCenterCustomLabels.
+     */
+    public UnaryCallSettings.Builder<
+            BatchApplyAdReviewCenterCustomLabelsRequest,
+            BatchApplyAdReviewCenterCustomLabelsResponse>
+        batchApplyAdReviewCenterCustomLabelsSettings() {
+      return batchApplyAdReviewCenterCustomLabelsSettings;
     }
 
     @Override

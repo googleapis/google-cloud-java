@@ -49,6 +49,14 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_ToolsSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_ToolsSpec_fieldAccessorTable;
@@ -131,7 +139,7 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
           + "/protobuf/empty.proto\032 google/protobuf/f"
           + "ield_mask.proto\"R\n\022AssistUserMetadata\022\026\n"
           + "\ttime_zone\030\001 \001(\tB\003\340A\001\022$\n\027preferred_langu"
-          + "age_code\030\002 \001(\tB\003\340A\001\"\336\t\n\023StreamAssistRequ"
+          + "age_code\030\002 \001(\tB\003\340A\001\"\331\013\n\023StreamAssistRequ"
           + "est\022>\n\004name\030\001 \001(\tB0\340A\002\372A*\n(discoveryengi"
           + "ne.googleapis.com/Assistant\022>\n\005query\030\002 \001"
           + "(\0132*.google.cloud.discoveryengine.v1beta"
@@ -139,109 +147,116 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
           + "scoveryengine.googleapis.com/Session\022S\n\r"
           + "user_metadata\030\006 \001(\01327.google.cloud.disco"
           + "veryengine.v1beta.AssistUserMetadataB\003\340A"
-          + "\001\022[\n\ntools_spec\030\022 \001(\0132B.google.cloud.dis"
-          + "coveryengine.v1beta.StreamAssistRequest."
-          + "ToolsSpecB\003\340A\001\022e\n\017generation_spec\030\023 \001(\0132"
-          + "G.google.cloud.discoveryengine.v1beta.St"
-          + "reamAssistRequest.GenerationSpecB\003\340A\001\032\303\005"
-          + "\n\tToolsSpec\022y\n\025vertex_ai_search_spec\030\001 \001"
-          + "(\0132U.google.cloud.discoveryengine.v1beta"
-          + ".StreamAssistRequest.ToolsSpec.VertexAiS"
-          + "earchSpecB\003\340A\001\022t\n\022web_grounding_spec\030\002 \001"
-          + "(\0132S.google.cloud.discoveryengine.v1beta"
-          + ".StreamAssistRequest.ToolsSpec.WebGround"
-          + "ingSpecB\003\340A\001\022z\n\025image_generation_spec\030\003 "
-          + "\001(\0132V.google.cloud.discoveryengine.v1bet"
-          + "a.StreamAssistRequest.ToolsSpec.ImageGen"
-          + "erationSpecB\003\340A\001\022z\n\025video_generation_spe"
-          + "c\030\004 \001(\0132V.google.cloud.discoveryengine.v"
-          + "1beta.StreamAssistRequest.ToolsSpec.Vide"
-          + "oGenerationSpecB\003\340A\001\032\212\001\n\022VertexAiSearchS"
-          + "pec\022_\n\020data_store_specs\030\002 \003(\0132@.google.c"
-          + "loud.discoveryengine.v1beta.SearchReques"
-          + "t.DataStoreSpecB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A"
-          + "\001\032\022\n\020WebGroundingSpec\032\025\n\023ImageGeneration"
-          + "Spec\032\025\n\023VideoGenerationSpec\032\'\n\016Generatio"
-          + "nSpec\022\025\n\010model_id\030\001 \001(\tB\003\340A\001\"\307\003\n\024StreamA"
-          + "ssistResponse\022A\n\006answer\030\001 \001(\01321.google.c"
-          + "loud.discoveryengine.v1beta.AssistAnswer"
-          + "\022[\n\014session_info\030\002 \001(\0132E.google.cloud.di"
-          + "scoveryengine.v1beta.StreamAssistRespons"
-          + "e.SessionInfo\022\024\n\014assist_token\030\004 \001(\t\022\030\n\020i"
-          + "nvocation_tools\030\010 \003(\t\022^\n\016invoked_skills\030"
-          + "\n \003(\0132F.google.cloud.discoveryengine.v1b"
-          + "eta.StreamAssistResponse.InvokedSkill\032K\n"
-          + "\013SessionInfo\022<\n\007session\030\001 \001(\tB+\372A(\n&disc"
-          + "overyengine.googleapis.com/Session\0322\n\014In"
-          + "vokedSkill\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name"
-          + "\030\002 \001(\t\"\272\001\n\026CreateAssistantRequest\022=\n\006par"
-          + "ent\030\001 \001(\tB-\340A\002\372A\'\n%discoveryengine.googl"
-          + "eapis.com/Engine\022F\n\tassistant\030\002 \001(\0132..go"
+          + "\001\022]\n\013agents_spec\030\026 \001(\0132C.google.cloud.di"
+          + "scoveryengine.v1beta.StreamAssistRequest"
+          + ".AgentsSpecB\003\340A\001\022[\n\ntools_spec\030\022 \001(\0132B.g"
+          + "oogle.cloud.discoveryengine.v1beta.Strea"
+          + "mAssistRequest.ToolsSpecB\003\340A\001\022e\n\017generat"
+          + "ion_spec\030\023 \001(\0132G.google.cloud.discoverye"
+          + "ngine.v1beta.StreamAssistRequest.Generat"
+          + "ionSpecB\003\340A\001\032\231\001\n\nAgentsSpec\022g\n\013agent_spe"
+          + "cs\030\001 \003(\0132M.google.cloud.discoveryengine."
+          + "v1beta.StreamAssistRequest.AgentsSpec.Ag"
+          + "entSpecB\003\340A\001\032\"\n\tAgentSpec\022\025\n\010agent_id\030\001 "
+          + "\001(\tB\003\340A\002\032\303\005\n\tToolsSpec\022y\n\025vertex_ai_sear"
+          + "ch_spec\030\001 \001(\0132U.google.cloud.discoveryen"
+          + "gine.v1beta.StreamAssistRequest.ToolsSpe"
+          + "c.VertexAiSearchSpecB\003\340A\001\022t\n\022web_groundi"
+          + "ng_spec\030\002 \001(\0132S.google.cloud.discoveryen"
+          + "gine.v1beta.StreamAssistRequest.ToolsSpe"
+          + "c.WebGroundingSpecB\003\340A\001\022z\n\025image_generat"
+          + "ion_spec\030\003 \001(\0132V.google.cloud.discoverye"
+          + "ngine.v1beta.StreamAssistRequest.ToolsSp"
+          + "ec.ImageGenerationSpecB\003\340A\001\022z\n\025video_gen"
+          + "eration_spec\030\004 \001(\0132V.google.cloud.discov"
+          + "eryengine.v1beta.StreamAssistRequest.Too"
+          + "lsSpec.VideoGenerationSpecB\003\340A\001\032\212\001\n\022Vert"
+          + "exAiSearchSpec\022_\n\020data_store_specs\030\002 \003(\013"
+          + "2@.google.cloud.discoveryengine.v1beta.S"
+          + "earchRequest.DataStoreSpecB\003\340A\001\022\023\n\006filte"
+          + "r\030\004 \001(\tB\003\340A\001\032\022\n\020WebGroundingSpec\032\025\n\023Imag"
+          + "eGenerationSpec\032\025\n\023VideoGenerationSpec\032\'"
+          + "\n\016GenerationSpec\022\025\n\010model_id\030\001 \001(\tB\003\340A\001\""
+          + "\307\003\n\024StreamAssistResponse\022A\n\006answer\030\001 \001(\013"
+          + "21.google.cloud.discoveryengine.v1beta.A"
+          + "ssistAnswer\022[\n\014session_info\030\002 \001(\0132E.goog"
+          + "le.cloud.discoveryengine.v1beta.StreamAs"
+          + "sistResponse.SessionInfo\022\024\n\014assist_token"
+          + "\030\004 \001(\t\022\030\n\020invocation_tools\030\010 \003(\t\022^\n\016invo"
+          + "ked_skills\030\n \003(\0132F.google.cloud.discover"
+          + "yengine.v1beta.StreamAssistResponse.Invo"
+          + "kedSkill\032K\n\013SessionInfo\022<\n\007session\030\001 \001(\t"
+          + "B+\372A(\n&discoveryengine.googleapis.com/Se"
+          + "ssion\0322\n\014InvokedSkill\022\014\n\004name\030\001 \001(\t\022\024\n\014d"
+          + "isplay_name\030\002 \001(\t\"\272\001\n\026CreateAssistantReq"
+          + "uest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discoverye"
+          + "ngine.googleapis.com/Engine\022F\n\tassistant"
+          + "\030\002 \001(\0132..google.cloud.discoveryengine.v1"
+          + "beta.AssistantB\003\340A\002\022\031\n\014assistant_id\030\003 \001("
+          + "\tB\003\340A\002\"X\n\026DeleteAssistantRequest\022>\n\004name"
+          + "\030\001 \001(\tB0\340A\002\372A*\n(discoveryengine.googleap"
+          + "is.com/Assistant\"U\n\023GetAssistantRequest\022"
+          + ">\n\004name\030\001 \001(\tB0\340A\002\372A*\n(discoveryengine.g"
+          + "oogleapis.com/Assistant\"}\n\025ListAssistant"
+          + "sRequest\022=\n\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discov"
+          + "eryengine.googleapis.com/Engine\022\021\n\tpage_"
+          + "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"u\n\026ListAs"
+          + "sistantsResponse\022B\n\nassistants\030\001 \003(\0132..g"
+          + "oogle.cloud.discoveryengine.v1beta.Assis"
+          + "tant\022\027\n\017next_page_token\030\002 \001(\t\"\221\001\n\026Update"
+          + "AssistantRequest\022F\n\tassistant\030\001 \001(\0132..go"
           + "ogle.cloud.discoveryengine.v1beta.Assist"
-          + "antB\003\340A\002\022\031\n\014assistant_id\030\003 \001(\tB\003\340A\002\"X\n\026D"
-          + "eleteAssistantRequest\022>\n\004name\030\001 \001(\tB0\340A\002"
-          + "\372A*\n(discoveryengine.googleapis.com/Assi"
-          + "stant\"U\n\023GetAssistantRequest\022>\n\004name\030\001 \001"
-          + "(\tB0\340A\002\372A*\n(discoveryengine.googleapis.c"
-          + "om/Assistant\"}\n\025ListAssistantsRequest\022=\n"
-          + "\006parent\030\001 \001(\tB-\340A\002\372A\'\n%discoveryengine.g"
-          + "oogleapis.com/Engine\022\021\n\tpage_size\030\002 \001(\005\022"
-          + "\022\n\npage_token\030\003 \001(\t\"u\n\026ListAssistantsRes"
-          + "ponse\022B\n\nassistants\030\001 \003(\0132..google.cloud"
-          + ".discoveryengine.v1beta.Assistant\022\027\n\017nex"
-          + "t_page_token\030\002 \001(\t\"\221\001\n\026UpdateAssistantRe"
-          + "quest\022F\n\tassistant\030\001 \001(\0132..google.cloud."
-          + "discoveryengine.v1beta.AssistantB\003\340A\002\022/\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie"
-          + "ldMask2\366\014\n\020AssistantService\022\351\001\n\014StreamAs"
-          + "sist\0228.google.cloud.discoveryengine.v1be"
-          + "ta.StreamAssistRequest\0329.google.cloud.di"
-          + "scoveryengine.v1beta.StreamAssistRespons"
-          + "e\"b\202\323\344\223\002\\\"W/v1beta/{name=projects/*/loca"
-          + "tions/*/collections/*/engines/*/assistan"
-          + "ts/*}:streamAssist:\001*0\001\022\335\001\n\017CreateAssist"
-          + "ant\022;.google.cloud.discoveryengine.v1bet"
-          + "a.CreateAssistantRequest\032..google.cloud."
-          + "discoveryengine.v1beta.Assistant\"]\202\323\344\223\002W"
-          + "\"J/v1beta/{parent=projects/*/locations/*"
-          + "/collections/*/engines/*}/assistants:\tas"
-          + "sistant\022\301\001\n\017DeleteAssistant\022;.google.clo"
-          + "ud.discoveryengine.v1beta.DeleteAssistan"
-          + "tRequest\032\026.google.protobuf.Empty\"Y\332A\004nam"
-          + "e\202\323\344\223\002L*J/v1beta/{name=projects/*/locati"
-          + "ons/*/collections/*/engines/*/assistants"
-          + "/*}\022\377\001\n\017UpdateAssistant\022;.google.cloud.d"
-          + "iscoveryengine.v1beta.UpdateAssistantReq"
-          + "uest\032..google.cloud.discoveryengine.v1be"
-          + "ta.Assistant\"\177\332A\025assistant,update_mask\202\323"
-          + "\344\223\002a2T/v1beta/{assistant.name=projects/*"
-          + "/locations/*/collections/*/engines/*/ass"
-          + "istants/*}:\tassistant\022\323\001\n\014GetAssistant\0228"
-          + ".google.cloud.discoveryengine.v1beta.Get"
-          + "AssistantRequest\032..google.cloud.discover"
-          + "yengine.v1beta.Assistant\"Y\332A\004name\202\323\344\223\002L\022"
-          + "J/v1beta/{name=projects/*/locations/*/co"
-          + "llections/*/engines/*/assistants/*}\022\346\001\n\016"
-          + "ListAssistants\022:.google.cloud.discoverye"
-          + "ngine.v1beta.ListAssistantsRequest\032;.goo"
-          + "gle.cloud.discoveryengine.v1beta.ListAss"
-          + "istantsResponse\"[\332A\006parent\202\323\344\223\002L\022J/v1bet"
-          + "a/{parent=projects/*/locations/*/collect"
-          + "ions/*/engines/*}/assistants\032\220\002\312A\036discov"
-          + "eryengine.googleapis.com\322A\353\001https://www."
-          + "googleapis.com/auth/cloud-platform,https"
-          + "://www.googleapis.com/auth/discoveryengi"
-          + "ne.assist.readwrite,https://www.googleap"
-          + "is.com/auth/discoveryengine.readwrite,ht"
-          + "tps://www.googleapis.com/auth/discoverye"
-          + "ngine.serving.readwriteB\234\002\n\'com.google.c"
-          + "loud.discoveryengine.v1betaB\025AssistantSe"
-          + "rviceProtoP\001ZQcloud.google.com/go/discov"
-          + "eryengine/apiv1beta/discoveryenginepb;di"
-          + "scoveryenginepb\242\002\017DISCOVERYENGINE\252\002#Goog"
-          + "le.Cloud.DiscoveryEngine.V1Beta\312\002#Google"
-          + "\\Cloud\\DiscoveryEngine\\V1beta\352\002&Google::"
-          + "Cloud::DiscoveryEngine::V1betab\006proto3"
+          + "antB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.p"
+          + "rotobuf.FieldMask2\366\014\n\020AssistantService\022\351"
+          + "\001\n\014StreamAssist\0228.google.cloud.discovery"
+          + "engine.v1beta.StreamAssistRequest\0329.goog"
+          + "le.cloud.discoveryengine.v1beta.StreamAs"
+          + "sistResponse\"b\202\323\344\223\002\\\"W/v1beta/{name=proj"
+          + "ects/*/locations/*/collections/*/engines"
+          + "/*/assistants/*}:streamAssist:\001*0\001\022\335\001\n\017C"
+          + "reateAssistant\022;.google.cloud.discoverye"
+          + "ngine.v1beta.CreateAssistantRequest\032..go"
+          + "ogle.cloud.discoveryengine.v1beta.Assist"
+          + "ant\"]\202\323\344\223\002W\"J/v1beta/{parent=projects/*/"
+          + "locations/*/collections/*/engines/*}/ass"
+          + "istants:\tassistant\022\301\001\n\017DeleteAssistant\022;"
+          + ".google.cloud.discoveryengine.v1beta.Del"
+          + "eteAssistantRequest\032\026.google.protobuf.Em"
+          + "pty\"Y\332A\004name\202\323\344\223\002L*J/v1beta/{name=projec"
+          + "ts/*/locations/*/collections/*/engines/*"
+          + "/assistants/*}\022\377\001\n\017UpdateAssistant\022;.goo"
+          + "gle.cloud.discoveryengine.v1beta.UpdateA"
+          + "ssistantRequest\032..google.cloud.discovery"
+          + "engine.v1beta.Assistant\"\177\332A\025assistant,up"
+          + "date_mask\202\323\344\223\002a2T/v1beta/{assistant.name"
+          + "=projects/*/locations/*/collections/*/en"
+          + "gines/*/assistants/*}:\tassistant\022\323\001\n\014Get"
+          + "Assistant\0228.google.cloud.discoveryengine"
+          + ".v1beta.GetAssistantRequest\032..google.clo"
+          + "ud.discoveryengine.v1beta.Assistant\"Y\332A\004"
+          + "name\202\323\344\223\002L\022J/v1beta/{name=projects/*/loc"
+          + "ations/*/collections/*/engines/*/assista"
+          + "nts/*}\022\346\001\n\016ListAssistants\022:.google.cloud"
+          + ".discoveryengine.v1beta.ListAssistantsRe"
+          + "quest\032;.google.cloud.discoveryengine.v1b"
+          + "eta.ListAssistantsResponse\"[\332A\006parent\202\323\344"
+          + "\223\002L\022J/v1beta/{parent=projects/*/location"
+          + "s/*/collections/*/engines/*}/assistants\032"
+          + "\220\002\312A\036discoveryengine.googleapis.com\322A\353\001h"
+          + "ttps://www.googleapis.com/auth/cloud-pla"
+          + "tform,https://www.googleapis.com/auth/di"
+          + "scoveryengine.assist.readwrite,https://w"
+          + "ww.googleapis.com/auth/discoveryengine.r"
+          + "eadwrite,https://www.googleapis.com/auth"
+          + "/discoveryengine.serving.readwriteB\234\002\n\'c"
+          + "om.google.cloud.discoveryengine.v1betaB\025"
+          + "AssistantServiceProtoP\001ZQcloud.google.co"
+          + "m/go/discoveryengine/apiv1beta/discovery"
+          + "enginepb;discoveryenginepb\242\002\017DISCOVERYEN"
+          + "GINE\252\002#Google.Cloud.DiscoveryEngine.V1Be"
+          + "ta\312\002#Google\\Cloud\\DiscoveryEngine\\V1beta"
+          + "\352\002&Google::Cloud::DiscoveryEngine::V1bet"
+          + "ab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -272,11 +287,35 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Query", "Session", "UserMetadata", "ToolsSpec", "GenerationSpec",
+              "Name",
+              "Query",
+              "Session",
+              "UserMetadata",
+              "AgentsSpec",
+              "ToolsSpec",
+              "GenerationSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor,
+            new java.lang.String[] {
+              "AgentSpecs",
+            });
+    internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor,
+            new java.lang.String[] {
+              "AgentId",
             });
     internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_ToolsSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_descriptor
-            .getNestedType(0);
+            .getNestedType(1);
     internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_ToolsSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_ToolsSpec_descriptor,
@@ -318,7 +357,7 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_GenerationSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_descriptor
-            .getNestedType(1);
+            .getNestedType(2);
     internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_GenerationSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1beta_StreamAssistRequest_GenerationSpec_descriptor,

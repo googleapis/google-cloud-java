@@ -4221,6 +4221,404 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface CompanionFeedbackOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Feedback for companion agent.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback}
+   */
+  public static final class CompanionFeedback extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback)
+      CompanionFeedbackOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "CompanionFeedback");
+    }
+
+    // Use CompanionFeedback.newBuilder() to construct.
+    private CompanionFeedback(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CompanionFeedback() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+          .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+          .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.class,
+              com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder
+                  .class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback other =
+          (com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Feedback for companion agent.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback)
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.class,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.AnswerRecordsProto
+            .internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback build() {
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+          buildPartial() {
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback result =
+            new com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback)
+    private static final com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback();
+    }
+
+    public static com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CompanionFeedback> PARSER =
+        new com.google.protobuf.AbstractParser<CompanionFeedback>() {
+          @java.lang.Override
+          public CompanionFeedback parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CompanionFeedback> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CompanionFeedback> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int ANSWER_RELEVANCE_FIELD_NUMBER = 1;
   private int answerRelevance_ = 0;
@@ -4589,6 +4987,70 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         : knowledgeAssistFeedback_;
   }
 
+  public static final int COMPANION_FEEDBACK_FIELD_NUMBER = 8;
+  private com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+      companionFeedback_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for companion agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the companionFeedback field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompanionFeedback() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for companion agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The companionFeedback.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+      getCompanionFeedback() {
+    return companionFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+            .getDefaultInstance()
+        : companionFeedback_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for companion agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder
+      getCompanionFeedbackOrBuilder() {
+    return companionFeedback_ == null
+        ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+            .getDefaultInstance()
+        : companionFeedback_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4630,6 +5092,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getKnowledgeAssistFeedback());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(8, getCompanionFeedback());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4669,6 +5134,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getKnowledgeAssistFeedback());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCompanionFeedback());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4700,6 +5168,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (hasKnowledgeAssistFeedback()) {
       if (!getKnowledgeAssistFeedback().equals(other.getKnowledgeAssistFeedback())) return false;
     }
+    if (hasCompanionFeedback() != other.hasCompanionFeedback()) return false;
+    if (hasCompanionFeedback()) {
+      if (!getCompanionFeedback().equals(other.getCompanionFeedback())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4728,6 +5200,10 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
     if (hasKnowledgeAssistFeedback()) {
       hash = (37 * hash) + KNOWLEDGE_ASSIST_FEEDBACK_FIELD_NUMBER;
       hash = (53 * hash) + getKnowledgeAssistFeedback().hashCode();
+    }
+    if (hasCompanionFeedback()) {
+      hash = (37 * hash) + COMPANION_FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getCompanionFeedback().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4874,6 +5350,7 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         internalGetSummarizationFeedbackFieldBuilder();
         internalGetKnowledgeSearchFeedbackFieldBuilder();
         internalGetKnowledgeAssistFeedbackFieldBuilder();
+        internalGetCompanionFeedbackFieldBuilder();
       }
     }
 
@@ -4898,6 +5375,11 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       if (knowledgeAssistFeedbackBuilder_ != null) {
         knowledgeAssistFeedbackBuilder_.dispose();
         knowledgeAssistFeedbackBuilder_ = null;
+      }
+      companionFeedback_ = null;
+      if (companionFeedbackBuilder_ != null) {
+        companionFeedbackBuilder_.dispose();
+        companionFeedbackBuilder_ = null;
       }
       return this;
     }
@@ -4966,6 +5448,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
                 : knowledgeAssistFeedbackBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.companionFeedback_ =
+            companionFeedbackBuilder_ == null
+                ? companionFeedback_
+                : companionFeedbackBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4999,6 +5488,9 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
       }
       if (other.hasKnowledgeAssistFeedback()) {
         mergeKnowledgeAssistFeedback(other.getKnowledgeAssistFeedback());
+      }
+      if (other.hasCompanionFeedback()) {
+        mergeCompanionFeedback(other.getCompanionFeedback());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5067,6 +5559,13 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 66:
+              {
+                input.readMessage(
+                    internalGetCompanionFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6191,6 +6690,230 @@ public final class AgentAssistantFeedback extends com.google.protobuf.GeneratedM
         knowledgeAssistFeedback_ = null;
       }
       return knowledgeAssistFeedbackBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        companionFeedback_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder>
+        companionFeedbackBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the companionFeedback field is set.
+     */
+    public boolean hasCompanionFeedback() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The companionFeedback.
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+        getCompanionFeedback() {
+      if (companionFeedbackBuilder_ == null) {
+        return companionFeedback_ == null
+            ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+                .getDefaultInstance()
+            : companionFeedback_;
+      } else {
+        return companionFeedbackBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCompanionFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback value) {
+      if (companionFeedbackBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        companionFeedback_ = value;
+      } else {
+        companionFeedbackBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCompanionFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder
+            builderForValue) {
+      if (companionFeedbackBuilder_ == null) {
+        companionFeedback_ = builderForValue.build();
+      } else {
+        companionFeedbackBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCompanionFeedback(
+        com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback value) {
+      if (companionFeedbackBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && companionFeedback_ != null
+            && companionFeedback_
+                != com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+                    .getDefaultInstance()) {
+          getCompanionFeedbackBuilder().mergeFrom(value);
+        } else {
+          companionFeedback_ = value;
+        }
+      } else {
+        companionFeedbackBuilder_.mergeFrom(value);
+      }
+      if (companionFeedback_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCompanionFeedback() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      companionFeedback_ = null;
+      if (companionFeedbackBuilder_ != null) {
+        companionFeedbackBuilder_.dispose();
+        companionFeedbackBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder
+        getCompanionFeedbackBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetCompanionFeedbackFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder
+        getCompanionFeedbackOrBuilder() {
+      if (companionFeedbackBuilder_ != null) {
+        return companionFeedbackBuilder_.getMessageOrBuilder();
+      } else {
+        return companionFeedback_ == null
+            ? com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback
+                .getDefaultInstance()
+            : companionFeedback_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Feedback for companion agent.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder,
+            com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder>
+        internalGetCompanionFeedbackFieldBuilder() {
+      if (companionFeedbackBuilder_ == null) {
+        companionFeedbackBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback.Builder,
+                com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder>(
+                getCompanionFeedback(), getParentForChildren(), isClean());
+        companionFeedback_ = null;
+      }
+      return companionFeedbackBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.AgentAssistantFeedback)

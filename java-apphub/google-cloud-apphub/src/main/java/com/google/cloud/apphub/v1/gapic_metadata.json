@@ -40,11 +40,17 @@
             "GetApplication": {
               "methods": ["getApplication", "getApplication", "getApplication", "getApplicationCallable"]
             },
+            "GetBoundary": {
+              "methods": ["getBoundary", "getBoundary", "getBoundary", "getBoundaryCallable"]
+            },
             "GetDiscoveredService": {
               "methods": ["getDiscoveredService", "getDiscoveredService", "getDiscoveredService", "getDiscoveredServiceCallable"]
             },
             "GetDiscoveredWorkload": {
               "methods": ["getDiscoveredWorkload", "getDiscoveredWorkload", "getDiscoveredWorkload", "getDiscoveredWorkloadCallable"]
+            },
+            "GetExtendedMetadataSchema": {
+              "methods": ["getExtendedMetadataSchema", "getExtendedMetadataSchema", "getExtendedMetadataSchema", "getExtendedMetadataSchemaCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -69,6 +75,9 @@
             },
             "ListDiscoveredWorkloads": {
               "methods": ["listDiscoveredWorkloads", "listDiscoveredWorkloads", "listDiscoveredWorkloads", "listDiscoveredWorkloadsPagedCallable", "listDiscoveredWorkloadsCallable"]
+            },
+            "ListExtendedMetadataSchemas": {
+              "methods": ["listExtendedMetadataSchemas", "listExtendedMetadataSchemas", "listExtendedMetadataSchemas", "listExtendedMetadataSchemasPagedCallable", "listExtendedMetadataSchemasCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
@@ -99,6 +108,9 @@
             },
             "UpdateApplication": {
               "methods": ["updateApplicationAsync", "updateApplicationAsync", "updateApplicationOperationCallable", "updateApplicationCallable"]
+            },
+            "UpdateBoundary": {
+              "methods": ["updateBoundaryAsync", "updateBoundaryAsync", "updateBoundaryOperationCallable", "updateBoundaryCallable"]
             },
             "UpdateService": {
               "methods": ["updateServiceAsync", "updateServiceAsync", "updateServiceOperationCallable", "updateServiceCallable"]

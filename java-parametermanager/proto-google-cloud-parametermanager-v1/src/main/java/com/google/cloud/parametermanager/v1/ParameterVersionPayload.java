@@ -70,6 +70,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
             com.google.cloud.parametermanager.v1.ParameterVersionPayload.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
 
@@ -89,6 +90,45 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     return data_;
   }
 
+  public static final int DATA_CRC32C_FIELD_NUMBER = 3;
+  private long dataCrc32C_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Optional] The integrity checksum of the payload.
+   * If provided, the server will verify that the checksum matches the payload.
+   * If not provided, the server will generate the checksum.
+   * </pre>
+   *
+   * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the dataCrc32c field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataCrc32C() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Optional] The integrity checksum of the payload.
+   * If provided, the server will verify that the checksum matches the payload.
+   * If not provided, the server will generate the checksum.
+   * </pre>
+   *
+   * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dataCrc32c.
+   */
+  @java.lang.Override
+  public long getDataCrc32C() {
+    return dataCrc32C_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -106,6 +146,9 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     if (!data_.isEmpty()) {
       output.writeBytes(1, data_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(3, dataCrc32C_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -117,6 +160,9 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     size = 0;
     if (!data_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, data_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, dataCrc32C_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -135,6 +181,10 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
         (com.google.cloud.parametermanager.v1.ParameterVersionPayload) obj;
 
     if (!getData().equals(other.getData())) return false;
+    if (hasDataCrc32C() != other.hasDataCrc32C()) return false;
+    if (hasDataCrc32C()) {
+      if (getDataCrc32C() != other.getDataCrc32C()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -148,6 +198,10 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DATA_FIELD_NUMBER;
     hash = (53 * hash) + getData().hashCode();
+    if (hasDataCrc32C()) {
+      hash = (37 * hash) + DATA_CRC32C_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataCrc32C());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -290,6 +344,7 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       data_ = com.google.protobuf.ByteString.EMPTY;
+      dataCrc32C_ = 0L;
       return this;
     }
 
@@ -331,6 +386,12 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.data_ = data_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dataCrc32C_ = dataCrc32C_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -349,6 +410,9 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
         return this;
       if (!other.getData().isEmpty()) {
         setData(other.getData());
+      }
+      if (other.hasDataCrc32C()) {
+        setDataCrc32C(other.getDataCrc32C());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -382,6 +446,12 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 24:
+              {
+                dataCrc32C_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -455,6 +525,86 @@ public final class ParameterVersionPayload extends com.google.protobuf.Generated
     public Builder clearData() {
       bitField0_ = (bitField0_ & ~0x00000001);
       data_ = getDefaultInstance().getData();
+      onChanged();
+      return this;
+    }
+
+    private long dataCrc32C_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Optional] The integrity checksum of the payload.
+     * If provided, the server will verify that the checksum matches the payload.
+     * If not provided, the server will generate the checksum.
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the dataCrc32c field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataCrc32C() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Optional] The integrity checksum of the payload.
+     * If provided, the server will verify that the checksum matches the payload.
+     * If not provided, the server will generate the checksum.
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dataCrc32c.
+     */
+    @java.lang.Override
+    public long getDataCrc32C() {
+      return dataCrc32C_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Optional] The integrity checksum of the payload.
+     * If provided, the server will verify that the checksum matches the payload.
+     * If not provided, the server will generate the checksum.
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dataCrc32c to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataCrc32C(long value) {
+
+      dataCrc32C_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. [Optional] The integrity checksum of the payload.
+     * If provided, the server will verify that the checksum matches the payload.
+     * If not provided, the server will generate the checksum.
+     * </pre>
+     *
+     * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataCrc32C() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dataCrc32C_ = 0L;
       onChanged();
       return this;
     }

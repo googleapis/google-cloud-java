@@ -19,12 +19,14 @@ package com.google.chat.v1;
 import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListMessagePinsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -138,6 +140,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).deleteMessageSettings();
   }
 
+  /** Returns the object with the settings used for calls to searchMessages. */
+  public PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).searchMessagesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getAttachment. */
   public UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).getAttachmentSettings();
@@ -233,6 +242,23 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   /** Returns the object with the settings used for calls to deleteReaction. */
   public UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).deleteReactionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMessagePins. */
+  public PagedCallSettings<
+          ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+      listMessagePinsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).listMessagePinsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMessagePin. */
+  public UnaryCallSettings<CreateMessagePinRequest, MessagePin> createMessagePinSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).createMessagePinSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMessagePin. */
+  public UnaryCallSettings<DeleteMessagePinRequest, Empty> deleteMessagePinSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).deleteMessagePinSettings();
   }
 
   /** Returns the object with the settings used for calls to createCustomEmoji. */
@@ -513,6 +539,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
       return getStubSettingsBuilder().deleteMessageSettings();
     }
 
+    /** Returns the builder for the settings used for calls to searchMessages. */
+    public PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings() {
+      return getStubSettingsBuilder().searchMessagesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getAttachment. */
     public UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings() {
       return getStubSettingsBuilder().getAttachmentSettings();
@@ -613,6 +646,24 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteReaction. */
     public UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings() {
       return getStubSettingsBuilder().deleteReactionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMessagePins. */
+    public PagedCallSettings.Builder<
+            ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+        listMessagePinsSettings() {
+      return getStubSettingsBuilder().listMessagePinsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMessagePin. */
+    public UnaryCallSettings.Builder<CreateMessagePinRequest, MessagePin>
+        createMessagePinSettings() {
+      return getStubSettingsBuilder().createMessagePinSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMessagePin. */
+    public UnaryCallSettings.Builder<DeleteMessagePinRequest, Empty> deleteMessagePinSettings() {
+      return getStubSettingsBuilder().deleteMessagePinSettings();
     }
 
     /** Returns the builder for the settings used for calls to createCustomEmoji. */

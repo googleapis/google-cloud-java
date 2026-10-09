@@ -247,7 +247,8 @@ public interface SleepOrBuilder
    *
    *
    * <pre>
-   * Optional. Sleep metadata: processing, main, manually edited, stages status.
+   * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+   * `stages_status`.
    * </pre>
    *
    * <code>
@@ -262,7 +263,8 @@ public interface SleepOrBuilder
    *
    *
    * <pre>
-   * Optional. Sleep metadata: processing, main, manually edited, stages status.
+   * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+   * `stages_status`.
    * </pre>
    *
    * <code>
@@ -277,7 +279,8 @@ public interface SleepOrBuilder
    *
    *
    * <pre>
-   * Optional. Sleep metadata: processing, main, manually edited, stages status.
+   * Optional. Sleep metadata: `processed`, `main_sleep`, `manually_edited`, and
+   * `stages_status`.
    * </pre>
    *
    * <code>
@@ -408,4 +411,76 @@ public interface SleepOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.devicesandservices.health.v4.Sleep.SleepStage> getShortAwakeningsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.Sleep.SleepStage getShortAwakenings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getShortAwakeningsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder>
+      getShortAwakeningsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of short awake segments (under a set threshold) that are
+   * part of the sleep session. These can overlap with sleep stages.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.devicesandservices.health.v4.Sleep.SleepStage short_awakenings = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.Sleep.SleepStageOrBuilder getShortAwakeningsOrBuilder(
+      int index);
 }

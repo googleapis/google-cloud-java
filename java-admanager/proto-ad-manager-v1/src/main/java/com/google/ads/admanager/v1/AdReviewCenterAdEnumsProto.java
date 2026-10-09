@@ -48,6 +48,10 @@ public final class AdReviewCenterAdEnumsProto extends com.google.protobuf.Genera
       internal_static_google_ads_admanager_v1_ManualAdReviewCenterAdStatusEnum_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ManualAdReviewCenterAdStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ArcCreativeFormatEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ArcCreativeFormatEnum_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -73,12 +77,21 @@ public final class AdReviewCenterAdEnumsProto extends com.google.protobuf.Genera
           + "\007BLOCKED\020\002\022\014\n"
           + "\010ARCHIVED\020\003\022\013\n"
           + "\007PENDING\020\004\022\013\n"
-          + "\007SERVING\020\005B\316\001\n"
-          + "\033com.google.ads.admanager.v1B\032AdReviewCenterAdEnumsProtoP\001Z@goog"
-          + "le.golang.org/genproto/googleapis/ads/ad"
-          + "manager/v1;admanager\252\002\027Google.Ads.AdMana"
-          + "ger.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Googl"
-          + "e::Ads::AdManager::V1b\006proto3"
+          + "\007SERVING\020\005\"\237\001\n"
+          + "\025ArcCreativeFormatEnum\"\205\001\n"
+          + "\021ArcCreativeFormat\022#\n"
+          + "\037ARC_CREATIVE_FORMAT_UNSPECIFIED\020\000\022\010\n"
+          + "\004TEXT\020\001\022\t\n"
+          + "\005IMAGE\020\002\022\t\n"
+          + "\005VIDEO\020\003\022\t\n"
+          + "\005AUDIO\020\004\022\020\n"
+          + "\014APP_INSTALLS\020\005\022\016\n\n"
+          + "RICH_MEDIA\020\006B\316\001\n"
+          + "\033com.google.ads.admanager.v1B\032AdReviewCenterAdEnumsProtoP\001Z@go"
+          + "ogle.golang.org/genproto/googleapis/ads/"
+          + "admanager/v1;admanager\252\002\027Google.Ads.AdMa"
+          + "nager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goo"
+          + "gle::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -94,6 +107,12 @@ public final class AdReviewCenterAdEnumsProto extends com.google.protobuf.Genera
     internal_static_google_ads_admanager_v1_ManualAdReviewCenterAdStatusEnum_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ManualAdReviewCenterAdStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_ArcCreativeFormatEnum_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_ArcCreativeFormatEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ArcCreativeFormatEnum_descriptor,
             new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
   }

@@ -38,6 +38,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -156,8 +157,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -206,8 +207,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -316,6 +317,53 @@ public class DataChatServiceClientTest {
   }
 
   @Test
+  public void updateConversationTest() throws Exception {
+    Conversation expectedResponse =
+        Conversation.newBuilder()
+            .setName(ConversationName.of("[PROJECT]", "[LOCATION]", "[CONVERSATION]").toString())
+            .addAllAgents(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setLastUsedTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockDataChatService.addResponse(expectedResponse);
+
+    Conversation conversation = Conversation.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Conversation actualResponse = client.updateConversation(conversation, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConversationRequest actualRequest = ((UpdateConversationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversation, actualRequest.getConversation());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConversationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataChatService.addException(exception);
+
+    try {
+      Conversation conversation = Conversation.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversation(conversation, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getConversationTest() throws Exception {
     Conversation expectedResponse =
         Conversation.newBuilder()
@@ -324,8 +372,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -368,8 +416,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setTitle("title110371416")
             .setKmsKey("kmsKey-1127483058")
-            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 

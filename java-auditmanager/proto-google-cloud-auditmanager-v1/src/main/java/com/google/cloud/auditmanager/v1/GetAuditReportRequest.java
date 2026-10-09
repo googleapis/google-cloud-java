@@ -24,7 +24,8 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * Message for requesting the overall audit report for an audit report name.
+ * Request message for
+ * [GetAuditReport][google.cloud.auditmanager.v1.AuditManager.GetAuditReport].
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.GetAuditReportRequest}
@@ -79,9 +80,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Format
-   * projects/{project}/locations/{location}/auditReports/{audit_report},
-   * folders/{folder}/locations/{location}/auditReports/{audit_report}
+   * Required. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>
@@ -107,9 +110,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Format
-   * projects/{project}/locations/{location}/auditReports/{audit_report},
-   * folders/{folder}/locations/{location}/auditReports/{audit_report}
+   * Required. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>
@@ -296,7 +301,8 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Message for requesting the overall audit report for an audit report name.
+   * Request message for
+   * [GetAuditReport][google.cloud.auditmanager.v1.AuditManager.GetAuditReport].
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.GetAuditReportRequest}
@@ -448,9 +454,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Format
-     * projects/{project}/locations/{location}/auditReports/{audit_report},
-     * folders/{folder}/locations/{location}/auditReports/{audit_report}
+     * Required. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>
@@ -475,9 +483,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Format
-     * projects/{project}/locations/{location}/auditReports/{audit_report},
-     * folders/{folder}/locations/{location}/auditReports/{audit_report}
+     * Required. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>
@@ -502,9 +512,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Format
-     * projects/{project}/locations/{location}/auditReports/{audit_report},
-     * folders/{folder}/locations/{location}/auditReports/{audit_report}
+     * Required. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>
@@ -528,9 +540,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Format
-     * projects/{project}/locations/{location}/auditReports/{audit_report},
-     * folders/{folder}/locations/{location}/auditReports/{audit_report}
+     * Required. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>
@@ -550,9 +564,11 @@ public final class GetAuditReportRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Format
-     * projects/{project}/locations/{location}/auditReports/{audit_report},
-     * folders/{folder}/locations/{location}/auditReports/{audit_report}
+     * Required. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>
