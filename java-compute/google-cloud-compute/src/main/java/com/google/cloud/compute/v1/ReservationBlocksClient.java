@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The ReservationBlocks API.
  *
+ * <p>This client uses ReservationBlocks version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -547,7 +549,6 @@ public class ReservationBlocksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReservation("reservation-1563081780")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (ReservationBlock element : reservationBlocksClient.list(request).iterateAll()) {
@@ -584,7 +585,6 @@ public class ReservationBlocksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReservation("reservation-1563081780")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<ReservationBlock> future =
@@ -621,7 +621,6 @@ public class ReservationBlocksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setReservation("reservation-1563081780")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {

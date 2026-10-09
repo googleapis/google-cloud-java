@@ -34,12 +34,14 @@ import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.Transaction;
+import io.grpc.Attributes;
 import io.grpc.Metadata;
 import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.ServerInterceptors;
+import io.grpc.ServerTransportFilter;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.io.Closeable;
@@ -50,6 +52,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /** Shared-backend replica harness for end-to-end location-aware routing tests. */
 final class SharedBackendReplicaHarness implements Closeable {
@@ -71,9 +74,22 @@ final class SharedBackendReplicaHarness implements Closeable {
     private final Map<String, ArrayDeque<Throwable>> methodErrors = new HashMap<>();
     private final Map<String, List<AbstractMessage>> requests = new HashMap<>();
     private final Map<String, List<String>> requestIds = new HashMap<>();
+    private final AtomicInteger activeConnections = new AtomicInteger();
 
     private HookedReplicaSpannerService(MockSpannerServiceImpl backend) {
       this.backend = backend;
+    }
+
+    void recordConnectionReady() {
+      activeConnections.incrementAndGet();
+    }
+
+    void recordConnectionTerminated() {
+      activeConnections.decrementAndGet();
+    }
+
+    boolean hasConnected() {
+      return activeConnections.get() > 0;
     }
 
     synchronized void putMethodErrors(String method, Throwable... errors) {
@@ -278,10 +294,33 @@ final class SharedBackendReplicaHarness implements Closeable {
     Server server =
         NettyServerBuilder.forAddress(address)
             .addService(ServerInterceptors.intercept(service, interceptor))
+            .addTransportFilter(
+                new ServerTransportFilter() {
+                  @Override
+                  public Attributes transportReady(Attributes transportAttrs) {
+                    service.recordConnectionReady();
+                    return super.transportReady(transportAttrs);
+                  }
+
+                  @Override
+                  public void transportTerminated(Attributes transportAttrs) {
+                    service.recordConnectionTerminated();
+                    super.transportTerminated(transportAttrs);
+                  }
+                })
             .build()
             .start();
     servers.add(server);
     return "localhost:" + server.getPort();
+  }
+
+  boolean allReplicasConnected() {
+    for (HookedReplicaSpannerService replica : replicas) {
+      if (!replica.hasConnected()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   void clearRequests() {

@@ -33,6 +33,195 @@ public final class AuditManagerGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest,
+          com.google.cloud.auditmanager.v1.AuditSchedule>
+      getCreateAuditScheduleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAuditSchedule",
+      requestType = com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest.class,
+      responseType = com.google.cloud.auditmanager.v1.AuditSchedule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest,
+          com.google.cloud.auditmanager.v1.AuditSchedule>
+      getCreateAuditScheduleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest,
+            com.google.cloud.auditmanager.v1.AuditSchedule>
+        getCreateAuditScheduleMethod;
+    if ((getCreateAuditScheduleMethod = AuditManagerGrpc.getCreateAuditScheduleMethod) == null) {
+      synchronized (AuditManagerGrpc.class) {
+        if ((getCreateAuditScheduleMethod = AuditManagerGrpc.getCreateAuditScheduleMethod)
+            == null) {
+          AuditManagerGrpc.getCreateAuditScheduleMethod =
+              getCreateAuditScheduleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest,
+                          com.google.cloud.auditmanager.v1.AuditSchedule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAuditSchedule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.AuditSchedule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AuditManagerMethodDescriptorSupplier("CreateAuditSchedule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAuditScheduleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest,
+          com.google.cloud.auditmanager.v1.AuditSchedule>
+      getUpdateAuditScheduleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAuditSchedule",
+      requestType = com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest.class,
+      responseType = com.google.cloud.auditmanager.v1.AuditSchedule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest,
+          com.google.cloud.auditmanager.v1.AuditSchedule>
+      getUpdateAuditScheduleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest,
+            com.google.cloud.auditmanager.v1.AuditSchedule>
+        getUpdateAuditScheduleMethod;
+    if ((getUpdateAuditScheduleMethod = AuditManagerGrpc.getUpdateAuditScheduleMethod) == null) {
+      synchronized (AuditManagerGrpc.class) {
+        if ((getUpdateAuditScheduleMethod = AuditManagerGrpc.getUpdateAuditScheduleMethod)
+            == null) {
+          AuditManagerGrpc.getUpdateAuditScheduleMethod =
+              getUpdateAuditScheduleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest,
+                          com.google.cloud.auditmanager.v1.AuditSchedule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAuditSchedule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.AuditSchedule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AuditManagerMethodDescriptorSupplier("UpdateAuditSchedule"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAuditScheduleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.GetAuditScheduleRequest,
+          com.google.cloud.auditmanager.v1.AuditSchedule>
+      getGetAuditScheduleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuditSchedule",
+      requestType = com.google.cloud.auditmanager.v1.GetAuditScheduleRequest.class,
+      responseType = com.google.cloud.auditmanager.v1.AuditSchedule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.GetAuditScheduleRequest,
+          com.google.cloud.auditmanager.v1.AuditSchedule>
+      getGetAuditScheduleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.auditmanager.v1.GetAuditScheduleRequest,
+            com.google.cloud.auditmanager.v1.AuditSchedule>
+        getGetAuditScheduleMethod;
+    if ((getGetAuditScheduleMethod = AuditManagerGrpc.getGetAuditScheduleMethod) == null) {
+      synchronized (AuditManagerGrpc.class) {
+        if ((getGetAuditScheduleMethod = AuditManagerGrpc.getGetAuditScheduleMethod) == null) {
+          AuditManagerGrpc.getGetAuditScheduleMethod =
+              getGetAuditScheduleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.auditmanager.v1.GetAuditScheduleRequest,
+                          com.google.cloud.auditmanager.v1.AuditSchedule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuditSchedule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.GetAuditScheduleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.AuditSchedule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AuditManagerMethodDescriptorSupplier("GetAuditSchedule"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuditScheduleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest,
+          com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+      getListAuditSchedulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuditSchedules",
+      requestType = com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest.class,
+      responseType = com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest,
+          com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+      getListAuditSchedulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest,
+            com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+        getListAuditSchedulesMethod;
+    if ((getListAuditSchedulesMethod = AuditManagerGrpc.getListAuditSchedulesMethod) == null) {
+      synchronized (AuditManagerGrpc.class) {
+        if ((getListAuditSchedulesMethod = AuditManagerGrpc.getListAuditSchedulesMethod) == null) {
+          AuditManagerGrpc.getListAuditSchedulesMethod =
+              getListAuditSchedulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest,
+                          com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuditSchedules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AuditManagerMethodDescriptorSupplier("ListAuditSchedules"))
+                      .build();
+        }
+      }
+    }
+    return getListAuditSchedulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.auditmanager.v1.EnrollResourceRequest,
           com.google.cloud.auditmanager.v1.Enrollment>
       getEnrollResourceMethod;
@@ -487,6 +676,66 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
+     * Creates a new audit schedule in a given project and location.
+     * </pre>
+     */
+    default void createAuditSchedule(
+        com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAuditScheduleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing audit schedule.
+     * </pre>
+     */
+    default void updateAuditSchedule(
+        com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAuditScheduleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single audit schedule.
+     * </pre>
+     */
+    default void getAuditSchedule(
+        com.google.cloud.auditmanager.v1.GetAuditScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuditScheduleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists audit schedules in a given project and location.
+     * </pre>
+     */
+    default void listAuditSchedules(
+        com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuditSchedulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Adds your project, folder, or organization to Audit
      * Manager. This method creates the Audit Manager service agent in your
      * workload and grants required permissions to the service agent.
@@ -649,6 +898,74 @@ public final class AuditManagerGrpc {
     @java.lang.Override
     protected AuditManagerStub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new AuditManagerStub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new audit schedule in a given project and location.
+     * </pre>
+     */
+    public void createAuditSchedule(
+        com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAuditScheduleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing audit schedule.
+     * </pre>
+     */
+    public void updateAuditSchedule(
+        com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAuditScheduleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single audit schedule.
+     * </pre>
+     */
+    public void getAuditSchedule(
+        com.google.cloud.auditmanager.v1.GetAuditScheduleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuditScheduleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists audit schedules in a given project and location.
+     * </pre>
+     */
+    public void listAuditSchedules(
+        com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuditSchedulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -824,6 +1141,62 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
+     * Creates a new audit schedule in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.AuditSchedule createAuditSchedule(
+        com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAuditScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing audit schedule.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.AuditSchedule updateAuditSchedule(
+        com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAuditScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single audit schedule.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.AuditSchedule getAuditSchedule(
+        com.google.cloud.auditmanager.v1.GetAuditScheduleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuditScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists audit schedules in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse listAuditSchedules(
+        com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuditSchedulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Adds your project, folder, or organization to Audit
      * Manager. This method creates the Audit Manager service agent in your
      * workload and grants required permissions to the service agent.
@@ -971,6 +1344,58 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
+     * Creates a new audit schedule in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.AuditSchedule createAuditSchedule(
+        com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAuditScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing audit schedule.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.AuditSchedule updateAuditSchedule(
+        com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuditScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single audit schedule.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.AuditSchedule getAuditSchedule(
+        com.google.cloud.auditmanager.v1.GetAuditScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuditScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists audit schedules in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse listAuditSchedules(
+        com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuditSchedulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Adds your project, folder, or organization to Audit
      * Manager. This method creates the Audit Manager service agent in your
      * workload and grants required permissions to the service agent.
@@ -1110,6 +1535,62 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
+     * Creates a new audit schedule in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.auditmanager.v1.AuditSchedule>
+        createAuditSchedule(com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAuditScheduleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing audit schedule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.auditmanager.v1.AuditSchedule>
+        updateAuditSchedule(com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAuditScheduleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single audit schedule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.auditmanager.v1.AuditSchedule>
+        getAuditSchedule(com.google.cloud.auditmanager.v1.GetAuditScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuditScheduleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists audit schedules in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>
+        listAuditSchedules(com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuditSchedulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Adds your project, folder, or organization to Audit
      * Manager. This method creates the Audit Manager service agent in your
      * workload and grants required permissions to the service agent.
@@ -1236,14 +1717,18 @@ public final class AuditManagerGrpc {
     }
   }
 
-  private static final int METHODID_ENROLL_RESOURCE = 0;
-  private static final int METHODID_GENERATE_AUDIT_SCOPE_REPORT = 1;
-  private static final int METHODID_GENERATE_AUDIT_REPORT = 2;
-  private static final int METHODID_LIST_AUDIT_REPORTS = 3;
-  private static final int METHODID_GET_AUDIT_REPORT = 4;
-  private static final int METHODID_GET_RESOURCE_ENROLLMENT_STATUS = 5;
-  private static final int METHODID_LIST_RESOURCE_ENROLLMENT_STATUSES = 6;
-  private static final int METHODID_LIST_CONTROLS = 7;
+  private static final int METHODID_CREATE_AUDIT_SCHEDULE = 0;
+  private static final int METHODID_UPDATE_AUDIT_SCHEDULE = 1;
+  private static final int METHODID_GET_AUDIT_SCHEDULE = 2;
+  private static final int METHODID_LIST_AUDIT_SCHEDULES = 3;
+  private static final int METHODID_ENROLL_RESOURCE = 4;
+  private static final int METHODID_GENERATE_AUDIT_SCOPE_REPORT = 5;
+  private static final int METHODID_GENERATE_AUDIT_REPORT = 6;
+  private static final int METHODID_LIST_AUDIT_REPORTS = 7;
+  private static final int METHODID_GET_AUDIT_REPORT = 8;
+  private static final int METHODID_GET_RESOURCE_ENROLLMENT_STATUS = 9;
+  private static final int METHODID_LIST_RESOURCE_ENROLLMENT_STATUSES = 10;
+  private static final int METHODID_LIST_CONTROLS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1262,6 +1747,31 @@ public final class AuditManagerGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CREATE_AUDIT_SCHEDULE:
+          serviceImpl.createAuditSchedule(
+              (com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AUDIT_SCHEDULE:
+          serviceImpl.updateAuditSchedule(
+              (com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUDIT_SCHEDULE:
+          serviceImpl.getAuditSchedule(
+              (com.google.cloud.auditmanager.v1.GetAuditScheduleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.auditmanager.v1.AuditSchedule>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUDIT_SCHEDULES:
+          serviceImpl.listAuditSchedules(
+              (com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>)
+                  responseObserver);
+          break;
         case METHODID_ENROLL_RESOURCE:
           serviceImpl.enrollResource(
               (com.google.cloud.auditmanager.v1.EnrollResourceRequest) request,
@@ -1330,6 +1840,34 @@ public final class AuditManagerGrpc {
 
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+            getCreateAuditScheduleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.auditmanager.v1.CreateAuditScheduleRequest,
+                    com.google.cloud.auditmanager.v1.AuditSchedule>(
+                    service, METHODID_CREATE_AUDIT_SCHEDULE)))
+        .addMethod(
+            getUpdateAuditScheduleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.auditmanager.v1.UpdateAuditScheduleRequest,
+                    com.google.cloud.auditmanager.v1.AuditSchedule>(
+                    service, METHODID_UPDATE_AUDIT_SCHEDULE)))
+        .addMethod(
+            getGetAuditScheduleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.auditmanager.v1.GetAuditScheduleRequest,
+                    com.google.cloud.auditmanager.v1.AuditSchedule>(
+                    service, METHODID_GET_AUDIT_SCHEDULE)))
+        .addMethod(
+            getListAuditSchedulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.auditmanager.v1.ListAuditSchedulesRequest,
+                    com.google.cloud.auditmanager.v1.ListAuditSchedulesResponse>(
+                    service, METHODID_LIST_AUDIT_SCHEDULES)))
         .addMethod(
             getEnrollResourceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1436,6 +1974,10 @@ public final class AuditManagerGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AuditManagerFileDescriptorSupplier())
+                      .addMethod(getCreateAuditScheduleMethod())
+                      .addMethod(getUpdateAuditScheduleMethod())
+                      .addMethod(getGetAuditScheduleMethod())
+                      .addMethod(getListAuditSchedulesMethod())
                       .addMethod(getEnrollResourceMethod())
                       .addMethod(getGenerateAuditScopeReportMethod())
                       .addMethod(getGenerateAuditReportMethod())

@@ -64,6 +64,7 @@ case ${JOB_TYPE} in
     retry_with_backoff 3 10 \
       mvn ${MAVEN_GOAL} \
         -B -ntp \
+        -U \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -86,15 +87,17 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
     else
       install_modules "sdk-platform-java"
-      mvn install \
-        -B -ntp \
-        -Pquick-build \
-        -Dorg.slf4j.simpleLogger.showDateTime=true \
-        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dmaven.wagon.http.retryHandler.count=5 \
-        -DskipTests=true \
-        --also-make \
-        -T 1C
+      retry_with_backoff 3 10 \
+        mvn install \
+          -B -ntp \
+          -U \
+          -Pquick-build \
+          -Dorg.slf4j.simpleLogger.showDateTime=true \
+          -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+          -Dmaven.wagon.http.retryHandler.count=5 \
+          -DskipTests=true \
+          --also-make \
+          -T 1C
     fi
     ;;
   integration)
@@ -238,7 +241,7 @@ case ${JOB_TYPE} in
         # Format those specific modules instead of the entire codebase, reducing format check time.
         # The --relative flag is when building in the submodule as only files modified in the module
         # should be accounted for.
-        changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
+        changed_file_list=$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
         has_code_change="false"
@@ -301,6 +304,9 @@ case ${JOB_TYPE} in
             unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
             MODULE_FILTER="-pl ${unique_modules}"
             echo "Formatting only changed modules: ${unique_modules}"
+        else
+            echo "No formatting-eligible Java modules affected. Skipping linter check."
+            exit 0
         fi
     else
         echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."

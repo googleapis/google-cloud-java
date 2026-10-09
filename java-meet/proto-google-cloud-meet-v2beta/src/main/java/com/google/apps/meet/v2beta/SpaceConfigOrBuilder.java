@@ -90,7 +90,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * The pre-configured moderation mode for the Meeting.
    * Default: Controlled by the user's policies.
    * </pre>
@@ -105,7 +104,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * The pre-configured moderation mode for the Meeting.
    * Default: Controlled by the user's policies.
    * </pre>
@@ -120,7 +118,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * When moderation.ON, these restrictions go into effect for the meeting.
    * When moderation.OFF, will be reset to default ModerationRestrictions.
    * </pre>
@@ -136,7 +133,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * When moderation.ON, these restrictions go into effect for the meeting.
    * When moderation.OFF, will be reset to default ModerationRestrictions.
    * </pre>
@@ -152,7 +148,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * When moderation.ON, these restrictions go into effect for the meeting.
    * When moderation.OFF, will be reset to default ModerationRestrictions.
    * </pre>
@@ -167,7 +162,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Whether attendance report is enabled for the meeting space.
    * </pre>
    *
@@ -183,7 +177,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Whether attendance report is enabled for the meeting space.
    * </pre>
    *
@@ -200,7 +193,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Configuration pertaining to the auto-generated artifacts that the meeting
    * supports.
    * </pre>
@@ -215,7 +207,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Configuration pertaining to the auto-generated artifacts that the meeting
    * supports.
    * </pre>
@@ -230,7 +221,6 @@ public interface SpaceConfigOrBuilder
    *
    *
    * <pre>
-   * [Developer Preview](https://developers.google.com/workspace/preview):
    * Configuration pertaining to the auto-generated artifacts that the meeting
    * supports.
    * </pre>

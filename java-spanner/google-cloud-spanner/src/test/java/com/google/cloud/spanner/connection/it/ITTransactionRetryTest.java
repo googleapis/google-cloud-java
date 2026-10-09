@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.connection.it;
 
 import static com.google.cloud.spanner.testing.EmulatorSpannerHelper.isUsingEmulator;
+import static com.google.cloud.spanner.testing.SpannerOmniHelper.isSpannerOmni;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -38,6 +39,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -54,6 +56,12 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITTransactionRetryTest extends ITAbstractSpannerTest {
   private static final Logger logger = Logger.getLogger(ITTransactionRetryTest.class.getName());
+
+  @BeforeClass
+  public static void setup() {
+    assumeFalse("Skipping the test due to a known bug b/441255724", isSpannerOmni());
+    ITAbstractSpannerTest.setup();
+  }
 
   @Rule public TestName testName = new TestName();
 

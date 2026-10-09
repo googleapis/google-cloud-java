@@ -31,15 +31,21 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A specialized {@link ApiFuture} for tracking and controlling an in-flight resumable upload.
  *
- * @param <ResponseT> response type
+ * <p>The payload {@link java.io.InputStream} supplied when initiating the upload is managed by this
+ * future and will be closed automatically upon completion, failure, or cancellation.
+ *
+ * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @BetaApi
+@NullMarked
 public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
 
   /** Returns the upload session URL, or {@code null} if session initiation is in progress. */
-  String getUploadSessionUrl();
+  @Nullable String getUploadSessionUrl();
 }

@@ -14,6 +14,5 @@
   "library_type": "GAPIC_COMBO",
   "codeowner_team": "@googleapis/spanner-team",
   "issue_tracker": "https://issuetracker.google.com/issues?q=componentid:190851%2B%20status:open",
-  "recommended_package": "com.google.cloud.spanner",
-  "min_java_version": 8
+  "recommended_package": "com.google.cloud.spanner"
 }

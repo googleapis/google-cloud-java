@@ -471,6 +471,743 @@ public final class MarketingplatformAdminServiceGrpc {
     return getReportPropertyUsageMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+      getGetUserGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserGroup",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.UserGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+      getGetUserGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+        getGetUserGroupMethod;
+    if ((getGetUserGroupMethod = MarketingplatformAdminServiceGrpc.getGetUserGroupMethod) == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getGetUserGroupMethod = MarketingplatformAdminServiceGrpc.getGetUserGroupMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getGetUserGroupMethod =
+              getGetUserGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UserGroup
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier("GetUserGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+      getListUserGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserGroups",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+      getListUserGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+        getListUserGroupsMethod;
+    if ((getListUserGroupsMethod = MarketingplatformAdminServiceGrpc.getListUserGroupsMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getListUserGroupsMethod = MarketingplatformAdminServiceGrpc.getListUserGroupsMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getListUserGroupsMethod =
+              getListUserGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUserGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "ListUserGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListUserGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+      getCreateUserGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUserGroup",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.UserGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+      getCreateUserGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+        getCreateUserGroupMethod;
+    if ((getCreateUserGroupMethod = MarketingplatformAdminServiceGrpc.getCreateUserGroupMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getCreateUserGroupMethod = MarketingplatformAdminServiceGrpc.getCreateUserGroupMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getCreateUserGroupMethod =
+              getCreateUserGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUserGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UserGroup
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "CreateUserGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateUserGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+      getUpdateUserGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserGroup",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.UserGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+      getUpdateUserGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+        getUpdateUserGroupMethod;
+    if ((getUpdateUserGroupMethod = MarketingplatformAdminServiceGrpc.getUpdateUserGroupMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getUpdateUserGroupMethod = MarketingplatformAdminServiceGrpc.getUpdateUserGroupMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getUpdateUserGroupMethod =
+              getUpdateUserGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateUserGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UserGroup
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "UpdateUserGroup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateUserGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUserGroup",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest,
+            com.google.protobuf.Empty>
+        getDeleteUserGroupMethod;
+    if ((getDeleteUserGroupMethod = MarketingplatformAdminServiceGrpc.getDeleteUserGroupMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getDeleteUserGroupMethod = MarketingplatformAdminServiceGrpc.getDeleteUserGroupMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getDeleteUserGroupMethod =
+              getDeleteUserGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUserGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "DeleteUserGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+      getGetUserGroupMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserGroupMember",
+      requestType = com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+      getGetUserGroupMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+        getGetUserGroupMemberMethod;
+    if ((getGetUserGroupMemberMethod =
+            MarketingplatformAdminServiceGrpc.getGetUserGroupMemberMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getGetUserGroupMemberMethod =
+                MarketingplatformAdminServiceGrpc.getGetUserGroupMemberMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getGetUserGroupMemberMethod =
+              getGetUserGroupMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserGroupMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .GetUserGroupMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "GetUserGroupMember"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserGroupMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>
+      getListUserGroupMembersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserGroupMembers",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest.class,
+      responseType =
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>
+      getListUserGroupMembersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>
+        getListUserGroupMembersMethod;
+    if ((getListUserGroupMembersMethod =
+            MarketingplatformAdminServiceGrpc.getListUserGroupMembersMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getListUserGroupMembersMethod =
+                MarketingplatformAdminServiceGrpc.getListUserGroupMembersMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getListUserGroupMembersMethod =
+              getListUserGroupMembersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha
+                              .ListUserGroupMembersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListUserGroupMembers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ListUserGroupMembersRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ListUserGroupMembersResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "ListUserGroupMembers"))
+                      .build();
+        }
+      }
+    }
+    return getListUserGroupMembersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+      getCreateUserGroupMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUserGroupMember",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+      getCreateUserGroupMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+        getCreateUserGroupMemberMethod;
+    if ((getCreateUserGroupMemberMethod =
+            MarketingplatformAdminServiceGrpc.getCreateUserGroupMemberMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getCreateUserGroupMemberMethod =
+                MarketingplatformAdminServiceGrpc.getCreateUserGroupMemberMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getCreateUserGroupMemberMethod =
+              getCreateUserGroupMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateUserGroupMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .CreateUserGroupMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "CreateUserGroupMember"))
+                      .build();
+        }
+      }
+    }
+    return getCreateUserGroupMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+      getUpdateUserGroupMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateUserGroupMember",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+      getUpdateUserGroupMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+        getUpdateUserGroupMemberMethod;
+    if ((getUpdateUserGroupMemberMethod =
+            MarketingplatformAdminServiceGrpc.getUpdateUserGroupMemberMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getUpdateUserGroupMemberMethod =
+                MarketingplatformAdminServiceGrpc.getUpdateUserGroupMemberMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getUpdateUserGroupMemberMethod =
+              getUpdateUserGroupMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateUserGroupMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .UpdateUserGroupMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "UpdateUserGroupMember"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateUserGroupMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserGroupMemberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUserGroupMember",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest,
+          com.google.protobuf.Empty>
+      getDeleteUserGroupMemberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest,
+            com.google.protobuf.Empty>
+        getDeleteUserGroupMemberMethod;
+    if ((getDeleteUserGroupMemberMethod =
+            MarketingplatformAdminServiceGrpc.getDeleteUserGroupMemberMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getDeleteUserGroupMemberMethod =
+                MarketingplatformAdminServiceGrpc.getDeleteUserGroupMemberMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getDeleteUserGroupMemberMethod =
+              getDeleteUserGroupMemberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteUserGroupMember"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .DeleteUserGroupMemberRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "DeleteUserGroupMember"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserGroupMemberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+      getGetAdminAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAdminAccessBinding",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+      getGetAdminAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+        getGetAdminAccessBindingMethod;
+    if ((getGetAdminAccessBindingMethod =
+            MarketingplatformAdminServiceGrpc.getGetAdminAccessBindingMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getGetAdminAccessBindingMethod =
+                MarketingplatformAdminServiceGrpc.getGetAdminAccessBindingMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getGetAdminAccessBindingMethod =
+              getGetAdminAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAdminAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .GetAdminAccessBindingRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "GetAdminAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetAdminAccessBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>
+      getListAdminAccessBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAdminAccessBindings",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest.class,
+      responseType =
+          com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>
+      getListAdminAccessBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>
+        getListAdminAccessBindingsMethod;
+    if ((getListAdminAccessBindingsMethod =
+            MarketingplatformAdminServiceGrpc.getListAdminAccessBindingsMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getListAdminAccessBindingsMethod =
+                MarketingplatformAdminServiceGrpc.getListAdminAccessBindingsMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getListAdminAccessBindingsMethod =
+              getListAdminAccessBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha
+                              .ListAdminAccessBindingsRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha
+                              .ListAdminAccessBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAdminAccessBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ListAdminAccessBindingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .ListAdminAccessBindingsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "ListAdminAccessBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListAdminAccessBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+      getCreateAdminAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAdminAccessBinding",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+      getCreateAdminAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+        getCreateAdminAccessBindingMethod;
+    if ((getCreateAdminAccessBindingMethod =
+            MarketingplatformAdminServiceGrpc.getCreateAdminAccessBindingMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getCreateAdminAccessBindingMethod =
+                MarketingplatformAdminServiceGrpc.getCreateAdminAccessBindingMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getCreateAdminAccessBindingMethod =
+              getCreateAdminAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha
+                              .CreateAdminAccessBindingRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAdminAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .CreateAdminAccessBindingRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "CreateAdminAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAdminAccessBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+      getUpdateAdminAccessBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAdminAccessBinding",
+      requestType =
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest.class,
+      responseType = com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest,
+          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+      getUpdateAdminAccessBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest,
+            com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+        getUpdateAdminAccessBindingMethod;
+    if ((getUpdateAdminAccessBindingMethod =
+            MarketingplatformAdminServiceGrpc.getUpdateAdminAccessBindingMethod)
+        == null) {
+      synchronized (MarketingplatformAdminServiceGrpc.class) {
+        if ((getUpdateAdminAccessBindingMethod =
+                MarketingplatformAdminServiceGrpc.getUpdateAdminAccessBindingMethod)
+            == null) {
+          MarketingplatformAdminServiceGrpc.getUpdateAdminAccessBindingMethod =
+              getUpdateAdminAccessBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.ads.marketingplatform.admin.v1alpha
+                              .UpdateAdminAccessBindingRequest,
+                          com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAdminAccessBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha
+                                  .UpdateAdminAccessBindingRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MarketingplatformAdminServiceMethodDescriptorSupplier(
+                              "UpdateAdminAccessBinding"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAdminAccessBindingMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static MarketingplatformAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<MarketingplatformAdminServiceStub> factory =
@@ -539,7 +1276,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single organization.
+     * Looks up a single organization.
      * </pre>
      */
     default void getOrganization(
@@ -660,7 +1397,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Get the usage and billing data for properties within the organization for
+     * Gets the usage and billing data for properties within the organization for
      * the specified month.
      * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
      * organization in order to view the billing and usage data.
@@ -677,6 +1414,220 @@ public final class MarketingplatformAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getReportPropertyUsageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group.
+     * </pre>
+     */
+    default void getUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUserGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of user groups in the specified GMP organization.
+     * </pre>
+     */
+    default void listUserGroups(
+        com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUserGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user group in the specified GMP organization.
+     * </pre>
+     */
+    default void createUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateUserGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user group in the specified GMP organization.
+     * </pre>
+     */
+    default void updateUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateUserGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user group in the specified GMP organization.
+     * </pre>
+     */
+    default void deleteUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteUserGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group member.
+     * </pre>
+     */
+    default void getUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUserGroupMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of members in the specified user group.
+     * </pre>
+     */
+    default void listUserGroupMembers(
+        com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUserGroupMembersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a member to the specified GMP user group.
+     * </pre>
+     */
+    default void createUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateUserGroupMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member in the specified GMP user group.
+     * </pre>
+     */
+    default void updateUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateUserGroupMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a member in the specified GMP user group.
+     * </pre>
+     */
+    default void deleteUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteUserGroupMemberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single admin access binding.
+     * </pre>
+     */
+    default void getAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAdminAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of admin access bindings in the specified GMP organization.
+     * </pre>
+     */
+    default void listAdminAccessBindings(
+        com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAdminAccessBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    default void createAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAdminAccessBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    default void updateAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAdminAccessBindingMethod(), responseObserver);
     }
   }
 
@@ -720,7 +1671,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single organization.
+     * Looks up a single organization.
      * </pre>
      */
     public void getOrganization(
@@ -855,7 +1806,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Get the usage and billing data for properties within the organization for
+     * Gets the usage and billing data for properties within the organization for
      * the specified month.
      * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
      * organization in order to view the billing and usage data.
@@ -872,6 +1823,248 @@ public final class MarketingplatformAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getReportPropertyUsageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group.
+     * </pre>
+     */
+    public void getUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of user groups in the specified GMP organization.
+     * </pre>
+     */
+    public void listUserGroups(
+        com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public void createUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public void updateUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user group in the specified GMP organization.
+     * </pre>
+     */
+    public void deleteUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group member.
+     * </pre>
+     */
+    public void getUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserGroupMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of members in the specified user group.
+     * </pre>
+     */
+    public void listUserGroupMembers(
+        com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserGroupMembersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a member to the specified GMP user group.
+     * </pre>
+     */
+    public void createUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserGroupMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member in the specified GMP user group.
+     * </pre>
+     */
+    public void updateUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateUserGroupMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a member in the specified GMP user group.
+     * </pre>
+     */
+    public void deleteUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserGroupMemberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single admin access binding.
+     * </pre>
+     */
+    public void getAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAdminAccessBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of admin access bindings in the specified GMP organization.
+     * </pre>
+     */
+    public void listAdminAccessBindings(
+        com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAdminAccessBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public void createAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAdminAccessBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public void updateAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAdminAccessBindingMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -901,7 +2094,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single organization.
+     * Looks up a single organization.
      * </pre>
      */
     public com.google.ads.marketingplatform.admin.v1alpha.Organization getOrganization(
@@ -1016,7 +2209,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Get the usage and billing data for properties within the organization for
+     * Gets the usage and billing data for properties within the organization for
      * the specified month.
      * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
      * organization in order to view the billing and usage data.
@@ -1032,6 +2225,206 @@ public final class MarketingplatformAdminServiceGrpc {
             throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportPropertyUsageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroup getUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of user groups in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse listUserGroups(
+        com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUserGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroup createUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroup updateUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group member.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember getUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of members in the specified user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse
+        listUserGroupMembers(
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListUserGroupMembersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a member to the specified GMP user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember createUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member in the specified GMP user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember updateUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a member in the specified GMP user group.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single admin access binding.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding getAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAdminAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of admin access bindings in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse
+        listAdminAccessBindings(
+            com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAdminAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+        createAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAdminAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+        updateAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAdminAccessBindingMethod(), getCallOptions(), request);
     }
   }
 
@@ -1060,7 +2453,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single organization.
+     * Looks up a single organization.
      * </pre>
      */
     public com.google.ads.marketingplatform.admin.v1alpha.Organization getOrganization(
@@ -1169,7 +2562,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Get the usage and billing data for properties within the organization for
+     * Gets the usage and billing data for properties within the organization for
      * the specified month.
      * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
      * organization in order to view the billing and usage data.
@@ -1184,6 +2577,194 @@ public final class MarketingplatformAdminServiceGrpc {
             com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReportPropertyUsageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroup getUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of user groups in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse listUserGroups(
+        com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroup createUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroup updateUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserGroup(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group member.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember getUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of members in the specified user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse
+        listUserGroupMembers(
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserGroupMembersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a member to the specified GMP user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember createUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member in the specified GMP user group.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember updateUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a member in the specified GMP user group.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserGroupMember(
+        com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserGroupMemberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single admin access binding.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding getAdminAccessBinding(
+        com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAdminAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of admin access bindings in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse
+        listAdminAccessBindings(
+            com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAdminAccessBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+        createAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAdminAccessBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding
+        updateAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAdminAccessBindingMethod(), getCallOptions(), request);
     }
   }
 
@@ -1212,7 +2793,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Lookup for a single organization.
+     * Looks up a single organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1331,7 +2912,7 @@ public final class MarketingplatformAdminServiceGrpc {
      *
      *
      * <pre>
-     * Get the usage and billing data for properties within the organization for
+     * Gets the usage and billing data for properties within the organization for
      * the specified month.
      * Per direct client org, user needs to be OrgAdmin/BillingAdmin on the
      * organization in order to view the billing and usage data.
@@ -1348,6 +2929,215 @@ public final class MarketingplatformAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getReportPropertyUsageMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+        getUserGroup(com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of user groups in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>
+        listUserGroups(
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+        createUserGroup(
+            com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroup>
+        updateUserGroup(
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user group in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteUserGroup(
+            com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single user group member.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+        getUserGroupMember(
+            com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserGroupMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of members in the specified user group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>
+        listUserGroupMembers(
+            com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserGroupMembersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a member to the specified GMP user group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+        createUserGroupMember(
+            com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserGroupMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a member in the specified GMP user group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>
+        updateUserGroupMember(
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateUserGroupMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a member in the specified GMP user group.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteUserGroupMember(
+            com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserGroupMemberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up a single admin access binding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+        getAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAdminAccessBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of admin access bindings in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>
+        listAdminAccessBindings(
+            com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAdminAccessBindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+        createAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAdminAccessBindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an admin access binding in the specified GMP organization.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>
+        updateAdminAccessBinding(
+            com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAdminAccessBindingMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ORGANIZATION = 0;
@@ -1358,6 +3148,20 @@ public final class MarketingplatformAdminServiceGrpc {
   private static final int METHODID_DELETE_ANALYTICS_ACCOUNT_LINK = 5;
   private static final int METHODID_SET_PROPERTY_SERVICE_LEVEL = 6;
   private static final int METHODID_REPORT_PROPERTY_USAGE = 7;
+  private static final int METHODID_GET_USER_GROUP = 8;
+  private static final int METHODID_LIST_USER_GROUPS = 9;
+  private static final int METHODID_CREATE_USER_GROUP = 10;
+  private static final int METHODID_UPDATE_USER_GROUP = 11;
+  private static final int METHODID_DELETE_USER_GROUP = 12;
+  private static final int METHODID_GET_USER_GROUP_MEMBER = 13;
+  private static final int METHODID_LIST_USER_GROUP_MEMBERS = 14;
+  private static final int METHODID_CREATE_USER_GROUP_MEMBER = 15;
+  private static final int METHODID_UPDATE_USER_GROUP_MEMBER = 16;
+  private static final int METHODID_DELETE_USER_GROUP_MEMBER = 17;
+  private static final int METHODID_GET_ADMIN_ACCESS_BINDING = 18;
+  private static final int METHODID_LIST_ADMIN_ACCESS_BINDINGS = 19;
+  private static final int METHODID_CREATE_ADMIN_ACCESS_BINDING = 20;
+  private static final int METHODID_UPDATE_ADMIN_ACCESS_BINDING = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1438,6 +3242,104 @@ public final class MarketingplatformAdminServiceGrpc {
                       com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_USER_GROUP:
+          serviceImpl.getUserGroup(
+              (com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.UserGroup>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_USER_GROUPS:
+          serviceImpl.listUserGroups(
+              (com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_USER_GROUP:
+          serviceImpl.createUserGroup(
+              (com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.UserGroup>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_USER_GROUP:
+          serviceImpl.updateUserGroup(
+              (com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.UserGroup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_USER_GROUP:
+          serviceImpl.deleteUserGroup(
+              (com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_USER_GROUP_MEMBER:
+          serviceImpl.getUserGroupMember(
+              (com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_USER_GROUP_MEMBERS:
+          serviceImpl.listUserGroupMembers(
+              (com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_USER_GROUP_MEMBER:
+          serviceImpl.createUserGroupMember(
+              (com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_USER_GROUP_MEMBER:
+          serviceImpl.updateUserGroupMember(
+              (com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_USER_GROUP_MEMBER:
+          serviceImpl.deleteUserGroupMember(
+              (com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_ADMIN_ACCESS_BINDING:
+          serviceImpl.getAdminAccessBinding(
+              (com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ADMIN_ACCESS_BINDINGS:
+          serviceImpl.listAdminAccessBindings(
+              (com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha
+                          .ListAdminAccessBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ADMIN_ACCESS_BINDING:
+          serviceImpl.createAdminAccessBinding(
+              (com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_ADMIN_ACCESS_BINDING:
+          serviceImpl.updateAdminAccessBinding(
+              (com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1516,6 +3418,102 @@ public final class MarketingplatformAdminServiceGrpc {
                     com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest,
                     com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse>(
                     service, METHODID_REPORT_PROPERTY_USAGE)))
+        .addMethod(
+            getGetUserGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.UserGroup>(
+                    service, METHODID_GET_USER_GROUP)))
+        .addMethod(
+            getListUserGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse>(
+                    service, METHODID_LIST_USER_GROUPS)))
+        .addMethod(
+            getCreateUserGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.UserGroup>(
+                    service, METHODID_CREATE_USER_GROUP)))
+        .addMethod(
+            getUpdateUserGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.UserGroup>(
+                    service, METHODID_UPDATE_USER_GROUP)))
+        .addMethod(
+            getDeleteUserGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_GROUP)))
+        .addMethod(
+            getGetUserGroupMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>(
+                    service, METHODID_GET_USER_GROUP_MEMBER)))
+        .addMethod(
+            getListUserGroupMembersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse>(
+                    service, METHODID_LIST_USER_GROUP_MEMBERS)))
+        .addMethod(
+            getCreateUserGroupMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>(
+                    service, METHODID_CREATE_USER_GROUP_MEMBER)))
+        .addMethod(
+            getUpdateUserGroupMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember>(
+                    service, METHODID_UPDATE_USER_GROUP_MEMBER)))
+        .addMethod(
+            getDeleteUserGroupMemberMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_GROUP_MEMBER)))
+        .addMethod(
+            getGetAdminAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>(
+                    service, METHODID_GET_ADMIN_ACCESS_BINDING)))
+        .addMethod(
+            getListAdminAccessBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse>(
+                    service, METHODID_LIST_ADMIN_ACCESS_BINDINGS)))
+        .addMethod(
+            getCreateAdminAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>(
+                    service, METHODID_CREATE_ADMIN_ACCESS_BINDING)))
+        .addMethod(
+            getUpdateAdminAccessBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest,
+                    com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding>(
+                    service, METHODID_UPDATE_ADMIN_ACCESS_BINDING)))
         .build();
   }
 
@@ -1577,6 +3575,20 @@ public final class MarketingplatformAdminServiceGrpc {
                       .addMethod(getDeleteAnalyticsAccountLinkMethod())
                       .addMethod(getSetPropertyServiceLevelMethod())
                       .addMethod(getReportPropertyUsageMethod())
+                      .addMethod(getGetUserGroupMethod())
+                      .addMethod(getListUserGroupsMethod())
+                      .addMethod(getCreateUserGroupMethod())
+                      .addMethod(getUpdateUserGroupMethod())
+                      .addMethod(getDeleteUserGroupMethod())
+                      .addMethod(getGetUserGroupMemberMethod())
+                      .addMethod(getListUserGroupMembersMethod())
+                      .addMethod(getCreateUserGroupMemberMethod())
+                      .addMethod(getUpdateUserGroupMemberMethod())
+                      .addMethod(getDeleteUserGroupMemberMethod())
+                      .addMethod(getGetAdminAccessBindingMethod())
+                      .addMethod(getListAdminAccessBindingsMethod())
+                      .addMethod(getCreateAdminAccessBindingMethod())
+                      .addMethod(getUpdateAdminAccessBindingMethod())
                       .build();
         }
       }

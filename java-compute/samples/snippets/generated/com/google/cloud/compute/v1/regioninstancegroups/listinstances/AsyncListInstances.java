@@ -48,7 +48,6 @@ public class AsyncListInstances {
               .setRegion("region-934795532")
               .setRegionInstanceGroupsListInstancesRequestResource(
                   RegionInstanceGroupsListInstancesRequest.newBuilder().build())
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<InstanceWithNamedPorts> future =
           regionInstanceGroupsClient.listInstancesPagedCallable().futureCall(request);

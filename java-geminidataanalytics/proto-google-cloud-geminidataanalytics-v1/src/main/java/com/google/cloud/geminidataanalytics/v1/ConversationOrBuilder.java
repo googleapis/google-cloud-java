@@ -304,6 +304,32 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
+   * Optional. The display name for the conversation (max 63 chars).
+   * </pre>
+   *
+   * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The title.
+   */
+  java.lang.String getTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The display name for the conversation (max 63 chars).
+   * </pre>
+   *
+   * <code>string title = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for title.
+   */
+  com.google.protobuf.ByteString getTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Customer managed encryption key (CMEK) to use for encrypting the
    * Conversation resources. Encryption will happen at Titan layer, we will pass
    * the KMS key to Titan.
@@ -359,30 +385,4 @@ public interface ConversationOrBuilder
    * @return The bytes for kmsKey.
    */
   com.google.protobuf.ByteString getKmsKeyBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether memory is paused for this conversation.
-   * </pre>
-   *
-   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return Whether the memoryPaused field is set.
-   */
-  boolean hasMemoryPaused();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Whether memory is paused for this conversation.
-   * </pre>
-   *
-   * <code>optional bool memory_paused = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The memoryPaused.
-   */
-  boolean getMemoryPaused();
 }

@@ -534,7 +534,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. VO2 max value measured as in ml consumed oxygen / kg of body
-   * weight / min.
+   * weight / min. Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -551,7 +551,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. VO2 max value measured as in ml consumed oxygen / kg of body
-   * weight / min.
+   * weight / min. Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1222,7 +1222,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. VO2 max value measured as in ml consumed oxygen / kg of body
-     * weight / min.
+     * weight / min. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1239,7 +1239,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. VO2 max value measured as in ml consumed oxygen / kg of body
-     * weight / min.
+     * weight / min. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1256,7 +1256,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. VO2 max value measured as in ml consumed oxygen / kg of body
-     * weight / min.
+     * weight / min. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1277,7 +1277,7 @@ public final class VO2Max extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. VO2 max value measured as in ml consumed oxygen / kg of body
-     * weight / min.
+     * weight / min. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double vo2_max = 2 [(.google.api.field_behavior) = REQUIRED];</code>

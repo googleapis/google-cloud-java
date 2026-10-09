@@ -30,14 +30,17 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.longrunning.OperationResponsePollAlgorithm;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.StreamingRetryAlgorithm;
+import java.time.Duration;
 import java.util.Collection;
 import org.jspecify.annotations.NullMarked;
 
@@ -268,6 +271,30 @@ public class Callables {
 
     return new OperationCallableImpl<>(
         initialCallable, scheduler, longRunningClient, operationCallSettings);
+  }
+
+  /**
+   * Creates a {@link ResumableUploadCallable} to execute resumable uploads. Designed for use by
+   * generated code.
+   *
+   * @param uploadClient client executing the wire-level upload protocol
+   * @param callSettings {@link UnaryCallSettings} to configure the method-level settings with
+   * @param clientContext {@link ClientContext} to use to connect to the service.
+   * @return {@link ResumableUploadCallable} callable object
+   */
+  @BetaApi
+  @InternalApi
+  public static <RequestT, ResponseT> ResumableUploadCallable<RequestT, ResponseT> resumableUpload(
+      ResumableUploadClient<RequestT, ResponseT> uploadClient,
+      UnaryCallSettings<RequestT, ResponseT> callSettings,
+      ClientContext clientContext) {
+    ResumableUploadOptions.Builder defaultOptionsBuilder = ResumableUploadOptions.newBuilder();
+    Duration totalTimeout = callSettings.getRetrySettings().getTotalTimeoutDuration();
+    if (totalTimeout != null && !totalTimeout.isZero() && !totalTimeout.isNegative()) {
+      defaultOptionsBuilder.setGlobalTimeout(totalTimeout);
+    }
+    return new ResumableUploadCallableImpl<>(
+        uploadClient, defaultOptionsBuilder.build(), clientContext);
   }
 
   private static boolean areRetriesDisabled(

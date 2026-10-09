@@ -59,4 +59,18 @@ public interface ActiveConferenceOrBuilder
    * @return The bytes for conferenceRecord.
    */
   com.google.protobuf.ByteString getConferenceRecordBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether a media api consenter is present in the
+   * conference.
+   * </pre>
+   *
+   * <code>bool media_api_consenter_present = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The mediaApiConsenterPresent.
+   */
+  boolean getMediaApiConsenterPresent();
 }

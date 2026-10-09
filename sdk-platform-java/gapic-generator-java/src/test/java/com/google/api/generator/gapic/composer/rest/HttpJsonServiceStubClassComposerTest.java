@@ -86,7 +86,8 @@ class HttpJsonServiceStubClassComposerTest {
             .build();
     HttpBinding httpBinding =
         HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 3, "Values");
+    String actual =
+        HttpJsonDescriptorComposer.getBindingFieldMethodName(httpBinding, 4, 3, "Values");
     Truth.assertThat(actual).isEqualTo("getValuesList");
   }
 
@@ -96,7 +97,8 @@ class HttpJsonServiceStubClassComposerTest {
         Field.builder().setIsEnum(true).setName("doesNotMatter").setType(TypeNode.OBJECT).build();
     HttpBinding httpBinding =
         HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 3, "Enums");
+    String actual =
+        HttpJsonDescriptorComposer.getBindingFieldMethodName(httpBinding, 4, 3, "Enums");
     Truth.assertThat(actual).isEqualTo("getEnumsValue");
   }
 
@@ -106,7 +108,8 @@ class HttpJsonServiceStubClassComposerTest {
     Field field = Field.builder().setName("doesNotMatter").setType(TypeNode.OBJECT).build();
     HttpBinding httpBinding =
         HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 3, "Value");
+    String actual =
+        HttpJsonDescriptorComposer.getBindingFieldMethodName(httpBinding, 4, 3, "Value");
     Truth.assertThat(actual).isEqualTo("getValue");
   }
 
@@ -115,7 +118,8 @@ class HttpJsonServiceStubClassComposerTest {
     Field field = Field.builder().setName("doesNotMatter").setType(TypeNode.OBJECT).build();
     HttpBinding httpBinding =
         HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 1, "Value");
+    String actual =
+        HttpJsonDescriptorComposer.getBindingFieldMethodName(httpBinding, 4, 1, "Value");
     Truth.assertThat(actual).isEqualTo("getValue");
   }
 
@@ -221,6 +225,16 @@ class HttpJsonServiceStubClassComposerTest {
     GapicClass clazz = HttpJsonServiceStubClassComposer.instance().generate(context, service);
 
     Assert.assertGoldenClass(this.getClass(), clazz, "HttpJsonResourceNameExtractorStub.golden");
+    Assert.assertEmptySamples(clazz.samples());
+  }
+
+  @Test
+  void generateHttpJsonServiceStubClass_resumableUpload() {
+    GapicContext context = RestTestProtoLoader.instance().parseShowcaseResumableUpload();
+    Service service = context.services().get(0);
+    GapicClass clazz = composer.generate(context, service);
+
+    Assert.assertGoldenClass(this.getClass(), clazz, "HttpJsonMediaServiceStub.golden");
     Assert.assertEmptySamples(clazz.samples());
   }
 }

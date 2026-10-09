@@ -81,7 +81,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The initial image the remote agent will attempt to run for the control
-   * plane.
+   * plane. Format would be a gcr image path, e.g.:
+   * gcr.io/PROJECT-ID/my-image:tag1
    * </pre>
    *
    * <code>string target_image = 1;</code>
@@ -106,7 +107,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The initial image the remote agent will attempt to run for the control
-   * plane.
+   * plane. Format would be a gcr image path, e.g.:
+   * gcr.io/PROJECT-ID/my-image:tag1
    * </pre>
    *
    * <code>string target_image = 1;</code>
@@ -136,7 +138,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The stable image that the remote agent will fallback to if the target image
-   * fails.
+   * fails. Format would be a gcr image path, e.g.:
+   * gcr.io/PROJECT-ID/my-image:tag1
    * </pre>
    *
    * <code>string stable_image = 2;</code>
@@ -161,7 +164,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The stable image that the remote agent will fallback to if the target image
-   * fails.
+   * fails. Format would be a gcr image path, e.g.:
+   * gcr.io/PROJECT-ID/my-image:tag1
    * </pre>
    *
    * <code>string stable_image = 2;</code>
@@ -523,7 +527,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The initial image the remote agent will attempt to run for the control
-     * plane.
+     * plane. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string target_image = 1;</code>
@@ -547,7 +552,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The initial image the remote agent will attempt to run for the control
-     * plane.
+     * plane. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string target_image = 1;</code>
@@ -571,7 +577,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The initial image the remote agent will attempt to run for the control
-     * plane.
+     * plane. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string target_image = 1;</code>
@@ -594,7 +601,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The initial image the remote agent will attempt to run for the control
-     * plane.
+     * plane. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string target_image = 1;</code>
@@ -613,7 +621,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The initial image the remote agent will attempt to run for the control
-     * plane.
+     * plane. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string target_image = 1;</code>
@@ -639,7 +648,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The stable image that the remote agent will fallback to if the target image
-     * fails.
+     * fails. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string stable_image = 2;</code>
@@ -663,7 +673,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The stable image that the remote agent will fallback to if the target image
-     * fails.
+     * fails. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string stable_image = 2;</code>
@@ -687,7 +698,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The stable image that the remote agent will fallback to if the target image
-     * fails.
+     * fails. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string stable_image = 2;</code>
@@ -710,7 +722,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The stable image that the remote agent will fallback to if the target image
-     * fails.
+     * fails. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string stable_image = 2;</code>
@@ -729,7 +742,8 @@ public final class ImageConfig extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The stable image that the remote agent will fallback to if the target image
-     * fails.
+     * fails. Format would be a gcr image path, e.g.:
+     * gcr.io/PROJECT-ID/my-image:tag1
      * </pre>
      *
      * <code>string stable_image = 2;</code>

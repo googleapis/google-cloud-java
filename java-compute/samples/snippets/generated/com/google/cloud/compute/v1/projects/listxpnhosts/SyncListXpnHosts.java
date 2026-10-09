@@ -44,7 +44,6 @@ public class SyncListXpnHosts {
               .setProject("project-309310695")
               .setProjectsListXpnHostsRequestResource(
                   ProjectsListXpnHostsRequest.newBuilder().build())
-              .setReturnPartialSuccess(true)
               .build();
       for (Project element : projectsClient.listXpnHosts(request).iterateAll()) {
         // doThingsWith(element);

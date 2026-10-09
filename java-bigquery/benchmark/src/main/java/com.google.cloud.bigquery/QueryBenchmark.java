@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.apache.arrow.vector.VectorSchemaRoot;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -92,5 +93,34 @@ public class QueryBenchmark {
   @Benchmark
   public void query(QueryParams queryParams, Blackhole blackhole) throws Exception {
     queryPerform(queryParams.queries, blackhole);
+  }
+
+  @Benchmark
+  public void queryWithArrowRowBased(QueryParams queryParams, Blackhole blackhole)
+      throws Exception {
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(queryParams.queries)
+            .setUseLegacySql(false)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    TableResult result = bigquery.query(config);
+    for (FieldValueList row : result.iterateAll()) {
+      blackhole.consume(row);
+    }
+  }
+
+  @Benchmark
+  public void queryWithArrowZeroCopy(QueryParams queryParams, Blackhole blackhole)
+      throws Exception {
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(queryParams.queries)
+            .setUseLegacySql(false)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
+      for (VectorSchemaRoot root : result) {
+        blackhole.consume(root);
+      }
+    }
   }
 }

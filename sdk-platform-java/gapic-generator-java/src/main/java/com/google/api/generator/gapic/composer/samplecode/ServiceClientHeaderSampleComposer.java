@@ -56,10 +56,10 @@ public class ServiceClientHeaderSampleComposer {
       Map<String, Message> messageTypes) {
     List<Method> publicMethods =
         service.methods().stream()
-            .filter(m -> m.isInternalApi() == false)
+            .filter(m -> !m.isInternalApi() && !m.isResumableUpload())
             .collect(Collectors.toList());
 
-    // If all generated methods are INTERNAL, generate an empty service sample.
+    // If all generated methods are INTERNAL or resumable upload, generate an empty service sample.
     if (publicMethods.isEmpty()) {
       return ServiceClientMethodSampleComposer.composeEmptyServiceSample(clientType, service);
     }

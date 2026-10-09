@@ -39,6 +39,7 @@ public class SyncEnrollResource {
           EnrollResourceRequest.newBuilder()
               .setScope("scope109264468")
               .addAllDestinations(new ArrayList<EnrollResourceRequest.EligibleDestination>())
+              .setValidateOnly(true)
               .build();
       Enrollment response = auditManagerClient.enrollResource(request);
     }

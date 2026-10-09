@@ -33,6 +33,7 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -51,6 +52,7 @@ import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackChannelOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackOpenTelemetry;
+import com.google.cloud.grpc.fallback.GcpFallbackState;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.Dialect;
@@ -668,6 +670,83 @@ public class GapicSpannerRpcTest {
       }
     } finally {
       executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testStreamingRetrySettingsNormalizedIndependently() {
+    for (boolean customizeRead : new boolean[] {true, false}) {
+      SpannerOptions.Builder builder = createSpannerOptions().toBuilder();
+      RetrySettings customSettings =
+          RetrySettings.newBuilder()
+              .setMaxAttempts(3)
+              .setTotalTimeoutDuration(Duration.ofSeconds(5))
+              .setInitialRetryDelayDuration(Duration.ofMillis(20))
+              .setMaxRetryDelayDuration(Duration.ofMillis(200))
+              .setRetryDelayMultiplier(2.0)
+              .build();
+      if (customizeRead) {
+        builder
+            .getSpannerStubSettingsBuilder()
+            .streamingReadSettings()
+            .setRetrySettings(customSettings);
+      } else {
+        builder
+            .getSpannerStubSettingsBuilder()
+            .executeStreamingSqlSettings()
+            .setRetrySettings(customSettings);
+      }
+      GapicSpannerRpc rpc = new GapicSpannerRpc(builder.build(), true);
+      try {
+        assertEquals(
+            customizeRead ? customSettings : GapicSpannerRpc.DEFAULT_STREAMING_RETRY_SETTINGS,
+            rpc.getReadRetrySettings());
+        assertEquals(
+            customizeRead ? GapicSpannerRpc.DEFAULT_STREAMING_RETRY_SETTINGS : customSettings,
+            rpc.getExecuteQueryRetrySettings());
+      } finally {
+        rpc.shutdown();
+      }
+    }
+  }
+
+  @Test
+  public void testCustomStreamingRetrySettingsRetainExplicitTimeout() {
+    for (boolean unlimited : new boolean[] {true, false}) {
+      SpannerOptions.Builder builder = createSpannerOptions().toBuilder();
+      RetrySettings.Builder readSettings =
+          builder
+              .getSpannerStubSettingsBuilder()
+              .streamingReadSettings()
+              .getRetrySettings()
+              .toBuilder()
+              .setMaxAttempts(2);
+      RetrySettings.Builder querySettings =
+          builder
+              .getSpannerStubSettingsBuilder()
+              .executeStreamingSqlSettings()
+              .getRetrySettings()
+              .toBuilder()
+              .setMaxAttempts(3);
+      if (unlimited) {
+        readSettings.setTotalTimeoutDuration(Duration.ZERO);
+        querySettings.setTotalTimeoutDuration(Duration.ZERO);
+      }
+      builder
+          .getSpannerStubSettingsBuilder()
+          .streamingReadSettings()
+          .setRetrySettings(readSettings.build());
+      builder
+          .getSpannerStubSettingsBuilder()
+          .executeStreamingSqlSettings()
+          .setRetrySettings(querySettings.build());
+      GapicSpannerRpc rpc = new GapicSpannerRpc(builder.build(), true);
+      try {
+        assertEquals(readSettings.build(), rpc.getReadRetrySettings());
+        assertEquals(querySettings.build(), rpc.getExecuteQueryRetrySettings());
+      } finally {
+        rpc.shutdown();
+      }
     }
   }
 
@@ -2615,6 +2694,36 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testDirectPathFallbackRecoveryWrapsFallbackChannelsInGrpcGcpPool() {
+    SpannerOptions.useEnvironment(
+        new SpannerOptions.SpannerEnvironment() {
+          @Override
+          public boolean isEnableGcpFallbackRecovery() {
+            return true;
+          }
+        });
+    GapicSpannerRpc rpc = null;
+    try {
+      SpannerOptions options = createDirectPathFallbackObjectCountOptions().build();
+      assumeTrue(
+          "GCP fallback must be enabled for this DirectPath fallback test",
+          options.isEnableGcpFallback());
+      GrpcGcpObjectCounts before = countGrpcGcpObjectsFromChannelz();
+      rpc = new GapicSpannerRpc(options);
+      GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
+      assertEquals(counts.debugString(), 3, counts.gcpManagedChannels);
+      assertEquals(counts.debugString(), 24, counts.channelRefs);
+      // One fallback state per pool.
+      assertEquals(3, new HashSet<>(rpc.getFallbackStates()).size());
+    } finally {
+      if (rpc != null) {
+        rpc.shutdown();
+      }
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
   public void testDirectPathFallbackWithGaxChannelPoolDoesNotCreateGrpcGcpChannelRefs() {
     SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
     GapicSpannerRpc rpc = null;
@@ -2768,11 +2877,12 @@ public class GapicSpannerRpcTest {
 
     @Override
     GcpFallbackChannelOptions createFallbackChannelOptions(
-        GcpFallbackOpenTelemetry fallbackTelemetry, int minFailedCalls) {
+        GcpFallbackOpenTelemetry fallbackTelemetry,
+        int minFailedCalls,
+        @Nullable GcpFallbackState fallbackState) {
       // Override default 1-minute period to 10ms for instant testing
       return GcpFallbackChannelOptions.newBuilder()
-          .setPrimaryChannelName("directpath")
-          .setFallbackChannelName("cloudpath")
+          .setSharedState(fallbackState)
           .setMinFailedCalls(10)
           .setPeriod(Duration.ofMillis(5))
           .setGcpFallbackOpenTelemetry(fallbackTelemetry)
@@ -2847,11 +2957,12 @@ public class GapicSpannerRpcTest {
 
     @Override
     GcpFallbackChannelOptions createFallbackChannelOptions(
-        GcpFallbackOpenTelemetry fallbackTelemetry, int minFailedCalls) {
+        GcpFallbackOpenTelemetry fallbackTelemetry,
+        int minFailedCalls,
+        @Nullable GcpFallbackState fallbackState) {
       // Override default 1-minute period to 10ms for instant testing
       return GcpFallbackChannelOptions.newBuilder()
-          .setPrimaryChannelName("directpath")
-          .setFallbackChannelName("cloudpath")
+          .setSharedState(fallbackState)
           .setMinFailedCalls(1)
           .setPeriod(Duration.ofMillis(5))
           .setGcpFallbackOpenTelemetry(fallbackTelemetry)

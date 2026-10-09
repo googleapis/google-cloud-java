@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -2210,6 +2211,8 @@ public class AppHubClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2270,6 +2273,8 @@ public class AppHubClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2330,6 +2335,8 @@ public class AppHubClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     mockAppHub.addResponse(expectedResponse);
 
@@ -2375,6 +2382,8 @@ public class AppHubClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     mockAppHub.addResponse(expectedResponse);
 
@@ -2420,6 +2429,8 @@ public class AppHubClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2545,6 +2556,319 @@ public class AppHubClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getBoundaryTest() throws Exception {
+    Boundary expectedResponse =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAppHub.addResponse(expectedResponse);
+
+    BoundaryName name = BoundaryName.of("[PROJECT]", "[LOCATION]");
+
+    Boundary actualResponse = client.getBoundary(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBoundaryRequest actualRequest = ((GetBoundaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBoundaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      BoundaryName name = BoundaryName.of("[PROJECT]", "[LOCATION]");
+      client.getBoundary(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBoundaryTest2() throws Exception {
+    Boundary expectedResponse =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockAppHub.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Boundary actualResponse = client.getBoundary(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetBoundaryRequest actualRequest = ((GetBoundaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getBoundaryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getBoundary(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBoundaryTest() throws Exception {
+    Boundary expectedResponse =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBoundaryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAppHub.addResponse(resultOperation);
+
+    Boundary boundary = Boundary.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Boundary actualResponse = client.updateBoundaryAsync(boundary, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateBoundaryRequest actualRequest = ((UpdateBoundaryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(boundary, actualRequest.getBoundary());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateBoundaryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      Boundary boundary = Boundary.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBoundaryAsync(boundary, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaTest() throws Exception {
+    ExtendedMetadataSchema expectedResponse =
+        ExtendedMetadataSchema.newBuilder()
+            .setName(
+                ExtendedMetadataSchemaName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+                    .toString())
+            .setJsonSchema("jsonSchema435994793")
+            .setSchemaVersion(1684719674)
+            .build();
+    mockAppHub.addResponse(expectedResponse);
+
+    ExtendedMetadataSchemaName name =
+        ExtendedMetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]");
+
+    ExtendedMetadataSchema actualResponse = client.getExtendedMetadataSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetExtendedMetadataSchemaRequest actualRequest =
+        ((GetExtendedMetadataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      ExtendedMetadataSchemaName name =
+          ExtendedMetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]");
+      client.getExtendedMetadataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaTest2() throws Exception {
+    ExtendedMetadataSchema expectedResponse =
+        ExtendedMetadataSchema.newBuilder()
+            .setName(
+                ExtendedMetadataSchemaName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+                    .toString())
+            .setJsonSchema("jsonSchema435994793")
+            .setSchemaVersion(1684719674)
+            .build();
+    mockAppHub.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ExtendedMetadataSchema actualResponse = client.getExtendedMetadataSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetExtendedMetadataSchemaRequest actualRequest =
+        ((GetExtendedMetadataSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getExtendedMetadataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasTest() throws Exception {
+    ExtendedMetadataSchema responsesElement = ExtendedMetadataSchema.newBuilder().build();
+    ListExtendedMetadataSchemasResponse expectedResponse =
+        ListExtendedMetadataSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExtendedMetadataSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockAppHub.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListExtendedMetadataSchemasPagedResponse pagedListResponse =
+        client.listExtendedMetadataSchemas(parent);
+
+    List<ExtendedMetadataSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExtendedMetadataSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExtendedMetadataSchemasRequest actualRequest =
+        ((ListExtendedMetadataSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listExtendedMetadataSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasTest2() throws Exception {
+    ExtendedMetadataSchema responsesElement = ExtendedMetadataSchema.newBuilder().build();
+    ListExtendedMetadataSchemasResponse expectedResponse =
+        ListExtendedMetadataSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExtendedMetadataSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockAppHub.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListExtendedMetadataSchemasPagedResponse pagedListResponse =
+        client.listExtendedMetadataSchemas(parent);
+
+    List<ExtendedMetadataSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExtendedMetadataSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAppHub.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListExtendedMetadataSchemasRequest actualRequest =
+        ((ListExtendedMetadataSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAppHub.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listExtendedMetadataSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

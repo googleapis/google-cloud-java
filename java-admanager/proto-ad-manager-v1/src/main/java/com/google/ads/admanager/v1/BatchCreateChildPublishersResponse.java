@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [BatchCreateChildPublishers][] method.
+ * Response object for `BatchCreateChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchCreateChildPublishersResponse}
@@ -320,7 +320,7 @@ public final class BatchCreateChildPublishersResponse extends com.google.protobu
    *
    *
    * <pre>
-   * Response object for [BatchCreateChildPublishers][] method.
+   * Response object for `BatchCreateChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchCreateChildPublishersResponse}

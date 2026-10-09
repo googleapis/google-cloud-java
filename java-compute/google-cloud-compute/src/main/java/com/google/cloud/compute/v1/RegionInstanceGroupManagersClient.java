@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionInstanceGroupManagers API.
  *
+ * <p>This client uses RegionInstanceGroupManagers version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -2008,7 +2010,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstanceGroupManager element :
    *       regionInstanceGroupManagersClient.list(request).iterateAll()) {
@@ -2046,7 +2047,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstanceGroupManager> future =
    *       regionInstanceGroupManagersClient.listPagedCallable().futureCall(request);
@@ -2084,7 +2084,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupManagerList response =
@@ -2176,7 +2175,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstanceManagedByIgmError element :
    *       regionInstanceGroupManagersClient.listErrors(request).iterateAll()) {
@@ -2217,7 +2215,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstanceManagedByIgmError> future =
    *       regionInstanceGroupManagersClient.listErrorsPagedCallable().futureCall(request);
@@ -2257,7 +2254,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupManagersListErrorsResponse response =
@@ -2353,7 +2349,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (ManagedInstance element :
    *       regionInstanceGroupManagersClient.listManagedInstances(request).iterateAll()) {
@@ -2396,7 +2391,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<ManagedInstance> future =
    *       regionInstanceGroupManagersClient.listManagedInstancesPagedCallable().futureCall(request);
@@ -2439,7 +2433,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupManagersListInstancesResponse response =
@@ -2532,7 +2525,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (PerInstanceConfig element :
    *       regionInstanceGroupManagersClient.listPerInstanceConfigs(request).iterateAll()) {
@@ -2573,7 +2565,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<PerInstanceConfig> future =
    *       regionInstanceGroupManagersClient
@@ -2617,7 +2608,6 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RegionInstanceGroupManagersListInstanceConfigsResp response =

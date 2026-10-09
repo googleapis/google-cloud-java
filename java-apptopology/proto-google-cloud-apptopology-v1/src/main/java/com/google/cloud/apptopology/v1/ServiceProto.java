@@ -57,6 +57,14 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apptopology_v1_GetSchemaRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apptopology_v1_ExploreSchemaRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apptopology_v1_ExploreSchemaRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apptopology_v1_ExploreSchemaResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apptopology_v1_ExploreSchemaResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apptopology_v1_GetDomainRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apptopology_v1_GetDomainRequest_fieldAccessorTable;
@@ -105,45 +113,63 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\005graph\030\001 \001(\0132\".google.cloud.apptopology.v1.Graph\"K\n"
           + "\020GetSchemaRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!apptopology.googleapis.com/Schema\"K\n"
+          + "!apptopology.googleapis.com/Schema\"\257\001\n"
+          + "\024ExploreSchemaRequest\0227\n"
+          + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!apptopology.googleapis.com/Schema\022\031\n"
+          + "\014start_labels\030\003 \003(\tB\003\340A\001\022\022\n"
+          + "\005depth\030\004 \001(\005B\003\340A\001\022\026\n"
+          + "\tpage_size\030\005 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\006 \001(\tB\003\340A\001\"\251\002\n"
+          + "\025ExploreSchemaResponse\0229\n\n"
+          + "node_types\030\001 \003(\0132%.google.cloud.apptopology.v1.NodeType\0229\n\n"
+          + "edge_types\030\002 \003(\0132%.google.cloud.apptopology.v1.EdgeType\022F\n"
+          + "\020label_properties\030\003"
+          + " \003(\0132,.google.cloud.apptopology.v1.LabelProperties\0229\n\n"
+          + "edge_rules\030\004 \003(\0132%.google.cloud.apptopology.v1.EdgeRule\022\027\n"
+          + "\017next_page_token\030\005 \001(\t\"K\n"
           + "\020GetDomainRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!apptopology.googleapis.com/Domain\"\200\001\n"
           + "\022ListDomainsRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)"
-          + "\340A\002\372A#\022!apptopology.googleapis.com/Domain\022\026\n"
+          + "\006parent\030\001 \001(\tB)\340A"
+          + "\002\372A#\022!apptopology.googleapis.com/Domain\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"d\n"
           + "\023ListDomainsResponse\0224\n"
           + "\007domains\030\001 \003(\0132#.google.cloud.apptopology.v1.Domain\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\346\007\n"
+          + "\017next_page_token\030\002 \001(\t2\255\t\n"
           + "\013AppTopology\022\243\002\n"
-          + "#GenerateDiscoveredResourcesTopology\022G.google.cloud.apptopology.v1.G"
-          + "enerateDiscoveredResourcesTopologyRequest\032H.google.cloud.apptopology.v1.Generate"
-          + "DiscoveredResourcesTopologyResponse\"i\332A\025"
-          + "name,topology_domains\202\323\344\223\002K\"F/v1/{name=p"
-          + "rojects/*/locations/*/discoveredResourcesTopology}:generate:\001*\022\242\001\n"
-          + "\tGetSchema\022-.google.cloud.apptopology.v1.GetSchemaRequ"
-          + "est\032#.google.cloud.apptopology.v1.Schema"
-          + "\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=projects/*/locations/*/domains/*/schema}\022\233\001\n"
-          + "\tGetDomain\022-.google.cloud.apptopology.v1.GetDomai"
-          + "nRequest\032#.google.cloud.apptopology.v1.D"
-          + "omain\":\332A\004name\202\323\344\223\002-\022+/v1/{name=projects/*/locations/*/domains/*}\022\256\001\n"
-          + "\013ListDomains\022/.google.cloud.apptopology.v1.ListDoma"
-          + "insRequest\0320.google.cloud.apptopology.v1"
-          + ".ListDomainsResponse\"<\332A\006parent\202\323\344\223\002-\022+/"
-          + "v1/{parent=projects/*/locations/*}/domai"
-          + "ns\032\274\001\312A\032apptopology.googleapis.com\322A\233\001ht"
-          + "tps://www.googleapis.com/auth/apptopology.read-only,https://www.googleapis.com/a"
-          + "uth/apptopology.read-write,https://www.googleapis.com/auth/cloud-platformB\216\003\n"
-          + "\037com.google.cloud.apptopology.v1B\014ServicePr"
-          + "otoP\001ZAcloud.google.com/go/apptopology/a"
-          + "piv1/apptopologypb;apptopologypb\252\002\033Googl"
-          + "e.Cloud.AppTopology.V1\312\002\033Google\\Cloud\\Ap"
-          + "pTopology\\V1\352\002\036Google::Cloud::AppTopology::V1\352A\271\001\n"
-          + "6apptopology.googleapis.com/DiscoveredResourcesTopology\022Cprojects/{pro"
-          + "ject}/locations/{location}/discoveredResourcesTopology*\035discoveredResourcesTopol"
-          + "ogies2\033discoveredResourcesTopologyb\006proto3"
+          + "#GenerateDiscoveredResourcesTopology\022G.google.cloud.apptopology.v1.Gen"
+          + "erateDiscoveredResourcesTopologyRequest\032H.google.cloud.apptopology.v1.GenerateDi"
+          + "scoveredResourcesTopologyResponse\"i\332A\025na"
+          + "me,topology_domains\202\323\344\223\002K\"F/v1/{name=pro"
+          + "jects/*/locations/*/discoveredResourcesTopology}:generate:\001*\022\242\001\n"
+          + "\tGetSchema\022-.google.cloud.apptopology.v1.GetSchemaReques"
+          + "t\032#.google.cloud.apptopology.v1.Schema\"A"
+          + "\332A\004name\202\323\344\223\0024\0222/v1/{name=projects/*/locations/*/domains/*/schema}\022\304\001\n\r"
+          + "ExploreSchema\0221.google.cloud.apptopology.v1.Explor"
+          + "eSchemaRequest\0322.google.cloud.apptopolog"
+          + "y.v1.ExploreSchemaResponse\"L\332A\004name\202\323\344\223\002"
+          + "?\":/v1/{name=projects/*/locations/*/domains/*/schema}:explore:\001*\022\233\001\n"
+          + "\tGetDomain\022-.google.cloud.apptopology.v1.GetDomainRe"
+          + "quest\032#.google.cloud.apptopology.v1.Doma"
+          + "in\":\332A\004name\202\323\344\223\002-\022+/v1/{name=projects/*/locations/*/domains/*}\022\256\001\n"
+          + "\013ListDomains\022/.google.cloud.apptopology.v1.ListDomains"
+          + "Request\0320.google.cloud.apptopology.v1.Li"
+          + "stDomainsResponse\"<\332A\006parent\202\323\344\223\002-\022+/v1/"
+          + "{parent=projects/*/locations/*}/domains\032"
+          + "\274\001\312A\032apptopology.googleapis.com\322A\233\001https"
+          + "://www.googleapis.com/auth/apptopology.read-only,https://www.googleapis.com/auth"
+          + "/apptopology.read-write,https://www.googleapis.com/auth/cloud-platformB\216\003\n"
+          + "\037com.google.cloud.apptopology.v1B\014ServiceProto"
+          + "P\001ZAcloud.google.com/go/apptopology/apiv"
+          + "1/apptopologypb;apptopologypb\252\002\033Google.C"
+          + "loud.AppTopology.V1\312\002\033Google\\Cloud\\AppTo"
+          + "pology\\V1\352\002\036Google::Cloud::AppTopology::V1\352A\271\001\n"
+          + "6apptopology.googleapis.com/DiscoveredResourcesTopology\022Cprojects/{projec"
+          + "t}/locations/{location}/discoveredResourcesTopology*\035discoveredResourcesTopologi"
+          + "es2\033discoveredResourcesTopologyb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -196,8 +222,24 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_apptopology_v1_GetDomainRequest_descriptor =
+    internal_static_google_cloud_apptopology_v1_ExploreSchemaRequest_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_cloud_apptopology_v1_ExploreSchemaRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apptopology_v1_ExploreSchemaRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "StartLabels", "Depth", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_apptopology_v1_ExploreSchemaResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_cloud_apptopology_v1_ExploreSchemaResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apptopology_v1_ExploreSchemaResponse_descriptor,
+            new java.lang.String[] {
+              "NodeTypes", "EdgeTypes", "LabelProperties", "EdgeRules", "NextPageToken",
+            });
+    internal_static_google_cloud_apptopology_v1_GetDomainRequest_descriptor =
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_apptopology_v1_GetDomainRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apptopology_v1_GetDomainRequest_descriptor,
@@ -205,7 +247,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_apptopology_v1_ListDomainsRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_apptopology_v1_ListDomainsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apptopology_v1_ListDomainsRequest_descriptor,
@@ -213,7 +255,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apptopology_v1_ListDomainsResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_apptopology_v1_ListDomainsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apptopology_v1_ListDomainsResponse_descriptor,

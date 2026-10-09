@@ -30,39 +30,70 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
-import java.io.InputStream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A ResumableUploadCallable is an API-transport-independent wrapper for the Resumable Upload
  * protocol. Operates directly on the request object and input stream payload.
  *
- * @param <RequestT> request type
- * @param <ResponseT> response type
+ * @param <RequestT> the type of the initial request message that initiates the upload session
+ * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @BetaApi
+@NullMarked
 public abstract class ResumableUploadCallable<RequestT, ResponseT> {
 
   protected ResumableUploadCallable() {}
 
   /**
-   * Performs a new resumable upload asynchronously.
+   * Performs a new resumable upload asynchronously with options overrides and default call context.
+   *
+   * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
    *
    * @param request the request message
-   * @param payload the data payload input stream
-   * @param settings call settings overrides; may be {@code null}
+   * @param payload supplier of the data payload input stream to upload and close
+   * @param options request-level upload options overrides; may be {@code null}
+   * @return future for tracking and controlling the upload
+   */
+  public ResumableUploadFuture<ResponseT> futureCall(
+      RequestT request, InputStreamSupplier payload, @Nullable ResumableUploadOptions options) {
+    return futureCall(request, payload, null, options);
+  }
+
+  /**
+   * Performs a new resumable upload asynchronously with call context and options overrides.
+   *
+   * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
+   * @param request the request message
+   * @param payload supplier of the data payload input stream to upload and close
+   * @param context call context overrides; may be {@code null}
+   * @param options request-level upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, ResumableUploadCallSettings settings);
+      RequestT request,
+      InputStreamSupplier payload,
+      @Nullable ApiCallContext context,
+      @Nullable ResumableUploadOptions options);
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
    *
+   * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
    * @param sessionUrl the upload session URL
-   * @param payload the data payload input stream
-   * @param settings call settings overrides; may be {@code null}
+   * @param payload supplier of the data payload input stream to upload and close
+   * @param options upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, ResumableUploadCallSettings settings);
+      String sessionUrl, InputStreamSupplier payload, @Nullable ResumableUploadOptions options);
 }

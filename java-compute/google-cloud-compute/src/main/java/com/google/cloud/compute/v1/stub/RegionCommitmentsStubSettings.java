@@ -402,7 +402,8 @@ public class RegionCommitmentsStubSettings extends StubSettings<RegionCommitment
             "gapic", GaxProperties.getLibraryVersion(RegionCommitmentsStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

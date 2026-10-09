@@ -27,27 +27,6 @@ public interface BindingOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional string binding_id = 441088277;</code>
-   *
-   * @return Whether the bindingId field is set.
-   */
-  boolean hasBindingId();
-
-  /**
-   * <code>optional string binding_id = 441088277;</code>
-   *
-   * @return The bindingId.
-   */
-  java.lang.String getBindingId();
-
-  /**
-   * <code>optional string binding_id = 441088277;</code>
-   *
-   * @return The bytes for bindingId.
-   */
-  com.google.protobuf.ByteString getBindingIdBytes();
-
-  /**
    *
    *
    * <pre>

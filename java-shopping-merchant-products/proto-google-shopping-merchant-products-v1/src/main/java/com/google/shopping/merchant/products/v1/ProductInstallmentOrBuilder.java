@@ -222,4 +222,51 @@ public interface ProductInstallmentOrBuilder
    * </code>
    */
   com.google.shopping.type.PriceOrBuilder getTotalAmountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mileage allowance for the lease of the vehicle. Only
+   * applicable to vehicle products.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mileageAllowance field is set.
+   */
+  boolean hasMileageAllowance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mileage allowance for the lease of the vehicle. Only
+   * applicable to vehicle products.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mileageAllowance.
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileageAllowance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mileage allowance for the lease of the vehicle. Only
+   * applicable to vehicle products.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+      getMileageAllowanceOrBuilder();
 }

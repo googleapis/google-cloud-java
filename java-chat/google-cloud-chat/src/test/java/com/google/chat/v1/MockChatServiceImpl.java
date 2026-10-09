@@ -600,6 +600,69 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void listMessagePins(
+      ListMessagePinsRequest request, StreamObserver<ListMessagePinsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListMessagePinsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListMessagePinsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListMessagePins, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListMessagePinsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createMessagePin(
+      CreateMessagePinRequest request, StreamObserver<MessagePin> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MessagePin) {
+      requests.add(request);
+      responseObserver.onNext(((MessagePin) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateMessagePin, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MessagePin.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteMessagePin(
+      DeleteMessagePinRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteMessagePin, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createCustomEmoji(
       CreateCustomEmojiRequest request, StreamObserver<CustomEmoji> responseObserver) {
     Object response = responses.poll();

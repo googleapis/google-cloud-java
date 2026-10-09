@@ -81,6 +81,10 @@ public final class AnswerRecordsProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_KnowledgeAssistFeedback_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2_AgentAssistantRecord_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2_AgentAssistantRecord_fieldAccessorTable;
@@ -133,7 +137,7 @@ public final class AnswerRecordsProto extends com.google.protobuf.GeneratedFile 
           + "buf.Timestamp\"p\n\020CorrectnessLevel\022!\n\035COR"
           + "RECTNESS_LEVEL_UNSPECIFIED\020\000\022\017\n\013NOT_CORR"
           + "ECT\020\001\022\025\n\021PARTIALLY_CORRECT\020\002\022\021\n\rFULLY_CO"
-          + "RRECT\020\003B\021\n\017detail_feedback\"\373\n\n\026AgentAssi"
+          + "RRECT\020\003B\021\n\017detail_feedback\"\367\013\n\026AgentAssi"
           + "stantFeedback\022a\n\020answer_relevance\030\001 \001(\0162"
           + "B.google.cloud.dialogflow.v2.AgentAssist"
           + "antFeedback.AnswerRelevanceB\003\340A\001\022i\n\024docu"
@@ -150,56 +154,65 @@ public final class AnswerRecordsProto extends com.google.protobuf.GeneratedFile 
           + "ck.KnowledgeSearchFeedbackB\003\340A\001\022r\n\031knowl"
           + "edge_assist_feedback\030\006 \001(\0132J.google.clou"
           + "d.dialogflow.v2.AgentAssistantFeedback.K"
-          + "nowledgeAssistFeedbackB\003\340A\001\032\273\002\n\025Summariz"
-          + "ationFeedback\022.\n\nstart_time\030\001 \001(\0132\032.goog"
-          + "le.protobuf.Timestamp\022/\n\013submit_time\030\002 \001"
-          + "(\0132\032.google.protobuf.Timestamp\022\024\n\014summar"
-          + "y_text\030\003 \001(\t\022v\n\rtext_sections\030\004 \003(\0132Z.go"
-          + "ogle.cloud.dialogflow.v2.AgentAssistantF"
-          + "eedback.SummarizationFeedback.TextSectio"
-          + "nsEntryB\003\340A\001\0323\n\021TextSectionsEntry\022\013\n\003key"
-          + "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032F\n\027KnowledgeSe"
-          + "archFeedback\022\025\n\ranswer_copied\030\001 \001(\010\022\024\n\014c"
-          + "licked_uris\030\002 \003(\t\032F\n\027KnowledgeAssistFeed"
-          + "back\022\025\n\ranswer_copied\030\001 \001(\010\022\024\n\014clicked_u"
-          + "ris\030\002 \003(\t\"Q\n\017AnswerRelevance\022 \n\034ANSWER_R"
-          + "ELEVANCE_UNSPECIFIED\020\000\022\016\n\nIRRELEVANT\020\001\022\014"
-          + "\n\010RELEVANT\020\002\"W\n\023DocumentCorrectness\022$\n D"
-          + "OCUMENT_CORRECTNESS_UNSPECIFIED\020\000\022\r\n\tINC"
-          + "ORRECT\020\001\022\013\n\007CORRECT\020\002\"Y\n\022DocumentEfficie"
-          + "ncy\022#\n\037DOCUMENT_EFFICIENCY_UNSPECIFIED\020\000"
-          + "\022\017\n\013INEFFICIENT\020\001\022\r\n\tEFFICIENT\020\002\"\352\002\n\024Age"
-          + "ntAssistantRecord\022S\n\031article_suggestion_"
-          + "answer\030\005 \001(\0132).google.cloud.dialogflow.v"
-          + "2.ArticleAnswerB\003\340A\003H\000\022@\n\nfaq_answer\030\006 \001"
-          + "(\0132%.google.cloud.dialogflow.v2.FaqAnswe"
-          + "rB\003\340A\003H\000\022[\n\030dialogflow_assist_answer\030\007 \001"
-          + "(\01322.google.cloud.dialogflow.v2.Dialogfl"
-          + "owAssistAnswerB\003\340A\003H\000\022T\n\024generator_sugge"
-          + "stion\030\010 \001(\0132/.google.cloud.dialogflow.v2"
-          + ".GeneratorSuggestionB\003\340A\003H\000B\010\n\006answer2\255\005"
-          + "\n\rAnswerRecords\022\355\001\n\021ListAnswerRecords\0224."
-          + "google.cloud.dialogflow.v2.ListAnswerRec"
-          + "ordsRequest\0325.google.cloud.dialogflow.v2"
-          + ".ListAnswerRecordsResponse\"k\332A\006parent\202\323\344"
-          + "\223\002\\\022%/v2/{parent=projects/*}/answerRecor"
-          + "dsZ3\0221/v2/{parent=projects/*/locations/*"
-          + "}/answerRecords\022\261\002\n\022UpdateAnswerRecord\0225"
-          + ".google.cloud.dialogflow.v2.UpdateAnswer"
-          + "RecordRequest\032(.google.cloud.dialogflow."
-          + "v2.AnswerRecord\"\271\001\332A\031answer_record,updat"
-          + "e_mask\202\323\344\223\002\226\00123/v2/{answer_record.name=p"
-          + "rojects/*/answerRecords/*}:\ranswer_recor"
-          + "dZP2?/v2/{answer_record.name=projects/*/"
-          + "locations/*/answerRecords/*}:\ranswer_rec"
-          + "ord\032x\312A\031dialogflow.googleapis.com\322AYhttp"
-          + "s://www.googleapis.com/auth/cloud-platfo"
-          + "rm,https://www.googleapis.com/auth/dialo"
-          + "gflowB\230\001\n\036com.google.cloud.dialogflow.v2"
-          + "B\022AnswerRecordsProtoP\001Z>cloud.google.com"
-          + "/go/dialogflow/apiv2/dialogflowpb;dialog"
-          + "flowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2"
-          + "b\006proto3"
+          + "nowledgeAssistFeedbackB\003\340A\001\022e\n\022companion"
+          + "_feedback\030\010 \001(\0132D.google.cloud.dialogflo"
+          + "w.v2.AgentAssistantFeedback.CompanionFee"
+          + "dbackB\003\340A\001\032\273\002\n\025SummarizationFeedback\022.\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022/\n\013submit_time\030\002 \001(\0132\032.google.proto"
+          + "buf.Timestamp\022\024\n\014summary_text\030\003 \001(\t\022v\n\rt"
+          + "ext_sections\030\004 \003(\0132Z.google.cloud.dialog"
+          + "flow.v2.AgentAssistantFeedback.Summariza"
+          + "tionFeedback.TextSectionsEntryB\003\340A\001\0323\n\021T"
+          + "extSectionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\032F\n\027KnowledgeSearchFeedback\022\025\n\ra"
+          + "nswer_copied\030\001 \001(\010\022\024\n\014clicked_uris\030\002 \003(\t"
+          + "\032F\n\027KnowledgeAssistFeedback\022\025\n\ranswer_co"
+          + "pied\030\001 \001(\010\022\024\n\014clicked_uris\030\002 \003(\t\032\023\n\021Comp"
+          + "anionFeedback\"Q\n\017AnswerRelevance\022 \n\034ANSW"
+          + "ER_RELEVANCE_UNSPECIFIED\020\000\022\016\n\nIRRELEVANT"
+          + "\020\001\022\014\n\010RELEVANT\020\002\"W\n\023DocumentCorrectness\022"
+          + "$\n DOCUMENT_CORRECTNESS_UNSPECIFIED\020\000\022\r\n"
+          + "\tINCORRECT\020\001\022\013\n\007CORRECT\020\002\"Y\n\022DocumentEff"
+          + "iciency\022#\n\037DOCUMENT_EFFICIENCY_UNSPECIFI"
+          + "ED\020\000\022\017\n\013INEFFICIENT\020\001\022\r\n\tEFFICIENT\020\002\"\317\004\n"
+          + "\024AgentAssistantRecord\022S\n\031article_suggest"
+          + "ion_answer\030\005 \001(\0132).google.cloud.dialogfl"
+          + "ow.v2.ArticleAnswerB\003\340A\003H\000\022@\n\nfaq_answer"
+          + "\030\006 \001(\0132%.google.cloud.dialogflow.v2.FaqA"
+          + "nswerB\003\340A\003H\000\022[\n\030dialogflow_assist_answer"
+          + "\030\007 \001(\01322.google.cloud.dialogflow.v2.Dial"
+          + "ogflowAssistAnswerB\003\340A\003H\000\022T\n\024generator_s"
+          + "uggestion\030\010 \001(\0132/.google.cloud.dialogflo"
+          + "w.v2.GeneratorSuggestionB\003\340A\003H\000\022T\n\024compa"
+          + "nion_suggestion\030\t \001(\0132/.google.cloud.dia"
+          + "logflow.v2.CompanionSuggestionB\003\340A\003H\000\022\214\001"
+          + "\n\035reactive_companion_suggestion\030\n \001(\0132^."
+          + "google.cloud.dialogflow.v2.StreamingReac"
+          + "tiveCompanionSuggestionsResponse.Reactiv"
+          + "eModeResponseB\003\340A\003H\000B\010\n\006answer2\255\005\n\rAnswe"
+          + "rRecords\022\355\001\n\021ListAnswerRecords\0224.google."
+          + "cloud.dialogflow.v2.ListAnswerRecordsReq"
+          + "uest\0325.google.cloud.dialogflow.v2.ListAn"
+          + "swerRecordsResponse\"k\332A\006parent\202\323\344\223\002\\\022%/v"
+          + "2/{parent=projects/*}/answerRecordsZ3\0221/"
+          + "v2/{parent=projects/*/locations/*}/answe"
+          + "rRecords\022\261\002\n\022UpdateAnswerRecord\0225.google"
+          + ".cloud.dialogflow.v2.UpdateAnswerRecordR"
+          + "equest\032(.google.cloud.dialogflow.v2.Answ"
+          + "erRecord\"\271\001\332A\031answer_record,update_mask\202"
+          + "\323\344\223\002\226\00123/v2/{answer_record.name=projects"
+          + "/*/answerRecords/*}:\ranswer_recordZP2?/v"
+          + "2/{answer_record.name=projects/*/locatio"
+          + "ns/*/answerRecords/*}:\ranswer_record\032x\312A"
+          + "\031dialogflow.googleapis.com\322AYhttps://www"
+          + ".googleapis.com/auth/cloud-platform,http"
+          + "s://www.googleapis.com/auth/dialogflowB\230"
+          + "\001\n\036com.google.cloud.dialogflow.v2B\022Answe"
+          + "rRecordsProtoP\001Z>cloud.google.com/go/dia"
+          + "logflow/apiv2/dialogflowpb;dialogflowpb\242"
+          + "\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -272,6 +285,7 @@ public final class AnswerRecordsProto extends com.google.protobuf.GeneratedFile 
               "SummarizationFeedback",
               "KnowledgeSearchFeedback",
               "KnowledgeAssistFeedback",
+              "CompanionFeedback",
             });
     internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_SummarizationFeedback_descriptor =
         internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_descriptor.getNestedType(
@@ -309,6 +323,13 @@ public final class AnswerRecordsProto extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "AnswerCopied", "ClickedUris",
             });
+    internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_descriptor =
+        internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_descriptor.getNestedType(
+            3);
+    internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2_AgentAssistantFeedback_CompanionFeedback_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_dialogflow_v2_AgentAssistantRecord_descriptor =
         getDescriptor().getMessageType(6);
     internal_static_google_cloud_dialogflow_v2_AgentAssistantRecord_fieldAccessorTable =
@@ -319,6 +340,8 @@ public final class AnswerRecordsProto extends com.google.protobuf.GeneratedFile 
               "FaqAnswer",
               "DialogflowAssistAnswer",
               "GeneratorSuggestion",
+              "CompanionSuggestion",
+              "ReactiveCompanionSuggestion",
               "Answer",
             });
     descriptor.resolveAllFeaturesImmutable();
