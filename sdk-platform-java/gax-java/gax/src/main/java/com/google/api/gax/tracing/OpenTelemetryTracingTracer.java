@@ -66,12 +66,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void injectTraceContext(Map<String, String> carrier) {
-    if (carrier == null) {
-      return;
-    }
-    // Prefer the active attempt span (T4) so outgoing RPC wire context reflects the specific
-    // attempt;
-    // fall back to the overall operation span (T3) if no attempt is currently in-flight.
+    // Prefer the active attempt span so outgoing RPC wire context reflects the specific attempt;
+    // fall back to the overall operation span if no attempt is currently in-flight.
     Span currentSpan = attemptSpan != null ? attemptSpan : operationSpan;
     if (currentSpan != null) {
       Context context = Context.current().with(currentSpan);
@@ -85,19 +81,6 @@ class OpenTelemetryTracingTracer implements ApiTracer {
                 }
               });
     }
-  }
-
-  @Override
-  @SuppressWarnings("MustBeClosedChecker")
-  public Scope inScope() {
-    // Attach the active attempt span to the current execution thread context;
-    // fall back to the overall operation span when between attempts.
-    Span currentSpan = attemptSpan != null ? attemptSpan : operationSpan;
-    if (currentSpan == null) {
-      return () -> {};
-    }
-    io.opentelemetry.context.Scope otelScope = currentSpan.makeCurrent();
-    return otelScope::close;
   }
 
   /**
@@ -121,28 +104,10 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   @InternalApi
   OpenTelemetryTracingTracer(
       Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
-    this(tracer, apiTracerContext, attemptSpanName, resolveOperationSpanName(attemptSpanName));
-  }
-
-  /**
-   * Creates a new instance of {@code OpenTelemetryTracingTracer} with explicitly provided attempt
-   * and operation span names.
-   *
-   * @param tracer the {@link Tracer} to use for recording spans
-   * @param apiTracerContext the {@link ApiTracerContext} to use for recording spans
-   * @param attemptSpanName the name of the individual attempt spans
-   * @param operationSpanName the name of the overall client request operation span
-   */
-  @InternalApi
-  OpenTelemetryTracingTracer(
-      Tracer tracer,
-      ApiTracerContext apiTracerContext,
-      String attemptSpanName,
-      String operationSpanName) {
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
     this.attemptSpanName = attemptSpanName;
-    this.operationSpanName = operationSpanName;
+    this.operationSpanName = resolveOperationSpanName(attemptSpanName);
     this.attemptAttributes = new HashMap<>();
     this.parentContext = Context.current();
     buildAttributes();
@@ -151,7 +116,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   /**
-   * Starts and initializes the operation-level client request span (T3).
+   * Starts and initializes the operation-level client request span.
    *
    * @return the newly started {@link Span} for the overall operation
    */
@@ -160,7 +125,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     operationSpanBuilder.setSpanKind(SpanKind.INTERNAL);
     operationSpanBuilder.setParent(parentContext);
     operationSpanBuilder.setAllAttributes(
-        ObservabilityUtils.toOtelAttributes(this.attemptAttributes));
+        ObservabilityUtils.toOtelAttributes(this.apiTracerContext.getOperationAttributes()));
     return operationSpanBuilder.startSpan();
   }
 
@@ -209,17 +174,6 @@ class OpenTelemetryTracingTracer implements ApiTracer {
 
   @Override
   public void attemptStarted(Object request, int attemptNumber) {
-    // Prevent creating new attempt spans if the overall operation has already concluded.
-    if (operationSpan == null) {
-      return;
-    }
-    // If a previous attempt was not explicitly closed before a retry started,
-    // end it cleanly so it does not linger.
-    if (attemptSpan != null) {
-      endSpan(attemptSpan, null);
-      attemptSpan = null;
-    }
-
     Map<String, Object> currentAttemptAttributes = new HashMap<>(this.attemptAttributes);
 
     if (attemptNumber > 0) {
@@ -238,7 +192,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     // Attempt spans are of the CLIENT kind
     spanBuilder.setSpanKind(SpanKind.CLIENT);
 
-    // Link attempt span to operation context (parent T3 span)
+    // Link attempt span to operation context (parent operation span)
     spanBuilder.setParent(operationContext);
 
     // Pass the combined attributes to the new SpanBuilder method

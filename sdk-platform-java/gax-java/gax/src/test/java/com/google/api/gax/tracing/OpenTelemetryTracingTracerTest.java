@@ -35,7 +35,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -746,32 +745,6 @@ class OpenTelemetryTracingTracerTest {
   }
 
   @Test
-  void testInScope_withAttemptSpan() {
-    // Verifies that inScope() activates the current attempt span if an attempt is currently active.
-    io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
-    when(span.makeCurrent()).thenReturn(mockScope);
-
-    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
-    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
-      verify(span).makeCurrent();
-    }
-    verify(mockScope).close();
-  }
-
-  @Test
-  void testInScope_withOperationSpanFallback() {
-    // Verifies that inScope() falls back to activating the operation span when no attempt span is
-    // active.
-    io.opentelemetry.context.Scope mockScope = mock(io.opentelemetry.context.Scope.class);
-    when(operationSpan.makeCurrent()).thenReturn(mockScope);
-
-    try (ApiTracer.Scope scope = openTelemetryTracingTracer.inScope()) {
-      verify(operationSpan).makeCurrent();
-    }
-    verify(mockScope).close();
-  }
-
-  @Test
   void testInjectTraceContext_withOperationSpanFallback() {
     // Verifies that injectTraceContext() injects the operation span context into the carrier
     // when between attempts so that context propagation doesn't drop trace state.
@@ -793,36 +766,5 @@ class OpenTelemetryTracingTracerTest {
     assertThat(carrier).containsKey("traceparent");
     assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000003");
     assertThat(carrier.get("traceparent")).contains("0000000000000004");
-  }
-
-  @Test
-  void testAttemptStarted_whenPreviousAttemptActive_closesOldSpan() {
-    // Verifies that starting a new retry attempt cleanly closes any lingering previous attempt
-    // span.
-    Span span1 = mock(Span.class);
-    Span span2 = mock(Span.class);
-
-    when(spanBuilder.startSpan()).thenReturn(span1, span2);
-
-    openTelemetryTracingTracer.attemptStarted(new Object(), 0);
-
-    // Start a second attempt before the first attempt was ended
-    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
-    verify(span1).end();
-    verify(span2, never()).end();
-
-    // Now complete the second attempt
-    openTelemetryTracingTracer.attemptSucceeded();
-    verify(span2).end();
-  }
-
-  @Test
-  void testAttemptStarted_afterOperationCompleted_doesNotStartNewSpan() {
-    // Verifies that after operation completion, late callbacks cannot spawn new attempt spans.
-    openTelemetryTracingTracer.operationSucceeded();
-
-    // Attempting to start a new attempt after operation completion should be a no-op
-    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
-    verify(spanBuilder, never()).startSpan();
   }
 }
