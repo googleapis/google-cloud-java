@@ -36,6 +36,9 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
   private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
 
   public CheckAndMutateRowShim(Client client) {
+    // TODO: once the backend confirms the required permission for CheckAndMutateRow, if it is
+    // PERMISSION_READ_WRITE, merge these pools with ReadModifyWriteRowShim's pools into a shared
+    // ReadWriteSessionPools to halve session connections and unify circuit-breaker tracking.
     // CheckAndMutateRow reads (predicate filter) and conditionally writes, so it needs
     // read + write access on the session.
     tables =
@@ -67,11 +70,6 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
     } else {
       return false;
     }
-    // Circuit-breaker: stop routing to the session path if the server has repeatedly indicated
-    // it doesn't support this RPC (UNIMPLEMENTED). Still allow through if there is already an
-    // active session, since an open session proves the server supports it for this connection.
-    // Currently this will only fallback in case RLS is misconfigured. If the AFE pool is
-    // unavailable, it'll be controlled by ClientConfiguration.
     return UnaryShim.shouldRouteToSession(pool);
   }
 

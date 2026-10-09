@@ -15,10 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
-import com.google.bigtable.v2.Cell;
-import com.google.bigtable.v2.Column;
-import com.google.bigtable.v2.Family;
-import com.google.bigtable.v2.Row;
 import com.google.protobuf.ByteString;
 import java.util.List;
 
@@ -30,30 +26,6 @@ import java.util.List;
 public interface RowAdapter<RowT> {
   /** Creates a new instance of a {@link RowBuilder}. */
   RowBuilder<RowT> createRowBuilder();
-
-  /** Builds a user-facing row from a bigtable {@link Row} proto, or null if the proto is null. */
-  default RowT buildRowFromProto(Row protoRow) {
-    if (protoRow == null) {
-      return null;
-    }
-    RowBuilder<RowT> builder = createRowBuilder();
-    builder.startRow(protoRow.getKey());
-    for (Family family : protoRow.getFamiliesList()) {
-      for (Column column : family.getColumnsList()) {
-        for (Cell cell : column.getCellsList()) {
-          builder.startCell(
-              family.getName(),
-              column.getQualifier(),
-              cell.getTimestampMicros(),
-              cell.getLabelsList(),
-              0);
-          builder.cellValue(cell.getValue());
-          builder.finishCell();
-        }
-      }
-    }
-    return builder.finishRow();
-  }
 
   /**
    * Checks if the given row is a special marker row. Please the documentation for {@link

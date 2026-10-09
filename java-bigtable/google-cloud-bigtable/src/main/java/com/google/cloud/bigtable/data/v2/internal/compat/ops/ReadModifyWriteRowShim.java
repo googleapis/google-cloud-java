@@ -68,11 +68,6 @@ public class ReadModifyWriteRowShim
     } else {
       return false;
     }
-    // Circuit-breaker: stop routing to the session path if the server has repeatedly indicated
-    // it doesn't support this RPC (UNIMPLEMENTED). Still allow through if there is already an
-    // active session, since an open session proves the server supports it for this connection.
-    // Currently this will only fallback in case RLS is misconfigured. If the AFE pool is
-    // unavailable, it'll be controlled by ClientConfiguration.
     return UnaryShim.shouldRouteToSession(pool);
   }
 
