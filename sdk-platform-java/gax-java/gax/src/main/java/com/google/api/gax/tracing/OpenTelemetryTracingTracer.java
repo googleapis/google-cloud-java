@@ -52,6 +52,10 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
+  // Captures the active trace context from the calling thread at RPC initiation.
+  // This allows attempt spans—including retries dispatched on background threads—to
+  // link back to the original parent trace.
+  private final io.opentelemetry.context.Context parentContext;
   private @Nullable Span attemptSpan;
 
   @Override
@@ -82,6 +86,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.apiTracerContext = apiTracerContext;
     this.attemptSpanName = resolveAttemptSpanName(apiTracerContext);
     this.attemptAttributes = new HashMap<>();
+    this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
   }
 
@@ -100,6 +105,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.attemptSpanName = attemptSpanName;
     this.apiTracerContext = apiTracerContext;
     this.attemptAttributes = new HashMap<>();
+    this.parentContext = io.opentelemetry.context.Context.current();
     buildAttributes();
   }
 
@@ -142,10 +148,45 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     // Attempt spans are of the CLIENT kind
     spanBuilder.setSpanKind(SpanKind.CLIENT);
 
+    // Link attempt span to parent context
+    spanBuilder.setParent(parentContext);
+
     // Pass the combined attributes to the new SpanBuilder method
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
+  }
+
+  /**
+   * Signals that the overall logical operation succeeded.
+   *
+   * <p>Closes any remaining in-flight attempt span.
+   */
+  @Override
+  public void operationSucceeded() {
+    recordErrorAndEndAttempt(null);
+  }
+
+  /**
+   * Signals that the overall logical operation was cancelled.
+   *
+   * <p>Closes any remaining in-flight attempt span with a {@link CancellationException}.
+   */
+  @Override
+  public void operationCancelled() {
+    recordErrorAndEndAttempt(new CancellationException());
+  }
+
+  /**
+   * Signals that the overall logical operation failed permanently.
+   *
+   * <p>Closes any remaining in-flight attempt span with the provided error details.
+   *
+   * @param error the cause of the operation failure
+   */
+  @Override
+  public void operationFailed(Throwable error) {
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
@@ -215,10 +256,16 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(error);
   }
 
+  /**
+   * Records error details and ends the current attempt span.
+   *
+   * @param error the exception associated with the attempt failure, or {@code null} if successful
+   */
   private void recordErrorAndEndAttempt(@Nullable Throwable error) {
     if (attemptSpan == null) {
       return;
     }
+
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
     if (!responseAttributes.isEmpty()) {
@@ -228,14 +275,6 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
       attemptSpan.setAttribute(
           ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
-    }
-
-    endAttempt();
-  }
-
-  private void endAttempt() {
-    if (attemptSpan == null) {
-      return;
     }
 
     attemptSpan.end();
