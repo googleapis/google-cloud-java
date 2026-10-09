@@ -74,8 +74,7 @@ jobs:
     - name: Get librarian version
       id: librarian
       run: |
-        version=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
-        echo "version=${version}" >> $GITHUB_OUTPUT
+        echo "version=680d2c45" >> $GITHUB_OUTPUT
     - name: Run librarian update & tidy
       run: |
         go run "github.com/googleapis/librarian/cmd/librarian@${STEPS_LIBRARIAN_OUTPUTS_VERSION}" update sources.googleapis
