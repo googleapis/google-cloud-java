@@ -15,22 +15,34 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
+import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import io.grpc.Deadline;
 import java.io.Closeable;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Wrapper interface for session operations. It will own a set of {@link
- * com.google.cloud.bigtable.data.v2.internal.session.SessionPool}s and wil dispatch vRPCs. It's
- * responsible for creating these {@link
- * com.google.cloud.bigtable.data.v2.internal.session.SessionPool}s on the fly and garbage
- * collecting them when they are no longer used. Each logical operation will implement this
- * interface.
+ * Wrapper interface for session operations. It will own a set of {@link SessionPool}s and dispatch
+ * vRPCs. It's responsible for creating these pools on the fly and garbage collecting them when they
+ * are no longer used. Each logical operation will implement this interface.
  */
 public interface UnaryShim<ReqT, RespT> extends Closeable {
+  // TODO: this should be a client config
+  int MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES = 30;
+
   CompletableFuture<RespT> call(ReqT request, Deadline deadline);
 
   default boolean supports(ReqT request) {
     return true;
+  }
+
+  /**
+   * Circuit-breaker check for {@link #supports} implementations. Returns false once the server has
+   * repeatedly rejected the session RPC with UNIMPLEMENTED, unless a session is already open (which
+   * proves the server supports it for this connection). Currently only falls back when RLS is
+   * misconfigured; AFE pool availability is controlled by ClientConfiguration.
+   */
+  static boolean shouldRouteToSession(SessionPool<?> pool) {
+    return pool.getConsecutiveUnimplementedFailures() < MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES
+        || pool.hasSession();
   }
 }

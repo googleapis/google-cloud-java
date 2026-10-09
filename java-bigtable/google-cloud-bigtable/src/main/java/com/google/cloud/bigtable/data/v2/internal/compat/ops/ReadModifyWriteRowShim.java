@@ -15,20 +15,22 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
-import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
-import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.TableId;
 import com.google.cloud.bigtable.data.v2.models.TargetId;
 import io.grpc.Deadline;
 import java.util.concurrent.CompletableFuture;
 
-public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, Boolean> {
+public class ReadModifyWriteRowShim
+    implements UnaryShim<ReadModifyWriteRow, SessionReadModifyWriteRowResponse> {
 
   private final ReadWriteSessionPools pools;
 
-  public CheckAndMutateRowShim(ReadWriteSessionPools pools) {
+  public ReadModifyWriteRowShim(ReadWriteSessionPools pools) {
     this.pools = pools;
   }
 
@@ -36,7 +38,7 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
   public void close() {}
 
   @Override
-  public boolean supports(ConditionalRowMutation request) {
+  public boolean supports(ReadModifyWriteRow request) {
     TargetId targetId = request.getTargetId();
     SessionPool<?> pool;
     if (targetId instanceof TableId) {
@@ -50,22 +52,20 @@ public class CheckAndMutateRowShim implements UnaryShim<ConditionalRowMutation, 
   }
 
   @Override
-  public CompletableFuture<Boolean> call(ConditionalRowMutation request, Deadline deadline) {
+  public CompletableFuture<SessionReadModifyWriteRowResponse> call(
+      ReadModifyWriteRow request, Deadline deadline) {
     TargetId targetId = request.getTargetId();
-    SessionCheckAndMutateRowRequest innerReq = request.toSessionProto();
+    SessionReadModifyWriteRowRequest innerReq = request.toSessionProto();
 
     if (targetId instanceof TableId) {
-      return pools.tables.apply(
-          (TableId) targetId,
-          t -> t.checkAndMutateRow(innerReq, deadline).thenApply(r -> r.getPredicateMatched()));
+      return pools.tables.apply((TableId) targetId, t -> t.readModifyWriteRow(innerReq, deadline));
     }
     if (targetId instanceof AuthorizedViewId) {
       return pools.authViews.apply(
-          (AuthorizedViewId) targetId,
-          v -> v.checkAndMutateRow(innerReq, deadline).thenApply(r -> r.getPredicateMatched()));
+          (AuthorizedViewId) targetId, v -> v.readModifyWriteRow(innerReq, deadline));
     }
 
-    CompletableFuture<Boolean> f = new CompletableFuture<>();
+    CompletableFuture<SessionReadModifyWriteRowResponse> f = new CompletableFuture<>();
     f.completeExceptionally(
         new UnsupportedOperationException("Unsupported targetId type: " + targetId));
     return f;

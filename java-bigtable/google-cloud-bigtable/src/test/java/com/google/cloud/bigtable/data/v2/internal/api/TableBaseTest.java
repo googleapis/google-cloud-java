@@ -21,9 +21,11 @@ import static com.google.cloud.bigtable.data.v2.internal.test_helpers.VRpcCallCo
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.OpenTableRequest;
+import com.google.bigtable.v2.ReadModifyWriteRule;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
@@ -77,6 +79,7 @@ public class TableBaseTest {
             VRpcDescriptor.READ_ROW,
             VRpcDescriptor.MUTATE_ROW,
             VRpcDescriptor.CHECK_AND_MUTATE_ROW,
+            VRpcDescriptor.READ_MODIFY_WRITE_ROW,
             noopMetrics,
             mockTimer,
             MoreExecutors.directExecutor());
@@ -179,6 +182,18 @@ public class TableBaseTest {
         SessionCheckAndMutateRowRequest.newBuilder()
             .addTrueMutations(
                 Mutation.newBuilder().setDeleteFromRow(Mutation.DeleteFromRow.getDefaultInstance()))
+            .build(),
+        new UnaryResponseFuture<>(),
+        deadline);
+    assertThat(fakeSessionPool.lastVRpc.ctx).isNotIdempotent();
+  }
+
+  @Test
+  public void testReadModifyWriteRowNotIdempotent() {
+    // ReadModifyWriteRow is never idempotent and must never be retried.
+    table.readModifyWriteRow(
+        SessionReadModifyWriteRowRequest.newBuilder()
+            .addRules(ReadModifyWriteRule.newBuilder().setFamilyName("f").build())
             .build(),
         new UnaryResponseFuture<>(),
         deadline);
