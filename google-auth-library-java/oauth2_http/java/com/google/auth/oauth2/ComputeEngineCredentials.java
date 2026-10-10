@@ -81,7 +81,11 @@ import org.jspecify.annotations.Nullable;
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
  *
- * <p>Fetches access tokens from the Google Compute Engine metadata server.
+ * <p>Fetches access tokens from the Google Compute Engine metadata server. When a workload
+ * certificate for an agent identity is available, requests certificate-bound access tokens and ID
+ * tokens by default (see {@code IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN} and the <a
+ * href="https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library">Google
+ * Auth Library guide</a>).
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
  */
