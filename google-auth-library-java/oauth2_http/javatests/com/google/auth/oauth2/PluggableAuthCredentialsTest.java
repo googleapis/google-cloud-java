@@ -35,6 +35,7 @@ import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
 import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SERVICE_ACCOUNT_IMPERSONATION_URL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpTransport;
@@ -48,6 +49,7 @@ import java.io.InputStream;
 import java.io.NotSerializableException;
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,6 +65,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   // The maximum timeout for waiting for the executable to finish (120 seconds).
   private static final int MAXIMUM_EXECUTABLE_TIMEOUT_MS = 120 * 1000;
   private static final String STS_URL = "https://sts.googleapis.com";
+  private static final String IMPERSONATED_EMAIL = "testn@test.iam.gserviceaccount.com";
 
   private static final PluggableAuthCredentials CREDENTIAL =
       PluggableAuthCredentials.newBuilder()
@@ -212,6 +215,15 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
 
+    final int[] invocationCount = {0};
+    final ExecutableOptions[] providedOptions = {null};
+    ExecutableHandler executableHandler =
+        options -> {
+          invocationCount[0]++;
+          providedOptions[0] = options;
+          return "pluggableAuthToken";
+        };
+
     PluggableAuthCredentials credential =
         PluggableAuthCredentials.newBuilder()
             .setAudience(
@@ -220,18 +232,19 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setTokenInfoUrl("tokenInfoUrl")
             .setTokenUrl(transportFactory.transport.getStsUrl())
             .setCredentialSource(buildCredentialSource())
+            .setExecutableHandler(executableHandler)
             .setServiceAccountImpersonationUrl(
                 transportFactory.transport.getServiceAccountImpersonationUrl())
             .setHttpTransportFactory(transportFactory)
             .build();
 
-    credential =
-        PluggableAuthCredentials.newBuilder(credential)
-            .setExecutableHandler(options -> "pluggableAuthToken")
-            .build();
-
     AccessToken accessToken = credential.refreshAccessToken();
 
+    // Validate that the executable was invoked once with the impersonated email.
+    assertEquals(1, invocationCount[0]);
+    assertEquals(
+        IMPERSONATED_EMAIL,
+        providedOptions[0].getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
@@ -244,6 +257,11 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "executable", true, false);
+
+    // Validate that refreshing a second time reuses cached impersonatedCredentials and does not
+    // re-invoke the executable while the source STS token is still unexpired.
+    credential.refreshAccessToken();
+    assertEquals(1, invocationCount[0]);
   }
 
   @Test
@@ -253,6 +271,15 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
 
+    final int[] invocationCount = {0};
+    final ExecutableOptions[] providedOptions = {null};
+    ExecutableHandler executableHandler =
+        options -> {
+          invocationCount[0]++;
+          providedOptions[0] = options;
+          return "pluggableAuthToken";
+        };
+
     PluggableAuthCredentials credential =
         PluggableAuthCredentials.newBuilder()
             .setAudience(
@@ -261,6 +288,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setTokenInfoUrl("tokenInfoUrl")
             .setTokenUrl(transportFactory.transport.getStsUrl())
             .setCredentialSource(buildCredentialSource())
+            .setExecutableHandler(executableHandler)
             .setServiceAccountImpersonationUrl(
                 transportFactory.transport.getServiceAccountImpersonationUrl())
             .setServiceAccountImpersonationOptions(
@@ -268,13 +296,13 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .build();
 
-    credential =
-        PluggableAuthCredentials.newBuilder(credential)
-            .setExecutableHandler(options -> "pluggableAuthToken")
-            .build();
-
     AccessToken accessToken = credential.refreshAccessToken();
 
+    // Validate that the executable was invoked once with the impersonated email.
+    assertEquals(1, invocationCount[0]);
+    assertEquals(
+        IMPERSONATED_EMAIL,
+        providedOptions[0].getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
     assertEquals(
         transportFactory.transport.getServiceAccountAccessToken(), accessToken.getTokenValue());
 
@@ -290,6 +318,36 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     ExternalAccountCredentialsTest.validateMetricsHeader(headers, "executable", true, true);
+  }
+
+  @Test
+  void refreshAccessToken_withServiceAccountImpersonation_executableFailure() {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    PluggableAuthException expectedException =
+        new PluggableAuthException("INVALID_EXECUTABLE", "Executable failed.");
+    ExecutableHandler executableHandler =
+        options -> {
+          throw expectedException;
+        };
+
+    PluggableAuthCredentials credential =
+        PluggableAuthCredentials.newBuilder()
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenInfoUrl("tokenInfoUrl")
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setCredentialSource(buildCredentialSource())
+            .setExecutableHandler(executableHandler)
+            .setServiceAccountImpersonationUrl(
+                transportFactory.transport.getServiceAccountImpersonationUrl())
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    IOException exception = assertThrows(IOException.class, credential::refreshAccessToken);
+    assertSame(expectedException, exception.getCause());
   }
 
   @Test
@@ -583,6 +641,35 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     assertEquals(credentials.getExecutableHandler(), newCredentials.getExecutableHandler());
     assertEquals(credentials.getUniverseDomain(), newCredentials.getUniverseDomain());
     assertEquals("universeDomain", newCredentials.getUniverseDomain());
+  }
+
+  @Test
+  void createScoped_preservesImpersonatedServiceAccountEmail() throws IOException {
+    final String[] recordedImpersonatedEmail = {null};
+    PluggableAuthCredentials outerCredentials =
+        PluggableAuthCredentials.newBuilder(CREDENTIAL)
+            .setExecutableHandler(
+                options -> {
+                  recordedImpersonatedEmail[0] =
+                      options.getEnvironmentMap().get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL");
+                  return "pluggableAuthToken";
+                })
+            .setServiceAccountImpersonationUrl(
+                "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/"
+                    + IMPERSONATED_EMAIL
+                    + ":generateAccessToken")
+            .build();
+    PluggableAuthCredentials sourceCredentials =
+        (PluggableAuthCredentials)
+            outerCredentials.buildImpersonatedCredentials().getSourceCredentials();
+
+    PluggableAuthCredentials scopedCredentials =
+        sourceCredentials.createScoped(Collections.singletonList("scope1"));
+    scopedCredentials.retrieveSubjectToken();
+
+    assertNull(scopedCredentials.getServiceAccountImpersonationUrl());
+    assertNull(scopedCredentials.getServiceAccountEmail());
+    assertEquals(IMPERSONATED_EMAIL, recordedImpersonatedEmail[0]);
   }
 
   @Test
