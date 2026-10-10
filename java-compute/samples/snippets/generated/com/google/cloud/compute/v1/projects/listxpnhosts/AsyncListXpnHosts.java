@@ -45,7 +45,6 @@ public class AsyncListXpnHosts {
               .setProject("project-309310695")
               .setProjectsListXpnHostsRequestResource(
                   ProjectsListXpnHostsRequest.newBuilder().build())
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<Project> future = projectsClient.listXpnHostsPagedCallable().futureCall(request);
       // Do something.

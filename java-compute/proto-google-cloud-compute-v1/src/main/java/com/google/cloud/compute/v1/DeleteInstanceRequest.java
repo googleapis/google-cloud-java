@@ -127,6 +127,41 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int NO_GRACEFUL_SHUTDOWN_FIELD_NUMBER = 336255890;
+  private boolean noGracefulShutdown_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, Graceful Shutdown is skipped.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return Whether the noGracefulShutdown field is set.
+   */
+  @java.lang.Override
+  public boolean hasNoGracefulShutdown() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, Graceful Shutdown is skipped.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return The noGracefulShutdown.
+   */
+  @java.lang.Override
+  public boolean getNoGracefulShutdown() {
+    return noGracefulShutdown_;
+  }
+
   public static final int PROJECT_FIELD_NUMBER = 227560217;
 
   @SuppressWarnings("serial")
@@ -214,7 +249,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasRequestId() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -366,11 +401,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18257045, instance_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 37109963, requestId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(336255890, noGracefulShutdown_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -387,11 +425,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instance_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18257045, instance_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(37109963, requestId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(227560217, project_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(336255890, noGracefulShutdown_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -410,6 +451,10 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         (com.google.cloud.compute.v1.DeleteInstanceRequest) obj;
 
     if (!getInstance().equals(other.getInstance())) return false;
+    if (hasNoGracefulShutdown() != other.hasNoGracefulShutdown()) return false;
+    if (hasNoGracefulShutdown()) {
+      if (getNoGracefulShutdown() != other.getNoGracefulShutdown()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (hasRequestId() != other.hasRequestId()) return false;
     if (hasRequestId()) {
@@ -429,6 +474,10 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getInstance().hashCode();
+    if (hasNoGracefulShutdown()) {
+      hash = (37 * hash) + NO_GRACEFUL_SHUTDOWN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoGracefulShutdown());
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     if (hasRequestId()) {
@@ -578,6 +627,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       bitField0_ = 0;
       instance_ = "";
+      noGracefulShutdown_ = false;
       project_ = "";
       requestId_ = "";
       zone_ = "";
@@ -620,15 +670,19 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.instance_ = instance_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.project_ = project_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.requestId_ = requestId_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.noGracefulShutdown_ = noGracefulShutdown_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.zone_ = zone_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -652,19 +706,22 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasNoGracefulShutdown()) {
+        setNoGracefulShutdown(other.getNoGracefulShutdown());
+      }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRequestId()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -696,7 +753,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 146056362:
@@ -708,15 +765,21 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 296879706
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
+            case -1604920176:
+              {
+                noGracefulShutdown_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1604920176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -847,6 +910,78 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private boolean noGracefulShutdown_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, Graceful Shutdown is skipped.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @return Whether the noGracefulShutdown field is set.
+     */
+    @java.lang.Override
+    public boolean hasNoGracefulShutdown() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, Graceful Shutdown is skipped.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @return The noGracefulShutdown.
+     */
+    @java.lang.Override
+    public boolean getNoGracefulShutdown() {
+      return noGracefulShutdown_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, Graceful Shutdown is skipped.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @param value The noGracefulShutdown to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoGracefulShutdown(boolean value) {
+
+      noGracefulShutdown_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set to true, Graceful Shutdown is skipped.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNoGracefulShutdown() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      noGracefulShutdown_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object project_ = "";
 
     /**
@@ -918,7 +1053,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       project_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -938,7 +1073,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearProject() {
       project_ = getDefaultInstance().getProject();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -963,7 +1098,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       project_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -994,7 +1129,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1096,7 +1231,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1126,7 +1261,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1161,7 +1296,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1237,7 +1372,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1257,7 +1392,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1282,7 +1417,7 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

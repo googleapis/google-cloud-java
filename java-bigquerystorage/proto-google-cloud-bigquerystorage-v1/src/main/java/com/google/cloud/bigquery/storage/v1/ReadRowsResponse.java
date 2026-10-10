@@ -590,6 +590,51 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     return uncompressedByteSize_;
   }
 
+  public static final int TOTAL_ESTIMATED_ROW_COUNT_FIELD_NUMBER = 10;
+  private long totalEstimatedRowCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total estimated number of rows in the query results.
+   * Only populated when reading data from a BigQuery job.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalEstimatedRowCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalEstimatedRowCount() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total estimated number of rows in the query results.
+   * Only populated when reading data from a BigQuery job.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalEstimatedRowCount.
+   */
+  @java.lang.Override
+  public long getTotalEstimatedRowCount() {
+    return totalEstimatedRowCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -627,6 +672,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt64(9, uncompressedByteSize_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(10, totalEstimatedRowCount_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -669,6 +717,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(9, uncompressedByteSize_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, totalEstimatedRowCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -697,6 +748,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (hasUncompressedByteSize() != other.hasUncompressedByteSize()) return false;
     if (hasUncompressedByteSize()) {
       if (getUncompressedByteSize() != other.getUncompressedByteSize()) return false;
+    }
+    if (hasTotalEstimatedRowCount() != other.hasTotalEstimatedRowCount()) return false;
+    if (hasTotalEstimatedRowCount()) {
+      if (getTotalEstimatedRowCount() != other.getTotalEstimatedRowCount()) return false;
     }
     if (!getRowsCase().equals(other.getRowsCase())) return false;
     switch (rowsCase_) {
@@ -744,6 +799,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     if (hasUncompressedByteSize()) {
       hash = (37 * hash) + UNCOMPRESSED_BYTE_SIZE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUncompressedByteSize());
+    }
+    if (hasTotalEstimatedRowCount()) {
+      hash = (37 * hash) + TOTAL_ESTIMATED_ROW_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalEstimatedRowCount());
     }
     switch (rowsCase_) {
       case 3:
@@ -945,6 +1004,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         arrowSchemaBuilder_.clear();
       }
       uncompressedByteSize_ = 0L;
+      totalEstimatedRowCount_ = 0L;
       rowsCase_ = 0;
       rows_ = null;
       schemaCase_ = 0;
@@ -1003,6 +1063,10 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         result.uncompressedByteSize_ = uncompressedByteSize_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.totalEstimatedRowCount_ = totalEstimatedRowCount_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1049,6 +1113,9 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUncompressedByteSize()) {
         setUncompressedByteSize(other.getUncompressedByteSize());
+      }
+      if (other.hasTotalEstimatedRowCount()) {
+        setTotalEstimatedRowCount(other.getTotalEstimatedRowCount());
       }
       switch (other.getRowsCase()) {
         case AVRO_ROWS:
@@ -1161,6 +1228,12 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 72
+            case 80:
+              {
+                totalEstimatedRowCount_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2701,6 +2774,98 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public Builder clearUncompressedByteSize() {
       bitField0_ = (bitField0_ & ~0x00000080);
       uncompressedByteSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalEstimatedRowCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total estimated number of rows in the query results.
+     * Only populated when reading data from a BigQuery job.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the totalEstimatedRowCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasTotalEstimatedRowCount() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total estimated number of rows in the query results.
+     * Only populated when reading data from a BigQuery job.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The totalEstimatedRowCount.
+     */
+    @java.lang.Override
+    public long getTotalEstimatedRowCount() {
+      return totalEstimatedRowCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total estimated number of rows in the query results.
+     * Only populated when reading data from a BigQuery job.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The totalEstimatedRowCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalEstimatedRowCount(long value) {
+
+      totalEstimatedRowCount_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total estimated number of rows in the query results.
+     * Only populated when reading data from a BigQuery job.
+     *
+     * This feature is not yet available.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalEstimatedRowCount() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      totalEstimatedRowCount_ = 0L;
       onChanged();
       return this;
     }

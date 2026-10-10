@@ -41,7 +41,6 @@ public class SyncListUsable {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .build();
       for (BackendBucket element : backendBucketsClient.listUsable(request).iterateAll()) {
         // doThingsWith(element);

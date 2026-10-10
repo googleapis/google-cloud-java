@@ -37,9 +37,15 @@ import java.util.Map;
  */
 abstract class BigQueryBaseStruct implements java.sql.Struct {
   protected final BigQueryJdbcResultSetLogger LOG;
+  protected final boolean enableTimestampPicos;
 
   BigQueryBaseStruct(BigQueryJdbcResultSetLogger log) {
+    this(false, log);
+  }
+
+  BigQueryBaseStruct(boolean enableTimestampPicos, BigQueryJdbcResultSetLogger log) {
     this.LOG = log;
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   abstract FieldList getSchema();

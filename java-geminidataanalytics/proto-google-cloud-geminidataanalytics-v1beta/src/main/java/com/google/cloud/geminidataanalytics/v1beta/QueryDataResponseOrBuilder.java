@@ -224,4 +224,93 @@ public interface QueryDataResponseOrBuilder
    * @return The bytes of the disambiguationQuestion at the given index.
    */
   com.google.protobuf.ByteString getDisambiguationQuestionBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed step-by-step pipeline execution information.
+   * Populated only if generation_options.generate_debug_info was true.
+   * Provided for debugging and transparency purposes only.
+   * The structure and content of this object is not guaranteed and may
+   * change at any time without notice. Do not write production code or
+   * business logic depending on the fields in this object.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+   *
+   * @return Whether the pipelineDebugInfo field is set.
+   */
+  boolean hasPipelineDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed step-by-step pipeline execution information.
+   * Populated only if generation_options.generate_debug_info was true.
+   * Provided for debugging and transparency purposes only.
+   * The structure and content of this object is not guaranteed and may
+   * change at any time without notice. Do not write production code or
+   * business logic depending on the fields in this object.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+   *
+   * @return The pipelineDebugInfo.
+   */
+  com.google.protobuf.Struct getPipelineDebugInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed step-by-step pipeline execution information.
+   * Populated only if generation_options.generate_debug_info was true.
+   * Provided for debugging and transparency purposes only.
+   * The structure and content of this object is not guaranteed and may
+   * change at any time without notice. Do not write production code or
+   * business logic depending on the fields in this object.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+   */
+  com.google.protobuf.StructOrBuilder getPipelineDebugInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return Whether the tokenUsage field is set.
+   */
+  boolean hasTokenUsage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return The tokenUsage.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.TokenUsage getTokenUsage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder getTokenUsageOrBuilder();
 }

@@ -24,8 +24,8 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for `ListCompaniesRequest` containing matching `Company`
- * objects.
+ * Response object for `ListCompaniesRequest` containing matching
+ * [Company][google.ads.admanager.v1.Company] objects.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ListCompaniesResponse}
@@ -81,7 +81,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The `Company` objects from the specified network.
+   * The [Company][google.ads.admanager.v1.Company] objects from the specified
+   * network.
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -95,7 +96,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The `Company` objects from the specified network.
+   * The [Company][google.ads.admanager.v1.Company] objects from the specified
+   * network.
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -110,7 +112,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The `Company` objects from the specified network.
+   * The [Company][google.ads.admanager.v1.Company] objects from the specified
+   * network.
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -124,7 +127,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The `Company` objects from the specified network.
+   * The [Company][google.ads.admanager.v1.Company] objects from the specified
+   * network.
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -138,7 +142,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The `Company` objects from the specified network.
+   * The [Company][google.ads.admanager.v1.Company] objects from the specified
+   * network.
    * </pre>
    *
    * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -210,7 +215,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Total number of `Company` objects.
+   * Total number of [Company][google.ads.admanager.v1.Company] objects.
    * If a filter was included in the request, this reflects the total number
    * after the filtering is applied.
    *
@@ -416,8 +421,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response object for `ListCompaniesRequest` containing matching `Company`
-   * objects.
+   * Response object for `ListCompaniesRequest` containing matching
+   * [Company][google.ads.admanager.v1.Company] objects.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ListCompaniesResponse}
@@ -657,7 +662,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -674,7 +680,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -691,7 +698,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -708,7 +716,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -731,7 +740,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -752,7 +762,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -775,7 +786,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -798,7 +810,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -818,7 +831,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -839,7 +853,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -860,7 +875,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -880,7 +896,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -900,7 +917,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -913,7 +931,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -930,7 +949,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -948,7 +968,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -962,7 +983,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -976,7 +998,8 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The `Company` objects from the specified network.
+     * The [Company][google.ads.admanager.v1.Company] objects from the specified
+     * network.
      * </pre>
      *
      * <code>repeated .google.ads.admanager.v1.Company companies = 1;</code>
@@ -1124,7 +1147,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Total number of `Company` objects.
+     * Total number of [Company][google.ads.admanager.v1.Company] objects.
      * If a filter was included in the request, this reflects the total number
      * after the filtering is applied.
      *
@@ -1150,7 +1173,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Total number of `Company` objects.
+     * Total number of [Company][google.ads.admanager.v1.Company] objects.
      * If a filter was included in the request, this reflects the total number
      * after the filtering is applied.
      *
@@ -1180,7 +1203,7 @@ public final class ListCompaniesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Total number of `Company` objects.
+     * Total number of [Company][google.ads.admanager.v1.Company] objects.
      * If a filter was included in the request, this reflects the total number
      * after the filtering is applied.
      *

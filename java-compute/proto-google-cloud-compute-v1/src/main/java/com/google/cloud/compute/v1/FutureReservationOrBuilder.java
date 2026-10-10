@@ -214,6 +214,51 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
+   * Full or partial URL of an existing future reservation to indicate
+   * intent for reserving capacity in the same cluster as the colocation
+   * resource.
+   * </pre>
+   *
+   * <code>optional string colocation_resource = 32901740;</code>
+   *
+   * @return Whether the colocationResource field is set.
+   */
+  boolean hasColocationResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of an existing future reservation to indicate
+   * intent for reserving capacity in the same cluster as the colocation
+   * resource.
+   * </pre>
+   *
+   * <code>optional string colocation_resource = 32901740;</code>
+   *
+   * @return The colocationResource.
+   */
+  java.lang.String getColocationResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Full or partial URL of an existing future reservation to indicate
+   * intent for reserving capacity in the same cluster as the colocation
+   * resource.
+   * </pre>
+   *
+   * <code>optional string colocation_resource = 32901740;</code>
+   *
+   * @return The bytes for colocationResource.
+   */
+  com.google.protobuf.ByteString getColocationResourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * If not present, then FR will not deliver a new commitment or update an
    * existing commitment.
    * </pre>
@@ -807,6 +852,100 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
+   * Output only. Contains standard resource metadata for an FutureReservation
+   * resource. It is populated for each instance of the FutureReservation
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   *
+   * @return Whether the resourceMetadata field is set.
+   */
+  boolean hasResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an FutureReservation
+   * resource. It is populated for each instance of the FutureReservation
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   *
+   * @return The resourceMetadata.
+   */
+  com.google.cloud.compute.v1.ResourceMetadata getResourceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an FutureReservation
+   * resource. It is populated for each instance of the FutureReservation
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   */
+  com.google.cloud.compute.v1.ResourceMetadataOrBuilder getResourceMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource intended to be delivered. Name should conform to
+   * RFC1035. This will be the name of storage pool or Exapool for persistent
+   * disk FRs.
+   * </pre>
+   *
+   * <code>optional string resource_name = 442550300;</code>
+   *
+   * @return Whether the resourceName field is set.
+   */
+  boolean hasResourceName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource intended to be delivered. Name should conform to
+   * RFC1035. This will be the name of storage pool or Exapool for persistent
+   * disk FRs.
+   * </pre>
+   *
+   * <code>optional string resource_name = 442550300;</code>
+   *
+   * @return The resourceName.
+   */
+  java.lang.String getResourceName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource intended to be delivered. Name should conform to
+   * RFC1035. This will be the name of storage pool or Exapool for persistent
+   * disk FRs.
+   * </pre>
+   *
+   * <code>optional string resource_name = 442550300;</code>
+   *
+   * @return The bytes for resourceName.
+   */
+  com.google.protobuf.ByteString getResourceNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Maintenance information for this reservation
    * Check the SchedulingType enum for the list of possible values.
    * </pre>
@@ -1073,6 +1212,50 @@ public interface FutureReservationOrBuilder
    * <code>optional .google.cloud.compute.v1.FutureReservationStatus status = 181260274;</code>
    */
   com.google.cloud.compute.v1.FutureReservationStatusOrBuilder getStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage pool details for the future reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+   * </code>
+   *
+   * @return Whether the storagePoolProperties field is set.
+   */
+  boolean hasStoragePoolProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage pool details for the future reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+   * </code>
+   *
+   * @return The storagePoolProperties.
+   */
+  com.google.cloud.compute.v1.FutureReservationStoragePoolProperties getStoragePoolProperties();
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage pool details for the future reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FutureReservationStoragePoolPropertiesOrBuilder
+      getStoragePoolPropertiesOrBuilder();
 
   /**
    *

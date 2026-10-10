@@ -254,6 +254,1008 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority)
   }
 
+  public interface EndUserAuthenticationConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user to run workflow invocations under.
+     * </pre>
+     *
+     * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The userEmail.
+     */
+    java.lang.String getUserEmail();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user to run workflow invocations under.
+     * </pre>
+     *
+     * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for userEmail.
+     */
+    com.google.protobuf.ByteString getUserEmailBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth configuration for end user authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the oauthConfig field is set.
+     */
+    boolean hasOauthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth configuration for end user authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The oauthConfig.
+     */
+    com.google.cloud.dataform.v1beta1.OAuthConfig getOauthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth configuration for end user authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dataform.v1beta1.OAuthConfigOrBuilder getOauthConfigOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Includes configuration options for end user authentication.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig}
+   */
+  public static final class EndUserAuthenticationConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)
+      EndUserAuthenticationConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "EndUserAuthenticationConfig");
+    }
+
+    // Use EndUserAuthenticationConfig.newBuilder() to construct.
+    private EndUserAuthenticationConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EndUserAuthenticationConfig() {
+      userEmail_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_InvocationConfig_EndUserAuthenticationConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataform.v1beta1.DataformProto
+          .internal_static_google_cloud_dataform_v1beta1_InvocationConfig_EndUserAuthenticationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.class,
+              com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.Builder
+                  .class);
+    }
+
+    private int bitField0_;
+    public static final int USER_EMAIL_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userEmail_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user to run workflow invocations under.
+     * </pre>
+     *
+     * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The userEmail.
+     */
+    @java.lang.Override
+    public java.lang.String getUserEmail() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userEmail_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Email address of the user to run workflow invocations under.
+     * </pre>
+     *
+     * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for userEmail.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUserEmailBytes() {
+      java.lang.Object ref = userEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_CONFIG_FIELD_NUMBER = 4;
+    private com.google.cloud.dataform.v1beta1.OAuthConfig oauthConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth configuration for end user authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the oauthConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth configuration for end user authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The oauthConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.OAuthConfig getOauthConfig() {
+      return oauthConfig_ == null
+          ? com.google.cloud.dataform.v1beta1.OAuthConfig.getDefaultInstance()
+          : oauthConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. OAuth configuration for end user authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.OAuthConfigOrBuilder getOauthConfigOrBuilder() {
+      return oauthConfig_ == null
+          ? com.google.cloud.dataform.v1beta1.OAuthConfig.getDefaultInstance()
+          : oauthConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userEmail_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, userEmail_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getOauthConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userEmail_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userEmail_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getOauthConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig other =
+          (com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig) obj;
+
+      if (!getUserEmail().equals(other.getUserEmail())) return false;
+      if (hasOauthConfig() != other.hasOauthConfig()) return false;
+      if (hasOauthConfig()) {
+        if (!getOauthConfig().equals(other.getOauthConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getUserEmail().hashCode();
+      if (hasOauthConfig()) {
+        hash = (37 * hash) + OAUTH_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Includes configuration options for end user authentication.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_InvocationConfig_EndUserAuthenticationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_InvocationConfig_EndUserAuthenticationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                    .class,
+                com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetOauthConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        userEmail_ = "";
+        oauthConfig_ = null;
+        if (oauthConfigBuilder_ != null) {
+          oauthConfigBuilder_.dispose();
+          oauthConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataform.v1beta1.DataformProto
+            .internal_static_google_cloud_dataform_v1beta1_InvocationConfig_EndUserAuthenticationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+          build() {
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+          buildPartial() {
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig result =
+            new com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.userEmail_ = userEmail_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.oauthConfig_ =
+              oauthConfigBuilder_ == null ? oauthConfig_ : oauthConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig) {
+          return mergeFrom(
+              (com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig other) {
+        if (other
+            == com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                .getDefaultInstance()) return this;
+        if (!other.getUserEmail().isEmpty()) {
+          userEmail_ = other.userEmail_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasOauthConfig()) {
+          mergeOauthConfig(other.getOauthConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  userEmail_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetOauthConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object userEmail_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Email address of the user to run workflow invocations under.
+       * </pre>
+       *
+       * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The userEmail.
+       */
+      public java.lang.String getUserEmail() {
+        java.lang.Object ref = userEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Email address of the user to run workflow invocations under.
+       * </pre>
+       *
+       * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for userEmail.
+       */
+      public com.google.protobuf.ByteString getUserEmailBytes() {
+        java.lang.Object ref = userEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          userEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Email address of the user to run workflow invocations under.
+       * </pre>
+       *
+       * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmail(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userEmail_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Email address of the user to run workflow invocations under.
+       * </pre>
+       *
+       * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUserEmail() {
+        userEmail_ = getDefaultInstance().getUserEmail();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Email address of the user to run workflow invocations under.
+       * </pre>
+       *
+       * <code>string user_email = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for userEmail to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserEmailBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        userEmail_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.dataform.v1beta1.OAuthConfig oauthConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataform.v1beta1.OAuthConfig,
+              com.google.cloud.dataform.v1beta1.OAuthConfig.Builder,
+              com.google.cloud.dataform.v1beta1.OAuthConfigOrBuilder>
+          oauthConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the oauthConfig field is set.
+       */
+      public boolean hasOauthConfig() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The oauthConfig.
+       */
+      public com.google.cloud.dataform.v1beta1.OAuthConfig getOauthConfig() {
+        if (oauthConfigBuilder_ == null) {
+          return oauthConfig_ == null
+              ? com.google.cloud.dataform.v1beta1.OAuthConfig.getDefaultInstance()
+              : oauthConfig_;
+        } else {
+          return oauthConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOauthConfig(com.google.cloud.dataform.v1beta1.OAuthConfig value) {
+        if (oauthConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oauthConfig_ = value;
+        } else {
+          oauthConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOauthConfig(
+          com.google.cloud.dataform.v1beta1.OAuthConfig.Builder builderForValue) {
+        if (oauthConfigBuilder_ == null) {
+          oauthConfig_ = builderForValue.build();
+        } else {
+          oauthConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeOauthConfig(com.google.cloud.dataform.v1beta1.OAuthConfig value) {
+        if (oauthConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && oauthConfig_ != null
+              && oauthConfig_
+                  != com.google.cloud.dataform.v1beta1.OAuthConfig.getDefaultInstance()) {
+            getOauthConfigBuilder().mergeFrom(value);
+          } else {
+            oauthConfig_ = value;
+          }
+        } else {
+          oauthConfigBuilder_.mergeFrom(value);
+        }
+        if (oauthConfig_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearOauthConfig() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        oauthConfig_ = null;
+        if (oauthConfigBuilder_ != null) {
+          oauthConfigBuilder_.dispose();
+          oauthConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataform.v1beta1.OAuthConfig.Builder getOauthConfigBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetOauthConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dataform.v1beta1.OAuthConfigOrBuilder getOauthConfigOrBuilder() {
+        if (oauthConfigBuilder_ != null) {
+          return oauthConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return oauthConfig_ == null
+              ? com.google.cloud.dataform.v1beta1.OAuthConfig.getDefaultInstance()
+              : oauthConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. OAuth configuration for end user authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataform.v1beta1.OAuthConfig oauth_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataform.v1beta1.OAuthConfig,
+              com.google.cloud.dataform.v1beta1.OAuthConfig.Builder,
+              com.google.cloud.dataform.v1beta1.OAuthConfigOrBuilder>
+          internalGetOauthConfigFieldBuilder() {
+        if (oauthConfigBuilder_ == null) {
+          oauthConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dataform.v1beta1.OAuthConfig,
+                  com.google.cloud.dataform.v1beta1.OAuthConfig.Builder,
+                  com.google.cloud.dataform.v1beta1.OAuthConfigOrBuilder>(
+                  getOauthConfig(), getParentForChildren(), isClean());
+          oauthConfig_ = null;
+        }
+        return oauthConfigBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig)
+    private static final com.google.cloud.dataform.v1beta1.InvocationConfig
+            .EndUserAuthenticationConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig();
+    }
+
+    public static com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EndUserAuthenticationConfig> PARSER =
+        new com.google.protobuf.AbstractParser<EndUserAuthenticationConfig>() {
+          @java.lang.Override
+          public EndUserAuthenticationConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EndUserAuthenticationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EndUserAuthenticationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int INCLUDED_TARGETS_FIELD_NUMBER = 1;
 
@@ -524,6 +1526,73 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int END_USER_AUTH_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+      endUserAuthConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for end user authentication.
+   * Note that this should not be set when `service_account` is used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserAuthConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndUserAuthConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for end user authentication.
+   * Note that this should not be set when `service_account` is used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserAuthConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+      getEndUserAuthConfig() {
+    return endUserAuthConfig_ == null
+        ? com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+            .getDefaultInstance()
+        : endUserAuthConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for end user authentication.
+   * Note that this should not be set when `service_account` is used.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfigOrBuilder
+      getEndUserAuthConfigOrBuilder() {
+    return endUserAuthConfig_ == null
+        ? com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+            .getDefaultInstance()
+        : endUserAuthConfig_;
+  }
+
   public static final int QUERY_PRIORITY_FIELD_NUMBER = 9;
   private int queryPriority_ = 0;
 
@@ -544,7 +1613,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasQueryPriority() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -624,6 +1693,9 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 6, serviceAccount_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(7, getEndUserAuthConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeEnum(9, queryPriority_);
     }
     getUnknownFields().writeTo(output);
@@ -663,6 +1735,9 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, serviceAccount_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEndUserAuthConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, queryPriority_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -689,6 +1764,10 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     if (getFullyRefreshIncrementalTablesEnabled()
         != other.getFullyRefreshIncrementalTablesEnabled()) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasEndUserAuthConfig() != other.hasEndUserAuthConfig()) return false;
+    if (hasEndUserAuthConfig()) {
+      if (!getEndUserAuthConfig().equals(other.getEndUserAuthConfig())) return false;
+    }
     if (hasQueryPriority() != other.hasQueryPriority()) return false;
     if (hasQueryPriority()) {
       if (queryPriority_ != other.queryPriority_) return false;
@@ -724,6 +1803,10 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
             + com.google.protobuf.Internal.hashBoolean(getFullyRefreshIncrementalTablesEnabled());
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasEndUserAuthConfig()) {
+      hash = (37 * hash) + END_USER_AUTH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEndUserAuthConfig().hashCode();
+    }
     if (hasQueryPriority()) {
       hash = (37 * hash) + QUERY_PRIORITY_FIELD_NUMBER;
       hash = (53 * hash) + queryPriority_;
@@ -860,10 +1943,20 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.dataform.v1beta1.InvocationConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetIncludedTargetsFieldBuilder();
+        internalGetEndUserAuthConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -882,6 +1975,11 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       transitiveDependentsIncluded_ = false;
       fullyRefreshIncrementalTablesEnabled_ = false;
       serviceAccount_ = "";
+      endUserAuthConfig_ = null;
+      if (endUserAuthConfigBuilder_ != null) {
+        endUserAuthConfigBuilder_.dispose();
+        endUserAuthConfigBuilder_ = null;
+      }
       queryPriority_ = 0;
       return this;
     }
@@ -951,8 +2049,15 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.queryPriority_ = queryPriority_;
+        result.endUserAuthConfig_ =
+            endUserAuthConfigBuilder_ == null
+                ? endUserAuthConfig_
+                : endUserAuthConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.queryPriority_ = queryPriority_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1020,6 +2125,9 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
         serviceAccount_ = other.serviceAccount_;
         bitField0_ |= 0x00000020;
         onChanged();
+      }
+      if (other.hasEndUserAuthConfig()) {
+        mergeEndUserAuthConfig(other.getEndUserAuthConfig());
       }
       if (other.hasQueryPriority()) {
         setQueryPriorityValue(other.getQueryPriorityValue());
@@ -1094,10 +2202,17 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetEndUserAuthConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             case 72:
               {
                 queryPriority_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 72
             default:
@@ -2007,6 +3122,241 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        endUserAuthConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig,
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.Builder,
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfigOrBuilder>
+        endUserAuthConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the endUserAuthConfig field is set.
+     */
+    public boolean hasEndUserAuthConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endUserAuthConfig.
+     */
+    public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+        getEndUserAuthConfig() {
+      if (endUserAuthConfigBuilder_ == null) {
+        return endUserAuthConfig_ == null
+            ? com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                .getDefaultInstance()
+            : endUserAuthConfig_;
+      } else {
+        return endUserAuthConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndUserAuthConfig(
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig value) {
+      if (endUserAuthConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endUserAuthConfig_ = value;
+      } else {
+        endUserAuthConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEndUserAuthConfig(
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.Builder
+            builderForValue) {
+      if (endUserAuthConfigBuilder_ == null) {
+        endUserAuthConfig_ = builderForValue.build();
+      } else {
+        endUserAuthConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEndUserAuthConfig(
+        com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig value) {
+      if (endUserAuthConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && endUserAuthConfig_ != null
+            && endUserAuthConfig_
+                != com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                    .getDefaultInstance()) {
+          getEndUserAuthConfigBuilder().mergeFrom(value);
+        } else {
+          endUserAuthConfig_ = value;
+        }
+      } else {
+        endUserAuthConfigBuilder_.mergeFrom(value);
+      }
+      if (endUserAuthConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEndUserAuthConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      endUserAuthConfig_ = null;
+      if (endUserAuthConfigBuilder_ != null) {
+        endUserAuthConfigBuilder_.dispose();
+        endUserAuthConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.Builder
+        getEndUserAuthConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetEndUserAuthConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfigOrBuilder
+        getEndUserAuthConfigOrBuilder() {
+      if (endUserAuthConfigBuilder_ != null) {
+        return endUserAuthConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return endUserAuthConfig_ == null
+            ? com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                .getDefaultInstance()
+            : endUserAuthConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for end user authentication.
+     * Note that this should not be set when `service_account` is used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig end_user_auth_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig,
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig.Builder,
+            com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfigOrBuilder>
+        internalGetEndUserAuthConfigFieldBuilder() {
+      if (endUserAuthConfigBuilder_ == null) {
+        endUserAuthConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig,
+                com.google.cloud.dataform.v1beta1.InvocationConfig.EndUserAuthenticationConfig
+                    .Builder,
+                com.google.cloud.dataform.v1beta1.InvocationConfig
+                    .EndUserAuthenticationConfigOrBuilder>(
+                getEndUserAuthConfig(), getParentForChildren(), isClean());
+        endUserAuthConfig_ = null;
+      }
+      return endUserAuthConfigBuilder_;
+    }
+
     private int queryPriority_ = 0;
 
     /**
@@ -2026,7 +3376,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasQueryPriority() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2067,7 +3417,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setQueryPriorityValue(int value) {
       queryPriority_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2118,7 +3468,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       queryPriority_ = value.getNumber();
       onChanged();
       return this;
@@ -2140,7 +3490,7 @@ public final class InvocationConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQueryPriority() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       queryPriority_ = 0;
       onChanged();
       return this;

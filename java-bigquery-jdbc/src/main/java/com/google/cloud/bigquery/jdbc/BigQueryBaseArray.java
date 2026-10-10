@@ -46,12 +46,18 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   protected final boolean arrayOfStruct;
   private boolean valid;
   protected Field schema;
+  protected final boolean enableTimestampPicos;
 
   BigQueryBaseArray(Field schema, BigQueryJdbcResultSetLogger log) {
+    this(schema, false, log);
+  }
+
+  BigQueryBaseArray(Field schema, boolean enableTimestampPicos, BigQueryJdbcResultSetLogger log) {
     this.LOG = log;
     this.schema = schema;
     this.arrayOfStruct = isStruct(schema);
     this.valid = true;
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -65,8 +71,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   public final int getBaseType() {
     LOG.finestTrace("getBaseType");
     ensureValid();
-    return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
-        schema.getType().getStandardType());
+    return BigQueryTypeRegistry.toJdbcType(schema.getType().getStandardType());
   }
 
   @Override
@@ -91,7 +96,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
-  protected Object getArrayInternal(int fromIndex, int toIndexExclusive) {
+  protected Object getArrayInternal(int fromIndex, int toIndexExclusive) throws SQLException {
     LOG.finestTrace("getArrayInternal");
     Class<?> targetClass = getTargetClass();
     int size = toIndexExclusive - fromIndex;
@@ -143,13 +148,15 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   protected Class<?> getTargetClass() {
     LOG.finestTrace("getTargetClass");
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
+      return String.class;
+    }
     return this.arrayOfStruct
         ? Struct.class
-        : BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-            this.schema.getType().getStandardType());
+        : BigQueryTypeRegistry.toJavaClass(this.schema.getType().getStandardType());
   }
 
-  abstract Object getCoercedValue(int index);
+  abstract Object getCoercedValue(int index) throws SQLException;
 
   static boolean isArray(Field currentSchema) {
     return currentSchema.getMode() == REPEATED;

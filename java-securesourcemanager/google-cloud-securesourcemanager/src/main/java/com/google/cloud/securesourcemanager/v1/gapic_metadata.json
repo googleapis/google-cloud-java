@@ -67,6 +67,9 @@
             "FetchBlob": {
               "methods": ["fetchBlob", "fetchBlobCallable"]
             },
+            "FetchRefs": {
+              "methods": ["fetchRefs", "fetchRefsPagedCallable", "fetchRefsCallable"]
+            },
             "FetchTree": {
               "methods": ["fetchTree", "fetchTreePagedCallable", "fetchTreeCallable"]
             },

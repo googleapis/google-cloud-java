@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "CloudTasksClient",
           "rpcs": {
+            "BatchCreateTasks": {
+              "methods": ["batchCreateTasksAsync", "batchCreateTasksAsync", "batchCreateTasksAsync", "batchCreateTasksOperationCallable", "batchCreateTasksCallable"]
+            },
+            "BatchDeleteTasks": {
+              "methods": ["batchDeleteTasksAsync", "batchDeleteTasksAsync", "batchDeleteTasksAsync", "batchDeleteTasksOperationCallable", "batchDeleteTasksCallable"]
+            },
             "CreateQueue": {
               "methods": ["createQueue", "createQueue", "createQueue", "createQueueCallable"]
             },
@@ -21,6 +27,9 @@
             },
             "DeleteTask": {
               "methods": ["deleteTask", "deleteTask", "deleteTask", "deleteTaskCallable"]
+            },
+            "GetCmekConfig": {
+              "methods": ["getCmekConfig", "getCmekConfig", "getCmekConfig", "getCmekConfigCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
@@ -60,6 +69,9 @@
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateCmekConfig": {
+              "methods": ["updateCmekConfig", "updateCmekConfig", "updateCmekConfigCallable"]
             },
             "UpdateQueue": {
               "methods": ["updateQueue", "updateQueue", "updateQueueCallable"]

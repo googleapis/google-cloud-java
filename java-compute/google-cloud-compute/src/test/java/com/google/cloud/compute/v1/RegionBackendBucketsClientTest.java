@@ -88,6 +88,7 @@ public class RegionBackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -224,7 +225,6 @@ public class RegionBackendBucketsClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -278,6 +278,7 @@ public class RegionBackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -457,6 +458,7 @@ public class RegionBackendBucketsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -533,7 +535,6 @@ public class RegionBackendBucketsClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

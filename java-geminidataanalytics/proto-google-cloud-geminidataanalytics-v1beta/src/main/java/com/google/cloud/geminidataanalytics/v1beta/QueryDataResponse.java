@@ -384,6 +384,127 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     return disambiguationQuestion_.getByteString(index);
   }
 
+  public static final int PIPELINE_DEBUG_INFO_FIELD_NUMBER = 9;
+  private com.google.protobuf.Struct pipelineDebugInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed step-by-step pipeline execution information.
+   * Populated only if generation_options.generate_debug_info was true.
+   * Provided for debugging and transparency purposes only.
+   * The structure and content of this object is not guaranteed and may
+   * change at any time without notice. Do not write production code or
+   * business logic depending on the fields in this object.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+   *
+   * @return Whether the pipelineDebugInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasPipelineDebugInfo() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed step-by-step pipeline execution information.
+   * Populated only if generation_options.generate_debug_info was true.
+   * Provided for debugging and transparency purposes only.
+   * The structure and content of this object is not guaranteed and may
+   * change at any time without notice. Do not write production code or
+   * business logic depending on the fields in this object.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+   *
+   * @return The pipelineDebugInfo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getPipelineDebugInfo() {
+    return pipelineDebugInfo_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : pipelineDebugInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed step-by-step pipeline execution information.
+   * Populated only if generation_options.generate_debug_info was true.
+   * Provided for debugging and transparency purposes only.
+   * The structure and content of this object is not guaranteed and may
+   * change at any time without notice. Do not write production code or
+   * business logic depending on the fields in this object.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getPipelineDebugInfoOrBuilder() {
+    return pipelineDebugInfo_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : pipelineDebugInfo_;
+  }
+
+  public static final int TOKEN_USAGE_FIELD_NUMBER = 10;
+  private com.google.cloud.geminidataanalytics.v1beta.TokenUsage tokenUsage_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return Whether the tokenUsage field is set.
+   */
+  @java.lang.Override
+  public boolean hasTokenUsage() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   *
+   * @return The tokenUsage.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.TokenUsage getTokenUsage() {
+    return tokenUsage_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+        : tokenUsage_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Overall token usage for the request.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder getTokenUsageOrBuilder() {
+    return tokenUsage_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+        : tokenUsage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -414,6 +535,12 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessage.writeString(
           output, 5, disambiguationQuestion_.getRaw(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getPipelineDebugInfo());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getTokenUsage());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -443,6 +570,12 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getDisambiguationQuestionList().size();
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getPipelineDebugInfo());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getTokenUsage());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -468,6 +601,14 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     if (!getNaturalLanguageAnswer().equals(other.getNaturalLanguageAnswer())) return false;
     if (!getDisambiguationQuestionList().equals(other.getDisambiguationQuestionList()))
       return false;
+    if (hasPipelineDebugInfo() != other.hasPipelineDebugInfo()) return false;
+    if (hasPipelineDebugInfo()) {
+      if (!getPipelineDebugInfo().equals(other.getPipelineDebugInfo())) return false;
+    }
+    if (hasTokenUsage() != other.hasTokenUsage()) return false;
+    if (hasTokenUsage()) {
+      if (!getTokenUsage().equals(other.getTokenUsage())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -492,6 +633,14 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     if (getDisambiguationQuestionCount() > 0) {
       hash = (37 * hash) + DISAMBIGUATION_QUESTION_FIELD_NUMBER;
       hash = (53 * hash) + getDisambiguationQuestionList().hashCode();
+    }
+    if (hasPipelineDebugInfo()) {
+      hash = (37 * hash) + PIPELINE_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getPipelineDebugInfo().hashCode();
+    }
+    if (hasTokenUsage()) {
+      hash = (37 * hash) + TOKEN_USAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenUsage().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -636,6 +785,8 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetQueryResultFieldBuilder();
+        internalGetPipelineDebugInfoFieldBuilder();
+        internalGetTokenUsageFieldBuilder();
       }
     }
 
@@ -652,6 +803,16 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       }
       naturalLanguageAnswer_ = "";
       disambiguationQuestion_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      pipelineDebugInfo_ = null;
+      if (pipelineDebugInfoBuilder_ != null) {
+        pipelineDebugInfoBuilder_.dispose();
+        pipelineDebugInfoBuilder_ = null;
+      }
+      tokenUsage_ = null;
+      if (tokenUsageBuilder_ != null) {
+        tokenUsageBuilder_.dispose();
+        tokenUsageBuilder_ = null;
+      }
       return this;
     }
 
@@ -709,6 +870,17 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
         disambiguationQuestion_.makeImmutable();
         result.disambiguationQuestion_ = disambiguationQuestion_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.pipelineDebugInfo_ =
+            pipelineDebugInfoBuilder_ == null
+                ? pipelineDebugInfo_
+                : pipelineDebugInfoBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tokenUsage_ = tokenUsageBuilder_ == null ? tokenUsage_ : tokenUsageBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -753,6 +925,12 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
           disambiguationQuestion_.addAll(other.disambiguationQuestion_);
         }
         onChanged();
+      }
+      if (other.hasPipelineDebugInfo()) {
+        mergePipelineDebugInfo(other.getPipelineDebugInfo());
+      }
+      if (other.hasTokenUsage()) {
+        mergeTokenUsage(other.getTokenUsage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -812,6 +990,20 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
                 disambiguationQuestion_.add(s);
                 break;
               } // case 42
+            case 74:
+              {
+                input.readMessage(
+                    internalGetPipelineDebugInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetTokenUsageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1621,6 +1813,442 @@ public final class QueryDataResponse extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct pipelineDebugInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        pipelineDebugInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     *
+     * @return Whether the pipelineDebugInfo field is set.
+     */
+    public boolean hasPipelineDebugInfo() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     *
+     * @return The pipelineDebugInfo.
+     */
+    public com.google.protobuf.Struct getPipelineDebugInfo() {
+      if (pipelineDebugInfoBuilder_ == null) {
+        return pipelineDebugInfo_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : pipelineDebugInfo_;
+      } else {
+        return pipelineDebugInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    public Builder setPipelineDebugInfo(com.google.protobuf.Struct value) {
+      if (pipelineDebugInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pipelineDebugInfo_ = value;
+      } else {
+        pipelineDebugInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    public Builder setPipelineDebugInfo(com.google.protobuf.Struct.Builder builderForValue) {
+      if (pipelineDebugInfoBuilder_ == null) {
+        pipelineDebugInfo_ = builderForValue.build();
+      } else {
+        pipelineDebugInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    public Builder mergePipelineDebugInfo(com.google.protobuf.Struct value) {
+      if (pipelineDebugInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && pipelineDebugInfo_ != null
+            && pipelineDebugInfo_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getPipelineDebugInfoBuilder().mergeFrom(value);
+        } else {
+          pipelineDebugInfo_ = value;
+        }
+      } else {
+        pipelineDebugInfoBuilder_.mergeFrom(value);
+      }
+      if (pipelineDebugInfo_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    public Builder clearPipelineDebugInfo() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      pipelineDebugInfo_ = null;
+      if (pipelineDebugInfoBuilder_ != null) {
+        pipelineDebugInfoBuilder_.dispose();
+        pipelineDebugInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    public com.google.protobuf.Struct.Builder getPipelineDebugInfoBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetPipelineDebugInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getPipelineDebugInfoOrBuilder() {
+      if (pipelineDebugInfoBuilder_ != null) {
+        return pipelineDebugInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return pipelineDebugInfo_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : pipelineDebugInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detailed step-by-step pipeline execution information.
+     * Populated only if generation_options.generate_debug_info was true.
+     * Provided for debugging and transparency purposes only.
+     * The structure and content of this object is not guaranteed and may
+     * change at any time without notice. Do not write production code or
+     * business logic depending on the fields in this object.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct pipeline_debug_info = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetPipelineDebugInfoFieldBuilder() {
+      if (pipelineDebugInfoBuilder_ == null) {
+        pipelineDebugInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getPipelineDebugInfo(), getParentForChildren(), isClean());
+        pipelineDebugInfo_ = null;
+      }
+      return pipelineDebugInfoBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.TokenUsage tokenUsage_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder>
+        tokenUsageBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     *
+     * @return Whether the tokenUsage field is set.
+     */
+    public boolean hasTokenUsage() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     *
+     * @return The tokenUsage.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.TokenUsage getTokenUsage() {
+      if (tokenUsageBuilder_ == null) {
+        return tokenUsage_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+            : tokenUsage_;
+      } else {
+        return tokenUsageBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder setTokenUsage(com.google.cloud.geminidataanalytics.v1beta.TokenUsage value) {
+      if (tokenUsageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenUsage_ = value;
+      } else {
+        tokenUsageBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder setTokenUsage(
+        com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder builderForValue) {
+      if (tokenUsageBuilder_ == null) {
+        tokenUsage_ = builderForValue.build();
+      } else {
+        tokenUsageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder mergeTokenUsage(com.google.cloud.geminidataanalytics.v1beta.TokenUsage value) {
+      if (tokenUsageBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && tokenUsage_ != null
+            && tokenUsage_
+                != com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()) {
+          getTokenUsageBuilder().mergeFrom(value);
+        } else {
+          tokenUsage_ = value;
+        }
+      } else {
+        tokenUsageBuilder_.mergeFrom(value);
+      }
+      if (tokenUsage_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public Builder clearTokenUsage() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      tokenUsage_ = null;
+      if (tokenUsageBuilder_ != null) {
+        tokenUsageBuilder_.dispose();
+        tokenUsageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder getTokenUsageBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetTokenUsageFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder
+        getTokenUsageOrBuilder() {
+      if (tokenUsageBuilder_ != null) {
+        return tokenUsageBuilder_.getMessageOrBuilder();
+      } else {
+        return tokenUsage_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.TokenUsage.getDefaultInstance()
+            : tokenUsage_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Overall token usage for the request.
+     * </pre>
+     *
+     * <code>.google.cloud.geminidataanalytics.v1beta.TokenUsage token_usage = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder>
+        internalGetTokenUsageFieldBuilder() {
+      if (tokenUsageBuilder_ == null) {
+        tokenUsageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1beta.TokenUsage,
+                com.google.cloud.geminidataanalytics.v1beta.TokenUsage.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.TokenUsageOrBuilder>(
+                getTokenUsage(), getParentForChildren(), isClean());
+        tokenUsage_ = null;
+      }
+      return tokenUsageBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1beta.QueryDataResponse)

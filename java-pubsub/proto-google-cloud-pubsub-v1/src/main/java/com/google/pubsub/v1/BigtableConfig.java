@@ -26,8 +26,9 @@ package com.google.pubsub.v1;
  * <pre>
  * Configuration for a Bigtable subscription. The Pub/Sub message will be
  * written to a Bigtable row as follows:
- * - row key: subscription name and message ID delimited by #.
- * - columns: message bytes written to a single column family "data" with an
+ * - row key: subscription name, message ID hash, and message ID delimited by
+ * `#`.
+ * - columns: message bytes written to a single column family `data` with an
  * empty-string column qualifier.
  * - cell timestamp: the message publish timestamp.
  * </pre>
@@ -113,8 +114,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Cannot write to Bigtable because the instance, table, or app profile
-     * does not exist.
+     * Unused in the current implementation. Placeholder for future use.
      * </pre>
      *
      * <code>NOT_FOUND = 2;</code>
@@ -124,8 +124,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Cannot write to Bigtable because the app profile is not configured for
-     * single-cluster routing.
+     * Unused in the current implementation. Placeholder for future use.
      * </pre>
      *
      * <code>APP_PROFILE_MISCONFIGURED = 3;</code>
@@ -137,6 +136,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Cannot write to Bigtable because of permission denied errors.
      * This can happen if:
+     * - The Bigtable instance, table, or app profile does not exist.
      * - The Pub/Sub service agent has not been granted the
      * [appropriate Bigtable IAM permission
      * bigtable.tables.mutateRows]({$universe.dns_names.final_documentation_domain}/bigtable/docs/access-control#permissions)
@@ -151,8 +151,9 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Cannot write to Bigtable because of a missing column family ("data") or
-     * if there is no structured row key for the subscription name + message ID.
+     * Cannot write to Bigtable because of a missing column family (`data`), or
+     * if there is no structured row key for the subscription name + message ID,
+     * if because the app profile is not configured for single-cluster routing.
      * </pre>
      *
      * <code>SCHEMA_MISMATCH = 5;</code>
@@ -219,8 +220,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Cannot write to Bigtable because the instance, table, or app profile
-     * does not exist.
+     * Unused in the current implementation. Placeholder for future use.
      * </pre>
      *
      * <code>NOT_FOUND = 2;</code>
@@ -231,8 +231,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Cannot write to Bigtable because the app profile is not configured for
-     * single-cluster routing.
+     * Unused in the current implementation. Placeholder for future use.
      * </pre>
      *
      * <code>APP_PROFILE_MISCONFIGURED = 3;</code>
@@ -245,6 +244,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Cannot write to Bigtable because of permission denied errors.
      * This can happen if:
+     * - The Bigtable instance, table, or app profile does not exist.
      * - The Pub/Sub service agent has not been granted the
      * [appropriate Bigtable IAM permission
      * bigtable.tables.mutateRows]({$universe.dns_names.final_documentation_domain}/bigtable/docs/access-control#permissions)
@@ -260,8 +260,9 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Cannot write to Bigtable because of a missing column family ("data") or
-     * if there is no structured row key for the subscription name + message ID.
+     * Cannot write to Bigtable because of a missing column family (`data`), or
+     * if there is no structured row key for the subscription name + message ID,
+     * if because the app profile is not configured for single-cluster routing.
      * </pre>
      *
      * <code>SCHEMA_MISMATCH = 5;</code>
@@ -831,8 +832,9 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Configuration for a Bigtable subscription. The Pub/Sub message will be
    * written to a Bigtable row as follows:
-   * - row key: subscription name and message ID delimited by #.
-   * - columns: message bytes written to a single column family "data" with an
+   * - row key: subscription name, message ID hash, and message ID delimited by
+   * `#`.
+   * - columns: message bytes written to a single column family `data` with an
    * empty-string column qualifier.
    * - cell timestamp: the message publish timestamp.
    * </pre>

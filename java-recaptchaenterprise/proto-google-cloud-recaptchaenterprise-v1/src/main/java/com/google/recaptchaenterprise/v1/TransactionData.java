@@ -1949,8 +1949,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Unique account identifier for this user. If using account
-     * defender, this should match the hashed_account_id field. Otherwise, a
+     * Optional. Unique account identifier for this user. If using Account
+     * defense, this should match the hashed_account_id field. Otherwise, a
      * unique and persistent identifier for this account.
      * </pre>
      *
@@ -1964,8 +1964,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Unique account identifier for this user. If using account
-     * defender, this should match the hashed_account_id field. Otherwise, a
+     * Optional. Unique account identifier for this user. If using Account
+     * defense, this should match the hashed_account_id field. Otherwise, a
      * unique and persistent identifier for this account.
      * </pre>
      *
@@ -2129,8 +2129,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Unique account identifier for this user. If using account
-     * defender, this should match the hashed_account_id field. Otherwise, a
+     * Optional. Unique account identifier for this user. If using Account
+     * defense, this should match the hashed_account_id field. Otherwise, a
      * unique and persistent identifier for this account.
      * </pre>
      *
@@ -2155,8 +2155,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Unique account identifier for this user. If using account
-     * defender, this should match the hashed_account_id field. Otherwise, a
+     * Optional. Unique account identifier for this user. If using Account
+     * defense, this should match the hashed_account_id field. Otherwise, a
      * unique and persistent identifier for this account.
      * </pre>
      *
@@ -2773,8 +2773,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Unique account identifier for this user. If using account
-       * defender, this should match the hashed_account_id field. Otherwise, a
+       * Optional. Unique account identifier for this user. If using Account
+       * defense, this should match the hashed_account_id field. Otherwise, a
        * unique and persistent identifier for this account.
        * </pre>
        *
@@ -2798,8 +2798,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Unique account identifier for this user. If using account
-       * defender, this should match the hashed_account_id field. Otherwise, a
+       * Optional. Unique account identifier for this user. If using Account
+       * defense, this should match the hashed_account_id field. Otherwise, a
        * unique and persistent identifier for this account.
        * </pre>
        *
@@ -2823,8 +2823,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Unique account identifier for this user. If using account
-       * defender, this should match the hashed_account_id field. Otherwise, a
+       * Optional. Unique account identifier for this user. If using Account
+       * defense, this should match the hashed_account_id field. Otherwise, a
        * unique and persistent identifier for this account.
        * </pre>
        *
@@ -2847,8 +2847,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Unique account identifier for this user. If using account
-       * defender, this should match the hashed_account_id field. Otherwise, a
+       * Optional. Unique account identifier for this user. If using Account
+       * defense, this should match the hashed_account_id field. Otherwise, a
        * unique and persistent identifier for this account.
        * </pre>
        *
@@ -2867,8 +2867,8 @@ public final class TransactionData extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Unique account identifier for this user. If using account
-       * defender, this should match the hashed_account_id field. Otherwise, a
+       * Optional. Unique account identifier for this user. If using Account
+       * defense, this should match the hashed_account_id field. Otherwise, a
        * unique and persistent identifier for this account.
        * </pre>
        *

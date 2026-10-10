@@ -85,7 +85,7 @@ public interface WarningsOrBuilder
    * {
    * "key": "scope",
    * "value": "zones/us-east1-d"
-   * }
+   * }]
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -103,7 +103,7 @@ public interface WarningsOrBuilder
    * {
    * "key": "scope",
    * "value": "zones/us-east1-d"
-   * }
+   * }]
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -121,7 +121,7 @@ public interface WarningsOrBuilder
    * {
    * "key": "scope",
    * "value": "zones/us-east1-d"
-   * }
+   * }]
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -139,7 +139,7 @@ public interface WarningsOrBuilder
    * {
    * "key": "scope",
    * "value": "zones/us-east1-d"
-   * }
+   * }]
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>
@@ -157,7 +157,7 @@ public interface WarningsOrBuilder
    * {
    * "key": "scope",
    * "value": "zones/us-east1-d"
-   * }
+   * }]
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Data data = 3076010;</code>

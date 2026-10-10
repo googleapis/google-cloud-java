@@ -70,7 +70,7 @@ public interface ContentItemOrBuilder
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
    * to learn more.
    * </pre>
    *
@@ -85,7 +85,7 @@ public interface ContentItemOrBuilder
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
    * to learn more.
    * </pre>
    *
@@ -100,7 +100,7 @@ public interface ContentItemOrBuilder
    *
    * <pre>
    * Structured content for inspection. See
-   * https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table
    * to learn more.
    * </pre>
    *

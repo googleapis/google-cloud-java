@@ -574,5 +574,48 @@ public interface AppendRowsRequestOrBuilder
   com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
       getDefaultMissingValueInterpretation();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stats and telemetry data gathered on the client side.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ClientStats client_stats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientStats field is set.
+   */
+  boolean hasClientStats();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stats and telemetry data gathered on the client side.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ClientStats client_stats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientStats.
+   */
+  com.google.cloud.bigquery.storage.v1.ClientStats getClientStats();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stats and telemetry data gathered on the client side.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ClientStats client_stats = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.storage.v1.ClientStatsOrBuilder getClientStatsOrBuilder();
+
   com.google.cloud.bigquery.storage.v1.AppendRowsRequest.RowsCase getRowsCase();
 }

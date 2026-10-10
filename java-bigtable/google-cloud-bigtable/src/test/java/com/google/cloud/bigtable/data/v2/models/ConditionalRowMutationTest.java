@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.RowFilter;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
@@ -253,6 +254,71 @@ public class ConditionalRowMutationTest {
 
     actual = (ConditionalRowMutation) ois.readObject();
     assertThat(actual.toProto(REQUEST_CONTEXT)).isEqualTo(expected.toProto(REQUEST_CONTEXT));
+  }
+
+  @Test
+  public void getTargetIdTest() {
+    ConditionalRowMutation tableMutation = ConditionalRowMutation.create(TABLE_ID, TEST_KEY);
+    assertThat(tableMutation.getTargetId()).isEqualTo(TABLE_ID);
+
+    AuthorizedViewId authorizedViewId = AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID);
+    ConditionalRowMutation authViewMutation =
+        ConditionalRowMutation.create(authorizedViewId, TEST_KEY);
+    assertThat(authViewMutation.getTargetId()).isEqualTo(authorizedViewId);
+  }
+
+  @Test
+  public void toSessionProtoTest() {
+    // With a predicate filter plus both true and false mutations.
+    ConditionalRowMutation mutation =
+        ConditionalRowMutation.create(TABLE_ID, TEST_KEY)
+            .condition(Filters.FILTERS.key().regex("a.*"))
+            .then(Mutation.create().setCell("cf1", "q1", 10_000L, "v1"))
+            .otherwise(Mutation.create().deleteFamily("cf2"));
+
+    CheckAndMutateRowRequest proto = mutation.toProto(REQUEST_CONTEXT);
+
+    SessionCheckAndMutateRowRequest expected =
+        SessionCheckAndMutateRowRequest.newBuilder()
+            .setKey(TEST_KEY)
+            .setPredicateFilter(proto.getPredicateFilter())
+            .addAllTrueMutations(proto.getTrueMutationsList())
+            .addAllFalseMutations(proto.getFalseMutationsList())
+            .build();
+
+    assertThat(mutation.toSessionProto()).isEqualTo(expected);
+  }
+
+  @Test
+  public void toSessionProtoWithoutPredicateTest() {
+    // No predicate filter, only true mutations. The predicate_filter field must stay unset.
+    ConditionalRowMutation mutation =
+        ConditionalRowMutation.create(TABLE_ID, TEST_KEY)
+            .then(Mutation.create().deleteCells("cf1", "q1"));
+
+    List<com.google.bigtable.v2.Mutation> trueMutations =
+        mutation.toProto(REQUEST_CONTEXT).getTrueMutationsList();
+
+    SessionCheckAndMutateRowRequest sessionProto = mutation.toSessionProto();
+
+    assertThat(sessionProto.hasPredicateFilter()).isFalse();
+    assertThat(sessionProto.getKey()).isEqualTo(TEST_KEY);
+    assertThat(sessionProto.getTrueMutationsList()).isEqualTo(trueMutations);
+    assertThat(sessionProto.getFalseMutationsList()).isEmpty();
+  }
+
+  @Test
+  public void toSessionProtoNoMutationsTest() {
+    ConditionalRowMutation mutation =
+        ConditionalRowMutation.create(TABLE_ID, TEST_KEY).condition(Filters.FILTERS.pass());
+
+    Throwable actualError = null;
+    try {
+      mutation.toSessionProto();
+    } catch (Throwable t) {
+      actualError = t;
+    }
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
   }
 
   @Test

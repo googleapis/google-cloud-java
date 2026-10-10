@@ -13,7 +13,6 @@
   "api_id": "dataproc.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "codeowner_team": "@googleapis/api-dataproc",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/559745",
   "rest_documentation": "https://cloud.google.com/dataproc/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/dataproc/docs/reference/rpc"
 }

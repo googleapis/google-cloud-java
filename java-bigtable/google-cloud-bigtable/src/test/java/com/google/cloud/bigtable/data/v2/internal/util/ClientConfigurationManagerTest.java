@@ -33,6 +33,7 @@ import com.google.bigtable.v2.LoadBalancingOptions;
 import com.google.bigtable.v2.LoadBalancingOptions.LeastInFlight;
 import com.google.bigtable.v2.LoadBalancingOptions.PeakEwma;
 import com.google.bigtable.v2.SessionClientConfiguration;
+import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessWithFallback;
 import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders;
@@ -62,12 +63,15 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.api.Timeout.ThreadMode;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -77,7 +81,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 // Backstop against a wedged blocking call (e.g. manager.start().get()) hanging the CI runner
 // indefinitely. If any test exceeds this, fail fast with a diagnosable timeout instead.
-@Timeout(value = 60, unit = TimeUnit.SECONDS)
+//
+// SEPARATE_THREAD is required, not cosmetic: the default SAME_THREAD mode enforces the timeout by
+// interrupting the test thread, and a thread blocked on monitor entry (`synchronized`) cannot be
+// interrupted. A deadlock like the one testDeadlockPrevention guards against would therefore
+// silently wedge the whole surefire JVM until the CI job's own multi-hour timeout.
+@Timeout(value = 60, unit = TimeUnit.SECONDS, threadMode = ThreadMode.SEPARATE_THREAD)
 class ClientConfigurationManagerTest {
   private static final FeatureFlags FEATURE_FLAGS = FeatureFlags.getDefaultInstance();
 
@@ -378,6 +387,63 @@ class ClientConfigurationManagerTest {
     assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
+  /**
+   * The manager must never invoke a listener while holding its own monitor, no matter which thread
+   * ends up running the config-fetch continuation. See {@link #testDeadlockPrevention()} for the
+   * deadlock this prevents.
+   *
+   * <p>Where testDeadlockPrevention relies on a real RPC and so only catches the bad interleaving
+   * by luck, this test pins it: the channel answers GetClientConfiguration synchronously on the
+   * calling thread, so the config future is always already complete by the time
+   * sendRequestWithRetries() registers its continuation, and the continuation always runs inline on
+   * the polling thread.
+   */
+  @Test
+  void listenersAreNotifiedWithoutHoldingTheManagerLock() throws Exception {
+    manager.close();
+
+    ChannelProviders.ChannelProvider synchronousProvider =
+        new ForwardingChannelProvider(channelProvider) {
+          @Override
+          public ManagedChannelBuilder<?> newChannelBuilder() {
+            return super.newChannelBuilder().intercept(new SynchronousConfigInterceptor(service));
+          }
+        };
+    manager =
+        new ClientConfigurationManager(
+            FEATURE_FLAGS, CLIENT_INFO, synchronousProvider, noopDebugTracer, mockExecutor);
+
+    manager.start().get();
+
+    ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+    verify(mockExecutor, times(1)).schedule(runnableCaptor.capture(), anyLong(), any());
+
+    ClientConfigurationManager notifyingManager = manager;
+    AtomicInteger notifications = new AtomicInteger();
+    AtomicBoolean lockHeldDuringCallback = new AtomicBoolean();
+    manager.addListener(
+        ClientConfiguration::getSessionConfiguration,
+        newValue -> {
+          notifications.incrementAndGet();
+          lockHeldDuringCallback.set(Thread.holdsLock(notifyingManager));
+        });
+
+    // Change the watched section so the listener actually fires, then poll.
+    ClientConfiguration.Builder builder = service.config.get().toBuilder();
+    builder
+        .getSessionConfigurationBuilder()
+        .getSessionPoolConfigurationBuilder()
+        .setLoadBalancingOptions(
+            LoadBalancingOptions.newBuilder()
+                .setLeastInFlight(LeastInFlight.newBuilder().setRandomSubsetSize(30)));
+    service.config.set(builder.build());
+
+    runnableCaptor.getValue().run();
+
+    assertThat(notifications.get()).isEqualTo(1);
+    assertThat(lockHeldDuringCallback.get()).isFalse();
+  }
+
   @Test
   void testDeadlockPrevention() throws Exception {
     // Initialize the manager and fetch the initial config to schedule polling.
@@ -463,6 +529,59 @@ class ClientConfigurationManagerTest {
     assertThat(retrievedConfig.get()).isNotNull();
   }
 
+  @Test
+  void disableDirectPathFallbackTest() throws Exception {
+    Properties sysProps = new Properties();
+    sysProps.setProperty(
+        ClientConfigurationManager.DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "true");
+    String clientConfigOverrides =
+        TextFormat.printer()
+            .printToString(
+                ClientConfiguration.newBuilder()
+                    .setSessionConfiguration(
+                        SessionClientConfiguration.newBuilder()
+                            .setSessionLoad(0.75f)
+                            .setChannelConfiguration(
+                                SessionClientConfiguration.ChannelPoolConfiguration.newBuilder()
+                                    .setDirectAccessWithFallback(
+                                        DirectAccessWithFallback.getDefaultInstance())))
+                    .build());
+    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+
+    try (ClientConfigurationManager fallbackDisabledManager =
+        new ClientConfigurationManager(
+            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor)) {
+
+      // Check initial default config with override has fallback disabled and direct_access_only set
+      SessionClientConfiguration.ChannelPoolConfiguration initialChannelConfig =
+          fallbackDisabledManager
+              .getClientConfiguration()
+              .getSessionConfiguration()
+              .getChannelConfiguration();
+      assertThat(initialChannelConfig.hasDirectAccessOnly()).isTrue();
+      assertThat(initialChannelConfig.hasDirectAccessWithFallback()).isFalse();
+
+      // Start manager and fetch server config (which sends direct_access_with_fallback)
+      ClientConfiguration fetchedConfig = fallbackDisabledManager.start().get();
+      SessionClientConfiguration.ChannelPoolConfiguration fetchedChannelConfig =
+          fetchedConfig.getSessionConfiguration().getChannelConfiguration();
+
+      // Verify that direct_access_with_fallback is converted to direct_access_only
+      assertThat(fetchedChannelConfig.hasDirectAccessOnly()).isTrue();
+      assertThat(fetchedChannelConfig.hasDirectAccessWithFallback()).isFalse();
+
+      // Verify other channel pool configuration fields from the server are preserved
+      SessionClientConfiguration.ChannelPoolConfiguration serverChannelConfig =
+          service.config.get().getSessionConfiguration().getChannelConfiguration();
+      assertThat(fetchedChannelConfig.getMinServerCount())
+          .isEqualTo(serverChannelConfig.getMinServerCount());
+      assertThat(fetchedChannelConfig.getMaxServerCount())
+          .isEqualTo(serverChannelConfig.getMaxServerCount());
+      assertThat(fetchedChannelConfig.getPerServerSessionCount())
+          .isEqualTo(serverChannelConfig.getPerServerSessionCount());
+    }
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
@@ -473,6 +592,12 @@ class ClientConfigurationManagerTest {
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
       builder.getSessionConfigurationBuilder().setSessionLoad(0.25f);
+      builder
+          .getSessionConfigurationBuilder()
+          .getChannelConfigurationBuilder()
+          .setMinServerCount(2)
+          .setMaxServerCount(10)
+          .setPerServerSessionCount(15);
       config.set(builder.build());
     }
 
@@ -487,6 +612,49 @@ class ClientConfigurationManagerTest {
       }
       responseObserver.onNext(config.get());
       responseObserver.onCompleted();
+    }
+  }
+
+  /**
+   * Answers GetClientConfiguration from {@link FakeConfigService#config} synchronously, on the
+   * thread that issued the call, without touching the network. Used to make the "response already
+   * delivered before the caller registers its continuation" interleaving deterministic.
+   */
+  private static class SynchronousConfigInterceptor implements ClientInterceptor {
+    private final FakeConfigService service;
+
+    SynchronousConfigInterceptor(FakeConfigService service) {
+      this.service = service;
+    }
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
+      return new ClientCall<ReqT, RespT>() {
+        private Listener<RespT> responseListener;
+
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          this.responseListener = responseListener;
+        }
+
+        @Override
+        public void request(int numMessages) {}
+
+        @Override
+        public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+        @Override
+        public void halfClose() {
+          @SuppressWarnings("unchecked")
+          RespT response = (RespT) service.config.get();
+          responseListener.onMessage(response);
+          responseListener.onClose(Status.OK, new Metadata());
+        }
+
+        @Override
+        public void sendMessage(ReqT message) {}
+      };
     }
   }
 

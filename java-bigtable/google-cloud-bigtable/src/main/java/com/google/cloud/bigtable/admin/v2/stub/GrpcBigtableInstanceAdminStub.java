@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListHotTabletsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListLogicalViewsPagedResponse;
 import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMaterializedViewsPagedResponse;
+import static com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListMemoryLayersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -50,6 +51,7 @@ import com.google.bigtable.admin.v2.GetClusterRequest;
 import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.GetLogicalViewRequest;
 import com.google.bigtable.admin.v2.GetMaterializedViewRequest;
+import com.google.bigtable.admin.v2.GetMemoryLayerRequest;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.ListAppProfilesRequest;
 import com.google.bigtable.admin.v2.ListAppProfilesResponse;
@@ -63,8 +65,11 @@ import com.google.bigtable.admin.v2.ListLogicalViewsRequest;
 import com.google.bigtable.admin.v2.ListLogicalViewsResponse;
 import com.google.bigtable.admin.v2.ListMaterializedViewsRequest;
 import com.google.bigtable.admin.v2.ListMaterializedViewsResponse;
+import com.google.bigtable.admin.v2.ListMemoryLayersRequest;
+import com.google.bigtable.admin.v2.ListMemoryLayersResponse;
 import com.google.bigtable.admin.v2.LogicalView;
 import com.google.bigtable.admin.v2.MaterializedView;
+import com.google.bigtable.admin.v2.MemoryLayer;
 import com.google.bigtable.admin.v2.PartialUpdateClusterMetadata;
 import com.google.bigtable.admin.v2.PartialUpdateClusterRequest;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
@@ -76,6 +81,8 @@ import com.google.bigtable.admin.v2.UpdateLogicalViewMetadata;
 import com.google.bigtable.admin.v2.UpdateLogicalViewRequest;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewMetadata;
 import com.google.bigtable.admin.v2.UpdateMaterializedViewRequest;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerMetadata;
+import com.google.bigtable.admin.v2.UpdateMemoryLayerRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -224,6 +231,40 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<UpdateMemoryLayerRequest, Operation>
+      updateMemoryLayerMethodDescriptor =
+          MethodDescriptor.<UpdateMemoryLayerRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/UpdateMemoryLayer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateMemoryLayerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListMemoryLayersRequest, ListMemoryLayersResponse>
+      listMemoryLayersMethodDescriptor =
+          MethodDescriptor.<ListMemoryLayersRequest, ListMemoryLayersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/ListMemoryLayers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMemoryLayersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMemoryLayersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetMemoryLayerRequest, MemoryLayer>
+      getMemoryLayerMethodDescriptor =
+          MethodDescriptor.<GetMemoryLayerRequest, MemoryLayer>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.bigtable.admin.v2.BigtableInstanceAdmin/GetMemoryLayer")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMemoryLayerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MemoryLayer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<CreateAppProfileRequest, AppProfile>
       createAppProfileMethodDescriptor =
@@ -465,6 +506,14 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
           PartialUpdateClusterRequest, Cluster, PartialUpdateClusterMetadata>
       partialUpdateClusterOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable;
+  private final UnaryCallable<UpdateMemoryLayerRequest, Operation> updateMemoryLayerCallable;
+  private final OperationCallable<UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationCallable;
+  private final UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersResponse>
+      listMemoryLayersCallable;
+  private final UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersPagedResponse>
+      listMemoryLayersPagedCallable;
+  private final UnaryCallable<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerCallable;
   private final UnaryCallable<CreateAppProfileRequest, AppProfile> createAppProfileCallable;
   private final UnaryCallable<GetAppProfileRequest, AppProfile> getAppProfileCallable;
   private final UnaryCallable<ListAppProfilesRequest, ListAppProfilesResponse>
@@ -679,6 +728,40 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     GrpcCallSettings<DeleteClusterRequest, Empty> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateMemoryLayerRequest, Operation> updateMemoryLayerTransportSettings =
+        GrpcCallSettings.<UpdateMemoryLayerRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateMemoryLayerMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "memory_layer.name", String.valueOf(request.getMemoryLayer().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListMemoryLayersRequest, ListMemoryLayersResponse>
+        listMemoryLayersTransportSettings =
+            GrpcCallSettings.<ListMemoryLayersRequest, ListMemoryLayersResponse>newBuilder()
+                .setMethodDescriptor(listMemoryLayersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerTransportSettings =
+        GrpcCallSettings.<GetMemoryLayerRequest, MemoryLayer>newBuilder()
+            .setMethodDescriptor(getMemoryLayerMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -977,6 +1060,26 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
     this.deleteClusterCallable =
         callableFactory.createUnaryCallable(
             deleteClusterTransportSettings, settings.deleteClusterSettings(), clientContext);
+    this.updateMemoryLayerCallable =
+        callableFactory.createUnaryCallable(
+            updateMemoryLayerTransportSettings,
+            settings.updateMemoryLayerSettings(),
+            clientContext);
+    this.updateMemoryLayerOperationCallable =
+        callableFactory.createOperationCallable(
+            updateMemoryLayerTransportSettings,
+            settings.updateMemoryLayerOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listMemoryLayersCallable =
+        callableFactory.createUnaryCallable(
+            listMemoryLayersTransportSettings, settings.listMemoryLayersSettings(), clientContext);
+    this.listMemoryLayersPagedCallable =
+        callableFactory.createPagedCallable(
+            listMemoryLayersTransportSettings, settings.listMemoryLayersSettings(), clientContext);
+    this.getMemoryLayerCallable =
+        callableFactory.createUnaryCallable(
+            getMemoryLayerTransportSettings, settings.getMemoryLayerSettings(), clientContext);
     this.createAppProfileCallable =
         callableFactory.createUnaryCallable(
             createAppProfileTransportSettings, settings.createAppProfileSettings(), clientContext);
@@ -1193,6 +1296,34 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
   @Override
   public UnaryCallable<DeleteClusterRequest, Empty> deleteClusterCallable() {
     return deleteClusterCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateMemoryLayerRequest, Operation> updateMemoryLayerCallable() {
+    return updateMemoryLayerCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateMemoryLayerRequest, MemoryLayer, UpdateMemoryLayerMetadata>
+      updateMemoryLayerOperationCallable() {
+    return updateMemoryLayerOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersResponse>
+      listMemoryLayersCallable() {
+    return listMemoryLayersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMemoryLayersRequest, ListMemoryLayersPagedResponse>
+      listMemoryLayersPagedCallable() {
+    return listMemoryLayersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMemoryLayerRequest, MemoryLayer> getMemoryLayerCallable() {
+    return getMemoryLayerCallable;
   }
 
   @Override

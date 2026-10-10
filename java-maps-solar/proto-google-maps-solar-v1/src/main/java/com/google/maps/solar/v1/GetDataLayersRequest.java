@@ -306,7 +306,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA experiments to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage descriptions](
+   * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+   * details.
    * </pre>
    *
    * <code>
@@ -325,7 +331,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA experiments to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage descriptions](
+   * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+   * details.
    * </pre>
    *
    * <code>
@@ -343,7 +355,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA experiments to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage descriptions](
+   * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+   * details.
    * </pre>
    *
    * <code>
@@ -362,7 +380,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA experiments to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage descriptions](
+   * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+   * details.
    * </pre>
    *
    * <code>
@@ -380,7 +404,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Specifies the pre-GA experiments to enable.
+   * Optional. Specifies the pre-GA experiments to enable. Requests using this
+   * field are classified as a pre-GA offering under the [Google Maps Platform
+   * Service Specific
+   * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+   * See [launch stage descriptions](
+   * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+   * details.
    * </pre>
    *
    * <code>
@@ -1547,7 +1577,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1565,7 +1601,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1582,7 +1624,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1600,7 +1648,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1625,7 +1679,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1649,7 +1709,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1673,7 +1739,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1693,7 +1765,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1711,7 +1789,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1729,7 +1813,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1751,7 +1841,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>
@@ -1772,7 +1868,13 @@ public final class GetDataLayersRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Specifies the pre-GA experiments to enable.
+     * Optional. Specifies the pre-GA experiments to enable. Requests using this
+     * field are classified as a pre-GA offering under the [Google Maps Platform
+     * Service Specific
+     * Terms](https://cloud.google.com/maps-platform/terms/maps-service-terms).
+     * See [launch stage descriptions](
+     * https://cloud.google.com/maps-platform/terms/launch-stages) for more
+     * details.
      * </pre>
      *
      * <code>

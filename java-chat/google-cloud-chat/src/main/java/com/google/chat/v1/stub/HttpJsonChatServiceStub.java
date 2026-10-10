@@ -19,12 +19,14 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListMessagePinsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -45,6 +47,7 @@ import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
+import com.google.chat.v1.CreateMessagePinRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSectionRequest;
@@ -52,6 +55,7 @@ import com.google.chat.v1.CreateSpaceRequest;
 import com.google.chat.v1.CustomEmoji;
 import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
+import com.google.chat.v1.DeleteMessagePinRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
@@ -73,6 +77,8 @@ import com.google.chat.v1.ListCustomEmojisRequest;
 import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
+import com.google.chat.v1.ListMessagePinsRequest;
+import com.google.chat.v1.ListMessagePinsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
@@ -90,11 +96,14 @@ import com.google.chat.v1.MarkAsAwayRequest;
 import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MessagePin;
 import com.google.chat.v1.MoveSectionItemRequest;
 import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -204,6 +213,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                             ProtoRestSerializer<ListMessagesRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(
+                                fields, "markupSyntax", request.getMarkupSyntaxValue());
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
@@ -320,6 +331,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetMessageRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "markupSyntax", request.getMarkupSyntaxValue());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })
@@ -405,6 +418,43 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
                       .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SearchMessagesRequest, SearchMessagesResponse>
+      searchMessagesMethodDescriptor =
+          ApiMethodDescriptor.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/SearchMessages")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchMessagesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=spaces/*}/messages:search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchMessagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchMessagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchMessagesResponse>newBuilder()
+                      .setDefaultInstance(SearchMessagesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1053,6 +1103,113 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteReactionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListMessagePinsRequest, ListMessagePinsResponse>
+      listMessagePinsMethodDescriptor =
+          ApiMethodDescriptor.<ListMessagePinsRequest, ListMessagePinsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListMessagePins")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListMessagePinsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=spaces/*}/messagePins",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMessagePinsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListMessagePinsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListMessagePinsResponse>newBuilder()
+                      .setDefaultInstance(ListMessagePinsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateMessagePinRequest, MessagePin>
+      createMessagePinMethodDescriptor =
+          ApiMethodDescriptor.<CreateMessagePinRequest, MessagePin>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/CreateMessagePin")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateMessagePinRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=spaces/*}/messagePins",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMessagePinRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateMessagePinRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("messagePin", request.getMessagePin(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MessagePin>newBuilder()
+                      .setDefaultInstance(MessagePin.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteMessagePinRequest, Empty>
+      deleteMessagePinMethodDescriptor =
+          ApiMethodDescriptor.<DeleteMessagePinRequest, Empty>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/DeleteMessagePin")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteMessagePinRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=spaces/*/messagePins/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteMessagePinRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteMessagePinRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -1921,6 +2078,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<GetMessageRequest, Message> getMessageCallable;
   private final UnaryCallable<UpdateMessageRequest, Message> updateMessageCallable;
   private final UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable;
   private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
   private final UnaryCallable<UploadAttachmentRequest, UploadAttachmentResponse>
       uploadAttachmentCallable;
@@ -1948,6 +2108,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse>
+      listMessagePinsCallable;
+  private final UnaryCallable<ListMessagePinsRequest, ListMessagePinsPagedResponse>
+      listMessagePinsPagedCallable;
+  private final UnaryCallable<CreateMessagePinRequest, MessagePin> createMessagePinCallable;
+  private final UnaryCallable<DeleteMessagePinRequest, Empty> deleteMessagePinCallable;
   private final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable;
   private final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable;
   private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
@@ -2115,6 +2281,19 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<SearchMessagesRequest, SearchMessagesResponse>
+        searchMessagesTransportSettings =
+            HttpJsonCallSettings.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+                .setMethodDescriptor(searchMessagesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
             .setMethodDescriptor(getAttachmentMethodDescriptor)
@@ -2283,6 +2462,43 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     HttpJsonCallSettings<DeleteReactionRequest, Empty> deleteReactionTransportSettings =
         HttpJsonCallSettings.<DeleteReactionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteReactionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListMessagePinsRequest, ListMessagePinsResponse>
+        listMessagePinsTransportSettings =
+            HttpJsonCallSettings.<ListMessagePinsRequest, ListMessagePinsResponse>newBuilder()
+                .setMethodDescriptor(listMessagePinsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<CreateMessagePinRequest, MessagePin> createMessagePinTransportSettings =
+        HttpJsonCallSettings.<CreateMessagePinRequest, MessagePin>newBuilder()
+            .setMethodDescriptor(createMessagePinMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<DeleteMessagePinRequest, Empty> deleteMessagePinTransportSettings =
+        HttpJsonCallSettings.<DeleteMessagePinRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteMessagePinMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -2597,6 +2813,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.deleteMessageCallable =
         callableFactory.createUnaryCallable(
             deleteMessageTransportSettings, settings.deleteMessageSettings(), clientContext);
+    this.searchMessagesCallable =
+        callableFactory.createUnaryCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
+    this.searchMessagesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
     this.getAttachmentCallable =
         callableFactory.createUnaryCallable(
             getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
@@ -2667,6 +2889,18 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.listMessagePinsCallable =
+        callableFactory.createUnaryCallable(
+            listMessagePinsTransportSettings, settings.listMessagePinsSettings(), clientContext);
+    this.listMessagePinsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMessagePinsTransportSettings, settings.listMessagePinsSettings(), clientContext);
+    this.createMessagePinCallable =
+        callableFactory.createUnaryCallable(
+            createMessagePinTransportSettings, settings.createMessagePinSettings(), clientContext);
+    this.deleteMessagePinCallable =
+        callableFactory.createUnaryCallable(
+            deleteMessagePinTransportSettings, settings.deleteMessagePinSettings(), clientContext);
     this.createCustomEmojiCallable =
         callableFactory.createUnaryCallable(
             createCustomEmojiTransportSettings,
@@ -2781,6 +3015,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getMessageMethodDescriptor);
     methodDescriptors.add(updateMessageMethodDescriptor);
     methodDescriptors.add(deleteMessageMethodDescriptor);
+    methodDescriptors.add(searchMessagesMethodDescriptor);
     methodDescriptors.add(getAttachmentMethodDescriptor);
     methodDescriptors.add(uploadAttachmentMethodDescriptor);
     methodDescriptors.add(listSpacesMethodDescriptor);
@@ -2799,6 +3034,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(createReactionMethodDescriptor);
     methodDescriptors.add(listReactionsMethodDescriptor);
     methodDescriptors.add(deleteReactionMethodDescriptor);
+    methodDescriptors.add(listMessagePinsMethodDescriptor);
+    methodDescriptors.add(createMessagePinMethodDescriptor);
+    methodDescriptors.add(deleteMessagePinMethodDescriptor);
     methodDescriptors.add(createCustomEmojiMethodDescriptor);
     methodDescriptors.add(getCustomEmojiMethodDescriptor);
     methodDescriptors.add(listCustomEmojisMethodDescriptor);
@@ -2869,6 +3107,17 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable() {
     return deleteMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable() {
+    return searchMessagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    return searchMessagesPagedCallable;
   }
 
   @Override
@@ -2983,6 +3232,27 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse> listMessagePinsCallable() {
+    return listMessagePinsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessagePinsRequest, ListMessagePinsPagedResponse>
+      listMessagePinsPagedCallable() {
+    return listMessagePinsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMessagePinRequest, MessagePin> createMessagePinCallable() {
+    return createMessagePinCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMessagePinRequest, Empty> deleteMessagePinCallable() {
+    return deleteMessagePinCallable;
   }
 
   @Override

@@ -24,7 +24,7 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * The different execution states of the Audit Manager service.
+ * Different execution states of the Audit Manager service.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.auditmanager.v1.OperationState}
@@ -35,7 +35,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified. Invalid state.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>OPERATION_STATE_UNSPECIFIED = 0;</code>
@@ -45,7 +45,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit report generation process has not started.
+   * Audit generation process hasn't started.
    * </pre>
    *
    * <code>OPERATION_STATE_NOT_STARTED = 10;</code>
@@ -55,8 +55,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager is currently evaluating the workloads against specific
-   * standard.
+   * Evaluation process is in progress.
    * </pre>
    *
    * <code>OPERATION_STATE_EVALUATION_IN_PROGRESS = 20;</code>
@@ -66,7 +65,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager has completed Evaluation for the workload.
+   * Evaluation process is completed.
    * </pre>
    *
    * <code>OPERATION_STATE_EVALUATION_DONE = 21;</code>
@@ -76,7 +75,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager is creating audit report from the evaluated data.
+   * Report generation process is in progress.
    * </pre>
    *
    * <code>OPERATION_STATE_EVIDENCE_REPORT_GENERATION_IN_PROGRESS = 30;</code>
@@ -86,7 +85,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager has completed generation of the audit report.
+   * Report generation process is completed.
    * </pre>
    *
    * <code>OPERATION_STATE_EVIDENCE_REPORT_GENERATION_DONE = 31;</code>
@@ -96,8 +95,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager is uploading the audit report and evidences to the customer
-   * provided destination.
+   * The audit report and evidence are being uploaded to your bucket.
    * </pre>
    *
    * <code>OPERATION_STATE_EVIDENCE_UPLOAD_IN_PROGRESS = 40;</code>
@@ -107,7 +105,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit report generation process is completed.
+   * The audit report and evidence are uploaded to your bucket.
    * </pre>
    *
    * <code>OPERATION_STATE_DONE = 50;</code>
@@ -117,7 +115,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit report generation process has failed.
+   * Audit report generation process failed.
    * </pre>
    *
    * <code>OPERATION_STATE_FAILED = 60;</code>
@@ -140,7 +138,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Unspecified. Invalid state.
+   * Default value. This value is unused.
    * </pre>
    *
    * <code>OPERATION_STATE_UNSPECIFIED = 0;</code>
@@ -151,7 +149,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit report generation process has not started.
+   * Audit generation process hasn't started.
    * </pre>
    *
    * <code>OPERATION_STATE_NOT_STARTED = 10;</code>
@@ -162,8 +160,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager is currently evaluating the workloads against specific
-   * standard.
+   * Evaluation process is in progress.
    * </pre>
    *
    * <code>OPERATION_STATE_EVALUATION_IN_PROGRESS = 20;</code>
@@ -174,7 +171,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager has completed Evaluation for the workload.
+   * Evaluation process is completed.
    * </pre>
    *
    * <code>OPERATION_STATE_EVALUATION_DONE = 21;</code>
@@ -185,7 +182,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager is creating audit report from the evaluated data.
+   * Report generation process is in progress.
    * </pre>
    *
    * <code>OPERATION_STATE_EVIDENCE_REPORT_GENERATION_IN_PROGRESS = 30;</code>
@@ -196,7 +193,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager has completed generation of the audit report.
+   * Report generation process is completed.
    * </pre>
    *
    * <code>OPERATION_STATE_EVIDENCE_REPORT_GENERATION_DONE = 31;</code>
@@ -207,8 +204,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit Manager is uploading the audit report and evidences to the customer
-   * provided destination.
+   * The audit report and evidence are being uploaded to your bucket.
    * </pre>
    *
    * <code>OPERATION_STATE_EVIDENCE_UPLOAD_IN_PROGRESS = 40;</code>
@@ -219,7 +215,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit report generation process is completed.
+   * The audit report and evidence are uploaded to your bucket.
    * </pre>
    *
    * <code>OPERATION_STATE_DONE = 50;</code>
@@ -230,7 +226,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Audit report generation process has failed.
+   * Audit report generation process failed.
    * </pre>
    *
    * <code>OPERATION_STATE_FAILED = 60;</code>

@@ -128,6 +128,7 @@ public class GlobalOrganizationOperationsClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -238,7 +239,6 @@ public class GlobalOrganizationOperationsClientTest {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setParentId("parentId1175162725")
-              .setReturnPartialSuccess(true)
               .build();
       client.list(request);
       Assert.fail("No exception raised");

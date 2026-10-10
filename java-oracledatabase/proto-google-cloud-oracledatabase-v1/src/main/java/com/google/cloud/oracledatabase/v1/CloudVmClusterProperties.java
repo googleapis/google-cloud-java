@@ -73,6 +73,8 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     clusterName_ = "";
     computeModel_ = 0;
     storageManagementType_ = 0;
+    vmFileSystemStorageType_ = 0;
+    vmBackupStorageType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -891,6 +893,356 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage types for VM File System.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType}
+   */
+  public enum VmFileSystemStorageType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified storage type.
+     * </pre>
+     *
+     * <code>VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Local DB server storage.
+     * </pre>
+     *
+     * <code>VM_FILE_SYSTEM_STORAGE_TYPE_LOCAL = 1;</code>
+     */
+    VM_FILE_SYSTEM_STORAGE_TYPE_LOCAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Exascale storage.
+     * </pre>
+     *
+     * <code>VM_FILE_SYSTEM_STORAGE_TYPE_EXASCALE = 2;</code>
+     */
+    VM_FILE_SYSTEM_STORAGE_TYPE_EXASCALE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "VmFileSystemStorageType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified storage type.
+     * </pre>
+     *
+     * <code>VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Local DB server storage.
+     * </pre>
+     *
+     * <code>VM_FILE_SYSTEM_STORAGE_TYPE_LOCAL = 1;</code>
+     */
+    public static final int VM_FILE_SYSTEM_STORAGE_TYPE_LOCAL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Exascale storage.
+     * </pre>
+     *
+     * <code>VM_FILE_SYSTEM_STORAGE_TYPE_EXASCALE = 2;</code>
+     */
+    public static final int VM_FILE_SYSTEM_STORAGE_TYPE_EXASCALE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VmFileSystemStorageType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VmFileSystemStorageType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED;
+        case 1:
+          return VM_FILE_SYSTEM_STORAGE_TYPE_LOCAL;
+        case 2:
+          return VM_FILE_SYSTEM_STORAGE_TYPE_EXASCALE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VmFileSystemStorageType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VmFileSystemStorageType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<VmFileSystemStorageType>() {
+              public VmFileSystemStorageType findValueByNumber(int number) {
+                return VmFileSystemStorageType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.getDescriptor()
+          .getEnumTypes()
+          .get(4);
+    }
+
+    private static final VmFileSystemStorageType[] VALUES = values();
+
+    public static VmFileSystemStorageType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VmFileSystemStorageType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage types for VM Backup.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType}
+   */
+  public enum VmBackupStorageType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified storage type.
+     * </pre>
+     *
+     * <code>VM_BACKUP_STORAGE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    VM_BACKUP_STORAGE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Local DB server storage.
+     * </pre>
+     *
+     * <code>VM_BACKUP_STORAGE_TYPE_LOCAL = 1;</code>
+     */
+    VM_BACKUP_STORAGE_TYPE_LOCAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Exascale storage.
+     * </pre>
+     *
+     * <code>VM_BACKUP_STORAGE_TYPE_EXASCALE = 2;</code>
+     */
+    VM_BACKUP_STORAGE_TYPE_EXASCALE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "VmBackupStorageType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified storage type.
+     * </pre>
+     *
+     * <code>VM_BACKUP_STORAGE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VM_BACKUP_STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Local DB server storage.
+     * </pre>
+     *
+     * <code>VM_BACKUP_STORAGE_TYPE_LOCAL = 1;</code>
+     */
+    public static final int VM_BACKUP_STORAGE_TYPE_LOCAL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Exascale storage.
+     * </pre>
+     *
+     * <code>VM_BACKUP_STORAGE_TYPE_EXASCALE = 2;</code>
+     */
+    public static final int VM_BACKUP_STORAGE_TYPE_EXASCALE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VmBackupStorageType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VmBackupStorageType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VM_BACKUP_STORAGE_TYPE_UNSPECIFIED;
+        case 1:
+          return VM_BACKUP_STORAGE_TYPE_LOCAL;
+        case 2:
+          return VM_BACKUP_STORAGE_TYPE_EXASCALE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VmBackupStorageType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VmBackupStorageType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<VmBackupStorageType>() {
+              public VmBackupStorageType findValueByNumber(int number) {
+                return VmBackupStorageType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.getDescriptor()
+          .getEnumTypes()
+          .get(5);
+    }
+
+    private static final VmBackupStorageType[] VALUES = values();
+
+    public static VmBackupStorageType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VmBackupStorageType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType)
   }
 
   private int bitField0_;
@@ -2334,6 +2686,102 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         : result;
   }
 
+  public static final int VM_FILE_SYSTEM_STORAGE_TYPE_FIELD_NUMBER = 39;
+  private int vmFileSystemStorageType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM file system storage / VM images are stored
+   * on local DB server storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for vmFileSystemStorageType.
+   */
+  @java.lang.Override
+  public int getVmFileSystemStorageTypeValue() {
+    return vmFileSystemStorageType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM file system storage / VM images are stored
+   * on local DB server storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vmFileSystemStorageType.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+      getVmFileSystemStorageType() {
+    com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType result =
+        com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+            .forNumber(vmFileSystemStorageType_);
+    return result == null
+        ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int VM_BACKUP_STORAGE_TYPE_FIELD_NUMBER = 40;
+  private int vmBackupStorageType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM backups are stored on local DB server
+   * storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for vmBackupStorageType.
+   */
+  @java.lang.Override
+  public int getVmBackupStorageTypeValue() {
+    return vmBackupStorageType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether VM backups are stored on local DB server
+   * storage or Exascale storage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vmBackupStorageType.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+      getVmBackupStorageType() {
+    com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType result =
+        com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType.forNumber(
+            vmBackupStorageType_);
+    return result == null
+        ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2461,6 +2909,18 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
             .STORAGE_MANAGEMENT_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(38, storageManagementType_);
+    }
+    if (vmFileSystemStorageType_
+        != com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+            .VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(39, vmFileSystemStorageType_);
+    }
+    if (vmBackupStorageType_
+        != com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+            .VM_BACKUP_STORAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(40, vmBackupStorageType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2602,6 +3062,18 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(38, storageManagementType_);
     }
+    if (vmFileSystemStorageType_
+        != com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+            .VM_FILE_SYSTEM_STORAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(39, vmFileSystemStorageType_);
+    }
+    if (vmBackupStorageType_
+        != com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+            .VM_BACKUP_STORAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(40, vmBackupStorageType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2662,6 +3134,8 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     if (!getClusterName().equals(other.getClusterName())) return false;
     if (computeModel_ != other.computeModel_) return false;
     if (storageManagementType_ != other.storageManagementType_) return false;
+    if (vmFileSystemStorageType_ != other.vmFileSystemStorageType_) return false;
+    if (vmBackupStorageType_ != other.vmBackupStorageType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2754,6 +3228,10 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     hash = (53 * hash) + computeModel_;
     hash = (37 * hash) + STORAGE_MANAGEMENT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + storageManagementType_;
+    hash = (37 * hash) + VM_FILE_SYSTEM_STORAGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + vmFileSystemStorageType_;
+    hash = (37 * hash) + VM_BACKUP_STORAGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + vmBackupStorageType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2948,6 +3426,8 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       clusterName_ = "";
       computeModel_ = 0;
       storageManagementType_ = 0;
+      vmFileSystemStorageType_ = 0;
+      vmBackupStorageType_ = 0;
       return this;
     }
 
@@ -3102,6 +3582,12 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
         result.storageManagementType_ = storageManagementType_;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.vmFileSystemStorageType_ = vmFileSystemStorageType_;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.vmBackupStorageType_ = vmBackupStorageType_;
       }
     }
 
@@ -3266,6 +3752,12 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       if (other.storageManagementType_ != 0) {
         setStorageManagementTypeValue(other.getStorageManagementTypeValue());
+      }
+      if (other.vmFileSystemStorageType_ != 0) {
+        setVmFileSystemStorageTypeValue(other.getVmFileSystemStorageTypeValue());
+      }
+      if (other.vmBackupStorageType_ != 0) {
+        setVmBackupStorageTypeValue(other.getVmBackupStorageTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3503,6 +3995,18 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
                 bitField1_ |= 0x00000002;
                 break;
               } // case 304
+            case 312:
+              {
+                vmFileSystemStorageType_ = input.readEnum();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 312
+            case 320:
+              {
+                vmBackupStorageType_ = input.readEnum();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 320
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7101,6 +7605,238 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public Builder clearStorageManagementType() {
       bitField1_ = (bitField1_ & ~0x00000002);
       storageManagementType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int vmFileSystemStorageType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM file system storage / VM images are stored
+     * on local DB server storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for vmFileSystemStorageType.
+     */
+    @java.lang.Override
+    public int getVmFileSystemStorageTypeValue() {
+      return vmFileSystemStorageType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM file system storage / VM images are stored
+     * on local DB server storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for vmFileSystemStorageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVmFileSystemStorageTypeValue(int value) {
+      vmFileSystemStorageType_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM file system storage / VM images are stored
+     * on local DB server storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vmFileSystemStorageType.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+        getVmFileSystemStorageType() {
+      com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType result =
+          com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+              .forNumber(vmFileSystemStorageType_);
+      return result == null
+          ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM file system storage / VM images are stored
+     * on local DB server storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The vmFileSystemStorageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVmFileSystemStorageType(
+        com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000004;
+      vmFileSystemStorageType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM file system storage / VM images are stored
+     * on local DB server storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmFileSystemStorageType vm_file_system_storage_type = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVmFileSystemStorageType() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      vmFileSystemStorageType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int vmBackupStorageType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM backups are stored on local DB server
+     * storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for vmBackupStorageType.
+     */
+    @java.lang.Override
+    public int getVmBackupStorageTypeValue() {
+      return vmBackupStorageType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM backups are stored on local DB server
+     * storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for vmBackupStorageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVmBackupStorageTypeValue(int value) {
+      vmBackupStorageType_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM backups are stored on local DB server
+     * storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vmBackupStorageType.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+        getVmBackupStorageType() {
+      com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType result =
+          com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType.forNumber(
+              vmBackupStorageType_);
+      return result == null
+          ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM backups are stored on local DB server
+     * storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The vmBackupStorageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVmBackupStorageType(
+        com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000008;
+      vmBackupStorageType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether VM backups are stored on local DB server
+     * storage or Exascale storage.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.VmBackupStorageType vm_backup_storage_type = 40 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVmBackupStorageType() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      vmBackupStorageType_ = 0;
       onChanged();
       return this;
     }

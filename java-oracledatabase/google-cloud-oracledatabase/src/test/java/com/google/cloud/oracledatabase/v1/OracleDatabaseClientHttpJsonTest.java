@@ -4024,6 +4024,248 @@ public class OracleDatabaseClientHttpJsonTest {
   }
 
   @Test
+  public void refreshAutonomousDatabaseTest() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+    Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+
+    AutonomousDatabase actualResponse =
+        client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void refreshAutonomousDatabaseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+      client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void refreshAutonomousDatabaseTest2() throws Exception {
+    AutonomousDatabase expectedResponse =
+        AutonomousDatabase.newBuilder()
+            .setName(
+                AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+                    .toString())
+            .setDatabase("database1789464955")
+            .setDisplayName("displayName1714148973")
+            .setEntitlementId("entitlementId-1302274264")
+            .setAdminPassword("adminPassword-95067382")
+            .setAdminPasswordSecretVersion("adminPasswordSecretVersion-1822814946")
+            .setProperties(AutonomousDatabaseProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setCidr("cidr3053428")
+            .setOdbNetwork(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+            .setOdbSubnet(
+                OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setSourceConfig(SourceConfig.newBuilder().build())
+            .addAllPeerAutonomousDatabases(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllDisasterRecoverySupportedLocations(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshAutonomousDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+    Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+
+    AutonomousDatabase actualResponse =
+        client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void refreshAutonomousDatabaseExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+      client.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesTest() throws Exception {
+    AutonomousDatabaseRefreshableClones expectedResponse =
+        AutonomousDatabaseRefreshableClones.newBuilder()
+            .addAllAutonomousDatabaseRefreshableClones(
+                new ArrayList<AutonomousDatabaseRefreshableClone>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutonomousDatabaseName name =
+        AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+
+    AutonomousDatabaseRefreshableClones actualResponse =
+        client.getAutonomousDatabaseRefreshableClones(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutonomousDatabaseName name =
+          AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+      client.getAutonomousDatabaseRefreshableClones(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesTest2() throws Exception {
+    AutonomousDatabaseRefreshableClones expectedResponse =
+        AutonomousDatabaseRefreshableClones.newBuilder()
+            .addAllAutonomousDatabaseRefreshableClones(
+                new ArrayList<AutonomousDatabaseRefreshableClone>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+
+    AutonomousDatabaseRefreshableClones actualResponse =
+        client.getAutonomousDatabaseRefreshableClones(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutonomousDatabaseRefreshableClonesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8766/locations/location-8766/autonomousDatabases/autonomousDatabase-8766";
+      client.getAutonomousDatabaseRefreshableClones(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listOdbNetworksTest() throws Exception {
     OdbNetwork responsesElement = OdbNetwork.newBuilder().build();
     ListOdbNetworksResponse expectedResponse =
@@ -4960,6 +5202,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5020,6 +5263,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5080,6 +5324,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5148,6 +5393,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5310,6 +5556,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5336,6 +5583,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5384,6 +5632,7 @@ public class OracleDatabaseClientHttpJsonTest {
               .setDisplayName("displayName1714148973")
               .setCreateTime(Timestamp.newBuilder().build())
               .setEntitlementId("entitlementId-1302274264")
+              .setIdentityConnector(IdentityConnector.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateExadbVmClusterAsync(exadbVmCluster, updateMask).get();
@@ -5411,6 +5660,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5479,6 +5729,7 @@ public class OracleDatabaseClientHttpJsonTest {
             .setDisplayName("displayName1714148973")
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
+            .setIdentityConnector(IdentityConnector.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

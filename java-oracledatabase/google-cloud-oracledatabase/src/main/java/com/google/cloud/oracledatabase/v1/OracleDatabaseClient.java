@@ -679,6 +679,45 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RefreshAutonomousDatabase</td>
+ *      <td><p> Refreshes the refreshable clone of an Autonomous Database.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> refreshAutonomousDatabaseAsync(RefreshAutonomousDatabaseRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> refreshAutonomousDatabaseAsync(AutonomousDatabaseName name, Timestamp refreshCutoffTime)
+ *           <li><p> refreshAutonomousDatabaseAsync(String name, Timestamp refreshCutoffTime)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> refreshAutonomousDatabaseOperationCallable()
+ *           <li><p> refreshAutonomousDatabaseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAutonomousDatabaseRefreshableClones</td>
+ *      <td><p> Gets the refreshable clones for a given Autonomous Database.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAutonomousDatabaseRefreshableClones(AutonomousDatabaseName name)
+ *           <li><p> getAutonomousDatabaseRefreshableClones(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAutonomousDatabaseRefreshableClonesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListOdbNetworks</td>
  *      <td><p> Lists the ODB Networks in a given project and location.</td>
  *      <td>
@@ -2565,6 +2604,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
    *                   .toString())
    *           .setTotalStorageSizeGb(1493200154)
+   *           .setTotalVmStorageSizeGb(-1791568024)
    *           .setRequestId("requestId693933066")
    *           .build();
    *   CloudExadataInfrastructure response =
@@ -2601,6 +2641,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
    *                   .toString())
    *           .setTotalStorageSizeGb(1493200154)
+   *           .setTotalVmStorageSizeGb(-1791568024)
    *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<CloudExadataInfrastructure, OperationMetadata> future =
@@ -2640,6 +2681,7 @@ public class OracleDatabaseClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
    *                   .toString())
    *           .setTotalStorageSizeGb(1493200154)
+   *           .setTotalVmStorageSizeGb(-1791568024)
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
@@ -6988,6 +7030,311 @@ public class OracleDatabaseClient implements BackgroundResource {
   public final UnaryCallable<FailoverAutonomousDatabaseRequest, Operation>
       failoverAutonomousDatabaseCallable() {
     return stub.failoverAutonomousDatabaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes the refreshable clone of an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   AutonomousDatabaseName name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+   *   Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+   *   AutonomousDatabase response =
+   *       oracleDatabaseClient.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the AutonomousDatabase resource. Format:
+   *     projects/{project}/location/{location}/autonomousDatabases/{autonomous_database}
+   * @param refreshCutoffTime Required. The timestamp to which the Autonomous Database refreshable
+   *     clone will be refreshed. Changes made in the primary database after this timestamp are not
+   *     part of the data refresh.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseAsync(
+          @Nullable AutonomousDatabaseName name, Timestamp refreshCutoffTime) {
+    RefreshAutonomousDatabaseRequest request =
+        RefreshAutonomousDatabaseRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRefreshCutoffTime(refreshCutoffTime)
+            .build();
+    return refreshAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes the refreshable clone of an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]").toString();
+   *   Timestamp refreshCutoffTime = Timestamp.newBuilder().build();
+   *   AutonomousDatabase response =
+   *       oracleDatabaseClient.refreshAutonomousDatabaseAsync(name, refreshCutoffTime).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the AutonomousDatabase resource. Format:
+   *     projects/{project}/location/{location}/autonomousDatabases/{autonomous_database}
+   * @param refreshCutoffTime Required. The timestamp to which the Autonomous Database refreshable
+   *     clone will be refreshed. Changes made in the primary database after this timestamp are not
+   *     part of the data refresh.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseAsync(String name, Timestamp refreshCutoffTime) {
+    RefreshAutonomousDatabaseRequest request =
+        RefreshAutonomousDatabaseRequest.newBuilder()
+            .setName(name)
+            .setRefreshCutoffTime(refreshCutoffTime)
+            .build();
+    return refreshAutonomousDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes the refreshable clone of an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   RefreshAutonomousDatabaseRequest request =
+   *       RefreshAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .setRefreshCutoffTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   AutonomousDatabase response =
+   *       oracleDatabaseClient.refreshAutonomousDatabaseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseAsync(RefreshAutonomousDatabaseRequest request) {
+    return refreshAutonomousDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes the refreshable clone of an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   RefreshAutonomousDatabaseRequest request =
+   *       RefreshAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .setRefreshCutoffTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   OperationFuture<AutonomousDatabase, OperationMetadata> future =
+   *       oracleDatabaseClient.refreshAutonomousDatabaseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutonomousDatabase response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable() {
+    return stub.refreshAutonomousDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Refreshes the refreshable clone of an Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   RefreshAutonomousDatabaseRequest request =
+   *       RefreshAutonomousDatabaseRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .setRefreshCutoffTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.refreshAutonomousDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable() {
+    return stub.refreshAutonomousDatabaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the refreshable clones for a given Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   AutonomousDatabaseName name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]");
+   *   AutonomousDatabaseRefreshableClones response =
+   *       oracleDatabaseClient.getAutonomousDatabaseRefreshableClones(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Autonomous Database resource whose refreshable clones are to be
+   *     listed. Format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutonomousDatabaseRefreshableClones getAutonomousDatabaseRefreshableClones(
+      @Nullable AutonomousDatabaseName name) {
+    GetAutonomousDatabaseRefreshableClonesRequest request =
+        GetAutonomousDatabaseRefreshableClonesRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAutonomousDatabaseRefreshableClones(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the refreshable clones for a given Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]").toString();
+   *   AutonomousDatabaseRefreshableClones response =
+   *       oracleDatabaseClient.getAutonomousDatabaseRefreshableClones(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The Autonomous Database resource whose refreshable clones are to be
+   *     listed. Format:
+   *     projects/{project}/locations/{location}/autonomousDatabases/{autonomous_database}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutonomousDatabaseRefreshableClones getAutonomousDatabaseRefreshableClones(
+      String name) {
+    GetAutonomousDatabaseRefreshableClonesRequest request =
+        GetAutonomousDatabaseRefreshableClonesRequest.newBuilder().setName(name).build();
+    return getAutonomousDatabaseRefreshableClones(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the refreshable clones for a given Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetAutonomousDatabaseRefreshableClonesRequest request =
+   *       GetAutonomousDatabaseRefreshableClonesRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   AutonomousDatabaseRefreshableClones response =
+   *       oracleDatabaseClient.getAutonomousDatabaseRefreshableClones(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutonomousDatabaseRefreshableClones getAutonomousDatabaseRefreshableClones(
+      GetAutonomousDatabaseRefreshableClonesRequest request) {
+    return getAutonomousDatabaseRefreshableClonesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the refreshable clones for a given Autonomous Database.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetAutonomousDatabaseRefreshableClonesRequest request =
+   *       GetAutonomousDatabaseRefreshableClonesRequest.newBuilder()
+   *           .setName(
+   *               AutonomousDatabaseName.of("[PROJECT]", "[LOCATION]", "[AUTONOMOUS_DATABASE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AutonomousDatabaseRefreshableClones> future =
+   *       oracleDatabaseClient.getAutonomousDatabaseRefreshableClonesCallable().futureCall(request);
+   *   // Do something.
+   *   AutonomousDatabaseRefreshableClones response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable() {
+    return stub.getAutonomousDatabaseRefreshableClonesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

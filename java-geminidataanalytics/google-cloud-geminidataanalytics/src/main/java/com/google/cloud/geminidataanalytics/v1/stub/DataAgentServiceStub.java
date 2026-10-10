@@ -32,6 +32,11 @@ import com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1.ListDataAgentsRequest;
 import com.google.cloud.geminidataanalytics.v1.ListDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1.OperationMetadata;
+import com.google.cloud.geminidataanalytics.v1.RetrieveAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1.RetrieveAgentOpsObservabilityResponse;
+import com.google.cloud.geminidataanalytics.v1.SetAgentOpsObservabilityMetadata;
+import com.google.cloud.geminidataanalytics.v1.SetAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1.SetAgentOpsObservabilityResponse;
 import com.google.cloud.geminidataanalytics.v1.UpdateDataAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -135,6 +140,26 @@ public abstract class DataAgentServiceStub implements BackgroundResource {
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setAgentOpsObservabilityOperationCallable()");
+  }
+
+  public UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable() {
+    throw new UnsupportedOperationException("Not implemented: setAgentOpsObservabilityCallable()");
+  }
+
+  public UnaryCallable<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: retrieveAgentOpsObservabilityCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

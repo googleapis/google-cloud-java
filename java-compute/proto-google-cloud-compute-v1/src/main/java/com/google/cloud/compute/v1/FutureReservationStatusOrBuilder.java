@@ -130,6 +130,51 @@ public interface FutureReservationStatusOrBuilder
    *
    *
    * <pre>
+   * Output only. Exapool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return Whether the exapoolProvisionedCapacityGb field is set.
+   */
+  boolean hasExapoolProvisionedCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Exapool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return The exapoolProvisionedCapacityGb.
+   */
+  com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+      getExapoolProvisionedCapacityGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Exapool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   */
+  com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder
+      getExapoolProvisionedCapacityGbOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Represents the existing matching usage for the future
    * reservation.
    * </pre>
@@ -379,4 +424,49 @@ public interface FutureReservationStatusOrBuilder
    */
   com.google.cloud.compute.v1.FutureReservationStatusSpecificSKUPropertiesOrBuilder
       getSpecificSkuPropertiesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage pool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+   * </code>
+   *
+   * @return Whether the storagePoolProvisionedCapacity field is set.
+   */
+  boolean hasStoragePoolProvisionedCapacity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage pool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+   * </code>
+   *
+   * @return The storagePoolProvisionedCapacity.
+   */
+  com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+      getStoragePoolProvisionedCapacity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage pool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+   * </code>
+   */
+  com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacityOrBuilder
+      getStoragePoolProvisionedCapacityOrBuilder();
 }

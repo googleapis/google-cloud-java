@@ -19,6 +19,9 @@ package com.google.cloud.spanner.connection.it;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.SerialIntegrationTest;
@@ -28,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -65,22 +69,36 @@ public class ITBulkConnectionTest extends ITAbstractSpannerTest {
   }
 
   @Test
-  public void testBulkCreateConnectionsMultiThreaded() throws InterruptedException {
+  public void testBulkCreateConnectionsMultiThreaded() throws Exception {
     ExecutorService executor = Executors.newFixedThreadPool(50);
-    for (int i = 0; i < NUMBER_OF_TEST_CONNECTIONS; i++) {
-      executor.submit(
-          () -> {
-            try (ITConnection connection = createConnection()) {
-              try (ResultSet rs = connection.executeQuery(Statement.of("select 1"))) {
-                assertThat(rs.next(), is(true));
-                assertThat(connection.getReadTimestamp(), is(notNullValue()));
-              }
-            }
-            return null;
-          });
+    try {
+      List<Future<?>> futures = new ArrayList<>(NUMBER_OF_TEST_CONNECTIONS);
+      for (int i = 0; i < NUMBER_OF_TEST_CONNECTIONS; i++) {
+        futures.add(
+            executor.submit(
+                () -> {
+                  try (ITConnection connection = createConnection()) {
+                    try (ResultSet resultSet = connection.executeQuery(Statement.of("select 1"))) {
+                      assertTrue(resultSet.next());
+                      assertNotNull(connection.getReadTimestamp());
+                    }
+                  }
+                  return null;
+                }));
+      }
+      executor.shutdown();
+      assertTrue(
+          "Executor did not terminate within timeout; active threads remain",
+          executor.awaitTermination(60L, TimeUnit.SECONDS));
+      for (Future<?> future : futures) {
+        assertNull(future.get());
+      }
+    } finally {
+      if (!executor.isTerminated()) {
+        executor.shutdownNow();
+        executor.awaitTermination(5L, TimeUnit.SECONDS);
+      }
     }
-    executor.shutdown();
-    executor.awaitTermination(10L, TimeUnit.SECONDS);
     // close Spanner instances explicitly. This method will throw an exception if there are any
     // connections still open in the pool
     closeSpanner();

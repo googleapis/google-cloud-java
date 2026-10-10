@@ -53,7 +53,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -111,9 +113,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     return executor == null;
   }
 
-  @Nullable
   @Override
-  public Executor getExecutor() {
+  public @Nullable Executor getExecutor() {
     return executor;
   }
 
@@ -218,18 +219,28 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
       // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
       return builder;
     }
-    // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
-    // key managers
-    // and trust manager factory (TMF) are bound to Conscrypt's TLS implementation (supporting PQC
-    // key exchange).
+    // NetHttpTransport.Builder.trustCertificates() in google-http-client initializes with the
+    // default SunX509 KeyManagerFactory (via SslUtils.getDefaultKeyManagerFactory()), which is not
+    // supported by Conscrypt. Explicitly initialize SSLContext with the Conscrypt provider so that
+    // the client certificate key managers and trust manager factory (TMF) are bound to Conscrypt's
+    // TLS implementation (supporting PQC key exchange).
     SSLContext sslContext = SSLContext.getInstance("TLS", conscryptProvider);
+    // The TrustManagerFactory must come from the same provider as the SSLContext. On TLS 1.3,
+    // Conscrypt passes authType "GENERIC" to the trust manager, which the JDK (SunJSSE) PKIX
+    // trust manager rejects for CA-issued server certificates that carry a KeyUsage extension
+    // (e.g. Google front ends), failing the handshake with "Unknown authType: GENERIC".
+    // Conscrypt's trust manager loads the same default trust store as the JDK.
+    // The KeyManagerFactory must also come from Conscrypt: since JDK 26 (JDK-8359956) the JDK's
+    // SunX509 key manager applies algorithm constraints to the client certificate, and when called
+    // from a Conscrypt handshake it rejects valid certificates (e.g. SHA256withRSA), so no client
+    // certificate is sent.
     SslUtils.initSslContext(
         sslContext,
         null,
-        SslUtils.getPkixTrustManagerFactory(),
+        TrustManagerFactory.getInstance("PKIX", conscryptProvider),
         mtlsKeyStore,
         "",
-        SslUtils.getDefaultKeyManagerFactory());
+        KeyManagerFactory.getInstance("PKIX", conscryptProvider));
     builder.setSslSocketFactory(sslContext.getSocketFactory());
     return builder;
   }

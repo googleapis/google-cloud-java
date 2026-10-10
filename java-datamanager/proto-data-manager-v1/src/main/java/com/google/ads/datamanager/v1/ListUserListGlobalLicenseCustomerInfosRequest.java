@@ -170,6 +170,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
    * - `&lt;`
    * - `&lt;=`
    *
+   * **Supported Functions:**
+   * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+   * of the values.  Example: `IN(user_list_id, 123, 456)`
+   *
    * **Unsupported Fields:**
    *
    * - `name` (use get method instead)
@@ -215,6 +219,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
    * - `&gt;=`
    * - `&lt;`
    * - `&lt;=`
+   *
+   * **Supported Functions:**
+   * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+   * of the values.  Example: `IN(user_list_id, 123, 456)`
    *
    * **Unsupported Fields:**
    *
@@ -898,6 +906,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
      * - `&lt;`
      * - `&lt;=`
      *
+     * **Supported Functions:**
+     * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+     * of the values.  Example: `IN(user_list_id, 123, 456)`
+     *
      * **Unsupported Fields:**
      *
      * - `name` (use get method instead)
@@ -942,6 +954,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
      * - `&gt;=`
      * - `&lt;`
      * - `&lt;=`
+     *
+     * **Supported Functions:**
+     * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+     * of the values.  Example: `IN(user_list_id, 123, 456)`
      *
      * **Unsupported Fields:**
      *
@@ -988,6 +1004,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
      * - `&lt;`
      * - `&lt;=`
      *
+     * **Supported Functions:**
+     * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+     * of the values.  Example: `IN(user_list_id, 123, 456)`
+     *
      * **Unsupported Fields:**
      *
      * - `name` (use get method instead)
@@ -1032,6 +1052,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
      * - `&lt;`
      * - `&lt;=`
      *
+     * **Supported Functions:**
+     * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+     * of the values.  Example: `IN(user_list_id, 123, 456)`
+     *
      * **Unsupported Fields:**
      *
      * - `name` (use get method instead)
@@ -1071,6 +1095,10 @@ public final class ListUserListGlobalLicenseCustomerInfosRequest
      * - `&gt;=`
      * - `&lt;`
      * - `&lt;=`
+     *
+     * **Supported Functions:**
+     * - `IN(field, value1, value2, ...)`: returns true if the field matches any
+     * of the values.  Example: `IN(user_list_id, 123, 456)`
      *
      * **Unsupported Fields:**
      *

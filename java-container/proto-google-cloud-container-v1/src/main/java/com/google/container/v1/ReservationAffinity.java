@@ -125,6 +125,17 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      * <code>SPECIFIC_RESERVATION = 3;</code>
      */
     SPECIFIC_RESERVATION(3),
+    /**
+     *
+     *
+     * <pre>
+     * Consume any reservation available. If no reservation is available, fail
+     * the node creation.
+     * </pre>
+     *
+     * <code>ANY_RESERVATION_THEN_FAIL = 4;</code>
+     */
+    ANY_RESERVATION_THEN_FAIL(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -183,6 +194,18 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
      */
     public static final int SPECIFIC_RESERVATION_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Consume any reservation available. If no reservation is available, fail
+     * the node creation.
+     * </pre>
+     *
+     * <code>ANY_RESERVATION_THEN_FAIL = 4;</code>
+     */
+    public static final int ANY_RESERVATION_THEN_FAIL_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -215,6 +238,8 @@ public final class ReservationAffinity extends com.google.protobuf.GeneratedMess
           return ANY_RESERVATION;
         case 3:
           return SPECIFIC_RESERVATION;
+        case 4:
+          return ANY_RESERVATION_THEN_FAIL;
         default:
           return null;
       }

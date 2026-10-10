@@ -347,6 +347,45 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
         : document_;
   }
 
+  public static final int RELEVANCE_SCORE_FIELD_NUMBER = 5;
+  private double relevanceScore_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the relevance score of the chunk to the search
+   * query. Higher score indicates higher chunk relevance. The score is in range
+   * [0.0, 1.0].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the relevanceScore field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelevanceScore() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Represents the relevance score of the chunk to the search
+   * query. Higher score indicates higher chunk relevance. The score is in range
+   * [0.0, 1.0].
+   * </pre>
+   *
+   * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The relevanceScore.
+   */
+  @java.lang.Override
+  public double getRelevanceScore() {
+    return relevanceScore_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -373,6 +412,9 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getDocument());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeDouble(5, relevanceScore_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -393,6 +435,9 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDocument());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, relevanceScore_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -417,6 +462,11 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
     if (hasDocument()) {
       if (!getDocument().equals(other.getDocument())) return false;
     }
+    if (hasRelevanceScore() != other.hasRelevanceScore()) return false;
+    if (hasRelevanceScore()) {
+      if (java.lang.Double.doubleToLongBits(getRelevanceScore())
+          != java.lang.Double.doubleToLongBits(other.getRelevanceScore())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -437,6 +487,13 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
     if (hasDocument()) {
       hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDocument().hashCode();
+    }
+    if (hasRelevanceScore()) {
+      hash = (37 * hash) + RELEVANCE_SCORE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getRelevanceScore()));
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -600,6 +657,7 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
         documentBuilder_.dispose();
         documentBuilder_ = null;
       }
+      relevanceScore_ = 0D;
       return this;
     }
 
@@ -650,6 +708,10 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
         result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.relevanceScore_ = relevanceScore_;
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -683,6 +745,9 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDocument()) {
         mergeDocument(other.getDocument());
+      }
+      if (other.hasRelevanceScore()) {
+        setRelevanceScore(other.getRelevanceScore());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -735,6 +800,12 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 41:
+              {
+                relevanceScore_ = input.readDouble();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 41
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1445,6 +1516,90 @@ public final class DocumentChunk extends com.google.protobuf.GeneratedMessage
         document_ = null;
       }
       return documentBuilder_;
+    }
+
+    private double relevanceScore_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the relevance score of the chunk to the search
+     * query. Higher score indicates higher chunk relevance. The score is in range
+     * [0.0, 1.0].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the relevanceScore field is set.
+     */
+    @java.lang.Override
+    public boolean hasRelevanceScore() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the relevance score of the chunk to the search
+     * query. Higher score indicates higher chunk relevance. The score is in range
+     * [0.0, 1.0].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The relevanceScore.
+     */
+    @java.lang.Override
+    public double getRelevanceScore() {
+      return relevanceScore_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the relevance score of the chunk to the search
+     * query. Higher score indicates higher chunk relevance. The score is in range
+     * [0.0, 1.0].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The relevanceScore to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelevanceScore(double value) {
+
+      relevanceScore_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Represents the relevance score of the chunk to the search
+     * query. Higher score indicates higher chunk relevance. The score is in range
+     * [0.0, 1.0].
+     * </pre>
+     *
+     * <code>optional double relevance_score = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelevanceScore() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      relevanceScore_ = 0D;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.developers.knowledge.v1.DocumentChunk)

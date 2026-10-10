@@ -40,7 +40,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  *
  * @see <a href="https://cloud.google.com/bigquery/what-is-bigquery">Google Cloud BigQuery</a>
  */
-public interface BigQuery extends Service<BigQueryOptions> {
+public interface BigQuery extends Service<BigQueryOptions>, AutoCloseable {
 
   /**
    * Fields of a BigQuery Dataset resource.
@@ -1354,7 +1354,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Sends an insert all request.
    *
-   * <p>Example of inserting rows into a table without running a load job.
+   * <p>Example of inserting rows into a table without running a load job. To prevent duplicate
+   * rows, this method does not perform automatic retries unless insert IDs are provided. Transient
+   * service errors (such as UNAVAILABLE) may be thrown and should be handled by the caller when
+   * insert IDs are not provided.
    *
    * <pre>{@code
    * String datasetName = "my_dataset_name";
@@ -1637,6 +1640,74 @@ public interface BigQuery extends Service<BigQueryOptions> {
       throws InterruptedException, JobException;
 
   /**
+   * <b>[Beta]</b> Runs the query associated with the request and returns an {@link
+   * ArrowQueryResult} yielding Apache Arrow {@code VectorSchemaRoot} batches directly for zero-copy
+   * vector access.
+   *
+   * <p>Callers must manage off-heap native memory by closing the returned {@link ArrowQueryResult}
+   * (e.g. via a {@code try-with-resources} block).
+   *
+   * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
+   * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+   *
+   * <p><b>JVM Requirements (Java 16+):</b> Apache Arrow uses internal {@code java.nio}
+   * DirectByteBuffer access for off-heap buffer management. Applications running on Java 16 or
+   * newer must supply the following JVM argument:
+   *
+   * <pre>{@code
+   * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
+   * }</pre>
+   *
+   * @param configuration the query configuration
+   * @param options query options
+   * @return an {@link ArrowQueryResult} streaming Arrow vectors
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   * @throws JobException if the job completes unsuccessfully
+   */
+  @BetaApi
+  default ArrowQueryResult queryArrow(QueryJobConfiguration configuration, JobOption... options)
+      throws InterruptedException, JobException {
+    throw new UnsupportedOperationException("queryArrow is not implemented");
+  }
+
+  /**
+   * <b>[Beta]</b> Runs the query associated with the request, using the given JobId, and returns an
+   * {@link ArrowQueryResult} yielding Apache Arrow {@code VectorSchemaRoot} batches directly for
+   * zero-copy vector access.
+   *
+   * <p>Callers must manage off-heap native memory by closing the returned {@link ArrowQueryResult}
+   * (e.g. via a {@code try-with-resources} block).
+   *
+   * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
+   * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+   *
+   * <p><b>JVM Requirements (Java 16+):</b> Apache Arrow uses internal {@code java.nio}
+   * DirectByteBuffer access for off-heap buffer management. Applications running on Java 16 or
+   * newer must supply the following JVM argument:
+   *
+   * <pre>{@code
+   * --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED
+   * }</pre>
+   *
+   * @param configuration the query configuration
+   * @param jobId the job ID to use
+   * @param options query options
+   * @return an {@link ArrowQueryResult} streaming Arrow vectors
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the query
+   *     to complete
+   * @throws JobException if the job completes unsuccessfully
+   */
+  @BetaApi
+  default ArrowQueryResult queryArrow(
+      QueryJobConfiguration configuration, JobId jobId, JobOption... options)
+      throws InterruptedException, JobException {
+    throw new UnsupportedOperationException("queryArrow is not implemented");
+  }
+
+  /**
    * Starts the query associated with the request, using the given JobId. It returns either
    * TableResult for quick queries or Job object for long-running queries.
    *
@@ -1766,4 +1837,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * represents the subset of granted permissions.
    */
   List<String> testIamPermissions(TableId table, List<String> permissions, IAMOption... options);
+
+  /**
+   * Closes any background resources and transport channels held by this service.
+   *
+   * <p>The default implementation does nothing. Implementations that manage background resources
+   * (such as gRPC channels or storage clients) should override this method to release them
+   * deterministically.
+   */
+  @Override
+  default void close() {}
 }

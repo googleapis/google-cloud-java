@@ -44,6 +44,8 @@ public abstract class Method {
 
   public abstract boolean isBatching();
 
+  public abstract boolean isResumableUpload();
+
   public boolean isPaged() {
     return pageSizeFieldName() != null;
   }
@@ -137,7 +139,8 @@ public abstract class Method {
         .setIsInternalApi(false)
         .setIsBatching(false)
         .setIsDeprecated(false)
-        .setOperationPollingMethod(false);
+        .setOperationPollingMethod(false)
+        .setIsResumableUpload(false);
   }
 
   public static Stream toStream(boolean isClientStreaming, boolean isServerStreaming) {
@@ -176,6 +179,8 @@ public abstract class Method {
     public abstract Builder setMethodSignatures(List<List<MethodArgument>> methodSignature);
 
     public abstract Builder setIsBatching(boolean isBatching);
+
+    public abstract Builder setIsResumableUpload(boolean isResumableUpload);
 
     public abstract Builder setPageSizeFieldName(String pagedFieldName);
 

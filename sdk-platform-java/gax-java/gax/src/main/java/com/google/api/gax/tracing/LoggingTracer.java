@@ -38,6 +38,7 @@ import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.slf4j.event.Level;
 
 /**
  * An {@link ApiTracer} that logs actionable errors using {@link LoggingUtils} when an RPC attempt
@@ -56,21 +57,37 @@ class LoggingTracer extends BaseApiTracer {
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    recordActionableError(error);
+    recordActionableError(error, Level.DEBUG);
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    recordActionableError(error);
+    recordActionableError(error, Level.DEBUG);
+  }
+
+  /**
+   * Records an actionable error log entry at ERROR level when the logical operation fails.
+   *
+   * @param error the exception that caused the logical operation to fail
+   */
+  @Override
+  public void operationFailed(Throwable error) {
+    recordActionableError(error, Level.ERROR);
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
-    recordActionableError(error);
+    recordActionableError(error, Level.DEBUG);
   }
 
+  /**
+   * Records an actionable error log entry with the specified log level.
+   *
+   * @param error the exception that occurred
+   * @param level the SLF4J log level at which to emit the error log
+   */
   @VisibleForTesting
-  void recordActionableError(Throwable error) {
+  void recordActionableError(Throwable error, Level level) {
     if (error == null) {
       return;
     }
@@ -98,6 +115,6 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     String message = error.getMessage() != null ? error.getMessage() : error.getClass().getName();
-    LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message);
+    LoggingUtils.logActionableError(logContext, LOGGER_PROVIDER, message, level);
   }
 }

@@ -41,14 +41,11 @@ import com.google.common.hash.Hashing;
 import com.google.common.hash.HashingInputStream;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.io.StringReader;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
@@ -381,7 +378,6 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
   @Immutable
   static final class ApiaryReadRequest implements Serializable {
     private static final long serialVersionUID = -4059435314115374448L;
-    private static final Gson gson = new Gson();
     @NonNull private transient StorageObject object;
     @NonNull private final Map<StorageRpc.Option, ?> options;
     @NonNull private final ByteRangeSpec byteRangeSpec;
@@ -450,7 +446,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       if (objectJson == null) {
         synchronized (this) {
           if (objectJson == null) {
-            objectJson = gson.toJson(object);
+            objectJson = JsonUtils.objectToJson(object);
           }
         }
       }
@@ -464,8 +460,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
       in.defaultReadObject();
-      JsonReader jsonReader = gson.newJsonReader(new StringReader(this.objectJson));
-      this.object = gson.fromJson(jsonReader, StorageObject.class);
+      this.object = JsonUtils.jsonToObject(this.objectJson, StorageObject.class);
     }
   }
 }

@@ -85,4 +85,17 @@ public interface VirtualRpcResponseOrBuilder
    * @return The payload.
    */
   com.google.protobuf.ByteString getPayload();
+
+  /**
+   *
+   *
+   * <pre>
+   * If there are more responses for this rpc_id coming.
+   * </pre>
+   *
+   * <code>bool has_more = 5;</code>
+   *
+   * @return The hasMore.
+   */
+  boolean getHasMore();
 }

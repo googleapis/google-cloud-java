@@ -105,7 +105,7 @@ public class RemoteBigQueryHelper {
               .setProjectId(projectId)
               .setRetrySettings(retrySettings())
               .setTransportOptions(transportOptions);
-      String endpoint = System.getenv("BIGQUERY_ENDPOINT");
+      String endpoint = System.getProperty("bigquery.endpoint", System.getenv("BIGQUERY_ENDPOINT"));
       if (endpoint != null) {
         builder.setHost(endpoint);
       }
@@ -143,7 +143,7 @@ public class RemoteBigQueryHelper {
         bigqueryOptionsBuilder
             .setRetrySettings(retrySettings())
             .setTransportOptions(transportOptions);
-    String endpoint = System.getenv("BIGQUERY_ENDPOINT");
+    String endpoint = System.getProperty("bigquery.endpoint", System.getenv("BIGQUERY_ENDPOINT"));
     if (endpoint != null) {
       builder.setHost(endpoint);
     }
@@ -183,5 +183,17 @@ public class RemoteBigQueryHelper {
     public static BigQueryHelperException translate(Exception ex) {
       return new BigQueryHelperException(ex.getMessage(), ex);
     }
+  }
+
+  /**
+   * Helper to check if the provided BigQuery client is configured to target a regional endpoint.
+   */
+  public static boolean isRegionalEndpoint(BigQuery bigquery) {
+    if (bigquery == null || bigquery.getOptions() == null) {
+      return false;
+    }
+    String host = bigquery.getOptions().getHost();
+    return host != null
+        && (host.contains("-bigquery.googleapis.com") || host.contains(".rep.googleapis.com"));
   }
 }

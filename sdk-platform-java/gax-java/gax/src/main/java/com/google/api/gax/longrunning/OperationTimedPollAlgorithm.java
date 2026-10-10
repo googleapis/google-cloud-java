@@ -54,7 +54,7 @@ public class OperationTimedPollAlgorithm extends ExponentialRetryAlgorithm {
 
   @VisibleForTesting
   static final String LRO_TROUBLESHOOTING_LINK =
-      "https://github.com/googleapis/google-cloud-java#lro-timeouts";
+      "https://docs.cloud.google.com/java/docs/long-running-operations";
 
   /**
    * Creates the polling algorithm, using the default {@code NanoClock} for time computations.

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
@@ -241,6 +242,97 @@ public class QueryJobConfigurationTest {
         QUERY_JOB_CONFIGURATION_SET_JOB_CREATION_MODE.toBuilder().build());
   }
 
+  @Test
+  public void testArrowConfigurations() {
+    QueryResultsFormat format = QueryResultsFormat.ARROW;
+    ArrowSerializationOptions options =
+        ArrowSerializationOptions.newBuilder()
+            .setBufferCompression(ArrowSerializationOptions.CompressionCodec.LZ4_FRAME)
+            .setPicosTimestampPrecision(ArrowSerializationOptions.TimestampPrecision.NANOS)
+            .build();
+    QueryJobConfiguration job =
+        QueryJobConfiguration.newBuilder(QUERY)
+            .setQueryResultsFormat(format)
+            .setArrowSerializationOptions(options)
+            .build();
+
+    assertEquals(format, job.getQueryResultsFormat());
+    assertEquals(options, job.getArrowSerializationOptions());
+
+    // Test toBuilder
+    QueryJobConfiguration copiedJob = job.toBuilder().build();
+    assertEquals(job, copiedJob);
+    assertEquals(format, copiedJob.getQueryResultsFormat());
+    assertEquals(options, copiedJob.getArrowSerializationOptions());
+
+    // Test toPb/fromPb (not preserved)
+    QueryJobConfiguration jobFromPb = QueryJobConfiguration.fromPb(job.toPb());
+    assertEquals(QueryResultsFormat.STRUCT_ENCODING, jobFromPb.getQueryResultsFormat());
+    assertNull(jobFromPb.getArrowSerializationOptions());
+  }
+
+  @Test
+  public void testArrowSerializationOptionsNullChecks() {
+    ArrowSerializationOptions.Builder builder = ArrowSerializationOptions.newBuilder();
+    assertEquals(
+        ArrowSerializationOptions.CompressionCodec.UNCOMPRESSED,
+        builder.build().getBufferCompression());
+    assertEquals(
+        ArrowSerializationOptions.TimestampPrecision.MICROS,
+        builder.build().getPicosTimestampPrecision());
+
+    NullPointerException ex1 =
+        assertThrows(NullPointerException.class, () -> builder.setBufferCompression(null));
+    assertEquals("bufferCompression cannot be null", ex1.getMessage());
+
+    NullPointerException ex2 =
+        assertThrows(NullPointerException.class, () -> builder.setPicosTimestampPrecision(null));
+    assertEquals("picosTimestampPrecision cannot be null", ex2.getMessage());
+  }
+
+  @Test
+  public void testQueryJobConfigurationDefaults() {
+    QueryJobConfiguration defaultJob = QueryJobConfiguration.newBuilder(QUERY).build();
+
+    // Default query format is STRUCT_ENCODING; Arrow options are null by default
+    assertEquals(QueryResultsFormat.STRUCT_ENCODING, defaultJob.getQueryResultsFormat());
+    assertNull(defaultJob.getArrowSerializationOptions());
+
+    // Verify toBuilder preserves defaults
+    QueryJobConfiguration copiedJob = defaultJob.toBuilder().build();
+    assertEquals(QueryResultsFormat.STRUCT_ENCODING, copiedJob.getQueryResultsFormat());
+    assertNull(copiedJob.getArrowSerializationOptions());
+  }
+
+  @Test
+  public void testArrowFormatWithNullSerializationOptions() {
+    QueryJobConfiguration job =
+        QueryJobConfiguration.newBuilder(QUERY)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+
+    assertEquals(QueryResultsFormat.ARROW, job.getQueryResultsFormat());
+    assertNull(job.getArrowSerializationOptions());
+
+    // Verify toBuilder preserves ARROW format with null options
+    QueryJobConfiguration copiedJob = job.toBuilder().build();
+    assertEquals(QueryResultsFormat.ARROW, copiedJob.getQueryResultsFormat());
+    assertNull(copiedJob.getArrowSerializationOptions());
+  }
+
+  @Test
+  public void testQueryJobConfigurationArrowNullChecks() {
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder(QUERY);
+
+    NullPointerException ex1 =
+        assertThrows(NullPointerException.class, () -> builder.setQueryResultsFormat(null));
+    assertEquals("queryResultsFormat cannot be null", ex1.getMessage());
+
+    NullPointerException ex2 =
+        assertThrows(NullPointerException.class, () -> builder.setArrowSerializationOptions(null));
+    assertEquals("arrowSerializationOptions cannot be null", ex2.getMessage());
+  }
+
   private void compareQueryJobConfiguration(
       QueryJobConfiguration expected, QueryJobConfiguration value) {
     assertEquals(expected, value);
@@ -275,5 +367,7 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getPositionalParameters(), value.getPositionalParameters());
     assertEquals(expected.getNamedParameters(), value.getNamedParameters());
     assertEquals(expected.getReservation(), value.getReservation());
+    assertEquals(expected.getQueryResultsFormat(), value.getQueryResultsFormat());
+    assertEquals(expected.getArrowSerializationOptions(), value.getArrowSerializationOptions());
   }
 }
