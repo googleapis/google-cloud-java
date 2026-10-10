@@ -263,6 +263,88 @@ public interface DatasourceReferencesOrBuilder
   com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder
       getCloudSqlReferenceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 11;
+   * </code>
+   *
+   * @return Whether the bigtableReference field is set.
+   */
+  boolean hasBigtableReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 11;
+   * </code>
+   *
+   * @return The bigtableReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigtableReference getBigtableReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 11;
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder
+      getBigtableReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 13;
+   * </code>
+   *
+   * @return Whether the firestoreReference field is set.
+   */
+  boolean hasFirestoreReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 13;
+   * </code>
+   *
+   * @return The firestoreReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.FirestoreReference getFirestoreReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 13;
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder
+      getFirestoreReferenceOrBuilder();
+
   com.google.cloud.geminidataanalytics.v1beta.DatasourceReferences.ReferencesCase
       getReferencesCase();
 }

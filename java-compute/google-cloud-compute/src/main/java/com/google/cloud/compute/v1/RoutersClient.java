@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Routers API.
  *
+ * <p>This client uses Routers version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -627,7 +629,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, RoutersScopedList> element :
@@ -668,7 +669,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, RoutersScopedList>> future =
@@ -709,7 +709,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -1481,7 +1480,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   for (VmEndpointNatMappings element : routersClient.getNatMappingInfo(request).iterateAll()) {
@@ -1520,7 +1518,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   ApiFuture<VmEndpointNatMappings> future =
@@ -1559,7 +1556,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   while (true) {
@@ -1965,7 +1961,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Router element : routersClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -2001,7 +1996,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Router> future = routersClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -2036,7 +2030,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RouterList response = routersClient.listCallable().call(request);
@@ -2120,7 +2113,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPolicyApplied(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouteType("routeType167668003")
    *           .setRouter("router-925132983")
    *           .build();
@@ -2162,7 +2154,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPolicyApplied(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouteType("routeType167668003")
    *           .setRouter("router-925132983")
    *           .build();
@@ -2204,7 +2195,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPolicyApplied(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouteType("routeType167668003")
    *           .setRouter("router-925132983")
    *           .build();
@@ -2287,7 +2277,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   for (NamedSet element : routersClient.listNamedSets(request).iterateAll()) {
@@ -2324,7 +2313,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   ApiFuture<NamedSet> future = routersClient.listNamedSetsPagedCallable().futureCall(request);
@@ -2361,7 +2349,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   while (true) {
@@ -2444,7 +2431,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   for (RoutePolicy element : routersClient.listRoutePolicies(request).iterateAll()) {
@@ -2482,7 +2468,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   ApiFuture<RoutePolicy> future =
@@ -2520,7 +2505,6 @@ public class RoutersClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setRouter("router-925132983")
    *           .build();
    *   while (true) {

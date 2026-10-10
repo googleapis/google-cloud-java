@@ -49,7 +49,6 @@ import io.opencensus.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -224,8 +223,7 @@ public class OpencensusTracer extends BaseApiTracer {
   private AtomicLong totalSentMessages = new AtomicLong(0);
   private long totalReceivedMessages = 0;
 
-  OpencensusTracer(
-      @Nonnull Tracer tracer, @Nonnull Span span, @Nonnull OperationType operationType) {
+  OpencensusTracer(Tracer tracer, Span span, OperationType operationType) {
     this.tracer = Preconditions.checkNotNull(tracer, "tracer can't be null");
     this.span = Preconditions.checkNotNull(span, "span can't be null");
     this.operationType = Preconditions.checkNotNull(operationType, "operationType can't be null");

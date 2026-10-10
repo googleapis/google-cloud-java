@@ -24,10 +24,14 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
+import com.google.api.gax.rpc.InputStreamSupplier;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadOptions;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.generator.engine.ast.AnnotationNode;
@@ -109,6 +113,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
   private static final String CALLABLE_NAME_PATTERN = "%sCallable";
   private static final String PAGED_CALLABLE_NAME_PATTERN = "%sPagedCallable";
   private static final String OPERATION_CALLABLE_NAME_PATTERN = "%sOperationCallable";
+  private static final String REQUEST_VAR_NAME = "request";
 
   private static final Reference LIST_REFERENCE = ConcreteReference.withClazz(List.class);
   private static final Reference MAP_REFERENCE = ConcreteReference.withClazz(Map.class);
@@ -650,42 +655,46 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
         methodVariantsForClientHeader.put(method.name(), new ArrayList<>());
       }
       if (method.stream().equals(Stream.NONE)) {
-        List<MethodDefinition> generatedMethods =
-            createMethodVariants(
-                method,
-                ClassNames.getServiceClientClassName(service),
-                messageTypes,
-                typeStore,
-                resourceNames,
-                samples,
-                service);
+        if (!method.isResumableUpload()) {
+          List<MethodDefinition> generatedMethods =
+              createMethodVariants(
+                  method,
+                  ClassNames.getServiceClientClassName(service),
+                  messageTypes,
+                  typeStore,
+                  resourceNames,
+                  samples,
+                  service);
 
-        // Collect data for gapic_metadata.json.
-        grpcRpcToJavaMethodMetadata
-            .get(method.name())
-            .addAll(
-                generatedMethods.stream()
-                    .map(m -> javaMethodNameFn.apply(m))
-                    .collect(Collectors.toList()));
+          // Collect data for gapic_metadata.json.
+          grpcRpcToJavaMethodMetadata
+              .get(method.name())
+              .addAll(
+                  generatedMethods.stream()
+                      .map(m -> javaMethodNameFn.apply(m))
+                      .collect(Collectors.toList()));
 
-        // Collect data for Client header
-        methodVariantsForClientHeader
-            .get(method.name())
-            .addAll(
-                generatedMethods.stream()
-                    .map(AbstractServiceClientClassComposer::getJavaMethod)
-                    .collect(Collectors.toList()));
-        javaMethods.addAll(generatedMethods);
+          // Collect data for Client header
+          methodVariantsForClientHeader
+              .get(method.name())
+              .addAll(
+                  generatedMethods.stream()
+                      .map(AbstractServiceClientClassComposer::getJavaMethod)
+                      .collect(Collectors.toList()));
+          javaMethods.addAll(generatedMethods);
+        }
 
         MethodDefinition generatedMethod =
-            createMethodDefaultMethod(
-                method,
-                ClassNames.getServiceClientClassName(service),
-                messageTypes,
-                typeStore,
-                resourceNames,
-                samples,
-                service);
+            method.isResumableUpload()
+                ? createResumableUploadDefaultMethod(method, typeStore)
+                : createMethodDefaultMethod(
+                    method,
+                    ClassNames.getServiceClientClassName(service),
+                    messageTypes,
+                    typeStore,
+                    resourceNames,
+                    samples,
+                    service);
 
         // Collect data for gapic_metadata.json and client header.
         grpcRpcToJavaMethodMetadata.get(method.name()).add(javaMethodNameFn.apply(generatedMethod));
@@ -778,7 +787,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
       // Request proto builder.
       VariableExpr requestVarExpr =
           VariableExpr.builder()
-              .setVariable(Variable.builder().setName("request").setType(methodInputType).build())
+              .setVariable(
+                  Variable.builder().setName(REQUEST_VAR_NAME).setType(methodInputType).build())
               .setIsDecl(true)
               .build();
 
@@ -873,7 +883,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     // Construct the method that accepts a request proto.
     VariableExpr requestArgVarExpr =
         VariableExpr.builder()
-            .setVariable(Variable.builder().setName("request").setType(methodInputType).build())
+            .setVariable(
+                Variable.builder().setName(REQUEST_VAR_NAME).setType(methodInputType).build())
             .setIsDecl(true)
             .build();
     String callableMethodName =
@@ -914,14 +925,100 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             .setName(String.format(method.hasLro() ? "%sAsync" : "%s", methodName))
             .setArguments(Arrays.asList(requestArgVarExpr));
 
+    if (method.hasLro()) {
+      methodBuilder =
+          methodBuilder.setReturnExpr(callableMethodExpr).setReturnType(methodOutputType);
+    } else {
+      if (isProtoEmptyType(methodOutputType)) {
+        methodBuilder =
+            methodBuilder
+                .setBody(Arrays.asList(ExprStatement.withExpr(callableMethodExpr)))
+                .setReturnType(TypeNode.VOID);
+      } else {
+        methodBuilder =
+            methodBuilder.setReturnExpr(callableMethodExpr).setReturnType(methodOutputType);
+      }
+    }
+
+    methodBuilder.setAnnotations(createMethodAnnotations(method, typeStore));
+    return methodBuilder.build();
+  }
+
+  private static MethodDefinition createResumableUploadDefaultMethod(
+      Method method, TypeStore typeStore) {
+    String methodName = JavaStyle.toLowerCamelCase(method.name());
+    TypeNode methodInputType = method.inputType();
+    TypeNode methodOutputType = method.outputType();
+
+    VariableExpr requestArgVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder().setName(REQUEST_VAR_NAME).setType(methodInputType).build())
+            .setIsDecl(true)
+            .build();
+    VariableExpr payloadArgVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder()
+                    .setName("payload")
+                    .setType(typeStore.get("InputStreamSupplier"))
+                    .build())
+            .setIsDecl(true)
+            .build();
+    VariableExpr optionsArgVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder()
+                    .setName("options")
+                    .setType(
+                        TypeNode.withReference(
+                            typeStore
+                                .get("ResumableUploadOptions")
+                                .reference()
+                                .copyAndSetNullable(true)))
+                    .build())
+            .setIsDecl(true)
+            .build();
+
+    String callableMethodName = String.format(CALLABLE_NAME_PATTERN, methodName);
+    MethodInvocationExpr callableMethodExpr =
+        MethodInvocationExpr.builder().setMethodName(callableMethodName).build();
+    MethodInvocationExpr futureCallExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(callableMethodExpr)
+            .setMethodName("futureCall")
+            .setArguments(
+                Arrays.asList(
+                    requestArgVarExpr.toBuilder().setIsDecl(false).build(),
+                    payloadArgVarExpr.toBuilder().setIsDecl(false).build(),
+                    optionsArgVarExpr.toBuilder().setIsDecl(false).build()))
+            .build();
+
+    MethodInvocationExpr callAndTranslateExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(typeStore.get("ApiExceptions"))
+            .setMethodName("callAndTranslateApiException")
+            .setArguments(Arrays.asList(futureCallExpr))
+            .setReturnType(methodOutputType)
+            .build();
+
+    MethodDefinition.Builder methodBuilder =
+        MethodDefinition.builder()
+            .setHeaderCommentStatements(
+                ServiceClientCommentComposer.createRpcMethodHeaderComment(method, Optional.empty()))
+            .setScope(ScopeNode.PUBLIC)
+            .setIsFinal(true)
+            .setName(methodName)
+            .setArguments(Arrays.asList(requestArgVarExpr, payloadArgVarExpr, optionsArgVarExpr));
+
     if (isProtoEmptyType(methodOutputType)) {
       methodBuilder =
           methodBuilder
-              .setBody(Arrays.asList(ExprStatement.withExpr(callableMethodExpr)))
+              .setBody(Arrays.asList(ExprStatement.withExpr(callAndTranslateExpr)))
               .setReturnType(TypeNode.VOID);
     } else {
       methodBuilder =
-          methodBuilder.setReturnExpr(callableMethodExpr).setReturnType(methodOutputType);
+          methodBuilder.setReturnExpr(callAndTranslateExpr).setReturnType(methodOutputType);
     }
 
     methodBuilder.setAnnotations(createMethodAnnotations(method, typeStore));
@@ -992,7 +1089,9 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
         case NONE:
         // Fall through.
         default:
-          rawCallableReturnType = typeStore.get("UnaryCallable");
+          rawCallableReturnType =
+              typeStore.get(
+                  method.isResumableUpload() ? "ResumableUploadCallable" : "UnaryCallable");
       }
     }
 
@@ -1036,24 +1135,26 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
                   messageTypes,
                   service));
     } else if (callableMethodKind.equals(CallableMethodKind.REGULAR)) {
-      if (method.stream().equals(Stream.NONE)) {
-        sampleCode =
-            Optional.of(
-                ServiceClientCallableMethodSampleComposer.composeRegularCallableMethod(
-                    method,
-                    typeStore.get(ClassNames.getServiceClientClassName(service)),
-                    resourceNames,
-                    messageTypes,
-                    service));
-      } else {
-        sampleCode =
-            Optional.of(
-                ServiceClientCallableMethodSampleComposer.composeStreamCallableMethod(
-                    method,
-                    typeStore.get(ClassNames.getServiceClientClassName(service)),
-                    resourceNames,
-                    messageTypes,
-                    service));
+      if (!method.isResumableUpload()) {
+        if (method.stream().equals(Stream.NONE)) {
+          sampleCode =
+              Optional.of(
+                  ServiceClientCallableMethodSampleComposer.composeRegularCallableMethod(
+                      method,
+                      typeStore.get(ClassNames.getServiceClientClassName(service)),
+                      resourceNames,
+                      messageTypes,
+                      service));
+        } else {
+          sampleCode =
+              Optional.of(
+                  ServiceClientCallableMethodSampleComposer.composeStreamCallableMethod(
+                      method,
+                      typeStore.get(ClassNames.getServiceClientClassName(service)),
+                      resourceNames,
+                      messageTypes,
+                      service));
+        }
       }
     }
     Optional<String> sampleDocCode = Optional.empty();
@@ -1330,7 +1431,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             Variable.builder().setName("input").setType(methodPageType).build());
 
     // Overrides ApiFunction.apply.
-    // (https://github.com/googleapis/api-common-java/blob/debf25960dea0367b0d3b5e16d57d76c1d01947e/src/main/java/com/google/api/core/ApiFunction.java).
+    // (https://github.com/googleapis/google-cloud-java/blob/e50b96b70826f173e6d23278fea96c2af9b6e817/sdk-platform-java/api-common-java/src/main/java/com/google/api/core/ApiFunction.java).
     Expr pageToTransformExpr =
         LambdaExpr.builder()
             .setArguments(inputVarExpr.toBuilder().setIsDecl(true).build())
@@ -1797,6 +1898,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
     List<Class<?>> concreteClazzes =
         Arrays.asList(
             AbstractPagedListResponse.class,
+            ApiExceptions.class,
             ApiFunction.class,
             ApiFuture.class,
             ApiFutures.class,
@@ -1806,6 +1908,7 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             BidiStreamingCallable.class,
             ClientStreamingCallable.class,
             Generated.class,
+            InputStreamSupplier.class,
             InterruptedException.class,
             IOException.class,
             MoreExecutors.class,
@@ -1814,6 +1917,8 @@ public abstract class AbstractServiceClientClassComposer implements ClassCompose
             Operation.class,
             OperationFuture.class,
             OperationCallable.class,
+            ResumableUploadCallable.class,
+            ResumableUploadOptions.class,
             ServerStreamingCallable.class,
             Status.class,
             Strings.class,

@@ -634,6 +634,54 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Check the TargetStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_status = 307799648;</code>
+   *
+   * @return Whether the targetStatus field is set.
+   */
+  boolean hasTargetStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Check the TargetStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_status = 307799648;</code>
+   *
+   * @return The targetStatus.
+   */
+  java.lang.String getTargetStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Check the TargetStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_status = 307799648;</code>
+   *
+   * @return The bytes for targetStatus.
+   */
+  com.google.protobuf.ByteString getTargetStatusBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *

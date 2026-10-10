@@ -33,6 +33,8 @@ import java.util.concurrent.TimeoutException;
 public class FakeSessionListener implements Session.Listener {
   private BlockingDeque<Object> msgs = new LinkedBlockingDeque<>();
 
+  private volatile SessionState lastPrevState;
+
   @Override
   public void onReady(OpenSessionResponse msg) {
     msgs.add(msg);
@@ -45,7 +47,12 @@ public class FakeSessionListener implements Session.Listener {
 
   @Override
   public void onClose(SessionState prevState, Status status, Metadata trailers) {
+    this.lastPrevState = prevState;
     msgs.add(status);
+  }
+
+  public SessionState getLastPrevState() {
+    return lastPrevState;
   }
 
   @SuppressWarnings("unchecked")

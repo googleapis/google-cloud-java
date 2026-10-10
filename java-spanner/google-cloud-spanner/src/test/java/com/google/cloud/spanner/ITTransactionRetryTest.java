@@ -37,7 +37,7 @@ public class ITTransactionRetryTest {
   @Test
   public void TestRetryInfo() {
     assumeFalse("emulator does not support parallel transaction", isUsingEmulator());
-    assumeFalse("Skipping the test due to a known bug b/422916293", isSpannerOmni());
+    assumeFalse("Skipping the test due to a known bug b/441255724", isSpannerOmni());
     // Creating a database with the table which contains INT64 columns
     Database db =
         env.getTestHelper()

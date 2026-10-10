@@ -3270,7 +3270,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
      * @return The address.
      */
     @java.lang.Deprecated
@@ -3289,7 +3289,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
      * @return The bytes for address.
      */
     @java.lang.Deprecated
@@ -3596,7 +3596,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
      * @return The address.
      */
     @java.lang.Override
@@ -3626,7 +3626,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -4514,7 +4514,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
        * @return The address.
        */
       @java.lang.Deprecated
@@ -4543,7 +4543,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
        * @return The bytes for address.
        */
       @java.lang.Deprecated
@@ -4572,7 +4572,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -4600,7 +4600,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -4624,7 +4624,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=98
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -5069,7 +5069,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
      * @return Whether the unlimitedRenewal field is set.
      */
     @java.lang.Deprecated
@@ -5089,7 +5089,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
      * @return The unlimitedRenewal.
      */
     @java.lang.Deprecated
@@ -6190,7 +6190,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
      * @return Whether the unlimitedRenewal field is set.
      */
     @java.lang.Override
@@ -6213,7 +6213,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
      * @return The unlimitedRenewal.
      */
     @java.lang.Override
@@ -7717,7 +7717,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
        * @return Whether the unlimitedRenewal field is set.
        */
       @java.lang.Deprecated
@@ -7739,7 +7739,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
        * @return The unlimitedRenewal.
        */
       @java.lang.Deprecated
@@ -7764,7 +7764,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
        * @param value The unlimitedRenewal to set.
        * @return This builder for chaining.
        */
@@ -7791,7 +7791,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=247
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -9665,6 +9665,55 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.RevenueShareOrBuilder
         getRevenueShareOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional contract value that the customer is legally
+     * obligated to spend on the product over the duration of the offer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the additionalContractValue field is set.
+     */
+    boolean hasAdditionalContractValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional contract value that the customer is legally
+     * obligated to spend on the product over the duration of the offer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The additionalContractValue.
+     */
+    com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue
+        getAdditionalContractValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional contract value that the customer is legally
+     * obligated to spend on the product over the duration of the offer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+            .AdditionalContractValueOrBuilder
+        getAdditionalContractValueOrBuilder();
 
     com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AmendedOfferCase
         getAmendedOfferCase();
@@ -26027,6 +26076,1754 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public interface AdditionalContractValueOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The absolute, cumulative contract value of the customer's
+       * spend obligation that is added on top of the automatically billed fees
+       * from Google. This amount is not automatically billed or invoiced by
+       * Google; instead, it is tracked as a legal spend guarantee to be met via
+       * usage reporting and manually trued-up by partners.
+       *
+       * The overall total contract value of the offer is calculated as the
+       * sum of Google-billed fees (from installments), plus this additional
+       * contract value.
+       *
+       * For amendments, this field must be set to the new cumulative
+       * additional total.
+       *
+       * For example:
+       *
+       * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+       * plus an `additional_contract_value` of $100 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the offer is $145 ($45 + $100).
+       * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+       * plus an `additional_contract_value` of $70 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the amended offer is $160
+       * ($90 + $70).
+       *
+       * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+       * </pre>
+       *
+       * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the contractValue field is set.
+       */
+      boolean hasContractValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The absolute, cumulative contract value of the customer's
+       * spend obligation that is added on top of the automatically billed fees
+       * from Google. This amount is not automatically billed or invoiced by
+       * Google; instead, it is tracked as a legal spend guarantee to be met via
+       * usage reporting and manually trued-up by partners.
+       *
+       * The overall total contract value of the offer is calculated as the
+       * sum of Google-billed fees (from installments), plus this additional
+       * contract value.
+       *
+       * For amendments, this field must be set to the new cumulative
+       * additional total.
+       *
+       * For example:
+       *
+       * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+       * plus an `additional_contract_value` of $100 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the offer is $145 ($45 + $100).
+       * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+       * plus an `additional_contract_value` of $70 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the amended offer is $160
+       * ($90 + $70).
+       *
+       * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+       * </pre>
+       *
+       * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The contractValue.
+       */
+      com.google.type.Money getContractValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The absolute, cumulative contract value of the customer's
+       * spend obligation that is added on top of the automatically billed fees
+       * from Google. This amount is not automatically billed or invoiced by
+       * Google; instead, it is tracked as a legal spend guarantee to be met via
+       * usage reporting and manually trued-up by partners.
+       *
+       * The overall total contract value of the offer is calculated as the
+       * sum of Google-billed fees (from installments), plus this additional
+       * contract value.
+       *
+       * For amendments, this field must be set to the new cumulative
+       * additional total.
+       *
+       * For example:
+       *
+       * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+       * plus an `additional_contract_value` of $100 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the offer is $145 ($45 + $100).
+       * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+       * plus an `additional_contract_value` of $70 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the amended offer is $160
+       * ($90 + $70).
+       *
+       * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+       * </pre>
+       *
+       * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.type.MoneyOrBuilder getContractValueOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the eligibleSkus.
+       */
+      java.util.List<java.lang.String> getEligibleSkusList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of eligibleSkus.
+       */
+      int getEligibleSkusCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The eligibleSkus at the given index.
+       */
+      java.lang.String getEligibleSkus(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the eligibleSkus at the given index.
+       */
+      com.google.protobuf.ByteString getEligibleSkusBytes(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional contract value that represents a spend obligation or target
+     * contract value tracked out-of-band by the partner.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue}
+     */
+    public static final class AdditionalContractValue extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue)
+        AdditionalContractValueOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "AdditionalContractValue");
+      }
+
+      // Use AdditionalContractValue.newBuilder() to construct.
+      private AdditionalContractValue(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private AdditionalContractValue() {
+        eligibleSkus_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.commerceproducer.v1beta.PrivateOfferProto
+            .internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.commerceproducer.v1beta.PrivateOfferProto
+            .internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                    .AdditionalContractValue.class,
+                com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                    .AdditionalContractValue.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int CONTRACT_VALUE_FIELD_NUMBER = 1;
+      private com.google.type.Money contractValue_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The absolute, cumulative contract value of the customer's
+       * spend obligation that is added on top of the automatically billed fees
+       * from Google. This amount is not automatically billed or invoiced by
+       * Google; instead, it is tracked as a legal spend guarantee to be met via
+       * usage reporting and manually trued-up by partners.
+       *
+       * The overall total contract value of the offer is calculated as the
+       * sum of Google-billed fees (from installments), plus this additional
+       * contract value.
+       *
+       * For amendments, this field must be set to the new cumulative
+       * additional total.
+       *
+       * For example:
+       *
+       * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+       * plus an `additional_contract_value` of $100 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the offer is $145 ($45 + $100).
+       * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+       * plus an `additional_contract_value` of $70 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the amended offer is $160
+       * ($90 + $70).
+       *
+       * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+       * </pre>
+       *
+       * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the contractValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasContractValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The absolute, cumulative contract value of the customer's
+       * spend obligation that is added on top of the automatically billed fees
+       * from Google. This amount is not automatically billed or invoiced by
+       * Google; instead, it is tracked as a legal spend guarantee to be met via
+       * usage reporting and manually trued-up by partners.
+       *
+       * The overall total contract value of the offer is calculated as the
+       * sum of Google-billed fees (from installments), plus this additional
+       * contract value.
+       *
+       * For amendments, this field must be set to the new cumulative
+       * additional total.
+       *
+       * For example:
+       *
+       * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+       * plus an `additional_contract_value` of $100 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the offer is $145 ($45 + $100).
+       * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+       * plus an `additional_contract_value` of $70 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the amended offer is $160
+       * ($90 + $70).
+       *
+       * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+       * </pre>
+       *
+       * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The contractValue.
+       */
+      @java.lang.Override
+      public com.google.type.Money getContractValue() {
+        return contractValue_ == null ? com.google.type.Money.getDefaultInstance() : contractValue_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The absolute, cumulative contract value of the customer's
+       * spend obligation that is added on top of the automatically billed fees
+       * from Google. This amount is not automatically billed or invoiced by
+       * Google; instead, it is tracked as a legal spend guarantee to be met via
+       * usage reporting and manually trued-up by partners.
+       *
+       * The overall total contract value of the offer is calculated as the
+       * sum of Google-billed fees (from installments), plus this additional
+       * contract value.
+       *
+       * For amendments, this field must be set to the new cumulative
+       * additional total.
+       *
+       * For example:
+       *
+       * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+       * plus an `additional_contract_value` of $100 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the offer is $145 ($45 + $100).
+       * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+       * plus an `additional_contract_value` of $70 (billed by Partner, with
+       * true-ups happening at the end of the offer's term).
+       * The overall total contract value of the amended offer is $160
+       * ($90 + $70).
+       *
+       * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+       * </pre>
+       *
+       * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.type.MoneyOrBuilder getContractValueOrBuilder() {
+        return contractValue_ == null ? com.google.type.Money.getDefaultInstance() : contractValue_;
+      }
+
+      public static final int ELIGIBLE_SKUS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList eligibleSkus_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the eligibleSkus.
+       */
+      public com.google.protobuf.ProtocolStringList getEligibleSkusList() {
+        return eligibleSkus_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of eligibleSkus.
+       */
+      public int getEligibleSkusCount() {
+        return eligibleSkus_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The eligibleSkus at the given index.
+       */
+      public java.lang.String getEligibleSkus(int index) {
+        return eligibleSkus_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource names of the SKUs whose tracked usage is
+       * eligible to contribute toward satisfying this additional contract value
+       * obligation.
+       *
+       * This list explicitly separates core spend obligations from exclusions
+       * like overage fees, which do not count toward meeting the customer's
+       * legal spend commitment.
+       *
+       * Must be non-empty for the offer to be published.
+       *
+       * Format:
+       * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+       * </pre>
+       *
+       * <code>
+       * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the eligibleSkus at the given index.
+       */
+      public com.google.protobuf.ByteString getEligibleSkusBytes(int index) {
+        return eligibleSkus_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getContractValue());
+        }
+        for (int i = 0; i < eligibleSkus_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, eligibleSkus_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getContractValue());
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < eligibleSkus_.size(); i++) {
+            dataSize += computeStringSizeNoTag(eligibleSkus_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getEligibleSkusList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                .AdditionalContractValue)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                .AdditionalContractValue
+            other =
+                (com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                        .AdditionalContractValue)
+                    obj;
+
+        if (hasContractValue() != other.hasContractValue()) return false;
+        if (hasContractValue()) {
+          if (!getContractValue().equals(other.getContractValue())) return false;
+        }
+        if (!getEligibleSkusList().equals(other.getEligibleSkusList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasContractValue()) {
+          hash = (37 * hash) + CONTRACT_VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + getContractValue().hashCode();
+        }
+        if (getEligibleSkusCount() > 0) {
+          hash = (37 * hash) + ELIGIBLE_SKUS_FIELD_NUMBER;
+          hash = (53 * hash) + getEligibleSkusList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional contract value that represents a spend obligation or target
+       * contract value tracked out-of-band by the partner.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue)
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValueOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.commerceproducer.v1beta.PrivateOfferProto
+              .internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.commerceproducer.v1beta.PrivateOfferProto
+              .internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValue.class,
+                  com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValue.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetContractValueFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          contractValue_ = null;
+          if (contractValueBuilder_ != null) {
+            contractValueBuilder_.dispose();
+            contractValueBuilder_ = null;
+          }
+          eligibleSkus_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.commerceproducer.v1beta.PrivateOfferProto
+              .internal_static_google_cloud_commerceproducer_v1beta_PrivateOffer_SingleProductOffer_AdditionalContractValue_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                .AdditionalContractValue
+            getDefaultInstanceForType() {
+          return com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                .AdditionalContractValue
+            build() {
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                .AdditionalContractValue
+            buildPartial() {
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue
+              result =
+                  new com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValue(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                    .AdditionalContractValue
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.contractValue_ =
+                contractValueBuilder_ == null ? contractValue_ : contractValueBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            eligibleSkus_.makeImmutable();
+            result.eligibleSkus_ = eligibleSkus_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue) {
+            return mergeFrom(
+                (com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                        .AdditionalContractValue)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                    .AdditionalContractValue
+                other) {
+          if (other
+              == com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue.getDefaultInstance()) return this;
+          if (other.hasContractValue()) {
+            mergeContractValue(other.getContractValue());
+          }
+          if (!other.eligibleSkus_.isEmpty()) {
+            if (eligibleSkus_.isEmpty()) {
+              eligibleSkus_ = other.eligibleSkus_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensureEligibleSkusIsMutable();
+              eligibleSkus_.addAll(other.eligibleSkus_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetContractValueFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureEligibleSkusIsMutable();
+                    eligibleSkus_.add(s);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.type.Money contractValue_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.type.Money,
+                com.google.type.Money.Builder,
+                com.google.type.MoneyOrBuilder>
+            contractValueBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the contractValue field is set.
+         */
+        public boolean hasContractValue() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The contractValue.
+         */
+        public com.google.type.Money getContractValue() {
+          if (contractValueBuilder_ == null) {
+            return contractValue_ == null
+                ? com.google.type.Money.getDefaultInstance()
+                : contractValue_;
+          } else {
+            return contractValueBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setContractValue(com.google.type.Money value) {
+          if (contractValueBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            contractValue_ = value;
+          } else {
+            contractValueBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setContractValue(com.google.type.Money.Builder builderForValue) {
+          if (contractValueBuilder_ == null) {
+            contractValue_ = builderForValue.build();
+          } else {
+            contractValueBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeContractValue(com.google.type.Money value) {
+          if (contractValueBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && contractValue_ != null
+                && contractValue_ != com.google.type.Money.getDefaultInstance()) {
+              getContractValueBuilder().mergeFrom(value);
+            } else {
+              contractValue_ = value;
+            }
+          } else {
+            contractValueBuilder_.mergeFrom(value);
+          }
+          if (contractValue_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearContractValue() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          contractValue_ = null;
+          if (contractValueBuilder_ != null) {
+            contractValueBuilder_.dispose();
+            contractValueBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.type.Money.Builder getContractValueBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return internalGetContractValueFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.type.MoneyOrBuilder getContractValueOrBuilder() {
+          if (contractValueBuilder_ != null) {
+            return contractValueBuilder_.getMessageOrBuilder();
+          } else {
+            return contractValue_ == null
+                ? com.google.type.Money.getDefaultInstance()
+                : contractValue_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The absolute, cumulative contract value of the customer's
+         * spend obligation that is added on top of the automatically billed fees
+         * from Google. This amount is not automatically billed or invoiced by
+         * Google; instead, it is tracked as a legal spend guarantee to be met via
+         * usage reporting and manually trued-up by partners.
+         *
+         * The overall total contract value of the offer is calculated as the
+         * sum of Google-billed fees (from installments), plus this additional
+         * contract value.
+         *
+         * For amendments, this field must be set to the new cumulative
+         * additional total.
+         *
+         * For example:
+         *
+         * * Initial Offer: 3 installments of $15 (total $45 billed by Google)
+         * plus an `additional_contract_value` of $100 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the offer is $145 ($45 + $100).
+         * * Amended Offer: 6 installments of $15 (total $90 billed by Google)
+         * plus an `additional_contract_value` of $70 (billed by Partner, with
+         * true-ups happening at the end of the offer's term).
+         * The overall total contract value of the amended offer is $160
+         * ($90 + $70).
+         *
+         * Must be non-negative. The maximum allowed value is 1,000,000,000 USD.
+         * </pre>
+         *
+         * <code>.google.type.Money contract_value = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.type.Money,
+                com.google.type.Money.Builder,
+                com.google.type.MoneyOrBuilder>
+            internalGetContractValueFieldBuilder() {
+          if (contractValueBuilder_ == null) {
+            contractValueBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.type.Money,
+                    com.google.type.Money.Builder,
+                    com.google.type.MoneyOrBuilder>(
+                    getContractValue(), getParentForChildren(), isClean());
+            contractValue_ = null;
+          }
+          return contractValueBuilder_;
+        }
+
+        private com.google.protobuf.LazyStringArrayList eligibleSkus_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureEligibleSkusIsMutable() {
+          if (!eligibleSkus_.isModifiable()) {
+            eligibleSkus_ = new com.google.protobuf.LazyStringArrayList(eligibleSkus_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return A list containing the eligibleSkus.
+         */
+        public com.google.protobuf.ProtocolStringList getEligibleSkusList() {
+          eligibleSkus_.makeImmutable();
+          return eligibleSkus_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The count of eligibleSkus.
+         */
+        public int getEligibleSkusCount() {
+          return eligibleSkus_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The eligibleSkus at the given index.
+         */
+        public java.lang.String getEligibleSkus(int index) {
+          return eligibleSkus_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the eligibleSkus at the given index.
+         */
+        public com.google.protobuf.ByteString getEligibleSkusBytes(int index) {
+          return eligibleSkus_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The eligibleSkus to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEligibleSkus(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEligibleSkusIsMutable();
+          eligibleSkus_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The eligibleSkus to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEligibleSkus(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEligibleSkusIsMutable();
+          eligibleSkus_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param values The eligibleSkus to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllEligibleSkus(java.lang.Iterable<java.lang.String> values) {
+          ensureEligibleSkusIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, eligibleSkus_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEligibleSkus() {
+          eligibleSkus_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The resource names of the SKUs whose tracked usage is
+         * eligible to contribute toward satisfying this additional contract value
+         * obligation.
+         *
+         * This list explicitly separates core spend obligations from exclusions
+         * like overage fees, which do not count toward meeting the customer's
+         * legal spend commitment.
+         *
+         * Must be non-empty for the offer to be published.
+         *
+         * Format:
+         * projects/{project}/locations/{location}/services/{service}/skus/{sku}
+         * </pre>
+         *
+         * <code>
+         * repeated string eligible_skus = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes of the eligibleSkus to add.
+         * @return This builder for chaining.
+         */
+        public Builder addEligibleSkusBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureEligibleSkusIsMutable();
+          eligibleSkus_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue)
+      private static final com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                .AdditionalContractValue();
+      }
+
+      public static com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<AdditionalContractValue> PARSER =
+          new com.google.protobuf.AbstractParser<AdditionalContractValue>() {
+            @java.lang.Override
+            public AdditionalContractValue parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<AdditionalContractValue> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AdditionalContractValue> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     private int amendedOfferCase_ = 0;
 
@@ -27193,6 +28990,76 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
           : revenueShare_;
     }
 
+    public static final int ADDITIONAL_CONTRACT_VALUE_FIELD_NUMBER = 13;
+    private com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+            .AdditionalContractValue
+        additionalContractValue_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional contract value that the customer is legally
+     * obligated to spend on the product over the duration of the offer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the additionalContractValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdditionalContractValue() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional contract value that the customer is legally
+     * obligated to spend on the product over the duration of the offer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The additionalContractValue.
+     */
+    @java.lang.Override
+    public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+            .AdditionalContractValue
+        getAdditionalContractValue() {
+      return additionalContractValue_ == null
+          ? com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue.getDefaultInstance()
+          : additionalContractValue_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional contract value that the customer is legally
+     * obligated to spend on the product over the duration of the offer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+            .AdditionalContractValueOrBuilder
+        getAdditionalContractValueOrBuilder() {
+      return additionalContractValue_ == null
+          ? com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue.getDefaultInstance()
+          : additionalContractValue_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -27247,6 +29114,9 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(12, getRevenueShare());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(13, getAdditionalContractValue());
       }
       getUnknownFields().writeTo(output);
     }
@@ -27303,6 +29173,11 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getRevenueShare());
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                13, getAdditionalContractValue());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -27334,6 +29209,10 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       if (hasRevenueShare() != other.hasRevenueShare()) return false;
       if (hasRevenueShare()) {
         if (!getRevenueShare().equals(other.getRevenueShare())) return false;
+      }
+      if (hasAdditionalContractValue() != other.hasAdditionalContractValue()) return false;
+      if (hasAdditionalContractValue()) {
+        if (!getAdditionalContractValue().equals(other.getAdditionalContractValue())) return false;
       }
       if (!getAmendedOfferCase().equals(other.getAmendedOfferCase())) return false;
       switch (amendedOfferCase_) {
@@ -27389,6 +29268,10 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       if (hasRevenueShare()) {
         hash = (37 * hash) + REVENUE_SHARE_FIELD_NUMBER;
         hash = (53 * hash) + getRevenueShare().hashCode();
+      }
+      if (hasAdditionalContractValue()) {
+        hash = (37 * hash) + ADDITIONAL_CONTRACT_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getAdditionalContractValue().hashCode();
       }
       switch (amendedOfferCase_) {
         case 3:
@@ -27568,6 +29451,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
           internalGetEffectiveInstallmentTimelineFieldBuilder();
           internalGetContractValueFieldBuilder();
           internalGetRevenueShareFieldBuilder();
+          internalGetAdditionalContractValueFieldBuilder();
         }
       }
 
@@ -27607,6 +29491,11 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
         if (revenueShareBuilder_ != null) {
           revenueShareBuilder_.dispose();
           revenueShareBuilder_ = null;
+        }
+        additionalContractValue_ = null;
+        if (additionalContractValueBuilder_ != null) {
+          additionalContractValueBuilder_.dispose();
+          additionalContractValueBuilder_ = null;
         }
         amendedOfferCase_ = 0;
         amendedOffer_ = null;
@@ -27697,6 +29586,13 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
           result.revenueShare_ =
               revenueShareBuilder_ == null ? revenueShare_ : revenueShareBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.additionalContractValue_ =
+              additionalContractValueBuilder_ == null
+                  ? additionalContractValue_
+                  : additionalContractValueBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -27807,6 +29703,9 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasRevenueShare()) {
           mergeRevenueShare(other.getRevenueShare());
+        }
+        if (other.hasAdditionalContractValue()) {
+          mergeAdditionalContractValue(other.getAdditionalContractValue());
         }
         switch (other.getAmendedOfferCase()) {
           case AMENDED_PRIVATE_OFFER:
@@ -27964,6 +29863,14 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000400;
                   break;
                 } // case 98
+              case 106:
+                {
+                  input.readMessage(
+                      internalGetAdditionalContractValueFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 106
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -31254,6 +33161,257 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
           revenueShare_ = null;
         }
         return revenueShareBuilder_;
+      }
+
+      private com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          additionalContractValue_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue,
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue.Builder,
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValueOrBuilder>
+          additionalContractValueBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the additionalContractValue field is set.
+       */
+      public boolean hasAdditionalContractValue() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The additionalContractValue.
+       */
+      public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue
+          getAdditionalContractValue() {
+        if (additionalContractValueBuilder_ == null) {
+          return additionalContractValue_ == null
+              ? com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue.getDefaultInstance()
+              : additionalContractValue_;
+        } else {
+          return additionalContractValueBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAdditionalContractValue(
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue
+              value) {
+        if (additionalContractValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          additionalContractValue_ = value;
+        } else {
+          additionalContractValueBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setAdditionalContractValue(
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue.Builder
+              builderForValue) {
+        if (additionalContractValueBuilder_ == null) {
+          additionalContractValue_ = builderForValue.build();
+        } else {
+          additionalContractValueBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeAdditionalContractValue(
+          com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue
+              value) {
+        if (additionalContractValueBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)
+              && additionalContractValue_ != null
+              && additionalContractValue_
+                  != com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValue.getDefaultInstance()) {
+            getAdditionalContractValueBuilder().mergeFrom(value);
+          } else {
+            additionalContractValue_ = value;
+          }
+        } else {
+          additionalContractValueBuilder_.mergeFrom(value);
+        }
+        if (additionalContractValue_ != null) {
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearAdditionalContractValue() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        additionalContractValue_ = null;
+        if (additionalContractValueBuilder_ != null) {
+          additionalContractValueBuilder_.dispose();
+          additionalContractValueBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValue.Builder
+          getAdditionalContractValueBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return internalGetAdditionalContractValueFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+              .AdditionalContractValueOrBuilder
+          getAdditionalContractValueOrBuilder() {
+        if (additionalContractValueBuilder_ != null) {
+          return additionalContractValueBuilder_.getMessageOrBuilder();
+        } else {
+          return additionalContractValue_ == null
+              ? com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue.getDefaultInstance()
+              : additionalContractValue_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Additional contract value that the customer is legally
+       * obligated to spend on the product over the duration of the offer.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer.AdditionalContractValue additional_contract_value = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue,
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValue.Builder,
+              com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                  .AdditionalContractValueOrBuilder>
+          internalGetAdditionalContractValueFieldBuilder() {
+        if (additionalContractValueBuilder_ == null) {
+          additionalContractValueBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValue,
+                  com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValue.Builder,
+                  com.google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer
+                      .AdditionalContractValueOrBuilder>(
+                  getAdditionalContractValue(), getParentForChildren(), isClean());
+          additionalContractValue_ = null;
+        }
+        return additionalContractValueBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.commerceproducer.v1beta.PrivateOffer.SingleProductOffer)

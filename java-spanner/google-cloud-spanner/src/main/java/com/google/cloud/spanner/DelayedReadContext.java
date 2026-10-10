@@ -132,11 +132,27 @@ class DelayedReadContext<T extends ReadContext> implements ReadContext {
   @Override
   public void close() {
     try {
+      if (this.readContextFuture.cancel(true) || this.readContextFuture.isCancelled()) {
+        return;
+      }
       this.readContextFuture.get().close();
     } catch (Throwable ignore) {
       // Ignore any errors during close, as this error has already propagated to the user through
       // other means.
     }
+  }
+
+  @Override
+  public ApiFuture<Void> closeAsync() {
+    if (this.readContextFuture.cancel(true) || this.readContextFuture.isCancelled()) {
+      return ApiFutures.immediateFuture(null);
+    }
+    return ApiFutures.catchingAsync(
+        ApiFutures.transformAsync(
+            this.readContextFuture, ReadContext::closeAsync, MoreExecutors.directExecutor()),
+        Throwable.class,
+        throwable -> ApiFutures.immediateFuture(null),
+        MoreExecutors.directExecutor());
   }
 
   /**

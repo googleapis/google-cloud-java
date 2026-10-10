@@ -30,8 +30,8 @@ package com.google.apps.meet.v2beta;
  * communication must occur across WebRTC.
  *
  * See [Meet Media API
- * overview](https://developers.google.com/meet/media-api/guides/overview) for
- * more details about this connection.
+ * overview](https://developers.google.com/workspace/meet/media-api/guides/overview)
+ * for more details about this connection.
  * </pre>
  *
  * Protobuf type {@code google.apps.meet.v2beta.ConnectActiveConferenceResponse}
@@ -366,8 +366,8 @@ public final class ConnectActiveConferenceResponse extends com.google.protobuf.G
    * communication must occur across WebRTC.
    *
    * See [Meet Media API
-   * overview](https://developers.google.com/meet/media-api/guides/overview) for
-   * more details about this connection.
+   * overview](https://developers.google.com/workspace/meet/media-api/guides/overview)
+   * for more details about this connection.
    * </pre>
    *
    * Protobuf type {@code google.apps.meet.v2beta.ConnectActiveConferenceResponse}

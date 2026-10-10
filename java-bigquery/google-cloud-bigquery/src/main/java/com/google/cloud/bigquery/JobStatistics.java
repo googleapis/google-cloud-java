@@ -674,6 +674,9 @@ public abstract class JobStatistics implements Serializable {
             this.exportDataStats =
                 ExportDataStats.fromPb(statisticsPb.getQuery().getExportDataStatistics());
           }
+          if (statisticsPb.getQuery().getUndeclaredQueryParameters() != null) {
+            this.queryParameters = statisticsPb.getQuery().getUndeclaredQueryParameters();
+          }
         }
       }
 
@@ -1681,6 +1684,11 @@ public abstract class JobStatistics implements Serializable {
 
     B setTotalSlotMs(Long totalSlotMs) {
       this.totalSlotMs = totalSlotMs;
+      return self();
+    }
+
+    B setSessionInfo(SessionInfo sessionInfo) {
+      this.sessionInfo = sessionInfo;
       return self();
     }
 

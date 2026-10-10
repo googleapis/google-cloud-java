@@ -18,10 +18,16 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CompanyServiceClient.ListCompaniesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchCreateCompaniesRequest;
+import com.google.ads.admanager.v1.BatchCreateCompaniesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCompaniesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCompaniesResponse;
 import com.google.ads.admanager.v1.Company;
+import com.google.ads.admanager.v1.CreateCompanyRequest;
 import com.google.ads.admanager.v1.GetCompanyRequest;
 import com.google.ads.admanager.v1.ListCompaniesRequest;
 import com.google.ads.admanager.v1.ListCompaniesResponse;
+import com.google.ads.admanager.v1.UpdateCompanyRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -127,10 +133,170 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCompanyRequest, Company>
+      createCompanyMethodDescriptor =
+          ApiMethodDescriptor.<CreateCompanyRequest, Company>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CompanyService/CreateCompany")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCompanyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/companies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCompanyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCompanyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("company", request.getCompany(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Company>newBuilder()
+                      .setDefaultInstance(Company.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CompanyService/BatchCreateCompanies")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateCompaniesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/companies:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCompaniesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCompaniesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateCompaniesResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateCompaniesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCompanyRequest, Company>
+      updateCompanyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCompanyRequest, Company>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CompanyService/UpdateCompany")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCompanyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{company.name=networks/*/companies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCompanyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "company.name", request.getCompany().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCompanyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("company", request.getCompany(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Company>newBuilder()
+                      .setDefaultInstance(Company.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.CompanyService/BatchUpdateCompanies")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateCompaniesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/companies:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCompaniesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCompaniesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateCompaniesResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateCompaniesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetCompanyRequest, Company> getCompanyCallable;
   private final UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable;
   private final UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable;
+  private final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable;
+  private final UnaryCallable<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesCallable;
+  private final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable;
+  private final UnaryCallable<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -199,6 +365,57 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CreateCompanyRequest, Company> createCompanyTransportSettings =
+        HttpJsonCallSettings.<CreateCompanyRequest, Company>newBuilder()
+            .setMethodDescriptor(createCompanyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+        batchCreateCompaniesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>newBuilder()
+                .setMethodDescriptor(batchCreateCompaniesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateCompanyRequest, Company> updateCompanyTransportSettings =
+        HttpJsonCallSettings.<UpdateCompanyRequest, Company>newBuilder()
+            .setMethodDescriptor(updateCompanyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("company.name", String.valueOf(request.getCompany().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+        batchUpdateCompaniesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateCompaniesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getCompanyCallable =
         callableFactory.createUnaryCallable(
@@ -209,6 +426,22 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
     this.listCompaniesPagedCallable =
         callableFactory.createPagedCallable(
             listCompaniesTransportSettings, settings.listCompaniesSettings(), clientContext);
+    this.createCompanyCallable =
+        callableFactory.createUnaryCallable(
+            createCompanyTransportSettings, settings.createCompanySettings(), clientContext);
+    this.batchCreateCompaniesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateCompaniesTransportSettings,
+            settings.batchCreateCompaniesSettings(),
+            clientContext);
+    this.updateCompanyCallable =
+        callableFactory.createUnaryCallable(
+            updateCompanyTransportSettings, settings.updateCompanySettings(), clientContext);
+    this.batchUpdateCompaniesCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateCompaniesTransportSettings,
+            settings.batchUpdateCompaniesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -219,6 +452,10 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCompanyMethodDescriptor);
     methodDescriptors.add(listCompaniesMethodDescriptor);
+    methodDescriptors.add(createCompanyMethodDescriptor);
+    methodDescriptors.add(batchCreateCompaniesMethodDescriptor);
+    methodDescriptors.add(updateCompanyMethodDescriptor);
+    methodDescriptors.add(batchUpdateCompaniesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -236,6 +473,28 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
   public UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable() {
     return listCompaniesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
+    return createCompanyCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesCallable() {
+    return batchCreateCompaniesCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
+    return updateCompanyCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesCallable() {
+    return batchUpdateCompaniesCallable;
   }
 
   @Override

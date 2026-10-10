@@ -1087,6 +1087,68 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int CUSTOM_IMAGE_INFO_FIELD_NUMBER = 8;
+  private com.google.container.v1.CustomImageInfo customImageInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upgrade info for the node pool specific to the usage of custom
+   * images.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customImageInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomImageInfo() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upgrade info for the node pool specific to the usage of custom
+   * images.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customImageInfo.
+   */
+  @java.lang.Override
+  public com.google.container.v1.CustomImageInfo getCustomImageInfo() {
+    return customImageInfo_ == null
+        ? com.google.container.v1.CustomImageInfo.getDefaultInstance()
+        : customImageInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upgrade info for the node pool specific to the usage of custom
+   * images.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.CustomImageInfoOrBuilder getCustomImageInfoOrBuilder() {
+    return customImageInfo_ == null
+        ? com.google.container.v1.CustomImageInfo.getDefaultInstance()
+        : customImageInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1130,6 +1192,9 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, endOfExtendedSupportTimestamp_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(8, getCustomImageInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1184,6 +1249,9 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(7, endOfExtendedSupportTimestamp_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getCustomImageInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1223,6 +1291,10 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
       if (!getEndOfExtendedSupportTimestamp().equals(other.getEndOfExtendedSupportTimestamp()))
         return false;
     }
+    if (hasCustomImageInfo() != other.hasCustomImageInfo()) return false;
+    if (hasCustomImageInfo()) {
+      if (!getCustomImageInfo().equals(other.getCustomImageInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1261,6 +1333,10 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
     if (hasEndOfExtendedSupportTimestamp()) {
       hash = (37 * hash) + END_OF_EXTENDED_SUPPORT_TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getEndOfExtendedSupportTimestamp().hashCode();
+    }
+    if (hasCustomImageInfo()) {
+      hash = (37 * hash) + CUSTOM_IMAGE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomImageInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1392,10 +1468,20 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
     }
 
     // Construct using com.google.container.v1.NodePoolUpgradeInfo.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetUpgradeDetailsFieldBuilder();
+        internalGetCustomImageInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1415,6 +1501,11 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
       bitField0_ = (bitField0_ & ~0x00000010);
       endOfStandardSupportTimestamp_ = "";
       endOfExtendedSupportTimestamp_ = "";
+      customImageInfo_ = null;
+      if (customImageInfoBuilder_ != null) {
+        customImageInfoBuilder_.dispose();
+        customImageInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -1488,6 +1579,11 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.endOfExtendedSupportTimestamp_ = endOfExtendedSupportTimestamp_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.customImageInfo_ =
+            customImageInfoBuilder_ == null ? customImageInfo_ : customImageInfoBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1572,6 +1668,9 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
         endOfExtendedSupportTimestamp_ = other.endOfExtendedSupportTimestamp_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasCustomImageInfo()) {
+        mergeCustomImageInfo(other.getCustomImageInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1672,6 +1771,13 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetCustomImageInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3091,6 +3197,228 @@ public final class NodePoolUpgradeInfo extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.container.v1.CustomImageInfo customImageInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.CustomImageInfo,
+            com.google.container.v1.CustomImageInfo.Builder,
+            com.google.container.v1.CustomImageInfoOrBuilder>
+        customImageInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the customImageInfo field is set.
+     */
+    public boolean hasCustomImageInfo() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The customImageInfo.
+     */
+    public com.google.container.v1.CustomImageInfo getCustomImageInfo() {
+      if (customImageInfoBuilder_ == null) {
+        return customImageInfo_ == null
+            ? com.google.container.v1.CustomImageInfo.getDefaultInstance()
+            : customImageInfo_;
+      } else {
+        return customImageInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomImageInfo(com.google.container.v1.CustomImageInfo value) {
+      if (customImageInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customImageInfo_ = value;
+      } else {
+        customImageInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomImageInfo(
+        com.google.container.v1.CustomImageInfo.Builder builderForValue) {
+      if (customImageInfoBuilder_ == null) {
+        customImageInfo_ = builderForValue.build();
+      } else {
+        customImageInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCustomImageInfo(com.google.container.v1.CustomImageInfo value) {
+      if (customImageInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && customImageInfo_ != null
+            && customImageInfo_ != com.google.container.v1.CustomImageInfo.getDefaultInstance()) {
+          getCustomImageInfoBuilder().mergeFrom(value);
+        } else {
+          customImageInfo_ = value;
+        }
+      } else {
+        customImageInfoBuilder_.mergeFrom(value);
+      }
+      if (customImageInfo_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustomImageInfo() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      customImageInfo_ = null;
+      if (customImageInfoBuilder_ != null) {
+        customImageInfoBuilder_.dispose();
+        customImageInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.CustomImageInfo.Builder getCustomImageInfoBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetCustomImageInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.CustomImageInfoOrBuilder getCustomImageInfoOrBuilder() {
+      if (customImageInfoBuilder_ != null) {
+        return customImageInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return customImageInfo_ == null
+            ? com.google.container.v1.CustomImageInfo.getDefaultInstance()
+            : customImageInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upgrade info for the node pool specific to the usage of custom
+     * images.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.CustomImageInfo,
+            com.google.container.v1.CustomImageInfo.Builder,
+            com.google.container.v1.CustomImageInfoOrBuilder>
+        internalGetCustomImageInfoFieldBuilder() {
+      if (customImageInfoBuilder_ == null) {
+        customImageInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.CustomImageInfo,
+                com.google.container.v1.CustomImageInfo.Builder,
+                com.google.container.v1.CustomImageInfoOrBuilder>(
+                getCustomImageInfo(), getParentForChildren(), isClean());
+        customImageInfo_ = null;
+      }
+      return customImageInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodePoolUpgradeInfo)

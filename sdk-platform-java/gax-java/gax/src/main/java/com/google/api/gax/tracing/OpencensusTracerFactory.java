@@ -38,7 +38,6 @@ import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import java.util.Map;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -53,8 +52,8 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @InternalApi("For google-cloud-java client use only")
 public final class OpencensusTracerFactory extends BaseApiTracerFactory {
-  @Nonnull private final Tracer internalTracer;
-  @Nonnull private final Map<String, AttributeValue> spanAttributes;
+  private final Tracer internalTracer;
+  private final Map<String, AttributeValue> spanAttributes;
 
   /**
    * Instantiates a new instance capturing the {@link io.opencensus.trace.Tracer} in {@code
@@ -85,7 +84,7 @@ public final class OpencensusTracerFactory extends BaseApiTracerFactory {
    * @param internalTracer the Opencensus tracer to wrap.
    */
   @InternalApi("Visible for testing")
-  OpencensusTracerFactory(Tracer internalTracer, @Nonnull Map<String, String> spanAttributes) {
+  OpencensusTracerFactory(Tracer internalTracer, Map<String, String> spanAttributes) {
     this.internalTracer =
         Preconditions.checkNotNull(internalTracer, "internalTracer can't be null");
     ImmutableMap.Builder<String, AttributeValue> formattedSpanAttributes = ImmutableMap.builder();

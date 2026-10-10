@@ -19,6 +19,7 @@ package com.google.chat.v1.samples;
 // [START chat_v1_generated_ChatService_ListMessages_sync]
 import com.google.chat.v1.ChatServiceClient;
 import com.google.chat.v1.ListMessagesRequest;
+import com.google.chat.v1.MarkupSyntax;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.SpaceName;
 
@@ -43,6 +44,7 @@ public class SyncListMessages {
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
               .setShowDeleted(true)
+              .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       for (Message element : chatServiceClient.listMessages(request).iterateAll()) {
         // doThingsWith(element);

@@ -1526,6 +1526,53 @@ public final class SecureSourceManagerGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.FetchRefsRequest,
+          com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+      getFetchRefsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchRefs",
+      requestType = com.google.cloud.securesourcemanager.v1.FetchRefsRequest.class,
+      responseType = com.google.cloud.securesourcemanager.v1.FetchRefsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.securesourcemanager.v1.FetchRefsRequest,
+          com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+      getFetchRefsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.securesourcemanager.v1.FetchRefsRequest,
+            com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+        getFetchRefsMethod;
+    if ((getFetchRefsMethod = SecureSourceManagerGrpc.getFetchRefsMethod) == null) {
+      synchronized (SecureSourceManagerGrpc.class) {
+        if ((getFetchRefsMethod = SecureSourceManagerGrpc.getFetchRefsMethod) == null) {
+          SecureSourceManagerGrpc.getFetchRefsMethod =
+              getFetchRefsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.securesourcemanager.v1.FetchRefsRequest,
+                          com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchRefs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.FetchRefsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.securesourcemanager.v1.FetchRefsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SecureSourceManagerMethodDescriptorSupplier("FetchRefs"))
+                      .build();
+        }
+      }
+    }
+    return getFetchRefsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.securesourcemanager.v1.CreateIssueRequest,
           com.google.longrunning.Operation>
       getCreateIssueMethod;
@@ -3037,6 +3084,20 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Fetches git references from a repository.
+     * </pre>
+     */
+    default void fetchRefs(
+        com.google.cloud.securesourcemanager.v1.FetchRefsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFetchRefsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an issue.
      * </pre>
      */
@@ -3893,6 +3954,21 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Fetches git references from a repository.
+     * </pre>
+     */
+    public void fetchRefs(
+        com.google.cloud.securesourcemanager.v1.FetchRefsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchRefsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an issue.
      * </pre>
      */
@@ -4700,6 +4776,20 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Fetches git references from a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.FetchRefsResponse fetchRefs(
+        com.google.cloud.securesourcemanager.v1.FetchRefsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an issue.
      * </pre>
      */
@@ -5433,6 +5523,19 @@ public final class SecureSourceManagerGrpc {
         com.google.cloud.securesourcemanager.v1.FetchBlobRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchBlobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches git references from a repository.
+     * </pre>
+     */
+    public com.google.cloud.securesourcemanager.v1.FetchRefsResponse fetchRefs(
+        com.google.cloud.securesourcemanager.v1.FetchRefsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchRefsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -6174,6 +6277,20 @@ public final class SecureSourceManagerGrpc {
      *
      *
      * <pre>
+     * Fetches git references from a repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.securesourcemanager.v1.FetchRefsResponse>
+        fetchRefs(com.google.cloud.securesourcemanager.v1.FetchRefsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchRefsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an issue.
      * </pre>
      */
@@ -6496,26 +6613,27 @@ public final class SecureSourceManagerGrpc {
   private static final int METHODID_LIST_PULL_REQUEST_FILE_DIFFS = 29;
   private static final int METHODID_FETCH_TREE = 30;
   private static final int METHODID_FETCH_BLOB = 31;
-  private static final int METHODID_CREATE_ISSUE = 32;
-  private static final int METHODID_GET_ISSUE = 33;
-  private static final int METHODID_LIST_ISSUES = 34;
-  private static final int METHODID_UPDATE_ISSUE = 35;
-  private static final int METHODID_DELETE_ISSUE = 36;
-  private static final int METHODID_OPEN_ISSUE = 37;
-  private static final int METHODID_CLOSE_ISSUE = 38;
-  private static final int METHODID_GET_PULL_REQUEST_COMMENT = 39;
-  private static final int METHODID_LIST_PULL_REQUEST_COMMENTS = 40;
-  private static final int METHODID_CREATE_PULL_REQUEST_COMMENT = 41;
-  private static final int METHODID_UPDATE_PULL_REQUEST_COMMENT = 42;
-  private static final int METHODID_DELETE_PULL_REQUEST_COMMENT = 43;
-  private static final int METHODID_BATCH_CREATE_PULL_REQUEST_COMMENTS = 44;
-  private static final int METHODID_RESOLVE_PULL_REQUEST_COMMENTS = 45;
-  private static final int METHODID_UNRESOLVE_PULL_REQUEST_COMMENTS = 46;
-  private static final int METHODID_CREATE_ISSUE_COMMENT = 47;
-  private static final int METHODID_GET_ISSUE_COMMENT = 48;
-  private static final int METHODID_LIST_ISSUE_COMMENTS = 49;
-  private static final int METHODID_UPDATE_ISSUE_COMMENT = 50;
-  private static final int METHODID_DELETE_ISSUE_COMMENT = 51;
+  private static final int METHODID_FETCH_REFS = 32;
+  private static final int METHODID_CREATE_ISSUE = 33;
+  private static final int METHODID_GET_ISSUE = 34;
+  private static final int METHODID_LIST_ISSUES = 35;
+  private static final int METHODID_UPDATE_ISSUE = 36;
+  private static final int METHODID_DELETE_ISSUE = 37;
+  private static final int METHODID_OPEN_ISSUE = 38;
+  private static final int METHODID_CLOSE_ISSUE = 39;
+  private static final int METHODID_GET_PULL_REQUEST_COMMENT = 40;
+  private static final int METHODID_LIST_PULL_REQUEST_COMMENTS = 41;
+  private static final int METHODID_CREATE_PULL_REQUEST_COMMENT = 42;
+  private static final int METHODID_UPDATE_PULL_REQUEST_COMMENT = 43;
+  private static final int METHODID_DELETE_PULL_REQUEST_COMMENT = 44;
+  private static final int METHODID_BATCH_CREATE_PULL_REQUEST_COMMENTS = 45;
+  private static final int METHODID_RESOLVE_PULL_REQUEST_COMMENTS = 46;
+  private static final int METHODID_UNRESOLVE_PULL_REQUEST_COMMENTS = 47;
+  private static final int METHODID_CREATE_ISSUE_COMMENT = 48;
+  private static final int METHODID_GET_ISSUE_COMMENT = 49;
+  private static final int METHODID_LIST_ISSUE_COMMENTS = 50;
+  private static final int METHODID_UPDATE_ISSUE_COMMENT = 51;
+  private static final int METHODID_DELETE_ISSUE_COMMENT = 52;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6714,6 +6832,13 @@ public final class SecureSourceManagerGrpc {
               (com.google.cloud.securesourcemanager.v1.FetchBlobRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.securesourcemanager.v1.FetchBlobResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_REFS:
+          serviceImpl.fetchRefs(
+              (com.google.cloud.securesourcemanager.v1.FetchRefsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.securesourcemanager.v1.FetchRefsResponse>)
                   responseObserver);
           break;
         case METHODID_CREATE_ISSUE:
@@ -7049,6 +7174,13 @@ public final class SecureSourceManagerGrpc {
                     com.google.cloud.securesourcemanager.v1.FetchBlobResponse>(
                     service, METHODID_FETCH_BLOB)))
         .addMethod(
+            getFetchRefsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.securesourcemanager.v1.FetchRefsRequest,
+                    com.google.cloud.securesourcemanager.v1.FetchRefsResponse>(
+                    service, METHODID_FETCH_REFS)))
+        .addMethod(
             getCreateIssueMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -7262,6 +7394,7 @@ public final class SecureSourceManagerGrpc {
                       .addMethod(getListPullRequestFileDiffsMethod())
                       .addMethod(getFetchTreeMethod())
                       .addMethod(getFetchBlobMethod())
+                      .addMethod(getFetchRefsMethod())
                       .addMethod(getCreateIssueMethod())
                       .addMethod(getGetIssueMethod())
                       .addMethod(getListIssuesMethod())

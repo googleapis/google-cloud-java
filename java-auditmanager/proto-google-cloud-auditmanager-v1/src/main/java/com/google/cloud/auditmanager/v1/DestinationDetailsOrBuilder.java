@@ -30,7 +30,8 @@ public interface DestinationDetailsOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage bucket where the audit report is/will be uploaded.
+   * URI for the Cloud Storage bucket, in the format
+   * `gs://{bucket_name}`.
    * </pre>
    *
    * <code>string gcs_bucket_uri = 1;</code>
@@ -43,7 +44,8 @@ public interface DestinationDetailsOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage bucket where the audit report is/will be uploaded.
+   * URI for the Cloud Storage bucket, in the format
+   * `gs://{bucket_name}`.
    * </pre>
    *
    * <code>string gcs_bucket_uri = 1;</code>
@@ -56,7 +58,8 @@ public interface DestinationDetailsOrBuilder
    *
    *
    * <pre>
-   * The Cloud Storage bucket where the audit report is/will be uploaded.
+   * URI for the Cloud Storage bucket, in the format
+   * `gs://{bucket_name}`.
    * </pre>
    *
    * <code>string gcs_bucket_uri = 1;</code>

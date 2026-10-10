@@ -30,11 +30,11 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Repository URL.
+   * Repository URL.
    * Example: 'https://github.com/kubernetes/examples.git'
    * </pre>
    *
-   * <code>optional string repo = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string repo = 1;</code>
    *
    * @return Whether the repo field is set.
    */
@@ -44,11 +44,11 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Repository URL.
+   * Repository URL.
    * Example: 'https://github.com/kubernetes/examples.git'
    * </pre>
    *
-   * <code>optional string repo = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string repo = 1;</code>
    *
    * @return The repo.
    */
@@ -58,11 +58,11 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Repository URL.
+   * Repository URL.
    * Example: 'https://github.com/kubernetes/examples.git'
    * </pre>
    *
-   * <code>optional string repo = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string repo = 1;</code>
    *
    * @return The bytes for repo.
    */
@@ -72,11 +72,11 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Subdirectory inside the repository.
+   * Subdirectory inside the repository.
    * Example: 'staging/my-package'
    * </pre>
    *
-   * <code>optional string directory = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string directory = 2;</code>
    *
    * @return Whether the directory field is set.
    */
@@ -86,11 +86,11 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Subdirectory inside the repository.
+   * Subdirectory inside the repository.
    * Example: 'staging/my-package'
    * </pre>
    *
-   * <code>optional string directory = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string directory = 2;</code>
    *
    * @return The directory.
    */
@@ -100,11 +100,11 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Subdirectory inside the repository.
+   * Subdirectory inside the repository.
    * Example: 'staging/my-package'
    * </pre>
    *
-   * <code>optional string directory = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string directory = 2;</code>
    *
    * @return The bytes for directory.
    */
@@ -114,10 +114,10 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Git reference (e.g. branch or tag).
+   * Git reference (e.g. branch or tag).
    * </pre>
    *
-   * <code>optional string ref = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string ref = 3;</code>
    *
    * @return Whether the ref field is set.
    */
@@ -127,10 +127,10 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Git reference (e.g. branch or tag).
+   * Git reference (e.g. branch or tag).
    * </pre>
    *
-   * <code>optional string ref = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string ref = 3;</code>
    *
    * @return The ref.
    */
@@ -140,10 +140,10 @@ public interface GitSourceOrBuilder
    *
    *
    * <pre>
-   * Optional. Git reference (e.g. branch or tag).
+   * Git reference (e.g. branch or tag).
    * </pre>
    *
-   * <code>optional string ref = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string ref = 3;</code>
    *
    * @return The bytes for ref.
    */

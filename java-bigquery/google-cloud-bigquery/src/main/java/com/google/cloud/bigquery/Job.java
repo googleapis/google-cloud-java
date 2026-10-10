@@ -28,6 +28,9 @@ import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
@@ -414,6 +417,18 @@ public class Job extends JobInfo {
                 : ImmutableList.copyOf(job.getStatus().getExecutionErrors()));
       }
 
+      QueryStatistics stats =
+          job.getStatistics() instanceof QueryStatistics
+              ? (QueryStatistics) job.getStatistics()
+              : null;
+      StatementType statementType = stats != null ? stats.getStatementType() : null;
+      Long totalBytesBilled = stats != null ? stats.getTotalBytesBilled() : null;
+      Long totalBytesProcessed = stats != null ? stats.getTotalBytesProcessed() : null;
+      Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
+      Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
+      SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
+      Boolean cacheHit = stats != null ? stats.getCacheHit() : null;
+
       // If there are no rows in the result, this may have been a DDL query.
       // Listing table data might fail, such as with CREATE VIEW queries.
       // Avoid a tabledata.list API request by returning an empty TableResult.
@@ -425,6 +440,13 @@ public class Job extends JobInfo {
                 .setTotalRows(0L)
                 .setPageNoSchema(new PageImpl<FieldValueList>(null, "", null))
                 .setRowsInPage(0L)
+                .setStatementType(statementType)
+                .setTotalBytesBilled(totalBytesBilled)
+                .setTotalBytesProcessed(totalBytesProcessed)
+                .setTotalSlotMs(totalSlotMs)
+                .setNumDmlAffectedRows(numDmlAffectedRows)
+                .setSessionInfo(sessionInfo)
+                .setCacheHit(cacheHit)
                 .build();
         return emptyTableResult;
       }
@@ -436,7 +458,17 @@ public class Job extends JobInfo {
       TableResult tableResult =
           bigquery.listTableData(
               table, response.getSchema(), listOptions.toArray(new TableDataListOption[0]));
-      TableResult tableResultWithJobId = tableResult.toBuilder().setJobId(job.getJobId()).build();
+      TableResult tableResultWithJobId =
+          tableResult.toBuilder()
+              .setJobId(job.getJobId())
+              .setStatementType(statementType)
+              .setTotalBytesBilled(totalBytesBilled)
+              .setTotalBytesProcessed(totalBytesProcessed)
+              .setTotalSlotMs(totalSlotMs)
+              .setNumDmlAffectedRows(numDmlAffectedRows)
+              .setSessionInfo(sessionInfo)
+              .setCacheHit(cacheHit)
+              .build();
       return tableResultWithJobId;
     } finally {
       if (getQueryResults != null) {

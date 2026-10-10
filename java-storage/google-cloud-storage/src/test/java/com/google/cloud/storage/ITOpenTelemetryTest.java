@@ -185,7 +185,7 @@ public final class ITOpenTelemetryTest {
     assertAll(
         () ->
             assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.id"))
-                .isEqualTo("projects/_/buckets/test"),
+                .isEqualTo("//storage.googleapis.com/projects/_/buckets/test"),
         () ->
             assertThat(getAttributeValue(getSpan2, "gcp.resource.destination.location"))
                 .isEqualTo("global"));

@@ -1602,6 +1602,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1661,6 +1662,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1720,6 +1722,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1783,6 +1786,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1846,6 +1850,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1867,6 +1872,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1914,6 +1920,7 @@ public class DataformClientHttpJsonTest {
               .setKmsKeyName("kmsKeyName412586233")
               .setDataEncryptionState(DataEncryptionState.newBuilder().build())
               .setInternalMetadata("internalMetadata6789388")
+              .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepository(repository, updateMask);
@@ -2835,6 +2842,7 @@ public class DataformClientHttpJsonTest {
             .setWorkspace(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
 
     InstallNpmPackagesResponse actualResponse = client.installNpmPackages(request);
@@ -2868,6 +2876,7 @@ public class DataformClientHttpJsonTest {
               .setWorkspace(
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
+              .setPipelineConfig(PipelineConfig.newBuilder().build())
               .build();
       client.installNpmPackages(request);
       Assert.fail("No exception raised");
@@ -4419,6 +4428,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4477,6 +4487,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4534,6 +4545,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4591,6 +4603,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5351,6 +5364,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5411,6 +5425,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5469,6 +5484,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5527,6 +5543,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

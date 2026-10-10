@@ -40,8 +40,8 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Joiner;
-import com.google.api.client.util.Preconditions;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
@@ -49,6 +49,7 @@ import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -75,8 +76,8 @@ public class UserAuthorizer {
 
   static final URI DEFAULT_CALLBACK_URI = URI.create("/oauth2callback");
 
-  private final String TOKEN_STORE_ERROR = "Error parsing stored token data.";
-  private final String FETCH_TOKEN_ERROR = "Error reading result of Token API:";
+  private static final String TOKEN_STORE_ERROR = "Error parsing stored token data.";
+  private static final String FETCH_TOKEN_ERROR = "Error reading result of Token API:";
 
   private final ClientId clientId;
   private final Collection<String> scopes;
@@ -86,7 +87,7 @@ public class UserAuthorizer {
   private final HttpTransportFactory transportFactory;
   private final URI tokenServerUri;
   private final URI userAuthUri;
-  private final PKCEProvider pkce;
+  private final @Nullable PKCEProvider pkce;
   private final ClientAuthenticationType clientAuthenticationType;
 
   /** Internal constructor. See {@link Builder}. */
@@ -147,7 +148,7 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the callback URI relative to.
    * @return The resolved URI.
    */
-  public URI getCallbackUri(URI baseUri) {
+  public URI getCallbackUri(@Nullable URI baseUri) {
     if (callbackUri.isAbsolute()) {
       return callbackUri;
     }
@@ -184,7 +185,8 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the OAuth2 callback URI relative to.
    * @return The URL that can be navigated or redirected to.
    */
-  public URL getAuthorizationUrl(String userId, String state, URI baseUri) {
+  public URL getAuthorizationUrl(
+      @Nullable String userId, @Nullable String state, @Nullable URI baseUri) {
     return this.getAuthorizationUrl(userId, state, baseUri, null);
   }
 
@@ -198,9 +200,9 @@ public class UserAuthorizer {
    * @return The URL that can be navigated or redirected to.
    */
   public URL getAuthorizationUrl(
-      String userId,
-      String state,
-      URI baseUri,
+      @Nullable String userId,
+      @Nullable String state,
+      @Nullable URI baseUri,
       @Nullable Map<String, String> additionalParameters) {
     URI resolvedCallbackUri = getCallbackUri(baseUri);
     String scopesString = Joiner.on(' ').join(scopes);
@@ -221,9 +223,7 @@ public class UserAuthorizer {
     url.put("include_granted_scopes", true);
 
     if (additionalParameters != null) {
-      for (Map.Entry<String, String> entry : additionalParameters.entrySet()) {
-        url.put(entry.getKey(), entry.getValue());
-      }
+      url.putAll(additionalParameters);
     }
 
     if (pkce != null) {
@@ -240,12 +240,8 @@ public class UserAuthorizer {
    * @return The loaded credentials or null if there are no valid approved credentials.
    * @throws IOException If there is error retrieving or loading the credentials.
    */
-  @Nullable
-  public UserCredentials getCredentials(String userId) throws IOException {
+  public @Nullable UserCredentials getCredentials(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
-    if (tokenStore == null) {
-      throw new IllegalStateException("Method cannot be called if token store is not specified.");
-    }
     String tokenData = tokenStore.load(userId);
     if (tokenData == null) {
       return null;
@@ -253,7 +249,7 @@ public class UserAuthorizer {
     GenericJson tokenJson = OAuth2Utils.parseJson(tokenData);
     String accessTokenValue =
         OAuth2Utils.validateString(tokenJson, "access_token", TOKEN_STORE_ERROR);
-    Long expirationMillis =
+    long expirationMillis =
         OAuth2Utils.validateLong(tokenJson, "expiration_time_millis", TOKEN_STORE_ERROR);
     Date expirationTime = new Date(expirationMillis);
     List<String> scopes =
@@ -288,8 +284,9 @@ public class UserAuthorizer {
    * @return the UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens.
    */
-  public UserCredentials getCredentialsFromCode(String code, URI baseUri) throws IOException {
-    return getCredentialsFromCode(code, baseUri, null);
+  public UserCredentials getCredentialsFromCode(String code, @Nullable URI baseUri)
+      throws IOException {
+    return getCredentialsFromCode(code, baseUri, Collections.emptyMap());
   }
 
   /**
@@ -303,10 +300,12 @@ public class UserAuthorizer {
    * @throws IOException An error from the server API call to get the tokens.
    */
   public UserCredentials getCredentialsFromCode(
-      String code, URI baseUri, @Nullable Map<String, String> additionalParameters)
+      String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters)
       throws IOException {
+    Map<String, String> effectiveAdditionalParameters =
+        additionalParameters != null ? additionalParameters : Collections.emptyMap();
     TokenResponseWithConfig tokenResponseWithConfig =
-        getCredentialsFromCodeInternal(code, baseUri, additionalParameters);
+        getCredentialsFromCodeInternal(code, baseUri, effectiveAdditionalParameters);
     return UserCredentials.newBuilder()
         .setClientId(tokenResponseWithConfig.getClientId())
         .setClientSecret(tokenResponseWithConfig.getClientSecret())
@@ -330,8 +329,11 @@ public class UserAuthorizer {
    * @throws IOException If an error occurs during the token exchange process.
    */
   public TokenResponseWithConfig getTokenResponseFromAuthCodeExchange(
-      String code, URI callbackUri, Map<String, String> additionalParameters) throws IOException {
-    return getCredentialsFromCodeInternal(code, callbackUri, additionalParameters);
+      String code, @Nullable URI callbackUri, @Nullable Map<String, String> additionalParameters)
+      throws IOException {
+    Map<String, String> effectiveAdditionalParameters =
+        additionalParameters != null ? additionalParameters : Collections.emptyMap();
+    return getCredentialsFromCodeInternal(code, callbackUri, effectiveAdditionalParameters);
   }
 
   /**
@@ -343,8 +345,8 @@ public class UserAuthorizer {
    * @return UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens or store the tokens.
    */
-  public UserCredentials getAndStoreCredentialsFromCode(String userId, String code, URI baseUri)
-      throws IOException {
+  public UserCredentials getAndStoreCredentialsFromCode(
+      String userId, String code, @Nullable URI baseUri) throws IOException {
     Preconditions.checkNotNull(userId);
     Preconditions.checkNotNull(code);
     UserCredentials credentials = getCredentialsFromCode(code, baseUri);
@@ -361,9 +363,6 @@ public class UserAuthorizer {
    */
   public void revokeAuthorization(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
-    if (tokenStore == null) {
-      throw new IllegalStateException("Method cannot be called if token store is not specified.");
-    }
     String tokenData = tokenStore.load(userId);
     if (tokenData == null) {
       return;
@@ -414,25 +413,24 @@ public class UserAuthorizer {
    * @throws IOException An error storing the credentials.
    */
   public void storeCredentials(String userId, UserCredentials credentials) throws IOException {
-    if (tokenStore == null) {
-      throw new IllegalStateException("Cannot store tokens if tokenStore is not specified.");
-    }
     AccessToken accessToken = credentials.getAccessToken();
-    String acessTokenValue = null;
+    String accessTokenValue = null;
     Date expiresBy = null;
     List<String> grantedScopes = new ArrayList<>();
 
     if (accessToken != null) {
-      acessTokenValue = accessToken.getTokenValue();
+      accessTokenValue = accessToken.getTokenValue();
       expiresBy = accessToken.getExpirationTime();
       grantedScopes = accessToken.getScopes();
     }
     String refreshToken = credentials.getRefreshToken();
     GenericJson tokenStateJson = new GenericJson();
     tokenStateJson.setFactory(OAuth2Utils.JSON_FACTORY);
-    tokenStateJson.put("access_token", acessTokenValue);
+    tokenStateJson.put("access_token", accessTokenValue);
     tokenStateJson.put(OAuth2Utils.TOKEN_RESPONSE_SCOPE, grantedScopes);
-    tokenStateJson.put("expiration_time_millis", expiresBy.getTime());
+    if (expiresBy != null) {
+      tokenStateJson.put("expiration_time_millis", expiresBy.getTime());
+    }
     if (refreshToken != null) {
       tokenStateJson.put("refresh_token", refreshToken);
     }
@@ -451,7 +449,8 @@ public class UserAuthorizer {
   }
 
   private TokenResponseWithConfig getCredentialsFromCodeInternal(
-      String code, URI baseUri, Map<String, String> additionalParameters) throws IOException {
+      String code, @Nullable URI baseUri, Map<String, String> additionalParameters)
+      throws IOException {
     Preconditions.checkNotNull(code);
     URI resolvedCallbackUri = getCallbackUri(baseUri);
 
@@ -461,11 +460,7 @@ public class UserAuthorizer {
     tokenData.put("redirect_uri", resolvedCallbackUri);
     tokenData.put("grant_type", "authorization_code");
 
-    if (additionalParameters != null) {
-      for (Map.Entry<String, String> entry : additionalParameters.entrySet()) {
-        tokenData.put(entry.getKey(), entry.getValue());
-      }
-    }
+    tokenData.putAll(additionalParameters);
 
     if (pkce != null) {
       tokenData.put("code_verifier", pkce.getCodeVerifier());
@@ -505,7 +500,7 @@ public class UserAuthorizer {
     String accessTokenValue =
         OAuth2Utils.validateString(parsedTokens, "access_token", FETCH_TOKEN_ERROR);
     int expiresInSecs = OAuth2Utils.validateInt32(parsedTokens, "expires_in", FETCH_TOKEN_ERROR);
-    Date expirationTime = new Date(new Date().getTime() + expiresInSecs * 1000);
+    Date expirationTime = new Date(new Date().getTime() + expiresInSecs * 1000L);
     String scopes =
         OAuth2Utils.validateOptionalString(
             parsedTokens, OAuth2Utils.TOKEN_RESPONSE_SCOPE, FETCH_TOKEN_ERROR);
@@ -558,15 +553,15 @@ public class UserAuthorizer {
 
   public static class Builder {
 
-    private ClientId clientId;
-    private TokenStore tokenStore;
-    private URI callbackUri;
-    private URI tokenServerUri;
-    private URI userAuthUri;
-    private Collection<String> scopes;
-    private HttpTransportFactory transportFactory;
-    private PKCEProvider pkce;
-    private ClientAuthenticationType clientAuthenticationType;
+    private @Nullable ClientId clientId;
+    private @Nullable TokenStore tokenStore;
+    private @Nullable URI callbackUri;
+    private @Nullable URI tokenServerUri;
+    private @Nullable URI userAuthUri;
+    private @Nullable Collection<String> scopes;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable PKCEProvider pkce;
+    private @Nullable ClientAuthenticationType clientAuthenticationType;
 
     protected Builder() {}
 
@@ -676,14 +671,14 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setPKCEProvider(PKCEProvider pkce) {
+    public Builder setPKCEProvider(@Nullable PKCEProvider pkce) {
       if (pkce != null) {
         if (pkce.getCodeChallenge() == null
             || pkce.getCodeVerifier() == null
             || pkce.getCodeChallengeMethod() == null) {
-
           throw new IllegalArgumentException(
-              "PKCE provider contained null implementations. PKCE object must implement all PKCEProvider methods.");
+              "PKCE provider contained null implementations. PKCE object must implement all"
+                  + " PKCEProvider methods.");
         }
       }
       this.pkce = pkce;
@@ -704,39 +699,39 @@ public class UserAuthorizer {
       return this;
     }
 
-    public ClientId getClientId() {
+    public @Nullable ClientId getClientId() {
       return clientId;
     }
 
-    public TokenStore getTokenStore() {
+    public @Nullable TokenStore getTokenStore() {
       return tokenStore;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public URI getCallbackUri() {
+    public @Nullable URI getCallbackUri() {
       return callbackUri;
     }
 
-    public URI getUserAuthUri() {
+    public @Nullable URI getUserAuthUri() {
       return userAuthUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    public PKCEProvider getPKCEProvider() {
+    public @Nullable PKCEProvider getPKCEProvider() {
       return pkce;
     }
 
-    public ClientAuthenticationType getClientAuthenticationType() {
+    public @Nullable ClientAuthenticationType getClientAuthenticationType() {
       return clientAuthenticationType;
     }
 
@@ -777,18 +772,18 @@ public class UserAuthorizer {
   public static class TokenResponseWithConfig {
 
     private final String clientId;
-    private final String clientSecret;
-    private final String refreshToken;
+    private final @Nullable String clientSecret;
+    private final @Nullable String refreshToken;
     private final AccessToken accessToken;
-    private URI tokenServerUri;
+    private final URI tokenServerUri;
     private final HttpTransportFactory httpTransportFactory;
 
     private TokenResponseWithConfig(Builder builder) {
-      this.clientId = builder.clientId;
+      this.clientId = Preconditions.checkNotNull(builder.clientId);
       this.clientSecret = builder.clientSecret;
-      this.accessToken = builder.accessToken;
-      this.httpTransportFactory = builder.httpTransportFactory;
-      this.tokenServerUri = builder.tokenServerUri;
+      this.accessToken = Preconditions.checkNotNull(builder.accessToken);
+      this.httpTransportFactory = Preconditions.checkNotNull(builder.httpTransportFactory);
+      this.tokenServerUri = Preconditions.checkNotNull(builder.tokenServerUri);
       this.refreshToken = builder.refreshToken;
     }
 
@@ -806,7 +801,7 @@ public class UserAuthorizer {
      *
      * @return The client secret.
      */
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
@@ -842,8 +837,7 @@ public class UserAuthorizer {
      *
      * @return The refresh token, or null if not granted.
      */
-    @Nullable
-    public String getRefreshToken() {
+    public @Nullable String getRefreshToken() {
       return refreshToken;
     }
 
@@ -852,12 +846,12 @@ public class UserAuthorizer {
     }
 
     static class Builder {
-      private String clientId;
-      private String clientSecret;
-      private String refreshToken;
-      private AccessToken accessToken;
-      private URI tokenServerUri;
-      private HttpTransportFactory httpTransportFactory;
+      private @Nullable String clientId;
+      private @Nullable String clientSecret;
+      private @Nullable String refreshToken;
+      private @Nullable AccessToken accessToken;
+      private @Nullable URI tokenServerUri;
+      private @Nullable HttpTransportFactory httpTransportFactory;
 
       @CanIgnoreReturnValue
       Builder setClientId(String clientId) {
@@ -866,13 +860,13 @@ public class UserAuthorizer {
       }
 
       @CanIgnoreReturnValue
-      Builder setClientSecret(String clientSecret) {
+      Builder setClientSecret(@Nullable String clientSecret) {
         this.clientSecret = clientSecret;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setRefreshToken(String refreshToken) {
+      Builder setRefreshToken(@Nullable String refreshToken) {
         this.refreshToken = refreshToken;
         return this;
       }

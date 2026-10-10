@@ -30,7 +30,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Required. Observed interval.
+   * Required. The time window when the food was logged.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Required. Observed interval.
+   * Required. The time window when the food was logged.
    * </pre>
    *
    * <code>
@@ -60,7 +60,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Required. Observed interval.
+   * Required. The time window when the food was logged.
    * </pre>
    *
    * <code>
@@ -73,7 +73,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -86,7 +86,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -112,7 +112,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -126,7 +126,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -140,10 +140,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the energy of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total energy of the food, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -158,10 +155,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the energy of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total energy of the food, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -176,10 +170,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the energy of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total energy of the food, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -192,10 +183,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the energy from fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The energy from fat, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -210,10 +198,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the energy from fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The energy from fat, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -228,10 +213,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the energy from fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The energy from fat, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -244,10 +226,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the total carbohydrate of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total carbohydrate content, measured in grams.
    * </pre>
    *
    * <code>
@@ -262,10 +241,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the total carbohydrate of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total carbohydrate content, measured in grams.
    * </pre>
    *
    * <code>
@@ -280,10 +256,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the total carbohydrate of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total carbohydrate content, measured in grams.
    * </pre>
    *
    * <code>
@@ -296,10 +269,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the total fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total fat content, measured in grams.
    * </pre>
    *
    * <code>
@@ -314,10 +284,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the total fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total fat content, measured in grams.
    * </pre>
    *
    * <code>
@@ -332,10 +299,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the total fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total fat content, measured in grams.
    * </pre>
    *
    * <code>
@@ -348,7 +312,8 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the meal type of the nutrition log.
+   * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+   * `SNACK`.
    * </pre>
    *
    * <code>
@@ -363,7 +328,8 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the meal type of the nutrition log.
+   * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+   * `SNACK`.
    * </pre>
    *
    * <code>
@@ -378,7 +344,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrition log serving.
+   * Optional. The serving information for the logged food.
    * </pre>
    *
    * <code>
@@ -393,7 +359,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrition log serving.
+   * Optional. The serving information for the logged food.
    * </pre>
    *
    * <code>
@@ -408,7 +374,7 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Optional. Value representing the nutrition log serving.
+   * Optional. The serving information for the logged food.
    * </pre>
    *
    * <code>
@@ -421,11 +387,13 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Required. Represents the food ID.
+   * Optional. The resource name of the Food item. Required when creating a
+   * nutrition log from an identified food. For anonymous food logs, use the
+   * `food_display_name` field instead.
    * </pre>
    *
    * <code>
-   * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The food.
@@ -436,11 +404,13 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Required. Represents the food ID.
+   * Optional. The resource name of the Food item. Required when creating a
+   * nutrition log from an identified food. For anonymous food logs, use the
+   * `food_display_name` field instead.
    * </pre>
    *
    * <code>
-   * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for food.
@@ -451,10 +421,8 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Value representing the display name of the food.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * The display name of the food. For identified food logs, this is populated
+   * automatically from the referenced food.
    * </pre>
    *
    * <code>string food_display_name = 16;</code>
@@ -467,10 +435,8 @@ public interface NutritionLogOrBuilder
    *
    *
    * <pre>
-   * Value representing the display name of the food.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * The display name of the food. For identified food logs, this is populated
+   * automatically from the referenced food.
    * </pre>
    *
    * <code>string food_display_name = 16;</code>

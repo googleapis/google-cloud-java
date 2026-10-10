@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.jdbc.it;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assume.assumeFalse;
 
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseId;
@@ -51,8 +52,14 @@ public class ITSingleJarTest extends ITAbstractJdbcTest {
 
   private Database database;
 
+  public static boolean isUsingGraalVm() {
+    String jobType = System.getenv("JOB_TYPE");
+    return jobType != null && jobType.contains("graalvm");
+  }
+
   @Before
   public void setup() {
+    assumeFalse("Skipping test on GraalVM", isUsingGraalVm());
     database =
         env.getOrCreateDatabase(
             getDialect(),
@@ -116,11 +123,12 @@ public class ITSingleJarTest extends ITAbstractJdbcTest {
   }
 
   private void execute(ProcessBuilder builder) throws Exception {
+    builder.redirectErrorStream(true);
     Process process = builder.start();
-    String errors;
-    try (InputStreamReader reader = new InputStreamReader(process.getErrorStream())) {
-      errors = CharStreams.toString(reader);
+    String output;
+    try (InputStreamReader reader = new InputStreamReader(process.getInputStream())) {
+      output = CharStreams.toString(reader);
     }
-    assertEquals(errors, 0, process.waitFor());
+    assertEquals(output, 0, process.waitFor());
   }
 }

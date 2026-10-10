@@ -1434,6 +1434,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The heart rate value in beats per minute.
+   * Must be in the range `[1, 300]`.
    * </pre>
    *
    * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1450,6 +1451,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The heart rate value in beats per minute.
+   * Must be in the range `[1, 300]`.
    * </pre>
    *
    * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2139,6 +2141,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The heart rate value in beats per minute.
+     * Must be in the range `[1, 300]`.
      * </pre>
      *
      * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2155,6 +2158,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The heart rate value in beats per minute.
+     * Must be in the range `[1, 300]`.
      * </pre>
      *
      * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2171,6 +2175,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The heart rate value in beats per minute.
+     * Must be in the range `[1, 300]`.
      * </pre>
      *
      * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2191,6 +2196,7 @@ public final class HeartRate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The heart rate value in beats per minute.
+     * Must be in the range `[1, 300]`.
      * </pre>
      *
      * <code>optional int64 beats_per_minute = 4 [(.google.api.field_behavior) = REQUIRED];</code>

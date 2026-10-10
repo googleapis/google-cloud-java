@@ -1,0 +1,273 @@
+syntax = "proto2";
+
+package com.google.cloud.bigquery.storage.test;
+
+import "google/cloud/bigquery/storage/v1/annotations.proto";
+
+message SupportedTypes {
+  optional int32 int32_value = 1;
+  optional int64 int64_value = 2;
+  optional uint32 uint32_value = 3;
+  optional uint64 uint64_value = 4;
+  optional fixed32 fixed32_value = 7;
+  optional fixed64 fixed64_value = 8;
+  optional sfixed32 sfixed32_value = 9;
+  optional sfixed64 sfixed64_value = 10;
+  optional float float_value = 11;
+  optional double double_value = 12;
+  optional bool bool_value = 13;
+  optional bytes bytes_value = 14;
+  optional string string_value = 15;
+}
+
+message NonSupportedTypes {
+  optional sint32 sint32_value = 5;
+  optional sint64 sint64_value = 6;
+}
+
+message Int32Type {
+  optional int32 test_field_type = 1;
+}
+
+message Int64Type {
+  optional int64 test_field_type = 1;
+}
+
+message UInt32Type {
+  optional uint32 test_field_type = 1;
+}
+
+message UInt64Type {
+  optional uint64 test_field_type = 1;
+}
+
+message Fixed32Type {
+  optional fixed32 test_field_type = 1;
+}
+
+message Fixed64Type {
+  optional fixed64 test_field_type = 1;
+}
+
+message SFixed32Type {
+  optional sfixed32 test_field_type = 1;
+}
+
+message SFixed64Type {
+  optional sfixed64 test_field_type = 1;
+}
+
+message FloatType {
+  optional float test_field_type = 1;
+}
+
+message DoubleType {
+  optional double test_field_type = 1;
+}
+
+message BoolType {
+  optional bool test_field_type = 1;
+}
+
+message BytesType {
+  optional bytes test_field_type = 1;
+}
+
+message StringType {
+  optional string test_field_type = 1;
+}
+
+message EnumType {
+  enum EnumTest {
+    test1 = 0;
+  }
+  optional EnumTest test_field_type = 1;
+}
+
+message MessageType {
+  optional StringType test_field_type = 1;
+}
+
+message GroupType {
+  optional group Test_field_type = 1 {
+    optional string test_field_type = 2;
+  }
+}
+
+message MessageTypeMismatch {
+  optional MismatchLvl0 mismatchlvl0 = 1;
+}
+
+message MismatchLvl0 {
+  optional MismatchLvl1 mismatchlvl1 = 1;
+}
+
+message MismatchLvl1 {
+  optional string test_field_type = 1;
+}
+
+message TopLevelMatch {
+  optional string match = 1;
+  optional MismatchLvl1 mismatch = 2;
+}
+
+message ProtoRepeatedBQRepeated {
+  repeated int32 repeated_mode = 1;
+}
+
+message ProtoOptionalBQRepeated {
+  optional int32 repeated_mode = 1;
+}
+
+message ProtoRequiredBQRepeated {
+  required int32 repeated_mode = 1;
+}
+
+message ProtoRequiredBQRequired  {
+  required int32 required_mode = 1;
+}
+
+message ProtoNoneBQRequired {
+  optional int32 no_required_mode = 1;
+}
+
+message ProtoOptionalBQRequired {
+  optional int32 required_mode = 1;
+}
+
+message ProtoRepeatedBQRequired {
+  repeated int32 required_mode = 1;
+}
+
+message ProtoOptionalBQOptional {
+  optional int32 optional_mode = 1;
+}
+
+message ProtoRequiredBQOptional{
+  required int32 optional_mode = 1;
+}
+
+message ProtoRepeatedBQOptional {
+  repeated int32 optional_mode = 1;
+}
+
+message ProtoCompatibleWithBQInt {
+  optional int32 optional_mode = 1;
+}
+
+message SupportedNestingLvl1 {
+  optional int32 int_value = 1;
+  optional SupportedNestingLvl2 nesting_value = 2;
+}
+
+message SupportedNestingLvl2 {
+  optional int32 int_value = 1;
+}
+
+message SupportedNestingStacked {
+  optional int32 test_int = 1;
+  optional SupportedNestingLvl2 nesting_value1 = 2;
+  optional SupportedNestingLvl2 nesting_value2 = 3;
+}
+
+message NonSupportedMap {
+  map<int32, int32> map_value = 1;
+}
+
+message NonSupportedNestingRecursive {
+  optional NonSupportedNestingRecursive nesting_value = 2;
+}
+
+message NonSupportedNestingContainsRecursive {
+  optional int32 int_value = 1;
+  optional NonSupportedNestingRecursive nesting_value = 2;
+}
+
+message NonSupportedNestingLvl0 {
+  optional NonSupportedNestingLvl1 test1 = 1;
+}
+
+message NonSupportedNestingLvl1 {
+  optional NonSupportedNestingLvl2 test1 = 1;
+}
+
+message NonSupportedNestingLvl2 {
+  optional NonSupportedNestingLvl3 test1 = 1;
+}
+
+message NonSupportedNestingLvl3 {
+  optional NonSupportedNestingLvl4 test1 = 1;
+}
+
+message NonSupportedNestingLvl4 {
+  optional NonSupportedNestingLvl5 test1 = 1;
+}
+
+message NonSupportedNestingLvl5 {
+  optional NonSupportedNestingLvl6 test1 = 1;
+}
+
+message NonSupportedNestingLvl6 {
+  optional NonSupportedNestingLvl7 test1 = 1;
+}
+
+message NonSupportedNestingLvl7 {
+  optional NonSupportedNestingLvl8 test1 = 1;
+}
+
+message NonSupportedNestingLvl8 {
+  optional NonSupportedNestingLvl9 test1 = 1;
+}
+
+message NonSupportedNestingLvl9 {
+  optional NonSupportedNestingLvl10 test1 = 1;
+}
+
+message NonSupportedNestingLvl10 {
+  optional NonSupportedNestingLvl11 test1 = 1;
+}
+
+message NonSupportedNestingLvl11 {
+  optional NonSupportedNestingLvl12 test1 = 1;
+}
+
+message NonSupportedNestingLvl12 {
+  optional NonSupportedNestingLvl13 test1 = 1;
+}
+
+message NonSupportedNestingLvl13 {
+  optional NonSupportedNestingLvl14 test1 = 1;
+}
+
+message NonSupportedNestingLvl14 {
+  optional NonSupportedNestingLvl15 test1 = 1;
+}
+
+message NonSupportedNestingLvl15 {
+  optional NonSupportedNestingLvl16 test1 = 1;
+}
+
+message NonSupportedNestingLvl16 {
+  optional int32 test1 = 1;
+}
+
+message AllowUnknownUnsupportedFields {
+  optional NonSupportedMap map_value = 1;
+  optional string string_value = 2;
+}
+
+message FakeFooType {
+  optional int32 foo = 1;
+}
+
+message TestNestedFlexibleFieldName {
+  optional string col_c3RyLeWIlw = 1
+  [(.google.cloud.bigquery.storage.v1.column_name) = "str-列"];
+  optional FlexibleNameField col_bmVzdGVkLeWIlw = 2
+  [(.google.cloud.bigquery.storage.v1.column_name) = "nested-列"];
+}
+
+message FlexibleNameField {
+  optional int64 col_aW50LeWIlw = 1
+  [(.google.cloud.bigquery.storage.v1.column_name) = "int-列"];
+}

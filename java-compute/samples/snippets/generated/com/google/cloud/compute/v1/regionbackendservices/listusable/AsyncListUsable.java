@@ -44,7 +44,6 @@ public class AsyncListUsable {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<BackendService> future =
           regionBackendServicesClient.listUsablePagedCallable().futureCall(request);

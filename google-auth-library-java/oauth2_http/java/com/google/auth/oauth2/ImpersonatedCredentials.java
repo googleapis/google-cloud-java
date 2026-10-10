@@ -111,14 +111,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private List<String> delegates;
   private final List<String> scopes;
   private final int lifetime;
-  private final String iamEndpointOverride;
+  private final @Nullable String iamEndpointOverride;
   private final String transportFactoryClassName;
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ImpersonatedCredentials.class);
 
   private transient HttpTransportFactory transportFactory;
 
-  private transient Calendar calendar;
+  private transient @Nullable Calendar calendar;
 
   /**
    * @param sourceCredentials the source credential used to acquire the impersonated credentials. It
@@ -145,7 +145,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime,
       HttpTransportFactory transportFactory) {
@@ -179,19 +179,22 @@ public class ImpersonatedCredentials extends GoogleCredentials
    *     the credentials.
    * @param transportFactory HTTP transport factory that creates the transport used to get access
    *     tokens.
-   * @param quotaProjectId the project used for quota and billing purposes. Should be null unless
-   *     the caller wants to use a project different from the one that owns the impersonated
-   *     credential for billing/quota purposes.
+   * @param quotaProjectId the project used for quota and billing purposes on downstream requests
+   *     made with the impersonated credentials. Should be null unless the caller wants to use a
+   *     project different from the one that owns the impersonated credential for billing/quota
+   *     purposes. Note that this does not apply to the IAM Credentials API requests used to mint
+   *     tokens ({@code generateAccessToken} or {@code generateIdToken}); to specify a quota project
+   *     for those calls, set the quota project ID on {@code sourceCredentials}.
    * @return new credentials
    */
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime,
       HttpTransportFactory transportFactory,
-      String quotaProjectId) {
+      @Nullable String quotaProjectId) {
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setTargetPrincipal(targetPrincipal)
@@ -223,9 +226,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
    *     the credentials.
    * @param transportFactory HTTP transport factory that creates the transport used to get access
    *     tokens.
-   * @param quotaProjectId the project used for quota and billing purposes. Should be null unless
-   *     the caller wants to use a project different from the one that owns the impersonated
-   *     credential for billing/quota purposes.
+   * @param quotaProjectId the project used for quota and billing purposes on downstream requests
+   *     made with the impersonated credentials. Should be null unless the caller wants to use a
+   *     project different from the one that owns the impersonated credential for billing/quota
+   *     purposes. Note that this does not apply to the IAM Credentials API requests used to mint
+   *     tokens ({@code generateAccessToken} or {@code generateIdToken}); to specify a quota project
+   *     for those calls, set the quota project ID on {@code sourceCredentials}.
    * @param iamEndpointOverride The full IAM endpoint override with the target_principal embedded.
    *     This is useful when supporting impersonation with regional endpoints.
    * @return new credentials
@@ -233,12 +239,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime,
       HttpTransportFactory transportFactory,
-      String quotaProjectId,
-      String iamEndpointOverride) {
+      @Nullable String quotaProjectId,
+      @Nullable String iamEndpointOverride) {
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setTargetPrincipal(targetPrincipal)
@@ -276,7 +282,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime) {
     return ImpersonatedCredentials.newBuilder()
@@ -675,8 +681,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
   /**
    * Returns an IdToken for the current Credential.
    *
+   * <p>The {@code generateIdToken} request to the IAM Credentials API is authenticated using {@link
+   * #getSourceCredentials() sourceCredentials}. To specify a quota project ({@code
+   * x-goog-user-project} header) for the {@code generateIdToken} call itself, configure the quota
+   * project ID on {@code sourceCredentials} rather than on this {@code ImpersonatedCredentials}
+   * instance.
+   *
    * @param targetAudience the audience field for the issued ID token
-   * @param options credential specific options for for the token. For example, an ID token for an
+   * @param options credential specific options for the token. For example, an ID token for an
    *     ImpersonatedCredentials can return the email address within the token claims if
    *     "ImpersonatedCredentials.INCLUDE_EMAIL" is provided as a list option.<br>
    *     Only one option value is supported: "ImpersonatedCredentials.INCLUDE_EMAIL" If no options
@@ -685,8 +697,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
    * @throws IOException if the attempt to get an ID token failed
    */
   @Override
-  public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
-      throws IOException {
+  public IdToken idTokenWithAudience(
+      String targetAudience, @Nullable List<IdTokenProvider.Option> options) throws IOException {
     boolean includeEmail =
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
     return IamUtils.getIdToken(
@@ -763,14 +775,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private GoogleCredentials sourceCredentials;
-    private String targetPrincipal;
-    private List<String> delegates;
-    private List<String> scopes;
+    private @Nullable GoogleCredentials sourceCredentials;
+    private @Nullable String targetPrincipal;
+    private @Nullable List<String> delegates;
+    private @Nullable List<String> scopes;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
-    private HttpTransportFactory transportFactory;
-    private String iamEndpointOverride;
-    private Calendar calendar = Calendar.getInstance();
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String iamEndpointOverride;
+    private @Nullable Calendar calendar = Calendar.getInstance();
 
     protected Builder() {}
 
@@ -803,7 +815,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    public GoogleCredentials getSourceCredentials() {
+    public @Nullable GoogleCredentials getSourceCredentials() {
       return this.sourceCredentials;
     }
 
@@ -813,17 +825,17 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    public String getTargetPrincipal() {
+    public @Nullable String getTargetPrincipal() {
       return this.targetPrincipal;
     }
 
     @CanIgnoreReturnValue
-    public Builder setDelegates(List<String> delegates) {
+    public Builder setDelegates(@Nullable List<String> delegates) {
       this.delegates = delegates;
       return this;
     }
 
-    public List<String> getDelegates() {
+    public @Nullable List<String> getDelegates() {
       return this.delegates;
     }
 
@@ -843,7 +855,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     /**
      * @return List of scopes to be applied to the impersonated token.
      */
-    public List<String> getScopes() {
+    public @Nullable List<String> getScopes() {
       return this.scopes;
     }
 
@@ -858,26 +870,43 @@ public class ImpersonatedCredentials extends GoogleCredentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
+    /**
+     * Sets the quota project ID applied to downstream API requests made with the impersonated
+     * credentials (sent via the {@code x-goog-user-project} header).
+     *
+     * <p>Note: This quota project ID is not sent on the IAM Credentials API calls ({@code
+     * generateAccessToken} or {@code generateIdToken}) used to mint tokens, because those requests
+     * are authenticated using {@code sourceCredentials}. To specify a quota project for the IAM
+     * Credentials API requests, set the quota project ID on {@code sourceCredentials} instead.
+     *
+     * @param quotaProjectId the project ID used for quota and billing purposes on downstream
+     *     requests
+     * @return the builder
+     */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setIamEndpointOverride(String iamEndpointOverride) {
+    public Builder setIamEndpointOverride(@Nullable String iamEndpointOverride) {
       this.iamEndpointOverride = iamEndpointOverride;
       return this;
+    }
+
+    public @Nullable String getIamEndpointOverride() {
+      return this.iamEndpointOverride;
     }
 
     /**
@@ -891,7 +920,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
      */
     @CanIgnoreReturnValue
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
-    public Builder setCalendar(Calendar calendar) {
+    public Builder setCalendar(@Nullable Calendar calendar) {
       this.calendar = calendar;
       return this;
     }
@@ -905,7 +934,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
      * @return the calendar
      */
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
-    public Calendar getCalendar() {
+    public @Nullable Calendar getCalendar() {
       return this.calendar;
     }
 

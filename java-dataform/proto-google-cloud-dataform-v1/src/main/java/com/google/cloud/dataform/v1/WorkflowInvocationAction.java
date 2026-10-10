@@ -1245,6 +1245,32 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
      * @return The bytes for jobId.
      */
     com.google.protobuf.ByteString getJobIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to the notebook file in the repository.
+     * </pre>
+     *
+     * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The filePath.
+     */
+    java.lang.String getFilePath();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to the notebook file in the repository.
+     * </pre>
+     *
+     * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for filePath.
+     */
+    com.google.protobuf.ByteString getFilePathBytes();
   }
 
   /**
@@ -1280,6 +1306,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
     private NotebookAction() {
       contents_ = "";
       jobId_ = "";
+      filePath_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1409,6 +1436,59 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
     }
 
+    public static final int FILE_PATH_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object filePath_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to the notebook file in the repository.
+     * </pre>
+     *
+     * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The filePath.
+     */
+    @java.lang.Override
+    public java.lang.String getFilePath() {
+      java.lang.Object ref = filePath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filePath_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to the notebook file in the repository.
+     * </pre>
+     *
+     * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for filePath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFilePathBytes() {
+      java.lang.Object ref = filePath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        filePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1429,6 +1509,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, jobId_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filePath_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, filePath_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1443,6 +1526,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(jobId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, jobId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filePath_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, filePath_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1462,6 +1548,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
 
       if (!getContents().equals(other.getContents())) return false;
       if (!getJobId().equals(other.getJobId())) return false;
+      if (!getFilePath().equals(other.getFilePath())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1477,6 +1564,8 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
       hash = (53 * hash) + getContents().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId().hashCode();
+      hash = (37 * hash) + FILE_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getFilePath().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1622,6 +1711,7 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         bitField0_ = 0;
         contents_ = "";
         jobId_ = "";
+        filePath_ = "";
         return this;
       }
 
@@ -1668,6 +1758,9 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.jobId_ = jobId_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.filePath_ = filePath_;
+        }
       }
 
       @java.lang.Override
@@ -1694,6 +1787,11 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         if (!other.getJobId().isEmpty()) {
           jobId_ = other.jobId_;
           bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getFilePath().isEmpty()) {
+          filePath_ = other.filePath_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1734,6 +1832,12 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  filePath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1986,6 +2090,117 @@ public final class WorkflowInvocationAction extends com.google.protobuf.Generate
         checkByteStringIsUtf8(value);
         jobId_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object filePath_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to the notebook file in the repository.
+       * </pre>
+       *
+       * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The filePath.
+       */
+      public java.lang.String getFilePath() {
+        java.lang.Object ref = filePath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          filePath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to the notebook file in the repository.
+       * </pre>
+       *
+       * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for filePath.
+       */
+      public com.google.protobuf.ByteString getFilePathBytes() {
+        java.lang.Object ref = filePath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          filePath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to the notebook file in the repository.
+       * </pre>
+       *
+       * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The filePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilePath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filePath_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to the notebook file in the repository.
+       * </pre>
+       *
+       * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFilePath() {
+        filePath_ = getDefaultInstance().getFilePath();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to the notebook file in the repository.
+       * </pre>
+       *
+       * <code>string file_path = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for filePath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFilePathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        filePath_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }

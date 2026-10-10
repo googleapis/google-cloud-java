@@ -42,6 +42,7 @@
  *       GetDocumentRequest.newBuilder()
  *           .setName("name3373707")
  *           .setMask(DocumentMask.newBuilder().build())
+ *           .setRequestOptions(RequestOptions.newBuilder().build())
  *           .build();
  *   Document response = firestoreClient.getDocument(request);
  * }

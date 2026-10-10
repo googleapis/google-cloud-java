@@ -220,7 +220,7 @@ public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEn
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(15);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(16);
   }
 
   private static final StoredInfoTypeState[] VALUES = values();

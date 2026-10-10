@@ -24,7 +24,7 @@ package com.google.devicesandservices.health.v4;
  *
  *
  * <pre>
- * Holds information about a user logged food.
+ * Holds information about food logged by a user.
  *
  * There are two ways of creating a nutrition log based on the food type:
  * 1. Identified food: Using the food field, which is a reference to a Food
@@ -36,7 +36,7 @@ package com.google.devicesandservices.health.v4;
  * `total_fat` fields manually.
  *
  * The identified food is preferred over the anonymous food.
- * Nutrition logs created from anonymous food are not be editable.
+ * Nutrition logs created from anonymous food are not editable.
  * </pre>
  *
  * Protobuf type {@code google.devicesandservices.health.v4.NutritionLog}
@@ -94,7 +94,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Amount of food consumed, fractional values are supported.
+     * Optional. The number of servings.
      * </pre>
      *
      * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -107,7 +107,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Amount of food consumed, fractional values are supported.
+     * Optional. The number of servings.
      * </pre>
      *
      * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -238,7 +238,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Amount of food consumed, fractional values are supported.
+     * Optional. The number of servings.
      * </pre>
      *
      * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -254,7 +254,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Amount of food consumed, fractional values are supported.
+     * Optional. The number of servings.
      * </pre>
      *
      * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -765,7 +765,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Amount of food consumed, fractional values are supported.
+       * Optional. The number of servings.
        * </pre>
        *
        * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -781,7 +781,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Amount of food consumed, fractional values are supported.
+       * Optional. The number of servings.
        * </pre>
        *
        * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -797,7 +797,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Amount of food consumed, fractional values are supported.
+       * Optional. The number of servings.
        * </pre>
        *
        * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -817,7 +817,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Amount of food consumed, fractional values are supported.
+       * Optional. The number of servings.
        * </pre>
        *
        * <code>optional double amount = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1141,7 +1141,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Observed interval.
+   * Required. The time window when the food was logged.
    * </pre>
    *
    * <code>
@@ -1159,7 +1159,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Observed interval.
+   * Required. The time window when the food was logged.
    * </pre>
    *
    * <code>
@@ -1179,7 +1179,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Observed interval.
+   * Required. The time window when the food was logged.
    * </pre>
    *
    * <code>
@@ -1203,7 +1203,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -1220,7 +1220,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -1237,7 +1237,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -1253,7 +1253,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -1269,7 +1269,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrients of the nutrition log.
+   * Optional. An array of individual nutrient values for the nutrition log.
    * </pre>
    *
    * <code>
@@ -1289,10 +1289,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the energy of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total energy of the food, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -1310,10 +1307,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the energy of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total energy of the food, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -1333,10 +1327,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the energy of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total energy of the food, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -1357,10 +1348,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the energy from fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The energy from fat, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -1378,10 +1366,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the energy from fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The energy from fat, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -1401,10 +1386,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the energy from fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The energy from fat, measured in kilocalories (`kcal`).
    * </pre>
    *
    * <code>
@@ -1426,10 +1408,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the total carbohydrate of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total carbohydrate content, measured in grams.
    * </pre>
    *
    * <code>
@@ -1447,10 +1426,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the total carbohydrate of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total carbohydrate content, measured in grams.
    * </pre>
    *
    * <code>
@@ -1470,10 +1446,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the total carbohydrate of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total carbohydrate content, measured in grams.
    * </pre>
    *
    * <code>
@@ -1495,10 +1468,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the total fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total fat content, measured in grams.
    * </pre>
    *
    * <code>
@@ -1516,10 +1486,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the total fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total fat content, measured in grams.
    * </pre>
    *
    * <code>
@@ -1539,10 +1506,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the total fat of the nutrition log.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * Optional. The total fat content, measured in grams.
    * </pre>
    *
    * <code>
@@ -1563,7 +1527,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the meal type of the nutrition log.
+   * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+   * `SNACK`.
    * </pre>
    *
    * <code>
@@ -1581,7 +1546,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the meal type of the nutrition log.
+   * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+   * `SNACK`.
    * </pre>
    *
    * <code>
@@ -1604,7 +1570,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrition log serving.
+   * Optional. The serving information for the logged food.
    * </pre>
    *
    * <code>
@@ -1622,7 +1588,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrition log serving.
+   * Optional. The serving information for the logged food.
    * </pre>
    *
    * <code>
@@ -1642,7 +1608,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Value representing the nutrition log serving.
+   * Optional. The serving information for the logged food.
    * </pre>
    *
    * <code>
@@ -1666,11 +1632,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Represents the food ID.
+   * Optional. The resource name of the Food item. Required when creating a
+   * nutrition log from an identified food. For anonymous food logs, use the
+   * `food_display_name` field instead.
    * </pre>
    *
    * <code>
-   * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The food.
@@ -1692,11 +1660,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Represents the food ID.
+   * Optional. The resource name of the Food item. Required when creating a
+   * nutrition log from an identified food. For anonymous food logs, use the
+   * `food_display_name` field instead.
    * </pre>
    *
    * <code>
-   * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for food.
@@ -1723,10 +1693,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Value representing the display name of the food.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * The display name of the food. For identified food logs, this is populated
+   * automatically from the referenced food.
    * </pre>
    *
    * <code>string food_display_name = 16;</code>
@@ -1750,10 +1718,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Value representing the display name of the food.
-   * For nutrition logs created from an identified food, this field will be
-   * populated based on the referenced food. For anonymous food, this field will
-   * be populated manually.
+   * The display name of the food. For identified food logs, this is populated
+   * automatically from the referenced food.
    * </pre>
    *
    * <code>string food_display_name = 16;</code>
@@ -2052,7 +2018,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds information about a user logged food.
+   * Holds information about food logged by a user.
    *
    * There are two ways of creating a nutrition log based on the food type:
    * 1. Identified food: Using the food field, which is a reference to a Food
@@ -2064,7 +2030,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
    * `total_fat` fields manually.
    *
    * The identified food is preferred over the anonymous food.
-   * Nutrition logs created from anonymous food are not be editable.
+   * Nutrition logs created from anonymous food are not editable.
    * </pre>
    *
    * Protobuf type {@code google.devicesandservices.health.v4.NutritionLog}
@@ -2444,7 +2410,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2461,7 +2427,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2484,7 +2450,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2509,7 +2475,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2532,7 +2498,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2565,7 +2531,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2587,7 +2553,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2605,7 +2571,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2627,7 +2593,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Observed interval.
+     * Required. The time window when the food was logged.
      * </pre>
      *
      * <code>
@@ -2673,7 +2639,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2693,7 +2659,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2712,7 +2678,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2731,7 +2697,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2757,7 +2723,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2781,7 +2747,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2806,7 +2772,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2832,7 +2798,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2855,7 +2821,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2879,7 +2845,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2903,7 +2869,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2925,7 +2891,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2947,7 +2913,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2963,7 +2929,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -2983,7 +2949,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -3004,7 +2970,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -3021,7 +2987,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -3039,7 +3005,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrients of the nutrition log.
+     * Optional. An array of individual nutrient values for the nutrition log.
      * </pre>
      *
      * <code>
@@ -3079,10 +3045,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3099,10 +3062,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3125,10 +3085,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3153,10 +3110,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3179,10 +3133,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3213,10 +3164,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3238,10 +3186,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3258,10 +3203,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3282,10 +3224,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total energy of the food, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3320,10 +3259,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3340,10 +3276,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3366,10 +3299,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3394,10 +3324,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3420,10 +3347,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3455,10 +3379,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3480,10 +3401,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3501,10 +3419,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3526,10 +3441,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the energy from fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The energy from fat, measured in kilocalories (`kcal`).
      * </pre>
      *
      * <code>
@@ -3564,10 +3476,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3584,10 +3493,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3610,10 +3516,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3639,10 +3542,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3665,10 +3565,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3700,10 +3597,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3725,10 +3619,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3746,10 +3637,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3771,10 +3659,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total carbohydrate of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total carbohydrate content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3809,10 +3694,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3829,10 +3711,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3855,10 +3734,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3883,10 +3759,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3909,10 +3782,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3943,10 +3813,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3968,10 +3835,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -3988,10 +3852,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -4012,10 +3873,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the total fat of the nutrition log.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * Optional. The total fat content, measured in grams.
      * </pre>
      *
      * <code>
@@ -4045,7 +3903,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the meal type of the nutrition log.
+     * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+     * `SNACK`.
      * </pre>
      *
      * <code>
@@ -4063,7 +3922,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the meal type of the nutrition log.
+     * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+     * `SNACK`.
      * </pre>
      *
      * <code>
@@ -4084,7 +3944,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the meal type of the nutrition log.
+     * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+     * `SNACK`.
      * </pre>
      *
      * <code>
@@ -4106,7 +3967,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the meal type of the nutrition log.
+     * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+     * `SNACK`.
      * </pre>
      *
      * <code>
@@ -4130,7 +3992,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the meal type of the nutrition log.
+     * Optional. The meal category. One of `BREAKFAST`, `LUNCH`, `DINNER`, or
+     * `SNACK`.
      * </pre>
      *
      * <code>
@@ -4157,7 +4020,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4174,7 +4037,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4197,7 +4060,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4222,7 +4085,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4245,7 +4108,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4278,7 +4141,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4300,7 +4163,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4318,7 +4181,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4340,7 +4203,7 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Value representing the nutrition log serving.
+     * Optional. The serving information for the logged food.
      * </pre>
      *
      * <code>
@@ -4370,11 +4233,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Represents the food ID.
+     * Optional. The resource name of the Food item. Required when creating a
+     * nutrition log from an identified food. For anonymous food logs, use the
+     * `food_display_name` field instead.
      * </pre>
      *
      * <code>
-     * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The food.
@@ -4395,11 +4260,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Represents the food ID.
+     * Optional. The resource name of the Food item. Required when creating a
+     * nutrition log from an identified food. For anonymous food logs, use the
+     * `food_display_name` field instead.
      * </pre>
      *
      * <code>
-     * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for food.
@@ -4420,11 +4287,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Represents the food ID.
+     * Optional. The resource name of the Food item. Required when creating a
+     * nutrition log from an identified food. For anonymous food logs, use the
+     * `food_display_name` field instead.
      * </pre>
      *
      * <code>
-     * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The food to set.
@@ -4444,11 +4313,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Represents the food ID.
+     * Optional. The resource name of the Food item. Required when creating a
+     * nutrition log from an identified food. For anonymous food logs, use the
+     * `food_display_name` field instead.
      * </pre>
      *
      * <code>
-     * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4464,11 +4335,13 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Represents the food ID.
+     * Optional. The resource name of the Food item. Required when creating a
+     * nutrition log from an identified food. For anonymous food logs, use the
+     * `food_display_name` field instead.
      * </pre>
      *
      * <code>
-     * string food = 15 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string food = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for food to set.
@@ -4491,10 +4364,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value representing the display name of the food.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * The display name of the food. For identified food logs, this is populated
+     * automatically from the referenced food.
      * </pre>
      *
      * <code>string food_display_name = 16;</code>
@@ -4517,10 +4388,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value representing the display name of the food.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * The display name of the food. For identified food logs, this is populated
+     * automatically from the referenced food.
      * </pre>
      *
      * <code>string food_display_name = 16;</code>
@@ -4543,10 +4412,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value representing the display name of the food.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * The display name of the food. For identified food logs, this is populated
+     * automatically from the referenced food.
      * </pre>
      *
      * <code>string food_display_name = 16;</code>
@@ -4568,10 +4435,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value representing the display name of the food.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * The display name of the food. For identified food logs, this is populated
+     * automatically from the referenced food.
      * </pre>
      *
      * <code>string food_display_name = 16;</code>
@@ -4589,10 +4454,8 @@ public final class NutritionLog extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value representing the display name of the food.
-     * For nutrition logs created from an identified food, this field will be
-     * populated based on the referenced food. For anonymous food, this field will
-     * be populated manually.
+     * The display name of the food. For identified food logs, this is populated
+     * automatically from the referenced food.
      * </pre>
      *
      * <code>string food_display_name = 16;</code>

@@ -147,7 +147,7 @@ public class HttpJsonSuggestedAdUnitServiceStub extends SuggestedAdUnitServiceSt
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<BatchApproveSuggestedAdUnitsRequest>newBuilder()
                       .setPath(
-                          "/v1/{parent=networks/*}/suggestedAdUnit:batchApprove",
+                          "/v1/{parent=networks/*}/suggestedAdUnits:batchApprove",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<BatchApproveSuggestedAdUnitsRequest> serializer =

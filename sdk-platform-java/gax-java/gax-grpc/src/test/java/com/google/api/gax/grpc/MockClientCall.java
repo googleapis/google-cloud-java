@@ -32,7 +32,7 @@ package com.google.api.gax.grpc;
 import io.grpc.ClientCall;
 import io.grpc.Metadata;
 import io.grpc.Status;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public class MockClientCall<RequestT, ResponseT> extends ClientCall<RequestT, ResponseT> {
 

@@ -21,6 +21,7 @@ import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.ClientConfiguration.PollingCase;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
+import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessOnly;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Util;
@@ -73,6 +74,10 @@ public class ClientConfigurationManager implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(ClientConfigurationManager.class.getName());
 
   public static final String OVERRIDE_SYS_PROP_KEY = "bigtable.internal.client-config-override";
+  public static final String DISABLE_DIRECT_ACCESS_FALLBACK_ENV_VAR =
+      "CBT_DISABLE_DIRECT_ACCESS_FALLBACK";
+  public static final String DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY =
+      "bigtable.internal.disable-direct-access-fallback";
 
   public interface ConfigListener<T> {
     void onChange(T newValue);
@@ -126,6 +131,7 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   private final ClientConfiguration defaultConfig;
   private final Optional<ClientConfiguration> overrideConfig;
+  private final boolean disableDirectPathFallback;
 
   private final Duration defaultDeadline = Duration.ofSeconds(5);
 
@@ -177,6 +183,11 @@ public class ClientConfigurationManager implements AutoCloseable {
                         "Failed to parse bigtable.internal.client-config-override", e);
                   }
                 });
+    this.disableDirectPathFallback =
+        Optional.ofNullable(System.getenv(DISABLE_DIRECT_ACCESS_FALLBACK_ENV_VAR))
+            .orElseGet(
+                () -> sysProps.getProperty(DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "false"))
+            .equalsIgnoreCase("true");
 
     if (overrideConfig.isPresent()) {
       logger.log(
@@ -188,7 +199,7 @@ public class ClientConfigurationManager implements AutoCloseable {
                       .printToString(overrideConfig.get()));
     }
     featureFlags = channelProvider.updateFeatureFlags(featureFlags);
-    this.clientConfiguration = defaultConfig;
+    this.clientConfiguration = normalizeConfig(defaultConfig);
 
     this.metadata =
         Util.composeMetadata(
@@ -275,14 +286,29 @@ public class ClientConfigurationManager implements AutoCloseable {
     return result;
   }
 
-  private synchronized void sendRequestWithRetries(
+  private void sendRequestWithRetries(
       int attemptCount, CompletableFuture<ClientConfiguration> finalResult) {
-    if (closing) {
+    // Nothing after the synchronized block below may run while holding this monitor, because both
+    // completing finalResult and registering the continuation can run alien code inline on the
+    // current thread: completing the future runs whatever the caller of start() chained onto it,
+    // and the continuation reaches registered ConfigListeners through setClientConfiguration() ->
+    // notifyListeners(). Notifying a listener under this monitor deadlocks against any thread that
+    // holds the listener's own lock and calls a synchronized method such as
+    // getClientConfiguration().
+    @Nullable CompletableFuture<ClientConfiguration> currentRequest = null;
+    synchronized (this) {
+      if (!closing) {
+        // Note that this only starts the call: the response can land before whenComplete() is
+        // registered below, in which case the continuation runs inline on this thread.
+        currentRequest = sendRequest();
+      }
+    }
+
+    if (currentRequest == null) {
       finalResult.completeExceptionally(new RuntimeException("Client is closing"));
       return;
     }
 
-    CompletableFuture<ClientConfiguration> currentRequest = sendRequest();
     // We only schedule the next poll after successfully getting a client config
     // from the server.
     @SuppressWarnings("UnusedVariable")
@@ -406,6 +432,18 @@ public class ClientConfigurationManager implements AutoCloseable {
     // Inject overrides
     overrideConfig.ifPresent(builder::mergeFrom);
 
+    if (disableDirectPathFallback
+        && builder
+            .getSessionConfiguration()
+            .getChannelConfiguration()
+            .hasDirectAccessWithFallback()) {
+      builder
+          .getSessionConfigurationBuilder()
+          .getChannelConfigurationBuilder()
+          .clearDirectAccessWithFallback()
+          .setDirectAccessOnly(DirectAccessOnly.getDefaultInstance());
+    }
+
     // When sessions are disabled make sure to clear out the config. Read from the builder, not
     // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
     // the server-returned config has session_load=0.
@@ -453,7 +491,7 @@ public class ClientConfigurationManager implements AutoCloseable {
     ClientConfiguration old;
     synchronized (this) {
       old = this.clientConfiguration;
-      clientConfiguration = result;
+      clientConfiguration = normalizeConfig(result);
       if (clientConfiguration.hasPollingConfiguration()) {
         this.validUntil =
             Instant.now()

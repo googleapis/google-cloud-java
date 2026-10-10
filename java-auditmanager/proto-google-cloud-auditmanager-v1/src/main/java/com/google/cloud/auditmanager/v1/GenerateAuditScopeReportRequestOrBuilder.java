@@ -30,10 +30,12 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Scope for which the AuditScopeReport is required. Must be of
-   * format resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
+   * Required. Project or folder that the audit scope report is generated for,
+   * in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -46,10 +48,12 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Scope for which the AuditScopeReport is required. Must be of
-   * format resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
+   * Required. Project or folder that the audit scope report is generated for,
+   * in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -62,35 +66,49 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Compliance Standard against which the Scope Report must be
-   * generated. Eg: FEDRAMP_MODERATE
+   * Optional. Deprecated. The standard (industry or regulatory requirements)
+   * that the audit scope report is run against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
    * @return The complianceStandard.
    */
+  @java.lang.Deprecated
   java.lang.String getComplianceStandard();
 
   /**
    *
    *
    * <pre>
-   * Required. Compliance Standard against which the Scope Report must be
-   * generated. Eg: FEDRAMP_MODERATE
+   * Optional. Deprecated. The standard (industry or regulatory requirements)
+   * that the audit scope report is run against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.GenerateAuditScopeReportRequest.compliance_standard is
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=420
    * @return The bytes for complianceStandard.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getComplianceStandardBytes();
 
   /**
    *
    *
    * <pre>
-   * Required. The format in which the Scope report bytes should be returned.
+   * Required. Format for the audit scope report.
    * </pre>
    *
    * <code>
@@ -105,7 +123,7 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The format in which the Scope report bytes should be returned.
+   * Required. Format for the audit scope report.
    * </pre>
    *
    * <code>
@@ -121,8 +139,8 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Compliance framework against which the Scope Report must be
-   * generated.
+   * Required. Framework (set of controls) that the audit scope report is
+   * generated against. For example, `NIST_800_53`.
    * </pre>
    *
    * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -135,8 +153,8 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Compliance framework against which the Scope Report must be
-   * generated.
+   * Required. Framework (set of controls) that the audit scope report is
+   * generated against. For example, `NIST_800_53`.
    * </pre>
    *
    * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -144,4 +162,29 @@ public interface GenerateAuditScopeReportRequestOrBuilder
    * @return The bytes for complianceFramework.
    */
   com.google.protobuf.ByteString getComplianceFrameworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, only validates the request and does not generate the
+   * audit scope report. This executes standard request validation (such as
+   * schema, framework existence, scope, and IAM checks) and skips the apply
+   * phase.
+   *
+   * Use this field for the following purposes:
+   * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+   * dry-run mutations (e.g., `terraform plan`) without creating real
+   * resources or incurring costs.
+   * * **User Interface Validation**: Enable real-time form and permission
+   * validation in custom UIs before submitting requests.
+   * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+   * safely without consuming resource quotas.
+   * </pre>
+   *
+   * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

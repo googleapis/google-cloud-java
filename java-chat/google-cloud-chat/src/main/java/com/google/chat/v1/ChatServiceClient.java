@@ -233,6 +233,31 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SearchMessages</td>
+ *      <td><p> Searches for messages in Google Chat that the calling user has access to. Returns a list of messages matching the search criteria.
+ * <p>  To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have their `name` field populated with the full resource name, which includes the specific `space` in which the message resides.
+ * <p>  This API doesn't return all message types. The types of messages listed below aren't included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list all messages.
+ * <p>  - Private Messages that are visible to the authenticated user. - Messages posted by Chat apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. - Messages in spaces that the caller has muted.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.messages.readonly`   - `https://www.googleapis.com/auth/chat.messages`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchMessages(SearchMessagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchMessages(SpaceName parent, String filter)
+ *           <li><p> searchMessages(String parent, String filter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchMessagesPagedCallable()
+ *           <li><p> searchMessagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetAttachment</td>
  *      <td><p> Gets the metadata of a message attachment. The attachment data is fetched using the [media API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an example, see [Get metadata about a message attachment](https://developers.google.com/workspace/chat/get-media-attachments).
  * <p>  Requires [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
@@ -295,9 +320,11 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> SearchSpaces</td>
- *      <td><p> Returns a list of spaces in a Google Workspace organization based on an administrator's search. In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
- * <p>  Requires [user authentication with administrator privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges) and one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
- * <p>    - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`   - `https://www.googleapis.com/auth/chat.admin.spaces`</td>
+ *      <td><p> Returns a list of spaces in a Google Workspace organization. For an example, see [Search for and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+ * <p>  When `use_admin_access` is set to `false`, the results are limited to spaces where the calling user is a joined member. To search with administrator privileges, set `use_admin_access` to `true`.
+ * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+ * <p>  - [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.spaces.readonly`     - `https://www.googleapis.com/auth/chat.spaces`
+ * <p>  - [User authentication with administrator privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges) and one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`     - `https://www.googleapis.com/auth/chat.admin.spaces`</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -624,6 +651,70 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteReactionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListMessagePins</td>
+ *      <td><p> Lists message pins in a space. Users can pin important messages in spaces for easy access. For more information, see [Pin or unpin a conversation in Google Chat](https://support.google.com/chat/answer/15622437).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.spaces.pins.readonly`   - `https://www.googleapis.com/auth/chat.spaces.pins`   - `https://www.googleapis.com/auth/chat.spaces.readonly`   - `https://www.googleapis.com/auth/chat.spaces`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listMessagePins(ListMessagePinsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listMessagePins(SpaceName parent)
+ *           <li><p> listMessagePins(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listMessagePinsPagedCallable()
+ *           <li><p> listMessagePinsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateMessagePin</td>
+ *      <td><p> Creates a message pin.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.spaces.pins`   - `https://www.googleapis.com/auth/chat.spaces`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createMessagePin(CreateMessagePinRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createMessagePin(SpaceName parent, MessagePin messagePin)
+ *           <li><p> createMessagePin(String parent, MessagePin messagePin)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createMessagePinCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteMessagePin</td>
+ *      <td><p> Deletes a message pin.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.spaces.pins`   - `https://www.googleapis.com/auth/chat.spaces`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteMessagePin(DeleteMessagePinRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteMessagePin(MessagePinName name)
+ *           <li><p> deleteMessagePin(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteMessagePinCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1669,6 +1760,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setShowDeleted(true)
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   for (Message element : chatServiceClient.listMessages(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1725,6 +1817,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setShowDeleted(true)
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   ApiFuture<Message> future = chatServiceClient.listMessagesPagedCallable().futureCall(request);
    *   // Do something.
@@ -1781,6 +1874,7 @@ public class ChatServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setOrderBy("orderBy-1207110587")
    *           .setShowDeleted(true)
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   while (true) {
    *     ListMessagesResponse response = chatServiceClient.listMessagesCallable().call(request);
@@ -2461,6 +2555,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   GetMessageRequest request =
    *       GetMessageRequest.newBuilder()
    *           .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   Message response = chatServiceClient.getMessage(request);
    * }
@@ -2511,6 +2606,7 @@ public class ChatServiceClient implements BackgroundResource {
    *   GetMessageRequest request =
    *       GetMessageRequest.newBuilder()
    *           .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
    *           .build();
    *   ApiFuture<Message> future = chatServiceClient.getMessageCallable().futureCall(request);
    *   // Do something.
@@ -2860,6 +2956,461 @@ public class ChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable() {
     return stub.deleteMessageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   String filter = "filter-1274492040";
+   *   for (SearchMessageResult element :
+   *       chatServiceClient.searchMessages(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the space to search within.
+   *     <p>To search across all spaces the user has access to, set this field to `spaces/-`. Using
+   *     any other value for `parent` results in an `INVALID_ARGUMENT` error.
+   *     <p>To limit the search to one or more spaces, use `space.name` or `space.display_name` in
+   *     the `filter`.
+   * @param filter Required. A search query.
+   *     <p>The query can specify one or more search keywords, which are used to filter the results,
+   *     <p>You can also filter the results using the following message fields:
+   *     <p>- `create_time`: Accepts a timestamp in
+   *     [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported comparison
+   *     operators are: `&lt;` and `&gt;=`. - `sender.name`: The resource name of the sender
+   *     (`users/{user}`). Only supports `=`. You can use the e-mail as an alias for `{user}`. For
+   *     example, `users/example{@literal @}gmail.com`, where `example{@literal @}gmail.com` is the
+   *     e-mail of the Google Chat user. - `space.name`: The resource name of the space where the
+   *     message is posted. (`spaces/{space}`). Only supports `=`. If this filter is not set, the
+   *     search is performed across all direct messages and spaces the user has access to as a space
+   *     member. - `space.display_name`: Supports the operator `:` (has) and filters spaces based on
+   *     a partial match of their display name. Results are limited to the top five space matches.
+   *     For example, `space.display_name:Project` searches for messages in the top five spaces that
+   *     contain the word "Project" in their display names. - `space.space_type`: The type of the
+   *     space. Only supports `=`. For example, `space.space_type="DIRECT_MESSAGE"` returns only
+   *     messages from direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`, and
+   *     `SPACE`. - `attachment`: Supports the operator `:&#42;` (has any) to check for the presence
+   *     of attachments. If `attachment:&#42;` is specified, only messages that have at least one
+   *     attachment are returned. - `annotations.user_mentions.user.name`: The resource name of the
+   *     mentioned user (`users/{user}`). Only supports `:` (has). For example:
+   *     `annotations.user_mentions.user.name:"users/1234567890"` returns only messages that contain
+   *     a mention to the specified user. Alternatively, the alias `me` can be used to filter for
+   *     messages that mention the caller user, for example:
+   *     `annotations.user_mentions.user.name:users/me`. You can also use the e-mail as an alias for
+   *     `{user}`, for example, `users/example{@literal @}gmail.com`.
+   *     <p>For advanced filtering, the following functions are also available:
+   *     <p>- `has_link()`: Returns only messages that have at least one hyperlink in the message
+   *     text. - `is_unread()`: Filters out messages that have been read by the calling user.
+   *     <p>Using the `space.display_name` or the `space.space_type` filters requires that the
+   *     calling credentials include one of the following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   *     `https://www.googleapis.com/auth/chat.spaces`
+   *     <p>Using the `is_unread()` filter requires that the calling credentials include one of the
+   *     following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.users.readstate.readonly` -
+   *     `https://www.googleapis.com/auth/chat.users.readstate`
+   *     <p>Across different fields, only `AND` operators are supported. A valid example is
+   *     `sender.name = "users/1234567890" AND is_unread()`. The word `AND` is optional and is
+   *     implied if omitted. For example, `sender.name = "users/1234567890" is_unread()` is valid
+   *     and is equivalent to the previous example. An invalid example is `sender.name =
+   *     "users/1234567890" OR is_unread()` because `OR` is not supported between different fields.
+   *     <p>Among the same field:
+   *     <p>- `create_time` supports only `AND`, and can only be used to represent an interval, such
+   *     as `create_time &gt;= "2022-01-01T00:00:00+00:00" AND create_time &lt;
+   *     "2023-01-01T00:00:00+00:00"`. - `sender.name` supports only the `OR` operator, for example:
+   *     `sender.name = "users/1234567890" OR sender.name = "users/0987654321"`. - `space.name`
+   *     supports only the `OR` operator, for example: `space.name = "spaces/ABCDEFGH" OR space.name
+   *     = "spaces/QWERTYUI"`. - `space.display_name` supports the operators `AND` and `OR`, but not
+   *     a mix of both. For example: `space.display_name:Project AND space.display_name:Tasks`
+   *     returns messages that are in spaces with display names containing both `Project` and
+   *     `Tasks`, whereas `space.display_name:Project OR space.display_name:Tasks` returns messages
+   *     that are in spaces with display names containing either `Project` or `Tasks` or both. -
+   *     `space.space_type` supports only the `OR` operator, for example: `space.space_type =
+   *     "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`. -
+   *     `annotations.user_mentions.user.name` supports the operators `AND` and `OR`, but not a mix
+   *     of both. For example: `annotations.user_mentions.user.name:"users/1234567890" AND
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns only messages that mentions
+   *     both users, whereas `annotations.user_mentions.user.name:"users/1234567890" OR
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns messages that mention
+   *     either user or both.
+   *     <p>Parentheses are required to disambiguate operator precedence when combining `AND` and
+   *     `OR` operators in the same query. For example: `(sender.name="users/me" OR
+   *     sender.name="users/123456") AND is_unread()`. Otherwise, parentheses are optional.
+   *     <p>The following example queries are valid:
+   *     <p>``` "Pending reports" AND create_time &gt;= "2023-01-01T00:00:00Z"
+   *     <p>sender.name = "users/example{@literal @}gmail.com"
+   *     <p>annotations.user_mentions.user.name:"users/0987654321"
+   *     <p>attachment:&#42; AND space.name = "spaces/ABCDEFGH"
+   *     <p>tasks AND is_unread() AND sender.name = "users/1234567890"
+   *     <p>"things to do" "urgent"
+   *     <p>(sender.name = "users/1234567890") AND (create_time &lt; "2023-05-01T00:00:00Z")
+   *     <p>tasks AND space.name = "spaces/ABCDEFGH" AND has_link()
+   *     <p>"project one" is_unread()
+   *     <p>space.display_name:Project tasks ```
+   *     <p>The maximum query length is 1,000 characters.
+   *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMessagesPagedResponse searchMessages(
+      @Nullable SpaceName parent, String filter) {
+    SearchMessagesRequest request =
+        SearchMessagesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return searchMessages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   String filter = "filter-1274492040";
+   *   for (SearchMessageResult element :
+   *       chatServiceClient.searchMessages(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the space to search within.
+   *     <p>To search across all spaces the user has access to, set this field to `spaces/-`. Using
+   *     any other value for `parent` results in an `INVALID_ARGUMENT` error.
+   *     <p>To limit the search to one or more spaces, use `space.name` or `space.display_name` in
+   *     the `filter`.
+   * @param filter Required. A search query.
+   *     <p>The query can specify one or more search keywords, which are used to filter the results,
+   *     <p>You can also filter the results using the following message fields:
+   *     <p>- `create_time`: Accepts a timestamp in
+   *     [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported comparison
+   *     operators are: `&lt;` and `&gt;=`. - `sender.name`: The resource name of the sender
+   *     (`users/{user}`). Only supports `=`. You can use the e-mail as an alias for `{user}`. For
+   *     example, `users/example{@literal @}gmail.com`, where `example{@literal @}gmail.com` is the
+   *     e-mail of the Google Chat user. - `space.name`: The resource name of the space where the
+   *     message is posted. (`spaces/{space}`). Only supports `=`. If this filter is not set, the
+   *     search is performed across all direct messages and spaces the user has access to as a space
+   *     member. - `space.display_name`: Supports the operator `:` (has) and filters spaces based on
+   *     a partial match of their display name. Results are limited to the top five space matches.
+   *     For example, `space.display_name:Project` searches for messages in the top five spaces that
+   *     contain the word "Project" in their display names. - `space.space_type`: The type of the
+   *     space. Only supports `=`. For example, `space.space_type="DIRECT_MESSAGE"` returns only
+   *     messages from direct messages. The possible values are `DIRECT_MESSAGE`, `GROUP_CHAT`, and
+   *     `SPACE`. - `attachment`: Supports the operator `:&#42;` (has any) to check for the presence
+   *     of attachments. If `attachment:&#42;` is specified, only messages that have at least one
+   *     attachment are returned. - `annotations.user_mentions.user.name`: The resource name of the
+   *     mentioned user (`users/{user}`). Only supports `:` (has). For example:
+   *     `annotations.user_mentions.user.name:"users/1234567890"` returns only messages that contain
+   *     a mention to the specified user. Alternatively, the alias `me` can be used to filter for
+   *     messages that mention the caller user, for example:
+   *     `annotations.user_mentions.user.name:users/me`. You can also use the e-mail as an alias for
+   *     `{user}`, for example, `users/example{@literal @}gmail.com`.
+   *     <p>For advanced filtering, the following functions are also available:
+   *     <p>- `has_link()`: Returns only messages that have at least one hyperlink in the message
+   *     text. - `is_unread()`: Filters out messages that have been read by the calling user.
+   *     <p>Using the `space.display_name` or the `space.space_type` filters requires that the
+   *     calling credentials include one of the following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   *     `https://www.googleapis.com/auth/chat.spaces`
+   *     <p>Using the `is_unread()` filter requires that the calling credentials include one of the
+   *     following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.users.readstate.readonly` -
+   *     `https://www.googleapis.com/auth/chat.users.readstate`
+   *     <p>Across different fields, only `AND` operators are supported. A valid example is
+   *     `sender.name = "users/1234567890" AND is_unread()`. The word `AND` is optional and is
+   *     implied if omitted. For example, `sender.name = "users/1234567890" is_unread()` is valid
+   *     and is equivalent to the previous example. An invalid example is `sender.name =
+   *     "users/1234567890" OR is_unread()` because `OR` is not supported between different fields.
+   *     <p>Among the same field:
+   *     <p>- `create_time` supports only `AND`, and can only be used to represent an interval, such
+   *     as `create_time &gt;= "2022-01-01T00:00:00+00:00" AND create_time &lt;
+   *     "2023-01-01T00:00:00+00:00"`. - `sender.name` supports only the `OR` operator, for example:
+   *     `sender.name = "users/1234567890" OR sender.name = "users/0987654321"`. - `space.name`
+   *     supports only the `OR` operator, for example: `space.name = "spaces/ABCDEFGH" OR space.name
+   *     = "spaces/QWERTYUI"`. - `space.display_name` supports the operators `AND` and `OR`, but not
+   *     a mix of both. For example: `space.display_name:Project AND space.display_name:Tasks`
+   *     returns messages that are in spaces with display names containing both `Project` and
+   *     `Tasks`, whereas `space.display_name:Project OR space.display_name:Tasks` returns messages
+   *     that are in spaces with display names containing either `Project` or `Tasks` or both. -
+   *     `space.space_type` supports only the `OR` operator, for example: `space.space_type =
+   *     "DIRECT_MESSAGE" OR space.space_type = "GROUP_CHAT"`. -
+   *     `annotations.user_mentions.user.name` supports the operators `AND` and `OR`, but not a mix
+   *     of both. For example: `annotations.user_mentions.user.name:"users/1234567890" AND
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns only messages that mentions
+   *     both users, whereas `annotations.user_mentions.user.name:"users/1234567890" OR
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns messages that mention
+   *     either user or both.
+   *     <p>Parentheses are required to disambiguate operator precedence when combining `AND` and
+   *     `OR` operators in the same query. For example: `(sender.name="users/me" OR
+   *     sender.name="users/123456") AND is_unread()`. Otherwise, parentheses are optional.
+   *     <p>The following example queries are valid:
+   *     <p>``` "Pending reports" AND create_time &gt;= "2023-01-01T00:00:00Z"
+   *     <p>sender.name = "users/example{@literal @}gmail.com"
+   *     <p>annotations.user_mentions.user.name:"users/0987654321"
+   *     <p>attachment:&#42; AND space.name = "spaces/ABCDEFGH"
+   *     <p>tasks AND is_unread() AND sender.name = "users/1234567890"
+   *     <p>"things to do" "urgent"
+   *     <p>(sender.name = "users/1234567890") AND (create_time &lt; "2023-05-01T00:00:00Z")
+   *     <p>tasks AND space.name = "spaces/ABCDEFGH" AND has_link()
+   *     <p>"project one" is_unread()
+   *     <p>space.display_name:Project tasks ```
+   *     <p>The maximum query length is 1,000 characters.
+   *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMessagesPagedResponse searchMessages(String parent, String filter) {
+    SearchMessagesRequest request =
+        SearchMessagesRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return searchMessages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchMessagesRequest request =
+   *       SearchMessagesRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
+   *           .build();
+   *   for (SearchMessageResult element : chatServiceClient.searchMessages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMessagesPagedResponse searchMessages(SearchMessagesRequest request) {
+    return searchMessagesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchMessagesRequest request =
+   *       SearchMessagesRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
+   *           .build();
+   *   ApiFuture<SearchMessageResult> future =
+   *       chatServiceClient.searchMessagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SearchMessageResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    return stub.searchMessagesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchMessagesRequest request =
+   *       SearchMessagesRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setMarkupSyntax(MarkupSyntax.forNumber(0))
+   *           .build();
+   *   while (true) {
+   *     SearchMessagesResponse response = chatServiceClient.searchMessagesCallable().call(request);
+   *     for (SearchMessageResult element : response.getResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchMessagesRequest, SearchMessagesResponse>
+      searchMessagesCallable() {
+    return stub.searchMessagesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3305,16 +3856,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3342,16 +3904,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3386,16 +3959,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3430,16 +4014,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -4143,7 +4738,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     `access_settings.access_permission_settings` is not supported with `useAdminAccess`. The
    *     supported field masks include:
    *     <p>- `access_settings.access_permission_settings.discoverSpaceSetting` -
-   *     `access_settings.access_permission_settings.joinSpaceSetting`
+   *     `access_settings.access_permission_settings.joinSpaceSetting` -
+   *     `access_settings.access_permission_settings.viewSpaceMembershipSetting`
    *     <p>`permission_settings`: Supports changing the [permission
    *     settings](https://support.google.com/chat/answer/13340792) of a space. When updating
    *     permission settings, you can only specify `permissionSettings` field masks; you cannot
@@ -4151,7 +4747,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>- `permission_settings.manageMembersAndGroups` -
    *     `permission_settings.modifySpaceDetails` - `permission_settings.toggleHistory` -
    *     `permission_settings.useAtMentionAll` - `permission_settings.manageApps` -
-   *     `permission_settings.manageWebhooks` - `permission_settings.replyMessages`
+   *     `permission_settings.manageWebhooks` - `permission_settings.replyMessages` -
+   *     `permission_settings.viewSpaceMembership`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Space updateSpace(Space space, FieldMask updateMask) {
@@ -6044,6 +6641,527 @@ public class ChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return stub.deleteReactionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists message pins in a space. Users can pin important messages in spaces for easy access. For
+   * more information, see [Pin or unpin a conversation in Google
+   * Chat](https://support.google.com/chat/answer/15622437).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   for (MessagePin element : chatServiceClient.listMessagePins(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent space which owns the collection of pinned items Format:
+   *     `spaces/{space}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMessagePinsPagedResponse listMessagePins(@Nullable SpaceName parent) {
+    ListMessagePinsRequest request =
+        ListMessagePinsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listMessagePins(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists message pins in a space. Users can pin important messages in spaces for easy access. For
+   * more information, see [Pin or unpin a conversation in Google
+   * Chat](https://support.google.com/chat/answer/15622437).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   for (MessagePin element : chatServiceClient.listMessagePins(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent space which owns the collection of pinned items Format:
+   *     `spaces/{space}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMessagePinsPagedResponse listMessagePins(String parent) {
+    ListMessagePinsRequest request = ListMessagePinsRequest.newBuilder().setParent(parent).build();
+    return listMessagePins(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists message pins in a space. Users can pin important messages in spaces for easy access. For
+   * more information, see [Pin or unpin a conversation in Google
+   * Chat](https://support.google.com/chat/answer/15622437).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListMessagePinsRequest request =
+   *       ListMessagePinsRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MessagePin element : chatServiceClient.listMessagePins(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListMessagePinsPagedResponse listMessagePins(ListMessagePinsRequest request) {
+    return listMessagePinsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists message pins in a space. Users can pin important messages in spaces for easy access. For
+   * more information, see [Pin or unpin a conversation in Google
+   * Chat](https://support.google.com/chat/answer/15622437).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListMessagePinsRequest request =
+   *       ListMessagePinsRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MessagePin> future =
+   *       chatServiceClient.listMessagePinsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MessagePin element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMessagePinsRequest, ListMessagePinsPagedResponse>
+      listMessagePinsPagedCallable() {
+    return stub.listMessagePinsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists message pins in a space. Users can pin important messages in spaces for easy access. For
+   * more information, see [Pin or unpin a conversation in Google
+   * Chat](https://support.google.com/chat/answer/15622437).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListMessagePinsRequest request =
+   *       ListMessagePinsRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListMessagePinsResponse response =
+   *         chatServiceClient.listMessagePinsCallable().call(request);
+   *     for (MessagePin element : response.getMessagePinsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse>
+      listMessagePinsCallable() {
+    return stub.listMessagePinsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   MessagePin messagePin = MessagePin.newBuilder().build();
+   *   MessagePin response = chatServiceClient.createMessagePin(parent, messagePin);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent space in which to create the message pin. Format:
+   *     spaces/{space}
+   * @param messagePin Required. The MessagePin to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MessagePin createMessagePin(@Nullable SpaceName parent, MessagePin messagePin) {
+    CreateMessagePinRequest request =
+        CreateMessagePinRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setMessagePin(messagePin)
+            .build();
+    return createMessagePin(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   MessagePin messagePin = MessagePin.newBuilder().build();
+   *   MessagePin response = chatServiceClient.createMessagePin(parent, messagePin);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent space in which to create the message pin. Format:
+   *     spaces/{space}
+   * @param messagePin Required. The MessagePin to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MessagePin createMessagePin(String parent, MessagePin messagePin) {
+    CreateMessagePinRequest request =
+        CreateMessagePinRequest.newBuilder().setParent(parent).setMessagePin(messagePin).build();
+    return createMessagePin(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CreateMessagePinRequest request =
+   *       CreateMessagePinRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setMessagePin(MessagePin.newBuilder().build())
+   *           .build();
+   *   MessagePin response = chatServiceClient.createMessagePin(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MessagePin createMessagePin(CreateMessagePinRequest request) {
+    return createMessagePinCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CreateMessagePinRequest request =
+   *       CreateMessagePinRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setMessagePin(MessagePin.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MessagePin> future =
+   *       chatServiceClient.createMessagePinCallable().futureCall(request);
+   *   // Do something.
+   *   MessagePin response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateMessagePinRequest, MessagePin> createMessagePinCallable() {
+    return stub.createMessagePinCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MessagePinName name = MessagePinName.of("[SPACE]", "[MESSAGE_PIN]");
+   *   chatServiceClient.deleteMessagePin(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the message pin to remove. Format:
+   *     spaces/{space}/messagePins/{message_pin}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMessagePin(@Nullable MessagePinName name) {
+    DeleteMessagePinRequest request =
+        DeleteMessagePinRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteMessagePin(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = MessagePinName.of("[SPACE]", "[MESSAGE_PIN]").toString();
+   *   chatServiceClient.deleteMessagePin(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the message pin to remove. Format:
+   *     spaces/{space}/messagePins/{message_pin}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMessagePin(String name) {
+    DeleteMessagePinRequest request = DeleteMessagePinRequest.newBuilder().setName(name).build();
+    deleteMessagePin(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   DeleteMessagePinRequest request =
+   *       DeleteMessagePinRequest.newBuilder()
+   *           .setName(MessagePinName.of("[SPACE]", "[MESSAGE_PIN]").toString())
+   *           .build();
+   *   chatServiceClient.deleteMessagePin(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteMessagePin(DeleteMessagePinRequest request) {
+    deleteMessagePinCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a message pin.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.spaces.pins` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   DeleteMessagePinRequest request =
+   *       DeleteMessagePinRequest.newBuilder()
+   *           .setName(MessagePinName.of("[SPACE]", "[MESSAGE_PIN]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = chatServiceClient.deleteMessagePinCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteMessagePinRequest, Empty> deleteMessagePinCallable() {
+    return stub.deleteMessagePinCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -10045,6 +11163,86 @@ public class ChatServiceClient implements BackgroundResource {
     }
   }
 
+  public static class SearchMessagesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchMessagesRequest,
+          SearchMessagesResponse,
+          SearchMessageResult,
+          SearchMessagesPage,
+          SearchMessagesFixedSizeCollection> {
+
+    public static ApiFuture<SearchMessagesPagedResponse> createAsync(
+        PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult> context,
+        ApiFuture<SearchMessagesResponse> futureResponse) {
+      ApiFuture<SearchMessagesPage> futurePage =
+          SearchMessagesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchMessagesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchMessagesPagedResponse(SearchMessagesPage page) {
+      super(page, SearchMessagesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchMessagesPage
+      extends AbstractPage<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult, SearchMessagesPage> {
+
+    private SearchMessagesPage(
+        @Nullable PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+            context,
+        @Nullable SearchMessagesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchMessagesPage createEmptyPage() {
+      return new SearchMessagesPage(null, null);
+    }
+
+    @Override
+    protected SearchMessagesPage createPage(
+        @Nullable PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+            context,
+        @Nullable SearchMessagesResponse response) {
+      return new SearchMessagesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchMessagesPage> createPageAsync(
+        @Nullable PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+            context,
+        ApiFuture<SearchMessagesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchMessagesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchMessagesRequest,
+          SearchMessagesResponse,
+          SearchMessageResult,
+          SearchMessagesPage,
+          SearchMessagesFixedSizeCollection> {
+
+    private SearchMessagesFixedSizeCollection(
+        @Nullable List<SearchMessagesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchMessagesFixedSizeCollection createEmptyCollection() {
+      return new SearchMessagesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchMessagesFixedSizeCollection createCollection(
+        @Nullable List<SearchMessagesPage> pages, int collectionSize) {
+      return new SearchMessagesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListSpacesPagedResponse
       extends AbstractPagedListResponse<
           ListSpacesRequest,
@@ -10346,6 +11544,83 @@ public class ChatServiceClient implements BackgroundResource {
     protected ListReactionsFixedSizeCollection createCollection(
         @Nullable List<ListReactionsPage> pages, int collectionSize) {
       return new ListReactionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListMessagePinsPagedResponse
+      extends AbstractPagedListResponse<
+          ListMessagePinsRequest,
+          ListMessagePinsResponse,
+          MessagePin,
+          ListMessagePinsPage,
+          ListMessagePinsFixedSizeCollection> {
+
+    public static ApiFuture<ListMessagePinsPagedResponse> createAsync(
+        PageContext<ListMessagePinsRequest, ListMessagePinsResponse, MessagePin> context,
+        ApiFuture<ListMessagePinsResponse> futureResponse) {
+      ApiFuture<ListMessagePinsPage> futurePage =
+          ListMessagePinsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListMessagePinsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListMessagePinsPagedResponse(ListMessagePinsPage page) {
+      super(page, ListMessagePinsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListMessagePinsPage
+      extends AbstractPage<
+          ListMessagePinsRequest, ListMessagePinsResponse, MessagePin, ListMessagePinsPage> {
+
+    private ListMessagePinsPage(
+        @Nullable PageContext<ListMessagePinsRequest, ListMessagePinsResponse, MessagePin> context,
+        @Nullable ListMessagePinsResponse response) {
+      super(context, response);
+    }
+
+    private static ListMessagePinsPage createEmptyPage() {
+      return new ListMessagePinsPage(null, null);
+    }
+
+    @Override
+    protected ListMessagePinsPage createPage(
+        @Nullable PageContext<ListMessagePinsRequest, ListMessagePinsResponse, MessagePin> context,
+        @Nullable ListMessagePinsResponse response) {
+      return new ListMessagePinsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListMessagePinsPage> createPageAsync(
+        @Nullable PageContext<ListMessagePinsRequest, ListMessagePinsResponse, MessagePin> context,
+        ApiFuture<ListMessagePinsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListMessagePinsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListMessagePinsRequest,
+          ListMessagePinsResponse,
+          MessagePin,
+          ListMessagePinsPage,
+          ListMessagePinsFixedSizeCollection> {
+
+    private ListMessagePinsFixedSizeCollection(
+        @Nullable List<ListMessagePinsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListMessagePinsFixedSizeCollection createEmptyCollection() {
+      return new ListMessagePinsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListMessagePinsFixedSizeCollection createCollection(
+        @Nullable List<ListMessagePinsPage> pages, int collectionSize) {
+      return new ListMessagePinsFixedSizeCollection(pages, collectionSize);
     }
   }
 

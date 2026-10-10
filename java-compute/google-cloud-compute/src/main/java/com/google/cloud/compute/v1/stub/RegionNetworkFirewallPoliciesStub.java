@@ -37,6 +37,7 @@ import com.google.cloud.compute.v1.GetRuleRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListRegionNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchAssociationRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -149,6 +150,16 @@ public abstract class RegionNetworkFirewallPoliciesStub implements BackgroundRes
 
   public UnaryCallable<PatchRegionNetworkFirewallPolicyRequest, Operation> patchCallable() {
     throw new UnsupportedOperationException("Not implemented: patchCallable()");
+  }
+
+  public OperationCallable<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchAssociationOperationCallable()");
+  }
+
+  public UnaryCallable<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchAssociationCallable()");
   }
 
   public OperationCallable<PatchRuleRegionNetworkFirewallPolicyRequest, Operation, Operation>

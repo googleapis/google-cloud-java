@@ -269,4 +269,34 @@ public interface ListMessagesRequestOrBuilder
    * @return The showDeleted.
    */
   boolean getShowDeleted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  int getMarkupSyntaxValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  com.google.chat.v1.MarkupSyntax getMarkupSyntax();
 }

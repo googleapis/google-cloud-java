@@ -44,7 +44,6 @@ public class AsyncListPaged {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         NodeTemplateList response = nodeTemplatesClient.listCallable().call(request);

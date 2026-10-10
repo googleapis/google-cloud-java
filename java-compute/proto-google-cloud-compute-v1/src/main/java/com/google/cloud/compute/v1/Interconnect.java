@@ -79,6 +79,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     remoteLocation_ = "";
     requestedFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
+    selfLinkWithId_ = "";
     state_ = "";
     subzone_ = "";
     wireGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -3755,6 +3756,75 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SELF_LINK_WITH_ID_FIELD_NUMBER = 44520962;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object selfLinkWithId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return Whether the selfLinkWithId field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfLinkWithId() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The selfLinkWithId.
+   */
+  @java.lang.Override
+  public java.lang.String getSelfLinkWithId() {
+    java.lang.Object ref = selfLinkWithId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      selfLinkWithId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The bytes for selfLinkWithId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSelfLinkWithIdBytes() {
+    java.lang.Object ref = selfLinkWithId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      selfLinkWithId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATE_FIELD_NUMBER = 109757585;
 
   @SuppressWarnings("serial")
@@ -3783,7 +3853,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
@@ -3873,7 +3943,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSubzone() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
@@ -4037,13 +4107,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < wireGroups_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 40662734, wireGroups_.getRaw(i));
     }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
+    }
     if (((bitField0_ & 0x01000000) != 0)) {
       output.writeInt32(45051387, requestedLinkCount_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(78313862, getParams());
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
@@ -4068,7 +4141,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < expectedOutages_.size(); i++) {
       output.writeMessage(264484123, expectedOutages_.get(i));
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 280084972, subzone_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
@@ -4165,13 +4238,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getWireGroupsList().size();
     }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
+    }
     if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(45051387, requestedLinkCount_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
@@ -4203,7 +4279,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               264484123, expectedOutages_.get(i));
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(280084972, subzone_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
@@ -4420,6 +4496,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (hasSelfLinkWithId() != other.hasSelfLinkWithId()) return false;
+    if (hasSelfLinkWithId()) {
+      if (!getSelfLinkWithId().equals(other.getSelfLinkWithId())) return false;
+    }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
@@ -4575,6 +4655,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (hasSelfLinkWithId()) {
+      hash = (37 * hash) + SELF_LINK_WITH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfLinkWithId().hashCode();
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
@@ -4826,6 +4910,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       requestedLinkCount_ = 0;
       satisfiesPzs_ = false;
       selfLink_ = "";
+      selfLinkWithId_ = "";
       state_ = "";
       subzone_ = "";
       wireGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -5029,14 +5114,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.state_ = state_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
-        result.subzone_ = subzone_;
+        result.state_ = state_;
         to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.subzone_ = subzone_;
+        to_bitField0_ |= 0x20000000;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
         wireGroups_.makeImmutable();
         result.wireGroups_ = wireGroups_;
       }
@@ -5266,20 +5355,25 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
         bitField1_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasSelfLinkWithId()) {
+        selfLinkWithId_ = other.selfLinkWithId_;
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSubzone()) {
         subzone_ = other.subzone_;
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       if (!other.wireGroups_.isEmpty()) {
         if (wireGroups_.isEmpty()) {
           wireGroups_ = other.wireGroups_;
-          bitField1_ |= 0x00000010;
+          bitField1_ |= 0x00000020;
         } else {
           ensureWireGroupsIsMutable();
           wireGroups_.addAll(other.wireGroups_);
@@ -5355,6 +5449,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
                 wireGroups_.add(s);
                 break;
               } // case 325301874
+            case 356167698:
+              {
+                selfLinkWithId_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 356167698
             case 360411096:
               {
                 requestedLinkCount_ = input.readInt32();
@@ -5370,7 +5470,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 878060682
             case 1318718842:
@@ -5435,7 +5535,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
             case -2054287518:
               {
                 subzone_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000010;
                 break;
               } // case -2054287518
             case -1971520086:
@@ -11216,6 +11316,132 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object selfLinkWithId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return Whether the selfLinkWithId field is set.
+     */
+    public boolean hasSelfLinkWithId() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return The selfLinkWithId.
+     */
+    public java.lang.String getSelfLinkWithId() {
+      java.lang.Object ref = selfLinkWithId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        selfLinkWithId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return The bytes for selfLinkWithId.
+     */
+    public com.google.protobuf.ByteString getSelfLinkWithIdBytes() {
+      java.lang.Object ref = selfLinkWithId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        selfLinkWithId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @param value The selfLinkWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfLinkWithId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      selfLinkWithId_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSelfLinkWithId() {
+      selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
+      bitField1_ = (bitField1_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-defined URL for this resource with the resource id.
+     * </pre>
+     *
+     * <code>optional string self_link_with_id = 44520962;</code>
+     *
+     * @param value The bytes for selfLinkWithId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfLinkWithIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      selfLinkWithId_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object state_ = "";
 
     /**
@@ -11240,7 +11466,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -11336,7 +11562,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       state_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11364,7 +11590,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -11397,7 +11623,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -11417,7 +11643,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      * @return Whether the subzone field is set.
      */
     public boolean hasSubzone() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -11486,7 +11712,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subzone_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -11505,7 +11731,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubzone() {
       subzone_ = getDefaultInstance().getSubzone();
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -11529,7 +11755,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subzone_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -11541,7 +11767,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       if (!wireGroups_.isModifiable()) {
         wireGroups_ = new com.google.protobuf.LazyStringArrayList(wireGroups_);
       }
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
     }
 
     /**
@@ -11636,7 +11862,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       }
       ensureWireGroupsIsMutable();
       wireGroups_.set(index, value);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11661,7 +11887,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       }
       ensureWireGroupsIsMutable();
       wireGroups_.add(value);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11683,7 +11909,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
     public Builder addAllWireGroups(java.lang.Iterable<java.lang.String> values) {
       ensureWireGroupsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, wireGroups_);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -11703,7 +11929,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearWireGroups() {
       wireGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000020);
       ;
       onChanged();
       return this;
@@ -11730,7 +11956,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureWireGroupsIsMutable();
       wireGroups_.add(value);
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }

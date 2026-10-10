@@ -76,11 +76,6 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
    * <pre>
    * Health state of the network endpoint determined based on the health checks
    * configured.
-   * Additional supported values which may be not listed in the enum directly due to technical reasons:
-   * DRAINING
-   * HEALTHY
-   * UNHEALTHY
-   * UNKNOWN
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState}
@@ -96,13 +91,45 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     UNDEFINED_HEALTH_STATE(0),
-    /** <code>DRAINING = 480455402;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint is being drained.
+     * </pre>
+     *
+     * <code>DRAINING = 480455402;</code>
+     */
     DRAINING(480455402),
-    /** <code>HEALTHY = 439801213;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint is healthy.
+     * </pre>
+     *
+     * <code>HEALTHY = 439801213;</code>
+     */
     HEALTHY(439801213),
-    /** <code>UNHEALTHY = 462118084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint is unhealthy.
+     * </pre>
+     *
+     * <code>UNHEALTHY = 462118084;</code>
+     */
     UNHEALTHY(462118084),
-    /** <code>UNKNOWN = 433141802;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Health status of the endpoint is unknown.
+     * </pre>
+     *
+     * <code>UNKNOWN = 433141802;</code>
+     */
     UNKNOWN(433141802),
     UNRECOGNIZED(-1),
     ;
@@ -128,16 +155,48 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      */
     public static final int UNDEFINED_HEALTH_STATE_VALUE = 0;
 
-    /** <code>DRAINING = 480455402;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint is being drained.
+     * </pre>
+     *
+     * <code>DRAINING = 480455402;</code>
+     */
     public static final int DRAINING_VALUE = 480455402;
 
-    /** <code>HEALTHY = 439801213;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint is healthy.
+     * </pre>
+     *
+     * <code>HEALTHY = 439801213;</code>
+     */
     public static final int HEALTHY_VALUE = 439801213;
 
-    /** <code>UNHEALTHY = 462118084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Endpoint is unhealthy.
+     * </pre>
+     *
+     * <code>UNHEALTHY = 462118084;</code>
+     */
     public static final int UNHEALTHY_VALUE = 462118084;
 
-    /** <code>UNKNOWN = 433141802;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * Health status of the endpoint is unknown.
+     * </pre>
+     *
+     * <code>UNKNOWN = 433141802;</code>
+     */
     public static final int UNKNOWN_VALUE = 433141802;
 
     public final int getNumber() {

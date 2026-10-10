@@ -572,7 +572,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=686
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=689
    * @return The network.
    */
   @java.lang.Deprecated
@@ -594,7 +594,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=686
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=689
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -828,7 +828,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=721
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=724
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -844,7 +844,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=721
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=724
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1305,7 +1305,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=771
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=774
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1324,7 +1324,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=771
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=774
    * @return The geminiConfig.
    */
   @java.lang.Deprecated

@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.data.v2.it;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.TruthJUnit.assume;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
@@ -39,6 +41,7 @@ import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -192,11 +195,27 @@ public class LargeRowIT {
     byte[] largeValueBytes = new byte[3 * 1024 * 1024];
     ByteString largeValue = ByteString.copyFrom(largeValueBytes);
 
+    // Each cell is written with its own qualifier, so the writes are independent of each other and
+    // can be sent concurrently. Doing them one at a time means 200 sequential round trips carrying
+    // 600 MiB in total, which dominated the runtime of this test. Keep a bounded window in flight
+    // so we don't buffer the whole payload in the channel.
+    int inFlightLimit = 16;
+    List<ApiFuture<Void>> pending = new ArrayList<>(inFlightLimit);
     for (int i = 0; i < 100; i++) {
       ByteString qualifier = ByteString.copyFromUtf8("qualifier1_" + "_" + i);
-      client.mutateRow(RowMutation.create(tableId, "r2").setCell(familyId, qualifier, largeValue));
-      client.mutateRow(RowMutation.create(tableId, "r3").setCell(familyId, qualifier, largeValue));
+      pending.add(
+          client.mutateRowAsync(
+              RowMutation.create(tableId, "r2").setCell(familyId, qualifier, largeValue)));
+      pending.add(
+          client.mutateRowAsync(
+              RowMutation.create(tableId, "r3").setCell(familyId, qualifier, largeValue)));
+
+      if (pending.size() >= inFlightLimit) {
+        ApiFutures.allAsList(pending).get(10, TimeUnit.MINUTES);
+        pending.clear();
+      }
     }
+    ApiFutures.allAsList(pending).get(10, TimeUnit.MINUTES);
 
     // sync
     assertThat(

@@ -403,4 +403,50 @@ public interface ExadbVmClusterOrBuilder
    * @return The bytes for entitlementId.
    */
   com.google.protobuf.ByteString getEntitlementIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity connector details which will allow OCI to
+   * securely access the resources in the customer project.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.IdentityConnector identity_connector = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the identityConnector field is set.
+   */
+  boolean hasIdentityConnector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity connector details which will allow OCI to
+   * securely access the resources in the customer project.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.IdentityConnector identity_connector = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The identityConnector.
+   */
+  com.google.cloud.oracledatabase.v1.IdentityConnector getIdentityConnector();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity connector details which will allow OCI to
+   * securely access the resources in the customer project.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.IdentityConnector identity_connector = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.IdentityConnectorOrBuilder getIdentityConnectorOrBuilder();
 }

@@ -37,6 +37,7 @@ public class SyncDelete {
       DeleteInstanceRequest request =
           DeleteInstanceRequest.newBuilder()
               .setInstance("instance555127957")
+              .setNoGracefulShutdown(true)
               .setProject("project-309310695")
               .setRequestId("requestId693933066")
               .setZone("zone3744684")

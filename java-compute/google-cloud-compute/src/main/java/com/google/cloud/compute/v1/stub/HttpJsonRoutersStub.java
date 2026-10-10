@@ -135,12 +135,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             if (request.hasServiceProjectNumber()) {
                               serializer.putQueryParam(
                                   fields,
@@ -468,12 +462,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -646,10 +634,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                         if (request.hasPageToken()) {
                           serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                         }
-                        if (request.hasReturnPartialSuccess()) {
-                          serializer.putQueryParam(
-                              fields, "returnPartialSuccess", request.getReturnPartialSuccess());
-                        }
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -713,12 +697,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                               serializer.putQueryParam(
                                   fields, "policyApplied", request.getPolicyApplied());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             if (request.hasRouteType()) {
                               serializer.putQueryParam(fields, "routeType", request.getRouteType());
                             }
@@ -770,12 +748,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -825,12 +797,6 @@ public class HttpJsonRoutersStub extends RoutersStub {
                             }
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })

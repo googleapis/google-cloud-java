@@ -305,6 +305,10 @@ public interface TaskOrBuilder
    * information see
    * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
    *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    * `dispatch_deadline` will be truncated to the nearest millisecond. The
    * deadline is an approximate deadline.
    * </pre>
@@ -350,6 +354,10 @@ public interface TaskOrBuilder
    * information see
    * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
    *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    * `dispatch_deadline` will be truncated to the nearest millisecond. The
    * deadline is an approximate deadline.
    * </pre>
@@ -395,6 +403,10 @@ public interface TaskOrBuilder
    * information see
    * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
    *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    * `dispatch_deadline` will be truncated to the nearest millisecond. The
    * deadline is an approximate deadline.
    * </pre>
@@ -545,6 +557,64 @@ public interface TaskOrBuilder
    * @return The view.
    */
   com.google.cloud.tasks.v2.Task.View getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the task-level
+   * [RetryConfig][google.cloud.tasks.v2.RetryConfig].
+   *
+   * If present, this overrides the
+   * [Queue.retry_config][google.cloud.tasks.v2.Queue.retry_config] for this
+   * task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2.RetryConfig retry_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retryConfig field is set.
+   */
+  boolean hasRetryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the task-level
+   * [RetryConfig][google.cloud.tasks.v2.RetryConfig].
+   *
+   * If present, this overrides the
+   * [Queue.retry_config][google.cloud.tasks.v2.Queue.retry_config] for this
+   * task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2.RetryConfig retry_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retryConfig.
+   */
+  com.google.cloud.tasks.v2.RetryConfig getRetryConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the task-level
+   * [RetryConfig][google.cloud.tasks.v2.RetryConfig].
+   *
+   * If present, this overrides the
+   * [Queue.retry_config][google.cloud.tasks.v2.Queue.retry_config] for this
+   * task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2.RetryConfig retry_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tasks.v2.RetryConfigOrBuilder getRetryConfigOrBuilder();
 
   com.google.cloud.tasks.v2.Task.MessageTypeCase getMessageTypeCase();
 }

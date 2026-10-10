@@ -69,39 +69,37 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
           + "-google/ads/admanager/v1/report_message"
           + "s.proto\022\027google.ads.admanager.v1\032/google"
           + "/ads/admanager/v1/report_definition.proto\032-google/ads/admanager/v1/report_delive"
-          + "ry.proto\032*google/ads/admanager/v1/report"
-          + "_value.proto\032\037google/api/field_behavior."
-          + "proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\316\004\n"
+          + "ry.proto\032*google/ads/admanager/v1/report_value.proto\0324google/ads/admanager/v1/re"
+          + "port_visibility_enum.proto\032\037google/api/f"
+          + "ield_behavior.proto\032\031google/api/resource"
+          + ".proto\032\037google/protobuf/timestamp.proto\"\356\004\n"
           + "\006Report\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
-          + "\treport_id\030\003 \001(\003B\003\340A\003\022C\n\n"
-          + "visibility\030\002"
-          + " \001(\0162*.google.ads.admanager.v1.Report.VisibilityB\003\340A\001\022I\n"
+          + "\treport_id\030\003 \001(\003B\003\340A\003\022W\n\n"
+          + "visibility\030\002 \001(\0162>.goog"
+          + "le.ads.admanager.v1.ReportVisibilityEnum.ReportVisibilityB\003\340A\001\022I\n"
           + "\021report_definition\030\004"
-          + " \001(\0132).google.ads.admanager.v1.ReportDefinitionB\003\340A\002\022\031\n"
+          + " \001(\0132).google.ads.admanager.v1.ReportDefinitionB\003\340A\002\022O\n"
+          + "\027draft_report_definition\030\016"
+          + " \001(\0132).google.ads.admanager.v1.ReportDefinitionB\003\340A\001\022\031\n"
           + "\014display_name\030\005 \001(\tB\003\340A\001\0224\n"
           + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013create_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\006locale\030\010 \001(\tB\003\340A\003\022G\n"
-          + "\020schedule_options\030\t"
-          + " \001(\0132(.google.ads.admanager.v1.ScheduleOptionsB\003\340A\001\"C\n\n"
-          + "Visibility\022\n\n"
-          + "\006HIDDEN\020\000\022\t\n"
-          + "\005DRAFT\020\001\022\013\n"
-          + "\007VISIBLE\020\002\022\r\n"
-          + "\005SAVED\020\002\032\002\010\001\032\002\020\001:_\352A\\\n"
-          + "\037admanager.googleapis.com/Report\022"
-          + "(networks/{network_code}/reports/{report}*\007reports2\006report\"\207\005\n"
+          + "\020schedule_options\030\t \001(\013"
+          + "2(.google.ads.admanager.v1.ScheduleOptionsB\003\340A\001:_\352A\\\n"
+          + "\037admanager.googleapis.com/R"
+          + "eport\022(networks/{network_code}/reports/{report}*\007reports2\006report\"\207\005\n"
           + "\017ReportDataTable\032\235\001\n"
           + "\003Row\022>\n"
           + "\020dimension_values\030\001 \003(\0132$.google.ads.admanager.v1.ReportValue\022V\n"
-          + "\023metric_value_groups\030\002 \003(\01329.google.ads.admanag"
-          + "er.v1.ReportDataTable.MetricValueGroup\032\323\003\n"
+          + "\023metric_value_groups\030\002 \003(\01329.google.ads.a"
+          + "dmanager.v1.ReportDataTable.MetricValueGroup\032\323\003\n"
           + "\020MetricValueGroup\022<\n"
           + "\016primary_values\030\001 \003(\0132$.google.ads.admanager.v1.ReportValue\022M\n"
-          + "\037primary_percent_of_total_values\030\002 \003"
-          + "(\0132$.google.ads.admanager.v1.ReportValue\022?\n"
+          + "\037primary_percent_of_total_values\030\002"
+          + " \003(\0132$.google.ads.admanager.v1.ReportValue\022?\n"
           + "\021comparison_values\030\003 \003(\0132$.google.ads.admanager.v1.ReportValue\022P\n"
           + "\"comparison_percent_of_total_values\030\004"
           + " \003(\0132$.google.ads.admanager.v1.ReportValue\022D\n"
@@ -110,11 +108,11 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
           + "\026relative_change_values\030\006"
           + " \003(\0132$.google.ads.admanager.v1.ReportValue\022\023\n"
           + "\013flag_values\030\007 \003(\010B\307\001\n"
-          + "\033com.google.ads.admanager.v1B\023ReportMessagesProt"
-          + "oP\001Z@google.golang.org/genproto/googleap"
-          + "is/ads/admanager/v1;admanager\252\002\027Google.A"
-          + "ds.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V"
-          + "1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\033com.google.ads.admanager.v1B\023ReportMessag"
+          + "esProtoP\001Z@google.golang.org/genproto/go"
+          + "ogleapis/ads/admanager/v1;admanager\252\002\027Go"
+          + "ogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMan"
+          + "ager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +121,7 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
               com.google.ads.admanager.v1.ReportDefinitionProto.getDescriptor(),
               com.google.ads.admanager.v1.ReportDeliveryProto.getDescriptor(),
               com.google.ads.admanager.v1.ReportValueProto.getDescriptor(),
+              com.google.ads.admanager.v1.ReportVisibilityEnumProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -136,6 +135,7 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
               "ReportId",
               "Visibility",
               "ReportDefinition",
+              "DraftReportDefinition",
               "DisplayName",
               "UpdateTime",
               "CreateTime",
@@ -174,6 +174,7 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
     com.google.ads.admanager.v1.ReportDefinitionProto.getDescriptor();
     com.google.ads.admanager.v1.ReportDeliveryProto.getDescriptor();
     com.google.ads.admanager.v1.ReportValueProto.getDescriptor();
+    com.google.ads.admanager.v1.ReportVisibilityEnumProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

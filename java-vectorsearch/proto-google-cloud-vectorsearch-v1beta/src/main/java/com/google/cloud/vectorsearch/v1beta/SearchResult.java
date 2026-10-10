@@ -68,6 +68,4146 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
             com.google.cloud.vectorsearch.v1beta.SearchResult.Builder.class);
   }
 
+  public interface SearchResultMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance>
+        getSearchDistancesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+        getSearchDistances(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getSearchDistancesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .SearchDistanceOrBuilder>
+        getSearchDistancesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistanceOrBuilder
+        getSearchDistancesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The RRF combination signals for this data object. Only set
+     * when the request combines results using RRF.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rrfRankerResult field is set.
+     */
+    boolean hasRrfRankerResult();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The RRF combination signals for this data object. Only set
+     * when the request combines results using RRF.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The rrfRankerResult.
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+        getRrfRankerResult();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The RRF combination signals for this data object. Only set
+     * when the request combines results using RRF.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResultOrBuilder
+        getRrfRankerResultOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Vertex re-ranking signals for this data object. Only set
+     * when the request re-ranks results using the Vertex ranker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the vertexRankerResult field is set.
+     */
+    boolean hasVertexRankerResult();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Vertex re-ranking signals for this data object. Only set
+     * when the request re-ranks results using the Vertex ranker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The vertexRankerResult.
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+        getVertexRankerResult();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Vertex re-ranking signals for this data object. Only set
+     * when the request re-ranks results using the Vertex ranker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .VertexRankerResultOrBuilder
+        getVertexRankerResultOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Quality signals describing how this result was retrieved, combined and
+   * re-ranked. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata}
+   */
+  public static final class SearchResultMetadata extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata)
+      SearchResultMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SearchResultMetadata");
+    }
+
+    // Use SearchResultMetadata.newBuilder() to construct.
+    private SearchResultMetadata(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SearchResultMetadata() {
+      searchDistances_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.class,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder.class);
+    }
+
+    public interface SearchDistanceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The index of the search in the
+       * [BatchSearchDataObjectsRequest.searches][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.searches]
+       * this distance corresponds to.
+       * </pre>
+       *
+       * <code>int32 search_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The searchIndex.
+       */
+      int getSearchIndex();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The order of this data object in the search's result list,
+       * starting at 1 for the top (best-ranked) result.
+       * </pre>
+       *
+       * <code>int32 rank = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rank.
+       */
+      int getRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The similarity distance of this data object for the
+       * search.
+       * </pre>
+       *
+       * <code>double distance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The distance.
+       */
+      double getDistance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The rank and distance of this data object within a single search of the
+     * batch.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance}
+     */
+    public static final class SearchDistance extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance)
+        SearchDistanceOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "SearchDistance");
+      }
+
+      // Use SearchDistance.newBuilder() to construct.
+      private SearchDistance(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SearchDistance() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_SearchDistance_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_SearchDistance_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .SearchDistance.class,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .SearchDistance.Builder.class);
+      }
+
+      public static final int SEARCH_INDEX_FIELD_NUMBER = 1;
+      private int searchIndex_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The index of the search in the
+       * [BatchSearchDataObjectsRequest.searches][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.searches]
+       * this distance corresponds to.
+       * </pre>
+       *
+       * <code>int32 search_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The searchIndex.
+       */
+      @java.lang.Override
+      public int getSearchIndex() {
+        return searchIndex_;
+      }
+
+      public static final int RANK_FIELD_NUMBER = 2;
+      private int rank_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The order of this data object in the search's result list,
+       * starting at 1 for the top (best-ranked) result.
+       * </pre>
+       *
+       * <code>int32 rank = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rank.
+       */
+      @java.lang.Override
+      public int getRank() {
+        return rank_;
+      }
+
+      public static final int DISTANCE_FIELD_NUMBER = 3;
+      private double distance_ = 0D;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The similarity distance of this data object for the
+       * search.
+       * </pre>
+       *
+       * <code>double distance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The distance.
+       */
+      @java.lang.Override
+      public double getDistance() {
+        return distance_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (searchIndex_ != 0) {
+          output.writeInt32(1, searchIndex_);
+        }
+        if (rank_ != 0) {
+          output.writeInt32(2, rank_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
+          output.writeDouble(3, distance_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (searchIndex_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, searchIndex_);
+        }
+        if (rank_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rank_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(distance_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, distance_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .SearchDistance)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+            other =
+                (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                        .SearchDistance)
+                    obj;
+
+        if (getSearchIndex() != other.getSearchIndex()) return false;
+        if (getRank() != other.getRank()) return false;
+        if (java.lang.Double.doubleToLongBits(getDistance())
+            != java.lang.Double.doubleToLongBits(other.getDistance())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SEARCH_INDEX_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchIndex();
+        hash = (37 * hash) + RANK_FIELD_NUMBER;
+        hash = (53 * hash) + getRank();
+        hash = (37 * hash) + DISTANCE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getDistance()));
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The rank and distance of this data object within a single search of the
+       * batch.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance)
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistanceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_SearchDistance_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_SearchDistance_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistance.class,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistance.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          searchIndex_ = 0;
+          rank_ = 0;
+          distance_ = 0D;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_SearchDistance_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+            getDefaultInstanceForType() {
+          return com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+            build() {
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+            buildPartial() {
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              result =
+                  new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistance(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.searchIndex_ = searchIndex_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.rank_ = rank_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.distance_ = distance_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .SearchDistance) {
+            return mergeFrom(
+                (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                        .SearchDistance)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                other) {
+          if (other
+              == com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .SearchDistance.getDefaultInstance()) return this;
+          if (other.getSearchIndex() != 0) {
+            setSearchIndex(other.getSearchIndex());
+          }
+          if (other.getRank() != 0) {
+            setRank(other.getRank());
+          }
+          if (java.lang.Double.doubleToRawLongBits(other.getDistance()) != 0) {
+            setDistance(other.getDistance());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    searchIndex_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    rank_ = input.readInt32();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 25:
+                  {
+                    distance_ = input.readDouble();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 25
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int searchIndex_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The index of the search in the
+         * [BatchSearchDataObjectsRequest.searches][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.searches]
+         * this distance corresponds to.
+         * </pre>
+         *
+         * <code>int32 search_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The searchIndex.
+         */
+        @java.lang.Override
+        public int getSearchIndex() {
+          return searchIndex_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The index of the search in the
+         * [BatchSearchDataObjectsRequest.searches][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.searches]
+         * this distance corresponds to.
+         * </pre>
+         *
+         * <code>int32 search_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The searchIndex to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSearchIndex(int value) {
+
+          searchIndex_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The index of the search in the
+         * [BatchSearchDataObjectsRequest.searches][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.searches]
+         * this distance corresponds to.
+         * </pre>
+         *
+         * <code>int32 search_index = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSearchIndex() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          searchIndex_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int rank_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The order of this data object in the search's result list,
+         * starting at 1 for the top (best-ranked) result.
+         * </pre>
+         *
+         * <code>int32 rank = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The rank.
+         */
+        @java.lang.Override
+        public int getRank() {
+          return rank_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The order of this data object in the search's result list,
+         * starting at 1 for the top (best-ranked) result.
+         * </pre>
+         *
+         * <code>int32 rank = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The rank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRank(int value) {
+
+          rank_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The order of this data object in the search's result list,
+         * starting at 1 for the top (best-ranked) result.
+         * </pre>
+         *
+         * <code>int32 rank = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRank() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          rank_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private double distance_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The similarity distance of this data object for the
+         * search.
+         * </pre>
+         *
+         * <code>double distance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The distance.
+         */
+        @java.lang.Override
+        public double getDistance() {
+          return distance_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The similarity distance of this data object for the
+         * search.
+         * </pre>
+         *
+         * <code>double distance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The distance to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDistance(double value) {
+
+          distance_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The similarity distance of this data object for the
+         * search.
+         * </pre>
+         *
+         * <code>double distance = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDistance() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          distance_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance)
+      private static final com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .SearchDistance();
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistance
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SearchDistance> PARSER =
+          new com.google.protobuf.AbstractParser<SearchDistance>() {
+            @java.lang.Override
+            public SearchDistance parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SearchDistance> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SearchDistance> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface RrfRankerResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rank of this data object after RRF combination.
+       * </pre>
+       *
+       * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rank.
+       */
+      int getRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The score of this data object after RRF combination.
+       * </pre>
+       *
+       * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The score.
+       */
+      double getScore();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The rank and score assigned by the Reciprocal Rank Fusion ranker when
+     * combining the results of the batch searches.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult}
+     */
+    public static final class RrfRankerResult extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult)
+        RrfRankerResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "RrfRankerResult");
+      }
+
+      // Use RrfRankerResult.newBuilder() to construct.
+      private RrfRankerResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RrfRankerResult() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_RrfRankerResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_RrfRankerResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .RrfRankerResult.class,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .RrfRankerResult.Builder.class);
+      }
+
+      public static final int RANK_FIELD_NUMBER = 1;
+      private int rank_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rank of this data object after RRF combination.
+       * </pre>
+       *
+       * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rank.
+       */
+      @java.lang.Override
+      public int getRank() {
+        return rank_;
+      }
+
+      public static final int SCORE_FIELD_NUMBER = 2;
+      private double score_ = 0D;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The score of this data object after RRF combination.
+       * </pre>
+       *
+       * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (rank_ != 0) {
+          output.writeInt32(1, rank_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+          output.writeDouble(2, score_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (rank_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, rank_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, score_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .RrfRankerResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+            other =
+                (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                        .RrfRankerResult)
+                    obj;
+
+        if (getRank() != other.getRank()) return false;
+        if (java.lang.Double.doubleToLongBits(getScore())
+            != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RANK_FIELD_NUMBER;
+        hash = (53 * hash) + getRank();
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getScore()));
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The rank and score assigned by the Reciprocal Rank Fusion ranker when
+       * combining the results of the batch searches.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult)
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_RrfRankerResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_RrfRankerResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResult.class,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResult.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          rank_ = 0;
+          score_ = 0D;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_RrfRankerResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .RrfRankerResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .RrfRankerResult
+            build() {
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .RrfRankerResult
+            buildPartial() {
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              result =
+                  new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResult(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.rank_ = rank_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.score_ = score_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResult) {
+            return mergeFrom(
+                (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                        .RrfRankerResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+                other) {
+          if (other
+              == com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResult.getDefaultInstance()) return this;
+          if (other.getRank() != 0) {
+            setRank(other.getRank());
+          }
+          if (java.lang.Double.doubleToRawLongBits(other.getScore()) != 0) {
+            setScore(other.getScore());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    rank_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 17:
+                  {
+                    score_ = input.readDouble();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 17
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int rank_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The rank of this data object after RRF combination.
+         * </pre>
+         *
+         * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The rank.
+         */
+        @java.lang.Override
+        public int getRank() {
+          return rank_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The rank of this data object after RRF combination.
+         * </pre>
+         *
+         * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The rank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRank(int value) {
+
+          rank_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The rank of this data object after RRF combination.
+         * </pre>
+         *
+         * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRank() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          rank_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private double score_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The score of this data object after RRF combination.
+         * </pre>
+         *
+         * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The score.
+         */
+        @java.lang.Override
+        public double getScore() {
+          return score_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The score of this data object after RRF combination.
+         * </pre>
+         *
+         * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The score to set.
+         * @return This builder for chaining.
+         */
+        public Builder setScore(double value) {
+
+          score_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The score of this data object after RRF combination.
+         * </pre>
+         *
+         * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearScore() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          score_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult)
+      private static final com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .RrfRankerResult();
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RrfRankerResult> PARSER =
+          new com.google.protobuf.AbstractParser<RrfRankerResult>() {
+            @java.lang.Override
+            public RrfRankerResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RrfRankerResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RrfRankerResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface VertexRankerResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rank of this data object after Vertex re-ranking.
+       * </pre>
+       *
+       * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rank.
+       */
+      int getRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The score of this data object after Vertex re-ranking.
+       * </pre>
+       *
+       * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The score.
+       */
+      double getScore();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The rank and score assigned by the Vertex re-ranker.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult}
+     */
+    public static final class VertexRankerResult extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult)
+        VertexRankerResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "VertexRankerResult");
+      }
+
+      // Use VertexRankerResult.newBuilder() to construct.
+      private VertexRankerResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private VertexRankerResult() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_VertexRankerResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_VertexRankerResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .VertexRankerResult.class,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .VertexRankerResult.Builder.class);
+      }
+
+      public static final int RANK_FIELD_NUMBER = 1;
+      private int rank_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The rank of this data object after Vertex re-ranking.
+       * </pre>
+       *
+       * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The rank.
+       */
+      @java.lang.Override
+      public int getRank() {
+        return rank_;
+      }
+
+      public static final int SCORE_FIELD_NUMBER = 2;
+      private double score_ = 0D;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The score of this data object after Vertex re-ranking.
+       * </pre>
+       *
+       * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public double getScore() {
+        return score_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (rank_ != 0) {
+          output.writeInt32(1, rank_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+          output.writeDouble(2, score_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (rank_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, rank_);
+        }
+        if (java.lang.Double.doubleToRawLongBits(score_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, score_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .VertexRankerResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+            other =
+                (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                        .VertexRankerResult)
+                    obj;
+
+        if (getRank() != other.getRank()) return false;
+        if (java.lang.Double.doubleToLongBits(getScore())
+            != java.lang.Double.doubleToLongBits(other.getScore())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + RANK_FIELD_NUMBER;
+        hash = (53 * hash) + getRank();
+        hash = (37 * hash) + SCORE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getScore()));
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The rank and score assigned by the Vertex re-ranker.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult)
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_VertexRankerResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_VertexRankerResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResult.class,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResult.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          rank_ = 0;
+          score_ = 0D;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_VertexRankerResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .VertexRankerResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .VertexRankerResult
+            build() {
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .VertexRankerResult
+            buildPartial() {
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+              result =
+                  new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResult(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .VertexRankerResult
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.rank_ = rank_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.score_ = score_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult) {
+            return mergeFrom(
+                (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                        .VertexRankerResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .VertexRankerResult
+                other) {
+          if (other
+              == com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult.getDefaultInstance()) return this;
+          if (other.getRank() != 0) {
+            setRank(other.getRank());
+          }
+          if (java.lang.Double.doubleToRawLongBits(other.getScore()) != 0) {
+            setScore(other.getScore());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    rank_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 17:
+                  {
+                    score_ = input.readDouble();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 17
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int rank_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The rank of this data object after Vertex re-ranking.
+         * </pre>
+         *
+         * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The rank.
+         */
+        @java.lang.Override
+        public int getRank() {
+          return rank_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The rank of this data object after Vertex re-ranking.
+         * </pre>
+         *
+         * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The rank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRank(int value) {
+
+          rank_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The rank of this data object after Vertex re-ranking.
+         * </pre>
+         *
+         * <code>int32 rank = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRank() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          rank_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private double score_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The score of this data object after Vertex re-ranking.
+         * </pre>
+         *
+         * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The score.
+         */
+        @java.lang.Override
+        public double getScore() {
+          return score_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The score of this data object after Vertex re-ranking.
+         * </pre>
+         *
+         * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The score to set.
+         * @return This builder for chaining.
+         */
+        public Builder setScore(double value) {
+
+          score_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The score of this data object after Vertex re-ranking.
+         * </pre>
+         *
+         * <code>double score = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearScore() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          score_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult)
+      private static final com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .VertexRankerResult();
+      }
+
+      public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<VertexRankerResult> PARSER =
+          new com.google.protobuf.AbstractParser<VertexRankerResult>() {
+            @java.lang.Override
+            public VertexRankerResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<VertexRankerResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<VertexRankerResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int SEARCH_DISTANCES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance>
+        searchDistances_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance>
+        getSearchDistancesList() {
+      return searchDistances_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .SearchDistanceOrBuilder>
+        getSearchDistancesOrBuilderList() {
+      return searchDistances_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSearchDistancesCount() {
+      return searchDistances_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+        getSearchDistances(int index) {
+      return searchDistances_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The per-search distances for this data object, one entry per
+     * batch search that returned it.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .SearchDistanceOrBuilder
+        getSearchDistancesOrBuilder(int index) {
+      return searchDistances_.get(index);
+    }
+
+    public static final int RRF_RANKER_RESULT_FIELD_NUMBER = 2;
+    private com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+        rrfRankerResult_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The RRF combination signals for this data object. Only set
+     * when the request combines results using RRF.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rrfRankerResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasRrfRankerResult() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The RRF combination signals for this data object. Only set
+     * when the request combines results using RRF.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The rrfRankerResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+        getRrfRankerResult() {
+      return rrfRankerResult_ == null
+          ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              .getDefaultInstance()
+          : rrfRankerResult_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The RRF combination signals for this data object. Only set
+     * when the request combines results using RRF.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .RrfRankerResultOrBuilder
+        getRrfRankerResultOrBuilder() {
+      return rrfRankerResult_ == null
+          ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              .getDefaultInstance()
+          : rrfRankerResult_;
+    }
+
+    public static final int VERTEX_RANKER_RESULT_FIELD_NUMBER = 3;
+    private com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .VertexRankerResult
+        vertexRankerResult_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Vertex re-ranking signals for this data object. Only set
+     * when the request re-ranks results using the Vertex ranker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the vertexRankerResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasVertexRankerResult() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Vertex re-ranking signals for this data object. Only set
+     * when the request re-ranks results using the Vertex ranker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The vertexRankerResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+        getVertexRankerResult() {
+      return vertexRankerResult_ == null
+          ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult.getDefaultInstance()
+          : vertexRankerResult_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The Vertex re-ranking signals for this data object. Only set
+     * when the request re-ranks results using the Vertex ranker.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .VertexRankerResultOrBuilder
+        getVertexRankerResultOrBuilder() {
+      return vertexRankerResult_ == null
+          ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult.getDefaultInstance()
+          : vertexRankerResult_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < searchDistances_.size(); i++) {
+        output.writeMessage(1, searchDistances_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getRrfRankerResult());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(3, getVertexRankerResult());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < searchDistances_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, searchDistances_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRrfRankerResult());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, getVertexRankerResult());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata other =
+          (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata) obj;
+
+      if (!getSearchDistancesList().equals(other.getSearchDistancesList())) return false;
+      if (hasRrfRankerResult() != other.hasRrfRankerResult()) return false;
+      if (hasRrfRankerResult()) {
+        if (!getRrfRankerResult().equals(other.getRrfRankerResult())) return false;
+      }
+      if (hasVertexRankerResult() != other.hasVertexRankerResult()) return false;
+      if (hasVertexRankerResult()) {
+        if (!getVertexRankerResult().equals(other.getVertexRankerResult())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSearchDistancesCount() > 0) {
+        hash = (37 * hash) + SEARCH_DISTANCES_FIELD_NUMBER;
+        hash = (53 * hash) + getSearchDistancesList().hashCode();
+      }
+      if (hasRrfRankerResult()) {
+        hash = (37 * hash) + RRF_RANKER_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getRrfRankerResult().hashCode();
+      }
+      if (hasVertexRankerResult()) {
+        hash = (37 * hash) + VERTEX_RANKER_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getVertexRankerResult().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Quality signals describing how this result was retrieved, combined and
+     * re-ranked. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata)
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.class,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetSearchDistancesFieldBuilder();
+          internalGetRrfRankerResultFieldBuilder();
+          internalGetVertexRankerResultFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (searchDistancesBuilder_ == null) {
+          searchDistances_ = java.util.Collections.emptyList();
+        } else {
+          searchDistances_ = null;
+          searchDistancesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        rrfRankerResult_ = null;
+        if (rrfRankerResultBuilder_ != null) {
+          rrfRankerResultBuilder_.dispose();
+          rrfRankerResultBuilder_ = null;
+        }
+        vertexRankerResult_ = null;
+        if (vertexRankerResultBuilder_ != null) {
+          vertexRankerResultBuilder_.dispose();
+          vertexRankerResultBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vectorsearch.v1beta.DataObjectSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1beta_SearchResult_SearchResultMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+          getDefaultInstanceForType() {
+        return com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata build() {
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata buildPartial() {
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata result =
+            new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata result) {
+        if (searchDistancesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            searchDistances_ = java.util.Collections.unmodifiableList(searchDistances_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.searchDistances_ = searchDistances_;
+        } else {
+          result.searchDistances_ = searchDistancesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rrfRankerResult_ =
+              rrfRankerResultBuilder_ == null ? rrfRankerResult_ : rrfRankerResultBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.vertexRankerResult_ =
+              vertexRankerResultBuilder_ == null
+                  ? vertexRankerResult_
+                  : vertexRankerResultBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata) {
+          return mergeFrom(
+              (com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata other) {
+        if (other
+            == com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .getDefaultInstance()) return this;
+        if (searchDistancesBuilder_ == null) {
+          if (!other.searchDistances_.isEmpty()) {
+            if (searchDistances_.isEmpty()) {
+              searchDistances_ = other.searchDistances_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSearchDistancesIsMutable();
+              searchDistances_.addAll(other.searchDistances_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.searchDistances_.isEmpty()) {
+            if (searchDistancesBuilder_.isEmpty()) {
+              searchDistancesBuilder_.dispose();
+              searchDistancesBuilder_ = null;
+              searchDistances_ = other.searchDistances_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              searchDistancesBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetSearchDistancesFieldBuilder()
+                      : null;
+            } else {
+              searchDistancesBuilder_.addAllMessages(other.searchDistances_);
+            }
+          }
+        }
+        if (other.hasRrfRankerResult()) {
+          mergeRrfRankerResult(other.getRrfRankerResult());
+        }
+        if (other.hasVertexRankerResult()) {
+          mergeVertexRankerResult(other.getVertexRankerResult());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                          .SearchDistance
+                      m =
+                          input.readMessage(
+                              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                                  .SearchDistance.parser(),
+                              extensionRegistry);
+                  if (searchDistancesBuilder_ == null) {
+                    ensureSearchDistancesIsMutable();
+                    searchDistances_.add(m);
+                  } else {
+                    searchDistancesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetRrfRankerResultFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetVertexRankerResultFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance>
+          searchDistances_ = java.util.Collections.emptyList();
+
+      private void ensureSearchDistancesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          searchDistances_ =
+              new java.util.ArrayList<
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistance>(searchDistances_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                  .Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .SearchDistanceOrBuilder>
+          searchDistancesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance>
+          getSearchDistancesList() {
+        if (searchDistancesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(searchDistances_);
+        } else {
+          return searchDistancesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getSearchDistancesCount() {
+        if (searchDistancesBuilder_ == null) {
+          return searchDistances_.size();
+        } else {
+          return searchDistancesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+          getSearchDistances(int index) {
+        if (searchDistancesBuilder_ == null) {
+          return searchDistances_.get(index);
+        } else {
+          return searchDistancesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSearchDistances(
+          int index,
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              value) {
+        if (searchDistancesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchDistancesIsMutable();
+          searchDistances_.set(index, value);
+          onChanged();
+        } else {
+          searchDistancesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSearchDistances(
+          int index,
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                  .Builder
+              builderForValue) {
+        if (searchDistancesBuilder_ == null) {
+          ensureSearchDistancesIsMutable();
+          searchDistances_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchDistancesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSearchDistances(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              value) {
+        if (searchDistancesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchDistancesIsMutable();
+          searchDistances_.add(value);
+          onChanged();
+        } else {
+          searchDistancesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSearchDistances(
+          int index,
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              value) {
+        if (searchDistancesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSearchDistancesIsMutable();
+          searchDistances_.add(index, value);
+          onChanged();
+        } else {
+          searchDistancesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSearchDistances(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                  .Builder
+              builderForValue) {
+        if (searchDistancesBuilder_ == null) {
+          ensureSearchDistancesIsMutable();
+          searchDistances_.add(builderForValue.build());
+          onChanged();
+        } else {
+          searchDistancesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSearchDistances(
+          int index,
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                  .Builder
+              builderForValue) {
+        if (searchDistancesBuilder_ == null) {
+          ensureSearchDistancesIsMutable();
+          searchDistances_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          searchDistancesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllSearchDistances(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                          .SearchDistance>
+              values) {
+        if (searchDistancesBuilder_ == null) {
+          ensureSearchDistancesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, searchDistances_);
+          onChanged();
+        } else {
+          searchDistancesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSearchDistances() {
+        if (searchDistancesBuilder_ == null) {
+          searchDistances_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          searchDistancesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeSearchDistances(int index) {
+        if (searchDistancesBuilder_ == null) {
+          ensureSearchDistancesIsMutable();
+          searchDistances_.remove(index);
+          onChanged();
+        } else {
+          searchDistancesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              .Builder
+          getSearchDistancesBuilder(int index) {
+        return internalGetSearchDistancesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .SearchDistanceOrBuilder
+          getSearchDistancesOrBuilder(int index) {
+        if (searchDistancesBuilder_ == null) {
+          return searchDistances_.get(index);
+        } else {
+          return searchDistancesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistanceOrBuilder>
+          getSearchDistancesOrBuilderList() {
+        if (searchDistancesBuilder_ != null) {
+          return searchDistancesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(searchDistances_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              .Builder
+          addSearchDistancesBuilder() {
+        return internalGetSearchDistancesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .SearchDistance.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+              .Builder
+          addSearchDistancesBuilder(int index) {
+        return internalGetSearchDistancesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .SearchDistance.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The per-search distances for this data object, one entry per
+       * batch search that returned it.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance search_distances = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                  .Builder>
+          getSearchDistancesBuilderList() {
+        return internalGetSearchDistancesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.SearchDistance
+                  .Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .SearchDistanceOrBuilder>
+          internalGetSearchDistancesFieldBuilder() {
+        if (searchDistancesBuilder_ == null) {
+          searchDistancesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistance,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistance.Builder,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .SearchDistanceOrBuilder>(
+                  searchDistances_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          searchDistances_ = null;
+        }
+        return searchDistancesBuilder_;
+      }
+
+      private com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+          rrfRankerResult_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResult,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+                  .Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResultOrBuilder>
+          rrfRankerResultBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the rrfRankerResult field is set.
+       */
+      public boolean hasRrfRankerResult() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The rrfRankerResult.
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+          getRrfRankerResult() {
+        if (rrfRankerResultBuilder_ == null) {
+          return rrfRankerResult_ == null
+              ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResult.getDefaultInstance()
+              : rrfRankerResult_;
+        } else {
+          return rrfRankerResultBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRrfRankerResult(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              value) {
+        if (rrfRankerResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rrfRankerResult_ = value;
+        } else {
+          rrfRankerResultBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRrfRankerResult(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+                  .Builder
+              builderForValue) {
+        if (rrfRankerResultBuilder_ == null) {
+          rrfRankerResult_ = builderForValue.build();
+        } else {
+          rrfRankerResultBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeRrfRankerResult(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              value) {
+        if (rrfRankerResultBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && rrfRankerResult_ != null
+              && rrfRankerResult_
+                  != com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResult.getDefaultInstance()) {
+            getRrfRankerResultBuilder().mergeFrom(value);
+          } else {
+            rrfRankerResult_ = value;
+          }
+        } else {
+          rrfRankerResultBuilder_.mergeFrom(value);
+        }
+        if (rrfRankerResult_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearRrfRankerResult() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rrfRankerResult_ = null;
+        if (rrfRankerResultBuilder_ != null) {
+          rrfRankerResultBuilder_.dispose();
+          rrfRankerResultBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+              .Builder
+          getRrfRankerResultBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetRrfRankerResultFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .RrfRankerResultOrBuilder
+          getRrfRankerResultOrBuilder() {
+        if (rrfRankerResultBuilder_ != null) {
+          return rrfRankerResultBuilder_.getMessageOrBuilder();
+        } else {
+          return rrfRankerResult_ == null
+              ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResult.getDefaultInstance()
+              : rrfRankerResult_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The RRF combination signals for this data object. Only set
+       * when the request combines results using RRF.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult rrf_ranker_result = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResult,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.RrfRankerResult
+                  .Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .RrfRankerResultOrBuilder>
+          internalGetRrfRankerResultFieldBuilder() {
+        if (rrfRankerResultBuilder_ == null) {
+          rrfRankerResultBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResult,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResult.Builder,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .RrfRankerResultOrBuilder>(
+                  getRrfRankerResult(), getParentForChildren(), isClean());
+          rrfRankerResult_ = null;
+        }
+        return rrfRankerResultBuilder_;
+      }
+
+      private com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          vertexRankerResult_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult.Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResultOrBuilder>
+          vertexRankerResultBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the vertexRankerResult field is set.
+       */
+      public boolean hasVertexRankerResult() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The vertexRankerResult.
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult
+          getVertexRankerResult() {
+        if (vertexRankerResultBuilder_ == null) {
+          return vertexRankerResult_ == null
+              ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult.getDefaultInstance()
+              : vertexRankerResult_;
+        } else {
+          return vertexRankerResultBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setVertexRankerResult(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+              value) {
+        if (vertexRankerResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vertexRankerResult_ = value;
+        } else {
+          vertexRankerResultBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setVertexRankerResult(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+                  .Builder
+              builderForValue) {
+        if (vertexRankerResultBuilder_ == null) {
+          vertexRankerResult_ = builderForValue.build();
+        } else {
+          vertexRankerResultBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeVertexRankerResult(
+          com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult
+              value) {
+        if (vertexRankerResultBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && vertexRankerResult_ != null
+              && vertexRankerResult_
+                  != com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResult.getDefaultInstance()) {
+            getVertexRankerResultBuilder().mergeFrom(value);
+          } else {
+            vertexRankerResult_ = value;
+          }
+        } else {
+          vertexRankerResultBuilder_.mergeFrom(value);
+        }
+        if (vertexRankerResult_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearVertexRankerResult() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        vertexRankerResult_ = null;
+        if (vertexRankerResultBuilder_ != null) {
+          vertexRankerResultBuilder_.dispose();
+          vertexRankerResultBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResult.Builder
+          getVertexRankerResultBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return internalGetVertexRankerResultFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+              .VertexRankerResultOrBuilder
+          getVertexRankerResultOrBuilder() {
+        if (vertexRankerResultBuilder_ != null) {
+          return vertexRankerResultBuilder_.getMessageOrBuilder();
+        } else {
+          return vertexRankerResult_ == null
+              ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult.getDefaultInstance()
+              : vertexRankerResult_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The Vertex re-ranking signals for this data object. Only set
+       * when the request re-ranks results using the Vertex ranker.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.VertexRankerResult vertex_ranker_result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResult.Builder,
+              com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                  .VertexRankerResultOrBuilder>
+          internalGetVertexRankerResultFieldBuilder() {
+        if (vertexRankerResultBuilder_ == null) {
+          vertexRankerResultBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResult,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResult.Builder,
+                  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                      .VertexRankerResultOrBuilder>(
+                  getVertexRankerResult(), getParentForChildren(), isClean());
+          vertexRankerResult_ = null;
+        }
+        return vertexRankerResultBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata)
+    private static final com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata();
+    }
+
+    public static com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchResultMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<SearchResultMetadata>() {
+          @java.lang.Override
+          public SearchResultMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SearchResultMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchResultMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int DATA_OBJECT_FIELD_NUMBER = 1;
   private com.google.cloud.vectorsearch.v1beta.DataObject dataObject_;
@@ -165,6 +4305,76 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
     return distance_;
   }
 
+  public static final int SEARCH_RESULT_METADATA_FIELD_NUMBER = 3;
+  private com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+      searchResultMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Quality signals for this result. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the searchResultMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchResultMetadata() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Quality signals for this result. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The searchResultMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+      getSearchResultMetadata() {
+    return searchResultMetadata_ == null
+        ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .getDefaultInstance()
+        : searchResultMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Quality signals for this result. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder
+      getSearchResultMetadataOrBuilder() {
+    return searchResultMetadata_ == null
+        ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+            .getDefaultInstance()
+        : searchResultMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -185,6 +4395,9 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(2, distance_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getSearchResultMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +4412,10 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, distance_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSearchResultMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -225,6 +4442,10 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
       if (java.lang.Double.doubleToLongBits(getDistance())
           != java.lang.Double.doubleToLongBits(other.getDistance())) return false;
     }
+    if (hasSearchResultMetadata() != other.hasSearchResultMetadata()) return false;
+    if (hasSearchResultMetadata()) {
+      if (!getSearchResultMetadata().equals(other.getSearchResultMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -246,6 +4467,10 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getDistance()));
+    }
+    if (hasSearchResultMetadata()) {
+      hash = (37 * hash) + SEARCH_RESULT_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchResultMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -389,6 +4614,7 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetDataObjectFieldBuilder();
+        internalGetSearchResultMetadataFieldBuilder();
       }
     }
 
@@ -402,6 +4628,11 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
         dataObjectBuilder_ = null;
       }
       distance_ = 0D;
+      searchResultMetadata_ = null;
+      if (searchResultMetadataBuilder_ != null) {
+        searchResultMetadataBuilder_.dispose();
+        searchResultMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -447,6 +4678,13 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
         result.distance_ = distance_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchResultMetadata_ =
+            searchResultMetadataBuilder_ == null
+                ? searchResultMetadata_
+                : searchResultMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -468,6 +4706,9 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDistance()) {
         setDistance(other.getDistance());
+      }
+      if (other.hasSearchResultMetadata()) {
+        mergeSearchResultMetadata(other.getSearchResultMetadata());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -508,6 +4749,13 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 17
+            case 26:
+              {
+                input.readMessage(
+                    internalGetSearchResultMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -815,6 +5063,248 @@ public final class SearchResult extends com.google.protobuf.GeneratedMessage
       distance_ = 0D;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        searchResultMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata,
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder>
+        searchResultMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the searchResultMetadata field is set.
+     */
+    public boolean hasSearchResultMetadata() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The searchResultMetadata.
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+        getSearchResultMetadata() {
+      if (searchResultMetadataBuilder_ == null) {
+        return searchResultMetadata_ == null
+            ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .getDefaultInstance()
+            : searchResultMetadata_;
+      } else {
+        return searchResultMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSearchResultMetadata(
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata value) {
+      if (searchResultMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchResultMetadata_ = value;
+      } else {
+        searchResultMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSearchResultMetadata(
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder
+            builderForValue) {
+      if (searchResultMetadataBuilder_ == null) {
+        searchResultMetadata_ = builderForValue.build();
+      } else {
+        searchResultMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeSearchResultMetadata(
+        com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata value) {
+      if (searchResultMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && searchResultMetadata_ != null
+            && searchResultMetadata_
+                != com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                    .getDefaultInstance()) {
+          getSearchResultMetadataBuilder().mergeFrom(value);
+        } else {
+          searchResultMetadata_ = value;
+        }
+      } else {
+        searchResultMetadataBuilder_.mergeFrom(value);
+      }
+      if (searchResultMetadata_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSearchResultMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      searchResultMetadata_ = null;
+      if (searchResultMetadataBuilder_ != null) {
+        searchResultMetadataBuilder_.dispose();
+        searchResultMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder
+        getSearchResultMetadataBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetSearchResultMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder
+        getSearchResultMetadataOrBuilder() {
+      if (searchResultMetadataBuilder_ != null) {
+        return searchResultMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return searchResultMetadata_ == null
+            ? com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata
+                .getDefaultInstance()
+            : searchResultMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Quality signals for this result. Only populated when
+     * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+     * is `true`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata,
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder,
+            com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder>
+        internalGetSearchResultMetadataFieldBuilder() {
+      if (searchResultMetadataBuilder_ == null) {
+        searchResultMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata.Builder,
+                com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder>(
+                getSearchResultMetadata(), getParentForChildren(), isClean());
+        searchResultMetadata_ = null;
+      }
+      return searchResultMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.SearchResult)

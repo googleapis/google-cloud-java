@@ -210,6 +210,30 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
     return ((DataAgentServiceStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to setAgentOpsObservability. */
+  public UnaryCallSettings<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilitySettings() {
+    return ((DataAgentServiceStubSettings) getStubSettings()).setAgentOpsObservabilitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to setAgentOpsObservability. */
+  public OperationCallSettings<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationSettings() {
+    return ((DataAgentServiceStubSettings) getStubSettings())
+        .setAgentOpsObservabilityOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to retrieveAgentOpsObservability. */
+  public UnaryCallSettings<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilitySettings() {
+    return ((DataAgentServiceStubSettings) getStubSettings())
+        .retrieveAgentOpsObservabilitySettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -412,6 +436,28 @@ public class DataAgentServiceSettings extends ClientSettings<DataAgentServiceSet
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setAgentOpsObservability. */
+    public UnaryCallSettings.Builder<SetAgentOpsObservabilityRequest, Operation>
+        setAgentOpsObservabilitySettings() {
+      return getStubSettingsBuilder().setAgentOpsObservabilitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setAgentOpsObservability. */
+    public OperationCallSettings.Builder<
+            SetAgentOpsObservabilityRequest,
+            SetAgentOpsObservabilityResponse,
+            SetAgentOpsObservabilityMetadata>
+        setAgentOpsObservabilityOperationSettings() {
+      return getStubSettingsBuilder().setAgentOpsObservabilityOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveAgentOpsObservability. */
+    public UnaryCallSettings.Builder<
+            RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+        retrieveAgentOpsObservabilitySettings() {
+      return getStubSettingsBuilder().retrieveAgentOpsObservabilitySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

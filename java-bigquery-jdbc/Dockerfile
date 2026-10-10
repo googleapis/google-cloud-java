@@ -1,4 +1,4 @@
-FROM gcr.io/cloud-devrel-public-resources/java11 AS base
+FROM gcr.io/cloud-devrel-public-resources/java17 AS base
 ARG BRANCH=main
 ENV JDBC_DOCKER_ENV=true
 

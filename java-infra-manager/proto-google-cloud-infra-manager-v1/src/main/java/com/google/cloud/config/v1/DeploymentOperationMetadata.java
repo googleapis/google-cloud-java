@@ -676,6 +676,25 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     }
   }
 
+  public static final int APPLY_RESULTS_AVAILABLE_FIELD_NUMBER = 5;
+  private boolean applyResultsAvailable_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicating if early apply results are available.
+   * </pre>
+   *
+   * <code>bool apply_results_available = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The applyResultsAvailable.
+   */
+  @java.lang.Override
+  public boolean getApplyResultsAvailable() {
+    return applyResultsAvailable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -705,6 +724,9 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(logs_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, logs_);
     }
+    if (applyResultsAvailable_ != false) {
+      output.writeBool(5, applyResultsAvailable_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -729,6 +751,9 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(logs_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, logs_);
     }
+    if (applyResultsAvailable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, applyResultsAvailable_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -752,6 +777,7 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     }
     if (!getBuild().equals(other.getBuild())) return false;
     if (!getLogs().equals(other.getLogs())) return false;
+    if (getApplyResultsAvailable() != other.getApplyResultsAvailable()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -773,6 +799,8 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
     hash = (53 * hash) + getBuild().hashCode();
     hash = (37 * hash) + LOGS_FIELD_NUMBER;
     hash = (53 * hash) + getLogs().hashCode();
+    hash = (37 * hash) + APPLY_RESULTS_AVAILABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getApplyResultsAvailable());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -931,6 +959,7 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       }
       build_ = "";
       logs_ = "";
+      applyResultsAvailable_ = false;
       return this;
     }
 
@@ -982,6 +1011,9 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.logs_ = logs_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.applyResultsAvailable_ = applyResultsAvailable_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1013,6 +1045,9 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
         logs_ = other.logs_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getApplyResultsAvailable() != false) {
+        setApplyResultsAvailable(other.getApplyResultsAvailable());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1065,6 +1100,12 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                applyResultsAvailable_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1600,6 +1641,62 @@ public final class DeploymentOperationMetadata extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       logs_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean applyResultsAvailable_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicating if early apply results are available.
+     * </pre>
+     *
+     * <code>bool apply_results_available = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The applyResultsAvailable.
+     */
+    @java.lang.Override
+    public boolean getApplyResultsAvailable() {
+      return applyResultsAvailable_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicating if early apply results are available.
+     * </pre>
+     *
+     * <code>bool apply_results_available = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The applyResultsAvailable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplyResultsAvailable(boolean value) {
+
+      applyResultsAvailable_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicating if early apply results are available.
+     * </pre>
+     *
+     * <code>bool apply_results_available = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApplyResultsAvailable() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      applyResultsAvailable_ = false;
       onChanged();
       return this;
     }

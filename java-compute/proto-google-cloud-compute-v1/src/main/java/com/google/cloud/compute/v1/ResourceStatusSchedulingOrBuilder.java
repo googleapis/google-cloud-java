@@ -55,4 +55,85 @@ public interface ResourceStatusSchedulingOrBuilder
    * @return The availabilityDomain.
    */
   int getAvailabilityDomain();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+   * process, in RFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+   *
+   * @return Whether the gracefulShutdownTimestamp field is set.
+   */
+  boolean hasGracefulShutdownTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+   * process, in RFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+   *
+   * @return The gracefulShutdownTimestamp.
+   */
+  java.lang.String getGracefulShutdownTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+   * process, in RFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+   *
+   * @return The bytes for gracefulShutdownTimestamp.
+   */
+  com.google.protobuf.ByteString getGracefulShutdownTimestampBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Time in future when the instance will be terminated inRFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string termination_timestamp = 364180891;</code>
+   *
+   * @return Whether the terminationTimestamp field is set.
+   */
+  boolean hasTerminationTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Time in future when the instance will be terminated inRFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string termination_timestamp = 364180891;</code>
+   *
+   * @return The terminationTimestamp.
+   */
+  java.lang.String getTerminationTimestamp();
+
+  /**
+   *
+   *
+   * <pre>
+   * Time in future when the instance will be terminated inRFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string termination_timestamp = 364180891;</code>
+   *
+   * @return The bytes for terminationTimestamp.
+   */
+  com.google.protobuf.ByteString getTerminationTimestampBytes();
 }
