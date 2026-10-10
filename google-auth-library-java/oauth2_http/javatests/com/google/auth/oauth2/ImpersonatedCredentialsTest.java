@@ -47,12 +47,15 @@ import static org.mockito.Mockito.withSettings;
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.Json;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonGenerator;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebToken.Payload;
+import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner.SigningException;
@@ -60,6 +63,7 @@ import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.util.concurrent.Uninterruptibles;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -70,9 +74,16 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -1260,6 +1271,75 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     AccessToken token = deserializedCredentials.refreshAccessToken();
     assertNotNull(token);
     assertEquals(ACCESS_TOKEN, token.getTokenValue());
+  }
+
+  @Test
+  void refreshAccessToken_concurrentColdStart_scopesAndRefreshesSourceCredentialsOnce()
+      throws Exception {
+    int numThreads = 16;
+    AtomicInteger createScopedCount = new AtomicInteger(0);
+    AtomicInteger sourceRefreshCount = new AtomicInteger(0);
+
+    GoogleCredentials coldSourceCredentials =
+        new GoogleCredentials() {
+          @Override
+          public GoogleCredentials createScoped(Collection<String> scopes) {
+            createScopedCount.incrementAndGet();
+            return new GoogleCredentials() {
+              @Override
+              public AccessToken refreshAccessToken() {
+                sourceRefreshCount.incrementAndGet();
+                Uninterruptibles.sleepUninterruptibly(50, TimeUnit.MILLISECONDS);
+                return new AccessToken(
+                    "source-token", new Date(System.currentTimeMillis() + 3600_000L));
+              }
+            };
+          }
+        };
+
+    ImpersonatedCredentials impersonatedCredentials =
+        (ImpersonatedCredentials)
+            ImpersonatedCredentials.create(
+                    coldSourceCredentials,
+                    IMPERSONATED_CLIENT_EMAIL,
+                    null,
+                    ImmutableList.of(),
+                    VALID_LIFETIME,
+                    () ->
+                        new MockHttpTransport.Builder()
+                            .setLowLevelHttpResponse(
+                                new MockLowLevelHttpResponse()
+                                    .setContentType(Json.MEDIA_TYPE)
+                                    .setContent(
+                                        String.format(
+                                            "{\"accessToken\":\"%s\",\"expireTime\":\"%s\"}",
+                                            ACCESS_TOKEN, getDefaultExpireTime())))
+                            .build())
+                .createScoped(IMMUTABLE_SCOPES_LIST);
+
+    assertEquals(1, createScopedCount.get());
+
+    CyclicBarrier barrier = new CyclicBarrier(numThreads);
+    ExecutorService executor = Executors.newFixedThreadPool(numThreads);
+    try {
+      List<Future<AccessToken>> futures = new ArrayList<>(numThreads);
+      for (int i = 0; i < numThreads; i++) {
+        futures.add(
+            executor.submit(
+                () -> {
+                  barrier.await(5, TimeUnit.SECONDS);
+                  return impersonatedCredentials.refreshAccessToken();
+                }));
+      }
+      for (Future<AccessToken> future : futures) {
+        assertEquals(ACCESS_TOKEN, future.get(10, TimeUnit.SECONDS).getTokenValue());
+      }
+    } finally {
+      executor.shutdownNow();
+    }
+
+    assertEquals(1, createScopedCount.get());
+    assertEquals(1, sourceRefreshCount.get());
   }
 
   public static String getDefaultExpireTime() {
