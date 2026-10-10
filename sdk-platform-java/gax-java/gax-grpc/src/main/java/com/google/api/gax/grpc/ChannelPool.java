@@ -58,7 +58,6 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.concurrent.GuardedBy;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -93,7 +92,7 @@ class ChannelPool extends ManagedChannel {
   private final CertificateRotationTracker rotationTracker;
   private final Object entryWriteLock = new Object();
 
-  @GuardedBy("entryWriteLock")
+  // Guarded by entryWriteLock.
   private boolean isShutdown = false;
 
   private final AtomicLong generation = new AtomicLong(0);
