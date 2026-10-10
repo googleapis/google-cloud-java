@@ -32,6 +32,7 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ErrorDetails;
+import com.google.common.collect.Iterables;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -112,13 +113,34 @@ class HttpJsonErrorParser {
       return Status.getDefaultInstance();
     }
 
+    JsonObject errorObject = errorElement.getAsJsonObject();
+    JsonElement detailsElement = errorObject.get("details");
+    if (detailsElement != null && detailsElement.isJsonArray()) {
+      Iterables.removeIf(detailsElement.getAsJsonArray(), detail -> !isRecognizedDetail(detail));
+    }
+
     Status.Builder statusBuilder = Status.newBuilder();
     try {
-      JSON_PARSER.merge(errorElement.toString(), statusBuilder);
+      JSON_PARSER.merge(errorObject.toString(), statusBuilder);
     } catch (InvalidProtocolBufferException e) {
       return Status.getDefaultInstance();
     }
 
     return statusBuilder.build();
+  }
+
+  private static boolean isRecognizedDetail(JsonElement detail) {
+    if (!detail.isJsonObject()) {
+      return false;
+    }
+    JsonElement typeElement = detail.getAsJsonObject().get("@type");
+    if (typeElement == null || !typeElement.isJsonPrimitive()) {
+      return false;
+    }
+    try {
+      return STANDARD_ERROR_TYPES.getDescriptorForTypeUrl(typeElement.getAsString()) != null;
+    } catch (InvalidProtocolBufferException e) {
+      return false;
+    }
   }
 }

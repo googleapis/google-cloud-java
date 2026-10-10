@@ -148,4 +148,43 @@ class HttpJsonApiExceptionFactoryTest {
     assertThat(apiException.getErrorDetails()).isNotNull();
     assertThat(apiException.getErrorDetails().getErrorInfo()).isNull();
   }
+
+  @Test
+  void testCreate_unrecognizedProtoInDetails_preservesMessageAndOtherDetails() {
+    String payload =
+        "{\n"
+            + "  \"error\": {\n"
+            + "    \"code\": 400,\n"
+            + "    \"message\": \"Request contains an invalid argument.\",\n"
+            + "    \"details\": [\n"
+            + "      {\n"
+            + "        \"@type\": \"type.googleapis.com/custom.UnrecognizedDetail\",\n"
+            + "        \"detailMessage\": \"'123-invalid' is not a valid customer ID.\"\n"
+            + "      },\n"
+            + "      {\n"
+            + "        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n"
+            + "        \"reason\": \"INVALID_CUSTOMER_ID\",\n"
+            + "        \"domain\": \"googleapis.com\"\n"
+            + "      }\n"
+            + "    ]\n"
+            + "  }\n"
+            + "}";
+
+    // HttpResponseException(HttpResponse) populates message with the status line + content.
+    HttpResponseException exception =
+        new HttpResponseException.Builder(400, "Bad Request", new HttpHeaders())
+            .setContent(payload)
+            .setMessage("400 Bad Request\n" + payload)
+            .build();
+
+    HttpJsonApiExceptionFactory factory =
+        new HttpJsonApiExceptionFactory(ImmutableSet.of(Code.UNAVAILABLE));
+    ApiException apiException = factory.create(exception);
+
+    assertThat(apiException.getStatusCode().getCode()).isEqualTo(Code.INVALID_ARGUMENT);
+    assertThat(apiException.getMessage()).contains("Request contains an invalid argument.");
+    assertThat(apiException.getReason()).isEqualTo("INVALID_CUSTOMER_ID");
+    assertThat(((HttpResponseException) apiException.getCause()).getContent())
+        .contains("'123-invalid' is not a valid customer ID.");
+  }
 }
