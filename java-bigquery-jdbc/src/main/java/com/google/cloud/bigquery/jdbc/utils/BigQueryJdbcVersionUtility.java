@@ -80,6 +80,14 @@ public final class BigQueryJdbcVersionUtility {
     return DRIVER_VERSION;
   }
 
+  /**
+   * Returns a sanitized version of the driver version, containing only the major and minor
+   * components (e.g. "1.2" for "1.2.0-SNAPSHOT").
+   */
+  public static String getSanitizedDriverVersion() {
+    return DRIVER_MAJOR_VERSION + "." + DRIVER_MINOR_VERSION;
+  }
+
   public static int getDriverMajorVersion() {
     return DRIVER_MAJOR_VERSION;
   }

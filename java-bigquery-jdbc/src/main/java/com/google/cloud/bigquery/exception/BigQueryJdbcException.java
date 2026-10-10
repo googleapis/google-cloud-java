@@ -28,7 +28,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param message The detail message.
    */
   public BigQueryJdbcException(String message) {
-    super(message);
+    super(message, BigQueryJdbcSqlStates.GENERAL_ERROR);
   }
 
   /**
@@ -37,7 +37,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param ex The InterruptedException to be thrown.
    */
   public BigQueryJdbcException(InterruptedException ex) {
-    super(ex);
+    super(ex.getMessage(), BigQueryJdbcSqlStates.QUERY_CANCELED, ex);
   }
 
   /**
@@ -47,7 +47,10 @@ public class BigQueryJdbcException extends SQLException {
    * @param ex The BigQueryException to be thrown.
    */
   public BigQueryJdbcException(String message, BigQueryException ex) {
-    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+    super(
+        BigQueryJdbcExceptionUtils.formatMessage(message, ex),
+        BigQueryJdbcExceptionUtils.sqlStateForCause(ex),
+        ex);
     this.bigQueryException = ex;
   }
 
@@ -58,7 +61,10 @@ public class BigQueryJdbcException extends SQLException {
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(String message, Throwable cause) {
-    super(BigQueryJdbcExceptionUtils.formatMessage(message, cause), cause);
+    super(
+        BigQueryJdbcExceptionUtils.formatMessage(message, cause),
+        BigQueryJdbcExceptionUtils.sqlStateForCause(cause),
+        cause);
   }
 
   /**
@@ -68,7 +74,10 @@ public class BigQueryJdbcException extends SQLException {
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(Throwable cause) {
-    super(cause);
+    super(
+        cause == null ? null : cause.getMessage(),
+        BigQueryJdbcExceptionUtils.sqlStateForCause(cause),
+        cause);
   }
 
   public BigQueryException getBigQueryException() {

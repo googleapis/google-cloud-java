@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryPropertyUtility;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
@@ -366,5 +367,28 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
     String result2 = BigQueryJdbcUrlUtility.parseUriProperty(url2, "EnableTimestampPicos");
     assertThat(result2).isEqualTo("0");
+  }
+
+  @Test
+  public void testParseDiagnosticTelemetryProperties() {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableDiagnosticTelemetry=0";
+
+    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "EnableDiagnosticTelemetry"))
+        .isEqualTo("0");
+
+    DataSource ds = DataSource.fromUrl(url);
+    assertThat(ds.getEnableDiagnosticTelemetry()).isFalse();
+
+    Properties props = ds.createProperties();
+    assertThat(props.getProperty("EnableDiagnosticTelemetry")).isEqualTo("false");
+
+    String urlWithoutTelemetry =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=MyBigQueryProject";
+    DataSource defaultDs = DataSource.fromUrl(urlWithoutTelemetry);
+    assertThat(defaultDs.getEnableDiagnosticTelemetry())
+        .isEqualTo(TelemetryPropertyUtility.DEFAULT_ENABLE_DIAGNOSTIC_TELEMETRY_VALUE);
   }
 }

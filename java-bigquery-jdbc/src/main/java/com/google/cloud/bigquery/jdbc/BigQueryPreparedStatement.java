@@ -29,6 +29,9 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -428,19 +431,41 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     }
 
     if (useWriteAPI()) {
+      long startTime = System.currentTimeMillis();
+      StatementExecution.Builder writeApiExecutionBuilder =
+          StatementExecution.newBuilder()
+              .setStatementType(
+                  com.google.cloud.bigquery.jdbc.telemetry.v1.StatementType.STATEMENT_TYPE_INSERT)
+              .setQueryApiType(
+                  com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType
+                      .QUERY_API_TYPE_WRITE_API);
       try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
         LOG.info("Using Write API for bulk INSERT operation.");
 
         long rowCount = bulkInsertWithWriteAPI(writeClient);
         int[] insertArray = new int[Math.toIntExact(rowCount)];
         Arrays.fill(insertArray, 1);
+
+        writeApiExecutionBuilder.setStatus(
+            com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
+
         return insertArray;
 
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
-        throw new BigQueryJdbcRuntimeException("Interrupted during Write API batch", e);
+        writeApiExecutionBuilder
+            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw new BigQueryJdbcException(e);
       } catch (DescriptorValidationException | IOException e) {
-        throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
+        writeApiExecutionBuilder
+            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw new BigQueryJdbcRuntimeException("Failed to execute batch with Write API", e);
+      } finally {
+        long durationMs = System.currentTimeMillis() - startTime;
+        TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
+        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
 
     } else {
@@ -472,6 +497,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         throw new BigQueryJdbcRuntimeException("Interrupted during individual INSERT batch", ex);
       } catch (SQLException e) {
         throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
+      } finally {
+        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
     }
   }
@@ -625,6 +652,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (this.resultSchema == null) {
       return null;
     }
+
+    TelemetryManager.recordFeatureUsage(
+        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+
     return BigQueryResultSetMetadata.of(this.resultSchema.getFields(), this);
   }
 
