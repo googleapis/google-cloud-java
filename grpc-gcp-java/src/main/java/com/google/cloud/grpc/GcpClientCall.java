@@ -17,6 +17,7 @@
 package com.google.cloud.grpc;
 
 import com.google.cloud.grpc.proto.AffinityConfig;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
@@ -62,7 +63,18 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   @GuardedBy("this")
   private boolean started;
 
+  @GuardedBy("this")
+  private boolean cancelQueued;
+
+  @GuardedBy("this")
+  private boolean cancelled;
+
   private long startNanos = 0;
+
+  @VisibleForTesting
+  synchronized int queuedCallCountForTest() {
+    return calls.size();
+  }
 
   protected GcpClientCall(
       GcpManagedChannel delegateChannel,
@@ -92,7 +104,22 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
-    checkSendMessage(() -> checkedCancel(message, cause));
+    synchronized (this) {
+      if (cancelQueued || cancelled) {
+        return;
+      }
+      cancelQueued = true;
+      Runnable cancelCall =
+          () -> {
+            cancelled = true;
+            checkedCancel(message, cause);
+          };
+      if (started) {
+        cancelCall.run();
+      } else {
+        calls.add(cancelCall);
+      }
+    }
   }
 
   @Override
@@ -106,7 +133,11 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
    */
   @Override
   public void sendMessage(ReqT message) {
+    boolean send;
     synchronized (this) {
+      if (cancelled) {
+        return;
+      }
       if (!started) {
         startNanos = System.nanoTime();
         // Check if the current channelRef is bound with the key and change it if necessary.
@@ -127,10 +158,10 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         delegateChannelRef.activeStreamsCountIncr();
         Preconditions.checkState(countState.compareAndSet(0, 1));
 
-        // Create the client call and do the previous operations.
-        CallOptions callOptionsWithChannelId =
-            callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, delegateChannelRef.getId());
         try {
+          // Create the client call and do the previous operations.
+          CallOptions callOptionsWithChannelId =
+              callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, delegateChannelRef.getId());
           delegateCall =
               delegateChannelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
           for (Runnable call : calls) {
@@ -138,14 +169,23 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
           }
         } catch (RuntimeException | Error failure) {
           finishCount(Status.fromThrowable(failure), true);
+          cancelled = true;
           throw failure;
         } finally {
           calls.clear();
         }
         started = true;
       }
+      send = !cancelled;
     }
-    delegateCall.sendMessage(message);
+    if (send) {
+      try {
+        delegateCall.sendMessage(message);
+      } catch (RuntimeException | Error failure) {
+        finishCount(Status.fromThrowable(failure), true);
+        throw failure;
+      }
+    }
   }
 
   /** Calls that send exactly one message should not check this method. */
@@ -178,14 +218,17 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     delegateCall.cancel(message, cause);
   }
 
-  private void finishCount(Status status, boolean cancelled) {
+  private void finishCount(Status status, boolean fromClientSide) {
     if (countState.compareAndSet(1, 2)) {
-      delegateChannelRef.activeStreamsCountDecr(startNanos, status, cancelled);
+      delegateChannelRef.activeStreamsCountDecr(startNanos, status, fromClientSide);
     }
   }
 
   private void checkSendMessage(Runnable call) {
     synchronized (this) {
+      if (cancelQueued || cancelled) {
+        return;
+      }
       if (started) {
         call.run();
       } else {
@@ -233,7 +276,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
    * A simple wrapper of ClientCall.
    *
    * <p>It defines the callback function to manage the number of active streams of a ChannelRef
-   * everytime a call is started/closed.
+   * every time a call is created/closed. Stream capacity is reserved in the constructor, before
+   * {@link #start(Listener, Metadata)}, and remains reserved until close or cancel.
    */
   public static class SimpleGcpClientCall<ReqT, RespT> extends ForwardingClientCall<ReqT, RespT> {
 
@@ -242,7 +286,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private final ClientCall<ReqT, RespT> delegateCall;
     @Nullable private final String affinityKey;
     private final boolean unbindOnComplete;
-    private long startNanos;
+    private long startNanos = 0;
 
     // 0 = not counted, 1 = counted, 2 = finished.
     private final AtomicInteger countState = new AtomicInteger();
@@ -318,9 +362,19 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       delegateCall.cancel(message, cause);
     }
 
-    private void finishCount(Status status, boolean cancelled) {
+    @Override
+    public void sendMessage(ReqT message) {
+      try {
+        delegateCall.sendMessage(message);
+      } catch (RuntimeException | Error failure) {
+        finishCount(Status.fromThrowable(failure), true);
+        throw failure;
+      }
+    }
+
+    private void finishCount(Status status, boolean fromClientSide) {
       if (countState.compareAndSet(1, 2)) {
-        channelRef.activeStreamsCountDecr(startNanos, status, cancelled);
+        channelRef.activeStreamsCountDecr(startNanos, status, fromClientSide);
       }
     }
   }
