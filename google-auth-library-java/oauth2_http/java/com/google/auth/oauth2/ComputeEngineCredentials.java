@@ -154,7 +154,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
     private final String label;
 
-    private GoogleAuthTransport(String label) {
+    GoogleAuthTransport(String label) {
       this.label = label;
     }
 
@@ -185,7 +185,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
     private final String label;
 
-    private BindingEnforcement(String label) {
+    BindingEnforcement(String label) {
       this.label = label;
     }
 
@@ -455,7 +455,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
         OAuth2Utils.validateString(responseData, "access_token", PARSE_ERROR_PREFIX);
     int expiresInSeconds =
         OAuth2Utils.validateInt32(responseData, "expires_in", PARSE_ERROR_PREFIX);
-    long expiresAtMilliseconds = clock.currentTimeMillis() + expiresInSeconds * 1000;
+    long expiresAtMilliseconds = clock.currentTimeMillis() + expiresInSeconds * 1000L;
 
     return new AccessToken(accessToken, new Date(expiresAtMilliseconds));
   }
@@ -828,7 +828,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
           this.getUniverseDomain(),
           transportFactory.create(),
           toSign,
-          Collections.<String, Object>emptyMap());
+          Collections.emptyMap());
     } catch (SigningException ex) {
       throw ex;
     } catch (RuntimeException ex) {

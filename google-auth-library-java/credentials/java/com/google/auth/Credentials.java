@@ -121,7 +121,7 @@ public abstract class Credentials implements Serializable {
    * @param callback Callback to execute when the request is finished.
    */
   public void getRequestMetadata(
-      final URI uri, Executor executor, final RequestMetadataCallback callback) {
+      final @Nullable URI uri, Executor executor, final RequestMetadataCallback callback) {
     executor.execute(
         new Runnable() {
           @Override
@@ -137,7 +137,7 @@ public abstract class Credentials implements Serializable {
    * @param uri URI of the entry point for the request.
    * @param callback Callback handler to execute when the metadata completes.
    */
-  protected final void blockingGetToCallback(URI uri, RequestMetadataCallback callback) {
+  protected final void blockingGetToCallback(@Nullable URI uri, RequestMetadataCallback callback) {
     Map<String, List<String>> result;
     try {
       result = getRequestMetadata(uri);
