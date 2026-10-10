@@ -1156,6 +1156,8 @@ class ConnectionWorker implements AutoCloseable {
     boolean firstRequestForTableOrSchemaSwitch = true;
 
     while (!waitingQueueDrained()) {
+      long queuedRequestsCount = 0;
+      ClientStats.WindowStats windowStats = null;
       this.lock.lock();
       try {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
@@ -1202,6 +1204,11 @@ class ConnectionWorker implements AutoCloseable {
           this.inflightRequestQueue.add(requestWrapper);
           localQueue.addLast(requestWrapper);
           healthCheckMetrics.updateRequestsSent(requestWrapper.messageSize);
+        }
+        if (!localQueue.isEmpty()) {
+          queuedRequestsCount =
+              inflightRequestQueue.size(); // waitingRequestQueue is empty so can be omitted here
+          windowStats = createWindowStats();
         }
       } catch (InterruptedException e) {
         log.warning(
@@ -1289,6 +1296,13 @@ class ConnectionWorker implements AutoCloseable {
         }
         firstRequestForTableOrSchemaSwitch = false;
 
+        ClientStats clientStats =
+            createClientStats(wrapper.requestSendTimeStamp, queuedRequestsCount, windowStats);
+        windowStats = null;
+        if (!clientStats.equals(ClientStats.getDefaultInstance())) {
+          originalRequestBuilder.setClientStats(clientStats);
+        }
+
         requestProfilerHook.startOperation(
             RequestProfiler.OperationName.RESPONSE_LATENCY, requestUniqueId);
 
@@ -1305,6 +1319,69 @@ class ConnectionWorker implements AutoCloseable {
       }
     }
     cleanupConnectionAndRequests(/* avoidBlocking= */ false);
+  }
+
+  private static ClientStats createClientStats(
+      @Nullable Instant requestSendTimeStamp,
+      long queuedRequestsCount,
+      @Nullable ClientStats.WindowStats windowStats) {
+    ClientStats.Builder clientStatsBuilder = ClientStats.newBuilder();
+    ClientStats.RequestStats requestStats =
+        createRequestStats(requestSendTimeStamp, queuedRequestsCount);
+    if (!requestStats.equals(ClientStats.RequestStats.getDefaultInstance())) {
+      clientStatsBuilder.setRequestStats(requestStats);
+    }
+    if (windowStats != null && !windowStats.equals(ClientStats.WindowStats.getDefaultInstance())) {
+      clientStatsBuilder.setWindowStats(windowStats);
+    }
+    return clientStatsBuilder.build();
+  }
+
+  private static ClientStats.RequestStats createRequestStats(
+      @Nullable Instant requestSendTimeStamp, long queuedRequestsCount) {
+    ClientStats.RequestStats.Builder requestStatsBuilder = ClientStats.RequestStats.newBuilder();
+    if (requestSendTimeStamp != null) {
+      requestStatsBuilder.setSendTimeMillis(requestSendTimeStamp.toEpochMilli());
+    }
+    if (queuedRequestsCount > 0) {
+      requestStatsBuilder.setQueuedRequestsCount(queuedRequestsCount);
+    }
+    return requestStatsBuilder.build();
+  }
+
+  @GuardedBy("lock")
+  private ClientStats.WindowStats createWindowStats() {
+    ClientStats.WindowStats.Builder windowStatsBuilder = ClientStats.WindowStats.newBuilder();
+    if (healthCheckMetrics.windowedMilliLatencyMax > 0) {
+      windowStatsBuilder.setMaxResponseLatencyMillis(healthCheckMetrics.windowedMilliLatencyMax);
+    }
+    long avgResponseLatencyMillis =
+        healthCheckMetrics.windowedResponsesAcked > 0
+            ? healthCheckMetrics.windowedMilliLatencySum / healthCheckMetrics.windowedResponsesAcked
+            : 0;
+    if (avgResponseLatencyMillis > 0) {
+      windowStatsBuilder.setAvgResponseLatencyMillis(avgResponseLatencyMillis);
+    }
+    if (healthCheckMetrics.windowedMilliResponseWaitTimeMax > 0) {
+      windowStatsBuilder.setLongestWaitNoResponseMillis(
+          healthCheckMetrics.windowedMilliResponseWaitTimeMax);
+    }
+    if (healthCheckMetrics.windowedRequestsSent > 0) {
+      windowStatsBuilder.setRequestsSentCount(healthCheckMetrics.windowedRequestsSent);
+    }
+    if (healthCheckMetrics.windowedResponsesAcked > 0) {
+      windowStatsBuilder.setResponsesReceivedCount(healthCheckMetrics.windowedResponsesAcked);
+    }
+    if (healthCheckMetrics.windowedRequestsSentBytes > 0) {
+      windowStatsBuilder.setBytesSentCount(healthCheckMetrics.windowedRequestsSentBytes);
+    }
+    long windowStartTimeEpochMillis = healthCheckMetrics.healthCheckTimeStamp.toEpochMilli();
+    windowStatsBuilder.setWindowStartTimeEpochMillis(windowStartTimeEpochMillis);
+    long windowMillis = Instant.now().toEpochMilli() - windowStartTimeEpochMillis;
+    if (windowMillis >= 0) {
+      windowStatsBuilder.setWindowMillis(windowMillis);
+    }
+    return windowStatsBuilder.build();
   }
 
   @Nullable
