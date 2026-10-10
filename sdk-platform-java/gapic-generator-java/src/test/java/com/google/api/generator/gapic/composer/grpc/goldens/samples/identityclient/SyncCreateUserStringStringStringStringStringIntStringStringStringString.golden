@@ -34,30 +34,34 @@ public class SyncCreateUserStringStringStringStringStringIntStringStringStringSt
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (IdentityClient identityClient = IdentityClient.create()) {
-      String parent = UserName.of("[USER]").toString();
-      String displayName = "displayName1714148973";
-      String email = "email96619420";
-      String hobbyName = "hobbyName882586493";
-      String songName = "songName1535136064";
-      int weeklyFrequency = 1572999966;
-      String companyName = "companyName-508582744";
-      String title = "title110371416";
-      String subject = "subject-1867885268";
-      String artistName = "artistName629723762";
-      User response =
-          identityClient.createUser(
-              parent,
-              displayName,
-              email,
-              hobbyName,
-              songName,
-              weeklyFrequency,
-              companyName,
-              title,
-              subject,
-              artistName);
-    }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    IdentityClient identityClient = IdentityClient.create();
+    String parent = UserName.of("[USER]").toString();
+    String displayName = "displayName1714148973";
+    String email = "email96619420";
+    String hobbyName = "hobbyName882586493";
+    String songName = "songName1535136064";
+    int weeklyFrequency = 1572999966;
+    String companyName = "companyName-508582744";
+    String title = "title110371416";
+    String subject = "subject-1867885268";
+    String artistName = "artistName629723762";
+    User response =
+        identityClient.createUser(
+            parent,
+            displayName,
+            email,
+            hobbyName,
+            songName,
+            weeklyFrequency,
+            companyName,
+            title,
+            subject,
+            artistName);
   }
 }
 // [END goldensample_generated_Identity_CreateUser_StringStringStringStringStringIntStringStringStringString_sync]
