@@ -17,7 +17,9 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
+import com.google.bigtable.admin.v2.AvroSchema;
 import com.google.bigtable.admin.v2.SchemaBundleName;
 import com.google.protobuf.ByteString;
 import org.junit.Test;
@@ -143,6 +145,110 @@ public class SchemaBundleTest {
                     com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
                         .setProtoDescriptors(ByteString.copyFromUtf8("schema"))
                         .build())
+                .build()
+                .hashCode());
+  }
+
+  @Test
+  public void testFromProtoWithAvroSchema() {
+    SchemaBundleName schemaBundleName =
+        SchemaBundleName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID);
+
+    com.google.bigtable.admin.v2.SchemaBundle schemaBundleProto =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(schemaBundleName.toString())
+            .setAvroSchema(
+                AvroSchema.newBuilder()
+                    .addJsonSchemas("{\"type\": \"record\", \"name\": \"User\"}")
+                    .build())
+            .build();
+
+    SchemaBundle result = SchemaBundle.fromProto(schemaBundleProto);
+
+    assertThat(result.getId()).isEqualTo(SCHEMA_BUNDLE_ID);
+    assertThat(result.getTableId()).isEqualTo(TABLE_ID);
+    assertThat(result.getAvroSchema())
+        .containsExactly("{\"type\": \"record\", \"name\": \"User\"}");
+  }
+
+  @Test
+  public void testGetProtoSchemaThrowsOnAvroSchemaBundle() {
+    SchemaBundleName schemaBundleName =
+        SchemaBundleName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID);
+
+    com.google.bigtable.admin.v2.SchemaBundle schemaBundleProto =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(schemaBundleName.toString())
+            .setAvroSchema(
+                AvroSchema.newBuilder()
+                    .addJsonSchemas("{\"type\": \"record\", \"name\": \"User\"}")
+                    .build())
+            .build();
+
+    SchemaBundle result = SchemaBundle.fromProto(schemaBundleProto);
+
+    assertThrows(IllegalStateException.class, result::getProtoSchema);
+  }
+
+  @Test
+  public void testGetAvroSchemaThrowsOnProtoSchemaBundle() {
+    SchemaBundleName schemaBundleName =
+        SchemaBundleName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID);
+
+    com.google.bigtable.admin.v2.SchemaBundle schemaBundleProto =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(schemaBundleName.toString())
+            .setProtoSchema(
+                com.google.bigtable.admin.v2.ProtoSchema.newBuilder()
+                    .setProtoDescriptors(ByteString.copyFromUtf8("schema"))
+                    .build())
+            .build();
+
+    SchemaBundle result = SchemaBundle.fromProto(schemaBundleProto);
+
+    assertThrows(IllegalStateException.class, result::getAvroSchema);
+  }
+
+  @Test
+  public void testEqualityWithAvroSchema() {
+    SchemaBundleName schemaBundleName =
+        SchemaBundleName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID);
+    com.google.bigtable.admin.v2.SchemaBundle proto =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(schemaBundleName.toString())
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas("schema").build())
+            .build();
+    SchemaBundle schemaBundle = SchemaBundle.fromProto(proto);
+
+    assertThat(schemaBundle).isEqualTo(SchemaBundle.fromProto(proto));
+
+    assertThat(schemaBundle)
+        .isNotEqualTo(
+            SchemaBundle.fromProto(
+                com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                    .setName(schemaBundleName.toString())
+                    .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas("schema2").build())
+                    .build()));
+  }
+
+  @Test
+  public void testHashCodeWithAvroSchema() {
+    SchemaBundleName schemaBundleName =
+        SchemaBundleName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID, SCHEMA_BUNDLE_ID);
+    com.google.bigtable.admin.v2.SchemaBundle proto =
+        com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+            .setName(schemaBundleName.toString())
+            .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas("schema").build())
+            .build();
+    SchemaBundle schemaBundle = SchemaBundle.fromProto(proto);
+
+    assertThat(schemaBundle.hashCode()).isEqualTo(SchemaBundle.fromProto(proto).hashCode());
+
+    assertThat(schemaBundle.hashCode())
+        .isNotEqualTo(
+            com.google.bigtable.admin.v2.SchemaBundle.newBuilder()
+                .setName(schemaBundleName.toString())
+                .setAvroSchema(AvroSchema.newBuilder().addJsonSchemas("schema").build())
                 .build()
                 .hashCode());
   }
