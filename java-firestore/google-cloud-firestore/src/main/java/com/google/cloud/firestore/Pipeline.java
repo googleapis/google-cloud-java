@@ -47,6 +47,7 @@ import com.google.cloud.firestore.pipeline.stages.Delete;
 import com.google.cloud.firestore.pipeline.stages.Distinct;
 import com.google.cloud.firestore.pipeline.stages.FindNearest;
 import com.google.cloud.firestore.pipeline.stages.FindNearestOptions;
+import com.google.cloud.firestore.pipeline.stages.Insert;
 import com.google.cloud.firestore.pipeline.stages.Limit;
 import com.google.cloud.firestore.pipeline.stages.Offset;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
@@ -63,6 +64,7 @@ import com.google.cloud.firestore.pipeline.stages.Union;
 import com.google.cloud.firestore.pipeline.stages.Unnest;
 import com.google.cloud.firestore.pipeline.stages.UnnestOptions;
 import com.google.cloud.firestore.pipeline.stages.Update;
+import com.google.cloud.firestore.pipeline.stages.Upsert;
 import com.google.cloud.firestore.pipeline.stages.Where;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
@@ -76,6 +78,7 @@ import com.google.firestore.v1.Document;
 import com.google.firestore.v1.ExecutePipelineRequest;
 import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.StructuredPipeline;
+import com.google.firestore.v1.TransactionOptions;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
@@ -1212,7 +1215,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline delete() {
     return append(new Delete());
   }
@@ -1251,7 +1253,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update() {
     return append(new Update());
   }
@@ -1275,7 +1276,6 @@ public final class Pipeline {
    * @param transformedFields The transformations to apply.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update(Selectable... transformedFields) {
     return append(new Update().withTransformedFields(transformedFields));
   }
@@ -1301,9 +1301,20 @@ public final class Pipeline {
    * @param update The {@code Update} stage to append.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update(Update update) {
     return append(update);
+  }
+
+  public Pipeline insert(Insert insert) {
+    return append(insert);
+  }
+
+  public Pipeline upsert(Upsert upsert) {
+    return append(upsert);
+  }
+
+  public Pipeline upsert(Selectable... additionalFields) {
+    return append(new Upsert(additionalFields));
   }
 
   /**
@@ -1509,31 +1520,50 @@ public final class Pipeline {
     }
   }
 
-  void executeInternal(
+  ExecutePipelineRequest toExecutePipelineRequest(
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
-      @Nullable com.google.protobuf.Timestamp readTime,
-      PipelineResultObserver observer,
-      MetricsContext metricsContext) {
+      @Nullable com.google.protobuf.Timestamp readTime) {
+    java.util.Map<String, com.google.firestore.v1.Value> optionsMap =
+        new java.util.HashMap<>(StageUtils.toMap(options));
+    optionsMap.remove("atomic");
+
     ExecutePipelineRequest.Builder request =
         ExecutePipelineRequest.newBuilder()
-            .setDatabase(rpcContext.getDatabaseName())
+            .setDatabase(rpcContext != null ? rpcContext.getDatabaseName() : "")
             .setStructuredPipeline(
                 StructuredPipeline.newBuilder()
                     .setPipeline(toProto())
-                    .putAllOptions(StageUtils.toMap(options))
+                    .putAllOptions(optionsMap)
                     .build());
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
+    } else if (options.isAtomic()) {
+      request.setNewTransaction(
+          TransactionOptions.newBuilder()
+              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())
+              .build());
+      request.setAutoCommitTransaction(true);
     }
 
     if (readTime != null) {
       request.setReadTime(readTime);
     }
 
+    return request.build();
+  }
+
+  void executeInternal(
+      @Nonnull PipelineExecuteOptions options,
+      @Nullable final ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      PipelineResultObserver observer,
+      MetricsContext metricsContext) {
+    ExecutePipelineRequest request = toExecutePipelineRequest(options, transactionId, readTime);
+
     pipelineInternalStream(
-        request.build(),
+        request,
         new PipelineResultObserver() {
           @Override
           public void onCompleted() {
