@@ -479,7 +479,8 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getClock(),
               retryConfig,
               false,
-              null);
+              null,
+              bigQueryOptions.getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -938,7 +939,8 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               false,
-              null);
+              null,
+              bigQueryOptions.getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       if (e.getCause() instanceof BigQueryException) {
         if (((BigQueryException) e.getCause()).getCode() == HTTP_NOT_FOUND) {
@@ -985,7 +987,8 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               false,
-              null);
+              null,
+              bigQueryOptions.getApiTracerFactory());
 
       return results;
     } catch (BigQueryRetryHelperException e) {
@@ -1226,7 +1229,8 @@ class ConnectionImpl implements Connection {
                 bigQueryOptions.getClock(),
                 retryConfig,
                 false,
-                null);
+                null,
+                bigQueryOptions.getApiTracerFactory());
 
         if (results.getErrors() != null) {
           List<BigQueryError> bigQueryErrors =
@@ -1493,7 +1497,8 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getClock(),
               retryConfig,
               false,
-              null);
+              null,
+              bigQueryOptions.getApiTracerFactory());
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       logger.log(Level.WARNING, "\n Error occurred while calling createJobForQuery", e);
       throw BigQueryException.translateAndThrow(e);
@@ -1538,7 +1543,8 @@ class ConnectionImpl implements Connection {
               bigQueryOptions.getClock(),
               retryConfig,
               false,
-              null);
+              null,
+              bigQueryOptions.getApiTracerFactory());
     } catch (BigQueryRetryHelper.BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
