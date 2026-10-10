@@ -53,6 +53,28 @@ final class JsonUtils {
 
   private JsonUtils() {}
 
+  static <T> String objectToJson(T object) {
+    if (object == null) {
+      return null;
+    }
+    try {
+      return jop.getJsonFactory().toString(object);
+    } catch (IOException e) {
+      throw StorageException.coalesce(e);
+    }
+  }
+
+  static <T> T jsonToObject(String json, Class<T> clazz) {
+    if (json == null) {
+      return null;
+    }
+    try {
+      return jop.parseAndClose(new StringReader(json), clazz);
+    } catch (IOException e) {
+      throw StorageException.coalesce(e);
+    }
+  }
+
   /**
    * Given a GenericJson src, and a list of {@code fieldsForOutput} create a new GenericJson where
    * every field specified in {@code fieldsForOutput} is present. If a field exists in {@code src}

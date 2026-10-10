@@ -30,6 +30,10 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.CalendarModeAdviceResponse;
 import com.google.cloud.compute.v1.CalendarModeAdviceRpcRequest;
+import com.google.cloud.compute.v1.CapacityAdviceResponse;
+import com.google.cloud.compute.v1.CapacityAdviceRpcRequest;
+import com.google.cloud.compute.v1.CapacityHistoryAdviceRequest;
+import com.google.cloud.compute.v1.CapacityHistoryResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -91,8 +95,91 @@ public class HttpJsonAdviceStub extends AdviceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CapacityAdviceRpcRequest, CapacityAdviceResponse>
+      capacityMethodDescriptor =
+          ApiMethodDescriptor.<CapacityAdviceRpcRequest, CapacityAdviceResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Advice/Capacity")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CapacityAdviceRpcRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/advice/capacity",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CapacityAdviceRpcRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CapacityAdviceRpcRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "capacityAdviceRequestResource",
+                                      request.getCapacityAdviceRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CapacityAdviceResponse>newBuilder()
+                      .setDefaultInstance(CapacityAdviceResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistoryMethodDescriptor =
+          ApiMethodDescriptor.<CapacityHistoryAdviceRequest, CapacityHistoryResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Advice/CapacityHistory")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CapacityHistoryAdviceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/advice/capacityHistory",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CapacityHistoryAdviceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CapacityHistoryAdviceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "capacityHistoryRequestResource",
+                                      request.getCapacityHistoryRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CapacityHistoryResponse>newBuilder()
+                      .setDefaultInstance(CapacityHistoryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
       calendarModeCallable;
+  private final UnaryCallable<CapacityAdviceRpcRequest, CapacityAdviceResponse> capacityCallable;
+  private final UnaryCallable<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistoryCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -147,10 +234,42 @@ public class HttpJsonAdviceStub extends AdviceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CapacityAdviceRpcRequest, CapacityAdviceResponse>
+        capacityTransportSettings =
+            HttpJsonCallSettings.<CapacityAdviceRpcRequest, CapacityAdviceResponse>newBuilder()
+                .setMethodDescriptor(capacityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+        capacityHistoryTransportSettings =
+            HttpJsonCallSettings.<CapacityHistoryAdviceRequest, CapacityHistoryResponse>newBuilder()
+                .setMethodDescriptor(capacityHistoryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .build();
 
     this.calendarModeCallable =
         callableFactory.createUnaryCallable(
             calendarModeTransportSettings, settings.calendarModeSettings(), clientContext);
+    this.capacityCallable =
+        callableFactory.createUnaryCallable(
+            capacityTransportSettings, settings.capacitySettings(), clientContext);
+    this.capacityHistoryCallable =
+        callableFactory.createUnaryCallable(
+            capacityHistoryTransportSettings, settings.capacityHistorySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -160,6 +279,8 @@ public class HttpJsonAdviceStub extends AdviceStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(calendarModeMethodDescriptor);
+    methodDescriptors.add(capacityMethodDescriptor);
+    methodDescriptors.add(capacityHistoryMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -167,6 +288,17 @@ public class HttpJsonAdviceStub extends AdviceStub {
   public UnaryCallable<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
       calendarModeCallable() {
     return calendarModeCallable;
+  }
+
+  @Override
+  public UnaryCallable<CapacityAdviceRpcRequest, CapacityAdviceResponse> capacityCallable() {
+    return capacityCallable;
+  }
+
+  @Override
+  public UnaryCallable<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistoryCallable() {
+    return capacityHistoryCallable;
   }
 
   @Override

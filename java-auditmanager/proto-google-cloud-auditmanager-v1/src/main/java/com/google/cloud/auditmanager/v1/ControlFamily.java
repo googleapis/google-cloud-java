@@ -24,7 +24,7 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * The regulatory family of the control.
+ * Regulatory family of the control.
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.ControlFamily}
@@ -80,7 +80,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The ID of the regulatory control family.
+   * ID of the regulatory control family. To find the list of supported
+   * control families, use the
+   * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+   * method and review the `control_family` field in the response.
    * </pre>
    *
    * <code>string family_id = 1;</code>
@@ -104,7 +107,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The ID of the regulatory control family.
+   * ID of the regulatory control family. To find the list of supported
+   * control families, use the
+   * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+   * method and review the `control_family` field in the response.
    * </pre>
    *
    * <code>string family_id = 1;</code>
@@ -133,7 +139,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The display name of the regulatory control family.
+   * Display name of the regulatory control family.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -157,7 +163,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The display name of the regulatory control family.
+   * Display name of the regulatory control family.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -350,7 +356,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The regulatory family of the control.
+   * Regulatory family of the control.
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.ControlFamily}
@@ -516,7 +522,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of the regulatory control family.
+     * ID of the regulatory control family. To find the list of supported
+     * control families, use the
+     * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+     * method and review the `control_family` field in the response.
      * </pre>
      *
      * <code>string family_id = 1;</code>
@@ -539,7 +548,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of the regulatory control family.
+     * ID of the regulatory control family. To find the list of supported
+     * control families, use the
+     * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+     * method and review the `control_family` field in the response.
      * </pre>
      *
      * <code>string family_id = 1;</code>
@@ -562,7 +574,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of the regulatory control family.
+     * ID of the regulatory control family. To find the list of supported
+     * control families, use the
+     * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+     * method and review the `control_family` field in the response.
      * </pre>
      *
      * <code>string family_id = 1;</code>
@@ -584,7 +599,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of the regulatory control family.
+     * ID of the regulatory control family. To find the list of supported
+     * control families, use the
+     * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+     * method and review the `control_family` field in the response.
      * </pre>
      *
      * <code>string family_id = 1;</code>
@@ -602,7 +620,10 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The ID of the regulatory control family.
+     * ID of the regulatory control family. To find the list of supported
+     * control families, use the
+     * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+     * method and review the `control_family` field in the response.
      * </pre>
      *
      * <code>string family_id = 1;</code>
@@ -627,7 +648,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The display name of the regulatory control family.
+     * Display name of the regulatory control family.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -650,7 +671,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The display name of the regulatory control family.
+     * Display name of the regulatory control family.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -673,7 +694,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The display name of the regulatory control family.
+     * Display name of the regulatory control family.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -695,7 +716,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The display name of the regulatory control family.
+     * Display name of the regulatory control family.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -713,7 +734,7 @@ public final class ControlFamily extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The display name of the regulatory control family.
+     * Display name of the regulatory control family.
      * </pre>
      *
      * <code>string display_name = 2;</code>

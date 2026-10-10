@@ -11,6 +11,5 @@
   "repo_short": "java-monitoring",
   "distribution_name": "com.google.cloud:google-cloud-monitoring",
   "api_id": "monitoring.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/559785"
+  "library_type": "GAPIC_AUTO"
 }

@@ -261,6 +261,12 @@ class SessionList {
     }
 
     void onSessionClosed(SessionState prevState) {
+      if (prevState == SessionState.NEW) {
+        throw new IllegalStateException("NEW session was closed");
+      }
+      if (prevState == SessionState.CLOSED) {
+        throw new IllegalStateException("double close");
+      }
       // Always drop from allSessions on the way out, even if the branch below throws — otherwise a
       // stranded handle blocks drainedFuture and pool.awaitTerminated hangs until the shared close
       // deadline elapses.
@@ -273,35 +279,17 @@ class SessionList {
         afe.ifPresent(afeHandle -> afeHandle.refCount--);
 
         // NOTE: don't need to update vRpc counters, onVRpcFinish will have been invoked already
-        switch (prevState) {
-          case NEW:
-            throw new IllegalStateException("NEW session was closed");
-          case STARTING:
-            poolStats.startingCount--;
-            break;
-          case READY:
-            {
-              // afe may be empty if SessionPoolImpl.onSessionReady early-returned on poolState !=
-              // STARTED (pool closed after SessionImpl transitioned to READY but before
-              // handle.onSessionStarted ran). Skip the AFE bookkeeping cleanly rather than NPE.
-              if (afe.isPresent()) {
-                AfeHandle afeHandle = afe.get();
-                // If the session was available & idle, then we need to remove it
-                if (afeHandle.sessions.remove(this)) {
-                  poolStats.readyCount--;
-                  if (afeHandle.sessions.isEmpty()) {
-                    afesWithReadySessions.remove(afeHandle);
-                  }
-                }
-              }
-              break;
+        if (!afe.isPresent()) {
+          poolStats.startingCount--;
+        } else {
+          AfeHandle afeHandle = afe.get();
+          // If the session was available & idle, then we need to remove it
+          if (afeHandle.sessions.remove(this)) {
+            poolStats.readyCount--;
+            if (afeHandle.sessions.isEmpty()) {
+              afesWithReadySessions.remove(afeHandle);
             }
-          case CLOSING:
-          case WAIT_SERVER_CLOSE:
-            // noop
-            break;
-          case CLOSED:
-            throw new IllegalStateException("double close");
+          }
         }
       } finally {
         allSessions.remove(this);

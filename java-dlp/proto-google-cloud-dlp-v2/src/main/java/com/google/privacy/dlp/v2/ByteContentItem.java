@@ -77,7 +77,7 @@ public final class ByteContentItem extends com.google.protobuf.GeneratedMessage
    * <pre>
    * The type of data being sent for inspection. To learn more, see
    * [Supported file
-   * types](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types).
+   * types](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types).
    *
    * Only the first frame of each multiframe image is inspected. Metadata and
    * other frames aren't inspected.

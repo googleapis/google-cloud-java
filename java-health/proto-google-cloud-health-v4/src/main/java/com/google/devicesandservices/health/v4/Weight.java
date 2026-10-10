@@ -139,6 +139,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Weight of a user in grams.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,6 +156,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Weight of a user in grams.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -830,6 +832,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Weight of a user in grams.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -846,6 +849,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Weight of a user in grams.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -862,6 +866,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Weight of a user in grams.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -882,6 +887,7 @@ public final class Weight extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Weight of a user in grams.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double weight_grams = 3 [(.google.api.field_behavior) = REQUIRED];</code>

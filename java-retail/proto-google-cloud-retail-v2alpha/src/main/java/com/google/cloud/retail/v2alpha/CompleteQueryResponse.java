@@ -55,6 +55,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     completionResults_ = java.util.Collections.emptyList();
     attributionToken_ = "";
     recentSearchResults_ = java.util.Collections.emptyList();
+    agentPrompts_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -312,6 +313,105 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * @return The totalProductCount.
      */
     int getTotalProductCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Deprecated
+    java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+        getAgentPromptsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Deprecated
+    com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt getAgentPrompts(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Deprecated
+    int getAgentPromptsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Deprecated
+    java.util.List<
+            ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+        getAgentPromptsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Deprecated
+    com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder
+        getAgentPromptsOrBuilder(int index);
   }
 
   /**
@@ -347,6 +447,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     private CompletionResult() {
       suggestion_ = "";
       facets_ = java.util.Collections.emptyList();
+      agentPrompts_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -702,6 +803,127 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       return totalProductCount_;
     }
 
+    public static final int AGENT_PROMPTS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+        agentPrompts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+        getAgentPromptsList() {
+      return agentPrompts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.List<
+            ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+        getAgentPromptsOrBuilderList() {
+      return agentPrompts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public int getAgentPromptsCount() {
+      return agentPrompts_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt getAgentPrompts(
+        int index) {
+      return agentPrompts_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use
+     * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+     * instead. Conversational prompts to trigger agents like Shopping Agent.
+     * There may be multiple prompts for a single suggestion.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+     * </code>
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder
+        getAgentPromptsOrBuilder(int index) {
+      return agentPrompts_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -726,6 +948,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       if (totalProductCount_ != 0) {
         output.writeInt32(4, totalProductCount_);
+      }
+      for (int i = 0; i < agentPrompts_.size(); i++) {
+        output.writeMessage(6, agentPrompts_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -757,6 +982,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (totalProductCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, totalProductCount_);
       }
+      for (int i = 0; i < agentPrompts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, agentPrompts_.get(i));
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -778,6 +1006,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
       if (!getFacetsList().equals(other.getFacetsList())) return false;
       if (getTotalProductCount() != other.getTotalProductCount()) return false;
+      if (!getAgentPromptsList().equals(other.getAgentPromptsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -801,6 +1030,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       hash = (37 * hash) + TOTAL_PRODUCT_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalProductCount();
+      if (getAgentPromptsCount() > 0) {
+        hash = (37 * hash) + AGENT_PROMPTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAgentPromptsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -977,6 +1210,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         totalProductCount_ = 0;
+        if (agentPromptsBuilder_ == null) {
+          agentPrompts_ = java.util.Collections.emptyList();
+        } else {
+          agentPrompts_ = null;
+          agentPromptsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1025,6 +1265,15 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           result.facets_ = facets_;
         } else {
           result.facets_ = facetsBuilder_.build();
+        }
+        if (agentPromptsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            agentPrompts_ = java.util.Collections.unmodifiableList(agentPrompts_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.agentPrompts_ = agentPrompts_;
+        } else {
+          result.agentPrompts_ = agentPromptsBuilder_.build();
         }
       }
 
@@ -1097,6 +1346,33 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         if (other.getTotalProductCount() != 0) {
           setTotalProductCount(other.getTotalProductCount());
         }
+        if (agentPromptsBuilder_ == null) {
+          if (!other.agentPrompts_.isEmpty()) {
+            if (agentPrompts_.isEmpty()) {
+              agentPrompts_ = other.agentPrompts_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureAgentPromptsIsMutable();
+              agentPrompts_.addAll(other.agentPrompts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.agentPrompts_.isEmpty()) {
+            if (agentPromptsBuilder_.isEmpty()) {
+              agentPromptsBuilder_.dispose();
+              agentPromptsBuilder_ = null;
+              agentPrompts_ = other.agentPrompts_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              agentPromptsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetAgentPromptsFieldBuilder()
+                      : null;
+            } else {
+              agentPromptsBuilder_.addAllMessages(other.agentPrompts_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1163,6 +1439,21 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 32
+              case 50:
+                {
+                  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt m =
+                      input.readMessage(
+                          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+                              .parser(),
+                          extensionRegistry);
+                  if (agentPromptsBuilder_ == null) {
+                    ensureAgentPromptsIsMutable();
+                    agentPrompts_.add(m);
+                  } else {
+                    agentPromptsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2126,6 +2417,545 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         totalProductCount_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+          agentPrompts_ = java.util.Collections.emptyList();
+
+      private void ensureAgentPromptsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          agentPrompts_ =
+              new java.util.ArrayList<
+                  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>(agentPrompts_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt,
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder,
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+          agentPromptsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+          getAgentPromptsList() {
+        if (agentPromptsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(agentPrompts_);
+        } else {
+          return agentPromptsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public int getAgentPromptsCount() {
+        if (agentPromptsBuilder_ == null) {
+          return agentPrompts_.size();
+        } else {
+          return agentPromptsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt getAgentPrompts(
+          int index) {
+        if (agentPromptsBuilder_ == null) {
+          return agentPrompts_.get(index);
+        } else {
+          return agentPromptsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder setAgentPrompts(
+          int index, com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt value) {
+        if (agentPromptsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.set(index, value);
+          onChanged();
+        } else {
+          agentPromptsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder setAgentPrompts(
+          int index,
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+              builderForValue) {
+        if (agentPromptsBuilder_ == null) {
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          agentPromptsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder addAgentPrompts(
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt value) {
+        if (agentPromptsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.add(value);
+          onChanged();
+        } else {
+          agentPromptsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder addAgentPrompts(
+          int index, com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt value) {
+        if (agentPromptsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.add(index, value);
+          onChanged();
+        } else {
+          agentPromptsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder addAgentPrompts(
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+              builderForValue) {
+        if (agentPromptsBuilder_ == null) {
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          agentPromptsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder addAgentPrompts(
+          int index,
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+              builderForValue) {
+        if (agentPromptsBuilder_ == null) {
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          agentPromptsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder addAllAgentPrompts(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+              values) {
+        if (agentPromptsBuilder_ == null) {
+          ensureAgentPromptsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, agentPrompts_);
+          onChanged();
+        } else {
+          agentPromptsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder clearAgentPrompts() {
+        if (agentPromptsBuilder_ == null) {
+          agentPrompts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          agentPromptsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public Builder removeAgentPrompts(int index) {
+        if (agentPromptsBuilder_ == null) {
+          ensureAgentPromptsIsMutable();
+          agentPrompts_.remove(index);
+          onChanged();
+        } else {
+          agentPromptsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+          getAgentPromptsBuilder(int index) {
+        return internalGetAgentPromptsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder
+          getAgentPromptsOrBuilder(int index) {
+        if (agentPromptsBuilder_ == null) {
+          return agentPrompts_.get(index);
+        } else {
+          return agentPromptsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public java.util.List<
+              ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+          getAgentPromptsOrBuilderList() {
+        if (agentPromptsBuilder_ != null) {
+          return agentPromptsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(agentPrompts_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+          addAgentPromptsBuilder() {
+        return internalGetAgentPromptsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+          addAgentPromptsBuilder(int index) {
+        return internalGetAgentPromptsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Deprecated: Use
+       * [CompleteQueryResponse.agent_prompts][google.cloud.retail.v2alpha.CompleteQueryResponse.agent_prompts]
+       * instead. Conversational prompts to trigger agents like Shopping Agent.
+       * There may be multiple prompts for a single suggestion.
+       *
+       * This is an experimental feature for select customers.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 6 [deprecated = true];
+       * </code>
+       */
+      @java.lang.Deprecated
+      public java.util.List<
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder>
+          getAgentPromptsBuilderList() {
+        return internalGetAgentPromptsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt,
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder,
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+          internalGetAgentPromptsFieldBuilder() {
+        if (agentPromptsBuilder_ == null) {
+          agentPromptsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt,
+                  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder,
+                  com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>(
+                  agentPrompts_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          agentPrompts_ = null;
+        }
+        return agentPromptsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CompleteQueryResponse.CompletionResult)
@@ -3569,6 +4399,625 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public interface AgentPromptOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational prompt string.
+     * </pre>
+     *
+     * <code>string prompt = 1;</code>
+     *
+     * @return The prompt.
+     */
+    java.lang.String getPrompt();
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational prompt string.
+     * </pre>
+     *
+     * <code>string prompt = 1;</code>
+     *
+     * @return The bytes for prompt.
+     */
+    com.google.protobuf.ByteString getPromptBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A conversational prompt to trigger agents like Shopping Agent.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt}
+   */
+  public static final class AgentPrompt extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt)
+      AgentPromptOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AgentPrompt");
+    }
+
+    // Use AgentPrompt.newBuilder() to construct.
+    private AgentPrompt(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AgentPrompt() {
+      prompt_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.retail.v2alpha.CompletionServiceProto
+          .internal_static_google_cloud_retail_v2alpha_CompleteQueryResponse_AgentPrompt_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.retail.v2alpha.CompletionServiceProto
+          .internal_static_google_cloud_retail_v2alpha_CompleteQueryResponse_AgentPrompt_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.class,
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder.class);
+    }
+
+    public static final int PROMPT_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object prompt_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational prompt string.
+     * </pre>
+     *
+     * <code>string prompt = 1;</code>
+     *
+     * @return The prompt.
+     */
+    @java.lang.Override
+    public java.lang.String getPrompt() {
+      java.lang.Object ref = prompt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prompt_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversational prompt string.
+     * </pre>
+     *
+     * <code>string prompt = 1;</code>
+     *
+     * @return The bytes for prompt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPromptBytes() {
+      java.lang.Object ref = prompt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        prompt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(prompt_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, prompt_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(prompt_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, prompt_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt other =
+          (com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt) obj;
+
+      if (!getPrompt().equals(other.getPrompt())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrompt().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A conversational prompt to trigger agents like Shopping Agent.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt)
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.retail.v2alpha.CompletionServiceProto
+            .internal_static_google_cloud_retail_v2alpha_CompleteQueryResponse_AgentPrompt_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.retail.v2alpha.CompletionServiceProto
+            .internal_static_google_cloud_retail_v2alpha_CompleteQueryResponse_AgentPrompt_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.class,
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        prompt_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.retail.v2alpha.CompletionServiceProto
+            .internal_static_google_cloud_retail_v2alpha_CompleteQueryResponse_AgentPrompt_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+          getDefaultInstanceForType() {
+        return com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt build() {
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt buildPartial() {
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt result =
+            new com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.prompt_ = prompt_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt) {
+          return mergeFrom(
+              (com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt other) {
+        if (other
+            == com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+                .getDefaultInstance()) return this;
+        if (!other.getPrompt().isEmpty()) {
+          prompt_ = other.prompt_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  prompt_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object prompt_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The conversational prompt string.
+       * </pre>
+       *
+       * <code>string prompt = 1;</code>
+       *
+       * @return The prompt.
+       */
+      public java.lang.String getPrompt() {
+        java.lang.Object ref = prompt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          prompt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The conversational prompt string.
+       * </pre>
+       *
+       * <code>string prompt = 1;</code>
+       *
+       * @return The bytes for prompt.
+       */
+      public com.google.protobuf.ByteString getPromptBytes() {
+        java.lang.Object ref = prompt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          prompt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The conversational prompt string.
+       * </pre>
+       *
+       * <code>string prompt = 1;</code>
+       *
+       * @param value The prompt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrompt(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        prompt_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The conversational prompt string.
+       * </pre>
+       *
+       * <code>string prompt = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPrompt() {
+        prompt_ = getDefaultInstance().getPrompt();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The conversational prompt string.
+       * </pre>
+       *
+       * <code>string prompt = 1;</code>
+       *
+       * @param value The bytes for prompt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPromptBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        prompt_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt)
+    private static final com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt();
+    }
+
+    public static com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AgentPrompt> PARSER =
+        new com.google.protobuf.AbstractParser<AgentPrompt>() {
+          @java.lang.Override
+          public AgentPrompt parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AgentPrompt> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AgentPrompt> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int COMPLETION_RESULTS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -4085,6 +5534,107 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     return map.get(key);
   }
 
+  public static final int AGENT_PROMPTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+      agentPrompts_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+      getAgentPromptsList() {
+    return agentPrompts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+      getAgentPromptsOrBuilderList() {
+    return agentPrompts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public int getAgentPromptsCount() {
+    return agentPrompts_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt getAgentPrompts(
+      int index) {
+    return agentPrompts_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational prompts to trigger agents like Shopping Agent.
+   *
+   * This is an experimental feature for select customers.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder
+      getAgentPromptsOrBuilder(int index) {
+    return agentPrompts_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4110,6 +5660,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetAttributeResults(), AttributeResultsDefaultEntryHolder.defaultEntry, 4);
+    for (int i = 0; i < agentPrompts_.size(); i++) {
+      output.writeMessage(5, agentPrompts_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4144,6 +5697,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, attributeResults__);
     }
+    for (int i = 0; i < agentPrompts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, agentPrompts_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4164,6 +5720,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     if (!getAttributionToken().equals(other.getAttributionToken())) return false;
     if (!getRecentSearchResultsList().equals(other.getRecentSearchResultsList())) return false;
     if (!internalGetAttributeResults().equals(other.internalGetAttributeResults())) return false;
+    if (!getAgentPromptsList().equals(other.getAgentPromptsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4188,6 +5745,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     if (!internalGetAttributeResults().getMap().isEmpty()) {
       hash = (37 * hash) + ATTRIBUTE_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAttributeResults().hashCode();
+    }
+    if (getAgentPromptsCount() > 0) {
+      hash = (37 * hash) + AGENT_PROMPTS_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentPromptsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4368,6 +5929,13 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableAttributeResults().clear();
+      if (agentPromptsBuilder_ == null) {
+        agentPrompts_ = java.util.Collections.emptyList();
+      } else {
+        agentPrompts_ = null;
+        agentPromptsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -4422,6 +5990,15 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         result.recentSearchResults_ = recentSearchResults_;
       } else {
         result.recentSearchResults_ = recentSearchResultsBuilder_.build();
+      }
+      if (agentPromptsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          agentPrompts_ = java.util.Collections.unmodifiableList(agentPrompts_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.agentPrompts_ = agentPrompts_;
+      } else {
+        result.agentPrompts_ = agentPromptsBuilder_.build();
       }
     }
 
@@ -4510,6 +6087,33 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
       internalGetMutableAttributeResults().mergeFrom(other.internalGetAttributeResults());
       bitField0_ |= 0x00000008;
+      if (agentPromptsBuilder_ == null) {
+        if (!other.agentPrompts_.isEmpty()) {
+          if (agentPrompts_.isEmpty()) {
+            agentPrompts_ = other.agentPrompts_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureAgentPromptsIsMutable();
+            agentPrompts_.addAll(other.agentPrompts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.agentPrompts_.isEmpty()) {
+          if (agentPromptsBuilder_.isEmpty()) {
+            agentPromptsBuilder_.dispose();
+            agentPromptsBuilder_ = null;
+            agentPrompts_ = other.agentPrompts_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            agentPromptsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAgentPromptsFieldBuilder()
+                    : null;
+          } else {
+            agentPromptsBuilder_.addAllMessages(other.agentPrompts_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4587,6 +6191,20 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt m =
+                    input.readMessage(
+                        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.parser(),
+                        extensionRegistry);
+                if (agentPromptsBuilder_ == null) {
+                  ensureAgentPromptsIsMutable();
+                  agentPrompts_.add(m);
+                } else {
+                  agentPromptsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6333,6 +7951,466 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         builderMap.put(key, entry);
       }
       return (com.google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult.Builder) entry;
+    }
+
+    private java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+        agentPrompts_ = java.util.Collections.emptyList();
+
+    private void ensureAgentPromptsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        agentPrompts_ =
+            new java.util.ArrayList<
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>(agentPrompts_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt,
+            com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder,
+            com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+        agentPromptsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+        getAgentPromptsList() {
+      if (agentPromptsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(agentPrompts_);
+      } else {
+        return agentPromptsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public int getAgentPromptsCount() {
+      if (agentPromptsBuilder_ == null) {
+        return agentPrompts_.size();
+      } else {
+        return agentPromptsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt getAgentPrompts(
+        int index) {
+      if (agentPromptsBuilder_ == null) {
+        return agentPrompts_.get(index);
+      } else {
+        return agentPromptsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder setAgentPrompts(
+        int index, com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt value) {
+      if (agentPromptsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.set(index, value);
+        onChanged();
+      } else {
+        agentPromptsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder setAgentPrompts(
+        int index,
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder builderForValue) {
+      if (agentPromptsBuilder_ == null) {
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        agentPromptsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder addAgentPrompts(
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt value) {
+      if (agentPromptsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.add(value);
+        onChanged();
+      } else {
+        agentPromptsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder addAgentPrompts(
+        int index, com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt value) {
+      if (agentPromptsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.add(index, value);
+        onChanged();
+      } else {
+        agentPromptsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder addAgentPrompts(
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder builderForValue) {
+      if (agentPromptsBuilder_ == null) {
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        agentPromptsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder addAgentPrompts(
+        int index,
+        com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder builderForValue) {
+      if (agentPromptsBuilder_ == null) {
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        agentPromptsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder addAllAgentPrompts(
+        java.lang.Iterable<
+                ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt>
+            values) {
+      if (agentPromptsBuilder_ == null) {
+        ensureAgentPromptsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, agentPrompts_);
+        onChanged();
+      } else {
+        agentPromptsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder clearAgentPrompts() {
+      if (agentPromptsBuilder_ == null) {
+        agentPrompts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        agentPromptsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public Builder removeAgentPrompts(int index) {
+      if (agentPromptsBuilder_ == null) {
+        ensureAgentPromptsIsMutable();
+        agentPrompts_.remove(index);
+        onChanged();
+      } else {
+        agentPromptsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+        getAgentPromptsBuilder(int index) {
+      return internalGetAgentPromptsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder
+        getAgentPromptsOrBuilder(int index) {
+      if (agentPromptsBuilder_ == null) {
+        return agentPrompts_.get(index);
+      } else {
+        return agentPromptsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+        getAgentPromptsOrBuilderList() {
+      if (agentPromptsBuilder_ != null) {
+        return agentPromptsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(agentPrompts_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+        addAgentPromptsBuilder() {
+      return internalGetAgentPromptsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder
+        addAgentPromptsBuilder(int index) {
+      return internalGetAgentPromptsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational prompts to trigger agents like Shopping Agent.
+     *
+     * This is an experimental feature for select customers.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt agent_prompts = 5;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder>
+        getAgentPromptsBuilderList() {
+      return internalGetAgentPromptsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt,
+            com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder,
+            com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>
+        internalGetAgentPromptsFieldBuilder() {
+      if (agentPromptsBuilder_ == null) {
+        agentPromptsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt,
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPrompt.Builder,
+                com.google.cloud.retail.v2alpha.CompleteQueryResponse.AgentPromptOrBuilder>(
+                agentPrompts_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        agentPrompts_ = null;
+      }
+      return agentPromptsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.retail.v2alpha.CompleteQueryResponse)

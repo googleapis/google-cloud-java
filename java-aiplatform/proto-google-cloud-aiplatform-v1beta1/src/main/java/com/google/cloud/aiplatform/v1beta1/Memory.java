@@ -56,6 +56,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     displayName_ = "";
     description_ = "";
     fact_ = "";
+    topics_ = java.util.Collections.emptyList();
+    memoryType_ = 0;
+    context_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +73,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 11:
         return internalGetScope();
+      case 19:
+        return internalGetRevisionLabels();
+      case 21:
+        return internalGetMetadata();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -83,6 +90,949 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.aiplatform.v1beta1.Memory.class,
             com.google.cloud.aiplatform.v1beta1.Memory.Builder.class);
+  }
+
+  public interface StructuredContentOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Memory.StructuredContent)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the structured value of the memory.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the structured value of the memory.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The data.
+     */
+    com.google.protobuf.Struct getData();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the structured value of the memory.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    com.google.protobuf.StructOrBuilder getDataOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the schema ID for which this structured memory
+     * belongs to.
+     * </pre>
+     *
+     * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schemaId.
+     */
+    java.lang.String getSchemaId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the schema ID for which this structured memory
+     * belongs to.
+     * </pre>
+     *
+     * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schemaId.
+     */
+    com.google.protobuf.ByteString getSchemaIdBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the structured value of the memory.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.Memory.StructuredContent}
+   */
+  public static final class StructuredContent extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Memory.StructuredContent)
+      StructuredContentOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "StructuredContent");
+    }
+
+    // Use StructuredContent.newBuilder() to construct.
+    private StructuredContent(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StructuredContent() {
+      schemaId_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Memory_StructuredContent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+          .internal_static_google_cloud_aiplatform_v1beta1_Memory_StructuredContent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.class,
+              com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DATA_FIELD_NUMBER = 1;
+    private com.google.protobuf.Struct data_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the structured value of the memory.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the structured value of the memory.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getData() {
+      return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the structured value of the memory.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getDataOrBuilder() {
+      return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+    }
+
+    public static final int SCHEMA_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schemaId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the schema ID for which this structured memory
+     * belongs to.
+     * </pre>
+     *
+     * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The schemaId.
+     */
+    @java.lang.Override
+    public java.lang.String getSchemaId() {
+      java.lang.Object ref = schemaId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schemaId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Represents the schema ID for which this structured memory
+     * belongs to.
+     * </pre>
+     *
+     * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for schemaId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemaIdBytes() {
+      java.lang.Object ref = schemaId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schemaId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getData());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(schemaId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, schemaId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getData());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(schemaId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, schemaId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent other =
+          (com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent) obj;
+
+      if (hasData() != other.hasData()) return false;
+      if (hasData()) {
+        if (!getData().equals(other.getData())) return false;
+      }
+      if (!getSchemaId().equals(other.getSchemaId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasData()) {
+        hash = (37 * hash) + DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getData().hashCode();
+      }
+      hash = (37 * hash) + SCHEMA_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the structured value of the memory.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.Memory.StructuredContent}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.Memory.StructuredContent)
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContentOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Memory_StructuredContent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Memory_StructuredContent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.class,
+                com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetDataFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        data_ = null;
+        if (dataBuilder_ != null) {
+          dataBuilder_.dispose();
+          dataBuilder_ = null;
+        }
+        schemaId_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+            .internal_static_google_cloud_aiplatform_v1beta1_Memory_StructuredContent_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent build() {
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent result =
+            new com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.data_ = dataBuilder_ == null ? data_ : dataBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.schemaId_ = schemaId_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.getDefaultInstance())
+          return this;
+        if (other.hasData()) {
+          mergeData(other.getData());
+        }
+        if (!other.getSchemaId().isEmpty()) {
+          schemaId_ = other.schemaId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(internalGetDataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  schemaId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Struct data_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          dataBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return Whether the data field is set.
+       */
+      public boolean hasData() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The data.
+       */
+      public com.google.protobuf.Struct getData() {
+        if (dataBuilder_ == null) {
+          return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+        } else {
+          return dataBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setData(com.google.protobuf.Struct value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          data_ = value;
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder setData(com.google.protobuf.Struct.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          data_ = builderForValue.build();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder mergeData(com.google.protobuf.Struct value) {
+        if (dataBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && data_ != null
+              && data_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getDataBuilder().mergeFrom(value);
+          } else {
+            data_ = value;
+          }
+        } else {
+          dataBuilder_.mergeFrom(value);
+        }
+        if (data_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        data_ = null;
+        if (dataBuilder_ != null) {
+          dataBuilder_.dispose();
+          dataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.protobuf.Struct.Builder getDataBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetDataFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      public com.google.protobuf.StructOrBuilder getDataOrBuilder() {
+        if (dataBuilder_ != null) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the structured value of the memory.
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct data = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          internalGetDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          dataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getData(), getParentForChildren(), isClean());
+          data_ = null;
+        }
+        return dataBuilder_;
+      }
+
+      private java.lang.Object schemaId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the schema ID for which this structured memory
+       * belongs to.
+       * </pre>
+       *
+       * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The schemaId.
+       */
+      public java.lang.String getSchemaId() {
+        java.lang.Object ref = schemaId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schemaId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the schema ID for which this structured memory
+       * belongs to.
+       * </pre>
+       *
+       * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for schemaId.
+       */
+      public com.google.protobuf.ByteString getSchemaIdBytes() {
+        java.lang.Object ref = schemaId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          schemaId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the schema ID for which this structured memory
+       * belongs to.
+       * </pre>
+       *
+       * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The schemaId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schemaId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the schema ID for which this structured memory
+       * belongs to.
+       * </pre>
+       *
+       * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSchemaId() {
+        schemaId_ = getDefaultInstance().getSchemaId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Represents the schema ID for which this structured memory
+       * belongs to.
+       * </pre>
+       *
+       * <code>string schema_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for schemaId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        schemaId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.Memory.StructuredContent)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.Memory.StructuredContent)
+    private static final com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StructuredContent> PARSER =
+        new com.google.protobuf.AbstractParser<StructuredContent>() {
+          @java.lang.Override
+          public StructuredContent parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StructuredContent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StructuredContent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   private int bitField0_;
@@ -136,15 +1086,68 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     return ExpirationCase.forNumber(expirationCase_);
   }
 
+  private int revisionExpirationCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object revisionExpiration_;
+
+  public enum RevisionExpirationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    REVISION_EXPIRE_TIME(16),
+    REVISION_TTL(17),
+    DISABLE_MEMORY_REVISIONS(18),
+    REVISIONEXPIRATION_NOT_SET(0);
+    private final int value;
+
+    private RevisionExpirationCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RevisionExpirationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RevisionExpirationCase forNumber(int value) {
+      switch (value) {
+        case 16:
+          return REVISION_EXPIRE_TIME;
+        case 17:
+          return REVISION_TTL;
+        case 18:
+          return DISABLE_MEMORY_REVISIONS;
+        case 0:
+          return REVISIONEXPIRATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RevisionExpirationCase getRevisionExpirationCase() {
+    return RevisionExpirationCase.forNumber(revisionExpirationCase_);
+  }
+
   public static final int EXPIRE_TIME_FIELD_NUMBER = 13;
 
   /**
    *
    *
    * <pre>
-   * Optional. Timestamp of when this resource is considered expired.
-   * This is *always* provided on output, regardless of what `expiration` was
-   * sent on input.
+   * Optional. Represents the timestamp of when this resource is considered
+   * expired. This is *always* provided on output when `expiration` is set on
+   * input, regardless of whether `expire_time` or `ttl` was provided.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -161,9 +1164,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Timestamp of when this resource is considered expired.
-   * This is *always* provided on output, regardless of what `expiration` was
-   * sent on input.
+   * Optional. Represents the timestamp of when this resource is considered
+   * expired. This is *always* provided on output when `expiration` is set on
+   * input, regardless of whether `expire_time` or `ttl` was provided.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -183,9 +1186,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Timestamp of when this resource is considered expired.
-   * This is *always* provided on output, regardless of what `expiration` was
-   * sent on input.
+   * Optional. Represents the timestamp of when this resource is considered
+   * expired. This is *always* provided on output when `expiration` is set on
+   * input, regardless of whether `expire_time` or `ttl` was provided.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -205,8 +1208,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Input only. The TTL for this resource. The expiration time is
-   * computed: now + TTL.
+   * Optional. Input only. Represents the TTL for this resource. The
+   * expiration time is computed: now + TTL.
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -222,8 +1225,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Input only. The TTL for this resource. The expiration time is
-   * computed: now + TTL.
+   * Optional. Input only. Represents the TTL for this resource. The
+   * expiration time is computed: now + TTL.
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -242,8 +1245,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Input only. The TTL for this resource. The expiration time is
-   * computed: now + TTL.
+   * Optional. Input only. Represents the TTL for this resource. The
+   * expiration time is computed: now + TTL.
    * </pre>
    *
    * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -256,6 +1259,178 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
+  public static final int REVISION_EXPIRE_TIME_FIELD_NUMBER = 16;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the timestamp of when the revision is
+   * considered expired. If not set, the memory revision will be kept until
+   * manually deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the revisionExpireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasRevisionExpireTime() {
+    return revisionExpirationCase_ == 16;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the timestamp of when the revision is
+   * considered expired. If not set, the memory revision will be kept until
+   * manually deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The revisionExpireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getRevisionExpireTime() {
+    if (revisionExpirationCase_ == 16) {
+      return (com.google.protobuf.Timestamp) revisionExpiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the timestamp of when the revision is
+   * considered expired. If not set, the memory revision will be kept until
+   * manually deleted.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getRevisionExpireTimeOrBuilder() {
+    if (revisionExpirationCase_ == 16) {
+      return (com.google.protobuf.Timestamp) revisionExpiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  public static final int REVISION_TTL_FIELD_NUMBER = 17;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the TTL for the revision. The expiration
+   * time is computed: now + TTL.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the revisionTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasRevisionTtl() {
+    return revisionExpirationCase_ == 17;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the TTL for the revision. The expiration
+   * time is computed: now + TTL.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The revisionTtl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getRevisionTtl() {
+    if (revisionExpirationCase_ == 17) {
+      return (com.google.protobuf.Duration) revisionExpiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the TTL for the revision. The expiration
+   * time is computed: now + TTL.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getRevisionTtlOrBuilder() {
+    if (revisionExpirationCase_ == 17) {
+      return (com.google.protobuf.Duration) revisionExpiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
+  public static final int DISABLE_MEMORY_REVISIONS_FIELD_NUMBER = 18;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Indicates whether no revision will be created for
+   * this request.
+   * </pre>
+   *
+   * <code>
+   * bool disable_memory_revisions = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the disableMemoryRevisions field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableMemoryRevisions() {
+    return revisionExpirationCase_ == 18;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Indicates whether no revision will be created for
+   * this request.
+   * </pre>
+   *
+   * <code>
+   * bool disable_memory_revisions = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The disableMemoryRevisions.
+   */
+  @java.lang.Override
+  public boolean getDisableMemoryRevisions() {
+    if (revisionExpirationCase_ == 18) {
+      return (java.lang.Boolean) revisionExpiration_;
+    }
+    return false;
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -265,7 +1440,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The resource name of the Memory.
+   * Identifier. Represents the resource name of the Memory.
    * Format:
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
    * </pre>
@@ -291,7 +1466,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The resource name of the Memory.
+   * Identifier. Represents the resource name of the Memory.
    * Format:
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
    * </pre>
@@ -322,7 +1497,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Display name of the Memory.
+   * Optional. Represents the display name of the Memory.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,7 +1521,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Display name of the Memory.
+   * Optional. Represents the display name of the Memory.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -375,7 +1550,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Description of the Memory.
+   * Optional. Represents the description of the Memory.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -399,7 +1574,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Description of the Memory.
+   * Optional. Represents the description of the Memory.
    * </pre>
    *
    * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -426,7 +1601,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when this Memory was created.
+   * Output only. Represents the timestamp when this Memory was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -443,7 +1618,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when this Memory was created.
+   * Output only. Represents the timestamp when this Memory was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -460,7 +1635,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when this Memory was created.
+   * Output only. Represents the timestamp when this Memory was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -478,7 +1653,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when this Memory was most recently updated.
+   * Output only. Represents the timestamp when this Memory was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -495,7 +1671,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when this Memory was most recently updated.
+   * Output only. Represents the timestamp when this Memory was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -512,7 +1689,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Timestamp when this Memory was most recently updated.
+   * Output only. Represents the timestamp when this Memory was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -532,10 +1710,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Semantic knowledge extracted from the source content.
+   * Optional. Represents semantic knowledge extracted from the source content.
    * </pre>
    *
-   * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The fact.
    */
@@ -556,10 +1734,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Semantic knowledge extracted from the source content.
+   * Optional. Represents semantic knowledge extracted from the source content.
    * </pre>
    *
-   * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for fact.
    */
@@ -607,9 +1785,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. The scope of the Memory. Memories are isolated
-   * within their scope. The scope is defined when creating or generating
-   * memories. Scope values cannot contain the wildcard character '*'.
+   * Required. Immutable. Represents the scope of the Memory. Memories are
+   * isolated within their scope. The scope is defined when creating or
+   * generating memories. Scope values cannot contain the wildcard character
+   * '*'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -633,9 +1812,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. The scope of the Memory. Memories are isolated
-   * within their scope. The scope is defined when creating or generating
-   * memories. Scope values cannot contain the wildcard character '*'.
+   * Required. Immutable. Represents the scope of the Memory. Memories are
+   * isolated within their scope. The scope is defined when creating or
+   * generating memories. Scope values cannot contain the wildcard character
+   * '*'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -649,9 +1829,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. The scope of the Memory. Memories are isolated
-   * within their scope. The scope is defined when creating or generating
-   * memories. Scope values cannot contain the wildcard character '*'.
+   * Required. Immutable. Represents the scope of the Memory. Memories are
+   * isolated within their scope. The scope is defined when creating or
+   * generating memories. Scope values cannot contain the wildcard character
+   * '*'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -672,9 +1853,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. The scope of the Memory. Memories are isolated
-   * within their scope. The scope is defined when creating or generating
-   * memories. Scope values cannot contain the wildcard character '*'.
+   * Required. Immutable. Represents the scope of the Memory. Memories are
+   * isolated within their scope. The scope is defined when creating or
+   * generating memories. Scope values cannot contain the wildcard character
+   * '*'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -689,6 +1871,509 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int TOPICS_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.MemoryTopicId> topics_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the Topics of the Memory.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.MemoryTopicId> getTopicsList() {
+    return topics_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the Topics of the Memory.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder>
+      getTopicsOrBuilderList() {
+    return topics_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the Topics of the Memory.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getTopicsCount() {
+    return topics_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the Topics of the Memory.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MemoryTopicId getTopics(int index) {
+    return topics_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the Topics of the Memory.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder getTopicsOrBuilder(int index) {
+    return topics_.get(index);
+  }
+
+  public static final int REVISION_LABELS_FIELD_NUMBER = 19;
+
+  private static final class RevisionLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+                .internal_static_google_cloud_aiplatform_v1beta1_Memory_RevisionLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> revisionLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRevisionLabels() {
+    if (revisionLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          RevisionLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return revisionLabels_;
+  }
+
+  public int getRevisionLabelsCount() {
+    return internalGetRevisionLabels().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the labels to apply to the Memory Revision
+   * created as a result of this request.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsRevisionLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetRevisionLabels().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getRevisionLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getRevisionLabels() {
+    return getRevisionLabelsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the labels to apply to the Memory Revision
+   * created as a result of this request.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getRevisionLabelsMap() {
+    return internalGetRevisionLabels().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the labels to apply to the Memory Revision
+   * created as a result of this request.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getRevisionLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetRevisionLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Represents the labels to apply to the Memory Revision
+   * created as a result of this request.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getRevisionLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetRevisionLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 21;
+
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+                    newDefaultInstance(
+                        com.google.cloud.aiplatform.v1beta1.MemoryBankProto
+                            .internal_static_google_cloud_aiplatform_v1beta1_Memory_MetadataEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+      metadata_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+      internalGetMetadata() {
+    if (metadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
+    }
+    return metadata_;
+  }
+
+  public int getMetadataCount() {
+    return internalGetMetadata().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents user-provided metadata for the Memory. This
+   * information was provided when creating, updating, or generating the Memory.
+   * It was not generated by Memory Bank.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetMetadata().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getMetadataMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+      getMetadata() {
+    return getMetadataMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents user-provided metadata for the Memory. This
+   * information was provided when creating, updating, or generating the Memory.
+   * It was not generated by Memory Bank.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+      getMetadataMap() {
+    return internalGetMetadata().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents user-provided metadata for the Memory. This
+   * information was provided when creating, updating, or generating the Memory.
+   * It was not generated by Memory Bank.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue
+      getMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue> map =
+        internalGetMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents user-provided metadata for the Memory. This
+   * information was provided when creating, updating, or generating the Memory.
+   * It was not generated by Memory Bank.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue getMetadataOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue> map =
+        internalGetMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int MEMORY_TYPE_FIELD_NUMBER = 22;
+  private int memoryType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the type of the memory. If not set, the
+   * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+   * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for memoryType.
+   */
+  @java.lang.Override
+  public int getMemoryTypeValue() {
+    return memoryType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the type of the memory. If not set, the
+   * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+   * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The memoryType.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.MemoryType getMemoryType() {
+    com.google.cloud.aiplatform.v1beta1.MemoryType result =
+        com.google.cloud.aiplatform.v1beta1.MemoryType.forNumber(memoryType_);
+    return result == null ? com.google.cloud.aiplatform.v1beta1.MemoryType.UNRECOGNIZED : result;
+  }
+
+  public static final int STRUCTURED_CONTENT_FIELD_NUMBER = 24;
+  private com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent structuredContent_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the structured content of the memory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the structuredContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasStructuredContent() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the structured content of the memory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The structuredContent.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent getStructuredContent() {
+    return structuredContent_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.getDefaultInstance()
+        : structuredContent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the structured content of the memory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContentOrBuilder
+      getStructuredContentOrBuilder() {
+    return structuredContent_ == null
+        ? com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.getDefaultInstance()
+        : structuredContent_;
+  }
+
+  public static final int CONTEXT_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object context_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the context of the memory.
+   * </pre>
+   *
+   * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The context.
+   */
+  @java.lang.Override
+  public java.lang.String getContext() {
+    java.lang.Object ref = context_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      context_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the context of the memory.
+   * </pre>
+   *
+   * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for context.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getContextBytes() {
+    java.lang.Object ref = context_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      context_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -730,6 +2415,32 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     }
     if (expirationCase_ == 14) {
       output.writeMessage(14, (com.google.protobuf.Duration) expiration_);
+    }
+    for (int i = 0; i < topics_.size(); i++) {
+      output.writeMessage(15, topics_.get(i));
+    }
+    if (revisionExpirationCase_ == 16) {
+      output.writeMessage(16, (com.google.protobuf.Timestamp) revisionExpiration_);
+    }
+    if (revisionExpirationCase_ == 17) {
+      output.writeMessage(17, (com.google.protobuf.Duration) revisionExpiration_);
+    }
+    if (revisionExpirationCase_ == 18) {
+      output.writeBool(18, (boolean) ((java.lang.Boolean) revisionExpiration_));
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetRevisionLabels(), RevisionLabelsDefaultEntryHolder.defaultEntry, 19);
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 21);
+    if (memoryType_
+        != com.google.cloud.aiplatform.v1beta1.MemoryType.MEMORY_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(22, memoryType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(24, getStructuredContent());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(context_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 25, context_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -778,6 +2489,57 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.protobuf.Duration) expiration_);
     }
+    for (int i = 0; i < topics_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, topics_.get(i));
+    }
+    if (revisionExpirationCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.protobuf.Timestamp) revisionExpiration_);
+    }
+    if (revisionExpirationCase_ == 17) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              17, (com.google.protobuf.Duration) revisionExpiration_);
+    }
+    if (revisionExpirationCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              18, (boolean) ((java.lang.Boolean) revisionExpiration_));
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetRevisionLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> revisionLabels__ =
+          RevisionLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, revisionLabels__);
+    }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+        entry : internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+          metadata__ =
+              MetadataDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, metadata__);
+    }
+    if (memoryType_
+        != com.google.cloud.aiplatform.v1beta1.MemoryType.MEMORY_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, memoryType_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getStructuredContent());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(context_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(25, context_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -807,6 +2569,15 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     }
     if (!getFact().equals(other.getFact())) return false;
     if (!internalGetScope().equals(other.internalGetScope())) return false;
+    if (!getTopicsList().equals(other.getTopicsList())) return false;
+    if (!internalGetRevisionLabels().equals(other.internalGetRevisionLabels())) return false;
+    if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
+    if (memoryType_ != other.memoryType_) return false;
+    if (hasStructuredContent() != other.hasStructuredContent()) return false;
+    if (hasStructuredContent()) {
+      if (!getStructuredContent().equals(other.getStructuredContent())) return false;
+    }
+    if (!getContext().equals(other.getContext())) return false;
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
       case 13:
@@ -814,6 +2585,20 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         break;
       case 14:
         if (!getTtl().equals(other.getTtl())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getRevisionExpirationCase().equals(other.getRevisionExpirationCase())) return false;
+    switch (revisionExpirationCase_) {
+      case 16:
+        if (!getRevisionExpireTime().equals(other.getRevisionExpireTime())) return false;
+        break;
+      case 17:
+        if (!getRevisionTtl().equals(other.getRevisionTtl())) return false;
+        break;
+      case 18:
+        if (getDisableMemoryRevisions() != other.getDisableMemoryRevisions()) return false;
         break;
       case 0:
       default:
@@ -849,6 +2634,26 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SCOPE_FIELD_NUMBER;
       hash = (53 * hash) + internalGetScope().hashCode();
     }
+    if (getTopicsCount() > 0) {
+      hash = (37 * hash) + TOPICS_FIELD_NUMBER;
+      hash = (53 * hash) + getTopicsList().hashCode();
+    }
+    if (!internalGetRevisionLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + REVISION_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetRevisionLabels().hashCode();
+    }
+    if (!internalGetMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    hash = (37 * hash) + MEMORY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + memoryType_;
+    if (hasStructuredContent()) {
+      hash = (37 * hash) + STRUCTURED_CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getStructuredContent().hashCode();
+    }
+    hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+    hash = (53 * hash) + getContext().hashCode();
     switch (expirationCase_) {
       case 13:
         hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
@@ -857,6 +2662,22 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       case 14:
         hash = (37 * hash) + TTL_FIELD_NUMBER;
         hash = (53 * hash) + getTtl().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (revisionExpirationCase_) {
+      case 16:
+        hash = (37 * hash) + REVISION_EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getRevisionExpireTime().hashCode();
+        break;
+      case 17:
+        hash = (37 * hash) + REVISION_TTL_FIELD_NUMBER;
+        hash = (53 * hash) + getRevisionTtl().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + DISABLE_MEMORY_REVISIONS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableMemoryRevisions());
         break;
       case 0:
       default:
@@ -986,6 +2807,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 11:
           return internalGetScope();
+        case 19:
+          return internalGetRevisionLabels();
+        case 21:
+          return internalGetMetadata();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -997,6 +2822,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 11:
           return internalGetMutableScope();
+        case 19:
+          return internalGetMutableRevisionLabels();
+        case 21:
+          return internalGetMutableMetadata();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1026,6 +2855,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetTopicsFieldBuilder();
+        internalGetStructuredContentFieldBuilder();
       }
     }
 
@@ -1038,6 +2869,12 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       if (ttlBuilder_ != null) {
         ttlBuilder_.clear();
+      }
+      if (revisionExpireTimeBuilder_ != null) {
+        revisionExpireTimeBuilder_.clear();
+      }
+      if (revisionTtlBuilder_ != null) {
+        revisionTtlBuilder_.clear();
       }
       name_ = "";
       displayName_ = "";
@@ -1054,8 +2891,26 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       fact_ = "";
       internalGetMutableScope().clear();
+      if (topicsBuilder_ == null) {
+        topics_ = java.util.Collections.emptyList();
+      } else {
+        topics_ = null;
+        topicsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
+      internalGetMutableRevisionLabels().clear();
+      internalGetMutableMetadata().clear();
+      memoryType_ = 0;
+      structuredContent_ = null;
+      if (structuredContentBuilder_ != null) {
+        structuredContentBuilder_.dispose();
+        structuredContentBuilder_ = null;
+      }
+      context_ = "";
       expirationCase_ = 0;
       expiration_ = null;
+      revisionExpirationCase_ = 0;
+      revisionExpiration_ = null;
       return this;
     }
 
@@ -1083,6 +2938,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.Memory buildPartial() {
       com.google.cloud.aiplatform.v1beta1.Memory result =
           new com.google.cloud.aiplatform.v1beta1.Memory(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -1091,32 +2947,64 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
+    private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1beta1.Memory result) {
+      if (topicsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          topics_ = java.util.Collections.unmodifiableList(topics_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.topics_ = topics_;
+      } else {
+        result.topics_ = topicsBuilder_.build();
+      }
+    }
+
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.Memory result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.fact_ = fact_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.scope_ = internalGetScope();
         result.scope_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.revisionLabels_ = internalGetRevisionLabels();
+        result.revisionLabels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.metadata_ = internalGetMetadata().build(MetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.memoryType_ = memoryType_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.structuredContent_ =
+            structuredContentBuilder_ == null
+                ? structuredContent_
+                : structuredContentBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.context_ = context_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1129,6 +3017,14 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       if (expirationCase_ == 14 && ttlBuilder_ != null) {
         result.expiration_ = ttlBuilder_.build();
+      }
+      result.revisionExpirationCase_ = revisionExpirationCase_;
+      result.revisionExpiration_ = this.revisionExpiration_;
+      if (revisionExpirationCase_ == 16 && revisionExpireTimeBuilder_ != null) {
+        result.revisionExpiration_ = revisionExpireTimeBuilder_.build();
+      }
+      if (revisionExpirationCase_ == 17 && revisionTtlBuilder_ != null) {
+        result.revisionExpiration_ = revisionTtlBuilder_.build();
       }
     }
 
@@ -1146,17 +3042,17 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.aiplatform.v1beta1.Memory.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1167,11 +3063,53 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getFact().isEmpty()) {
         fact_ = other.fact_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       internalGetMutableScope().mergeFrom(other.internalGetScope());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
+      if (topicsBuilder_ == null) {
+        if (!other.topics_.isEmpty()) {
+          if (topics_.isEmpty()) {
+            topics_ = other.topics_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureTopicsIsMutable();
+            topics_.addAll(other.topics_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.topics_.isEmpty()) {
+          if (topicsBuilder_.isEmpty()) {
+            topicsBuilder_.dispose();
+            topicsBuilder_ = null;
+            topics_ = other.topics_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            topicsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetTopicsFieldBuilder()
+                    : null;
+          } else {
+            topicsBuilder_.addAllMessages(other.topics_);
+          }
+        }
+      }
+      internalGetMutableRevisionLabels().mergeFrom(other.internalGetRevisionLabels());
+      bitField0_ |= 0x00002000;
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      bitField0_ |= 0x00004000;
+      if (other.memoryType_ != 0) {
+        setMemoryTypeValue(other.getMemoryTypeValue());
+      }
+      if (other.hasStructuredContent()) {
+        mergeStructuredContent(other.getStructuredContent());
+      }
+      if (!other.getContext().isEmpty()) {
+        context_ = other.context_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       switch (other.getExpirationCase()) {
         case EXPIRE_TIME:
           {
@@ -1184,6 +3122,27 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
             break;
           }
         case EXPIRATION_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getRevisionExpirationCase()) {
+        case REVISION_EXPIRE_TIME:
+          {
+            mergeRevisionExpireTime(other.getRevisionExpireTime());
+            break;
+          }
+        case REVISION_TTL:
+          {
+            mergeRevisionTtl(other.getRevisionTtl());
+            break;
+          }
+        case DISABLE_MEMORY_REVISIONS:
+          {
+            setDisableMemoryRevisions(other.getDisableMemoryRevisions());
+            break;
+          }
+        case REVISIONEXPIRATION_NOT_SET:
           {
             break;
           }
@@ -1217,39 +3176,39 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 42
             case 82:
               {
                 fact_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
@@ -1258,7 +3217,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
                     input.readMessage(
                         ScopeDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableScope().getMutableMap().put(scope__.getKey(), scope__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
             case 106:
@@ -1274,6 +3233,85 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
                 expirationCase_ = 14;
                 break;
               } // case 114
+            case 122:
+              {
+                com.google.cloud.aiplatform.v1beta1.MemoryTopicId m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.MemoryTopicId.parser(),
+                        extensionRegistry);
+                if (topicsBuilder_ == null) {
+                  ensureTopicsIsMutable();
+                  topics_.add(m);
+                } else {
+                  topicsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    internalGetRevisionExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                revisionExpirationCase_ = 16;
+                break;
+              } // case 130
+            case 138:
+              {
+                input.readMessage(
+                    internalGetRevisionTtlFieldBuilder().getBuilder(), extensionRegistry);
+                revisionExpirationCase_ = 17;
+                break;
+              } // case 138
+            case 144:
+              {
+                revisionExpiration_ = input.readBool();
+                revisionExpirationCase_ = 18;
+                break;
+              } // case 144
+            case 154:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> revisionLabels__ =
+                    input.readMessage(
+                        RevisionLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableRevisionLabels()
+                    .getMutableMap()
+                    .put(revisionLabels__.getKey(), revisionLabels__.getValue());
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 154
+            case 170:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+                    metadata__ =
+                        input.readMessage(
+                            MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableMetadata()
+                    .ensureBuilderMap()
+                    .put(metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 170
+            case 176:
+              {
+                memoryType_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 176
+            case 194:
+              {
+                input.readMessage(
+                    internalGetStructuredContentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 194
+            case 202:
+              {
+                context_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1305,6 +3343,20 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int revisionExpirationCase_ = 0;
+    private java.lang.Object revisionExpiration_;
+
+    public RevisionExpirationCase getRevisionExpirationCase() {
+      return RevisionExpirationCase.forNumber(revisionExpirationCase_);
+    }
+
+    public Builder clearRevisionExpiration() {
+      revisionExpirationCase_ = 0;
+      revisionExpiration_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilder<
@@ -1317,9 +3369,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1336,9 +3388,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1365,9 +3417,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1391,9 +3443,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1414,9 +3466,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1449,9 +3501,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1478,9 +3530,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1494,9 +3546,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1518,9 +3570,9 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Timestamp of when this resource is considered expired.
-     * This is *always* provided on output, regardless of what `expiration` was
-     * sent on input.
+     * Optional. Represents the timestamp of when this resource is considered
+     * expired. This is *always* provided on output when `expiration` is set on
+     * input, regardless of whether `expire_time` or `ttl` was provided.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
@@ -1558,8 +3610,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1575,8 +3627,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1602,8 +3654,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1626,8 +3678,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1647,8 +3699,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1680,8 +3732,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1707,8 +3759,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1721,8 +3773,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1743,8 +3795,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Input only. The TTL for this resource. The expiration time is
-     * computed: now + TTL.
+     * Optional. Input only. Represents the TTL for this resource. The
+     * expiration time is computed: now + TTL.
      * </pre>
      *
      * <code>.google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1771,13 +3823,595 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       return ttlBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        revisionExpireTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the revisionExpireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasRevisionExpireTime() {
+      return revisionExpirationCase_ == 16;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The revisionExpireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getRevisionExpireTime() {
+      if (revisionExpireTimeBuilder_ == null) {
+        if (revisionExpirationCase_ == 16) {
+          return (com.google.protobuf.Timestamp) revisionExpiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      } else {
+        if (revisionExpirationCase_ == 16) {
+          return revisionExpireTimeBuilder_.getMessage();
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setRevisionExpireTime(com.google.protobuf.Timestamp value) {
+      if (revisionExpireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        revisionExpiration_ = value;
+        onChanged();
+      } else {
+        revisionExpireTimeBuilder_.setMessage(value);
+      }
+      revisionExpirationCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setRevisionExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (revisionExpireTimeBuilder_ == null) {
+        revisionExpiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        revisionExpireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      revisionExpirationCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRevisionExpireTime(com.google.protobuf.Timestamp value) {
+      if (revisionExpireTimeBuilder_ == null) {
+        if (revisionExpirationCase_ == 16
+            && revisionExpiration_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          revisionExpiration_ =
+              com.google.protobuf.Timestamp.newBuilder(
+                      (com.google.protobuf.Timestamp) revisionExpiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          revisionExpiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (revisionExpirationCase_ == 16) {
+          revisionExpireTimeBuilder_.mergeFrom(value);
+        } else {
+          revisionExpireTimeBuilder_.setMessage(value);
+        }
+      }
+      revisionExpirationCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRevisionExpireTime() {
+      if (revisionExpireTimeBuilder_ == null) {
+        if (revisionExpirationCase_ == 16) {
+          revisionExpirationCase_ = 0;
+          revisionExpiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (revisionExpirationCase_ == 16) {
+          revisionExpirationCase_ = 0;
+          revisionExpiration_ = null;
+        }
+        revisionExpireTimeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getRevisionExpireTimeBuilder() {
+      return internalGetRevisionExpireTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getRevisionExpireTimeOrBuilder() {
+      if ((revisionExpirationCase_ == 16) && (revisionExpireTimeBuilder_ != null)) {
+        return revisionExpireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (revisionExpirationCase_ == 16) {
+          return (com.google.protobuf.Timestamp) revisionExpiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the timestamp of when the revision is
+     * considered expired. If not set, the memory revision will be kept until
+     * manually deleted.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp revision_expire_time = 16 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetRevisionExpireTimeFieldBuilder() {
+      if (revisionExpireTimeBuilder_ == null) {
+        if (!(revisionExpirationCase_ == 16)) {
+          revisionExpiration_ = com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+        revisionExpireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) revisionExpiration_,
+                getParentForChildren(),
+                isClean());
+        revisionExpiration_ = null;
+      }
+      revisionExpirationCase_ = 16;
+      onChanged();
+      return revisionExpireTimeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        revisionTtlBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the revisionTtl field is set.
+     */
+    @java.lang.Override
+    public boolean hasRevisionTtl() {
+      return revisionExpirationCase_ == 17;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The revisionTtl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getRevisionTtl() {
+      if (revisionTtlBuilder_ == null) {
+        if (revisionExpirationCase_ == 17) {
+          return (com.google.protobuf.Duration) revisionExpiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      } else {
+        if (revisionExpirationCase_ == 17) {
+          return revisionTtlBuilder_.getMessage();
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setRevisionTtl(com.google.protobuf.Duration value) {
+      if (revisionTtlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        revisionExpiration_ = value;
+        onChanged();
+      } else {
+        revisionTtlBuilder_.setMessage(value);
+      }
+      revisionExpirationCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setRevisionTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (revisionTtlBuilder_ == null) {
+        revisionExpiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        revisionTtlBuilder_.setMessage(builderForValue.build());
+      }
+      revisionExpirationCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRevisionTtl(com.google.protobuf.Duration value) {
+      if (revisionTtlBuilder_ == null) {
+        if (revisionExpirationCase_ == 17
+            && revisionExpiration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          revisionExpiration_ =
+              com.google.protobuf.Duration.newBuilder(
+                      (com.google.protobuf.Duration) revisionExpiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          revisionExpiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (revisionExpirationCase_ == 17) {
+          revisionTtlBuilder_.mergeFrom(value);
+        } else {
+          revisionTtlBuilder_.setMessage(value);
+        }
+      }
+      revisionExpirationCase_ = 17;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRevisionTtl() {
+      if (revisionTtlBuilder_ == null) {
+        if (revisionExpirationCase_ == 17) {
+          revisionExpirationCase_ = 0;
+          revisionExpiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (revisionExpirationCase_ == 17) {
+          revisionExpirationCase_ = 0;
+          revisionExpiration_ = null;
+        }
+        revisionTtlBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getRevisionTtlBuilder() {
+      return internalGetRevisionTtlFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getRevisionTtlOrBuilder() {
+      if ((revisionExpirationCase_ == 17) && (revisionTtlBuilder_ != null)) {
+        return revisionTtlBuilder_.getMessageOrBuilder();
+      } else {
+        if (revisionExpirationCase_ == 17) {
+          return (com.google.protobuf.Duration) revisionExpiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the TTL for the revision. The expiration
+     * time is computed: now + TTL.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration revision_ttl = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetRevisionTtlFieldBuilder() {
+      if (revisionTtlBuilder_ == null) {
+        if (!(revisionExpirationCase_ == 17)) {
+          revisionExpiration_ = com.google.protobuf.Duration.getDefaultInstance();
+        }
+        revisionTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                (com.google.protobuf.Duration) revisionExpiration_,
+                getParentForChildren(),
+                isClean());
+        revisionExpiration_ = null;
+      }
+      revisionExpirationCase_ = 17;
+      onChanged();
+      return revisionTtlBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Indicates whether no revision will be created for
+     * this request.
+     * </pre>
+     *
+     * <code>
+     * bool disable_memory_revisions = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the disableMemoryRevisions field is set.
+     */
+    public boolean hasDisableMemoryRevisions() {
+      return revisionExpirationCase_ == 18;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Indicates whether no revision will be created for
+     * this request.
+     * </pre>
+     *
+     * <code>
+     * bool disable_memory_revisions = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The disableMemoryRevisions.
+     */
+    public boolean getDisableMemoryRevisions() {
+      if (revisionExpirationCase_ == 18) {
+        return (java.lang.Boolean) revisionExpiration_;
+      }
+      return false;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Indicates whether no revision will be created for
+     * this request.
+     * </pre>
+     *
+     * <code>
+     * bool disable_memory_revisions = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The disableMemoryRevisions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableMemoryRevisions(boolean value) {
+
+      revisionExpirationCase_ = 18;
+      revisionExpiration_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Indicates whether no revision will be created for
+     * this request.
+     * </pre>
+     *
+     * <code>
+     * bool disable_memory_revisions = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableMemoryRevisions() {
+      if (revisionExpirationCase_ == 18) {
+        revisionExpirationCase_ = 0;
+        revisionExpiration_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
      *
      *
      * <pre>
-     * Identifier. The resource name of the Memory.
+     * Identifier. Represents the resource name of the Memory.
      * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
      * </pre>
@@ -1802,7 +4436,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the Memory.
+     * Identifier. Represents the resource name of the Memory.
      * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
      * </pre>
@@ -1827,7 +4461,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the Memory.
+     * Identifier. Represents the resource name of the Memory.
      * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
      * </pre>
@@ -1842,7 +4476,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1851,7 +4485,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the Memory.
+     * Identifier. Represents the resource name of the Memory.
      * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
      * </pre>
@@ -1862,7 +4496,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1871,7 +4505,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The resource name of the Memory.
+     * Identifier. Represents the resource name of the Memory.
      * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}`
      * </pre>
@@ -1887,7 +4521,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1898,7 +4532,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Display name of the Memory.
+     * Optional. Represents the display name of the Memory.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1921,7 +4555,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Display name of the Memory.
+     * Optional. Represents the display name of the Memory.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1944,7 +4578,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Display name of the Memory.
+     * Optional. Represents the display name of the Memory.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1957,7 +4591,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1966,7 +4600,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Display name of the Memory.
+     * Optional. Represents the display name of the Memory.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1975,7 +4609,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1984,7 +4618,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Display name of the Memory.
+     * Optional. Represents the display name of the Memory.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1998,7 +4632,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2009,7 +4643,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the Memory.
+     * Optional. Represents the description of the Memory.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2032,7 +4666,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the Memory.
+     * Optional. Represents the description of the Memory.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2055,7 +4689,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the Memory.
+     * Optional. Represents the description of the Memory.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2068,7 +4702,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2077,7 +4711,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the Memory.
+     * Optional. Represents the description of the Memory.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2086,7 +4720,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2095,7 +4729,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Description of the Memory.
+     * Optional. Represents the description of the Memory.
      * </pre>
      *
      * <code>string description = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2109,7 +4743,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2125,7 +4759,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2135,14 +4769,14 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2165,7 +4799,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2181,7 +4815,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2190,7 +4824,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2203,7 +4837,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2212,7 +4846,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2221,7 +4855,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2232,7 +4866,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2242,7 +4876,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2250,7 +4884,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2264,7 +4898,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2272,7 +4906,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2281,7 +4915,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2302,7 +4936,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was created.
+     * Output only. Represents the timestamp when this Memory was created.
      * </pre>
      *
      * <code>
@@ -2337,7 +4971,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2347,14 +4982,15 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2377,7 +5013,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2393,7 +5030,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2402,7 +5039,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2415,7 +5053,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2424,7 +5062,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2433,7 +5072,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -2444,7 +5083,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2454,7 +5093,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2462,7 +5102,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -2476,7 +5116,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2484,7 +5125,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -2493,7 +5134,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2514,7 +5156,8 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Timestamp when this Memory was most recently updated.
+     * Output only. Represents the timestamp when this Memory was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -2544,10 +5187,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Semantic knowledge extracted from the source content.
+     * Optional. Represents semantic knowledge extracted from the source content.
      * </pre>
      *
-     * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The fact.
      */
@@ -2567,10 +5210,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Semantic knowledge extracted from the source content.
+     * Optional. Represents semantic knowledge extracted from the source content.
      * </pre>
      *
-     * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for fact.
      */
@@ -2590,10 +5233,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Semantic knowledge extracted from the source content.
+     * Optional. Represents semantic knowledge extracted from the source content.
      * </pre>
      *
-     * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The fact to set.
      * @return This builder for chaining.
@@ -2603,7 +5246,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       fact_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2612,16 +5255,16 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Semantic knowledge extracted from the source content.
+     * Optional. Represents semantic knowledge extracted from the source content.
      * </pre>
      *
-     * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearFact() {
       fact_ = getDefaultInstance().getFact();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2630,10 +5273,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Semantic knowledge extracted from the source content.
+     * Optional. Represents semantic knowledge extracted from the source content.
      * </pre>
      *
-     * <code>string fact = 10 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string fact = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for fact to set.
      * @return This builder for chaining.
@@ -2644,7 +5287,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       fact_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2666,7 +5309,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
       if (!scope_.isMutable()) {
         scope_ = scope_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return scope_;
     }
@@ -2679,9 +5322,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2705,9 +5349,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2721,9 +5366,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2744,9 +5390,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2764,7 +5411,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearScope() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internalGetMutableScope().getMutableMap().clear();
       return this;
     }
@@ -2773,9 +5420,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2791,7 +5439,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableScope() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       return internalGetMutableScope().getMutableMap();
     }
 
@@ -2799,9 +5447,10 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2814,7 +5463,7 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableScope().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       return this;
     }
 
@@ -2822,16 +5471,1349 @@ public final class Memory extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. The scope of the Memory. Memories are isolated
-     * within their scope. The scope is defined when creating or generating
-     * memories. Scope values cannot contain the wildcard character '*'.
+     * Required. Immutable. Represents the scope of the Memory. Memories are
+     * isolated within their scope. The scope is defined when creating or
+     * generating memories. Scope values cannot contain the wildcard character
+     * '*'.
      * </pre>
      *
      * <code>map&lt;string, string&gt; scope = 11 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder putAllScope(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableScope().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.MemoryTopicId> topics_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTopicsIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        topics_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.MemoryTopicId>(topics_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MemoryTopicId,
+            com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder,
+            com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder>
+        topicsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.MemoryTopicId> getTopicsList() {
+      if (topicsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(topics_);
+      } else {
+        return topicsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getTopicsCount() {
+      if (topicsBuilder_ == null) {
+        return topics_.size();
+      } else {
+        return topicsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MemoryTopicId getTopics(int index) {
+      if (topicsBuilder_ == null) {
+        return topics_.get(index);
+      } else {
+        return topicsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTopics(int index, com.google.cloud.aiplatform.v1beta1.MemoryTopicId value) {
+      if (topicsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTopicsIsMutable();
+        topics_.set(index, value);
+        onChanged();
+      } else {
+        topicsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTopics(
+        int index, com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder builderForValue) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        topicsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTopics(com.google.cloud.aiplatform.v1beta1.MemoryTopicId value) {
+      if (topicsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTopicsIsMutable();
+        topics_.add(value);
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTopics(int index, com.google.cloud.aiplatform.v1beta1.MemoryTopicId value) {
+      if (topicsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTopicsIsMutable();
+        topics_.add(index, value);
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTopics(
+        com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder builderForValue) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.add(builderForValue.build());
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addTopics(
+        int index, com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder builderForValue) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        topicsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllTopics(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.MemoryTopicId> values) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, topics_);
+        onChanged();
+      } else {
+        topicsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTopics() {
+      if (topicsBuilder_ == null) {
+        topics_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        topicsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTopics(int index) {
+      if (topicsBuilder_ == null) {
+        ensureTopicsIsMutable();
+        topics_.remove(index);
+        onChanged();
+      } else {
+        topicsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder getTopicsBuilder(int index) {
+      return internalGetTopicsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder getTopicsOrBuilder(
+        int index) {
+      if (topicsBuilder_ == null) {
+        return topics_.get(index);
+      } else {
+        return topicsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder>
+        getTopicsOrBuilderList() {
+      if (topicsBuilder_ != null) {
+        return topicsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(topics_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder addTopicsBuilder() {
+      return internalGetTopicsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.MemoryTopicId.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder addTopicsBuilder(int index) {
+      return internalGetTopicsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.MemoryTopicId.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the Topics of the Memory.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.MemoryTopicId topics = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder>
+        getTopicsBuilderList() {
+      return internalGetTopicsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.MemoryTopicId,
+            com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder,
+            com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder>
+        internalGetTopicsFieldBuilder() {
+      if (topicsBuilder_ == null) {
+        topicsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.MemoryTopicId,
+                com.google.cloud.aiplatform.v1beta1.MemoryTopicId.Builder,
+                com.google.cloud.aiplatform.v1beta1.MemoryTopicIdOrBuilder>(
+                topics_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+        topics_ = null;
+      }
+      return topicsBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> revisionLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRevisionLabels() {
+      if (revisionLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RevisionLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return revisionLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRevisionLabels() {
+      if (revisionLabels_ == null) {
+        revisionLabels_ =
+            com.google.protobuf.MapField.newMapField(RevisionLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!revisionLabels_.isMutable()) {
+        revisionLabels_ = revisionLabels_.copy();
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return revisionLabels_;
+    }
+
+    public int getRevisionLabelsCount() {
+      return internalGetRevisionLabels().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsRevisionLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetRevisionLabels().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getRevisionLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getRevisionLabels() {
+      return getRevisionLabelsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getRevisionLabelsMap() {
+      return internalGetRevisionLabels().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getRevisionLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetRevisionLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getRevisionLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetRevisionLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearRevisionLabels() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      internalGetMutableRevisionLabels().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder removeRevisionLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableRevisionLabels().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableRevisionLabels() {
+      bitField0_ |= 0x00002000;
+      return internalGetMutableRevisionLabels().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder putRevisionLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableRevisionLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Represents the labels to apply to the Memory Revision
+     * created as a result of this request.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; revision_labels = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllRevisionLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableRevisionLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00002000;
+      return this;
+    }
+
+    private static final class MetadataConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue> {
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue build(
+          com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder val) {
+        if (val instanceof com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue) {
+          return (com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue) val;
+        }
+        return ((com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+          defaultEntry() {
+        return MetadataDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final MetadataConverter metadataConverter = new MetadataConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.Builder>
+        metadata_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.Builder>
+        internalGetMetadata() {
+      if (metadata_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(metadataConverter);
+      }
+      return metadata_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue,
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.Builder>
+        internalGetMutableMetadata() {
+      if (metadata_ == null) {
+        metadata_ = new com.google.protobuf.MapFieldBuilder<>(metadataConverter);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetMetadata().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getMetadataMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+        getMetadata() {
+      return getMetadataMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+        getMetadataMap() {
+      return internalGetMetadata().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue
+        getMetadataOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder>
+          map = internalGetMutableMetadata().ensureBuilderMap();
+      return map.containsKey(key) ? metadataConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder>
+          map = internalGetMutableMetadata().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return metadataConverter.build(map.get(key));
+    }
+
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      internalGetMutableMetadata().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableMetadata().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+        getMutableMetadata() {
+      bitField0_ |= 0x00004000;
+      return internalGetMutableMetadata().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putMetadata(
+        java.lang.String key, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableMetadata().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllMetadata(
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableMetadata().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents user-provided metadata for the Memory. This
+     * information was provided when creating, updating, or generating the Memory.
+     * It was not generated by Memory Bank.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.aiplatform.v1beta1.MemoryMetadataValue&gt; metadata = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.Builder
+        putMetadataBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String, com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder>
+          builderMap = internalGetMutableMetadata().ensureBuilderMap();
+      com.google.cloud.aiplatform.v1beta1.MemoryMetadataValueOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue) {
+        entry = ((com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.aiplatform.v1beta1.MemoryMetadataValue.Builder) entry;
+    }
+
+    private int memoryType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the type of the memory. If not set, the
+     * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+     * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for memoryType.
+     */
+    @java.lang.Override
+    public int getMemoryTypeValue() {
+      return memoryType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the type of the memory. If not set, the
+     * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+     * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for memoryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMemoryTypeValue(int value) {
+      memoryType_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the type of the memory. If not set, the
+     * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+     * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The memoryType.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.MemoryType getMemoryType() {
+      com.google.cloud.aiplatform.v1beta1.MemoryType result =
+          com.google.cloud.aiplatform.v1beta1.MemoryType.forNumber(memoryType_);
+      return result == null ? com.google.cloud.aiplatform.v1beta1.MemoryType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the type of the memory. If not set, the
+     * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+     * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The memoryType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMemoryType(com.google.cloud.aiplatform.v1beta1.MemoryType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      memoryType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the type of the memory. If not set, the
+     * `NATURAL_LANGUAGE_COLLECTION` type is used. If `STRUCTURED_COLLECTION` or
+     * `STRUCTURED_PROFILE` is used, then `structured_data` must be provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.MemoryType memory_type = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMemoryType() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      memoryType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent structuredContent_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent,
+            com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder,
+            com.google.cloud.aiplatform.v1beta1.Memory.StructuredContentOrBuilder>
+        structuredContentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the structuredContent field is set.
+     */
+    public boolean hasStructuredContent() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The structuredContent.
+     */
+    public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent getStructuredContent() {
+      if (structuredContentBuilder_ == null) {
+        return structuredContent_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.getDefaultInstance()
+            : structuredContent_;
+      } else {
+        return structuredContentBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStructuredContent(
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent value) {
+      if (structuredContentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        structuredContent_ = value;
+      } else {
+        structuredContentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setStructuredContent(
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder builderForValue) {
+      if (structuredContentBuilder_ == null) {
+        structuredContent_ = builderForValue.build();
+      } else {
+        structuredContentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeStructuredContent(
+        com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent value) {
+      if (structuredContentBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && structuredContent_ != null
+            && structuredContent_
+                != com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent
+                    .getDefaultInstance()) {
+          getStructuredContentBuilder().mergeFrom(value);
+        } else {
+          structuredContent_ = value;
+        }
+      } else {
+        structuredContentBuilder_.mergeFrom(value);
+      }
+      if (structuredContent_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearStructuredContent() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      structuredContent_ = null;
+      if (structuredContentBuilder_ != null) {
+        structuredContentBuilder_.dispose();
+        structuredContentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder
+        getStructuredContentBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return internalGetStructuredContentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Memory.StructuredContentOrBuilder
+        getStructuredContentOrBuilder() {
+      if (structuredContentBuilder_ != null) {
+        return structuredContentBuilder_.getMessageOrBuilder();
+      } else {
+        return structuredContent_ == null
+            ? com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.getDefaultInstance()
+            : structuredContent_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the structured content of the memory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.Memory.StructuredContent structured_content = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent,
+            com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder,
+            com.google.cloud.aiplatform.v1beta1.Memory.StructuredContentOrBuilder>
+        internalGetStructuredContentFieldBuilder() {
+      if (structuredContentBuilder_ == null) {
+        structuredContentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent,
+                com.google.cloud.aiplatform.v1beta1.Memory.StructuredContent.Builder,
+                com.google.cloud.aiplatform.v1beta1.Memory.StructuredContentOrBuilder>(
+                getStructuredContent(), getParentForChildren(), isClean());
+        structuredContent_ = null;
+      }
+      return structuredContentBuilder_;
+    }
+
+    private java.lang.Object context_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the context of the memory.
+     * </pre>
+     *
+     * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The context.
+     */
+    public java.lang.String getContext() {
+      java.lang.Object ref = context_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        context_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the context of the memory.
+     * </pre>
+     *
+     * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for context.
+     */
+    public com.google.protobuf.ByteString getContextBytes() {
+      java.lang.Object ref = context_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        context_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the context of the memory.
+     * </pre>
+     *
+     * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The context to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContext(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      context_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the context of the memory.
+     * </pre>
+     *
+     * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContext() {
+      context_ = getDefaultInstance().getContext();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the context of the memory.
+     * </pre>
+     *
+     * <code>string context = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for context to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContextBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      context_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
       return this;
     }
 

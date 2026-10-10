@@ -52,7 +52,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
   }
 
   private Binding() {
-    bindingId_ = "";
     members_ = com.google.protobuf.LazyStringArrayList.emptyList();
     role_ = "";
   }
@@ -73,57 +72,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
-  public static final int BINDING_ID_FIELD_NUMBER = 441088277;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object bindingId_ = "";
-
-  /**
-   * <code>optional string binding_id = 441088277;</code>
-   *
-   * @return Whether the bindingId field is set.
-   */
-  @java.lang.Override
-  public boolean hasBindingId() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-
-  /**
-   * <code>optional string binding_id = 441088277;</code>
-   *
-   * @return The bindingId.
-   */
-  @java.lang.Override
-  public java.lang.String getBindingId() {
-    java.lang.Object ref = bindingId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      bindingId_ = s;
-      return s;
-    }
-  }
-
-  /**
-   * <code>optional string binding_id = 441088277;</code>
-   *
-   * @return The bytes for bindingId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getBindingIdBytes() {
-    java.lang.Object ref = bindingId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      bindingId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int CONDITION_FIELD_NUMBER = 212430107;
   private com.google.cloud.compute.v1.Expr condition_;
 
@@ -151,7 +99,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCondition() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
 
   /**
@@ -622,7 +570,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRole() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -699,17 +647,14 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3506294, role_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(212430107, getCondition());
     }
     for (int i = 0; i < members_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 412010777, members_.getRaw(i));
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 441088277, bindingId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -720,10 +665,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3506294, role_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(212430107, getCondition());
     }
     {
@@ -733,9 +678,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       }
       size += dataSize;
       size += 5 * getMembersList().size();
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(441088277, bindingId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -752,10 +694,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
     }
     com.google.cloud.compute.v1.Binding other = (com.google.cloud.compute.v1.Binding) obj;
 
-    if (hasBindingId() != other.hasBindingId()) return false;
-    if (hasBindingId()) {
-      if (!getBindingId().equals(other.getBindingId())) return false;
-    }
     if (hasCondition() != other.hasCondition()) return false;
     if (hasCondition()) {
       if (!getCondition().equals(other.getCondition())) return false;
@@ -776,10 +714,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasBindingId()) {
-      hash = (37 * hash) + BINDING_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getBindingId().hashCode();
-    }
     if (hasCondition()) {
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + getCondition().hashCode();
@@ -940,7 +874,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      bindingId_ = "";
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -985,20 +918,16 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.bindingId_ = bindingId_;
+        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         members_.makeImmutable();
         result.members_ = members_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.role_ = role_;
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1015,18 +944,13 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.Binding other) {
       if (other == com.google.cloud.compute.v1.Binding.getDefaultInstance()) return this;
-      if (other.hasBindingId()) {
-        bindingId_ = other.bindingId_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (other.hasCondition()) {
         mergeCondition(other.getCondition());
       }
       if (!other.members_.isEmpty()) {
         if (members_.isEmpty()) {
           members_ = other.members_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
         } else {
           ensureMembersIsMutable();
           members_.addAll(other.members_);
@@ -1035,7 +959,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRole()) {
         role_ = other.role_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1067,14 +991,14 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
             case 28050354:
               {
                 role_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 28050354
             case 1699440858:
               {
                 input.readMessage(
                     internalGetConditionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 1699440858
             case -998881078:
@@ -1084,12 +1008,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
                 members_.add(s);
                 break;
               } // case -998881078
-            case -766261078:
-              {
-                bindingId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case -766261078
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1108,96 +1026,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
-
-    private java.lang.Object bindingId_ = "";
-
-    /**
-     * <code>optional string binding_id = 441088277;</code>
-     *
-     * @return Whether the bindingId field is set.
-     */
-    public boolean hasBindingId() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-
-    /**
-     * <code>optional string binding_id = 441088277;</code>
-     *
-     * @return The bindingId.
-     */
-    public java.lang.String getBindingId() {
-      java.lang.Object ref = bindingId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        bindingId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     * <code>optional string binding_id = 441088277;</code>
-     *
-     * @return The bytes for bindingId.
-     */
-    public com.google.protobuf.ByteString getBindingIdBytes() {
-      java.lang.Object ref = bindingId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        bindingId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     * <code>optional string binding_id = 441088277;</code>
-     *
-     * @param value The bindingId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBindingId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bindingId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>optional string binding_id = 441088277;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearBindingId() {
-      bindingId_ = getDefaultInstance().getBindingId();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-
-    /**
-     * <code>optional string binding_id = 441088277;</code>
-     *
-     * @param value The bytes for bindingId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setBindingIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      bindingId_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
 
     private com.google.cloud.compute.v1.Expr condition_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -1229,7 +1057,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      * @return Whether the condition field is set.
      */
     public boolean hasCondition() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
 
     /**
@@ -1293,7 +1121,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       } else {
         conditionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1324,7 +1152,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       } else {
         conditionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1351,7 +1179,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCondition(com.google.cloud.compute.v1.Expr value) {
       if (conditionBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000001) != 0)
             && condition_ != null
             && condition_ != com.google.cloud.compute.v1.Expr.getDefaultInstance()) {
           getConditionBuilder().mergeFrom(value);
@@ -1362,7 +1190,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
         conditionBuilder_.mergeFrom(value);
       }
       if (condition_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -1389,7 +1217,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Expr condition = 212430107;</code>
      */
     public Builder clearCondition() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       condition_ = null;
       if (conditionBuilder_ != null) {
         conditionBuilder_.dispose();
@@ -1420,7 +1248,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Expr condition = 212430107;</code>
      */
     public com.google.cloud.compute.v1.Expr.Builder getConditionBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return internalGetConditionFieldBuilder().getBuilder();
     }
@@ -1499,7 +1327,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       if (!members_.isModifiable()) {
         members_ = new com.google.protobuf.LazyStringArrayList(members_);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
     }
 
     /**
@@ -1989,7 +1817,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       }
       ensureMembersIsMutable();
       members_.set(index, value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2093,7 +1921,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       }
       ensureMembersIsMutable();
       members_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2194,7 +2022,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
     public Builder addAllMembers(java.lang.Iterable<java.lang.String> values) {
       ensureMembersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, members_);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2293,7 +2121,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearMembers() {
       members_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -2399,7 +2227,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureMembersIsMutable();
       members_.add(value);
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2424,7 +2252,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      * @return Whether the role field is set.
      */
     public boolean hasRole() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -2508,7 +2336,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       role_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2532,7 +2360,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRole() {
       role_ = getDefaultInstance().getRole();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -2561,7 +2389,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       role_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

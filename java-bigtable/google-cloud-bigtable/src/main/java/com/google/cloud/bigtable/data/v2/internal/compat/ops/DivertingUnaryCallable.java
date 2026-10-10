@@ -22,8 +22,10 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.compat.FutureAdapter;
 import com.google.cloud.bigtable.data.v2.internal.compat.Util;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.base.Throwables;
 import io.grpc.Context;
@@ -46,21 +48,32 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   private final UnaryShim<ReqT, RespT> experimental;
 
   private final Duration defaultTimeout;
+  private final DebugTagTracer debugTagTracer;
 
   public DivertingUnaryCallable(
       ClientConfigurationManager configurationManager,
       UnaryCallable<ReqT, RespT> classic,
       UnaryShim<ReqT, RespT> experimental,
-      Duration defaultTimeout) {
+      Duration defaultTimeout,
+      DebugTagTracer debugTagTracer) {
     this.configurationManager = configurationManager;
     this.classic = classic;
     this.experimental = experimental;
     this.defaultTimeout = defaultTimeout;
+    this.debugTagTracer = debugTagTracer;
   }
 
   @Override
   public ApiFuture<RespT> futureCall(ReqT request, ApiCallContext context) {
     if (!useExperimental(request)) {
+      return classic.futureCall(request, context);
+    }
+    // Per-RPC credential overrides cannot be forwarded to the session path (sessions are
+    // established with channel-level credentials). Fall back to classic to honor the override.
+    if (context instanceof GrpcCallContext
+        && ((GrpcCallContext) context).getCallOptions().getCredentials() != null) {
+      debugTagTracer.record(
+          TelemetryConfiguration.Level.WARN, "per_rpc_credentials_session_fallback");
       return classic.futureCall(request, context);
     }
 

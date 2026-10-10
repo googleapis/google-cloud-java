@@ -30,6 +30,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.Instant;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +50,7 @@ public class RowMutationTest {
 
   @Test
   public void toProtoTest() {
-    long timestampMin = System.currentTimeMillis() * 1_000;
+    Instant minInstant = Instant.now();
 
     // Test RowMutation on a table.
     RowMutation rowMutation =
@@ -58,7 +59,7 @@ public class RowMutationTest {
 
     MutateRowRequest actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
     com.google.common.collect.Range<Long> timestampRange =
-        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+        com.google.common.collect.Range.closed(toMicros(minInstant), toMicros(Instant.now()));
 
     assertThat(actualRowMutation.getTableName())
         .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
@@ -77,7 +78,7 @@ public class RowMutationTest {
 
     actualRowMutation = rowMutation.toProto(REQUEST_CONTEXT);
     timestampRange =
-        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+        com.google.common.collect.Range.closed(toMicros(minInstant), toMicros(Instant.now()));
 
     assertThat(actualRowMutation.getTableName()).isEmpty();
     assertThat(actualRowMutation.getAuthorizedViewName())
@@ -92,7 +93,7 @@ public class RowMutationTest {
 
   @Test
   public void toBulkProtoTest() {
-    long timestampMin = System.currentTimeMillis() * 1_000;
+    Instant minInstant = Instant.now();
 
     // Test RowMutation on a table.
     RowMutation rowMutation =
@@ -102,7 +103,7 @@ public class RowMutationTest {
     MutateRowsRequest actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
 
     com.google.common.collect.Range<Long> timestampRange =
-        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+        com.google.common.collect.Range.closed(toMicros(minInstant), toMicros(Instant.now()));
 
     assertThat(actualRowMutation.getTableName())
         .isEqualTo(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
@@ -124,7 +125,7 @@ public class RowMutationTest {
     actualRowMutation = rowMutation.toBulkProto(REQUEST_CONTEXT);
 
     timestampRange =
-        com.google.common.collect.Range.closed(timestampMin, System.currentTimeMillis() * 1_000);
+        com.google.common.collect.Range.closed(toMicros(minInstant), toMicros(Instant.now()));
 
     assertThat(actualRowMutation.getTableName()).isEmpty();
     assertThat(actualRowMutation.getAuthorizedViewName())
@@ -299,5 +300,9 @@ public class RowMutationTest {
     SessionMutateRowRequest sessionProto = rowMutation.toSessionProto();
 
     assertThat(sessionProto).isEqualTo(expected);
+  }
+
+  private static long toMicros(Instant instant) {
+    return instant.getEpochSecond() * 1_000_000L + instant.getNano() / 1_000;
   }
 }

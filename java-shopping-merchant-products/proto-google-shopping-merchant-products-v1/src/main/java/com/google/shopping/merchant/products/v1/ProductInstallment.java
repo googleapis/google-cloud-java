@@ -343,6 +343,69 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         : totalAmount_;
   }
 
+  public static final int MILEAGE_ALLOWANCE_FIELD_NUMBER = 7;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileageAllowance_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mileage allowance for the lease of the vehicle. Only
+   * applicable to vehicle products.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mileageAllowance field is set.
+   */
+  @java.lang.Override
+  public boolean hasMileageAllowance() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mileage allowance for the lease of the vehicle. Only
+   * applicable to vehicle products.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mileageAllowance.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileageAllowance() {
+    return mileageAllowance_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+        : mileageAllowance_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mileage allowance for the lease of the vehicle. Only
+   * applicable to vehicle products.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+      getMileageAllowanceOrBuilder() {
+    return mileageAllowance_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+        : mileageAllowance_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -375,6 +438,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(6, getTotalAmount());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(7, getMileageAllowance());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -401,6 +467,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getTotalAmount());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMileageAllowance());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -440,6 +509,10 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (hasTotalAmount()) {
       if (!getTotalAmount().equals(other.getTotalAmount())) return false;
     }
+    if (hasMileageAllowance() != other.hasMileageAllowance()) return false;
+    if (hasMileageAllowance()) {
+      if (!getMileageAllowance().equals(other.getMileageAllowance())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -475,6 +548,10 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (hasTotalAmount()) {
       hash = (37 * hash) + TOTAL_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + getTotalAmount().hashCode();
+    }
+    if (hasMileageAllowance()) {
+      hash = (37 * hash) + MILEAGE_ALLOWANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getMileageAllowance().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -621,6 +698,7 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         internalGetAmountFieldBuilder();
         internalGetDownpaymentFieldBuilder();
         internalGetTotalAmountFieldBuilder();
+        internalGetMileageAllowanceFieldBuilder();
       }
     }
 
@@ -645,6 +723,11 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       if (totalAmountBuilder_ != null) {
         totalAmountBuilder_.dispose();
         totalAmountBuilder_ = null;
+      }
+      mileageAllowance_ = null;
+      if (mileageAllowanceBuilder_ != null) {
+        mileageAllowanceBuilder_.dispose();
+        mileageAllowanceBuilder_ = null;
       }
       return this;
     }
@@ -708,6 +791,11 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
             totalAmountBuilder_ == null ? totalAmount_ : totalAmountBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.mileageAllowance_ =
+            mileageAllowanceBuilder_ == null ? mileageAllowance_ : mileageAllowanceBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -741,6 +829,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasTotalAmount()) {
         mergeTotalAmount(other.getTotalAmount());
+      }
+      if (other.hasMileageAllowance()) {
+        mergeMileageAllowance(other.getMileageAllowance());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -806,6 +897,13 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetMileageAllowanceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1664,6 +1762,238 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         totalAmount_ = null;
       }
       return totalAmountBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileageAllowance_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+        mileageAllowanceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the mileageAllowance field is set.
+     */
+    public boolean hasMileageAllowance() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The mileageAllowance.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+        getMileageAllowance() {
+      if (mileageAllowanceBuilder_ == null) {
+        return mileageAllowance_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()
+            : mileageAllowance_;
+      } else {
+        return mileageAllowanceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMileageAllowance(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+      if (mileageAllowanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mileageAllowance_ = value;
+      } else {
+        mileageAllowanceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMileageAllowance(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+            builderForValue) {
+      if (mileageAllowanceBuilder_ == null) {
+        mileageAllowance_ = builderForValue.build();
+      } else {
+        mileageAllowanceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMileageAllowance(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+      if (mileageAllowanceBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && mileageAllowance_ != null
+            && mileageAllowance_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                    .getDefaultInstance()) {
+          getMileageAllowanceBuilder().mergeFrom(value);
+        } else {
+          mileageAllowance_ = value;
+        }
+      } else {
+        mileageAllowanceBuilder_.mergeFrom(value);
+      }
+      if (mileageAllowance_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMileageAllowance() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      mileageAllowance_ = null;
+      if (mileageAllowanceBuilder_ != null) {
+        mileageAllowanceBuilder_.dispose();
+        mileageAllowanceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+        getMileageAllowanceBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetMileageAllowanceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+        getMileageAllowanceOrBuilder() {
+      if (mileageAllowanceBuilder_ != null) {
+        return mileageAllowanceBuilder_.getMessageOrBuilder();
+      } else {
+        return mileageAllowance_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()
+            : mileageAllowance_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mileage allowance for the lease of the vehicle. Only
+     * applicable to vehicle products.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_allowance = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+        internalGetMileageAllowanceFieldBuilder() {
+      if (mileageAllowanceBuilder_ == null) {
+        mileageAllowanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>(
+                getMileageAllowance(), getParentForChildren(), isClean());
+        mileageAllowance_ = null;
+      }
+      return mileageAllowanceBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductInstallment)

@@ -30,6 +30,51 @@ public interface AddAssociationRegionNetworkFirewallPolicyRequestOrBuilder
    *
    *
    * <pre>
+   * Name of the firewall policy associated with the target network to swap
+   * association with. This field is mutually exclusive with
+   * 'replace_existing_association'.
+   * </pre>
+   *
+   * <code>optional string associated_policy_to_be_replaced = 240901404;</code>
+   *
+   * @return Whether the associatedPolicyToBeReplaced field is set.
+   */
+  boolean hasAssociatedPolicyToBeReplaced();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the firewall policy associated with the target network to swap
+   * association with. This field is mutually exclusive with
+   * 'replace_existing_association'.
+   * </pre>
+   *
+   * <code>optional string associated_policy_to_be_replaced = 240901404;</code>
+   *
+   * @return The associatedPolicyToBeReplaced.
+   */
+  java.lang.String getAssociatedPolicyToBeReplaced();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the firewall policy associated with the target network to swap
+   * association with. This field is mutually exclusive with
+   * 'replace_existing_association'.
+   * </pre>
+   *
+   * <code>optional string associated_policy_to_be_replaced = 240901404;</code>
+   *
+   * @return The bytes for associatedPolicyToBeReplaced.
+   */
+  com.google.protobuf.ByteString getAssociatedPolicyToBeReplacedBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the firewall policy to update.
    * </pre>
    *

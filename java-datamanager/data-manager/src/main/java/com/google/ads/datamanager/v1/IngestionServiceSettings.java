@@ -100,9 +100,25 @@ public class IngestionServiceSettings extends ClientSettings<IngestionServiceSet
     return ((IngestionServiceStubSettings) getStubSettings()).removeAudienceMembersSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeAllAudienceMembers. */
+  public UnaryCallSettings<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersSettings() {
+    return ((IngestionServiceStubSettings) getStubSettings()).removeAllAudienceMembersSettings();
+  }
+
   /** Returns the object with the settings used for calls to ingestEvents. */
   public UnaryCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsSettings() {
     return ((IngestionServiceStubSettings) getStubSettings()).ingestEventsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to ingestUsers. */
+  public UnaryCallSettings<IngestUsersRequest, IngestUsersResponse> ingestUsersSettings() {
+    return ((IngestionServiceStubSettings) getStubSettings()).ingestUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to removeUsers. */
+  public UnaryCallSettings<RemoveUsersRequest, RemoveUsersResponse> removeUsersSettings() {
+    return ((IngestionServiceStubSettings) getStubSettings()).removeUsersSettings();
   }
 
   /** Returns the object with the settings used for calls to ingestAdEvents. */
@@ -240,10 +256,29 @@ public class IngestionServiceSettings extends ClientSettings<IngestionServiceSet
       return getStubSettingsBuilder().removeAudienceMembersSettings();
     }
 
+    /** Returns the builder for the settings used for calls to removeAllAudienceMembers. */
+    public UnaryCallSettings.Builder<
+            RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+        removeAllAudienceMembersSettings() {
+      return getStubSettingsBuilder().removeAllAudienceMembersSettings();
+    }
+
     /** Returns the builder for the settings used for calls to ingestEvents. */
     public UnaryCallSettings.Builder<IngestEventsRequest, IngestEventsResponse>
         ingestEventsSettings() {
       return getStubSettingsBuilder().ingestEventsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to ingestUsers. */
+    public UnaryCallSettings.Builder<IngestUsersRequest, IngestUsersResponse>
+        ingestUsersSettings() {
+      return getStubSettingsBuilder().ingestUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeUsers. */
+    public UnaryCallSettings.Builder<RemoveUsersRequest, RemoveUsersResponse>
+        removeUsersSettings() {
+      return getStubSettingsBuilder().removeUsersSettings();
     }
 
     /** Returns the builder for the settings used for calls to ingestAdEvents. */

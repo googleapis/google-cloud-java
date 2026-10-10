@@ -803,6 +803,100 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatusOrBuilder
         getCompositeDataIngestionStatusOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+     * </code>
+     *
+     * @return Whether the googleUserIdDataIngestionStatus field is set.
+     */
+    boolean hasGoogleUserIdDataIngestionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+     * </code>
+     *
+     * @return The googleUserIdDataIngestionStatus.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+        getGoogleUserIdDataIngestionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatusOrBuilder
+        getGoogleUserIdDataIngestionStatusOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+     * </code>
+     *
+     * @return Whether the partnerProvidedIdDataIngestionStatus field is set.
+     */
+    boolean hasPartnerProvidedIdDataIngestionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+     * </code>
+     *
+     * @return The partnerProvidedIdDataIngestionStatus.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus
+        getPartnerProvidedIdDataIngestionStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatusOrBuilder
+        getPartnerProvidedIdDataIngestionStatusOrBuilder();
+
     com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestAudienceMembersStatus.StatusCase
         getStatusCase();
   }
@@ -872,6 +966,8 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       USER_ID_DATA_INGESTION_STATUS(4),
       PPID_DATA_INGESTION_STATUS(5),
       COMPOSITE_DATA_INGESTION_STATUS(6),
+      GOOGLE_USER_ID_DATA_INGESTION_STATUS(7),
+      PARTNER_PROVIDED_ID_DATA_INGESTION_STATUS(8),
       STATUS_NOT_SET(0);
       private final int value;
 
@@ -903,6 +999,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
             return PPID_DATA_INGESTION_STATUS;
           case 6:
             return COMPOSITE_DATA_INGESTION_STATUS;
+          case 7:
+            return GOOGLE_USER_ID_DATA_INGESTION_STATUS;
+          case 8:
+            return PARTNER_PROVIDED_ID_DATA_INGESTION_STATUS;
           case 0:
             return STATUS_NOT_SET;
           default:
@@ -1316,6 +1416,148 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           .getDefaultInstance();
     }
 
+    public static final int GOOGLE_USER_ID_DATA_INGESTION_STATUS_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+     * </code>
+     *
+     * @return Whether the googleUserIdDataIngestionStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleUserIdDataIngestionStatus() {
+      return statusCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+     * </code>
+     *
+     * @return The googleUserIdDataIngestionStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+        getGoogleUserIdDataIngestionStatus() {
+      if (statusCase_ == 7) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestGoogleUserIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatusOrBuilder
+        getGoogleUserIdDataIngestionStatusOrBuilder() {
+      if (statusCase_ == 7) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestGoogleUserIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+          .getDefaultInstance();
+    }
+
+    public static final int PARTNER_PROVIDED_ID_DATA_INGESTION_STATUS_FIELD_NUMBER = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+     * </code>
+     *
+     * @return Whether the partnerProvidedIdDataIngestionStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartnerProvidedIdDataIngestionStatus() {
+      return statusCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+     * </code>
+     *
+     * @return The partnerProvidedIdDataIngestionStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        getPartnerProvidedIdDataIngestionStatus() {
+      if (statusCase_ == 8) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestPartnerProvidedIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination
+          .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatusOrBuilder
+        getPartnerProvidedIdDataIngestionStatusOrBuilder() {
+      if (statusCase_ == 8) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestPartnerProvidedIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination
+          .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1364,6 +1606,19 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         output.writeMessage(
             6,
             (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestCompositeDataStatus)
+                status_);
+      }
+      if (statusCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+                status_);
+      }
+      if (statusCase_ == 8) {
+        output.writeMessage(
+            8,
+            (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus)
                 status_);
       }
       getUnknownFields().writeTo(output);
@@ -1418,6 +1673,22 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                         .IngestCompositeDataStatus)
                     status_);
       }
+      if (statusCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .IngestGoogleUserIdDataStatus)
+                    status_);
+      }
+      if (statusCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8,
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .IngestPartnerProvidedIdDataStatus)
+                    status_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1463,6 +1734,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           if (!getCompositeDataIngestionStatus().equals(other.getCompositeDataIngestionStatus()))
             return false;
           break;
+        case 7:
+          if (!getGoogleUserIdDataIngestionStatus()
+              .equals(other.getGoogleUserIdDataIngestionStatus())) return false;
+          break;
+        case 8:
+          if (!getPartnerProvidedIdDataIngestionStatus()
+              .equals(other.getPartnerProvidedIdDataIngestionStatus())) return false;
+          break;
         case 0:
         default:
       }
@@ -1501,6 +1780,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         case 6:
           hash = (37 * hash) + COMPOSITE_DATA_INGESTION_STATUS_FIELD_NUMBER;
           hash = (53 * hash) + getCompositeDataIngestionStatus().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + GOOGLE_USER_ID_DATA_INGESTION_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getGoogleUserIdDataIngestionStatus().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + PARTNER_PROVIDED_ID_DATA_INGESTION_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getPartnerProvidedIdDataIngestionStatus().hashCode();
           break;
         case 0:
         default:
@@ -1688,6 +1975,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (compositeDataIngestionStatusBuilder_ != null) {
           compositeDataIngestionStatusBuilder_.clear();
         }
+        if (googleUserIdDataIngestionStatusBuilder_ != null) {
+          googleUserIdDataIngestionStatusBuilder_.clear();
+        }
+        if (partnerProvidedIdDataIngestionStatusBuilder_ != null) {
+          partnerProvidedIdDataIngestionStatusBuilder_.clear();
+        }
         statusCase_ = 0;
         status_ = null;
         return this;
@@ -1761,6 +2054,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (statusCase_ == 6 && compositeDataIngestionStatusBuilder_ != null) {
           result.status_ = compositeDataIngestionStatusBuilder_.build();
         }
+        if (statusCase_ == 7 && googleUserIdDataIngestionStatusBuilder_ != null) {
+          result.status_ = googleUserIdDataIngestionStatusBuilder_.build();
+        }
+        if (statusCase_ == 8 && partnerProvidedIdDataIngestionStatusBuilder_ != null) {
+          result.status_ = partnerProvidedIdDataIngestionStatusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1813,6 +2112,17 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           case COMPOSITE_DATA_INGESTION_STATUS:
             {
               mergeCompositeDataIngestionStatus(other.getCompositeDataIngestionStatus());
+              break;
+            }
+          case GOOGLE_USER_ID_DATA_INGESTION_STATUS:
+            {
+              mergeGoogleUserIdDataIngestionStatus(other.getGoogleUserIdDataIngestionStatus());
+              break;
+            }
+          case PARTNER_PROVIDED_ID_DATA_INGESTION_STATUS:
+            {
+              mergePartnerProvidedIdDataIngestionStatus(
+                  other.getPartnerProvidedIdDataIngestionStatus());
               break;
             }
           case STATUS_NOT_SET:
@@ -1894,6 +2204,22 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                   statusCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      internalGetGoogleUserIdDataIngestionStatusFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  statusCase_ = 7;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      internalGetPartnerProvidedIdDataIngestionStatusFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  statusCase_ = 8;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3510,6 +3836,562 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         return compositeDataIngestionStatusBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestGoogleUserIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestGoogleUserIdDataStatusOrBuilder>
+          googleUserIdDataIngestionStatusBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       *
+       * @return Whether the googleUserIdDataIngestionStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasGoogleUserIdDataIngestionStatus() {
+        return statusCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       *
+       * @return The googleUserIdDataIngestionStatus.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+          getGoogleUserIdDataIngestionStatus() {
+        if (googleUserIdDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 7) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestGoogleUserIdDataStatus.getDefaultInstance();
+        } else {
+          if (statusCase_ == 7) {
+            return googleUserIdDataIngestionStatusBuilder_.getMessage();
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestGoogleUserIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      public Builder setGoogleUserIdDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+              value) {
+        if (googleUserIdDataIngestionStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          googleUserIdDataIngestionStatusBuilder_.setMessage(value);
+        }
+        statusCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      public Builder setGoogleUserIdDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+                  .Builder
+              builderForValue) {
+        if (googleUserIdDataIngestionStatusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          googleUserIdDataIngestionStatusBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      public Builder mergeGoogleUserIdDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+              value) {
+        if (googleUserIdDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 7
+              && status_
+                  != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestGoogleUserIdDataStatus.getDefaultInstance()) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus.newBuilder(
+                        (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                                .IngestGoogleUserIdDataStatus)
+                            status_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 7) {
+            googleUserIdDataIngestionStatusBuilder_.mergeFrom(value);
+          } else {
+            googleUserIdDataIngestionStatusBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      public Builder clearGoogleUserIdDataIngestionStatus() {
+        if (googleUserIdDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 7) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 7) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          googleUserIdDataIngestionStatusBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+              .Builder
+          getGoogleUserIdDataIngestionStatusBuilder() {
+        return internalGetGoogleUserIdDataIngestionStatusFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestGoogleUserIdDataStatusOrBuilder
+          getGoogleUserIdDataIngestionStatusOrBuilder() {
+        if ((statusCase_ == 7) && (googleUserIdDataIngestionStatusBuilder_ != null)) {
+          return googleUserIdDataIngestionStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 7) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestGoogleUserIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data ingestion to the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus google_user_id_data_ingestion_status = 7;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestGoogleUserIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestGoogleUserIdDataStatusOrBuilder>
+          internalGetGoogleUserIdDataIngestionStatusFieldBuilder() {
+        if (googleUserIdDataIngestionStatusBuilder_ == null) {
+          if (!(statusCase_ == 7)) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus.getDefaultInstance();
+          }
+          googleUserIdDataIngestionStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestGoogleUserIdDataStatus,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestGoogleUserIdDataStatus.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestGoogleUserIdDataStatusOrBuilder>(
+                  (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                          .IngestGoogleUserIdDataStatus)
+                      status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 7;
+        onChanged();
+        return googleUserIdDataIngestionStatusBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatusOrBuilder>
+          partnerProvidedIdDataIngestionStatusBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       *
+       * @return Whether the partnerProvidedIdDataIngestionStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasPartnerProvidedIdDataIngestionStatus() {
+        return statusCase_ == 8;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       *
+       * @return The partnerProvidedIdDataIngestionStatus.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus
+          getPartnerProvidedIdDataIngestionStatus() {
+        if (partnerProvidedIdDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 8) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+        } else {
+          if (statusCase_ == 8) {
+            return partnerProvidedIdDataIngestionStatusBuilder_.getMessage();
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      public Builder setPartnerProvidedIdDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus
+              value) {
+        if (partnerProvidedIdDataIngestionStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          partnerProvidedIdDataIngestionStatusBuilder_.setMessage(value);
+        }
+        statusCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      public Builder setPartnerProvidedIdDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus.Builder
+              builderForValue) {
+        if (partnerProvidedIdDataIngestionStatusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          partnerProvidedIdDataIngestionStatusBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      public Builder mergePartnerProvidedIdDataIngestionStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus
+              value) {
+        if (partnerProvidedIdDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 8
+              && status_
+                  != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestPartnerProvidedIdDataStatus.getDefaultInstance()) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus.newBuilder(
+                        (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                                .IngestPartnerProvidedIdDataStatus)
+                            status_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 8) {
+            partnerProvidedIdDataIngestionStatusBuilder_.mergeFrom(value);
+          } else {
+            partnerProvidedIdDataIngestionStatusBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      public Builder clearPartnerProvidedIdDataIngestionStatus() {
+        if (partnerProvidedIdDataIngestionStatusBuilder_ == null) {
+          if (statusCase_ == 8) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 8) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          partnerProvidedIdDataIngestionStatusBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus.Builder
+          getPartnerProvidedIdDataIngestionStatusBuilder() {
+        return internalGetPartnerProvidedIdDataIngestionStatusFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatusOrBuilder
+          getPartnerProvidedIdDataIngestionStatusOrBuilder() {
+        if ((statusCase_ == 8) && (partnerProvidedIdDataIngestionStatusBuilder_ != null)) {
+          return partnerProvidedIdDataIngestionStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 8) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data ingestion to the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus partner_provided_id_data_ingestion_status = 8;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatusOrBuilder>
+          internalGetPartnerProvidedIdDataIngestionStatusFieldBuilder() {
+        if (partnerProvidedIdDataIngestionStatusBuilder_ == null) {
+          if (!(statusCase_ == 8)) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+          }
+          partnerProvidedIdDataIngestionStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestPartnerProvidedIdDataStatus,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestPartnerProvidedIdDataStatus.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestPartnerProvidedIdDataStatusOrBuilder>(
+                  (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                          .IngestPartnerProvidedIdDataStatus)
+                      status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 8;
+        onChanged();
+        return partnerProvidedIdDataIngestionStatusBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestAudienceMembersStatus)
     }
 
@@ -3844,6 +4726,100 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatusOrBuilder
         getCompositeDataRemovalStatusOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+     * </code>
+     *
+     * @return Whether the googleUserIdDataRemovalStatus field is set.
+     */
+    boolean hasGoogleUserIdDataRemovalStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+     * </code>
+     *
+     * @return The googleUserIdDataRemovalStatus.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+        getGoogleUserIdDataRemovalStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatusOrBuilder
+        getGoogleUserIdDataRemovalStatusOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+     * </code>
+     *
+     * @return Whether the partnerProvidedIdDataRemovalStatus field is set.
+     */
+    boolean hasPartnerProvidedIdDataRemovalStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+     * </code>
+     *
+     * @return The partnerProvidedIdDataRemovalStatus.
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus
+        getPartnerProvidedIdDataRemovalStatus();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+     * </code>
+     */
+    com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatusOrBuilder
+        getPartnerProvidedIdDataRemovalStatusOrBuilder();
+
     com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAudienceMembersStatus.StatusCase
         getStatusCase();
   }
@@ -3913,6 +4889,8 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       USER_ID_DATA_REMOVAL_STATUS(4),
       PPID_DATA_REMOVAL_STATUS(5),
       COMPOSITE_DATA_REMOVAL_STATUS(6),
+      GOOGLE_USER_ID_DATA_REMOVAL_STATUS(7),
+      PARTNER_PROVIDED_ID_DATA_REMOVAL_STATUS(8),
       STATUS_NOT_SET(0);
       private final int value;
 
@@ -3944,6 +4922,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
             return PPID_DATA_REMOVAL_STATUS;
           case 6:
             return COMPOSITE_DATA_REMOVAL_STATUS;
+          case 7:
+            return GOOGLE_USER_ID_DATA_REMOVAL_STATUS;
+          case 8:
+            return PARTNER_PROVIDED_ID_DATA_REMOVAL_STATUS;
           case 0:
             return STATUS_NOT_SET;
           default:
@@ -4357,6 +5339,148 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           .getDefaultInstance();
     }
 
+    public static final int GOOGLE_USER_ID_DATA_REMOVAL_STATUS_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+     * </code>
+     *
+     * @return Whether the googleUserIdDataRemovalStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleUserIdDataRemovalStatus() {
+      return statusCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+     * </code>
+     *
+     * @return The googleUserIdDataRemovalStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+        getGoogleUserIdDataRemovalStatus() {
+      if (statusCase_ == 7) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveGoogleUserIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatusOrBuilder
+        getGoogleUserIdDataRemovalStatusOrBuilder() {
+      if (statusCase_ == 7) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveGoogleUserIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+          .getDefaultInstance();
+    }
+
+    public static final int PARTNER_PROVIDED_ID_DATA_REMOVAL_STATUS_FIELD_NUMBER = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+     * </code>
+     *
+     * @return Whether the partnerProvidedIdDataRemovalStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartnerProvidedIdDataRemovalStatus() {
+      return statusCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+     * </code>
+     *
+     * @return The partnerProvidedIdDataRemovalStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        getPartnerProvidedIdDataRemovalStatus() {
+      if (statusCase_ == 8) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemovePartnerProvidedIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination
+          .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the
+     * destination.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatusOrBuilder
+        getPartnerProvidedIdDataRemovalStatusOrBuilder() {
+      if (statusCase_ == 8) {
+        return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemovePartnerProvidedIdDataStatus)
+            status_;
+      }
+      return com.google.ads.datamanager.v1.RequestStatusPerDestination
+          .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4405,6 +5529,19 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         output.writeMessage(
             6,
             (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveCompositeDataStatus)
+                status_);
+      }
+      if (statusCase_ == 7) {
+        output.writeMessage(
+            7,
+            (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+                status_);
+      }
+      if (statusCase_ == 8) {
+        output.writeMessage(
+            8,
+            (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus)
                 status_);
       }
       getUnknownFields().writeTo(output);
@@ -4459,6 +5596,22 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                         .RemoveCompositeDataStatus)
                     status_);
       }
+      if (statusCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7,
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .RemoveGoogleUserIdDataStatus)
+                    status_);
+      }
+      if (statusCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8,
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .RemovePartnerProvidedIdDataStatus)
+                    status_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4501,6 +5654,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           if (!getCompositeDataRemovalStatus().equals(other.getCompositeDataRemovalStatus()))
             return false;
           break;
+        case 7:
+          if (!getGoogleUserIdDataRemovalStatus().equals(other.getGoogleUserIdDataRemovalStatus()))
+            return false;
+          break;
+        case 8:
+          if (!getPartnerProvidedIdDataRemovalStatus()
+              .equals(other.getPartnerProvidedIdDataRemovalStatus())) return false;
+          break;
         case 0:
         default:
       }
@@ -4539,6 +5700,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         case 6:
           hash = (37 * hash) + COMPOSITE_DATA_REMOVAL_STATUS_FIELD_NUMBER;
           hash = (53 * hash) + getCompositeDataRemovalStatus().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + GOOGLE_USER_ID_DATA_REMOVAL_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getGoogleUserIdDataRemovalStatus().hashCode();
+          break;
+        case 8:
+          hash = (37 * hash) + PARTNER_PROVIDED_ID_DATA_REMOVAL_STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getPartnerProvidedIdDataRemovalStatus().hashCode();
           break;
         case 0:
         default:
@@ -4726,6 +5895,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (compositeDataRemovalStatusBuilder_ != null) {
           compositeDataRemovalStatusBuilder_.clear();
         }
+        if (googleUserIdDataRemovalStatusBuilder_ != null) {
+          googleUserIdDataRemovalStatusBuilder_.clear();
+        }
+        if (partnerProvidedIdDataRemovalStatusBuilder_ != null) {
+          partnerProvidedIdDataRemovalStatusBuilder_.clear();
+        }
         statusCase_ = 0;
         status_ = null;
         return this;
@@ -4799,6 +5974,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (statusCase_ == 6 && compositeDataRemovalStatusBuilder_ != null) {
           result.status_ = compositeDataRemovalStatusBuilder_.build();
         }
+        if (statusCase_ == 7 && googleUserIdDataRemovalStatusBuilder_ != null) {
+          result.status_ = googleUserIdDataRemovalStatusBuilder_.build();
+        }
+        if (statusCase_ == 8 && partnerProvidedIdDataRemovalStatusBuilder_ != null) {
+          result.status_ = partnerProvidedIdDataRemovalStatusBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -4851,6 +6032,17 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           case COMPOSITE_DATA_REMOVAL_STATUS:
             {
               mergeCompositeDataRemovalStatus(other.getCompositeDataRemovalStatus());
+              break;
+            }
+          case GOOGLE_USER_ID_DATA_REMOVAL_STATUS:
+            {
+              mergeGoogleUserIdDataRemovalStatus(other.getGoogleUserIdDataRemovalStatus());
+              break;
+            }
+          case PARTNER_PROVIDED_ID_DATA_REMOVAL_STATUS:
+            {
+              mergePartnerProvidedIdDataRemovalStatus(
+                  other.getPartnerProvidedIdDataRemovalStatus());
               break;
             }
           case STATUS_NOT_SET:
@@ -4932,6 +6124,22 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                   statusCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      internalGetGoogleUserIdDataRemovalStatusFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  statusCase_ = 7;
+                  break;
+                } // case 58
+              case 66:
+                {
+                  input.readMessage(
+                      internalGetPartnerProvidedIdDataRemovalStatusFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  statusCase_ = 8;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6548,6 +7756,562 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         return compositeDataRemovalStatusBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveGoogleUserIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveGoogleUserIdDataStatusOrBuilder>
+          googleUserIdDataRemovalStatusBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       *
+       * @return Whether the googleUserIdDataRemovalStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasGoogleUserIdDataRemovalStatus() {
+        return statusCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       *
+       * @return The googleUserIdDataRemovalStatus.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+          getGoogleUserIdDataRemovalStatus() {
+        if (googleUserIdDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 7) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveGoogleUserIdDataStatus.getDefaultInstance();
+        } else {
+          if (statusCase_ == 7) {
+            return googleUserIdDataRemovalStatusBuilder_.getMessage();
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveGoogleUserIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      public Builder setGoogleUserIdDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+              value) {
+        if (googleUserIdDataRemovalStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          googleUserIdDataRemovalStatusBuilder_.setMessage(value);
+        }
+        statusCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      public Builder setGoogleUserIdDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+                  .Builder
+              builderForValue) {
+        if (googleUserIdDataRemovalStatusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          googleUserIdDataRemovalStatusBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      public Builder mergeGoogleUserIdDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+              value) {
+        if (googleUserIdDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 7
+              && status_
+                  != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveGoogleUserIdDataStatus.getDefaultInstance()) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus.newBuilder(
+                        (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                                .RemoveGoogleUserIdDataStatus)
+                            status_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 7) {
+            googleUserIdDataRemovalStatusBuilder_.mergeFrom(value);
+          } else {
+            googleUserIdDataRemovalStatusBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      public Builder clearGoogleUserIdDataRemovalStatus() {
+        if (googleUserIdDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 7) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 7) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          googleUserIdDataRemovalStatusBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+              .Builder
+          getGoogleUserIdDataRemovalStatusBuilder() {
+        return internalGetGoogleUserIdDataRemovalStatusFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveGoogleUserIdDataStatusOrBuilder
+          getGoogleUserIdDataRemovalStatusOrBuilder() {
+        if ((statusCase_ == 7) && (googleUserIdDataRemovalStatusBuilder_ != null)) {
+          return googleUserIdDataRemovalStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 7) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveGoogleUserIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the google user id data removal from the destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus google_user_id_data_removal_status = 7;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveGoogleUserIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+                  .Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveGoogleUserIdDataStatusOrBuilder>
+          internalGetGoogleUserIdDataRemovalStatusFieldBuilder() {
+        if (googleUserIdDataRemovalStatusBuilder_ == null) {
+          if (!(statusCase_ == 7)) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus.getDefaultInstance();
+          }
+          googleUserIdDataRemovalStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveGoogleUserIdDataStatus,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveGoogleUserIdDataStatus.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveGoogleUserIdDataStatusOrBuilder>(
+                  (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                          .RemoveGoogleUserIdDataStatus)
+                      status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 7;
+        onChanged();
+        return googleUserIdDataRemovalStatusBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatusOrBuilder>
+          partnerProvidedIdDataRemovalStatusBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       *
+       * @return Whether the partnerProvidedIdDataRemovalStatus field is set.
+       */
+      @java.lang.Override
+      public boolean hasPartnerProvidedIdDataRemovalStatus() {
+        return statusCase_ == 8;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       *
+       * @return The partnerProvidedIdDataRemovalStatus.
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus
+          getPartnerProvidedIdDataRemovalStatus() {
+        if (partnerProvidedIdDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 8) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+        } else {
+          if (statusCase_ == 8) {
+            return partnerProvidedIdDataRemovalStatusBuilder_.getMessage();
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      public Builder setPartnerProvidedIdDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus
+              value) {
+        if (partnerProvidedIdDataRemovalStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          status_ = value;
+          onChanged();
+        } else {
+          partnerProvidedIdDataRemovalStatusBuilder_.setMessage(value);
+        }
+        statusCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      public Builder setPartnerProvidedIdDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus.Builder
+              builderForValue) {
+        if (partnerProvidedIdDataRemovalStatusBuilder_ == null) {
+          status_ = builderForValue.build();
+          onChanged();
+        } else {
+          partnerProvidedIdDataRemovalStatusBuilder_.setMessage(builderForValue.build());
+        }
+        statusCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      public Builder mergePartnerProvidedIdDataRemovalStatus(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus
+              value) {
+        if (partnerProvidedIdDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 8
+              && status_
+                  != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemovePartnerProvidedIdDataStatus.getDefaultInstance()) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus.newBuilder(
+                        (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                                .RemovePartnerProvidedIdDataStatus)
+                            status_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            status_ = value;
+          }
+          onChanged();
+        } else {
+          if (statusCase_ == 8) {
+            partnerProvidedIdDataRemovalStatusBuilder_.mergeFrom(value);
+          } else {
+            partnerProvidedIdDataRemovalStatusBuilder_.setMessage(value);
+          }
+        }
+        statusCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      public Builder clearPartnerProvidedIdDataRemovalStatus() {
+        if (partnerProvidedIdDataRemovalStatusBuilder_ == null) {
+          if (statusCase_ == 8) {
+            statusCase_ = 0;
+            status_ = null;
+            onChanged();
+          }
+        } else {
+          if (statusCase_ == 8) {
+            statusCase_ = 0;
+            status_ = null;
+          }
+          partnerProvidedIdDataRemovalStatusBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus.Builder
+          getPartnerProvidedIdDataRemovalStatusBuilder() {
+        return internalGetPartnerProvidedIdDataRemovalStatusFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatusOrBuilder
+          getPartnerProvidedIdDataRemovalStatusOrBuilder() {
+        if ((statusCase_ == 8) && (partnerProvidedIdDataRemovalStatusBuilder_ != null)) {
+          return partnerProvidedIdDataRemovalStatusBuilder_.getMessageOrBuilder();
+        } else {
+          if (statusCase_ == 8) {
+            return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus)
+                status_;
+          }
+          return com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The status of the partner provided id data removal from the
+       * destination.
+       * </pre>
+       *
+       * <code>
+       * .google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus partner_provided_id_data_removal_status = 8;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus.Builder,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatusOrBuilder>
+          internalGetPartnerProvidedIdDataRemovalStatusFieldBuilder() {
+        if (partnerProvidedIdDataRemovalStatusBuilder_ == null) {
+          if (!(statusCase_ == 8)) {
+            status_ =
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+          }
+          partnerProvidedIdDataRemovalStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemovePartnerProvidedIdDataStatus,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemovePartnerProvidedIdDataStatus.Builder,
+                  com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemovePartnerProvidedIdDataStatusOrBuilder>(
+                  (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                          .RemovePartnerProvidedIdDataStatus)
+                      status_,
+                  getParentForChildren(),
+                  isClean());
+          status_ = null;
+        }
+        statusCase_ = 8;
+        onChanged();
+        return partnerProvidedIdDataRemovalStatusBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAudienceMembersStatus)
     }
 
@@ -6602,6 +8366,448 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
 
     @java.lang.Override
     public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAudienceMembersStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RemoveAllAudienceMembersStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus}
+   */
+  public static final class RemoveAllAudienceMembersStatus
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus)
+      RemoveAllAudienceMembersStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RemoveAllAudienceMembersStatus");
+    }
+
+    // Use RemoveAllAudienceMembersStatus.newBuilder() to construct.
+    private RemoveAllAudienceMembersStatus(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RemoveAllAudienceMembersStatus() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveAllAudienceMembersStatus.class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveAllAudienceMembersStatus.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+          other =
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveAllAudienceMembersStatus)
+                  obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatus.class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveAllAudienceMembersStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+            result =
+                new com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatus(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveAllAudienceMembersStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveAllAudienceMembersStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveAllAudienceMembersStatus.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveAllAudienceMembersStatus> PARSER =
+        new com.google.protobuf.AbstractParser<RemoveAllAudienceMembersStatus>() {
+          @java.lang.Override
+          public RemoveAllAudienceMembersStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RemoveAllAudienceMembersStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveAllAudienceMembersStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -16789,6 +18995,2782 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     }
   }
 
+  public interface IngestGoogleUserIdDataStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the upload request for the
+     * destination. Includes all audience members in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    long getRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of google user ids sent in the upload request for the
+     * destination. Includes all google user ids in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 google_user_id_count = 2;</code>
+     *
+     * @return The googleUserIdCount.
+     */
+    long getGoogleUserIdCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the google user id data ingestion to the destination
+   * containing stats related to the ingestion.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus}
+   */
+  public static final class IngestGoogleUserIdDataStatus
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+      IngestGoogleUserIdDataStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "IngestGoogleUserIdDataStatus");
+    }
+
+    // Use IngestGoogleUserIdDataStatus.newBuilder() to construct.
+    private IngestGoogleUserIdDataStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IngestGoogleUserIdDataStatus() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+                  .class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+                  .Builder.class);
+    }
+
+    public static final int RECORD_COUNT_FIELD_NUMBER = 1;
+    private long recordCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the upload request for the
+     * destination. Includes all audience members in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    @java.lang.Override
+    public long getRecordCount() {
+      return recordCount_;
+    }
+
+    public static final int GOOGLE_USER_ID_COUNT_FIELD_NUMBER = 2;
+    private long googleUserIdCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of google user ids sent in the upload request for the
+     * destination. Includes all google user ids in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 google_user_id_count = 2;</code>
+     *
+     * @return The googleUserIdCount.
+     */
+    @java.lang.Override
+    public long getGoogleUserIdCount() {
+      return googleUserIdCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (recordCount_ != 0L) {
+        output.writeInt64(1, recordCount_);
+      }
+      if (googleUserIdCount_ != 0L) {
+        output.writeInt64(2, googleUserIdCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (recordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, recordCount_);
+      }
+      if (googleUserIdCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, googleUserIdCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus other =
+          (com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+              obj;
+
+      if (getRecordCount() != other.getRecordCount()) return false;
+      if (getGoogleUserIdCount() != other.getGoogleUserIdCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
+      hash = (37 * hash) + GOOGLE_USER_ID_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGoogleUserIdCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data ingestion to the destination
+     * containing stats related to the ingestion.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus.class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordCount_ = 0L;
+        googleUserIdCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestGoogleUserIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+            result =
+                new com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestGoogleUserIdDataStatus(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordCount_ = recordCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.googleUserIdCount_ = googleUserIdCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestGoogleUserIdDataStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestGoogleUserIdDataStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestGoogleUserIdDataStatus.getDefaultInstance()) return this;
+        if (other.getRecordCount() != 0L) {
+          setRecordCount(other.getRecordCount());
+        }
+        if (other.getGoogleUserIdCount() != 0L) {
+          setGoogleUserIdCount(other.getGoogleUserIdCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  recordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  googleUserIdCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long recordCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return The recordCount.
+       */
+      @java.lang.Override
+      public long getRecordCount() {
+        return recordCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @param value The recordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordCount(long value) {
+
+        recordCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long googleUserIdCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of google user ids sent in the upload request for the
+       * destination. Includes all google user ids in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 google_user_id_count = 2;</code>
+       *
+       * @return The googleUserIdCount.
+       */
+      @java.lang.Override
+      public long getGoogleUserIdCount() {
+        return googleUserIdCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of google user ids sent in the upload request for the
+       * destination. Includes all google user ids in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 google_user_id_count = 2;</code>
+       *
+       * @param value The googleUserIdCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGoogleUserIdCount(long value) {
+
+        googleUserIdCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of google user ids sent in the upload request for the
+       * destination. Includes all google user ids in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 google_user_id_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGoogleUserIdCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        googleUserIdCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestGoogleUserIdDataStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestGoogleUserIdDataStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IngestGoogleUserIdDataStatus> PARSER =
+        new com.google.protobuf.AbstractParser<IngestGoogleUserIdDataStatus>() {
+          @java.lang.Override
+          public IngestGoogleUserIdDataStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IngestGoogleUserIdDataStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IngestGoogleUserIdDataStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestGoogleUserIdDataStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RemoveGoogleUserIdDataStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the removal request. Includes
+     * all audience members in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    long getRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of google user ids sent in the removal request. Includes
+     * all google user ids in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 google_user_id_count = 2;</code>
+     *
+     * @return The googleUserIdCount.
+     */
+    long getGoogleUserIdCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the google user id data removal from the destination.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus}
+   */
+  public static final class RemoveGoogleUserIdDataStatus
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+      RemoveGoogleUserIdDataStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RemoveGoogleUserIdDataStatus");
+    }
+
+    // Use RemoveGoogleUserIdDataStatus.newBuilder() to construct.
+    private RemoveGoogleUserIdDataStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RemoveGoogleUserIdDataStatus() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+                  .class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+                  .Builder.class);
+    }
+
+    public static final int RECORD_COUNT_FIELD_NUMBER = 1;
+    private long recordCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the removal request. Includes
+     * all audience members in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    @java.lang.Override
+    public long getRecordCount() {
+      return recordCount_;
+    }
+
+    public static final int GOOGLE_USER_ID_COUNT_FIELD_NUMBER = 2;
+    private long googleUserIdCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of google user ids sent in the removal request. Includes
+     * all google user ids in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 google_user_id_count = 2;</code>
+     *
+     * @return The googleUserIdCount.
+     */
+    @java.lang.Override
+    public long getGoogleUserIdCount() {
+      return googleUserIdCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (recordCount_ != 0L) {
+        output.writeInt64(1, recordCount_);
+      }
+      if (googleUserIdCount_ != 0L) {
+        output.writeInt64(2, googleUserIdCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (recordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, recordCount_);
+      }
+      if (googleUserIdCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, googleUserIdCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus other =
+          (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+              obj;
+
+      if (getRecordCount() != other.getRecordCount()) return false;
+      if (getGoogleUserIdCount() != other.getGoogleUserIdCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
+      hash = (37 * hash) + GOOGLE_USER_ID_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGoogleUserIdCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the google user id data removal from the destination.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus.class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordCount_ = 0L;
+        googleUserIdCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemoveGoogleUserIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+            result =
+                new com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveGoogleUserIdDataStatus(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordCount_ = recordCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.googleUserIdCount_ = googleUserIdCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveGoogleUserIdDataStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveGoogleUserIdDataStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveGoogleUserIdDataStatus.getDefaultInstance()) return this;
+        if (other.getRecordCount() != 0L) {
+          setRecordCount(other.getRecordCount());
+        }
+        if (other.getGoogleUserIdCount() != 0L) {
+          setGoogleUserIdCount(other.getGoogleUserIdCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  recordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  googleUserIdCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long recordCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return The recordCount.
+       */
+      @java.lang.Override
+      public long getRecordCount() {
+        return recordCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @param value The recordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordCount(long value) {
+
+        recordCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long googleUserIdCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of google user ids sent in the removal request. Includes
+       * all google user ids in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 google_user_id_count = 2;</code>
+       *
+       * @return The googleUserIdCount.
+       */
+      @java.lang.Override
+      public long getGoogleUserIdCount() {
+        return googleUserIdCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of google user ids sent in the removal request. Includes
+       * all google user ids in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 google_user_id_count = 2;</code>
+       *
+       * @param value The googleUserIdCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGoogleUserIdCount(long value) {
+
+        googleUserIdCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of google user ids sent in the removal request. Includes
+       * all google user ids in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 google_user_id_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGoogleUserIdCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        googleUserIdCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveGoogleUserIdDataStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveGoogleUserIdDataStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemoveGoogleUserIdDataStatus> PARSER =
+        new com.google.protobuf.AbstractParser<RemoveGoogleUserIdDataStatus>() {
+          @java.lang.Override
+          public RemoveGoogleUserIdDataStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RemoveGoogleUserIdDataStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemoveGoogleUserIdDataStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveGoogleUserIdDataStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface IngestPartnerProvidedIdDataStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the upload request for the
+     * destination. Includes all audience members in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    long getRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of partner provided ids sent in the upload request for
+     * the destination. Includes all partner provided ids in the request,
+     * regardless of whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 partner_provided_id_count = 2;</code>
+     *
+     * @return The partnerProvidedIdCount.
+     */
+    long getPartnerProvidedIdCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the partner provided id data ingestion to the destination
+   * containing stats related to the ingestion.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus}
+   */
+  public static final class IngestPartnerProvidedIdDataStatus
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus)
+      IngestPartnerProvidedIdDataStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "IngestPartnerProvidedIdDataStatus");
+    }
+
+    // Use IngestPartnerProvidedIdDataStatus.newBuilder() to construct.
+    private IngestPartnerProvidedIdDataStatus(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private IngestPartnerProvidedIdDataStatus() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus.class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus.Builder.class);
+    }
+
+    public static final int RECORD_COUNT_FIELD_NUMBER = 1;
+    private long recordCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the upload request for the
+     * destination. Includes all audience members in the request, regardless of
+     * whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    @java.lang.Override
+    public long getRecordCount() {
+      return recordCount_;
+    }
+
+    public static final int PARTNER_PROVIDED_ID_COUNT_FIELD_NUMBER = 2;
+    private long partnerProvidedIdCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of partner provided ids sent in the upload request for
+     * the destination. Includes all partner provided ids in the request,
+     * regardless of whether they were successfully ingested or not.
+     * </pre>
+     *
+     * <code>int64 partner_provided_id_count = 2;</code>
+     *
+     * @return The partnerProvidedIdCount.
+     */
+    @java.lang.Override
+    public long getPartnerProvidedIdCount() {
+      return partnerProvidedIdCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (recordCount_ != 0L) {
+        output.writeInt64(1, recordCount_);
+      }
+      if (partnerProvidedIdCount_ != 0L) {
+        output.writeInt64(2, partnerProvidedIdCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (recordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, recordCount_);
+      }
+      if (partnerProvidedIdCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, partnerProvidedIdCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus
+          other =
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestPartnerProvidedIdDataStatus)
+                  obj;
+
+      if (getRecordCount() != other.getRecordCount()) return false;
+      if (getPartnerProvidedIdCount() != other.getPartnerProvidedIdCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
+      hash = (37 * hash) + PARTNER_PROVIDED_ID_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartnerProvidedIdCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data ingestion to the destination
+     * containing stats related to the ingestion.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus.class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordCount_ = 0L;
+        partnerProvidedIdCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_IngestPartnerProvidedIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus
+            result =
+                new com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .IngestPartnerProvidedIdDataStatus(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordCount_ = recordCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.partnerProvidedIdCount_ = partnerProvidedIdCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestPartnerProvidedIdDataStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .IngestPartnerProvidedIdDataStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .IngestPartnerProvidedIdDataStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .IngestPartnerProvidedIdDataStatus.getDefaultInstance()) return this;
+        if (other.getRecordCount() != 0L) {
+          setRecordCount(other.getRecordCount());
+        }
+        if (other.getPartnerProvidedIdCount() != 0L) {
+          setPartnerProvidedIdCount(other.getPartnerProvidedIdCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  recordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  partnerProvidedIdCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long recordCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return The recordCount.
+       */
+      @java.lang.Override
+      public long getRecordCount() {
+        return recordCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @param value The recordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordCount(long value) {
+
+        recordCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the upload request for the
+       * destination. Includes all audience members in the request, regardless of
+       * whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long partnerProvidedIdCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of partner provided ids sent in the upload request for
+       * the destination. Includes all partner provided ids in the request,
+       * regardless of whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 partner_provided_id_count = 2;</code>
+       *
+       * @return The partnerProvidedIdCount.
+       */
+      @java.lang.Override
+      public long getPartnerProvidedIdCount() {
+        return partnerProvidedIdCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of partner provided ids sent in the upload request for
+       * the destination. Includes all partner provided ids in the request,
+       * regardless of whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 partner_provided_id_count = 2;</code>
+       *
+       * @param value The partnerProvidedIdCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartnerProvidedIdCount(long value) {
+
+        partnerProvidedIdCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of partner provided ids sent in the upload request for
+       * the destination. Includes all partner provided ids in the request,
+       * regardless of whether they were successfully ingested or not.
+       * </pre>
+       *
+       * <code>int64 partner_provided_id_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartnerProvidedIdCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        partnerProvidedIdCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.IngestPartnerProvidedIdDataStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .IngestPartnerProvidedIdDataStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<IngestPartnerProvidedIdDataStatus> PARSER =
+        new com.google.protobuf.AbstractParser<IngestPartnerProvidedIdDataStatus>() {
+          @java.lang.Override
+          public IngestPartnerProvidedIdDataStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<IngestPartnerProvidedIdDataStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<IngestPartnerProvidedIdDataStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .IngestPartnerProvidedIdDataStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RemovePartnerProvidedIdDataStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the removal request. Includes
+     * all audience members in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    long getRecordCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of partner provided ids sent in the removal request.
+     * Includes all partner provided ids in the request, regardless of whether
+     * they were successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 partner_provided_id_count = 2;</code>
+     *
+     * @return The partnerProvidedIdCount.
+     */
+    long getPartnerProvidedIdCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the partner provided id data removal from the destination.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus}
+   */
+  public static final class RemovePartnerProvidedIdDataStatus
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus)
+      RemovePartnerProvidedIdDataStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RemovePartnerProvidedIdDataStatus");
+    }
+
+    // Use RemovePartnerProvidedIdDataStatus.newBuilder() to construct.
+    private RemovePartnerProvidedIdDataStatus(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RemovePartnerProvidedIdDataStatus() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+          .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus.class,
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus.Builder.class);
+    }
+
+    public static final int RECORD_COUNT_FIELD_NUMBER = 1;
+    private long recordCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of audience members sent in the removal request. Includes
+     * all audience members in the request, regardless of whether they were
+     * successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 record_count = 1;</code>
+     *
+     * @return The recordCount.
+     */
+    @java.lang.Override
+    public long getRecordCount() {
+      return recordCount_;
+    }
+
+    public static final int PARTNER_PROVIDED_ID_COUNT_FIELD_NUMBER = 2;
+    private long partnerProvidedIdCount_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total count of partner provided ids sent in the removal request.
+     * Includes all partner provided ids in the request, regardless of whether
+     * they were successfully removed or not.
+     * </pre>
+     *
+     * <code>int64 partner_provided_id_count = 2;</code>
+     *
+     * @return The partnerProvidedIdCount.
+     */
+    @java.lang.Override
+    public long getPartnerProvidedIdCount() {
+      return partnerProvidedIdCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (recordCount_ != 0L) {
+        output.writeInt64(1, recordCount_);
+      }
+      if (partnerProvidedIdCount_ != 0L) {
+        output.writeInt64(2, partnerProvidedIdCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (recordCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, recordCount_);
+      }
+      if (partnerProvidedIdCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, partnerProvidedIdCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus)) {
+        return super.equals(obj);
+      }
+      com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus
+          other =
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemovePartnerProvidedIdDataStatus)
+                  obj;
+
+      if (getRecordCount() != other.getRecordCount()) return false;
+      if (getPartnerProvidedIdCount() != other.getPartnerProvidedIdCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RECORD_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRecordCount());
+      hash = (37 * hash) + PARTNER_PROVIDED_ID_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartnerProvidedIdCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the partner provided id data removal from the destination.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus)
+        com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus.class,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        recordCount_ = 0L;
+        partnerProvidedIdCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestinationProto
+            .internal_static_google_ads_datamanager_v1_RequestStatusPerDestination_RemovePartnerProvidedIdDataStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus
+          getDefaultInstanceForType() {
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus
+          build() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus
+            result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus
+          buildPartial() {
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus
+            result =
+                new com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemovePartnerProvidedIdDataStatus(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordCount_ = recordCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.partnerProvidedIdCount_ = partnerProvidedIdCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemovePartnerProvidedIdDataStatus) {
+          return mergeFrom(
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemovePartnerProvidedIdDataStatus)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemovePartnerProvidedIdDataStatus
+              other) {
+        if (other
+            == com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemovePartnerProvidedIdDataStatus.getDefaultInstance()) return this;
+        if (other.getRecordCount() != 0L) {
+          setRecordCount(other.getRecordCount());
+        }
+        if (other.getPartnerProvidedIdCount() != 0L) {
+          setPartnerProvidedIdCount(other.getPartnerProvidedIdCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  recordCount_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  partnerProvidedIdCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long recordCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return The recordCount.
+       */
+      @java.lang.Override
+      public long getRecordCount() {
+        return recordCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @param value The recordCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordCount(long value) {
+
+        recordCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of audience members sent in the removal request. Includes
+       * all audience members in the request, regardless of whether they were
+       * successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 record_count = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recordCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long partnerProvidedIdCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of partner provided ids sent in the removal request.
+       * Includes all partner provided ids in the request, regardless of whether
+       * they were successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 partner_provided_id_count = 2;</code>
+       *
+       * @return The partnerProvidedIdCount.
+       */
+      @java.lang.Override
+      public long getPartnerProvidedIdCount() {
+        return partnerProvidedIdCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of partner provided ids sent in the removal request.
+       * Includes all partner provided ids in the request, regardless of whether
+       * they were successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 partner_provided_id_count = 2;</code>
+       *
+       * @param value The partnerProvidedIdCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPartnerProvidedIdCount(long value) {
+
+        partnerProvidedIdCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total count of partner provided ids sent in the removal request.
+       * Includes all partner provided ids in the request, regardless of whether
+       * they were successfully removed or not.
+       * </pre>
+       *
+       * <code>int64 partner_provided_id_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPartnerProvidedIdCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        partnerProvidedIdCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.datamanager.v1.RequestStatusPerDestination.RemovePartnerProvidedIdDataStatus)
+    private static final com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemovePartnerProvidedIdDataStatus();
+    }
+
+    public static com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RemovePartnerProvidedIdDataStatus> PARSER =
+        new com.google.protobuf.AbstractParser<RemovePartnerProvidedIdDataStatus>() {
+          @java.lang.Override
+          public RemovePartnerProvidedIdDataStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RemovePartnerProvidedIdDataStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RemovePartnerProvidedIdDataStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemovePartnerProvidedIdDataStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DataTypeCountOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.ads.datamanager.v1.RequestStatusPerDestination.DataTypeCount)
@@ -17515,6 +22497,7 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     AUDIENCE_MEMBERS_INGESTION_STATUS(4),
     EVENTS_INGESTION_STATUS(5),
     AUDIENCE_MEMBERS_REMOVAL_STATUS(6),
+    REMOVE_ALL_AUDIENCE_MEMBERS_STATUS(8),
     STATUS_NOT_SET(0);
     private final int value;
 
@@ -17540,6 +22523,8 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
           return EVENTS_INGESTION_STATUS;
         case 6:
           return AUDIENCE_MEMBERS_REMOVAL_STATUS;
+        case 8:
+          return REMOVE_ALL_AUDIENCE_MEMBERS_STATUS;
         case 0:
           return STATUS_NOT_SET;
         default:
@@ -17998,6 +22983,75 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         .getDefaultInstance();
   }
 
+  public static final int REMOVE_ALL_AUDIENCE_MEMBERS_STATUS_FIELD_NUMBER = 8;
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+   * </code>
+   *
+   * @return Whether the removeAllAudienceMembersStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemoveAllAudienceMembersStatus() {
+    return statusCase_ == 8;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+   * </code>
+   *
+   * @return The removeAllAudienceMembersStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+      getRemoveAllAudienceMembersStatus() {
+    if (statusCase_ == 8) {
+      return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus)
+          status_;
+    }
+    return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of the remove all audience members request.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.datamanager.v1.RequestStatusPerDestination
+          .RemoveAllAudienceMembersStatusOrBuilder
+      getRemoveAllAudienceMembersStatusOrBuilder() {
+    if (statusCase_ == 8) {
+      return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+              .RemoveAllAudienceMembersStatus)
+          status_;
+    }
+    return com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -18043,6 +23097,12 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getWarningInfo());
+    }
+    if (statusCase_ == 8) {
+      output.writeMessage(
+          8,
+          (com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus)
+              status_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -18091,6 +23151,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getWarningInfo());
     }
+    if (statusCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8,
+              (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                      .RemoveAllAudienceMembersStatus)
+                  status_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -18133,6 +23201,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         if (!getAudienceMembersRemovalStatus().equals(other.getAudienceMembersRemovalStatus()))
           return false;
         break;
+      case 8:
+        if (!getRemoveAllAudienceMembersStatus().equals(other.getRemoveAllAudienceMembersStatus()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -18173,6 +23245,10 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       case 6:
         hash = (37 * hash) + AUDIENCE_MEMBERS_REMOVAL_STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getAudienceMembersRemovalStatus().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + REMOVE_ALL_AUDIENCE_MEMBERS_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getRemoveAllAudienceMembersStatus().hashCode();
         break;
       case 0:
       default:
@@ -18354,6 +23430,9 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       if (audienceMembersRemovalStatusBuilder_ != null) {
         audienceMembersRemovalStatusBuilder_.clear();
       }
+      if (removeAllAudienceMembersStatusBuilder_ != null) {
+        removeAllAudienceMembersStatusBuilder_.clear();
+      }
       statusCase_ = 0;
       status_ = null;
       return this;
@@ -18427,6 +23506,9 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       if (statusCase_ == 6 && audienceMembersRemovalStatusBuilder_ != null) {
         result.status_ = audienceMembersRemovalStatusBuilder_.build();
       }
+      if (statusCase_ == 8 && removeAllAudienceMembersStatusBuilder_ != null) {
+        result.status_ = removeAllAudienceMembersStatusBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -18468,6 +23550,11 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
         case AUDIENCE_MEMBERS_REMOVAL_STATUS:
           {
             mergeAudienceMembersRemovalStatus(other.getAudienceMembersRemovalStatus());
+            break;
+          }
+        case REMOVE_ALL_AUDIENCE_MEMBERS_STATUS:
+          {
+            mergeRemoveAllAudienceMembersStatus(other.getRemoveAllAudienceMembersStatus());
             break;
           }
         case STATUS_NOT_SET:
@@ -18551,6 +23638,14 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000008;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    internalGetRemoveAllAudienceMembersStatusFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                statusCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -20198,6 +25293,278 @@ public final class RequestStatusPerDestination extends com.google.protobuf.Gener
       statusCase_ = 6;
       onChanged();
       return audienceMembersRemovalStatusBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveAllAudienceMembersStatus,
+            com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+                .Builder,
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveAllAudienceMembersStatusOrBuilder>
+        removeAllAudienceMembersStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     *
+     * @return Whether the removeAllAudienceMembersStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasRemoveAllAudienceMembersStatus() {
+      return statusCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     *
+     * @return The removeAllAudienceMembersStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+        getRemoveAllAudienceMembersStatus() {
+      if (removeAllAudienceMembersStatusBuilder_ == null) {
+        if (statusCase_ == 8) {
+          return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveAllAudienceMembersStatus)
+              status_;
+        }
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus.getDefaultInstance();
+      } else {
+        if (statusCase_ == 8) {
+          return removeAllAudienceMembersStatusBuilder_.getMessage();
+        }
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    public Builder setRemoveAllAudienceMembersStatus(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+            value) {
+      if (removeAllAudienceMembersStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+        onChanged();
+      } else {
+        removeAllAudienceMembersStatusBuilder_.setMessage(value);
+      }
+      statusCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    public Builder setRemoveAllAudienceMembersStatus(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+                .Builder
+            builderForValue) {
+      if (removeAllAudienceMembersStatusBuilder_ == null) {
+        status_ = builderForValue.build();
+        onChanged();
+      } else {
+        removeAllAudienceMembersStatusBuilder_.setMessage(builderForValue.build());
+      }
+      statusCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    public Builder mergeRemoveAllAudienceMembersStatus(
+        com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+            value) {
+      if (removeAllAudienceMembersStatusBuilder_ == null) {
+        if (statusCase_ == 8
+            && status_
+                != com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatus.getDefaultInstance()) {
+          status_ =
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveAllAudienceMembersStatus.newBuilder(
+                      (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                              .RemoveAllAudienceMembersStatus)
+                          status_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          status_ = value;
+        }
+        onChanged();
+      } else {
+        if (statusCase_ == 8) {
+          removeAllAudienceMembersStatusBuilder_.mergeFrom(value);
+        } else {
+          removeAllAudienceMembersStatusBuilder_.setMessage(value);
+        }
+      }
+      statusCase_ = 8;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    public Builder clearRemoveAllAudienceMembersStatus() {
+      if (removeAllAudienceMembersStatusBuilder_ == null) {
+        if (statusCase_ == 8) {
+          statusCase_ = 0;
+          status_ = null;
+          onChanged();
+        }
+      } else {
+        if (statusCase_ == 8) {
+          statusCase_ = 0;
+          status_ = null;
+        }
+        removeAllAudienceMembersStatusBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+            .Builder
+        getRemoveAllAudienceMembersStatusBuilder() {
+      return internalGetRemoveAllAudienceMembersStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatusOrBuilder
+        getRemoveAllAudienceMembersStatusOrBuilder() {
+      if ((statusCase_ == 8) && (removeAllAudienceMembersStatusBuilder_ != null)) {
+        return removeAllAudienceMembersStatusBuilder_.getMessageOrBuilder();
+      } else {
+        if (statusCase_ == 8) {
+          return (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveAllAudienceMembersStatus)
+              status_;
+        }
+        return com.google.ads.datamanager.v1.RequestStatusPerDestination
+            .RemoveAllAudienceMembersStatus.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of the remove all audience members request.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus remove_all_audience_members_status = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveAllAudienceMembersStatus,
+            com.google.ads.datamanager.v1.RequestStatusPerDestination.RemoveAllAudienceMembersStatus
+                .Builder,
+            com.google.ads.datamanager.v1.RequestStatusPerDestination
+                .RemoveAllAudienceMembersStatusOrBuilder>
+        internalGetRemoveAllAudienceMembersStatusFieldBuilder() {
+      if (removeAllAudienceMembersStatusBuilder_ == null) {
+        if (!(statusCase_ == 8)) {
+          status_ =
+              com.google.ads.datamanager.v1.RequestStatusPerDestination
+                  .RemoveAllAudienceMembersStatus.getDefaultInstance();
+        }
+        removeAllAudienceMembersStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatus,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatus.Builder,
+                com.google.ads.datamanager.v1.RequestStatusPerDestination
+                    .RemoveAllAudienceMembersStatusOrBuilder>(
+                (com.google.ads.datamanager.v1.RequestStatusPerDestination
+                        .RemoveAllAudienceMembersStatus)
+                    status_,
+                getParentForChildren(),
+                isClean());
+        status_ = null;
+      }
+      statusCase_ = 8;
+      onChanged();
+      return removeAllAudienceMembersStatusBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.datamanager.v1.RequestStatusPerDestination)

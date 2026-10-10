@@ -228,14 +228,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `canonicalDisplayName`
+   * * `customSpot`
+   * * `displayName`
+   * * `flexible`
+   * * `name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -263,14 +262,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `canonicalDisplayName`
+   * * `customSpot`
+   * * `displayName`
+   * * `flexible`
+   * * `name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1123,14 +1121,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `canonicalDisplayName`
+     * * `customSpot`
+     * * `displayName`
+     * * `flexible`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1157,14 +1154,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `canonicalDisplayName`
+     * * `customSpot`
+     * * `displayName`
+     * * `flexible`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1191,14 +1187,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `canonicalDisplayName`
+     * * `customSpot`
+     * * `displayName`
+     * * `flexible`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1224,14 +1219,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `canonicalDisplayName`
+     * * `customSpot`
+     * * `displayName`
+     * * `flexible`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1253,14 +1247,13 @@ public final class ListAdSpotsRequest extends com.google.protobuf.GeneratedMessa
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;canonicalDisplayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;customSpot&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;flexible&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `canonicalDisplayName`
+     * * `customSpot`
+     * * `displayName`
+     * * `flexible`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

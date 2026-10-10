@@ -17,7 +17,7 @@ To use it in Maven, add the following to your POM:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.86.0</version>
+      <version>26.90.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,14 +42,14 @@ The content of the Libraries BOM consists of 2 categories:
 This is the table of modules included in the latest libraries-bom release:
 
 <!--- {x-version-update-start:libraries-bom:released} -->
-### libraries-bom: v<version>26.86.0</version>
+### libraries-bom: v<version>26.90.0</version>
 <!--- {x-version-update-end} -->
 
 <!-- TABLE_START -->
 | Artifact ID | Library Type | Google Cloud Library Reference | Google Cloud Product Reference | 
 | --------- | ------------ | ------------ | ------------ |
 | api-common | Runtime | [2.66.0](https://cloud.google.com/java/docs/reference/api-common/latest/overview) | N/A |
-| conscrypt-openjdk-uber | Product | [2.6.0](https://cloud.google.com/java/docs/reference/conscrypt-openjdk-uber/latest/overview) | N/A |
+| conscrypt-openjdk-uber | Product | [2.6.2](https://cloud.google.com/java/docs/reference/conscrypt-openjdk-uber/latest/overview) | N/A |
 | gax | Runtime | [2.83.0](https://cloud.google.com/java/docs/reference/gax/latest/overview) | N/A |
 | google-analytics-admin | Product | [0.105.0](https://cloud.google.com/java/docs/reference/google-analytics-admin/latest/overview) | [Analytics Admin](https://developers.google.com/analytics) |
 | google-analytics-data | Product | [0.106.0](https://cloud.google.com/java/docs/reference/google-analytics-data/latest/overview) | [Analytics Data](https://developers.google.com/analytics/trusted-testing/analytics-data) |
@@ -75,7 +75,6 @@ This is the table of modules included in the latest libraries-bom release:
 | google-cloud-asset | Product | [3.99.0](https://cloud.google.com/java/docs/reference/google-cloud-asset/latest/overview) | [Cloud Asset Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview) |
 | google-cloud-assured-workloads | Product | [2.95.0](https://cloud.google.com/java/docs/reference/google-cloud-assured-workloads/latest/overview) | [Assured Workloads for Government](https://cloud.google.com/assured-workloads/) |
 | google-cloud-auditmanager | Product | [0.13.0](https://cloud.google.com/java/docs/reference/google-cloud-auditmanager/latest/overview) | N/A |
-| google-cloud-automl | Product | [2.95.0](https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/overview) | [Cloud Auto ML](https://cloud.google.com/automl/docs/) |
 | google-cloud-backstory | Product | [0.3.0](https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview) | N/A |
 | google-cloud-backupdr | Product | [0.54.0](https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview) | N/A |
 | google-cloud-bare-metal-solution | Product | [0.95.0](https://cloud.google.com/java/docs/reference/google-cloud-bare-metal-solution/latest/overview) | [Bare Metal Solution](https://cloud.google.com/bare-metal/docs) |
@@ -123,10 +122,8 @@ This is the table of modules included in the latest libraries-bom release:
 | google-cloud-core | Runtime | [2.73.0](https://cloud.google.com/java/docs/reference/google-cloud-core/latest/overview) | [Google Cloud Core](n/a) |
 | google-cloud-data-fusion | Product | [1.95.0](https://cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/overview) | [Cloud Data Fusion](https://cloud.google.com/data-fusion/docs) |
 | google-cloud-databasecenter | Product | [0.16.0](https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview) | N/A |
-| google-cloud-datacatalog | Product | [1.101.0](https://cloud.google.com/java/docs/reference/google-cloud-datacatalog/latest/overview) | [Data Catalog](https://cloud.google.com/data-catalog) |
 | google-cloud-dataflow | Product | [0.99.0](https://cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview) | [Dataflow](https://cloud.google.com/dataflow/docs) |
 | google-cloud-dataform | Product | [0.94.0](https://cloud.google.com/java/docs/reference/google-cloud-dataform/latest/overview) | [Cloud Dataform](https://cloud.google.com/dataform/docs) |
-| google-cloud-datalabeling | Product | [0.215.0](https://cloud.google.com/java/docs/reference/google-cloud-datalabeling/latest/overview) | [Data Labeling](https://cloud.google.com/ai-platform/data-labeling/docs/) |
 | google-cloud-datalineage | Product | [0.87.0](https://cloud.google.com/java/docs/reference/google-cloud-datalineage/latest/overview) | [Data Lineage](https://cloud.google.com/data-catalog/docs/data-lineage/) |
 | google-cloud-dataplex | Product | [1.93.0](https://cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/overview) | [Cloud Dataplex](https://cloud.google.com/dataplex) |
 | google-cloud-dataproc | Product | [4.92.0](https://cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/overview) | [Dataproc](https://cloud.google.com/dataproc) |
@@ -289,7 +286,7 @@ This is the table of modules included in the latest libraries-bom release:
 
 The [google-cloud-bom dashboard](https://storage.googleapis.com/java-cloud-bom-dashboard/com.google.cloud/google-cloud-bom/all-versions/index.html) provides client library consumers with easy access to dependency information pertaining to each client library that goes into the google-cloud-bom.
 
-The dashboard shows the content of **each version** of the BOM which includes all the versions of the artifacts in it and their underlying [google-cloud-shared-dependencies BOM](https://github.com/googleapis/sdk-platform-java/tree/main/java-shared-dependencies) version.
+The dashboard shows the content of **each version** of the BOM which includes all the versions of the artifacts in it and their underlying [google-cloud-shared-dependencies BOM](https://github.com/googleapis/google-cloud-java/tree/main/sdk-platform-java/java-shared-dependencies) version.
 
 The dashboard also has an [all versions](https://storage.googleapis.com/java-cloud-bom-dashboard/com.google.cloud/google-cloud-bom/all-versions/index.html) page where user can easily search on any artifact or version to see which version of the google-cloud-bom it exists in -- this could be helpful in providing client library consumer advice on which version(s) of google-cloud-bom to import to address their needs.
 

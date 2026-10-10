@@ -329,9 +329,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    * Dictionary words containing a large number of characters that are not
    * letters or digits may result in unexpected findings because such characters
    * are treated as whitespace. The
-   * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
-   * contains details about the size limits of dictionaries. For dictionaries
-   * that do not fit within these constraints, consider using
+   * [limits](https://docs.cloud.google.com/sensitive-data-protection/limits)
+   * page contains details about the size limits of dictionaries. For
+   * dictionaries that do not fit within these constraints, consider using
    * `LargeCustomDictionaryConfig` in the `StoredInfoType` API.
    * </pre>
    *
@@ -1532,9 +1532,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * Dictionary words containing a large number of characters that are not
      * letters or digits may result in unexpected findings because such characters
      * are treated as whitespace. The
-     * [limits](https://cloud.google.com/sensitive-data-protection/limits) page
-     * contains details about the size limits of dictionaries. For dictionaries
-     * that do not fit within these constraints, consider using
+     * [limits](https://docs.cloud.google.com/sensitive-data-protection/limits)
+     * page contains details about the size limits of dictionaries. For
+     * dictionaries that do not fit within these constraints, consider using
      * `LargeCustomDictionaryConfig` in the `StoredInfoType` API.
      * </pre>
      *
@@ -3175,7 +3175,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Message for detecting output from deidentification transformations
    * such as
-   * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
+   * [`CryptoReplaceFfxFpeConfig`](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
    * These types of transformations are
    * those that perform pseudonymization, thereby producing a "surrogate" as
    * output. This should be used in conjunction with a field on the
@@ -3381,7 +3381,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Message for detecting output from deidentification transformations
      * such as
-     * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
+     * [`CryptoReplaceFfxFpeConfig`](https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
      * These types of transformations are
      * those that perform pseudonymization, thereby producing a "surrogate" as
      * output. This should be used in conjunction with a field on the
@@ -4404,6 +4404,4200 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface FileLabelInfoTypeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+     * </code>
+     *
+     * @return Whether the sensitivityLabel field is set.
+     */
+    boolean hasSensitivityLabel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+     * </code>
+     *
+     * @return The sensitivityLabel.
+     */
+    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+        getSensitivityLabel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabelOrBuilder
+        getSensitivityLabelOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+     * </code>
+     *
+     * @return Whether the googleDriveLabel field is set.
+     */
+    boolean hasGoogleDriveLabel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+     * </code>
+     *
+     * @return The googleDriveLabel.
+     */
+    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+        getGoogleDriveLabel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelOrBuilder
+        getGoogleDriveLabelOrBuilder();
+
+    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.TypeCase getTypeCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for a custom infoType that detects file labels.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType}
+   */
+  public static final class FileLabelInfoType extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType)
+      FileLabelInfoTypeOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "FileLabelInfoType");
+    }
+
+    // Use FileLabelInfoType.newBuilder() to construct.
+    private FileLabelInfoType(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FileLabelInfoType() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.class,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder.class);
+    }
+
+    public interface SensitivityLabelOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The GUID of the sensitivity label.
+       * </pre>
+       *
+       * <code>string guid = 1;</code>
+       *
+       * @return The guid.
+       */
+      java.lang.String getGuid();
+
+      /**
+       *
+       *
+       * <pre>
+       * The GUID of the sensitivity label.
+       * </pre>
+       *
+       * <code>string guid = 1;</code>
+       *
+       * @return The bytes for guid.
+       */
+      com.google.protobuf.ByteString getGuidBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel}
+     */
+    public static final class SensitivityLabel extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+        SensitivityLabelOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "SensitivityLabel");
+      }
+
+      // Use SensitivityLabel.newBuilder() to construct.
+      private SensitivityLabel(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SensitivityLabel() {
+        guid_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.class,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.Builder
+                    .class);
+      }
+
+      public static final int GUID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object guid_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The GUID of the sensitivity label.
+       * </pre>
+       *
+       * <code>string guid = 1;</code>
+       *
+       * @return The guid.
+       */
+      @java.lang.Override
+      public java.lang.String getGuid() {
+        java.lang.Object ref = guid_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          guid_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The GUID of the sensitivity label.
+       * </pre>
+       *
+       * <code>string guid = 1;</code>
+       *
+       * @return The bytes for guid.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGuidBytes() {
+        java.lang.Object ref = guid_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          guid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(guid_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, guid_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(guid_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, guid_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)) {
+          return super.equals(obj);
+        }
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel other =
+            (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel) obj;
+
+        if (!getGuid().equals(other.getGuid())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + GUID_FIELD_NUMBER;
+        hash = (53 * hash) + getGuid().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabelOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          guid_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_SensitivityLabel_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel build() {
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+            buildPartial() {
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel result =
+              new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.guid_ = guid_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel other) {
+          if (other
+              == com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+                  .getDefaultInstance()) return this;
+          if (!other.getGuid().isEmpty()) {
+            guid_ = other.guid_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    guid_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object guid_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The GUID of the sensitivity label.
+         * </pre>
+         *
+         * <code>string guid = 1;</code>
+         *
+         * @return The guid.
+         */
+        public java.lang.String getGuid() {
+          java.lang.Object ref = guid_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            guid_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The GUID of the sensitivity label.
+         * </pre>
+         *
+         * <code>string guid = 1;</code>
+         *
+         * @return The bytes for guid.
+         */
+        public com.google.protobuf.ByteString getGuidBytes() {
+          java.lang.Object ref = guid_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            guid_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The GUID of the sensitivity label.
+         * </pre>
+         *
+         * <code>string guid = 1;</code>
+         *
+         * @param value The guid to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGuid(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          guid_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The GUID of the sensitivity label.
+         * </pre>
+         *
+         * <code>string guid = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearGuid() {
+          guid_ = getDefaultInstance().getGuid();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The GUID of the sensitivity label.
+         * </pre>
+         *
+         * <code>string guid = 1;</code>
+         *
+         * @param value The bytes for guid to set.
+         * @return This builder for chaining.
+         */
+        public Builder setGuidBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          guid_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+      private static final com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+              .SensitivityLabel
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel();
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SensitivityLabel> PARSER =
+          new com.google.protobuf.AbstractParser<SensitivityLabel>() {
+            @java.lang.Override
+            public SensitivityLabel parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SensitivityLabel> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SensitivityLabel> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface GoogleDriveLabelOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The [label
+       * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+       * of the Google Drive label.
+       * </pre>
+       *
+       * <code>string label_id = 1;</code>
+       *
+       * @return The labelId.
+       */
+      java.lang.String getLabelId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The [label
+       * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+       * of the Google Drive label.
+       * </pre>
+       *
+       * <code>string label_id = 1;</code>
+       *
+       * @return The bytes for labelId.
+       */
+      com.google.protobuf.ByteString getLabelIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      java.util.List<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField>
+          getLabelFieldsToMatchList();
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+          getLabelFieldsToMatch(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      int getLabelFieldsToMatchCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .LabelFieldOrBuilder>
+          getLabelFieldsToMatchOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+              .LabelFieldOrBuilder
+          getLabelFieldsToMatchOrBuilder(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel}
+     */
+    public static final class GoogleDriveLabel extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+        GoogleDriveLabelOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "GoogleDriveLabel");
+      }
+
+      // Use GoogleDriveLabel.newBuilder() to construct.
+      private GoogleDriveLabel(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private GoogleDriveLabel() {
+        labelId_ = "";
+        labelFieldsToMatch_ = java.util.Collections.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.class,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.Builder
+                    .class);
+      }
+
+      public interface LabelFieldOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The identifier of the Label Field.
+         * </pre>
+         *
+         * <code>string id = 1;</code>
+         *
+         * @return The id.
+         */
+        java.lang.String getId();
+
+        /**
+         *
+         *
+         * <pre>
+         * The identifier of the Label Field.
+         * </pre>
+         *
+         * <code>string id = 1;</code>
+         *
+         * @return The bytes for id.
+         */
+        com.google.protobuf.ByteString getIdBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The value of the Label Field to match.
+         * </pre>
+         *
+         * <code>string value = 2;</code>
+         *
+         * @return The value.
+         */
+        java.lang.String getValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * The value of the Label Field to match.
+         * </pre>
+         *
+         * <code>string value = 2;</code>
+         *
+         * @return The bytes for value.
+         */
+        com.google.protobuf.ByteString getValueBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField}
+       */
+      public static final class LabelField extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField)
+          LabelFieldOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 6,
+              /* suffix= */ "",
+              "LabelField");
+        }
+
+        // Use LabelField.newBuilder() to construct.
+        private LabelField(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LabelField() {
+          id_ = "";
+          value_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .LabelField.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .LabelField.Builder.class);
+        }
+
+        public static final int ID_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object id_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The identifier of the Label Field.
+         * </pre>
+         *
+         * <code>string id = 1;</code>
+         *
+         * @return The id.
+         */
+        @java.lang.Override
+        public java.lang.String getId() {
+          java.lang.Object ref = id_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            id_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The identifier of the Label Field.
+         * </pre>
+         *
+         * <code>string id = 1;</code>
+         *
+         * @return The bytes for id.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getIdBytes() {
+          java.lang.Object ref = id_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            id_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int VALUE_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object value_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The value of the Label Field to match.
+         * </pre>
+         *
+         * <code>string value = 2;</code>
+         *
+         * @return The value.
+         */
+        @java.lang.Override
+        public java.lang.String getValue() {
+          java.lang.Object ref = value_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            value_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The value of the Label Field to match.
+         * </pre>
+         *
+         * <code>string value = 2;</code>
+         *
+         * @return The bytes for value.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getValueBytes() {
+          java.lang.Object ref = value_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            value_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField)) {
+            return super.equals(obj);
+          }
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+              other =
+                  (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                          .LabelField)
+                      obj;
+
+          if (!getId().equals(other.getId())) return false;
+          if (!getValue().equals(other.getValue())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + ID_FIELD_NUMBER;
+          hash = (53 * hash) + getId().hashCode();
+          hash = (37 * hash) + VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + getValue().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField)
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelFieldOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.privacy.dlp.v2.DlpStorage
+                .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.privacy.dlp.v2.DlpStorage
+                .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelField.class,
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelField.Builder.class);
+          }
+
+          // Construct using
+          // com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            id_ = "";
+            value_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.privacy.dlp.v2.DlpStorage
+                .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_LabelField_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField
+              getDefaultInstanceForType() {
+            return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField
+              build() {
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField
+              buildPartial() {
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                result =
+                    new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelField(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.id_ = id_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.value_ = value_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField) {
+              return mergeFrom(
+                  (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                          .LabelField)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                  other) {
+            if (other
+                == com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField.getDefaultInstance()) return this;
+            if (!other.getId().isEmpty()) {
+              id_ = other.id_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getValue().isEmpty()) {
+              value_ = other.value_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      id_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      value_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object id_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The identifier of the Label Field.
+           * </pre>
+           *
+           * <code>string id = 1;</code>
+           *
+           * @return The id.
+           */
+          public java.lang.String getId() {
+            java.lang.Object ref = id_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              id_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The identifier of the Label Field.
+           * </pre>
+           *
+           * <code>string id = 1;</code>
+           *
+           * @return The bytes for id.
+           */
+          public com.google.protobuf.ByteString getIdBytes() {
+            java.lang.Object ref = id_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              id_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The identifier of the Label Field.
+           * </pre>
+           *
+           * <code>string id = 1;</code>
+           *
+           * @param value The id to set.
+           * @return This builder for chaining.
+           */
+          public Builder setId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            id_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The identifier of the Label Field.
+           * </pre>
+           *
+           * <code>string id = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearId() {
+            id_ = getDefaultInstance().getId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The identifier of the Label Field.
+           * </pre>
+           *
+           * <code>string id = 1;</code>
+           *
+           * @param value The bytes for id to set.
+           * @return This builder for chaining.
+           */
+          public Builder setIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            id_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object value_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The value of the Label Field to match.
+           * </pre>
+           *
+           * <code>string value = 2;</code>
+           *
+           * @return The value.
+           */
+          public java.lang.String getValue() {
+            java.lang.Object ref = value_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              value_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The value of the Label Field to match.
+           * </pre>
+           *
+           * <code>string value = 2;</code>
+           *
+           * @return The bytes for value.
+           */
+          public com.google.protobuf.ByteString getValueBytes() {
+            java.lang.Object ref = value_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              value_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The value of the Label Field to match.
+           * </pre>
+           *
+           * <code>string value = 2;</code>
+           *
+           * @param value The value to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValue(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            value_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The value of the Label Field to match.
+           * </pre>
+           *
+           * <code>string value = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValue() {
+            value_ = getDefaultInstance().getValue();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The value of the Label Field to match.
+           * </pre>
+           *
+           * <code>string value = 2;</code>
+           *
+           * @param value The bytes for value to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValueBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            value_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField)
+        private static final com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                .GoogleDriveLabel.LabelField
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField();
+        }
+
+        public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LabelField> PARSER =
+            new com.google.protobuf.AbstractParser<LabelField>() {
+              @java.lang.Override
+              public LabelField parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LabelField> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LabelField> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int LABEL_ID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object labelId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The [label
+       * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+       * of the Google Drive label.
+       * </pre>
+       *
+       * <code>string label_id = 1;</code>
+       *
+       * @return The labelId.
+       */
+      @java.lang.Override
+      public java.lang.String getLabelId() {
+        java.lang.Object ref = labelId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          labelId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The [label
+       * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+       * of the Google Drive label.
+       * </pre>
+       *
+       * <code>string label_id = 1;</code>
+       *
+       * @return The bytes for labelId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLabelIdBytes() {
+        java.lang.Object ref = labelId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          labelId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LABEL_FIELDS_TO_MATCH_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField>
+          labelFieldsToMatch_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .LabelField>
+          getLabelFieldsToMatchList() {
+        return labelFieldsToMatch_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .LabelFieldOrBuilder>
+          getLabelFieldsToMatchOrBuilderList() {
+        return labelFieldsToMatch_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public int getLabelFieldsToMatchCount() {
+        return labelFieldsToMatch_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+          getLabelFieldsToMatch(int index) {
+        return labelFieldsToMatch_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The field values of the Google Drive label to match.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+              .LabelFieldOrBuilder
+          getLabelFieldsToMatchOrBuilder(int index) {
+        return labelFieldsToMatch_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(labelId_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, labelId_);
+        }
+        for (int i = 0; i < labelFieldsToMatch_.size(); i++) {
+          output.writeMessage(2, labelFieldsToMatch_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(labelId_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, labelId_);
+        }
+        for (int i = 0; i < labelFieldsToMatch_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, labelFieldsToMatch_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)) {
+          return super.equals(obj);
+        }
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel other =
+            (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel) obj;
+
+        if (!getLabelId().equals(other.getLabelId())) return false;
+        if (!getLabelFieldsToMatchList().equals(other.getLabelFieldsToMatchList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + LABEL_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getLabelId().hashCode();
+        if (getLabelFieldsToMatchCount() > 0) {
+          hash = (37 * hash) + LABEL_FIELDS_TO_MATCH_FIELD_NUMBER;
+          hash = (53 * hash) + getLabelFieldsToMatchList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          labelId_ = "";
+          if (labelFieldsToMatchBuilder_ == null) {
+            labelFieldsToMatch_ = java.util.Collections.emptyList();
+          } else {
+            labelFieldsToMatch_ = null;
+            labelFieldsToMatchBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_GoogleDriveLabel_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel build() {
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+            buildPartial() {
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel result =
+              new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel result) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)) {
+              labelFieldsToMatch_ = java.util.Collections.unmodifiableList(labelFieldsToMatch_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
+            result.labelFieldsToMatch_ = labelFieldsToMatch_;
+          } else {
+            result.labelFieldsToMatch_ = labelFieldsToMatchBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.labelId_ = labelId_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel other) {
+          if (other
+              == com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                  .getDefaultInstance()) return this;
+          if (!other.getLabelId().isEmpty()) {
+            labelId_ = other.labelId_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (labelFieldsToMatchBuilder_ == null) {
+            if (!other.labelFieldsToMatch_.isEmpty()) {
+              if (labelFieldsToMatch_.isEmpty()) {
+                labelFieldsToMatch_ = other.labelFieldsToMatch_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+              } else {
+                ensureLabelFieldsToMatchIsMutable();
+                labelFieldsToMatch_.addAll(other.labelFieldsToMatch_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.labelFieldsToMatch_.isEmpty()) {
+              if (labelFieldsToMatchBuilder_.isEmpty()) {
+                labelFieldsToMatchBuilder_.dispose();
+                labelFieldsToMatchBuilder_ = null;
+                labelFieldsToMatch_ = other.labelFieldsToMatch_;
+                bitField0_ = (bitField0_ & ~0x00000002);
+                labelFieldsToMatchBuilder_ =
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                        ? internalGetLabelFieldsToMatchFieldBuilder()
+                        : null;
+              } else {
+                labelFieldsToMatchBuilder_.addAllMessages(other.labelFieldsToMatch_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    labelId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                            .LabelField
+                        m =
+                            input.readMessage(
+                                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                                    .GoogleDriveLabel.LabelField.parser(),
+                                extensionRegistry);
+                    if (labelFieldsToMatchBuilder_ == null) {
+                      ensureLabelFieldsToMatchIsMutable();
+                      labelFieldsToMatch_.add(m);
+                    } else {
+                      labelFieldsToMatchBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object labelId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The [label
+         * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+         * of the Google Drive label.
+         * </pre>
+         *
+         * <code>string label_id = 1;</code>
+         *
+         * @return The labelId.
+         */
+        public java.lang.String getLabelId() {
+          java.lang.Object ref = labelId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            labelId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The [label
+         * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+         * of the Google Drive label.
+         * </pre>
+         *
+         * <code>string label_id = 1;</code>
+         *
+         * @return The bytes for labelId.
+         */
+        public com.google.protobuf.ByteString getLabelIdBytes() {
+          java.lang.Object ref = labelId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            labelId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The [label
+         * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+         * of the Google Drive label.
+         * </pre>
+         *
+         * <code>string label_id = 1;</code>
+         *
+         * @param value The labelId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLabelId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          labelId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The [label
+         * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+         * of the Google Drive label.
+         * </pre>
+         *
+         * <code>string label_id = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLabelId() {
+          labelId_ = getDefaultInstance().getLabelId();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The [label
+         * ID](https://developers.google.com/workspace/drive/labels/guides/overview)
+         * of the Google Drive label.
+         * </pre>
+         *
+         * <code>string label_id = 1;</code>
+         *
+         * @param value The bytes for labelId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLabelIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          labelId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField>
+            labelFieldsToMatch_ = java.util.Collections.emptyList();
+
+        private void ensureLabelFieldsToMatchIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            labelFieldsToMatch_ =
+                new java.util.ArrayList<
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelField>(labelFieldsToMatch_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelFieldOrBuilder>
+            labelFieldsToMatchBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public java.util.List<
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField>
+            getLabelFieldsToMatchList() {
+          if (labelFieldsToMatchBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(labelFieldsToMatch_);
+          } else {
+            return labelFieldsToMatchBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public int getLabelFieldsToMatchCount() {
+          if (labelFieldsToMatchBuilder_ == null) {
+            return labelFieldsToMatch_.size();
+          } else {
+            return labelFieldsToMatchBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField
+            getLabelFieldsToMatch(int index) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            return labelFieldsToMatch_.get(index);
+          } else {
+            return labelFieldsToMatchBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder setLabelFieldsToMatch(
+            int index,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                value) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.set(index, value);
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder setLabelFieldsToMatch(
+            int index,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                    .Builder
+                builderForValue) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder addLabelFieldsToMatch(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                value) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.add(value);
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder addLabelFieldsToMatch(
+            int index,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                value) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.add(index, value);
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder addLabelFieldsToMatch(
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                    .Builder
+                builderForValue) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.add(builderForValue.build());
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder addLabelFieldsToMatch(
+            int index,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField
+                    .Builder
+                builderForValue) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder addAllLabelFieldsToMatch(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                            .LabelField>
+                values) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            ensureLabelFieldsToMatchIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labelFieldsToMatch_);
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder clearLabelFieldsToMatch() {
+          if (labelFieldsToMatchBuilder_ == null) {
+            labelFieldsToMatch_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public Builder removeLabelFieldsToMatch(int index) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            ensureLabelFieldsToMatchIsMutable();
+            labelFieldsToMatch_.remove(index);
+            onChanged();
+          } else {
+            labelFieldsToMatchBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField.Builder
+            getLabelFieldsToMatchBuilder(int index) {
+          return internalGetLabelFieldsToMatchFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelFieldOrBuilder
+            getLabelFieldsToMatchOrBuilder(int index) {
+          if (labelFieldsToMatchBuilder_ == null) {
+            return labelFieldsToMatch_.get(index);
+          } else {
+            return labelFieldsToMatchBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelFieldOrBuilder>
+            getLabelFieldsToMatchOrBuilderList() {
+          if (labelFieldsToMatchBuilder_ != null) {
+            return labelFieldsToMatchBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(labelFieldsToMatch_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField.Builder
+            addLabelFieldsToMatchBuilder() {
+          return internalGetLabelFieldsToMatchFieldBuilder()
+              .addBuilder(
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .LabelField.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                .LabelField.Builder
+            addLabelFieldsToMatchBuilder(int index) {
+          return internalGetLabelFieldsToMatchFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .LabelField.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The field values of the Google Drive label to match.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.LabelField label_fields_to_match = 2;
+         * </code>
+         */
+        public java.util.List<
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField.Builder>
+            getLabelFieldsToMatchBuilderList() {
+          return internalGetLabelFieldsToMatchFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelField.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .LabelFieldOrBuilder>
+            internalGetLabelFieldsToMatchFieldBuilder() {
+          if (labelFieldsToMatchBuilder_ == null) {
+            labelFieldsToMatchBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilder<
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelField,
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelField.Builder,
+                    com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                        .LabelFieldOrBuilder>(
+                    labelFieldsToMatch_,
+                    ((bitField0_ & 0x00000002) != 0),
+                    getParentForChildren(),
+                    isClean());
+            labelFieldsToMatch_ = null;
+          }
+          return labelFieldsToMatchBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+      private static final com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+              .GoogleDriveLabel
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel();
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GoogleDriveLabel> PARSER =
+          new com.google.protobuf.AbstractParser<GoogleDriveLabel>() {
+            @java.lang.Override
+            public GoogleDriveLabel parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<GoogleDriveLabel> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GoogleDriveLabel> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int typeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object type_;
+
+    public enum TypeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SENSITIVITY_LABEL(1),
+      GOOGLE_DRIVE_LABEL(2),
+      TYPE_NOT_SET(0);
+      private final int value;
+
+      private TypeCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static TypeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static TypeCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return SENSITIVITY_LABEL;
+          case 2:
+            return GOOGLE_DRIVE_LABEL;
+          case 0:
+            return TYPE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public TypeCase getTypeCase() {
+      return TypeCase.forNumber(typeCase_);
+    }
+
+    public static final int SENSITIVITY_LABEL_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+     * </code>
+     *
+     * @return Whether the sensitivityLabel field is set.
+     */
+    @java.lang.Override
+    public boolean hasSensitivityLabel() {
+      return typeCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+     * </code>
+     *
+     * @return The sensitivityLabel.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+        getSensitivityLabel() {
+      if (typeCase_ == 1) {
+        return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel) type_;
+      }
+      return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity labels published by Microsoft.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabelOrBuilder
+        getSensitivityLabelOrBuilder() {
+      if (typeCase_ == 1) {
+        return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel) type_;
+      }
+      return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          .getDefaultInstance();
+    }
+
+    public static final int GOOGLE_DRIVE_LABEL_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+     * </code>
+     *
+     * @return Whether the googleDriveLabel field is set.
+     */
+    @java.lang.Override
+    public boolean hasGoogleDriveLabel() {
+      return typeCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+     * </code>
+     *
+     * @return The googleDriveLabel.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+        getGoogleDriveLabel() {
+      if (typeCase_ == 2) {
+        return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel) type_;
+      }
+      return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google Drive labels published by Google.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelOrBuilder
+        getGoogleDriveLabelOrBuilder() {
+      if (typeCase_ == 2) {
+        return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel) type_;
+      }
+      return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (typeCase_ == 1) {
+        output.writeMessage(
+            1, (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel) type_);
+      }
+      if (typeCase_ == 2) {
+        output.writeMessage(
+            2, (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel) type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (typeCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+                    type_);
+      }
+      if (typeCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+                    type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType other =
+          (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) obj;
+
+      if (!getTypeCase().equals(other.getTypeCase())) return false;
+      switch (typeCase_) {
+        case 1:
+          if (!getSensitivityLabel().equals(other.getSensitivityLabel())) return false;
+          break;
+        case 2:
+          if (!getGoogleDriveLabel().equals(other.getGoogleDriveLabel())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (typeCase_) {
+        case 1:
+          hash = (37 * hash) + SENSITIVITY_LABEL_FIELD_NUMBER;
+          hash = (53 * hash) + getSensitivityLabel().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + GOOGLE_DRIVE_LABEL_FIELD_NUMBER;
+          hash = (53 * hash) + getGoogleDriveLabel().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for a custom infoType that detects file labels.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType)
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.class,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder.class);
+      }
+
+      // Construct using com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (sensitivityLabelBuilder_ != null) {
+          sensitivityLabelBuilder_.clear();
+        }
+        if (googleDriveLabelBuilder_ != null) {
+          googleDriveLabelBuilder_.clear();
+        }
+        typeCase_ = 0;
+        type_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_FileLabelInfoType_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType build() {
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType buildPartial() {
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType result =
+            new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType result) {
+        result.typeCase_ = typeCase_;
+        result.type_ = this.type_;
+        if (typeCase_ == 1 && sensitivityLabelBuilder_ != null) {
+          result.type_ = sensitivityLabelBuilder_.build();
+        }
+        if (typeCase_ == 2 && googleDriveLabelBuilder_ != null) {
+          result.type_ = googleDriveLabelBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) {
+          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType other) {
+        if (other
+            == com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance())
+          return this;
+        switch (other.getTypeCase()) {
+          case SENSITIVITY_LABEL:
+            {
+              mergeSensitivityLabel(other.getSensitivityLabel());
+              break;
+            }
+          case GOOGLE_DRIVE_LABEL:
+            {
+              mergeGoogleDriveLabel(other.getGoogleDriveLabel());
+              break;
+            }
+          case TYPE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetSensitivityLabelFieldBuilder().getBuilder(), extensionRegistry);
+                  typeCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetGoogleDriveLabelFieldBuilder().getBuilder(), extensionRegistry);
+                  typeCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int typeCase_ = 0;
+      private java.lang.Object type_;
+
+      public TypeCase getTypeCase() {
+        return TypeCase.forNumber(typeCase_);
+      }
+
+      public Builder clearType() {
+        typeCase_ = 0;
+        type_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabelOrBuilder>
+          sensitivityLabelBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       *
+       * @return Whether the sensitivityLabel field is set.
+       */
+      @java.lang.Override
+      public boolean hasSensitivityLabel() {
+        return typeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       *
+       * @return The sensitivityLabel.
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+          getSensitivityLabel() {
+        if (sensitivityLabelBuilder_ == null) {
+          if (typeCase_ == 1) {
+            return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+                type_;
+          }
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+              .getDefaultInstance();
+        } else {
+          if (typeCase_ == 1) {
+            return sensitivityLabelBuilder_.getMessage();
+          }
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      public Builder setSensitivityLabel(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel value) {
+        if (sensitivityLabelBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          sensitivityLabelBuilder_.setMessage(value);
+        }
+        typeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      public Builder setSensitivityLabel(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.Builder
+              builderForValue) {
+        if (sensitivityLabelBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          sensitivityLabelBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      public Builder mergeSensitivityLabel(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel value) {
+        if (sensitivityLabelBuilder_ == null) {
+          if (typeCase_ == 1
+              && type_
+                  != com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+                      .getDefaultInstance()) {
+            type_ =
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+                    .newBuilder(
+                        (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                                .SensitivityLabel)
+                            type_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 1) {
+            sensitivityLabelBuilder_.mergeFrom(value);
+          } else {
+            sensitivityLabelBuilder_.setMessage(value);
+          }
+        }
+        typeCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      public Builder clearSensitivityLabel() {
+        if (sensitivityLabelBuilder_ == null) {
+          if (typeCase_ == 1) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 1) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          sensitivityLabelBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.Builder
+          getSensitivityLabelBuilder() {
+        return internalGetSensitivityLabelFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabelOrBuilder
+          getSensitivityLabelOrBuilder() {
+        if ((typeCase_ == 1) && (sensitivityLabelBuilder_ != null)) {
+          return sensitivityLabelBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 1) {
+            return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+                type_;
+          }
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sensitivity labels published by Microsoft.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel sensitivity_label = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabelOrBuilder>
+          internalGetSensitivityLabelFieldBuilder() {
+        if (sensitivityLabelBuilder_ == null) {
+          if (!(typeCase_ == 1)) {
+            type_ =
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+                    .getDefaultInstance();
+          }
+          sensitivityLabelBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel
+                      .Builder,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                      .SensitivityLabelOrBuilder>(
+                  (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.SensitivityLabel)
+                      type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 1;
+        onChanged();
+        return sensitivityLabelBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelOrBuilder>
+          googleDriveLabelBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       *
+       * @return Whether the googleDriveLabel field is set.
+       */
+      @java.lang.Override
+      public boolean hasGoogleDriveLabel() {
+        return typeCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       *
+       * @return The googleDriveLabel.
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+          getGoogleDriveLabel() {
+        if (googleDriveLabelBuilder_ == null) {
+          if (typeCase_ == 2) {
+            return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+                type_;
+          }
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+              .getDefaultInstance();
+        } else {
+          if (typeCase_ == 2) {
+            return googleDriveLabelBuilder_.getMessage();
+          }
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      public Builder setGoogleDriveLabel(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel value) {
+        if (googleDriveLabelBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          googleDriveLabelBuilder_.setMessage(value);
+        }
+        typeCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      public Builder setGoogleDriveLabel(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.Builder
+              builderForValue) {
+        if (googleDriveLabelBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          googleDriveLabelBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      public Builder mergeGoogleDriveLabel(
+          com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel value) {
+        if (googleDriveLabelBuilder_ == null) {
+          if (typeCase_ == 2
+              && type_
+                  != com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .getDefaultInstance()) {
+            type_ =
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .newBuilder(
+                        (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                                .GoogleDriveLabel)
+                            type_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 2) {
+            googleDriveLabelBuilder_.mergeFrom(value);
+          } else {
+            googleDriveLabelBuilder_.setMessage(value);
+          }
+        }
+        typeCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      public Builder clearGoogleDriveLabel() {
+        if (googleDriveLabelBuilder_ == null) {
+          if (typeCase_ == 2) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 2) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          googleDriveLabelBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.Builder
+          getGoogleDriveLabelBuilder() {
+        return internalGetGoogleDriveLabelFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelOrBuilder
+          getGoogleDriveLabelOrBuilder() {
+        if ((typeCase_ == 2) && (googleDriveLabelBuilder_ != null)) {
+          return googleDriveLabelBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 2) {
+            return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+                type_;
+          }
+          return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google Drive labels published by Google.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel google_drive_label = 2;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabelOrBuilder>
+          internalGetGoogleDriveLabelFieldBuilder() {
+        if (googleDriveLabelBuilder_ == null) {
+          if (!(typeCase_ == 2)) {
+            type_ =
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                    .getDefaultInstance();
+          }
+          googleDriveLabelBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel
+                      .Builder,
+                  com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                      .GoogleDriveLabelOrBuilder>(
+                  (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.GoogleDriveLabel)
+                      type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 2;
+        onChanged();
+        return googleDriveLabelBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType)
+    private static final com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType();
+    }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FileLabelInfoType> PARSER =
+        new com.google.protobuf.AbstractParser<FileLabelInfoType>() {
+          @java.lang.Override
+          public FileLabelInfoType parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FileLabelInfoType> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FileLabelInfoType> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DetectionRuleOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
@@ -4516,7 +8710,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * if you want to modify the likelihood of an entire column of findngs,
        * set this to 1. For more information, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
@@ -4598,7 +8792,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * if you want to modify the likelihood of an entire column of findngs,
        * set this to 1. For more information, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>int32 window_before = 1;</code>
@@ -4982,7 +9176,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * if you want to modify the likelihood of an entire column of findngs,
          * set this to 1. For more information, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
@@ -5002,7 +9196,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * if you want to modify the likelihood of an entire column of findngs,
          * set this to 1. For more information, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
@@ -5026,7 +9220,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * if you want to modify the likelihood of an entire column of findngs,
          * set this to 1. For more information, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>int32 window_before = 1;</code>
@@ -6182,7 +10376,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6207,7 +10401,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6232,7 +10426,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6407,7 +10601,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6435,7 +10629,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -6465,7 +10659,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
        * For tabular data, if you want to modify the likelihood of an entire
        * column of findngs, see
        * [Hotword example: Set the match likelihood of a table column]
-       * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+       * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7180,7 +11374,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7207,7 +11401,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7241,7 +11435,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7277,7 +11471,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7311,7 +11505,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7354,7 +11548,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7386,7 +11580,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7414,7 +11608,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -7447,7 +11641,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
          * For tabular data, if you want to modify the likelihood of an entire
          * column of findngs, see
          * [Hotword example: Set the match likelihood of a table column]
-         * (https://cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
+         * (https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood#match-column-values).
          * </pre>
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
@@ -8527,6 +12721,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     SURROGATE_TYPE(4),
     STORED_TYPE(5),
     METADATA_KEY_VALUE_EXPRESSION(10),
+    FILE_LABEL_INFO_TYPE(12),
     TYPE_NOT_SET(0);
     private final int value;
 
@@ -8556,6 +12751,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
           return STORED_TYPE;
         case 10:
           return METADATA_KEY_VALUE_EXPRESSION;
+        case 12:
+          return FILE_LABEL_INFO_TYPE;
         case 0:
           return TYPE_NOT_SET;
         default:
@@ -8959,6 +13156,61 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression.getDefaultInstance();
   }
 
+  public static final int FILE_LABEL_INFO_TYPE_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * File label to detect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;</code>
+   *
+   * @return Whether the fileLabelInfoType field is set.
+   */
+  @java.lang.Override
+  public boolean hasFileLabelInfoType() {
+    return typeCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * File label to detect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;</code>
+   *
+   * @return The fileLabelInfoType.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType getFileLabelInfoType() {
+    if (typeCase_ == 12) {
+      return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * File label to detect.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder
+      getFileLabelInfoTypeOrBuilder() {
+    if (typeCase_ == 12) {
+      return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_;
+    }
+    return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+  }
+
   public static final int DETECTION_RULES_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -9202,6 +13454,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           10, (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_);
     }
+    if (typeCase_ == 12) {
+      output.writeMessage(12, (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -9253,6 +13508,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, (com.google.privacy.dlp.v2.CustomInfoType.MetadataKeyValueExpression) type_);
     }
+    if (typeCase_ == 12) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -9296,6 +13556,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       case 10:
         if (!getMetadataKeyValueExpression().equals(other.getMetadataKeyValueExpression()))
           return false;
+        break;
+      case 12:
+        if (!getFileLabelInfoType().equals(other.getFileLabelInfoType())) return false;
         break;
       case 0:
       default:
@@ -9347,6 +13610,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       case 10:
         hash = (37 * hash) + METADATA_KEY_VALUE_EXPRESSION_FIELD_NUMBER;
         hash = (53 * hash) + getMetadataKeyValueExpression().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + FILE_LABEL_INFO_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getFileLabelInfoType().hashCode();
         break;
       case 0:
       default:
@@ -9524,13 +13791,16 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (metadataKeyValueExpressionBuilder_ != null) {
         metadataKeyValueExpressionBuilder_.clear();
       }
+      if (fileLabelInfoTypeBuilder_ != null) {
+        fileLabelInfoTypeBuilder_.clear();
+      }
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
       } else {
         detectionRules_ = null;
         detectionRulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       exclusionType_ = 0;
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
@@ -9577,9 +13847,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.privacy.dlp.v2.CustomInfoType result) {
       if (detectionRulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.detectionRules_ = detectionRules_;
       } else {
@@ -9597,10 +13867,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.likelihood_ = likelihood_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.exclusionType_ = exclusionType_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.sensitivityScore_ =
             sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -9626,6 +13896,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (typeCase_ == 10 && metadataKeyValueExpressionBuilder_ != null) {
         result.type_ = metadataKeyValueExpressionBuilder_.build();
       }
+      if (typeCase_ == 12 && fileLabelInfoTypeBuilder_ != null) {
+        result.type_ = fileLabelInfoTypeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -9650,7 +13923,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         if (!other.detectionRules_.isEmpty()) {
           if (detectionRules_.isEmpty()) {
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureDetectionRulesIsMutable();
             detectionRules_.addAll(other.detectionRules_);
@@ -9663,7 +13936,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
             detectionRulesBuilder_.dispose();
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             detectionRulesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetDetectionRulesFieldBuilder()
@@ -9703,6 +13976,11 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         case METADATA_KEY_VALUE_EXPRESSION:
           {
             mergeMetadataKeyValueExpression(other.getMetadataKeyValueExpression());
+            break;
+          }
+        case FILE_LABEL_INFO_TYPE:
+          {
+            mergeFileLabelInfoType(other.getFileLabelInfoType());
             break;
           }
         case TYPE_NOT_SET:
@@ -9793,14 +14071,14 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
             case 64:
               {
                 exclusionType_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 64
             case 74:
               {
                 input.readMessage(
                     internalGetSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
@@ -9811,6 +14089,13 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
                 typeCase_ = 10;
                 break;
               } // case 82
+            case 98:
+              {
+                input.readMessage(
+                    internalGetFileLabelInfoTypeFieldBuilder().getBuilder(), extensionRegistry);
+                typeCase_ = 12;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11318,15 +15603,248 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       return metadataKeyValueExpressionBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder>
+        fileLabelInfoTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     *
+     * @return Whether the fileLabelInfoType field is set.
+     */
+    @java.lang.Override
+    public boolean hasFileLabelInfoType() {
+      return typeCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     *
+     * @return The fileLabelInfoType.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType getFileLabelInfoType() {
+      if (fileLabelInfoTypeBuilder_ == null) {
+        if (typeCase_ == 12) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+      } else {
+        if (typeCase_ == 12) {
+          return fileLabelInfoTypeBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    public Builder setFileLabelInfoType(
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType value) {
+      if (fileLabelInfoTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        fileLabelInfoTypeBuilder_.setMessage(value);
+      }
+      typeCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    public Builder setFileLabelInfoType(
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder builderForValue) {
+      if (fileLabelInfoTypeBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        fileLabelInfoTypeBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    public Builder mergeFileLabelInfoType(
+        com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType value) {
+      if (fileLabelInfoTypeBuilder_ == null) {
+        if (typeCase_ == 12
+            && type_
+                != com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType
+                    .getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.newBuilder(
+                      (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 12) {
+          fileLabelInfoTypeBuilder_.mergeFrom(value);
+        } else {
+          fileLabelInfoTypeBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 12;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    public Builder clearFileLabelInfoType() {
+      if (fileLabelInfoTypeBuilder_ == null) {
+        if (typeCase_ == 12) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 12) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        fileLabelInfoTypeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder
+        getFileLabelInfoTypeBuilder() {
+      return internalGetFileLabelInfoTypeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder
+        getFileLabelInfoTypeOrBuilder() {
+      if ((typeCase_ == 12) && (fileLabelInfoTypeBuilder_ != null)) {
+        return fileLabelInfoTypeBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 12) {
+          return (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_;
+        }
+        return com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * File label to detect.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType file_label_info_type = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder>
+        internalGetFileLabelInfoTypeFieldBuilder() {
+      if (fileLabelInfoTypeBuilder_ == null) {
+        if (!(typeCase_ == 12)) {
+          type_ = com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.getDefaultInstance();
+        }
+        fileLabelInfoTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoTypeOrBuilder>(
+                (com.google.privacy.dlp.v2.CustomInfoType.FileLabelInfoType) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 12;
+      onChanged();
+      return fileLabelInfoTypeBuilder_;
+    }
+
     private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_ =
         java.util.Collections.emptyList();
 
     private void ensureDetectionRulesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         detectionRules_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
                 detectionRules_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -11589,7 +16107,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
         detectionRules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         detectionRulesBuilder_.clear();
@@ -11745,7 +16263,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
                 com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         detectionRules_ = null;
@@ -11789,7 +16307,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      */
     public Builder setExclusionTypeValue(int value) {
       exclusionType_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -11834,7 +16352,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       exclusionType_ = value.getNumber();
       onChanged();
       return this;
@@ -11854,7 +16372,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearExclusionType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       exclusionType_ = 0;
       onChanged();
       return this;
@@ -11883,7 +16401,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * @return Whether the sensitivityScore field is set.
      */
     public boolean hasSensitivityScore() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -11933,7 +16451,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       } else {
         sensitivityScoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11958,7 +16476,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
       } else {
         sensitivityScoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11978,7 +16496,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
       if (sensitivityScoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && sensitivityScore_ != null
             && sensitivityScore_
                 != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
@@ -11990,7 +16508,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
         sensitivityScoreBuilder_.mergeFrom(value);
       }
       if (sensitivityScore_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -12010,7 +16528,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
      */
     public Builder clearSensitivityScore() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -12034,7 +16552,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessage
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 9;</code>
      */
     public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetSensitivityScoreFieldBuilder().getBuilder();
     }

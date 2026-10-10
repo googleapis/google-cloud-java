@@ -604,9 +604,7 @@ public class ITCallableStatementTest extends ITBase {
 
   @Test
   public void testScript() throws SQLException {
-    String BASE_QUERY =
-        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-            + " trip_distance asc LIMIT %s;";
+    String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
     String query1 = String.format(BASE_QUERY, 5000);
     String query2 = String.format(BASE_QUERY, 7000);
     String query3 = String.format(BASE_QUERY, 9000);

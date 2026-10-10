@@ -97,7 +97,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Immutable. The ID of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -111,7 +111,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Immutable. The ID of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -125,7 +125,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -141,7 +141,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -157,7 +157,7 @@ public interface PrivateAuctionDealOrBuilder
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -262,6 +262,58 @@ public interface PrivateAuctionDealOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.TargetingOrBuilder getTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+   * If unset, the `startTime` will default as follows:
+   * On create: To the deal's `create_time`.
+   * On update: To the deal's existing `start_time`, which can be null.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+   * If unset, the `startTime` will default as follows:
+   * On create: To the deal's `create_time`.
+   * On update: To the deal's existing `start_time`, which can be null.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  com.google.protobuf.Timestamp getStartTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The start time of the `PrivateAuctionDeal`.
+   * If unset, the `startTime` will default as follows:
+   * On create: To the deal's `create_time`.
+   * On update: To the deal's existing `start_time`, which can be null.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
    *
@@ -518,6 +570,34 @@ public interface PrivateAuctionDealOrBuilder
    *
    *
    * <pre>
+   * Optional. Whether the deal is exempt from publisher floor price.
+   * </pre>
+   *
+   * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the publisherFloorExempt field is set.
+   */
+  boolean hasPublisherFloorExempt();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the deal is exempt from publisher floor price.
+   * </pre>
+   *
+   * <code>optional bool publisher_floor_exempt = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The publisherFloorExempt.
+   */
+  boolean getPublisherFloorExempt();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The buyer permission model defining how the deal would transact
    * among all buyers under the same bidder.
    * </pre>
@@ -648,6 +728,32 @@ public interface PrivateAuctionDealOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder getDealPriorityOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the deal is archived.
+   * </pre>
+   *
+   * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  boolean hasArchived();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the deal is archived.
+   * </pre>
+   *
+   * <code>optional bool archived = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  boolean getArchived();
 
   /**
    *

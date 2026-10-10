@@ -338,7 +338,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A token that identifies a
-   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
    * obtained from the `SearchDestinations` method of the Geocoding API.
    * </pre>
    *
@@ -355,7 +355,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A token that identifies a
-   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
    * obtained from the `SearchDestinations` method of the Geocoding API.
    * </pre>
    *
@@ -385,7 +385,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A token that identifies a
-   * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+   * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
    * obtained from the `SearchDestinations` method of the Geocoding API.
    * </pre>
    *
@@ -1502,7 +1502,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token that identifies a
-     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
      * obtained from the `SearchDestinations` method of the Geocoding API.
      * </pre>
      *
@@ -1520,7 +1520,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token that identifies a
-     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
      * obtained from the `SearchDestinations` method of the Geocoding API.
      * </pre>
      *
@@ -1551,7 +1551,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token that identifies a
-     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
      * obtained from the `SearchDestinations` method of the Geocoding API.
      * </pre>
      *
@@ -1582,7 +1582,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token that identifies a
-     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
      * obtained from the `SearchDestinations` method of the Geocoding API.
      * </pre>
      *
@@ -1606,7 +1606,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token that identifies a
-     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
      * obtained from the `SearchDestinations` method of the Geocoding API.
      * </pre>
      *
@@ -1628,7 +1628,7 @@ public final class Waypoint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * A token that identifies a
-     * [`NavigationPoint`](https://developers.google.com/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
+     * [`NavigationPoint`](/maps/documentation/geocoding/reference/rest/v4alpha/geocode.destinations/searchDestinations#navigationpoint),
      * obtained from the `SearchDestinations` method of the Geocoding API.
      * </pre>
      *

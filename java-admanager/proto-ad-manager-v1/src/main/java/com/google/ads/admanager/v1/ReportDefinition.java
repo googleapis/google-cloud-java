@@ -503,7 +503,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DIMENSION_UNSPECIFIED = 0;</code>
      */
-    DIMENSION_UNSPECIFIED(0),
+    DIMENSION_UNSPECIFIED(0, 0),
     /**
      *
      *
@@ -522,7 +522,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ACTIVE_VIEW_MEASUREMENT_SOURCE = 575;</code>
      */
-    ACTIVE_VIEW_MEASUREMENT_SOURCE(575),
+    ACTIVE_VIEW_MEASUREMENT_SOURCE(1, 575),
     /**
      *
      *
@@ -540,7 +540,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ACTIVE_VIEW_MEASUREMENT_SOURCE_NAME = 576;</code>
      */
-    ACTIVE_VIEW_MEASUREMENT_SOURCE_NAME(576),
+    ACTIVE_VIEW_MEASUREMENT_SOURCE_NAME(2, 576),
     /**
      *
      *
@@ -560,7 +560,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_CREDIT_STATUS = 475;</code>
      */
-    ADVERTISER_CREDIT_STATUS(475),
+    ADVERTISER_CREDIT_STATUS(3, 475),
     /**
      *
      *
@@ -579,25 +579,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_CREDIT_STATUS_NAME = 476;</code>
      */
-    ADVERTISER_CREDIT_STATUS_NAME(476),
-    /**
-     *
-     *
-     * <pre>
-     * The domain name of the advertiser.
-     *
-     *
-     *
-     * Corresponds to "Landing page domain" in the Ad Manager UI.
-     *
-     * Compatible with the following report types: `HISTORICAL`
-     *
-     * Data format: `STRING`
-     * </pre>
-     *
-     * <code>ADVERTISER_DOMAIN_NAME = 242;</code>
-     */
-    ADVERTISER_DOMAIN_NAME(242),
+    ADVERTISER_CREDIT_STATUS_NAME(4, 476),
     /**
      *
      *
@@ -615,7 +597,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_EXTERNAL_ID = 228;</code>
      */
-    ADVERTISER_EXTERNAL_ID(228),
+    ADVERTISER_EXTERNAL_ID(5, 228),
     /**
      *
      *
@@ -634,7 +616,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_ID = 131;</code>
      */
-    ADVERTISER_ID(131),
+    ADVERTISER_ID(6, 131),
     /**
      *
      *
@@ -653,7 +635,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_LABELS = 230;</code>
      */
-    ADVERTISER_LABELS(230),
+    ADVERTISER_LABELS(7, 230),
     /**
      *
      *
@@ -672,7 +654,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_LABEL_IDS = 229;</code>
      */
-    ADVERTISER_LABEL_IDS(229),
+    ADVERTISER_LABEL_IDS(8, 229),
     /**
      *
      *
@@ -691,7 +673,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_NAME = 132;</code>
      */
-    ADVERTISER_NAME(132),
+    ADVERTISER_NAME(9, 132),
     /**
      *
      *
@@ -709,7 +691,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_PRIMARY_CONTACT = 227;</code>
      */
-    ADVERTISER_PRIMARY_CONTACT(227),
+    ADVERTISER_PRIMARY_CONTACT(10, 227),
     /**
      *
      *
@@ -728,7 +710,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_STATUS = 471;</code>
      */
-    ADVERTISER_STATUS(471),
+    ADVERTISER_STATUS(11, 471),
     /**
      *
      *
@@ -746,7 +728,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_STATUS_NAME = 472;</code>
      */
-    ADVERTISER_STATUS_NAME(472),
+    ADVERTISER_STATUS_NAME(12, 472),
     /**
      *
      *
@@ -766,7 +748,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_TYPE = 473;</code>
      */
-    ADVERTISER_TYPE(473),
+    ADVERTISER_TYPE(13, 473),
     /**
      *
      *
@@ -785,7 +767,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_TYPE_NAME = 474;</code>
      */
-    ADVERTISER_TYPE_NAME(474),
+    ADVERTISER_TYPE_NAME(14, 474),
     /**
      *
      *
@@ -804,7 +786,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADVERTISER_VERTICAL = 580;</code>
      */
-    ADVERTISER_VERTICAL(580),
+    ADVERTISER_VERTICAL(15, 580),
     /**
      *
      *
@@ -824,7 +806,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADX_PRODUCT = 499;</code>
      */
-    ADX_PRODUCT(499),
+    ADX_PRODUCT(16, 499),
     /**
      *
      *
@@ -844,7 +826,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ADX_PRODUCT_NAME = 500;</code>
      */
-    ADX_PRODUCT_NAME(500),
+    ADX_PRODUCT_NAME(17, 500),
     /**
      *
      *
@@ -863,7 +845,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXPERIENCES_TYPE = 641;</code>
      */
-    AD_EXPERIENCES_TYPE(641),
+    AD_EXPERIENCES_TYPE(18, 641),
     /**
      *
      *
@@ -881,7 +863,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXPERIENCES_TYPE_NAME = 642;</code>
      */
-    AD_EXPERIENCES_TYPE_NAME(642),
+    AD_EXPERIENCES_TYPE_NAME(19, 642),
     /**
      *
      *
@@ -901,7 +883,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_LOCATION = 390;</code>
      */
-    AD_LOCATION(390),
+    AD_LOCATION(20, 390),
     /**
      *
      *
@@ -920,7 +902,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_LOCATION_NAME = 391;</code>
      */
-    AD_LOCATION_NAME(391),
+    AD_LOCATION_NAME(21, 391),
     /**
      *
      *
@@ -938,7 +920,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_REQUEST_SIZES = 541;</code>
      */
-    AD_REQUEST_SIZES(541),
+    AD_REQUEST_SIZES(22, 541),
     /**
      *
      *
@@ -956,7 +938,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_TECHNOLOGY_PROVIDER_DOMAIN = 620;</code>
      */
-    AD_TECHNOLOGY_PROVIDER_DOMAIN(620),
+    AD_TECHNOLOGY_PROVIDER_DOMAIN(23, 620),
     /**
      *
      *
@@ -974,7 +956,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_TECHNOLOGY_PROVIDER_ID = 621;</code>
      */
-    AD_TECHNOLOGY_PROVIDER_ID(621),
+    AD_TECHNOLOGY_PROVIDER_ID(24, 621),
     /**
      *
      *
@@ -992,7 +974,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_TECHNOLOGY_PROVIDER_NAME = 622;</code>
      */
-    AD_TECHNOLOGY_PROVIDER_NAME(622),
+    AD_TECHNOLOGY_PROVIDER_NAME(25, 622),
     /**
      *
      *
@@ -1011,7 +993,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_TYPE = 497;</code>
      */
-    AD_TYPE(497),
+    AD_TYPE(26, 497),
     /**
      *
      *
@@ -1029,7 +1011,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_TYPE_NAME = 498;</code>
      */
-    AD_TYPE_NAME(498),
+    AD_TYPE_NAME(27, 498),
     /**
      *
      *
@@ -1048,7 +1030,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE = 64;</code>
      */
-    AD_UNIT_CODE(64),
+    AD_UNIT_CODE(28, 64),
     /**
      *
      *
@@ -1068,7 +1050,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_1 = 65;</code>
      */
-    AD_UNIT_CODE_LEVEL_1(65),
+    AD_UNIT_CODE_LEVEL_1(29, 65),
     /**
      *
      *
@@ -1088,7 +1070,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_10 = 74;</code>
      */
-    AD_UNIT_CODE_LEVEL_10(74),
+    AD_UNIT_CODE_LEVEL_10(30, 74),
     /**
      *
      *
@@ -1108,7 +1090,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_11 = 75;</code>
      */
-    AD_UNIT_CODE_LEVEL_11(75),
+    AD_UNIT_CODE_LEVEL_11(31, 75),
     /**
      *
      *
@@ -1128,7 +1110,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_12 = 76;</code>
      */
-    AD_UNIT_CODE_LEVEL_12(76),
+    AD_UNIT_CODE_LEVEL_12(32, 76),
     /**
      *
      *
@@ -1148,7 +1130,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_13 = 77;</code>
      */
-    AD_UNIT_CODE_LEVEL_13(77),
+    AD_UNIT_CODE_LEVEL_13(33, 77),
     /**
      *
      *
@@ -1168,7 +1150,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_14 = 78;</code>
      */
-    AD_UNIT_CODE_LEVEL_14(78),
+    AD_UNIT_CODE_LEVEL_14(34, 78),
     /**
      *
      *
@@ -1188,7 +1170,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_15 = 79;</code>
      */
-    AD_UNIT_CODE_LEVEL_15(79),
+    AD_UNIT_CODE_LEVEL_15(35, 79),
     /**
      *
      *
@@ -1208,7 +1190,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_16 = 80;</code>
      */
-    AD_UNIT_CODE_LEVEL_16(80),
+    AD_UNIT_CODE_LEVEL_16(36, 80),
     /**
      *
      *
@@ -1228,7 +1210,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_2 = 66;</code>
      */
-    AD_UNIT_CODE_LEVEL_2(66),
+    AD_UNIT_CODE_LEVEL_2(37, 66),
     /**
      *
      *
@@ -1248,7 +1230,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_3 = 67;</code>
      */
-    AD_UNIT_CODE_LEVEL_3(67),
+    AD_UNIT_CODE_LEVEL_3(38, 67),
     /**
      *
      *
@@ -1268,7 +1250,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_4 = 68;</code>
      */
-    AD_UNIT_CODE_LEVEL_4(68),
+    AD_UNIT_CODE_LEVEL_4(39, 68),
     /**
      *
      *
@@ -1288,7 +1270,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_5 = 69;</code>
      */
-    AD_UNIT_CODE_LEVEL_5(69),
+    AD_UNIT_CODE_LEVEL_5(40, 69),
     /**
      *
      *
@@ -1308,7 +1290,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_6 = 70;</code>
      */
-    AD_UNIT_CODE_LEVEL_6(70),
+    AD_UNIT_CODE_LEVEL_6(41, 70),
     /**
      *
      *
@@ -1328,7 +1310,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_7 = 71;</code>
      */
-    AD_UNIT_CODE_LEVEL_7(71),
+    AD_UNIT_CODE_LEVEL_7(42, 71),
     /**
      *
      *
@@ -1348,7 +1330,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_8 = 72;</code>
      */
-    AD_UNIT_CODE_LEVEL_8(72),
+    AD_UNIT_CODE_LEVEL_8(43, 72),
     /**
      *
      *
@@ -1368,7 +1350,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_CODE_LEVEL_9 = 73;</code>
      */
-    AD_UNIT_CODE_LEVEL_9(73),
+    AD_UNIT_CODE_LEVEL_9(44, 73),
     /**
      *
      *
@@ -1388,7 +1370,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID = 25;</code>
      */
-    AD_UNIT_ID(25),
+    AD_UNIT_ID(45, 25),
     /**
      *
      *
@@ -1409,7 +1391,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_ALL_LEVEL = 27;</code>
      */
-    AD_UNIT_ID_ALL_LEVEL(27),
+    AD_UNIT_ID_ALL_LEVEL(46, 27),
     /**
      *
      *
@@ -1428,7 +1410,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_1 = 30;</code>
      */
-    AD_UNIT_ID_LEVEL_1(30),
+    AD_UNIT_ID_LEVEL_1(47, 30),
     /**
      *
      *
@@ -1447,7 +1429,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_10 = 48;</code>
      */
-    AD_UNIT_ID_LEVEL_10(48),
+    AD_UNIT_ID_LEVEL_10(48, 48),
     /**
      *
      *
@@ -1466,7 +1448,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_11 = 50;</code>
      */
-    AD_UNIT_ID_LEVEL_11(50),
+    AD_UNIT_ID_LEVEL_11(49, 50),
     /**
      *
      *
@@ -1485,7 +1467,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_12 = 52;</code>
      */
-    AD_UNIT_ID_LEVEL_12(52),
+    AD_UNIT_ID_LEVEL_12(50, 52),
     /**
      *
      *
@@ -1505,7 +1487,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_13 = 54;</code>
      */
-    AD_UNIT_ID_LEVEL_13(54),
+    AD_UNIT_ID_LEVEL_13(51, 54),
     /**
      *
      *
@@ -1525,7 +1507,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_14 = 56;</code>
      */
-    AD_UNIT_ID_LEVEL_14(56),
+    AD_UNIT_ID_LEVEL_14(52, 56),
     /**
      *
      *
@@ -1544,7 +1526,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_15 = 58;</code>
      */
-    AD_UNIT_ID_LEVEL_15(58),
+    AD_UNIT_ID_LEVEL_15(53, 58),
     /**
      *
      *
@@ -1563,7 +1545,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_16 = 60;</code>
      */
-    AD_UNIT_ID_LEVEL_16(60),
+    AD_UNIT_ID_LEVEL_16(54, 60),
     /**
      *
      *
@@ -1582,7 +1564,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_2 = 32;</code>
      */
-    AD_UNIT_ID_LEVEL_2(32),
+    AD_UNIT_ID_LEVEL_2(55, 32),
     /**
      *
      *
@@ -1601,7 +1583,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_3 = 34;</code>
      */
-    AD_UNIT_ID_LEVEL_3(34),
+    AD_UNIT_ID_LEVEL_3(56, 34),
     /**
      *
      *
@@ -1620,7 +1602,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_4 = 36;</code>
      */
-    AD_UNIT_ID_LEVEL_4(36),
+    AD_UNIT_ID_LEVEL_4(57, 36),
     /**
      *
      *
@@ -1639,7 +1621,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_5 = 38;</code>
      */
-    AD_UNIT_ID_LEVEL_5(38),
+    AD_UNIT_ID_LEVEL_5(58, 38),
     /**
      *
      *
@@ -1658,7 +1640,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_6 = 40;</code>
      */
-    AD_UNIT_ID_LEVEL_6(40),
+    AD_UNIT_ID_LEVEL_6(59, 40),
     /**
      *
      *
@@ -1677,7 +1659,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_7 = 42;</code>
      */
-    AD_UNIT_ID_LEVEL_7(42),
+    AD_UNIT_ID_LEVEL_7(60, 42),
     /**
      *
      *
@@ -1696,7 +1678,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_8 = 44;</code>
      */
-    AD_UNIT_ID_LEVEL_8(44),
+    AD_UNIT_ID_LEVEL_8(61, 44),
     /**
      *
      *
@@ -1715,7 +1697,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_LEVEL_9 = 46;</code>
      */
-    AD_UNIT_ID_LEVEL_9(46),
+    AD_UNIT_ID_LEVEL_9(62, 46),
     /**
      *
      *
@@ -1735,7 +1717,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_ID_TOP_LEVEL = 142;</code>
      */
-    AD_UNIT_ID_TOP_LEVEL(142),
+    AD_UNIT_ID_TOP_LEVEL(63, 142),
     /**
      *
      *
@@ -1755,7 +1737,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME = 26;</code>
      */
-    AD_UNIT_NAME(26),
+    AD_UNIT_NAME(64, 26),
     /**
      *
      *
@@ -1776,7 +1758,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_ALL_LEVEL = 29;</code>
      */
-    AD_UNIT_NAME_ALL_LEVEL(29),
+    AD_UNIT_NAME_ALL_LEVEL(65, 29),
     /**
      *
      *
@@ -1795,7 +1777,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_1 = 31;</code>
      */
-    AD_UNIT_NAME_LEVEL_1(31),
+    AD_UNIT_NAME_LEVEL_1(66, 31),
     /**
      *
      *
@@ -1814,7 +1796,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_10 = 49;</code>
      */
-    AD_UNIT_NAME_LEVEL_10(49),
+    AD_UNIT_NAME_LEVEL_10(67, 49),
     /**
      *
      *
@@ -1834,7 +1816,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_11 = 51;</code>
      */
-    AD_UNIT_NAME_LEVEL_11(51),
+    AD_UNIT_NAME_LEVEL_11(68, 51),
     /**
      *
      *
@@ -1853,7 +1835,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_12 = 53;</code>
      */
-    AD_UNIT_NAME_LEVEL_12(53),
+    AD_UNIT_NAME_LEVEL_12(69, 53),
     /**
      *
      *
@@ -1873,7 +1855,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_13 = 55;</code>
      */
-    AD_UNIT_NAME_LEVEL_13(55),
+    AD_UNIT_NAME_LEVEL_13(70, 55),
     /**
      *
      *
@@ -1893,7 +1875,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_14 = 57;</code>
      */
-    AD_UNIT_NAME_LEVEL_14(57),
+    AD_UNIT_NAME_LEVEL_14(71, 57),
     /**
      *
      *
@@ -1913,7 +1895,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_15 = 59;</code>
      */
-    AD_UNIT_NAME_LEVEL_15(59),
+    AD_UNIT_NAME_LEVEL_15(72, 59),
     /**
      *
      *
@@ -1933,7 +1915,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_16 = 61;</code>
      */
-    AD_UNIT_NAME_LEVEL_16(61),
+    AD_UNIT_NAME_LEVEL_16(73, 61),
     /**
      *
      *
@@ -1952,7 +1934,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_2 = 33;</code>
      */
-    AD_UNIT_NAME_LEVEL_2(33),
+    AD_UNIT_NAME_LEVEL_2(74, 33),
     /**
      *
      *
@@ -1971,7 +1953,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_3 = 35;</code>
      */
-    AD_UNIT_NAME_LEVEL_3(35),
+    AD_UNIT_NAME_LEVEL_3(75, 35),
     /**
      *
      *
@@ -1990,7 +1972,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_4 = 37;</code>
      */
-    AD_UNIT_NAME_LEVEL_4(37),
+    AD_UNIT_NAME_LEVEL_4(76, 37),
     /**
      *
      *
@@ -2009,7 +1991,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_5 = 39;</code>
      */
-    AD_UNIT_NAME_LEVEL_5(39),
+    AD_UNIT_NAME_LEVEL_5(77, 39),
     /**
      *
      *
@@ -2028,7 +2010,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_6 = 41;</code>
      */
-    AD_UNIT_NAME_LEVEL_6(41),
+    AD_UNIT_NAME_LEVEL_6(78, 41),
     /**
      *
      *
@@ -2047,7 +2029,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_7 = 43;</code>
      */
-    AD_UNIT_NAME_LEVEL_7(43),
+    AD_UNIT_NAME_LEVEL_7(79, 43),
     /**
      *
      *
@@ -2066,7 +2048,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_8 = 45;</code>
      */
-    AD_UNIT_NAME_LEVEL_8(45),
+    AD_UNIT_NAME_LEVEL_8(80, 45),
     /**
      *
      *
@@ -2085,7 +2067,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_LEVEL_9 = 47;</code>
      */
-    AD_UNIT_NAME_LEVEL_9(47),
+    AD_UNIT_NAME_LEVEL_9(81, 47),
     /**
      *
      *
@@ -2105,7 +2087,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_NAME_TOP_LEVEL = 143;</code>
      */
-    AD_UNIT_NAME_TOP_LEVEL(143),
+    AD_UNIT_NAME_TOP_LEVEL(82, 143),
     /**
      *
      *
@@ -2124,7 +2106,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_REWARD_AMOUNT = 63;</code>
      */
-    AD_UNIT_REWARD_AMOUNT(63),
+    AD_UNIT_REWARD_AMOUNT(83, 63),
     /**
      *
      *
@@ -2143,7 +2125,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_REWARD_TYPE = 62;</code>
      */
-    AD_UNIT_REWARD_TYPE(62),
+    AD_UNIT_REWARD_TYPE(84, 62),
     /**
      *
      *
@@ -2166,7 +2148,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_STATUS = 206;</code>
      */
-    AD_UNIT_STATUS(206),
+    AD_UNIT_STATUS(85, 206),
     /**
      *
      *
@@ -2185,7 +2167,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_STATUS_NAME = 207;</code>
      */
-    AD_UNIT_STATUS_NAME(207),
+    AD_UNIT_STATUS_NAME(86, 207),
     /**
      *
      *
@@ -2203,7 +2185,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGENCY_LEVEL_1_ID = 565;</code>
      */
-    AGENCY_LEVEL_1_ID(565),
+    AGENCY_LEVEL_1_ID(87, 565),
     /**
      *
      *
@@ -2221,7 +2203,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGENCY_LEVEL_1_NAME = 566;</code>
      */
-    AGENCY_LEVEL_1_NAME(566),
+    AGENCY_LEVEL_1_NAME(88, 566),
     /**
      *
      *
@@ -2239,7 +2221,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGENCY_LEVEL_2_ID = 567;</code>
      */
-    AGENCY_LEVEL_2_ID(567),
+    AGENCY_LEVEL_2_ID(89, 567),
     /**
      *
      *
@@ -2257,7 +2239,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGENCY_LEVEL_2_NAME = 568;</code>
      */
-    AGENCY_LEVEL_2_NAME(568),
+    AGENCY_LEVEL_2_NAME(90, 568),
     /**
      *
      *
@@ -2275,7 +2257,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGENCY_LEVEL_3_ID = 569;</code>
      */
-    AGENCY_LEVEL_3_ID(569),
+    AGENCY_LEVEL_3_ID(91, 569),
     /**
      *
      *
@@ -2293,7 +2275,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGENCY_LEVEL_3_NAME = 570;</code>
      */
-    AGENCY_LEVEL_3_NAME(570),
+    AGENCY_LEVEL_3_NAME(92, 570),
     /**
      *
      *
@@ -2312,7 +2294,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGE_BRACKET = 508;</code>
      */
-    AGE_BRACKET(508),
+    AGE_BRACKET(93, 508),
     /**
      *
      *
@@ -2331,7 +2313,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AGE_BRACKET_NAME = 582;</code>
      */
-    AGE_BRACKET_NAME(582),
+    AGE_BRACKET_NAME(94, 582),
     /**
      *
      *
@@ -2349,7 +2331,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ANALYTICS_PROPERTY_ID = 733;</code>
      */
-    ANALYTICS_PROPERTY_ID(733),
+    ANALYTICS_PROPERTY_ID(95, 733),
     /**
      *
      *
@@ -2367,7 +2349,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ANALYTICS_PROPERTY_NAME = 767;</code>
      */
-    ANALYTICS_PROPERTY_NAME(767),
+    ANALYTICS_PROPERTY_NAME(96, 767),
     /**
      *
      *
@@ -2386,7 +2368,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>APP_TRACKING_TRANSPARENCY_CONSENT_STATUS = 442;</code>
      */
-    APP_TRACKING_TRANSPARENCY_CONSENT_STATUS(442),
+    APP_TRACKING_TRANSPARENCY_CONSENT_STATUS(97, 442),
     /**
      *
      *
@@ -2405,7 +2387,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>APP_TRACKING_TRANSPARENCY_CONSENT_STATUS_NAME = 443;</code>
      */
-    APP_TRACKING_TRANSPARENCY_CONSENT_STATUS_NAME(443),
+    APP_TRACKING_TRANSPARENCY_CONSENT_STATUS_NAME(98, 443),
     /**
      *
      *
@@ -2423,7 +2405,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>APP_VERSION = 392;</code>
      */
-    APP_VERSION(392),
+    APP_VERSION(99, 392),
     /**
      *
      *
@@ -2441,7 +2423,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUCTION_PACKAGE_DEAL = 579;</code>
      */
-    AUCTION_PACKAGE_DEAL(579),
+    AUCTION_PACKAGE_DEAL(100, 579),
     /**
      *
      *
@@ -2459,7 +2441,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUCTION_PACKAGE_DEAL_ID = 571;</code>
      */
-    AUCTION_PACKAGE_DEAL_ID(571),
+    AUCTION_PACKAGE_DEAL_ID(101, 571),
     /**
      *
      *
@@ -2477,7 +2459,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_BILLABLE = 594;</code>
      */
-    AUDIENCE_SEGMENT_BILLABLE(594),
+    AUDIENCE_SEGMENT_BILLABLE(102, 594),
     /**
      *
      *
@@ -2495,7 +2477,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_DATA_PROVIDER_ID = 613;</code>
      */
-    AUDIENCE_SEGMENT_DATA_PROVIDER_ID(613),
+    AUDIENCE_SEGMENT_DATA_PROVIDER_ID(103, 613),
     /**
      *
      *
@@ -2513,7 +2495,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_DATA_PROVIDER_NAME = 614;</code>
      */
-    AUDIENCE_SEGMENT_DATA_PROVIDER_NAME(614),
+    AUDIENCE_SEGMENT_DATA_PROVIDER_NAME(104, 614),
     /**
      *
      *
@@ -2531,7 +2513,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_ID_BILLABLE = 595;</code>
      */
-    AUDIENCE_SEGMENT_ID_BILLABLE(595),
+    AUDIENCE_SEGMENT_ID_BILLABLE(105, 595),
     /**
      *
      *
@@ -2551,7 +2533,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_ID_TARGETED = 584;</code>
      */
-    AUDIENCE_SEGMENT_ID_TARGETED(584),
+    AUDIENCE_SEGMENT_ID_TARGETED(106, 584),
     /**
      *
      *
@@ -2571,7 +2553,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED = 585;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED(585),
+    AUDIENCE_SEGMENT_TARGETED(107, 585),
     /**
      *
      *
@@ -2591,7 +2573,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_AD_ID_USER_SIZE = 605;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_AD_ID_USER_SIZE(605),
+    AUDIENCE_SEGMENT_TARGETED_AD_ID_USER_SIZE(108, 605),
     /**
      *
      *
@@ -2611,7 +2593,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_AMAZON_FIRE_USER_SIZE = 606;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_AMAZON_FIRE_USER_SIZE(606),
+    AUDIENCE_SEGMENT_TARGETED_AMAZON_FIRE_USER_SIZE(109, 606),
     /**
      *
      *
@@ -2631,7 +2613,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_ANDROID_TV_USER_SIZE = 607;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_ANDROID_TV_USER_SIZE(607),
+    AUDIENCE_SEGMENT_TARGETED_ANDROID_TV_USER_SIZE(110, 607),
     /**
      *
      *
@@ -2651,7 +2633,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_APPLE_TV_USER_SIZE = 608;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_APPLE_TV_USER_SIZE(608),
+    AUDIENCE_SEGMENT_TARGETED_APPLE_TV_USER_SIZE(111, 608),
     /**
      *
      *
@@ -2671,7 +2653,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_IDFA_USER_SIZE = 609;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_IDFA_USER_SIZE(609),
+    AUDIENCE_SEGMENT_TARGETED_IDFA_USER_SIZE(112, 609),
     /**
      *
      *
@@ -2691,7 +2673,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_MOBILE_WEB_USER_SIZE = 610;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_MOBILE_WEB_USER_SIZE(610),
+    AUDIENCE_SEGMENT_TARGETED_MOBILE_WEB_USER_SIZE(113, 610),
     /**
      *
      *
@@ -2711,7 +2693,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_PLAYSTATION_USER_SIZE = 611;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_PLAYSTATION_USER_SIZE(611),
+    AUDIENCE_SEGMENT_TARGETED_PLAYSTATION_USER_SIZE(114, 611),
     /**
      *
      *
@@ -2731,7 +2713,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_PPID_USER_SIZE = 612;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_PPID_USER_SIZE(612),
+    AUDIENCE_SEGMENT_TARGETED_PPID_USER_SIZE(115, 612),
     /**
      *
      *
@@ -2751,7 +2733,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_ROKU_USER_SIZE = 615;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_ROKU_USER_SIZE(615),
+    AUDIENCE_SEGMENT_TARGETED_ROKU_USER_SIZE(116, 615),
     /**
      *
      *
@@ -2771,7 +2753,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_SAMSUNG_TV_USER_SIZE = 616;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_SAMSUNG_TV_USER_SIZE(616),
+    AUDIENCE_SEGMENT_TARGETED_SAMSUNG_TV_USER_SIZE(117, 616),
     /**
      *
      *
@@ -2790,7 +2772,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_SIZE = 618;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_SIZE(618),
+    AUDIENCE_SEGMENT_TARGETED_SIZE(118, 618),
     /**
      *
      *
@@ -2810,7 +2792,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_STATUS = 628;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_STATUS(628),
+    AUDIENCE_SEGMENT_TARGETED_STATUS(119, 628),
     /**
      *
      *
@@ -2829,7 +2811,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_STATUS_NAME = 617;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_STATUS_NAME(617),
+    AUDIENCE_SEGMENT_TARGETED_STATUS_NAME(120, 617),
     /**
      *
      *
@@ -2849,7 +2831,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_TARGETED_XBOX_USER_SIZE = 619;</code>
      */
-    AUDIENCE_SEGMENT_TARGETED_XBOX_USER_SIZE(619),
+    AUDIENCE_SEGMENT_TARGETED_XBOX_USER_SIZE(121, 619),
     /**
      *
      *
@@ -2868,7 +2850,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUTO_REFRESHED_TRAFFIC = 421;</code>
      */
-    AUTO_REFRESHED_TRAFFIC(421),
+    AUTO_REFRESHED_TRAFFIC(122, 421),
     /**
      *
      *
@@ -2886,7 +2868,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUTO_REFRESHED_TRAFFIC_NAME = 422;</code>
      */
-    AUTO_REFRESHED_TRAFFIC_NAME(422),
+    AUTO_REFRESHED_TRAFFIC_NAME(123, 422),
     /**
      *
      *
@@ -2905,7 +2887,28 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BIDDER_ENCRYPTED_ID = 493;</code>
      */
-    BIDDER_ENCRYPTED_ID(493),
+    BIDDER_ENCRYPTED_ID(124, 493),
+    /**
+     *
+     *
+     * <pre>
+     * Represents a single Bidder integration, like Open Bidding, SDK
+     * Bidding, or Authorized Buying.
+     *
+     *
+     *
+     * Corresponds to "Bidder ID" in the Ad Manager UI (when showing API
+     * fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`,
+     * `REVENUE_VERIFICATION`, `ADS_TRAFFIC_NAVIGATOR`
+     *
+     * Data format: `IDENTIFIER`
+     * </pre>
+     *
+     * <code>BIDDER_ID = 445;</code>
+     */
+    BIDDER_ID(125, 445),
     /**
      *
      *
@@ -2924,7 +2927,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BIDDER_NAME = 494;</code>
      */
-    BIDDER_NAME(494),
+    BIDDER_NAME(126, 494),
     /**
      *
      *
@@ -2942,7 +2945,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BID_RANGE = 679;</code>
      */
-    BID_RANGE(679),
+    BID_RANGE(127, 679),
     /**
      *
      *
@@ -2961,7 +2964,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BID_REJECTION_REASON = 599;</code>
      */
-    BID_REJECTION_REASON(599),
+    BID_REJECTION_REASON(128, 599),
     /**
      *
      *
@@ -2979,7 +2982,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BID_REJECTION_REASON_NAME = 600;</code>
      */
-    BID_REJECTION_REASON_NAME(600),
+    BID_REJECTION_REASON_NAME(129, 600),
     /**
      *
      *
@@ -2999,7 +3002,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BRANDING_TYPE = 383;</code>
      */
-    BRANDING_TYPE(383),
+    BRANDING_TYPE(130, 383),
     /**
      *
      *
@@ -3018,7 +3021,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BRANDING_TYPE_NAME = 384;</code>
      */
-    BRANDING_TYPE_NAME(384),
+    BRANDING_TYPE_NAME(131, 384),
     /**
      *
      *
@@ -3038,7 +3041,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BROWSER_CATEGORY = 119;</code>
      */
-    BROWSER_CATEGORY(119),
+    BROWSER_CATEGORY(132, 119),
     /**
      *
      *
@@ -3057,7 +3060,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BROWSER_CATEGORY_NAME = 120;</code>
      */
-    BROWSER_CATEGORY_NAME(120),
+    BROWSER_CATEGORY_NAME(133, 120),
     /**
      *
      *
@@ -3076,7 +3079,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BROWSER_ID = 235;</code>
      */
-    BROWSER_ID(235),
+    BROWSER_ID(134, 235),
     /**
      *
      *
@@ -3095,7 +3098,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BROWSER_NAME = 236;</code>
      */
-    BROWSER_NAME(236),
+    BROWSER_NAME(135, 236),
     /**
      *
      *
@@ -3113,7 +3116,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BUYER_NETWORK_ID = 448;</code>
      */
-    BUYER_NETWORK_ID(448),
+    BUYER_NETWORK_ID(136, 448),
     /**
      *
      *
@@ -3131,7 +3134,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BUYER_NETWORK_NAME = 449;</code>
      */
-    BUYER_NETWORK_NAME(449),
+    BUYER_NETWORK_NAME(137, 449),
     /**
      *
      *
@@ -3149,7 +3152,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CALLOUT_STATUS_CATEGORY_NAME = 589;</code>
      */
-    CALLOUT_STATUS_CATEGORY_NAME(589),
+    CALLOUT_STATUS_CATEGORY_NAME(138, 589),
     /**
      *
      *
@@ -3167,7 +3170,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CARRIER_ID = 369;</code>
      */
-    CARRIER_ID(369),
+    CARRIER_ID(139, 369),
     /**
      *
      *
@@ -3185,7 +3188,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CARRIER_NAME = 368;</code>
      */
-    CARRIER_NAME(368),
+    CARRIER_NAME(140, 368),
     /**
      *
      *
@@ -3203,7 +3206,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CHANNEL = 501;</code>
      */
-    CHANNEL(501),
+    CHANNEL(141, 501),
     /**
      *
      *
@@ -3221,7 +3224,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CHILD_NETWORK_CODE = 542;</code>
      */
-    CHILD_NETWORK_CODE(542),
+    CHILD_NETWORK_CODE(142, 542),
     /**
      *
      *
@@ -3239,7 +3242,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CHILD_NETWORK_ID = 544;</code>
      */
-    CHILD_NETWORK_ID(544),
+    CHILD_NETWORK_ID(143, 544),
     /**
      *
      *
@@ -3257,7 +3260,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CHILD_PARTNER_NAME = 543;</code>
      */
-    CHILD_PARTNER_NAME(543),
+    CHILD_PARTNER_NAME(144, 543),
     /**
      *
      *
@@ -3268,14 +3271,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "City ID" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `OFF_PROPERTY_CAMPAIGNS`
      *
      * Data format: `IDENTIFIER`
      * </pre>
      *
      * <code>CITY_ID = 459;</code>
      */
-    CITY_ID(459),
+    CITY_ID(145, 459),
     /**
      *
      *
@@ -3293,7 +3297,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CITY_NAME = 452;</code>
      */
-    CITY_NAME(452),
+    CITY_NAME(146, 452),
     /**
      *
      *
@@ -3305,14 +3309,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Advertiser ID (classified)" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `REACH`
      *
      * Data format: `IDENTIFIER`
      * </pre>
      *
      * <code>CLASSIFIED_ADVERTISER_ID = 133;</code>
      */
-    CLASSIFIED_ADVERTISER_ID(133),
+    CLASSIFIED_ADVERTISER_ID(147, 133),
     /**
      *
      *
@@ -3324,14 +3329,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Advertiser (classified)" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `REACH`
      *
      * Data format: `STRING`
      * </pre>
      *
      * <code>CLASSIFIED_ADVERTISER_NAME = 134;</code>
      */
-    CLASSIFIED_ADVERTISER_NAME(134),
+    CLASSIFIED_ADVERTISER_NAME(148, 134),
     /**
      *
      *
@@ -3349,7 +3355,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CLASSIFIED_BRAND_ID = 243;</code>
      */
-    CLASSIFIED_BRAND_ID(243),
+    CLASSIFIED_BRAND_ID(149, 243),
     /**
      *
      *
@@ -3367,7 +3373,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CLASSIFIED_BRAND_NAME = 244;</code>
      */
-    CLASSIFIED_BRAND_NAME(244),
+    CLASSIFIED_BRAND_NAME(150, 244),
     /**
      *
      *
@@ -3386,7 +3392,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_BUNDLE_ID = 460;</code>
      */
-    CONTENT_BUNDLE_ID(460),
+    CONTENT_BUNDLE_ID(151, 460),
     /**
      *
      *
@@ -3405,7 +3411,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_BUNDLE_NAME = 461;</code>
      */
-    CONTENT_BUNDLE_NAME(461),
+    CONTENT_BUNDLE_NAME(152, 461),
     /**
      *
      *
@@ -3424,7 +3430,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_CMS_METADATA_KV_NAMESPACE_ID = 462;</code>
      */
-    CONTENT_CMS_METADATA_KV_NAMESPACE_ID(462),
+    CONTENT_CMS_METADATA_KV_NAMESPACE_ID(153, 462),
     /**
      *
      *
@@ -3443,7 +3449,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_CMS_METADATA_KV_NAMESPACE_NAME = 463;</code>
      */
-    CONTENT_CMS_METADATA_KV_NAMESPACE_NAME(463),
+    CONTENT_CMS_METADATA_KV_NAMESPACE_NAME(154, 463),
     /**
      *
      *
@@ -3462,7 +3468,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_CMS_NAME = 643;</code>
      */
-    CONTENT_CMS_NAME(643),
+    CONTENT_CMS_NAME(155, 643),
     /**
      *
      *
@@ -3482,7 +3488,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_CMS_VIDEO_ID = 644;</code>
      */
-    CONTENT_CMS_VIDEO_ID(644),
+    CONTENT_CMS_VIDEO_ID(156, 644),
     /**
      *
      *
@@ -3501,7 +3507,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_ID = 246;</code>
      */
-    CONTENT_ID(246),
+    CONTENT_ID(157, 246),
     /**
      *
      *
@@ -3520,7 +3526,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_MAPPING_PRESENCE = 731;</code>
      */
-    CONTENT_MAPPING_PRESENCE(731),
+    CONTENT_MAPPING_PRESENCE(158, 731),
     /**
      *
      *
@@ -3538,7 +3544,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_MAPPING_PRESENCE_NAME = 732;</code>
      */
-    CONTENT_MAPPING_PRESENCE_NAME(732),
+    CONTENT_MAPPING_PRESENCE_NAME(159, 732),
     /**
      *
      *
@@ -3557,7 +3563,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTENT_NAME = 247;</code>
      */
-    CONTENT_NAME(247),
+    CONTENT_NAME(160, 247),
     /**
      *
      *
@@ -3576,7 +3582,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTINENT = 469;</code>
      */
-    CONTINENT(469),
+    CONTINENT(161, 469),
     /**
      *
      *
@@ -3594,7 +3600,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CONTINENT_NAME = 470;</code>
      */
-    CONTINENT_NAME(470),
+    CONTINENT_NAME(162, 470),
     /**
      *
      *
@@ -3614,7 +3620,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>COUNTRY_CODE = 466;</code>
      */
-    COUNTRY_CODE(466),
+    COUNTRY_CODE(163, 466),
     /**
      *
      *
@@ -3635,7 +3641,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>COUNTRY_ID = 11;</code>
      */
-    COUNTRY_ID(11),
+    COUNTRY_ID(164, 11),
     /**
      *
      *
@@ -3656,7 +3662,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>COUNTRY_NAME = 12;</code>
      */
-    COUNTRY_NAME(12),
+    COUNTRY_NAME(165, 12),
     /**
      *
      *
@@ -3675,7 +3681,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_BILLING_TYPE = 366;</code>
      */
-    CREATIVE_BILLING_TYPE(366),
+    CREATIVE_BILLING_TYPE(166, 366),
     /**
      *
      *
@@ -3693,7 +3699,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_BILLING_TYPE_NAME = 367;</code>
      */
-    CREATIVE_BILLING_TYPE_NAME(367),
+    CREATIVE_BILLING_TYPE_NAME(167, 367),
     /**
      *
      *
@@ -3711,7 +3717,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CLICK_THROUGH_URL = 174;</code>
      */
-    CREATIVE_CLICK_THROUGH_URL(174),
+    CREATIVE_CLICK_THROUGH_URL(168, 174),
     /**
      *
      *
@@ -3730,7 +3736,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_ID = 138;</code>
      */
-    CREATIVE_ID(138),
+    CREATIVE_ID(169, 138),
     /**
      *
      *
@@ -3749,7 +3755,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_NAME = 139;</code>
      */
-    CREATIVE_NAME(139),
+    CREATIVE_NAME(170, 139),
     /**
      *
      *
@@ -3770,7 +3776,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_OR_CREATIVE_SET = 682;</code>
      */
-    CREATIVE_OR_CREATIVE_SET(682),
+    CREATIVE_OR_CREATIVE_SET(171, 682),
     /**
      *
      *
@@ -3790,7 +3796,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_OR_CREATIVE_SET_NAME = 683;</code>
      */
-    CREATIVE_OR_CREATIVE_SET_NAME(683),
+    CREATIVE_OR_CREATIVE_SET_NAME(172, 683),
     /**
      *
      *
@@ -3809,7 +3815,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_POLICIES_FILTERING = 711;</code>
      */
-    CREATIVE_POLICIES_FILTERING(711),
+    CREATIVE_POLICIES_FILTERING(173, 711),
     /**
      *
      *
@@ -3827,7 +3833,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_POLICIES_FILTERING_NAME = 712;</code>
      */
-    CREATIVE_POLICIES_FILTERING_NAME(712),
+    CREATIVE_POLICIES_FILTERING_NAME(174, 712),
     /**
      *
      *
@@ -3846,7 +3852,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_PROTECTIONS_FILTERING = 704;</code>
      */
-    CREATIVE_PROTECTIONS_FILTERING(704),
+    CREATIVE_PROTECTIONS_FILTERING(175, 704),
     /**
      *
      *
@@ -3864,7 +3870,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_PROTECTIONS_FILTERING_NAME = 705;</code>
      */
-    CREATIVE_PROTECTIONS_FILTERING_NAME(705),
+    CREATIVE_PROTECTIONS_FILTERING_NAME(176, 705),
     /**
      *
      *
@@ -3884,7 +3890,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_SET_ROLE_TYPE = 686;</code>
      */
-    CREATIVE_SET_ROLE_TYPE(686),
+    CREATIVE_SET_ROLE_TYPE(177, 686),
     /**
      *
      *
@@ -3903,7 +3909,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_SET_ROLE_TYPE_NAME = 687;</code>
      */
-    CREATIVE_SET_ROLE_TYPE_NAME(687),
+    CREATIVE_SET_ROLE_TYPE_NAME(178, 687),
     /**
      *
      *
@@ -3919,11 +3925,14 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Compatible with the following report types: `HISTORICAL`
      *
      * Data format: `ENUM`
+     *
+     * Values:
+     * [CreativeSslOverride][google.ads.admanager.v1.CreativeSslOverrideEnum.CreativeSslOverride]
      * </pre>
      *
      * <code>CREATIVE_SSL_COMPLIANCE_OVERRIDE = 784;</code>
      */
-    CREATIVE_SSL_COMPLIANCE_OVERRIDE(784),
+    CREATIVE_SSL_COMPLIANCE_OVERRIDE(179, 784),
     /**
      *
      *
@@ -3941,7 +3950,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_SSL_COMPLIANCE_OVERRIDE_NAME = 786;</code>
      */
-    CREATIVE_SSL_COMPLIANCE_OVERRIDE_NAME(786),
+    CREATIVE_SSL_COMPLIANCE_OVERRIDE_NAME(180, 786),
     /**
      *
      *
@@ -3956,11 +3965,14 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Compatible with the following report types: `HISTORICAL`
      *
      * Data format: `ENUM`
+     *
+     * Values:
+     * [CreativeSslScanResult][google.ads.admanager.v1.CreativeSslScanResultEnum.CreativeSslScanResult]
      * </pre>
      *
      * <code>CREATIVE_SSL_SCAN_RESULT = 785;</code>
      */
-    CREATIVE_SSL_SCAN_RESULT(785),
+    CREATIVE_SSL_SCAN_RESULT(181, 785),
     /**
      *
      *
@@ -3978,7 +3990,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_SSL_SCAN_RESULT_NAME = 787;</code>
      */
-    CREATIVE_SSL_SCAN_RESULT_NAME(787),
+    CREATIVE_SSL_SCAN_RESULT_NAME(182, 787),
     /**
      *
      *
@@ -3998,7 +4010,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_TARGET_AD_UNIT_SIZE = 770;</code>
      */
-    CREATIVE_TARGET_AD_UNIT_SIZE(770),
+    CREATIVE_TARGET_AD_UNIT_SIZE(183, 770),
     /**
      *
      *
@@ -4017,7 +4029,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_TECHNOLOGY = 148;</code>
      */
-    CREATIVE_TECHNOLOGY(148),
+    CREATIVE_TECHNOLOGY(184, 148),
     /**
      *
      *
@@ -4035,7 +4047,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_TECHNOLOGY_NAME = 149;</code>
      */
-    CREATIVE_TECHNOLOGY_NAME(149),
+    CREATIVE_TECHNOLOGY_NAME(185, 149),
     /**
      *
      *
@@ -4053,7 +4065,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_THIRD_PARTY_VENDOR = 361;</code>
      */
-    CREATIVE_THIRD_PARTY_VENDOR(361),
+    CREATIVE_THIRD_PARTY_VENDOR(186, 361),
     /**
      *
      *
@@ -4072,7 +4084,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_TYPE = 344;</code>
      */
-    CREATIVE_TYPE(344),
+    CREATIVE_TYPE(187, 344),
     /**
      *
      *
@@ -4090,7 +4102,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_TYPE_NAME = 345;</code>
      */
-    CREATIVE_TYPE_NAME(345),
+    CREATIVE_TYPE_NAME(188, 345),
     /**
      *
      *
@@ -4108,7 +4120,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_VENDOR_ID = 706;</code>
      */
-    CREATIVE_VENDOR_ID(706),
+    CREATIVE_VENDOR_ID(189, 706),
     /**
      *
      *
@@ -4126,7 +4138,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_VENDOR_NAME = 707;</code>
      */
-    CREATIVE_VENDOR_NAME(707),
+    CREATIVE_VENDOR_NAME(190, 707),
     /**
      *
      *
@@ -4146,7 +4158,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_VIDEO_REDIRECT_THIRD_PARTY = 562;</code>
      */
-    CREATIVE_VIDEO_REDIRECT_THIRD_PARTY(562),
+    CREATIVE_VIDEO_REDIRECT_THIRD_PARTY(191, 562),
     /**
      *
      *
@@ -4164,7 +4176,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CURATOR_ID = 572;</code>
      */
-    CURATOR_ID(572),
+    CURATOR_ID(192, 572),
     /**
      *
      *
@@ -4182,7 +4194,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CURATOR_NAME = 573;</code>
      */
-    CURATOR_NAME(573),
+    CURATOR_NAME(193, 573),
     /**
      *
      *
@@ -4200,7 +4212,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_EVENT_ID = 737;</code>
      */
-    CUSTOM_EVENT_ID(737),
+    CUSTOM_EVENT_ID(194, 737),
     /**
      *
      *
@@ -4218,7 +4230,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_EVENT_NAME = 735;</code>
      */
-    CUSTOM_EVENT_NAME(735),
+    CUSTOM_EVENT_NAME(195, 735),
     /**
      *
      *
@@ -4237,7 +4249,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_EVENT_TYPE = 736;</code>
      */
-    CUSTOM_EVENT_TYPE(736),
+    CUSTOM_EVENT_TYPE(196, 736),
     /**
      *
      *
@@ -4255,7 +4267,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_EVENT_TYPE_NAME = 738;</code>
      */
-    CUSTOM_EVENT_TYPE_NAME(738),
+    CUSTOM_EVENT_TYPE_NAME(197, 738),
     /**
      *
      *
@@ -4274,7 +4286,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_SPOT_ID = 423;</code>
      */
-    CUSTOM_SPOT_ID(423),
+    CUSTOM_SPOT_ID(198, 423),
     /**
      *
      *
@@ -4293,7 +4305,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_SPOT_NAME = 424;</code>
      */
-    CUSTOM_SPOT_NAME(424),
+    CUSTOM_SPOT_NAME(199, 424),
     /**
      *
      *
@@ -4315,7 +4327,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DATE = 3;</code>
      */
-    DATE(3),
+    DATE(200, 3),
     /**
      *
      *
@@ -4336,7 +4348,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DAY_OF_WEEK = 4;</code>
      */
-    DAY_OF_WEEK(4),
+    DAY_OF_WEEK(201, 4),
     /**
      *
      *
@@ -4354,7 +4366,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEAL_BUYER_ID = 240;</code>
      */
-    DEAL_BUYER_ID(240),
+    DEAL_BUYER_ID(202, 240),
     /**
      *
      *
@@ -4372,7 +4384,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEAL_BUYER_NAME = 241;</code>
      */
-    DEAL_BUYER_NAME(241),
+    DEAL_BUYER_NAME(203, 241),
     /**
      *
      *
@@ -4391,7 +4403,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEAL_ID = 436;</code>
      */
-    DEAL_ID(436),
+    DEAL_ID(204, 436),
     /**
      *
      *
@@ -4409,7 +4421,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEAL_ID_ALL = 781;</code>
      */
-    DEAL_ID_ALL(781),
+    DEAL_ID_ALL(205, 781),
     /**
      *
      *
@@ -4428,7 +4440,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEAL_NAME = 437;</code>
      */
-    DEAL_NAME(437),
+    DEAL_NAME(206, 437),
     /**
      *
      *
@@ -4446,7 +4458,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DECLARED_ADVERTISER_DOMAIN = 796;</code>
      */
-    DECLARED_ADVERTISER_DOMAIN(796),
+    DECLARED_ADVERTISER_DOMAIN(207, 796),
     /**
      *
      *
@@ -4465,7 +4477,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DELIVERED_SECURE_SIGNAL_ID = 309;</code>
      */
-    DELIVERED_SECURE_SIGNAL_ID(309),
+    DELIVERED_SECURE_SIGNAL_ID(208, 309),
     /**
      *
      *
@@ -4484,7 +4496,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DELIVERED_SECURE_SIGNAL_NAME = 310;</code>
      */
-    DELIVERED_SECURE_SIGNAL_NAME(310),
+    DELIVERED_SECURE_SIGNAL_NAME(209, 310),
     /**
      *
      *
@@ -4504,7 +4516,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEMAND_CHANNEL = 9;</code>
      */
-    DEMAND_CHANNEL(9),
+    DEMAND_CHANNEL(210, 9),
     /**
      *
      *
@@ -4523,7 +4535,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEMAND_CHANNEL_NAME = 10;</code>
      */
-    DEMAND_CHANNEL_NAME(10),
+    DEMAND_CHANNEL_NAME(211, 10),
     /**
      *
      *
@@ -4542,7 +4554,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEMAND_SOURCE = 592;</code>
      */
-    DEMAND_SOURCE(592),
+    DEMAND_SOURCE(212, 592),
     /**
      *
      *
@@ -4560,7 +4572,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEMAND_SOURCE_ALL = 782;</code>
      */
-    DEMAND_SOURCE_ALL(782),
+    DEMAND_SOURCE_ALL(213, 782),
     /**
      *
      *
@@ -4578,7 +4590,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEMAND_SOURCE_NAME = 593;</code>
      */
-    DEMAND_SOURCE_NAME(593),
+    DEMAND_SOURCE_NAME(214, 593),
     /**
      *
      *
@@ -4590,14 +4602,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Demand subchannel value" in the Ad Manager UI (when
      * showing API fields).
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ON_PLATFORM_MULTICALL`
      *
      * Data format: `ENUM`
      * </pre>
      *
      * <code>DEMAND_SUBCHANNEL = 22;</code>
      */
-    DEMAND_SUBCHANNEL(22),
+    DEMAND_SUBCHANNEL(215, 22),
     /**
      *
      *
@@ -4608,18 +4621,20 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Demand subchannel" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ON_PLATFORM_MULTICALL`
      *
      * Data format: `STRING`
      * </pre>
      *
      * <code>DEMAND_SUBCHANNEL_NAME = 23;</code>
      */
-    DEMAND_SUBCHANNEL_NAME(23),
+    DEMAND_SUBCHANNEL_NAME(216, 23),
     /**
      *
      *
      * <pre>
+     * Deprecated: Use `DEVICE_MANUFACTURER_ID` and `DEVICE_MODEL_ID` instead.
      * The device on which an ad was served.
      *
      *
@@ -4632,9 +4647,10 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Data format: `ENUM`
      * </pre>
      *
-     * <code>DEVICE = 226;</code>
+     * <code>DEVICE = 226 [deprecated = true];</code>
      */
-    DEVICE(226),
+    @java.lang.Deprecated
+    DEVICE(217, 226),
     /**
      *
      *
@@ -4655,7 +4671,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEVICE_CATEGORY = 15;</code>
      */
-    DEVICE_CATEGORY(15),
+    DEVICE_CATEGORY(218, 15),
     /**
      *
      *
@@ -4676,7 +4692,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEVICE_CATEGORY_NAME = 16;</code>
      */
-    DEVICE_CATEGORY_NAME(16),
+    DEVICE_CATEGORY_NAME(219, 16),
     /**
      *
      *
@@ -4695,7 +4711,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEVICE_MANUFACTURER_ID = 525;</code>
      */
-    DEVICE_MANUFACTURER_ID(525),
+    DEVICE_MANUFACTURER_ID(220, 525),
     /**
      *
      *
@@ -4713,7 +4729,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEVICE_MANUFACTURER_NAME = 526;</code>
      */
-    DEVICE_MANUFACTURER_NAME(526),
+    DEVICE_MANUFACTURER_NAME(221, 526),
     /**
      *
      *
@@ -4732,7 +4748,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEVICE_MODEL_ID = 527;</code>
      */
-    DEVICE_MODEL_ID(527),
+    DEVICE_MODEL_ID(222, 527),
     /**
      *
      *
@@ -4750,11 +4766,13 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEVICE_MODEL_NAME = 528;</code>
      */
-    DEVICE_MODEL_NAME(528),
+    DEVICE_MODEL_NAME(223, 528),
     /**
      *
      *
      * <pre>
+     * Deprecated: Use `DEVICE_MANUFACTURER_NAME` and `DEVICE_MODEL_NAME`
+     * instead.
      * The localized name of the device on which an ad was served.
      *
      *
@@ -4769,7 +4787,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>DEVICE_NAME = 225 [deprecated = true];</code>
      */
     @java.lang.Deprecated
-    DEVICE_NAME(225),
+    DEVICE_NAME(224, 225),
     /**
      *
      *
@@ -4787,7 +4805,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DSP_SEAT_ID = 564;</code>
      */
-    DSP_SEAT_ID(564),
+    DSP_SEAT_ID(225, 564),
     /**
      *
      *
@@ -4807,7 +4825,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DYNAMIC_ALLOCATION_TYPE = 502;</code>
      */
-    DYNAMIC_ALLOCATION_TYPE(502),
+    DYNAMIC_ALLOCATION_TYPE(226, 502),
     /**
      *
      *
@@ -4825,7 +4843,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DYNAMIC_ALLOCATION_TYPE_NAME = 503;</code>
      */
-    DYNAMIC_ALLOCATION_TYPE_NAME(503),
+    DYNAMIC_ALLOCATION_TYPE_NAME(227, 503),
     /**
      *
      *
@@ -4844,7 +4862,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ESP_DELIVERY = 623;</code>
      */
-    ESP_DELIVERY(623),
+    ESP_DELIVERY(228, 623),
     /**
      *
      *
@@ -4862,7 +4880,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ESP_DELIVERY_NAME = 624;</code>
      */
-    ESP_DELIVERY_NAME(624),
+    ESP_DELIVERY_NAME(229, 624),
     /**
      *
      *
@@ -4881,7 +4899,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ESP_PRESENCE = 625;</code>
      */
-    ESP_PRESENCE(625),
+    ESP_PRESENCE(230, 625),
     /**
      *
      *
@@ -4899,7 +4917,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ESP_PRESENCE_NAME = 626;</code>
      */
-    ESP_PRESENCE_NAME(626),
+    ESP_PRESENCE_NAME(231, 626),
     /**
      *
      *
@@ -4917,7 +4935,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EXCHANGE_BIDDING_DEAL_ID = 715;</code>
      */
-    EXCHANGE_BIDDING_DEAL_ID(715),
+    EXCHANGE_BIDDING_DEAL_ID(232, 715),
     /**
      *
      *
@@ -4936,7 +4954,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EXCHANGE_BIDDING_DEAL_TYPE = 714;</code>
      */
-    EXCHANGE_BIDDING_DEAL_TYPE(714),
+    EXCHANGE_BIDDING_DEAL_TYPE(233, 714),
     /**
      *
      *
@@ -4954,7 +4972,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EXCHANGE_BIDDING_DEAL_TYPE_NAME = 723;</code>
      */
-    EXCHANGE_BIDDING_DEAL_TYPE_NAME(723),
+    EXCHANGE_BIDDING_DEAL_TYPE_NAME(234, 723),
     /**
      *
      *
@@ -4972,7 +4990,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EXCHANGE_THIRD_PARTY_COMPANY_ID = 185;</code>
      */
-    EXCHANGE_THIRD_PARTY_COMPANY_ID(185),
+    EXCHANGE_THIRD_PARTY_COMPANY_ID(235, 185),
     /**
      *
      *
@@ -4990,7 +5008,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EXCHANGE_THIRD_PARTY_COMPANY_NAME = 186;</code>
      */
-    EXCHANGE_THIRD_PARTY_COMPANY_NAME(186),
+    EXCHANGE_THIRD_PARTY_COMPANY_NAME(236, 186),
     /**
      *
      *
@@ -5008,7 +5026,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>FIRST_LOOK_PRICING_RULE_ID = 248;</code>
      */
-    FIRST_LOOK_PRICING_RULE_ID(248),
+    FIRST_LOOK_PRICING_RULE_ID(237, 248),
     /**
      *
      *
@@ -5026,7 +5044,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>FIRST_LOOK_PRICING_RULE_NAME = 249;</code>
      */
-    FIRST_LOOK_PRICING_RULE_NAME(249),
+    FIRST_LOOK_PRICING_RULE_NAME(238, 249),
     /**
      *
      *
@@ -5046,7 +5064,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>FIRST_PARTY_ID_STATUS = 404;</code>
      */
-    FIRST_PARTY_ID_STATUS(404),
+    FIRST_PARTY_ID_STATUS(239, 404),
     /**
      *
      *
@@ -5065,7 +5083,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>FIRST_PARTY_ID_STATUS_NAME = 405;</code>
      */
-    FIRST_PARTY_ID_STATUS_NAME(405),
+    FIRST_PARTY_ID_STATUS_NAME(240, 405),
     /**
      *
      *
@@ -5084,7 +5102,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GENDER = 509;</code>
      */
-    GENDER(509),
+    GENDER(241, 509),
     /**
      *
      *
@@ -5103,7 +5121,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GENDER_NAME = 583;</code>
      */
-    GENDER_NAME(583),
+    GENDER_NAME(242, 583),
     /**
      *
      *
@@ -5121,7 +5139,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_STREAM_ID = 519;</code>
      */
-    GOOGLE_ANALYTICS_STREAM_ID(519),
+    GOOGLE_ANALYTICS_STREAM_ID(243, 519),
     /**
      *
      *
@@ -5140,7 +5158,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_STREAM_NAME = 520;</code>
      */
-    GOOGLE_ANALYTICS_STREAM_NAME(520),
+    GOOGLE_ANALYTICS_STREAM_NAME(244, 520),
     /**
      *
      *
@@ -5159,7 +5177,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>HBT_YIELD_PARTNER_ID = 659;</code>
      */
-    HBT_YIELD_PARTNER_ID(659),
+    HBT_YIELD_PARTNER_ID(245, 659),
     /**
      *
      *
@@ -5178,7 +5196,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>HBT_YIELD_PARTNER_NAME = 660;</code>
      */
-    HBT_YIELD_PARTNER_NAME(660),
+    HBT_YIELD_PARTNER_NAME(246, 660),
     /**
      *
      *
@@ -5197,7 +5215,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>HEADER_BIDDER_INTEGRATION_TYPE = 718;</code>
      */
-    HEADER_BIDDER_INTEGRATION_TYPE(718),
+    HEADER_BIDDER_INTEGRATION_TYPE(247, 718),
     /**
      *
      *
@@ -5215,7 +5233,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>HEADER_BIDDER_INTEGRATION_TYPE_NAME = 719;</code>
      */
-    HEADER_BIDDER_INTEGRATION_TYPE_NAME(719),
+    HEADER_BIDDER_INTEGRATION_TYPE_NAME(248, 719),
+    /**
+     *
+     *
+     * <pre>
+     * High engagement ads allowed.
+     *
+     *
+     *
+     * Corresponds to "High engagement ads allowed" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `BOOLEAN`
+     * </pre>
+     *
+     * <code>HIGH_ENGAGEMENT_ADS_ALLOWED = 838;</code>
+     */
+    HIGH_ENGAGEMENT_ADS_ALLOWED(249, 838),
     /**
      *
      *
@@ -5235,7 +5271,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>HOUR = 100;</code>
      */
-    HOUR(100),
+    HOUR(250, 100),
     /**
      *
      *
@@ -5254,7 +5290,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IMPRESSION_COUNTING_METHOD = 577;</code>
      */
-    IMPRESSION_COUNTING_METHOD(577),
+    IMPRESSION_COUNTING_METHOD(251, 577),
     /**
      *
      *
@@ -5272,7 +5308,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IMPRESSION_COUNTING_METHOD_NAME = 578;</code>
      */
-    IMPRESSION_COUNTING_METHOD_NAME(578),
+    IMPRESSION_COUNTING_METHOD_NAME(252, 578),
     /**
      *
      *
@@ -5291,7 +5327,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INTERACTION_TYPE = 223;</code>
      */
-    INTERACTION_TYPE(223),
+    INTERACTION_TYPE(253, 223),
     /**
      *
      *
@@ -5309,7 +5345,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INTERACTION_TYPE_NAME = 224;</code>
      */
-    INTERACTION_TYPE_NAME(224),
+    INTERACTION_TYPE_NAME(254, 224),
     /**
      *
      *
@@ -5327,7 +5363,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INTEREST = 510;</code>
      */
-    INTEREST(510),
+    INTEREST(255, 510),
     /**
      *
      *
@@ -5347,7 +5383,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_FORMAT = 17;</code>
      */
-    INVENTORY_FORMAT(17),
+    INVENTORY_FORMAT(256, 17),
     /**
      *
      *
@@ -5366,7 +5402,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_FORMAT_NAME = 18;</code>
      */
-    INVENTORY_FORMAT_NAME(18),
+    INVENTORY_FORMAT_NAME(257, 18),
     /**
      *
      *
@@ -5384,7 +5420,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_ASSIGNMENT_ID = 648;</code>
      */
-    INVENTORY_SHARE_ASSIGNMENT_ID(648),
+    INVENTORY_SHARE_ASSIGNMENT_ID(258, 648),
     /**
      *
      *
@@ -5402,7 +5438,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_ASSIGNMENT_NAME = 649;</code>
      */
-    INVENTORY_SHARE_ASSIGNMENT_NAME(649),
+    INVENTORY_SHARE_ASSIGNMENT_NAME(259, 649),
     /**
      *
      *
@@ -5421,7 +5457,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_OUTCOME = 603;</code>
      */
-    INVENTORY_SHARE_OUTCOME(603),
+    INVENTORY_SHARE_OUTCOME(260, 603),
     /**
      *
      *
@@ -5439,7 +5475,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_OUTCOME_NAME = 604;</code>
      */
-    INVENTORY_SHARE_OUTCOME_NAME(604),
+    INVENTORY_SHARE_OUTCOME_NAME(261, 604),
     /**
      *
      *
@@ -5458,7 +5494,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_PARTNER_AD_SERVER = 652;</code>
      */
-    INVENTORY_SHARE_PARTNER_AD_SERVER(652),
+    INVENTORY_SHARE_PARTNER_AD_SERVER(262, 652),
     /**
      *
      *
@@ -5476,7 +5512,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_PARTNER_AD_SERVER_NAME = 653;</code>
      */
-    INVENTORY_SHARE_PARTNER_AD_SERVER_NAME(653),
+    INVENTORY_SHARE_PARTNER_AD_SERVER_NAME(263, 653),
     /**
      *
      *
@@ -5494,7 +5530,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_TARGET_SHARE_PERCENT = 654;</code>
      */
-    INVENTORY_SHARE_TARGET_SHARE_PERCENT(654),
+    INVENTORY_SHARE_TARGET_SHARE_PERCENT(264, 654),
     /**
      *
      *
@@ -5513,7 +5549,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_TYPE = 650;</code>
      */
-    INVENTORY_SHARE_TYPE(650),
+    INVENTORY_SHARE_TYPE(265, 650),
     /**
      *
      *
@@ -5531,7 +5567,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_TYPE_NAME = 651;</code>
      */
-    INVENTORY_SHARE_TYPE_NAME(651),
+    INVENTORY_SHARE_TYPE_NAME(266, 651),
     /**
      *
      *
@@ -5552,7 +5588,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_TYPE = 19;</code>
      */
-    INVENTORY_TYPE(19),
+    INVENTORY_TYPE(267, 19),
     /**
      *
      *
@@ -5572,7 +5608,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_TYPE_NAME = 20;</code>
      */
-    INVENTORY_TYPE_NAME(20),
+    INVENTORY_TYPE_NAME(268, 20),
     /**
      *
      *
@@ -5590,7 +5626,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IS_ADX_DIRECT = 382;</code>
      */
-    IS_ADX_DIRECT(382),
+    IS_ADX_DIRECT(269, 382),
     /**
      *
      *
@@ -5608,7 +5644,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IS_CURATION_TARGETED = 574;</code>
      */
-    IS_CURATION_TARGETED(574),
+    IS_CURATION_TARGETED(270, 574),
     /**
      *
      *
@@ -5626,7 +5662,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IS_DROPPED = 464;</code>
      */
-    IS_DROPPED(464),
+    IS_DROPPED(271, 464),
     /**
      *
      *
@@ -5644,7 +5680,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IS_FIRST_LOOK_DEAL = 401;</code>
      */
-    IS_FIRST_LOOK_DEAL(401),
+    IS_FIRST_LOOK_DEAL(272, 401),
     /**
      *
      *
@@ -5663,7 +5699,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>KEY_VALUES_ID = 214;</code>
      */
-    KEY_VALUES_ID(214),
+    KEY_VALUES_ID(273, 214),
     /**
      *
      *
@@ -5682,7 +5718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>KEY_VALUES_NAME = 215;</code>
      */
-    KEY_VALUES_NAME(215),
+    KEY_VALUES_NAME(274, 215),
     /**
      *
      *
@@ -5700,7 +5736,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>KEY_VALUES_SET = 713;</code>
      */
-    KEY_VALUES_SET(713),
+    KEY_VALUES_SET(275, 713),
+    /**
+     *
+     *
+     * <pre>
+     * The landing page domain name of the advertiser.
+     *
+     *
+     *
+     * Corresponds to "Landing page domain" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`, `REACH`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>LANDING_PAGE_DOMAIN = 242;</code>
+     */
+    LANDING_PAGE_DOMAIN(276, 242),
     /**
      *
      *
@@ -5718,7 +5772,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_AGENCY = 663;</code>
      */
-    LINE_ITEM_AGENCY(663),
+    LINE_ITEM_AGENCY(277, 663),
     /**
      *
      *
@@ -5736,7 +5790,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_ARCHIVED = 188;</code>
      */
-    LINE_ITEM_ARCHIVED(188),
+    LINE_ITEM_ARCHIVED(278, 188),
     /**
      *
      *
@@ -5754,7 +5808,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_AVERAGE_NUMBER_OF_VIEWERS = 694;</code>
      */
-    LINE_ITEM_AVERAGE_NUMBER_OF_VIEWERS(694),
+    LINE_ITEM_AVERAGE_NUMBER_OF_VIEWERS(279, 694),
     /**
      *
      *
@@ -5776,7 +5830,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COMPANION_DELIVERY_OPTION = 204;</code>
      */
-    LINE_ITEM_COMPANION_DELIVERY_OPTION(204),
+    LINE_ITEM_COMPANION_DELIVERY_OPTION(280, 204),
     /**
      *
      *
@@ -5795,7 +5849,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COMPANION_DELIVERY_OPTION_NAME = 205;</code>
      */
-    LINE_ITEM_COMPANION_DELIVERY_OPTION_NAME(205),
+    LINE_ITEM_COMPANION_DELIVERY_OPTION_NAME(281, 205),
     /**
      *
      *
@@ -5818,7 +5872,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COMPUTED_STATUS = 250;</code>
      */
-    LINE_ITEM_COMPUTED_STATUS(250),
+    LINE_ITEM_COMPUTED_STATUS(282, 250),
     /**
      *
      *
@@ -5837,7 +5891,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COMPUTED_STATUS_NAME = 251;</code>
      */
-    LINE_ITEM_COMPUTED_STATUS_NAME(251),
+    LINE_ITEM_COMPUTED_STATUS_NAME(283, 251),
     /**
      *
      *
@@ -5855,7 +5909,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CONTRACTED_QUANTITY = 92;</code>
      */
-    LINE_ITEM_CONTRACTED_QUANTITY(92),
+    LINE_ITEM_CONTRACTED_QUANTITY(284, 92),
     /**
      *
      *
@@ -5874,7 +5928,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COST_PER_UNIT = 85;</code>
      */
-    LINE_ITEM_COST_PER_UNIT(85),
+    LINE_ITEM_COST_PER_UNIT(285, 85),
     /**
      *
      *
@@ -5897,7 +5951,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COST_TYPE = 212;</code>
      */
-    LINE_ITEM_COST_TYPE(212),
+    LINE_ITEM_COST_TYPE(286, 212),
     /**
      *
      *
@@ -5916,7 +5970,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_COST_TYPE_NAME = 213;</code>
      */
-    LINE_ITEM_COST_TYPE_NAME(213),
+    LINE_ITEM_COST_TYPE_NAME(287, 213),
     /**
      *
      *
@@ -5934,7 +5988,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CREATIVE_END_DATE = 176;</code>
      */
-    LINE_ITEM_CREATIVE_END_DATE(176),
+    LINE_ITEM_CREATIVE_END_DATE(288, 176),
     /**
      *
      *
@@ -5956,7 +6010,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CREATIVE_ROTATION_TYPE = 189;</code>
      */
-    LINE_ITEM_CREATIVE_ROTATION_TYPE(189),
+    LINE_ITEM_CREATIVE_ROTATION_TYPE(289, 189),
     /**
      *
      *
@@ -5974,7 +6028,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CREATIVE_ROTATION_TYPE_NAME = 190;</code>
      */
-    LINE_ITEM_CREATIVE_ROTATION_TYPE_NAME(190),
+    LINE_ITEM_CREATIVE_ROTATION_TYPE_NAME(290, 190),
     /**
      *
      *
@@ -5992,7 +6046,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CREATIVE_START_DATE = 175;</code>
      */
-    LINE_ITEM_CREATIVE_START_DATE(175),
+    LINE_ITEM_CREATIVE_START_DATE(291, 175),
     /**
      *
      *
@@ -6011,7 +6065,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CURRENCY_CODE = 180;</code>
      */
-    LINE_ITEM_CURRENCY_CODE(180),
+    LINE_ITEM_CURRENCY_CODE(292, 180),
     /**
      *
      *
@@ -6030,7 +6084,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_DELIVERY_INDICATOR = 87;</code>
      */
-    LINE_ITEM_DELIVERY_INDICATOR(87),
+    LINE_ITEM_DELIVERY_INDICATOR(293, 87),
     /**
      *
      *
@@ -6053,7 +6107,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_DELIVERY_RATE_TYPE = 191;</code>
      */
-    LINE_ITEM_DELIVERY_RATE_TYPE(191),
+    LINE_ITEM_DELIVERY_RATE_TYPE(294, 191),
     /**
      *
      *
@@ -6072,7 +6126,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_DELIVERY_RATE_TYPE_NAME = 192;</code>
      */
-    LINE_ITEM_DELIVERY_RATE_TYPE_NAME(192),
+    LINE_ITEM_DELIVERY_RATE_TYPE_NAME(295, 192),
     /**
      *
      *
@@ -6091,7 +6145,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_DISCOUNT_ABSOLUTE = 195;</code>
      */
-    LINE_ITEM_DISCOUNT_ABSOLUTE(195),
+    LINE_ITEM_DISCOUNT_ABSOLUTE(296, 195),
     /**
      *
      *
@@ -6109,7 +6163,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_DISCOUNT_PERCENTAGE = 196;</code>
      */
-    LINE_ITEM_DISCOUNT_PERCENTAGE(196),
+    LINE_ITEM_DISCOUNT_PERCENTAGE(297, 196),
     /**
      *
      *
@@ -6128,7 +6182,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_END_DATE = 81;</code>
      */
-    LINE_ITEM_END_DATE(81),
+    LINE_ITEM_END_DATE(298, 81),
     /**
      *
      *
@@ -6147,7 +6201,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_END_DATE_TIME = 83;</code>
      */
-    LINE_ITEM_END_DATE_TIME(83),
+    LINE_ITEM_END_DATE_TIME(299, 83),
     /**
      *
      *
@@ -6169,7 +6223,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_ENVIRONMENT_TYPE = 201;</code>
      */
-    LINE_ITEM_ENVIRONMENT_TYPE(201),
+    LINE_ITEM_ENVIRONMENT_TYPE(300, 201),
     /**
      *
      *
@@ -6187,7 +6241,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_ENVIRONMENT_TYPE_NAME = 202;</code>
      */
-    LINE_ITEM_ENVIRONMENT_TYPE_NAME(202),
+    LINE_ITEM_ENVIRONMENT_TYPE_NAME(301, 202),
     /**
      *
      *
@@ -6205,7 +6259,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_EXTERNAL_DEAL_ID = 97;</code>
      */
-    LINE_ITEM_EXTERNAL_DEAL_ID(97),
+    LINE_ITEM_EXTERNAL_DEAL_ID(302, 97),
     /**
      *
      *
@@ -6223,7 +6277,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_EXTERNAL_ID = 86;</code>
      */
-    LINE_ITEM_EXTERNAL_ID(86),
+    LINE_ITEM_EXTERNAL_ID(303, 86),
     /**
      *
      *
@@ -6241,7 +6295,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_FREQUENCY_CAP = 256;</code>
      */
-    LINE_ITEM_FREQUENCY_CAP(256),
+    LINE_ITEM_FREQUENCY_CAP(304, 256),
     /**
      *
      *
@@ -6261,7 +6315,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_ID = 1;</code>
      */
-    LINE_ITEM_ID(1),
+    LINE_ITEM_ID(305, 1),
     /**
      *
      *
@@ -6279,7 +6333,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_LABELS = 667;</code>
      */
-    LINE_ITEM_LABELS(667),
+    LINE_ITEM_LABELS(306, 667),
     /**
      *
      *
@@ -6297,7 +6351,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_LABEL_IDS = 665;</code>
      */
-    LINE_ITEM_LABEL_IDS(665),
+    LINE_ITEM_LABEL_IDS(307, 665),
     /**
      *
      *
@@ -6315,7 +6369,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_LAST_MODIFIED_BY_APP = 181;</code>
      */
-    LINE_ITEM_LAST_MODIFIED_BY_APP(181),
+    LINE_ITEM_LAST_MODIFIED_BY_APP(308, 181),
     /**
      *
      *
@@ -6334,7 +6388,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_LIFETIME_CLICKS = 95;</code>
      */
-    LINE_ITEM_LIFETIME_CLICKS(95),
+    LINE_ITEM_LIFETIME_CLICKS(309, 95),
     /**
      *
      *
@@ -6354,7 +6408,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_LIFETIME_IMPRESSIONS = 94;</code>
      */
-    LINE_ITEM_LIFETIME_IMPRESSIONS(94),
+    LINE_ITEM_LIFETIME_IMPRESSIONS(310, 94),
     /**
      *
      *
@@ -6375,7 +6429,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_LIFETIME_VIEWABLE_IMPRESSIONS = 96;</code>
      */
-    LINE_ITEM_LIFETIME_VIEWABLE_IMPRESSIONS(96),
+    LINE_ITEM_LIFETIME_VIEWABLE_IMPRESSIONS(311, 96),
     /**
      *
      *
@@ -6395,7 +6449,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_MAKEGOOD = 89;</code>
      */
-    LINE_ITEM_MAKEGOOD(89),
+    LINE_ITEM_MAKEGOOD(312, 89),
     /**
      *
      *
@@ -6415,7 +6469,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_NAME = 2;</code>
      */
-    LINE_ITEM_NAME(2),
+    LINE_ITEM_NAME(313, 2),
     /**
      *
      *
@@ -6434,7 +6488,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_NON_CPD_BOOKED_REVENUE = 98;</code>
      */
-    LINE_ITEM_NON_CPD_BOOKED_REVENUE(98),
+    LINE_ITEM_NON_CPD_BOOKED_REVENUE(314, 98),
     /**
      *
      *
@@ -6452,7 +6506,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_OPTIMIZABLE = 90;</code>
      */
-    LINE_ITEM_OPTIMIZABLE(90),
+    LINE_ITEM_OPTIMIZABLE(315, 90),
     /**
      *
      *
@@ -6471,7 +6525,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PO_NUMBER = 669;</code>
      */
-    LINE_ITEM_PO_NUMBER(669),
+    LINE_ITEM_PO_NUMBER(316, 669),
     /**
      *
      *
@@ -6492,7 +6546,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIMARY_GOAL_TYPE = 210;</code>
      */
-    LINE_ITEM_PRIMARY_GOAL_TYPE(210),
+    LINE_ITEM_PRIMARY_GOAL_TYPE(317, 210),
     /**
      *
      *
@@ -6510,7 +6564,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIMARY_GOAL_TYPE_NAME = 211;</code>
      */
-    LINE_ITEM_PRIMARY_GOAL_TYPE_NAME(211),
+    LINE_ITEM_PRIMARY_GOAL_TYPE_NAME(318, 211),
     /**
      *
      *
@@ -6535,7 +6589,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIMARY_GOAL_UNITS_ABSOLUTE = 93;</code>
      */
-    LINE_ITEM_PRIMARY_GOAL_UNITS_ABSOLUTE(93),
+    LINE_ITEM_PRIMARY_GOAL_UNITS_ABSOLUTE(319, 93),
     /**
      *
      *
@@ -6559,7 +6613,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIMARY_GOAL_UNITS_PERCENTAGE = 396;</code>
      */
-    LINE_ITEM_PRIMARY_GOAL_UNITS_PERCENTAGE(396),
+    LINE_ITEM_PRIMARY_GOAL_UNITS_PERCENTAGE(320, 396),
     /**
      *
      *
@@ -6580,7 +6634,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE = 208;</code>
      */
-    LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE(208),
+    LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE(321, 208),
     /**
      *
      *
@@ -6598,7 +6652,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE_NAME = 209;</code>
      */
-    LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE_NAME(209),
+    LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE_NAME(322, 209),
     /**
      *
      *
@@ -6619,7 +6673,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_PRIORITY = 24;</code>
      */
-    LINE_ITEM_PRIORITY(24),
+    LINE_ITEM_PRIORITY(323, 24),
     /**
      *
      *
@@ -6642,7 +6696,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_RESERVATION_STATUS = 304;</code>
      */
-    LINE_ITEM_RESERVATION_STATUS(304),
+    LINE_ITEM_RESERVATION_STATUS(324, 304),
     /**
      *
      *
@@ -6661,7 +6715,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_RESERVATION_STATUS_NAME = 305;</code>
      */
-    LINE_ITEM_RESERVATION_STATUS_NAME(305),
+    LINE_ITEM_RESERVATION_STATUS_NAME(325, 305),
     /**
      *
      *
@@ -6679,7 +6733,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_SALESPERSON = 671;</code>
      */
-    LINE_ITEM_SALESPERSON(671),
+    LINE_ITEM_SALESPERSON(326, 671),
     /**
      *
      *
@@ -6697,7 +6751,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_SECONDARY_SALESPEOPLE = 673;</code>
      */
-    LINE_ITEM_SECONDARY_SALESPEOPLE(673),
+    LINE_ITEM_SECONDARY_SALESPEOPLE(327, 673),
     /**
      *
      *
@@ -6715,7 +6769,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_SECONDARY_TRAFFICKERS = 675;</code>
      */
-    LINE_ITEM_SECONDARY_TRAFFICKERS(675),
+    LINE_ITEM_SECONDARY_TRAFFICKERS(328, 675),
     /**
      *
      *
@@ -6734,7 +6788,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_START_DATE = 82;</code>
      */
-    LINE_ITEM_START_DATE(82),
+    LINE_ITEM_START_DATE(329, 82),
     /**
      *
      *
@@ -6753,7 +6807,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_START_DATE_TIME = 84;</code>
      */
-    LINE_ITEM_START_DATE_TIME(84),
+    LINE_ITEM_START_DATE_TIME(330, 84),
     /**
      *
      *
@@ -6771,7 +6825,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_TRAFFICKER = 677;</code>
      */
-    LINE_ITEM_TRAFFICKER(677),
+    LINE_ITEM_TRAFFICKER(331, 677),
     /**
      *
      *
@@ -6794,7 +6848,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_TYPE = 193;</code>
      */
-    LINE_ITEM_TYPE(193),
+    LINE_ITEM_TYPE(332, 193),
     /**
      *
      *
@@ -6813,7 +6867,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_TYPE_NAME = 194;</code>
      */
-    LINE_ITEM_TYPE_NAME(194),
+    LINE_ITEM_TYPE_NAME(333, 194),
     /**
      *
      *
@@ -6834,7 +6888,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_UNLIMITED_END = 187;</code>
      */
-    LINE_ITEM_UNLIMITED_END(187),
+    LINE_ITEM_UNLIMITED_END(334, 187),
     /**
      *
      *
@@ -6853,7 +6907,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_VALUE_COST_PER_UNIT = 88;</code>
      */
-    LINE_ITEM_VALUE_COST_PER_UNIT(88),
+    LINE_ITEM_VALUE_COST_PER_UNIT(335, 88),
     /**
      *
      *
@@ -6871,7 +6925,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_WEB_PROPERTY_CODE = 179;</code>
      */
-    LINE_ITEM_WEB_PROPERTY_CODE(179),
+    LINE_ITEM_WEB_PROPERTY_CODE(336, 179),
     /**
      *
      *
@@ -6890,7 +6944,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MASTER_COMPANION_CREATIVE_ID = 140;</code>
      */
-    MASTER_COMPANION_CREATIVE_ID(140),
+    MASTER_COMPANION_CREATIVE_ID(337, 140),
     /**
      *
      *
@@ -6909,7 +6963,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MASTER_COMPANION_CREATIVE_NAME = 141;</code>
      */
-    MASTER_COMPANION_CREATIVE_NAME(141),
+    MASTER_COMPANION_CREATIVE_NAME(338, 141),
     /**
      *
      *
@@ -6928,7 +6982,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MEDIATION_TYPE = 701;</code>
      */
-    MEDIATION_TYPE(701),
+    MEDIATION_TYPE(339, 701),
     /**
      *
      *
@@ -6946,7 +7000,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MEDIATION_TYPE_NAME = 754;</code>
      */
-    MEDIATION_TYPE_NAME(754),
+    MEDIATION_TYPE_NAME(340, 754),
     /**
      *
      *
@@ -6965,7 +7019,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MEDIATION_YIELD_PARTNER_ID = 661;</code>
      */
-    MEDIATION_YIELD_PARTNER_ID(661),
+    MEDIATION_YIELD_PARTNER_ID(341, 661),
     /**
      *
      *
@@ -6983,7 +7037,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MEDIATION_YIELD_PARTNER_NAME = 662;</code>
      */
-    MEDIATION_YIELD_PARTNER_NAME(662),
+    MEDIATION_YIELD_PARTNER_NAME(342, 662),
     /**
      *
      *
@@ -6994,14 +7048,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Metro ID" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `OFF_PROPERTY_CAMPAIGNS`
      *
      * Data format: `IDENTIFIER`
      * </pre>
      *
      * <code>METRO_ID = 453;</code>
      */
-    METRO_ID(453),
+    METRO_ID(343, 453),
     /**
      *
      *
@@ -7019,7 +7074,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>METRO_NAME = 454;</code>
      */
-    METRO_NAME(454),
+    METRO_NAME(344, 454),
     /**
      *
      *
@@ -7038,7 +7093,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_FREE = 128;</code>
      */
-    MOBILE_APP_FREE(128),
+    MOBILE_APP_FREE(345, 128),
     /**
      *
      *
@@ -7057,7 +7112,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_ICON_URL = 129;</code>
      */
-    MOBILE_APP_ICON_URL(129),
+    MOBILE_APP_ICON_URL(346, 129),
     /**
      *
      *
@@ -7076,7 +7131,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_ID = 123;</code>
      */
-    MOBILE_APP_ID(123),
+    MOBILE_APP_ID(347, 123),
     /**
      *
      *
@@ -7095,7 +7150,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_NAME = 127;</code>
      */
-    MOBILE_APP_NAME(127),
+    MOBILE_APP_NAME(348, 127),
     /**
      *
      *
@@ -7114,7 +7169,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_OWNERSHIP_STATUS = 311;</code>
      */
-    MOBILE_APP_OWNERSHIP_STATUS(311),
+    MOBILE_APP_OWNERSHIP_STATUS(349, 311),
     /**
      *
      *
@@ -7132,7 +7187,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_OWNERSHIP_STATUS_NAME = 312;</code>
      */
-    MOBILE_APP_OWNERSHIP_STATUS_NAME(312),
+    MOBILE_APP_OWNERSHIP_STATUS_NAME(350, 312),
     /**
      *
      *
@@ -7151,7 +7206,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_STORE = 125;</code>
      */
-    MOBILE_APP_STORE(125),
+    MOBILE_APP_STORE(351, 125),
     /**
      *
      *
@@ -7169,7 +7224,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_APP_STORE_NAME = 245;</code>
      */
-    MOBILE_APP_STORE_NAME(245),
+    MOBILE_APP_STORE_NAME(352, 245),
     /**
      *
      *
@@ -7195,7 +7250,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_INVENTORY_TYPE = 99;</code>
      */
-    MOBILE_INVENTORY_TYPE(99),
+    MOBILE_INVENTORY_TYPE(353, 99),
     /**
      *
      *
@@ -7216,7 +7271,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_INVENTORY_TYPE_NAME = 21;</code>
      */
-    MOBILE_INVENTORY_TYPE_NAME(21),
+    MOBILE_INVENTORY_TYPE_NAME(354, 21),
     /**
      *
      *
@@ -7236,7 +7291,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_RENDERING_SDK = 646;</code>
      */
-    MOBILE_RENDERING_SDK(646),
+    MOBILE_RENDERING_SDK(355, 646),
     /**
      *
      *
@@ -7255,7 +7310,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_RENDERING_SDK_NAME = 647;</code>
      */
-    MOBILE_RENDERING_SDK_NAME(647),
+    MOBILE_RENDERING_SDK_NAME(356, 647),
     /**
      *
      *
@@ -7273,7 +7328,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_SDK_MAJOR_VERSION = 692;</code>
      */
-    MOBILE_SDK_MAJOR_VERSION(692),
+    MOBILE_SDK_MAJOR_VERSION(357, 692),
     /**
      *
      *
@@ -7291,7 +7346,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_SDK_MINOR_VERSION = 693;</code>
      */
-    MOBILE_SDK_MINOR_VERSION(693),
+    MOBILE_SDK_MINOR_VERSION(358, 693),
     /**
      *
      *
@@ -7309,7 +7364,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MOBILE_SDK_VERSION_NAME = 130;</code>
      */
-    MOBILE_SDK_VERSION_NAME(130),
+    MOBILE_SDK_VERSION_NAME(359, 130),
     /**
      *
      *
@@ -7330,7 +7385,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MONTH_YEAR = 6;</code>
      */
-    MONTH_YEAR(6),
+    MONTH_YEAR(360, 6),
     /**
      *
      *
@@ -7348,7 +7403,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NATIVE_AD_FORMAT_ID = 255;</code>
      */
-    NATIVE_AD_FORMAT_ID(255),
+    NATIVE_AD_FORMAT_ID(361, 255),
     /**
      *
      *
@@ -7366,7 +7421,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NATIVE_AD_FORMAT_NAME = 254;</code>
      */
-    NATIVE_AD_FORMAT_NAME(254),
+    NATIVE_AD_FORMAT_NAME(362, 254),
     /**
      *
      *
@@ -7384,7 +7439,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NATIVE_STYLE_ID = 253;</code>
      */
-    NATIVE_STYLE_ID(253),
+    NATIVE_STYLE_ID(363, 253),
     /**
      *
      *
@@ -7402,7 +7457,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NATIVE_STYLE_NAME = 252;</code>
      */
-    NATIVE_STYLE_NAME(252),
+    NATIVE_STYLE_NAME(364, 252),
     /**
      *
      *
@@ -7421,7 +7476,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_DEMOGRAPHICS = 695;</code>
      */
-    NIELSEN_DEMOGRAPHICS(695),
+    NIELSEN_DEMOGRAPHICS(365, 695),
     /**
      *
      *
@@ -7440,7 +7495,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_DEMOGRAPHICS_NAME = 768;</code>
      */
-    NIELSEN_DEMOGRAPHICS_NAME(768),
+    NIELSEN_DEMOGRAPHICS_NAME(366, 768),
     /**
      *
      *
@@ -7459,7 +7514,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_DEVICE = 696;</code>
      */
-    NIELSEN_DEVICE(696),
+    NIELSEN_DEVICE(367, 696),
     /**
      *
      *
@@ -7477,7 +7532,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_DEVICE_NAME = 697;</code>
      */
-    NIELSEN_DEVICE_NAME(697),
+    NIELSEN_DEVICE_NAME(368, 697),
     /**
      *
      *
@@ -7495,7 +7550,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_IN_TARGET = 769;</code>
      */
-    NIELSEN_IN_TARGET(769),
+    NIELSEN_IN_TARGET(369, 769),
     /**
      *
      *
@@ -7514,7 +7569,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_RESTATEMENT_DATE = 698;</code>
      */
-    NIELSEN_RESTATEMENT_DATE(698),
+    NIELSEN_RESTATEMENT_DATE(370, 698),
     /**
      *
      *
@@ -7532,7 +7587,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_SEGMENT = 699;</code>
      */
-    NIELSEN_SEGMENT(699),
+    NIELSEN_SEGMENT(371, 699),
     /**
      *
      *
@@ -7550,7 +7605,48 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_SITE_URL = 700;</code>
      */
-    NIELSEN_SITE_URL(700),
+    NIELSEN_SITE_URL(372, 700),
+    /**
+     *
+     *
+     * <pre>
+     * Deal priority tier for non-guaranteed deals.
+     *
+     *
+     *
+     * Corresponds to "Non-guaranteed deal priority tier" in the Ad Manager UI
+     * (when showing API fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `ENUM`
+     *
+     * Values:
+     * [DealPriorityTier][google.ads.admanager.v1.DealPriorityTierEnum.DealPriorityTier]
+     * </pre>
+     *
+     * <code>NON_GUARANTEED_DEAL_PRIORITY_TIER = 859;</code>
+     */
+    NON_GUARANTEED_DEAL_PRIORITY_TIER(373, 859),
+    /**
+     *
+     *
+     * <pre>
+     * The localized name of the deal priority tier for non-guaranteed deals.
+     *
+     *
+     *
+     * Corresponds to "Non-guaranteed deal priority tier (Name)" in the Ad
+     * Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>NON_GUARANTEED_DEAL_PRIORITY_TIER_NAME = 860;</code>
+     */
+    NON_GUARANTEED_DEAL_PRIORITY_TIER_NAME(374, 860),
     /**
      *
      *
@@ -7568,7 +7664,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NO_FILL_REASON_CATEGORY_NAME = 587;</code>
      */
-    NO_FILL_REASON_CATEGORY_NAME(587),
+    NO_FILL_REASON_CATEGORY_NAME(375, 587),
+    /**
+     *
+     *
+     * <pre>
+     * Number of ads served in a pod response.
+     *
+     *
+     *
+     * Corresponds to "Number of ads in pod" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>NUM_ADS_IN_POD = 804;</code>
+     */
+    NUM_ADS_IN_POD(376, 804),
     /**
      *
      *
@@ -7587,7 +7701,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPERATING_SYSTEM_CATEGORY = 117;</code>
      */
-    OPERATING_SYSTEM_CATEGORY(117),
+    OPERATING_SYSTEM_CATEGORY(377, 117),
     /**
      *
      *
@@ -7605,7 +7719,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPERATING_SYSTEM_CATEGORY_NAME = 118;</code>
      */
-    OPERATING_SYSTEM_CATEGORY_NAME(118),
+    OPERATING_SYSTEM_CATEGORY_NAME(378, 118),
     /**
      *
      *
@@ -7623,7 +7737,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPERATING_SYSTEM_VERSION_ID = 238;</code>
      */
-    OPERATING_SYSTEM_VERSION_ID(238),
+    OPERATING_SYSTEM_VERSION_ID(379, 238),
     /**
      *
      *
@@ -7641,7 +7755,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPERATING_SYSTEM_VERSION_NAME = 237;</code>
      */
-    OPERATING_SYSTEM_VERSION_NAME(237),
+    OPERATING_SYSTEM_VERSION_NAME(380, 237),
     /**
      *
      *
@@ -7660,7 +7774,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPTIMIZATION_TYPE = 639;</code>
      */
-    OPTIMIZATION_TYPE(639),
+    OPTIMIZATION_TYPE(381, 639),
     /**
      *
      *
@@ -7678,7 +7792,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPTIMIZATION_TYPE_NAME = 640;</code>
      */
-    OPTIMIZATION_TYPE_NAME(640),
+    OPTIMIZATION_TYPE_NAME(382, 640),
     /**
      *
      *
@@ -7696,7 +7810,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_AGENCY = 150;</code>
      */
-    ORDER_AGENCY(150),
+    ORDER_AGENCY(383, 150),
     /**
      *
      *
@@ -7714,7 +7828,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_AGENCY_ID = 151;</code>
      */
-    ORDER_AGENCY_ID(151),
+    ORDER_AGENCY_ID(384, 151),
     /**
      *
      *
@@ -7732,7 +7846,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_BOOKED_CPC = 152;</code>
      */
-    ORDER_BOOKED_CPC(152),
+    ORDER_BOOKED_CPC(385, 152),
     /**
      *
      *
@@ -7750,7 +7864,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_BOOKED_CPM = 153;</code>
      */
-    ORDER_BOOKED_CPM(153),
+    ORDER_BOOKED_CPM(386, 153),
     /**
      *
      *
@@ -7772,7 +7886,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_DELIVERY_STATUS = 231;</code>
      */
-    ORDER_DELIVERY_STATUS(231),
+    ORDER_DELIVERY_STATUS(387, 231),
     /**
      *
      *
@@ -7790,7 +7904,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_DELIVERY_STATUS_NAME = 239;</code>
      */
-    ORDER_DELIVERY_STATUS_NAME(239),
+    ORDER_DELIVERY_STATUS_NAME(388, 239),
     /**
      *
      *
@@ -7809,7 +7923,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_END_DATE = 154;</code>
      */
-    ORDER_END_DATE(154),
+    ORDER_END_DATE(389, 154),
     /**
      *
      *
@@ -7828,7 +7942,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_END_DATE_TIME = 155;</code>
      */
-    ORDER_END_DATE_TIME(155),
+    ORDER_END_DATE_TIME(390, 155),
     /**
      *
      *
@@ -7846,7 +7960,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_EXTERNAL_ID = 156;</code>
      */
-    ORDER_EXTERNAL_ID(156),
+    ORDER_EXTERNAL_ID(391, 156),
     /**
      *
      *
@@ -7865,7 +7979,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_ID = 7;</code>
      */
-    ORDER_ID(7),
+    ORDER_ID(392, 7),
     /**
      *
      *
@@ -7883,7 +7997,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_LABELS = 170;</code>
      */
-    ORDER_LABELS(170),
+    ORDER_LABELS(393, 170),
     /**
      *
      *
@@ -7901,7 +8015,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_LABEL_IDS = 171;</code>
      */
-    ORDER_LABEL_IDS(171),
+    ORDER_LABEL_IDS(394, 171),
     /**
      *
      *
@@ -7920,7 +8034,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_LIFETIME_CLICKS = 158;</code>
      */
-    ORDER_LIFETIME_CLICKS(158),
+    ORDER_LIFETIME_CLICKS(395, 158),
     /**
      *
      *
@@ -7939,7 +8053,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_LIFETIME_IMPRESSIONS = 159;</code>
      */
-    ORDER_LIFETIME_IMPRESSIONS(159),
+    ORDER_LIFETIME_IMPRESSIONS(396, 159),
     /**
      *
      *
@@ -7958,7 +8072,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_NAME = 8;</code>
      */
-    ORDER_NAME(8),
+    ORDER_NAME(397, 8),
     /**
      *
      *
@@ -7977,7 +8091,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_PO_NUMBER = 160;</code>
      */
-    ORDER_PO_NUMBER(160),
+    ORDER_PO_NUMBER(398, 160),
     /**
      *
      *
@@ -7995,7 +8109,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_PROGRAMMATIC = 157;</code>
      */
-    ORDER_PROGRAMMATIC(157),
+    ORDER_PROGRAMMATIC(399, 157),
     /**
      *
      *
@@ -8014,7 +8128,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_SALESPERSON = 161;</code>
      */
-    ORDER_SALESPERSON(161),
+    ORDER_SALESPERSON(400, 161),
     /**
      *
      *
@@ -8033,7 +8147,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_SALESPERSON_ID = 629;</code>
      */
-    ORDER_SALESPERSON_ID(629),
+    ORDER_SALESPERSON_ID(401, 629),
     /**
      *
      *
@@ -8051,7 +8165,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_SECONDARY_SALESPEOPLE = 164;</code>
      */
-    ORDER_SECONDARY_SALESPEOPLE(164),
+    ORDER_SECONDARY_SALESPEOPLE(402, 164),
     /**
      *
      *
@@ -8069,7 +8183,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_SECONDARY_SALESPEOPLE_ID = 165;</code>
      */
-    ORDER_SECONDARY_SALESPEOPLE_ID(165),
+    ORDER_SECONDARY_SALESPEOPLE_ID(403, 165),
     /**
      *
      *
@@ -8087,7 +8201,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_SECONDARY_TRAFFICKERS = 166;</code>
      */
-    ORDER_SECONDARY_TRAFFICKERS(166),
+    ORDER_SECONDARY_TRAFFICKERS(404, 166),
     /**
      *
      *
@@ -8105,7 +8219,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_SECONDARY_TRAFFICKERS_ID = 167;</code>
      */
-    ORDER_SECONDARY_TRAFFICKERS_ID(167),
+    ORDER_SECONDARY_TRAFFICKERS_ID(405, 167),
     /**
      *
      *
@@ -8124,7 +8238,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_START_DATE = 168;</code>
      */
-    ORDER_START_DATE(168),
+    ORDER_START_DATE(406, 168),
     /**
      *
      *
@@ -8143,7 +8257,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_START_DATE_TIME = 169;</code>
      */
-    ORDER_START_DATE_TIME(169),
+    ORDER_START_DATE_TIME(407, 169),
     /**
      *
      *
@@ -8161,7 +8275,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_TRAFFICKER = 162;</code>
      */
-    ORDER_TRAFFICKER(162),
+    ORDER_TRAFFICKER(408, 162),
     /**
      *
      *
@@ -8179,7 +8293,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_TRAFFICKER_ID = 163;</code>
      */
-    ORDER_TRAFFICKER_ID(163),
+    ORDER_TRAFFICKER_ID(409, 163),
     /**
      *
      *
@@ -8200,7 +8314,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_UNLIMITED_END = 203;</code>
      */
-    ORDER_UNLIMITED_END(203),
+    ORDER_UNLIMITED_END(410, 203),
     /**
      *
      *
@@ -8219,7 +8333,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PAGE_PATH = 511;</code>
      */
-    PAGE_PATH(511),
+    PAGE_PATH(411, 511),
     /**
      *
      *
@@ -8238,7 +8352,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PAGE_TITLE_AND_SCREEN_CLASS = 512;</code>
      */
-    PAGE_TITLE_AND_SCREEN_CLASS(512),
+    PAGE_TITLE_AND_SCREEN_CLASS(412, 512),
     /**
      *
      *
@@ -8256,7 +8370,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PAGE_TITLE_AND_SCREEN_NAME = 513;</code>
      */
-    PAGE_TITLE_AND_SCREEN_NAME(513),
+    PAGE_TITLE_AND_SCREEN_NAME(413, 513),
     /**
      *
      *
@@ -8275,7 +8389,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_ASSIGNMENT_ID = 657;</code>
      */
-    PARTNER_MANAGEMENT_ASSIGNMENT_ID(657),
+    PARTNER_MANAGEMENT_ASSIGNMENT_ID(414, 657),
     /**
      *
      *
@@ -8294,7 +8408,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_ASSIGNMENT_NAME = 658;</code>
      */
-    PARTNER_MANAGEMENT_ASSIGNMENT_NAME(658),
+    PARTNER_MANAGEMENT_ASSIGNMENT_NAME(415, 658),
     /**
      *
      *
@@ -8313,7 +8427,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_PARTNER_ID = 655;</code>
      */
-    PARTNER_MANAGEMENT_PARTNER_ID(655),
+    PARTNER_MANAGEMENT_PARTNER_ID(416, 655),
     /**
      *
      *
@@ -8332,7 +8446,43 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_PARTNER_NAME = 656;</code>
      */
-    PARTNER_MANAGEMENT_PARTNER_NAME(656),
+    PARTNER_MANAGEMENT_PARTNER_NAME(417, 656),
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the payment profile.
+     *
+     *
+     *
+     * Corresponds to "Payment profile ID" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `IDENTIFIER`
+     * </pre>
+     *
+     * <code>PAYMENT_PROFILE_ID = 858;</code>
+     */
+    PAYMENT_PROFILE_ID(418, 858),
+    /**
+     *
+     *
+     * <pre>
+     * The name of the payment profile.
+     *
+     *
+     *
+     * Corresponds to "Payment profile" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>PAYMENT_PROFILE_NAME = 857;</code>
+     */
+    PAYMENT_PROFILE_NAME(419, 857),
     /**
      *
      *
@@ -8351,7 +8501,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_ID = 113;</code>
      */
-    PLACEMENT_ID(113),
+    PLACEMENT_ID(420, 113),
     /**
      *
      *
@@ -8370,7 +8520,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_ID_ALL = 144;</code>
      */
-    PLACEMENT_ID_ALL(144),
+    PLACEMENT_ID_ALL(421, 144),
     /**
      *
      *
@@ -8389,7 +8539,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_NAME = 114;</code>
      */
-    PLACEMENT_NAME(114),
+    PLACEMENT_NAME(422, 114),
     /**
      *
      *
@@ -8408,7 +8558,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_NAME_ALL = 145;</code>
      */
-    PLACEMENT_NAME_ALL(145),
+    PLACEMENT_NAME_ALL(423, 145),
     /**
      *
      *
@@ -8431,7 +8581,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_STATUS = 362;</code>
      */
-    PLACEMENT_STATUS(362),
+    PLACEMENT_STATUS(424, 362),
     /**
      *
      *
@@ -8450,7 +8600,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_STATUS_NAME = 364;</code>
      */
-    PLACEMENT_STATUS_NAME(364),
+    PLACEMENT_STATUS_NAME(425, 364),
     /**
      *
      *
@@ -8470,7 +8620,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PLACEMENT_STATUS_NAME_ALL = 365;</code>
      */
-    PLACEMENT_STATUS_NAME_ALL(365),
+    PLACEMENT_STATUS_NAME_ALL(426, 365),
     /**
      *
      *
@@ -8488,7 +8638,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>POSTAL_CODE_ID = 455;</code>
      */
-    POSTAL_CODE_ID(455),
+    POSTAL_CODE_ID(427, 455),
     /**
      *
      *
@@ -8506,7 +8656,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>POSTAL_CODE_NAME = 456;</code>
      */
-    POSTAL_CODE_NAME(456),
+    POSTAL_CODE_NAME(428, 456),
     /**
      *
      *
@@ -8526,7 +8676,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PPID_STATUS = 406;</code>
      */
-    PPID_STATUS(406),
+    PPID_STATUS(429, 406),
     /**
      *
      *
@@ -8545,7 +8695,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PPID_STATUS_NAME = 407;</code>
      */
-    PPID_STATUS_NAME(407),
+    PPID_STATUS_NAME(430, 407),
     /**
      *
      *
@@ -8564,7 +8714,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PREDICTED_VIEWABILITY_BUCKET = 633;</code>
      */
-    PREDICTED_VIEWABILITY_BUCKET(633),
+    PREDICTED_VIEWABILITY_BUCKET(431, 633),
     /**
      *
      *
@@ -8582,7 +8732,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PREDICTED_VIEWABILITY_BUCKET_NAME = 634;</code>
      */
-    PREDICTED_VIEWABILITY_BUCKET_NAME(634),
+    PREDICTED_VIEWABILITY_BUCKET_NAME(432, 634),
     /**
      *
      *
@@ -8600,7 +8750,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PRESENTED_SECURE_SIGNAL_ID = 495;</code>
      */
-    PRESENTED_SECURE_SIGNAL_ID(495),
+    PRESENTED_SECURE_SIGNAL_ID(433, 495),
     /**
      *
      *
@@ -8618,7 +8768,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PRESENTED_SECURE_SIGNAL_NAME = 496;</code>
      */
-    PRESENTED_SECURE_SIGNAL_NAME(496),
+    PRESENTED_SECURE_SIGNAL_NAME(434, 496),
     /**
      *
      *
@@ -8636,7 +8786,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PRICING_RULE_ID = 393;</code>
      */
-    PRICING_RULE_ID(393),
+    PRICING_RULE_ID(435, 393),
     /**
      *
      *
@@ -8654,7 +8804,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PRICING_RULE_NAME = 394;</code>
      */
-    PRICING_RULE_NAME(394),
+    PRICING_RULE_NAME(436, 394),
     /**
      *
      *
@@ -8673,7 +8823,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PRIMARY_PERSONALIZATION_ID_TYPE = 408;</code>
      */
-    PRIMARY_PERSONALIZATION_ID_TYPE(408),
+    PRIMARY_PERSONALIZATION_ID_TYPE(437, 408),
     /**
      *
      *
@@ -8691,7 +8841,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PRIMARY_PERSONALIZATION_ID_TYPE_NAME = 409;</code>
      */
-    PRIMARY_PERSONALIZATION_ID_TYPE_NAME(409),
+    PRIMARY_PERSONALIZATION_ID_TYPE_NAME(438, 409),
     /**
      *
      *
@@ -8712,7 +8862,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PROGRAMMATIC_CHANNEL = 13;</code>
      */
-    PROGRAMMATIC_CHANNEL(13),
+    PROGRAMMATIC_CHANNEL(439, 13),
     /**
      *
      *
@@ -8732,7 +8882,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PROGRAMMATIC_CHANNEL_NAME = 14;</code>
      */
-    PROGRAMMATIC_CHANNEL_NAME(14),
+    PROGRAMMATIC_CHANNEL_NAME(440, 14),
     /**
      *
      *
@@ -8751,7 +8901,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_EXTERNAL_CODE = 410;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_EXTERNAL_CODE(410),
+    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_EXTERNAL_CODE(441, 410),
     /**
      *
      *
@@ -8770,7 +8920,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_IDS = 546;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_IDS(546),
+    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_IDS(442, 546),
     /**
      *
      *
@@ -8789,7 +8939,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_NAME = 412;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_NAME(412),
+    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_NAME(443, 412),
     /**
      *
      *
@@ -8808,7 +8958,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TIER = 413;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TIER(413),
+    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TIER(444, 413),
     /**
      *
      *
@@ -8827,7 +8977,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TYPE = 414;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TYPE(414),
+    PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TYPE(445, 414),
     /**
      *
      *
@@ -8846,7 +8996,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_DELIVERED_EXTERNAL_CODE = 425;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_EXTERNAL_CODE(425),
+    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_EXTERNAL_CODE(446, 425),
     /**
      *
      *
@@ -8865,7 +9015,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_DELIVERED_IDS = 545;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_IDS(545),
+    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_IDS(447, 545),
     /**
      *
      *
@@ -8884,7 +9034,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_DELIVERED_NAME = 427;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_NAME(427),
+    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_NAME(448, 427),
     /**
      *
      *
@@ -8903,7 +9053,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TIER = 428;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TIER(428),
+    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TIER(449, 428),
     /**
      *
      *
@@ -8922,7 +9072,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TYPE = 429;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TYPE(429),
+    PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TYPE(450, 429),
     /**
      *
      *
@@ -8941,7 +9091,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_EXTERNAL_CODE = 415;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_EXTERNAL_CODE(415),
+    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_EXTERNAL_CODE(451, 415),
     /**
      *
      *
@@ -8960,7 +9110,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_ID = 416;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_ID(416),
+    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_ID(452, 416),
     /**
      *
      *
@@ -8979,7 +9129,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_NAME = 417;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_NAME(417),
+    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_NAME(453, 417),
     /**
      *
      *
@@ -8998,7 +9148,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TIER = 418;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TIER(418),
+    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TIER(454, 418),
     /**
      *
      *
@@ -9017,7 +9167,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TYPE = 419;</code>
      */
-    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TYPE(419),
+    PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TYPE(455, 419),
     /**
      *
      *
@@ -9036,7 +9186,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_ID = 136;</code>
      */
-    PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_ID(136),
+    PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_ID(456, 136),
     /**
      *
      *
@@ -9055,7 +9205,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_NAME = 137;</code>
      */
-    PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_NAME(137),
+    PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_NAME(457, 137),
     /**
      *
      *
@@ -9075,7 +9225,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REGION_ID = 457;</code>
      */
-    REGION_ID(457),
+    REGION_ID(458, 457),
     /**
      *
      *
@@ -9095,7 +9245,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REGION_NAME = 458;</code>
      */
-    REGION_NAME(458),
+    REGION_NAME(459, 458),
     /**
      *
      *
@@ -9113,7 +9263,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REJECTION_CLASS_CATEGORY_NAME = 591;</code>
      */
-    REJECTION_CLASS_CATEGORY_NAME(591),
+    REJECTION_CLASS_CATEGORY_NAME(460, 591),
     /**
      *
      *
@@ -9133,7 +9283,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RENDERED_CREATIVE_SIZE = 343;</code>
      */
-    RENDERED_CREATIVE_SIZE(343),
+    RENDERED_CREATIVE_SIZE(461, 343),
     /**
      *
      *
@@ -9151,7 +9301,44 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REQUESTED_AD_SIZES = 352;</code>
      */
-    REQUESTED_AD_SIZES(352),
+    REQUESTED_AD_SIZES(462, 352),
+    /**
+     *
+     *
+     * <pre>
+     * The orientation of the creative requested.
+     *
+     *
+     *
+     * Corresponds to "Requested creative orientation value" in the Ad Manager
+     * UI (when showing API fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `ENUM_LIST`
+     * </pre>
+     *
+     * <code>REQUESTED_CREATIVE_ORIENTATION = 828;</code>
+     */
+    REQUESTED_CREATIVE_ORIENTATION(463, 828),
+    /**
+     *
+     *
+     * <pre>
+     * Localized name of the requested creative orientation.
+     *
+     *
+     *
+     * Corresponds to "Requested creative orientation" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING_LIST`
+     * </pre>
+     *
+     * <code>REQUESTED_CREATIVE_ORIENTATION_NAME = 829;</code>
+     */
+    REQUESTED_CREATIVE_ORIENTATION_NAME(464, 829),
     /**
      *
      *
@@ -9170,7 +9357,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REQUEST_TYPE = 146;</code>
      */
-    REQUEST_TYPE(146),
+    REQUEST_TYPE(465, 146),
     /**
      *
      *
@@ -9188,7 +9375,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REQUEST_TYPE_NAME = 147;</code>
      */
-    REQUEST_TYPE_NAME(147),
+    REQUEST_TYPE_NAME(466, 147),
     /**
      *
      *
@@ -9206,7 +9393,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_VERIFICATION_ID = 645;</code>
      */
-    REVENUE_VERIFICATION_ID(645),
+    REVENUE_VERIFICATION_ID(467, 645),
     /**
      *
      *
@@ -9224,7 +9411,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_ELIGIBLE = 597;</code>
      */
-    SERVER_SIDE_UNWRAPPING_ELIGIBLE(597),
+    SERVER_SIDE_UNWRAPPING_ELIGIBLE(468, 597),
     /**
      *
      *
@@ -9243,7 +9430,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVING_RESTRICTION = 631;</code>
      */
-    SERVING_RESTRICTION(631),
+    SERVING_RESTRICTION(469, 631),
     /**
      *
      *
@@ -9261,7 +9448,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVING_RESTRICTION_NAME = 632;</code>
      */
-    SERVING_RESTRICTION_NAME(632),
+    SERVING_RESTRICTION_NAME(470, 632),
     /**
      *
      *
@@ -9280,7 +9467,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SITE = 387;</code>
      */
-    SITE(387),
+    SITE(471, 387),
     /**
      *
      *
@@ -9300,7 +9487,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETING_ID = 232;</code>
      */
-    TARGETING_ID(232),
+    TARGETING_ID(472, 232),
     /**
      *
      *
@@ -9319,7 +9506,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETING_NAME = 233;</code>
      */
-    TARGETING_NAME(233),
+    TARGETING_NAME(473, 233),
     /**
      *
      *
@@ -9338,7 +9525,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETING_TYPE = 385;</code>
      */
-    TARGETING_TYPE(385),
+    TARGETING_TYPE(474, 385),
     /**
      *
      *
@@ -9356,7 +9543,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETING_TYPE_NAME = 386;</code>
      */
-    TARGETING_TYPE_NAME(386),
+    TARGETING_TYPE_NAME(475, 386),
     /**
      *
      *
@@ -9375,7 +9562,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETS_CUSTOMER_MATCHING_LIST = 789;</code>
      */
-    TARGETS_CUSTOMER_MATCHING_LIST(789),
+    TARGETS_CUSTOMER_MATCHING_LIST(476, 789),
     /**
      *
      *
@@ -9395,7 +9582,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>THIRD_PARTY_ID_STATUS = 402;</code>
      */
-    THIRD_PARTY_ID_STATUS(402),
+    THIRD_PARTY_ID_STATUS(477, 402),
     /**
      *
      *
@@ -9414,11 +9601,12 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>THIRD_PARTY_ID_STATUS_NAME = 403;</code>
      */
-    THIRD_PARTY_ID_STATUS_NAME(403),
+    THIRD_PARTY_ID_STATUS_NAME(478, 403),
     /**
      *
      *
      * <pre>
+     * Deprecated: No longer supported.
      * Reports the status of Topics in the ad request.
      *
      *
@@ -9431,13 +9619,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Data format: `ENUM`
      * </pre>
      *
-     * <code>TOPICS_STATUS = 504;</code>
+     * <code>TOPICS_STATUS = 504 [deprecated = true];</code>
      */
-    TOPICS_STATUS(504),
+    @java.lang.Deprecated
+    TOPICS_STATUS(479, 504),
     /**
      *
      *
      * <pre>
+     * Deprecated: No longer supported.
      * The localized name of the status of Topics in the ad request.
      *
      *
@@ -9449,9 +9639,10 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Data format: `STRING`
      * </pre>
      *
-     * <code>TOPICS_STATUS_NAME = 505;</code>
+     * <code>TOPICS_STATUS_NAME = 505 [deprecated = true];</code>
      */
-    TOPICS_STATUS_NAME(505),
+    @java.lang.Deprecated
+    TOPICS_STATUS_NAME(480, 505),
     /**
      *
      *
@@ -9470,7 +9661,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TOP_PRIVATE_DOMAIN = 444;</code>
      */
-    TOP_PRIVATE_DOMAIN(444),
+    TOP_PRIVATE_DOMAIN(481, 444),
     /**
      *
      *
@@ -9489,7 +9680,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TRAFFIC_SOURCE = 388;</code>
      */
-    TRAFFIC_SOURCE(388),
+    TRAFFIC_SOURCE(482, 388),
     /**
      *
      *
@@ -9507,7 +9698,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TRAFFIC_SOURCE_NAME = 389;</code>
      */
-    TRAFFIC_SOURCE_NAME(389),
+    TRAFFIC_SOURCE_NAME(483, 389),
     /**
      *
      *
@@ -9525,7 +9716,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>URL = 506;</code>
      */
-    URL(506),
+    URL(484, 506),
     /**
      *
      *
@@ -9543,7 +9734,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>URL_ID = 507;</code>
      */
-    URL_ID(507),
+    URL_ID(485, 507),
     /**
      *
      *
@@ -9562,7 +9753,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_CHOICE = 702;</code>
      */
-    USER_MESSAGES_CHOICE(702),
+    USER_MESSAGES_CHOICE(486, 702),
     /**
      *
      *
@@ -9580,7 +9771,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_CHOICE_NAME = 703;</code>
      */
-    USER_MESSAGES_CHOICE_NAME(703),
+    USER_MESSAGES_CHOICE_NAME(487, 703),
     /**
      *
      *
@@ -9599,7 +9790,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_ENTITLEMENT_SOURCE = 635;</code>
      */
-    USER_MESSAGES_ENTITLEMENT_SOURCE(635),
+    USER_MESSAGES_ENTITLEMENT_SOURCE(488, 635),
     /**
      *
      *
@@ -9617,7 +9808,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_ENTITLEMENT_SOURCE_NAME = 636;</code>
      */
-    USER_MESSAGES_ENTITLEMENT_SOURCE_NAME(636),
+    USER_MESSAGES_ENTITLEMENT_SOURCE_NAME(489, 636),
     /**
      *
      *
@@ -9636,7 +9827,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_ID = 637;</code>
      */
-    USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_ID(637),
+    USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_ID(490, 637),
     /**
      *
      *
@@ -9654,7 +9845,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_NAME = 638;</code>
      */
-    USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_NAME(638),
+    USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_NAME(491, 638),
     /**
      *
      *
@@ -9673,7 +9864,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VAST_VERSION = 554;</code>
      */
-    VAST_VERSION(554),
+    VAST_VERSION(492, 554),
     /**
      *
      *
@@ -9692,7 +9883,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VAST_VERSION_NAME = 555;</code>
      */
-    VAST_VERSION_NAME(555),
+    VAST_VERSION_NAME(493, 555),
     /**
      *
      *
@@ -9711,7 +9902,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_BREAK_TYPE = 556;</code>
      */
-    VIDEO_AD_BREAK_TYPE(556),
+    VIDEO_AD_BREAK_TYPE(494, 556),
     /**
      *
      *
@@ -9729,7 +9920,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_BREAK_TYPE_NAME = 557;</code>
      */
-    VIDEO_AD_BREAK_TYPE_NAME(557),
+    VIDEO_AD_BREAK_TYPE_NAME(495, 557),
     /**
      *
      *
@@ -9747,7 +9938,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_DURATION = 450;</code>
      */
-    VIDEO_AD_DURATION(450),
+    VIDEO_AD_DURATION(496, 450),
     /**
      *
      *
@@ -9766,7 +9957,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_FORMATS_RULE = 561;</code>
      */
-    VIDEO_AD_FORMATS_RULE(561),
+    VIDEO_AD_FORMATS_RULE(497, 561),
     /**
      *
      *
@@ -9785,7 +9976,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_FORMATS_RULE_ID = 560;</code>
      */
-    VIDEO_AD_FORMATS_RULE_ID(560),
+    VIDEO_AD_FORMATS_RULE_ID(498, 560),
     /**
      *
      *
@@ -9804,7 +9995,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_REQUEST_DURATION = 558;</code>
      */
-    VIDEO_AD_REQUEST_DURATION(558),
+    VIDEO_AD_REQUEST_DURATION(499, 558),
     /**
      *
      *
@@ -9822,7 +10013,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_REQUEST_DURATION_MIDPOINT_NAME = 751;</code>
      */
-    VIDEO_AD_REQUEST_DURATION_MIDPOINT_NAME(751),
+    VIDEO_AD_REQUEST_DURATION_MIDPOINT_NAME(500, 751),
     /**
      *
      *
@@ -9840,7 +10031,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_REQUEST_DURATION_NAME = 559;</code>
      */
-    VIDEO_AD_REQUEST_DURATION_NAME(559),
+    VIDEO_AD_REQUEST_DURATION_NAME(501, 559),
     /**
      *
      *
@@ -9860,7 +10051,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_REQUEST_SOURCE = 438;</code>
      */
-    VIDEO_AD_REQUEST_SOURCE(438),
+    VIDEO_AD_REQUEST_SOURCE(502, 438),
     /**
      *
      *
@@ -9879,7 +10070,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_REQUEST_SOURCE_NAME = 439;</code>
      */
-    VIDEO_AD_REQUEST_SOURCE_NAME(439),
+    VIDEO_AD_REQUEST_SOURCE_NAME(503, 439),
     /**
      *
      *
@@ -9898,7 +10089,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_TYPE = 432;</code>
      */
-    VIDEO_AD_TYPE(432),
+    VIDEO_AD_TYPE(504, 432),
     /**
      *
      *
@@ -9916,7 +10107,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_AD_TYPE_NAME = 433;</code>
      */
-    VIDEO_AD_TYPE_NAME(433),
+    VIDEO_AD_TYPE_NAME(505, 433),
     /**
      *
      *
@@ -9935,7 +10126,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_CONTINUOUS_PLAY_TYPE = 721;</code>
      */
-    VIDEO_CONTINUOUS_PLAY_TYPE(721),
+    VIDEO_CONTINUOUS_PLAY_TYPE(506, 721),
     /**
      *
      *
@@ -9953,7 +10144,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_CONTINUOUS_PLAY_TYPE_NAME = 722;</code>
      */
-    VIDEO_CONTINUOUS_PLAY_TYPE_NAME(722),
+    VIDEO_CONTINUOUS_PLAY_TYPE_NAME(507, 722),
     /**
      *
      *
@@ -9971,7 +10162,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_FALLBACK_POSITION = 530;</code>
      */
-    VIDEO_FALLBACK_POSITION(530),
+    VIDEO_FALLBACK_POSITION(508, 530),
     /**
      *
      *
@@ -9989,7 +10180,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_LIVE_STREAM_EVENT_AD_BREAK_DURATION = 547;</code>
      */
-    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_DURATION(547),
+    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_DURATION(509, 547),
     /**
      *
      *
@@ -10008,7 +10199,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_LIVE_STREAM_EVENT_AD_BREAK_ID = 548;</code>
      */
-    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_ID(548),
+    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_ID(510, 548),
     /**
      *
      *
@@ -10027,7 +10218,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_LIVE_STREAM_EVENT_AD_BREAK_NAME = 549;</code>
      */
-    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_NAME(549),
+    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_NAME(511, 549),
     /**
      *
      *
@@ -10046,7 +10237,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_LIVE_STREAM_EVENT_AD_BREAK_TIME = 550;</code>
      */
-    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_TIME(550),
+    VIDEO_LIVE_STREAM_EVENT_AD_BREAK_TIME(512, 550),
     /**
      *
      *
@@ -10065,7 +10256,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_LIVE_STREAM_EVENT_ID = 551;</code>
      */
-    VIDEO_LIVE_STREAM_EVENT_ID(551),
+    VIDEO_LIVE_STREAM_EVENT_ID(513, 551),
     /**
      *
      *
@@ -10084,7 +10275,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_LIVE_STREAM_EVENT_NAME = 552;</code>
      */
-    VIDEO_LIVE_STREAM_EVENT_NAME(552),
+    VIDEO_LIVE_STREAM_EVENT_NAME(514, 552),
     /**
      *
      *
@@ -10103,7 +10294,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_MEASUREMENT_SOURCE = 601;</code>
      */
-    VIDEO_MEASUREMENT_SOURCE(601),
+    VIDEO_MEASUREMENT_SOURCE(515, 601),
     /**
      *
      *
@@ -10121,7 +10312,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_MEASUREMENT_SOURCE_NAME = 602;</code>
      */
-    VIDEO_MEASUREMENT_SOURCE_NAME(602),
+    VIDEO_MEASUREMENT_SOURCE_NAME(516, 602),
     /**
      *
      *
@@ -10140,7 +10331,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_PLCMT = 172;</code>
      */
-    VIDEO_PLCMT(172),
+    VIDEO_PLCMT(517, 172),
     /**
      *
      *
@@ -10158,7 +10349,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_PLCMT_NAME = 173;</code>
      */
-    VIDEO_PLCMT_NAME(173),
+    VIDEO_PLCMT_NAME(518, 173),
     /**
      *
      *
@@ -10176,7 +10367,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_POSITION_IN_POD = 538;</code>
      */
-    VIDEO_POSITION_IN_POD(538),
+    VIDEO_POSITION_IN_POD(519, 538),
     /**
      *
      *
@@ -10189,14 +10380,14 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Position of pod" in the Ad Manager UI.
      *
      * Compatible with the following report types: `HISTORICAL`,
-     * `REAL_TIME_VIDEO`
+     * `REAL_TIME_VIDEO`, `OFF_PROPERTY_CAMPAIGNS`
      *
      * Data format: `STRING`
      * </pre>
      *
      * <code>VIDEO_POSITION_OF_POD = 539;</code>
      */
-    VIDEO_POSITION_OF_POD(539),
+    VIDEO_POSITION_OF_POD(520, 539),
     /**
      *
      *
@@ -10216,7 +10407,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_SDK_VERSION = 440;</code>
      */
-    VIDEO_SDK_VERSION(440),
+    VIDEO_SDK_VERSION(521, 440),
     /**
      *
      *
@@ -10235,7 +10426,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_SDK_VERSION_NAME = 441;</code>
      */
-    VIDEO_SDK_VERSION_NAME(441),
+    VIDEO_SDK_VERSION_NAME(522, 441),
     /**
      *
      *
@@ -10254,7 +10445,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_STITCHER_TYPE = 752;</code>
      */
-    VIDEO_STITCHER_TYPE(752),
+    VIDEO_STITCHER_TYPE(523, 752),
     /**
      *
      *
@@ -10272,7 +10463,44 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_STITCHER_TYPE_NAME = 753;</code>
      */
-    VIDEO_STITCHER_TYPE_NAME(753),
+    VIDEO_STITCHER_TYPE_NAME(524, 753),
+    /**
+     *
+     *
+     * <pre>
+     * Web interstitial trigger type.
+     *
+     *
+     *
+     * Corresponds to "Web interstitial trigger type value" in the Ad Manager UI
+     * (when showing API fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `ENUM`
+     * </pre>
+     *
+     * <code>WEB_INTERSTITIAL_TRIGGER_TYPE = 826;</code>
+     */
+    WEB_INTERSTITIAL_TRIGGER_TYPE(525, 826),
+    /**
+     *
+     *
+     * <pre>
+     * Localized name of the web interstitial trigger type.
+     *
+     *
+     *
+     * Corresponds to "Web interstitial trigger type" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>WEB_INTERSTITIAL_TRIGGER_TYPE_NAME = 827;</code>
+     */
+    WEB_INTERSTITIAL_TRIGGER_TYPE_NAME(526, 827),
     /**
      *
      *
@@ -10290,7 +10518,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>WEB_PROPERTY_CODE = 730;</code>
      */
-    WEB_PROPERTY_CODE(730),
+    WEB_PROPERTY_CODE(527, 730),
     /**
      *
      *
@@ -10310,7 +10538,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>WEEK = 5;</code>
      */
-    WEEK(5),
+    WEEK(528, 5),
     /**
      *
      *
@@ -10328,7 +10556,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_BUYER_NAME = 184;</code>
      */
-    YIELD_GROUP_BUYER_NAME(184),
+    YIELD_GROUP_BUYER_NAME(529, 184),
     /**
      *
      *
@@ -10346,7 +10574,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_BUYER_TAG_NAME = 627;</code>
      */
-    YIELD_GROUP_BUYER_TAG_NAME(627),
+    YIELD_GROUP_BUYER_TAG_NAME(530, 627),
     /**
      *
      *
@@ -10365,7 +10593,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_ID = 182;</code>
      */
-    YIELD_GROUP_ID(182),
+    YIELD_GROUP_ID(531, 182),
     /**
      *
      *
@@ -10384,7 +10612,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_NAME = 183;</code>
      */
-    YIELD_GROUP_NAME(183),
+    YIELD_GROUP_NAME(532, 183),
     /**
      *
      *
@@ -10403,7 +10631,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YOUTUBE_AD_DURATION_BUCKET = 430;</code>
      */
-    YOUTUBE_AD_DURATION_BUCKET(430),
+    YOUTUBE_AD_DURATION_BUCKET(533, 430),
     /**
      *
      *
@@ -10421,7 +10649,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YOUTUBE_AD_DURATION_BUCKET_NAME = 431;</code>
      */
-    YOUTUBE_AD_DURATION_BUCKET_NAME(431),
+    YOUTUBE_AD_DURATION_BUCKET_NAME(534, 431),
     /**
      *
      *
@@ -10440,7 +10668,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YOUTUBE_AD_TYPE = 399;</code>
      */
-    YOUTUBE_AD_TYPE(399),
+    YOUTUBE_AD_TYPE(535, 399),
     /**
      *
      *
@@ -10458,7 +10686,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YOUTUBE_AD_TYPE_NAME = 400;</code>
      */
-    YOUTUBE_AD_TYPE_NAME(400),
+    YOUTUBE_AD_TYPE_NAME(536, 400),
     /**
      *
      *
@@ -10469,7 +10697,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_0_OPTION_ID = 10000;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_0_OPTION_ID(10000),
+    LINE_ITEM_CUSTOM_FIELD_0_OPTION_ID(538, 10000),
     /**
      *
      *
@@ -10480,7 +10708,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_1_OPTION_ID = 10001;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_1_OPTION_ID(10001),
+    LINE_ITEM_CUSTOM_FIELD_1_OPTION_ID(539, 10001),
     /**
      *
      *
@@ -10491,7 +10719,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_2_OPTION_ID = 10002;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_2_OPTION_ID(10002),
+    LINE_ITEM_CUSTOM_FIELD_2_OPTION_ID(540, 10002),
     /**
      *
      *
@@ -10502,7 +10730,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_3_OPTION_ID = 10003;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_3_OPTION_ID(10003),
+    LINE_ITEM_CUSTOM_FIELD_3_OPTION_ID(541, 10003),
     /**
      *
      *
@@ -10513,7 +10741,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_4_OPTION_ID = 10004;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_4_OPTION_ID(10004),
+    LINE_ITEM_CUSTOM_FIELD_4_OPTION_ID(542, 10004),
     /**
      *
      *
@@ -10524,7 +10752,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_5_OPTION_ID = 10005;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_5_OPTION_ID(10005),
+    LINE_ITEM_CUSTOM_FIELD_5_OPTION_ID(543, 10005),
     /**
      *
      *
@@ -10535,7 +10763,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_6_OPTION_ID = 10006;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_6_OPTION_ID(10006),
+    LINE_ITEM_CUSTOM_FIELD_6_OPTION_ID(544, 10006),
     /**
      *
      *
@@ -10546,7 +10774,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_7_OPTION_ID = 10007;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_7_OPTION_ID(10007),
+    LINE_ITEM_CUSTOM_FIELD_7_OPTION_ID(545, 10007),
     /**
      *
      *
@@ -10557,7 +10785,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_8_OPTION_ID = 10008;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_8_OPTION_ID(10008),
+    LINE_ITEM_CUSTOM_FIELD_8_OPTION_ID(546, 10008),
     /**
      *
      *
@@ -10568,7 +10796,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_9_OPTION_ID = 10009;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_9_OPTION_ID(10009),
+    LINE_ITEM_CUSTOM_FIELD_9_OPTION_ID(547, 10009),
     /**
      *
      *
@@ -10579,7 +10807,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_10_OPTION_ID = 10010;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_10_OPTION_ID(10010),
+    LINE_ITEM_CUSTOM_FIELD_10_OPTION_ID(548, 10010),
     /**
      *
      *
@@ -10590,7 +10818,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_11_OPTION_ID = 10011;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_11_OPTION_ID(10011),
+    LINE_ITEM_CUSTOM_FIELD_11_OPTION_ID(549, 10011),
     /**
      *
      *
@@ -10601,7 +10829,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_12_OPTION_ID = 10012;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_12_OPTION_ID(10012),
+    LINE_ITEM_CUSTOM_FIELD_12_OPTION_ID(550, 10012),
     /**
      *
      *
@@ -10612,7 +10840,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_13_OPTION_ID = 10013;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_13_OPTION_ID(10013),
+    LINE_ITEM_CUSTOM_FIELD_13_OPTION_ID(551, 10013),
     /**
      *
      *
@@ -10623,7 +10851,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_14_OPTION_ID = 10014;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_14_OPTION_ID(10014),
+    LINE_ITEM_CUSTOM_FIELD_14_OPTION_ID(552, 10014),
     /**
      *
      *
@@ -10636,7 +10864,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_0_VALUE = 11000;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_0_VALUE(11000),
+    LINE_ITEM_CUSTOM_FIELD_0_VALUE(553, 11000),
     /**
      *
      *
@@ -10649,7 +10877,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_1_VALUE = 11001;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_1_VALUE(11001),
+    LINE_ITEM_CUSTOM_FIELD_1_VALUE(554, 11001),
     /**
      *
      *
@@ -10662,7 +10890,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_2_VALUE = 11002;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_2_VALUE(11002),
+    LINE_ITEM_CUSTOM_FIELD_2_VALUE(555, 11002),
     /**
      *
      *
@@ -10675,7 +10903,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_3_VALUE = 11003;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_3_VALUE(11003),
+    LINE_ITEM_CUSTOM_FIELD_3_VALUE(556, 11003),
     /**
      *
      *
@@ -10688,7 +10916,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_4_VALUE = 11004;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_4_VALUE(11004),
+    LINE_ITEM_CUSTOM_FIELD_4_VALUE(557, 11004),
     /**
      *
      *
@@ -10701,7 +10929,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_5_VALUE = 11005;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_5_VALUE(11005),
+    LINE_ITEM_CUSTOM_FIELD_5_VALUE(558, 11005),
     /**
      *
      *
@@ -10714,7 +10942,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_6_VALUE = 11006;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_6_VALUE(11006),
+    LINE_ITEM_CUSTOM_FIELD_6_VALUE(559, 11006),
     /**
      *
      *
@@ -10727,7 +10955,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_7_VALUE = 11007;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_7_VALUE(11007),
+    LINE_ITEM_CUSTOM_FIELD_7_VALUE(560, 11007),
     /**
      *
      *
@@ -10740,7 +10968,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_8_VALUE = 11008;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_8_VALUE(11008),
+    LINE_ITEM_CUSTOM_FIELD_8_VALUE(561, 11008),
     /**
      *
      *
@@ -10753,7 +10981,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_9_VALUE = 11009;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_9_VALUE(11009),
+    LINE_ITEM_CUSTOM_FIELD_9_VALUE(562, 11009),
     /**
      *
      *
@@ -10766,7 +10994,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_10_VALUE = 11010;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_10_VALUE(11010),
+    LINE_ITEM_CUSTOM_FIELD_10_VALUE(563, 11010),
     /**
      *
      *
@@ -10779,7 +11007,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_11_VALUE = 11011;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_11_VALUE(11011),
+    LINE_ITEM_CUSTOM_FIELD_11_VALUE(564, 11011),
     /**
      *
      *
@@ -10792,7 +11020,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_12_VALUE = 11012;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_12_VALUE(11012),
+    LINE_ITEM_CUSTOM_FIELD_12_VALUE(565, 11012),
     /**
      *
      *
@@ -10805,7 +11033,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_13_VALUE = 11013;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_13_VALUE(11013),
+    LINE_ITEM_CUSTOM_FIELD_13_VALUE(566, 11013),
     /**
      *
      *
@@ -10818,7 +11046,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_14_VALUE = 11014;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_14_VALUE(11014),
+    LINE_ITEM_CUSTOM_FIELD_14_VALUE(567, 11014),
     /**
      *
      *
@@ -10831,7 +11059,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_0_VALUE_DOUBLE = 11015;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_0_VALUE_DOUBLE(11015),
+    LINE_ITEM_CUSTOM_FIELD_0_VALUE_DOUBLE(568, 11015),
     /**
      *
      *
@@ -10844,7 +11072,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_1_VALUE_DOUBLE = 11016;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_1_VALUE_DOUBLE(11016),
+    LINE_ITEM_CUSTOM_FIELD_1_VALUE_DOUBLE(569, 11016),
     /**
      *
      *
@@ -10857,7 +11085,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_2_VALUE_DOUBLE = 11017;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_2_VALUE_DOUBLE(11017),
+    LINE_ITEM_CUSTOM_FIELD_2_VALUE_DOUBLE(570, 11017),
     /**
      *
      *
@@ -10870,7 +11098,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_3_VALUE_DOUBLE = 11018;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_3_VALUE_DOUBLE(11018),
+    LINE_ITEM_CUSTOM_FIELD_3_VALUE_DOUBLE(571, 11018),
     /**
      *
      *
@@ -10883,7 +11111,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_4_VALUE_DOUBLE = 11019;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_4_VALUE_DOUBLE(11019),
+    LINE_ITEM_CUSTOM_FIELD_4_VALUE_DOUBLE(572, 11019),
     /**
      *
      *
@@ -10896,7 +11124,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_5_VALUE_DOUBLE = 11020;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_5_VALUE_DOUBLE(11020),
+    LINE_ITEM_CUSTOM_FIELD_5_VALUE_DOUBLE(573, 11020),
     /**
      *
      *
@@ -10909,7 +11137,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_6_VALUE_DOUBLE = 11021;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_6_VALUE_DOUBLE(11021),
+    LINE_ITEM_CUSTOM_FIELD_6_VALUE_DOUBLE(574, 11021),
     /**
      *
      *
@@ -10922,7 +11150,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_7_VALUE_DOUBLE = 11022;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_7_VALUE_DOUBLE(11022),
+    LINE_ITEM_CUSTOM_FIELD_7_VALUE_DOUBLE(575, 11022),
     /**
      *
      *
@@ -10935,7 +11163,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_8_VALUE_DOUBLE = 11023;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_8_VALUE_DOUBLE(11023),
+    LINE_ITEM_CUSTOM_FIELD_8_VALUE_DOUBLE(576, 11023),
     /**
      *
      *
@@ -10948,7 +11176,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_9_VALUE_DOUBLE = 11024;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_9_VALUE_DOUBLE(11024),
+    LINE_ITEM_CUSTOM_FIELD_9_VALUE_DOUBLE(577, 11024),
     /**
      *
      *
@@ -10961,7 +11189,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_10_VALUE_DOUBLE = 11025;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_10_VALUE_DOUBLE(11025),
+    LINE_ITEM_CUSTOM_FIELD_10_VALUE_DOUBLE(578, 11025),
     /**
      *
      *
@@ -10974,7 +11202,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_11_VALUE_DOUBLE = 11026;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_11_VALUE_DOUBLE(11026),
+    LINE_ITEM_CUSTOM_FIELD_11_VALUE_DOUBLE(579, 11026),
     /**
      *
      *
@@ -10987,7 +11215,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_12_VALUE_DOUBLE = 11027;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_12_VALUE_DOUBLE(11027),
+    LINE_ITEM_CUSTOM_FIELD_12_VALUE_DOUBLE(580, 11027),
     /**
      *
      *
@@ -11000,7 +11228,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_13_VALUE_DOUBLE = 11028;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_13_VALUE_DOUBLE(11028),
+    LINE_ITEM_CUSTOM_FIELD_13_VALUE_DOUBLE(581, 11028),
     /**
      *
      *
@@ -11013,7 +11241,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_14_VALUE_DOUBLE = 11029;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_14_VALUE_DOUBLE(11029),
+    LINE_ITEM_CUSTOM_FIELD_14_VALUE_DOUBLE(582, 11029),
     /**
      *
      *
@@ -11026,7 +11254,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_0_VALUE_BOOL = 11030;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_0_VALUE_BOOL(11030),
+    LINE_ITEM_CUSTOM_FIELD_0_VALUE_BOOL(583, 11030),
     /**
      *
      *
@@ -11039,7 +11267,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_1_VALUE_BOOL = 11031;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_1_VALUE_BOOL(11031),
+    LINE_ITEM_CUSTOM_FIELD_1_VALUE_BOOL(584, 11031),
     /**
      *
      *
@@ -11052,7 +11280,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_2_VALUE_BOOL = 11032;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_2_VALUE_BOOL(11032),
+    LINE_ITEM_CUSTOM_FIELD_2_VALUE_BOOL(585, 11032),
     /**
      *
      *
@@ -11065,7 +11293,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_3_VALUE_BOOL = 11033;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_3_VALUE_BOOL(11033),
+    LINE_ITEM_CUSTOM_FIELD_3_VALUE_BOOL(586, 11033),
     /**
      *
      *
@@ -11078,7 +11306,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_4_VALUE_BOOL = 11034;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_4_VALUE_BOOL(11034),
+    LINE_ITEM_CUSTOM_FIELD_4_VALUE_BOOL(587, 11034),
     /**
      *
      *
@@ -11091,7 +11319,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_5_VALUE_BOOL = 11035;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_5_VALUE_BOOL(11035),
+    LINE_ITEM_CUSTOM_FIELD_5_VALUE_BOOL(588, 11035),
     /**
      *
      *
@@ -11104,7 +11332,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_6_VALUE_BOOL = 11036;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_6_VALUE_BOOL(11036),
+    LINE_ITEM_CUSTOM_FIELD_6_VALUE_BOOL(589, 11036),
     /**
      *
      *
@@ -11117,7 +11345,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_7_VALUE_BOOL = 11037;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_7_VALUE_BOOL(11037),
+    LINE_ITEM_CUSTOM_FIELD_7_VALUE_BOOL(590, 11037),
     /**
      *
      *
@@ -11130,7 +11358,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_8_VALUE_BOOL = 11038;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_8_VALUE_BOOL(11038),
+    LINE_ITEM_CUSTOM_FIELD_8_VALUE_BOOL(591, 11038),
     /**
      *
      *
@@ -11143,7 +11371,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_9_VALUE_BOOL = 11039;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_9_VALUE_BOOL(11039),
+    LINE_ITEM_CUSTOM_FIELD_9_VALUE_BOOL(592, 11039),
     /**
      *
      *
@@ -11156,7 +11384,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_10_VALUE_BOOL = 11040;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_10_VALUE_BOOL(11040),
+    LINE_ITEM_CUSTOM_FIELD_10_VALUE_BOOL(593, 11040),
     /**
      *
      *
@@ -11169,7 +11397,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_11_VALUE_BOOL = 11041;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_11_VALUE_BOOL(11041),
+    LINE_ITEM_CUSTOM_FIELD_11_VALUE_BOOL(594, 11041),
     /**
      *
      *
@@ -11182,7 +11410,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_12_VALUE_BOOL = 11042;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_12_VALUE_BOOL(11042),
+    LINE_ITEM_CUSTOM_FIELD_12_VALUE_BOOL(595, 11042),
     /**
      *
      *
@@ -11195,7 +11423,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_13_VALUE_BOOL = 11043;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_13_VALUE_BOOL(11043),
+    LINE_ITEM_CUSTOM_FIELD_13_VALUE_BOOL(596, 11043),
     /**
      *
      *
@@ -11208,7 +11436,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>LINE_ITEM_CUSTOM_FIELD_14_VALUE_BOOL = 11044;</code>
      */
-    LINE_ITEM_CUSTOM_FIELD_14_VALUE_BOOL(11044),
+    LINE_ITEM_CUSTOM_FIELD_14_VALUE_BOOL(597, 11044),
     /**
      *
      *
@@ -11219,7 +11447,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_0_OPTION_ID = 12000;</code>
      */
-    ORDER_CUSTOM_FIELD_0_OPTION_ID(12000),
+    ORDER_CUSTOM_FIELD_0_OPTION_ID(598, 12000),
     /**
      *
      *
@@ -11230,7 +11458,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_1_OPTION_ID = 12001;</code>
      */
-    ORDER_CUSTOM_FIELD_1_OPTION_ID(12001),
+    ORDER_CUSTOM_FIELD_1_OPTION_ID(599, 12001),
     /**
      *
      *
@@ -11241,7 +11469,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_2_OPTION_ID = 12002;</code>
      */
-    ORDER_CUSTOM_FIELD_2_OPTION_ID(12002),
+    ORDER_CUSTOM_FIELD_2_OPTION_ID(600, 12002),
     /**
      *
      *
@@ -11252,7 +11480,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_3_OPTION_ID = 12003;</code>
      */
-    ORDER_CUSTOM_FIELD_3_OPTION_ID(12003),
+    ORDER_CUSTOM_FIELD_3_OPTION_ID(601, 12003),
     /**
      *
      *
@@ -11263,7 +11491,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_4_OPTION_ID = 12004;</code>
      */
-    ORDER_CUSTOM_FIELD_4_OPTION_ID(12004),
+    ORDER_CUSTOM_FIELD_4_OPTION_ID(602, 12004),
     /**
      *
      *
@@ -11274,7 +11502,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_5_OPTION_ID = 12005;</code>
      */
-    ORDER_CUSTOM_FIELD_5_OPTION_ID(12005),
+    ORDER_CUSTOM_FIELD_5_OPTION_ID(603, 12005),
     /**
      *
      *
@@ -11285,7 +11513,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_6_OPTION_ID = 12006;</code>
      */
-    ORDER_CUSTOM_FIELD_6_OPTION_ID(12006),
+    ORDER_CUSTOM_FIELD_6_OPTION_ID(604, 12006),
     /**
      *
      *
@@ -11296,7 +11524,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_7_OPTION_ID = 12007;</code>
      */
-    ORDER_CUSTOM_FIELD_7_OPTION_ID(12007),
+    ORDER_CUSTOM_FIELD_7_OPTION_ID(605, 12007),
     /**
      *
      *
@@ -11307,7 +11535,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_8_OPTION_ID = 12008;</code>
      */
-    ORDER_CUSTOM_FIELD_8_OPTION_ID(12008),
+    ORDER_CUSTOM_FIELD_8_OPTION_ID(606, 12008),
     /**
      *
      *
@@ -11318,7 +11546,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_9_OPTION_ID = 12009;</code>
      */
-    ORDER_CUSTOM_FIELD_9_OPTION_ID(12009),
+    ORDER_CUSTOM_FIELD_9_OPTION_ID(607, 12009),
     /**
      *
      *
@@ -11329,7 +11557,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_10_OPTION_ID = 12010;</code>
      */
-    ORDER_CUSTOM_FIELD_10_OPTION_ID(12010),
+    ORDER_CUSTOM_FIELD_10_OPTION_ID(608, 12010),
     /**
      *
      *
@@ -11340,7 +11568,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_11_OPTION_ID = 12011;</code>
      */
-    ORDER_CUSTOM_FIELD_11_OPTION_ID(12011),
+    ORDER_CUSTOM_FIELD_11_OPTION_ID(609, 12011),
     /**
      *
      *
@@ -11351,7 +11579,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_12_OPTION_ID = 12012;</code>
      */
-    ORDER_CUSTOM_FIELD_12_OPTION_ID(12012),
+    ORDER_CUSTOM_FIELD_12_OPTION_ID(610, 12012),
     /**
      *
      *
@@ -11362,7 +11590,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_13_OPTION_ID = 12013;</code>
      */
-    ORDER_CUSTOM_FIELD_13_OPTION_ID(12013),
+    ORDER_CUSTOM_FIELD_13_OPTION_ID(611, 12013),
     /**
      *
      *
@@ -11373,7 +11601,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_14_OPTION_ID = 12014;</code>
      */
-    ORDER_CUSTOM_FIELD_14_OPTION_ID(12014),
+    ORDER_CUSTOM_FIELD_14_OPTION_ID(612, 12014),
     /**
      *
      *
@@ -11386,7 +11614,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_0_VALUE = 13000;</code>
      */
-    ORDER_CUSTOM_FIELD_0_VALUE(13000),
+    ORDER_CUSTOM_FIELD_0_VALUE(613, 13000),
     /**
      *
      *
@@ -11399,7 +11627,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_1_VALUE = 13001;</code>
      */
-    ORDER_CUSTOM_FIELD_1_VALUE(13001),
+    ORDER_CUSTOM_FIELD_1_VALUE(614, 13001),
     /**
      *
      *
@@ -11412,7 +11640,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_2_VALUE = 13002;</code>
      */
-    ORDER_CUSTOM_FIELD_2_VALUE(13002),
+    ORDER_CUSTOM_FIELD_2_VALUE(615, 13002),
     /**
      *
      *
@@ -11425,7 +11653,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_3_VALUE = 13003;</code>
      */
-    ORDER_CUSTOM_FIELD_3_VALUE(13003),
+    ORDER_CUSTOM_FIELD_3_VALUE(616, 13003),
     /**
      *
      *
@@ -11438,7 +11666,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_4_VALUE = 13004;</code>
      */
-    ORDER_CUSTOM_FIELD_4_VALUE(13004),
+    ORDER_CUSTOM_FIELD_4_VALUE(617, 13004),
     /**
      *
      *
@@ -11451,7 +11679,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_5_VALUE = 13005;</code>
      */
-    ORDER_CUSTOM_FIELD_5_VALUE(13005),
+    ORDER_CUSTOM_FIELD_5_VALUE(618, 13005),
     /**
      *
      *
@@ -11464,7 +11692,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_6_VALUE = 13006;</code>
      */
-    ORDER_CUSTOM_FIELD_6_VALUE(13006),
+    ORDER_CUSTOM_FIELD_6_VALUE(619, 13006),
     /**
      *
      *
@@ -11477,7 +11705,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_7_VALUE = 13007;</code>
      */
-    ORDER_CUSTOM_FIELD_7_VALUE(13007),
+    ORDER_CUSTOM_FIELD_7_VALUE(620, 13007),
     /**
      *
      *
@@ -11490,7 +11718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_8_VALUE = 13008;</code>
      */
-    ORDER_CUSTOM_FIELD_8_VALUE(13008),
+    ORDER_CUSTOM_FIELD_8_VALUE(621, 13008),
     /**
      *
      *
@@ -11503,7 +11731,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_9_VALUE = 13009;</code>
      */
-    ORDER_CUSTOM_FIELD_9_VALUE(13009),
+    ORDER_CUSTOM_FIELD_9_VALUE(622, 13009),
     /**
      *
      *
@@ -11516,7 +11744,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_10_VALUE = 13010;</code>
      */
-    ORDER_CUSTOM_FIELD_10_VALUE(13010),
+    ORDER_CUSTOM_FIELD_10_VALUE(623, 13010),
     /**
      *
      *
@@ -11529,7 +11757,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_11_VALUE = 13011;</code>
      */
-    ORDER_CUSTOM_FIELD_11_VALUE(13011),
+    ORDER_CUSTOM_FIELD_11_VALUE(624, 13011),
     /**
      *
      *
@@ -11542,7 +11770,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_12_VALUE = 13012;</code>
      */
-    ORDER_CUSTOM_FIELD_12_VALUE(13012),
+    ORDER_CUSTOM_FIELD_12_VALUE(625, 13012),
     /**
      *
      *
@@ -11555,7 +11783,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_13_VALUE = 13013;</code>
      */
-    ORDER_CUSTOM_FIELD_13_VALUE(13013),
+    ORDER_CUSTOM_FIELD_13_VALUE(626, 13013),
     /**
      *
      *
@@ -11568,7 +11796,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_14_VALUE = 13014;</code>
      */
-    ORDER_CUSTOM_FIELD_14_VALUE(13014),
+    ORDER_CUSTOM_FIELD_14_VALUE(627, 13014),
     /**
      *
      *
@@ -11581,7 +11809,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_0_VALUE_DOUBLE = 13015;</code>
      */
-    ORDER_CUSTOM_FIELD_0_VALUE_DOUBLE(13015),
+    ORDER_CUSTOM_FIELD_0_VALUE_DOUBLE(628, 13015),
     /**
      *
      *
@@ -11594,7 +11822,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_1_VALUE_DOUBLE = 13016;</code>
      */
-    ORDER_CUSTOM_FIELD_1_VALUE_DOUBLE(13016),
+    ORDER_CUSTOM_FIELD_1_VALUE_DOUBLE(629, 13016),
     /**
      *
      *
@@ -11607,7 +11835,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_2_VALUE_DOUBLE = 13017;</code>
      */
-    ORDER_CUSTOM_FIELD_2_VALUE_DOUBLE(13017),
+    ORDER_CUSTOM_FIELD_2_VALUE_DOUBLE(630, 13017),
     /**
      *
      *
@@ -11620,7 +11848,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_3_VALUE_DOUBLE = 13018;</code>
      */
-    ORDER_CUSTOM_FIELD_3_VALUE_DOUBLE(13018),
+    ORDER_CUSTOM_FIELD_3_VALUE_DOUBLE(631, 13018),
     /**
      *
      *
@@ -11633,7 +11861,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_4_VALUE_DOUBLE = 13019;</code>
      */
-    ORDER_CUSTOM_FIELD_4_VALUE_DOUBLE(13019),
+    ORDER_CUSTOM_FIELD_4_VALUE_DOUBLE(632, 13019),
     /**
      *
      *
@@ -11646,7 +11874,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_5_VALUE_DOUBLE = 13020;</code>
      */
-    ORDER_CUSTOM_FIELD_5_VALUE_DOUBLE(13020),
+    ORDER_CUSTOM_FIELD_5_VALUE_DOUBLE(633, 13020),
     /**
      *
      *
@@ -11659,7 +11887,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_6_VALUE_DOUBLE = 13021;</code>
      */
-    ORDER_CUSTOM_FIELD_6_VALUE_DOUBLE(13021),
+    ORDER_CUSTOM_FIELD_6_VALUE_DOUBLE(634, 13021),
     /**
      *
      *
@@ -11672,7 +11900,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_7_VALUE_DOUBLE = 13022;</code>
      */
-    ORDER_CUSTOM_FIELD_7_VALUE_DOUBLE(13022),
+    ORDER_CUSTOM_FIELD_7_VALUE_DOUBLE(635, 13022),
     /**
      *
      *
@@ -11685,7 +11913,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_8_VALUE_DOUBLE = 13023;</code>
      */
-    ORDER_CUSTOM_FIELD_8_VALUE_DOUBLE(13023),
+    ORDER_CUSTOM_FIELD_8_VALUE_DOUBLE(636, 13023),
     /**
      *
      *
@@ -11698,7 +11926,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_9_VALUE_DOUBLE = 13024;</code>
      */
-    ORDER_CUSTOM_FIELD_9_VALUE_DOUBLE(13024),
+    ORDER_CUSTOM_FIELD_9_VALUE_DOUBLE(637, 13024),
     /**
      *
      *
@@ -11711,7 +11939,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_10_VALUE_DOUBLE = 13025;</code>
      */
-    ORDER_CUSTOM_FIELD_10_VALUE_DOUBLE(13025),
+    ORDER_CUSTOM_FIELD_10_VALUE_DOUBLE(638, 13025),
     /**
      *
      *
@@ -11724,7 +11952,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_11_VALUE_DOUBLE = 13026;</code>
      */
-    ORDER_CUSTOM_FIELD_11_VALUE_DOUBLE(13026),
+    ORDER_CUSTOM_FIELD_11_VALUE_DOUBLE(639, 13026),
     /**
      *
      *
@@ -11737,7 +11965,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_12_VALUE_DOUBLE = 13027;</code>
      */
-    ORDER_CUSTOM_FIELD_12_VALUE_DOUBLE(13027),
+    ORDER_CUSTOM_FIELD_12_VALUE_DOUBLE(640, 13027),
     /**
      *
      *
@@ -11750,7 +11978,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_13_VALUE_DOUBLE = 13028;</code>
      */
-    ORDER_CUSTOM_FIELD_13_VALUE_DOUBLE(13028),
+    ORDER_CUSTOM_FIELD_13_VALUE_DOUBLE(641, 13028),
     /**
      *
      *
@@ -11763,7 +11991,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_14_VALUE_DOUBLE = 13029;</code>
      */
-    ORDER_CUSTOM_FIELD_14_VALUE_DOUBLE(13029),
+    ORDER_CUSTOM_FIELD_14_VALUE_DOUBLE(642, 13029),
     /**
      *
      *
@@ -11776,7 +12004,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_0_VALUE_BOOL = 13030;</code>
      */
-    ORDER_CUSTOM_FIELD_0_VALUE_BOOL(13030),
+    ORDER_CUSTOM_FIELD_0_VALUE_BOOL(643, 13030),
     /**
      *
      *
@@ -11789,7 +12017,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_1_VALUE_BOOL = 13031;</code>
      */
-    ORDER_CUSTOM_FIELD_1_VALUE_BOOL(13031),
+    ORDER_CUSTOM_FIELD_1_VALUE_BOOL(644, 13031),
     /**
      *
      *
@@ -11802,7 +12030,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_2_VALUE_BOOL = 13032;</code>
      */
-    ORDER_CUSTOM_FIELD_2_VALUE_BOOL(13032),
+    ORDER_CUSTOM_FIELD_2_VALUE_BOOL(645, 13032),
     /**
      *
      *
@@ -11815,7 +12043,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_3_VALUE_BOOL = 13033;</code>
      */
-    ORDER_CUSTOM_FIELD_3_VALUE_BOOL(13033),
+    ORDER_CUSTOM_FIELD_3_VALUE_BOOL(646, 13033),
     /**
      *
      *
@@ -11828,7 +12056,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_4_VALUE_BOOL = 13034;</code>
      */
-    ORDER_CUSTOM_FIELD_4_VALUE_BOOL(13034),
+    ORDER_CUSTOM_FIELD_4_VALUE_BOOL(647, 13034),
     /**
      *
      *
@@ -11841,7 +12069,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_5_VALUE_BOOL = 13035;</code>
      */
-    ORDER_CUSTOM_FIELD_5_VALUE_BOOL(13035),
+    ORDER_CUSTOM_FIELD_5_VALUE_BOOL(648, 13035),
     /**
      *
      *
@@ -11854,7 +12082,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_6_VALUE_BOOL = 13036;</code>
      */
-    ORDER_CUSTOM_FIELD_6_VALUE_BOOL(13036),
+    ORDER_CUSTOM_FIELD_6_VALUE_BOOL(649, 13036),
     /**
      *
      *
@@ -11867,7 +12095,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_7_VALUE_BOOL = 13037;</code>
      */
-    ORDER_CUSTOM_FIELD_7_VALUE_BOOL(13037),
+    ORDER_CUSTOM_FIELD_7_VALUE_BOOL(650, 13037),
     /**
      *
      *
@@ -11880,7 +12108,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_8_VALUE_BOOL = 13038;</code>
      */
-    ORDER_CUSTOM_FIELD_8_VALUE_BOOL(13038),
+    ORDER_CUSTOM_FIELD_8_VALUE_BOOL(651, 13038),
     /**
      *
      *
@@ -11893,7 +12121,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_9_VALUE_BOOL = 13039;</code>
      */
-    ORDER_CUSTOM_FIELD_9_VALUE_BOOL(13039),
+    ORDER_CUSTOM_FIELD_9_VALUE_BOOL(652, 13039),
     /**
      *
      *
@@ -11906,7 +12134,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_10_VALUE_BOOL = 13040;</code>
      */
-    ORDER_CUSTOM_FIELD_10_VALUE_BOOL(13040),
+    ORDER_CUSTOM_FIELD_10_VALUE_BOOL(653, 13040),
     /**
      *
      *
@@ -11919,7 +12147,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_11_VALUE_BOOL = 13041;</code>
      */
-    ORDER_CUSTOM_FIELD_11_VALUE_BOOL(13041),
+    ORDER_CUSTOM_FIELD_11_VALUE_BOOL(654, 13041),
     /**
      *
      *
@@ -11932,7 +12160,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_12_VALUE_BOOL = 13042;</code>
      */
-    ORDER_CUSTOM_FIELD_12_VALUE_BOOL(13042),
+    ORDER_CUSTOM_FIELD_12_VALUE_BOOL(655, 13042),
     /**
      *
      *
@@ -11945,7 +12173,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_13_VALUE_BOOL = 13043;</code>
      */
-    ORDER_CUSTOM_FIELD_13_VALUE_BOOL(13043),
+    ORDER_CUSTOM_FIELD_13_VALUE_BOOL(656, 13043),
     /**
      *
      *
@@ -11958,7 +12186,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ORDER_CUSTOM_FIELD_14_VALUE_BOOL = 13044;</code>
      */
-    ORDER_CUSTOM_FIELD_14_VALUE_BOOL(13044),
+    ORDER_CUSTOM_FIELD_14_VALUE_BOOL(657, 13044),
     /**
      *
      *
@@ -11969,7 +12197,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_0_OPTION_ID = 14000;</code>
      */
-    CREATIVE_CUSTOM_FIELD_0_OPTION_ID(14000),
+    CREATIVE_CUSTOM_FIELD_0_OPTION_ID(658, 14000),
     /**
      *
      *
@@ -11980,7 +12208,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_1_OPTION_ID = 14001;</code>
      */
-    CREATIVE_CUSTOM_FIELD_1_OPTION_ID(14001),
+    CREATIVE_CUSTOM_FIELD_1_OPTION_ID(659, 14001),
     /**
      *
      *
@@ -11991,7 +12219,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_2_OPTION_ID = 14002;</code>
      */
-    CREATIVE_CUSTOM_FIELD_2_OPTION_ID(14002),
+    CREATIVE_CUSTOM_FIELD_2_OPTION_ID(660, 14002),
     /**
      *
      *
@@ -12002,7 +12230,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_3_OPTION_ID = 14003;</code>
      */
-    CREATIVE_CUSTOM_FIELD_3_OPTION_ID(14003),
+    CREATIVE_CUSTOM_FIELD_3_OPTION_ID(661, 14003),
     /**
      *
      *
@@ -12013,7 +12241,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_4_OPTION_ID = 14004;</code>
      */
-    CREATIVE_CUSTOM_FIELD_4_OPTION_ID(14004),
+    CREATIVE_CUSTOM_FIELD_4_OPTION_ID(662, 14004),
     /**
      *
      *
@@ -12024,7 +12252,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_5_OPTION_ID = 14005;</code>
      */
-    CREATIVE_CUSTOM_FIELD_5_OPTION_ID(14005),
+    CREATIVE_CUSTOM_FIELD_5_OPTION_ID(663, 14005),
     /**
      *
      *
@@ -12035,7 +12263,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_6_OPTION_ID = 14006;</code>
      */
-    CREATIVE_CUSTOM_FIELD_6_OPTION_ID(14006),
+    CREATIVE_CUSTOM_FIELD_6_OPTION_ID(664, 14006),
     /**
      *
      *
@@ -12046,7 +12274,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_7_OPTION_ID = 14007;</code>
      */
-    CREATIVE_CUSTOM_FIELD_7_OPTION_ID(14007),
+    CREATIVE_CUSTOM_FIELD_7_OPTION_ID(665, 14007),
     /**
      *
      *
@@ -12057,7 +12285,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_8_OPTION_ID = 14008;</code>
      */
-    CREATIVE_CUSTOM_FIELD_8_OPTION_ID(14008),
+    CREATIVE_CUSTOM_FIELD_8_OPTION_ID(666, 14008),
     /**
      *
      *
@@ -12068,7 +12296,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_9_OPTION_ID = 14009;</code>
      */
-    CREATIVE_CUSTOM_FIELD_9_OPTION_ID(14009),
+    CREATIVE_CUSTOM_FIELD_9_OPTION_ID(667, 14009),
     /**
      *
      *
@@ -12079,7 +12307,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_10_OPTION_ID = 14010;</code>
      */
-    CREATIVE_CUSTOM_FIELD_10_OPTION_ID(14010),
+    CREATIVE_CUSTOM_FIELD_10_OPTION_ID(668, 14010),
     /**
      *
      *
@@ -12090,7 +12318,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_11_OPTION_ID = 14011;</code>
      */
-    CREATIVE_CUSTOM_FIELD_11_OPTION_ID(14011),
+    CREATIVE_CUSTOM_FIELD_11_OPTION_ID(669, 14011),
     /**
      *
      *
@@ -12101,7 +12329,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_12_OPTION_ID = 14012;</code>
      */
-    CREATIVE_CUSTOM_FIELD_12_OPTION_ID(14012),
+    CREATIVE_CUSTOM_FIELD_12_OPTION_ID(670, 14012),
     /**
      *
      *
@@ -12112,7 +12340,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_13_OPTION_ID = 14013;</code>
      */
-    CREATIVE_CUSTOM_FIELD_13_OPTION_ID(14013),
+    CREATIVE_CUSTOM_FIELD_13_OPTION_ID(671, 14013),
     /**
      *
      *
@@ -12123,7 +12351,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_14_OPTION_ID = 14014;</code>
      */
-    CREATIVE_CUSTOM_FIELD_14_OPTION_ID(14014),
+    CREATIVE_CUSTOM_FIELD_14_OPTION_ID(672, 14014),
     /**
      *
      *
@@ -12136,7 +12364,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_0_VALUE = 15000;</code>
      */
-    CREATIVE_CUSTOM_FIELD_0_VALUE(15000),
+    CREATIVE_CUSTOM_FIELD_0_VALUE(673, 15000),
     /**
      *
      *
@@ -12149,7 +12377,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_1_VALUE = 15001;</code>
      */
-    CREATIVE_CUSTOM_FIELD_1_VALUE(15001),
+    CREATIVE_CUSTOM_FIELD_1_VALUE(674, 15001),
     /**
      *
      *
@@ -12162,7 +12390,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_2_VALUE = 15002;</code>
      */
-    CREATIVE_CUSTOM_FIELD_2_VALUE(15002),
+    CREATIVE_CUSTOM_FIELD_2_VALUE(675, 15002),
     /**
      *
      *
@@ -12175,7 +12403,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_3_VALUE = 15003;</code>
      */
-    CREATIVE_CUSTOM_FIELD_3_VALUE(15003),
+    CREATIVE_CUSTOM_FIELD_3_VALUE(676, 15003),
     /**
      *
      *
@@ -12188,7 +12416,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_4_VALUE = 15004;</code>
      */
-    CREATIVE_CUSTOM_FIELD_4_VALUE(15004),
+    CREATIVE_CUSTOM_FIELD_4_VALUE(677, 15004),
     /**
      *
      *
@@ -12201,7 +12429,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_5_VALUE = 15005;</code>
      */
-    CREATIVE_CUSTOM_FIELD_5_VALUE(15005),
+    CREATIVE_CUSTOM_FIELD_5_VALUE(678, 15005),
     /**
      *
      *
@@ -12214,7 +12442,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_6_VALUE = 15006;</code>
      */
-    CREATIVE_CUSTOM_FIELD_6_VALUE(15006),
+    CREATIVE_CUSTOM_FIELD_6_VALUE(679, 15006),
     /**
      *
      *
@@ -12227,7 +12455,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_7_VALUE = 15007;</code>
      */
-    CREATIVE_CUSTOM_FIELD_7_VALUE(15007),
+    CREATIVE_CUSTOM_FIELD_7_VALUE(680, 15007),
     /**
      *
      *
@@ -12240,7 +12468,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_8_VALUE = 15008;</code>
      */
-    CREATIVE_CUSTOM_FIELD_8_VALUE(15008),
+    CREATIVE_CUSTOM_FIELD_8_VALUE(681, 15008),
     /**
      *
      *
@@ -12253,7 +12481,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_9_VALUE = 15009;</code>
      */
-    CREATIVE_CUSTOM_FIELD_9_VALUE(15009),
+    CREATIVE_CUSTOM_FIELD_9_VALUE(682, 15009),
     /**
      *
      *
@@ -12266,7 +12494,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_10_VALUE = 15010;</code>
      */
-    CREATIVE_CUSTOM_FIELD_10_VALUE(15010),
+    CREATIVE_CUSTOM_FIELD_10_VALUE(683, 15010),
     /**
      *
      *
@@ -12279,7 +12507,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_11_VALUE = 15011;</code>
      */
-    CREATIVE_CUSTOM_FIELD_11_VALUE(15011),
+    CREATIVE_CUSTOM_FIELD_11_VALUE(684, 15011),
     /**
      *
      *
@@ -12292,7 +12520,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_12_VALUE = 15012;</code>
      */
-    CREATIVE_CUSTOM_FIELD_12_VALUE(15012),
+    CREATIVE_CUSTOM_FIELD_12_VALUE(685, 15012),
     /**
      *
      *
@@ -12305,7 +12533,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_13_VALUE = 15013;</code>
      */
-    CREATIVE_CUSTOM_FIELD_13_VALUE(15013),
+    CREATIVE_CUSTOM_FIELD_13_VALUE(686, 15013),
     /**
      *
      *
@@ -12318,7 +12546,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_14_VALUE = 15014;</code>
      */
-    CREATIVE_CUSTOM_FIELD_14_VALUE(15014),
+    CREATIVE_CUSTOM_FIELD_14_VALUE(687, 15014),
     /**
      *
      *
@@ -12331,7 +12559,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_0_VALUE_DOUBLE = 15015;</code>
      */
-    CREATIVE_CUSTOM_FIELD_0_VALUE_DOUBLE(15015),
+    CREATIVE_CUSTOM_FIELD_0_VALUE_DOUBLE(688, 15015),
     /**
      *
      *
@@ -12344,7 +12572,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_1_VALUE_DOUBLE = 15016;</code>
      */
-    CREATIVE_CUSTOM_FIELD_1_VALUE_DOUBLE(15016),
+    CREATIVE_CUSTOM_FIELD_1_VALUE_DOUBLE(689, 15016),
     /**
      *
      *
@@ -12357,7 +12585,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_2_VALUE_DOUBLE = 15017;</code>
      */
-    CREATIVE_CUSTOM_FIELD_2_VALUE_DOUBLE(15017),
+    CREATIVE_CUSTOM_FIELD_2_VALUE_DOUBLE(690, 15017),
     /**
      *
      *
@@ -12370,7 +12598,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_3_VALUE_DOUBLE = 15018;</code>
      */
-    CREATIVE_CUSTOM_FIELD_3_VALUE_DOUBLE(15018),
+    CREATIVE_CUSTOM_FIELD_3_VALUE_DOUBLE(691, 15018),
     /**
      *
      *
@@ -12383,7 +12611,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_4_VALUE_DOUBLE = 15019;</code>
      */
-    CREATIVE_CUSTOM_FIELD_4_VALUE_DOUBLE(15019),
+    CREATIVE_CUSTOM_FIELD_4_VALUE_DOUBLE(692, 15019),
     /**
      *
      *
@@ -12396,7 +12624,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_5_VALUE_DOUBLE = 15020;</code>
      */
-    CREATIVE_CUSTOM_FIELD_5_VALUE_DOUBLE(15020),
+    CREATIVE_CUSTOM_FIELD_5_VALUE_DOUBLE(693, 15020),
     /**
      *
      *
@@ -12409,7 +12637,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_6_VALUE_DOUBLE = 15021;</code>
      */
-    CREATIVE_CUSTOM_FIELD_6_VALUE_DOUBLE(15021),
+    CREATIVE_CUSTOM_FIELD_6_VALUE_DOUBLE(694, 15021),
     /**
      *
      *
@@ -12422,7 +12650,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_7_VALUE_DOUBLE = 15022;</code>
      */
-    CREATIVE_CUSTOM_FIELD_7_VALUE_DOUBLE(15022),
+    CREATIVE_CUSTOM_FIELD_7_VALUE_DOUBLE(695, 15022),
     /**
      *
      *
@@ -12435,7 +12663,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_8_VALUE_DOUBLE = 15023;</code>
      */
-    CREATIVE_CUSTOM_FIELD_8_VALUE_DOUBLE(15023),
+    CREATIVE_CUSTOM_FIELD_8_VALUE_DOUBLE(696, 15023),
     /**
      *
      *
@@ -12448,7 +12676,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_9_VALUE_DOUBLE = 15024;</code>
      */
-    CREATIVE_CUSTOM_FIELD_9_VALUE_DOUBLE(15024),
+    CREATIVE_CUSTOM_FIELD_9_VALUE_DOUBLE(697, 15024),
     /**
      *
      *
@@ -12461,7 +12689,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_10_VALUE_DOUBLE = 15025;</code>
      */
-    CREATIVE_CUSTOM_FIELD_10_VALUE_DOUBLE(15025),
+    CREATIVE_CUSTOM_FIELD_10_VALUE_DOUBLE(698, 15025),
     /**
      *
      *
@@ -12474,7 +12702,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_11_VALUE_DOUBLE = 15026;</code>
      */
-    CREATIVE_CUSTOM_FIELD_11_VALUE_DOUBLE(15026),
+    CREATIVE_CUSTOM_FIELD_11_VALUE_DOUBLE(699, 15026),
     /**
      *
      *
@@ -12487,7 +12715,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_12_VALUE_DOUBLE = 15027;</code>
      */
-    CREATIVE_CUSTOM_FIELD_12_VALUE_DOUBLE(15027),
+    CREATIVE_CUSTOM_FIELD_12_VALUE_DOUBLE(700, 15027),
     /**
      *
      *
@@ -12500,7 +12728,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_13_VALUE_DOUBLE = 15028;</code>
      */
-    CREATIVE_CUSTOM_FIELD_13_VALUE_DOUBLE(15028),
+    CREATIVE_CUSTOM_FIELD_13_VALUE_DOUBLE(701, 15028),
     /**
      *
      *
@@ -12513,7 +12741,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_14_VALUE_DOUBLE = 15029;</code>
      */
-    CREATIVE_CUSTOM_FIELD_14_VALUE_DOUBLE(15029),
+    CREATIVE_CUSTOM_FIELD_14_VALUE_DOUBLE(702, 15029),
     /**
      *
      *
@@ -12526,7 +12754,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_0_VALUE_BOOL = 15030;</code>
      */
-    CREATIVE_CUSTOM_FIELD_0_VALUE_BOOL(15030),
+    CREATIVE_CUSTOM_FIELD_0_VALUE_BOOL(703, 15030),
     /**
      *
      *
@@ -12539,7 +12767,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_1_VALUE_BOOL = 15031;</code>
      */
-    CREATIVE_CUSTOM_FIELD_1_VALUE_BOOL(15031),
+    CREATIVE_CUSTOM_FIELD_1_VALUE_BOOL(704, 15031),
     /**
      *
      *
@@ -12552,7 +12780,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_2_VALUE_BOOL = 15032;</code>
      */
-    CREATIVE_CUSTOM_FIELD_2_VALUE_BOOL(15032),
+    CREATIVE_CUSTOM_FIELD_2_VALUE_BOOL(705, 15032),
     /**
      *
      *
@@ -12565,7 +12793,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_3_VALUE_BOOL = 15033;</code>
      */
-    CREATIVE_CUSTOM_FIELD_3_VALUE_BOOL(15033),
+    CREATIVE_CUSTOM_FIELD_3_VALUE_BOOL(706, 15033),
     /**
      *
      *
@@ -12578,7 +12806,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_4_VALUE_BOOL = 15034;</code>
      */
-    CREATIVE_CUSTOM_FIELD_4_VALUE_BOOL(15034),
+    CREATIVE_CUSTOM_FIELD_4_VALUE_BOOL(707, 15034),
     /**
      *
      *
@@ -12591,7 +12819,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_5_VALUE_BOOL = 15035;</code>
      */
-    CREATIVE_CUSTOM_FIELD_5_VALUE_BOOL(15035),
+    CREATIVE_CUSTOM_FIELD_5_VALUE_BOOL(708, 15035),
     /**
      *
      *
@@ -12604,7 +12832,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_6_VALUE_BOOL = 15036;</code>
      */
-    CREATIVE_CUSTOM_FIELD_6_VALUE_BOOL(15036),
+    CREATIVE_CUSTOM_FIELD_6_VALUE_BOOL(709, 15036),
     /**
      *
      *
@@ -12617,7 +12845,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_7_VALUE_BOOL = 15037;</code>
      */
-    CREATIVE_CUSTOM_FIELD_7_VALUE_BOOL(15037),
+    CREATIVE_CUSTOM_FIELD_7_VALUE_BOOL(710, 15037),
     /**
      *
      *
@@ -12630,7 +12858,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_8_VALUE_BOOL = 15038;</code>
      */
-    CREATIVE_CUSTOM_FIELD_8_VALUE_BOOL(15038),
+    CREATIVE_CUSTOM_FIELD_8_VALUE_BOOL(711, 15038),
     /**
      *
      *
@@ -12643,7 +12871,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_9_VALUE_BOOL = 15039;</code>
      */
-    CREATIVE_CUSTOM_FIELD_9_VALUE_BOOL(15039),
+    CREATIVE_CUSTOM_FIELD_9_VALUE_BOOL(712, 15039),
     /**
      *
      *
@@ -12656,7 +12884,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_10_VALUE_BOOL = 15040;</code>
      */
-    CREATIVE_CUSTOM_FIELD_10_VALUE_BOOL(15040),
+    CREATIVE_CUSTOM_FIELD_10_VALUE_BOOL(713, 15040),
     /**
      *
      *
@@ -12669,7 +12897,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_11_VALUE_BOOL = 15041;</code>
      */
-    CREATIVE_CUSTOM_FIELD_11_VALUE_BOOL(15041),
+    CREATIVE_CUSTOM_FIELD_11_VALUE_BOOL(714, 15041),
     /**
      *
      *
@@ -12682,7 +12910,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_12_VALUE_BOOL = 15042;</code>
      */
-    CREATIVE_CUSTOM_FIELD_12_VALUE_BOOL(15042),
+    CREATIVE_CUSTOM_FIELD_12_VALUE_BOOL(715, 15042),
     /**
      *
      *
@@ -12695,7 +12923,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_13_VALUE_BOOL = 15043;</code>
      */
-    CREATIVE_CUSTOM_FIELD_13_VALUE_BOOL(15043),
+    CREATIVE_CUSTOM_FIELD_13_VALUE_BOOL(716, 15043),
     /**
      *
      *
@@ -12708,7 +12936,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_CUSTOM_FIELD_14_VALUE_BOOL = 15044;</code>
      */
-    CREATIVE_CUSTOM_FIELD_14_VALUE_BOOL(15044),
+    CREATIVE_CUSTOM_FIELD_14_VALUE_BOOL(717, 15044),
     /**
      *
      *
@@ -12720,7 +12948,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_0_VALUE_ID = 102000;</code>
      */
-    CMS_METADATA_DIMENSION_0_VALUE_ID(102000),
+    CMS_METADATA_DIMENSION_0_VALUE_ID(718, 102000),
     /**
      *
      *
@@ -12732,7 +12960,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_1_VALUE_ID = 102001;</code>
      */
-    CMS_METADATA_DIMENSION_1_VALUE_ID(102001),
+    CMS_METADATA_DIMENSION_1_VALUE_ID(719, 102001),
     /**
      *
      *
@@ -12744,7 +12972,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_2_VALUE_ID = 102002;</code>
      */
-    CMS_METADATA_DIMENSION_2_VALUE_ID(102002),
+    CMS_METADATA_DIMENSION_2_VALUE_ID(720, 102002),
     /**
      *
      *
@@ -12756,7 +12984,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_3_VALUE_ID = 102003;</code>
      */
-    CMS_METADATA_DIMENSION_3_VALUE_ID(102003),
+    CMS_METADATA_DIMENSION_3_VALUE_ID(721, 102003),
     /**
      *
      *
@@ -12768,7 +12996,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_4_VALUE_ID = 102004;</code>
      */
-    CMS_METADATA_DIMENSION_4_VALUE_ID(102004),
+    CMS_METADATA_DIMENSION_4_VALUE_ID(722, 102004),
     /**
      *
      *
@@ -12780,7 +13008,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_5_VALUE_ID = 102005;</code>
      */
-    CMS_METADATA_DIMENSION_5_VALUE_ID(102005),
+    CMS_METADATA_DIMENSION_5_VALUE_ID(723, 102005),
     /**
      *
      *
@@ -12792,7 +13020,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_6_VALUE_ID = 102006;</code>
      */
-    CMS_METADATA_DIMENSION_6_VALUE_ID(102006),
+    CMS_METADATA_DIMENSION_6_VALUE_ID(724, 102006),
     /**
      *
      *
@@ -12804,7 +13032,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_7_VALUE_ID = 102007;</code>
      */
-    CMS_METADATA_DIMENSION_7_VALUE_ID(102007),
+    CMS_METADATA_DIMENSION_7_VALUE_ID(725, 102007),
     /**
      *
      *
@@ -12816,7 +13044,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_8_VALUE_ID = 102008;</code>
      */
-    CMS_METADATA_DIMENSION_8_VALUE_ID(102008),
+    CMS_METADATA_DIMENSION_8_VALUE_ID(726, 102008),
     /**
      *
      *
@@ -12828,7 +13056,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_9_VALUE_ID = 102009;</code>
      */
-    CMS_METADATA_DIMENSION_9_VALUE_ID(102009),
+    CMS_METADATA_DIMENSION_9_VALUE_ID(727, 102009),
     /**
      *
      *
@@ -12840,7 +13068,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_0_VALUE = 103000;</code>
      */
-    CMS_METADATA_DIMENSION_0_VALUE(103000),
+    CMS_METADATA_DIMENSION_0_VALUE(728, 103000),
     /**
      *
      *
@@ -12852,7 +13080,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_1_VALUE = 103001;</code>
      */
-    CMS_METADATA_DIMENSION_1_VALUE(103001),
+    CMS_METADATA_DIMENSION_1_VALUE(729, 103001),
     /**
      *
      *
@@ -12864,7 +13092,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_2_VALUE = 103002;</code>
      */
-    CMS_METADATA_DIMENSION_2_VALUE(103002),
+    CMS_METADATA_DIMENSION_2_VALUE(730, 103002),
     /**
      *
      *
@@ -12876,7 +13104,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_3_VALUE = 103003;</code>
      */
-    CMS_METADATA_DIMENSION_3_VALUE(103003),
+    CMS_METADATA_DIMENSION_3_VALUE(731, 103003),
     /**
      *
      *
@@ -12888,7 +13116,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_4_VALUE = 103004;</code>
      */
-    CMS_METADATA_DIMENSION_4_VALUE(103004),
+    CMS_METADATA_DIMENSION_4_VALUE(732, 103004),
     /**
      *
      *
@@ -12900,7 +13128,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_5_VALUE = 103005;</code>
      */
-    CMS_METADATA_DIMENSION_5_VALUE(103005),
+    CMS_METADATA_DIMENSION_5_VALUE(733, 103005),
     /**
      *
      *
@@ -12912,7 +13140,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_6_VALUE = 103006;</code>
      */
-    CMS_METADATA_DIMENSION_6_VALUE(103006),
+    CMS_METADATA_DIMENSION_6_VALUE(734, 103006),
     /**
      *
      *
@@ -12924,7 +13152,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_7_VALUE = 103007;</code>
      */
-    CMS_METADATA_DIMENSION_7_VALUE(103007),
+    CMS_METADATA_DIMENSION_7_VALUE(735, 103007),
     /**
      *
      *
@@ -12936,7 +13164,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_8_VALUE = 103008;</code>
      */
-    CMS_METADATA_DIMENSION_8_VALUE(103008),
+    CMS_METADATA_DIMENSION_8_VALUE(736, 103008),
     /**
      *
      *
@@ -12948,7 +13176,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CMS_METADATA_DIMENSION_9_VALUE = 103009;</code>
      */
-    CMS_METADATA_DIMENSION_9_VALUE(103009),
+    CMS_METADATA_DIMENSION_9_VALUE(737, 103009),
     /**
      *
      *
@@ -12959,7 +13187,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_0_VALUE_ID = 100000;</code>
      */
-    CUSTOM_DIMENSION_0_VALUE_ID(100000),
+    CUSTOM_DIMENSION_0_VALUE_ID(738, 100000),
     /**
      *
      *
@@ -12970,7 +13198,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_1_VALUE_ID = 100001;</code>
      */
-    CUSTOM_DIMENSION_1_VALUE_ID(100001),
+    CUSTOM_DIMENSION_1_VALUE_ID(739, 100001),
     /**
      *
      *
@@ -12981,7 +13209,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_2_VALUE_ID = 100002;</code>
      */
-    CUSTOM_DIMENSION_2_VALUE_ID(100002),
+    CUSTOM_DIMENSION_2_VALUE_ID(740, 100002),
     /**
      *
      *
@@ -12992,7 +13220,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_3_VALUE_ID = 100003;</code>
      */
-    CUSTOM_DIMENSION_3_VALUE_ID(100003),
+    CUSTOM_DIMENSION_3_VALUE_ID(741, 100003),
     /**
      *
      *
@@ -13003,7 +13231,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_4_VALUE_ID = 100004;</code>
      */
-    CUSTOM_DIMENSION_4_VALUE_ID(100004),
+    CUSTOM_DIMENSION_4_VALUE_ID(742, 100004),
     /**
      *
      *
@@ -13014,7 +13242,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_5_VALUE_ID = 100005;</code>
      */
-    CUSTOM_DIMENSION_5_VALUE_ID(100005),
+    CUSTOM_DIMENSION_5_VALUE_ID(743, 100005),
     /**
      *
      *
@@ -13025,7 +13253,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_6_VALUE_ID = 100006;</code>
      */
-    CUSTOM_DIMENSION_6_VALUE_ID(100006),
+    CUSTOM_DIMENSION_6_VALUE_ID(744, 100006),
     /**
      *
      *
@@ -13036,7 +13264,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_7_VALUE_ID = 100007;</code>
      */
-    CUSTOM_DIMENSION_7_VALUE_ID(100007),
+    CUSTOM_DIMENSION_7_VALUE_ID(745, 100007),
     /**
      *
      *
@@ -13047,7 +13275,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_8_VALUE_ID = 100008;</code>
      */
-    CUSTOM_DIMENSION_8_VALUE_ID(100008),
+    CUSTOM_DIMENSION_8_VALUE_ID(746, 100008),
     /**
      *
      *
@@ -13058,7 +13286,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_9_VALUE_ID = 100009;</code>
      */
-    CUSTOM_DIMENSION_9_VALUE_ID(100009),
+    CUSTOM_DIMENSION_9_VALUE_ID(747, 100009),
     /**
      *
      *
@@ -13069,7 +13297,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_0_VALUE = 101000;</code>
      */
-    CUSTOM_DIMENSION_0_VALUE(101000),
+    CUSTOM_DIMENSION_0_VALUE(748, 101000),
     /**
      *
      *
@@ -13080,7 +13308,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_1_VALUE = 101001;</code>
      */
-    CUSTOM_DIMENSION_1_VALUE(101001),
+    CUSTOM_DIMENSION_1_VALUE(749, 101001),
     /**
      *
      *
@@ -13091,7 +13319,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_2_VALUE = 101002;</code>
      */
-    CUSTOM_DIMENSION_2_VALUE(101002),
+    CUSTOM_DIMENSION_2_VALUE(750, 101002),
     /**
      *
      *
@@ -13102,7 +13330,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_3_VALUE = 101003;</code>
      */
-    CUSTOM_DIMENSION_3_VALUE(101003),
+    CUSTOM_DIMENSION_3_VALUE(751, 101003),
     /**
      *
      *
@@ -13113,7 +13341,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_4_VALUE = 101004;</code>
      */
-    CUSTOM_DIMENSION_4_VALUE(101004),
+    CUSTOM_DIMENSION_4_VALUE(752, 101004),
     /**
      *
      *
@@ -13124,7 +13352,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_5_VALUE = 101005;</code>
      */
-    CUSTOM_DIMENSION_5_VALUE(101005),
+    CUSTOM_DIMENSION_5_VALUE(753, 101005),
     /**
      *
      *
@@ -13135,7 +13363,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_6_VALUE = 101006;</code>
      */
-    CUSTOM_DIMENSION_6_VALUE(101006),
+    CUSTOM_DIMENSION_6_VALUE(754, 101006),
     /**
      *
      *
@@ -13146,7 +13374,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_7_VALUE = 101007;</code>
      */
-    CUSTOM_DIMENSION_7_VALUE(101007),
+    CUSTOM_DIMENSION_7_VALUE(755, 101007),
     /**
      *
      *
@@ -13157,7 +13385,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_8_VALUE = 101008;</code>
      */
-    CUSTOM_DIMENSION_8_VALUE(101008),
+    CUSTOM_DIMENSION_8_VALUE(756, 101008),
     /**
      *
      *
@@ -13168,7 +13396,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CUSTOM_DIMENSION_9_VALUE = 101009;</code>
      */
-    CUSTOM_DIMENSION_9_VALUE(101009),
+    CUSTOM_DIMENSION_9_VALUE(757, 101009),
     /**
      *
      *
@@ -13179,7 +13407,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_0_VALUE_ID = 105000;</code>
      */
-    EKV_DIMENSION_0_VALUE_ID(105000),
+    EKV_DIMENSION_0_VALUE_ID(758, 105000),
     /**
      *
      *
@@ -13190,7 +13418,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_1_VALUE_ID = 105001;</code>
      */
-    EKV_DIMENSION_1_VALUE_ID(105001),
+    EKV_DIMENSION_1_VALUE_ID(759, 105001),
     /**
      *
      *
@@ -13201,7 +13429,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_2_VALUE_ID = 105002;</code>
      */
-    EKV_DIMENSION_2_VALUE_ID(105002),
+    EKV_DIMENSION_2_VALUE_ID(760, 105002),
     /**
      *
      *
@@ -13212,7 +13440,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_3_VALUE_ID = 105003;</code>
      */
-    EKV_DIMENSION_3_VALUE_ID(105003),
+    EKV_DIMENSION_3_VALUE_ID(761, 105003),
     /**
      *
      *
@@ -13223,7 +13451,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_4_VALUE_ID = 105004;</code>
      */
-    EKV_DIMENSION_4_VALUE_ID(105004),
+    EKV_DIMENSION_4_VALUE_ID(762, 105004),
     /**
      *
      *
@@ -13234,7 +13462,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_5_VALUE_ID = 105005;</code>
      */
-    EKV_DIMENSION_5_VALUE_ID(105005),
+    EKV_DIMENSION_5_VALUE_ID(763, 105005),
     /**
      *
      *
@@ -13245,7 +13473,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_6_VALUE_ID = 105006;</code>
      */
-    EKV_DIMENSION_6_VALUE_ID(105006),
+    EKV_DIMENSION_6_VALUE_ID(764, 105006),
     /**
      *
      *
@@ -13256,7 +13484,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_7_VALUE_ID = 105007;</code>
      */
-    EKV_DIMENSION_7_VALUE_ID(105007),
+    EKV_DIMENSION_7_VALUE_ID(765, 105007),
     /**
      *
      *
@@ -13267,7 +13495,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_8_VALUE_ID = 105008;</code>
      */
-    EKV_DIMENSION_8_VALUE_ID(105008),
+    EKV_DIMENSION_8_VALUE_ID(766, 105008),
     /**
      *
      *
@@ -13278,7 +13506,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_9_VALUE_ID = 105009;</code>
      */
-    EKV_DIMENSION_9_VALUE_ID(105009),
+    EKV_DIMENSION_9_VALUE_ID(767, 105009),
     /**
      *
      *
@@ -13289,7 +13517,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_0_VALUE = 106000;</code>
      */
-    EKV_DIMENSION_0_VALUE(106000),
+    EKV_DIMENSION_0_VALUE(768, 106000),
     /**
      *
      *
@@ -13300,7 +13528,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_1_VALUE = 106001;</code>
      */
-    EKV_DIMENSION_1_VALUE(106001),
+    EKV_DIMENSION_1_VALUE(769, 106001),
     /**
      *
      *
@@ -13311,7 +13539,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_2_VALUE = 106002;</code>
      */
-    EKV_DIMENSION_2_VALUE(106002),
+    EKV_DIMENSION_2_VALUE(770, 106002),
     /**
      *
      *
@@ -13322,7 +13550,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_3_VALUE = 106003;</code>
      */
-    EKV_DIMENSION_3_VALUE(106003),
+    EKV_DIMENSION_3_VALUE(771, 106003),
     /**
      *
      *
@@ -13333,7 +13561,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_4_VALUE = 106004;</code>
      */
-    EKV_DIMENSION_4_VALUE(106004),
+    EKV_DIMENSION_4_VALUE(772, 106004),
     /**
      *
      *
@@ -13344,7 +13572,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_5_VALUE = 106005;</code>
      */
-    EKV_DIMENSION_5_VALUE(106005),
+    EKV_DIMENSION_5_VALUE(773, 106005),
     /**
      *
      *
@@ -13355,7 +13583,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_6_VALUE = 106006;</code>
      */
-    EKV_DIMENSION_6_VALUE(106006),
+    EKV_DIMENSION_6_VALUE(774, 106006),
     /**
      *
      *
@@ -13366,7 +13594,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_7_VALUE = 106007;</code>
      */
-    EKV_DIMENSION_7_VALUE(106007),
+    EKV_DIMENSION_7_VALUE(775, 106007),
     /**
      *
      *
@@ -13377,7 +13605,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_8_VALUE = 106008;</code>
      */
-    EKV_DIMENSION_8_VALUE(106008),
+    EKV_DIMENSION_8_VALUE(776, 106008),
     /**
      *
      *
@@ -13388,8 +13616,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EKV_DIMENSION_9_VALUE = 106009;</code>
      */
-    EKV_DIMENSION_9_VALUE(106009),
-    UNRECOGNIZED(-1),
+    EKV_DIMENSION_9_VALUE(777, 106009),
+    UNRECOGNIZED(-1, -1),
     ;
 
     static {
@@ -13401,6 +13629,18 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           /* suffix= */ "",
           "Dimension");
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `LANDING_PAGE_DOMAIN` instead.
+     * The domain name of the advertiser.
+     * </pre>
+     *
+     * <code>ADVERTISER_DOMAIN_NAME = 242 [deprecated = true];</code>
+     */
+    public static final Dimension ADVERTISER_DOMAIN_NAME = LANDING_PAGE_DOMAIN;
 
     /**
      *
@@ -13492,25 +13732,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>ADVERTISER_CREDIT_STATUS_NAME = 476;</code>
      */
     public static final int ADVERTISER_CREDIT_STATUS_NAME_VALUE = 476;
-
-    /**
-     *
-     *
-     * <pre>
-     * The domain name of the advertiser.
-     *
-     *
-     *
-     * Corresponds to "Landing page domain" in the Ad Manager UI.
-     *
-     * Compatible with the following report types: `HISTORICAL`
-     *
-     * Data format: `STRING`
-     * </pre>
-     *
-     * <code>ADVERTISER_DOMAIN_NAME = 242;</code>
-     */
-    public static final int ADVERTISER_DOMAIN_NAME_VALUE = 242;
 
     /**
      *
@@ -15944,6 +16165,28 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Represents a single Bidder integration, like Open Bidding, SDK
+     * Bidding, or Authorized Buying.
+     *
+     *
+     *
+     * Corresponds to "Bidder ID" in the Ad Manager UI (when showing API
+     * fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`,
+     * `REVENUE_VERIFICATION`, `ADS_TRAFFIC_NAVIGATOR`
+     *
+     * Data format: `IDENTIFIER`
+     * </pre>
+     *
+     * <code>BIDDER_ID = 445;</code>
+     */
+    public static final int BIDDER_ID_VALUE = 445;
+
+    /**
+     *
+     *
+     * <pre>
      * The name of the bidder.
      *
      *
@@ -16321,7 +16564,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "City ID" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `OFF_PROPERTY_CAMPAIGNS`
      *
      * Data format: `IDENTIFIER`
      * </pre>
@@ -16360,7 +16604,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Advertiser ID (classified)" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `REACH`
      *
      * Data format: `IDENTIFIER`
      * </pre>
@@ -16380,7 +16625,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Advertiser (classified)" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `REACH`
      *
      * Data format: `STRING`
      * </pre>
@@ -17006,6 +17252,9 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Compatible with the following report types: `HISTORICAL`
      *
      * Data format: `ENUM`
+     *
+     * Values:
+     * [CreativeSslOverride][google.ads.admanager.v1.CreativeSslOverrideEnum.CreativeSslOverride]
      * </pre>
      *
      * <code>CREATIVE_SSL_COMPLIANCE_OVERRIDE = 784;</code>
@@ -17045,6 +17294,9 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Compatible with the following report types: `HISTORICAL`
      *
      * Data format: `ENUM`
+     *
+     * Values:
+     * [CreativeSslScanResult][google.ads.admanager.v1.CreativeSslScanResultEnum.CreativeSslScanResult]
      * </pre>
      *
      * <code>CREATIVE_SSL_SCAN_RESULT = 785;</code>
@@ -17713,7 +17965,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Demand subchannel value" in the Ad Manager UI (when
      * showing API fields).
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ON_PLATFORM_MULTICALL`
      *
      * Data format: `ENUM`
      * </pre>
@@ -17732,7 +17985,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Demand subchannel" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ON_PLATFORM_MULTICALL`
      *
      * Data format: `STRING`
      * </pre>
@@ -17745,6 +17999,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Use `DEVICE_MANUFACTURER_ID` and `DEVICE_MODEL_ID` instead.
      * The device on which an ad was served.
      *
      *
@@ -17757,9 +18012,9 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Data format: `ENUM`
      * </pre>
      *
-     * <code>DEVICE = 226;</code>
+     * <code>DEVICE = 226 [deprecated = true];</code>
      */
-    public static final int DEVICE_VALUE = 226;
+    @java.lang.Deprecated public static final int DEVICE_VALUE = 226;
 
     /**
      *
@@ -17887,6 +18142,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: Use `DEVICE_MANUFACTURER_NAME` and `DEVICE_MODEL_NAME`
+     * instead.
      * The localized name of the device on which an ad was served.
      *
      *
@@ -18371,6 +18628,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>HEADER_BIDDER_INTEGRATION_TYPE_NAME = 719;</code>
      */
     public static final int HEADER_BIDDER_INTEGRATION_TYPE_NAME_VALUE = 719;
+
+    /**
+     *
+     *
+     * <pre>
+     * High engagement ads allowed.
+     *
+     *
+     *
+     * Corresponds to "High engagement ads allowed" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `BOOLEAN`
+     * </pre>
+     *
+     * <code>HIGH_ENGAGEMENT_ADS_ALLOWED = 838;</code>
+     */
+    public static final int HIGH_ENGAGEMENT_ADS_ALLOWED_VALUE = 838;
 
     /**
      *
@@ -18882,6 +19158,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>KEY_VALUES_SET = 713;</code>
      */
     public static final int KEY_VALUES_SET_VALUE = 713;
+
+    /**
+     *
+     *
+     * <pre>
+     * The landing page domain name of the advertiser.
+     *
+     *
+     *
+     * Corresponds to "Landing page domain" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`, `REACH`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>LANDING_PAGE_DOMAIN = 242;</code>
+     */
+    public static final int LANDING_PAGE_DOMAIN_VALUE = 242;
 
     /**
      *
@@ -20242,7 +20537,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Metro ID" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`
+     * Compatible with the following report types: `HISTORICAL`, `AD_SPEED`,
+     * `OFF_PROPERTY_CAMPAIGNS`
      *
      * Data format: `IDENTIFIER`
      * </pre>
@@ -20833,6 +21129,49 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deal priority tier for non-guaranteed deals.
+     *
+     *
+     *
+     * Corresponds to "Non-guaranteed deal priority tier" in the Ad Manager UI
+     * (when showing API fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `ENUM`
+     *
+     * Values:
+     * [DealPriorityTier][google.ads.admanager.v1.DealPriorityTierEnum.DealPriorityTier]
+     * </pre>
+     *
+     * <code>NON_GUARANTEED_DEAL_PRIORITY_TIER = 859;</code>
+     */
+    public static final int NON_GUARANTEED_DEAL_PRIORITY_TIER_VALUE = 859;
+
+    /**
+     *
+     *
+     * <pre>
+     * The localized name of the deal priority tier for non-guaranteed deals.
+     *
+     *
+     *
+     * Corresponds to "Non-guaranteed deal priority tier (Name)" in the Ad
+     * Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>NON_GUARANTEED_DEAL_PRIORITY_TIER_NAME = 860;</code>
+     */
+    public static final int NON_GUARANTEED_DEAL_PRIORITY_TIER_NAME_VALUE = 860;
+
+    /**
+     *
+     *
+     * <pre>
      * No fill reason category name in the Ads traffic navigator report.
      *
      *
@@ -20847,6 +21186,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>NO_FILL_REASON_CATEGORY_NAME = 587;</code>
      */
     public static final int NO_FILL_REASON_CATEGORY_NAME_VALUE = 587;
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of ads served in a pod response.
+     *
+     *
+     *
+     * Corresponds to "Number of ads in pod" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>NUM_ADS_IN_POD = 804;</code>
+     */
+    public static final int NUM_ADS_IN_POD_VALUE = 804;
 
     /**
      *
@@ -21652,6 +22010,44 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>PARTNER_MANAGEMENT_PARTNER_NAME = 656;</code>
      */
     public static final int PARTNER_MANAGEMENT_PARTNER_NAME_VALUE = 656;
+
+    /**
+     *
+     *
+     * <pre>
+     * The ID of the payment profile.
+     *
+     *
+     *
+     * Corresponds to "Payment profile ID" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `IDENTIFIER`
+     * </pre>
+     *
+     * <code>PAYMENT_PROFILE_ID = 858;</code>
+     */
+    public static final int PAYMENT_PROFILE_ID_VALUE = 858;
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the payment profile.
+     *
+     *
+     *
+     * Corresponds to "Payment profile" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>PAYMENT_PROFILE_NAME = 857;</code>
+     */
+    public static final int PAYMENT_PROFILE_NAME_VALUE = 857;
 
     /**
      *
@@ -22519,6 +22915,45 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The orientation of the creative requested.
+     *
+     *
+     *
+     * Corresponds to "Requested creative orientation value" in the Ad Manager
+     * UI (when showing API fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `ENUM_LIST`
+     * </pre>
+     *
+     * <code>REQUESTED_CREATIVE_ORIENTATION = 828;</code>
+     */
+    public static final int REQUESTED_CREATIVE_ORIENTATION_VALUE = 828;
+
+    /**
+     *
+     *
+     * <pre>
+     * Localized name of the requested creative orientation.
+     *
+     *
+     *
+     * Corresponds to "Requested creative orientation" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING_LIST`
+     * </pre>
+     *
+     * <code>REQUESTED_CREATIVE_ORIENTATION_NAME = 829;</code>
+     */
+    public static final int REQUESTED_CREATIVE_ORIENTATION_NAME_VALUE = 829;
+
+    /**
+     *
+     *
+     * <pre>
      * Request type ENUM
      *
      *
@@ -22796,6 +23231,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Deprecated: No longer supported.
      * Reports the status of Topics in the ad request.
      *
      *
@@ -22808,14 +23244,15 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Data format: `ENUM`
      * </pre>
      *
-     * <code>TOPICS_STATUS = 504;</code>
+     * <code>TOPICS_STATUS = 504 [deprecated = true];</code>
      */
-    public static final int TOPICS_STATUS_VALUE = 504;
+    @java.lang.Deprecated public static final int TOPICS_STATUS_VALUE = 504;
 
     /**
      *
      *
      * <pre>
+     * Deprecated: No longer supported.
      * The localized name of the status of Topics in the ad request.
      *
      *
@@ -22827,9 +23264,9 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Data format: `STRING`
      * </pre>
      *
-     * <code>TOPICS_STATUS_NAME = 505;</code>
+     * <code>TOPICS_STATUS_NAME = 505 [deprecated = true];</code>
      */
-    public static final int TOPICS_STATUS_NAME_VALUE = 505;
+    @java.lang.Deprecated public static final int TOPICS_STATUS_NAME_VALUE = 505;
 
     /**
      *
@@ -23607,7 +24044,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Position of pod" in the Ad Manager UI.
      *
      * Compatible with the following report types: `HISTORICAL`,
-     * `REAL_TIME_VIDEO`
+     * `REAL_TIME_VIDEO`, `OFF_PROPERTY_CAMPAIGNS`
      *
      * Data format: `STRING`
      * </pre>
@@ -23695,6 +24132,45 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>VIDEO_STITCHER_TYPE_NAME = 753;</code>
      */
     public static final int VIDEO_STITCHER_TYPE_NAME_VALUE = 753;
+
+    /**
+     *
+     *
+     * <pre>
+     * Web interstitial trigger type.
+     *
+     *
+     *
+     * Corresponds to "Web interstitial trigger type value" in the Ad Manager UI
+     * (when showing API fields).
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `ENUM`
+     * </pre>
+     *
+     * <code>WEB_INTERSTITIAL_TRIGGER_TYPE = 826;</code>
+     */
+    public static final int WEB_INTERSTITIAL_TRIGGER_TYPE_VALUE = 826;
+
+    /**
+     *
+     *
+     * <pre>
+     * Localized name of the web interstitial trigger type.
+     *
+     *
+     *
+     * Corresponds to "Web interstitial trigger type" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>WEB_INTERSTITIAL_TRIGGER_TYPE_NAME = 827;</code>
+     */
+    public static final int WEB_INTERSTITIAL_TRIGGER_TYPE_NAME_VALUE = 827;
 
     /**
      *
@@ -23891,6 +24367,18 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>YOUTUBE_AD_TYPE_NAME = 400;</code>
      */
     public static final int YOUTUBE_AD_TYPE_NAME_VALUE = 400;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use `LANDING_PAGE_DOMAIN` instead.
+     * The domain name of the advertiser.
+     * </pre>
+     *
+     * <code>ADVERTISER_DOMAIN_NAME = 242 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int ADVERTISER_DOMAIN_NAME_VALUE = 242;
 
     /**
      *
@@ -27063,7 +27551,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
     public static final int EKV_DIMENSION_9_VALUE_VALUE = 106009;
 
     public final int getNumber() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
@@ -27096,8 +27584,6 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return ADVERTISER_CREDIT_STATUS;
         case 476:
           return ADVERTISER_CREDIT_STATUS_NAME;
-        case 242:
-          return ADVERTISER_DOMAIN_NAME;
         case 228:
           return ADVERTISER_EXTERNAL_ID;
         case 131:
@@ -27338,6 +27824,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return AUTO_REFRESHED_TRAFFIC_NAME;
         case 493:
           return BIDDER_ENCRYPTED_ID;
+        case 445:
+          return BIDDER_ID;
         case 494:
           return BIDDER_NAME;
         case 679:
@@ -27584,6 +28072,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return HEADER_BIDDER_INTEGRATION_TYPE;
         case 719:
           return HEADER_BIDDER_INTEGRATION_TYPE_NAME;
+        case 838:
+          return HIGH_ENGAGEMENT_ADS_ALLOWED;
         case 100:
           return HOUR;
         case 577:
@@ -27636,6 +28126,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return KEY_VALUES_NAME;
         case 713:
           return KEY_VALUES_SET;
+        case 242:
+          return LANDING_PAGE_DOMAIN;
         case 663:
           return LINE_ITEM_AGENCY;
         case 188:
@@ -27828,8 +28320,14 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return NIELSEN_SEGMENT;
         case 700:
           return NIELSEN_SITE_URL;
+        case 859:
+          return NON_GUARANTEED_DEAL_PRIORITY_TIER;
+        case 860:
+          return NON_GUARANTEED_DEAL_PRIORITY_TIER_NAME;
         case 587:
           return NO_FILL_REASON_CATEGORY_NAME;
+        case 804:
+          return NUM_ADS_IN_POD;
         case 117:
           return OPERATING_SYSTEM_CATEGORY;
         case 118:
@@ -27912,6 +28410,10 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return PARTNER_MANAGEMENT_PARTNER_ID;
         case 656:
           return PARTNER_MANAGEMENT_PARTNER_NAME;
+        case 858:
+          return PAYMENT_PROFILE_ID;
+        case 857:
+          return PAYMENT_PROFILE_NAME;
         case 113:
           return PLACEMENT_ID;
         case 144:
@@ -27998,6 +28500,10 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return RENDERED_CREATIVE_SIZE;
         case 352:
           return REQUESTED_AD_SIZES;
+        case 828:
+          return REQUESTED_CREATIVE_ORIENTATION;
+        case 829:
+          return REQUESTED_CREATIVE_ORIENTATION_NAME;
         case 146:
           return REQUEST_TYPE;
         case 147:
@@ -28118,6 +28624,10 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return VIDEO_STITCHER_TYPE;
         case 753:
           return VIDEO_STITCHER_TYPE_NAME;
+        case 826:
+          return WEB_INTERSTITIAL_TRIGGER_TYPE;
+        case 827:
+          return WEB_INTERSTITIAL_TRIGGER_TYPE_NAME;
         case 730:
           return WEB_PROPERTY_CODE;
         case 5:
@@ -28635,11 +29145,11 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
+      if (index == -1) {
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return getDescriptor().getValues().get(index);
     }
 
     public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
@@ -28650,7 +29160,790 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return com.google.ads.admanager.v1.ReportDefinition.getDescriptor().getEnumTypes().get(1);
     }
 
-    private static final Dimension[] VALUES = values();
+    private static final Dimension[] VALUES = getStaticValuesArray();
+
+    private static Dimension[] getStaticValuesArray() {
+      return new Dimension[] {
+        DIMENSION_UNSPECIFIED,
+        ACTIVE_VIEW_MEASUREMENT_SOURCE,
+        ACTIVE_VIEW_MEASUREMENT_SOURCE_NAME,
+        ADVERTISER_CREDIT_STATUS,
+        ADVERTISER_CREDIT_STATUS_NAME,
+        ADVERTISER_EXTERNAL_ID,
+        ADVERTISER_ID,
+        ADVERTISER_LABELS,
+        ADVERTISER_LABEL_IDS,
+        ADVERTISER_NAME,
+        ADVERTISER_PRIMARY_CONTACT,
+        ADVERTISER_STATUS,
+        ADVERTISER_STATUS_NAME,
+        ADVERTISER_TYPE,
+        ADVERTISER_TYPE_NAME,
+        ADVERTISER_VERTICAL,
+        ADX_PRODUCT,
+        ADX_PRODUCT_NAME,
+        AD_EXPERIENCES_TYPE,
+        AD_EXPERIENCES_TYPE_NAME,
+        AD_LOCATION,
+        AD_LOCATION_NAME,
+        AD_REQUEST_SIZES,
+        AD_TECHNOLOGY_PROVIDER_DOMAIN,
+        AD_TECHNOLOGY_PROVIDER_ID,
+        AD_TECHNOLOGY_PROVIDER_NAME,
+        AD_TYPE,
+        AD_TYPE_NAME,
+        AD_UNIT_CODE,
+        AD_UNIT_CODE_LEVEL_1,
+        AD_UNIT_CODE_LEVEL_10,
+        AD_UNIT_CODE_LEVEL_11,
+        AD_UNIT_CODE_LEVEL_12,
+        AD_UNIT_CODE_LEVEL_13,
+        AD_UNIT_CODE_LEVEL_14,
+        AD_UNIT_CODE_LEVEL_15,
+        AD_UNIT_CODE_LEVEL_16,
+        AD_UNIT_CODE_LEVEL_2,
+        AD_UNIT_CODE_LEVEL_3,
+        AD_UNIT_CODE_LEVEL_4,
+        AD_UNIT_CODE_LEVEL_5,
+        AD_UNIT_CODE_LEVEL_6,
+        AD_UNIT_CODE_LEVEL_7,
+        AD_UNIT_CODE_LEVEL_8,
+        AD_UNIT_CODE_LEVEL_9,
+        AD_UNIT_ID,
+        AD_UNIT_ID_ALL_LEVEL,
+        AD_UNIT_ID_LEVEL_1,
+        AD_UNIT_ID_LEVEL_10,
+        AD_UNIT_ID_LEVEL_11,
+        AD_UNIT_ID_LEVEL_12,
+        AD_UNIT_ID_LEVEL_13,
+        AD_UNIT_ID_LEVEL_14,
+        AD_UNIT_ID_LEVEL_15,
+        AD_UNIT_ID_LEVEL_16,
+        AD_UNIT_ID_LEVEL_2,
+        AD_UNIT_ID_LEVEL_3,
+        AD_UNIT_ID_LEVEL_4,
+        AD_UNIT_ID_LEVEL_5,
+        AD_UNIT_ID_LEVEL_6,
+        AD_UNIT_ID_LEVEL_7,
+        AD_UNIT_ID_LEVEL_8,
+        AD_UNIT_ID_LEVEL_9,
+        AD_UNIT_ID_TOP_LEVEL,
+        AD_UNIT_NAME,
+        AD_UNIT_NAME_ALL_LEVEL,
+        AD_UNIT_NAME_LEVEL_1,
+        AD_UNIT_NAME_LEVEL_10,
+        AD_UNIT_NAME_LEVEL_11,
+        AD_UNIT_NAME_LEVEL_12,
+        AD_UNIT_NAME_LEVEL_13,
+        AD_UNIT_NAME_LEVEL_14,
+        AD_UNIT_NAME_LEVEL_15,
+        AD_UNIT_NAME_LEVEL_16,
+        AD_UNIT_NAME_LEVEL_2,
+        AD_UNIT_NAME_LEVEL_3,
+        AD_UNIT_NAME_LEVEL_4,
+        AD_UNIT_NAME_LEVEL_5,
+        AD_UNIT_NAME_LEVEL_6,
+        AD_UNIT_NAME_LEVEL_7,
+        AD_UNIT_NAME_LEVEL_8,
+        AD_UNIT_NAME_LEVEL_9,
+        AD_UNIT_NAME_TOP_LEVEL,
+        AD_UNIT_REWARD_AMOUNT,
+        AD_UNIT_REWARD_TYPE,
+        AD_UNIT_STATUS,
+        AD_UNIT_STATUS_NAME,
+        AGENCY_LEVEL_1_ID,
+        AGENCY_LEVEL_1_NAME,
+        AGENCY_LEVEL_2_ID,
+        AGENCY_LEVEL_2_NAME,
+        AGENCY_LEVEL_3_ID,
+        AGENCY_LEVEL_3_NAME,
+        AGE_BRACKET,
+        AGE_BRACKET_NAME,
+        ANALYTICS_PROPERTY_ID,
+        ANALYTICS_PROPERTY_NAME,
+        APP_TRACKING_TRANSPARENCY_CONSENT_STATUS,
+        APP_TRACKING_TRANSPARENCY_CONSENT_STATUS_NAME,
+        APP_VERSION,
+        AUCTION_PACKAGE_DEAL,
+        AUCTION_PACKAGE_DEAL_ID,
+        AUDIENCE_SEGMENT_BILLABLE,
+        AUDIENCE_SEGMENT_DATA_PROVIDER_ID,
+        AUDIENCE_SEGMENT_DATA_PROVIDER_NAME,
+        AUDIENCE_SEGMENT_ID_BILLABLE,
+        AUDIENCE_SEGMENT_ID_TARGETED,
+        AUDIENCE_SEGMENT_TARGETED,
+        AUDIENCE_SEGMENT_TARGETED_AD_ID_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_AMAZON_FIRE_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_ANDROID_TV_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_APPLE_TV_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_IDFA_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_MOBILE_WEB_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_PLAYSTATION_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_PPID_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_ROKU_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_SAMSUNG_TV_USER_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_SIZE,
+        AUDIENCE_SEGMENT_TARGETED_STATUS,
+        AUDIENCE_SEGMENT_TARGETED_STATUS_NAME,
+        AUDIENCE_SEGMENT_TARGETED_XBOX_USER_SIZE,
+        AUTO_REFRESHED_TRAFFIC,
+        AUTO_REFRESHED_TRAFFIC_NAME,
+        BIDDER_ENCRYPTED_ID,
+        BIDDER_ID,
+        BIDDER_NAME,
+        BID_RANGE,
+        BID_REJECTION_REASON,
+        BID_REJECTION_REASON_NAME,
+        BRANDING_TYPE,
+        BRANDING_TYPE_NAME,
+        BROWSER_CATEGORY,
+        BROWSER_CATEGORY_NAME,
+        BROWSER_ID,
+        BROWSER_NAME,
+        BUYER_NETWORK_ID,
+        BUYER_NETWORK_NAME,
+        CALLOUT_STATUS_CATEGORY_NAME,
+        CARRIER_ID,
+        CARRIER_NAME,
+        CHANNEL,
+        CHILD_NETWORK_CODE,
+        CHILD_NETWORK_ID,
+        CHILD_PARTNER_NAME,
+        CITY_ID,
+        CITY_NAME,
+        CLASSIFIED_ADVERTISER_ID,
+        CLASSIFIED_ADVERTISER_NAME,
+        CLASSIFIED_BRAND_ID,
+        CLASSIFIED_BRAND_NAME,
+        CONTENT_BUNDLE_ID,
+        CONTENT_BUNDLE_NAME,
+        CONTENT_CMS_METADATA_KV_NAMESPACE_ID,
+        CONTENT_CMS_METADATA_KV_NAMESPACE_NAME,
+        CONTENT_CMS_NAME,
+        CONTENT_CMS_VIDEO_ID,
+        CONTENT_ID,
+        CONTENT_MAPPING_PRESENCE,
+        CONTENT_MAPPING_PRESENCE_NAME,
+        CONTENT_NAME,
+        CONTINENT,
+        CONTINENT_NAME,
+        COUNTRY_CODE,
+        COUNTRY_ID,
+        COUNTRY_NAME,
+        CREATIVE_BILLING_TYPE,
+        CREATIVE_BILLING_TYPE_NAME,
+        CREATIVE_CLICK_THROUGH_URL,
+        CREATIVE_ID,
+        CREATIVE_NAME,
+        CREATIVE_OR_CREATIVE_SET,
+        CREATIVE_OR_CREATIVE_SET_NAME,
+        CREATIVE_POLICIES_FILTERING,
+        CREATIVE_POLICIES_FILTERING_NAME,
+        CREATIVE_PROTECTIONS_FILTERING,
+        CREATIVE_PROTECTIONS_FILTERING_NAME,
+        CREATIVE_SET_ROLE_TYPE,
+        CREATIVE_SET_ROLE_TYPE_NAME,
+        CREATIVE_SSL_COMPLIANCE_OVERRIDE,
+        CREATIVE_SSL_COMPLIANCE_OVERRIDE_NAME,
+        CREATIVE_SSL_SCAN_RESULT,
+        CREATIVE_SSL_SCAN_RESULT_NAME,
+        CREATIVE_TARGET_AD_UNIT_SIZE,
+        CREATIVE_TECHNOLOGY,
+        CREATIVE_TECHNOLOGY_NAME,
+        CREATIVE_THIRD_PARTY_VENDOR,
+        CREATIVE_TYPE,
+        CREATIVE_TYPE_NAME,
+        CREATIVE_VENDOR_ID,
+        CREATIVE_VENDOR_NAME,
+        CREATIVE_VIDEO_REDIRECT_THIRD_PARTY,
+        CURATOR_ID,
+        CURATOR_NAME,
+        CUSTOM_EVENT_ID,
+        CUSTOM_EVENT_NAME,
+        CUSTOM_EVENT_TYPE,
+        CUSTOM_EVENT_TYPE_NAME,
+        CUSTOM_SPOT_ID,
+        CUSTOM_SPOT_NAME,
+        DATE,
+        DAY_OF_WEEK,
+        DEAL_BUYER_ID,
+        DEAL_BUYER_NAME,
+        DEAL_ID,
+        DEAL_ID_ALL,
+        DEAL_NAME,
+        DECLARED_ADVERTISER_DOMAIN,
+        DELIVERED_SECURE_SIGNAL_ID,
+        DELIVERED_SECURE_SIGNAL_NAME,
+        DEMAND_CHANNEL,
+        DEMAND_CHANNEL_NAME,
+        DEMAND_SOURCE,
+        DEMAND_SOURCE_ALL,
+        DEMAND_SOURCE_NAME,
+        DEMAND_SUBCHANNEL,
+        DEMAND_SUBCHANNEL_NAME,
+        DEVICE,
+        DEVICE_CATEGORY,
+        DEVICE_CATEGORY_NAME,
+        DEVICE_MANUFACTURER_ID,
+        DEVICE_MANUFACTURER_NAME,
+        DEVICE_MODEL_ID,
+        DEVICE_MODEL_NAME,
+        DEVICE_NAME,
+        DSP_SEAT_ID,
+        DYNAMIC_ALLOCATION_TYPE,
+        DYNAMIC_ALLOCATION_TYPE_NAME,
+        ESP_DELIVERY,
+        ESP_DELIVERY_NAME,
+        ESP_PRESENCE,
+        ESP_PRESENCE_NAME,
+        EXCHANGE_BIDDING_DEAL_ID,
+        EXCHANGE_BIDDING_DEAL_TYPE,
+        EXCHANGE_BIDDING_DEAL_TYPE_NAME,
+        EXCHANGE_THIRD_PARTY_COMPANY_ID,
+        EXCHANGE_THIRD_PARTY_COMPANY_NAME,
+        FIRST_LOOK_PRICING_RULE_ID,
+        FIRST_LOOK_PRICING_RULE_NAME,
+        FIRST_PARTY_ID_STATUS,
+        FIRST_PARTY_ID_STATUS_NAME,
+        GENDER,
+        GENDER_NAME,
+        GOOGLE_ANALYTICS_STREAM_ID,
+        GOOGLE_ANALYTICS_STREAM_NAME,
+        HBT_YIELD_PARTNER_ID,
+        HBT_YIELD_PARTNER_NAME,
+        HEADER_BIDDER_INTEGRATION_TYPE,
+        HEADER_BIDDER_INTEGRATION_TYPE_NAME,
+        HIGH_ENGAGEMENT_ADS_ALLOWED,
+        HOUR,
+        IMPRESSION_COUNTING_METHOD,
+        IMPRESSION_COUNTING_METHOD_NAME,
+        INTERACTION_TYPE,
+        INTERACTION_TYPE_NAME,
+        INTEREST,
+        INVENTORY_FORMAT,
+        INVENTORY_FORMAT_NAME,
+        INVENTORY_SHARE_ASSIGNMENT_ID,
+        INVENTORY_SHARE_ASSIGNMENT_NAME,
+        INVENTORY_SHARE_OUTCOME,
+        INVENTORY_SHARE_OUTCOME_NAME,
+        INVENTORY_SHARE_PARTNER_AD_SERVER,
+        INVENTORY_SHARE_PARTNER_AD_SERVER_NAME,
+        INVENTORY_SHARE_TARGET_SHARE_PERCENT,
+        INVENTORY_SHARE_TYPE,
+        INVENTORY_SHARE_TYPE_NAME,
+        INVENTORY_TYPE,
+        INVENTORY_TYPE_NAME,
+        IS_ADX_DIRECT,
+        IS_CURATION_TARGETED,
+        IS_DROPPED,
+        IS_FIRST_LOOK_DEAL,
+        KEY_VALUES_ID,
+        KEY_VALUES_NAME,
+        KEY_VALUES_SET,
+        LANDING_PAGE_DOMAIN,
+        LINE_ITEM_AGENCY,
+        LINE_ITEM_ARCHIVED,
+        LINE_ITEM_AVERAGE_NUMBER_OF_VIEWERS,
+        LINE_ITEM_COMPANION_DELIVERY_OPTION,
+        LINE_ITEM_COMPANION_DELIVERY_OPTION_NAME,
+        LINE_ITEM_COMPUTED_STATUS,
+        LINE_ITEM_COMPUTED_STATUS_NAME,
+        LINE_ITEM_CONTRACTED_QUANTITY,
+        LINE_ITEM_COST_PER_UNIT,
+        LINE_ITEM_COST_TYPE,
+        LINE_ITEM_COST_TYPE_NAME,
+        LINE_ITEM_CREATIVE_END_DATE,
+        LINE_ITEM_CREATIVE_ROTATION_TYPE,
+        LINE_ITEM_CREATIVE_ROTATION_TYPE_NAME,
+        LINE_ITEM_CREATIVE_START_DATE,
+        LINE_ITEM_CURRENCY_CODE,
+        LINE_ITEM_DELIVERY_INDICATOR,
+        LINE_ITEM_DELIVERY_RATE_TYPE,
+        LINE_ITEM_DELIVERY_RATE_TYPE_NAME,
+        LINE_ITEM_DISCOUNT_ABSOLUTE,
+        LINE_ITEM_DISCOUNT_PERCENTAGE,
+        LINE_ITEM_END_DATE,
+        LINE_ITEM_END_DATE_TIME,
+        LINE_ITEM_ENVIRONMENT_TYPE,
+        LINE_ITEM_ENVIRONMENT_TYPE_NAME,
+        LINE_ITEM_EXTERNAL_DEAL_ID,
+        LINE_ITEM_EXTERNAL_ID,
+        LINE_ITEM_FREQUENCY_CAP,
+        LINE_ITEM_ID,
+        LINE_ITEM_LABELS,
+        LINE_ITEM_LABEL_IDS,
+        LINE_ITEM_LAST_MODIFIED_BY_APP,
+        LINE_ITEM_LIFETIME_CLICKS,
+        LINE_ITEM_LIFETIME_IMPRESSIONS,
+        LINE_ITEM_LIFETIME_VIEWABLE_IMPRESSIONS,
+        LINE_ITEM_MAKEGOOD,
+        LINE_ITEM_NAME,
+        LINE_ITEM_NON_CPD_BOOKED_REVENUE,
+        LINE_ITEM_OPTIMIZABLE,
+        LINE_ITEM_PO_NUMBER,
+        LINE_ITEM_PRIMARY_GOAL_TYPE,
+        LINE_ITEM_PRIMARY_GOAL_TYPE_NAME,
+        LINE_ITEM_PRIMARY_GOAL_UNITS_ABSOLUTE,
+        LINE_ITEM_PRIMARY_GOAL_UNITS_PERCENTAGE,
+        LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE,
+        LINE_ITEM_PRIMARY_GOAL_UNIT_TYPE_NAME,
+        LINE_ITEM_PRIORITY,
+        LINE_ITEM_RESERVATION_STATUS,
+        LINE_ITEM_RESERVATION_STATUS_NAME,
+        LINE_ITEM_SALESPERSON,
+        LINE_ITEM_SECONDARY_SALESPEOPLE,
+        LINE_ITEM_SECONDARY_TRAFFICKERS,
+        LINE_ITEM_START_DATE,
+        LINE_ITEM_START_DATE_TIME,
+        LINE_ITEM_TRAFFICKER,
+        LINE_ITEM_TYPE,
+        LINE_ITEM_TYPE_NAME,
+        LINE_ITEM_UNLIMITED_END,
+        LINE_ITEM_VALUE_COST_PER_UNIT,
+        LINE_ITEM_WEB_PROPERTY_CODE,
+        MASTER_COMPANION_CREATIVE_ID,
+        MASTER_COMPANION_CREATIVE_NAME,
+        MEDIATION_TYPE,
+        MEDIATION_TYPE_NAME,
+        MEDIATION_YIELD_PARTNER_ID,
+        MEDIATION_YIELD_PARTNER_NAME,
+        METRO_ID,
+        METRO_NAME,
+        MOBILE_APP_FREE,
+        MOBILE_APP_ICON_URL,
+        MOBILE_APP_ID,
+        MOBILE_APP_NAME,
+        MOBILE_APP_OWNERSHIP_STATUS,
+        MOBILE_APP_OWNERSHIP_STATUS_NAME,
+        MOBILE_APP_STORE,
+        MOBILE_APP_STORE_NAME,
+        MOBILE_INVENTORY_TYPE,
+        MOBILE_INVENTORY_TYPE_NAME,
+        MOBILE_RENDERING_SDK,
+        MOBILE_RENDERING_SDK_NAME,
+        MOBILE_SDK_MAJOR_VERSION,
+        MOBILE_SDK_MINOR_VERSION,
+        MOBILE_SDK_VERSION_NAME,
+        MONTH_YEAR,
+        NATIVE_AD_FORMAT_ID,
+        NATIVE_AD_FORMAT_NAME,
+        NATIVE_STYLE_ID,
+        NATIVE_STYLE_NAME,
+        NIELSEN_DEMOGRAPHICS,
+        NIELSEN_DEMOGRAPHICS_NAME,
+        NIELSEN_DEVICE,
+        NIELSEN_DEVICE_NAME,
+        NIELSEN_IN_TARGET,
+        NIELSEN_RESTATEMENT_DATE,
+        NIELSEN_SEGMENT,
+        NIELSEN_SITE_URL,
+        NON_GUARANTEED_DEAL_PRIORITY_TIER,
+        NON_GUARANTEED_DEAL_PRIORITY_TIER_NAME,
+        NO_FILL_REASON_CATEGORY_NAME,
+        NUM_ADS_IN_POD,
+        OPERATING_SYSTEM_CATEGORY,
+        OPERATING_SYSTEM_CATEGORY_NAME,
+        OPERATING_SYSTEM_VERSION_ID,
+        OPERATING_SYSTEM_VERSION_NAME,
+        OPTIMIZATION_TYPE,
+        OPTIMIZATION_TYPE_NAME,
+        ORDER_AGENCY,
+        ORDER_AGENCY_ID,
+        ORDER_BOOKED_CPC,
+        ORDER_BOOKED_CPM,
+        ORDER_DELIVERY_STATUS,
+        ORDER_DELIVERY_STATUS_NAME,
+        ORDER_END_DATE,
+        ORDER_END_DATE_TIME,
+        ORDER_EXTERNAL_ID,
+        ORDER_ID,
+        ORDER_LABELS,
+        ORDER_LABEL_IDS,
+        ORDER_LIFETIME_CLICKS,
+        ORDER_LIFETIME_IMPRESSIONS,
+        ORDER_NAME,
+        ORDER_PO_NUMBER,
+        ORDER_PROGRAMMATIC,
+        ORDER_SALESPERSON,
+        ORDER_SALESPERSON_ID,
+        ORDER_SECONDARY_SALESPEOPLE,
+        ORDER_SECONDARY_SALESPEOPLE_ID,
+        ORDER_SECONDARY_TRAFFICKERS,
+        ORDER_SECONDARY_TRAFFICKERS_ID,
+        ORDER_START_DATE,
+        ORDER_START_DATE_TIME,
+        ORDER_TRAFFICKER,
+        ORDER_TRAFFICKER_ID,
+        ORDER_UNLIMITED_END,
+        PAGE_PATH,
+        PAGE_TITLE_AND_SCREEN_CLASS,
+        PAGE_TITLE_AND_SCREEN_NAME,
+        PARTNER_MANAGEMENT_ASSIGNMENT_ID,
+        PARTNER_MANAGEMENT_ASSIGNMENT_NAME,
+        PARTNER_MANAGEMENT_PARTNER_ID,
+        PARTNER_MANAGEMENT_PARTNER_NAME,
+        PAYMENT_PROFILE_ID,
+        PAYMENT_PROFILE_NAME,
+        PLACEMENT_ID,
+        PLACEMENT_ID_ALL,
+        PLACEMENT_NAME,
+        PLACEMENT_NAME_ALL,
+        PLACEMENT_STATUS,
+        PLACEMENT_STATUS_NAME,
+        PLACEMENT_STATUS_NAME_ALL,
+        POSTAL_CODE_ID,
+        POSTAL_CODE_NAME,
+        PPID_STATUS,
+        PPID_STATUS_NAME,
+        PREDICTED_VIEWABILITY_BUCKET,
+        PREDICTED_VIEWABILITY_BUCKET_NAME,
+        PRESENTED_SECURE_SIGNAL_ID,
+        PRESENTED_SECURE_SIGNAL_NAME,
+        PRICING_RULE_ID,
+        PRICING_RULE_NAME,
+        PRIMARY_PERSONALIZATION_ID_TYPE,
+        PRIMARY_PERSONALIZATION_ID_TYPE_NAME,
+        PROGRAMMATIC_CHANNEL,
+        PROGRAMMATIC_CHANNEL_NAME,
+        PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_EXTERNAL_CODE,
+        PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_IDS,
+        PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_NAME,
+        PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TIER,
+        PUBLISHER_PROVIDED_SIGNALS_ALL_LEVELS_TYPE,
+        PUBLISHER_PROVIDED_SIGNALS_DELIVERED_EXTERNAL_CODE,
+        PUBLISHER_PROVIDED_SIGNALS_DELIVERED_IDS,
+        PUBLISHER_PROVIDED_SIGNALS_DELIVERED_NAME,
+        PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TIER,
+        PUBLISHER_PROVIDED_SIGNALS_DELIVERED_TYPE,
+        PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_EXTERNAL_CODE,
+        PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_ID,
+        PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_NAME,
+        PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TIER,
+        PUBLISHER_PROVIDED_SIGNALS_TOP_LEVEL_TYPE,
+        PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_ID,
+        PUBLISHER_PROVIDED_SIGNAL_DATA_PROVIDER_NAME,
+        REGION_ID,
+        REGION_NAME,
+        REJECTION_CLASS_CATEGORY_NAME,
+        RENDERED_CREATIVE_SIZE,
+        REQUESTED_AD_SIZES,
+        REQUESTED_CREATIVE_ORIENTATION,
+        REQUESTED_CREATIVE_ORIENTATION_NAME,
+        REQUEST_TYPE,
+        REQUEST_TYPE_NAME,
+        REVENUE_VERIFICATION_ID,
+        SERVER_SIDE_UNWRAPPING_ELIGIBLE,
+        SERVING_RESTRICTION,
+        SERVING_RESTRICTION_NAME,
+        SITE,
+        TARGETING_ID,
+        TARGETING_NAME,
+        TARGETING_TYPE,
+        TARGETING_TYPE_NAME,
+        TARGETS_CUSTOMER_MATCHING_LIST,
+        THIRD_PARTY_ID_STATUS,
+        THIRD_PARTY_ID_STATUS_NAME,
+        TOPICS_STATUS,
+        TOPICS_STATUS_NAME,
+        TOP_PRIVATE_DOMAIN,
+        TRAFFIC_SOURCE,
+        TRAFFIC_SOURCE_NAME,
+        URL,
+        URL_ID,
+        USER_MESSAGES_CHOICE,
+        USER_MESSAGES_CHOICE_NAME,
+        USER_MESSAGES_ENTITLEMENT_SOURCE,
+        USER_MESSAGES_ENTITLEMENT_SOURCE_NAME,
+        USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_ID,
+        USER_MESSAGES_OPERATING_SYSTEM_CRITERIA_NAME,
+        VAST_VERSION,
+        VAST_VERSION_NAME,
+        VIDEO_AD_BREAK_TYPE,
+        VIDEO_AD_BREAK_TYPE_NAME,
+        VIDEO_AD_DURATION,
+        VIDEO_AD_FORMATS_RULE,
+        VIDEO_AD_FORMATS_RULE_ID,
+        VIDEO_AD_REQUEST_DURATION,
+        VIDEO_AD_REQUEST_DURATION_MIDPOINT_NAME,
+        VIDEO_AD_REQUEST_DURATION_NAME,
+        VIDEO_AD_REQUEST_SOURCE,
+        VIDEO_AD_REQUEST_SOURCE_NAME,
+        VIDEO_AD_TYPE,
+        VIDEO_AD_TYPE_NAME,
+        VIDEO_CONTINUOUS_PLAY_TYPE,
+        VIDEO_CONTINUOUS_PLAY_TYPE_NAME,
+        VIDEO_FALLBACK_POSITION,
+        VIDEO_LIVE_STREAM_EVENT_AD_BREAK_DURATION,
+        VIDEO_LIVE_STREAM_EVENT_AD_BREAK_ID,
+        VIDEO_LIVE_STREAM_EVENT_AD_BREAK_NAME,
+        VIDEO_LIVE_STREAM_EVENT_AD_BREAK_TIME,
+        VIDEO_LIVE_STREAM_EVENT_ID,
+        VIDEO_LIVE_STREAM_EVENT_NAME,
+        VIDEO_MEASUREMENT_SOURCE,
+        VIDEO_MEASUREMENT_SOURCE_NAME,
+        VIDEO_PLCMT,
+        VIDEO_PLCMT_NAME,
+        VIDEO_POSITION_IN_POD,
+        VIDEO_POSITION_OF_POD,
+        VIDEO_SDK_VERSION,
+        VIDEO_SDK_VERSION_NAME,
+        VIDEO_STITCHER_TYPE,
+        VIDEO_STITCHER_TYPE_NAME,
+        WEB_INTERSTITIAL_TRIGGER_TYPE,
+        WEB_INTERSTITIAL_TRIGGER_TYPE_NAME,
+        WEB_PROPERTY_CODE,
+        WEEK,
+        YIELD_GROUP_BUYER_NAME,
+        YIELD_GROUP_BUYER_TAG_NAME,
+        YIELD_GROUP_ID,
+        YIELD_GROUP_NAME,
+        YOUTUBE_AD_DURATION_BUCKET,
+        YOUTUBE_AD_DURATION_BUCKET_NAME,
+        YOUTUBE_AD_TYPE,
+        YOUTUBE_AD_TYPE_NAME,
+        ADVERTISER_DOMAIN_NAME,
+        LINE_ITEM_CUSTOM_FIELD_0_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_1_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_2_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_3_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_4_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_5_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_6_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_7_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_8_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_9_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_10_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_11_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_12_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_13_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_14_OPTION_ID,
+        LINE_ITEM_CUSTOM_FIELD_0_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_1_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_2_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_3_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_4_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_5_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_6_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_7_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_8_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_9_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_10_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_11_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_12_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_13_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_14_VALUE,
+        LINE_ITEM_CUSTOM_FIELD_0_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_1_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_2_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_3_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_4_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_5_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_6_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_7_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_8_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_9_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_10_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_11_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_12_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_13_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_14_VALUE_DOUBLE,
+        LINE_ITEM_CUSTOM_FIELD_0_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_1_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_2_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_3_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_4_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_5_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_6_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_7_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_8_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_9_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_10_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_11_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_12_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_13_VALUE_BOOL,
+        LINE_ITEM_CUSTOM_FIELD_14_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_0_OPTION_ID,
+        ORDER_CUSTOM_FIELD_1_OPTION_ID,
+        ORDER_CUSTOM_FIELD_2_OPTION_ID,
+        ORDER_CUSTOM_FIELD_3_OPTION_ID,
+        ORDER_CUSTOM_FIELD_4_OPTION_ID,
+        ORDER_CUSTOM_FIELD_5_OPTION_ID,
+        ORDER_CUSTOM_FIELD_6_OPTION_ID,
+        ORDER_CUSTOM_FIELD_7_OPTION_ID,
+        ORDER_CUSTOM_FIELD_8_OPTION_ID,
+        ORDER_CUSTOM_FIELD_9_OPTION_ID,
+        ORDER_CUSTOM_FIELD_10_OPTION_ID,
+        ORDER_CUSTOM_FIELD_11_OPTION_ID,
+        ORDER_CUSTOM_FIELD_12_OPTION_ID,
+        ORDER_CUSTOM_FIELD_13_OPTION_ID,
+        ORDER_CUSTOM_FIELD_14_OPTION_ID,
+        ORDER_CUSTOM_FIELD_0_VALUE,
+        ORDER_CUSTOM_FIELD_1_VALUE,
+        ORDER_CUSTOM_FIELD_2_VALUE,
+        ORDER_CUSTOM_FIELD_3_VALUE,
+        ORDER_CUSTOM_FIELD_4_VALUE,
+        ORDER_CUSTOM_FIELD_5_VALUE,
+        ORDER_CUSTOM_FIELD_6_VALUE,
+        ORDER_CUSTOM_FIELD_7_VALUE,
+        ORDER_CUSTOM_FIELD_8_VALUE,
+        ORDER_CUSTOM_FIELD_9_VALUE,
+        ORDER_CUSTOM_FIELD_10_VALUE,
+        ORDER_CUSTOM_FIELD_11_VALUE,
+        ORDER_CUSTOM_FIELD_12_VALUE,
+        ORDER_CUSTOM_FIELD_13_VALUE,
+        ORDER_CUSTOM_FIELD_14_VALUE,
+        ORDER_CUSTOM_FIELD_0_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_1_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_2_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_3_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_4_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_5_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_6_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_7_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_8_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_9_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_10_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_11_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_12_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_13_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_14_VALUE_DOUBLE,
+        ORDER_CUSTOM_FIELD_0_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_1_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_2_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_3_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_4_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_5_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_6_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_7_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_8_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_9_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_10_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_11_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_12_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_13_VALUE_BOOL,
+        ORDER_CUSTOM_FIELD_14_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_0_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_1_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_2_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_3_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_4_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_5_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_6_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_7_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_8_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_9_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_10_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_11_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_12_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_13_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_14_OPTION_ID,
+        CREATIVE_CUSTOM_FIELD_0_VALUE,
+        CREATIVE_CUSTOM_FIELD_1_VALUE,
+        CREATIVE_CUSTOM_FIELD_2_VALUE,
+        CREATIVE_CUSTOM_FIELD_3_VALUE,
+        CREATIVE_CUSTOM_FIELD_4_VALUE,
+        CREATIVE_CUSTOM_FIELD_5_VALUE,
+        CREATIVE_CUSTOM_FIELD_6_VALUE,
+        CREATIVE_CUSTOM_FIELD_7_VALUE,
+        CREATIVE_CUSTOM_FIELD_8_VALUE,
+        CREATIVE_CUSTOM_FIELD_9_VALUE,
+        CREATIVE_CUSTOM_FIELD_10_VALUE,
+        CREATIVE_CUSTOM_FIELD_11_VALUE,
+        CREATIVE_CUSTOM_FIELD_12_VALUE,
+        CREATIVE_CUSTOM_FIELD_13_VALUE,
+        CREATIVE_CUSTOM_FIELD_14_VALUE,
+        CREATIVE_CUSTOM_FIELD_0_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_1_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_2_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_3_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_4_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_5_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_6_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_7_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_8_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_9_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_10_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_11_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_12_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_13_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_14_VALUE_DOUBLE,
+        CREATIVE_CUSTOM_FIELD_0_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_1_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_2_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_3_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_4_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_5_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_6_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_7_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_8_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_9_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_10_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_11_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_12_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_13_VALUE_BOOL,
+        CREATIVE_CUSTOM_FIELD_14_VALUE_BOOL,
+        CMS_METADATA_DIMENSION_0_VALUE_ID,
+        CMS_METADATA_DIMENSION_1_VALUE_ID,
+        CMS_METADATA_DIMENSION_2_VALUE_ID,
+        CMS_METADATA_DIMENSION_3_VALUE_ID,
+        CMS_METADATA_DIMENSION_4_VALUE_ID,
+        CMS_METADATA_DIMENSION_5_VALUE_ID,
+        CMS_METADATA_DIMENSION_6_VALUE_ID,
+        CMS_METADATA_DIMENSION_7_VALUE_ID,
+        CMS_METADATA_DIMENSION_8_VALUE_ID,
+        CMS_METADATA_DIMENSION_9_VALUE_ID,
+        CMS_METADATA_DIMENSION_0_VALUE,
+        CMS_METADATA_DIMENSION_1_VALUE,
+        CMS_METADATA_DIMENSION_2_VALUE,
+        CMS_METADATA_DIMENSION_3_VALUE,
+        CMS_METADATA_DIMENSION_4_VALUE,
+        CMS_METADATA_DIMENSION_5_VALUE,
+        CMS_METADATA_DIMENSION_6_VALUE,
+        CMS_METADATA_DIMENSION_7_VALUE,
+        CMS_METADATA_DIMENSION_8_VALUE,
+        CMS_METADATA_DIMENSION_9_VALUE,
+        CUSTOM_DIMENSION_0_VALUE_ID,
+        CUSTOM_DIMENSION_1_VALUE_ID,
+        CUSTOM_DIMENSION_2_VALUE_ID,
+        CUSTOM_DIMENSION_3_VALUE_ID,
+        CUSTOM_DIMENSION_4_VALUE_ID,
+        CUSTOM_DIMENSION_5_VALUE_ID,
+        CUSTOM_DIMENSION_6_VALUE_ID,
+        CUSTOM_DIMENSION_7_VALUE_ID,
+        CUSTOM_DIMENSION_8_VALUE_ID,
+        CUSTOM_DIMENSION_9_VALUE_ID,
+        CUSTOM_DIMENSION_0_VALUE,
+        CUSTOM_DIMENSION_1_VALUE,
+        CUSTOM_DIMENSION_2_VALUE,
+        CUSTOM_DIMENSION_3_VALUE,
+        CUSTOM_DIMENSION_4_VALUE,
+        CUSTOM_DIMENSION_5_VALUE,
+        CUSTOM_DIMENSION_6_VALUE,
+        CUSTOM_DIMENSION_7_VALUE,
+        CUSTOM_DIMENSION_8_VALUE,
+        CUSTOM_DIMENSION_9_VALUE,
+        EKV_DIMENSION_0_VALUE_ID,
+        EKV_DIMENSION_1_VALUE_ID,
+        EKV_DIMENSION_2_VALUE_ID,
+        EKV_DIMENSION_3_VALUE_ID,
+        EKV_DIMENSION_4_VALUE_ID,
+        EKV_DIMENSION_5_VALUE_ID,
+        EKV_DIMENSION_6_VALUE_ID,
+        EKV_DIMENSION_7_VALUE_ID,
+        EKV_DIMENSION_8_VALUE_ID,
+        EKV_DIMENSION_9_VALUE_ID,
+        EKV_DIMENSION_0_VALUE,
+        EKV_DIMENSION_1_VALUE,
+        EKV_DIMENSION_2_VALUE,
+        EKV_DIMENSION_3_VALUE,
+        EKV_DIMENSION_4_VALUE,
+        EKV_DIMENSION_5_VALUE,
+        EKV_DIMENSION_6_VALUE,
+        EKV_DIMENSION_7_VALUE,
+        EKV_DIMENSION_8_VALUE,
+        EKV_DIMENSION_9_VALUE,
+      };
+    }
 
     public static Dimension valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -28662,9 +29955,11 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
       return VALUES[desc.getIndex()];
     }
 
+    private final int index;
     private final int value;
 
-    private Dimension(int value) {
+    private Dimension(int index, int value) {
+      this.index = index;
       this.value = value;
     }
 
@@ -29632,6 +30927,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The cost per item purchased.
+     *
+     *
+     *
+     * Corresponds to "Advertiser cost per attributed item purchased" in the Ad
+     * Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>ADVERTISER_COST_PER_ATTRIBUTED_ITEM_PURCHASED = 747;</code>
+     */
+    ADVERTISER_COST_PER_ATTRIBUTED_ITEM_PURCHASED(50, 747),
+    /**
+     *
+     *
+     * <pre>
      * Active View AdExchange average time in seconds that specific impressions
      * are reported as being viewable.
      *
@@ -29647,7 +30961,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 79;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME(50, 79),
+    AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME(51, 79),
     /**
      *
      *
@@ -29667,7 +30981,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 76;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS(51, 76),
+    AD_EXCHANGE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS(52, 76),
     /**
      *
      *
@@ -29687,7 +31001,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 75;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS(52, 75),
+    AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS(53, 75),
     /**
      *
      *
@@ -29708,7 +31022,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 78;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE(53, 78),
+    AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE(54, 78),
     /**
      *
      *
@@ -29727,7 +31041,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_NON_MEASURABLE_IMPRESSIONS = 654;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_NON_MEASURABLE_IMPRESSIONS(54, 654),
+    AD_EXCHANGE_ACTIVE_VIEW_NON_MEASURABLE_IMPRESSIONS(55, 654),
     /**
      *
      *
@@ -29746,7 +31060,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS = 655;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS(55, 655),
+    AD_EXCHANGE_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS(56, 655),
     /**
      *
      *
@@ -29765,7 +31079,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS_DISTRIBUTION = 656;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS_DISTRIBUTION(56, 656),
+    AD_EXCHANGE_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS_DISTRIBUTION(57, 656),
     /**
      *
      *
@@ -29784,7 +31098,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_UNDETERMINED_IMPRESSIONS_DISTRIBUTION = 657;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_UNDETERMINED_IMPRESSIONS_DISTRIBUTION(57, 657),
+    AD_EXCHANGE_ACTIVE_VIEW_UNDETERMINED_IMPRESSIONS_DISTRIBUTION(58, 657),
     /**
      *
      *
@@ -29804,7 +31118,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 74;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS(58, 74),
+    AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS(59, 74),
     /**
      *
      *
@@ -29823,7 +31137,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_DISTRIBUTION = 658;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_DISTRIBUTION(59, 658),
+    AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_DISTRIBUTION(60, 658),
     /**
      *
      *
@@ -29844,7 +31158,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 77;</code>
      */
-    AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE(60, 77),
+    AD_EXCHANGE_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE(61, 77),
     /**
      *
      *
@@ -29863,7 +31177,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_AVERAGE_ECPM = 18;</code>
      */
-    AD_EXCHANGE_AVERAGE_ECPM(61, 18),
+    AD_EXCHANGE_AVERAGE_ECPM(62, 18),
     /**
      *
      *
@@ -29881,7 +31195,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_CLICKS = 15;</code>
      */
-    AD_EXCHANGE_CLICKS(62, 15),
+    AD_EXCHANGE_CLICKS(63, 15),
     /**
      *
      *
@@ -29900,7 +31214,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_CPC = 244;</code>
      */
-    AD_EXCHANGE_CPC(63, 244),
+    AD_EXCHANGE_CPC(64, 244),
     /**
      *
      *
@@ -29921,7 +31235,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_CTR = 16;</code>
      */
-    AD_EXCHANGE_CTR(64, 16),
+    AD_EXCHANGE_CTR(65, 16),
     /**
      *
      *
@@ -29940,7 +31254,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_DELIVERY_RATE = 245;</code>
      */
-    AD_EXCHANGE_DELIVERY_RATE(65, 245),
+    AD_EXCHANGE_DELIVERY_RATE(66, 245),
     /**
      *
      *
@@ -29958,7 +31272,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_IMPRESSIONS = 14;</code>
      */
-    AD_EXCHANGE_IMPRESSIONS(66, 14),
+    AD_EXCHANGE_IMPRESSIONS(67, 14),
     /**
      *
      *
@@ -29977,7 +31291,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_IMPRESSIONS_PER_AD_VIEWER = 427;</code>
      */
-    AD_EXCHANGE_IMPRESSIONS_PER_AD_VIEWER(67, 427),
+    AD_EXCHANGE_IMPRESSIONS_PER_AD_VIEWER(68, 427),
     /**
      *
      *
@@ -29996,7 +31310,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_IMPRESSIONS_PER_SESSION = 428;</code>
      */
-    AD_EXCHANGE_IMPRESSIONS_PER_SESSION(68, 428),
+    AD_EXCHANGE_IMPRESSIONS_PER_SESSION(69, 428),
     /**
      *
      *
@@ -30016,7 +31330,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_LIFT = 246;</code>
      */
-    AD_EXCHANGE_LIFT(69, 246),
+    AD_EXCHANGE_LIFT(70, 246),
     /**
      *
      *
@@ -30037,7 +31351,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_MATCHED_REQUEST_CTR = 247;</code>
      */
-    AD_EXCHANGE_MATCHED_REQUEST_CTR(70, 247),
+    AD_EXCHANGE_MATCHED_REQUEST_CTR(71, 247),
     /**
      *
      *
@@ -30056,7 +31370,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_MATCHED_REQUEST_ECPM = 248;</code>
      */
-    AD_EXCHANGE_MATCHED_REQUEST_ECPM(71, 248),
+    AD_EXCHANGE_MATCHED_REQUEST_ECPM(72, 248),
     /**
      *
      *
@@ -30075,7 +31389,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_MATCH_RATE = 249;</code>
      */
-    AD_EXCHANGE_MATCH_RATE(72, 249),
+    AD_EXCHANGE_MATCH_RATE(73, 249),
     /**
      *
      *
@@ -30095,7 +31409,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_OPPORTUNITIES_FROM_ERRORS = 250;</code>
      */
-    AD_EXCHANGE_OPPORTUNITIES_FROM_ERRORS(73, 250),
+    AD_EXCHANGE_OPPORTUNITIES_FROM_ERRORS(74, 250),
     /**
      *
      *
@@ -30115,7 +31429,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_OPPORTUNITIES_FROM_IMPRESSIONS = 251;</code>
      */
-    AD_EXCHANGE_OPPORTUNITIES_FROM_IMPRESSIONS(74, 251),
+    AD_EXCHANGE_OPPORTUNITIES_FROM_IMPRESSIONS(75, 251),
     /**
      *
      *
@@ -30134,7 +31448,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PERCENT_CLICKS = 20;</code>
      */
-    AD_EXCHANGE_PERCENT_CLICKS(75, 20),
+    AD_EXCHANGE_PERCENT_CLICKS(76, 20),
     /**
      *
      *
@@ -30153,7 +31467,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PERCENT_IMPRESSIONS = 19;</code>
      */
-    AD_EXCHANGE_PERCENT_IMPRESSIONS(76, 19),
+    AD_EXCHANGE_PERCENT_IMPRESSIONS(77, 19),
     /**
      *
      *
@@ -30172,7 +31486,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PERCENT_REVENUE = 21;</code>
      */
-    AD_EXCHANGE_PERCENT_REVENUE(77, 21),
+    AD_EXCHANGE_PERCENT_REVENUE(78, 21),
     /**
      *
      *
@@ -30191,7 +31505,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PERCENT_REVENUE_WITHOUT_CPD = 31;</code>
      */
-    AD_EXCHANGE_PERCENT_REVENUE_WITHOUT_CPD(78, 31),
+    AD_EXCHANGE_PERCENT_REVENUE_WITHOUT_CPD(79, 31),
     /**
      *
      *
@@ -30211,7 +31525,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PLUS_YIELD_GROUP_ECPM = 252;</code>
      */
-    AD_EXCHANGE_PLUS_YIELD_GROUP_ECPM(79, 252),
+    AD_EXCHANGE_PLUS_YIELD_GROUP_ECPM(80, 252),
     /**
      *
      *
@@ -30230,7 +31544,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PLUS_YIELD_GROUP_IMPRESSIONS = 253;</code>
      */
-    AD_EXCHANGE_PLUS_YIELD_GROUP_IMPRESSIONS(80, 253),
+    AD_EXCHANGE_PLUS_YIELD_GROUP_IMPRESSIONS(81, 253),
     /**
      *
      *
@@ -30250,7 +31564,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE = 254;</code>
      */
-    AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE(81, 254),
+    AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE(82, 254),
+    /**
+     *
+     *
+     * <pre>
+     * The ratio of impressions to responses served in Ad Exchange.
+     *
+     *
+     *
+     * Corresponds to "Ad Exchange render rate" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `PERCENT`
+     * </pre>
+     *
+     * <code>AD_EXCHANGE_RENDER_RATE = 759;</code>
+     */
+    AD_EXCHANGE_RENDER_RATE(83, 759),
     /**
      *
      *
@@ -30268,7 +31600,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_RESPONSES_SERVED = 42;</code>
      */
-    AD_EXCHANGE_RESPONSES_SERVED(82, 42),
+    AD_EXCHANGE_RESPONSES_SERVED(84, 42),
     /**
      *
      *
@@ -30287,7 +31619,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_REVENUE = 17;</code>
      */
-    AD_EXCHANGE_REVENUE(83, 17),
+    AD_EXCHANGE_REVENUE(85, 17),
     /**
      *
      *
@@ -30308,7 +31640,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT = 212;</code>
      */
-    AD_EXCHANGE_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(84, 212),
+    AD_EXCHANGE_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(86, 212),
     /**
      *
      *
@@ -30327,7 +31659,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_REVENUE_PER_AD_VIEWER = 429;</code>
      */
-    AD_EXCHANGE_REVENUE_PER_AD_VIEWER(85, 429),
+    AD_EXCHANGE_REVENUE_PER_AD_VIEWER(87, 429),
     /**
      *
      *
@@ -30345,7 +31677,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_TOTAL_REQUESTS = 255;</code>
      */
-    AD_EXCHANGE_TOTAL_REQUESTS(86, 255),
+    AD_EXCHANGE_TOTAL_REQUESTS(88, 255),
     /**
      *
      *
@@ -30366,7 +31698,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_TOTAL_REQUEST_CTR = 256;</code>
      */
-    AD_EXCHANGE_TOTAL_REQUEST_CTR(87, 256),
+    AD_EXCHANGE_TOTAL_REQUEST_CTR(89, 256),
     /**
      *
      *
@@ -30386,7 +31718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXCHANGE_TOTAL_REQUEST_ECPM = 257;</code>
      */
-    AD_EXCHANGE_TOTAL_REQUEST_ECPM(88, 257),
+    AD_EXCHANGE_TOTAL_REQUEST_ECPM(90, 257),
     /**
      *
      *
@@ -30405,7 +31737,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_EXPOSURE_SECONDS = 241;</code>
      */
-    AD_EXPOSURE_SECONDS(89, 241),
+    AD_EXPOSURE_SECONDS(91, 241),
     /**
      *
      *
@@ -30424,7 +31756,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_REQUESTS = 38;</code>
      */
-    AD_REQUESTS(90, 38),
+    AD_REQUESTS(92, 38),
     /**
      *
      *
@@ -30444,7 +31776,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME = 67;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME(91, 67),
+    AD_SERVER_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME(93, 67),
     /**
      *
      *
@@ -30464,7 +31796,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS = 64;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS(92, 64),
+    AD_SERVER_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS(94, 64),
     /**
      *
      *
@@ -30484,7 +31816,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 63;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS(93, 63),
+    AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS(95, 63),
     /**
      *
      *
@@ -30505,7 +31837,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE = 66;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE(94, 66),
+    AD_SERVER_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS_RATE(96, 66),
     /**
      *
      *
@@ -30525,7 +31857,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_NON_MEASURABLE_IMPRESSIONS = 332;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_NON_MEASURABLE_IMPRESSIONS(95, 332),
+    AD_SERVER_ACTIVE_VIEW_NON_MEASURABLE_IMPRESSIONS(97, 332),
     /**
      *
      *
@@ -30545,7 +31877,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS = 331;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS(96, 331),
+    AD_SERVER_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS(98, 331),
     /**
      *
      *
@@ -30565,7 +31897,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS_DISTRIBUTION = 334;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS_DISTRIBUTION(97, 334),
+    AD_SERVER_ACTIVE_VIEW_NON_VIEWABLE_IMPRESSIONS_DISTRIBUTION(99, 334),
     /**
      *
      *
@@ -30583,7 +31915,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_REVENUE = 704;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_REVENUE(98, 704),
+    AD_SERVER_ACTIVE_VIEW_REVENUE(100, 704),
     /**
      *
      *
@@ -30603,7 +31935,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_UNDETERMINED_IMPRESSIONS_DISTRIBUTION = 335;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_UNDETERMINED_IMPRESSIONS_DISTRIBUTION(99, 335),
+    AD_SERVER_ACTIVE_VIEW_UNDETERMINED_IMPRESSIONS_DISTRIBUTION(101, 335),
     /**
      *
      *
@@ -30623,7 +31955,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 62;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS(100, 62),
+    AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS(102, 62),
     /**
      *
      *
@@ -30643,7 +31975,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_DISTRIBUTION = 333;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_DISTRIBUTION(101, 333),
+    AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_DISTRIBUTION(103, 333),
     /**
      *
      *
@@ -30664,7 +31996,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 65;</code>
      */
-    AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE(102, 65),
+    AD_SERVER_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE(104, 65),
     /**
      *
      *
@@ -30683,7 +32015,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_AVERAGE_ECPM = 34;</code>
      */
-    AD_SERVER_AVERAGE_ECPM(103, 34),
+    AD_SERVER_AVERAGE_ECPM(105, 34),
     /**
      *
      *
@@ -30702,7 +32034,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_AVERAGE_ECPM_WITHOUT_CPD = 10;</code>
      */
-    AD_SERVER_AVERAGE_ECPM_WITHOUT_CPD(104, 10),
+    AD_SERVER_AVERAGE_ECPM_WITHOUT_CPD(106, 10),
     /**
      *
      *
@@ -30722,7 +32054,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_BEGIN_TO_RENDER_IMPRESSIONS = 262;</code>
      */
-    AD_SERVER_BEGIN_TO_RENDER_IMPRESSIONS(105, 262),
+    AD_SERVER_BEGIN_TO_RENDER_IMPRESSIONS(107, 262),
     /**
      *
      *
@@ -30742,7 +32074,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_CLICKS = 7;</code>
      */
-    AD_SERVER_CLICKS(106, 7),
+    AD_SERVER_CLICKS(108, 7),
     /**
      *
      *
@@ -30760,7 +32092,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_COMPLETED_VIEWS = 431;</code>
      */
-    AD_SERVER_COMPLETED_VIEWS(107, 431),
+    AD_SERVER_COMPLETED_VIEWS(109, 431),
     /**
      *
      *
@@ -30778,7 +32110,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_COVIEWED_IMPRESSIONS = 554;</code>
      */
-    AD_SERVER_COVIEWED_IMPRESSIONS(108, 554),
+    AD_SERVER_COVIEWED_IMPRESSIONS(110, 554),
     /**
      *
      *
@@ -30798,7 +32130,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_CPD_REVENUE = 32;</code>
      */
-    AD_SERVER_CPD_REVENUE(109, 32),
+    AD_SERVER_CPD_REVENUE(111, 32),
     /**
      *
      *
@@ -30819,7 +32151,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_CTR = 8;</code>
      */
-    AD_SERVER_CTR(110, 8),
+    AD_SERVER_CTR(112, 8),
     /**
      *
      *
@@ -30840,7 +32172,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_GROSS_REVENUE = 483;</code>
      */
-    AD_SERVER_GROSS_REVENUE(111, 483),
+    AD_SERVER_GROSS_REVENUE(113, 483),
     /**
      *
      *
@@ -30862,7 +32194,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_GROSS_REVENUE_WITHOUT_CPD = 484;</code>
      */
-    AD_SERVER_GROSS_REVENUE_WITHOUT_CPD(112, 484),
+    AD_SERVER_GROSS_REVENUE_WITHOUT_CPD(114, 484),
     /**
      *
      *
@@ -30880,7 +32212,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_IMPRESSIONS = 6;</code>
      */
-    AD_SERVER_IMPRESSIONS(113, 6),
+    AD_SERVER_IMPRESSIONS(115, 6),
     /**
      *
      *
@@ -30899,7 +32231,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_IMPRESSIONS_WITH_COMPANION = 222;</code>
      */
-    AD_SERVER_IMPRESSIONS_WITH_COMPANION(114, 222),
+    AD_SERVER_IMPRESSIONS_WITH_COMPANION(116, 222),
     /**
      *
      *
@@ -30921,7 +32253,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS = 338;</code>
      */
-    AD_SERVER_INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS(115, 338),
+    AD_SERVER_INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS(117, 338),
     /**
      *
      *
@@ -30941,7 +32273,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_OPPORTUNITIES_FROM_ERRORS = 461;</code>
      */
-    AD_SERVER_OPPORTUNITIES_FROM_ERRORS(116, 461),
+    AD_SERVER_OPPORTUNITIES_FROM_ERRORS(118, 461),
     /**
      *
      *
@@ -30961,7 +32293,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_OPPORTUNITIES_FROM_IMPRESSIONS = 462;</code>
      */
-    AD_SERVER_OPPORTUNITIES_FROM_IMPRESSIONS(117, 462),
+    AD_SERVER_OPPORTUNITIES_FROM_IMPRESSIONS(119, 462),
     /**
      *
      *
@@ -30980,7 +32312,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_PERCENT_CLICKS = 12;</code>
      */
-    AD_SERVER_PERCENT_CLICKS(118, 12),
+    AD_SERVER_PERCENT_CLICKS(120, 12),
     /**
      *
      *
@@ -30999,7 +32331,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_PERCENT_IMPRESSIONS = 11;</code>
      */
-    AD_SERVER_PERCENT_IMPRESSIONS(119, 11),
+    AD_SERVER_PERCENT_IMPRESSIONS(121, 11),
     /**
      *
      *
@@ -31018,7 +32350,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_PERCENT_REVENUE = 35;</code>
      */
-    AD_SERVER_PERCENT_REVENUE(120, 35),
+    AD_SERVER_PERCENT_REVENUE(122, 35),
     /**
      *
      *
@@ -31037,7 +32369,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_PERCENT_REVENUE_WITHOUT_CPD = 13;</code>
      */
-    AD_SERVER_PERCENT_REVENUE_WITHOUT_CPD(121, 13),
+    AD_SERVER_PERCENT_REVENUE_WITHOUT_CPD(123, 13),
     /**
      *
      *
@@ -31055,7 +32387,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_RESPONSES_SERVED = 40;</code>
      */
-    AD_SERVER_RESPONSES_SERVED(122, 40),
+    AD_SERVER_RESPONSES_SERVED(124, 40),
     /**
      *
      *
@@ -31075,7 +32407,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_REVENUE = 33;</code>
      */
-    AD_SERVER_REVENUE(123, 33),
+    AD_SERVER_REVENUE(125, 33),
     /**
      *
      *
@@ -31096,7 +32428,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT = 213;</code>
      */
-    AD_SERVER_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(124, 213),
+    AD_SERVER_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(126, 213),
     /**
      *
      *
@@ -31116,7 +32448,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_REVENUE_WITHOUT_CPD = 9;</code>
      */
-    AD_SERVER_REVENUE_WITHOUT_CPD(125, 9),
+    AD_SERVER_REVENUE_WITHOUT_CPD(127, 9),
     /**
      *
      *
@@ -31135,7 +32467,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_TARGETED_CLICKS = 274;</code>
      */
-    AD_SERVER_TARGETED_CLICKS(126, 274),
+    AD_SERVER_TARGETED_CLICKS(128, 274),
     /**
      *
      *
@@ -31154,7 +32486,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_TARGETED_IMPRESSIONS = 275;</code>
      */
-    AD_SERVER_TARGETED_IMPRESSIONS(127, 275),
+    AD_SERVER_TARGETED_IMPRESSIONS(129, 275),
     /**
      *
      *
@@ -31172,7 +32504,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_TRACKED_ADS = 264;</code>
      */
-    AD_SERVER_TRACKED_ADS(128, 264),
+    AD_SERVER_TRACKED_ADS(130, 264),
     /**
      *
      *
@@ -31193,7 +32525,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_UNFILTERED_BEGIN_TO_RENDER_IMPRESSIONS = 261;</code>
      */
-    AD_SERVER_UNFILTERED_BEGIN_TO_RENDER_IMPRESSIONS(129, 261),
+    AD_SERVER_UNFILTERED_BEGIN_TO_RENDER_IMPRESSIONS(131, 261),
     /**
      *
      *
@@ -31211,7 +32543,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_UNFILTERED_CLICKS = 259;</code>
      */
-    AD_SERVER_UNFILTERED_CLICKS(130, 259),
+    AD_SERVER_UNFILTERED_CLICKS(132, 259),
     /**
      *
      *
@@ -31231,7 +32563,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS = 260;</code>
      */
-    AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS(131, 260),
+    AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS(133, 260),
     /**
      *
      *
@@ -31250,7 +32582,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_SERVER_UNFILTERED_TRACKED_ADS = 263;</code>
      */
-    AD_SERVER_UNFILTERED_TRACKED_ADS(133, 263),
+    AD_SERVER_UNFILTERED_TRACKED_ADS(135, 263),
     /**
      *
      *
@@ -31269,7 +32601,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_UNIT_EXPOSURE_SECONDS = 242;</code>
      */
-    AD_UNIT_EXPOSURE_SECONDS(134, 242),
+    AD_UNIT_EXPOSURE_SECONDS(136, 242),
     /**
      *
      *
@@ -31288,7 +32620,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AD_VIEWERS = 425;</code>
      */
-    AD_VIEWERS(135, 425),
+    AD_VIEWERS(137, 425),
     /**
      *
      *
@@ -31307,7 +32639,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_ADS_FAILED_TO_RENDER = 430;</code>
      */
-    ATN_ADS_FAILED_TO_RENDER(136, 430),
+    ATN_ADS_FAILED_TO_RENDER(138, 430),
     /**
      *
      *
@@ -31326,7 +32658,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_ELIGIBLE_LINE_ITEMS = 342;</code>
      */
-    ATN_ELIGIBLE_LINE_ITEMS(137, 342),
+    ATN_ELIGIBLE_LINE_ITEMS(139, 342),
     /**
      *
      *
@@ -31346,7 +32678,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_ELIGIBLE_LINE_ITEMS_AD_REQUESTS = 343;</code>
      */
-    ATN_ELIGIBLE_LINE_ITEMS_AD_REQUESTS(138, 343),
+    ATN_ELIGIBLE_LINE_ITEMS_AD_REQUESTS(140, 343),
     /**
      *
      *
@@ -31366,7 +32698,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_ALLOWED_AD_REQUESTS = 344;</code>
      */
-    ATN_HBT_ALLOWED_AD_REQUESTS(139, 344),
+    ATN_HBT_ALLOWED_AD_REQUESTS(141, 344),
     /**
      *
      *
@@ -31386,7 +32718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_BIDS_IN_AUCTION = 345;</code>
      */
-    ATN_HBT_BIDS_IN_AUCTION(140, 345),
+    ATN_HBT_BIDS_IN_AUCTION(142, 345),
     /**
      *
      *
@@ -31406,7 +32738,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_BIDS_IN_AUCTION_AD_REQUESTS = 346;</code>
      */
-    ATN_HBT_BIDS_IN_AUCTION_AD_REQUESTS(141, 346),
+    ATN_HBT_BIDS_IN_AUCTION_AD_REQUESTS(143, 346),
     /**
      *
      *
@@ -31425,7 +32757,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_CANDIDATE_BIDS = 347;</code>
      */
-    ATN_HBT_CANDIDATE_BIDS(142, 347),
+    ATN_HBT_CANDIDATE_BIDS(144, 347),
     /**
      *
      *
@@ -31445,7 +32777,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_INVALID_AD_REQUESTS = 348;</code>
      */
-    ATN_HBT_INVALID_AD_REQUESTS(143, 348),
+    ATN_HBT_INVALID_AD_REQUESTS(145, 348),
     /**
      *
      *
@@ -31465,7 +32797,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_NO_BIDS_AD_REQUESTS = 472;</code>
      */
-    ATN_HBT_NO_BIDS_AD_REQUESTS(144, 472),
+    ATN_HBT_NO_BIDS_AD_REQUESTS(146, 472),
     /**
      *
      *
@@ -31485,7 +32817,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_REJECTED_BIDS = 349;</code>
      */
-    ATN_HBT_REJECTED_BIDS(145, 349),
+    ATN_HBT_REJECTED_BIDS(147, 349),
     /**
      *
      *
@@ -31505,7 +32837,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_VALID_AD_REQUESTS = 350;</code>
      */
-    ATN_HBT_VALID_AD_REQUESTS(146, 350),
+    ATN_HBT_VALID_AD_REQUESTS(148, 350),
     /**
      *
      *
@@ -31525,7 +32857,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_HBT_WITH_BIDS_AD_REQUESTS = 473;</code>
      */
-    ATN_HBT_WITH_BIDS_AD_REQUESTS(147, 473),
+    ATN_HBT_WITH_BIDS_AD_REQUESTS(149, 473),
     /**
      *
      *
@@ -31543,7 +32875,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_INVALID_AD_REQUESTS = 351;</code>
      */
-    ATN_INVALID_AD_REQUESTS(148, 351),
+    ATN_INVALID_AD_REQUESTS(150, 351),
     /**
      *
      *
@@ -31563,7 +32895,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_LINE_ITEMS_CREATIVE_NOT_RETRIEVED = 476;</code>
      */
-    ATN_LINE_ITEMS_CREATIVE_NOT_RETRIEVED(149, 476),
+    ATN_LINE_ITEMS_CREATIVE_NOT_RETRIEVED(151, 476),
     /**
      *
      *
@@ -31582,7 +32914,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_LINE_ITEMS_IN_AUCTION = 352;</code>
      */
-    ATN_LINE_ITEMS_IN_AUCTION(150, 352),
+    ATN_LINE_ITEMS_IN_AUCTION(152, 352),
     /**
      *
      *
@@ -31601,7 +32933,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_LINE_ITEMS_NOT_COMPETING = 515;</code>
      */
-    ATN_LINE_ITEMS_NOT_COMPETING(151, 515),
+    ATN_LINE_ITEMS_NOT_COMPETING(153, 515),
     /**
      *
      *
@@ -31620,7 +32952,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_LINE_ITEMS_NOT_SELECTED = 353;</code>
      */
-    ATN_LINE_ITEMS_NOT_SELECTED(152, 353),
+    ATN_LINE_ITEMS_NOT_SELECTED(154, 353),
     /**
      *
      *
@@ -31640,7 +32972,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_LINE_ITEM_IN_AUCTION_AD_REQUESTS = 354;</code>
      */
-    ATN_LINE_ITEM_IN_AUCTION_AD_REQUESTS(153, 354),
+    ATN_LINE_ITEM_IN_AUCTION_AD_REQUESTS(155, 354),
     /**
      *
      *
@@ -31660,7 +32992,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_LINE_ITEM_TARGETED_AD_REQUESTS = 355;</code>
      */
-    ATN_LINE_ITEM_TARGETED_AD_REQUESTS(154, 355),
+    ATN_LINE_ITEM_TARGETED_AD_REQUESTS(156, 355),
     /**
      *
      *
@@ -31679,7 +33011,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_ALLOWED_AD_REQUESTS = 356;</code>
      */
-    ATN_MEDIATION_ALLOWED_AD_REQUESTS(155, 356),
+    ATN_MEDIATION_ALLOWED_AD_REQUESTS(157, 356),
     /**
      *
      *
@@ -31699,7 +33031,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_INVALID_AD_REQUESTS = 357;</code>
      */
-    ATN_MEDIATION_INVALID_AD_REQUESTS(156, 357),
+    ATN_MEDIATION_INVALID_AD_REQUESTS(158, 357),
     /**
      *
      *
@@ -31718,7 +33050,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_LOADED_ADS_FROM_CHAINS = 358;</code>
      */
-    ATN_MEDIATION_LOADED_ADS_FROM_CHAINS(157, 358),
+    ATN_MEDIATION_LOADED_ADS_FROM_CHAINS(159, 358),
     /**
      *
      *
@@ -31738,7 +33070,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_NO_PARTNER_AD_REQUESTS = 474;</code>
      */
-    ATN_MEDIATION_NO_PARTNER_AD_REQUESTS(158, 474),
+    ATN_MEDIATION_NO_PARTNER_AD_REQUESTS(160, 474),
     /**
      *
      *
@@ -31757,7 +33089,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_PARTNERS_IN_AUCTION = 359;</code>
      */
-    ATN_MEDIATION_PARTNERS_IN_AUCTION(159, 359),
+    ATN_MEDIATION_PARTNERS_IN_AUCTION(161, 359),
     /**
      *
      *
@@ -31777,7 +33109,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_PARTNERS_IN_AUCTION_AD_REQUESTS = 360;</code>
      */
-    ATN_MEDIATION_PARTNERS_IN_AUCTION_AD_REQUESTS(160, 360),
+    ATN_MEDIATION_PARTNERS_IN_AUCTION_AD_REQUESTS(162, 360),
     /**
      *
      *
@@ -31796,7 +33128,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_REJECTED_PARTNERS = 361;</code>
      */
-    ATN_MEDIATION_REJECTED_PARTNERS(161, 361),
+    ATN_MEDIATION_REJECTED_PARTNERS(163, 361),
     /**
      *
      *
@@ -31815,7 +33147,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_TARGETED_PARTNERS = 362;</code>
      */
-    ATN_MEDIATION_TARGETED_PARTNERS(162, 362),
+    ATN_MEDIATION_TARGETED_PARTNERS(164, 362),
     /**
      *
      *
@@ -31833,7 +33165,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_TOTAL_ADS_IN_CHAINS = 703;</code>
      */
-    ATN_MEDIATION_TOTAL_ADS_IN_CHAINS(163, 703),
+    ATN_MEDIATION_TOTAL_ADS_IN_CHAINS(165, 703),
     /**
      *
      *
@@ -31852,7 +33184,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_UNLOADED_ADS_FROM_CHAINS = 363;</code>
      */
-    ATN_MEDIATION_UNLOADED_ADS_FROM_CHAINS(164, 363),
+    ATN_MEDIATION_UNLOADED_ADS_FROM_CHAINS(166, 363),
     /**
      *
      *
@@ -31871,7 +33203,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_UNUSED_BIDS_OR_PARTNERS = 364;</code>
      */
-    ATN_MEDIATION_UNUSED_BIDS_OR_PARTNERS(165, 364),
+    ATN_MEDIATION_UNUSED_BIDS_OR_PARTNERS(167, 364),
     /**
      *
      *
@@ -31890,7 +33222,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_VALID_AD_REQUESTS = 365;</code>
      */
-    ATN_MEDIATION_VALID_AD_REQUESTS(166, 365),
+    ATN_MEDIATION_VALID_AD_REQUESTS(168, 365),
     /**
      *
      *
@@ -31910,7 +33242,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_MEDIATION_WITH_PARTNERS_AD_REQUESTS = 475;</code>
      */
-    ATN_MEDIATION_WITH_PARTNERS_AD_REQUESTS(167, 475),
+    ATN_MEDIATION_WITH_PARTNERS_AD_REQUESTS(169, 475),
     /**
      *
      *
@@ -31929,7 +33261,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_AD_REQUESTS_WITH_BIDS = 366;</code>
      */
-    ATN_PROGRAMMATIC_AD_REQUESTS_WITH_BIDS(168, 366),
+    ATN_PROGRAMMATIC_AD_REQUESTS_WITH_BIDS(170, 366),
     /**
      *
      *
@@ -31948,7 +33280,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_AD_REQUESTS_WITH_BID_REQUESTS_SENT = 367;</code>
      */
-    ATN_PROGRAMMATIC_AD_REQUESTS_WITH_BID_REQUESTS_SENT(169, 367),
+    ATN_PROGRAMMATIC_AD_REQUESTS_WITH_BID_REQUESTS_SENT(171, 367),
     /**
      *
      *
@@ -31967,7 +33299,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_ALLOWED_AD_REQUESTS = 368;</code>
      */
-    ATN_PROGRAMMATIC_ALLOWED_AD_REQUESTS(170, 368),
+    ATN_PROGRAMMATIC_ALLOWED_AD_REQUESTS(172, 368),
     /**
      *
      *
@@ -31986,7 +33318,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_BIDS_IN_AUCTION = 369;</code>
      */
-    ATN_PROGRAMMATIC_BIDS_IN_AUCTION(171, 369),
+    ATN_PROGRAMMATIC_BIDS_IN_AUCTION(173, 369),
     /**
      *
      *
@@ -32006,7 +33338,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_BID_IN_AUCTION_AD_REQUESTS = 370;</code>
      */
-    ATN_PROGRAMMATIC_BID_IN_AUCTION_AD_REQUESTS(172, 370),
+    ATN_PROGRAMMATIC_BID_IN_AUCTION_AD_REQUESTS(174, 370),
     /**
      *
      *
@@ -32025,7 +33357,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_BID_REQUESTS_SENT = 371;</code>
      */
-    ATN_PROGRAMMATIC_BID_REQUESTS_SENT(173, 371),
+    ATN_PROGRAMMATIC_BID_REQUESTS_SENT(175, 371),
     /**
      *
      *
@@ -32044,7 +33376,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_BID_REQUESTS_WITH_RESPONSE = 372;</code>
      */
-    ATN_PROGRAMMATIC_BID_REQUESTS_WITH_RESPONSE(174, 372),
+    ATN_PROGRAMMATIC_BID_REQUESTS_WITH_RESPONSE(176, 372),
     /**
      *
      *
@@ -32063,7 +33395,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_BID_REQUEST_CANDIDATES = 373;</code>
      */
-    ATN_PROGRAMMATIC_BID_REQUEST_CANDIDATES(175, 373),
+    ATN_PROGRAMMATIC_BID_REQUEST_CANDIDATES(177, 373),
     /**
      *
      *
@@ -32082,7 +33414,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_BID_REQUEST_ERRORS = 374;</code>
      */
-    ATN_PROGRAMMATIC_BID_REQUEST_ERRORS(176, 374),
+    ATN_PROGRAMMATIC_BID_REQUEST_ERRORS(178, 374),
     /**
      *
      *
@@ -32102,7 +33434,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_INELIGIBLE_AD_REQUESTS = 375;</code>
      */
-    ATN_PROGRAMMATIC_INELIGIBLE_AD_REQUESTS(177, 375),
+    ATN_PROGRAMMATIC_INELIGIBLE_AD_REQUESTS(179, 375),
     /**
      *
      *
@@ -32121,7 +33453,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_REJECTED_BIDS = 376;</code>
      */
-    ATN_PROGRAMMATIC_REJECTED_BIDS(178, 376),
+    ATN_PROGRAMMATIC_REJECTED_BIDS(180, 376),
     /**
      *
      *
@@ -32140,7 +33472,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_SKIPPED_BID_REQUESTS = 377;</code>
      */
-    ATN_PROGRAMMATIC_SKIPPED_BID_REQUESTS(179, 377),
+    ATN_PROGRAMMATIC_SKIPPED_BID_REQUESTS(181, 377),
     /**
      *
      *
@@ -32159,7 +33491,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_TOTAL_BIDS = 378;</code>
      */
-    ATN_PROGRAMMATIC_TOTAL_BIDS(180, 378),
+    ATN_PROGRAMMATIC_TOTAL_BIDS(182, 378),
     /**
      *
      *
@@ -32179,7 +33511,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_PROGRAMMATIC_VALID_AD_REQUESTS = 379;</code>
      */
-    ATN_PROGRAMMATIC_VALID_AD_REQUESTS(181, 379),
+    ATN_PROGRAMMATIC_VALID_AD_REQUESTS(183, 379),
     /**
      *
      *
@@ -32198,7 +33530,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_REJECTED_LINE_ITEMS = 380;</code>
      */
-    ATN_REJECTED_LINE_ITEMS(182, 380),
+    ATN_REJECTED_LINE_ITEMS(184, 380),
     /**
      *
      *
@@ -32217,7 +33549,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_SERVED_MEDIATION_CHAINS = 381;</code>
      */
-    ATN_SERVED_MEDIATION_CHAINS(183, 381),
+    ATN_SERVED_MEDIATION_CHAINS(185, 381),
     /**
      *
      *
@@ -32235,7 +33567,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_SERVED_SINGLE_ADS = 382;</code>
      */
-    ATN_SERVED_SINGLE_ADS(184, 382),
+    ATN_SERVED_SINGLE_ADS(186, 382),
     /**
      *
      *
@@ -32254,7 +33586,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_TARGETED_LINE_ITEMS = 383;</code>
      */
-    ATN_TARGETED_LINE_ITEMS(185, 383),
+    ATN_TARGETED_LINE_ITEMS(187, 383),
     /**
      *
      *
@@ -32274,7 +33606,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_TOTAL_AD_REQUESTS = 384;</code>
      */
-    ATN_TOTAL_AD_REQUESTS(186, 384),
+    ATN_TOTAL_AD_REQUESTS(188, 384),
     /**
      *
      *
@@ -32292,7 +33624,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_TOTAL_LOADED_ADS = 387;</code>
      */
-    ATN_TOTAL_LOADED_ADS(187, 387),
+    ATN_TOTAL_LOADED_ADS(189, 387),
     /**
      *
      *
@@ -32310,7 +33642,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_VALID_AD_REQUESTS = 389;</code>
      */
-    ATN_VALID_AD_REQUESTS(188, 389),
+    ATN_VALID_AD_REQUESTS(190, 389),
     /**
      *
      *
@@ -32329,7 +33661,46 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ATN_YIELD_GROUP_MEDIATION_PASSBACKS = 390;</code>
      */
-    ATN_YIELD_GROUP_MEDIATION_PASSBACKS(189, 390),
+    ATN_YIELD_GROUP_MEDIATION_PASSBACKS(191, 390),
+    /**
+     *
+     *
+     * <pre>
+     * The number of purchased items that were attributed to a view or click as
+     * defined by the sponsored product ad's line item settings.
+     *
+     *
+     *
+     * Corresponds to "Attributed items purchased" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>ATTRIBUTED_ITEMS_PURCHASED = 745;</code>
+     */
+    ATTRIBUTED_ITEMS_PURCHASED(192, 745),
+    /**
+     *
+     *
+     * <pre>
+     * The percent of revenue the retailer made on attributed items purchased
+     * compared to the advertiser's ad spend for those items. Return on Ad
+     * Spend
+     *
+     *
+     *
+     * Corresponds to "Attributed items purchased ROAS" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `PERCENT`
+     * </pre>
+     *
+     * <code>ATTRIBUTED_ITEMS_PURCHASED_ROAS = 748;</code>
+     */
+    ATTRIBUTED_ITEMS_PURCHASED_ROAS(193, 748),
     /**
      *
      *
@@ -32347,7 +33718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AUDIENCE_SEGMENT_COST = 558;</code>
      */
-    AUDIENCE_SEGMENT_COST(190, 558),
+    AUDIENCE_SEGMENT_COST(194, 558),
     /**
      *
      *
@@ -32366,7 +33737,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_ECPM = 37;</code>
      */
-    AVERAGE_ECPM(191, 37),
+    AVERAGE_ECPM(195, 37),
     /**
      *
      *
@@ -32385,7 +33756,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_ECPM_WITHOUT_CPD = 5;</code>
      */
-    AVERAGE_ECPM_WITHOUT_CPD(192, 5),
+    AVERAGE_ECPM_WITHOUT_CPD(196, 5),
     /**
      *
      *
@@ -32404,7 +33775,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_ENGAGEMENT_SECONDS_PER_SESSION = 224;</code>
      */
-    AVERAGE_ENGAGEMENT_SECONDS_PER_SESSION(193, 224),
+    AVERAGE_ENGAGEMENT_SECONDS_PER_SESSION(197, 224),
     /**
      *
      *
@@ -32423,7 +33794,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_ENGAGEMENT_SECONDS_PER_USER = 225;</code>
      */
-    AVERAGE_ENGAGEMENT_SECONDS_PER_USER(194, 225),
+    AVERAGE_ENGAGEMENT_SECONDS_PER_USER(198, 225),
     /**
      *
      *
@@ -32441,7 +33812,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_IMPRESSIONS_PER_UNIQUE_VISITOR = 418;</code>
      */
-    AVERAGE_IMPRESSIONS_PER_UNIQUE_VISITOR(195, 418),
+    AVERAGE_IMPRESSIONS_PER_UNIQUE_VISITOR(199, 418),
     /**
      *
      *
@@ -32459,7 +33830,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_PURCHASE_REVENUE_PER_PAYING_USER = 226;</code>
      */
-    AVERAGE_PURCHASE_REVENUE_PER_PAYING_USER(196, 226),
+    AVERAGE_PURCHASE_REVENUE_PER_PAYING_USER(200, 226),
     /**
      *
      *
@@ -32477,7 +33848,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_REVENUE_PER_USER = 227;</code>
      */
-    AVERAGE_REVENUE_PER_USER(197, 227),
+    AVERAGE_REVENUE_PER_USER(201, 227),
     /**
      *
      *
@@ -32495,7 +33866,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>AVERAGE_SESSION_SECONDS = 228;</code>
      */
-    AVERAGE_SESSION_SECONDS(198, 228),
+    AVERAGE_SESSION_SECONDS(202, 228),
     /**
      *
      *
@@ -32513,7 +33884,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BIDS = 443;</code>
      */
-    BIDS(199, 443),
+    BIDS(203, 443),
     /**
      *
      *
@@ -32531,7 +33902,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BID_AVERAGE_CPM = 444;</code>
      */
-    BID_AVERAGE_CPM(200, 444),
+    BID_AVERAGE_CPM(204, 444),
     /**
      *
      *
@@ -32549,7 +33920,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>BOUNCE_RATE = 433;</code>
      */
-    BOUNCE_RATE(201, 433),
+    BOUNCE_RATE(205, 433),
     /**
      *
      *
@@ -32568,7 +33939,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CLICKS = 2;</code>
      */
-    CLICKS(202, 2),
+    CLICKS(206, 2),
     /**
      *
      *
@@ -32588,7 +33959,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CODE_SERVED_COUNT = 44;</code>
      */
-    CODE_SERVED_COUNT(203, 44),
+    CODE_SERVED_COUNT(207, 44),
     /**
      *
      *
@@ -32606,7 +33977,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CPC_REVENUE = 440;</code>
      */
-    CPC_REVENUE(204, 440),
+    CPC_REVENUE(208, 440),
     /**
      *
      *
@@ -32624,7 +33995,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CPM_REVENUE = 441;</code>
      */
-    CPM_REVENUE(205, 441),
+    CPM_REVENUE(209, 441),
     /**
      *
      *
@@ -32642,7 +34013,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_LOAD_TIME_0_500_PERCENT = 324;</code>
      */
-    CREATIVE_LOAD_TIME_0_500_PERCENT(206, 324),
+    CREATIVE_LOAD_TIME_0_500_PERCENT(210, 324),
     /**
      *
      *
@@ -32660,7 +34031,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_LOAD_TIME_1000_2000_PERCENT = 326;</code>
      */
-    CREATIVE_LOAD_TIME_1000_2000_PERCENT(207, 326),
+    CREATIVE_LOAD_TIME_1000_2000_PERCENT(211, 326),
     /**
      *
      *
@@ -32678,7 +34049,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_LOAD_TIME_2000_4000_PERCENT = 327;</code>
      */
-    CREATIVE_LOAD_TIME_2000_4000_PERCENT(208, 327),
+    CREATIVE_LOAD_TIME_2000_4000_PERCENT(212, 327),
     /**
      *
      *
@@ -32696,7 +34067,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_LOAD_TIME_4000_8000_PERCENT = 328;</code>
      */
-    CREATIVE_LOAD_TIME_4000_8000_PERCENT(209, 328),
+    CREATIVE_LOAD_TIME_4000_8000_PERCENT(213, 328),
     /**
      *
      *
@@ -32714,7 +34085,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_LOAD_TIME_500_1000_PERCENT = 325;</code>
      */
-    CREATIVE_LOAD_TIME_500_1000_PERCENT(210, 325),
+    CREATIVE_LOAD_TIME_500_1000_PERCENT(214, 325),
     /**
      *
      *
@@ -32732,7 +34103,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CREATIVE_LOAD_TIME_GT_8000_PERCENT = 329;</code>
      */
-    CREATIVE_LOAD_TIME_GT_8000_PERCENT(211, 329),
+    CREATIVE_LOAD_TIME_GT_8000_PERCENT(215, 329),
     /**
      *
      *
@@ -32752,7 +34123,29 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>CTR = 3;</code>
      */
-    CTR(212, 3),
+    CTR(216, 3),
+    /**
+     *
+     *
+     * <pre>
+     * For standard ads, your ad clickthrough rate (CTR) is the number of ad
+     * clicks divided by the number of individual ad impressions expressed as a
+     * fraction. Ad CTR = Clicks / Ad impressions. Counts companion impressions
+     * in the number of ad impressions.
+     *
+     *
+     *
+     * Corresponds to "Total CTR with companion" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ADS_TRAFFIC_NAVIGATOR`, `AD_SPEED`
+     *
+     * Data format: `PERCENT`
+     * </pre>
+     *
+     * <code>CTR_WITH_COMPANION = 742;</code>
+     */
+    CTR_WITH_COMPANION(217, 742),
     /**
      *
      *
@@ -32770,7 +34163,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEALS_BIDS = 542;</code>
      */
-    DEALS_BIDS(213, 542),
+    DEALS_BIDS(218, 542),
     /**
      *
      *
@@ -32788,7 +34181,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEALS_BID_RATE = 543;</code>
      */
-    DEALS_BID_RATE(214, 543),
+    DEALS_BID_RATE(219, 543),
     /**
      *
      *
@@ -32806,7 +34199,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEALS_BID_REQUESTS = 544;</code>
      */
-    DEALS_BID_REQUESTS(215, 544),
+    DEALS_BID_REQUESTS(220, 544),
     /**
      *
      *
@@ -32824,7 +34217,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEALS_WINNING_BIDS = 545;</code>
      */
-    DEALS_WINNING_BIDS(216, 545),
+    DEALS_WINNING_BIDS(221, 545),
     /**
      *
      *
@@ -32842,7 +34235,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DEALS_WIN_RATE = 546;</code>
      */
-    DEALS_WIN_RATE(217, 546),
+    DEALS_WIN_RATE(222, 546),
     /**
      *
      *
@@ -32861,7 +34254,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_FIRST_AD_REQUEST_0_500_PERCENT = 521;</code>
      */
-    DOM_LOAD_TO_FIRST_AD_REQUEST_0_500_PERCENT(218, 521),
+    DOM_LOAD_TO_FIRST_AD_REQUEST_0_500_PERCENT(223, 521),
     /**
      *
      *
@@ -32880,7 +34273,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_FIRST_AD_REQUEST_1000_2000_PERCENT = 522;</code>
      */
-    DOM_LOAD_TO_FIRST_AD_REQUEST_1000_2000_PERCENT(219, 522),
+    DOM_LOAD_TO_FIRST_AD_REQUEST_1000_2000_PERCENT(224, 522),
     /**
      *
      *
@@ -32899,7 +34292,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_FIRST_AD_REQUEST_2000_4000_PERCENT = 523;</code>
      */
-    DOM_LOAD_TO_FIRST_AD_REQUEST_2000_4000_PERCENT(220, 523),
+    DOM_LOAD_TO_FIRST_AD_REQUEST_2000_4000_PERCENT(225, 523),
     /**
      *
      *
@@ -32918,7 +34311,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_FIRST_AD_REQUEST_4000_8000_PERCENT = 524;</code>
      */
-    DOM_LOAD_TO_FIRST_AD_REQUEST_4000_8000_PERCENT(221, 524),
+    DOM_LOAD_TO_FIRST_AD_REQUEST_4000_8000_PERCENT(226, 524),
     /**
      *
      *
@@ -32937,7 +34330,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_FIRST_AD_REQUEST_500_1000_PERCENT = 525;</code>
      */
-    DOM_LOAD_TO_FIRST_AD_REQUEST_500_1000_PERCENT(222, 525),
+    DOM_LOAD_TO_FIRST_AD_REQUEST_500_1000_PERCENT(227, 525),
     /**
      *
      *
@@ -32956,7 +34349,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_FIRST_AD_REQUEST_GT_8000_PERCENT = 520;</code>
      */
-    DOM_LOAD_TO_FIRST_AD_REQUEST_GT_8000_PERCENT(223, 520),
+    DOM_LOAD_TO_FIRST_AD_REQUEST_GT_8000_PERCENT(228, 520),
     /**
      *
      *
@@ -32975,7 +34368,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_TAG_LOAD_TIME_0_500_PERCENT = 526;</code>
      */
-    DOM_LOAD_TO_TAG_LOAD_TIME_0_500_PERCENT(224, 526),
+    DOM_LOAD_TO_TAG_LOAD_TIME_0_500_PERCENT(229, 526),
     /**
      *
      *
@@ -32994,7 +34387,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_TAG_LOAD_TIME_1000_2000_PERCENT = 527;</code>
      */
-    DOM_LOAD_TO_TAG_LOAD_TIME_1000_2000_PERCENT(225, 527),
+    DOM_LOAD_TO_TAG_LOAD_TIME_1000_2000_PERCENT(230, 527),
     /**
      *
      *
@@ -33013,7 +34406,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_TAG_LOAD_TIME_2000_4000_PERCENT = 528;</code>
      */
-    DOM_LOAD_TO_TAG_LOAD_TIME_2000_4000_PERCENT(226, 528),
+    DOM_LOAD_TO_TAG_LOAD_TIME_2000_4000_PERCENT(231, 528),
     /**
      *
      *
@@ -33032,7 +34425,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_TAG_LOAD_TIME_4000_8000_PERCENT = 529;</code>
      */
-    DOM_LOAD_TO_TAG_LOAD_TIME_4000_8000_PERCENT(227, 529),
+    DOM_LOAD_TO_TAG_LOAD_TIME_4000_8000_PERCENT(232, 529),
     /**
      *
      *
@@ -33051,7 +34444,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_TAG_LOAD_TIME_500_1000_PERCENT = 531;</code>
      */
-    DOM_LOAD_TO_TAG_LOAD_TIME_500_1000_PERCENT(228, 531),
+    DOM_LOAD_TO_TAG_LOAD_TIME_500_1000_PERCENT(233, 531),
     /**
      *
      *
@@ -33070,7 +34463,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DOM_LOAD_TO_TAG_LOAD_TIME_GT_8000_PERCENT = 530;</code>
      */
-    DOM_LOAD_TO_TAG_LOAD_TIME_GT_8000_PERCENT(229, 530),
+    DOM_LOAD_TO_TAG_LOAD_TIME_GT_8000_PERCENT(234, 530),
     /**
      *
      *
@@ -33088,7 +34481,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>DROPOFF_RATE = 415;</code>
      */
-    DROPOFF_RATE(230, 415),
+    DROPOFF_RATE(235, 415),
     /**
      *
      *
@@ -33106,7 +34499,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ENGAGED_SESSIONS = 229;</code>
      */
-    ENGAGED_SESSIONS(231, 229),
+    ENGAGED_SESSIONS(236, 229),
     /**
      *
      *
@@ -33124,7 +34517,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ENGAGED_SESSIONS_PER_USER = 230;</code>
      */
-    ENGAGED_SESSIONS_PER_USER(232, 230),
+    ENGAGED_SESSIONS_PER_USER(237, 230),
     /**
      *
      *
@@ -33142,7 +34535,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ENGAGEMENT_RATE = 426;</code>
      */
-    ENGAGEMENT_RATE(233, 426),
+    ENGAGEMENT_RATE(238, 426),
     /**
      *
      *
@@ -33161,7 +34554,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EUROPEAN_REGULATIONS_CONSENT_RATE = 270;</code>
      */
-    EUROPEAN_REGULATIONS_CONSENT_RATE(234, 270),
+    EUROPEAN_REGULATIONS_CONSENT_RATE(239, 270),
     /**
      *
      *
@@ -33181,7 +34574,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EUROPEAN_REGULATIONS_CUSTOM_CONSENT_RATE = 271;</code>
      */
-    EUROPEAN_REGULATIONS_CUSTOM_CONSENT_RATE(235, 271),
+    EUROPEAN_REGULATIONS_CUSTOM_CONSENT_RATE(240, 271),
     /**
      *
      *
@@ -33200,7 +34593,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EUROPEAN_REGULATIONS_MESSAGES_SHOWN = 272;</code>
      */
-    EUROPEAN_REGULATIONS_MESSAGES_SHOWN(236, 272),
+    EUROPEAN_REGULATIONS_MESSAGES_SHOWN(241, 272),
     /**
      *
      *
@@ -33220,7 +34613,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>EUROPEAN_REGULATIONS_NO_CONSENT_RATE = 273;</code>
      */
-    EUROPEAN_REGULATIONS_NO_CONSENT_RATE(237, 273),
+    EUROPEAN_REGULATIONS_NO_CONSENT_RATE(242, 273),
     /**
      *
      *
@@ -33239,7 +34632,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>FILL_RATE = 258;</code>
      */
-    FILL_RATE(238, 258),
+    FILL_RATE(243, 258),
     /**
      *
      *
@@ -33257,7 +34650,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_CLICKS = 231;</code>
      */
-    GOOGLE_ANALYTICS_CLICKS(239, 231),
+    GOOGLE_ANALYTICS_CLICKS(244, 231),
     /**
      *
      *
@@ -33275,7 +34668,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_CTR = 232;</code>
      */
-    GOOGLE_ANALYTICS_CTR(240, 232),
+    GOOGLE_ANALYTICS_CTR(245, 232),
     /**
      *
      *
@@ -33293,7 +34686,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_ECPM = 233;</code>
      */
-    GOOGLE_ANALYTICS_ECPM(241, 233),
+    GOOGLE_ANALYTICS_ECPM(246, 233),
     /**
      *
      *
@@ -33311,7 +34704,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_IMPRESSIONS = 234;</code>
      */
-    GOOGLE_ANALYTICS_IMPRESSIONS(242, 234),
+    GOOGLE_ANALYTICS_IMPRESSIONS(247, 234),
     /**
      *
      *
@@ -33329,7 +34722,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_REVENUE = 235;</code>
      */
-    GOOGLE_ANALYTICS_REVENUE(243, 235),
+    GOOGLE_ANALYTICS_REVENUE(248, 235),
     /**
      *
      *
@@ -33347,7 +34740,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_VIEWS = 236;</code>
      */
-    GOOGLE_ANALYTICS_VIEWS(244, 236),
+    GOOGLE_ANALYTICS_VIEWS(249, 236),
     /**
      *
      *
@@ -33365,7 +34758,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_ANALYTICS_VIEWS_PER_USER = 237;</code>
      */
-    GOOGLE_ANALYTICS_VIEWS_PER_USER(245, 237),
+    GOOGLE_ANALYTICS_VIEWS_PER_USER(250, 237),
     /**
      *
      *
@@ -33384,7 +34777,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_SOLD_AUCTION_COVIEWED_IMPRESSIONS = 129;</code>
      */
-    GOOGLE_SOLD_AUCTION_COVIEWED_IMPRESSIONS(246, 129),
+    GOOGLE_SOLD_AUCTION_COVIEWED_IMPRESSIONS(251, 129),
     /**
      *
      *
@@ -33402,7 +34795,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_SOLD_AUCTION_IMPRESSIONS = 128;</code>
      */
-    GOOGLE_SOLD_AUCTION_IMPRESSIONS(247, 128),
+    GOOGLE_SOLD_AUCTION_IMPRESSIONS(252, 128),
     /**
      *
      *
@@ -33421,7 +34814,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_SOLD_COVIEWED_IMPRESSIONS = 131;</code>
      */
-    GOOGLE_SOLD_COVIEWED_IMPRESSIONS(248, 131),
+    GOOGLE_SOLD_COVIEWED_IMPRESSIONS(253, 131),
     /**
      *
      *
@@ -33439,7 +34832,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_SOLD_IMPRESSIONS = 130;</code>
      */
-    GOOGLE_SOLD_IMPRESSIONS(249, 130),
+    GOOGLE_SOLD_IMPRESSIONS(254, 130),
     /**
      *
      *
@@ -33458,7 +34851,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_SOLD_RESERVATION_COVIEWED_IMPRESSIONS = 127;</code>
      */
-    GOOGLE_SOLD_RESERVATION_COVIEWED_IMPRESSIONS(250, 127),
+    GOOGLE_SOLD_RESERVATION_COVIEWED_IMPRESSIONS(255, 127),
     /**
      *
      *
@@ -33477,7 +34870,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>GOOGLE_SOLD_RESERVATION_IMPRESSIONS = 126;</code>
      */
-    GOOGLE_SOLD_RESERVATION_IMPRESSIONS(251, 126),
+    GOOGLE_SOLD_RESERVATION_IMPRESSIONS(256, 126),
     /**
      *
      *
@@ -33497,7 +34890,27 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>IMPRESSIONS = 1;</code>
      */
-    IMPRESSIONS(252, 1),
+    IMPRESSIONS(257, 1),
+    /**
+     *
+     *
+     * <pre>
+     * Total impressions from the Google Ad Manager server, AdSense,
+     * Ad Exchange, and yield group partners, including companion ads.
+     *
+     *
+     *
+     * Corresponds to "Total impressions with companion" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ADS_TRAFFIC_NAVIGATOR`, `AD_SPEED`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>IMPRESSIONS_WITH_COMPANION = 741;</code>
+     */
+    IMPRESSIONS_WITH_COMPANION(258, 741),
     /**
      *
      *
@@ -33519,7 +34932,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS = 407;</code>
      */
-    INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS(253, 407),
+    INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS(259, 407),
     /**
      *
      *
@@ -33537,7 +34950,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARES = 547;</code>
      */
-    INVENTORY_SHARES(254, 547),
+    INVENTORY_SHARES(260, 547),
     /**
      *
      *
@@ -33557,7 +34970,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVENTORY_SHARE_PARTNER_UNFILLED_OPPORTUNITIES = 548;</code>
      */
-    INVENTORY_SHARE_PARTNER_UNFILLED_OPPORTUNITIES(255, 548),
+    INVENTORY_SHARE_PARTNER_UNFILLED_OPPORTUNITIES(261, 548),
     /**
      *
      *
@@ -33575,7 +34988,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVOICED_IMPRESSIONS = 404;</code>
      */
-    INVOICED_IMPRESSIONS(256, 404),
+    INVOICED_IMPRESSIONS(262, 404),
     /**
      *
      *
@@ -33593,7 +35006,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>INVOICED_UNFILLED_IMPRESSIONS = 405;</code>
      */
-    INVOICED_UNFILLED_IMPRESSIONS(257, 405),
+    INVOICED_UNFILLED_IMPRESSIONS(263, 405),
     /**
      *
      *
@@ -33611,7 +35024,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MEDIATION_CHAINS_FILLED = 584;</code>
      */
-    MEDIATION_CHAINS_FILLED(258, 584),
+    MEDIATION_CHAINS_FILLED(264, 584),
     /**
      *
      *
@@ -33629,7 +35042,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MUTED_IMPRESSIONS = 412;</code>
      */
-    MUTED_IMPRESSIONS(259, 412),
+    MUTED_IMPRESSIONS(265, 412),
     /**
      *
      *
@@ -33647,7 +35060,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>MUTE_ELIGIBLE_IMPRESSIONS = 409;</code>
      */
-    MUTE_ELIGIBLE_IMPRESSIONS(260, 409),
+    MUTE_ELIGIBLE_IMPRESSIONS(266, 409),
     /**
      *
      *
@@ -33666,7 +35079,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_AUDIENCE_INDEX = 568;</code>
      */
-    NIELSEN_AUDIENCE_INDEX(261, 568),
+    NIELSEN_AUDIENCE_INDEX(267, 568),
     /**
      *
      *
@@ -33685,7 +35098,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_AVERAGE_FREQUENCY = 569;</code>
      */
-    NIELSEN_AVERAGE_FREQUENCY(262, 569),
+    NIELSEN_AVERAGE_FREQUENCY(268, 569),
     /**
      *
      *
@@ -33703,7 +35116,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_AVERAGE_NUMBER_OF_VIEWERS = 570;</code>
      */
-    NIELSEN_AVERAGE_NUMBER_OF_VIEWERS(263, 570),
+    NIELSEN_AVERAGE_NUMBER_OF_VIEWERS(269, 570),
     /**
      *
      *
@@ -33722,7 +35135,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_GROSS_RATING_POINTS = 571;</code>
      */
-    NIELSEN_GROSS_RATING_POINTS(264, 571),
+    NIELSEN_GROSS_RATING_POINTS(270, 571),
     /**
      *
      *
@@ -33741,7 +35154,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_IMPRESSIONS = 572;</code>
      */
-    NIELSEN_IMPRESSIONS(265, 572),
+    NIELSEN_IMPRESSIONS(271, 572),
     /**
      *
      *
@@ -33760,7 +35173,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_IMPRESSIONS_INDEX = 573;</code>
      */
-    NIELSEN_IMPRESSIONS_INDEX(266, 573),
+    NIELSEN_IMPRESSIONS_INDEX(272, 573),
     /**
      *
      *
@@ -33779,7 +35192,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_IN_TARGET_RATIO = 576;</code>
      */
-    NIELSEN_IN_TARGET_RATIO(267, 576),
+    NIELSEN_IN_TARGET_RATIO(273, 576),
     /**
      *
      *
@@ -33798,7 +35211,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_PERCENT_AUDIENCE_REACH = 578;</code>
      */
-    NIELSEN_PERCENT_AUDIENCE_REACH(268, 578),
+    NIELSEN_PERCENT_AUDIENCE_REACH(274, 578),
     /**
      *
      *
@@ -33816,7 +35229,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_PERCENT_AUDIENCE_SHARE = 579;</code>
      */
-    NIELSEN_PERCENT_AUDIENCE_SHARE(269, 579),
+    NIELSEN_PERCENT_AUDIENCE_SHARE(275, 579),
     /**
      *
      *
@@ -33834,7 +35247,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_PERCENT_IMPRESSIONS_SHARE = 580;</code>
      */
-    NIELSEN_PERCENT_IMPRESSIONS_SHARE(270, 580),
+    NIELSEN_PERCENT_IMPRESSIONS_SHARE(276, 580),
     /**
      *
      *
@@ -33853,7 +35266,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_PERCENT_POPULATION_SHARE = 581;</code>
      */
-    NIELSEN_PERCENT_POPULATION_SHARE(271, 581),
+    NIELSEN_PERCENT_POPULATION_SHARE(277, 581),
     /**
      *
      *
@@ -33871,7 +35284,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_POPULATION_BASE = 582;</code>
      */
-    NIELSEN_POPULATION_BASE(272, 582),
+    NIELSEN_POPULATION_BASE(278, 582),
     /**
      *
      *
@@ -33890,7 +35303,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>NIELSEN_UNIQUE_AUDIENCE = 583;</code>
      */
-    NIELSEN_UNIQUE_AUDIENCE(273, 583),
+    NIELSEN_UNIQUE_AUDIENCE(279, 583),
     /**
      *
      *
@@ -33910,7 +35323,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS = 395;</code>
      */
-    OFF_PROPERTY_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS(274, 395),
+    OFF_PROPERTY_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS(280, 395),
     /**
      *
      *
@@ -33930,7 +35343,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS = 396;</code>
      */
-    OFF_PROPERTY_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS(275, 396),
+    OFF_PROPERTY_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS(281, 396),
     /**
      *
      *
@@ -33950,7 +35363,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE = 397;</code>
      */
-    OFF_PROPERTY_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE(276, 397),
+    OFF_PROPERTY_ACTIVE_VIEW_VIEWABLE_IMPRESSIONS_RATE(282, 397),
     /**
      *
      *
@@ -33968,7 +35381,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_CLICKS = 398;</code>
      */
-    OFF_PROPERTY_CLICKS(277, 398),
+    OFF_PROPERTY_CLICKS(283, 398),
     /**
      *
      *
@@ -33988,7 +35401,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_CTR = 399;</code>
      */
-    OFF_PROPERTY_CTR(278, 399),
+    OFF_PROPERTY_CTR(284, 399),
     /**
      *
      *
@@ -34006,7 +35419,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_IMPRESSIONS = 400;</code>
      */
-    OFF_PROPERTY_IMPRESSIONS(279, 400),
+    OFF_PROPERTY_IMPRESSIONS(285, 400),
     /**
      *
      *
@@ -34025,7 +35438,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_REVENUE = 401;</code>
      */
-    OFF_PROPERTY_REVENUE(280, 401),
+    OFF_PROPERTY_REVENUE(286, 401),
     /**
      *
      *
@@ -34044,7 +35457,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_SPEND = 402;</code>
      */
-    OFF_PROPERTY_SPEND(281, 402),
+    OFF_PROPERTY_SPEND(287, 402),
     /**
      *
      *
@@ -34063,7 +35476,121 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OFF_PROPERTY_SPEND_ECPM = 403;</code>
      */
-    OFF_PROPERTY_SPEND_ECPM(282, 403),
+    OFF_PROPERTY_SPEND_ECPM(288, 403),
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video played to completion for off-property
+     * campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property completes" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_COMPLETES = 754;</code>
+     */
+    OFF_PROPERTY_VIDEO_COMPLETES(289, 754),
+    /**
+     *
+     *
+     * <pre>
+     * The number of engaged views for off-property campaigns: ad is viewed
+     * to completion or for 30s, whichever comes first.
+     *
+     *
+     *
+     * Corresponds to "Off-property engaged views" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_ENGAGED_VIEWS = 755;</code>
+     */
+    OFF_PROPERTY_VIDEO_ENGAGED_VIEWS(290, 755),
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video played to 25% of its length for
+     * off-property campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property first quartiles" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_FIRST_QUARTILES = 756;</code>
+     */
+    OFF_PROPERTY_VIDEO_FIRST_QUARTILES(291, 756),
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video reached its midpoint during play for off-
+     * property campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property midpoints" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_MIDPOINTS = 757;</code>
+     */
+    OFF_PROPERTY_VIDEO_MIDPOINTS(292, 757),
+    /**
+     *
+     *
+     * <pre>
+     * The number of impressions where the video was played for off-property
+     * campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property starts" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_STARTS = 753;</code>
+     */
+    OFF_PROPERTY_VIDEO_STARTS(293, 753),
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video played to 75% of its length for
+     * off-property campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property third quartiles" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_THIRD_QUARTILES = 758;</code>
+     */
+    OFF_PROPERTY_VIDEO_THIRD_QUARTILES(294, 758),
     /**
      *
      *
@@ -34082,7 +35609,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ON_PLATFORM_MULTIPLE_CALL_ECPM = 678;</code>
      */
-    ON_PLATFORM_MULTIPLE_CALL_ECPM(283, 678),
+    ON_PLATFORM_MULTIPLE_CALL_ECPM(295, 678),
     /**
      *
      *
@@ -34101,7 +35628,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ON_PLATFORM_MULTIPLE_CALL_IMPRESSIONS = 676;</code>
      */
-    ON_PLATFORM_MULTIPLE_CALL_IMPRESSIONS(284, 676),
+    ON_PLATFORM_MULTIPLE_CALL_IMPRESSIONS(296, 676),
     /**
      *
      *
@@ -34119,7 +35646,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>ON_PLATFORM_MULTIPLE_CALL_REVENUE = 677;</code>
      */
-    ON_PLATFORM_MULTIPLE_CALL_REVENUE(285, 677),
+    ON_PLATFORM_MULTIPLE_CALL_REVENUE(297, 677),
     /**
      *
      *
@@ -34137,7 +35664,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OPPORTUNITIES = 463;</code>
      */
-    OPPORTUNITIES(286, 463),
+    OPPORTUNITIES(298, 463),
     /**
      *
      *
@@ -34155,7 +35682,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>OVERDELIVERED_IMPRESSIONS = 432;</code>
      */
-    OVERDELIVERED_IMPRESSIONS(287, 432),
+    OVERDELIVERED_IMPRESSIONS(299, 432),
     /**
      *
      *
@@ -34173,7 +35700,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_FINANCE_GROSS_REVENUE = 648;</code>
      */
-    PARTNER_FINANCE_GROSS_REVENUE(288, 648),
+    PARTNER_FINANCE_GROSS_REVENUE(300, 648),
     /**
      *
      *
@@ -34191,7 +35718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_FINANCE_HOST_ECPM = 649;</code>
      */
-    PARTNER_FINANCE_HOST_ECPM(289, 649),
+    PARTNER_FINANCE_HOST_ECPM(301, 649),
     /**
      *
      *
@@ -34209,7 +35736,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_FINANCE_HOST_IMPRESSIONS = 650;</code>
      */
-    PARTNER_FINANCE_HOST_IMPRESSIONS(290, 650),
+    PARTNER_FINANCE_HOST_IMPRESSIONS(302, 650),
     /**
      *
      *
@@ -34227,7 +35754,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_FINANCE_HOST_REVENUE = 651;</code>
      */
-    PARTNER_FINANCE_HOST_REVENUE(291, 651),
+    PARTNER_FINANCE_HOST_REVENUE(303, 651),
     /**
      *
      *
@@ -34245,7 +35772,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_FINANCE_PARTNER_ECPM = 652;</code>
      */
-    PARTNER_FINANCE_PARTNER_ECPM(292, 652),
+    PARTNER_FINANCE_PARTNER_ECPM(304, 652),
     /**
      *
      *
@@ -34263,7 +35790,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_FINANCE_PARTNER_REVENUE = 653;</code>
      */
-    PARTNER_FINANCE_PARTNER_REVENUE(293, 653),
+    PARTNER_FINANCE_PARTNER_REVENUE(305, 653),
     /**
      *
      *
@@ -34281,7 +35808,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_GROSS_REVENUE = 533;</code>
      */
-    PARTNER_MANAGEMENT_GROSS_REVENUE(294, 533),
+    PARTNER_MANAGEMENT_GROSS_REVENUE(306, 533),
     /**
      *
      *
@@ -34299,7 +35826,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_HOST_CLICKS = 534;</code>
      */
-    PARTNER_MANAGEMENT_HOST_CLICKS(295, 534),
+    PARTNER_MANAGEMENT_HOST_CLICKS(307, 534),
     /**
      *
      *
@@ -34317,7 +35844,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_HOST_CTR = 535;</code>
      */
-    PARTNER_MANAGEMENT_HOST_CTR(296, 535),
+    PARTNER_MANAGEMENT_HOST_CTR(308, 535),
     /**
      *
      *
@@ -34336,7 +35863,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_HOST_IMPRESSIONS = 536;</code>
      */
-    PARTNER_MANAGEMENT_HOST_IMPRESSIONS(297, 536),
+    PARTNER_MANAGEMENT_HOST_IMPRESSIONS(309, 536),
     /**
      *
      *
@@ -34354,7 +35881,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_PARTNER_CLICKS = 537;</code>
      */
-    PARTNER_MANAGEMENT_PARTNER_CLICKS(298, 537),
+    PARTNER_MANAGEMENT_PARTNER_CLICKS(310, 537),
     /**
      *
      *
@@ -34372,7 +35899,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_PARTNER_CTR = 538;</code>
      */
-    PARTNER_MANAGEMENT_PARTNER_CTR(299, 538),
+    PARTNER_MANAGEMENT_PARTNER_CTR(311, 538),
     /**
      *
      *
@@ -34391,7 +35918,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_PARTNER_IMPRESSIONS = 539;</code>
      */
-    PARTNER_MANAGEMENT_PARTNER_IMPRESSIONS(300, 539),
+    PARTNER_MANAGEMENT_PARTNER_IMPRESSIONS(312, 539),
     /**
      *
      *
@@ -34410,7 +35937,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_TOTAL_CONTENT_VIEWS = 540;</code>
      */
-    PARTNER_MANAGEMENT_TOTAL_CONTENT_VIEWS(301, 540),
+    PARTNER_MANAGEMENT_TOTAL_CONTENT_VIEWS(313, 540),
     /**
      *
      *
@@ -34430,7 +35957,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_MANAGEMENT_UNFILLED_IMPRESSIONS = 541;</code>
      */
-    PARTNER_MANAGEMENT_UNFILLED_IMPRESSIONS(302, 541),
+    PARTNER_MANAGEMENT_UNFILLED_IMPRESSIONS(314, 541),
     /**
      *
      *
@@ -34449,7 +35976,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SALES_FILLED_POD_REQUESTS = 135;</code>
      */
-    PARTNER_SALES_FILLED_POD_REQUESTS(303, 135),
+    PARTNER_SALES_FILLED_POD_REQUESTS(315, 135),
     /**
      *
      *
@@ -34468,7 +35995,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SALES_FILL_RATE = 136;</code>
      */
-    PARTNER_SALES_FILL_RATE(304, 136),
+    PARTNER_SALES_FILL_RATE(316, 136),
     /**
      *
      *
@@ -34487,7 +36014,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SALES_PARTNER_MATCH_RATE = 137;</code>
      */
-    PARTNER_SALES_PARTNER_MATCH_RATE(305, 137),
+    PARTNER_SALES_PARTNER_MATCH_RATE(317, 137),
     /**
      *
      *
@@ -34505,7 +36032,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SALES_QUERIES = 132;</code>
      */
-    PARTNER_SALES_QUERIES(306, 132),
+    PARTNER_SALES_QUERIES(318, 132),
     /**
      *
      *
@@ -34525,7 +36052,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SALES_UNFILLED_IMPRESSIONS = 133;</code>
      */
-    PARTNER_SALES_UNFILLED_IMPRESSIONS(307, 133),
+    PARTNER_SALES_UNFILLED_IMPRESSIONS(319, 133),
     /**
      *
      *
@@ -34545,7 +36072,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SALES_UNMATCHED_QUERIES = 134;</code>
      */
-    PARTNER_SALES_UNMATCHED_QUERIES(308, 134),
+    PARTNER_SALES_UNMATCHED_QUERIES(320, 134),
     /**
      *
      *
@@ -34563,7 +36090,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SOLD_CODE_SERVED = 125;</code>
      */
-    PARTNER_SOLD_CODE_SERVED(309, 125),
+    PARTNER_SOLD_CODE_SERVED(321, 125),
     /**
      *
      *
@@ -34582,7 +36109,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SOLD_COVIEWED_IMPRESSIONS = 124;</code>
      */
-    PARTNER_SOLD_COVIEWED_IMPRESSIONS(310, 124),
+    PARTNER_SOLD_COVIEWED_IMPRESSIONS(322, 124),
     /**
      *
      *
@@ -34600,7 +36127,61 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PARTNER_SOLD_IMPRESSIONS = 123;</code>
      */
-    PARTNER_SOLD_IMPRESSIONS(311, 123),
+    PARTNER_SOLD_IMPRESSIONS(323, 123),
+    /**
+     *
+     *
+     * <pre>
+     * Total pod eCPM.
+     *
+     *
+     *
+     * Corresponds to "Total pod eCPM" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>POD_ECPM = 738;</code>
+     */
+    POD_ECPM(324, 738),
+    /**
+     *
+     *
+     * <pre>
+     * Total pod eCPM without CPD.
+     *
+     *
+     *
+     * Corresponds to "Total pod eCPM without CPD" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>POD_ECPM_WITHOUT_CPD = 739;</code>
+     */
+    POD_ECPM_WITHOUT_CPD(325, 739),
+    /**
+     *
+     *
+     * <pre>
+     * Total pod views.
+     *
+     *
+     *
+     * Corresponds to "Total pod views" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>POD_VIEWS = 740;</code>
+     */
+    POD_VIEWS(326, 740),
     /**
      *
      *
@@ -34620,7 +36201,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PROGRAMMATIC_ELIGIBLE_AD_REQUESTS = 177;</code>
      */
-    PROGRAMMATIC_ELIGIBLE_AD_REQUESTS(312, 177),
+    PROGRAMMATIC_ELIGIBLE_AD_REQUESTS(327, 177),
     /**
      *
      *
@@ -34640,7 +36221,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PROGRAMMATIC_MATCH_RATE = 178;</code>
      */
-    PROGRAMMATIC_MATCH_RATE(313, 178),
+    PROGRAMMATIC_MATCH_RATE(328, 178),
     /**
      *
      *
@@ -34662,7 +36243,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>PROGRAMMATIC_RESPONSES_SERVED = 176;</code>
      */
-    PROGRAMMATIC_RESPONSES_SERVED(314, 176),
+    PROGRAMMATIC_RESPONSES_SERVED(329, 176),
     /**
      *
      *
@@ -34680,7 +36261,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REACH_IMPRESSIONS = 416;</code>
      */
-    REACH_IMPRESSIONS(315, 416),
+    REACH_IMPRESSIONS(330, 416),
     /**
      *
      *
@@ -34699,7 +36280,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RESPONSES_SERVED = 39;</code>
      */
-    RESPONSES_SERVED(316, 39),
+    RESPONSES_SERVED(331, 39),
     /**
      *
      *
@@ -34717,7 +36298,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RETENTION = 238;</code>
      */
-    RETENTION(317, 238),
+    RETENTION(332, 238),
     /**
      *
      *
@@ -34737,7 +36318,28 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE = 36;</code>
      */
-    REVENUE(318, 36),
+    REVENUE(333, 36),
+    /**
+     *
+     *
+     * <pre>
+     * The total amount users paid for items that were attributed to a view or
+     * click as defined by the sponsored product ad's line item settings. This
+     * value is revenue for the retailer.
+     *
+     *
+     *
+     * Corresponds to "Revenue on attributed items purchased" in the Ad Manager
+     * UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>REVENUE_ON_ATTRIBUTED_ITEMS_PURCHASED = 746;</code>
+     */
+    REVENUE_ON_ATTRIBUTED_ITEMS_PURCHASED(334, 746),
     /**
      *
      *
@@ -34758,7 +36360,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT = 214;</code>
      */
-    REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(319, 214),
+    REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(335, 214),
     /**
      *
      *
@@ -34776,7 +36378,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_VERIFICATION_CPD_REVENUE = 560;</code>
      */
-    REVENUE_VERIFICATION_CPD_REVENUE(320, 560),
+    REVENUE_VERIFICATION_CPD_REVENUE(336, 560),
     /**
      *
      *
@@ -34794,7 +36396,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_VERIFICATION_GROSS_CPD_REVENUE = 559;</code>
      */
-    REVENUE_VERIFICATION_GROSS_CPD_REVENUE(321, 559),
+    REVENUE_VERIFICATION_GROSS_CPD_REVENUE(337, 559),
     /**
      *
      *
@@ -34813,7 +36415,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_VERIFICATION_GROSS_REVENUE_WITHOUT_CPD = 561;</code>
      */
-    REVENUE_VERIFICATION_GROSS_REVENUE_WITHOUT_CPD(322, 561),
+    REVENUE_VERIFICATION_GROSS_REVENUE_WITHOUT_CPD(338, 561),
     /**
      *
      *
@@ -34831,7 +36433,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_VERIFICATION_IMPRESSIONS = 564;</code>
      */
-    REVENUE_VERIFICATION_IMPRESSIONS(323, 564),
+    REVENUE_VERIFICATION_IMPRESSIONS(339, 564),
     /**
      *
      *
@@ -34849,7 +36451,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_VERIFICATION_REVENUE_WITHOUT_CPD = 567;</code>
      */
-    REVENUE_VERIFICATION_REVENUE_WITHOUT_CPD(324, 567),
+    REVENUE_VERIFICATION_REVENUE_WITHOUT_CPD(340, 567),
     /**
      *
      *
@@ -34870,7 +36472,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REVENUE_WITHOUT_CPD = 4;</code>
      */
-    REVENUE_WITHOUT_CPD(325, 4),
+    REVENUE_WITHOUT_CPD(341, 4),
     /**
      *
      *
@@ -34888,7 +36490,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>REWARDS_GRANTED = 413;</code>
      */
-    REWARDS_GRANTED(326, 413),
+    REWARDS_GRANTED(342, 413),
     /**
      *
      *
@@ -34907,7 +36509,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_AVERAGE_DISPLAY_TIME = 587;</code>
      */
-    RICH_MEDIA_AVERAGE_DISPLAY_TIME(327, 587),
+    RICH_MEDIA_AVERAGE_DISPLAY_TIME(343, 587),
     /**
      *
      *
@@ -34926,7 +36528,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_AVERAGE_INTERACTION_TIME = 588;</code>
      */
-    RICH_MEDIA_AVERAGE_INTERACTION_TIME(328, 588),
+    RICH_MEDIA_AVERAGE_INTERACTION_TIME(344, 588),
     /**
      *
      *
@@ -34945,7 +36547,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_BACKUP_IMAGES = 589;</code>
      */
-    RICH_MEDIA_BACKUP_IMAGES(329, 589),
+    RICH_MEDIA_BACKUP_IMAGES(345, 589),
     /**
      *
      *
@@ -34964,7 +36566,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_CUSTOM_EVENT_COUNT = 599;</code>
      */
-    RICH_MEDIA_CUSTOM_EVENT_COUNT(330, 599),
+    RICH_MEDIA_CUSTOM_EVENT_COUNT(346, 599),
     /**
      *
      *
@@ -34983,7 +36585,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_CUSTOM_EVENT_TIME = 600;</code>
      */
-    RICH_MEDIA_CUSTOM_EVENT_TIME(331, 600),
+    RICH_MEDIA_CUSTOM_EVENT_TIME(347, 600),
     /**
      *
      *
@@ -35002,7 +36604,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_DISPLAY_TIME = 590;</code>
      */
-    RICH_MEDIA_DISPLAY_TIME(332, 590),
+    RICH_MEDIA_DISPLAY_TIME(348, 590),
     /**
      *
      *
@@ -35021,7 +36623,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_EXPANDING_TIME = 591;</code>
      */
-    RICH_MEDIA_EXPANDING_TIME(333, 591),
+    RICH_MEDIA_EXPANDING_TIME(349, 591),
     /**
      *
      *
@@ -35039,7 +36641,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_EXPANSIONS = 592;</code>
      */
-    RICH_MEDIA_EXPANSIONS(334, 592),
+    RICH_MEDIA_EXPANSIONS(350, 592),
     /**
      *
      *
@@ -35057,7 +36659,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_FULL_SCREEN_IMPRESSIONS = 593;</code>
      */
-    RICH_MEDIA_FULL_SCREEN_IMPRESSIONS(335, 593),
+    RICH_MEDIA_FULL_SCREEN_IMPRESSIONS(351, 593),
     /**
      *
      *
@@ -35075,7 +36677,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_INTERACTION_COUNT = 594;</code>
      */
-    RICH_MEDIA_INTERACTION_COUNT(336, 594),
+    RICH_MEDIA_INTERACTION_COUNT(352, 594),
     /**
      *
      *
@@ -35094,7 +36696,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_INTERACTION_RATE = 595;</code>
      */
-    RICH_MEDIA_INTERACTION_RATE(337, 595),
+    RICH_MEDIA_INTERACTION_RATE(353, 595),
     /**
      *
      *
@@ -35113,7 +36715,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_INTERACTION_TIME = 596;</code>
      */
-    RICH_MEDIA_INTERACTION_TIME(338, 596),
+    RICH_MEDIA_INTERACTION_TIME(354, 596),
     /**
      *
      *
@@ -35131,7 +36733,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_INTERACTIVE_IMPRESSIONS = 597;</code>
      */
-    RICH_MEDIA_INTERACTIVE_IMPRESSIONS(339, 597),
+    RICH_MEDIA_INTERACTIVE_IMPRESSIONS(355, 597),
     /**
      *
      *
@@ -35149,7 +36751,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_MANUAL_CLOSES = 598;</code>
      */
-    RICH_MEDIA_MANUAL_CLOSES(340, 598),
+    RICH_MEDIA_MANUAL_CLOSES(356, 598),
     /**
      *
      *
@@ -35167,7 +36769,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_COMPLETES = 503;</code>
      */
-    RICH_MEDIA_VIDEO_COMPLETES(341, 503),
+    RICH_MEDIA_VIDEO_COMPLETES(357, 503),
     /**
      *
      *
@@ -35187,7 +36789,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_INTERACTIONS = 505;</code>
      */
-    RICH_MEDIA_VIDEO_INTERACTIONS(342, 505),
+    RICH_MEDIA_VIDEO_INTERACTIONS(358, 505),
     /**
      *
      *
@@ -35206,7 +36808,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_INTERACTION_RATE = 504;</code>
      */
-    RICH_MEDIA_VIDEO_INTERACTION_RATE(343, 504),
+    RICH_MEDIA_VIDEO_INTERACTION_RATE(359, 504),
     /**
      *
      *
@@ -35224,7 +36826,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_MIDPOINTS = 506;</code>
      */
-    RICH_MEDIA_VIDEO_MIDPOINTS(344, 506),
+    RICH_MEDIA_VIDEO_MIDPOINTS(360, 506),
     /**
      *
      *
@@ -35242,7 +36844,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_MUTES = 507;</code>
      */
-    RICH_MEDIA_VIDEO_MUTES(345, 507),
+    RICH_MEDIA_VIDEO_MUTES(361, 507),
     /**
      *
      *
@@ -35260,7 +36862,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_PAUSES = 508;</code>
      */
-    RICH_MEDIA_VIDEO_PAUSES(346, 508),
+    RICH_MEDIA_VIDEO_PAUSES(362, 508),
     /**
      *
      *
@@ -35278,7 +36880,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_PLAYS = 509;</code>
      */
-    RICH_MEDIA_VIDEO_PLAYS(347, 509),
+    RICH_MEDIA_VIDEO_PLAYS(363, 509),
     /**
      *
      *
@@ -35296,7 +36898,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_REPLAYS = 510;</code>
      */
-    RICH_MEDIA_VIDEO_REPLAYS(348, 510),
+    RICH_MEDIA_VIDEO_REPLAYS(364, 510),
     /**
      *
      *
@@ -35314,7 +36916,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_STOPS = 511;</code>
      */
-    RICH_MEDIA_VIDEO_STOPS(349, 511),
+    RICH_MEDIA_VIDEO_STOPS(365, 511),
     /**
      *
      *
@@ -35332,7 +36934,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_UNMUTES = 512;</code>
      */
-    RICH_MEDIA_VIDEO_UNMUTES(350, 512),
+    RICH_MEDIA_VIDEO_UNMUTES(366, 512),
     /**
      *
      *
@@ -35350,7 +36952,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_VIEW_RATE = 513;</code>
      */
-    RICH_MEDIA_VIDEO_VIEW_RATE(351, 513),
+    RICH_MEDIA_VIDEO_VIEW_RATE(367, 513),
     /**
      *
      *
@@ -35369,7 +36971,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>RICH_MEDIA_VIDEO_VIEW_TIME = 514;</code>
      */
-    RICH_MEDIA_VIDEO_VIEW_TIME(352, 514),
+    RICH_MEDIA_VIDEO_VIEW_TIME(368, 514),
     /**
      *
      *
@@ -35387,7 +36989,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SELL_THROUGH_AVAILABLE_IMPRESSIONS = 477;</code>
      */
-    SELL_THROUGH_AVAILABLE_IMPRESSIONS(353, 477),
+    SELL_THROUGH_AVAILABLE_IMPRESSIONS(369, 477),
     /**
      *
      *
@@ -35405,7 +37007,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SELL_THROUGH_FORECASTED_IMPRESSIONS = 478;</code>
      */
-    SELL_THROUGH_FORECASTED_IMPRESSIONS(354, 478),
+    SELL_THROUGH_FORECASTED_IMPRESSIONS(370, 478),
     /**
      *
      *
@@ -35423,7 +37025,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SELL_THROUGH_RESERVED_IMPRESSIONS = 479;</code>
      */
-    SELL_THROUGH_RESERVED_IMPRESSIONS(355, 479),
+    SELL_THROUGH_RESERVED_IMPRESSIONS(371, 479),
     /**
      *
      *
@@ -35441,7 +37043,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SELL_THROUGH_SELL_THROUGH_RATE = 480;</code>
      */
-    SELL_THROUGH_SELL_THROUGH_RATE(356, 480),
+    SELL_THROUGH_SELL_THROUGH_RATE(372, 480),
     /**
      *
      *
@@ -35464,7 +37066,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_AVERAGE_LATENCY_MS = 434;</code>
      */
-    SERVER_SIDE_UNWRAPPING_AVERAGE_LATENCY_MS(357, 434),
+    SERVER_SIDE_UNWRAPPING_AVERAGE_LATENCY_MS(373, 434),
     /**
      *
      *
@@ -35482,7 +37084,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_CALLOUTS = 435;</code>
      */
-    SERVER_SIDE_UNWRAPPING_CALLOUTS(358, 435),
+    SERVER_SIDE_UNWRAPPING_CALLOUTS(374, 435),
     /**
      *
      *
@@ -35502,7 +37104,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_EMPTY_RESPONSES = 436;</code>
      */
-    SERVER_SIDE_UNWRAPPING_EMPTY_RESPONSES(359, 436),
+    SERVER_SIDE_UNWRAPPING_EMPTY_RESPONSES(375, 436),
     /**
      *
      *
@@ -35522,7 +37124,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_ERROR_RESPONSES = 437;</code>
      */
-    SERVER_SIDE_UNWRAPPING_ERROR_RESPONSES(360, 437),
+    SERVER_SIDE_UNWRAPPING_ERROR_RESPONSES(376, 437),
     /**
      *
      *
@@ -35543,7 +37145,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_SUCCESSFUL_RESPONSES = 438;</code>
      */
-    SERVER_SIDE_UNWRAPPING_SUCCESSFUL_RESPONSES(361, 438),
+    SERVER_SIDE_UNWRAPPING_SUCCESSFUL_RESPONSES(377, 438),
     /**
      *
      *
@@ -35562,7 +37164,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SERVER_SIDE_UNWRAPPING_TIMEOUTS = 439;</code>
      */
-    SERVER_SIDE_UNWRAPPING_TIMEOUTS(362, 439),
+    SERVER_SIDE_UNWRAPPING_TIMEOUTS(378, 439),
     /**
      *
      *
@@ -35580,7 +37182,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>SESSIONS = 239;</code>
      */
-    SESSIONS(363, 239),
+    SESSIONS(379, 239),
     /**
      *
      *
@@ -35599,7 +37201,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TAG_LOAD_TO_FIRST_AD_REQUEST_0_500_PERCENT = 455;</code>
      */
-    TAG_LOAD_TO_FIRST_AD_REQUEST_0_500_PERCENT(364, 455),
+    TAG_LOAD_TO_FIRST_AD_REQUEST_0_500_PERCENT(380, 455),
     /**
      *
      *
@@ -35618,7 +37220,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TAG_LOAD_TO_FIRST_AD_REQUEST_1000_2000_PERCENT = 457;</code>
      */
-    TAG_LOAD_TO_FIRST_AD_REQUEST_1000_2000_PERCENT(365, 457),
+    TAG_LOAD_TO_FIRST_AD_REQUEST_1000_2000_PERCENT(381, 457),
     /**
      *
      *
@@ -35637,7 +37239,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TAG_LOAD_TO_FIRST_AD_REQUEST_2000_4000_PERCENT = 458;</code>
      */
-    TAG_LOAD_TO_FIRST_AD_REQUEST_2000_4000_PERCENT(366, 458),
+    TAG_LOAD_TO_FIRST_AD_REQUEST_2000_4000_PERCENT(382, 458),
     /**
      *
      *
@@ -35656,7 +37258,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TAG_LOAD_TO_FIRST_AD_REQUEST_4000_8000_PERCENT = 459;</code>
      */
-    TAG_LOAD_TO_FIRST_AD_REQUEST_4000_8000_PERCENT(367, 459),
+    TAG_LOAD_TO_FIRST_AD_REQUEST_4000_8000_PERCENT(383, 459),
     /**
      *
      *
@@ -35675,7 +37277,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TAG_LOAD_TO_FIRST_AD_REQUEST_500_1000_PERCENT = 456;</code>
      */
-    TAG_LOAD_TO_FIRST_AD_REQUEST_500_1000_PERCENT(368, 456),
+    TAG_LOAD_TO_FIRST_AD_REQUEST_500_1000_PERCENT(384, 456),
     /**
      *
      *
@@ -35694,7 +37296,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TAG_LOAD_TO_FIRST_AD_REQUEST_GT_8000_PERCENT = 460;</code>
      */
-    TAG_LOAD_TO_FIRST_AD_REQUEST_GT_8000_PERCENT(369, 460),
+    TAG_LOAD_TO_FIRST_AD_REQUEST_GT_8000_PERCENT(385, 460),
     /**
      *
      *
@@ -35713,7 +37315,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETED_CLICKS = 276;</code>
      */
-    TARGETED_CLICKS(370, 276),
+    TARGETED_CLICKS(386, 276),
     /**
      *
      *
@@ -35732,7 +37334,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>TARGETED_IMPRESSIONS = 277;</code>
      */
-    TARGETED_IMPRESSIONS(371, 277),
+    TARGETED_IMPRESSIONS(387, 277),
     /**
      *
      *
@@ -35751,7 +37353,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNFILLED_IMPRESSIONS = 45;</code>
      */
-    UNFILLED_IMPRESSIONS(372, 45),
+    UNFILLED_IMPRESSIONS(388, 45),
     /**
      *
      *
@@ -35769,7 +37371,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNIQUE_VISITORS = 417;</code>
      */
-    UNIQUE_VISITORS(373, 417),
+    UNIQUE_VISITORS(389, 417),
     /**
      *
      *
@@ -35789,7 +37391,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNLOADED_IMPRESSIONS_DUE_TO_CPU = 408;</code>
      */
-    UNLOADED_IMPRESSIONS_DUE_TO_CPU(374, 408),
+    UNLOADED_IMPRESSIONS_DUE_TO_CPU(390, 408),
     /**
      *
      *
@@ -35809,7 +37411,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNLOADED_IMPRESSIONS_DUE_TO_NETWORK = 406;</code>
      */
-    UNLOADED_IMPRESSIONS_DUE_TO_NETWORK(375, 406),
+    UNLOADED_IMPRESSIONS_DUE_TO_NETWORK(391, 406),
     /**
      *
      *
@@ -35827,7 +37429,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNMATCHED_AD_REQUESTS = 43;</code>
      */
-    UNMATCHED_AD_REQUESTS(376, 43),
+    UNMATCHED_AD_REQUESTS(392, 43),
     /**
      *
      *
@@ -35846,7 +37448,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNVIEWED_REASON_OTHER_PERCENT = 550;</code>
      */
-    UNVIEWED_REASON_OTHER_PERCENT(377, 550),
+    UNVIEWED_REASON_OTHER_PERCENT(393, 550),
     /**
      *
      *
@@ -35865,7 +37467,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNVIEWED_REASON_SLOT_NEVER_ENTERED_VIEWPORT_PERCENT = 553;</code>
      */
-    UNVIEWED_REASON_SLOT_NEVER_ENTERED_VIEWPORT_PERCENT(378, 553),
+    UNVIEWED_REASON_SLOT_NEVER_ENTERED_VIEWPORT_PERCENT(394, 553),
     /**
      *
      *
@@ -35884,7 +37486,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNVIEWED_REASON_USER_SCROLLED_BEFORE_AD_FILLED_PERCENT = 551;</code>
      */
-    UNVIEWED_REASON_USER_SCROLLED_BEFORE_AD_FILLED_PERCENT(379, 551),
+    UNVIEWED_REASON_USER_SCROLLED_BEFORE_AD_FILLED_PERCENT(395, 551),
     /**
      *
      *
@@ -35904,7 +37506,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNVIEWED_REASON_USER_SCROLLED_BEFORE_AD_LOADED_PERCENT = 552;</code>
      */
-    UNVIEWED_REASON_USER_SCROLLED_BEFORE_AD_LOADED_PERCENT(380, 552),
+    UNVIEWED_REASON_USER_SCROLLED_BEFORE_AD_LOADED_PERCENT(396, 552),
     /**
      *
      *
@@ -35924,7 +37526,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>UNVIEWED_REASON_USER_SCROLLED_BEFORE_ONE_SECOND_PERCENT = 549;</code>
      */
-    UNVIEWED_REASON_USER_SCROLLED_BEFORE_ONE_SECOND_PERCENT(381, 549),
+    UNVIEWED_REASON_USER_SCROLLED_BEFORE_ONE_SECOND_PERCENT(397, 549),
     /**
      *
      *
@@ -35943,7 +37545,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_ENGAGEMENT_DURATION_IN_SECONDS = 240;</code>
      */
-    USER_ENGAGEMENT_DURATION_IN_SECONDS(382, 240),
+    USER_ENGAGEMENT_DURATION_IN_SECONDS(398, 240),
     /**
      *
      *
@@ -35962,7 +37564,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_AD_BLOCKING_EXTENSION_RATE = 486;</code>
      */
-    USER_MESSAGES_AD_BLOCKING_EXTENSION_RATE(383, 486),
+    USER_MESSAGES_AD_BLOCKING_EXTENSION_RATE(399, 486),
     /**
      *
      *
@@ -35982,7 +37584,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_AD_BLOCKING_RECOVERY_ALLOWLISTED_COUNT = 487;</code>
      */
-    USER_MESSAGES_AD_BLOCKING_RECOVERY_ALLOWLISTED_COUNT(384, 487),
+    USER_MESSAGES_AD_BLOCKING_RECOVERY_ALLOWLISTED_COUNT(400, 487),
     /**
      *
      *
@@ -36001,7 +37603,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_AD_BLOCKING_RECOVERY_MESSAGES_SHOWN = 488;</code>
      */
-    USER_MESSAGES_AD_BLOCKING_RECOVERY_MESSAGES_SHOWN(385, 488),
+    USER_MESSAGES_AD_BLOCKING_RECOVERY_MESSAGES_SHOWN(401, 488),
     /**
      *
      *
@@ -36021,7 +37623,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_ALLOW_ADS_PAGEVIEWS = 489;</code>
      */
-    USER_MESSAGES_ALLOW_ADS_PAGEVIEWS(386, 489),
+    USER_MESSAGES_ALLOW_ADS_PAGEVIEWS(402, 489),
     /**
      *
      *
@@ -36040,7 +37642,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_ATT_ALERTS_SHOWN = 491;</code>
      */
-    USER_MESSAGES_IDFA_ATT_ALERTS_SHOWN(387, 491),
+    USER_MESSAGES_IDFA_ATT_ALERTS_SHOWN(403, 491),
     /**
      *
      *
@@ -36059,7 +37661,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_ATT_CONSENT = 492;</code>
      */
-    USER_MESSAGES_IDFA_ATT_CONSENT(388, 492),
+    USER_MESSAGES_IDFA_ATT_CONSENT(404, 492),
     /**
      *
      *
@@ -36078,7 +37680,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_ATT_CONSENT_RATE = 493;</code>
      */
-    USER_MESSAGES_IDFA_ATT_CONSENT_RATE(389, 493),
+    USER_MESSAGES_IDFA_ATT_CONSENT_RATE(405, 493),
     /**
      *
      *
@@ -36097,7 +37699,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_ATT_DECLINE_CONSENT = 494;</code>
      */
-    USER_MESSAGES_IDFA_ATT_DECLINE_CONSENT(390, 494),
+    USER_MESSAGES_IDFA_ATT_DECLINE_CONSENT(406, 494),
     /**
      *
      *
@@ -36116,7 +37718,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_ATT_DECLINE_RATE = 495;</code>
      */
-    USER_MESSAGES_IDFA_ATT_DECLINE_RATE(391, 495),
+    USER_MESSAGES_IDFA_ATT_DECLINE_RATE(407, 495),
     /**
      *
      *
@@ -36134,7 +37736,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_EXPLAINERS_SHOWN = 496;</code>
      */
-    USER_MESSAGES_IDFA_EXPLAINERS_SHOWN(392, 496),
+    USER_MESSAGES_IDFA_EXPLAINERS_SHOWN(408, 496),
     /**
      *
      *
@@ -36153,7 +37755,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_IAB_MESSAGES_SHOWN = 497;</code>
      */
-    USER_MESSAGES_IDFA_IAB_MESSAGES_SHOWN(393, 497),
+    USER_MESSAGES_IDFA_IAB_MESSAGES_SHOWN(409, 497),
     /**
      *
      *
@@ -36171,7 +37773,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_IDFA_NO_DECISION = 498;</code>
      */
-    USER_MESSAGES_IDFA_NO_DECISION(394, 498),
+    USER_MESSAGES_IDFA_NO_DECISION(410, 498),
     /**
      *
      *
@@ -36189,7 +37791,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_OFFERWALL_MESSAGES_SHOWN = 121;</code>
      */
-    USER_MESSAGES_OFFERWALL_MESSAGES_SHOWN(395, 121),
+    USER_MESSAGES_OFFERWALL_MESSAGES_SHOWN(411, 121),
     /**
      *
      *
@@ -36207,7 +37809,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_OFFERWALL_SUCCESSFUL_ENGAGEMENTS = 122;</code>
      */
-    USER_MESSAGES_OFFERWALL_SUCCESSFUL_ENGAGEMENTS(396, 122),
+    USER_MESSAGES_OFFERWALL_SUCCESSFUL_ENGAGEMENTS(412, 122),
     /**
      *
      *
@@ -36226,7 +37828,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_POST_OFFERWALL_PAGEVIEWS = 499;</code>
      */
-    USER_MESSAGES_POST_OFFERWALL_PAGEVIEWS(397, 499),
+    USER_MESSAGES_POST_OFFERWALL_PAGEVIEWS(413, 499),
     /**
      *
      *
@@ -36245,7 +37847,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_TOTAL_ESTIMATED_REVENUE = 500;</code>
      */
-    USER_MESSAGES_TOTAL_ESTIMATED_REVENUE(398, 500),
+    USER_MESSAGES_TOTAL_ESTIMATED_REVENUE(414, 500),
     /**
      *
      *
@@ -36264,7 +37866,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_UPTC_MESSAGES_SHOWN = 501;</code>
      */
-    USER_MESSAGES_UPTC_MESSAGES_SHOWN(399, 501),
+    USER_MESSAGES_UPTC_MESSAGES_SHOWN(415, 501),
     /**
      *
      *
@@ -36283,7 +37885,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_UPTC_PERSONALIZATION_OPT_OUT_RATIO = 502;</code>
      */
-    USER_MESSAGES_UPTC_PERSONALIZATION_OPT_OUT_RATIO(400, 502),
+    USER_MESSAGES_UPTC_PERSONALIZATION_OPT_OUT_RATIO(416, 502),
     /**
      *
      *
@@ -36301,7 +37903,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_US_STATES_MESSAGES_SHOWN = 490;</code>
      */
-    USER_MESSAGES_US_STATES_MESSAGES_SHOWN(401, 490),
+    USER_MESSAGES_US_STATES_MESSAGES_SHOWN(417, 490),
     /**
      *
      *
@@ -36319,7 +37921,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>USER_MESSAGES_US_STATES_OPT_OUT_SELECTIONS = 586;</code>
      */
-    USER_MESSAGES_US_STATES_OPT_OUT_SELECTIONS(402, 586),
+    USER_MESSAGES_US_STATES_OPT_OUT_SELECTIONS(418, 586),
     /**
      *
      *
@@ -36337,7 +37939,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_100_COUNT = 180;</code>
      */
-    VIDEO_ERROR_100_COUNT(403, 180),
+    VIDEO_ERROR_100_COUNT(419, 180),
     /**
      *
      *
@@ -36355,7 +37957,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_101_COUNT = 181;</code>
      */
-    VIDEO_ERROR_101_COUNT(404, 181),
+    VIDEO_ERROR_101_COUNT(420, 181),
     /**
      *
      *
@@ -36373,7 +37975,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_102_COUNT = 182;</code>
      */
-    VIDEO_ERROR_102_COUNT(405, 182),
+    VIDEO_ERROR_102_COUNT(421, 182),
     /**
      *
      *
@@ -36391,7 +37993,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_200_COUNT = 183;</code>
      */
-    VIDEO_ERROR_200_COUNT(406, 183),
+    VIDEO_ERROR_200_COUNT(422, 183),
     /**
      *
      *
@@ -36409,7 +38011,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_201_COUNT = 184;</code>
      */
-    VIDEO_ERROR_201_COUNT(407, 184),
+    VIDEO_ERROR_201_COUNT(423, 184),
     /**
      *
      *
@@ -36427,7 +38029,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_202_COUNT = 185;</code>
      */
-    VIDEO_ERROR_202_COUNT(408, 185),
+    VIDEO_ERROR_202_COUNT(424, 185),
     /**
      *
      *
@@ -36445,7 +38047,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_203_COUNT = 186;</code>
      */
-    VIDEO_ERROR_203_COUNT(409, 186),
+    VIDEO_ERROR_203_COUNT(425, 186),
     /**
      *
      *
@@ -36463,7 +38065,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_300_COUNT = 187;</code>
      */
-    VIDEO_ERROR_300_COUNT(410, 187),
+    VIDEO_ERROR_300_COUNT(426, 187),
     /**
      *
      *
@@ -36481,7 +38083,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_301_COUNT = 188;</code>
      */
-    VIDEO_ERROR_301_COUNT(411, 188),
+    VIDEO_ERROR_301_COUNT(427, 188),
     /**
      *
      *
@@ -36499,7 +38101,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_302_COUNT = 189;</code>
      */
-    VIDEO_ERROR_302_COUNT(412, 189),
+    VIDEO_ERROR_302_COUNT(428, 189),
     /**
      *
      *
@@ -36517,7 +38119,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_303_COUNT = 190;</code>
      */
-    VIDEO_ERROR_303_COUNT(413, 190),
+    VIDEO_ERROR_303_COUNT(429, 190),
     /**
      *
      *
@@ -36535,7 +38137,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_400_COUNT = 191;</code>
      */
-    VIDEO_ERROR_400_COUNT(414, 191),
+    VIDEO_ERROR_400_COUNT(430, 191),
     /**
      *
      *
@@ -36553,7 +38155,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_401_COUNT = 192;</code>
      */
-    VIDEO_ERROR_401_COUNT(415, 192),
+    VIDEO_ERROR_401_COUNT(431, 192),
     /**
      *
      *
@@ -36571,7 +38173,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_402_COUNT = 193;</code>
      */
-    VIDEO_ERROR_402_COUNT(416, 193),
+    VIDEO_ERROR_402_COUNT(432, 193),
     /**
      *
      *
@@ -36589,7 +38191,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_403_COUNT = 194;</code>
      */
-    VIDEO_ERROR_403_COUNT(417, 194),
+    VIDEO_ERROR_403_COUNT(433, 194),
     /**
      *
      *
@@ -36607,7 +38209,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_405_COUNT = 195;</code>
      */
-    VIDEO_ERROR_405_COUNT(418, 195),
+    VIDEO_ERROR_405_COUNT(434, 195),
     /**
      *
      *
@@ -36625,7 +38227,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_406_COUNT = 196;</code>
      */
-    VIDEO_ERROR_406_COUNT(419, 196),
+    VIDEO_ERROR_406_COUNT(435, 196),
     /**
      *
      *
@@ -36643,7 +38245,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_407_COUNT = 197;</code>
      */
-    VIDEO_ERROR_407_COUNT(420, 197),
+    VIDEO_ERROR_407_COUNT(436, 197),
     /**
      *
      *
@@ -36661,7 +38263,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_408_COUNT = 198;</code>
      */
-    VIDEO_ERROR_408_COUNT(421, 198),
+    VIDEO_ERROR_408_COUNT(437, 198),
     /**
      *
      *
@@ -36679,7 +38281,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_409_COUNT = 199;</code>
      */
-    VIDEO_ERROR_409_COUNT(422, 199),
+    VIDEO_ERROR_409_COUNT(438, 199),
     /**
      *
      *
@@ -36697,7 +38299,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_410_COUNT = 200;</code>
      */
-    VIDEO_ERROR_410_COUNT(423, 200),
+    VIDEO_ERROR_410_COUNT(439, 200),
     /**
      *
      *
@@ -36715,7 +38317,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_500_COUNT = 201;</code>
      */
-    VIDEO_ERROR_500_COUNT(424, 201),
+    VIDEO_ERROR_500_COUNT(440, 201),
     /**
      *
      *
@@ -36733,7 +38335,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_501_COUNT = 202;</code>
      */
-    VIDEO_ERROR_501_COUNT(425, 202),
+    VIDEO_ERROR_501_COUNT(441, 202),
     /**
      *
      *
@@ -36751,7 +38353,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_502_COUNT = 203;</code>
      */
-    VIDEO_ERROR_502_COUNT(426, 203),
+    VIDEO_ERROR_502_COUNT(442, 203),
     /**
      *
      *
@@ -36769,7 +38371,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_503_COUNT = 204;</code>
      */
-    VIDEO_ERROR_503_COUNT(427, 204),
+    VIDEO_ERROR_503_COUNT(443, 204),
     /**
      *
      *
@@ -36787,7 +38389,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_600_COUNT = 205;</code>
      */
-    VIDEO_ERROR_600_COUNT(428, 205),
+    VIDEO_ERROR_600_COUNT(444, 205),
     /**
      *
      *
@@ -36805,7 +38407,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_601_COUNT = 206;</code>
      */
-    VIDEO_ERROR_601_COUNT(429, 206),
+    VIDEO_ERROR_601_COUNT(445, 206),
     /**
      *
      *
@@ -36823,7 +38425,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_602_COUNT = 207;</code>
      */
-    VIDEO_ERROR_602_COUNT(430, 207),
+    VIDEO_ERROR_602_COUNT(446, 207),
     /**
      *
      *
@@ -36841,7 +38443,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_603_COUNT = 208;</code>
      */
-    VIDEO_ERROR_603_COUNT(431, 208),
+    VIDEO_ERROR_603_COUNT(447, 208),
     /**
      *
      *
@@ -36859,7 +38461,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_604_COUNT = 209;</code>
      */
-    VIDEO_ERROR_604_COUNT(432, 209),
+    VIDEO_ERROR_604_COUNT(448, 209),
     /**
      *
      *
@@ -36877,7 +38479,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_900_COUNT = 210;</code>
      */
-    VIDEO_ERROR_900_COUNT(433, 210),
+    VIDEO_ERROR_900_COUNT(449, 210),
     /**
      *
      *
@@ -36895,7 +38497,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_ERROR_901_COUNT = 211;</code>
      */
-    VIDEO_ERROR_901_COUNT(434, 211),
+    VIDEO_ERROR_901_COUNT(450, 211),
     /**
      *
      *
@@ -36914,7 +38516,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_AVERAGE_INTERACTION_RATE = 92;</code>
      */
-    VIDEO_INTERACTION_AVERAGE_INTERACTION_RATE(435, 92),
+    VIDEO_INTERACTION_AVERAGE_INTERACTION_RATE(451, 92),
     /**
      *
      *
@@ -36933,7 +38535,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_COLLAPSES = 93;</code>
      */
-    VIDEO_INTERACTION_COLLAPSES(436, 93),
+    VIDEO_INTERACTION_COLLAPSES(452, 93),
     /**
      *
      *
@@ -36951,7 +38553,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_EXPANDS = 95;</code>
      */
-    VIDEO_INTERACTION_EXPANDS(437, 95),
+    VIDEO_INTERACTION_EXPANDS(453, 95),
     /**
      *
      *
@@ -36969,7 +38571,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_FULL_SCREENS = 96;</code>
      */
-    VIDEO_INTERACTION_FULL_SCREENS(438, 96),
+    VIDEO_INTERACTION_FULL_SCREENS(454, 96),
     /**
      *
      *
@@ -36988,7 +38590,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_MUTES = 97;</code>
      */
-    VIDEO_INTERACTION_MUTES(439, 97),
+    VIDEO_INTERACTION_MUTES(455, 97),
     /**
      *
      *
@@ -37006,7 +38608,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_PAUSES = 98;</code>
      */
-    VIDEO_INTERACTION_PAUSES(440, 98),
+    VIDEO_INTERACTION_PAUSES(456, 98),
     /**
      *
      *
@@ -37024,7 +38626,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_RESUMES = 99;</code>
      */
-    VIDEO_INTERACTION_RESUMES(441, 99),
+    VIDEO_INTERACTION_RESUMES(457, 99),
     /**
      *
      *
@@ -37042,7 +38644,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_REWINDS = 100;</code>
      */
-    VIDEO_INTERACTION_REWINDS(442, 100),
+    VIDEO_INTERACTION_REWINDS(458, 100),
     /**
      *
      *
@@ -37060,7 +38662,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_UNMUTES = 101;</code>
      */
-    VIDEO_INTERACTION_UNMUTES(443, 101),
+    VIDEO_INTERACTION_UNMUTES(459, 101),
     /**
      *
      *
@@ -37078,7 +38680,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_INTERACTION_VIDEO_SKIPS = 102;</code>
      */
-    VIDEO_INTERACTION_VIDEO_SKIPS(444, 102),
+    VIDEO_INTERACTION_VIDEO_SKIPS(460, 102),
     /**
      *
      *
@@ -37096,7 +38698,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_MONETIZABLE_CONTENT_VIEWS = 601;</code>
      */
-    VIDEO_MONETIZABLE_CONTENT_VIEWS(445, 601),
+    VIDEO_MONETIZABLE_CONTENT_VIEWS(461, 601),
     /**
      *
      *
@@ -37114,7 +38716,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_CREATIVE_SERVES = 139;</code>
      */
-    VIDEO_REAL_TIME_CREATIVE_SERVES(446, 139),
+    VIDEO_REAL_TIME_CREATIVE_SERVES(462, 139),
     /**
      *
      *
@@ -37132,7 +38734,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_100_COUNT = 143;</code>
      */
-    VIDEO_REAL_TIME_ERROR_100_COUNT(447, 143),
+    VIDEO_REAL_TIME_ERROR_100_COUNT(463, 143),
     /**
      *
      *
@@ -37150,7 +38752,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_101_COUNT = 144;</code>
      */
-    VIDEO_REAL_TIME_ERROR_101_COUNT(448, 144),
+    VIDEO_REAL_TIME_ERROR_101_COUNT(464, 144),
     /**
      *
      *
@@ -37168,7 +38770,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_102_COUNT = 145;</code>
      */
-    VIDEO_REAL_TIME_ERROR_102_COUNT(449, 145),
+    VIDEO_REAL_TIME_ERROR_102_COUNT(465, 145),
     /**
      *
      *
@@ -37186,7 +38788,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_200_COUNT = 146;</code>
      */
-    VIDEO_REAL_TIME_ERROR_200_COUNT(450, 146),
+    VIDEO_REAL_TIME_ERROR_200_COUNT(466, 146),
     /**
      *
      *
@@ -37204,7 +38806,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_201_COUNT = 147;</code>
      */
-    VIDEO_REAL_TIME_ERROR_201_COUNT(451, 147),
+    VIDEO_REAL_TIME_ERROR_201_COUNT(467, 147),
     /**
      *
      *
@@ -37222,7 +38824,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_202_COUNT = 148;</code>
      */
-    VIDEO_REAL_TIME_ERROR_202_COUNT(452, 148),
+    VIDEO_REAL_TIME_ERROR_202_COUNT(468, 148),
     /**
      *
      *
@@ -37240,7 +38842,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_203_COUNT = 149;</code>
      */
-    VIDEO_REAL_TIME_ERROR_203_COUNT(453, 149),
+    VIDEO_REAL_TIME_ERROR_203_COUNT(469, 149),
     /**
      *
      *
@@ -37258,7 +38860,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_300_COUNT = 150;</code>
      */
-    VIDEO_REAL_TIME_ERROR_300_COUNT(454, 150),
+    VIDEO_REAL_TIME_ERROR_300_COUNT(470, 150),
     /**
      *
      *
@@ -37276,7 +38878,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_301_COUNT = 151;</code>
      */
-    VIDEO_REAL_TIME_ERROR_301_COUNT(455, 151),
+    VIDEO_REAL_TIME_ERROR_301_COUNT(471, 151),
     /**
      *
      *
@@ -37294,7 +38896,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_302_COUNT = 152;</code>
      */
-    VIDEO_REAL_TIME_ERROR_302_COUNT(456, 152),
+    VIDEO_REAL_TIME_ERROR_302_COUNT(472, 152),
     /**
      *
      *
@@ -37312,7 +38914,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_303_COUNT = 153;</code>
      */
-    VIDEO_REAL_TIME_ERROR_303_COUNT(457, 153),
+    VIDEO_REAL_TIME_ERROR_303_COUNT(473, 153),
     /**
      *
      *
@@ -37330,7 +38932,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_400_COUNT = 154;</code>
      */
-    VIDEO_REAL_TIME_ERROR_400_COUNT(458, 154),
+    VIDEO_REAL_TIME_ERROR_400_COUNT(474, 154),
     /**
      *
      *
@@ -37348,7 +38950,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_401_COUNT = 155;</code>
      */
-    VIDEO_REAL_TIME_ERROR_401_COUNT(459, 155),
+    VIDEO_REAL_TIME_ERROR_401_COUNT(475, 155),
     /**
      *
      *
@@ -37366,7 +38968,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_402_COUNT = 156;</code>
      */
-    VIDEO_REAL_TIME_ERROR_402_COUNT(460, 156),
+    VIDEO_REAL_TIME_ERROR_402_COUNT(476, 156),
     /**
      *
      *
@@ -37384,7 +38986,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_403_COUNT = 157;</code>
      */
-    VIDEO_REAL_TIME_ERROR_403_COUNT(461, 157),
+    VIDEO_REAL_TIME_ERROR_403_COUNT(477, 157),
     /**
      *
      *
@@ -37402,7 +39004,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_405_COUNT = 158;</code>
      */
-    VIDEO_REAL_TIME_ERROR_405_COUNT(462, 158),
+    VIDEO_REAL_TIME_ERROR_405_COUNT(478, 158),
     /**
      *
      *
@@ -37420,7 +39022,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_406_COUNT = 159;</code>
      */
-    VIDEO_REAL_TIME_ERROR_406_COUNT(463, 159),
+    VIDEO_REAL_TIME_ERROR_406_COUNT(479, 159),
     /**
      *
      *
@@ -37438,7 +39040,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_407_COUNT = 160;</code>
      */
-    VIDEO_REAL_TIME_ERROR_407_COUNT(464, 160),
+    VIDEO_REAL_TIME_ERROR_407_COUNT(480, 160),
     /**
      *
      *
@@ -37456,7 +39058,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_408_COUNT = 161;</code>
      */
-    VIDEO_REAL_TIME_ERROR_408_COUNT(465, 161),
+    VIDEO_REAL_TIME_ERROR_408_COUNT(481, 161),
     /**
      *
      *
@@ -37474,7 +39076,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_409_COUNT = 162;</code>
      */
-    VIDEO_REAL_TIME_ERROR_409_COUNT(466, 162),
+    VIDEO_REAL_TIME_ERROR_409_COUNT(482, 162),
     /**
      *
      *
@@ -37492,7 +39094,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_410_COUNT = 163;</code>
      */
-    VIDEO_REAL_TIME_ERROR_410_COUNT(467, 163),
+    VIDEO_REAL_TIME_ERROR_410_COUNT(483, 163),
     /**
      *
      *
@@ -37510,7 +39112,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_500_COUNT = 164;</code>
      */
-    VIDEO_REAL_TIME_ERROR_500_COUNT(468, 164),
+    VIDEO_REAL_TIME_ERROR_500_COUNT(484, 164),
     /**
      *
      *
@@ -37528,7 +39130,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_501_COUNT = 165;</code>
      */
-    VIDEO_REAL_TIME_ERROR_501_COUNT(469, 165),
+    VIDEO_REAL_TIME_ERROR_501_COUNT(485, 165),
     /**
      *
      *
@@ -37546,7 +39148,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_502_COUNT = 166;</code>
      */
-    VIDEO_REAL_TIME_ERROR_502_COUNT(470, 166),
+    VIDEO_REAL_TIME_ERROR_502_COUNT(486, 166),
     /**
      *
      *
@@ -37564,7 +39166,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_503_COUNT = 167;</code>
      */
-    VIDEO_REAL_TIME_ERROR_503_COUNT(471, 167),
+    VIDEO_REAL_TIME_ERROR_503_COUNT(487, 167),
     /**
      *
      *
@@ -37582,7 +39184,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_600_COUNT = 168;</code>
      */
-    VIDEO_REAL_TIME_ERROR_600_COUNT(472, 168),
+    VIDEO_REAL_TIME_ERROR_600_COUNT(488, 168),
     /**
      *
      *
@@ -37600,7 +39202,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_601_COUNT = 169;</code>
      */
-    VIDEO_REAL_TIME_ERROR_601_COUNT(473, 169),
+    VIDEO_REAL_TIME_ERROR_601_COUNT(489, 169),
     /**
      *
      *
@@ -37618,7 +39220,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_602_COUNT = 170;</code>
      */
-    VIDEO_REAL_TIME_ERROR_602_COUNT(474, 170),
+    VIDEO_REAL_TIME_ERROR_602_COUNT(490, 170),
     /**
      *
      *
@@ -37636,7 +39238,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_603_COUNT = 171;</code>
      */
-    VIDEO_REAL_TIME_ERROR_603_COUNT(475, 171),
+    VIDEO_REAL_TIME_ERROR_603_COUNT(491, 171),
     /**
      *
      *
@@ -37654,7 +39256,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_604_COUNT = 172;</code>
      */
-    VIDEO_REAL_TIME_ERROR_604_COUNT(476, 172),
+    VIDEO_REAL_TIME_ERROR_604_COUNT(492, 172),
     /**
      *
      *
@@ -37672,7 +39274,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_900_COUNT = 173;</code>
      */
-    VIDEO_REAL_TIME_ERROR_900_COUNT(477, 173),
+    VIDEO_REAL_TIME_ERROR_900_COUNT(493, 173),
     /**
      *
      *
@@ -37690,7 +39292,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_ERROR_901_COUNT = 174;</code>
      */
-    VIDEO_REAL_TIME_ERROR_901_COUNT(478, 174),
+    VIDEO_REAL_TIME_ERROR_901_COUNT(494, 174),
     /**
      *
      *
@@ -37708,7 +39310,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_IMPRESSIONS = 138;</code>
      */
-    VIDEO_REAL_TIME_IMPRESSIONS(479, 138),
+    VIDEO_REAL_TIME_IMPRESSIONS(495, 138),
     /**
      *
      *
@@ -37726,7 +39328,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_MATCHED_QUERIES = 140;</code>
      */
-    VIDEO_REAL_TIME_MATCHED_QUERIES(480, 140),
+    VIDEO_REAL_TIME_MATCHED_QUERIES(496, 140),
     /**
      *
      *
@@ -37744,7 +39346,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_TOTAL_ERROR_COUNT = 175;</code>
      */
-    VIDEO_REAL_TIME_TOTAL_ERROR_COUNT(481, 175),
+    VIDEO_REAL_TIME_TOTAL_ERROR_COUNT(497, 175),
     /**
      *
      *
@@ -37762,7 +39364,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_TOTAL_QUERIES = 142;</code>
      */
-    VIDEO_REAL_TIME_TOTAL_QUERIES(482, 142),
+    VIDEO_REAL_TIME_TOTAL_QUERIES(498, 142),
     /**
      *
      *
@@ -37780,7 +39382,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_REAL_TIME_UNMATCHED_QUERIES = 141;</code>
      */
-    VIDEO_REAL_TIME_UNMATCHED_QUERIES(483, 141),
+    VIDEO_REAL_TIME_UNMATCHED_QUERIES(499, 141),
     /**
      *
      *
@@ -37799,7 +39401,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_BREAK_END = 279;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_BREAK_END(484, 279),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_BREAK_END(500, 279),
     /**
      *
      *
@@ -37818,7 +39420,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_BREAK_START = 280;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_BREAK_START(485, 280),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_BREAK_START(501, 280),
     /**
      *
      *
@@ -37837,7 +39439,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_CAPPED_OPPORTUNITIES_ADBREAK = 281;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_CAPPED_OPPORTUNITIES_ADBREAK(486, 281),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_CAPPED_OPPORTUNITIES_ADBREAK(502, 281),
     /**
      *
      *
@@ -37856,7 +39458,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_CAPPED_OPPORTUNITIES_SUBPOD = 282;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_CAPPED_OPPORTUNITIES_SUBPOD(487, 282),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_CAPPED_OPPORTUNITIES_SUBPOD(503, 282),
     /**
      *
      *
@@ -37874,7 +39476,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_DURATION_ADBREAK = 283;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_DURATION_ADBREAK(488, 283),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_DURATION_ADBREAK(504, 283),
     /**
      *
      *
@@ -37892,7 +39494,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_DURATION_SUBPOD = 284;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_DURATION_SUBPOD(489, 284),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_DURATION_SUBPOD(505, 284),
     /**
      *
      *
@@ -37910,7 +39512,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_DURATION_ADBREAK = 285;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_DURATION_ADBREAK(490, 285),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_DURATION_ADBREAK(506, 285),
     /**
      *
      *
@@ -37928,7 +39530,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_DURATION_SUBPOD = 286;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_DURATION_SUBPOD(491, 286),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_DURATION_SUBPOD(507, 286),
     /**
      *
      *
@@ -37946,7 +39548,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_OPPORTUNITIES_ADBREAK = 287;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_OPPORTUNITIES_ADBREAK(492, 287),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_OPPORTUNITIES_ADBREAK(508, 287),
     /**
      *
      *
@@ -37964,7 +39566,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_OPPORTUNITIES_SUBPOD = 288;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_OPPORTUNITIES_SUBPOD(493, 288),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_MATCHED_OPPORTUNITIES_SUBPOD(509, 288),
     /**
      *
      *
@@ -37982,7 +39584,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_VIEWED_OPPORTUNITIES_ADBREAK = 289;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_VIEWED_OPPORTUNITIES_ADBREAK(494, 289),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_VIEWED_OPPORTUNITIES_ADBREAK(510, 289),
     /**
      *
      *
@@ -38000,7 +39602,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_OPPORTUNITIES_TOTAL_VIEWED_OPPORTUNITIES_SUBPOD = 290;</code>
      */
-    VIDEO_TRUE_OPPORTUNITIES_TOTAL_VIEWED_OPPORTUNITIES_SUBPOD(495, 290),
+    VIDEO_TRUE_OPPORTUNITIES_TOTAL_VIEWED_OPPORTUNITIES_SUBPOD(511, 290),
     /**
      *
      *
@@ -38018,7 +39620,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_VIEWS = 392;</code>
      */
-    VIDEO_TRUE_VIEWS(496, 392),
+    VIDEO_TRUE_VIEWS(512, 392),
     /**
      *
      *
@@ -38036,7 +39638,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_VIEW_SKIP_RATE = 393;</code>
      */
-    VIDEO_TRUE_VIEW_SKIP_RATE(497, 393),
+    VIDEO_TRUE_VIEW_SKIP_RATE(513, 393),
     /**
      *
      *
@@ -38055,7 +39657,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_TRUE_VIEW_VIEW_THROUGH_RATE = 394;</code>
      */
-    VIDEO_TRUE_VIEW_VIEW_THROUGH_RATE(498, 394),
+    VIDEO_TRUE_VIEW_VIEW_THROUGH_RATE(514, 394),
     /**
      *
      *
@@ -38074,7 +39676,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_AUTO_PLAYS = 103;</code>
      */
-    VIDEO_VIEWERSHIP_AUTO_PLAYS(499, 103),
+    VIDEO_VIEWERSHIP_AUTO_PLAYS(515, 103),
     /**
      *
      *
@@ -38092,7 +39694,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_AVERAGE_VIEW_RATE = 104;</code>
      */
-    VIDEO_VIEWERSHIP_AVERAGE_VIEW_RATE(500, 104),
+    VIDEO_VIEWERSHIP_AVERAGE_VIEW_RATE(516, 104),
     /**
      *
      *
@@ -38110,7 +39712,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_AVERAGE_VIEW_TIME = 105;</code>
      */
-    VIDEO_VIEWERSHIP_AVERAGE_VIEW_TIME(501, 105),
+    VIDEO_VIEWERSHIP_AVERAGE_VIEW_TIME(517, 105),
     /**
      *
      *
@@ -38129,7 +39731,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_CLICK_TO_PLAYS = 106;</code>
      */
-    VIDEO_VIEWERSHIP_CLICK_TO_PLAYS(502, 106),
+    VIDEO_VIEWERSHIP_CLICK_TO_PLAYS(518, 106),
     /**
      *
      *
@@ -38147,7 +39749,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_COMPLETES = 107;</code>
      */
-    VIDEO_VIEWERSHIP_COMPLETES(503, 107),
+    VIDEO_VIEWERSHIP_COMPLETES(519, 107),
     /**
      *
      *
@@ -38165,7 +39767,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_COMPLETION_RATE = 108;</code>
      */
-    VIDEO_VIEWERSHIP_COMPLETION_RATE(504, 108),
+    VIDEO_VIEWERSHIP_COMPLETION_RATE(520, 108),
     /**
      *
      *
@@ -38184,7 +39786,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_ENGAGED_VIEWS = 109;</code>
      */
-    VIDEO_VIEWERSHIP_ENGAGED_VIEWS(505, 109),
+    VIDEO_VIEWERSHIP_ENGAGED_VIEWS(521, 109),
     /**
      *
      *
@@ -38202,7 +39804,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_FIRST_QUARTILES = 110;</code>
      */
-    VIDEO_VIEWERSHIP_FIRST_QUARTILES(506, 110),
+    VIDEO_VIEWERSHIP_FIRST_QUARTILES(522, 110),
     /**
      *
      *
@@ -38220,7 +39822,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_MIDPOINTS = 111;</code>
      */
-    VIDEO_VIEWERSHIP_MIDPOINTS(507, 111),
+    VIDEO_VIEWERSHIP_MIDPOINTS(523, 111),
     /**
      *
      *
@@ -38238,7 +39840,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_SKIP_BUTTONS_SHOWN = 112;</code>
      */
-    VIDEO_VIEWERSHIP_SKIP_BUTTONS_SHOWN(508, 112),
+    VIDEO_VIEWERSHIP_SKIP_BUTTONS_SHOWN(524, 112),
     /**
      *
      *
@@ -38256,7 +39858,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_STARTS = 113;</code>
      */
-    VIDEO_VIEWERSHIP_STARTS(509, 113),
+    VIDEO_VIEWERSHIP_STARTS(525, 113),
     /**
      *
      *
@@ -38274,7 +39876,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_THIRD_QUARTILES = 114;</code>
      */
-    VIDEO_VIEWERSHIP_THIRD_QUARTILES(510, 114),
+    VIDEO_VIEWERSHIP_THIRD_QUARTILES(526, 114),
     /**
      *
      *
@@ -38293,7 +39895,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_TOTAL_ERROR_COUNT = 115;</code>
      */
-    VIDEO_VIEWERSHIP_TOTAL_ERROR_COUNT(511, 115),
+    VIDEO_VIEWERSHIP_TOTAL_ERROR_COUNT(527, 115),
     /**
      *
      *
@@ -38311,7 +39913,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_TOTAL_ERROR_RATE = 94;</code>
      */
-    VIDEO_VIEWERSHIP_TOTAL_ERROR_RATE(512, 94),
+    VIDEO_VIEWERSHIP_TOTAL_ERROR_RATE(528, 94),
     /**
      *
      *
@@ -38329,7 +39931,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_VIDEO_LENGTH = 116;</code>
      */
-    VIDEO_VIEWERSHIP_VIDEO_LENGTH(513, 116),
+    VIDEO_VIEWERSHIP_VIDEO_LENGTH(529, 116),
     /**
      *
      *
@@ -38347,7 +39949,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>VIDEO_VIEWERSHIP_VIEW_THROUGH_RATE = 117;</code>
      */
-    VIDEO_VIEWERSHIP_VIEW_THROUGH_RATE(514, 117),
+    VIDEO_VIEWERSHIP_VIEW_THROUGH_RATE(530, 117),
     /**
      *
      *
@@ -38366,7 +39968,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_AUCTIONS_WON = 80;</code>
      */
-    YIELD_GROUP_AUCTIONS_WON(515, 80),
+    YIELD_GROUP_AUCTIONS_WON(531, 80),
     /**
      *
      *
@@ -38385,7 +39987,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_BIDS = 81;</code>
      */
-    YIELD_GROUP_BIDS(516, 81),
+    YIELD_GROUP_BIDS(532, 81),
     /**
      *
      *
@@ -38404,7 +40006,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_BIDS_IN_AUCTION = 82;</code>
      */
-    YIELD_GROUP_BIDS_IN_AUCTION(517, 82),
+    YIELD_GROUP_BIDS_IN_AUCTION(533, 82),
     /**
      *
      *
@@ -38423,7 +40025,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_CALLOUTS = 83;</code>
      */
-    YIELD_GROUP_CALLOUTS(518, 83),
+    YIELD_GROUP_CALLOUTS(534, 83),
     /**
      *
      *
@@ -38442,7 +40044,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_ESTIMATED_CPM = 88;</code>
      */
-    YIELD_GROUP_ESTIMATED_CPM(519, 88),
+    YIELD_GROUP_ESTIMATED_CPM(535, 88),
     /**
      *
      *
@@ -38461,7 +40063,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_ESTIMATED_REVENUE = 87;</code>
      */
-    YIELD_GROUP_ESTIMATED_REVENUE(520, 87),
+    YIELD_GROUP_ESTIMATED_REVENUE(536, 87),
     /**
      *
      *
@@ -38480,7 +40082,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_IMPRESSIONS = 85;</code>
      */
-    YIELD_GROUP_IMPRESSIONS(521, 85),
+    YIELD_GROUP_IMPRESSIONS(537, 85),
     /**
      *
      *
@@ -38499,7 +40101,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_MEDIATION_FILL_RATE = 89;</code>
      */
-    YIELD_GROUP_MEDIATION_FILL_RATE(522, 89),
+    YIELD_GROUP_MEDIATION_FILL_RATE(538, 89),
     /**
      *
      *
@@ -38518,7 +40120,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_MEDIATION_MATCHED_QUERIES = 86;</code>
      */
-    YIELD_GROUP_MEDIATION_MATCHED_QUERIES(523, 86),
+    YIELD_GROUP_MEDIATION_MATCHED_QUERIES(539, 86),
     /**
      *
      *
@@ -38536,7 +40138,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_MEDIATION_PASSBACKS = 118;</code>
      */
-    YIELD_GROUP_MEDIATION_PASSBACKS(524, 118),
+    YIELD_GROUP_MEDIATION_PASSBACKS(540, 118),
     /**
      *
      *
@@ -38556,7 +40158,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_MEDIATION_THIRD_PARTY_ECPM = 90;</code>
      */
-    YIELD_GROUP_MEDIATION_THIRD_PARTY_ECPM(525, 90),
+    YIELD_GROUP_MEDIATION_THIRD_PARTY_ECPM(541, 90),
     /**
      *
      *
@@ -38577,7 +40179,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT = 215;</code>
      */
-    YIELD_GROUP_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(526, 215),
+    YIELD_GROUP_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT(542, 215),
     /**
      *
      *
@@ -38596,7 +40198,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * <code>YIELD_GROUP_SUCCESSFUL_RESPONSES = 84;</code>
      */
-    YIELD_GROUP_SUCCESSFUL_RESPONSES(527, 84),
+    YIELD_GROUP_SUCCESSFUL_RESPONSES(543, 84),
     UNRECOGNIZED(-1, -1),
     ;
 
@@ -38614,7 +40216,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Deprecated. This metric has been renamed to
+     * Deprecated: This metric has been renamed to
      * `AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS`.
      * The server will normalize any requests using this value to
      * `AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS`.
@@ -39627,6 +41229,26 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The cost per item purchased.
+     *
+     *
+     *
+     * Corresponds to "Advertiser cost per attributed item purchased" in the Ad
+     * Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>ADVERTISER_COST_PER_ATTRIBUTED_ITEM_PURCHASED = 747;</code>
+     */
+    public static final int ADVERTISER_COST_PER_ATTRIBUTED_ITEM_PURCHASED_VALUE = 747;
+
+    /**
+     *
+     *
+     * <pre>
      * Active View AdExchange average time in seconds that specific impressions
      * are reported as being viewable.
      *
@@ -40279,6 +41901,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE = 254;</code>
      */
     public static final int AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE_VALUE = 254;
+
+    /**
+     *
+     *
+     * <pre>
+     * The ratio of impressions to responses served in Ad Exchange.
+     *
+     *
+     *
+     * Corresponds to "Ad Exchange render rate" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `PERCENT`
+     * </pre>
+     *
+     * <code>AD_EXCHANGE_RENDER_RATE = 759;</code>
+     */
+    public static final int AD_EXCHANGE_RENDER_RATE_VALUE = 759;
 
     /**
      *
@@ -41315,7 +42956,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Deprecated. This metric has been renamed to
+     * Deprecated: This metric has been renamed to
      * `AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS`.
      * The server will normalize any requests using this value to
      * `AD_SERVER_UNFILTERED_DOWNLOADED_IMPRESSIONS`.
@@ -42485,6 +44126,47 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The number of purchased items that were attributed to a view or click as
+     * defined by the sponsored product ad's line item settings.
+     *
+     *
+     *
+     * Corresponds to "Attributed items purchased" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>ATTRIBUTED_ITEMS_PURCHASED = 745;</code>
+     */
+    public static final int ATTRIBUTED_ITEMS_PURCHASED_VALUE = 745;
+
+    /**
+     *
+     *
+     * <pre>
+     * The percent of revenue the retailer made on attributed items purchased
+     * compared to the advertiser's ad spend for those items. Return on Ad
+     * Spend
+     *
+     *
+     *
+     * Corresponds to "Attributed items purchased ROAS" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `PERCENT`
+     * </pre>
+     *
+     * <code>ATTRIBUTED_ITEMS_PURCHASED_ROAS = 748;</code>
+     */
+    public static final int ATTRIBUTED_ITEMS_PURCHASED_ROAS_VALUE = 748;
+
+    /**
+     *
+     *
+     * <pre>
      * Cost of the audience segment.
      *
      *
@@ -42926,6 +44608,29 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>CTR = 3;</code>
      */
     public static final int CTR_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * For standard ads, your ad clickthrough rate (CTR) is the number of ad
+     * clicks divided by the number of individual ad impressions expressed as a
+     * fraction. Ad CTR = Clicks / Ad impressions. Counts companion impressions
+     * in the number of ad impressions.
+     *
+     *
+     *
+     * Corresponds to "Total CTR with companion" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ADS_TRAFFIC_NAVIGATOR`, `AD_SPEED`
+     *
+     * Data format: `PERCENT`
+     * </pre>
+     *
+     * <code>CTR_WITH_COMPANION = 742;</code>
+     */
+    public static final int CTR_WITH_COMPANION_VALUE = 742;
 
     /**
      *
@@ -43716,6 +45421,27 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Total impressions from the Google Ad Manager server, AdSense,
+     * Ad Exchange, and yield group partners, including companion ads.
+     *
+     *
+     *
+     * Corresponds to "Total impressions with companion" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`,
+     * `ADS_TRAFFIC_NAVIGATOR`, `AD_SPEED`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>IMPRESSIONS_WITH_COMPANION = 741;</code>
+     */
+    public static final int IMPRESSIONS_WITH_COMPANION_VALUE = 741;
+
+    /**
+     *
+     *
+     * <pre>
      * The number of impressions (via begin to render methodology) considered
      * inactive, as defined by served to a device receiving ad or bid requests
      * continuously for a session of greater than 16 hours without a "reset"
@@ -44312,6 +46038,126 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The number of times the video played to completion for off-property
+     * campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property completes" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_COMPLETES = 754;</code>
+     */
+    public static final int OFF_PROPERTY_VIDEO_COMPLETES_VALUE = 754;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of engaged views for off-property campaigns: ad is viewed
+     * to completion or for 30s, whichever comes first.
+     *
+     *
+     *
+     * Corresponds to "Off-property engaged views" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_ENGAGED_VIEWS = 755;</code>
+     */
+    public static final int OFF_PROPERTY_VIDEO_ENGAGED_VIEWS_VALUE = 755;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video played to 25% of its length for
+     * off-property campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property first quartiles" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_FIRST_QUARTILES = 756;</code>
+     */
+    public static final int OFF_PROPERTY_VIDEO_FIRST_QUARTILES_VALUE = 756;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video reached its midpoint during play for off-
+     * property campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property midpoints" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_MIDPOINTS = 757;</code>
+     */
+    public static final int OFF_PROPERTY_VIDEO_MIDPOINTS_VALUE = 757;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of impressions where the video was played for off-property
+     * campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property starts" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_STARTS = 753;</code>
+     */
+    public static final int OFF_PROPERTY_VIDEO_STARTS_VALUE = 753;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of times the video played to 75% of its length for
+     * off-property campaigns.
+     *
+     *
+     *
+     * Corresponds to "Off-property third quartiles" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `OFF_PROPERTY_CAMPAIGNS`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>OFF_PROPERTY_VIDEO_THIRD_QUARTILES = 758;</code>
+     */
+    public static final int OFF_PROPERTY_VIDEO_THIRD_QUARTILES_VALUE = 758;
+
+    /**
+     *
+     *
+     * <pre>
      * Average effective cost-per-thousand-impressions earned from the mediation
      * on-platform multiple call, excluding CPD value.
      *
@@ -44878,6 +46724,63 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Total pod eCPM.
+     *
+     *
+     *
+     * Corresponds to "Total pod eCPM" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>POD_ECPM = 738;</code>
+     */
+    public static final int POD_ECPM_VALUE = 738;
+
+    /**
+     *
+     *
+     * <pre>
+     * Total pod eCPM without CPD.
+     *
+     *
+     *
+     * Corresponds to "Total pod eCPM without CPD" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>POD_ECPM_WITHOUT_CPD = 739;</code>
+     */
+    public static final int POD_ECPM_WITHOUT_CPD_VALUE = 739;
+
+    /**
+     *
+     *
+     * <pre>
+     * Total pod views.
+     *
+     *
+     *
+     * Corresponds to "Total pod views" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `INTEGER`
+     * </pre>
+     *
+     * <code>POD_VIEWS = 740;</code>
+     */
+    public static final int POD_VIEWS_VALUE = 740;
+
+    /**
+     *
+     *
+     * <pre>
      * The total number of ad requests eligible for programmatic inventory,
      * including Programmatic Guaranteed, Preferred Deals, backfill, and open
      * auction.
@@ -45017,6 +46920,28 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>REVENUE = 36;</code>
      */
     public static final int REVENUE_VALUE = 36;
+
+    /**
+     *
+     *
+     * <pre>
+     * The total amount users paid for items that were attributed to a view or
+     * click as defined by the sponsored product ad's line item settings. This
+     * value is revenue for the retailer.
+     *
+     *
+     *
+     * Corresponds to "Revenue on attributed items purchased" in the Ad Manager
+     * UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `MONEY`
+     * </pre>
+     *
+     * <code>REVENUE_ON_ATTRIBUTED_ITEMS_PURCHASED = 746;</code>
+     */
+    public static final int REVENUE_ON_ATTRIBUTED_ITEMS_PURCHASED_VALUE = 746;
 
     /**
      *
@@ -49211,6 +51136,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return ADSENSE_RESPONSES_SERVED;
         case 25:
           return ADSENSE_REVENUE;
+        case 747:
+          return ADVERTISER_COST_PER_ATTRIBUTED_ITEM_PURCHASED;
         case 79:
           return AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME;
         case 76:
@@ -49275,6 +51202,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return AD_EXCHANGE_PLUS_YIELD_GROUP_IMPRESSIONS;
         case 254:
           return AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE;
+        case 759:
+          return AD_EXCHANGE_RENDER_RATE;
         case 42:
           return AD_EXCHANGE_RESPONSES_SERVED;
         case 17:
@@ -49489,6 +51418,10 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return ATN_VALID_AD_REQUESTS;
         case 390:
           return ATN_YIELD_GROUP_MEDIATION_PASSBACKS;
+        case 745:
+          return ATTRIBUTED_ITEMS_PURCHASED;
+        case 748:
+          return ATTRIBUTED_ITEMS_PURCHASED_ROAS;
         case 558:
           return AUDIENCE_SEGMENT_COST;
         case 37:
@@ -49535,6 +51468,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return CREATIVE_LOAD_TIME_GT_8000_PERCENT;
         case 3:
           return CTR;
+        case 742:
+          return CTR_WITH_COMPANION;
         case 542:
           return DEALS_BIDS;
         case 543:
@@ -49615,6 +51550,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return GOOGLE_SOLD_RESERVATION_IMPRESSIONS;
         case 1:
           return IMPRESSIONS;
+        case 741:
+          return IMPRESSIONS_WITH_COMPANION;
         case 407:
           return INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS;
         case 547:
@@ -49675,6 +51612,18 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return OFF_PROPERTY_SPEND;
         case 403:
           return OFF_PROPERTY_SPEND_ECPM;
+        case 754:
+          return OFF_PROPERTY_VIDEO_COMPLETES;
+        case 755:
+          return OFF_PROPERTY_VIDEO_ENGAGED_VIEWS;
+        case 756:
+          return OFF_PROPERTY_VIDEO_FIRST_QUARTILES;
+        case 757:
+          return OFF_PROPERTY_VIDEO_MIDPOINTS;
+        case 753:
+          return OFF_PROPERTY_VIDEO_STARTS;
+        case 758:
+          return OFF_PROPERTY_VIDEO_THIRD_QUARTILES;
         case 678:
           return ON_PLATFORM_MULTIPLE_CALL_ECPM;
         case 676:
@@ -49733,6 +51682,12 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return PARTNER_SOLD_COVIEWED_IMPRESSIONS;
         case 123:
           return PARTNER_SOLD_IMPRESSIONS;
+        case 738:
+          return POD_ECPM;
+        case 739:
+          return POD_ECPM_WITHOUT_CPD;
+        case 740:
+          return POD_VIEWS;
         case 177:
           return PROGRAMMATIC_ELIGIBLE_AD_REQUESTS;
         case 178:
@@ -49747,6 +51702,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return RETENTION;
         case 36:
           return REVENUE;
+        case 746:
+          return REVENUE_ON_ATTRIBUTED_ITEMS_PURCHASED;
         case 214:
           return REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT;
         case 560:
@@ -50251,6 +52208,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         ADSENSE_PERCENT_REVENUE_WITHOUT_CPD,
         ADSENSE_RESPONSES_SERVED,
         ADSENSE_REVENUE,
+        ADVERTISER_COST_PER_ATTRIBUTED_ITEM_PURCHASED,
         AD_EXCHANGE_ACTIVE_VIEW_AVERAGE_VIEWABLE_TIME,
         AD_EXCHANGE_ACTIVE_VIEW_ELIGIBLE_IMPRESSIONS,
         AD_EXCHANGE_ACTIVE_VIEW_MEASURABLE_IMPRESSIONS,
@@ -50283,6 +52241,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         AD_EXCHANGE_PLUS_YIELD_GROUP_ECPM,
         AD_EXCHANGE_PLUS_YIELD_GROUP_IMPRESSIONS,
         AD_EXCHANGE_PLUS_YIELD_GROUP_REVENUE,
+        AD_EXCHANGE_RENDER_RATE,
         AD_EXCHANGE_RESPONSES_SERVED,
         AD_EXCHANGE_REVENUE,
         AD_EXCHANGE_REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT,
@@ -50391,6 +52350,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         ATN_TOTAL_LOADED_ADS,
         ATN_VALID_AD_REQUESTS,
         ATN_YIELD_GROUP_MEDIATION_PASSBACKS,
+        ATTRIBUTED_ITEMS_PURCHASED,
+        ATTRIBUTED_ITEMS_PURCHASED_ROAS,
         AUDIENCE_SEGMENT_COST,
         AVERAGE_ECPM,
         AVERAGE_ECPM_WITHOUT_CPD,
@@ -50414,6 +52375,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         CREATIVE_LOAD_TIME_500_1000_PERCENT,
         CREATIVE_LOAD_TIME_GT_8000_PERCENT,
         CTR,
+        CTR_WITH_COMPANION,
         DEALS_BIDS,
         DEALS_BID_RATE,
         DEALS_BID_REQUESTS,
@@ -50454,6 +52416,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         GOOGLE_SOLD_RESERVATION_COVIEWED_IMPRESSIONS,
         GOOGLE_SOLD_RESERVATION_IMPRESSIONS,
         IMPRESSIONS,
+        IMPRESSIONS_WITH_COMPANION,
         INACTIVE_BEGIN_TO_RENDER_IMPRESSIONS,
         INVENTORY_SHARES,
         INVENTORY_SHARE_PARTNER_UNFILLED_OPPORTUNITIES,
@@ -50484,6 +52447,12 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         OFF_PROPERTY_REVENUE,
         OFF_PROPERTY_SPEND,
         OFF_PROPERTY_SPEND_ECPM,
+        OFF_PROPERTY_VIDEO_COMPLETES,
+        OFF_PROPERTY_VIDEO_ENGAGED_VIEWS,
+        OFF_PROPERTY_VIDEO_FIRST_QUARTILES,
+        OFF_PROPERTY_VIDEO_MIDPOINTS,
+        OFF_PROPERTY_VIDEO_STARTS,
+        OFF_PROPERTY_VIDEO_THIRD_QUARTILES,
         ON_PLATFORM_MULTIPLE_CALL_ECPM,
         ON_PLATFORM_MULTIPLE_CALL_IMPRESSIONS,
         ON_PLATFORM_MULTIPLE_CALL_REVENUE,
@@ -50513,6 +52482,9 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         PARTNER_SOLD_CODE_SERVED,
         PARTNER_SOLD_COVIEWED_IMPRESSIONS,
         PARTNER_SOLD_IMPRESSIONS,
+        POD_ECPM,
+        POD_ECPM_WITHOUT_CPD,
+        POD_VIEWS,
         PROGRAMMATIC_ELIGIBLE_AD_REQUESTS,
         PROGRAMMATIC_MATCH_RATE,
         PROGRAMMATIC_RESPONSES_SERVED,
@@ -50520,6 +52492,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
         RESPONSES_SERVED,
         RETENTION,
         REVENUE,
+        REVENUE_ON_ATTRIBUTED_ITEMS_PURCHASED,
         REVENUE_PAID_THROUGH_MCM_AUTOPAYMENT,
         REVENUE_VERIFICATION_CPD_REVENUE,
         REVENUE_VERIFICATION_GROSS_CPD_REVENUE,
@@ -52869,7 +54842,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The entire previous 6 calendar months preceding the calendar month the
+       * The entire previous 12 calendar months preceding the calendar month the
        * report is run.
        * </pre>
        *
@@ -53386,7 +55359,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The entire previous 6 calendar months preceding the calendar month the
+       * The entire previous 12 calendar months preceding the calendar month the
        * report is run.
        * </pre>
        *
@@ -64195,8 +66168,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
    * <pre>
    * A flag for a report. Flags are used show if certain thresholds are met.
    * Result rows that match the filter will have the corresponding
-   * [MetricValueGroup.flagValues][MetricValueGroup] index set to true.
-   * For more information about flags see:
+   * [ReportDataTable.MetricValueGroup.flagValues][google.ads.admanager.v1.ReportDataTable.MetricValueGroup.flag_values]
+   * index set to true. For more information about flags see:
    * https://support.google.com/admanager/answer/15079975
    * </pre>
    *
@@ -64566,8 +66539,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A flag for a report. Flags are used show if certain thresholds are met.
      * Result rows that match the filter will have the corresponding
-     * [MetricValueGroup.flagValues][MetricValueGroup] index set to true.
-     * For more information about flags see:
+     * [ReportDataTable.MetricValueGroup.flagValues][google.ads.admanager.v1.ReportDataTable.MetricValueGroup.flag_values]
+     * index set to true. For more information about flags see:
      * https://support.google.com/admanager/answer/15079975
      * </pre>
      *

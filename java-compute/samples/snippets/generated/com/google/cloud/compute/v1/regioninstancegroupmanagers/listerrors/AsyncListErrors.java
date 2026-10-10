@@ -45,7 +45,6 @@ public class AsyncListErrors {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<InstanceManagedByIgmError> future =
           regionInstanceGroupManagersClient.listErrorsPagedCallable().futureCall(request);

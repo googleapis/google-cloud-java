@@ -1,5 +1,67 @@
 # Changelog
 
+## [2.81.0](https://github.com/googleapis/google-cloud-java/compare/73c9a0342f9...c2ce8c17fda) (2026-07-30)
+
+
+### Features
+
+* Add view_parameters support to BoundStatement ([#13673](https://github.com/googleapis/google-cloud-java/pull/13673)) ([d5cc43](https://github.com/googleapis/google-cloud-java/commit/d5cc43776effc4efa3d3d9bf526fcb4e64535601))
+* BigtableDataClientFactory session support ([#13829](https://github.com/googleapis/google-cloud-java/pull/13829)) ([284ce1](https://github.com/googleapis/google-cloud-java/commit/284ce13bae39082764d571dc5d2c06d528638354))
+* Default to least-in-flight balancing for Bigtable unary clients ([#13802](https://github.com/googleapis/google-cloud-java/pull/13802)) ([ac9ccd](https://github.com/googleapis/google-cloud-java/commit/ac9ccd1c87245bca97bd8b062359e9357360c321))
+
+
+### Bug Fixes
+
+* Add materialized view routing param to ReadRows and SampleRowKeys ([#13918](https://github.com/googleapis/google-cloud-java/pull/13918)) ([4ddf25](https://github.com/googleapis/google-cloud-java/commit/4ddf2500d842a5b7a981e80974fa8b48fa191142))
+* Bound SessionPoolImpl lock to prevent pod-wide wedge ([#13890](https://github.com/googleapis/google-cloud-java/pull/13890)) ([ed87a6](https://github.com/googleapis/google-cloud-java/commit/ed87a68f51e2d6dec1f7357e977d1dce8914ce01))
+* Deprecate resource detector ([#13844](https://github.com/googleapis/google-cloud-java/pull/13844)) ([aba4f0](https://github.com/googleapis/google-cloud-java/commit/aba4f01274a8f8eb0e4b4a3bcf1083e1efeda814))
+* Do not start stream with direct executor ([#13945](https://github.com/googleapis/google-cloud-java/pull/13945)) ([630e79](https://github.com/googleapis/google-cloud-java/commit/630e79065869d57c946c4b41915eb17e1f8d58fd))
+* Fix session creation leaks ([#13887](https://github.com/googleapis/google-cloud-java/pull/13887)) ([d586d0](https://github.com/googleapis/google-cloud-java/commit/d586d070ddeee36ef0803713998e13565389e880))
+* Prevent ClientConfigurationManagerTest from wedging on failed initial fetch ([#13907](https://github.com/googleapis/google-cloud-java/pull/13907)) ([725086](https://github.com/googleapis/google-cloud-java/commit/725086d5e749ab60035e4a6f3826039121c871d6))
+* Stop installing DirectpathEnforcer on the directpath pool ([#13880](https://github.com/googleapis/google-cloud-java/pull/13880)) ([5f2e05](https://github.com/googleapis/google-cloud-java/commit/5f2e056bc4e3903cbfc98c4183fe1636531db444))
+* Use a new managed channel builder when creating channels ([#13684](https://github.com/googleapis/google-cloud-java/pull/13684)) ([a04999](https://github.com/googleapis/google-cloud-java/commit/a049999722abd0d2d3a6683142fd301bbf502588))
+
+
+### Dependencies
+
+* Update gRPC-Java to v1.82.2 ([#13877](https://github.com/googleapis/google-cloud-java/pull/13877)) ([da228d](https://github.com/googleapis/google-cloud-java/commit/da228d815ffc4ca2066f431f46203eb748079879))
+* Update http-client to v2.2.0 ([#13854](https://github.com/googleapis/google-cloud-java/pull/13854)) ([334a2c](https://github.com/googleapis/google-cloud-java/commit/334a2c5250e8e4647c961c3821dd54c2e8f880e2))
+* Update Protobuf-Java to v4.33.6 ([#13876](https://github.com/googleapis/google-cloud-java/pull/13876)) ([5c6478](https://github.com/googleapis/google-cloud-java/commit/5c6478cfe19f0e6fed142f628f625a978a16f345))
+* Upgrade Guava to v33.6.0-jre ([#13875](https://github.com/googleapis/google-cloud-java/pull/13875)) ([41a7a5](https://github.com/googleapis/google-cloud-java/commit/41a7a523e30ec8666a814af2ec4501179e10ab3a))
+
+## [2.80.0](https://github.com/googleapis/google-cloud-java/compare/6ce7a4941ef...73c9a0342f9) (2026-07-07)
+
+
+### Features
+
+* Route point read rows to shim ([#13542](https://github.com/googleapis/google-cloud-java/pull/13542)) ([2c7e5f](https://github.com/googleapis/google-cloud-java/commit/2c7e5f530ebb5628a8c04d49be9019a0a66dfdca))
+
+
+### Bug Fixes
+
+* Fallback on VPC ([#13567](https://github.com/googleapis/google-cloud-java/pull/13567)) ([e8c428](https://github.com/googleapis/google-cloud-java/commit/e8c428d17087b14938a57bce1096b96a9b489f5a))
+* Honour session_load override when server-returned session_load is 0 ([#13629](https://github.com/googleapis/google-cloud-java/pull/13629)) ([b56f9b](https://github.com/googleapis/google-cloud-java/commit/b56f9b854f9ba110606b2f123b989d6ca758c6a2))
+
+
+### Dependencies
+
+* Add org.bouncycastle:bcprov-jdk18on to java-shared-dependencies ([#13531](https://github.com/googleapis/google-cloud-java/pull/13531)) ([e3d208](https://github.com/googleapis/google-cloud-java/commit/e3d20823faaaa10bb2fe94af9d67bb9b03f1a5c0))
+* Upgrade google-http-client to v2.1.1 ([#13578](https://github.com/googleapis/google-cloud-java/pull/13578)) ([6abef1](https://github.com/googleapis/google-cloud-java/commit/6abef19ff0f095a6a3156e1d50ae7162f9d53315))
+
+## [2.79.0](https://github.com/googleapis/google-cloud-java/compare/4614cae94a1...6ce7a4941ef) (2026-06-03)
+
+
+### Bug Fixes
+
+* Don't invoke unknown delegate code while holding a lock ([#13202](https://github.com/googleapis/google-cloud-java/pull/13202)) ([a7e859](https://github.com/googleapis/google-cloud-java/commit/a7e859e63216115e1c25954ca0c3ed179ccff8f3))
+* Ensure that FallbackChannelPool locks doesnt leak to alien listeners ([#13195](https://github.com/googleapis/google-cloud-java/pull/13195)) ([c8e615](https://github.com/googleapis/google-cloud-java/commit/c8e615e535bf68189b2950785da058dcc9f5a895))
+* Make heartbeat interval volatile ([#13217](https://github.com/googleapis/google-cloud-java/pull/13217)) ([279918](https://github.com/googleapis/google-cloud-java/commit/279918e5cc84dcffab8ef1ca03fd3cf41d6d3850))
+* Make ignoreError volatile ([#13218](https://github.com/googleapis/google-cloud-java/pull/13218)) ([e5e5f1](https://github.com/googleapis/google-cloud-java/commit/e5e5f14167789a6134f4b70c143c9bb9a80944fe))
+* Prune older AFEs first ([#13215](https://github.com/googleapis/google-cloud-java/pull/13215)) ([114e77](https://github.com/googleapis/google-cloud-java/commit/114e77b8e846fd43c580900706c0318c56710f35))
+* Recycle channel on consecutive new stream failures ([#13245](https://github.com/googleapis/google-cloud-java/pull/13245)) ([842f64](https://github.com/googleapis/google-cloud-java/commit/842f64eb515857e9324af9095527ade43cca34bf))
+* Resolve check-then-act race condition in VRpcImpl ([#13196](https://github.com/googleapis/google-cloud-java/pull/13196)) ([9853dd](https://github.com/googleapis/google-cloud-java/commit/9853dd517d50f073b5641fb4371d9cfc0f1847fc))
+* Resolve deadlock in ClientConfigurationManager when notifying callbacks ([#13192](https://github.com/googleapis/google-cloud-java/pull/13192)) ([c98e53](https://github.com/googleapis/google-cloud-java/commit/c98e53d612c4a72f475b4aad6ab848cfe539904d))
+
 ## [2.78.0](https://github.com/googleapis/java-bigtable/compare/v2.77.1...v2.78.0) (2026-05-07)
 
 

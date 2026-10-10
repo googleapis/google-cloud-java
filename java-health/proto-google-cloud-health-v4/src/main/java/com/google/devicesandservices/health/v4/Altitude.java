@@ -138,6 +138,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Altitude gain in millimeters over the observed interval.
+   * Must be in the range `[-1000000000, 1000000000]`.
    * </pre>
    *
    * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -154,6 +155,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Altitude gain in millimeters over the observed interval.
+   * Must be in the range `[-1000000000, 1000000000]`.
    * </pre>
    *
    * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -750,6 +752,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Altitude gain in millimeters over the observed interval.
+     * Must be in the range `[-1000000000, 1000000000]`.
      * </pre>
      *
      * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -766,6 +769,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Altitude gain in millimeters over the observed interval.
+     * Must be in the range `[-1000000000, 1000000000]`.
      * </pre>
      *
      * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -782,6 +786,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Altitude gain in millimeters over the observed interval.
+     * Must be in the range `[-1000000000, 1000000000]`.
      * </pre>
      *
      * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -802,6 +807,7 @@ public final class Altitude extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Altitude gain in millimeters over the observed interval.
+     * Must be in the range `[-1000000000, 1000000000]`.
      * </pre>
      *
      * <code>optional int64 gain_millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>

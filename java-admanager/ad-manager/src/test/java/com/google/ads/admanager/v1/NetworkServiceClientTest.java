@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -236,6 +237,232 @@ public class NetworkServiceClientTest {
               .setSkip(3532159)
               .build();
       client.listNetworks(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateNetworkTest() throws Exception {
+    Network expectedResponse =
+        Network.newBuilder()
+            .setName(NetworkName.of("[NETWORK_CODE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNetworkCode("networkCode-1941129925")
+            .setPropertyCode("propertyCode-865006238")
+            .setTimeZone("timeZone-2077180903")
+            .setCurrencyCode("currencyCode1004773790")
+            .addAllSecondaryCurrencyCodes(new ArrayList<String>())
+            .setEffectiveRootAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setTestNetwork(true)
+            .setNetworkId(-478232372)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    Network network =
+        Network.newBuilder()
+            .setName(NetworkName.of("[NETWORK_CODE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNetworkCode("networkCode-1941129925")
+            .setPropertyCode("propertyCode-865006238")
+            .setTimeZone("timeZone-2077180903")
+            .setCurrencyCode("currencyCode1004773790")
+            .addAllSecondaryCurrencyCodes(new ArrayList<String>())
+            .setEffectiveRootAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setTestNetwork(true)
+            .setNetworkId(-478232372)
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Network actualResponse = client.updateNetwork(network, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateNetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Network network =
+          Network.newBuilder()
+              .setName(NetworkName.of("[NETWORK_CODE]").toString())
+              .setDisplayName("displayName1714148973")
+              .setNetworkCode("networkCode-1941129925")
+              .setPropertyCode("propertyCode-865006238")
+              .setTimeZone("timeZone-2077180903")
+              .setCurrencyCode("currencyCode1004773790")
+              .addAllSecondaryCurrencyCodes(new ArrayList<String>())
+              .setEffectiveRootAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+              .setTestNetwork(true)
+              .setNetworkId(-478232372)
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateNetwork(network, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void provisionTestNetworkTest() throws Exception {
+    Network expectedResponse =
+        Network.newBuilder()
+            .setName(NetworkName.of("[NETWORK_CODE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setNetworkCode("networkCode-1941129925")
+            .setPropertyCode("propertyCode-865006238")
+            .setTimeZone("timeZone-2077180903")
+            .setCurrencyCode("currencyCode1004773790")
+            .addAllSecondaryCurrencyCodes(new ArrayList<String>())
+            .setEffectiveRootAdUnit(AdUnitName.of("[NETWORK_CODE]", "[AD_UNIT]").toString())
+            .setTestNetwork(true)
+            .setNetworkId(-478232372)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProvisionTestNetworkRequest request = ProvisionTestNetworkRequest.newBuilder().build();
+
+    Network actualResponse = client.provisionTestNetwork(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void provisionTestNetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProvisionTestNetworkRequest request = ProvisionTestNetworkRequest.newBuilder().build();
+      client.provisionTestNetwork(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDefaultThirdPartyDataDeclarationTest() throws Exception {
+    DefaultThirdPartyDataDeclaration expectedResponse =
+        DefaultThirdPartyDataDeclaration.newBuilder()
+            .setName(DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]").toString())
+            .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DefaultThirdPartyDataDeclarationName name =
+        DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]");
+
+    DefaultThirdPartyDataDeclaration actualResponse =
+        client.getDefaultThirdPartyDataDeclaration(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDefaultThirdPartyDataDeclarationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DefaultThirdPartyDataDeclarationName name =
+          DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]");
+      client.getDefaultThirdPartyDataDeclaration(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDefaultThirdPartyDataDeclarationTest2() throws Exception {
+    DefaultThirdPartyDataDeclaration expectedResponse =
+        DefaultThirdPartyDataDeclaration.newBuilder()
+            .setName(DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]").toString())
+            .setThirdPartyDataDeclaration(ThirdPartyDataDeclaration.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "networks/network-2476/defaultThirdPartyDataDeclaration";
+
+    DefaultThirdPartyDataDeclaration actualResponse =
+        client.getDefaultThirdPartyDataDeclaration(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDefaultThirdPartyDataDeclarationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "networks/network-2476/defaultThirdPartyDataDeclaration";
+      client.getDefaultThirdPartyDataDeclaration(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

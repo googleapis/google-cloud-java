@@ -23,6 +23,16 @@ import com.google.common.cache.CacheBuilder;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
+/**
+ * Associates an in-flight request with the endpoint that location-aware routing selected for it, so
+ * that {@link HeaderInterceptor} can attribute the observed latency back to that endpoint.
+ *
+ * <p>Entries are keyed by {@link XGoogSpannerRequestId#getLogicalRequestKey()}, which is stable
+ * across all attempts of the same logical RPC. Callers pass that key directly rather than the
+ * {@code x-goog-spanner-request-id} header value: every call site either holds the parsed {@link
+ * XGoogSpannerRequestId} (it is carried in the gRPC {@code CallOptions}) or has already derived the
+ * key from it, so re-parsing the header string here would be pure overhead on the per-RPC path.
+ */
 final class RequestIdTargetTracker {
   @VisibleForTesting static final long MAX_TRACKED_TARGETS = 1_000_000L;
 
@@ -37,54 +47,78 @@ final class RequestIdTargetTracker {
           .expireAfterWrite(10, TimeUnit.MINUTES)
           .build();
 
+  /**
+   * Whether a routing target has ever been recorded. Location-aware routing is the only producer of
+   * entries and is disabled unless the instance type is {@code OMNI}, so for most clients this
+   * cache stays empty for the lifetime of the process. Checking this flag first lets the per-RPC
+   * lookup and removal return immediately instead of probing the cache.
+   *
+   * <p>The flag only ever transitions from {@code false} to {@code true}, and every RPC reads it
+   * from whichever thread it happens to run on. It is therefore written only when it is not already
+   * set, so that recording a target does not repeatedly invalidate the cache line that all those
+   * readers share. Visibility of the entries themselves does not depend on this flag; {@link Cache}
+   * provides its own guarantees.
+   */
+  private static volatile boolean tracking;
+
   private RequestIdTargetTracker() {}
 
   static void record(
-      String requestId,
+      @Nullable String logicalRequestKey,
       @Nullable String databaseScope,
-      String targetEndpoint,
+      @Nullable String targetEndpoint,
       long operationUid,
       boolean preferLeader) {
-    String trackingKey = normalizeRequestKey(requestId);
-    if (trackingKey == null || targetEndpoint == null || targetEndpoint.isEmpty()) {
+    if (logicalRequestKey == null
+        || logicalRequestKey.isEmpty()
+        || targetEndpoint == null
+        || targetEndpoint.isEmpty()) {
       return;
     }
     TARGETS.put(
-        trackingKey, new RoutingTarget(databaseScope, targetEndpoint, operationUid, preferLeader));
+        logicalRequestKey,
+        new RoutingTarget(databaseScope, targetEndpoint, operationUid, preferLeader));
+    if (!tracking) {
+      tracking = true;
+    }
   }
 
   @Nullable
-  static RoutingTarget get(String requestId) {
-    String trackingKey = normalizeRequestKey(requestId);
-    if (trackingKey == null) {
-      return null;
-    }
-    return TARGETS.getIfPresent(trackingKey);
+  static RoutingTarget get(@Nullable XGoogSpannerRequestId requestId) {
+    String logicalRequestKey = trackingKey(requestId);
+    return logicalRequestKey == null ? null : TARGETS.getIfPresent(logicalRequestKey);
   }
 
-  static void remove(String requestId) {
-    String trackingKey = normalizeRequestKey(requestId);
-    if (trackingKey == null) {
+  static void remove(@Nullable XGoogSpannerRequestId requestId) {
+    removeLogicalKey(trackingKey(requestId));
+  }
+
+  static void removeLogicalKey(@Nullable String logicalRequestKey) {
+    if (!tracking || logicalRequestKey == null || logicalRequestKey.isEmpty()) {
       return;
     }
-    TARGETS.invalidate(trackingKey);
+    TARGETS.invalidate(logicalRequestKey);
+  }
+
+  /**
+   * Returns the cache key for {@code requestId}, or {@code null} if the key cannot be derived or
+   * nothing is being tracked. Deriving the key allocates a string, so it is skipped entirely while
+   * the cache is known to be empty.
+   */
+  @Nullable
+  private static String trackingKey(@Nullable XGoogSpannerRequestId requestId) {
+    return tracking && requestId != null ? requestId.getLogicalRequestKey() : null;
+  }
+
+  @VisibleForTesting
+  static boolean isTracking() {
+    return tracking;
   }
 
   @VisibleForTesting
   static void clear() {
     TARGETS.invalidateAll();
-  }
-
-  @VisibleForTesting
-  static String normalizeRequestKey(String requestId) {
-    if (requestId == null || requestId.isEmpty()) {
-      return null;
-    }
-    try {
-      return XGoogSpannerRequestId.of(requestId).getLogicalRequestKey();
-    } catch (IllegalStateException e) {
-      return requestId;
-    }
+    tracking = false;
   }
 
   static final class RoutingTarget {

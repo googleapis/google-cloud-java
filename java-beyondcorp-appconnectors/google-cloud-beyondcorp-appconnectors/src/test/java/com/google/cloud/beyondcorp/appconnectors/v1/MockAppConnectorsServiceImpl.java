@@ -166,6 +166,29 @@ public class MockAppConnectorsServiceImpl extends AppConnectorsServiceImplBase {
   }
 
   @Override
+  public void resolveInstanceConfig(
+      ResolveInstanceConfigRequest request,
+      StreamObserver<ResolveInstanceConfigResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ResolveInstanceConfigResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ResolveInstanceConfigResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResolveInstanceConfig, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ResolveInstanceConfigResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void reportStatus(
       ReportStatusRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

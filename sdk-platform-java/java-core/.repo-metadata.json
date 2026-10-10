@@ -1,12 +1,12 @@
 {
   "api_shortname": "google-cloud-core",
-  "product_documentation": "https://github.com/googleapis/sdk-platform-java/tree/main/java-core",
+  "product_documentation": "https://github.com/googleapis/google-cloud-java/tree/main/sdk-platform-java/java-core",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-core/latest/overview",
   "api_description": "A set of classes and utilities used in Google Cloud Java libraries.",
   "name_pretty": "Google Cloud Core",
   "release_level": "stable",
   "language": "java",
-  "repo": "googleapis/sdk-platform-java",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-core",
   "library_type": "CORE",
   "distribution_name": "com.google.cloud:google-cloud-core"

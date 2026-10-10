@@ -25,7 +25,7 @@ package com.google.cloud.vectorsearch.v1beta;
  *
  * <pre>
  * Defines a ranker using the Vertex AI ranking service.
- * See https://cloud.google.com/generative-ai-app-builder/docs/ranking for
+ * See &lt;https://cloud.google.com/generative-ai-app-builder/docs/ranking&gt; for
  * details.
  * </pre>
  *
@@ -1237,7 +1237,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The model used for ranking documents. The list of available
    * models is described in
-   * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+   * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
    * Currently, only `semantic-ranker-fast&#64;latest` is supported.
    * </pre>
    *
@@ -1264,7 +1264,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Required. The model used for ranking documents. The list of available
    * models is described in
-   * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+   * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
    * Currently, only `semantic-ranker-fast&#64;latest` is supported.
    * </pre>
    *
@@ -1503,7 +1503,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Defines a ranker using the Vertex AI ranking service.
-   * See https://cloud.google.com/generative-ai-app-builder/docs/ranking for
+   * See &lt;https://cloud.google.com/generative-ai-app-builder/docs/ranking&gt; for
    * details.
    * </pre>
    *
@@ -1955,7 +1955,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The model used for ranking documents. The list of available
      * models is described in
-     * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+     * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
      * Currently, only `semantic-ranker-fast&#64;latest` is supported.
      * </pre>
      *
@@ -1981,7 +1981,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The model used for ranking documents. The list of available
      * models is described in
-     * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+     * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
      * Currently, only `semantic-ranker-fast&#64;latest` is supported.
      * </pre>
      *
@@ -2007,7 +2007,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The model used for ranking documents. The list of available
      * models is described in
-     * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+     * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
      * Currently, only `semantic-ranker-fast&#64;latest` is supported.
      * </pre>
      *
@@ -2032,7 +2032,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The model used for ranking documents. The list of available
      * models is described in
-     * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+     * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
      * Currently, only `semantic-ranker-fast&#64;latest` is supported.
      * </pre>
      *
@@ -2053,7 +2053,7 @@ public final class VertexRanker extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Required. The model used for ranking documents. The list of available
      * models is described in
-     * https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models.
+     * &lt;https://docs.cloud.google.com/generative-ai-app-builder/docs/ranking#models&gt;.
      * Currently, only `semantic-ranker-fast&#64;latest` is supported.
      * </pre>
      *

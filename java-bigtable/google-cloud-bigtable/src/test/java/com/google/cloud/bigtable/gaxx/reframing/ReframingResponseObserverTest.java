@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.gax.rpc.StreamController;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable.StreamControllerStash;
-import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockResponseObserver;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockServerStreamingCall;
 import com.google.cloud.bigtable.gaxx.testing.MockStreamingApi.MockServerStreamingCallable;
@@ -460,8 +459,13 @@ public class ReframingResponseObserverTest {
           executor.submit(
               (Callable<Void>)
                   () -> {
-                    for (int j = 0; j < iterations; j++) {
-                      requestAndCompleteRaceConditionIteration();
+                    ExecutorService innerExecutor = Executors.newFixedThreadPool(2);
+                    try {
+                      for (int j = 0; j < iterations; j++) {
+                        requestAndCompleteRaceConditionIteration(innerExecutor);
+                      }
+                    } finally {
+                      innerExecutor.shutdownNow();
                     }
                     return null;
                   });
@@ -479,21 +483,17 @@ public class ReframingResponseObserverTest {
     }
   }
 
-  private static void requestAndCompleteRaceConditionIteration()
+  private static void requestAndCompleteRaceConditionIteration(ExecutorService executor)
       throws InterruptedException, ExecutionException {
-    MockStreamingApi.MockResponseObserver<String> observer =
-        new MockStreamingApi.MockResponseObserver<>(false);
+    MockResponseObserver<String> observer = new MockResponseObserver<>(false);
     ReframingResponseObserver<String, String> underTest =
-        new ReframingResponseObserver<>(
-            observer, new ReframingResponseObserverTest.DasherizingReframer(1));
+        new ReframingResponseObserver<>(observer, new DasherizingReframer(1));
 
     // This is intentionally not a Phaser, the Phaser seems to drastically reduce the reproduction
     // rate of the
     // original race condition.
     CountDownLatch readySignal = new CountDownLatch(2);
     CompletableFuture<Void> startSignal = new CompletableFuture<>();
-
-    ExecutorService executor = Executors.newFixedThreadPool(2);
 
     Future<Void> f1 =
         executor.submit(
@@ -539,7 +539,6 @@ public class ReframingResponseObserverTest {
 
               return null;
             });
-    executor.shutdown();
 
     // Wait for worker setup
     readySignal.await();

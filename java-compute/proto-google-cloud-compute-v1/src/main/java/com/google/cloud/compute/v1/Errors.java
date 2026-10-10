@@ -24,6 +24,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
+ * Represents a single error encountered during the processing of an
+ * operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Errors}
@@ -586,6 +588,8 @@ public final class Errors extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
+   * Represents a single error encountered during the processing of an
+   * operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Errors}

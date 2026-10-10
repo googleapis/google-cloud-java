@@ -282,6 +282,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
     return ((ReservationServiceStubSettings) getStubSettings()).listReservationGroupsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateReservationGroup. */
+  public UnaryCallSettings<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupSettings() {
+    return ((ReservationServiceStubSettings) getStubSettings()).updateReservationGroupSettings();
+  }
+
   public static final ReservationServiceSettings create(ReservationServiceStubSettings stub)
       throws IOException {
     return new ReservationServiceSettings.Builder(stub.toBuilder()).build();
@@ -578,6 +584,12 @@ public class ReservationServiceSettings extends ClientSettings<ReservationServic
             ListReservationGroupsPagedResponse>
         listReservationGroupsSettings() {
       return getStubSettingsBuilder().listReservationGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateReservationGroup. */
+    public UnaryCallSettings.Builder<UpdateReservationGroupRequest, ReservationGroup>
+        updateReservationGroupSettings() {
+      return getStubSettingsBuilder().updateReservationGroupSettings();
     }
 
     @Override

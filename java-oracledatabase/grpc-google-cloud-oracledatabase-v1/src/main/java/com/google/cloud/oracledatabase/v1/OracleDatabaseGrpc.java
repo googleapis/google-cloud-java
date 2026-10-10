@@ -1552,6 +1552,113 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest,
+          com.google.longrunning.Operation>
+      getRefreshAutonomousDatabaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RefreshAutonomousDatabase",
+      requestType = com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest,
+          com.google.longrunning.Operation>
+      getRefreshAutonomousDatabaseMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest,
+            com.google.longrunning.Operation>
+        getRefreshAutonomousDatabaseMethod;
+    if ((getRefreshAutonomousDatabaseMethod = OracleDatabaseGrpc.getRefreshAutonomousDatabaseMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getRefreshAutonomousDatabaseMethod =
+                OracleDatabaseGrpc.getRefreshAutonomousDatabaseMethod)
+            == null) {
+          OracleDatabaseGrpc.getRefreshAutonomousDatabaseMethod =
+              getRefreshAutonomousDatabaseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RefreshAutonomousDatabase"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("RefreshAutonomousDatabase"))
+                      .build();
+        }
+      }
+    }
+    return getRefreshAutonomousDatabaseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest,
+          com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+      getGetAutonomousDatabaseRefreshableClonesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutonomousDatabaseRefreshableClones",
+      requestType =
+          com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest,
+          com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+      getGetAutonomousDatabaseRefreshableClonesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest,
+            com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+        getGetAutonomousDatabaseRefreshableClonesMethod;
+    if ((getGetAutonomousDatabaseRefreshableClonesMethod =
+            OracleDatabaseGrpc.getGetAutonomousDatabaseRefreshableClonesMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getGetAutonomousDatabaseRefreshableClonesMethod =
+                OracleDatabaseGrpc.getGetAutonomousDatabaseRefreshableClonesMethod)
+            == null) {
+          OracleDatabaseGrpc.getGetAutonomousDatabaseRefreshableClonesMethod =
+              getGetAutonomousDatabaseRefreshableClonesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .GetAutonomousDatabaseRefreshableClonesRequest,
+                          com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetAutonomousDatabaseRefreshableClones"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .GetAutonomousDatabaseRefreshableClonesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "GetAutonomousDatabaseRefreshableClones"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutonomousDatabaseRefreshableClonesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest,
           com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse>
       getListOdbNetworksMethod;
@@ -4483,6 +4590,36 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Refreshes the refreshable clone of an Autonomous Database.
+     * </pre>
+     */
+    default void refreshAutonomousDatabase(
+        com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRefreshAutonomousDatabaseMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the refreshable clones for a given Autonomous Database.
+     * </pre>
+     */
+    default void getAutonomousDatabaseRefreshableClones(
+        com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutonomousDatabaseRefreshableClonesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the ODB Networks in a given project and location.
      * </pre>
      */
@@ -5736,6 +5873,40 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFailoverAutonomousDatabaseMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refreshes the refreshable clone of an Autonomous Database.
+     * </pre>
+     */
+    public void refreshAutonomousDatabase(
+        com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefreshAutonomousDatabaseMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the refreshable clones for a given Autonomous Database.
+     * </pre>
+     */
+    public void getAutonomousDatabaseRefreshableClones(
+        com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutonomousDatabaseRefreshableClonesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -7013,6 +7184,39 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Refreshes the refreshable clone of an Autonomous Database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation refreshAutonomousDatabase(
+        com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRefreshAutonomousDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the refreshable clones for a given Autonomous Database.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones
+        getAutonomousDatabaseRefreshableClones(
+            com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getGetAutonomousDatabaseRefreshableClonesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the ODB Networks in a given project and location.
      * </pre>
      */
@@ -8129,6 +8333,37 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Refreshes the refreshable clone of an Autonomous Database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation refreshAutonomousDatabase(
+        com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefreshAutonomousDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the refreshable clones for a given Autonomous Database.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones
+        getAutonomousDatabaseRefreshableClones(
+            com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getGetAutonomousDatabaseRefreshableClonesMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the ODB Networks in a given project and location.
      * </pre>
      */
@@ -9235,6 +9470,37 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Refreshes the refreshable clone of an Autonomous Database.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        refreshAutonomousDatabase(
+            com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefreshAutonomousDatabaseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the refreshable clones for a given Autonomous Database.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClones(
+            com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutonomousDatabaseRefreshableClonesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the ODB Networks in a given project and location.
      * </pre>
      */
@@ -9965,54 +10231,56 @@ public final class OracleDatabaseGrpc {
   private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 27;
   private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 28;
   private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 29;
-  private static final int METHODID_LIST_ODB_NETWORKS = 30;
-  private static final int METHODID_GET_ODB_NETWORK = 31;
-  private static final int METHODID_CREATE_ODB_NETWORK = 32;
-  private static final int METHODID_DELETE_ODB_NETWORK = 33;
-  private static final int METHODID_LIST_ODB_SUBNETS = 34;
-  private static final int METHODID_GET_ODB_SUBNET = 35;
-  private static final int METHODID_CREATE_ODB_SUBNET = 36;
-  private static final int METHODID_DELETE_ODB_SUBNET = 37;
-  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 38;
-  private static final int METHODID_GET_EXADB_VM_CLUSTER = 39;
-  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 40;
-  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 41;
-  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 42;
-  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 43;
-  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 44;
-  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 45;
-  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 46;
-  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 47;
-  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 48;
-  private static final int METHODID_LIST_DATABASES = 49;
-  private static final int METHODID_GET_DATABASE = 50;
-  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 51;
-  private static final int METHODID_GET_PLUGGABLE_DATABASE = 52;
-  private static final int METHODID_LIST_DB_SYSTEMS = 53;
-  private static final int METHODID_GET_DB_SYSTEM = 54;
-  private static final int METHODID_CREATE_DB_SYSTEM = 55;
-  private static final int METHODID_DELETE_DB_SYSTEM = 56;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 57;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 58;
-  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 59;
-  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 60;
-  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 61;
-  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 62;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 63;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 64;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 65;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 66;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 67;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 68;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 69;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 70;
-  private static final int METHODID_LIST_DB_VERSIONS = 71;
-  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 72;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 73;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 74;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 75;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
-  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
+  private static final int METHODID_REFRESH_AUTONOMOUS_DATABASE = 30;
+  private static final int METHODID_GET_AUTONOMOUS_DATABASE_REFRESHABLE_CLONES = 31;
+  private static final int METHODID_LIST_ODB_NETWORKS = 32;
+  private static final int METHODID_GET_ODB_NETWORK = 33;
+  private static final int METHODID_CREATE_ODB_NETWORK = 34;
+  private static final int METHODID_DELETE_ODB_NETWORK = 35;
+  private static final int METHODID_LIST_ODB_SUBNETS = 36;
+  private static final int METHODID_GET_ODB_SUBNET = 37;
+  private static final int METHODID_CREATE_ODB_SUBNET = 38;
+  private static final int METHODID_DELETE_ODB_SUBNET = 39;
+  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 40;
+  private static final int METHODID_GET_EXADB_VM_CLUSTER = 41;
+  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 42;
+  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 43;
+  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 44;
+  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 45;
+  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 46;
+  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 47;
+  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 48;
+  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 49;
+  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 50;
+  private static final int METHODID_LIST_DATABASES = 51;
+  private static final int METHODID_GET_DATABASE = 52;
+  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 53;
+  private static final int METHODID_GET_PLUGGABLE_DATABASE = 54;
+  private static final int METHODID_LIST_DB_SYSTEMS = 55;
+  private static final int METHODID_GET_DB_SYSTEM = 56;
+  private static final int METHODID_CREATE_DB_SYSTEM = 57;
+  private static final int METHODID_DELETE_DB_SYSTEM = 58;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 59;
+  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 60;
+  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 61;
+  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 62;
+  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 63;
+  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 64;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 65;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 66;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 67;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 68;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 69;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 70;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 71;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 72;
+  private static final int METHODID_LIST_DB_VERSIONS = 73;
+  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 74;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 75;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 78;
+  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 79;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10213,6 +10481,19 @@ public final class OracleDatabaseGrpc {
           serviceImpl.failoverAutonomousDatabase(
               (com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REFRESH_AUTONOMOUS_DATABASE:
+          serviceImpl.refreshAutonomousDatabase(
+              (com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_AUTONOMOUS_DATABASE_REFRESHABLE_CLONES:
+          serviceImpl.getAutonomousDatabaseRefreshableClones(
+              (com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>)
+                  responseObserver);
           break;
         case METHODID_LIST_ODB_NETWORKS:
           serviceImpl.listOdbNetworks(
@@ -10737,6 +11018,21 @@ public final class OracleDatabaseGrpc {
                     com.google.longrunning.Operation>(
                     service, METHODID_FAILOVER_AUTONOMOUS_DATABASE)))
         .addMethod(
+            getRefreshAutonomousDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_REFRESH_AUTONOMOUS_DATABASE)))
+        .addMethod(
+            getGetAutonomousDatabaseRefreshableClonesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1
+                        .GetAutonomousDatabaseRefreshableClonesRequest,
+                    com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones>(
+                    service, METHODID_GET_AUTONOMOUS_DATABASE_REFRESHABLE_CLONES)))
+        .addMethod(
             getListOdbNetworksMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11143,6 +11439,8 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getRestartAutonomousDatabaseMethod())
                       .addMethod(getSwitchoverAutonomousDatabaseMethod())
                       .addMethod(getFailoverAutonomousDatabaseMethod())
+                      .addMethod(getRefreshAutonomousDatabaseMethod())
+                      .addMethod(getGetAutonomousDatabaseRefreshableClonesMethod())
                       .addMethod(getListOdbNetworksMethod())
                       .addMethod(getGetOdbNetworkMethod())
                       .addMethod(getCreateOdbNetworkMethod())

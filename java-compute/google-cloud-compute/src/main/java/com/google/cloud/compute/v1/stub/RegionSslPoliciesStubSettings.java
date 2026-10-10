@@ -337,7 +337,8 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
             "gapic", GaxProperties.getLibraryVersion(RegionSslPoliciesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

@@ -4794,13 +4794,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the context content was generated from a tool call, specify the
-       * answer record associated with the tool call.
+       * Optional. The answer record of the tool execution result.
        * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
        * </pre>
        *
-       * <code>string answer_record = 4;</code>
+       * <code>
+       * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The answerRecord.
        */
@@ -4810,13 +4811,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the context content was generated from a tool call, specify the
-       * answer record associated with the tool call.
+       * Optional. The answer record of the tool execution result.
        * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
        * </pre>
        *
-       * <code>string answer_record = 4;</code>
+       * <code>
+       * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for answerRecord.
        */
@@ -5225,13 +5227,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the context content was generated from a tool call, specify the
-       * answer record associated with the tool call.
+       * Optional. The answer record of the tool execution result.
        * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
        * </pre>
        *
-       * <code>string answer_record = 4;</code>
+       * <code>
+       * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The answerRecord.
        */
@@ -5252,13 +5255,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * If the context content was generated from a tool call, specify the
-       * answer record associated with the tool call.
+       * Optional. The answer record of the tool execution result.
        * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
        * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
        * </pre>
        *
-       * <code>string answer_record = 4;</code>
+       * <code>
+       * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
        *
        * @return The bytes for answerRecord.
        */
@@ -6162,13 +6166,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * If the context content was generated from a tool call, specify the
-         * answer record associated with the tool call.
+         * Optional. The answer record of the tool execution result.
          * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
          * </pre>
          *
-         * <code>string answer_record = 4;</code>
+         * <code>
+         * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
          *
          * @return The answerRecord.
          */
@@ -6188,13 +6193,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * If the context content was generated from a tool call, specify the
-         * answer record associated with the tool call.
+         * Optional. The answer record of the tool execution result.
          * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
          * </pre>
          *
-         * <code>string answer_record = 4;</code>
+         * <code>
+         * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
          *
          * @return The bytes for answerRecord.
          */
@@ -6214,13 +6220,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * If the context content was generated from a tool call, specify the
-         * answer record associated with the tool call.
+         * Optional. The answer record of the tool execution result.
          * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
          * </pre>
          *
-         * <code>string answer_record = 4;</code>
+         * <code>
+         * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
          *
          * @param value The answerRecord to set.
          * @return This builder for chaining.
@@ -6239,13 +6246,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * If the context content was generated from a tool call, specify the
-         * answer record associated with the tool call.
+         * Optional. The answer record of the tool execution result.
          * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
          * </pre>
          *
-         * <code>string answer_record = 4;</code>
+         * <code>
+         * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
          *
          * @return This builder for chaining.
          */
@@ -6260,13 +6268,14 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * If the context content was generated from a tool call, specify the
-         * answer record associated with the tool call.
+         * Optional. The answer record of the tool execution result.
          * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
          * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`.
          * </pre>
          *
-         * <code>string answer_record = 4;</code>
+         * <code>
+         * string answer_record = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
          *
          * @param value The bytes for answerRecord to set.
          * @return This builder for chaining.

@@ -77,7 +77,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Check that one and only one of supplier or credential source are provided.
     if (builder.subjectTokenSupplier != null && credentialSource != null) {
       throw new IllegalArgumentException(
-          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a credentialSource.");
+          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a"
+              + " credentialSource.");
     }
     if (builder.subjectTokenSupplier == null && credentialSource == null) {
       throw new IllegalArgumentException(
@@ -104,7 +105,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         throw new RuntimeException(
             // Wrap IOException in RuntimeException because constructors cannot throw checked
             // exceptions.
-            "Failed to initialize IdentityPoolCredentials from certificate source due to an I/O error.",
+            "Failed to initialize IdentityPoolCredentials from certificate source due to an I/O"
+                + " error.",
             e);
       }
       this.metricsHeaderValue = CERTIFICATE_METRICS_HEADER_VALUE;
@@ -204,8 +206,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
-    private X509Provider x509Provider;
+    private @Nullable IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+    private @Nullable X509Provider x509Provider;
 
     Builder() {}
 
@@ -244,30 +246,35 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setAudience(String audience) {
       super.setAudience(audience);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setSubjectTokenType(String subjectTokenType) {
       super.setSubjectTokenType(subjectTokenType);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setSubjectTokenType(SubjectTokenTypes subjectTokenType) {
       super.setSubjectTokenType(subjectTokenType);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setTokenUrl(String tokenUrl) {
       super.setTokenUrl(tokenUrl);
@@ -280,36 +287,43 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setTokenInfoUrl(String tokenInfoUrl) {
       super.setTokenInfoUrl(tokenInfoUrl);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setClientId(String clientId) {
       super.setClientId(clientId);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setClientSecret(String clientSecret) {
       super.setClientSecret(clientSecret);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setScopes(Collection<String> scopes) {
       super.setScopes(scopes);
@@ -323,18 +337,21 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
       super.setServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setUniverseDomain(String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     Builder setEnvironmentProvider(EnvironmentProvider environmentProvider) {
       super.setEnvironmentProvider(environmentProvider);

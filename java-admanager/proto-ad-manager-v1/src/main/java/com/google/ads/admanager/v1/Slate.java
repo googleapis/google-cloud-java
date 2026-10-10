@@ -212,7 +212,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The status of this Slate. Slates are created in the
-   * [SlateStatus.ACTIVE][] state.
+   * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+   * state.
    * </pre>
    *
    * <code>
@@ -231,7 +232,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The status of this Slate. Slates are created in the
-   * [SlateStatus.ACTIVE][] state.
+   * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+   * state.
    * </pre>
    *
    * <code>
@@ -250,7 +252,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The status of this Slate. Slates are created in the
-   * [SlateStatus.ACTIVE][] state.
+   * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+   * state.
    * </pre>
    *
    * <code>
@@ -1178,7 +1181,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The status of this Slate. Slates are created in the
-     * [SlateStatus.ACTIVE][] state.
+     * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+     * state.
      * </pre>
      *
      * <code>
@@ -1197,7 +1201,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The status of this Slate. Slates are created in the
-     * [SlateStatus.ACTIVE][] state.
+     * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+     * state.
      * </pre>
      *
      * <code>
@@ -1216,7 +1221,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The status of this Slate. Slates are created in the
-     * [SlateStatus.ACTIVE][] state.
+     * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+     * state.
      * </pre>
      *
      * <code>
@@ -1238,7 +1244,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The status of this Slate. Slates are created in the
-     * [SlateStatus.ACTIVE][] state.
+     * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+     * state.
      * </pre>
      *
      * <code>
@@ -1261,7 +1268,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The status of this Slate. Slates are created in the
-     * [SlateStatus.ACTIVE][] state.
+     * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+     * state.
      * </pre>
      *
      * <code>
@@ -1286,7 +1294,8 @@ public final class Slate extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The status of this Slate. Slates are created in the
-     * [SlateStatus.ACTIVE][] state.
+     * [SlateStatusEnum.SlateStatus.ACTIVE][google.ads.admanager.v1.SlateStatusEnum.SlateStatus.ACTIVE]
+     * state.
      * </pre>
      *
      * <code>

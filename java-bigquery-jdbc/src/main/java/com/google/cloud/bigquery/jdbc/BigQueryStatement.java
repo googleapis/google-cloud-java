@@ -26,6 +26,7 @@ import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -49,14 +50,15 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -194,7 +196,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setUseQueryCache(this.connection.isUseQueryCache());
     querySettings.setQueryDialect(this.connection.getQueryDialect());
     querySettings.setKmsKeyName(this.connection.getKmsKeyName());
-    querySettings.setQueryProperties(this.connection.getQueryProperties());
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    querySettings.setQueryProperties(snapshot.queryProperties);
     querySettings.setAllowLargeResults(this.connection.isAllowLargeResults());
     if (this.connection.getJobTimeoutInSeconds() > 0) {
       querySettings.setJobTimeoutMs(this.connection.getJobTimeoutInSeconds() * 1000L);
@@ -208,17 +211,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           this.connection.getDestinationDatasetExpirationTime());
     }
     // only create session if enable session and session info is null
-    if (this.connection.enableSession) {
-      if (this.connection.sessionInfoConnectionProperty == null) {
-        querySettings.setEnableSession(this.connection.isSessionEnabled());
-      } else {
-        querySettings.setSessionInfoConnectionProperty(
-            this.connection.getSessionInfoConnectionProperty());
-      }
+    if (this.connection.isSessionEnabled()) {
+      querySettings.setEnableSession(this.connection.isSessionEnabled());
+      querySettings.setSessionInfoConnectionProperty(snapshot.sessionInfo);
     }
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
     querySettings.setWriteAPIAppendRowCount(this.connection.getWriteAPIAppendRowCount());
+    querySettings.setEnableTimestampPicos(this.connection.isEnableTimestampPicos());
 
     return querySettings.build();
   }
@@ -242,7 +242,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeQuery", this.connection, sql, () -> executeQueryImpl(sql));
   }
@@ -267,7 +267,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeLargeUpdate",
         this.connection,
@@ -308,7 +308,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    checkClosed();
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.execute", this.connection, sql, () -> executeImpl(sql));
   }
@@ -333,7 +333,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
     // BQ Read-only tokens are not recommended to use, they have a lot of known flaws.
     // We're supporting them in a limited capacity, for pure SELECT statements.
-    if (this.connection.isReadOnlyTokenUsed()) {
+    if (this.connection != null && this.connection.isReadOnlyTokenUsed()) {
       LOG.warning(
           "Read-only token detected, skipping dry run and assuming StatementType is SELECT.");
       return StatementType.SELECT;
@@ -400,6 +400,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (isClosed()) {
       return;
     }
+    this.isClosed = true;
     LOG.fine("Closing Statement %s.", this);
 
     boolean cancelSucceeded = false;
@@ -413,7 +414,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         closeStatementResources();
       }
       this.connection = null;
-      this.isClosed = true;
     }
   }
 
@@ -573,10 +573,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
-      if (tableResult.getJobId() != null) {
-        return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
-      }
-      return new ExecuteResult((TableResult) result, null);
+      saveSessionIdIfPresent(tableResult);
+      return new ExecuteResult(tableResult, null);
     }
 
     if (result instanceof Job) {
@@ -599,7 +597,47 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     synchronized (cancelLock) {
       jobIds.remove(jobId);
     }
+    saveSessionIdIfPresent(tableResult);
+    if (jobId != null && bigQuery != null) {
+      Job refreshedJob = bigQuery.getJob(jobId);
+      if (refreshedJob != null) {
+        job = refreshedJob;
+      }
+    }
     return new ExecuteResult(tableResult, job);
+  }
+
+  private void saveSessionIdIfPresent(TableResult tableResult) {
+    if (this.connection == null || tableResult == null) {
+      return;
+    }
+    if (tableResult.getSessionInfo() != null) {
+      String sessionId = tableResult.getSessionInfo().getSessionId();
+      if (sessionId != null && !sessionId.isEmpty()) {
+        this.connection.initSessionInfo(sessionId);
+      }
+    }
+  }
+
+  private StatementType getStatementType(ExecuteResult executeResult) {
+    // Fast path: Read statementType directly from TableResult
+    if (executeResult.tableResult.getStatementType() != null) {
+      return executeResult.tableResult.getStatementType();
+    }
+    // Jobful path: Read statementType from Job statistics when executed via JobCreationMode=1 or
+    // jobs.insert
+    if (executeResult.job != null && executeResult.job.getStatistics() instanceof QueryStatistics) {
+      return ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
+    }
+    // Fallback path: Lazily fetch completed Job metadata to resolve statementType without dry
+    // runs if omitted in TableResult
+    if (executeResult.tableResult.getJobId() != null && this.bigQuery != null) {
+      Job job = this.bigQuery.getJob(executeResult.tableResult.getJobId());
+      if (job != null && job.getStatistics() instanceof QueryStatistics) {
+        return ((QueryStatistics) job.getStatistics()).getStatementType();
+      }
+    }
+    return null;
   }
 
   /**
@@ -620,10 +658,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     try {
       resetStatementFields();
       ExecuteResult executeResult = executeJob(jobConfiguration);
-      StatementType statementType =
-          executeResult.job == null
-              ? getStatementType(jobConfiguration)
-              : ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
+      StatementType statementType = getStatementType(executeResult);
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
     } catch (InterruptedException ex) {
@@ -709,11 +744,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         break;
       case DML:
       case DML_EXTRA:
-        QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
-        Long dmlRowCount =
-            (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
-                ? dmlStats.getNumDmlAffectedRows()
-                : 0L;
+        Long dmlRowCount;
+        if (results.getNumDmlAffectedRows() != null) {
+          dmlRowCount = results.getNumDmlAffectedRows();
+        } else {
+          QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
+          dmlRowCount =
+              (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
+                  ? dmlStats.getNumDmlAffectedRows()
+                  : 0L;
+        }
         updateAffectedRowCount(dmlRowCount);
         break;
       case TCL:
@@ -773,7 +813,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       throws SQLException {
     try {
       Job activeJob = job;
-      if (activeJob == null) {
+      if (activeJob == null && results.getJobId() != null) {
         activeJob = this.bigQuery.getJob(results.getJobId());
       }
       Job completedJob = (activeJob != null) ? activeJob.waitFor() : null;
@@ -845,6 +885,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // format
       ReadSession.Builder sessionBuilder =
           ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW);
+      TableReadOptions readOptions = buildTableReadOptions();
+      if (readOptions != null) {
+        sessionBuilder.setReadOptions(readOptions);
+      }
 
       CreateReadSessionRequest.Builder builder =
           CreateReadSessionRequest.newBuilder()
@@ -874,6 +918,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
       arrowResultSet.setJobId(currentJobId);
       arrowResultSet.setQueryId(results.getQueryId());
+      if (job == null && currentJobId == null) {
+        arrowResultSet.setQueryStatistics(results.extractQueryStatistics());
+      }
       return arrowResultSet;
 
     } catch (Exception | OutOfMemoryError ex) {
@@ -885,18 +932,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             "Failed to execute query: Unable to allocate background threads to process the query results. Connection-scoped thread pool limit of 100 threads was reached or system is out of memory.",
             ex);
       }
-      if (ex instanceof RuntimeException) {
-        throw (ex instanceof BigQueryJdbcRuntimeException)
-            ? (BigQueryJdbcRuntimeException) ex
-            : new BigQueryJdbcRuntimeException(ex);
-      }
-      if (ex instanceof SQLException) {
-        throw (ex instanceof BigQueryJdbcException)
-            ? (BigQueryJdbcException) ex
-            : new BigQueryJdbcException(ex);
-      }
       throw new BigQueryJdbcException(ex.getMessage(), ex);
     }
+  }
+
+  private TableReadOptions buildTableReadOptions() {
+    if (!isEnableTimestampPicos()) {
+      return null;
+    }
+    return TableReadOptions.newBuilder()
+        .setArrowSerializationOptions(
+            ArrowSerializationOptions.newBuilder()
+                .setPicosTimestampPrecision(
+                    ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS)
+                .build())
+        .build();
   }
 
   /** Asynchronously reads results and populates an arrow record queue */
@@ -1161,6 +1211,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             job);
     jsonResultSet.setJobId(jobId);
     jsonResultSet.setQueryId(results.getQueryId());
+    if (job == null && jobId == null) {
+      jsonResultSet.setQueryStatistics(results.extractQueryStatistics());
+    }
     jsonResultSetFinalizers.add(
         new BigQueryResultSetFinalizers.JsonResultSetFinalizer(
             jsonResultSet, referenceQueueJsonRs, jsonWorkers));
@@ -1450,11 +1503,31 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setLabels(mergedLabels);
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
-    if (this.querySettings.getSessionInfoConnectionProperty() != null) {
-      queryConfigBuilder.setConnectionProperties(
-          ImmutableList.of(this.querySettings.getSessionInfoConnectionProperty()));
-    } else {
-      queryConfigBuilder.setCreateSession(querySettings.isEnableSession());
+
+    // Only reachable from execute paths, which call checkClosed() first, so this.connection is
+    // non-null here; close() is the only thing that nulls it.
+    BigQueryConnection.SessionState snapshot = this.connection.getSessionStateSnapshot();
+    ConnectionProperty sessionProperty = snapshot.sessionInfo;
+    boolean isSessionEnabled = this.connection.isSessionEnabled();
+    List<ConnectionProperty> queryProperties = snapshot.queryProperties;
+
+    List<ConnectionProperty> props =
+        queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();
+
+    if (sessionProperty != null) {
+      boolean hasSessionId =
+          props.stream()
+              .anyMatch(cp -> BigQueryConnection.SESSION_ID_KEY.equalsIgnoreCase(cp.getKey()));
+      if (!hasSessionId) {
+        props.add(sessionProperty);
+      }
+    } else if (isSessionEnabled) {
+      queryConfigBuilder.setCreateSession(true);
+      this.connection.markSessionCreatedByDriver();
+    }
+
+    if (!props.isEmpty()) {
+      queryConfigBuilder.setConnectionProperties(props);
     }
     if (this.querySettings.getKmsKeyName() != null) {
       EncryptionConfiguration encryption =
@@ -1462,9 +1535,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               .setKmsKeyName(this.querySettings.getKmsKeyName())
               .build();
       queryConfigBuilder.setDestinationEncryptionConfiguration(encryption);
-    }
-    if (this.querySettings.getQueryProperties() != null) {
-      queryConfigBuilder.setConnectionProperties(this.querySettings.getQueryProperties());
     }
     queryConfigBuilder.setUseLegacySql(getUseLegacySql());
 
@@ -1474,6 +1544,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private boolean getUseLegacySql() {
     return QueryDialectType.BIG_QUERY.equals(
         QueryDialectType.valueOf(this.querySettings.getQueryDialect()));
+  }
+
+  boolean isEnableTimestampPicos() {
+    return this.querySettings.isEnableTimestampPicos();
   }
 
   private void checkIfDatasetExistElseCreate(String datasetName) {
@@ -1623,6 +1697,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryStatement.executeBatch",
         this.connection,
@@ -1784,6 +1859,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
+  /**
+   * Validates that the statement is open and that execution configuration settings are compatible.
+   *
+   * @throws SQLException if the statement is closed or settings are incompatible
+   */
+  void validateExecution() throws SQLException {
+    checkClosed();
+    if (isEnableTimestampPicos() && getUseLegacySql()) {
+      throw new BigQueryJdbcException(
+          "Picosecond data is incompatible with Legacy SQL. "
+              + "To query your Picosecond data, please set QueryDialect to SQL "
+              + "and restructure your query as a Standard SQL query.");
+    }
+  }
+
   enum SqlType {
     SELECT,
     DML,
@@ -1816,5 +1906,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
+  }
+
+  QueryStatistics describePositionalParameterQuery(String query)
+      throws BigQueryJdbcException, BigQueryJdbcSqlSyntaxErrorException {
+    LOG.finer("++enter++");
+    return getQueryStatistics(getJobConfig(query).setParameterMode("POSITIONAL").build());
   }
 }

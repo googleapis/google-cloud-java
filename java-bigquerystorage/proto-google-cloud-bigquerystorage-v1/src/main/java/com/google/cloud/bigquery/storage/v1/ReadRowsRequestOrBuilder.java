@@ -70,4 +70,57 @@ public interface ReadRowsRequestOrBuilder
    * @return The offset.
    */
   long getOffset();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options specific to the Apache Arrow output format.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the arrowSerializationOptions field is set.
+   */
+  boolean hasArrowSerializationOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options specific to the Apache Arrow output format.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The arrowSerializationOptions.
+   */
+  com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions getArrowSerializationOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options specific to the Apache Arrow output format.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.storage.v1.ArrowSerializationOptions arrow_serialization_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.bigquery.storage.v1.ArrowSerializationOptionsOrBuilder
+      getArrowSerializationOptionsOrBuilder();
+
+  com.google.cloud.bigquery.storage.v1.ReadRowsRequest.OutputFormatSerializationOptionsCase
+      getOutputFormatSerializationOptionsCase();
 }

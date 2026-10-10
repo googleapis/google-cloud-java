@@ -30,6 +30,32 @@ public interface InstancePropertiesPatchOrBuilder
    *
    *
    * <pre>
+   * This optional flag exposes the hashed physical host ID.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return Whether the exposeHostTopology field is set.
+   */
+  boolean hasExposeHostTopology();
+
+  /**
+   *
+   *
+   * <pre>
+   * This optional flag exposes the hashed physical host ID.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return The exposeHostTopology.
+   */
+  boolean getExposeHostTopology();
+
+  /**
+   *
+   *
+   * <pre>
    * The label key-value pairs that you want to patch onto the instance.
    * </pre>
    *

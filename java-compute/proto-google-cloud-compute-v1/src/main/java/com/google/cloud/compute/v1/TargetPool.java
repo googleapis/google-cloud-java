@@ -472,7 +472,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
    * The server-defined URL for the resource. This field is applicable only when
    * the containing target pool is serving a forwarding rule as the primary
    * pool, and its failoverRatio field is properly set to a value
-   * between [0, 1].backupPool and failoverRatio together define
+   * between [0, 1].
+   * backupPool and failoverRatio together define
    * the fallback behavior of the primary target pool: if the ratio of the
    * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
    * IP will be directed to the backup pool.
@@ -500,7 +501,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
    * The server-defined URL for the resource. This field is applicable only when
    * the containing target pool is serving a forwarding rule as the primary
    * pool, and its failoverRatio field is properly set to a value
-   * between [0, 1].backupPool and failoverRatio together define
+   * between [0, 1].
+   * backupPool and failoverRatio together define
    * the fallback behavior of the primary target pool: if the ratio of the
    * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
    * IP will be directed to the backup pool.
@@ -536,7 +538,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
    * The server-defined URL for the resource. This field is applicable only when
    * the containing target pool is serving a forwarding rule as the primary
    * pool, and its failoverRatio field is properly set to a value
-   * between [0, 1].backupPool and failoverRatio together define
+   * between [0, 1].
+   * backupPool and failoverRatio together define
    * the fallback behavior of the primary target pool: if the ratio of the
    * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
    * IP will be directed to the backup pool.
@@ -2129,7 +2132,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
      * The server-defined URL for the resource. This field is applicable only when
      * the containing target pool is serving a forwarding rule as the primary
      * pool, and its failoverRatio field is properly set to a value
-     * between [0, 1].backupPool and failoverRatio together define
+     * between [0, 1].
+     * backupPool and failoverRatio together define
      * the fallback behavior of the primary target pool: if the ratio of the
      * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
      * IP will be directed to the backup pool.
@@ -2156,7 +2160,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
      * The server-defined URL for the resource. This field is applicable only when
      * the containing target pool is serving a forwarding rule as the primary
      * pool, and its failoverRatio field is properly set to a value
-     * between [0, 1].backupPool and failoverRatio together define
+     * between [0, 1].
+     * backupPool and failoverRatio together define
      * the fallback behavior of the primary target pool: if the ratio of the
      * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
      * IP will be directed to the backup pool.
@@ -2191,7 +2196,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
      * The server-defined URL for the resource. This field is applicable only when
      * the containing target pool is serving a forwarding rule as the primary
      * pool, and its failoverRatio field is properly set to a value
-     * between [0, 1].backupPool and failoverRatio together define
+     * between [0, 1].
+     * backupPool and failoverRatio together define
      * the fallback behavior of the primary target pool: if the ratio of the
      * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
      * IP will be directed to the backup pool.
@@ -2226,7 +2232,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
      * The server-defined URL for the resource. This field is applicable only when
      * the containing target pool is serving a forwarding rule as the primary
      * pool, and its failoverRatio field is properly set to a value
-     * between [0, 1].backupPool and failoverRatio together define
+     * between [0, 1].
+     * backupPool and failoverRatio together define
      * the fallback behavior of the primary target pool: if the ratio of the
      * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
      * IP will be directed to the backup pool.
@@ -2260,7 +2267,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
      * The server-defined URL for the resource. This field is applicable only when
      * the containing target pool is serving a forwarding rule as the primary
      * pool, and its failoverRatio field is properly set to a value
-     * between [0, 1].backupPool and failoverRatio together define
+     * between [0, 1].
+     * backupPool and failoverRatio together define
      * the fallback behavior of the primary target pool: if the ratio of the
      * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
      * IP will be directed to the backup pool.
@@ -2290,7 +2298,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessage
      * The server-defined URL for the resource. This field is applicable only when
      * the containing target pool is serving a forwarding rule as the primary
      * pool, and its failoverRatio field is properly set to a value
-     * between [0, 1].backupPool and failoverRatio together define
+     * between [0, 1].
+     * backupPool and failoverRatio together define
      * the fallback behavior of the primary target pool: if the ratio of the
      * healthy instances in the primary pool is at or belowfailoverRatio, traffic arriving at the load-balanced
      * IP will be directed to the backup pool.

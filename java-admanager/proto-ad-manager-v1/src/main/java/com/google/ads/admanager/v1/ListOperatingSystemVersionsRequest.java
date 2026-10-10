@@ -233,13 +233,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `majorVersion`
+   * * `microVersion`
+   * * `minorVersion`
+   * * `name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -267,13 +266,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `majorVersion`
+   * * `microVersion`
+   * * `minorVersion`
+   * * `name`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1141,13 +1139,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `majorVersion`
+     * * `microVersion`
+     * * `minorVersion`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1174,13 +1171,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `majorVersion`
+     * * `microVersion`
+     * * `minorVersion`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1207,13 +1203,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `majorVersion`
+     * * `microVersion`
+     * * `minorVersion`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1239,13 +1234,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `majorVersion`
+     * * `microVersion`
+     * * `minorVersion`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1267,13 +1261,12 @@ public final class ListOperatingSystemVersionsRequest extends com.google.protobu
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;majorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;microVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;minorVersion&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `majorVersion`
+     * * `microVersion`
+     * * `minorVersion`
+     * * `name`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

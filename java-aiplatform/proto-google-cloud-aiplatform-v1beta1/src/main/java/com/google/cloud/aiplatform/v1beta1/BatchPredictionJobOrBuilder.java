@@ -215,6 +215,42 @@ public interface BatchPredictionJobOrBuilder
    *
    *
    * <pre>
+   * For Bring-Your-Own-Endpoint (BYOE), the name of the Endpoint resource that
+   * produces the predictions via this job, must share the same ancestor
+   * Location. Exactly one of model, unmanaged_container_model, or endpoint must
+   * be set.
+   * Example:
+   * `projects/193595526740/locations/us-central1/endpoints/4203439000301600768`
+   * </pre>
+   *
+   * <code>string endpoint = 41 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The endpoint.
+   */
+  java.lang.String getEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * For Bring-Your-Own-Endpoint (BYOE), the name of the Endpoint resource that
+   * produces the predictions via this job, must share the same ancestor
+   * Location. Exactly one of model, unmanaged_container_model, or endpoint must
+   * be set.
+   * Example:
+   * `projects/193595526740/locations/us-central1/endpoints/4203439000301600768`
+   * </pre>
+   *
+   * <code>string endpoint = 41 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for endpoint.
+   */
+  com.google.protobuf.ByteString getEndpointBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Input configuration of the instances on which predictions are
    * performed. The schema of any single instance may be specified via the
    * [Model's][google.cloud.aiplatform.v1beta1.BatchPredictionJob.model]

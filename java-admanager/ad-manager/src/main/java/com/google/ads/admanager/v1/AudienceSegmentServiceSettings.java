@@ -105,6 +105,71 @@ public class AudienceSegmentServiceSettings extends ClientSettings<AudienceSegme
     return ((AudienceSegmentServiceStubSettings) getStubSettings()).listAudienceSegmentsSettings();
   }
 
+  /** Returns the object with the settings used for calls to createAudienceSegment. */
+  public UnaryCallSettings<CreateAudienceSegmentRequest, AudienceSegment>
+      createAudienceSegmentSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings()).createAudienceSegmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateAudienceSegments. */
+  public UnaryCallSettings<BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+      batchCreateAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchCreateAudienceSegmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAudienceSegment. */
+  public UnaryCallSettings<UpdateAudienceSegmentRequest, AudienceSegment>
+      updateAudienceSegmentSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings()).updateAudienceSegmentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateAudienceSegments. */
+  public UnaryCallSettings<BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+      batchUpdateAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchUpdateAudienceSegmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateAudienceSegments. */
+  public UnaryCallSettings<
+          BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+      batchActivateAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchActivateAudienceSegmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateAudienceSegments. */
+  public UnaryCallSettings<
+          BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+      batchDeactivateAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchDeactivateAudienceSegmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchApproveAudienceSegments. */
+  public UnaryCallSettings<
+          BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+      batchApproveAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchApproveAudienceSegmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchRejectAudienceSegments. */
+  public UnaryCallSettings<BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+      batchRejectAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchRejectAudienceSegmentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchPopulateAudienceSegments. */
+  public UnaryCallSettings<
+          BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+      batchPopulateAudienceSegmentsSettings() {
+    return ((AudienceSegmentServiceStubSettings) getStubSettings())
+        .batchPopulateAudienceSegmentsSettings();
+  }
+
   public static final AudienceSegmentServiceSettings create(AudienceSegmentServiceStubSettings stub)
       throws IOException {
     return new AudienceSegmentServiceSettings.Builder(stub.toBuilder()).build();
@@ -216,6 +281,67 @@ public class AudienceSegmentServiceSettings extends ClientSettings<AudienceSegme
             ListAudienceSegmentsPagedResponse>
         listAudienceSegmentsSettings() {
       return getStubSettingsBuilder().listAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAudienceSegment. */
+    public UnaryCallSettings.Builder<CreateAudienceSegmentRequest, AudienceSegment>
+        createAudienceSegmentSettings() {
+      return getStubSettingsBuilder().createAudienceSegmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchCreateAudienceSegmentsRequest, BatchCreateAudienceSegmentsResponse>
+        batchCreateAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchCreateAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAudienceSegment. */
+    public UnaryCallSettings.Builder<UpdateAudienceSegmentRequest, AudienceSegment>
+        updateAudienceSegmentSettings() {
+      return getStubSettingsBuilder().updateAudienceSegmentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateAudienceSegmentsRequest, BatchUpdateAudienceSegmentsResponse>
+        batchUpdateAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchUpdateAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+        batchActivateAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchActivateAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+        batchDeactivateAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchDeactivateAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchApproveAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+        batchApproveAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchApproveAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchRejectAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+        batchRejectAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchRejectAudienceSegmentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchPopulateAudienceSegments. */
+    public UnaryCallSettings.Builder<
+            BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+        batchPopulateAudienceSegmentsSettings() {
+      return getStubSettingsBuilder().batchPopulateAudienceSegmentsSettings();
     }
 
     @Override

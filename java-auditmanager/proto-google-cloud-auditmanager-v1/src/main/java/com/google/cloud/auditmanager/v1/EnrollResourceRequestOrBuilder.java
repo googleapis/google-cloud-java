@@ -30,11 +30,12 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource to be enrolled to the audit manager. Scope format
-   * should be resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
-   * organizations/{organization}/locations/{location}
+   * Required. Organization, folder, or project to enroll in Audit Manager, in
+   * one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -47,11 +48,12 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource to be enrolled to the audit manager. Scope format
-   * should be resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
-   * organizations/{organization}/locations/{location}
+   * Required. Organization, folder, or project to enroll in Audit Manager, in
+   * one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -64,13 +66,14 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of destination among which customer can choose to upload
-   * their reports during the audit process. While enrolling at a
-   * organization/folder level, customer can choose Cloud storage bucket in any
-   * project. If the audit is triggered at project level using the service agent
-   * at organization/folder level, all the destination options associated with
-   * respective organization/folder level service agent will be available to
-   * auditing projects.
+   * Required. Cloud Storage buckets that you can upload your audit reports to
+   * during the audit process.
+   *
+   * When you enroll an organization or folder, you can choose a Cloud Storage
+   * bucket from any project in the organization or folder. If you run an audit
+   * at the project level using the service agent at the organization or folder
+   * level, all the buckets that are associated with the service agent are
+   * available.
    * </pre>
    *
    * <code>
@@ -84,13 +87,14 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of destination among which customer can choose to upload
-   * their reports during the audit process. While enrolling at a
-   * organization/folder level, customer can choose Cloud storage bucket in any
-   * project. If the audit is triggered at project level using the service agent
-   * at organization/folder level, all the destination options associated with
-   * respective organization/folder level service agent will be available to
-   * auditing projects.
+   * Required. Cloud Storage buckets that you can upload your audit reports to
+   * during the audit process.
+   *
+   * When you enroll an organization or folder, you can choose a Cloud Storage
+   * bucket from any project in the organization or folder. If you run an audit
+   * at the project level using the service agent at the organization or folder
+   * level, all the buckets that are associated with the service agent are
+   * available.
    * </pre>
    *
    * <code>
@@ -104,13 +108,14 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of destination among which customer can choose to upload
-   * their reports during the audit process. While enrolling at a
-   * organization/folder level, customer can choose Cloud storage bucket in any
-   * project. If the audit is triggered at project level using the service agent
-   * at organization/folder level, all the destination options associated with
-   * respective organization/folder level service agent will be available to
-   * auditing projects.
+   * Required. Cloud Storage buckets that you can upload your audit reports to
+   * during the audit process.
+   *
+   * When you enroll an organization or folder, you can choose a Cloud Storage
+   * bucket from any project in the organization or folder. If you run an audit
+   * at the project level using the service agent at the organization or folder
+   * level, all the buckets that are associated with the service agent are
+   * available.
    * </pre>
    *
    * <code>
@@ -123,13 +128,14 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of destination among which customer can choose to upload
-   * their reports during the audit process. While enrolling at a
-   * organization/folder level, customer can choose Cloud storage bucket in any
-   * project. If the audit is triggered at project level using the service agent
-   * at organization/folder level, all the destination options associated with
-   * respective organization/folder level service agent will be available to
-   * auditing projects.
+   * Required. Cloud Storage buckets that you can upload your audit reports to
+   * during the audit process.
+   *
+   * When you enroll an organization or folder, you can choose a Cloud Storage
+   * bucket from any project in the organization or folder. If you run an audit
+   * at the project level using the service agent at the organization or folder
+   * level, all the buckets that are associated with the service agent are
+   * available.
    * </pre>
    *
    * <code>
@@ -145,13 +151,14 @@ public interface EnrollResourceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. List of destination among which customer can choose to upload
-   * their reports during the audit process. While enrolling at a
-   * organization/folder level, customer can choose Cloud storage bucket in any
-   * project. If the audit is triggered at project level using the service agent
-   * at organization/folder level, all the destination options associated with
-   * respective organization/folder level service agent will be available to
-   * auditing projects.
+   * Required. Cloud Storage buckets that you can upload your audit reports to
+   * during the audit process.
+   *
+   * When you enroll an organization or folder, you can choose a Cloud Storage
+   * bucket from any project in the organization or folder. If you run an audit
+   * at the project level using the service agent at the organization or folder
+   * level, all the buckets that are associated with the service agent are
+   * available.
    * </pre>
    *
    * <code>
@@ -160,4 +167,28 @@ public interface EnrollResourceRequestOrBuilder
    */
   com.google.cloud.auditmanager.v1.EnrollResourceRequest.EligibleDestinationOrBuilder
       getDestinationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, only validates the request and does not enroll the
+   * resource. This executes standard request validation (such as schema, IAM,
+   * and destination checks) and skips the apply phase.
+   *
+   * Use this field for the following purposes:
+   * * **Infrastructure as Code (IaC)**: Allow tools like Terraform to run
+   * dry-run mutations (e.g., `terraform plan`) without creating real
+   * resources or incurring costs.
+   * * **User Interface Validation**: Enable real-time form and permission
+   * validation in custom UIs before submitting requests.
+   * * **CI/CD &amp; Automation**: Test your scripts, permissions, and parameters
+   * safely without consuming resource quotas.
+   * </pre>
+   *
+   * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

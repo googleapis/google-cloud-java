@@ -39,6 +39,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The NodeTypes API.
  *
+ * <p>This client uses NodeTypes version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -270,7 +272,6 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, NodeTypesScopedList> element :
@@ -311,7 +312,6 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, NodeTypesScopedList>> future =
@@ -352,7 +352,6 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -520,7 +519,6 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (NodeType element : nodeTypesClient.list(request).iterateAll()) {
@@ -556,7 +554,6 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<NodeType> future = nodeTypesClient.listPagedCallable().futureCall(request);
@@ -591,7 +588,6 @@ public class NodeTypesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {

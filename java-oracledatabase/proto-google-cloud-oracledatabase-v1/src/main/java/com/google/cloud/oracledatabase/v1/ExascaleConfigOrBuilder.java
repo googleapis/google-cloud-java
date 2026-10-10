@@ -51,4 +51,31 @@ public interface ExascaleConfigOrBuilder
    * @return The availableStorageSizeGb.
    */
   int getAvailableStorageSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage size needed for VM storage on Exascale in GBs.
+   * </pre>
+   *
+   * <code>int32 total_vm_storage_size_gb = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The totalVmStorageSizeGb.
+   */
+  int getTotalVmStorageSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Available storage size for VM storage on Exascale in GBs.
+   * </pre>
+   *
+   * <code>int32 available_vm_storage_size_gb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableVmStorageSizeGb.
+   */
+  int getAvailableVmStorageSizeGb();
 }

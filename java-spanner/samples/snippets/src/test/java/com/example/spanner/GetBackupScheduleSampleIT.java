@@ -20,14 +20,20 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.spanner.admin.database.v1.BackupScheduleName;
 import java.util.UUID;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class GetBackupScheduleSampleIT extends SampleTestBaseV2 {
-  // Default instance and given db should exist for tests to pass.
-  private static String databaseId = System.getProperty("spanner.sample.database", "mysample");
+
+  private static String databaseId;
+
+  @BeforeClass
+  public static void setUp() throws Exception {
+    databaseId = createEphemeralDatabase();
+  }
 
   @Test
   public void testGetBackupScheduleSample() throws Exception {

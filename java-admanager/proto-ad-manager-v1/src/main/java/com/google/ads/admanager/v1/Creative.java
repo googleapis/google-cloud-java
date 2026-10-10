@@ -54,6 +54,11 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
   private Creative() {
     name_ = "";
     displayName_ = "";
+    advertiser_ = "";
+    customFieldValues_ = java.util.Collections.emptyList();
+    previewUrl_ = "";
+    thirdPartyDataDeclarationStatus_ = 0;
+    appliedLabels_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +77,1531 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  private int detailsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object details_;
+
+  public enum DetailsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AD_EXCHANGE_CREATIVE(20),
+    AD_SENSE_CREATIVE(22),
+    ASPECT_RATIO_IMAGE_CREATIVE(23),
+    AUDIO_CREATIVE(24),
+    AUDIO_REDIRECT_CREATIVE(25),
+    CLICK_TRACKING_CREATIVE(26),
+    CUSTOM_CREATIVE(18),
+    HTML5_CREATIVE(33),
+    IMAGE_CREATIVE(19),
+    IMAGE_OVERLAY_CREATIVE(35),
+    IMAGE_REDIRECT_CREATIVE(36),
+    IMAGE_REDIRECT_OVERLAY_CREATIVE(37),
+    INTERNAL_REDIRECT_CREATIVE(38),
+    LEGACY_DFP_CREATIVE(39),
+    PROGRAMMATIC_CREATIVE(42),
+    RICH_MEDIA_STUDIO_CREATIVE(43),
+    SET_TOP_BOX_CREATIVE(46),
+    TEMPLATE_CREATIVE(47),
+    THIRD_PARTY_CREATIVE(48),
+    VAST_REDIRECT_CREATIVE(49),
+    VIDEO_CREATIVE(51),
+    VIDEO_REDIRECT_CREATIVE(53),
+    DETAILS_NOT_SET(0);
+    private final int value;
+
+    private DetailsCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DetailsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static DetailsCase forNumber(int value) {
+      switch (value) {
+        case 20:
+          return AD_EXCHANGE_CREATIVE;
+        case 22:
+          return AD_SENSE_CREATIVE;
+        case 23:
+          return ASPECT_RATIO_IMAGE_CREATIVE;
+        case 24:
+          return AUDIO_CREATIVE;
+        case 25:
+          return AUDIO_REDIRECT_CREATIVE;
+        case 26:
+          return CLICK_TRACKING_CREATIVE;
+        case 18:
+          return CUSTOM_CREATIVE;
+        case 33:
+          return HTML5_CREATIVE;
+        case 19:
+          return IMAGE_CREATIVE;
+        case 35:
+          return IMAGE_OVERLAY_CREATIVE;
+        case 36:
+          return IMAGE_REDIRECT_CREATIVE;
+        case 37:
+          return IMAGE_REDIRECT_OVERLAY_CREATIVE;
+        case 38:
+          return INTERNAL_REDIRECT_CREATIVE;
+        case 39:
+          return LEGACY_DFP_CREATIVE;
+        case 42:
+          return PROGRAMMATIC_CREATIVE;
+        case 43:
+          return RICH_MEDIA_STUDIO_CREATIVE;
+        case 46:
+          return SET_TOP_BOX_CREATIVE;
+        case 47:
+          return TEMPLATE_CREATIVE;
+        case 48:
+          return THIRD_PARTY_CREATIVE;
+        case 49:
+          return VAST_REDIRECT_CREATIVE;
+        case 51:
+          return VIDEO_CREATIVE;
+        case 53:
+          return VIDEO_REDIRECT_CREATIVE;
+        case 0:
+          return DETAILS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public DetailsCase getDetailsCase() {
+    return DetailsCase.forNumber(detailsCase_);
+  }
+
+  public static final int AD_EXCHANGE_CREATIVE_FIELD_NUMBER = 20;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Ad Exchange dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the adExchangeCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdExchangeCreative() {
+    return detailsCase_ == 20;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Ad Exchange dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The adExchangeCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AdExchangeCreativeDetails getAdExchangeCreative() {
+    if (detailsCase_ == 20) {
+      return (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Ad Exchange dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AdExchangeCreativeDetailsOrBuilder
+      getAdExchangeCreativeOrBuilder() {
+    if (detailsCase_ == 20) {
+      return (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int AD_SENSE_CREATIVE_FIELD_NUMBER = 22;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An AdSense dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the adSenseCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdSenseCreative() {
+    return detailsCase_ == 22;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An AdSense dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The adSenseCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AdSenseCreativeDetails getAdSenseCreative() {
+    if (detailsCase_ == 22) {
+      return (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An AdSense dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AdSenseCreativeDetailsOrBuilder getAdSenseCreativeOrBuilder() {
+    if (detailsCase_ == 22) {
+      return (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int ASPECT_RATIO_IMAGE_CREATIVE_FIELD_NUMBER = 23;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative intended for mobile platforms that displays an
+   * image, whose size is defined as an aspect ratio. It can have multiple
+   * images whose dimensions conform to that aspect ratio.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the aspectRatioImageCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasAspectRatioImageCreative() {
+    return detailsCase_ == 23;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative intended for mobile platforms that displays an
+   * image, whose size is defined as an aspect ratio. It can have multiple
+   * images whose dimensions conform to that aspect ratio.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The aspectRatioImageCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AspectRatioImageCreativeDetails getAspectRatioImageCreative() {
+    if (detailsCase_ == 23) {
+      return (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative intended for mobile platforms that displays an
+   * image, whose size is defined as an aspect ratio. It can have multiple
+   * images whose dimensions conform to that aspect ratio.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AspectRatioImageCreativeDetailsOrBuilder
+      getAspectRatioImageCreativeOrBuilder() {
+    if (detailsCase_ == 23) {
+      return (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int AUDIO_CREATIVE_FIELD_NUMBER = 24;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the audioCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioCreative() {
+    return detailsCase_ == 24;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The audioCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AudioCreativeDetails getAudioCreative() {
+    if (detailsCase_ == 24) {
+      return (com.google.ads.admanager.v1.AudioCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AudioCreativeDetailsOrBuilder getAudioCreativeOrBuilder() {
+    if (detailsCase_ == 24) {
+      return (com.google.ads.admanager.v1.AudioCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int AUDIO_REDIRECT_CREATIVE_FIELD_NUMBER = 25;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the audioRedirectCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasAudioRedirectCreative() {
+    return detailsCase_ == 25;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The audioRedirectCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AudioRedirectCreativeDetails getAudioRedirectCreative() {
+    if (detailsCase_ == 25) {
+      return (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AudioRedirectCreativeDetailsOrBuilder
+      getAudioRedirectCreativeOrBuilder() {
+    if (detailsCase_ == 25) {
+      return (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int CLICK_TRACKING_CREATIVE_FIELD_NUMBER = 26;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A creative that is used for tracking clicks on ads that are
+   * served directly from the customers' web servers or media servers. NOTE:
+   * The size attribute is not used for click tracking creative and it will
+   * not be persisted upon save.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clickTrackingCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasClickTrackingCreative() {
+    return detailsCase_ == 26;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A creative that is used for tracking clicks on ads that are
+   * served directly from the customers' web servers or media servers. NOTE:
+   * The size attribute is not used for click tracking creative and it will
+   * not be persisted upon save.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clickTrackingCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ClickTrackingCreativeDetails getClickTrackingCreative() {
+    if (detailsCase_ == 26) {
+      return (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A creative that is used for tracking clicks on ads that are
+   * served directly from the customers' web servers or media servers. NOTE:
+   * The size attribute is not used for click tracking creative and it will
+   * not be persisted upon save.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ClickTrackingCreativeDetailsOrBuilder
+      getClickTrackingCreativeOrBuilder() {
+    if (detailsCase_ == 26) {
+      return (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int CUSTOM_CREATIVE_FIELD_NUMBER = 18;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a custom HTML snippet and file assets.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomCreative() {
+    return detailsCase_ == 18;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a custom HTML snippet and file assets.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CustomCreativeDetails getCustomCreative() {
+    if (detailsCase_ == 18) {
+      return (com.google.ads.admanager.v1.CustomCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a custom HTML snippet and file assets.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CustomCreativeDetailsOrBuilder getCustomCreativeOrBuilder() {
+    if (detailsCase_ == 18) {
+      return (com.google.ads.admanager.v1.CustomCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int HTML5_CREATIVE_FIELD_NUMBER = 33;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+   * third party impression trackers, and a third party click tracker.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the html5Creative field is set.
+   */
+  @java.lang.Override
+  public boolean hasHtml5Creative() {
+    return detailsCase_ == 33;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+   * third party impression trackers, and a third party click tracker.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The html5Creative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.Html5CreativeDetails getHtml5Creative() {
+    if (detailsCase_ == 33) {
+      return (com.google.ads.admanager.v1.Html5CreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+   * third party impression trackers, and a third party click tracker.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.Html5CreativeDetailsOrBuilder getHtml5CreativeOrBuilder() {
+    if (detailsCase_ == 33) {
+      return (com.google.ads.admanager.v1.Html5CreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance();
+  }
+
+  public static final int IMAGE_CREATIVE_FIELD_NUMBER = 19;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that displays an image.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageCreative() {
+    return detailsCase_ == 19;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that displays an image.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageCreativeDetails getImageCreative() {
+    if (detailsCase_ == 19) {
+      return (com.google.ads.admanager.v1.ImageCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that displays an image.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageCreativeDetailsOrBuilder getImageCreativeOrBuilder() {
+    if (detailsCase_ == 19) {
+      return (com.google.ads.admanager.v1.ImageCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int IMAGE_OVERLAY_CREATIVE_FIELD_NUMBER = 35;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that displays an image and is served via
+   * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+   * on top of.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageOverlayCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageOverlayCreative() {
+    return detailsCase_ == 35;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that displays an image and is served via
+   * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+   * on top of.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageOverlayCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageOverlayCreativeDetails getImageOverlayCreative() {
+    if (detailsCase_ == 35) {
+      return (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that displays an image and is served via
+   * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+   * on top of.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageOverlayCreativeDetailsOrBuilder
+      getImageOverlayCreativeOrBuilder() {
+    if (detailsCase_ == 35) {
+      return (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int IMAGE_REDIRECT_CREATIVE_FIELD_NUMBER = 36;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that loads an image asset from a specified URL.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageRedirectCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageRedirectCreative() {
+    return detailsCase_ == 36;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that loads an image asset from a specified URL.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageRedirectCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageRedirectCreativeDetails getImageRedirectCreative() {
+    if (detailsCase_ == 36) {
+      return (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that loads an image asset from a specified URL.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageRedirectCreativeDetailsOrBuilder
+      getImageRedirectCreativeOrBuilder() {
+    if (detailsCase_ == 36) {
+      return (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int IMAGE_REDIRECT_OVERLAY_CREATIVE_FIELD_NUMBER = 37;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that loads an image asset from a specified
+   * URL and is served via VAST XML. Overlays cover part of the video content
+   * they are displayed on top of. This creative is read only.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageRedirectOverlayCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasImageRedirectOverlayCreative() {
+    return detailsCase_ == 37;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that loads an image asset from a specified
+   * URL and is served via VAST XML. Overlays cover part of the video content
+   * they are displayed on top of. This creative is read only.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageRedirectOverlayCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails
+      getImageRedirectOverlayCreative() {
+    if (detailsCase_ == 37) {
+      return (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that loads an image asset from a specified
+   * URL and is served via VAST XML. Overlays cover part of the video content
+   * they are displayed on top of. This creative is read only.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetailsOrBuilder
+      getImageRedirectOverlayCreativeOrBuilder() {
+    if (detailsCase_ == 37) {
+      return (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int INTERNAL_REDIRECT_CREATIVE_FIELD_NUMBER = 38;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative hosted by Campaign Manager 360.
+   *
+   * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+   * retrieve a creative asset. However, Campaign Manager 360 tags are not
+   * sent to the user's browser. Instead, they are processed internally within
+   * the Google Marketing Platform system.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the internalRedirectCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasInternalRedirectCreative() {
+    return detailsCase_ == 38;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative hosted by Campaign Manager 360.
+   *
+   * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+   * retrieve a creative asset. However, Campaign Manager 360 tags are not
+   * sent to the user's browser. Instead, they are processed internally within
+   * the Google Marketing Platform system.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The internalRedirectCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.InternalRedirectCreativeDetails getInternalRedirectCreative() {
+    if (detailsCase_ == 38) {
+      return (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.InternalRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative hosted by Campaign Manager 360.
+   *
+   * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+   * retrieve a creative asset. However, Campaign Manager 360 tags are not
+   * sent to the user's browser. Instead, they are processed internally within
+   * the Google Marketing Platform system.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.InternalRedirectCreativeDetailsOrBuilder
+      getInternalRedirectCreativeOrBuilder() {
+    if (detailsCase_ == 38) {
+      return (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.InternalRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int LEGACY_DFP_CREATIVE_FIELD_NUMBER = 39;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that isn't supported by Google DFP, but was migrated
+   * from DART. Creatives of this type cannot be created or modified.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the legacyDfpCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasLegacyDfpCreative() {
+    return detailsCase_ == 39;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that isn't supported by Google DFP, but was migrated
+   * from DART. Creatives of this type cannot be created or modified.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The legacyDfpCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LegacyDfpCreativeDetails getLegacyDfpCreative() {
+    if (detailsCase_ == 39) {
+      return (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that isn't supported by Google DFP, but was migrated
+   * from DART. Creatives of this type cannot be created or modified.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LegacyDfpCreativeDetailsOrBuilder
+      getLegacyDfpCreativeOrBuilder() {
+    if (detailsCase_ == 39) {
+      return (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int PROGRAMMATIC_CREATIVE_FIELD_NUMBER = 42;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative used for programmatic trafficking. This creative
+   * will be auto-created with the right approval from the buyer. This
+   * creative cannot be created through the API. This creative can be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the programmaticCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasProgrammaticCreative() {
+    return detailsCase_ == 42;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative used for programmatic trafficking. This creative
+   * will be auto-created with the right approval from the buyer. This
+   * creative cannot be created through the API. This creative can be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The programmaticCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ProgrammaticCreativeDetails getProgrammaticCreative() {
+    if (detailsCase_ == 42) {
+      return (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative used for programmatic trafficking. This creative
+   * will be auto-created with the right approval from the buyer. This
+   * creative cannot be created through the API. This creative can be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ProgrammaticCreativeDetailsOrBuilder
+      getProgrammaticCreativeOrBuilder() {
+    if (detailsCase_ == 42) {
+      return (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int RICH_MEDIA_STUDIO_CREATIVE_FIELD_NUMBER = 43;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by a Rich Media Studio. You cannot
+   * create this creative, but you can update some fields of this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the richMediaStudioCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasRichMediaStudioCreative() {
+    return detailsCase_ == 43;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by a Rich Media Studio. You cannot
+   * create this creative, but you can update some fields of this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The richMediaStudioCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.RichMediaStudioCreativeDetails getRichMediaStudioCreative() {
+    if (detailsCase_ == 43) {
+      return (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by a Rich Media Studio. You cannot
+   * create this creative, but you can update some fields of this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.RichMediaStudioCreativeDetailsOrBuilder
+      getRichMediaStudioCreativeOrBuilder() {
+    if (detailsCase_ == 43) {
+      return (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int SET_TOP_BOX_CREATIVE_FIELD_NUMBER = 46;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that will be served into cable set-top boxes. There
+   * are no assets for this creative type, as they are hosted by external
+   * cable systems.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the setTopBoxCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasSetTopBoxCreative() {
+    return detailsCase_ == 46;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that will be served into cable set-top boxes. There
+   * are no assets for this creative type, as they are hosted by external
+   * cable systems.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The setTopBoxCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.SetTopBoxCreativeDetails getSetTopBoxCreative() {
+    if (detailsCase_ == 46) {
+      return (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that will be served into cable set-top boxes. There
+   * are no assets for this creative type, as they are hosted by external
+   * cable systems.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.SetTopBoxCreativeDetailsOrBuilder
+      getSetTopBoxCreativeOrBuilder() {
+    if (detailsCase_ == 46) {
+      return (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int TEMPLATE_CREATIVE_FIELD_NUMBER = 47;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by the specified creative template.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the templateCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasTemplateCreative() {
+    return detailsCase_ == 47;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by the specified creative template.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The templateCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.TemplateCreativeDetails getTemplateCreative() {
+    if (detailsCase_ == 47) {
+      return (com.google.ads.admanager.v1.TemplateCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by the specified creative template.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.TemplateCreativeDetailsOrBuilder
+      getTemplateCreativeOrBuilder() {
+    if (detailsCase_ == 47) {
+      return (com.google.ads.admanager.v1.TemplateCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int THIRD_PARTY_CREATIVE_FIELD_NUMBER = 48;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is served by a 3rd-party vendor.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasThirdPartyCreative() {
+    return detailsCase_ == 48;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is served by a 3rd-party vendor.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ThirdPartyCreativeDetails getThirdPartyCreative() {
+    if (detailsCase_ == 48) {
+      return (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is served by a 3rd-party vendor.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ThirdPartyCreativeDetailsOrBuilder
+      getThirdPartyCreativeOrBuilder() {
+    if (detailsCase_ == 48) {
+      return (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int VAST_REDIRECT_CREATIVE_FIELD_NUMBER = 49;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that points to an externally hosted VAST ad and is
+   * served via VAST XML as a VAST Wrapper.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vastRedirectCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasVastRedirectCreative() {
+    return detailsCase_ == 49;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that points to an externally hosted VAST ad and is
+   * served via VAST XML as a VAST Wrapper.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vastRedirectCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.VastRedirectCreativeDetails getVastRedirectCreative() {
+    if (detailsCase_ == 49) {
+      return (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that points to an externally hosted VAST ad and is
+   * served via VAST XML as a VAST Wrapper.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.VastRedirectCreativeDetailsOrBuilder
+      getVastRedirectCreativeOrBuilder() {
+    if (detailsCase_ == 49) {
+      return (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int VIDEO_CREATIVE_FIELD_NUMBER = 51;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the videoCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasVideoCreative() {
+    return detailsCase_ == 51;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The videoCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.VideoCreativeDetails getVideoCreative() {
+    if (detailsCase_ == 51) {
+      return (com.google.ads.admanager.v1.VideoCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.VideoCreativeDetailsOrBuilder getVideoCreativeOrBuilder() {
+    if (detailsCase_ == 51) {
+      return (com.google.ads.admanager.v1.VideoCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance();
+  }
+
+  public static final int VIDEO_REDIRECT_CREATIVE_FIELD_NUMBER = 53;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the videoRedirectCreative field is set.
+   */
+  @java.lang.Override
+  public boolean hasVideoRedirectCreative() {
+    return detailsCase_ == 53;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The videoRedirectCreative.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.VideoRedirectCreativeDetails getVideoRedirectCreative() {
+    if (detailsCase_ == 53) {
+      return (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.VideoRedirectCreativeDetailsOrBuilder
+      getVideoRedirectCreativeOrBuilder() {
+    if (detailsCase_ == 53) {
+      return (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_;
+    }
+    return com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -199,6 +1729,746 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ADVERTISER_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object advertiser_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the advertiser field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertiser() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The advertiser.
+   */
+  @java.lang.Override
+  public java.lang.String getAdvertiser() {
+    java.lang.Object ref = advertiser_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      advertiser_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for advertiser.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAdvertiserBytes() {
+    java.lang.Object ref = advertiser_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      advertiser_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instant this Creative was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instant this Creative was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instant this Creative was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int CUSTOM_FIELD_VALUES_FIELD_NUMBER = 76;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.CustomFieldValue> customFieldValues_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.CustomFieldValue> getCustomFieldValuesList() {
+    return customFieldValues_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.CustomFieldValueOrBuilder>
+      getCustomFieldValuesOrBuilderList() {
+    return customFieldValues_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomFieldValuesCount() {
+    return customFieldValues_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CustomFieldValue getCustomFieldValues(int index) {
+    return customFieldValues_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CustomFieldValueOrBuilder getCustomFieldValuesOrBuilder(
+      int index) {
+    return customFieldValues_.get(index);
+  }
+
+  public static final int PREVIEW_URL_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object previewUrl_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of the creative for previewing the media.
+   * </pre>
+   *
+   * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the previewUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreviewUrl() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of the creative for previewing the media.
+   * </pre>
+   *
+   * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The previewUrl.
+   */
+  @java.lang.Override
+  public java.lang.String getPreviewUrl() {
+    java.lang.Object ref = previewUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      previewUrl_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of the creative for previewing the media.
+   * </pre>
+   *
+   * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for previewUrl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPreviewUrlBytes() {
+    java.lang.Object ref = previewUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      previewUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SIZE_FIELD_NUMBER = 5;
+  private com.google.ads.admanager.v1.Size size_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The Size of the creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the size field is set.
+   */
+  @java.lang.Override
+  public boolean hasSize() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The Size of the creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The size.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.Size getSize() {
+    return size_ == null ? com.google.ads.admanager.v1.Size.getDefaultInstance() : size_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The Size of the creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.SizeOrBuilder getSizeOrBuilder() {
+    return size_ == null ? com.google.ads.admanager.v1.Size.getDefaultInstance() : size_;
+  }
+
+  public static final int THIRD_PARTY_DATA_DECLARATION_FIELD_NUMBER = 59;
+  private com.google.ads.admanager.v1.ThirdPartyDataDeclaration thirdPartyDataDeclaration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The third party companies associated with this creative.
+   * This is distinct from any associated companies that Google may detect
+   * programmatically.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyDataDeclaration field is set.
+   */
+  @java.lang.Override
+  public boolean hasThirdPartyDataDeclaration() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The third party companies associated with this creative.
+   * This is distinct from any associated companies that Google may detect
+   * programmatically.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyDataDeclaration.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ThirdPartyDataDeclaration getThirdPartyDataDeclaration() {
+    return thirdPartyDataDeclaration_ == null
+        ? com.google.ads.admanager.v1.ThirdPartyDataDeclaration.getDefaultInstance()
+        : thirdPartyDataDeclaration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The third party companies associated with this creative.
+   * This is distinct from any associated companies that Google may detect
+   * programmatically.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ThirdPartyDataDeclarationOrBuilder
+      getThirdPartyDataDeclarationOrBuilder() {
+    return thirdPartyDataDeclaration_ == null
+        ? com.google.ads.admanager.v1.ThirdPartyDataDeclaration.getDefaultInstance()
+        : thirdPartyDataDeclaration_;
+  }
+
+  public static final int THIRD_PARTY_DATA_DECLARATION_STATUS_FIELD_NUMBER = 60;
+  private int thirdPartyDataDeclarationStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+   * when compared with the set of third party companies detected via automated
+   * scanning.
+   *
+   * For example, if automated scanning detects more companies than have been
+   * declared, this status will be
+   * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the thirdPartyDataDeclarationStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasThirdPartyDataDeclarationStatus() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+   * when compared with the set of third party companies detected via automated
+   * scanning.
+   *
+   * For example, if automated scanning detects more companies than have been
+   * declared, this status will be
+   * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for thirdPartyDataDeclarationStatus.
+   */
+  @java.lang.Override
+  public int getThirdPartyDataDeclarationStatusValue() {
+    return thirdPartyDataDeclarationStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+   * when compared with the set of third party companies detected via automated
+   * scanning.
+   *
+   * For example, if automated scanning detects more companies than have been
+   * declared, this status will be
+   * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The thirdPartyDataDeclarationStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+          .CreativeThirdPartyDataDeclarationStatus
+      getThirdPartyDataDeclarationStatus() {
+    com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+            .CreativeThirdPartyDataDeclarationStatus
+        result =
+            com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+                .CreativeThirdPartyDataDeclarationStatus.forNumber(
+                thirdPartyDataDeclarationStatus_);
+    return result == null
+        ? com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+            .CreativeThirdPartyDataDeclarationStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SELF_DECLARED_EUROPEAN_UNION_POLITICAL_CONTENT_FIELD_NUMBER = 13;
+  private boolean selfDeclaredEuropeanUnionPoliticalContent_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this creative contains self-declared European Union
+   * political content.
+   * </pre>
+   *
+   * <code>
+   * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the selfDeclaredEuropeanUnionPoliticalContent field is set.
+   */
+  @java.lang.Override
+  public boolean hasSelfDeclaredEuropeanUnionPoliticalContent() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this creative contains self-declared European Union
+   * political content.
+   * </pre>
+   *
+   * <code>
+   * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The selfDeclaredEuropeanUnionPoliticalContent.
+   */
+  @java.lang.Override
+  public boolean getSelfDeclaredEuropeanUnionPoliticalContent() {
+    return selfDeclaredEuropeanUnionPoliticalContent_;
+  }
+
+  public static final int AD_BADGING_ENABLED_FIELD_NUMBER = 17;
+  private boolean adBadgingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Whether the creative has ad badging enabled.
+   *
+   * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+   * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+   * FlashOverlayCreative, GraphicalInterstitialCreative,
+   * LegacyDfpCreative, MobileAdNetworkCreative,
+   * MobileVideoInterstitialCreative, SdkMediationCreative, and
+   * FlashCreative types.
+   *
+   * Defaults to true for all other creative types.
+   * </pre>
+   *
+   * <code>
+   * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the adBadgingEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdBadgingEnabled() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Whether the creative has ad badging enabled.
+   *
+   * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+   * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+   * FlashOverlayCreative, GraphicalInterstitialCreative,
+   * LegacyDfpCreative, MobileAdNetworkCreative,
+   * MobileVideoInterstitialCreative, SdkMediationCreative, and
+   * FlashCreative types.
+   *
+   * Defaults to true for all other creative types.
+   * </pre>
+   *
+   * <code>
+   * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The adBadgingEnabled.
+   */
+  @java.lang.Override
+  public boolean getAdBadgingEnabled() {
+    return adBadgingEnabled_;
+  }
+
+  public static final int APPLIED_LABELS_FIELD_NUMBER = 56;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.AppliedLabel> appliedLabels_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList() {
+    return appliedLabels_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+      getAppliedLabelsOrBuilderList() {
+    return appliedLabels_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAppliedLabelsCount() {
+    return appliedLabels_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index) {
+    return appliedLabels_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AppliedLabelOrBuilder getAppliedLabelsOrBuilder(int index) {
+    return appliedLabels_.get(index);
+  }
+
+  public static final int BUYER_PLACEMENT_CONFIG_FIELD_NUMBER = 81;
+  private com.google.ads.admanager.v1.BuyerPlacementConfig buyerPlacementConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The buyer placement configuration for this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buyerPlacementConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuyerPlacementConfig() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The buyer placement configuration for this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buyerPlacementConfig.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BuyerPlacementConfig getBuyerPlacementConfig() {
+    return buyerPlacementConfig_ == null
+        ? com.google.ads.admanager.v1.BuyerPlacementConfig.getDefaultInstance()
+        : buyerPlacementConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The buyer placement configuration for this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.BuyerPlacementConfigOrBuilder
+      getBuyerPlacementConfigOrBuilder() {
+    return buyerPlacementConfig_ == null
+        ? com.google.ads.admanager.v1.BuyerPlacementConfig.getDefaultInstance()
+        : buyerPlacementConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -216,8 +2486,111 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, advertiser_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, previewUrl_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(5, getSize());
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, displayName_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(13, selfDeclaredEuropeanUnionPoliticalContent_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(17, adBadgingEnabled_);
+    }
+    if (detailsCase_ == 18) {
+      output.writeMessage(18, (com.google.ads.admanager.v1.CustomCreativeDetails) details_);
+    }
+    if (detailsCase_ == 19) {
+      output.writeMessage(19, (com.google.ads.admanager.v1.ImageCreativeDetails) details_);
+    }
+    if (detailsCase_ == 20) {
+      output.writeMessage(20, (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_);
+    }
+    if (detailsCase_ == 22) {
+      output.writeMessage(22, (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_);
+    }
+    if (detailsCase_ == 23) {
+      output.writeMessage(
+          23, (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_);
+    }
+    if (detailsCase_ == 24) {
+      output.writeMessage(24, (com.google.ads.admanager.v1.AudioCreativeDetails) details_);
+    }
+    if (detailsCase_ == 25) {
+      output.writeMessage(25, (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 26) {
+      output.writeMessage(26, (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_);
+    }
+    if (detailsCase_ == 33) {
+      output.writeMessage(33, (com.google.ads.admanager.v1.Html5CreativeDetails) details_);
+    }
+    if (detailsCase_ == 35) {
+      output.writeMessage(35, (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_);
+    }
+    if (detailsCase_ == 36) {
+      output.writeMessage(36, (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 37) {
+      output.writeMessage(
+          37, (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_);
+    }
+    if (detailsCase_ == 38) {
+      output.writeMessage(
+          38, (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 39) {
+      output.writeMessage(39, (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_);
+    }
+    if (detailsCase_ == 42) {
+      output.writeMessage(42, (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_);
+    }
+    if (detailsCase_ == 43) {
+      output.writeMessage(
+          43, (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_);
+    }
+    if (detailsCase_ == 46) {
+      output.writeMessage(46, (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_);
+    }
+    if (detailsCase_ == 47) {
+      output.writeMessage(47, (com.google.ads.admanager.v1.TemplateCreativeDetails) details_);
+    }
+    if (detailsCase_ == 48) {
+      output.writeMessage(48, (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_);
+    }
+    if (detailsCase_ == 49) {
+      output.writeMessage(49, (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 51) {
+      output.writeMessage(51, (com.google.ads.admanager.v1.VideoCreativeDetails) details_);
+    }
+    if (detailsCase_ == 53) {
+      output.writeMessage(53, (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_);
+    }
+    for (int i = 0; i < appliedLabels_.size(); i++) {
+      output.writeMessage(56, appliedLabels_.get(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(59, getThirdPartyDataDeclaration());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeEnum(60, thirdPartyDataDeclarationStatus_);
+    }
+    for (int i = 0; i < customFieldValues_.size(); i++) {
+      output.writeMessage(76, customFieldValues_.get(i));
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(81, getBuyerPlacementConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -231,8 +2604,159 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, advertiser_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateTime());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, previewUrl_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSize());
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, displayName_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              13, selfDeclaredEuropeanUnionPoliticalContent_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, adBadgingEnabled_);
+    }
+    if (detailsCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, (com.google.ads.admanager.v1.CustomCreativeDetails) details_);
+    }
+    if (detailsCase_ == 19) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, (com.google.ads.admanager.v1.ImageCreativeDetails) details_);
+    }
+    if (detailsCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_);
+    }
+    if (detailsCase_ == 22) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_);
+    }
+    if (detailsCase_ == 23) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23, (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_);
+    }
+    if (detailsCase_ == 24) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              24, (com.google.ads.admanager.v1.AudioCreativeDetails) details_);
+    }
+    if (detailsCase_ == 25) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 26) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              26, (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_);
+    }
+    if (detailsCase_ == 33) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33, (com.google.ads.admanager.v1.Html5CreativeDetails) details_);
+    }
+    if (detailsCase_ == 35) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              35, (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_);
+    }
+    if (detailsCase_ == 36) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              36, (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 37) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              37, (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_);
+    }
+    if (detailsCase_ == 38) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              38, (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 39) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              39, (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_);
+    }
+    if (detailsCase_ == 42) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              42, (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_);
+    }
+    if (detailsCase_ == 43) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              43, (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_);
+    }
+    if (detailsCase_ == 46) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              46, (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_);
+    }
+    if (detailsCase_ == 47) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              47, (com.google.ads.admanager.v1.TemplateCreativeDetails) details_);
+    }
+    if (detailsCase_ == 48) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              48, (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_);
+    }
+    if (detailsCase_ == 49) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              49, (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_);
+    }
+    if (detailsCase_ == 51) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              51, (com.google.ads.admanager.v1.VideoCreativeDetails) details_);
+    }
+    if (detailsCase_ == 53) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              53, (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_);
+    }
+    for (int i = 0; i < appliedLabels_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(56, appliedLabels_.get(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              59, getThirdPartyDataDeclaration());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              60, thirdPartyDataDeclarationStatus_);
+    }
+    for (int i = 0; i < customFieldValues_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(76, customFieldValues_.get(i));
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(81, getBuyerPlacementConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -254,6 +2778,122 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       if (!getDisplayName().equals(other.getDisplayName())) return false;
     }
+    if (hasAdvertiser() != other.hasAdvertiser()) return false;
+    if (hasAdvertiser()) {
+      if (!getAdvertiser().equals(other.getAdvertiser())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (!getCustomFieldValuesList().equals(other.getCustomFieldValuesList())) return false;
+    if (hasPreviewUrl() != other.hasPreviewUrl()) return false;
+    if (hasPreviewUrl()) {
+      if (!getPreviewUrl().equals(other.getPreviewUrl())) return false;
+    }
+    if (hasSize() != other.hasSize()) return false;
+    if (hasSize()) {
+      if (!getSize().equals(other.getSize())) return false;
+    }
+    if (hasThirdPartyDataDeclaration() != other.hasThirdPartyDataDeclaration()) return false;
+    if (hasThirdPartyDataDeclaration()) {
+      if (!getThirdPartyDataDeclaration().equals(other.getThirdPartyDataDeclaration()))
+        return false;
+    }
+    if (hasThirdPartyDataDeclarationStatus() != other.hasThirdPartyDataDeclarationStatus())
+      return false;
+    if (hasThirdPartyDataDeclarationStatus()) {
+      if (thirdPartyDataDeclarationStatus_ != other.thirdPartyDataDeclarationStatus_) return false;
+    }
+    if (hasSelfDeclaredEuropeanUnionPoliticalContent()
+        != other.hasSelfDeclaredEuropeanUnionPoliticalContent()) return false;
+    if (hasSelfDeclaredEuropeanUnionPoliticalContent()) {
+      if (getSelfDeclaredEuropeanUnionPoliticalContent()
+          != other.getSelfDeclaredEuropeanUnionPoliticalContent()) return false;
+    }
+    if (hasAdBadgingEnabled() != other.hasAdBadgingEnabled()) return false;
+    if (hasAdBadgingEnabled()) {
+      if (getAdBadgingEnabled() != other.getAdBadgingEnabled()) return false;
+    }
+    if (!getAppliedLabelsList().equals(other.getAppliedLabelsList())) return false;
+    if (hasBuyerPlacementConfig() != other.hasBuyerPlacementConfig()) return false;
+    if (hasBuyerPlacementConfig()) {
+      if (!getBuyerPlacementConfig().equals(other.getBuyerPlacementConfig())) return false;
+    }
+    if (!getDetailsCase().equals(other.getDetailsCase())) return false;
+    switch (detailsCase_) {
+      case 20:
+        if (!getAdExchangeCreative().equals(other.getAdExchangeCreative())) return false;
+        break;
+      case 22:
+        if (!getAdSenseCreative().equals(other.getAdSenseCreative())) return false;
+        break;
+      case 23:
+        if (!getAspectRatioImageCreative().equals(other.getAspectRatioImageCreative()))
+          return false;
+        break;
+      case 24:
+        if (!getAudioCreative().equals(other.getAudioCreative())) return false;
+        break;
+      case 25:
+        if (!getAudioRedirectCreative().equals(other.getAudioRedirectCreative())) return false;
+        break;
+      case 26:
+        if (!getClickTrackingCreative().equals(other.getClickTrackingCreative())) return false;
+        break;
+      case 18:
+        if (!getCustomCreative().equals(other.getCustomCreative())) return false;
+        break;
+      case 33:
+        if (!getHtml5Creative().equals(other.getHtml5Creative())) return false;
+        break;
+      case 19:
+        if (!getImageCreative().equals(other.getImageCreative())) return false;
+        break;
+      case 35:
+        if (!getImageOverlayCreative().equals(other.getImageOverlayCreative())) return false;
+        break;
+      case 36:
+        if (!getImageRedirectCreative().equals(other.getImageRedirectCreative())) return false;
+        break;
+      case 37:
+        if (!getImageRedirectOverlayCreative().equals(other.getImageRedirectOverlayCreative()))
+          return false;
+        break;
+      case 38:
+        if (!getInternalRedirectCreative().equals(other.getInternalRedirectCreative()))
+          return false;
+        break;
+      case 39:
+        if (!getLegacyDfpCreative().equals(other.getLegacyDfpCreative())) return false;
+        break;
+      case 42:
+        if (!getProgrammaticCreative().equals(other.getProgrammaticCreative())) return false;
+        break;
+      case 43:
+        if (!getRichMediaStudioCreative().equals(other.getRichMediaStudioCreative())) return false;
+        break;
+      case 46:
+        if (!getSetTopBoxCreative().equals(other.getSetTopBoxCreative())) return false;
+        break;
+      case 47:
+        if (!getTemplateCreative().equals(other.getTemplateCreative())) return false;
+        break;
+      case 48:
+        if (!getThirdPartyCreative().equals(other.getThirdPartyCreative())) return false;
+        break;
+      case 49:
+        if (!getVastRedirectCreative().equals(other.getVastRedirectCreative())) return false;
+        break;
+      case 51:
+        if (!getVideoCreative().equals(other.getVideoCreative())) return false;
+        break;
+      case 53:
+        if (!getVideoRedirectCreative().equals(other.getVideoRedirectCreative())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -270,6 +2910,145 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasAdvertiser()) {
+      hash = (37 * hash) + ADVERTISER_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertiser().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (getCustomFieldValuesCount() > 0) {
+      hash = (37 * hash) + CUSTOM_FIELD_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomFieldValuesList().hashCode();
+    }
+    if (hasPreviewUrl()) {
+      hash = (37 * hash) + PREVIEW_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getPreviewUrl().hashCode();
+    }
+    if (hasSize()) {
+      hash = (37 * hash) + SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getSize().hashCode();
+    }
+    if (hasThirdPartyDataDeclaration()) {
+      hash = (37 * hash) + THIRD_PARTY_DATA_DECLARATION_FIELD_NUMBER;
+      hash = (53 * hash) + getThirdPartyDataDeclaration().hashCode();
+    }
+    if (hasThirdPartyDataDeclarationStatus()) {
+      hash = (37 * hash) + THIRD_PARTY_DATA_DECLARATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + thirdPartyDataDeclarationStatus_;
+    }
+    if (hasSelfDeclaredEuropeanUnionPoliticalContent()) {
+      hash = (37 * hash) + SELF_DECLARED_EUROPEAN_UNION_POLITICAL_CONTENT_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(
+                  getSelfDeclaredEuropeanUnionPoliticalContent());
+    }
+    if (hasAdBadgingEnabled()) {
+      hash = (37 * hash) + AD_BADGING_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdBadgingEnabled());
+    }
+    if (getAppliedLabelsCount() > 0) {
+      hash = (37 * hash) + APPLIED_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + getAppliedLabelsList().hashCode();
+    }
+    if (hasBuyerPlacementConfig()) {
+      hash = (37 * hash) + BUYER_PLACEMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getBuyerPlacementConfig().hashCode();
+    }
+    switch (detailsCase_) {
+      case 20:
+        hash = (37 * hash) + AD_EXCHANGE_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getAdExchangeCreative().hashCode();
+        break;
+      case 22:
+        hash = (37 * hash) + AD_SENSE_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getAdSenseCreative().hashCode();
+        break;
+      case 23:
+        hash = (37 * hash) + ASPECT_RATIO_IMAGE_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getAspectRatioImageCreative().hashCode();
+        break;
+      case 24:
+        hash = (37 * hash) + AUDIO_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getAudioCreative().hashCode();
+        break;
+      case 25:
+        hash = (37 * hash) + AUDIO_REDIRECT_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getAudioRedirectCreative().hashCode();
+        break;
+      case 26:
+        hash = (37 * hash) + CLICK_TRACKING_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getClickTrackingCreative().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + CUSTOM_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomCreative().hashCode();
+        break;
+      case 33:
+        hash = (37 * hash) + HTML5_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getHtml5Creative().hashCode();
+        break;
+      case 19:
+        hash = (37 * hash) + IMAGE_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getImageCreative().hashCode();
+        break;
+      case 35:
+        hash = (37 * hash) + IMAGE_OVERLAY_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getImageOverlayCreative().hashCode();
+        break;
+      case 36:
+        hash = (37 * hash) + IMAGE_REDIRECT_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getImageRedirectCreative().hashCode();
+        break;
+      case 37:
+        hash = (37 * hash) + IMAGE_REDIRECT_OVERLAY_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getImageRedirectOverlayCreative().hashCode();
+        break;
+      case 38:
+        hash = (37 * hash) + INTERNAL_REDIRECT_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getInternalRedirectCreative().hashCode();
+        break;
+      case 39:
+        hash = (37 * hash) + LEGACY_DFP_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getLegacyDfpCreative().hashCode();
+        break;
+      case 42:
+        hash = (37 * hash) + PROGRAMMATIC_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getProgrammaticCreative().hashCode();
+        break;
+      case 43:
+        hash = (37 * hash) + RICH_MEDIA_STUDIO_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getRichMediaStudioCreative().hashCode();
+        break;
+      case 46:
+        hash = (37 * hash) + SET_TOP_BOX_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getSetTopBoxCreative().hashCode();
+        break;
+      case 47:
+        hash = (37 * hash) + TEMPLATE_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getTemplateCreative().hashCode();
+        break;
+      case 48:
+        hash = (37 * hash) + THIRD_PARTY_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getThirdPartyCreative().hashCode();
+        break;
+      case 49:
+        hash = (37 * hash) + VAST_REDIRECT_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getVastRedirectCreative().hashCode();
+        break;
+      case 51:
+        hash = (37 * hash) + VIDEO_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoCreative().hashCode();
+        break;
+      case 53:
+        hash = (37 * hash) + VIDEO_REDIRECT_CREATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getVideoRedirectCreative().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -400,18 +3179,140 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.ads.admanager.v1.Creative.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetUpdateTimeFieldBuilder();
+        internalGetCustomFieldValuesFieldBuilder();
+        internalGetSizeFieldBuilder();
+        internalGetThirdPartyDataDeclarationFieldBuilder();
+        internalGetAppliedLabelsFieldBuilder();
+        internalGetBuyerPlacementConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
+      if (adExchangeCreativeBuilder_ != null) {
+        adExchangeCreativeBuilder_.clear();
+      }
+      if (adSenseCreativeBuilder_ != null) {
+        adSenseCreativeBuilder_.clear();
+      }
+      if (aspectRatioImageCreativeBuilder_ != null) {
+        aspectRatioImageCreativeBuilder_.clear();
+      }
+      if (audioCreativeBuilder_ != null) {
+        audioCreativeBuilder_.clear();
+      }
+      if (audioRedirectCreativeBuilder_ != null) {
+        audioRedirectCreativeBuilder_.clear();
+      }
+      if (clickTrackingCreativeBuilder_ != null) {
+        clickTrackingCreativeBuilder_.clear();
+      }
+      if (customCreativeBuilder_ != null) {
+        customCreativeBuilder_.clear();
+      }
+      if (html5CreativeBuilder_ != null) {
+        html5CreativeBuilder_.clear();
+      }
+      if (imageCreativeBuilder_ != null) {
+        imageCreativeBuilder_.clear();
+      }
+      if (imageOverlayCreativeBuilder_ != null) {
+        imageOverlayCreativeBuilder_.clear();
+      }
+      if (imageRedirectCreativeBuilder_ != null) {
+        imageRedirectCreativeBuilder_.clear();
+      }
+      if (imageRedirectOverlayCreativeBuilder_ != null) {
+        imageRedirectOverlayCreativeBuilder_.clear();
+      }
+      if (internalRedirectCreativeBuilder_ != null) {
+        internalRedirectCreativeBuilder_.clear();
+      }
+      if (legacyDfpCreativeBuilder_ != null) {
+        legacyDfpCreativeBuilder_.clear();
+      }
+      if (programmaticCreativeBuilder_ != null) {
+        programmaticCreativeBuilder_.clear();
+      }
+      if (richMediaStudioCreativeBuilder_ != null) {
+        richMediaStudioCreativeBuilder_.clear();
+      }
+      if (setTopBoxCreativeBuilder_ != null) {
+        setTopBoxCreativeBuilder_.clear();
+      }
+      if (templateCreativeBuilder_ != null) {
+        templateCreativeBuilder_.clear();
+      }
+      if (thirdPartyCreativeBuilder_ != null) {
+        thirdPartyCreativeBuilder_.clear();
+      }
+      if (vastRedirectCreativeBuilder_ != null) {
+        vastRedirectCreativeBuilder_.clear();
+      }
+      if (videoCreativeBuilder_ != null) {
+        videoCreativeBuilder_.clear();
+      }
+      if (videoRedirectCreativeBuilder_ != null) {
+        videoRedirectCreativeBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
+      advertiser_ = "";
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      if (customFieldValuesBuilder_ == null) {
+        customFieldValues_ = java.util.Collections.emptyList();
+      } else {
+        customFieldValues_ = null;
+        customFieldValuesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x04000000);
+      previewUrl_ = "";
+      size_ = null;
+      if (sizeBuilder_ != null) {
+        sizeBuilder_.dispose();
+        sizeBuilder_ = null;
+      }
+      thirdPartyDataDeclaration_ = null;
+      if (thirdPartyDataDeclarationBuilder_ != null) {
+        thirdPartyDataDeclarationBuilder_.dispose();
+        thirdPartyDataDeclarationBuilder_ = null;
+      }
+      thirdPartyDataDeclarationStatus_ = 0;
+      selfDeclaredEuropeanUnionPoliticalContent_ = false;
+      adBadgingEnabled_ = false;
+      if (appliedLabelsBuilder_ == null) {
+        appliedLabels_ = java.util.Collections.emptyList();
+      } else {
+        appliedLabels_ = null;
+        appliedLabelsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000002);
+      buyerPlacementConfig_ = null;
+      if (buyerPlacementConfigBuilder_ != null) {
+        buyerPlacementConfigBuilder_.dispose();
+        buyerPlacementConfigBuilder_ = null;
+      }
+      detailsCase_ = 0;
+      details_ = null;
       return this;
     }
 
@@ -438,24 +3339,170 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.ads.admanager.v1.Creative buildPartial() {
       com.google.ads.admanager.v1.Creative result = new com.google.ads.admanager.v1.Creative(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
 
+    private void buildPartialRepeatedFields(com.google.ads.admanager.v1.Creative result) {
+      if (customFieldValuesBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)) {
+          customFieldValues_ = java.util.Collections.unmodifiableList(customFieldValues_);
+          bitField0_ = (bitField0_ & ~0x04000000);
+        }
+        result.customFieldValues_ = customFieldValues_;
+      } else {
+        result.customFieldValues_ = customFieldValuesBuilder_.build();
+      }
+      if (appliedLabelsBuilder_ == null) {
+        if (((bitField1_ & 0x00000002) != 0)) {
+          appliedLabels_ = java.util.Collections.unmodifiableList(appliedLabels_);
+          bitField1_ = (bitField1_ & ~0x00000002);
+        }
+        result.appliedLabels_ = appliedLabels_;
+      } else {
+        result.appliedLabels_ = appliedLabelsBuilder_.build();
+      }
+    }
+
     private void buildPartial0(com.google.ads.admanager.v1.Creative result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.displayName_ = displayName_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.advertiser_ = advertiser_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.previewUrl_ = previewUrl_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.size_ = sizeBuilder_ == null ? size_ : sizeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.thirdPartyDataDeclaration_ =
+            thirdPartyDataDeclarationBuilder_ == null
+                ? thirdPartyDataDeclaration_
+                : thirdPartyDataDeclarationBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.thirdPartyDataDeclarationStatus_ = thirdPartyDataDeclarationStatus_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.selfDeclaredEuropeanUnionPoliticalContent_ =
+            selfDeclaredEuropeanUnionPoliticalContent_;
+        to_bitField0_ |= 0x00000080;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.ads.admanager.v1.Creative result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.adBadgingEnabled_ = adBadgingEnabled_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.buyerPlacementConfig_ =
+            buyerPlacementConfigBuilder_ == null
+                ? buyerPlacementConfig_
+                : buyerPlacementConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.ads.admanager.v1.Creative result) {
+      result.detailsCase_ = detailsCase_;
+      result.details_ = this.details_;
+      if (detailsCase_ == 20 && adExchangeCreativeBuilder_ != null) {
+        result.details_ = adExchangeCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 22 && adSenseCreativeBuilder_ != null) {
+        result.details_ = adSenseCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 23 && aspectRatioImageCreativeBuilder_ != null) {
+        result.details_ = aspectRatioImageCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 24 && audioCreativeBuilder_ != null) {
+        result.details_ = audioCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 25 && audioRedirectCreativeBuilder_ != null) {
+        result.details_ = audioRedirectCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 26 && clickTrackingCreativeBuilder_ != null) {
+        result.details_ = clickTrackingCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 18 && customCreativeBuilder_ != null) {
+        result.details_ = customCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 33 && html5CreativeBuilder_ != null) {
+        result.details_ = html5CreativeBuilder_.build();
+      }
+      if (detailsCase_ == 19 && imageCreativeBuilder_ != null) {
+        result.details_ = imageCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 35 && imageOverlayCreativeBuilder_ != null) {
+        result.details_ = imageOverlayCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 36 && imageRedirectCreativeBuilder_ != null) {
+        result.details_ = imageRedirectCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 37 && imageRedirectOverlayCreativeBuilder_ != null) {
+        result.details_ = imageRedirectOverlayCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 38 && internalRedirectCreativeBuilder_ != null) {
+        result.details_ = internalRedirectCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 39 && legacyDfpCreativeBuilder_ != null) {
+        result.details_ = legacyDfpCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 42 && programmaticCreativeBuilder_ != null) {
+        result.details_ = programmaticCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 43 && richMediaStudioCreativeBuilder_ != null) {
+        result.details_ = richMediaStudioCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 46 && setTopBoxCreativeBuilder_ != null) {
+        result.details_ = setTopBoxCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 47 && templateCreativeBuilder_ != null) {
+        result.details_ = templateCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 48 && thirdPartyCreativeBuilder_ != null) {
+        result.details_ = thirdPartyCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 49 && vastRedirectCreativeBuilder_ != null) {
+        result.details_ = vastRedirectCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 51 && videoCreativeBuilder_ != null) {
+        result.details_ = videoCreativeBuilder_.build();
+      }
+      if (detailsCase_ == 53 && videoRedirectCreativeBuilder_ != null) {
+        result.details_ = videoRedirectCreativeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -472,13 +3519,215 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
       if (other == com.google.ads.admanager.v1.Creative.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00800000;
         onChanged();
+      }
+      if (other.hasAdvertiser()) {
+        advertiser_ = other.advertiser_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
+      if (customFieldValuesBuilder_ == null) {
+        if (!other.customFieldValues_.isEmpty()) {
+          if (customFieldValues_.isEmpty()) {
+            customFieldValues_ = other.customFieldValues_;
+            bitField0_ = (bitField0_ & ~0x04000000);
+          } else {
+            ensureCustomFieldValuesIsMutable();
+            customFieldValues_.addAll(other.customFieldValues_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customFieldValues_.isEmpty()) {
+          if (customFieldValuesBuilder_.isEmpty()) {
+            customFieldValuesBuilder_.dispose();
+            customFieldValuesBuilder_ = null;
+            customFieldValues_ = other.customFieldValues_;
+            bitField0_ = (bitField0_ & ~0x04000000);
+            customFieldValuesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCustomFieldValuesFieldBuilder()
+                    : null;
+          } else {
+            customFieldValuesBuilder_.addAllMessages(other.customFieldValues_);
+          }
+        }
+      }
+      if (other.hasPreviewUrl()) {
+        previewUrl_ = other.previewUrl_;
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      if (other.hasSize()) {
+        mergeSize(other.getSize());
+      }
+      if (other.hasThirdPartyDataDeclaration()) {
+        mergeThirdPartyDataDeclaration(other.getThirdPartyDataDeclaration());
+      }
+      if (other.hasThirdPartyDataDeclarationStatus()) {
+        setThirdPartyDataDeclarationStatusValue(other.getThirdPartyDataDeclarationStatusValue());
+      }
+      if (other.hasSelfDeclaredEuropeanUnionPoliticalContent()) {
+        setSelfDeclaredEuropeanUnionPoliticalContent(
+            other.getSelfDeclaredEuropeanUnionPoliticalContent());
+      }
+      if (other.hasAdBadgingEnabled()) {
+        setAdBadgingEnabled(other.getAdBadgingEnabled());
+      }
+      if (appliedLabelsBuilder_ == null) {
+        if (!other.appliedLabels_.isEmpty()) {
+          if (appliedLabels_.isEmpty()) {
+            appliedLabels_ = other.appliedLabels_;
+            bitField1_ = (bitField1_ & ~0x00000002);
+          } else {
+            ensureAppliedLabelsIsMutable();
+            appliedLabels_.addAll(other.appliedLabels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.appliedLabels_.isEmpty()) {
+          if (appliedLabelsBuilder_.isEmpty()) {
+            appliedLabelsBuilder_.dispose();
+            appliedLabelsBuilder_ = null;
+            appliedLabels_ = other.appliedLabels_;
+            bitField1_ = (bitField1_ & ~0x00000002);
+            appliedLabelsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAppliedLabelsFieldBuilder()
+                    : null;
+          } else {
+            appliedLabelsBuilder_.addAllMessages(other.appliedLabels_);
+          }
+        }
+      }
+      if (other.hasBuyerPlacementConfig()) {
+        mergeBuyerPlacementConfig(other.getBuyerPlacementConfig());
+      }
+      switch (other.getDetailsCase()) {
+        case AD_EXCHANGE_CREATIVE:
+          {
+            mergeAdExchangeCreative(other.getAdExchangeCreative());
+            break;
+          }
+        case AD_SENSE_CREATIVE:
+          {
+            mergeAdSenseCreative(other.getAdSenseCreative());
+            break;
+          }
+        case ASPECT_RATIO_IMAGE_CREATIVE:
+          {
+            mergeAspectRatioImageCreative(other.getAspectRatioImageCreative());
+            break;
+          }
+        case AUDIO_CREATIVE:
+          {
+            mergeAudioCreative(other.getAudioCreative());
+            break;
+          }
+        case AUDIO_REDIRECT_CREATIVE:
+          {
+            mergeAudioRedirectCreative(other.getAudioRedirectCreative());
+            break;
+          }
+        case CLICK_TRACKING_CREATIVE:
+          {
+            mergeClickTrackingCreative(other.getClickTrackingCreative());
+            break;
+          }
+        case CUSTOM_CREATIVE:
+          {
+            mergeCustomCreative(other.getCustomCreative());
+            break;
+          }
+        case HTML5_CREATIVE:
+          {
+            mergeHtml5Creative(other.getHtml5Creative());
+            break;
+          }
+        case IMAGE_CREATIVE:
+          {
+            mergeImageCreative(other.getImageCreative());
+            break;
+          }
+        case IMAGE_OVERLAY_CREATIVE:
+          {
+            mergeImageOverlayCreative(other.getImageOverlayCreative());
+            break;
+          }
+        case IMAGE_REDIRECT_CREATIVE:
+          {
+            mergeImageRedirectCreative(other.getImageRedirectCreative());
+            break;
+          }
+        case IMAGE_REDIRECT_OVERLAY_CREATIVE:
+          {
+            mergeImageRedirectOverlayCreative(other.getImageRedirectOverlayCreative());
+            break;
+          }
+        case INTERNAL_REDIRECT_CREATIVE:
+          {
+            mergeInternalRedirectCreative(other.getInternalRedirectCreative());
+            break;
+          }
+        case LEGACY_DFP_CREATIVE:
+          {
+            mergeLegacyDfpCreative(other.getLegacyDfpCreative());
+            break;
+          }
+        case PROGRAMMATIC_CREATIVE:
+          {
+            mergeProgrammaticCreative(other.getProgrammaticCreative());
+            break;
+          }
+        case RICH_MEDIA_STUDIO_CREATIVE:
+          {
+            mergeRichMediaStudioCreative(other.getRichMediaStudioCreative());
+            break;
+          }
+        case SET_TOP_BOX_CREATIVE:
+          {
+            mergeSetTopBoxCreative(other.getSetTopBoxCreative());
+            break;
+          }
+        case TEMPLATE_CREATIVE:
+          {
+            mergeTemplateCreative(other.getTemplateCreative());
+            break;
+          }
+        case THIRD_PARTY_CREATIVE:
+          {
+            mergeThirdPartyCreative(other.getThirdPartyCreative());
+            break;
+          }
+        case VAST_REDIRECT_CREATIVE:
+          {
+            mergeVastRedirectCreative(other.getVastRedirectCreative());
+            break;
+          }
+        case VIDEO_CREATIVE:
+          {
+            mergeVideoCreative(other.getVideoCreative());
+            break;
+          }
+        case VIDEO_REDIRECT_CREATIVE:
+          {
+            mergeVideoRedirectCreative(other.getVideoRedirectCreative());
+            break;
+          }
+        case DETAILS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -509,15 +3758,257 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 10
+            case 18:
+              {
+                advertiser_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 26
+            case 34:
+              {
+                previewUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(internalGetSizeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 42
             case 66:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 66
+            case 104:
+              {
+                selfDeclaredEuropeanUnionPoliticalContent_ = input.readBool();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 104
+            case 136:
+              {
+                adBadgingEnabled_ = input.readBool();
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 136
+            case 146:
+              {
+                input.readMessage(
+                    internalGetCustomCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 18;
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    internalGetImageCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 19;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    internalGetAdExchangeCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 20;
+                break;
+              } // case 162
+            case 178:
+              {
+                input.readMessage(
+                    internalGetAdSenseCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 22;
+                break;
+              } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    internalGetAspectRatioImageCreativeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 23;
+                break;
+              } // case 186
+            case 194:
+              {
+                input.readMessage(
+                    internalGetAudioCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 24;
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(
+                    internalGetAudioRedirectCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 25;
+                break;
+              } // case 202
+            case 210:
+              {
+                input.readMessage(
+                    internalGetClickTrackingCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 26;
+                break;
+              } // case 210
+            case 266:
+              {
+                input.readMessage(
+                    internalGetHtml5CreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 33;
+                break;
+              } // case 266
+            case 282:
+              {
+                input.readMessage(
+                    internalGetImageOverlayCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 35;
+                break;
+              } // case 282
+            case 290:
+              {
+                input.readMessage(
+                    internalGetImageRedirectCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 36;
+                break;
+              } // case 290
+            case 298:
+              {
+                input.readMessage(
+                    internalGetImageRedirectOverlayCreativeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 37;
+                break;
+              } // case 298
+            case 306:
+              {
+                input.readMessage(
+                    internalGetInternalRedirectCreativeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 38;
+                break;
+              } // case 306
+            case 314:
+              {
+                input.readMessage(
+                    internalGetLegacyDfpCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 39;
+                break;
+              } // case 314
+            case 338:
+              {
+                input.readMessage(
+                    internalGetProgrammaticCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 42;
+                break;
+              } // case 338
+            case 346:
+              {
+                input.readMessage(
+                    internalGetRichMediaStudioCreativeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 43;
+                break;
+              } // case 346
+            case 370:
+              {
+                input.readMessage(
+                    internalGetSetTopBoxCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 46;
+                break;
+              } // case 370
+            case 378:
+              {
+                input.readMessage(
+                    internalGetTemplateCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 47;
+                break;
+              } // case 378
+            case 386:
+              {
+                input.readMessage(
+                    internalGetThirdPartyCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 48;
+                break;
+              } // case 386
+            case 394:
+              {
+                input.readMessage(
+                    internalGetVastRedirectCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 49;
+                break;
+              } // case 394
+            case 410:
+              {
+                input.readMessage(
+                    internalGetVideoCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 51;
+                break;
+              } // case 410
+            case 426:
+              {
+                input.readMessage(
+                    internalGetVideoRedirectCreativeFieldBuilder().getBuilder(), extensionRegistry);
+                detailsCase_ = 53;
+                break;
+              } // case 426
+            case 450:
+              {
+                com.google.ads.admanager.v1.AppliedLabel m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.AppliedLabel.parser(), extensionRegistry);
+                if (appliedLabelsBuilder_ == null) {
+                  ensureAppliedLabelsIsMutable();
+                  appliedLabels_.add(m);
+                } else {
+                  appliedLabelsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 450
+            case 474:
+              {
+                input.readMessage(
+                    internalGetThirdPartyDataDeclarationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 474
+            case 480:
+              {
+                thirdPartyDataDeclarationStatus_ = input.readEnum();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 480
+            case 610:
+              {
+                com.google.ads.admanager.v1.CustomFieldValue m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.CustomFieldValue.parser(), extensionRegistry);
+                if (customFieldValuesBuilder_ == null) {
+                  ensureCustomFieldValuesIsMutable();
+                  customFieldValues_.add(m);
+                } else {
+                  customFieldValuesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 610
+            case 650:
+              {
+                input.readMessage(
+                    internalGetBuyerPlacementConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 650
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -535,7 +4026,5540 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int detailsCase_ = 0;
+    private java.lang.Object details_;
+
+    public DetailsCase getDetailsCase() {
+      return DetailsCase.forNumber(detailsCase_);
+    }
+
+    public Builder clearDetails() {
+      detailsCase_ = 0;
+      details_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
+    private int bitField1_;
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AdExchangeCreativeDetails,
+            com.google.ads.admanager.v1.AdExchangeCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AdExchangeCreativeDetailsOrBuilder>
+        adExchangeCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the adExchangeCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdExchangeCreative() {
+      return detailsCase_ == 20;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The adExchangeCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AdExchangeCreativeDetails getAdExchangeCreative() {
+      if (adExchangeCreativeBuilder_ == null) {
+        if (detailsCase_ == 20) {
+          return (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 20) {
+          return adExchangeCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdExchangeCreative(
+        com.google.ads.admanager.v1.AdExchangeCreativeDetails value) {
+      if (adExchangeCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        adExchangeCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdExchangeCreative(
+        com.google.ads.admanager.v1.AdExchangeCreativeDetails.Builder builderForValue) {
+      if (adExchangeCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        adExchangeCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAdExchangeCreative(
+        com.google.ads.admanager.v1.AdExchangeCreativeDetails value) {
+      if (adExchangeCreativeBuilder_ == null) {
+        if (detailsCase_ == 20
+            && details_
+                != com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.AdExchangeCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 20) {
+          adExchangeCreativeBuilder_.mergeFrom(value);
+        } else {
+          adExchangeCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 20;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdExchangeCreative() {
+      if (adExchangeCreativeBuilder_ == null) {
+        if (detailsCase_ == 20) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 20) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        adExchangeCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AdExchangeCreativeDetails.Builder
+        getAdExchangeCreativeBuilder() {
+      return internalGetAdExchangeCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AdExchangeCreativeDetailsOrBuilder
+        getAdExchangeCreativeOrBuilder() {
+      if ((detailsCase_ == 20) && (adExchangeCreativeBuilder_ != null)) {
+        return adExchangeCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 20) {
+          return (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An Ad Exchange dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AdExchangeCreativeDetails,
+            com.google.ads.admanager.v1.AdExchangeCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AdExchangeCreativeDetailsOrBuilder>
+        internalGetAdExchangeCreativeFieldBuilder() {
+      if (adExchangeCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 20)) {
+          details_ = com.google.ads.admanager.v1.AdExchangeCreativeDetails.getDefaultInstance();
+        }
+        adExchangeCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.AdExchangeCreativeDetails,
+                com.google.ads.admanager.v1.AdExchangeCreativeDetails.Builder,
+                com.google.ads.admanager.v1.AdExchangeCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.AdExchangeCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 20;
+      onChanged();
+      return adExchangeCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AdSenseCreativeDetails,
+            com.google.ads.admanager.v1.AdSenseCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AdSenseCreativeDetailsOrBuilder>
+        adSenseCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the adSenseCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdSenseCreative() {
+      return detailsCase_ == 22;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The adSenseCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AdSenseCreativeDetails getAdSenseCreative() {
+      if (adSenseCreativeBuilder_ == null) {
+        if (detailsCase_ == 22) {
+          return (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 22) {
+          return adSenseCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdSenseCreative(com.google.ads.admanager.v1.AdSenseCreativeDetails value) {
+      if (adSenseCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        adSenseCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 22;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAdSenseCreative(
+        com.google.ads.admanager.v1.AdSenseCreativeDetails.Builder builderForValue) {
+      if (adSenseCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        adSenseCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 22;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAdSenseCreative(com.google.ads.admanager.v1.AdSenseCreativeDetails value) {
+      if (adSenseCreativeBuilder_ == null) {
+        if (detailsCase_ == 22
+            && details_
+                != com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.AdSenseCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 22) {
+          adSenseCreativeBuilder_.mergeFrom(value);
+        } else {
+          adSenseCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 22;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAdSenseCreative() {
+      if (adSenseCreativeBuilder_ == null) {
+        if (detailsCase_ == 22) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 22) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        adSenseCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AdSenseCreativeDetails.Builder getAdSenseCreativeBuilder() {
+      return internalGetAdSenseCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AdSenseCreativeDetailsOrBuilder
+        getAdSenseCreativeOrBuilder() {
+      if ((detailsCase_ == 22) && (adSenseCreativeBuilder_ != null)) {
+        return adSenseCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 22) {
+          return (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An AdSense dynamic allocation creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AdSenseCreativeDetails,
+            com.google.ads.admanager.v1.AdSenseCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AdSenseCreativeDetailsOrBuilder>
+        internalGetAdSenseCreativeFieldBuilder() {
+      if (adSenseCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 22)) {
+          details_ = com.google.ads.admanager.v1.AdSenseCreativeDetails.getDefaultInstance();
+        }
+        adSenseCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.AdSenseCreativeDetails,
+                com.google.ads.admanager.v1.AdSenseCreativeDetails.Builder,
+                com.google.ads.admanager.v1.AdSenseCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.AdSenseCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 22;
+      onChanged();
+      return adSenseCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AspectRatioImageCreativeDetails,
+            com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AspectRatioImageCreativeDetailsOrBuilder>
+        aspectRatioImageCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the aspectRatioImageCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasAspectRatioImageCreative() {
+      return detailsCase_ == 23;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The aspectRatioImageCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AspectRatioImageCreativeDetails
+        getAspectRatioImageCreative() {
+      if (aspectRatioImageCreativeBuilder_ == null) {
+        if (detailsCase_ == 23) {
+          return (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 23) {
+          return aspectRatioImageCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAspectRatioImageCreative(
+        com.google.ads.admanager.v1.AspectRatioImageCreativeDetails value) {
+      if (aspectRatioImageCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        aspectRatioImageCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAspectRatioImageCreative(
+        com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.Builder builderForValue) {
+      if (aspectRatioImageCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        aspectRatioImageCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAspectRatioImageCreative(
+        com.google.ads.admanager.v1.AspectRatioImageCreativeDetails value) {
+      if (aspectRatioImageCreativeBuilder_ == null) {
+        if (detailsCase_ == 23
+            && details_
+                != com.google.ads.admanager.v1.AspectRatioImageCreativeDetails
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 23) {
+          aspectRatioImageCreativeBuilder_.mergeFrom(value);
+        } else {
+          aspectRatioImageCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 23;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAspectRatioImageCreative() {
+      if (aspectRatioImageCreativeBuilder_ == null) {
+        if (detailsCase_ == 23) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 23) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        aspectRatioImageCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.Builder
+        getAspectRatioImageCreativeBuilder() {
+      return internalGetAspectRatioImageCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AspectRatioImageCreativeDetailsOrBuilder
+        getAspectRatioImageCreativeOrBuilder() {
+      if ((detailsCase_ == 23) && (aspectRatioImageCreativeBuilder_ != null)) {
+        return aspectRatioImageCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 23) {
+          return (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative intended for mobile platforms that displays an
+     * image, whose size is defined as an aspect ratio. It can have multiple
+     * images whose dimensions conform to that aspect ratio.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AspectRatioImageCreativeDetails,
+            com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AspectRatioImageCreativeDetailsOrBuilder>
+        internalGetAspectRatioImageCreativeFieldBuilder() {
+      if (aspectRatioImageCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 23)) {
+          details_ =
+              com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.getDefaultInstance();
+        }
+        aspectRatioImageCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.AspectRatioImageCreativeDetails,
+                com.google.ads.admanager.v1.AspectRatioImageCreativeDetails.Builder,
+                com.google.ads.admanager.v1.AspectRatioImageCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.AspectRatioImageCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 23;
+      onChanged();
+      return aspectRatioImageCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AudioCreativeDetails,
+            com.google.ads.admanager.v1.AudioCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AudioCreativeDetailsOrBuilder>
+        audioCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the audioCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioCreative() {
+      return detailsCase_ == 24;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The audioCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AudioCreativeDetails getAudioCreative() {
+      if (audioCreativeBuilder_ == null) {
+        if (detailsCase_ == 24) {
+          return (com.google.ads.admanager.v1.AudioCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 24) {
+          return audioCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAudioCreative(com.google.ads.admanager.v1.AudioCreativeDetails value) {
+      if (audioCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        audioCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAudioCreative(
+        com.google.ads.admanager.v1.AudioCreativeDetails.Builder builderForValue) {
+      if (audioCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAudioCreative(com.google.ads.admanager.v1.AudioCreativeDetails value) {
+      if (audioCreativeBuilder_ == null) {
+        if (detailsCase_ == 24
+            && details_ != com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.AudioCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.AudioCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 24) {
+          audioCreativeBuilder_.mergeFrom(value);
+        } else {
+          audioCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 24;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAudioCreative() {
+      if (audioCreativeBuilder_ == null) {
+        if (detailsCase_ == 24) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 24) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        audioCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudioCreativeDetails.Builder getAudioCreativeBuilder() {
+      return internalGetAudioCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AudioCreativeDetailsOrBuilder getAudioCreativeOrBuilder() {
+      if ((detailsCase_ == 24) && (audioCreativeBuilder_ != null)) {
+        return audioCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 24) {
+          return (com.google.ads.admanager.v1.AudioCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AudioCreativeDetails,
+            com.google.ads.admanager.v1.AudioCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AudioCreativeDetailsOrBuilder>
+        internalGetAudioCreativeFieldBuilder() {
+      if (audioCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 24)) {
+          details_ = com.google.ads.admanager.v1.AudioCreativeDetails.getDefaultInstance();
+        }
+        audioCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.AudioCreativeDetails,
+                com.google.ads.admanager.v1.AudioCreativeDetails.Builder,
+                com.google.ads.admanager.v1.AudioCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.AudioCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 24;
+      onChanged();
+      return audioCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AudioRedirectCreativeDetails,
+            com.google.ads.admanager.v1.AudioRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AudioRedirectCreativeDetailsOrBuilder>
+        audioRedirectCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the audioRedirectCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudioRedirectCreative() {
+      return detailsCase_ == 25;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The audioRedirectCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AudioRedirectCreativeDetails getAudioRedirectCreative() {
+      if (audioRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 25) {
+          return (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 25) {
+          return audioRedirectCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAudioRedirectCreative(
+        com.google.ads.admanager.v1.AudioRedirectCreativeDetails value) {
+      if (audioRedirectCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        audioRedirectCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 25;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAudioRedirectCreative(
+        com.google.ads.admanager.v1.AudioRedirectCreativeDetails.Builder builderForValue) {
+      if (audioRedirectCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        audioRedirectCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 25;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAudioRedirectCreative(
+        com.google.ads.admanager.v1.AudioRedirectCreativeDetails value) {
+      if (audioRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 25
+            && details_
+                != com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.AudioRedirectCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 25) {
+          audioRedirectCreativeBuilder_.mergeFrom(value);
+        } else {
+          audioRedirectCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 25;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAudioRedirectCreative() {
+      if (audioRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 25) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 25) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        audioRedirectCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AudioRedirectCreativeDetails.Builder
+        getAudioRedirectCreativeBuilder() {
+      return internalGetAudioRedirectCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.AudioRedirectCreativeDetailsOrBuilder
+        getAudioRedirectCreativeOrBuilder() {
+      if ((detailsCase_ == 25) && (audioRedirectCreativeBuilder_ != null)) {
+        return audioRedirectCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 25) {
+          return (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted audio ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.AudioRedirectCreativeDetails,
+            com.google.ads.admanager.v1.AudioRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.AudioRedirectCreativeDetailsOrBuilder>
+        internalGetAudioRedirectCreativeFieldBuilder() {
+      if (audioRedirectCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 25)) {
+          details_ = com.google.ads.admanager.v1.AudioRedirectCreativeDetails.getDefaultInstance();
+        }
+        audioRedirectCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.AudioRedirectCreativeDetails,
+                com.google.ads.admanager.v1.AudioRedirectCreativeDetails.Builder,
+                com.google.ads.admanager.v1.AudioRedirectCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.AudioRedirectCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 25;
+      onChanged();
+      return audioRedirectCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ClickTrackingCreativeDetails,
+            com.google.ads.admanager.v1.ClickTrackingCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ClickTrackingCreativeDetailsOrBuilder>
+        clickTrackingCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clickTrackingCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasClickTrackingCreative() {
+      return detailsCase_ == 26;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clickTrackingCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ClickTrackingCreativeDetails getClickTrackingCreative() {
+      if (clickTrackingCreativeBuilder_ == null) {
+        if (detailsCase_ == 26) {
+          return (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 26) {
+          return clickTrackingCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClickTrackingCreative(
+        com.google.ads.admanager.v1.ClickTrackingCreativeDetails value) {
+      if (clickTrackingCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        clickTrackingCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClickTrackingCreative(
+        com.google.ads.admanager.v1.ClickTrackingCreativeDetails.Builder builderForValue) {
+      if (clickTrackingCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        clickTrackingCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClickTrackingCreative(
+        com.google.ads.admanager.v1.ClickTrackingCreativeDetails value) {
+      if (clickTrackingCreativeBuilder_ == null) {
+        if (detailsCase_ == 26
+            && details_
+                != com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ClickTrackingCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 26) {
+          clickTrackingCreativeBuilder_.mergeFrom(value);
+        } else {
+          clickTrackingCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 26;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClickTrackingCreative() {
+      if (clickTrackingCreativeBuilder_ == null) {
+        if (detailsCase_ == 26) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 26) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        clickTrackingCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ClickTrackingCreativeDetails.Builder
+        getClickTrackingCreativeBuilder() {
+      return internalGetClickTrackingCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ClickTrackingCreativeDetailsOrBuilder
+        getClickTrackingCreativeOrBuilder() {
+      if ((detailsCase_ == 26) && (clickTrackingCreativeBuilder_ != null)) {
+        return clickTrackingCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 26) {
+          return (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A creative that is used for tracking clicks on ads that are
+     * served directly from the customers' web servers or media servers. NOTE:
+     * The size attribute is not used for click tracking creative and it will
+     * not be persisted upon save.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ClickTrackingCreativeDetails,
+            com.google.ads.admanager.v1.ClickTrackingCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ClickTrackingCreativeDetailsOrBuilder>
+        internalGetClickTrackingCreativeFieldBuilder() {
+      if (clickTrackingCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 26)) {
+          details_ = com.google.ads.admanager.v1.ClickTrackingCreativeDetails.getDefaultInstance();
+        }
+        clickTrackingCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ClickTrackingCreativeDetails,
+                com.google.ads.admanager.v1.ClickTrackingCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ClickTrackingCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ClickTrackingCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 26;
+      onChanged();
+      return clickTrackingCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.CustomCreativeDetails,
+            com.google.ads.admanager.v1.CustomCreativeDetails.Builder,
+            com.google.ads.admanager.v1.CustomCreativeDetailsOrBuilder>
+        customCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomCreative() {
+      return detailsCase_ == 18;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.CustomCreativeDetails getCustomCreative() {
+      if (customCreativeBuilder_ == null) {
+        if (detailsCase_ == 18) {
+          return (com.google.ads.admanager.v1.CustomCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 18) {
+          return customCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomCreative(com.google.ads.admanager.v1.CustomCreativeDetails value) {
+      if (customCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        customCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 18;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomCreative(
+        com.google.ads.admanager.v1.CustomCreativeDetails.Builder builderForValue) {
+      if (customCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        customCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 18;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomCreative(com.google.ads.admanager.v1.CustomCreativeDetails value) {
+      if (customCreativeBuilder_ == null) {
+        if (detailsCase_ == 18
+            && details_ != com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.CustomCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.CustomCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 18) {
+          customCreativeBuilder_.mergeFrom(value);
+        } else {
+          customCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 18;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomCreative() {
+      if (customCreativeBuilder_ == null) {
+        if (detailsCase_ == 18) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 18) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        customCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomCreativeDetails.Builder getCustomCreativeBuilder() {
+      return internalGetCustomCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.CustomCreativeDetailsOrBuilder getCustomCreativeOrBuilder() {
+      if ((detailsCase_ == 18) && (customCreativeBuilder_ != null)) {
+        return customCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 18) {
+          return (com.google.ads.admanager.v1.CustomCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a custom HTML snippet and file assets.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.CustomCreativeDetails,
+            com.google.ads.admanager.v1.CustomCreativeDetails.Builder,
+            com.google.ads.admanager.v1.CustomCreativeDetailsOrBuilder>
+        internalGetCustomCreativeFieldBuilder() {
+      if (customCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 18)) {
+          details_ = com.google.ads.admanager.v1.CustomCreativeDetails.getDefaultInstance();
+        }
+        customCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.CustomCreativeDetails,
+                com.google.ads.admanager.v1.CustomCreativeDetails.Builder,
+                com.google.ads.admanager.v1.CustomCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.CustomCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 18;
+      onChanged();
+      return customCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.Html5CreativeDetails,
+            com.google.ads.admanager.v1.Html5CreativeDetails.Builder,
+            com.google.ads.admanager.v1.Html5CreativeDetailsOrBuilder>
+        html5CreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the html5Creative field is set.
+     */
+    @java.lang.Override
+    public boolean hasHtml5Creative() {
+      return detailsCase_ == 33;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The html5Creative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.Html5CreativeDetails getHtml5Creative() {
+      if (html5CreativeBuilder_ == null) {
+        if (detailsCase_ == 33) {
+          return (com.google.ads.admanager.v1.Html5CreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 33) {
+          return html5CreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHtml5Creative(com.google.ads.admanager.v1.Html5CreativeDetails value) {
+      if (html5CreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        html5CreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 33;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setHtml5Creative(
+        com.google.ads.admanager.v1.Html5CreativeDetails.Builder builderForValue) {
+      if (html5CreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        html5CreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 33;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeHtml5Creative(com.google.ads.admanager.v1.Html5CreativeDetails value) {
+      if (html5CreativeBuilder_ == null) {
+        if (detailsCase_ == 33
+            && details_ != com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.Html5CreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.Html5CreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 33) {
+          html5CreativeBuilder_.mergeFrom(value);
+        } else {
+          html5CreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 33;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearHtml5Creative() {
+      if (html5CreativeBuilder_ == null) {
+        if (detailsCase_ == 33) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 33) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        html5CreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Html5CreativeDetails.Builder getHtml5CreativeBuilder() {
+      return internalGetHtml5CreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.Html5CreativeDetailsOrBuilder getHtml5CreativeOrBuilder() {
+      if ((detailsCase_ == 33) && (html5CreativeBuilder_ != null)) {
+        return html5CreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 33) {
+          return (com.google.ads.admanager.v1.Html5CreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+     * third party impression trackers, and a third party click tracker.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.Html5CreativeDetails,
+            com.google.ads.admanager.v1.Html5CreativeDetails.Builder,
+            com.google.ads.admanager.v1.Html5CreativeDetailsOrBuilder>
+        internalGetHtml5CreativeFieldBuilder() {
+      if (html5CreativeBuilder_ == null) {
+        if (!(detailsCase_ == 33)) {
+          details_ = com.google.ads.admanager.v1.Html5CreativeDetails.getDefaultInstance();
+        }
+        html5CreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.Html5CreativeDetails,
+                com.google.ads.admanager.v1.Html5CreativeDetails.Builder,
+                com.google.ads.admanager.v1.Html5CreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.Html5CreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 33;
+      onChanged();
+      return html5CreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageCreativeDetails,
+            com.google.ads.admanager.v1.ImageCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageCreativeDetailsOrBuilder>
+        imageCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageCreative() {
+      return detailsCase_ == 19;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageCreativeDetails getImageCreative() {
+      if (imageCreativeBuilder_ == null) {
+        if (detailsCase_ == 19) {
+          return (com.google.ads.admanager.v1.ImageCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 19) {
+          return imageCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageCreative(com.google.ads.admanager.v1.ImageCreativeDetails value) {
+      if (imageCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 19;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageCreative(
+        com.google.ads.admanager.v1.ImageCreativeDetails.Builder builderForValue) {
+      if (imageCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 19;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeImageCreative(com.google.ads.admanager.v1.ImageCreativeDetails value) {
+      if (imageCreativeBuilder_ == null) {
+        if (detailsCase_ == 19
+            && details_ != com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ImageCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ImageCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 19) {
+          imageCreativeBuilder_.mergeFrom(value);
+        } else {
+          imageCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 19;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageCreative() {
+      if (imageCreativeBuilder_ == null) {
+        if (detailsCase_ == 19) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 19) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ImageCreativeDetails.Builder getImageCreativeBuilder() {
+      return internalGetImageCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageCreativeDetailsOrBuilder getImageCreativeOrBuilder() {
+      if ((detailsCase_ == 19) && (imageCreativeBuilder_ != null)) {
+        return imageCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 19) {
+          return (com.google.ads.admanager.v1.ImageCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that displays an image.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageCreativeDetails,
+            com.google.ads.admanager.v1.ImageCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageCreativeDetailsOrBuilder>
+        internalGetImageCreativeFieldBuilder() {
+      if (imageCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 19)) {
+          details_ = com.google.ads.admanager.v1.ImageCreativeDetails.getDefaultInstance();
+        }
+        imageCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ImageCreativeDetails,
+                com.google.ads.admanager.v1.ImageCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ImageCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ImageCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 19;
+      onChanged();
+      return imageCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageOverlayCreativeDetails,
+            com.google.ads.admanager.v1.ImageOverlayCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageOverlayCreativeDetailsOrBuilder>
+        imageOverlayCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageOverlayCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageOverlayCreative() {
+      return detailsCase_ == 35;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageOverlayCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageOverlayCreativeDetails getImageOverlayCreative() {
+      if (imageOverlayCreativeBuilder_ == null) {
+        if (detailsCase_ == 35) {
+          return (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 35) {
+          return imageOverlayCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageOverlayCreative(
+        com.google.ads.admanager.v1.ImageOverlayCreativeDetails value) {
+      if (imageOverlayCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageOverlayCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 35;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageOverlayCreative(
+        com.google.ads.admanager.v1.ImageOverlayCreativeDetails.Builder builderForValue) {
+      if (imageOverlayCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageOverlayCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 35;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeImageOverlayCreative(
+        com.google.ads.admanager.v1.ImageOverlayCreativeDetails value) {
+      if (imageOverlayCreativeBuilder_ == null) {
+        if (detailsCase_ == 35
+            && details_
+                != com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ImageOverlayCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 35) {
+          imageOverlayCreativeBuilder_.mergeFrom(value);
+        } else {
+          imageOverlayCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 35;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageOverlayCreative() {
+      if (imageOverlayCreativeBuilder_ == null) {
+        if (detailsCase_ == 35) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 35) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageOverlayCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ImageOverlayCreativeDetails.Builder
+        getImageOverlayCreativeBuilder() {
+      return internalGetImageOverlayCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageOverlayCreativeDetailsOrBuilder
+        getImageOverlayCreativeOrBuilder() {
+      if ((detailsCase_ == 35) && (imageOverlayCreativeBuilder_ != null)) {
+        return imageOverlayCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 35) {
+          return (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that displays an image and is served via
+     * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+     * on top of.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageOverlayCreativeDetails,
+            com.google.ads.admanager.v1.ImageOverlayCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageOverlayCreativeDetailsOrBuilder>
+        internalGetImageOverlayCreativeFieldBuilder() {
+      if (imageOverlayCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 35)) {
+          details_ = com.google.ads.admanager.v1.ImageOverlayCreativeDetails.getDefaultInstance();
+        }
+        imageOverlayCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ImageOverlayCreativeDetails,
+                com.google.ads.admanager.v1.ImageOverlayCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ImageOverlayCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ImageOverlayCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 35;
+      onChanged();
+      return imageOverlayCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageRedirectCreativeDetails,
+            com.google.ads.admanager.v1.ImageRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageRedirectCreativeDetailsOrBuilder>
+        imageRedirectCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageRedirectCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageRedirectCreative() {
+      return detailsCase_ == 36;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageRedirectCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageRedirectCreativeDetails getImageRedirectCreative() {
+      if (imageRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 36) {
+          return (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 36) {
+          return imageRedirectCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageRedirectCreative(
+        com.google.ads.admanager.v1.ImageRedirectCreativeDetails value) {
+      if (imageRedirectCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageRedirectCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageRedirectCreative(
+        com.google.ads.admanager.v1.ImageRedirectCreativeDetails.Builder builderForValue) {
+      if (imageRedirectCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageRedirectCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeImageRedirectCreative(
+        com.google.ads.admanager.v1.ImageRedirectCreativeDetails value) {
+      if (imageRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 36
+            && details_
+                != com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ImageRedirectCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 36) {
+          imageRedirectCreativeBuilder_.mergeFrom(value);
+        } else {
+          imageRedirectCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 36;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageRedirectCreative() {
+      if (imageRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 36) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 36) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageRedirectCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ImageRedirectCreativeDetails.Builder
+        getImageRedirectCreativeBuilder() {
+      return internalGetImageRedirectCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageRedirectCreativeDetailsOrBuilder
+        getImageRedirectCreativeOrBuilder() {
+      if ((detailsCase_ == 36) && (imageRedirectCreativeBuilder_ != null)) {
+        return imageRedirectCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 36) {
+          return (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that loads an image asset from a specified URL.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageRedirectCreativeDetails,
+            com.google.ads.admanager.v1.ImageRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageRedirectCreativeDetailsOrBuilder>
+        internalGetImageRedirectCreativeFieldBuilder() {
+      if (imageRedirectCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 36)) {
+          details_ = com.google.ads.admanager.v1.ImageRedirectCreativeDetails.getDefaultInstance();
+        }
+        imageRedirectCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ImageRedirectCreativeDetails,
+                com.google.ads.admanager.v1.ImageRedirectCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ImageRedirectCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ImageRedirectCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 36;
+      onChanged();
+      return imageRedirectCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails,
+            com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetailsOrBuilder>
+        imageRedirectOverlayCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the imageRedirectOverlayCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageRedirectOverlayCreative() {
+      return detailsCase_ == 37;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The imageRedirectOverlayCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails
+        getImageRedirectOverlayCreative() {
+      if (imageRedirectOverlayCreativeBuilder_ == null) {
+        if (detailsCase_ == 37) {
+          return (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 37) {
+          return imageRedirectOverlayCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageRedirectOverlayCreative(
+        com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails value) {
+      if (imageRedirectOverlayCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        imageRedirectOverlayCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 37;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setImageRedirectOverlayCreative(
+        com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.Builder builderForValue) {
+      if (imageRedirectOverlayCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        imageRedirectOverlayCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 37;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeImageRedirectOverlayCreative(
+        com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails value) {
+      if (imageRedirectOverlayCreativeBuilder_ == null) {
+        if (detailsCase_ == 37
+            && details_
+                != com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 37) {
+          imageRedirectOverlayCreativeBuilder_.mergeFrom(value);
+        } else {
+          imageRedirectOverlayCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 37;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearImageRedirectOverlayCreative() {
+      if (imageRedirectOverlayCreativeBuilder_ == null) {
+        if (detailsCase_ == 37) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 37) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        imageRedirectOverlayCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.Builder
+        getImageRedirectOverlayCreativeBuilder() {
+      return internalGetImageRedirectOverlayCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetailsOrBuilder
+        getImageRedirectOverlayCreativeOrBuilder() {
+      if ((detailsCase_ == 37) && (imageRedirectOverlayCreativeBuilder_ != null)) {
+        return imageRedirectOverlayCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 37) {
+          return (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An overlay Creative that loads an image asset from a specified
+     * URL and is served via VAST XML. Overlays cover part of the video content
+     * they are displayed on top of. This creative is read only.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails,
+            com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetailsOrBuilder>
+        internalGetImageRedirectOverlayCreativeFieldBuilder() {
+      if (imageRedirectOverlayCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 37)) {
+          details_ =
+              com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.getDefaultInstance();
+        }
+        imageRedirectOverlayCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails,
+                com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 37;
+      onChanged();
+      return imageRedirectOverlayCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.InternalRedirectCreativeDetails,
+            com.google.ads.admanager.v1.InternalRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.InternalRedirectCreativeDetailsOrBuilder>
+        internalRedirectCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the internalRedirectCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasInternalRedirectCreative() {
+      return detailsCase_ == 38;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The internalRedirectCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.InternalRedirectCreativeDetails
+        getInternalRedirectCreative() {
+      if (internalRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 38) {
+          return (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.InternalRedirectCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 38) {
+          return internalRedirectCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.InternalRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInternalRedirectCreative(
+        com.google.ads.admanager.v1.InternalRedirectCreativeDetails value) {
+      if (internalRedirectCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        internalRedirectCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInternalRedirectCreative(
+        com.google.ads.admanager.v1.InternalRedirectCreativeDetails.Builder builderForValue) {
+      if (internalRedirectCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        internalRedirectCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInternalRedirectCreative(
+        com.google.ads.admanager.v1.InternalRedirectCreativeDetails value) {
+      if (internalRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 38
+            && details_
+                != com.google.ads.admanager.v1.InternalRedirectCreativeDetails
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.InternalRedirectCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 38) {
+          internalRedirectCreativeBuilder_.mergeFrom(value);
+        } else {
+          internalRedirectCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInternalRedirectCreative() {
+      if (internalRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 38) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 38) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        internalRedirectCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.InternalRedirectCreativeDetails.Builder
+        getInternalRedirectCreativeBuilder() {
+      return internalGetInternalRedirectCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.InternalRedirectCreativeDetailsOrBuilder
+        getInternalRedirectCreativeOrBuilder() {
+      if ((detailsCase_ == 38) && (internalRedirectCreativeBuilder_ != null)) {
+        return internalRedirectCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 38) {
+          return (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.InternalRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative hosted by Campaign Manager 360.
+     *
+     * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+     * retrieve a creative asset. However, Campaign Manager 360 tags are not
+     * sent to the user's browser. Instead, they are processed internally within
+     * the Google Marketing Platform system.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.InternalRedirectCreativeDetails,
+            com.google.ads.admanager.v1.InternalRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.InternalRedirectCreativeDetailsOrBuilder>
+        internalGetInternalRedirectCreativeFieldBuilder() {
+      if (internalRedirectCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 38)) {
+          details_ =
+              com.google.ads.admanager.v1.InternalRedirectCreativeDetails.getDefaultInstance();
+        }
+        internalRedirectCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.InternalRedirectCreativeDetails,
+                com.google.ads.admanager.v1.InternalRedirectCreativeDetails.Builder,
+                com.google.ads.admanager.v1.InternalRedirectCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.InternalRedirectCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 38;
+      onChanged();
+      return internalRedirectCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LegacyDfpCreativeDetails,
+            com.google.ads.admanager.v1.LegacyDfpCreativeDetails.Builder,
+            com.google.ads.admanager.v1.LegacyDfpCreativeDetailsOrBuilder>
+        legacyDfpCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the legacyDfpCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasLegacyDfpCreative() {
+      return detailsCase_ == 39;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The legacyDfpCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LegacyDfpCreativeDetails getLegacyDfpCreative() {
+      if (legacyDfpCreativeBuilder_ == null) {
+        if (detailsCase_ == 39) {
+          return (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 39) {
+          return legacyDfpCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLegacyDfpCreative(
+        com.google.ads.admanager.v1.LegacyDfpCreativeDetails value) {
+      if (legacyDfpCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        legacyDfpCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 39;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLegacyDfpCreative(
+        com.google.ads.admanager.v1.LegacyDfpCreativeDetails.Builder builderForValue) {
+      if (legacyDfpCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        legacyDfpCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 39;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLegacyDfpCreative(
+        com.google.ads.admanager.v1.LegacyDfpCreativeDetails value) {
+      if (legacyDfpCreativeBuilder_ == null) {
+        if (detailsCase_ == 39
+            && details_
+                != com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.LegacyDfpCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 39) {
+          legacyDfpCreativeBuilder_.mergeFrom(value);
+        } else {
+          legacyDfpCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 39;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLegacyDfpCreative() {
+      if (legacyDfpCreativeBuilder_ == null) {
+        if (detailsCase_ == 39) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 39) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        legacyDfpCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LegacyDfpCreativeDetails.Builder
+        getLegacyDfpCreativeBuilder() {
+      return internalGetLegacyDfpCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LegacyDfpCreativeDetailsOrBuilder
+        getLegacyDfpCreativeOrBuilder() {
+      if ((detailsCase_ == 39) && (legacyDfpCreativeBuilder_ != null)) {
+        return legacyDfpCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 39) {
+          return (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that isn't supported by Google DFP, but was migrated
+     * from DART. Creatives of this type cannot be created or modified.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LegacyDfpCreativeDetails,
+            com.google.ads.admanager.v1.LegacyDfpCreativeDetails.Builder,
+            com.google.ads.admanager.v1.LegacyDfpCreativeDetailsOrBuilder>
+        internalGetLegacyDfpCreativeFieldBuilder() {
+      if (legacyDfpCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 39)) {
+          details_ = com.google.ads.admanager.v1.LegacyDfpCreativeDetails.getDefaultInstance();
+        }
+        legacyDfpCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.LegacyDfpCreativeDetails,
+                com.google.ads.admanager.v1.LegacyDfpCreativeDetails.Builder,
+                com.google.ads.admanager.v1.LegacyDfpCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.LegacyDfpCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 39;
+      onChanged();
+      return legacyDfpCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ProgrammaticCreativeDetails,
+            com.google.ads.admanager.v1.ProgrammaticCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ProgrammaticCreativeDetailsOrBuilder>
+        programmaticCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the programmaticCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasProgrammaticCreative() {
+      return detailsCase_ == 42;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The programmaticCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ProgrammaticCreativeDetails getProgrammaticCreative() {
+      if (programmaticCreativeBuilder_ == null) {
+        if (detailsCase_ == 42) {
+          return (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 42) {
+          return programmaticCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProgrammaticCreative(
+        com.google.ads.admanager.v1.ProgrammaticCreativeDetails value) {
+      if (programmaticCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        programmaticCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProgrammaticCreative(
+        com.google.ads.admanager.v1.ProgrammaticCreativeDetails.Builder builderForValue) {
+      if (programmaticCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        programmaticCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProgrammaticCreative(
+        com.google.ads.admanager.v1.ProgrammaticCreativeDetails value) {
+      if (programmaticCreativeBuilder_ == null) {
+        if (detailsCase_ == 42
+            && details_
+                != com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ProgrammaticCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 42) {
+          programmaticCreativeBuilder_.mergeFrom(value);
+        } else {
+          programmaticCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 42;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProgrammaticCreative() {
+      if (programmaticCreativeBuilder_ == null) {
+        if (detailsCase_ == 42) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 42) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        programmaticCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ProgrammaticCreativeDetails.Builder
+        getProgrammaticCreativeBuilder() {
+      return internalGetProgrammaticCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ProgrammaticCreativeDetailsOrBuilder
+        getProgrammaticCreativeOrBuilder() {
+      if ((detailsCase_ == 42) && (programmaticCreativeBuilder_ != null)) {
+        return programmaticCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 42) {
+          return (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative used for programmatic trafficking. This creative
+     * will be auto-created with the right approval from the buyer. This
+     * creative cannot be created through the API. This creative can be updated.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ProgrammaticCreativeDetails,
+            com.google.ads.admanager.v1.ProgrammaticCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ProgrammaticCreativeDetailsOrBuilder>
+        internalGetProgrammaticCreativeFieldBuilder() {
+      if (programmaticCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 42)) {
+          details_ = com.google.ads.admanager.v1.ProgrammaticCreativeDetails.getDefaultInstance();
+        }
+        programmaticCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ProgrammaticCreativeDetails,
+                com.google.ads.admanager.v1.ProgrammaticCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ProgrammaticCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ProgrammaticCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 42;
+      onChanged();
+      return programmaticCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.RichMediaStudioCreativeDetails,
+            com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.Builder,
+            com.google.ads.admanager.v1.RichMediaStudioCreativeDetailsOrBuilder>
+        richMediaStudioCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the richMediaStudioCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasRichMediaStudioCreative() {
+      return detailsCase_ == 43;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The richMediaStudioCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.RichMediaStudioCreativeDetails getRichMediaStudioCreative() {
+      if (richMediaStudioCreativeBuilder_ == null) {
+        if (detailsCase_ == 43) {
+          return (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 43) {
+          return richMediaStudioCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRichMediaStudioCreative(
+        com.google.ads.admanager.v1.RichMediaStudioCreativeDetails value) {
+      if (richMediaStudioCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        richMediaStudioCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 43;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRichMediaStudioCreative(
+        com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.Builder builderForValue) {
+      if (richMediaStudioCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        richMediaStudioCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 43;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRichMediaStudioCreative(
+        com.google.ads.admanager.v1.RichMediaStudioCreativeDetails value) {
+      if (richMediaStudioCreativeBuilder_ == null) {
+        if (detailsCase_ == 43
+            && details_
+                != com.google.ads.admanager.v1.RichMediaStudioCreativeDetails
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 43) {
+          richMediaStudioCreativeBuilder_.mergeFrom(value);
+        } else {
+          richMediaStudioCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 43;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRichMediaStudioCreative() {
+      if (richMediaStudioCreativeBuilder_ == null) {
+        if (detailsCase_ == 43) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 43) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        richMediaStudioCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.Builder
+        getRichMediaStudioCreativeBuilder() {
+      return internalGetRichMediaStudioCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.RichMediaStudioCreativeDetailsOrBuilder
+        getRichMediaStudioCreativeOrBuilder() {
+      if ((detailsCase_ == 43) && (richMediaStudioCreativeBuilder_ != null)) {
+        return richMediaStudioCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 43) {
+          return (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by a Rich Media Studio. You cannot
+     * create this creative, but you can update some fields of this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.RichMediaStudioCreativeDetails,
+            com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.Builder,
+            com.google.ads.admanager.v1.RichMediaStudioCreativeDetailsOrBuilder>
+        internalGetRichMediaStudioCreativeFieldBuilder() {
+      if (richMediaStudioCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 43)) {
+          details_ =
+              com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.getDefaultInstance();
+        }
+        richMediaStudioCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.RichMediaStudioCreativeDetails,
+                com.google.ads.admanager.v1.RichMediaStudioCreativeDetails.Builder,
+                com.google.ads.admanager.v1.RichMediaStudioCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.RichMediaStudioCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 43;
+      onChanged();
+      return richMediaStudioCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.SetTopBoxCreativeDetails,
+            com.google.ads.admanager.v1.SetTopBoxCreativeDetails.Builder,
+            com.google.ads.admanager.v1.SetTopBoxCreativeDetailsOrBuilder>
+        setTopBoxCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the setTopBoxCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasSetTopBoxCreative() {
+      return detailsCase_ == 46;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The setTopBoxCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.SetTopBoxCreativeDetails getSetTopBoxCreative() {
+      if (setTopBoxCreativeBuilder_ == null) {
+        if (detailsCase_ == 46) {
+          return (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 46) {
+          return setTopBoxCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSetTopBoxCreative(
+        com.google.ads.admanager.v1.SetTopBoxCreativeDetails value) {
+      if (setTopBoxCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        setTopBoxCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 46;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSetTopBoxCreative(
+        com.google.ads.admanager.v1.SetTopBoxCreativeDetails.Builder builderForValue) {
+      if (setTopBoxCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        setTopBoxCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 46;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSetTopBoxCreative(
+        com.google.ads.admanager.v1.SetTopBoxCreativeDetails value) {
+      if (setTopBoxCreativeBuilder_ == null) {
+        if (detailsCase_ == 46
+            && details_
+                != com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.SetTopBoxCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 46) {
+          setTopBoxCreativeBuilder_.mergeFrom(value);
+        } else {
+          setTopBoxCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 46;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSetTopBoxCreative() {
+      if (setTopBoxCreativeBuilder_ == null) {
+        if (detailsCase_ == 46) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 46) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        setTopBoxCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.SetTopBoxCreativeDetails.Builder
+        getSetTopBoxCreativeBuilder() {
+      return internalGetSetTopBoxCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.SetTopBoxCreativeDetailsOrBuilder
+        getSetTopBoxCreativeOrBuilder() {
+      if ((detailsCase_ == 46) && (setTopBoxCreativeBuilder_ != null)) {
+        return setTopBoxCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 46) {
+          return (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that will be served into cable set-top boxes. There
+     * are no assets for this creative type, as they are hosted by external
+     * cable systems.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.SetTopBoxCreativeDetails,
+            com.google.ads.admanager.v1.SetTopBoxCreativeDetails.Builder,
+            com.google.ads.admanager.v1.SetTopBoxCreativeDetailsOrBuilder>
+        internalGetSetTopBoxCreativeFieldBuilder() {
+      if (setTopBoxCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 46)) {
+          details_ = com.google.ads.admanager.v1.SetTopBoxCreativeDetails.getDefaultInstance();
+        }
+        setTopBoxCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.SetTopBoxCreativeDetails,
+                com.google.ads.admanager.v1.SetTopBoxCreativeDetails.Builder,
+                com.google.ads.admanager.v1.SetTopBoxCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.SetTopBoxCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 46;
+      onChanged();
+      return setTopBoxCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.TemplateCreativeDetails,
+            com.google.ads.admanager.v1.TemplateCreativeDetails.Builder,
+            com.google.ads.admanager.v1.TemplateCreativeDetailsOrBuilder>
+        templateCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the templateCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasTemplateCreative() {
+      return detailsCase_ == 47;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The templateCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.TemplateCreativeDetails getTemplateCreative() {
+      if (templateCreativeBuilder_ == null) {
+        if (detailsCase_ == 47) {
+          return (com.google.ads.admanager.v1.TemplateCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 47) {
+          return templateCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTemplateCreative(com.google.ads.admanager.v1.TemplateCreativeDetails value) {
+      if (templateCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        templateCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 47;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTemplateCreative(
+        com.google.ads.admanager.v1.TemplateCreativeDetails.Builder builderForValue) {
+      if (templateCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        templateCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 47;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTemplateCreative(
+        com.google.ads.admanager.v1.TemplateCreativeDetails value) {
+      if (templateCreativeBuilder_ == null) {
+        if (detailsCase_ == 47
+            && details_
+                != com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.TemplateCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.TemplateCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 47) {
+          templateCreativeBuilder_.mergeFrom(value);
+        } else {
+          templateCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 47;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTemplateCreative() {
+      if (templateCreativeBuilder_ == null) {
+        if (detailsCase_ == 47) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 47) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        templateCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.TemplateCreativeDetails.Builder
+        getTemplateCreativeBuilder() {
+      return internalGetTemplateCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.TemplateCreativeDetailsOrBuilder
+        getTemplateCreativeOrBuilder() {
+      if ((detailsCase_ == 47) && (templateCreativeBuilder_ != null)) {
+        return templateCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 47) {
+          return (com.google.ads.admanager.v1.TemplateCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is created by the specified creative template.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.TemplateCreativeDetails,
+            com.google.ads.admanager.v1.TemplateCreativeDetails.Builder,
+            com.google.ads.admanager.v1.TemplateCreativeDetailsOrBuilder>
+        internalGetTemplateCreativeFieldBuilder() {
+      if (templateCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 47)) {
+          details_ = com.google.ads.admanager.v1.TemplateCreativeDetails.getDefaultInstance();
+        }
+        templateCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.TemplateCreativeDetails,
+                com.google.ads.admanager.v1.TemplateCreativeDetails.Builder,
+                com.google.ads.admanager.v1.TemplateCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.TemplateCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 47;
+      onChanged();
+      return templateCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ThirdPartyCreativeDetails,
+            com.google.ads.admanager.v1.ThirdPartyCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ThirdPartyCreativeDetailsOrBuilder>
+        thirdPartyCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thirdPartyCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasThirdPartyCreative() {
+      return detailsCase_ == 48;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thirdPartyCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ThirdPartyCreativeDetails getThirdPartyCreative() {
+      if (thirdPartyCreativeBuilder_ == null) {
+        if (detailsCase_ == 48) {
+          return (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 48) {
+          return thirdPartyCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyCreative(
+        com.google.ads.admanager.v1.ThirdPartyCreativeDetails value) {
+      if (thirdPartyCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        thirdPartyCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 48;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyCreative(
+        com.google.ads.admanager.v1.ThirdPartyCreativeDetails.Builder builderForValue) {
+      if (thirdPartyCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        thirdPartyCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 48;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeThirdPartyCreative(
+        com.google.ads.admanager.v1.ThirdPartyCreativeDetails value) {
+      if (thirdPartyCreativeBuilder_ == null) {
+        if (detailsCase_ == 48
+            && details_
+                != com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.ThirdPartyCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 48) {
+          thirdPartyCreativeBuilder_.mergeFrom(value);
+        } else {
+          thirdPartyCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 48;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearThirdPartyCreative() {
+      if (thirdPartyCreativeBuilder_ == null) {
+        if (detailsCase_ == 48) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 48) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        thirdPartyCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ThirdPartyCreativeDetails.Builder
+        getThirdPartyCreativeBuilder() {
+      return internalGetThirdPartyCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ThirdPartyCreativeDetailsOrBuilder
+        getThirdPartyCreativeOrBuilder() {
+      if ((detailsCase_ == 48) && (thirdPartyCreativeBuilder_ != null)) {
+        return thirdPartyCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 48) {
+          return (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that is served by a 3rd-party vendor.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ThirdPartyCreativeDetails,
+            com.google.ads.admanager.v1.ThirdPartyCreativeDetails.Builder,
+            com.google.ads.admanager.v1.ThirdPartyCreativeDetailsOrBuilder>
+        internalGetThirdPartyCreativeFieldBuilder() {
+      if (thirdPartyCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 48)) {
+          details_ = com.google.ads.admanager.v1.ThirdPartyCreativeDetails.getDefaultInstance();
+        }
+        thirdPartyCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ThirdPartyCreativeDetails,
+                com.google.ads.admanager.v1.ThirdPartyCreativeDetails.Builder,
+                com.google.ads.admanager.v1.ThirdPartyCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.ThirdPartyCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 48;
+      onChanged();
+      return thirdPartyCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.VastRedirectCreativeDetails,
+            com.google.ads.admanager.v1.VastRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.VastRedirectCreativeDetailsOrBuilder>
+        vastRedirectCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the vastRedirectCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasVastRedirectCreative() {
+      return detailsCase_ == 49;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The vastRedirectCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.VastRedirectCreativeDetails getVastRedirectCreative() {
+      if (vastRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 49) {
+          return (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 49) {
+          return vastRedirectCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVastRedirectCreative(
+        com.google.ads.admanager.v1.VastRedirectCreativeDetails value) {
+      if (vastRedirectCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        vastRedirectCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 49;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVastRedirectCreative(
+        com.google.ads.admanager.v1.VastRedirectCreativeDetails.Builder builderForValue) {
+      if (vastRedirectCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        vastRedirectCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 49;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVastRedirectCreative(
+        com.google.ads.admanager.v1.VastRedirectCreativeDetails value) {
+      if (vastRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 49
+            && details_
+                != com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.VastRedirectCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 49) {
+          vastRedirectCreativeBuilder_.mergeFrom(value);
+        } else {
+          vastRedirectCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 49;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVastRedirectCreative() {
+      if (vastRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 49) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 49) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        vastRedirectCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.VastRedirectCreativeDetails.Builder
+        getVastRedirectCreativeBuilder() {
+      return internalGetVastRedirectCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.VastRedirectCreativeDetailsOrBuilder
+        getVastRedirectCreativeOrBuilder() {
+      if ((detailsCase_ == 49) && (vastRedirectCreativeBuilder_ != null)) {
+        return vastRedirectCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 49) {
+          return (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that points to an externally hosted VAST ad and is
+     * served via VAST XML as a VAST Wrapper.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.VastRedirectCreativeDetails,
+            com.google.ads.admanager.v1.VastRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.VastRedirectCreativeDetailsOrBuilder>
+        internalGetVastRedirectCreativeFieldBuilder() {
+      if (vastRedirectCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 49)) {
+          details_ = com.google.ads.admanager.v1.VastRedirectCreativeDetails.getDefaultInstance();
+        }
+        vastRedirectCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.VastRedirectCreativeDetails,
+                com.google.ads.admanager.v1.VastRedirectCreativeDetails.Builder,
+                com.google.ads.admanager.v1.VastRedirectCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.VastRedirectCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 49;
+      onChanged();
+      return vastRedirectCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.VideoCreativeDetails,
+            com.google.ads.admanager.v1.VideoCreativeDetails.Builder,
+            com.google.ads.admanager.v1.VideoCreativeDetailsOrBuilder>
+        videoCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the videoCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasVideoCreative() {
+      return detailsCase_ == 51;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The videoCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.VideoCreativeDetails getVideoCreative() {
+      if (videoCreativeBuilder_ == null) {
+        if (detailsCase_ == 51) {
+          return (com.google.ads.admanager.v1.VideoCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 51) {
+          return videoCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVideoCreative(com.google.ads.admanager.v1.VideoCreativeDetails value) {
+      if (videoCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        videoCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 51;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVideoCreative(
+        com.google.ads.admanager.v1.VideoCreativeDetails.Builder builderForValue) {
+      if (videoCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 51;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVideoCreative(com.google.ads.admanager.v1.VideoCreativeDetails value) {
+      if (videoCreativeBuilder_ == null) {
+        if (detailsCase_ == 51
+            && details_ != com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.VideoCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.VideoCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 51) {
+          videoCreativeBuilder_.mergeFrom(value);
+        } else {
+          videoCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 51;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVideoCreative() {
+      if (videoCreativeBuilder_ == null) {
+        if (detailsCase_ == 51) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 51) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        videoCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.VideoCreativeDetails.Builder getVideoCreativeBuilder() {
+      return internalGetVideoCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.VideoCreativeDetailsOrBuilder getVideoCreativeOrBuilder() {
+      if ((detailsCase_ == 51) && (videoCreativeBuilder_ != null)) {
+        return videoCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 51) {
+          return (com.google.ads.admanager.v1.VideoCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains Ad Manager hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.VideoCreativeDetails,
+            com.google.ads.admanager.v1.VideoCreativeDetails.Builder,
+            com.google.ads.admanager.v1.VideoCreativeDetailsOrBuilder>
+        internalGetVideoCreativeFieldBuilder() {
+      if (videoCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 51)) {
+          details_ = com.google.ads.admanager.v1.VideoCreativeDetails.getDefaultInstance();
+        }
+        videoCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.VideoCreativeDetails,
+                com.google.ads.admanager.v1.VideoCreativeDetails.Builder,
+                com.google.ads.admanager.v1.VideoCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.VideoCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 51;
+      onChanged();
+      return videoCreativeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.VideoRedirectCreativeDetails,
+            com.google.ads.admanager.v1.VideoRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.VideoRedirectCreativeDetailsOrBuilder>
+        videoRedirectCreativeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the videoRedirectCreative field is set.
+     */
+    @java.lang.Override
+    public boolean hasVideoRedirectCreative() {
+      return detailsCase_ == 53;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The videoRedirectCreative.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.VideoRedirectCreativeDetails getVideoRedirectCreative() {
+      if (videoRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 53) {
+          return (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance();
+      } else {
+        if (detailsCase_ == 53) {
+          return videoRedirectCreativeBuilder_.getMessage();
+        }
+        return com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVideoRedirectCreative(
+        com.google.ads.admanager.v1.VideoRedirectCreativeDetails value) {
+      if (videoRedirectCreativeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        details_ = value;
+        onChanged();
+      } else {
+        videoRedirectCreativeBuilder_.setMessage(value);
+      }
+      detailsCase_ = 53;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVideoRedirectCreative(
+        com.google.ads.admanager.v1.VideoRedirectCreativeDetails.Builder builderForValue) {
+      if (videoRedirectCreativeBuilder_ == null) {
+        details_ = builderForValue.build();
+        onChanged();
+      } else {
+        videoRedirectCreativeBuilder_.setMessage(builderForValue.build());
+      }
+      detailsCase_ = 53;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeVideoRedirectCreative(
+        com.google.ads.admanager.v1.VideoRedirectCreativeDetails value) {
+      if (videoRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 53
+            && details_
+                != com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance()) {
+          details_ =
+              com.google.ads.admanager.v1.VideoRedirectCreativeDetails.newBuilder(
+                      (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          details_ = value;
+        }
+        onChanged();
+      } else {
+        if (detailsCase_ == 53) {
+          videoRedirectCreativeBuilder_.mergeFrom(value);
+        } else {
+          videoRedirectCreativeBuilder_.setMessage(value);
+        }
+      }
+      detailsCase_ = 53;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVideoRedirectCreative() {
+      if (videoRedirectCreativeBuilder_ == null) {
+        if (detailsCase_ == 53) {
+          detailsCase_ = 0;
+          details_ = null;
+          onChanged();
+        }
+      } else {
+        if (detailsCase_ == 53) {
+          detailsCase_ = 0;
+          details_ = null;
+        }
+        videoRedirectCreativeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.VideoRedirectCreativeDetails.Builder
+        getVideoRedirectCreativeBuilder() {
+      return internalGetVideoRedirectCreativeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.VideoRedirectCreativeDetailsOrBuilder
+        getVideoRedirectCreativeOrBuilder() {
+      if ((detailsCase_ == 53) && (videoRedirectCreativeBuilder_ != null)) {
+        return videoRedirectCreativeBuilder_.getMessageOrBuilder();
+      } else {
+        if (detailsCase_ == 53) {
+          return (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_;
+        }
+        return com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A Creative that contains externally hosted video ads and is
+     * served via VAST XML.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.VideoRedirectCreativeDetails,
+            com.google.ads.admanager.v1.VideoRedirectCreativeDetails.Builder,
+            com.google.ads.admanager.v1.VideoRedirectCreativeDetailsOrBuilder>
+        internalGetVideoRedirectCreativeFieldBuilder() {
+      if (videoRedirectCreativeBuilder_ == null) {
+        if (!(detailsCase_ == 53)) {
+          details_ = com.google.ads.admanager.v1.VideoRedirectCreativeDetails.getDefaultInstance();
+        }
+        videoRedirectCreativeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.VideoRedirectCreativeDetails,
+                com.google.ads.admanager.v1.VideoRedirectCreativeDetails.Builder,
+                com.google.ads.admanager.v1.VideoRedirectCreativeDetailsOrBuilder>(
+                (com.google.ads.admanager.v1.VideoRedirectCreativeDetails) details_,
+                getParentForChildren(),
+                isClean());
+        details_ = null;
+      }
+      detailsCase_ = 53;
+      onChanged();
+      return videoRedirectCreativeBuilder_;
+    }
 
     private java.lang.Object name_ = "";
 
@@ -605,7 +9629,7 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -624,7 +9648,7 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -648,7 +9672,7 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -668,7 +9692,7 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
      * @return Whether the displayName field is set.
      */
     public boolean hasDisplayName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -737,7 +9761,7 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -756,7 +9780,7 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -780,9 +9804,2349 @@ public final class Creative extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object advertiser_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the advertiser field is set.
+     */
+    public boolean hasAdvertiser() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The advertiser.
+     */
+    public java.lang.String getAdvertiser() {
+      java.lang.Object ref = advertiser_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        advertiser_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for advertiser.
+     */
+    public com.google.protobuf.ByteString getAdvertiserBytes() {
+      java.lang.Object ref = advertiser_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        advertiser_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The advertiser to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiser(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      advertiser_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertiser() {
+      advertiser_ = getDefaultInstance().getAdvertiser();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for advertiser to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiserBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      advertiser_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The instant this Creative was last modified.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.CustomFieldValue> customFieldValues_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCustomFieldValuesIsMutable() {
+      if (!((bitField0_ & 0x04000000) != 0)) {
+        customFieldValues_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.CustomFieldValue>(
+                customFieldValues_);
+        bitField0_ |= 0x04000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CustomFieldValue,
+            com.google.ads.admanager.v1.CustomFieldValue.Builder,
+            com.google.ads.admanager.v1.CustomFieldValueOrBuilder>
+        customFieldValuesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CustomFieldValue> getCustomFieldValuesList() {
+      if (customFieldValuesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customFieldValues_);
+      } else {
+        return customFieldValuesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCustomFieldValuesCount() {
+      if (customFieldValuesBuilder_ == null) {
+        return customFieldValues_.size();
+      } else {
+        return customFieldValuesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomFieldValue getCustomFieldValues(int index) {
+      if (customFieldValuesBuilder_ == null) {
+        return customFieldValues_.get(index);
+      } else {
+        return customFieldValuesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomFieldValues(
+        int index, com.google.ads.admanager.v1.CustomFieldValue value) {
+      if (customFieldValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.set(index, value);
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomFieldValues(
+        int index, com.google.ads.admanager.v1.CustomFieldValue.Builder builderForValue) {
+      if (customFieldValuesBuilder_ == null) {
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomFieldValues(com.google.ads.admanager.v1.CustomFieldValue value) {
+      if (customFieldValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.add(value);
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomFieldValues(
+        int index, com.google.ads.admanager.v1.CustomFieldValue value) {
+      if (customFieldValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.add(index, value);
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomFieldValues(
+        com.google.ads.admanager.v1.CustomFieldValue.Builder builderForValue) {
+      if (customFieldValuesBuilder_ == null) {
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCustomFieldValues(
+        int index, com.google.ads.admanager.v1.CustomFieldValue.Builder builderForValue) {
+      if (customFieldValuesBuilder_ == null) {
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCustomFieldValues(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.CustomFieldValue> values) {
+      if (customFieldValuesBuilder_ == null) {
+        ensureCustomFieldValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customFieldValues_);
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomFieldValues() {
+      if (customFieldValuesBuilder_ == null) {
+        customFieldValues_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x04000000);
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCustomFieldValues(int index) {
+      if (customFieldValuesBuilder_ == null) {
+        ensureCustomFieldValuesIsMutable();
+        customFieldValues_.remove(index);
+        onChanged();
+      } else {
+        customFieldValuesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomFieldValue.Builder getCustomFieldValuesBuilder(
+        int index) {
+      return internalGetCustomFieldValuesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomFieldValueOrBuilder getCustomFieldValuesOrBuilder(
+        int index) {
+      if (customFieldValuesBuilder_ == null) {
+        return customFieldValues_.get(index);
+      } else {
+        return customFieldValuesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.CustomFieldValueOrBuilder>
+        getCustomFieldValuesOrBuilderList() {
+      if (customFieldValuesBuilder_ != null) {
+        return customFieldValuesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customFieldValues_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomFieldValue.Builder addCustomFieldValuesBuilder() {
+      return internalGetCustomFieldValuesFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.CustomFieldValue.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomFieldValue.Builder addCustomFieldValuesBuilder(
+        int index) {
+      return internalGetCustomFieldValuesFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.CustomFieldValue.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The values of the custom fields associated with this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CustomFieldValue.Builder>
+        getCustomFieldValuesBuilderList() {
+      return internalGetCustomFieldValuesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CustomFieldValue,
+            com.google.ads.admanager.v1.CustomFieldValue.Builder,
+            com.google.ads.admanager.v1.CustomFieldValueOrBuilder>
+        internalGetCustomFieldValuesFieldBuilder() {
+      if (customFieldValuesBuilder_ == null) {
+        customFieldValuesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.CustomFieldValue,
+                com.google.ads.admanager.v1.CustomFieldValue.Builder,
+                com.google.ads.admanager.v1.CustomFieldValueOrBuilder>(
+                customFieldValues_,
+                ((bitField0_ & 0x04000000) != 0),
+                getParentForChildren(),
+                isClean());
+        customFieldValues_ = null;
+      }
+      return customFieldValuesBuilder_;
+    }
+
+    private java.lang.Object previewUrl_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of the creative for previewing the media.
+     * </pre>
+     *
+     * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the previewUrl field is set.
+     */
+    public boolean hasPreviewUrl() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of the creative for previewing the media.
+     * </pre>
+     *
+     * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The previewUrl.
+     */
+    public java.lang.String getPreviewUrl() {
+      java.lang.Object ref = previewUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previewUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of the creative for previewing the media.
+     * </pre>
+     *
+     * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for previewUrl.
+     */
+    public com.google.protobuf.ByteString getPreviewUrlBytes() {
+      java.lang.Object ref = previewUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        previewUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of the creative for previewing the media.
+     * </pre>
+     *
+     * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The previewUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreviewUrl(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      previewUrl_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of the creative for previewing the media.
+     * </pre>
+     *
+     * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreviewUrl() {
+      previewUrl_ = getDefaultInstance().getPreviewUrl();
+      bitField0_ = (bitField0_ & ~0x08000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URL of the creative for previewing the media.
+     * </pre>
+     *
+     * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for previewUrl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreviewUrlBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      previewUrl_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.admanager.v1.Size size_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.Size,
+            com.google.ads.admanager.v1.Size.Builder,
+            com.google.ads.admanager.v1.SizeOrBuilder>
+        sizeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the size field is set.
+     */
+    public boolean hasSize() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The size.
+     */
+    public com.google.ads.admanager.v1.Size getSize() {
+      if (sizeBuilder_ == null) {
+        return size_ == null ? com.google.ads.admanager.v1.Size.getDefaultInstance() : size_;
+      } else {
+        return sizeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setSize(com.google.ads.admanager.v1.Size value) {
+      if (sizeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        size_ = value;
+      } else {
+        sizeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setSize(com.google.ads.admanager.v1.Size.Builder builderForValue) {
+      if (sizeBuilder_ == null) {
+        size_ = builderForValue.build();
+      } else {
+        sizeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeSize(com.google.ads.admanager.v1.Size value) {
+      if (sizeBuilder_ == null) {
+        if (((bitField0_ & 0x10000000) != 0)
+            && size_ != null
+            && size_ != com.google.ads.admanager.v1.Size.getDefaultInstance()) {
+          getSizeBuilder().mergeFrom(value);
+        } else {
+          size_ = value;
+        }
+      } else {
+        sizeBuilder_.mergeFrom(value);
+      }
+      if (size_ != null) {
+        bitField0_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearSize() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      size_ = null;
+      if (sizeBuilder_ != null) {
+        sizeBuilder_.dispose();
+        sizeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Size.Builder getSizeBuilder() {
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return internalGetSizeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.SizeOrBuilder getSizeOrBuilder() {
+      if (sizeBuilder_ != null) {
+        return sizeBuilder_.getMessageOrBuilder();
+      } else {
+        return size_ == null ? com.google.ads.admanager.v1.Size.getDefaultInstance() : size_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Immutable. The Size of the creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.Size,
+            com.google.ads.admanager.v1.Size.Builder,
+            com.google.ads.admanager.v1.SizeOrBuilder>
+        internalGetSizeFieldBuilder() {
+      if (sizeBuilder_ == null) {
+        sizeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.Size,
+                com.google.ads.admanager.v1.Size.Builder,
+                com.google.ads.admanager.v1.SizeOrBuilder>(
+                getSize(), getParentForChildren(), isClean());
+        size_ = null;
+      }
+      return sizeBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.ThirdPartyDataDeclaration thirdPartyDataDeclaration_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ThirdPartyDataDeclaration,
+            com.google.ads.admanager.v1.ThirdPartyDataDeclaration.Builder,
+            com.google.ads.admanager.v1.ThirdPartyDataDeclarationOrBuilder>
+        thirdPartyDataDeclarationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thirdPartyDataDeclaration field is set.
+     */
+    public boolean hasThirdPartyDataDeclaration() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thirdPartyDataDeclaration.
+     */
+    public com.google.ads.admanager.v1.ThirdPartyDataDeclaration getThirdPartyDataDeclaration() {
+      if (thirdPartyDataDeclarationBuilder_ == null) {
+        return thirdPartyDataDeclaration_ == null
+            ? com.google.ads.admanager.v1.ThirdPartyDataDeclaration.getDefaultInstance()
+            : thirdPartyDataDeclaration_;
+      } else {
+        return thirdPartyDataDeclarationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyDataDeclaration(
+        com.google.ads.admanager.v1.ThirdPartyDataDeclaration value) {
+      if (thirdPartyDataDeclarationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thirdPartyDataDeclaration_ = value;
+      } else {
+        thirdPartyDataDeclarationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyDataDeclaration(
+        com.google.ads.admanager.v1.ThirdPartyDataDeclaration.Builder builderForValue) {
+      if (thirdPartyDataDeclarationBuilder_ == null) {
+        thirdPartyDataDeclaration_ = builderForValue.build();
+      } else {
+        thirdPartyDataDeclarationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeThirdPartyDataDeclaration(
+        com.google.ads.admanager.v1.ThirdPartyDataDeclaration value) {
+      if (thirdPartyDataDeclarationBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)
+            && thirdPartyDataDeclaration_ != null
+            && thirdPartyDataDeclaration_
+                != com.google.ads.admanager.v1.ThirdPartyDataDeclaration.getDefaultInstance()) {
+          getThirdPartyDataDeclarationBuilder().mergeFrom(value);
+        } else {
+          thirdPartyDataDeclaration_ = value;
+        }
+      } else {
+        thirdPartyDataDeclarationBuilder_.mergeFrom(value);
+      }
+      if (thirdPartyDataDeclaration_ != null) {
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearThirdPartyDataDeclaration() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      thirdPartyDataDeclaration_ = null;
+      if (thirdPartyDataDeclarationBuilder_ != null) {
+        thirdPartyDataDeclarationBuilder_.dispose();
+        thirdPartyDataDeclarationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ThirdPartyDataDeclaration.Builder
+        getThirdPartyDataDeclarationBuilder() {
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return internalGetThirdPartyDataDeclarationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ThirdPartyDataDeclarationOrBuilder
+        getThirdPartyDataDeclarationOrBuilder() {
+      if (thirdPartyDataDeclarationBuilder_ != null) {
+        return thirdPartyDataDeclarationBuilder_.getMessageOrBuilder();
+      } else {
+        return thirdPartyDataDeclaration_ == null
+            ? com.google.ads.admanager.v1.ThirdPartyDataDeclaration.getDefaultInstance()
+            : thirdPartyDataDeclaration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The third party companies associated with this creative.
+     * This is distinct from any associated companies that Google may detect
+     * programmatically.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ThirdPartyDataDeclaration,
+            com.google.ads.admanager.v1.ThirdPartyDataDeclaration.Builder,
+            com.google.ads.admanager.v1.ThirdPartyDataDeclarationOrBuilder>
+        internalGetThirdPartyDataDeclarationFieldBuilder() {
+      if (thirdPartyDataDeclarationBuilder_ == null) {
+        thirdPartyDataDeclarationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ThirdPartyDataDeclaration,
+                com.google.ads.admanager.v1.ThirdPartyDataDeclaration.Builder,
+                com.google.ads.admanager.v1.ThirdPartyDataDeclarationOrBuilder>(
+                getThirdPartyDataDeclaration(), getParentForChildren(), isClean());
+        thirdPartyDataDeclaration_ = null;
+      }
+      return thirdPartyDataDeclarationBuilder_;
+    }
+
+    private int thirdPartyDataDeclarationStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+     * when compared with the set of third party companies detected via automated
+     * scanning.
+     *
+     * For example, if automated scanning detects more companies than have been
+     * declared, this status will be
+     * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the thirdPartyDataDeclarationStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasThirdPartyDataDeclarationStatus() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+     * when compared with the set of third party companies detected via automated
+     * scanning.
+     *
+     * For example, if automated scanning detects more companies than have been
+     * declared, this status will be
+     * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for thirdPartyDataDeclarationStatus.
+     */
+    @java.lang.Override
+    public int getThirdPartyDataDeclarationStatusValue() {
+      return thirdPartyDataDeclarationStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+     * when compared with the set of third party companies detected via automated
+     * scanning.
+     *
+     * For example, if automated scanning detects more companies than have been
+     * declared, this status will be
+     * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for thirdPartyDataDeclarationStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThirdPartyDataDeclarationStatusValue(int value) {
+      thirdPartyDataDeclarationStatus_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+     * when compared with the set of third party companies detected via automated
+     * scanning.
+     *
+     * For example, if automated scanning detects more companies than have been
+     * declared, this status will be
+     * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The thirdPartyDataDeclarationStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+            .CreativeThirdPartyDataDeclarationStatus
+        getThirdPartyDataDeclarationStatus() {
+      com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+              .CreativeThirdPartyDataDeclarationStatus
+          result =
+              com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+                  .CreativeThirdPartyDataDeclarationStatus.forNumber(
+                  thirdPartyDataDeclarationStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+              .CreativeThirdPartyDataDeclarationStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+     * when compared with the set of third party companies detected via automated
+     * scanning.
+     *
+     * For example, if automated scanning detects more companies than have been
+     * declared, this status will be
+     * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The thirdPartyDataDeclarationStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThirdPartyDataDeclarationStatus(
+        com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+                .CreativeThirdPartyDataDeclarationStatus
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x40000000;
+      thirdPartyDataDeclarationStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+     * when compared with the set of third party companies detected via automated
+     * scanning.
+     *
+     * For example, if automated scanning detects more companies than have been
+     * declared, this status will be
+     * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThirdPartyDataDeclarationStatus() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      thirdPartyDataDeclarationStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean selfDeclaredEuropeanUnionPoliticalContent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this creative contains self-declared European Union
+     * political content.
+     * </pre>
+     *
+     * <code>
+     * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the selfDeclaredEuropeanUnionPoliticalContent field is set.
+     */
+    @java.lang.Override
+    public boolean hasSelfDeclaredEuropeanUnionPoliticalContent() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this creative contains self-declared European Union
+     * political content.
+     * </pre>
+     *
+     * <code>
+     * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The selfDeclaredEuropeanUnionPoliticalContent.
+     */
+    @java.lang.Override
+    public boolean getSelfDeclaredEuropeanUnionPoliticalContent() {
+      return selfDeclaredEuropeanUnionPoliticalContent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this creative contains self-declared European Union
+     * political content.
+     * </pre>
+     *
+     * <code>
+     * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The selfDeclaredEuropeanUnionPoliticalContent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSelfDeclaredEuropeanUnionPoliticalContent(boolean value) {
+
+      selfDeclaredEuropeanUnionPoliticalContent_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this creative contains self-declared European Union
+     * political content.
+     * </pre>
+     *
+     * <code>
+     * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSelfDeclaredEuropeanUnionPoliticalContent() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      selfDeclaredEuropeanUnionPoliticalContent_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean adBadgingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Whether the creative has ad badging enabled.
+     *
+     * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+     * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+     * FlashOverlayCreative, GraphicalInterstitialCreative,
+     * LegacyDfpCreative, MobileAdNetworkCreative,
+     * MobileVideoInterstitialCreative, SdkMediationCreative, and
+     * FlashCreative types.
+     *
+     * Defaults to true for all other creative types.
+     * </pre>
+     *
+     * <code>
+     * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the adBadgingEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasAdBadgingEnabled() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Whether the creative has ad badging enabled.
+     *
+     * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+     * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+     * FlashOverlayCreative, GraphicalInterstitialCreative,
+     * LegacyDfpCreative, MobileAdNetworkCreative,
+     * MobileVideoInterstitialCreative, SdkMediationCreative, and
+     * FlashCreative types.
+     *
+     * Defaults to true for all other creative types.
+     * </pre>
+     *
+     * <code>
+     * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The adBadgingEnabled.
+     */
+    @java.lang.Override
+    public boolean getAdBadgingEnabled() {
+      return adBadgingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Whether the creative has ad badging enabled.
+     *
+     * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+     * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+     * FlashOverlayCreative, GraphicalInterstitialCreative,
+     * LegacyDfpCreative, MobileAdNetworkCreative,
+     * MobileVideoInterstitialCreative, SdkMediationCreative, and
+     * FlashCreative types.
+     *
+     * Defaults to true for all other creative types.
+     * </pre>
+     *
+     * <code>
+     * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The adBadgingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdBadgingEnabled(boolean value) {
+
+      adBadgingEnabled_ = value;
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Whether the creative has ad badging enabled.
+     *
+     * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+     * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+     * FlashOverlayCreative, GraphicalInterstitialCreative,
+     * LegacyDfpCreative, MobileAdNetworkCreative,
+     * MobileVideoInterstitialCreative, SdkMediationCreative, and
+     * FlashCreative types.
+     *
+     * Defaults to true for all other creative types.
+     * </pre>
+     *
+     * <code>
+     * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdBadgingEnabled() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      adBadgingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.AppliedLabel> appliedLabels_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAppliedLabelsIsMutable() {
+      if (!((bitField1_ & 0x00000002) != 0)) {
+        appliedLabels_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.AppliedLabel>(appliedLabels_);
+        bitField1_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.AppliedLabel,
+            com.google.ads.admanager.v1.AppliedLabel.Builder,
+            com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        appliedLabelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList() {
+      if (appliedLabelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(appliedLabels_);
+      } else {
+        return appliedLabelsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAppliedLabelsCount() {
+      if (appliedLabelsBuilder_ == null) {
+        return appliedLabels_.size();
+      } else {
+        return appliedLabelsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index) {
+      if (appliedLabelsBuilder_ == null) {
+        return appliedLabels_.get(index);
+      } else {
+        return appliedLabelsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAppliedLabels(int index, com.google.ads.admanager.v1.AppliedLabel value) {
+      if (appliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.set(index, value);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(com.google.ads.admanager.v1.AppliedLabel value) {
+      if (appliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(value);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(int index, com.google.ads.admanager.v1.AppliedLabel value) {
+      if (appliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(index, value);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(
+        com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAppliedLabels(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.AppliedLabel> values) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedLabels_);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAppliedLabels() {
+      if (appliedLabelsBuilder_ == null) {
+        appliedLabels_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000002);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAppliedLabels(int index) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.remove(index);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder getAppliedLabelsBuilder(int index) {
+      return internalGetAppliedLabelsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabelOrBuilder getAppliedLabelsOrBuilder(int index) {
+      if (appliedLabelsBuilder_ == null) {
+        return appliedLabels_.get(index);
+      } else {
+        return appliedLabelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        getAppliedLabelsOrBuilderList() {
+      if (appliedLabelsBuilder_ != null) {
+        return appliedLabelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(appliedLabels_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder addAppliedLabelsBuilder() {
+      return internalGetAppliedLabelsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.AppliedLabel.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder addAppliedLabelsBuilder(int index) {
+      return internalGetAppliedLabelsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.AppliedLabel.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this creative.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AppliedLabel.Builder>
+        getAppliedLabelsBuilderList() {
+      return internalGetAppliedLabelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.AppliedLabel,
+            com.google.ads.admanager.v1.AppliedLabel.Builder,
+            com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        internalGetAppliedLabelsFieldBuilder() {
+      if (appliedLabelsBuilder_ == null) {
+        appliedLabelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.AppliedLabel,
+                com.google.ads.admanager.v1.AppliedLabel.Builder,
+                com.google.ads.admanager.v1.AppliedLabelOrBuilder>(
+                appliedLabels_,
+                ((bitField1_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        appliedLabels_ = null;
+      }
+      return appliedLabelsBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.BuyerPlacementConfig buyerPlacementConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.BuyerPlacementConfig,
+            com.google.ads.admanager.v1.BuyerPlacementConfig.Builder,
+            com.google.ads.admanager.v1.BuyerPlacementConfigOrBuilder>
+        buyerPlacementConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the buyerPlacementConfig field is set.
+     */
+    public boolean hasBuyerPlacementConfig() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The buyerPlacementConfig.
+     */
+    public com.google.ads.admanager.v1.BuyerPlacementConfig getBuyerPlacementConfig() {
+      if (buyerPlacementConfigBuilder_ == null) {
+        return buyerPlacementConfig_ == null
+            ? com.google.ads.admanager.v1.BuyerPlacementConfig.getDefaultInstance()
+            : buyerPlacementConfig_;
+      } else {
+        return buyerPlacementConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuyerPlacementConfig(com.google.ads.admanager.v1.BuyerPlacementConfig value) {
+      if (buyerPlacementConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buyerPlacementConfig_ = value;
+      } else {
+        buyerPlacementConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuyerPlacementConfig(
+        com.google.ads.admanager.v1.BuyerPlacementConfig.Builder builderForValue) {
+      if (buyerPlacementConfigBuilder_ == null) {
+        buyerPlacementConfig_ = builderForValue.build();
+      } else {
+        buyerPlacementConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBuyerPlacementConfig(
+        com.google.ads.admanager.v1.BuyerPlacementConfig value) {
+      if (buyerPlacementConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000004) != 0)
+            && buyerPlacementConfig_ != null
+            && buyerPlacementConfig_
+                != com.google.ads.admanager.v1.BuyerPlacementConfig.getDefaultInstance()) {
+          getBuyerPlacementConfigBuilder().mergeFrom(value);
+        } else {
+          buyerPlacementConfig_ = value;
+        }
+      } else {
+        buyerPlacementConfigBuilder_.mergeFrom(value);
+      }
+      if (buyerPlacementConfig_ != null) {
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBuyerPlacementConfig() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      buyerPlacementConfig_ = null;
+      if (buyerPlacementConfigBuilder_ != null) {
+        buyerPlacementConfigBuilder_.dispose();
+        buyerPlacementConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BuyerPlacementConfig.Builder
+        getBuyerPlacementConfigBuilder() {
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return internalGetBuyerPlacementConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.BuyerPlacementConfigOrBuilder
+        getBuyerPlacementConfigOrBuilder() {
+      if (buyerPlacementConfigBuilder_ != null) {
+        return buyerPlacementConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return buyerPlacementConfig_ == null
+            ? com.google.ads.admanager.v1.BuyerPlacementConfig.getDefaultInstance()
+            : buyerPlacementConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The buyer placement configuration for this creative.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.BuyerPlacementConfig,
+            com.google.ads.admanager.v1.BuyerPlacementConfig.Builder,
+            com.google.ads.admanager.v1.BuyerPlacementConfigOrBuilder>
+        internalGetBuyerPlacementConfigFieldBuilder() {
+      if (buyerPlacementConfigBuilder_ == null) {
+        buyerPlacementConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.BuyerPlacementConfig,
+                com.google.ads.admanager.v1.BuyerPlacementConfig.Builder,
+                com.google.ads.admanager.v1.BuyerPlacementConfigOrBuilder>(
+                getBuyerPlacementConfig(), getParentForChildren(), isClean());
+        buyerPlacementConfig_ = null;
+      }
+      return buyerPlacementConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.Creative)

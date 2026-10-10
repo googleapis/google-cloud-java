@@ -12558,6 +12558,925 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public interface BuildSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Cloud Build WorkerPool to use for
+     * the build.
+     * Format:
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+     * </pre>
+     *
+     * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The workerPool.
+     */
+    java.lang.String getWorkerPool();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Cloud Build WorkerPool to use for
+     * the build.
+     * Format:
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+     * </pre>
+     *
+     * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for workerPool.
+     */
+    com.google.protobuf.ByteString getWorkerPoolBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that Cloud Build uses to run the build.
+     *
+     * This field is only applicable when `worker_pool` is specified (i.e., for
+     * custom worker pools). If `worker_pool` is not specified, this field is
+     * ignored and the build runs using the Google-managed service agent.
+     *
+     * Format: `projects/{project}/serviceAccounts/{service_account}` or
+     * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+     * </pre>
+     *
+     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    java.lang.String getServiceAccount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that Cloud Build uses to run the build.
+     *
+     * This field is only applicable when `worker_pool` is specified (i.e., for
+     * custom worker pools). If `worker_pool` is not specified, this field is
+     * ignored and the build runs using the Google-managed service agent.
+     *
+     * Format: `projects/{project}/serviceAccounts/{service_account}` or
+     * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+     * </pre>
+     *
+     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    com.google.protobuf.ByteString getServiceAccountBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification for building container image.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec}
+   */
+  public static final class BuildSpec extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec)
+      BuildSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "BuildSpec");
+    }
+
+    // Use BuildSpec.newBuilder() to construct.
+    private BuildSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BuildSpec() {
+      workerPool_ = "";
+      serviceAccount_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_BuildSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+          .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_BuildSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.class,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder.class);
+    }
+
+    public static final int WORKER_POOL_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object workerPool_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Cloud Build WorkerPool to use for
+     * the build.
+     * Format:
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+     * </pre>
+     *
+     * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The workerPool.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkerPool() {
+      java.lang.Object ref = workerPool_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerPool_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Cloud Build WorkerPool to use for
+     * the build.
+     * Format:
+     * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+     * </pre>
+     *
+     * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for workerPool.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getWorkerPoolBytes() {
+      java.lang.Object ref = workerPool_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workerPool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceAccount_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that Cloud Build uses to run the build.
+     *
+     * This field is only applicable when `worker_pool` is specified (i.e., for
+     * custom worker pools). If `worker_pool` is not specified, this field is
+     * ignored and the build runs using the Google-managed service agent.
+     *
+     * Format: `projects/{project}/serviceAccounts/{service_account}` or
+     * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+     * </pre>
+     *
+     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that Cloud Build uses to run the build.
+     *
+     * This field is only applicable when `worker_pool` is specified (i.e., for
+     * custom worker pools). If `worker_pool` is not specified, this field is
+     * ignored and the build runs using the Google-managed service agent.
+     *
+     * Format: `projects/{project}/serviceAccounts/{service_account}` or
+     * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+     * </pre>
+     *
+     * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerPool_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, workerPool_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, serviceAccount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerPool_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, workerPool_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, serviceAccount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec other =
+          (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec) obj;
+
+      if (!getWorkerPool().equals(other.getWorkerPool())) return false;
+      if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WORKER_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerPool().hashCode();
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for building container image.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec)
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_BuildSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_BuildSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        workerPool_ = "";
+        serviceAccount_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_BuildSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build() {
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec buildPartial() {
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec result =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.workerPool_ = workerPool_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serviceAccount_ = serviceAccount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.getDefaultInstance())
+          return this;
+        if (!other.getWorkerPool().isEmpty()) {
+          workerPool_ = other.workerPool_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getServiceAccount().isEmpty()) {
+          serviceAccount_ = other.serviceAccount_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  workerPool_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  serviceAccount_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object workerPool_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the Cloud Build WorkerPool to use for
+       * the build.
+       * Format:
+       * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+       * </pre>
+       *
+       * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The workerPool.
+       */
+      public java.lang.String getWorkerPool() {
+        java.lang.Object ref = workerPool_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          workerPool_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the Cloud Build WorkerPool to use for
+       * the build.
+       * Format:
+       * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+       * </pre>
+       *
+       * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for workerPool.
+       */
+      public com.google.protobuf.ByteString getWorkerPoolBytes() {
+        java.lang.Object ref = workerPool_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          workerPool_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the Cloud Build WorkerPool to use for
+       * the build.
+       * Format:
+       * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+       * </pre>
+       *
+       * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The workerPool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerPool(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workerPool_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the Cloud Build WorkerPool to use for
+       * the build.
+       * Format:
+       * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+       * </pre>
+       *
+       * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerPool() {
+        workerPool_ = getDefaultInstance().getWorkerPool();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The resource name of the Cloud Build WorkerPool to use for
+       * the build.
+       * Format:
+       * `projects/{project}/locations/{location}/workerPools/{worker_pool}`
+       * </pre>
+       *
+       * <code>string worker_pool = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for workerPool to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerPoolBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        workerPool_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceAccount_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account that Cloud Build uses to run the build.
+       *
+       * This field is only applicable when `worker_pool` is specified (i.e., for
+       * custom worker pools). If `worker_pool` is not specified, this field is
+       * ignored and the build runs using the Google-managed service agent.
+       *
+       * Format: `projects/{project}/serviceAccounts/{service_account}` or
+       * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+       * </pre>
+       *
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The serviceAccount.
+       */
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account that Cloud Build uses to run the build.
+       *
+       * This field is only applicable when `worker_pool` is specified (i.e., for
+       * custom worker pools). If `worker_pool` is not specified, this field is
+       * ignored and the build runs using the Google-managed service agent.
+       *
+       * Format: `projects/{project}/serviceAccounts/{service_account}` or
+       * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+       * </pre>
+       *
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for serviceAccount.
+       */
+      public com.google.protobuf.ByteString getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account that Cloud Build uses to run the build.
+       *
+       * This field is only applicable when `worker_pool` is specified (i.e., for
+       * custom worker pools). If `worker_pool` is not specified, this field is
+       * ignored and the build runs using the Google-managed service agent.
+       *
+       * Format: `projects/{project}/serviceAccounts/{service_account}` or
+       * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+       * </pre>
+       *
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The serviceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAccount(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceAccount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account that Cloud Build uses to run the build.
+       *
+       * This field is only applicable when `worker_pool` is specified (i.e., for
+       * custom worker pools). If `worker_pool` is not specified, this field is
+       * ignored and the build runs using the Google-managed service agent.
+       *
+       * Format: `projects/{project}/serviceAccounts/{service_account}` or
+       * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+       * </pre>
+       *
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceAccount() {
+        serviceAccount_ = getDefaultInstance().getServiceAccount();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The service account that Cloud Build uses to run the build.
+       *
+       * This field is only applicable when `worker_pool` is specified (i.e., for
+       * custom worker pools). If `worker_pool` is not specified, this field is
+       * ignored and the build runs using the Google-managed service agent.
+       *
+       * Format: `projects/{project}/serviceAccounts/{service_account}` or
+       * `{service_account}&#64;{project}.iam.gserviceaccount.com`
+       * </pre>
+       *
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for serviceAccount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceAccount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec)
+    private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BuildSpec> PARSER =
+        new com.google.protobuf.AbstractParser<BuildSpec>() {
+          @java.lang.Override
+          public BuildSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BuildSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuildSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int deploymentSourceCase_ = 0;
 
@@ -13135,6 +14054,66 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         : result;
   }
 
+  public static final int BUILD_SPEC_FIELD_NUMBER = 16;
+  private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec buildSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buildSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasBuildSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buildSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec getBuildSpec() {
+    return buildSpec_ == null
+        ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.getDefaultInstance()
+        : buildSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for building container image.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder
+      getBuildSpecOrBuilder() {
+    return buildSpec_ == null
+        ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.getDefaultInstance()
+        : buildSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13178,6 +14157,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       output.writeMessage(
           15, (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpec) deploymentSource_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(16, getBuildSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -13220,6 +14202,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
               15,
               (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.ContainerSpec) deploymentSource_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getBuildSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -13251,6 +14236,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     if (!getClassMethodsList().equals(other.getClassMethodsList())) return false;
     if (!getAgentFramework().equals(other.getAgentFramework())) return false;
     if (identityType_ != other.identityType_) return false;
+    if (hasBuildSpec() != other.hasBuildSpec()) return false;
+    if (hasBuildSpec()) {
+      if (!getBuildSpec().equals(other.getBuildSpec())) return false;
+    }
     if (!getDeploymentSourceCase().equals(other.getDeploymentSourceCase())) return false;
     switch (deploymentSourceCase_) {
       case 11:
@@ -13293,6 +14282,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getAgentFramework().hashCode();
     hash = (37 * hash) + IDENTITY_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + identityType_;
+    if (hasBuildSpec()) {
+      hash = (37 * hash) + BUILD_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getBuildSpec().hashCode();
+    }
     switch (deploymentSourceCase_) {
       case 11:
         hash = (37 * hash) + SOURCE_CODE_SPEC_FIELD_NUMBER;
@@ -13449,6 +14442,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         internalGetPackageSpecFieldBuilder();
         internalGetDeploymentSpecFieldBuilder();
         internalGetClassMethodsFieldBuilder();
+        internalGetBuildSpecFieldBuilder();
       }
     }
 
@@ -13482,6 +14476,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       bitField0_ = (bitField0_ & ~0x00000020);
       agentFramework_ = "";
       identityType_ = 0;
+      buildSpec_ = null;
+      if (buildSpecBuilder_ != null) {
+        buildSpecBuilder_.dispose();
+        buildSpecBuilder_ = null;
+      }
       deploymentSourceCase_ = 0;
       deploymentSource_ = null;
       return this;
@@ -13556,6 +14555,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.identityType_ = identityType_;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.buildSpec_ = buildSpecBuilder_ == null ? buildSpec_ : buildSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -13628,6 +14631,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       if (other.identityType_ != 0) {
         setIdentityTypeValue(other.getIdentityTypeValue());
+      }
+      if (other.hasBuildSpec()) {
+        mergeBuildSpec(other.getBuildSpec());
       }
       switch (other.getDeploymentSourceCase()) {
         case SOURCE_CODE_SPEC:
@@ -13729,6 +14735,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 deploymentSourceCase_ = 15;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    internalGetBuildSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15537,6 +16550,225 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       identityType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec buildSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder>
+        buildSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the buildSpec field is set.
+     */
+    public boolean hasBuildSpec() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The buildSpec.
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec getBuildSpec() {
+      if (buildSpecBuilder_ == null) {
+        return buildSpec_ == null
+            ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.getDefaultInstance()
+            : buildSpec_;
+      } else {
+        return buildSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuildSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec value) {
+      if (buildSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        buildSpec_ = value;
+      } else {
+        buildSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBuildSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder builderForValue) {
+      if (buildSpecBuilder_ == null) {
+        buildSpec_ = builderForValue.build();
+      } else {
+        buildSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeBuildSpec(
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec value) {
+      if (buildSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && buildSpec_ != null
+            && buildSpec_
+                != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec
+                    .getDefaultInstance()) {
+          getBuildSpecBuilder().mergeFrom(value);
+        } else {
+          buildSpec_ = value;
+        }
+      } else {
+        buildSpecBuilder_.mergeFrom(value);
+      }
+      if (buildSpec_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBuildSpec() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      buildSpec_ = null;
+      if (buildSpecBuilder_ != null) {
+        buildSpecBuilder_.dispose();
+        buildSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder
+        getBuildSpecBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetBuildSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder
+        getBuildSpecOrBuilder() {
+      if (buildSpecBuilder_ != null) {
+        return buildSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return buildSpec_ == null
+            ? com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.getDefaultInstance()
+            : buildSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for building container image.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec build_spec = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder,
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder>
+        internalGetBuildSpecFieldBuilder() {
+      if (buildSpecBuilder_ == null) {
+        buildSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpec.Builder,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.BuildSpecOrBuilder>(
+                getBuildSpec(), getParentForChildren(), isClean());
+        buildSpec_ = null;
+      }
+      return buildSpecBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec)

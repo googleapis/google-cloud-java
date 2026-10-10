@@ -22,6 +22,9 @@
             "CreateMessage": {
               "methods": ["createMessage", "createMessage", "createMessage", "createMessageCallable"]
             },
+            "CreateMessagePin": {
+              "methods": ["createMessagePin", "createMessagePin", "createMessagePin", "createMessagePinCallable"]
+            },
             "CreateReaction": {
               "methods": ["createReaction", "createReaction", "createReaction", "createReactionCallable"]
             },
@@ -39,6 +42,9 @@
             },
             "DeleteMessage": {
               "methods": ["deleteMessage", "deleteMessage", "deleteMessage", "deleteMessageCallable"]
+            },
+            "DeleteMessagePin": {
+              "methods": ["deleteMessagePin", "deleteMessagePin", "deleteMessagePin", "deleteMessagePinCallable"]
             },
             "DeleteReaction": {
               "methods": ["deleteReaction", "deleteReaction", "deleteReaction", "deleteReactionCallable"]
@@ -91,6 +97,9 @@
             "ListMemberships": {
               "methods": ["listMemberships", "listMemberships", "listMemberships", "listMembershipsPagedCallable", "listMembershipsCallable"]
             },
+            "ListMessagePins": {
+              "methods": ["listMessagePins", "listMessagePins", "listMessagePins", "listMessagePinsPagedCallable", "listMessagePinsCallable"]
+            },
             "ListMessages": {
               "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
             },
@@ -123,6 +132,9 @@
             },
             "PositionSection": {
               "methods": ["positionSection", "positionSectionCallable"]
+            },
+            "SearchMessages": {
+              "methods": ["searchMessages", "searchMessages", "searchMessages", "searchMessagesPagedCallable", "searchMessagesCallable"]
             },
             "SearchSpaces": {
               "methods": ["searchSpaces", "searchSpaces", "searchSpacesPagedCallable", "searchSpacesCallable"]

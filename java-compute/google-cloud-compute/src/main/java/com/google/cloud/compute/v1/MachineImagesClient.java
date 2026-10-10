@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The MachineImages API.
  *
+ * <p>This client uses MachineImages version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -805,7 +807,6 @@ public class MachineImagesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (MachineImage element : machineImagesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -840,7 +841,6 @@ public class MachineImagesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<MachineImage> future = machineImagesClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -874,7 +874,6 @@ public class MachineImagesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     MachineImageList response = machineImagesClient.listCallable().call(request);

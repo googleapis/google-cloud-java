@@ -50,7 +50,10 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     super(builder);
   }
 
-  private ResourceStatusScheduling() {}
+  private ResourceStatusScheduling() {
+    gracefulShutdownTimestamp_ = "";
+    terminationTimestamp_ = "";
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.compute.v1.Compute
@@ -107,6 +110,147 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     return availabilityDomain_;
   }
 
+  public static final int GRACEFUL_SHUTDOWN_TIMESTAMP_FIELD_NUMBER = 403022375;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object gracefulShutdownTimestamp_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+   * process, in RFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+   *
+   * @return Whether the gracefulShutdownTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasGracefulShutdownTimestamp() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+   * process, in RFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+   *
+   * @return The gracefulShutdownTimestamp.
+   */
+  @java.lang.Override
+  public java.lang.String getGracefulShutdownTimestamp() {
+    java.lang.Object ref = gracefulShutdownTimestamp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gracefulShutdownTimestamp_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+   * process, in RFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+   *
+   * @return The bytes for gracefulShutdownTimestamp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getGracefulShutdownTimestampBytes() {
+    java.lang.Object ref = gracefulShutdownTimestamp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      gracefulShutdownTimestamp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TERMINATION_TIMESTAMP_FIELD_NUMBER = 364180891;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object terminationTimestamp_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Time in future when the instance will be terminated inRFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string termination_timestamp = 364180891;</code>
+   *
+   * @return Whether the terminationTimestamp field is set.
+   */
+  @java.lang.Override
+  public boolean hasTerminationTimestamp() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Time in future when the instance will be terminated inRFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string termination_timestamp = 364180891;</code>
+   *
+   * @return The terminationTimestamp.
+   */
+  @java.lang.Override
+  public java.lang.String getTerminationTimestamp() {
+    java.lang.Object ref = terminationTimestamp_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      terminationTimestamp_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Time in future when the instance will be terminated inRFC3339 text format.
+   * </pre>
+   *
+   * <code>optional string termination_timestamp = 364180891;</code>
+   *
+   * @return The bytes for terminationTimestamp.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTerminationTimestampBytes() {
+    java.lang.Object ref = terminationTimestamp_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      terminationTimestamp_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -124,6 +268,13 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(252514344, availabilityDomain_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 364180891, terminationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 403022375, gracefulShutdownTimestamp_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -136,6 +287,15 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(252514344, availabilityDomain_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(364180891, terminationTimestamp_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              403022375, gracefulShutdownTimestamp_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -157,6 +317,15 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     if (hasAvailabilityDomain()) {
       if (getAvailabilityDomain() != other.getAvailabilityDomain()) return false;
     }
+    if (hasGracefulShutdownTimestamp() != other.hasGracefulShutdownTimestamp()) return false;
+    if (hasGracefulShutdownTimestamp()) {
+      if (!getGracefulShutdownTimestamp().equals(other.getGracefulShutdownTimestamp()))
+        return false;
+    }
+    if (hasTerminationTimestamp() != other.hasTerminationTimestamp()) return false;
+    if (hasTerminationTimestamp()) {
+      if (!getTerminationTimestamp().equals(other.getTerminationTimestamp())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -171,6 +340,14 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     if (hasAvailabilityDomain()) {
       hash = (37 * hash) + AVAILABILITY_DOMAIN_FIELD_NUMBER;
       hash = (53 * hash) + getAvailabilityDomain();
+    }
+    if (hasGracefulShutdownTimestamp()) {
+      hash = (37 * hash) + GRACEFUL_SHUTDOWN_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getGracefulShutdownTimestamp().hashCode();
+    }
+    if (hasTerminationTimestamp()) {
+      hash = (37 * hash) + TERMINATION_TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + getTerminationTimestamp().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -312,6 +489,8 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
       super.clear();
       bitField0_ = 0;
       availabilityDomain_ = 0;
+      gracefulShutdownTimestamp_ = "";
+      terminationTimestamp_ = "";
       return this;
     }
 
@@ -353,6 +532,14 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
         result.availabilityDomain_ = availabilityDomain_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.gracefulShutdownTimestamp_ = gracefulShutdownTimestamp_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.terminationTimestamp_ = terminationTimestamp_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -371,6 +558,16 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
         return this;
       if (other.hasAvailabilityDomain()) {
         setAvailabilityDomain(other.getAvailabilityDomain());
+      }
+      if (other.hasGracefulShutdownTimestamp()) {
+        gracefulShutdownTimestamp_ = other.gracefulShutdownTimestamp_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasTerminationTimestamp()) {
+        terminationTimestamp_ = other.terminationTimestamp_;
+        bitField0_ |= 0x00000004;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -404,6 +601,18 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000001;
                 break;
               } // case 2020114752
+            case -1381520166:
+              {
+                terminationTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1381520166
+            case -1070788294:
+              {
+                gracefulShutdownTimestamp_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1070788294
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -499,6 +708,264 @@ public final class ResourceStatusScheduling extends com.google.protobuf.Generate
     public Builder clearAvailabilityDomain() {
       bitField0_ = (bitField0_ & ~0x00000001);
       availabilityDomain_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object gracefulShutdownTimestamp_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+     * process, in RFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+     *
+     * @return Whether the gracefulShutdownTimestamp field is set.
+     */
+    public boolean hasGracefulShutdownTimestamp() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+     * process, in RFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+     *
+     * @return The gracefulShutdownTimestamp.
+     */
+    public java.lang.String getGracefulShutdownTimestamp() {
+      java.lang.Object ref = gracefulShutdownTimestamp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gracefulShutdownTimestamp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+     * process, in RFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+     *
+     * @return The bytes for gracefulShutdownTimestamp.
+     */
+    public com.google.protobuf.ByteString getGracefulShutdownTimestampBytes() {
+      java.lang.Object ref = gracefulShutdownTimestamp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        gracefulShutdownTimestamp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+     * process, in RFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+     *
+     * @param value The gracefulShutdownTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGracefulShutdownTimestamp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      gracefulShutdownTimestamp_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+     * process, in RFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGracefulShutdownTimestamp() {
+      gracefulShutdownTimestamp_ = getDefaultInstance().getGracefulShutdownTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the timestamp, when the instance will start graceful shutdown
+     * process, in RFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string graceful_shutdown_timestamp = 403022375;</code>
+     *
+     * @param value The bytes for gracefulShutdownTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGracefulShutdownTimestampBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      gracefulShutdownTimestamp_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object terminationTimestamp_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Time in future when the instance will be terminated inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string termination_timestamp = 364180891;</code>
+     *
+     * @return Whether the terminationTimestamp field is set.
+     */
+    public boolean hasTerminationTimestamp() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Time in future when the instance will be terminated inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string termination_timestamp = 364180891;</code>
+     *
+     * @return The terminationTimestamp.
+     */
+    public java.lang.String getTerminationTimestamp() {
+      java.lang.Object ref = terminationTimestamp_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        terminationTimestamp_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Time in future when the instance will be terminated inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string termination_timestamp = 364180891;</code>
+     *
+     * @return The bytes for terminationTimestamp.
+     */
+    public com.google.protobuf.ByteString getTerminationTimestampBytes() {
+      java.lang.Object ref = terminationTimestamp_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        terminationTimestamp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Time in future when the instance will be terminated inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string termination_timestamp = 364180891;</code>
+     *
+     * @param value The terminationTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTerminationTimestamp(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      terminationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Time in future when the instance will be terminated inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string termination_timestamp = 364180891;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTerminationTimestamp() {
+      terminationTimestamp_ = getDefaultInstance().getTerminationTimestamp();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Time in future when the instance will be terminated inRFC3339 text format.
+     * </pre>
+     *
+     * <code>optional string termination_timestamp = 364180891;</code>
+     *
+     * @param value The bytes for terminationTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTerminationTimestampBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      terminationTimestamp_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

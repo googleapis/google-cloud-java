@@ -20,6 +20,7 @@ import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListConfere
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantSessionsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListParticipantsPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListRecordingsPagedResponse;
+import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListSmartNotesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptEntriesPagedResponse;
 import static com.google.apps.meet.v2.ConferenceRecordsServiceClient.ListTranscriptsPagedResponse;
 
@@ -1085,6 +1086,174 @@ public class ConferenceRecordsServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listTranscriptEntries(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSmartNoteTest() throws Exception {
+    SmartNote expectedResponse =
+        SmartNote.newBuilder()
+            .setName(SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .build();
+    mockConferenceRecordsService.addResponse(expectedResponse);
+
+    SmartNoteName name = SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]");
+
+    SmartNote actualResponse = client.getSmartNote(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConferenceRecordsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSmartNoteRequest actualRequest = ((GetSmartNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSmartNoteExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConferenceRecordsService.addException(exception);
+
+    try {
+      SmartNoteName name = SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]");
+      client.getSmartNote(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSmartNoteTest2() throws Exception {
+    SmartNote expectedResponse =
+        SmartNote.newBuilder()
+            .setName(SmartNoteName.of("[CONFERENCE_RECORD]", "[SMART_NOTE]").toString())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .build();
+    mockConferenceRecordsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SmartNote actualResponse = client.getSmartNote(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConferenceRecordsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSmartNoteRequest actualRequest = ((GetSmartNoteRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSmartNoteExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConferenceRecordsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSmartNote(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSmartNotesTest() throws Exception {
+    SmartNote responsesElement = SmartNote.newBuilder().build();
+    ListSmartNotesResponse expectedResponse =
+        ListSmartNotesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSmartNotes(Arrays.asList(responsesElement))
+            .build();
+    mockConferenceRecordsService.addResponse(expectedResponse);
+
+    ConferenceRecordName parent = ConferenceRecordName.of("[CONFERENCE_RECORD]");
+
+    ListSmartNotesPagedResponse pagedListResponse = client.listSmartNotes(parent);
+
+    List<SmartNote> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSmartNotesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConferenceRecordsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSmartNotesRequest actualRequest = ((ListSmartNotesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSmartNotesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConferenceRecordsService.addException(exception);
+
+    try {
+      ConferenceRecordName parent = ConferenceRecordName.of("[CONFERENCE_RECORD]");
+      client.listSmartNotes(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSmartNotesTest2() throws Exception {
+    SmartNote responsesElement = SmartNote.newBuilder().build();
+    ListSmartNotesResponse expectedResponse =
+        ListSmartNotesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSmartNotes(Arrays.asList(responsesElement))
+            .build();
+    mockConferenceRecordsService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSmartNotesPagedResponse pagedListResponse = client.listSmartNotes(parent);
+
+    List<SmartNote> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSmartNotesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConferenceRecordsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSmartNotesRequest actualRequest = ((ListSmartNotesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSmartNotesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConferenceRecordsService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSmartNotes(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

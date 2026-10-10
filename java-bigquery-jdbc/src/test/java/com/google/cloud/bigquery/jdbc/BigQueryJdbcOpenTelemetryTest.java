@@ -52,7 +52,7 @@ public class BigQueryJdbcOpenTelemetryTest {
 
     OpenTelemetry result =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, false, false, mockCustomOtel, null, null, null);
+            false, false, false, mockCustomOtel, null, null, null, null);
 
     assertThat(result).isSameInstanceAs(mockCustomOtel);
   }
@@ -64,7 +64,7 @@ public class BigQueryJdbcOpenTelemetryTest {
     // Custom SDK always takes precedence over individual flags
     OpenTelemetry result =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, true, true, mockCustomOtel, null, null, null);
+            false, true, true, mockCustomOtel, null, null, null, null);
 
     assertThat(result).isSameInstanceAs(mockCustomOtel);
   }
@@ -72,7 +72,8 @@ public class BigQueryJdbcOpenTelemetryTest {
   @Test
   public void testGetOpenTelemetry_noFlags_returnsNoop() {
     OpenTelemetry result =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, false, false, null, null, null, null);
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            false, false, false, null, null, null, null, null);
 
     assertThat(result).isSameInstanceAs(OpenTelemetry.noop());
   }
@@ -88,10 +89,10 @@ public class BigQueryJdbcOpenTelemetryTest {
   public void testGetOpenTelemetry_cachesSdkInstances() {
     OpenTelemetry result1 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, true, false, null, null, "project1", null);
+            false, true, false, null, null, "project1", null, null);
     OpenTelemetry result2 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, true, false, null, null, "project1", null);
+            false, true, false, null, null, "project1", null, null);
 
     assertThat(result1).isSameInstanceAs(result2);
   }
@@ -100,10 +101,10 @@ public class BigQueryJdbcOpenTelemetryTest {
   public void testGetOpenTelemetry_createsNewInstanceForDifferentKey() {
     OpenTelemetry result1 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, true, false, null, null, "project1", null);
+            false, true, false, null, null, "project1", null, null);
     OpenTelemetry result2 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, true, false, null, null, "project2", null);
+            false, true, false, null, null, "project2", null, null);
 
     assertThat(result1).isNotSameInstanceAs(result2);
   }
@@ -111,10 +112,11 @@ public class BigQueryJdbcOpenTelemetryTest {
   @Test
   public void testGetOpenTelemetry_createsNewInstanceForDifferentTraceFlag() {
     OpenTelemetry result1 =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, true, true, null, null, "project1", null);
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            false, true, true, null, null, "project1", null, null);
     OpenTelemetry result2 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, false, true, null, null, "project1", null);
+            false, false, true, null, null, "project1", null, null);
 
     assertThat(result1).isNotSameInstanceAs(result2);
   }
@@ -122,10 +124,11 @@ public class BigQueryJdbcOpenTelemetryTest {
   @Test
   public void testGetOpenTelemetry_ignoresEnableLogFlagInCacheKey() {
     OpenTelemetry result1 =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(false, true, true, null, null, "project1", null);
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            false, true, true, null, null, "project1", null, null);
     OpenTelemetry result2 =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
-            false, true, false, null, null, "project1", null);
+            false, true, false, null, null, "project1", null, null);
 
     assertThat(result1).isSameInstanceAs(result2);
   }
@@ -133,7 +136,8 @@ public class BigQueryJdbcOpenTelemetryTest {
   @Test
   public void testGetOpenTelemetry_withUseGlobalOTel_returnsGlobal() {
     OpenTelemetry result =
-        BigQueryJdbcOpenTelemetry.getOpenTelemetry(true, false, false, null, null, null, null);
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            true, false, false, null, null, null, null, null);
 
     assertThat(result).isSameInstanceAs(GlobalOpenTelemetry.get());
   }

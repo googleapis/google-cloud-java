@@ -56,6 +56,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     pageToken_ = "";
     filter_ = "";
     orderBy_ = "";
+    markupSyntax_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -437,6 +438,47 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     return showDeleted_;
   }
 
+  public static final int MARKUP_SYNTAX_FIELD_NUMBER = 9;
+  private int markupSyntax_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for markupSyntax.
+   */
+  @java.lang.Override
+  public int getMarkupSyntaxValue() {
+    return markupSyntax_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the desired output syntax for the Chat message
+   * `formatted_text` field.
+   * </pre>
+   *
+   * <code>.google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The markupSyntax.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.MarkupSyntax getMarkupSyntax() {
+    com.google.chat.v1.MarkupSyntax result =
+        com.google.chat.v1.MarkupSyntax.forNumber(markupSyntax_);
+    return result == null ? com.google.chat.v1.MarkupSyntax.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -469,6 +511,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     if (showDeleted_ != false) {
       output.writeBool(6, showDeleted_);
     }
+    if (markupSyntax_ != com.google.chat.v1.MarkupSyntax.MARKUP_SYNTAX_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, markupSyntax_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -496,6 +541,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     if (showDeleted_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, showDeleted_);
     }
+    if (markupSyntax_ != com.google.chat.v1.MarkupSyntax.MARKUP_SYNTAX_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, markupSyntax_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -517,6 +565,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (getShowDeleted() != other.getShowDeleted()) return false;
+    if (markupSyntax_ != other.markupSyntax_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -540,6 +589,8 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getOrderBy().hashCode();
     hash = (37 * hash) + SHOW_DELETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowDeleted());
+    hash = (37 * hash) + MARKUP_SYNTAX_FIELD_NUMBER;
+    hash = (53 * hash) + markupSyntax_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -686,6 +737,7 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
       filter_ = "";
       orderBy_ = "";
       showDeleted_ = false;
+      markupSyntax_ = 0;
       return this;
     }
 
@@ -740,6 +792,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.showDeleted_ = showDeleted_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.markupSyntax_ = markupSyntax_;
+      }
     }
 
     @java.lang.Override
@@ -779,6 +834,9 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.getShowDeleted() != false) {
         setShowDeleted(other.getShowDeleted());
+      }
+      if (other.markupSyntax_ != 0) {
+        setMarkupSyntaxValue(other.getMarkupSyntaxValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -842,6 +900,12 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 72:
+              {
+                markupSyntax_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1703,6 +1767,116 @@ public final class ListMessagesRequest extends com.google.protobuf.GeneratedMess
     public Builder clearShowDeleted() {
       bitField0_ = (bitField0_ & ~0x00000020);
       showDeleted_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int markupSyntax_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for markupSyntax.
+     */
+    @java.lang.Override
+    public int getMarkupSyntaxValue() {
+      return markupSyntax_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for markupSyntax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupSyntaxValue(int value) {
+      markupSyntax_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The markupSyntax.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.MarkupSyntax getMarkupSyntax() {
+      com.google.chat.v1.MarkupSyntax result =
+          com.google.chat.v1.MarkupSyntax.forNumber(markupSyntax_);
+      return result == null ? com.google.chat.v1.MarkupSyntax.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The markupSyntax to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMarkupSyntax(com.google.chat.v1.MarkupSyntax value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      markupSyntax_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the desired output syntax for the Chat message
+     * `formatted_text` field.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.MarkupSyntax markup_syntax = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMarkupSyntax() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      markupSyntax_ = 0;
       onChanged();
       return this;
     }

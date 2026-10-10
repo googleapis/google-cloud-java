@@ -87,6 +87,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -163,6 +164,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -237,6 +239,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -308,6 +311,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -438,6 +442,7 @@ public class FirewallPoliciesClientTest {
             .setDisplayName("displayName1714148973")
             .setFirewallPolicyId("firewallPolicyId672926477")
             .setName("name3373707")
+            .setPriority(-1165461084)
             .setShortName("shortName-2028219097")
             .build();
     mockService.addResponse(expectedResponse);
@@ -485,7 +490,6 @@ public class FirewallPoliciesClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -595,6 +599,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -622,10 +627,9 @@ public class FirewallPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
-    String parentId = "parentId1175162725";
     FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
 
-    Operation actualResponse = client.insertAsync(parentId, firewallPolicyResource).get();
+    Operation actualResponse = client.insertAsync(firewallPolicyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -651,9 +655,8 @@ public class FirewallPoliciesClientTest {
     mockService.addException(exception);
 
     try {
-      String parentId = "parentId1175162725";
       FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-      client.insertAsync(parentId, firewallPolicyResource).get();
+      client.insertAsync(firewallPolicyResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -706,7 +709,6 @@ public class FirewallPoliciesClientTest {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setParentId("parentId1175162725")
-              .setReturnPartialSuccess(true)
               .build();
       client.list(request);
       Assert.fail("No exception raised");
@@ -771,6 +773,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -799,9 +802,8 @@ public class FirewallPoliciesClientTest {
     mockService.addResponse(expectedResponse);
 
     String firewallPolicy = "firewallPolicy-6600";
-    String parentId = "parentId1175162725";
 
-    Operation actualResponse = client.moveAsync(firewallPolicy, parentId).get();
+    Operation actualResponse = client.moveAsync(firewallPolicy).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -828,8 +830,7 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy-6600";
-      String parentId = "parentId1175162725";
-      client.moveAsync(firewallPolicy, parentId).get();
+      client.moveAsync(firewallPolicy).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -844,6 +845,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -917,6 +919,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -991,6 +994,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -1062,6 +1066,7 @@ public class FirewallPoliciesClientTest {
             .setDescription("description-1724546052")
             .setEndTime("endTime-1607243192")
             .setError(Error.newBuilder().build())
+            .setGetHealthOperationMetadata(GetHealthOperationMetadata.newBuilder().build())
             .setGetVersionOperationMetadata(GetVersionOperationMetadata.newBuilder().build())
             .setHttpErrorMessage("httpErrorMessage1577303431")
             .setHttpErrorStatusCode(0)
@@ -1131,7 +1136,6 @@ public class FirewallPoliciesClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

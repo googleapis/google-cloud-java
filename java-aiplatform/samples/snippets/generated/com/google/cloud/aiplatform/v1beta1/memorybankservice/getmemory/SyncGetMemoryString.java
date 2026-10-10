@@ -35,7 +35,9 @@ public class SyncGetMemoryString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
       String name =
-          MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]").toString();
+          MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                  "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+              .toString();
       Memory response = memoryBankServiceClient.getMemory(name);
     }
   }
