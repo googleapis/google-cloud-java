@@ -146,7 +146,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Provides the URI of the content, such as
-   * `docs.cloud.google.com/storage/docs/creating-buckets`.
+   * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -171,7 +171,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. Provides the URI of the content, such as
-   * `docs.cloud.google.com/storage/docs/creating-buckets`.
+   * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
    * </pre>
    *
    * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1173,7 +1173,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Provides the URI of the content, such as
-     * `docs.cloud.google.com/storage/docs/creating-buckets`.
+     * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1197,7 +1197,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Provides the URI of the content, such as
-     * `docs.cloud.google.com/storage/docs/creating-buckets`.
+     * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1221,7 +1221,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Provides the URI of the content, such as
-     * `docs.cloud.google.com/storage/docs/creating-buckets`.
+     * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1244,7 +1244,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Provides the URI of the content, such as
-     * `docs.cloud.google.com/storage/docs/creating-buckets`.
+     * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1263,7 +1263,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. Provides the URI of the content, such as
-     * `docs.cloud.google.com/storage/docs/creating-buckets`.
+     * `https://docs.cloud.google.com/storage/docs/creating-buckets`.
      * </pre>
      *
      * <code>string uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

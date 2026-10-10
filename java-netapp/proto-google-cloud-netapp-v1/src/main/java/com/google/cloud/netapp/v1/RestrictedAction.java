@@ -143,7 +143,7 @@ public enum RestrictedAction implements com.google.protobuf.ProtocolMessageEnum 
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.VolumeProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.cloud.netapp.v1.VolumeProto.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final RestrictedAction[] VALUES = values();

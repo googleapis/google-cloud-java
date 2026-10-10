@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1.stub;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
@@ -56,28 +58,40 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.AclPolicy;
+import com.google.cloud.redis.cluster.v1.AclPolicyRevision;
 import com.google.cloud.redis.cluster.v1.Backup;
 import com.google.cloud.redis.cluster.v1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1.BackupCollection;
 import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
+import com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
 import com.google.cloud.redis.cluster.v1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -181,16 +195,34 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
   private final PagedCallSettings<
           ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
       listClustersSettings;
+  private final PagedCallSettings<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      listAclPoliciesSettings;
   private final UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings;
+  private final UnaryCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicySettings;
   private final UnaryCallSettings<UpdateClusterRequest, Operation> updateClusterSettings;
   private final OperationCallSettings<UpdateClusterRequest, Cluster, Any>
       updateClusterOperationSettings;
+  private final UnaryCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicySettings;
+  private final OperationCallSettings<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationSettings;
   private final UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings;
   private final OperationCallSettings<DeleteClusterRequest, Empty, Any>
       deleteClusterOperationSettings;
+  private final UnaryCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings;
+  private final OperationCallSettings<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationSettings;
+  private final UnaryCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionSettings;
+  private final PagedCallSettings<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsSettings;
   private final UnaryCallSettings<CreateClusterRequest, Operation> createClusterSettings;
   private final OperationCallSettings<CreateClusterRequest, Cluster, Any>
       createClusterOperationSettings;
+  private final UnaryCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings;
   private final UnaryCallSettings<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthoritySettings;
   private final UnaryCallSettings<
@@ -255,6 +287,84 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
               return payload.getClustersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy>
+      LIST_ACL_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAclPoliciesRequest injectToken(
+                ListAclPoliciesRequest payload, String token) {
+              return ListAclPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAclPoliciesRequest injectPageSize(
+                ListAclPoliciesRequest payload, int pageSize) {
+              return ListAclPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAclPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAclPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AclPolicy> extractResources(ListAclPoliciesResponse payload) {
+              return payload.getAclPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>
+      LIST_ACL_POLICY_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAclPolicyRevisionsRequest injectToken(
+                ListAclPolicyRevisionsRequest payload, String token) {
+              return ListAclPolicyRevisionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAclPolicyRevisionsRequest injectPageSize(
+                ListAclPolicyRevisionsRequest payload, int pageSize) {
+              return ListAclPolicyRevisionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAclPolicyRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAclPolicyRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AclPolicyRevision> extractResources(
+                ListAclPolicyRevisionsResponse payload) {
+              return payload.getAclPolicyRevisionsList();
             }
           };
 
@@ -383,6 +493,50 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
           };
 
   private static final PagedListResponseFactory<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      LIST_ACL_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAclPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> callable,
+                ListAclPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAclPoliciesResponse> futureResponse) {
+              PageContext<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy> pageContext =
+                  PageContext.create(callable, LIST_ACL_POLICIES_PAGE_STR_DESC, request, context);
+              return ListAclPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      LIST_ACL_POLICY_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAclPolicyRevisionsRequest,
+              ListAclPolicyRevisionsResponse,
+              ListAclPolicyRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAclPolicyRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+                    callable,
+                ListAclPolicyRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAclPolicyRevisionsResponse> futureResponse) {
+              PageContext<
+                      ListAclPolicyRevisionsRequest,
+                      ListAclPolicyRevisionsResponse,
+                      AclPolicyRevision>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ACL_POLICY_REVISIONS_PAGE_STR_DESC, request, context);
+              return ListAclPolicyRevisionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListBackupCollectionsRequest,
           ListBackupCollectionsResponse,
           ListBackupCollectionsPagedResponse>
@@ -446,9 +600,21 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return listClustersSettings;
   }
 
+  /** Returns the object with the settings used for calls to listAclPolicies. */
+  public PagedCallSettings<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      listAclPoliciesSettings() {
+    return listAclPoliciesSettings;
+  }
+
   /** Returns the object with the settings used for calls to getCluster. */
   public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
     return getClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAclPolicy. */
+  public UnaryCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+    return getAclPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
@@ -462,6 +628,17 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return updateClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public UnaryCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+    return updateAclPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public OperationCallSettings<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationSettings() {
+    return updateAclPolicyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return deleteClusterSettings;
@@ -470,6 +647,32 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
   /** Returns the object with the settings used for calls to deleteCluster. */
   public OperationCallSettings<DeleteClusterRequest, Empty, Any> deleteClusterOperationSettings() {
     return deleteClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public UnaryCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+    return deleteAclPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public OperationCallSettings<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationSettings() {
+    return deleteAclPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAclPolicyRevision. */
+  public UnaryCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionSettings() {
+    return getAclPolicyRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAclPolicyRevisions. */
+  public PagedCallSettings<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsSettings() {
+    return listAclPolicyRevisionsSettings;
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
@@ -481,6 +684,11 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
   public OperationCallSettings<CreateClusterRequest, Cluster, Any>
       createClusterOperationSettings() {
     return createClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAclPolicy. */
+  public UnaryCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+    return createAclPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to getClusterCertificateAuthority. */
@@ -690,13 +898,22 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     super(settingsBuilder);
 
     listClustersSettings = settingsBuilder.listClustersSettings().build();
+    listAclPoliciesSettings = settingsBuilder.listAclPoliciesSettings().build();
     getClusterSettings = settingsBuilder.getClusterSettings().build();
+    getAclPolicySettings = settingsBuilder.getAclPolicySettings().build();
     updateClusterSettings = settingsBuilder.updateClusterSettings().build();
     updateClusterOperationSettings = settingsBuilder.updateClusterOperationSettings().build();
+    updateAclPolicySettings = settingsBuilder.updateAclPolicySettings().build();
+    updateAclPolicyOperationSettings = settingsBuilder.updateAclPolicyOperationSettings().build();
     deleteClusterSettings = settingsBuilder.deleteClusterSettings().build();
     deleteClusterOperationSettings = settingsBuilder.deleteClusterOperationSettings().build();
+    deleteAclPolicySettings = settingsBuilder.deleteAclPolicySettings().build();
+    deleteAclPolicyOperationSettings = settingsBuilder.deleteAclPolicyOperationSettings().build();
+    getAclPolicyRevisionSettings = settingsBuilder.getAclPolicyRevisionSettings().build();
+    listAclPolicyRevisionsSettings = settingsBuilder.listAclPolicyRevisionsSettings().build();
     createClusterSettings = settingsBuilder.createClusterSettings().build();
     createClusterOperationSettings = settingsBuilder.createClusterOperationSettings().build();
+    createAclPolicySettings = settingsBuilder.createAclPolicySettings().build();
     getClusterCertificateAuthoritySettings =
         settingsBuilder.getClusterCertificateAuthoritySettings().build();
     getSharedRegionalCertificateAuthoritySettings =
@@ -734,16 +951,38 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     private final PagedCallSettings.Builder<
             ListClustersRequest, ListClustersResponse, ListClustersPagedResponse>
         listClustersSettings;
+    private final PagedCallSettings.Builder<
+            ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+        listAclPoliciesSettings;
     private final UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings;
+    private final UnaryCallSettings.Builder<GetAclPolicyRequest, AclPolicy> getAclPolicySettings;
     private final UnaryCallSettings.Builder<UpdateClusterRequest, Operation> updateClusterSettings;
     private final OperationCallSettings.Builder<UpdateClusterRequest, Cluster, Any>
         updateClusterOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAclPolicyRequest, Operation>
+        updateAclPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+        updateAclPolicyOperationSettings;
     private final UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings;
     private final OperationCallSettings.Builder<DeleteClusterRequest, Empty, Any>
         deleteClusterOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAclPolicyRequest, Operation>
+        deleteAclPolicySettings;
+    private final OperationCallSettings.Builder<DeleteAclPolicyRequest, Empty, OperationMetadata>
+        deleteAclPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionSettings;
+    private final PagedCallSettings.Builder<
+            ListAclPolicyRevisionsRequest,
+            ListAclPolicyRevisionsResponse,
+            ListAclPolicyRevisionsPagedResponse>
+        listAclPolicyRevisionsSettings;
     private final UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings;
     private final OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings;
+    private final UnaryCallSettings.Builder<CreateAclPolicyRequest, AclPolicy>
+        createAclPolicySettings;
     private final UnaryCallSettings.Builder<
             GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthoritySettings;
@@ -816,13 +1055,23 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       super(clientContext);
 
       listClustersSettings = PagedCallSettings.newBuilder(LIST_CLUSTERS_PAGE_STR_FACT);
+      listAclPoliciesSettings = PagedCallSettings.newBuilder(LIST_ACL_POLICIES_PAGE_STR_FACT);
       getClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateClusterOperationSettings = OperationCallSettings.newBuilder();
+      updateAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAclPolicyOperationSettings = OperationCallSettings.newBuilder();
       deleteClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteClusterOperationSettings = OperationCallSettings.newBuilder();
+      deleteAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAclPolicyOperationSettings = OperationCallSettings.newBuilder();
+      getAclPolicyRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAclPolicyRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_ACL_POLICY_REVISIONS_PAGE_STR_FACT);
       createClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createClusterOperationSettings = OperationCallSettings.newBuilder();
+      createAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getClusterCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSharedRegionalCertificateAuthoritySettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -845,10 +1094,17 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listClustersSettings,
+              listAclPoliciesSettings,
               getClusterSettings,
+              getAclPolicySettings,
               updateClusterSettings,
+              updateAclPolicySettings,
               deleteClusterSettings,
+              deleteAclPolicySettings,
+              getAclPolicyRevisionSettings,
+              listAclPolicyRevisionsSettings,
               createClusterSettings,
+              createAclPolicySettings,
               getClusterCertificateAuthoritySettings,
               getSharedRegionalCertificateAuthoritySettings,
               rescheduleClusterMaintenanceSettings,
@@ -868,13 +1124,22 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       super(settings);
 
       listClustersSettings = settings.listClustersSettings.toBuilder();
+      listAclPoliciesSettings = settings.listAclPoliciesSettings.toBuilder();
       getClusterSettings = settings.getClusterSettings.toBuilder();
+      getAclPolicySettings = settings.getAclPolicySettings.toBuilder();
       updateClusterSettings = settings.updateClusterSettings.toBuilder();
       updateClusterOperationSettings = settings.updateClusterOperationSettings.toBuilder();
+      updateAclPolicySettings = settings.updateAclPolicySettings.toBuilder();
+      updateAclPolicyOperationSettings = settings.updateAclPolicyOperationSettings.toBuilder();
       deleteClusterSettings = settings.deleteClusterSettings.toBuilder();
       deleteClusterOperationSettings = settings.deleteClusterOperationSettings.toBuilder();
+      deleteAclPolicySettings = settings.deleteAclPolicySettings.toBuilder();
+      deleteAclPolicyOperationSettings = settings.deleteAclPolicyOperationSettings.toBuilder();
+      getAclPolicyRevisionSettings = settings.getAclPolicyRevisionSettings.toBuilder();
+      listAclPolicyRevisionsSettings = settings.listAclPolicyRevisionsSettings.toBuilder();
       createClusterSettings = settings.createClusterSettings.toBuilder();
       createClusterOperationSettings = settings.createClusterOperationSettings.toBuilder();
+      createAclPolicySettings = settings.createAclPolicySettings.toBuilder();
       getClusterCertificateAuthoritySettings =
           settings.getClusterCertificateAuthoritySettings.toBuilder();
       getSharedRegionalCertificateAuthoritySettings =
@@ -899,10 +1164,17 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listClustersSettings,
+              listAclPoliciesSettings,
               getClusterSettings,
+              getAclPolicySettings,
               updateClusterSettings,
+              updateAclPolicySettings,
               deleteClusterSettings,
+              deleteAclPolicySettings,
+              getAclPolicyRevisionSettings,
+              listAclPolicyRevisionsSettings,
               createClusterSettings,
+              createAclPolicySettings,
               getClusterCertificateAuthoritySettings,
               getSharedRegionalCertificateAuthoritySettings,
               rescheduleClusterMaintenanceSettings,
@@ -948,7 +1220,17 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .listAclPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .getClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAclPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -958,12 +1240,37 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .updateAclPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
           .deleteClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
+          .deleteAclPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getAclPolicyRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAclPolicyRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .createClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createAclPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1051,6 +1358,30 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
                       .build()));
 
       builder
+          .updateAclPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAclPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AclPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteClusterOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1071,6 +1402,30 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
                       .setRpcTimeoutMultiplier(1.0)
                       .setMaxRpcTimeoutDuration(Duration.ZERO)
                       .setTotalTimeoutDuration(Duration.ofMillis(1200000L))
+                      .build()));
+
+      builder
+          .deleteAclPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAclPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
       builder
@@ -1214,9 +1569,21 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       return listClustersSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listAclPolicies. */
+    public PagedCallSettings.Builder<
+            ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+        listAclPoliciesSettings() {
+      return listAclPoliciesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getCluster. */
     public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
       return getClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAclPolicy. */
+    public UnaryCallSettings.Builder<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+      return getAclPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
@@ -1230,6 +1597,17 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       return updateClusterOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public UnaryCallSettings.Builder<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+      return updateAclPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public OperationCallSettings.Builder<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+        updateAclPolicyOperationSettings() {
+      return updateAclPolicyOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
       return deleteClusterSettings;
@@ -1241,6 +1619,32 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       return deleteClusterOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public UnaryCallSettings.Builder<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+      return deleteAclPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public OperationCallSettings.Builder<DeleteAclPolicyRequest, Empty, OperationMetadata>
+        deleteAclPolicyOperationSettings() {
+      return deleteAclPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAclPolicyRevision. */
+    public UnaryCallSettings.Builder<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionSettings() {
+      return getAclPolicyRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAclPolicyRevisions. */
+    public PagedCallSettings.Builder<
+            ListAclPolicyRevisionsRequest,
+            ListAclPolicyRevisionsResponse,
+            ListAclPolicyRevisionsPagedResponse>
+        listAclPolicyRevisionsSettings() {
+      return listAclPolicyRevisionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createCluster. */
     public UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings() {
       return createClusterSettings;
@@ -1250,6 +1654,11 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings() {
       return createClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAclPolicy. */
+    public UnaryCallSettings.Builder<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+      return createAclPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to getClusterCertificateAuthority. */

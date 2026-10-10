@@ -60,30 +60,31 @@ public final class NotificationConfigProto extends com.google.protobuf.Generated
       "\n8google/cloud/securitycenter/v1/notific"
           + "ation_config.proto\022\036google.cloud.securit"
           + "ycenter.v1\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\"\305\004\n\022Notif"
+          + "oto\032\031google/api/resource.proto\"\362\004\n\022Notif"
           + "icationConfig\022\014\n\004name\030\001 \001(\t\022\023\n\013descripti"
           + "on\030\002 \001(\t\0226\n\014pubsub_topic\030\003 \001(\tB \372A\035\n\033pub"
           + "sub.googleapis.com/Topic\022\034\n\017service_acco"
           + "unt\030\004 \001(\tB\003\340A\003\022^\n\020streaming_config\030\005 \001(\013"
           + "2B.google.cloud.securitycenter.v1.Notifi"
-          + "cationConfig.StreamingConfigH\000\032!\n\017Stream"
-          + "ingConfig\022\016\n\006filter\030\001 \001(\t:\241\002\352A\235\002\n0securi"
-          + "tycenter.googleapis.com/NotificationConf"
-          + "ig\022Forganizations/{organization}/notific"
-          + "ationConfigs/{notification_config}\022:fold"
-          + "ers/{folder}/notificationConfigs/{notifi"
-          + "cation_config}\022<projects/{project}/notif"
-          + "icationConfigs/{notification_config}*\023no"
-          + "tificationConfigs2\022notificationConfigB\017\n"
-          + "\rnotify_configB\264\002\n\"com.google.cloud.secu"
-          + "ritycenter.v1B\027NotificationConfigProtoP\001"
-          + "ZJcloud.google.com/go/securitycenter/api"
-          + "v1/securitycenterpb;securitycenterpb\252\002\036G"
-          + "oogle.Cloud.SecurityCenter.V1\312\002\036Google\\C"
-          + "loud\\SecurityCenter\\V1\352\002!Google::Cloud::"
-          + "SecurityCenter::V1\352A@\n\033pubsub.googleapis"
-          + ".com/Topic\022!projects/{project}/topics/{t"
-          + "opic}b\006proto3"
+          + "cationConfig.StreamingConfigH\000\022+\n\036deleti"
+          + "on_notifications_enabled\030\007 \001(\010B\003\340A\001\032!\n\017S"
+          + "treamingConfig\022\016\n\006filter\030\001 \001(\t:\241\002\352A\235\002\n0s"
+          + "ecuritycenter.googleapis.com/Notificatio"
+          + "nConfig\022Forganizations/{organization}/no"
+          + "tificationConfigs/{notification_config}\022"
+          + ":folders/{folder}/notificationConfigs/{n"
+          + "otification_config}\022<projects/{project}/"
+          + "notificationConfigs/{notification_config"
+          + "}*\023notificationConfigs2\022notificationConf"
+          + "igB\017\n\rnotify_configB\264\002\n\"com.google.cloud"
+          + ".securitycenter.v1B\027NotificationConfigPr"
+          + "otoP\001ZJcloud.google.com/go/securitycente"
+          + "r/apiv1/securitycenterpb;securitycenterp"
+          + "b\252\002\036Google.Cloud.SecurityCenter.V1\312\002\036Goo"
+          + "gle\\Cloud\\SecurityCenter\\V1\352\002!Google::Cl"
+          + "oud::SecurityCenter::V1\352A@\n\033pubsub.googl"
+          + "eapis.com/Topic\022!projects/{project}/topi"
+          + "cs/{topic}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +104,7 @@ public final class NotificationConfigProto extends com.google.protobuf.Generated
               "PubsubTopic",
               "ServiceAccount",
               "StreamingConfig",
+              "DeletionNotificationsEnabled",
               "NotifyConfig",
             });
     internal_static_google_cloud_securitycenter_v1_NotificationConfig_StreamingConfig_descriptor =

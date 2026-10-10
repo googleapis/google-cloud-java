@@ -122,6 +122,31 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListAclPolicies</td>
+ *      <td><p> Lists all ACL policies owned by a project in either the specified location (region) or all locations.
+ * <p>  The location should have the following format:
+ * <ul>
+ * <li>  `projects/{project_id}/locations/{location_id}`
+ * </ul>
+ * <p>  If `location_id` is specified as `-` (wildcard), then all regions available to the project are queried, and the results are aggregated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAclPolicies(ListAclPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAclPolicies(LocationName parent)
+ *           <li><p> listAclPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAclPoliciesPagedCallable()
+ *           <li><p> listAclPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetCluster</td>
  *      <td><p> Gets the details of a specific Redis cluster.</td>
  *      <td>
@@ -137,6 +162,25 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAclPolicy</td>
+ *      <td><p> Gets the details of a specific Redis Cluster ACL policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAclPolicy(GetAclPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAclPolicy(AclPolicyName name)
+ *           <li><p> getAclPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAclPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -161,6 +205,27 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateAclPolicy</td>
+ *      <td><p> Updates the ACL policy.
+ * <p>  The operation applies the updated ACL policy to all of the linked clusters. If Memorystore can apply the policy to all clusters, then the operation returns a SUCCESS status. If Memorystore can't apply the policy to all clusters, then to ensure eventual consistency, Memorystore uses reconciliation to apply the policy to the failed clusters.
+ * <p>  Completed longrunning.Operation will contain the new ACL policy object in the response field.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAclPolicyAsync(UpdateAclPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAclPolicyAsync(AclPolicy aclPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAclPolicyOperationCallable()
+ *           <li><p> updateAclPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteCluster</td>
  *      <td><p> Deletes a specific Redis cluster. Cluster stops serving and data is deleted.</td>
  *      <td>
@@ -177,6 +242,65 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> deleteClusterOperationCallable()
  *           <li><p> deleteClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAclPolicy</td>
+ *      <td><p> Deletes a specific ACL policy. This action will delete the ACL policy and all the rules associated with it. An ACL policy cannot be deleted if it is attached to a cluster.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAclPolicyAsync(DeleteAclPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAclPolicyAsync(AclPolicyName name)
+ *           <li><p> deleteAclPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAclPolicyOperationCallable()
+ *           <li><p> deleteAclPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAclPolicyRevision</td>
+ *      <td><p> Gets details of a specific ACL policy revision.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAclPolicyRevision(GetAclPolicyRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAclPolicyRevision(AclPolicyRevisionName name)
+ *           <li><p> getAclPolicyRevision(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAclPolicyRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAclPolicyRevisions</td>
+ *      <td><p> Lists all ACL policy revisions in a given ACL policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAclPolicyRevisions(ListAclPolicyRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAclPolicyRevisions(AclPolicyName parent)
+ *           <li><p> listAclPolicyRevisions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAclPolicyRevisionsPagedCallable()
+ *           <li><p> listAclPolicyRevisionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -198,6 +322,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> createClusterOperationCallable()
  *           <li><p> createClusterCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAclPolicy</td>
+ *      <td><p> Creates an ACL policy. The creation is executed synchronously and the policy is available for use immediately after the RPC returns.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAclPolicy(CreateAclPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createAclPolicy(LocationName parent, AclPolicy aclPolicy, String aclPolicyId)
+ *           <li><p> createAclPolicy(String parent, AclPolicy aclPolicy, String aclPolicyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAclPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -773,6 +916,224 @@ public class CloudRedisClusterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists all ACL policies owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format:
+   *
+   * <ul>
+   *   <li>`projects/{project_id}/locations/{location_id}`
+   * </ul>
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AclPolicy element : cloudRedisClusterClient.listAclPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the ACL policy location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclPoliciesPagedResponse listAclPolicies(@Nullable LocationName parent) {
+    ListAclPoliciesRequest request =
+        ListAclPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAclPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policies owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format:
+   *
+   * <ul>
+   *   <li>`projects/{project_id}/locations/{location_id}`
+   * </ul>
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AclPolicy element : cloudRedisClusterClient.listAclPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the ACL policy location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclPoliciesPagedResponse listAclPolicies(String parent) {
+    ListAclPoliciesRequest request = ListAclPoliciesRequest.newBuilder().setParent(parent).build();
+    return listAclPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policies owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format:
+   *
+   * <ul>
+   *   <li>`projects/{project_id}/locations/{location_id}`
+   * </ul>
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListAclPoliciesRequest request =
+   *       ListAclPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AclPolicy element : cloudRedisClusterClient.listAclPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclPoliciesPagedResponse listAclPolicies(ListAclPoliciesRequest request) {
+    return listAclPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policies owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format:
+   *
+   * <ul>
+   *   <li>`projects/{project_id}/locations/{location_id}`
+   * </ul>
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListAclPoliciesRequest request =
+   *       ListAclPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AclPolicy> future =
+   *       cloudRedisClusterClient.listAclPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AclPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    return stub.listAclPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policies owned by a project in either the specified location (region) or all
+   * locations.
+   *
+   * <p>The location should have the following format:
+   *
+   * <ul>
+   *   <li>`projects/{project_id}/locations/{location_id}`
+   * </ul>
+   *
+   * <p>If `location_id` is specified as `-` (wildcard), then all regions available to the project
+   * are queried, and the results are aggregated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListAclPoliciesRequest request =
+   *       ListAclPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAclPoliciesResponse response =
+   *         cloudRedisClusterClient.listAclPoliciesCallable().call(request);
+   *     for (AclPolicy element : response.getAclPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesCallable() {
+    return stub.listAclPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets the details of a specific Redis cluster.
    *
    * <p>Sample code:
@@ -881,6 +1242,119 @@ public class CloudRedisClusterClient implements BackgroundResource {
    */
   public final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return stub.getClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific Redis Cluster ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+   *   AclPolicy response = cloudRedisClusterClient.getAclPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis ACL policy resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}` where
+   *     `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicy getAclPolicy(@Nullable AclPolicyName name) {
+    GetAclPolicyRequest request =
+        GetAclPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAclPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific Redis Cluster ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString();
+   *   AclPolicy response = cloudRedisClusterClient.getAclPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis ACL policy resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}` where
+   *     `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicy getAclPolicy(String name) {
+    GetAclPolicyRequest request = GetAclPolicyRequest.newBuilder().setName(name).build();
+    return getAclPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific Redis Cluster ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetAclPolicyRequest request =
+   *       GetAclPolicyRequest.newBuilder()
+   *           .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .build();
+   *   AclPolicy response = cloudRedisClusterClient.getAclPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicy getAclPolicy(GetAclPolicyRequest request) {
+    return getAclPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the details of a specific Redis Cluster ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetAclPolicyRequest request =
+   *       GetAclPolicyRequest.newBuilder()
+   *           .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .build();
+   *   ApiFuture<AclPolicy> future =
+   *       cloudRedisClusterClient.getAclPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   AclPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    return stub.getAclPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1021,6 +1495,167 @@ public class CloudRedisClusterClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the ACL policy.
+   *
+   * <p>The operation applies the updated ACL policy to all of the linked clusters. If Memorystore
+   * can apply the policy to all clusters, then the operation returns a SUCCESS status. If
+   * Memorystore can't apply the policy to all clusters, then to ensure eventual consistency,
+   * Memorystore uses reconciliation to apply the policy to the failed clusters.
+   *
+   * <p>Completed longrunning.Operation will contain the new ACL policy object in the response
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AclPolicy response =
+   *       cloudRedisClusterClient.updateAclPolicyAsync(aclPolicy, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param aclPolicy Required. The ACL policy to be updated.
+   * @param updateMask Optional. Mask of fields to be updated. At least one path must be supplied in
+   *     this field. The elements of the repeated paths field may only include these fields from
+   *     `AclPolicy`:
+   *     <p>&#42; `rules`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AclPolicy, OperationMetadata> updateAclPolicyAsync(
+      AclPolicy aclPolicy, FieldMask updateMask) {
+    UpdateAclPolicyRequest request =
+        UpdateAclPolicyRequest.newBuilder()
+            .setAclPolicy(aclPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAclPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the ACL policy.
+   *
+   * <p>The operation applies the updated ACL policy to all of the linked clusters. If Memorystore
+   * can apply the policy to all clusters, then the operation returns a SUCCESS status. If
+   * Memorystore can't apply the policy to all clusters, then to ensure eventual consistency,
+   * Memorystore uses reconciliation to apply the policy to the failed clusters.
+   *
+   * <p>Completed longrunning.Operation will contain the new ACL policy object in the response
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   UpdateAclPolicyRequest request =
+   *       UpdateAclPolicyRequest.newBuilder()
+   *           .setAclPolicy(AclPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AclPolicy response = cloudRedisClusterClient.updateAclPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AclPolicy, OperationMetadata> updateAclPolicyAsync(
+      UpdateAclPolicyRequest request) {
+    return updateAclPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the ACL policy.
+   *
+   * <p>The operation applies the updated ACL policy to all of the linked clusters. If Memorystore
+   * can apply the policy to all clusters, then the operation returns a SUCCESS status. If
+   * Memorystore can't apply the policy to all clusters, then to ensure eventual consistency,
+   * Memorystore uses reconciliation to apply the policy to the failed clusters.
+   *
+   * <p>Completed longrunning.Operation will contain the new ACL policy object in the response
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   UpdateAclPolicyRequest request =
+   *       UpdateAclPolicyRequest.newBuilder()
+   *           .setAclPolicy(AclPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AclPolicy, OperationMetadata> future =
+   *       cloudRedisClusterClient.updateAclPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AclPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    return stub.updateAclPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the ACL policy.
+   *
+   * <p>The operation applies the updated ACL policy to all of the linked clusters. If Memorystore
+   * can apply the policy to all clusters, then the operation returns a SUCCESS status. If
+   * Memorystore can't apply the policy to all clusters, then to ensure eventual consistency,
+   * Memorystore uses reconciliation to apply the policy to the failed clusters.
+   *
+   * <p>Completed longrunning.Operation will contain the new ACL policy object in the response
+   * field.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   UpdateAclPolicyRequest request =
+   *       UpdateAclPolicyRequest.newBuilder()
+   *           .setAclPolicy(AclPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClusterClient.updateAclPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    return stub.updateAclPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1166,6 +1801,457 @@ public class CloudRedisClusterClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific ACL policy. This action will delete the ACL policy and all the rules
+   * associated with it. An ACL policy cannot be deleted if it is attached to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+   *   cloudRedisClusterClient.deleteAclPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis ACL policy resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}` where
+   *     `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAclPolicyAsync(
+      @Nullable AclPolicyName name) {
+    DeleteAclPolicyRequest request =
+        DeleteAclPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteAclPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific ACL policy. This action will delete the ACL policy and all the rules
+   * associated with it. An ACL policy cannot be deleted if it is attached to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString();
+   *   cloudRedisClusterClient.deleteAclPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis ACL policy resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}` where
+   *     `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAclPolicyAsync(String name) {
+    DeleteAclPolicyRequest request = DeleteAclPolicyRequest.newBuilder().setName(name).build();
+    return deleteAclPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific ACL policy. This action will delete the ACL policy and all the rules
+   * associated with it. An ACL policy cannot be deleted if it is attached to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   DeleteAclPolicyRequest request =
+   *       DeleteAclPolicyRequest.newBuilder()
+   *           .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   cloudRedisClusterClient.deleteAclPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAclPolicyAsync(
+      DeleteAclPolicyRequest request) {
+    return deleteAclPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific ACL policy. This action will delete the ACL policy and all the rules
+   * associated with it. An ACL policy cannot be deleted if it is attached to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   DeleteAclPolicyRequest request =
+   *       DeleteAclPolicyRequest.newBuilder()
+   *           .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudRedisClusterClient.deleteAclPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    return stub.deleteAclPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a specific ACL policy. This action will delete the ACL policy and all the rules
+   * associated with it. An ACL policy cannot be deleted if it is attached to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   DeleteAclPolicyRequest request =
+   *       DeleteAclPolicyRequest.newBuilder()
+   *           .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudRedisClusterClient.deleteAclPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    return stub.deleteAclPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a specific ACL policy revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   AclPolicyRevisionName name =
+   *       AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]");
+   *   AclPolicyRevision response = cloudRedisClusterClient.getAclPolicyRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis ACL policy revision resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}/revisions/{revision_id}`
+   *     where `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicyRevision getAclPolicyRevision(@Nullable AclPolicyRevisionName name) {
+    GetAclPolicyRevisionRequest request =
+        GetAclPolicyRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAclPolicyRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a specific ACL policy revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String name =
+   *       AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+   *           .toString();
+   *   AclPolicyRevision response = cloudRedisClusterClient.getAclPolicyRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Redis ACL policy revision resource name using the form:
+   *     `projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}/revisions/{revision_id}`
+   *     where `location_id` refers to a Google Cloud region.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicyRevision getAclPolicyRevision(String name) {
+    GetAclPolicyRevisionRequest request =
+        GetAclPolicyRevisionRequest.newBuilder().setName(name).build();
+    return getAclPolicyRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a specific ACL policy revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetAclPolicyRevisionRequest request =
+   *       GetAclPolicyRevisionRequest.newBuilder()
+   *           .setName(
+   *               AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   AclPolicyRevision response = cloudRedisClusterClient.getAclPolicyRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicyRevision getAclPolicyRevision(GetAclPolicyRevisionRequest request) {
+    return getAclPolicyRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a specific ACL policy revision.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   GetAclPolicyRevisionRequest request =
+   *       GetAclPolicyRevisionRequest.newBuilder()
+   *           .setName(
+   *               AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AclPolicyRevision> future =
+   *       cloudRedisClusterClient.getAclPolicyRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   AclPolicyRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    return stub.getAclPolicyRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policy revisions in a given ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   AclPolicyName parent = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+   *   for (AclPolicyRevision element :
+   *       cloudRedisClusterClient.listAclPolicyRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the ACL policy to list revisions for. Format:
+   *     "projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclPolicyRevisionsPagedResponse listAclPolicyRevisions(
+      @Nullable AclPolicyName parent) {
+    ListAclPolicyRevisionsRequest request =
+        ListAclPolicyRevisionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAclPolicyRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policy revisions in a given ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String parent = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString();
+   *   for (AclPolicyRevision element :
+   *       cloudRedisClusterClient.listAclPolicyRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the ACL policy to list revisions for. Format:
+   *     "projects/{project_id}/locations/{location_id}/aclPolicies/{acl_policy_id}"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclPolicyRevisionsPagedResponse listAclPolicyRevisions(String parent) {
+    ListAclPolicyRevisionsRequest request =
+        ListAclPolicyRevisionsRequest.newBuilder().setParent(parent).build();
+    return listAclPolicyRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policy revisions in a given ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListAclPolicyRevisionsRequest request =
+   *       ListAclPolicyRevisionsRequest.newBuilder()
+   *           .setParent(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AclPolicyRevision element :
+   *       cloudRedisClusterClient.listAclPolicyRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAclPolicyRevisionsPagedResponse listAclPolicyRevisions(
+      ListAclPolicyRevisionsRequest request) {
+    return listAclPolicyRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policy revisions in a given ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListAclPolicyRevisionsRequest request =
+   *       ListAclPolicyRevisionsRequest.newBuilder()
+   *           .setParent(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AclPolicyRevision> future =
+   *       cloudRedisClusterClient.listAclPolicyRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AclPolicyRevision element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    return stub.listAclPolicyRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all ACL policy revisions in a given ACL policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   ListAclPolicyRevisionsRequest request =
+   *       ListAclPolicyRevisionsRequest.newBuilder()
+   *           .setParent(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListAclPolicyRevisionsResponse response =
+   *         cloudRedisClusterClient.listAclPolicyRevisionsCallable().call(request);
+   *     for (AclPolicyRevision element : response.getAclPolicyRevisionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    return stub.listAclPolicyRevisionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1384,6 +2470,165 @@ public class CloudRedisClusterClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an ACL policy. The creation is executed synchronously and the policy is available for
+   * use immediately after the RPC returns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+   *   String aclPolicyId = "aclPolicyId-1805591401";
+   *   AclPolicy response = cloudRedisClusterClient.createAclPolicy(parent, aclPolicy, aclPolicyId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the cluster location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
+   * @param aclPolicy Required. The ACL policy that is to be created.
+   * @param aclPolicyId Required. The logical name of the ACL policy in the customer project with
+   *     the following restrictions:
+   *     <ul>
+   *       <li>Must contain only lowercase letters, numbers, and hyphens.
+   *       <li>Must start with a letter.
+   *       <li>Must be between 1-63 characters.
+   *       <li>Must end with a number or a letter.
+   *       <li>Must be unique within the customer project / location
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicy createAclPolicy(
+      @Nullable LocationName parent, AclPolicy aclPolicy, String aclPolicyId) {
+    CreateAclPolicyRequest request =
+        CreateAclPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAclPolicy(aclPolicy)
+            .setAclPolicyId(aclPolicyId)
+            .build();
+    return createAclPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an ACL policy. The creation is executed synchronously and the policy is available for
+   * use immediately after the RPC returns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+   *   String aclPolicyId = "aclPolicyId-1805591401";
+   *   AclPolicy response = cloudRedisClusterClient.createAclPolicy(parent, aclPolicy, aclPolicyId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the cluster location using the form:
+   *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a Google
+   *     Cloud region.
+   * @param aclPolicy Required. The ACL policy that is to be created.
+   * @param aclPolicyId Required. The logical name of the ACL policy in the customer project with
+   *     the following restrictions:
+   *     <ul>
+   *       <li>Must contain only lowercase letters, numbers, and hyphens.
+   *       <li>Must start with a letter.
+   *       <li>Must be between 1-63 characters.
+   *       <li>Must end with a number or a letter.
+   *       <li>Must be unique within the customer project / location
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicy createAclPolicy(String parent, AclPolicy aclPolicy, String aclPolicyId) {
+    CreateAclPolicyRequest request =
+        CreateAclPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setAclPolicy(aclPolicy)
+            .setAclPolicyId(aclPolicyId)
+            .build();
+    return createAclPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an ACL policy. The creation is executed synchronously and the policy is available for
+   * use immediately after the RPC returns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   CreateAclPolicyRequest request =
+   *       CreateAclPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAclPolicyId("aclPolicyId-1805591401")
+   *           .setAclPolicy(AclPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AclPolicy response = cloudRedisClusterClient.createAclPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AclPolicy createAclPolicy(CreateAclPolicyRequest request) {
+    return createAclPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an ACL policy. The creation is executed synchronously and the policy is available for
+   * use immediately after the RPC returns.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudRedisClusterClient cloudRedisClusterClient = CloudRedisClusterClient.create()) {
+   *   CreateAclPolicyRequest request =
+   *       CreateAclPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAclPolicyId("aclPolicyId-1805591401")
+   *           .setAclPolicy(AclPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<AclPolicy> future =
+   *       cloudRedisClusterClient.createAclPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   AclPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    return stub.createAclPolicyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3111,6 +4356,174 @@ public class CloudRedisClusterClient implements BackgroundResource {
     protected ListClustersFixedSizeCollection createCollection(
         @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAclPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAclPoliciesRequest,
+          ListAclPoliciesResponse,
+          AclPolicy,
+          ListAclPoliciesPage,
+          ListAclPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListAclPoliciesPagedResponse> createAsync(
+        PageContext<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy> context,
+        ApiFuture<ListAclPoliciesResponse> futureResponse) {
+      ApiFuture<ListAclPoliciesPage> futurePage =
+          ListAclPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAclPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAclPoliciesPagedResponse(ListAclPoliciesPage page) {
+      super(page, ListAclPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAclPoliciesPage
+      extends AbstractPage<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy, ListAclPoliciesPage> {
+
+    private ListAclPoliciesPage(
+        @Nullable PageContext<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy> context,
+        @Nullable ListAclPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAclPoliciesPage createEmptyPage() {
+      return new ListAclPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListAclPoliciesPage createPage(
+        @Nullable PageContext<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy> context,
+        @Nullable ListAclPoliciesResponse response) {
+      return new ListAclPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAclPoliciesPage> createPageAsync(
+        @Nullable PageContext<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy> context,
+        ApiFuture<ListAclPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAclPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAclPoliciesRequest,
+          ListAclPoliciesResponse,
+          AclPolicy,
+          ListAclPoliciesPage,
+          ListAclPoliciesFixedSizeCollection> {
+
+    private ListAclPoliciesFixedSizeCollection(
+        @Nullable List<ListAclPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAclPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListAclPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAclPoliciesFixedSizeCollection createCollection(
+        @Nullable List<ListAclPoliciesPage> pages, int collectionSize) {
+      return new ListAclPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAclPolicyRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          AclPolicyRevision,
+          ListAclPolicyRevisionsPage,
+          ListAclPolicyRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListAclPolicyRevisionsPagedResponse> createAsync(
+        PageContext<
+                ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>
+            context,
+        ApiFuture<ListAclPolicyRevisionsResponse> futureResponse) {
+      ApiFuture<ListAclPolicyRevisionsPage> futurePage =
+          ListAclPolicyRevisionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAclPolicyRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAclPolicyRevisionsPagedResponse(ListAclPolicyRevisionsPage page) {
+      super(page, ListAclPolicyRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAclPolicyRevisionsPage
+      extends AbstractPage<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          AclPolicyRevision,
+          ListAclPolicyRevisionsPage> {
+
+    private ListAclPolicyRevisionsPage(
+        @Nullable
+            PageContext<
+                ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>
+            context,
+        @Nullable ListAclPolicyRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAclPolicyRevisionsPage createEmptyPage() {
+      return new ListAclPolicyRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListAclPolicyRevisionsPage createPage(
+        @Nullable
+            PageContext<
+                ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>
+            context,
+        @Nullable ListAclPolicyRevisionsResponse response) {
+      return new ListAclPolicyRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAclPolicyRevisionsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>
+            context,
+        ApiFuture<ListAclPolicyRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAclPolicyRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          AclPolicyRevision,
+          ListAclPolicyRevisionsPage,
+          ListAclPolicyRevisionsFixedSizeCollection> {
+
+    private ListAclPolicyRevisionsFixedSizeCollection(
+        @Nullable List<ListAclPolicyRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAclPolicyRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListAclPolicyRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAclPolicyRevisionsFixedSizeCollection createCollection(
+        @Nullable List<ListAclPolicyRevisionsPage> pages, int collectionSize) {
+      return new ListAclPolicyRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

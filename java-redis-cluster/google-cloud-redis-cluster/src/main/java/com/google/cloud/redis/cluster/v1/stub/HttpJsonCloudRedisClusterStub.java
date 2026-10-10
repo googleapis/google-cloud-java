@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1.stub;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
@@ -41,28 +43,40 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.AclPolicy;
+import com.google.cloud.redis.cluster.v1.AclPolicyRevision;
 import com.google.cloud.redis.cluster.v1.Backup;
 import com.google.cloud.redis.cluster.v1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1.BackupCollection;
 import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
+import com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
 import com.google.cloud.redis.cluster.v1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -91,7 +105,9 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
           .add(Cluster.getDescriptor())
+          .add(AclPolicy.getDescriptor())
           .add(Any.getDescriptor())
+          .add(OperationMetadata.getDescriptor())
           .add(Backup.getDescriptor())
           .build();
 
@@ -131,6 +147,42 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/ListAclPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/aclPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListAclPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
       ApiMethodDescriptor.<GetClusterRequest, Cluster>newBuilder()
           .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/GetCluster")
@@ -163,6 +215,40 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<GetAclPolicyRequest, AclPolicy>
+      getAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetAclPolicyRequest, AclPolicy>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/GetAclPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicy>newBuilder()
+                      .setDefaultInstance(AclPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<UpdateClusterRequest, Operation>
       updateClusterMethodDescriptor =
@@ -207,6 +293,49 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateAclPolicyRequest, Operation>
+      updateAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAclPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/UpdateAclPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{aclPolicy.name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "aclPolicy.name", request.getAclPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclPolicy", request.getAclPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAclPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteClusterRequest, Operation>
       deleteClusterMethodDescriptor =
           ApiMethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
@@ -243,6 +372,119 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
               .setOperationSnapshotFactory(
                   (DeleteClusterRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAclPolicyRequest, Operation>
+      deleteAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAclPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/DeleteAclPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAclPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionMethodDescriptor =
+          ApiMethodDescriptor.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetAclPolicyRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAclPolicyRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/aclPolicies/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicyRevision>newBuilder()
+                      .setDefaultInstance(AclPolicyRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/ListAclPolicyRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclPolicyRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/aclPolicies/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPolicyRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPolicyRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclPolicyRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListAclPolicyRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CreateClusterRequest, Operation>
@@ -285,6 +527,46 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
               .setOperationSnapshotFactory(
                   (CreateClusterRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAclPolicyRequest, AclPolicy>
+      createAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/CreateAclPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/aclPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "aclPolicyId", request.getAclPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclPolicy", request.getAclPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicy>newBuilder()
+                      .setDefaultInstance(AclPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<
@@ -736,15 +1018,33 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
+  private final UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable;
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, Any>
       updateClusterOperationCallable;
+  private final UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable;
+  private final OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, Any> deleteClusterOperationCallable;
+  private final UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable;
+  private final OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable;
+  private final UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
   private final OperationCallable<CreateClusterRequest, Cluster, Any>
       createClusterOperationCallable;
+  private final UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable;
   private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable;
   private final UnaryCallable<
@@ -858,9 +1158,34 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<ListAclPoliciesRequest, ListAclPoliciesResponse>
+        listAclPoliciesTransportSettings =
+            HttpJsonCallSettings.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listAclPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicyTransportSettings =
+        HttpJsonCallSettings.<GetAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(getAclPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -881,6 +1206,17 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicyTransportSettings =
+        HttpJsonCallSettings.<UpdateAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl_policy.name", String.valueOf(request.getAclPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -893,9 +1229,60 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionTransportSettings =
+            HttpJsonCallSettings.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+                .setMethodDescriptor(getAclPolicyRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listAclPolicyRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicyTransportSettings =
+        HttpJsonCallSettings.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(createAclPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -1065,9 +1452,18 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
     this.listClustersPagedCallable =
         callableFactory.createPagedCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
+    this.listAclPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
+    this.listAclPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
     this.getClusterCallable =
         callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
+    this.getAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyTransportSettings, settings.getAclPolicySettings(), clientContext);
     this.updateClusterCallable =
         callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
@@ -1075,6 +1471,15 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
         callableFactory.createOperationCallable(
             updateClusterTransportSettings,
             settings.updateClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateAclPolicyTransportSettings, settings.updateAclPolicySettings(), clientContext);
+    this.updateAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAclPolicyTransportSettings,
+            settings.updateAclPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.deleteClusterCallable =
@@ -1086,6 +1491,30 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclPolicyTransportSettings, settings.deleteAclPolicySettings(), clientContext);
+    this.deleteAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAclPolicyTransportSettings,
+            settings.deleteAclPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAclPolicyRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyRevisionTransportSettings,
+            settings.getAclPolicyRevisionSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
     this.createClusterCallable =
         callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
@@ -1095,6 +1524,9 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.createClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAclPolicyTransportSettings, settings.createAclPolicySettings(), clientContext);
     this.getClusterCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             getClusterCertificateAuthorityTransportSettings,
@@ -1185,10 +1617,17 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listClustersMethodDescriptor);
+    methodDescriptors.add(listAclPoliciesMethodDescriptor);
     methodDescriptors.add(getClusterMethodDescriptor);
+    methodDescriptors.add(getAclPolicyMethodDescriptor);
     methodDescriptors.add(updateClusterMethodDescriptor);
+    methodDescriptors.add(updateAclPolicyMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
+    methodDescriptors.add(deleteAclPolicyMethodDescriptor);
+    methodDescriptors.add(getAclPolicyRevisionMethodDescriptor);
+    methodDescriptors.add(listAclPolicyRevisionsMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
+    methodDescriptors.add(createAclPolicyMethodDescriptor);
     methodDescriptors.add(getClusterCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(rescheduleClusterMaintenanceMethodDescriptor);
@@ -1219,8 +1658,24 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    return listAclPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    return listAclPoliciesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    return getAclPolicyCallable;
   }
 
   @Override
@@ -1234,6 +1689,17 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    return updateAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    return updateAclPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
@@ -1244,6 +1710,35 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    return deleteAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    return deleteAclPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    return getAclPolicyRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    return listAclPolicyRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    return listAclPolicyRevisionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
@@ -1251,6 +1746,11 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     return createClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    return createAclPolicyCallable;
   }
 
   @Override

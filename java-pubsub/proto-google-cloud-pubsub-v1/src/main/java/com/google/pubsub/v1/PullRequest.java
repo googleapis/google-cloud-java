@@ -147,7 +147,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=2251
+   *     google/pubsub/v1/pubsub.proto;l=2327
    * @return The returnImmediately.
    */
   @java.lang.Override
@@ -673,7 +673,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=2251
+     *     google/pubsub/v1/pubsub.proto;l=2327
      * @return The returnImmediately.
      */
     @java.lang.Override
@@ -700,7 +700,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=2251
+     *     google/pubsub/v1/pubsub.proto;l=2327
      * @param value The returnImmediately to set.
      * @return This builder for chaining.
      */
@@ -731,7 +731,7 @@ public final class PullRequest extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.pubsub.v1.PullRequest.return_immediately is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=2251
+     *     google/pubsub/v1/pubsub.proto;l=2327
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -166,7 +166,7 @@ public enum SecurityStyle implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.VolumeProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.cloud.netapp.v1.VolumeProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final SecurityStyle[] VALUES = values();

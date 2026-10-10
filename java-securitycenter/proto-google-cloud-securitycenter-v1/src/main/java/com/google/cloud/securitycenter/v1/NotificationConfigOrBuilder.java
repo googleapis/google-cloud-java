@@ -185,5 +185,20 @@ public interface NotificationConfigOrBuilder
   com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfigOrBuilder
       getStreamingConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the notifications will be sent for deleted
+   * findings. When enabled, the filter defined in the streaming config is still
+   * respected when sending deletion notifications.
+   * </pre>
+   *
+   * <code>bool deletion_notifications_enabled = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionNotificationsEnabled.
+   */
+  boolean getDeletionNotificationsEnabled();
+
   com.google.cloud.securitycenter.v1.NotificationConfig.NotifyConfigCase getNotifyConfigCase();
 }

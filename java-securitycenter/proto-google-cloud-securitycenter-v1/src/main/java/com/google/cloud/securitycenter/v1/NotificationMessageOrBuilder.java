@@ -129,5 +129,18 @@ public interface NotificationMessageOrBuilder
    */
   com.google.cloud.securitycenter.v1.ResourceOrBuilder getResourceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the finding is deleted.
+   * </pre>
+   *
+   * <code>bool deleted_finding = 5;</code>
+   *
+   * @return The deletedFinding.
+   */
+  boolean getDeletedFinding();
+
   com.google.cloud.securitycenter.v1.NotificationMessage.EventCase getEventCase();
 }

@@ -57,18 +57,19 @@ public final class NotificationMessageProto extends com.google.protobuf.Generate
           + "ation_message.proto\022\036google.cloud.securi"
           + "tycenter.v1\032,google/cloud/securitycenter"
           + "/v1/finding.proto\032-google/cloud/security"
-          + "center/v1/resource.proto\"\270\001\n\023Notificatio"
+          + "center/v1/resource.proto\"\321\001\n\023Notificatio"
           + "nMessage\022 \n\030notification_config_name\030\001 \001"
           + "(\t\022:\n\007finding\030\002 \001(\0132\'.google.cloud.secur"
           + "itycenter.v1.FindingH\000\022:\n\010resource\030\003 \001(\013"
           + "2(.google.cloud.securitycenter.v1.Resour"
-          + "ceB\007\n\005eventB\362\001\n\"com.google.cloud.securit"
-          + "ycenter.v1B\030NotificationMessageProtoP\001ZJ"
-          + "cloud.google.com/go/securitycenter/apiv1"
-          + "/securitycenterpb;securitycenterpb\252\002\036Goo"
-          + "gle.Cloud.SecurityCenter.V1\312\002\036Google\\Clo"
-          + "ud\\SecurityCenter\\V1\352\002!Google::Cloud::Se"
-          + "curityCenter::V1b\006proto3"
+          + "ce\022\027\n\017deleted_finding\030\005 \001(\010B\007\n\005eventB\362\001\n"
+          + "\"com.google.cloud.securitycenter.v1B\030Not"
+          + "ificationMessageProtoP\001ZJcloud.google.co"
+          + "m/go/securitycenter/apiv1/securitycenter"
+          + "pb;securitycenterpb\252\002\036Google.Cloud.Secur"
+          + "ityCenter.V1\312\002\036Google\\Cloud\\SecurityCent"
+          + "er\\V1\352\002!Google::Cloud::SecurityCenter::V"
+          + "1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,7 +84,7 @@ public final class NotificationMessageProto extends com.google.protobuf.Generate
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_securitycenter_v1_NotificationMessage_descriptor,
             new java.lang.String[] {
-              "NotificationConfigName", "Finding", "Resource", "Event",
+              "NotificationConfigName", "Finding", "Resource", "DeletedFinding", "Event",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.cloud.securitycenter.v1.FindingOuterClass.getDescriptor();

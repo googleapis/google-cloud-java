@@ -106,13 +106,13 @@ public final class ReasoningEngineRuntimeRevision extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Is deprecated, may not be used, only preserved for historical
-     * purposes.
+     * Is archived and can no longer receive traffic, only preserved for
+     * historical purposes.
      * </pre>
      *
-     * <code>DEPRECATED = 2;</code>
+     * <code>ARCHIVED = 3;</code>
      */
-    DEPRECATED(2),
+    ARCHIVED(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -152,13 +152,13 @@ public final class ReasoningEngineRuntimeRevision extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Is deprecated, may not be used, only preserved for historical
-     * purposes.
+     * Is archived and can no longer receive traffic, only preserved for
+     * historical purposes.
      * </pre>
      *
-     * <code>DEPRECATED = 2;</code>
+     * <code>ARCHIVED = 3;</code>
      */
-    public static final int DEPRECATED_VALUE = 2;
+    public static final int ARCHIVED_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -188,8 +188,8 @@ public final class ReasoningEngineRuntimeRevision extends com.google.protobuf.Ge
           return STATE_UNSPECIFIED;
         case 1:
           return ACTIVE;
-        case 2:
-          return DEPRECATED;
+        case 3:
+          return ARCHIVED;
         default:
           return null;
       }

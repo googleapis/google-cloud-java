@@ -67,6 +67,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     kmsKey_ = "";
     serverCaMode_ = 0;
     serverCaPool_ = "";
+    aclPolicy_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -5434,6 +5435,122 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     return rotateServerCertificate_;
   }
 
+  public static final int ACL_POLICY_FIELD_NUMBER = 56;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object aclPolicy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy to be applied to the cluster.
+   * </pre>
+   *
+   * <code>
+   * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The aclPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getAclPolicy() {
+    java.lang.Object ref = aclPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aclPolicy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy to be applied to the cluster.
+   * </pre>
+   *
+   * <code>
+   * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for aclPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAclPolicyBytes() {
+    java.lang.Object ref = aclPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      aclPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACL_POLICY_INFO_FIELD_NUMBER = 58;
+  private com.google.cloud.redis.cluster.v1.AclPolicyInfo aclPolicyInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the aclPolicyInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasAclPolicyInfo() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The aclPolicyInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.AclPolicyInfo getAclPolicyInfo() {
+    return aclPolicyInfo_ == null
+        ? com.google.cloud.redis.cluster.v1.AclPolicyInfo.getDefaultInstance()
+        : aclPolicyInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.redis.cluster.v1.AclPolicyInfoOrBuilder getAclPolicyInfoOrBuilder() {
+    return aclPolicyInfo_ == null
+        ? com.google.cloud.redis.cluster.v1.AclPolicyInfo.getDefaultInstance()
+        : aclPolicyInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5554,6 +5671,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       output.writeBool(55, rotateServerCertificate_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(aclPolicy_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 56, aclPolicy_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeMessage(58, getAclPolicyInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -5692,6 +5815,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(55, rotateServerCertificate_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(aclPolicy_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(56, aclPolicy_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(58, getAclPolicyInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5804,6 +5933,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (hasRotateServerCertificate() != other.hasRotateServerCertificate()) return false;
     if (hasRotateServerCertificate()) {
       if (getRotateServerCertificate() != other.getRotateServerCertificate()) return false;
+    }
+    if (!getAclPolicy().equals(other.getAclPolicy())) return false;
+    if (hasAclPolicyInfo() != other.hasAclPolicyInfo()) return false;
+    if (hasAclPolicyInfo()) {
+      if (!getAclPolicyInfo().equals(other.getAclPolicyInfo())) return false;
     }
     if (!getImportSourcesCase().equals(other.getImportSourcesCase())) return false;
     switch (importSourcesCase_) {
@@ -5947,6 +6081,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (hasRotateServerCertificate()) {
       hash = (37 * hash) + ROTATE_SERVER_CERTIFICATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRotateServerCertificate());
+    }
+    hash = (37 * hash) + ACL_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getAclPolicy().hashCode();
+    if (hasAclPolicyInfo()) {
+      hash = (37 * hash) + ACL_POLICY_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAclPolicyInfo().hashCode();
     }
     switch (importSourcesCase_) {
       case 34:
@@ -6137,6 +6277,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         internalGetClusterEndpointsFieldBuilder();
         internalGetAutomatedBackupConfigFieldBuilder();
         internalGetEncryptionInfoFieldBuilder();
+        internalGetAclPolicyInfoFieldBuilder();
       }
     }
 
@@ -6249,6 +6390,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       serverCaMode_ = 0;
       serverCaPool_ = "";
       rotateServerCertificate_ = false;
+      aclPolicy_ = "";
+      aclPolicyInfo_ = null;
+      if (aclPolicyInfoBuilder_ != null) {
+        aclPolicyInfoBuilder_.dispose();
+        aclPolicyInfoBuilder_ = null;
+      }
       importSourcesCase_ = 0;
       importSources_ = null;
       return this;
@@ -6467,6 +6614,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       if (((from_bitField1_ & 0x00000002) != 0)) {
         result.rotateServerCertificate_ = rotateServerCertificate_;
         to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.aclPolicy_ = aclPolicy_;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.aclPolicyInfo_ =
+            aclPolicyInfoBuilder_ == null ? aclPolicyInfo_ : aclPolicyInfoBuilder_.build();
+        to_bitField0_ |= 0x00100000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6718,6 +6873,14 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRotateServerCertificate()) {
         setRotateServerCertificate(other.getRotateServerCertificate());
+      }
+      if (!other.getAclPolicy().isEmpty()) {
+        aclPolicy_ = other.aclPolicy_;
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasAclPolicyInfo()) {
+        mergeAclPolicyInfo(other.getAclPolicyInfo());
       }
       switch (other.getImportSourcesCase()) {
         case GCS_SOURCE:
@@ -7023,6 +7186,19 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00000002;
                 break;
               } // case 440
+            case 450:
+              {
+                aclPolicy_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 450
+            case 466:
+              {
+                input.readMessage(
+                    internalGetAclPolicyInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 466
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13662,6 +13838,341 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       rotateServerCertificate_ = false;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object aclPolicy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy to be applied to the cluster.
+     * </pre>
+     *
+     * <code>
+     * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The aclPolicy.
+     */
+    public java.lang.String getAclPolicy() {
+      java.lang.Object ref = aclPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aclPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy to be applied to the cluster.
+     * </pre>
+     *
+     * <code>
+     * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for aclPolicy.
+     */
+    public com.google.protobuf.ByteString getAclPolicyBytes() {
+      java.lang.Object ref = aclPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        aclPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy to be applied to the cluster.
+     * </pre>
+     *
+     * <code>
+     * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The aclPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      aclPolicy_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy to be applied to the cluster.
+     * </pre>
+     *
+     * <code>
+     * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAclPolicy() {
+      aclPolicy_ = getDefaultInstance().getAclPolicy();
+      bitField1_ = (bitField1_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy to be applied to the cluster.
+     * </pre>
+     *
+     * <code>
+     * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for aclPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      aclPolicy_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.redis.cluster.v1.AclPolicyInfo aclPolicyInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.redis.cluster.v1.AclPolicyInfo,
+            com.google.cloud.redis.cluster.v1.AclPolicyInfo.Builder,
+            com.google.cloud.redis.cluster.v1.AclPolicyInfoOrBuilder>
+        aclPolicyInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the aclPolicyInfo field is set.
+     */
+    public boolean hasAclPolicyInfo() {
+      return ((bitField1_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The aclPolicyInfo.
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicyInfo getAclPolicyInfo() {
+      if (aclPolicyInfoBuilder_ == null) {
+        return aclPolicyInfo_ == null
+            ? com.google.cloud.redis.cluster.v1.AclPolicyInfo.getDefaultInstance()
+            : aclPolicyInfo_;
+      } else {
+        return aclPolicyInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAclPolicyInfo(com.google.cloud.redis.cluster.v1.AclPolicyInfo value) {
+      if (aclPolicyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aclPolicyInfo_ = value;
+      } else {
+        aclPolicyInfoBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAclPolicyInfo(
+        com.google.cloud.redis.cluster.v1.AclPolicyInfo.Builder builderForValue) {
+      if (aclPolicyInfoBuilder_ == null) {
+        aclPolicyInfo_ = builderForValue.build();
+      } else {
+        aclPolicyInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAclPolicyInfo(com.google.cloud.redis.cluster.v1.AclPolicyInfo value) {
+      if (aclPolicyInfoBuilder_ == null) {
+        if (((bitField1_ & 0x00000008) != 0)
+            && aclPolicyInfo_ != null
+            && aclPolicyInfo_
+                != com.google.cloud.redis.cluster.v1.AclPolicyInfo.getDefaultInstance()) {
+          getAclPolicyInfoBuilder().mergeFrom(value);
+        } else {
+          aclPolicyInfo_ = value;
+        }
+      } else {
+        aclPolicyInfoBuilder_.mergeFrom(value);
+      }
+      if (aclPolicyInfo_ != null) {
+        bitField1_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAclPolicyInfo() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      aclPolicyInfo_ = null;
+      if (aclPolicyInfoBuilder_ != null) {
+        aclPolicyInfoBuilder_.dispose();
+        aclPolicyInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicyInfo.Builder getAclPolicyInfoBuilder() {
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return internalGetAclPolicyInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicyInfoOrBuilder getAclPolicyInfoOrBuilder() {
+      if (aclPolicyInfoBuilder_ != null) {
+        return aclPolicyInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return aclPolicyInfo_ == null
+            ? com.google.cloud.redis.cluster.v1.AclPolicyInfo.getDefaultInstance()
+            : aclPolicyInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.redis.cluster.v1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.redis.cluster.v1.AclPolicyInfo,
+            com.google.cloud.redis.cluster.v1.AclPolicyInfo.Builder,
+            com.google.cloud.redis.cluster.v1.AclPolicyInfoOrBuilder>
+        internalGetAclPolicyInfoFieldBuilder() {
+      if (aclPolicyInfoBuilder_ == null) {
+        aclPolicyInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.redis.cluster.v1.AclPolicyInfo,
+                com.google.cloud.redis.cluster.v1.AclPolicyInfo.Builder,
+                com.google.cloud.redis.cluster.v1.AclPolicyInfoOrBuilder>(
+                getAclPolicyInfo(), getParentForChildren(), isClean());
+        aclPolicyInfo_ = null;
+      }
+      return aclPolicyInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.redis.cluster.v1.Cluster)
