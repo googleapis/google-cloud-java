@@ -99,7 +99,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.executor = checkNotNull(executor, "executor must not be null");
     this.recoverySettings = recoveryAlgorithm.createFirstAttempt();
     this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
-    this.buffer = new RewindableStreamBuffer(payload, chunkSize, uploadUrl);
+    this.buffer = new RewindableStreamBuffer(payload, chunkSize);
   }
 
   ApiFuture<ResponseT> getFuture() {
@@ -150,8 +150,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
               if (response.getUploadStatus() == ResumableUploadStatus.UNKNOWN) {
                 recover(
                     new IllegalStateException(
-                        "Chunk upload response missing X-Goog-Upload-Status header for upload URL: "
-                            + uploadUrl));
+                        "Chunk upload response missing X-Goog-Upload-Status header"));
               } else {
                 try {
                   handleChunkResponse(response);
@@ -263,8 +262,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private void handleQueryResponse(QueryStatusResponse<ResponseT> queryResponse)
       throws IOException {
     if (queryResponse.getUploadStatus() == ResumableUploadStatus.UNKNOWN) {
-      throw new IllegalStateException(
-          "Query status response missing X-Goog-Upload-Status header for upload URL: " + uploadUrl);
+      throw new IllegalStateException("Query status response missing X-Goog-Upload-Status header");
     }
     if (queryResponse.getUploadStatus() == ResumableUploadStatus.FINAL) {
       progressTracker.onFinalized(buffer.getBufferBaseOffset() + buffer.getPayload().length);
@@ -274,8 +272,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     Long committedOffset = queryResponse.getCommittedOffset();
     if (committedOffset == null) {
       throw new IllegalStateException(
-          "Incomplete query status response did not include a committed offset for upload URL: "
-              + uploadUrl);
+          "Incomplete query status response did not include a committed offset");
     }
     progressTracker.onOffsetReceived(committedOffset);
     buffer.realignTo(committedOffset);
@@ -290,8 +287,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       uploadResultFuture.setException(
           new IllegalStateException(
               "Upload stream ended and final chunk was transmitted, but server returned"
-                  + " incomplete status for upload URL: "
-                  + uploadUrl));
+                  + " incomplete status"));
     } else {
       madeProgressSinceRecovery = true;
       buffer.fill();
