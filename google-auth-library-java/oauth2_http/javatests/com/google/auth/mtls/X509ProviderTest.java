@@ -31,7 +31,9 @@
 
 package com.google.auth.mtls;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -50,10 +52,12 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 class X509ProviderTest {
 
   private static final String TEST_CERT_PATH = "testresources/mtls/test_cert.pem";
+  private static final String TEST_KEY_PATH = "testresources/mtls/test_key.pem";
   private static final String TEST_CONFIG_PATH = "testresources/mtls/certificate_config.json";
 
   @Test
@@ -207,5 +211,200 @@ class X509ProviderTest {
     X509Provider testProvider = new X509Provider(tempConfig.toString());
 
     assertThrows(Exception.class, testProvider::getKeyStore);
+  }
+
+  @Test
+  void x509Provider_noConfig_usesGkeCredentialBundle(@TempDir Path tempDir) throws Exception {
+    Path bundle = writeGkeBundle(tempDir, /* keyFirst= */ false);
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      KeyStore store = testProvider.getKeyStore();
+      assertEquals(1, store.size());
+      assertNotNull(store.getCertificateAlias(loadTestCert()));
+      assertTrue(testProvider.isAvailable());
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_noConfig_usesGkeCredentialBundleWithKeyFirst(@TempDir Path tempDir)
+      throws Exception {
+    Path bundle = writeGkeBundle(tempDir, /* keyFirst= */ true);
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      KeyStore store = testProvider.getKeyStore();
+      assertNotNull(store.getCertificateAlias(loadTestCert()));
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_gkeCredentialBundleWithIntermediate_keepsFullChain(@TempDir Path tempDir)
+      throws Exception {
+    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
+    Files.write(
+        bundle,
+        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
+                + "\n"
+                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH))
+            .getBytes(UTF_8));
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      KeyStore store = testProvider.getKeyStore();
+      // The intermediate is presented too, so peers that only trust the root can verify the leaf.
+      MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_keyFirstGkeCredentialBundleWithIntermediate_keepsFullChain(
+      @TempDir Path tempDir) throws Exception {
+    // GKE pod certificate bundles put the private key before the certificate chain.
+    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
+    Files.write(
+        bundle,
+        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH)
+                + "\n"
+                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH))
+            .getBytes(UTF_8));
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(testProvider.getKeyStore());
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_certFileWithIntermediate_keepsFullChain(@TempDir Path tempDir)
+      throws Exception {
+    Path config = tempDir.resolve("certificate_config.json");
+    Files.write(
+        config,
+        ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+                + new File(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH).getAbsolutePath()
+                + "\",\"key_path\":\""
+                + new File(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH).getAbsolutePath()
+                + "\"}}}")
+            .getBytes(UTF_8));
+
+    X509Provider testProvider = new X509Provider(config.toString());
+
+    KeyStore store = testProvider.getKeyStore();
+    MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
+  }
+
+  @Test
+  void x509Provider_explicitConfigEnv_takesPrecedenceOverGkeCredentialBundle(@TempDir Path tempDir)
+      throws Exception {
+    MtlsUtils.setGkeCredentialBundlePathForTesting(
+        tempDir.resolve("does_not_matter.pem").toString());
+    try {
+      TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+      envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", "badfile.txt");
+      // Even with a bundle present, an explicit config is used (and fails here).
+      writeGkeBundleAt(tempDir.resolve("does_not_matter.pem"), false);
+      X509Provider testProvider =
+          new X509Provider(envProvider, noGcloudConfig(tempDir), null, true);
+
+      CertificateSourceUnavailableException e =
+          assertThrows(CertificateSourceUnavailableException.class, testProvider::getKeyStore);
+      assertFalse(String.valueOf(e.getMessage()).contains("GKE"));
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_overridePath_ignoresGkeCredentialBundle(@TempDir Path tempDir)
+      throws Exception {
+    Path bundle = writeGkeBundle(tempDir, false);
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(
+              new TestEnvironmentProvider(), noGcloudConfig(tempDir), "badfile.txt", true);
+
+      CertificateSourceUnavailableException e =
+          assertThrows(CertificateSourceUnavailableException.class, testProvider::getKeyStore);
+      assertFalse(String.valueOf(e.getMessage()).contains("GKE"));
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_noConfigAndNoGkeCredentialBundle_isUnavailable(@TempDir Path tempDir)
+      throws Exception {
+    MtlsUtils.setGkeCredentialBundlePathForTesting(tempDir.resolve("missing.pem").toString());
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      assertThrows(CertificateSourceUnavailableException.class, testProvider::getKeyStore);
+      assertFalse(testProvider.isAvailable());
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_publicConstructor_ignoresGkeCredentialBundle(@TempDir Path tempDir)
+      throws Exception {
+    Path bundle = writeGkeBundle(tempDir, false);
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      // Non-transport callers (e.g. workload identity federation X.509 credentials) keep the
+      // existing certificate configuration lookup and never fall back to the GKE bundle.
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null);
+
+      assertThrows(CertificateSourceUnavailableException.class, testProvider::getKeyStore);
+      assertFalse(testProvider.isAvailable());
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  /** Property provider whose user.home has no gcloud certificate_config.json. */
+  private static TestPropertyProvider noGcloudConfig(Path tempDir) {
+    TestPropertyProvider propProvider = new TestPropertyProvider();
+    propProvider.setProperty("os.name", "Linux");
+    propProvider.setProperty("user.home", tempDir.resolve("home").toString());
+    return propProvider;
+  }
+
+  private static Certificate loadTestCert() throws IOException, CertificateException {
+    try (FileInputStream fis = new FileInputStream(new File(TEST_CERT_PATH))) {
+      return CertificateFactory.getInstance("X.509").generateCertificate(fis);
+    }
+  }
+
+  private static Path writeGkeBundle(Path dir, boolean keyFirst) throws IOException {
+    return writeGkeBundleAt(dir.resolve("x509.credential-bundle.private-key.pem"), keyFirst);
+  }
+
+  private static Path writeGkeBundleAt(Path bundle, boolean keyFirst) throws IOException {
+    String cert = new String(Files.readAllBytes(new File(TEST_CERT_PATH).toPath()), UTF_8);
+    String key = new String(Files.readAllBytes(new File(TEST_KEY_PATH).toPath()), UTF_8);
+    String content = keyFirst ? key + "\n" + cert : cert + "\n" + key;
+    Files.write(bundle, content.getBytes(UTF_8));
+    return bundle;
   }
 }
