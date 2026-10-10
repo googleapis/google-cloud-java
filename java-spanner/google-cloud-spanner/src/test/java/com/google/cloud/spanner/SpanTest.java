@@ -379,6 +379,7 @@ public class SpanTest {
   public void transactionRunner() {
     TransactionRunner runner = client.readWriteTransaction();
     runner.run(transaction -> transaction.executeUpdate(UPDATE_STATEMENT));
+    client.getDialect();
     Map<String, Boolean> spans = failOnOverkillTraceComponent.getSpans();
     assertThat(spans).containsEntry("CloudSpanner.ReadWriteTransaction", true);
     assertThat(spans).containsEntry("CloudSpannerOperation.Commit", true);
@@ -389,6 +390,7 @@ public class SpanTest {
             "Starting Commit",
             "Commit Done",
             "Transaction Attempt Succeeded",
+            "Starting/Resuming stream",
             "Request for 1 multiplexed session returned 1 session");
     verifyAnnotations(
         failOnOverkillTraceComponent.getAnnotations().stream()
@@ -405,18 +407,20 @@ public class SpanTest {
             SpannerException.class,
             () -> runner.run(transaction -> transaction.executeUpdate(INVALID_UPDATE_STATEMENT)));
     assertEquals(ErrorCode.INVALID_ARGUMENT, e.getErrorCode());
-
+    client.getDialect();
     Map<String, Boolean> spans = failOnOverkillTraceComponent.getSpans();
 
-    assertEquals(spans.toString(), 3, spans.size());
+    assertEquals(spans.toString(), 4, spans.size());
     assertThat(spans).containsEntry("CloudSpannerOperation.CreateMultiplexedSession", true);
     assertThat(spans).containsEntry("CloudSpanner.ReadWriteTransaction", true);
     assertThat(spans).containsEntry("CloudSpannerOperation.ExecuteUpdate", true);
+    assertThat(spans).containsEntry("CloudSpannerOperation.ExecuteStreamingQuery", true);
 
     List<String> expectedAnnotationsForMultiplexedSessionsRW =
         ImmutableList.of(
             "Starting Transaction Attempt",
             "Transaction Attempt Failed in user operation",
+            "Starting/Resuming stream",
             "Request for 1 multiplexed session returned 1 session");
     verifyAnnotations(
         failOnOverkillTraceComponent.getAnnotations().stream()
