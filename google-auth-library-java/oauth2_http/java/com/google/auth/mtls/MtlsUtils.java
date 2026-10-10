@@ -33,6 +33,7 @@ package com.google.auth.mtls;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import java.io.File;
@@ -58,8 +59,66 @@ public class MtlsUtils {
   static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
 
+  /**
+   * Well-known path of the combined certificate chain and private key bundle that GKE delivers to
+   * pods with Agent Identity (Pod Certificates). Used as a fallback client certificate source when
+   * no certificate configuration file is configured or present.
+   */
+  static final String GKE_CREDENTIAL_BUNDLE_PATH =
+      "/var/run/secrets/workload-spiffe-credentials/x509.credential-bundle.private-key.pem";
+
+  private static volatile String gkeCredentialBundlePath = GKE_CREDENTIAL_BUNDLE_PATH;
+
   private MtlsUtils() {
     // Prevent instantiation for Utility class
+  }
+
+  /**
+   * Returns {@code true} if a certificate configuration is configured or present: either {@code
+   * GOOGLE_API_CERTIFICATE_CONFIG} is set, or the well-known gcloud {@code certificate_config.json}
+   * file exists. When this returns {@code true}, the GKE credential bundle fallback is not used, so
+   * the certificate used for mTLS and the certificate bound to tokens always come from the same
+   * source.
+   */
+  public static boolean hasCertificateConfiguration(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    if (!Strings.isNullOrEmpty(envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE))) {
+      return true;
+    }
+    try {
+      return getWellKnownCertificateConfigFile(envProvider, propProvider).exists();
+    } catch (IOException e) {
+      // APPDATA missing on Windows, etc. No well-known configuration file.
+      return false;
+    }
+  }
+
+  /**
+   * Returns the GKE credential bundle path if no certificate configuration is configured or present
+   * (see {@link #hasCertificateConfiguration}) and the bundle exists and is readable; otherwise
+   * returns {@code null}.
+   */
+  static @Nullable String getGkeCredentialBundlePath(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    if (hasCertificateConfiguration(envProvider, propProvider)) {
+      return null;
+    }
+    return findGkeCredentialBundle();
+  }
+
+  /**
+   * Returns the GKE credential bundle path if it is a readable, non-empty regular file, otherwise
+   * null.
+   */
+  private static @Nullable String findGkeCredentialBundle() {
+    File bundle = new File(gkeCredentialBundlePath);
+    return bundle.isFile() && bundle.canRead() && bundle.length() > 0 ? bundle.getPath() : null;
+  }
+
+  /** Overrides the GKE credential bundle path for testing; {@code null} restores the default. */
+  @VisibleForTesting
+  static void setGkeCredentialBundlePathForTesting(@Nullable String path) {
+    gkeCredentialBundlePath = path != null ? path : GKE_CREDENTIAL_BUNDLE_PATH;
   }
 
   /**
@@ -89,16 +148,20 @@ public class MtlsUtils {
    * <ol>
    *   <li><b>Non-null {@link String} (Valid happy path):</b> A valid workload certificate
    *       configuration was found and both the certificate and private key files exist and are
-   *       readable.
+   *       readable; or no certificate configuration is set or present and the GKE credential bundle
+   *       ({@code /var/run/secrets/workload-spiffe-credentials/
+   *       x509.credential-bundle.private-key.pem}) exists and is readable, in which case the bundle
+   *       path is returned.
    *   <li><b>{@link IllegalStateException} (Invalid state - fail closed):</b> An explicit {@code
    *       GOOGLE_API_CERTIFICATE_CONFIG} path or an existing default well-known certificate
    *       configuration file is missing, unreadable, malformed, or references missing/unreadable
    *       certificate or private key files. This is treated as an unrecoverable misconfiguration.
    *   <li><b>{@code null} (Safe fallback / fail open):</b> Client certificates are explicitly
    *       disabled via {@code GOOGLE_API_USE_CLIENT_CERTIFICATE=false}, no explicit configuration
-   *       is set and the default well-known configuration file does not exist on disk, or the
-   *       configuration specifies an non-workload source (e.g., ECP/PKCS11 without a {@code
-   *       workload} section). Callers can proceed without workload certificate file polling.
+   *       is set and neither the default well-known configuration file nor a readable GKE
+   *       credential bundle exists on disk, or the configuration specifies an non-workload source
+   *       (e.g., ECP/PKCS11 without a {@code workload} section). Callers can proceed without
+   *       workload certificate file polling.
    * </ol>
    */
   public static @Nullable String getWorkloadCertPath(
@@ -175,9 +238,14 @@ public class MtlsUtils {
         checkCertAndKeyFilesReadable(config, defaultConfigFile.getAbsolutePath(), true);
         return config.getCertPath();
       }
+      // A default configuration file exists without a workload section (e.g. ECP); it takes
+      // precedence over the GKE credential bundle.
+      return null;
     }
 
-    return null;
+    // 3. GKE credential bundle (Pod Certificates), used only when no certificate configuration
+    // file is configured or present. The combined bundle serves as both certificate and key.
+    return findGkeCredentialBundle();
   }
 
   private static void checkCertAndKeyFilesReadable(
