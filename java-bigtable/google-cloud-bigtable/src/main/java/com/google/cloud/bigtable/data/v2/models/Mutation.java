@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.Mutation.AddToCell;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.Mutation.DeleteFromFamily;
@@ -29,6 +30,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.CodedOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -62,6 +64,11 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   private int numMutations;
   private long byteSize;
 
+  private transient int mutationCount;
+
+  /** Tag, length prefix and body of each mutation. Recomputed by readObject. */
+  private transient long mutationsSerializedSize;
+
   /** Creates new instance of Mutation object. */
   public static Mutation create() {
     return new Mutation(false);
@@ -88,6 +95,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   public static Mutation fromProtoUnsafe(List<com.google.bigtable.v2.Mutation> protos) {
     Mutation mutation = new Mutation(true);
     mutation.mutations.addAll(protos);
+    mutation.countAllTowardsSerializedSize(protos);
     return mutation;
   }
 
@@ -101,6 +109,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   public static Mutation fromProtoUnsafe(Iterable<com.google.bigtable.v2.Mutation> protos) {
     Mutation mutation = new Mutation(true);
     mutation.mutations.addAll(protos);
+    mutation.countAllTowardsSerializedSize(protos);
     return mutation;
   }
 
@@ -117,6 +126,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   static Mutation fromProto(List<com.google.bigtable.v2.Mutation> protos) {
     Mutation mutation = new Mutation(false);
     mutation.mutations.addAll(protos);
+    mutation.countAllTowardsSerializedSize(protos);
     return mutation;
   }
 
@@ -131,6 +141,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     ImmutableList<com.google.bigtable.v2.Mutation> deserialized =
         (ImmutableList<com.google.bigtable.v2.Mutation>) input.readObject();
     this.mutations = ImmutableList.<com.google.bigtable.v2.Mutation>builder().addAll(deserialized);
+    countAllTowardsSerializedSize(deserialized);
   }
 
   private void writeObject(ObjectOutputStream output) throws IOException {
@@ -348,8 +359,31 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
 
     numMutations++;
     byteSize += mutation.getSerializedSize();
+    countTowardsSerializedSize(mutation);
 
     mutations.add(mutation);
+  }
+
+  private void countTowardsSerializedSize(com.google.bigtable.v2.Mutation mutation) {
+    mutationCount++;
+    // Every request proto numbers this field below 16, so the tag is one byte in all of them.
+    mutationsSerializedSize +=
+        CodedOutputStream.computeMessageSize(
+            MutateRowsRequest.Entry.MUTATIONS_FIELD_NUMBER, mutation);
+  }
+
+  private void countAllTowardsSerializedSize(Iterable<com.google.bigtable.v2.Mutation> protos) {
+    for (com.google.bigtable.v2.Mutation proto : protos) {
+      countTowardsSerializedSize(proto);
+    }
+  }
+
+  int getMutationCount() {
+    return mutationCount;
+  }
+
+  long getMutationsSerializedSize() {
+    return mutationsSerializedSize;
   }
 
   private static ByteString wrapByteString(String str) {
