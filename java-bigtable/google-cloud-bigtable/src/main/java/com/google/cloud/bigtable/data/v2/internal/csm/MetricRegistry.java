@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientPerConnectio
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionDuration;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionOpenLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionUptime;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientUptime;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientTransportLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.CustomAttemptLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.GrpcMetric;
@@ -80,6 +81,7 @@ public class MetricRegistry {
   final ClientTransportLatency transportLatencyMetric;
 
   final ClientSessionUptime sessionUptimeMetric;
+  final ClientUptime clientUptimeMetric;
   final ClientSessionDuration sessionDurationMetric;
   final ClientSessionOpenLatency sessionOpenLatencyMetric;
 
@@ -111,6 +113,7 @@ public class MetricRegistry {
     batchWriteFlowControlTargetQpsMetric = register(new ClientBatchWriteFlowControlTargetQps());
 
     sessionUptimeMetric = register(new ClientSessionUptime());
+    clientUptimeMetric = register(new ClientUptime());
     sessionDurationMetric = register(new ClientSessionDuration());
     sessionOpenLatencyMetric = register(new ClientSessionOpenLatency());
     transportLatencyMetric = register(new ClientTransportLatency());
@@ -222,6 +225,7 @@ public class MetricRegistry {
     public final ClientTransportLatency.Recorder transportLatency;
 
     public final ClientSessionUptime.Recorder sessionUptime;
+    public final ClientUptime.Recorder clientUptime;
     public final ClientSessionDuration.Recorder sessionDuration;
     public final ClientSessionOpenLatency.Recorder sessionOpenLatency;
 
@@ -260,6 +264,7 @@ public class MetricRegistry {
       transportLatency = transportLatencyMetric.newRecorder(meter);
 
       sessionUptime = sessionUptimeMetric.newRecorder(meter);
+      clientUptime = clientUptimeMetric.newRecorder(meter);
       sessionDuration = sessionDurationMetric.newRecorder(meter);
       sessionOpenLatency = sessionOpenLatencyMetric.newRecorder(meter);
 
