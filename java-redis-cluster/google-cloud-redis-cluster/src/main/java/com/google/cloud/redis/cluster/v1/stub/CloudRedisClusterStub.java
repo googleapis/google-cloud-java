@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1.stub;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
@@ -28,28 +30,40 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.AclPolicy;
+import com.google.cloud.redis.cluster.v1.AclPolicyRevision;
 import com.google.cloud.redis.cluster.v1.Backup;
 import com.google.cloud.redis.cluster.v1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1.BackupCollection;
 import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
+import com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
 import com.google.cloud.redis.cluster.v1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -86,8 +100,21 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listClustersCallable()");
   }
 
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclPoliciesCallable()");
+  }
+
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: getClusterCallable()");
+  }
+
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAclPolicyCallable()");
   }
 
   public OperationCallable<UpdateClusterRequest, Cluster, Any> updateClusterOperationCallable() {
@@ -98,6 +125,15 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateClusterCallable()");
   }
 
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAclPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAclPolicyCallable()");
+  }
+
   public OperationCallable<DeleteClusterRequest, Empty, Any> deleteClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteClusterOperationCallable()");
   }
@@ -106,12 +142,41 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteClusterCallable()");
   }
 
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAclPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAclPolicyCallable()");
+  }
+
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAclPolicyRevisionCallable()");
+  }
+
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listAclPolicyRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclPolicyRevisionsCallable()");
+  }
+
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createClusterOperationCallable()");
   }
 
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: createClusterCallable()");
+  }
+
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAclPolicyCallable()");
   }
 
   public UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>

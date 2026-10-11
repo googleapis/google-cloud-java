@@ -17,6 +17,7 @@
 package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
@@ -110,12 +111,15 @@ import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
+import com.google.cloud.netapp.v1.GetSplitStatusRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
 import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
+import com.google.cloud.netapp.v1.ListBackupConfigsRequest;
+import com.google.cloud.netapp.v1.ListBackupConfigsResponse;
 import com.google.cloud.netapp.v1.ListBackupPoliciesRequest;
 import com.google.cloud.netapp.v1.ListBackupPoliciesResponse;
 import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
@@ -141,15 +145,21 @@ import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
 import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
+import com.google.cloud.netapp.v1.RestoreVolumeRequest;
+import com.google.cloud.netapp.v1.RestoreVolumeResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
+import com.google.cloud.netapp.v1.SplitStatus;
+import com.google.cloud.netapp.v1.StartSplitRequest;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigResponse;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
@@ -164,6 +174,7 @@ import com.google.cloud.netapp.v1.ValidateDirectoryServiceRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigRequest;
 import com.google.cloud.netapp.v1.VerifyKmsConfigResponse;
 import com.google.cloud.netapp.v1.Volume;
+import com.google.cloud.netapp.v1.VolumeBackupConfig;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -296,6 +307,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final UnaryCallSettings<RevertVolumeRequest, Operation> revertVolumeSettings;
   private final OperationCallSettings<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationSettings;
+  private final UnaryCallSettings<StartSplitRequest, Operation> startSplitSettings;
+  private final OperationCallSettings<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationSettings;
+  private final UnaryCallSettings<GetSplitStatusRequest, SplitStatus> getSplitStatusSettings;
   private final UnaryCallSettings<EstablishVolumePeeringRequest, Operation>
       establishVolumePeeringSettings;
   private final OperationCallSettings<EstablishVolumePeeringRequest, Volume, OperationMetadata>
@@ -458,6 +473,17 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       executeOntapDeleteSettings;
   private final UnaryCallSettings<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchSettings;
+  private final UnaryCallSettings<RestoreVolumeRequest, Operation> restoreVolumeSettings;
+  private final OperationCallSettings<
+          RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationSettings;
+  private final PagedCallSettings<
+          ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+      listBackupConfigsSettings;
+  private final UnaryCallSettings<UpdateBackupConfigRequest, Operation> updateBackupConfigSettings;
+  private final OperationCallSettings<
+          UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -861,6 +887,45 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>
+      LIST_BACKUP_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupConfigsRequest injectToken(
+                ListBackupConfigsRequest payload, String token) {
+              return ListBackupConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupConfigsRequest injectPageSize(
+                ListBackupConfigsRequest payload, int pageSize) {
+              return ListBackupConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<VolumeBackupConfig> extractResources(
+                ListBackupConfigsResponse payload) {
+              return payload.getVolumeBackupConfigsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -1100,6 +1165,27 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+      LIST_BACKUP_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupConfigsRequest,
+              ListBackupConfigsResponse,
+              ListBackupConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse> callable,
+                ListBackupConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupConfigsResponse> futureResponse) {
+              PageContext<ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListBackupConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1238,6 +1324,22 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   public OperationCallSettings<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationSettings() {
     return revertVolumeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startSplit. */
+  public UnaryCallSettings<StartSplitRequest, Operation> startSplitSettings() {
+    return startSplitSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startSplit. */
+  public OperationCallSettings<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationSettings() {
+    return startSplitOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSplitStatus. */
+  public UnaryCallSettings<GetSplitStatusRequest, SplitStatus> getSplitStatusSettings() {
+    return getSplitStatusSettings;
   }
 
   /** Returns the object with the settings used for calls to establishVolumePeering. */
@@ -1770,6 +1872,36 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return executeOntapPatchSettings;
   }
 
+  /** Returns the object with the settings used for calls to restoreVolume. */
+  public UnaryCallSettings<RestoreVolumeRequest, Operation> restoreVolumeSettings() {
+    return restoreVolumeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreVolume. */
+  public OperationCallSettings<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationSettings() {
+    return restoreVolumeOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupConfigs. */
+  public PagedCallSettings<
+          ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+      listBackupConfigsSettings() {
+    return listBackupConfigsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupConfig. */
+  public UnaryCallSettings<UpdateBackupConfigRequest, Operation> updateBackupConfigSettings() {
+    return updateBackupConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupConfig. */
+  public OperationCallSettings<
+          UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationSettings() {
+    return updateBackupConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1917,6 +2049,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     deleteVolumeOperationSettings = settingsBuilder.deleteVolumeOperationSettings().build();
     revertVolumeSettings = settingsBuilder.revertVolumeSettings().build();
     revertVolumeOperationSettings = settingsBuilder.revertVolumeOperationSettings().build();
+    startSplitSettings = settingsBuilder.startSplitSettings().build();
+    startSplitOperationSettings = settingsBuilder.startSplitOperationSettings().build();
+    getSplitStatusSettings = settingsBuilder.getSplitStatusSettings().build();
     establishVolumePeeringSettings = settingsBuilder.establishVolumePeeringSettings().build();
     establishVolumePeeringOperationSettings =
         settingsBuilder.establishVolumePeeringOperationSettings().build();
@@ -2027,6 +2162,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     executeOntapGetSettings = settingsBuilder.executeOntapGetSettings().build();
     executeOntapDeleteSettings = settingsBuilder.executeOntapDeleteSettings().build();
     executeOntapPatchSettings = settingsBuilder.executeOntapPatchSettings().build();
+    restoreVolumeSettings = settingsBuilder.restoreVolumeSettings().build();
+    restoreVolumeOperationSettings = settingsBuilder.restoreVolumeOperationSettings().build();
+    listBackupConfigsSettings = settingsBuilder.listBackupConfigsSettings().build();
+    updateBackupConfigSettings = settingsBuilder.updateBackupConfigSettings().build();
+    updateBackupConfigOperationSettings =
+        settingsBuilder.updateBackupConfigOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -2088,6 +2229,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final UnaryCallSettings.Builder<RevertVolumeRequest, Operation> revertVolumeSettings;
     private final OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings;
+    private final UnaryCallSettings.Builder<StartSplitRequest, Operation> startSplitSettings;
+    private final OperationCallSettings.Builder<StartSplitRequest, Volume, OperationMetadata>
+        startSplitOperationSettings;
+    private final UnaryCallSettings.Builder<GetSplitStatusRequest, SplitStatus>
+        getSplitStatusSettings;
     private final UnaryCallSettings.Builder<EstablishVolumePeeringRequest, Operation>
         establishVolumePeeringSettings;
     private final OperationCallSettings.Builder<
@@ -2299,6 +2445,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         executeOntapDeleteSettings;
     private final UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
         executeOntapPatchSettings;
+    private final UnaryCallSettings.Builder<RestoreVolumeRequest, Operation> restoreVolumeSettings;
+    private final OperationCallSettings.Builder<
+            RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+        restoreVolumeOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+        listBackupConfigsSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupConfigRequest, Operation>
+        updateBackupConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+        updateBackupConfigOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -2376,6 +2534,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteVolumeOperationSettings = OperationCallSettings.newBuilder();
       revertVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       revertVolumeOperationSettings = OperationCallSettings.newBuilder();
+      startSplitSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startSplitOperationSettings = OperationCallSettings.newBuilder();
+      getSplitStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       establishVolumePeeringSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       establishVolumePeeringOperationSettings = OperationCallSettings.newBuilder();
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
@@ -2470,6 +2631,11 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       executeOntapGetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       executeOntapDeleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       executeOntapPatchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreVolumeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      restoreVolumeOperationSettings = OperationCallSettings.newBuilder();
+      listBackupConfigsSettings = PagedCallSettings.newBuilder(LIST_BACKUP_CONFIGS_PAGE_STR_FACT);
+      updateBackupConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBackupConfigOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -2488,6 +2654,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               updateVolumeSettings,
               deleteVolumeSettings,
               revertVolumeSettings,
+              startSplitSettings,
+              getSplitStatusSettings,
               establishVolumePeeringSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
@@ -2546,6 +2714,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               executeOntapGetSettings,
               executeOntapDeleteSettings,
               executeOntapPatchSettings,
+              restoreVolumeSettings,
+              listBackupConfigsSettings,
+              updateBackupConfigSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -2578,6 +2749,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       deleteVolumeOperationSettings = settings.deleteVolumeOperationSettings.toBuilder();
       revertVolumeSettings = settings.revertVolumeSettings.toBuilder();
       revertVolumeOperationSettings = settings.revertVolumeOperationSettings.toBuilder();
+      startSplitSettings = settings.startSplitSettings.toBuilder();
+      startSplitOperationSettings = settings.startSplitOperationSettings.toBuilder();
+      getSplitStatusSettings = settings.getSplitStatusSettings.toBuilder();
       establishVolumePeeringSettings = settings.establishVolumePeeringSettings.toBuilder();
       establishVolumePeeringOperationSettings =
           settings.establishVolumePeeringOperationSettings.toBuilder();
@@ -2681,6 +2855,12 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       executeOntapGetSettings = settings.executeOntapGetSettings.toBuilder();
       executeOntapDeleteSettings = settings.executeOntapDeleteSettings.toBuilder();
       executeOntapPatchSettings = settings.executeOntapPatchSettings.toBuilder();
+      restoreVolumeSettings = settings.restoreVolumeSettings.toBuilder();
+      restoreVolumeOperationSettings = settings.restoreVolumeOperationSettings.toBuilder();
+      listBackupConfigsSettings = settings.listBackupConfigsSettings.toBuilder();
+      updateBackupConfigSettings = settings.updateBackupConfigSettings.toBuilder();
+      updateBackupConfigOperationSettings =
+          settings.updateBackupConfigOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -2699,6 +2879,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               updateVolumeSettings,
               deleteVolumeSettings,
               revertVolumeSettings,
+              startSplitSettings,
+              getSplitStatusSettings,
               establishVolumePeeringSettings,
               listSnapshotsSettings,
               getSnapshotSettings,
@@ -2757,6 +2939,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               executeOntapGetSettings,
               executeOntapDeleteSettings,
               executeOntapPatchSettings,
+              restoreVolumeSettings,
+              listBackupConfigsSettings,
+              updateBackupConfigSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2850,6 +3035,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .revertVolumeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .startSplitSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getSplitStatusSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .establishVolumePeeringSettings()
@@ -3142,6 +3337,21 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .restoreVolumeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateBackupConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -3350,6 +3560,29 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                   .<RevertVolumeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Volume.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .startSplitOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<StartSplitRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Volume.class))
@@ -4209,6 +4442,55 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .restoreVolumeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreVolumeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RestoreVolumeResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateBackupConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBackupConfigRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  UpdateBackupConfigResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -4354,6 +4636,22 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings() {
       return revertVolumeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startSplit. */
+    public UnaryCallSettings.Builder<StartSplitRequest, Operation> startSplitSettings() {
+      return startSplitSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startSplit. */
+    public OperationCallSettings.Builder<StartSplitRequest, Volume, OperationMetadata>
+        startSplitOperationSettings() {
+      return startSplitOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSplitStatus. */
+    public UnaryCallSettings.Builder<GetSplitStatusRequest, SplitStatus> getSplitStatusSettings() {
+      return getSplitStatusSettings;
     }
 
     /** Returns the builder for the settings used for calls to establishVolumePeering. */
@@ -4902,6 +5200,38 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     public UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
         executeOntapPatchSettings() {
       return executeOntapPatchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreVolume. */
+    public UnaryCallSettings.Builder<RestoreVolumeRequest, Operation> restoreVolumeSettings() {
+      return restoreVolumeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreVolume. */
+    public OperationCallSettings.Builder<
+            RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+        restoreVolumeOperationSettings() {
+      return restoreVolumeOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupConfigs. */
+    public PagedCallSettings.Builder<
+            ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+        listBackupConfigsSettings() {
+      return listBackupConfigsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupConfig. */
+    public UnaryCallSettings.Builder<UpdateBackupConfigRequest, Operation>
+        updateBackupConfigSettings() {
+      return updateBackupConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupConfig. */
+    public OperationCallSettings.Builder<
+            UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+        updateBackupConfigOperationSettings() {
+      return updateBackupConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

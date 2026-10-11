@@ -16,6 +16,8 @@
 
 package com.google.cloud.redis.cluster.v1;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
@@ -134,9 +136,21 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     return ((CloudRedisClusterStubSettings) getStubSettings()).listClustersSettings();
   }
 
+  /** Returns the object with the settings used for calls to listAclPolicies. */
+  public PagedCallSettings<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      listAclPoliciesSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).listAclPoliciesSettings();
+  }
+
   /** Returns the object with the settings used for calls to getCluster. */
   public UnaryCallSettings<GetClusterRequest, Cluster> getClusterSettings() {
     return ((CloudRedisClusterStubSettings) getStubSettings()).getClusterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAclPolicy. */
+  public UnaryCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).getAclPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to updateCluster. */
@@ -150,6 +164,17 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     return ((CloudRedisClusterStubSettings) getStubSettings()).updateClusterOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public UnaryCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).updateAclPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public OperationCallSettings<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).updateAclPolicyOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCluster. */
   public UnaryCallSettings<DeleteClusterRequest, Operation> deleteClusterSettings() {
     return ((CloudRedisClusterStubSettings) getStubSettings()).deleteClusterSettings();
@@ -158,6 +183,32 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
   /** Returns the object with the settings used for calls to deleteCluster. */
   public OperationCallSettings<DeleteClusterRequest, Empty, Any> deleteClusterOperationSettings() {
     return ((CloudRedisClusterStubSettings) getStubSettings()).deleteClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public UnaryCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteAclPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public OperationCallSettings<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteAclPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAclPolicyRevision. */
+  public UnaryCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).getAclPolicyRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAclPolicyRevisions. */
+  public PagedCallSettings<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).listAclPolicyRevisionsSettings();
   }
 
   /** Returns the object with the settings used for calls to createCluster. */
@@ -169,6 +220,11 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
   public OperationCallSettings<CreateClusterRequest, Cluster, Any>
       createClusterOperationSettings() {
     return ((CloudRedisClusterStubSettings) getStubSettings()).createClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAclPolicy. */
+  public UnaryCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).createAclPolicySettings();
   }
 
   /** Returns the object with the settings used for calls to getClusterCertificateAuthority. */
@@ -389,9 +445,21 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
       return getStubSettingsBuilder().listClustersSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listAclPolicies. */
+    public PagedCallSettings.Builder<
+            ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+        listAclPoliciesSettings() {
+      return getStubSettingsBuilder().listAclPoliciesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getCluster. */
     public UnaryCallSettings.Builder<GetClusterRequest, Cluster> getClusterSettings() {
       return getStubSettingsBuilder().getClusterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAclPolicy. */
+    public UnaryCallSettings.Builder<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+      return getStubSettingsBuilder().getAclPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to updateCluster. */
@@ -405,6 +473,17 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
       return getStubSettingsBuilder().updateClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public UnaryCallSettings.Builder<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+      return getStubSettingsBuilder().updateAclPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public OperationCallSettings.Builder<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+        updateAclPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateAclPolicyOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteCluster. */
     public UnaryCallSettings.Builder<DeleteClusterRequest, Operation> deleteClusterSettings() {
       return getStubSettingsBuilder().deleteClusterSettings();
@@ -416,6 +495,32 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
       return getStubSettingsBuilder().deleteClusterOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public UnaryCallSettings.Builder<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+      return getStubSettingsBuilder().deleteAclPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public OperationCallSettings.Builder<DeleteAclPolicyRequest, Empty, OperationMetadata>
+        deleteAclPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteAclPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAclPolicyRevision. */
+    public UnaryCallSettings.Builder<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionSettings() {
+      return getStubSettingsBuilder().getAclPolicyRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAclPolicyRevisions. */
+    public PagedCallSettings.Builder<
+            ListAclPolicyRevisionsRequest,
+            ListAclPolicyRevisionsResponse,
+            ListAclPolicyRevisionsPagedResponse>
+        listAclPolicyRevisionsSettings() {
+      return getStubSettingsBuilder().listAclPolicyRevisionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to createCluster. */
     public UnaryCallSettings.Builder<CreateClusterRequest, Operation> createClusterSettings() {
       return getStubSettingsBuilder().createClusterSettings();
@@ -425,6 +530,11 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     public OperationCallSettings.Builder<CreateClusterRequest, Cluster, Any>
         createClusterOperationSettings() {
       return getStubSettingsBuilder().createClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAclPolicy. */
+    public UnaryCallSettings.Builder<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+      return getStubSettingsBuilder().createAclPolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to getClusterCertificateAuthority. */

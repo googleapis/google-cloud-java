@@ -4212,6 +4212,964 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface QueryInsightsInstanceInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether Query Insights is enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether to record application tags.
+     * </pre>
+     *
+     * <code>bool record_application_tags = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The recordApplicationTags.
+     */
+    boolean getRecordApplicationTags();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether to record client address.
+     * </pre>
+     *
+     * <code>bool record_client_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The recordClientAddress.
+     */
+    boolean getRecordClientAddress();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maximum query string length.
+     * </pre>
+     *
+     * <code>uint32 query_string_length = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queryStringLength.
+     */
+    int getQueryStringLength();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of query execution plans captured per minute.
+     * </pre>
+     *
+     * <code>uint32 query_plans_per_minute = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queryPlansPerMinute.
+     */
+    int getQueryPlansPerMinute();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Instance level Query Insights information, which is read-only and available
+   * in the output only.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo}
+   */
+  public static final class QueryInsightsInstanceInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo)
+      QueryInsightsInstanceInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "QueryInsightsInstanceInfo");
+    }
+
+    // Use QueryInsightsInstanceInfo.newBuilder() to construct.
+    private QueryInsightsInstanceInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QueryInsightsInstanceInfo() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Instance_QueryInsightsInstanceInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Instance_QueryInsightsInstanceInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.class,
+              com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether Query Insights is enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int RECORD_APPLICATION_TAGS_FIELD_NUMBER = 2;
+    private boolean recordApplicationTags_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether to record application tags.
+     * </pre>
+     *
+     * <code>bool record_application_tags = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The recordApplicationTags.
+     */
+    @java.lang.Override
+    public boolean getRecordApplicationTags() {
+      return recordApplicationTags_;
+    }
+
+    public static final int RECORD_CLIENT_ADDRESS_FIELD_NUMBER = 3;
+    private boolean recordClientAddress_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether to record client address.
+     * </pre>
+     *
+     * <code>bool record_client_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The recordClientAddress.
+     */
+    @java.lang.Override
+    public boolean getRecordClientAddress() {
+      return recordClientAddress_;
+    }
+
+    public static final int QUERY_STRING_LENGTH_FIELD_NUMBER = 4;
+    private int queryStringLength_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maximum query string length.
+     * </pre>
+     *
+     * <code>uint32 query_string_length = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queryStringLength.
+     */
+    @java.lang.Override
+    public int getQueryStringLength() {
+      return queryStringLength_;
+    }
+
+    public static final int QUERY_PLANS_PER_MINUTE_FIELD_NUMBER = 5;
+    private int queryPlansPerMinute_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of query execution plans captured per minute.
+     * </pre>
+     *
+     * <code>uint32 query_plans_per_minute = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queryPlansPerMinute.
+     */
+    @java.lang.Override
+    public int getQueryPlansPerMinute() {
+      return queryPlansPerMinute_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      if (recordApplicationTags_ != false) {
+        output.writeBool(2, recordApplicationTags_);
+      }
+      if (recordClientAddress_ != false) {
+        output.writeBool(3, recordClientAddress_);
+      }
+      if (queryStringLength_ != 0) {
+        output.writeUInt32(4, queryStringLength_);
+      }
+      if (queryPlansPerMinute_ != 0) {
+        output.writeUInt32(5, queryPlansPerMinute_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      if (recordApplicationTags_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, recordApplicationTags_);
+      }
+      if (recordClientAddress_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, recordClientAddress_);
+      }
+      if (queryStringLength_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(4, queryStringLength_);
+      }
+      if (queryPlansPerMinute_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeUInt32Size(5, queryPlansPerMinute_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo other =
+          (com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (getRecordApplicationTags() != other.getRecordApplicationTags()) return false;
+      if (getRecordClientAddress() != other.getRecordClientAddress()) return false;
+      if (getQueryStringLength() != other.getQueryStringLength()) return false;
+      if (getQueryPlansPerMinute() != other.getQueryPlansPerMinute()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (37 * hash) + RECORD_APPLICATION_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRecordApplicationTags());
+      hash = (37 * hash) + RECORD_CLIENT_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRecordClientAddress());
+      hash = (37 * hash) + QUERY_STRING_LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryStringLength();
+      hash = (37 * hash) + QUERY_PLANS_PER_MINUTE_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryPlansPerMinute();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Instance level Query Insights information, which is read-only and available
+     * in the output only.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo)
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Instance_QueryInsightsInstanceInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Instance_QueryInsightsInstanceInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.class,
+                com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        recordApplicationTags_ = false;
+        recordClientAddress_ = false;
+        queryStringLength_ = 0;
+        queryPlansPerMinute_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Instance_QueryInsightsInstanceInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo build() {
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo buildPartial() {
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo result =
+            new com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.recordApplicationTags_ = recordApplicationTags_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.recordClientAddress_ = recordClientAddress_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.queryStringLength_ = queryStringLength_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.queryPlansPerMinute_ = queryPlansPerMinute_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo) {
+          return mergeFrom(
+              (com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo other) {
+        if (other
+            == com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+                .getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        if (other.getRecordApplicationTags() != false) {
+          setRecordApplicationTags(other.getRecordApplicationTags());
+        }
+        if (other.getRecordClientAddress() != false) {
+          setRecordClientAddress(other.getRecordClientAddress());
+        }
+        if (other.getQueryStringLength() != 0) {
+          setQueryStringLength(other.getQueryStringLength());
+        }
+        if (other.getQueryPlansPerMinute() != 0) {
+          setQueryPlansPerMinute(other.getQueryPlansPerMinute());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  recordApplicationTags_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  recordClientAddress_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  queryStringLength_ = input.readUInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  queryPlansPerMinute_ = input.readUInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether Query Insights is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether Query Insights is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether Query Insights is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean recordApplicationTags_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether to record application tags.
+       * </pre>
+       *
+       * <code>bool record_application_tags = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The recordApplicationTags.
+       */
+      @java.lang.Override
+      public boolean getRecordApplicationTags() {
+        return recordApplicationTags_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether to record application tags.
+       * </pre>
+       *
+       * <code>bool record_application_tags = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The recordApplicationTags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordApplicationTags(boolean value) {
+
+        recordApplicationTags_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether to record application tags.
+       * </pre>
+       *
+       * <code>bool record_application_tags = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordApplicationTags() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        recordApplicationTags_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean recordClientAddress_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether to record client address.
+       * </pre>
+       *
+       * <code>bool record_client_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The recordClientAddress.
+       */
+      @java.lang.Override
+      public boolean getRecordClientAddress() {
+        return recordClientAddress_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether to record client address.
+       * </pre>
+       *
+       * <code>bool record_client_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The recordClientAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordClientAddress(boolean value) {
+
+        recordClientAddress_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether to record client address.
+       * </pre>
+       *
+       * <code>bool record_client_address = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordClientAddress() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        recordClientAddress_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int queryStringLength_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Maximum query string length.
+       * </pre>
+       *
+       * <code>uint32 query_string_length = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The queryStringLength.
+       */
+      @java.lang.Override
+      public int getQueryStringLength() {
+        return queryStringLength_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Maximum query string length.
+       * </pre>
+       *
+       * <code>uint32 query_string_length = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The queryStringLength to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryStringLength(int value) {
+
+        queryStringLength_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Maximum query string length.
+       * </pre>
+       *
+       * <code>uint32 query_string_length = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryStringLength() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        queryStringLength_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int queryPlansPerMinute_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of query execution plans captured per minute.
+       * </pre>
+       *
+       * <code>uint32 query_plans_per_minute = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The queryPlansPerMinute.
+       */
+      @java.lang.Override
+      public int getQueryPlansPerMinute() {
+        return queryPlansPerMinute_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of query execution plans captured per minute.
+       * </pre>
+       *
+       * <code>uint32 query_plans_per_minute = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The queryPlansPerMinute to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryPlansPerMinute(int value) {
+
+        queryPlansPerMinute_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of query execution plans captured per minute.
+       * </pre>
+       *
+       * <code>uint32 query_plans_per_minute = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryPlansPerMinute() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        queryPlansPerMinute_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo)
+    private static final com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo();
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryInsightsInstanceInfo> PARSER =
+        new com.google.protobuf.AbstractParser<QueryInsightsInstanceInfo>() {
+          @java.lang.Override
+          public QueryInsightsInstanceInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QueryInsightsInstanceInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryInsightsInstanceInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ObservabilityInstanceConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig)
@@ -6339,6 +7297,1663 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ObservabilityInstanceInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Observability feature status for an instance.
+     * </pre>
+     *
+     * <code>bool enabled = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Preserve comments in query string for an instance.
+     * </pre>
+     *
+     * <code>bool preserve_comments = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The preserveComments.
+     */
+    boolean getPreserveComments();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track wait events during query execution for an instance.
+     * </pre>
+     *
+     * <code>bool track_wait_events = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackWaitEvents.
+     */
+    boolean getTrackWaitEvents();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track wait event types during query execution for an
+     * instance.
+     * </pre>
+     *
+     * <code>bool track_wait_event_types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackWaitEventTypes.
+     */
+    boolean getTrackWaitEventTypes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Query string length. The default value is 10k.
+     * </pre>
+     *
+     * <code>int32 max_query_string_length = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxQueryStringLength.
+     */
+    int getMaxQueryStringLength();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Record application tags for an instance.
+     * </pre>
+     *
+     * <code>bool record_application_tags = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The recordApplicationTags.
+     */
+    boolean getRecordApplicationTags();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of query execution plans captured by Insights per
+     * minute for all queries combined.
+     * </pre>
+     *
+     * <code>int32 query_plans_per_minute = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queryPlansPerMinute.
+     */
+    int getQueryPlansPerMinute();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track actively running queries on the instance.
+     * </pre>
+     *
+     * <code>bool track_active_queries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackActiveQueries.
+     */
+    boolean getTrackActiveQueries();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track client address for an instance.
+     * </pre>
+     *
+     * <code>bool track_client_address = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackClientAddress.
+     */
+    boolean getTrackClientAddress();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether assistive experiences are enabled for this AlloyDB
+     * instance.
+     * </pre>
+     *
+     * <code>bool assistive_experiences_enabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The assistiveExperiencesEnabled.
+     */
+    boolean getAssistiveExperiencesEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether to track active query plans for an
+     * instance. Deprecated: Use track_active_queries instead.
+     * </pre>
+     *
+     * <code>
+     * bool track_active_query_plan = 13 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @deprecated
+     *     google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.track_active_query_plan
+     *     is deprecated. See google/cloud/alloydb/v1alpha/resources.proto;l=976
+     * @return The trackActiveQueryPlan.
+     */
+    @java.lang.Deprecated
+    boolean getTrackActiveQueryPlan();
+  }
+
+  /** Protobuf type {@code google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo} */
+  public static final class ObservabilityInstanceInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo)
+      ObservabilityInstanceInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ObservabilityInstanceInfo");
+    }
+
+    // Use ObservabilityInstanceInfo.newBuilder() to construct.
+    private ObservabilityInstanceInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ObservabilityInstanceInfo() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Instance_ObservabilityInstanceInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Instance_ObservabilityInstanceInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.class,
+              com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 2;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Observability feature status for an instance.
+     * </pre>
+     *
+     * <code>bool enabled = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int PRESERVE_COMMENTS_FIELD_NUMBER = 3;
+    private boolean preserveComments_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Preserve comments in query string for an instance.
+     * </pre>
+     *
+     * <code>bool preserve_comments = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The preserveComments.
+     */
+    @java.lang.Override
+    public boolean getPreserveComments() {
+      return preserveComments_;
+    }
+
+    public static final int TRACK_WAIT_EVENTS_FIELD_NUMBER = 4;
+    private boolean trackWaitEvents_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track wait events during query execution for an instance.
+     * </pre>
+     *
+     * <code>bool track_wait_events = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackWaitEvents.
+     */
+    @java.lang.Override
+    public boolean getTrackWaitEvents() {
+      return trackWaitEvents_;
+    }
+
+    public static final int TRACK_WAIT_EVENT_TYPES_FIELD_NUMBER = 5;
+    private boolean trackWaitEventTypes_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track wait event types during query execution for an
+     * instance.
+     * </pre>
+     *
+     * <code>bool track_wait_event_types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackWaitEventTypes.
+     */
+    @java.lang.Override
+    public boolean getTrackWaitEventTypes() {
+      return trackWaitEventTypes_;
+    }
+
+    public static final int MAX_QUERY_STRING_LENGTH_FIELD_NUMBER = 6;
+    private int maxQueryStringLength_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Query string length. The default value is 10k.
+     * </pre>
+     *
+     * <code>int32 max_query_string_length = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The maxQueryStringLength.
+     */
+    @java.lang.Override
+    public int getMaxQueryStringLength() {
+      return maxQueryStringLength_;
+    }
+
+    public static final int RECORD_APPLICATION_TAGS_FIELD_NUMBER = 7;
+    private boolean recordApplicationTags_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Record application tags for an instance.
+     * </pre>
+     *
+     * <code>bool record_application_tags = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The recordApplicationTags.
+     */
+    @java.lang.Override
+    public boolean getRecordApplicationTags() {
+      return recordApplicationTags_;
+    }
+
+    public static final int QUERY_PLANS_PER_MINUTE_FIELD_NUMBER = 8;
+    private int queryPlansPerMinute_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of query execution plans captured by Insights per
+     * minute for all queries combined.
+     * </pre>
+     *
+     * <code>int32 query_plans_per_minute = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The queryPlansPerMinute.
+     */
+    @java.lang.Override
+    public int getQueryPlansPerMinute() {
+      return queryPlansPerMinute_;
+    }
+
+    public static final int TRACK_ACTIVE_QUERIES_FIELD_NUMBER = 9;
+    private boolean trackActiveQueries_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track actively running queries on the instance.
+     * </pre>
+     *
+     * <code>bool track_active_queries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackActiveQueries.
+     */
+    @java.lang.Override
+    public boolean getTrackActiveQueries() {
+      return trackActiveQueries_;
+    }
+
+    public static final int TRACK_CLIENT_ADDRESS_FIELD_NUMBER = 10;
+    private boolean trackClientAddress_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Track client address for an instance.
+     * </pre>
+     *
+     * <code>bool track_client_address = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The trackClientAddress.
+     */
+    @java.lang.Override
+    public boolean getTrackClientAddress() {
+      return trackClientAddress_;
+    }
+
+    public static final int ASSISTIVE_EXPERIENCES_ENABLED_FIELD_NUMBER = 11;
+    private boolean assistiveExperiencesEnabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether assistive experiences are enabled for this AlloyDB
+     * instance.
+     * </pre>
+     *
+     * <code>bool assistive_experiences_enabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The assistiveExperiencesEnabled.
+     */
+    @java.lang.Override
+    public boolean getAssistiveExperiencesEnabled() {
+      return assistiveExperiencesEnabled_;
+    }
+
+    public static final int TRACK_ACTIVE_QUERY_PLAN_FIELD_NUMBER = 13;
+    private boolean trackActiveQueryPlan_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether to track active query plans for an
+     * instance. Deprecated: Use track_active_queries instead.
+     * </pre>
+     *
+     * <code>
+     * bool track_active_query_plan = 13 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @deprecated
+     *     google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.track_active_query_plan
+     *     is deprecated. See google/cloud/alloydb/v1alpha/resources.proto;l=976
+     * @return The trackActiveQueryPlan.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public boolean getTrackActiveQueryPlan() {
+      return trackActiveQueryPlan_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(2, enabled_);
+      }
+      if (preserveComments_ != false) {
+        output.writeBool(3, preserveComments_);
+      }
+      if (trackWaitEvents_ != false) {
+        output.writeBool(4, trackWaitEvents_);
+      }
+      if (trackWaitEventTypes_ != false) {
+        output.writeBool(5, trackWaitEventTypes_);
+      }
+      if (maxQueryStringLength_ != 0) {
+        output.writeInt32(6, maxQueryStringLength_);
+      }
+      if (recordApplicationTags_ != false) {
+        output.writeBool(7, recordApplicationTags_);
+      }
+      if (queryPlansPerMinute_ != 0) {
+        output.writeInt32(8, queryPlansPerMinute_);
+      }
+      if (trackActiveQueries_ != false) {
+        output.writeBool(9, trackActiveQueries_);
+      }
+      if (trackClientAddress_ != false) {
+        output.writeBool(10, trackClientAddress_);
+      }
+      if (assistiveExperiencesEnabled_ != false) {
+        output.writeBool(11, assistiveExperiencesEnabled_);
+      }
+      if (trackActiveQueryPlan_ != false) {
+        output.writeBool(13, trackActiveQueryPlan_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enabled_);
+      }
+      if (preserveComments_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, preserveComments_);
+      }
+      if (trackWaitEvents_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, trackWaitEvents_);
+      }
+      if (trackWaitEventTypes_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, trackWaitEventTypes_);
+      }
+      if (maxQueryStringLength_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, maxQueryStringLength_);
+      }
+      if (recordApplicationTags_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, recordApplicationTags_);
+      }
+      if (queryPlansPerMinute_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, queryPlansPerMinute_);
+      }
+      if (trackActiveQueries_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, trackActiveQueries_);
+      }
+      if (trackClientAddress_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, trackClientAddress_);
+      }
+      if (assistiveExperiencesEnabled_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(11, assistiveExperiencesEnabled_);
+      }
+      if (trackActiveQueryPlan_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, trackActiveQueryPlan_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo other =
+          (com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (getPreserveComments() != other.getPreserveComments()) return false;
+      if (getTrackWaitEvents() != other.getTrackWaitEvents()) return false;
+      if (getTrackWaitEventTypes() != other.getTrackWaitEventTypes()) return false;
+      if (getMaxQueryStringLength() != other.getMaxQueryStringLength()) return false;
+      if (getRecordApplicationTags() != other.getRecordApplicationTags()) return false;
+      if (getQueryPlansPerMinute() != other.getQueryPlansPerMinute()) return false;
+      if (getTrackActiveQueries() != other.getTrackActiveQueries()) return false;
+      if (getTrackClientAddress() != other.getTrackClientAddress()) return false;
+      if (getAssistiveExperiencesEnabled() != other.getAssistiveExperiencesEnabled()) return false;
+      if (getTrackActiveQueryPlan() != other.getTrackActiveQueryPlan()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (37 * hash) + PRESERVE_COMMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreserveComments());
+      hash = (37 * hash) + TRACK_WAIT_EVENTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrackWaitEvents());
+      hash = (37 * hash) + TRACK_WAIT_EVENT_TYPES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrackWaitEventTypes());
+      hash = (37 * hash) + MAX_QUERY_STRING_LENGTH_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxQueryStringLength();
+      hash = (37 * hash) + RECORD_APPLICATION_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRecordApplicationTags());
+      hash = (37 * hash) + QUERY_PLANS_PER_MINUTE_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryPlansPerMinute();
+      hash = (37 * hash) + TRACK_ACTIVE_QUERIES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrackActiveQueries());
+      hash = (37 * hash) + TRACK_CLIENT_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrackClientAddress());
+      hash = (37 * hash) + ASSISTIVE_EXPERIENCES_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAssistiveExperiencesEnabled());
+      hash = (37 * hash) + TRACK_ACTIVE_QUERY_PLAN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrackActiveQueryPlan());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /** Protobuf type {@code google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo} */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo)
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Instance_ObservabilityInstanceInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Instance_ObservabilityInstanceInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.class,
+                com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        preserveComments_ = false;
+        trackWaitEvents_ = false;
+        trackWaitEventTypes_ = false;
+        maxQueryStringLength_ = 0;
+        recordApplicationTags_ = false;
+        queryPlansPerMinute_ = 0;
+        trackActiveQueries_ = false;
+        trackClientAddress_ = false;
+        assistiveExperiencesEnabled_ = false;
+        trackActiveQueryPlan_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Instance_ObservabilityInstanceInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo build() {
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo buildPartial() {
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo result =
+            new com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.preserveComments_ = preserveComments_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.trackWaitEvents_ = trackWaitEvents_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.trackWaitEventTypes_ = trackWaitEventTypes_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maxQueryStringLength_ = maxQueryStringLength_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.recordApplicationTags_ = recordApplicationTags_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.queryPlansPerMinute_ = queryPlansPerMinute_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.trackActiveQueries_ = trackActiveQueries_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.trackClientAddress_ = trackClientAddress_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.assistiveExperiencesEnabled_ = assistiveExperiencesEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.trackActiveQueryPlan_ = trackActiveQueryPlan_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo) {
+          return mergeFrom(
+              (com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo other) {
+        if (other
+            == com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+                .getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        if (other.getPreserveComments() != false) {
+          setPreserveComments(other.getPreserveComments());
+        }
+        if (other.getTrackWaitEvents() != false) {
+          setTrackWaitEvents(other.getTrackWaitEvents());
+        }
+        if (other.getTrackWaitEventTypes() != false) {
+          setTrackWaitEventTypes(other.getTrackWaitEventTypes());
+        }
+        if (other.getMaxQueryStringLength() != 0) {
+          setMaxQueryStringLength(other.getMaxQueryStringLength());
+        }
+        if (other.getRecordApplicationTags() != false) {
+          setRecordApplicationTags(other.getRecordApplicationTags());
+        }
+        if (other.getQueryPlansPerMinute() != 0) {
+          setQueryPlansPerMinute(other.getQueryPlansPerMinute());
+        }
+        if (other.getTrackActiveQueries() != false) {
+          setTrackActiveQueries(other.getTrackActiveQueries());
+        }
+        if (other.getTrackClientAddress() != false) {
+          setTrackClientAddress(other.getTrackClientAddress());
+        }
+        if (other.getAssistiveExperiencesEnabled() != false) {
+          setAssistiveExperiencesEnabled(other.getAssistiveExperiencesEnabled());
+        }
+        if (other.getTrackActiveQueryPlan() != false) {
+          setTrackActiveQueryPlan(other.getTrackActiveQueryPlan());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  preserveComments_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  trackWaitEvents_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  trackWaitEventTypes_ = input.readBool();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  maxQueryStringLength_ = input.readInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
+              case 56:
+                {
+                  recordApplicationTags_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 56
+              case 64:
+                {
+                  queryPlansPerMinute_ = input.readInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 64
+              case 72:
+                {
+                  trackActiveQueries_ = input.readBool();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 72
+              case 80:
+                {
+                  trackClientAddress_ = input.readBool();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 80
+              case 88:
+                {
+                  assistiveExperiencesEnabled_ = input.readBool();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 88
+              case 104:
+                {
+                  trackActiveQueryPlan_ = input.readBool();
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 104
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Observability feature status for an instance.
+       * </pre>
+       *
+       * <code>bool enabled = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Observability feature status for an instance.
+       * </pre>
+       *
+       * <code>bool enabled = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Observability feature status for an instance.
+       * </pre>
+       *
+       * <code>bool enabled = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean preserveComments_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Preserve comments in query string for an instance.
+       * </pre>
+       *
+       * <code>bool preserve_comments = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The preserveComments.
+       */
+      @java.lang.Override
+      public boolean getPreserveComments() {
+        return preserveComments_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Preserve comments in query string for an instance.
+       * </pre>
+       *
+       * <code>bool preserve_comments = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The preserveComments to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPreserveComments(boolean value) {
+
+        preserveComments_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Preserve comments in query string for an instance.
+       * </pre>
+       *
+       * <code>bool preserve_comments = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPreserveComments() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        preserveComments_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean trackWaitEvents_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track wait events during query execution for an instance.
+       * </pre>
+       *
+       * <code>bool track_wait_events = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The trackWaitEvents.
+       */
+      @java.lang.Override
+      public boolean getTrackWaitEvents() {
+        return trackWaitEvents_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track wait events during query execution for an instance.
+       * </pre>
+       *
+       * <code>bool track_wait_events = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The trackWaitEvents to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackWaitEvents(boolean value) {
+
+        trackWaitEvents_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track wait events during query execution for an instance.
+       * </pre>
+       *
+       * <code>bool track_wait_events = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrackWaitEvents() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        trackWaitEvents_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean trackWaitEventTypes_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track wait event types during query execution for an
+       * instance.
+       * </pre>
+       *
+       * <code>bool track_wait_event_types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The trackWaitEventTypes.
+       */
+      @java.lang.Override
+      public boolean getTrackWaitEventTypes() {
+        return trackWaitEventTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track wait event types during query execution for an
+       * instance.
+       * </pre>
+       *
+       * <code>bool track_wait_event_types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The trackWaitEventTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackWaitEventTypes(boolean value) {
+
+        trackWaitEventTypes_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track wait event types during query execution for an
+       * instance.
+       * </pre>
+       *
+       * <code>bool track_wait_event_types = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrackWaitEventTypes() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        trackWaitEventTypes_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int maxQueryStringLength_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Query string length. The default value is 10k.
+       * </pre>
+       *
+       * <code>int32 max_query_string_length = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The maxQueryStringLength.
+       */
+      @java.lang.Override
+      public int getMaxQueryStringLength() {
+        return maxQueryStringLength_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Query string length. The default value is 10k.
+       * </pre>
+       *
+       * <code>int32 max_query_string_length = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The maxQueryStringLength to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxQueryStringLength(int value) {
+
+        maxQueryStringLength_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Query string length. The default value is 10k.
+       * </pre>
+       *
+       * <code>int32 max_query_string_length = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxQueryStringLength() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        maxQueryStringLength_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean recordApplicationTags_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Record application tags for an instance.
+       * </pre>
+       *
+       * <code>bool record_application_tags = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The recordApplicationTags.
+       */
+      @java.lang.Override
+      public boolean getRecordApplicationTags() {
+        return recordApplicationTags_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Record application tags for an instance.
+       * </pre>
+       *
+       * <code>bool record_application_tags = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The recordApplicationTags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRecordApplicationTags(boolean value) {
+
+        recordApplicationTags_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Record application tags for an instance.
+       * </pre>
+       *
+       * <code>bool record_application_tags = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRecordApplicationTags() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        recordApplicationTags_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int queryPlansPerMinute_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of query execution plans captured by Insights per
+       * minute for all queries combined.
+       * </pre>
+       *
+       * <code>int32 query_plans_per_minute = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The queryPlansPerMinute.
+       */
+      @java.lang.Override
+      public int getQueryPlansPerMinute() {
+        return queryPlansPerMinute_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of query execution plans captured by Insights per
+       * minute for all queries combined.
+       * </pre>
+       *
+       * <code>int32 query_plans_per_minute = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The queryPlansPerMinute to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQueryPlansPerMinute(int value) {
+
+        queryPlansPerMinute_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Number of query execution plans captured by Insights per
+       * minute for all queries combined.
+       * </pre>
+       *
+       * <code>int32 query_plans_per_minute = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQueryPlansPerMinute() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        queryPlansPerMinute_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean trackActiveQueries_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track actively running queries on the instance.
+       * </pre>
+       *
+       * <code>bool track_active_queries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The trackActiveQueries.
+       */
+      @java.lang.Override
+      public boolean getTrackActiveQueries() {
+        return trackActiveQueries_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track actively running queries on the instance.
+       * </pre>
+       *
+       * <code>bool track_active_queries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The trackActiveQueries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackActiveQueries(boolean value) {
+
+        trackActiveQueries_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track actively running queries on the instance.
+       * </pre>
+       *
+       * <code>bool track_active_queries = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrackActiveQueries() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        trackActiveQueries_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean trackClientAddress_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track client address for an instance.
+       * </pre>
+       *
+       * <code>bool track_client_address = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The trackClientAddress.
+       */
+      @java.lang.Override
+      public boolean getTrackClientAddress() {
+        return trackClientAddress_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track client address for an instance.
+       * </pre>
+       *
+       * <code>bool track_client_address = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The trackClientAddress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrackClientAddress(boolean value) {
+
+        trackClientAddress_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Track client address for an instance.
+       * </pre>
+       *
+       * <code>bool track_client_address = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTrackClientAddress() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        trackClientAddress_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean assistiveExperiencesEnabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether assistive experiences are enabled for this AlloyDB
+       * instance.
+       * </pre>
+       *
+       * <code>bool assistive_experiences_enabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The assistiveExperiencesEnabled.
+       */
+      @java.lang.Override
+      public boolean getAssistiveExperiencesEnabled() {
+        return assistiveExperiencesEnabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether assistive experiences are enabled for this AlloyDB
+       * instance.
+       * </pre>
+       *
+       * <code>bool assistive_experiences_enabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The assistiveExperiencesEnabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssistiveExperiencesEnabled(boolean value) {
+
+        assistiveExperiencesEnabled_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Whether assistive experiences are enabled for this AlloyDB
+       * instance.
+       * </pre>
+       *
+       * <code>bool assistive_experiences_enabled = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAssistiveExperiencesEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        assistiveExperiencesEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean trackActiveQueryPlan_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether to track active query plans for an
+       * instance. Deprecated: Use track_active_queries instead.
+       * </pre>
+       *
+       * <code>
+       * bool track_active_query_plan = 13 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @deprecated
+       *     google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.track_active_query_plan
+       *     is deprecated. See google/cloud/alloydb/v1alpha/resources.proto;l=976
+       * @return The trackActiveQueryPlan.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public boolean getTrackActiveQueryPlan() {
+        return trackActiveQueryPlan_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether to track active query plans for an
+       * instance. Deprecated: Use track_active_queries instead.
+       * </pre>
+       *
+       * <code>
+       * bool track_active_query_plan = 13 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @deprecated
+       *     google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.track_active_query_plan
+       *     is deprecated. See google/cloud/alloydb/v1alpha/resources.proto;l=976
+       * @param value The trackActiveQueryPlan to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder setTrackActiveQueryPlan(boolean value) {
+
+        trackActiveQueryPlan_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether to track active query plans for an
+       * instance. Deprecated: Use track_active_queries instead.
+       * </pre>
+       *
+       * <code>
+       * bool track_active_query_plan = 13 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @deprecated
+       *     google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.track_active_query_plan
+       *     is deprecated. See google/cloud/alloydb/v1alpha/resources.proto;l=976
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated
+      public Builder clearTrackActiveQueryPlan() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        trackActiveQueryPlan_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo)
+    private static final com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo();
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ObservabilityInstanceInfo> PARSER =
+        new com.google.protobuf.AbstractParser<ObservabilityInstanceInfo>() {
+          @java.lang.Override
+          public ObservabilityInstanceInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ObservabilityInstanceInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ObservabilityInstanceInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -20082,6 +22697,76 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         : queryInsightsConfig_;
   }
 
+  public static final int QUERY_INSIGHTS_INFO_FIELD_NUMBER = 47;
+  private com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo queryInsightsInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level Query Insights information, which is read-only
+   * and available in the output only. Contains the effective query insights
+   * settings for this instance, by merging customer's provided
+   * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the queryInsightsInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueryInsightsInfo() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level Query Insights information, which is read-only
+   * and available in the output only. Contains the effective query insights
+   * settings for this instance, by merging customer's provided
+   * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The queryInsightsInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+      getQueryInsightsInfo() {
+    return queryInsightsInfo_ == null
+        ? com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.getDefaultInstance()
+        : queryInsightsInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level Query Insights information, which is read-only
+   * and available in the output only. Contains the effective query insights
+   * settings for this instance, by merging customer's provided
+   * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfoOrBuilder
+      getQueryInsightsInfoOrBuilder() {
+    return queryInsightsInfo_ == null
+        ? com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.getDefaultInstance()
+        : queryInsightsInfo_;
+  }
+
   public static final int OBSERVABILITY_CONFIG_FIELD_NUMBER = 26;
   private com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig
       observabilityConfig_;
@@ -20101,7 +22786,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasObservabilityConfig() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -20144,6 +22829,77 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         : observabilityConfig_;
   }
 
+  public static final int OBSERVABILITY_INSTANCE_INFO_FIELD_NUMBER = 44;
+  private com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+      observabilityInstanceInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level observability information, contains the
+   * effective values of observability settings for this instance, by merging
+   * customer's provided `ObservabilityInstanceConfig` with the
+   * Observability defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the observabilityInstanceInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasObservabilityInstanceInfo() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level observability information, contains the
+   * effective values of observability settings for this instance, by merging
+   * customer's provided `ObservabilityInstanceConfig` with the
+   * Observability defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The observabilityInstanceInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+      getObservabilityInstanceInfo() {
+    return observabilityInstanceInfo_ == null
+        ? com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.getDefaultInstance()
+        : observabilityInstanceInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level observability information, contains the
+   * effective values of observability settings for this instance, by merging
+   * customer's provided `ObservabilityInstanceConfig` with the
+   * Observability defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfoOrBuilder
+      getObservabilityInstanceInfoOrBuilder() {
+    return observabilityInstanceInfo_ == null
+        ? com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.getDefaultInstance()
+        : observabilityInstanceInfo_;
+  }
+
   public static final int READ_POOL_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig readPoolConfig_;
 
@@ -20161,7 +22917,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasReadPoolConfig() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -20528,7 +23284,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdatePolicy() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -20590,7 +23346,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasClientConnectionConfig() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -20690,7 +23446,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPscInstanceConfig() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -20753,7 +23509,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPscInstanceInfo() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -20815,7 +23571,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasNetworkConfig() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -20873,13 +23629,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1478
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
   @java.lang.Deprecated
   public boolean hasGeminiConfig() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -20895,7 +23651,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1478
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -21075,7 +23831,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasConnectionPoolConfig() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -21135,7 +23891,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGcaConfig() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -21231,7 +23987,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetDatabaseFlags(), DatabaseFlagsDefaultEntryHolder.defaultEntry, 13);
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(14, getReadPoolConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ipAddress_)) {
@@ -21254,31 +24010,31 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(21, getQueryInsightsConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(22, getUpdatePolicy());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(23, getClientConnectionConfig());
     }
     if (satisfiesPzs_ != false) {
       output.writeBool(24, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(26, getObservabilityConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(publicIpAddress_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 27, publicIpAddress_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(28, getPscInstanceConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(29, getNetworkConfig());
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(30, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(33, getGeminiConfig());
     }
     for (int i = 0; i < outboundPublicIpAddresses_.size(); i++) {
@@ -21290,14 +24046,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(35, activationPolicy_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(37, getConnectionPoolConfig());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeMessage(38, getGcaConfig());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(44, getObservabilityInstanceInfo());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(46, getPscInstanceInfo());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(47, getQueryInsightsInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -21365,7 +24127,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, databaseFlags__);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getReadPoolConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ipAddress_)) {
@@ -21397,33 +24159,33 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getQueryInsightsConfig());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getUpdatePolicy());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(23, getClientConnectionConfig());
     }
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(26, getObservabilityConfig());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(publicIpAddress_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(27, publicIpAddress_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getPscInstanceConfig());
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getNetworkConfig());
     }
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getGeminiConfig());
     }
     {
@@ -21439,15 +24201,23 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, activationPolicy_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(37, getConnectionPoolConfig());
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(38, getGcaConfig());
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              44, getObservabilityInstanceInfo());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(46, getPscInstanceInfo());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getQueryInsightsInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -21499,9 +24269,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (hasQueryInsightsConfig()) {
       if (!getQueryInsightsConfig().equals(other.getQueryInsightsConfig())) return false;
     }
+    if (hasQueryInsightsInfo() != other.hasQueryInsightsInfo()) return false;
+    if (hasQueryInsightsInfo()) {
+      if (!getQueryInsightsInfo().equals(other.getQueryInsightsInfo())) return false;
+    }
     if (hasObservabilityConfig() != other.hasObservabilityConfig()) return false;
     if (hasObservabilityConfig()) {
       if (!getObservabilityConfig().equals(other.getObservabilityConfig())) return false;
+    }
+    if (hasObservabilityInstanceInfo() != other.hasObservabilityInstanceInfo()) return false;
+    if (hasObservabilityInstanceInfo()) {
+      if (!getObservabilityInstanceInfo().equals(other.getObservabilityInstanceInfo()))
+        return false;
     }
     if (hasReadPoolConfig() != other.hasReadPoolConfig()) return false;
     if (hasReadPoolConfig()) {
@@ -21610,9 +24389,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + QUERY_INSIGHTS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getQueryInsightsConfig().hashCode();
     }
+    if (hasQueryInsightsInfo()) {
+      hash = (37 * hash) + QUERY_INSIGHTS_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryInsightsInfo().hashCode();
+    }
     if (hasObservabilityConfig()) {
       hash = (37 * hash) + OBSERVABILITY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getObservabilityConfig().hashCode();
+    }
+    if (hasObservabilityInstanceInfo()) {
+      hash = (37 * hash) + OBSERVABILITY_INSTANCE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getObservabilityInstanceInfo().hashCode();
     }
     if (hasReadPoolConfig()) {
       hash = (37 * hash) + READ_POOL_CONFIG_FIELD_NUMBER;
@@ -21851,7 +24638,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         internalGetWritableNodeFieldBuilder();
         internalGetNodesFieldBuilder();
         internalGetQueryInsightsConfigFieldBuilder();
+        internalGetQueryInsightsInfoFieldBuilder();
         internalGetObservabilityConfigFieldBuilder();
+        internalGetObservabilityInstanceInfoFieldBuilder();
         internalGetReadPoolConfigFieldBuilder();
         internalGetUpdatePolicyFieldBuilder();
         internalGetClientConnectionConfigFieldBuilder();
@@ -21915,10 +24704,20 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         queryInsightsConfigBuilder_.dispose();
         queryInsightsConfigBuilder_ = null;
       }
+      queryInsightsInfo_ = null;
+      if (queryInsightsInfoBuilder_ != null) {
+        queryInsightsInfoBuilder_.dispose();
+        queryInsightsInfoBuilder_ = null;
+      }
       observabilityConfig_ = null;
       if (observabilityConfigBuilder_ != null) {
         observabilityConfigBuilder_.dispose();
         observabilityConfigBuilder_ = null;
+      }
+      observabilityInstanceInfo_ = null;
+      if (observabilityInstanceInfoBuilder_ != null) {
+        observabilityInstanceInfoBuilder_.dispose();
+        observabilityInstanceInfoBuilder_ = null;
       }
       readPoolConfig_ = null;
       if (readPoolConfigBuilder_ != null) {
@@ -22086,96 +24885,110 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.queryInsightsInfo_ =
+            queryInsightsInfoBuilder_ == null
+                ? queryInsightsInfo_
+                : queryInsightsInfoBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.observabilityConfig_ =
             observabilityConfigBuilder_ == null
                 ? observabilityConfig_
                 : observabilityConfigBuilder_.build();
-        to_bitField0_ |= 0x00000040;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.readPoolConfig_ =
-            readPoolConfigBuilder_ == null ? readPoolConfig_ : readPoolConfigBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.ipAddress_ = ipAddress_;
+        result.observabilityInstanceInfo_ =
+            observabilityInstanceInfoBuilder_ == null
+                ? observabilityInstanceInfo_
+                : observabilityInstanceInfoBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.publicIpAddress_ = publicIpAddress_;
+        result.readPoolConfig_ =
+            readPoolConfigBuilder_ == null ? readPoolConfig_ : readPoolConfigBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.ipAddress_ = ipAddress_;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.etag_ = etag_;
+        result.publicIpAddress_ = publicIpAddress_;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.updatePolicy_ =
             updatePolicyBuilder_ == null ? updatePolicy_ : updatePolicyBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.clientConnectionConfig_ =
             clientConnectionConfigBuilder_ == null
                 ? clientConnectionConfig_
                 : clientConnectionConfigBuilder_.build();
-        to_bitField0_ |= 0x00000200;
-      }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.satisfiesPzi_ = satisfiesPzi_;
-      }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.pscInstanceConfig_ =
             pscInstanceConfigBuilder_ == null
                 ? pscInstanceConfig_
                 : pscInstanceConfigBuilder_.build();
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.pscInstanceInfo_ =
-            pscInstanceInfoBuilder_ == null ? pscInstanceInfo_ : pscInstanceInfoBuilder_.build();
-        to_bitField0_ |= 0x00000800;
-      }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.networkConfig_ =
-            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.geminiConfig_ =
-            geminiConfigBuilder_ == null ? geminiConfig_ : geminiConfigBuilder_.build();
+        result.pscInstanceInfo_ =
+            pscInstanceInfoBuilder_ == null ? pscInstanceInfo_ : pscInstanceInfoBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        outboundPublicIpAddresses_.makeImmutable();
-        result.outboundPublicIpAddresses_ = outboundPublicIpAddresses_;
+        result.networkConfig_ =
+            networkConfigBuilder_ == null ? networkConfig_ : networkConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartial1(com.google.cloud.alloydb.v1alpha.Instance result) {
       int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.geminiConfig_ =
+            geminiConfigBuilder_ == null ? geminiConfig_ : geminiConfigBuilder_.build();
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        outboundPublicIpAddresses_.makeImmutable();
+        result.outboundPublicIpAddresses_ = outboundPublicIpAddresses_;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         result.activationPolicy_ = activationPolicy_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00000002) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.connectionPoolConfig_ =
             connectionPoolConfigBuilder_ == null
                 ? connectionPoolConfig_
                 : connectionPoolConfigBuilder_.build();
-        to_bitField0_ |= 0x00004000;
+        to_bitField0_ |= 0x00010000;
       }
-      if (((from_bitField1_ & 0x00000004) != 0)) {
+      if (((from_bitField1_ & 0x00000010) != 0)) {
         result.gcaConfig_ = gcaConfigBuilder_ == null ? gcaConfig_ : gcaConfigBuilder_.build();
-        to_bitField0_ |= 0x00008000;
+        to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -22270,20 +25083,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (other.hasQueryInsightsConfig()) {
         mergeQueryInsightsConfig(other.getQueryInsightsConfig());
       }
+      if (other.hasQueryInsightsInfo()) {
+        mergeQueryInsightsInfo(other.getQueryInsightsInfo());
+      }
       if (other.hasObservabilityConfig()) {
         mergeObservabilityConfig(other.getObservabilityConfig());
+      }
+      if (other.hasObservabilityInstanceInfo()) {
+        mergeObservabilityInstanceInfo(other.getObservabilityInstanceInfo());
       }
       if (other.hasReadPoolConfig()) {
         mergeReadPoolConfig(other.getReadPoolConfig());
       }
       if (!other.getIpAddress().isEmpty()) {
         ipAddress_ = other.ipAddress_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (!other.getPublicIpAddress().isEmpty()) {
         publicIpAddress_ = other.publicIpAddress_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.getReconciling() != false) {
@@ -22291,11 +25110,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       if (other.hasUpdatePolicy()) {
         mergeUpdatePolicy(other.getUpdatePolicy());
       }
@@ -22323,7 +25142,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!other.outboundPublicIpAddresses_.isEmpty()) {
         if (outboundPublicIpAddresses_.isEmpty()) {
           outboundPublicIpAddresses_ = other.outboundPublicIpAddresses_;
-          bitField0_ |= 0x80000000;
+          bitField1_ |= 0x00000002;
         } else {
           ensureOutboundPublicIpAddressesIsMutable();
           outboundPublicIpAddresses_.addAll(other.outboundPublicIpAddresses_);
@@ -22463,25 +25282,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetReadPoolConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 114
             case 122:
               {
                 ipAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 122
             case 128:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 128
             case 138:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 138
             case 146:
@@ -22493,7 +25312,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 internalGetMutableAnnotations()
                     .getMutableMap()
                     .put(annotations__.getKey(), annotations__.getValue());
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 146
             case 154:
@@ -22527,7 +25346,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetUpdatePolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 178
             case 186:
@@ -22535,53 +25354,53 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetClientConnectionConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 186
             case 192:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 192
             case 210:
               {
                 input.readMessage(
                     internalGetObservabilityConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 210
             case 218:
               {
                 publicIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 218
             case 226:
               {
                 input.readMessage(
                     internalGetPscInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 226
             case 234:
               {
                 input.readMessage(
                     internalGetNetworkConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 234
             case 240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 240
             case 266:
               {
                 input.readMessage(
                     internalGetGeminiConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 266
             case 274:
@@ -22594,30 +25413,45 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
             case 280:
               {
                 activationPolicy_ = input.readEnum();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 280
             case 298:
               {
                 input.readMessage(
                     internalGetConnectionPoolConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 298
             case 306:
               {
                 input.readMessage(
                     internalGetGcaConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 306
+            case 354:
+              {
+                input.readMessage(
+                    internalGetObservabilityInstanceInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 354
             case 370:
               {
                 input.readMessage(
                     internalGetPscInstanceInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 370
+            case 378:
+              {
+                input.readMessage(
+                    internalGetQueryInsightsInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 378
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -25651,6 +28485,256 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       return queryInsightsConfigBuilder_;
     }
 
+    private com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo queryInsightsInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo,
+            com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder,
+            com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfoOrBuilder>
+        queryInsightsInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the queryInsightsInfo field is set.
+     */
+    public boolean hasQueryInsightsInfo() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The queryInsightsInfo.
+     */
+    public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+        getQueryInsightsInfo() {
+      if (queryInsightsInfoBuilder_ == null) {
+        return queryInsightsInfo_ == null
+            ? com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+                .getDefaultInstance()
+            : queryInsightsInfo_;
+      } else {
+        return queryInsightsInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setQueryInsightsInfo(
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo value) {
+      if (queryInsightsInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryInsightsInfo_ = value;
+      } else {
+        queryInsightsInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setQueryInsightsInfo(
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder
+            builderForValue) {
+      if (queryInsightsInfoBuilder_ == null) {
+        queryInsightsInfo_ = builderForValue.build();
+      } else {
+        queryInsightsInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeQueryInsightsInfo(
+        com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo value) {
+      if (queryInsightsInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && queryInsightsInfo_ != null
+            && queryInsightsInfo_
+                != com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+                    .getDefaultInstance()) {
+          getQueryInsightsInfoBuilder().mergeFrom(value);
+        } else {
+          queryInsightsInfo_ = value;
+        }
+      } else {
+        queryInsightsInfoBuilder_.mergeFrom(value);
+      }
+      if (queryInsightsInfo_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearQueryInsightsInfo() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      queryInsightsInfo_ = null;
+      if (queryInsightsInfoBuilder_ != null) {
+        queryInsightsInfoBuilder_.dispose();
+        queryInsightsInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder
+        getQueryInsightsInfoBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return internalGetQueryInsightsInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfoOrBuilder
+        getQueryInsightsInfoOrBuilder() {
+      if (queryInsightsInfoBuilder_ != null) {
+        return queryInsightsInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return queryInsightsInfo_ == null
+            ? com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo
+                .getDefaultInstance()
+            : queryInsightsInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level Query Insights information, which is read-only
+     * and available in the output only. Contains the effective query insights
+     * settings for this instance, by merging customer's provided
+     * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo,
+            com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder,
+            com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfoOrBuilder>
+        internalGetQueryInsightsInfoFieldBuilder() {
+      if (queryInsightsInfoBuilder_ == null) {
+        queryInsightsInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo,
+                com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfo.Builder,
+                com.google.cloud.alloydb.v1alpha.Instance.QueryInsightsInstanceInfoOrBuilder>(
+                getQueryInsightsInfo(), getParentForChildren(), isClean());
+        queryInsightsInfo_ = null;
+      }
+      return queryInsightsInfoBuilder_;
+    }
+
     private com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig
         observabilityConfig_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -25673,7 +28757,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the observabilityConfig field is set.
      */
     public boolean hasObservabilityConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -25722,7 +28806,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         observabilityConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -25746,7 +28830,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         observabilityConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -25765,7 +28849,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergeObservabilityConfig(
         com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig value) {
       if (observabilityConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && observabilityConfig_ != null
             && observabilityConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig
@@ -25778,7 +28862,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         observabilityConfigBuilder_.mergeFrom(value);
       }
       if (observabilityConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -25796,7 +28880,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearObservabilityConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       observabilityConfig_ = null;
       if (observabilityConfigBuilder_ != null) {
         observabilityConfigBuilder_.dispose();
@@ -25819,7 +28903,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceConfig.Builder
         getObservabilityConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetObservabilityConfigFieldBuilder().getBuilder();
     }
@@ -25875,6 +28959,257 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       return observabilityConfigBuilder_;
     }
 
+    private com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+        observabilityInstanceInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo,
+            com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder,
+            com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfoOrBuilder>
+        observabilityInstanceInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the observabilityInstanceInfo field is set.
+     */
+    public boolean hasObservabilityInstanceInfo() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The observabilityInstanceInfo.
+     */
+    public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+        getObservabilityInstanceInfo() {
+      if (observabilityInstanceInfoBuilder_ == null) {
+        return observabilityInstanceInfo_ == null
+            ? com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+                .getDefaultInstance()
+            : observabilityInstanceInfo_;
+      } else {
+        return observabilityInstanceInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setObservabilityInstanceInfo(
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo value) {
+      if (observabilityInstanceInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        observabilityInstanceInfo_ = value;
+      } else {
+        observabilityInstanceInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setObservabilityInstanceInfo(
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder
+            builderForValue) {
+      if (observabilityInstanceInfoBuilder_ == null) {
+        observabilityInstanceInfo_ = builderForValue.build();
+      } else {
+        observabilityInstanceInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeObservabilityInstanceInfo(
+        com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo value) {
+      if (observabilityInstanceInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && observabilityInstanceInfo_ != null
+            && observabilityInstanceInfo_
+                != com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+                    .getDefaultInstance()) {
+          getObservabilityInstanceInfoBuilder().mergeFrom(value);
+        } else {
+          observabilityInstanceInfo_ = value;
+        }
+      } else {
+        observabilityInstanceInfoBuilder_.mergeFrom(value);
+      }
+      if (observabilityInstanceInfo_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearObservabilityInstanceInfo() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      observabilityInstanceInfo_ = null;
+      if (observabilityInstanceInfoBuilder_ != null) {
+        observabilityInstanceInfoBuilder_.dispose();
+        observabilityInstanceInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder
+        getObservabilityInstanceInfoBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return internalGetObservabilityInstanceInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfoOrBuilder
+        getObservabilityInstanceInfoOrBuilder() {
+      if (observabilityInstanceInfoBuilder_ != null) {
+        return observabilityInstanceInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return observabilityInstanceInfo_ == null
+            ? com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo
+                .getDefaultInstance()
+            : observabilityInstanceInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instance level observability information, contains the
+     * effective values of observability settings for this instance, by merging
+     * customer's provided `ObservabilityInstanceConfig` with the
+     * Observability defaults.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo,
+            com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder,
+            com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfoOrBuilder>
+        internalGetObservabilityInstanceInfoFieldBuilder() {
+      if (observabilityInstanceInfoBuilder_ == null) {
+        observabilityInstanceInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo,
+                com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfo.Builder,
+                com.google.cloud.alloydb.v1alpha.Instance.ObservabilityInstanceInfoOrBuilder>(
+                getObservabilityInstanceInfo(), getParentForChildren(), isClean());
+        observabilityInstanceInfo_ = null;
+      }
+      return observabilityInstanceInfoBuilder_;
+    }
+
     private com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig readPoolConfig_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig,
@@ -25895,7 +29230,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the readPoolConfig field is set.
      */
     public boolean hasReadPoolConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -25940,7 +29275,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         readPoolConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -25962,7 +29297,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         readPoolConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -25980,7 +29315,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergeReadPoolConfig(
         com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig value) {
       if (readPoolConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && readPoolConfig_ != null
             && readPoolConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig.getDefaultInstance()) {
@@ -25992,7 +29327,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         readPoolConfigBuilder_.mergeFrom(value);
       }
       if (readPoolConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -26009,7 +29344,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig read_pool_config = 14;</code>
      */
     public Builder clearReadPoolConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       readPoolConfig_ = null;
       if (readPoolConfigBuilder_ != null) {
         readPoolConfigBuilder_.dispose();
@@ -26031,7 +29366,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.ReadPoolConfig.Builder
         getReadPoolConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetReadPoolConfigFieldBuilder().getBuilder();
     }
@@ -26152,7 +29487,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipAddress_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -26171,7 +29506,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpAddress() {
       ipAddress_ = getDefaultInstance().getIpAddress();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -26195,7 +29530,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipAddress_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -26277,7 +29612,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       publicIpAddress_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -26299,7 +29634,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPublicIpAddress() {
       publicIpAddress_ = getDefaultInstance().getPublicIpAddress();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -26326,7 +29661,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       publicIpAddress_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -26372,7 +29707,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -26393,7 +29728,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -26464,7 +29799,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -26482,7 +29817,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -26505,7 +29840,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -26530,7 +29865,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return annotations_;
     }
@@ -26628,7 +29963,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearAnnotations() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
@@ -26655,7 +29990,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       return internalGetMutableAnnotations().getMutableMap();
     }
 
@@ -26678,7 +30013,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableAnnotations().getMutableMap().put(key, value);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       return this;
     }
 
@@ -26695,7 +30030,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       return this;
     }
 
@@ -26721,7 +30056,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the updatePolicy field is set.
      */
     public boolean hasUpdatePolicy() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -26769,7 +30104,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         updatePolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -26793,7 +30128,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         updatePolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -26812,7 +30147,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdatePolicy(com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy value) {
       if (updatePolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && updatePolicy_ != null
             && updatePolicy_
                 != com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy.getDefaultInstance()) {
@@ -26824,7 +30159,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         updatePolicyBuilder_.mergeFrom(value);
       }
       if (updatePolicy_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -26843,7 +30178,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy update_policy = 22;</code>
      */
     public Builder clearUpdatePolicy() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       updatePolicy_ = null;
       if (updatePolicyBuilder_ != null) {
         updatePolicyBuilder_.dispose();
@@ -26866,7 +30201,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy update_policy = 22;</code>
      */
     public com.google.cloud.alloydb.v1alpha.Instance.UpdatePolicy.Builder getUpdatePolicyBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return internalGetUpdatePolicyFieldBuilder().getBuilder();
     }
@@ -26945,7 +30280,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the clientConnectionConfig field is set.
      */
     public boolean hasClientConnectionConfig() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -26993,7 +30328,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         clientConnectionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -27016,7 +30351,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         clientConnectionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -27035,7 +30370,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergeClientConnectionConfig(
         com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig value) {
       if (clientConnectionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && clientConnectionConfig_ != null
             && clientConnectionConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig
@@ -27048,7 +30383,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         clientConnectionConfigBuilder_.mergeFrom(value);
       }
       if (clientConnectionConfig_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -27066,7 +30401,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearClientConnectionConfig() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       clientConnectionConfig_ = null;
       if (clientConnectionConfigBuilder_ != null) {
         clientConnectionConfigBuilder_.dispose();
@@ -27089,7 +30424,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig.Builder
         getClientConnectionConfigBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return internalGetClientConnectionConfigFieldBuilder().getBuilder();
     }
@@ -27177,7 +30512,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -27194,7 +30529,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       satisfiesPzi_ = false;
       onChanged();
       return this;
@@ -27233,7 +30568,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -27250,7 +30585,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -27278,7 +30613,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the pscInstanceConfig field is set.
      */
     public boolean hasPscInstanceConfig() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -27327,7 +30662,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         pscInstanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -27351,7 +30686,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         pscInstanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -27371,7 +30706,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergePscInstanceConfig(
         com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig value) {
       if (pscInstanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && pscInstanceConfig_ != null
             && pscInstanceConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig
@@ -27384,7 +30719,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         pscInstanceConfigBuilder_.mergeFrom(value);
       }
       if (pscInstanceConfig_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -27403,7 +30738,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPscInstanceConfig() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       pscInstanceConfig_ = null;
       if (pscInstanceConfigBuilder_ != null) {
         pscInstanceConfigBuilder_.dispose();
@@ -27427,7 +30762,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.PscInstanceConfig.Builder
         getPscInstanceConfigBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return internalGetPscInstanceConfigFieldBuilder().getBuilder();
     }
@@ -27506,7 +30841,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the pscInstanceInfo field is set.
      */
     public boolean hasPscInstanceInfo() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -27555,7 +30890,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         pscInstanceInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -27579,7 +30914,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         pscInstanceInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -27599,7 +30934,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergePscInstanceInfo(
         com.google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo value) {
       if (pscInstanceInfoBuilder_ == null) {
-        if (((bitField0_ & 0x10000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && pscInstanceInfo_ != null
             && pscInstanceInfo_
                 != com.google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo.getDefaultInstance()) {
@@ -27611,7 +30946,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         pscInstanceInfoBuilder_.mergeFrom(value);
       }
       if (pscInstanceInfo_ != null) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -27630,7 +30965,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearPscInstanceInfo() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       pscInstanceInfo_ = null;
       if (pscInstanceInfoBuilder_ != null) {
         pscInstanceInfoBuilder_.dispose();
@@ -27654,7 +30989,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo.Builder
         getPscInstanceInfoBuilder() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return internalGetPscInstanceInfoFieldBuilder().getBuilder();
     }
@@ -27732,7 +31067,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkConfig field is set.
      */
     public boolean hasNetworkConfig() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -27779,7 +31114,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         networkConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -27802,7 +31137,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         networkConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -27821,7 +31156,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergeNetworkConfig(
         com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig value) {
       if (networkConfigBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)
+        if (((bitField0_ & 0x80000000) != 0)
             && networkConfig_ != null
             && networkConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig
@@ -27834,7 +31169,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         networkConfigBuilder_.mergeFrom(value);
       }
       if (networkConfig_ != null) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -27852,7 +31187,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearNetworkConfig() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       networkConfig_ = null;
       if (networkConfigBuilder_ != null) {
         networkConfigBuilder_.dispose();
@@ -27875,7 +31210,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.InstanceNetworkConfig.Builder
         getNetworkConfigBuilder() {
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return internalGetNetworkConfigFieldBuilder().getBuilder();
     }
@@ -27950,12 +31285,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=1478
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
     public boolean hasGeminiConfig() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -27971,7 +31306,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1alpha/resources.proto;l=1399
+     *     google/cloud/alloydb/v1alpha/resources.proto;l=1478
      * @return The geminiConfig.
      */
     @java.lang.Deprecated
@@ -28007,7 +31342,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         geminiConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -28032,7 +31367,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         geminiConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -28052,7 +31387,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     @java.lang.Deprecated
     public Builder mergeGeminiConfig(com.google.cloud.alloydb.v1alpha.GeminiInstanceConfig value) {
       if (geminiConfigBuilder_ == null) {
-        if (((bitField0_ & 0x40000000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && geminiConfig_ != null
             && geminiConfig_
                 != com.google.cloud.alloydb.v1alpha.GeminiInstanceConfig.getDefaultInstance()) {
@@ -28064,7 +31399,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         geminiConfigBuilder_.mergeFrom(value);
       }
       if (geminiConfig_ != null) {
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -28084,7 +31419,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Deprecated
     public Builder clearGeminiConfig() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       geminiConfig_ = null;
       if (geminiConfigBuilder_ != null) {
         geminiConfigBuilder_.dispose();
@@ -28108,7 +31443,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Deprecated
     public com.google.cloud.alloydb.v1alpha.GeminiInstanceConfig.Builder getGeminiConfigBuilder() {
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return internalGetGeminiConfigFieldBuilder().getBuilder();
     }
@@ -28174,7 +31509,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         outboundPublicIpAddresses_ =
             new com.google.protobuf.LazyStringArrayList(outboundPublicIpAddresses_);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
     }
 
     /**
@@ -28269,7 +31604,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       ensureOutboundPublicIpAddressesIsMutable();
       outboundPublicIpAddresses_.set(index, value);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -28294,7 +31629,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       ensureOutboundPublicIpAddressesIsMutable();
       outboundPublicIpAddresses_.add(value);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -28316,7 +31651,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder addAllOutboundPublicIpAddresses(java.lang.Iterable<java.lang.String> values) {
       ensureOutboundPublicIpAddressesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, outboundPublicIpAddresses_);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -28336,7 +31671,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearOutboundPublicIpAddresses() {
       outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -28363,7 +31698,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureOutboundPublicIpAddressesIsMutable();
       outboundPublicIpAddresses_.add(value);
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -28416,7 +31751,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder setActivationPolicyValue(int value) {
       activationPolicy_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -28474,7 +31809,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       activationPolicy_ = value.getNumber();
       onChanged();
       return this;
@@ -28500,7 +31835,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearActivationPolicy() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       activationPolicy_ = 0;
       onChanged();
       return this;
@@ -28527,7 +31862,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the connectionPoolConfig field is set.
      */
     public boolean hasConnectionPoolConfig() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
 
     /**
@@ -28575,7 +31910,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         connectionPoolConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -28598,7 +31933,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         connectionPoolConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -28617,7 +31952,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder mergeConnectionPoolConfig(
         com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig value) {
       if (connectionPoolConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000002) != 0)
+        if (((bitField1_ & 0x00000008) != 0)
             && connectionPoolConfig_ != null
             && connectionPoolConfig_
                 != com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig
@@ -28630,7 +31965,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         connectionPoolConfigBuilder_.mergeFrom(value);
       }
       if (connectionPoolConfig_ != null) {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -28648,7 +31983,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearConnectionPoolConfig() {
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000008);
       connectionPoolConfig_ = null;
       if (connectionPoolConfigBuilder_ != null) {
         connectionPoolConfigBuilder_.dispose();
@@ -28671,7 +32006,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.alloydb.v1alpha.Instance.ConnectionPoolConfig.Builder
         getConnectionPoolConfigBuilder() {
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return internalGetConnectionPoolConfigFieldBuilder().getBuilder();
     }
@@ -28747,7 +32082,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the gcaConfig field is set.
      */
     public boolean hasGcaConfig() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
 
     /**
@@ -28793,7 +32128,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         gcaConfigBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -28816,7 +32151,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         gcaConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -28834,7 +32169,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGcaConfig(com.google.cloud.alloydb.v1alpha.GCAInstanceConfig value) {
       if (gcaConfigBuilder_ == null) {
-        if (((bitField1_ & 0x00000004) != 0)
+        if (((bitField1_ & 0x00000010) != 0)
             && gcaConfig_ != null
             && gcaConfig_
                 != com.google.cloud.alloydb.v1alpha.GCAInstanceConfig.getDefaultInstance()) {
@@ -28846,7 +32181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         gcaConfigBuilder_.mergeFrom(value);
       }
       if (gcaConfig_ != null) {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -28864,7 +32199,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGcaConfig() {
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000010);
       gcaConfig_ = null;
       if (gcaConfigBuilder_ != null) {
         gcaConfigBuilder_.dispose();
@@ -28886,7 +32221,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.alloydb.v1alpha.GCAInstanceConfig.Builder getGcaConfigBuilder() {
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return internalGetGcaConfigFieldBuilder().getBuilder();
     }
