@@ -643,6 +643,90 @@ class PathTemplateTest {
   }
 
   @Test
+  void instantiateRejectsDotAndDoubleDotInSingleWildcard() {
+    PathTemplate template =
+        PathTemplate.create("/compute/v1/projects/{project}/regions/{region}/addresses");
+    ValidationException dotDotException =
+        Assertions.assertThrows(
+            ValidationException.class,
+            () -> template.instantiate("project", "my-project", "region", ".."));
+    Truth.assertThat(dotDotException.getMessage()).isEqualTo("Invalid value .. for region.");
+
+    ValidationException dotException =
+        Assertions.assertThrows(
+            ValidationException.class,
+            () -> template.instantiate("project", "my-project", "region", "."));
+    Truth.assertThat(dotException.getMessage()).isEqualTo("Invalid value . for region.");
+  }
+
+  @Test
+  void instantiateRejectsDotAndDoubleDotInMultiSegmentWildcard() {
+    PathTemplate template =
+        PathTemplate.create("/v2/{parent=projects/*/locations/*}/content:inspect");
+    ValidationException dotException =
+        Assertions.assertThrows(
+            ValidationException.class,
+            () -> template.instantiate("parent", "projects/my-project/locations/."));
+    Truth.assertThat(dotException.getMessage())
+        .isEqualTo("Invalid value projects/my-project/locations/. for parent.");
+
+    ValidationException dotDotException =
+        Assertions.assertThrows(
+            ValidationException.class,
+            () -> template.instantiate("parent", "projects/my-project/locations/.."));
+    Truth.assertThat(dotDotException.getMessage())
+        .isEqualTo("Invalid value projects/my-project/locations/.. for parent.");
+  }
+
+  @Test
+  void instantiateRejectsDotAndDoubleDotInPathWildcard() {
+    PathTemplate template =
+        PathTemplate.create("/v3/{name=projects/*/monitoredResourceDescriptors/**}");
+    for (String invalidName :
+        new String[] {
+          "projects/my-project/monitoredResourceDescriptors/instance/my-instance/..",
+          "projects/my-project/monitoredResourceDescriptors/instance/my-instance/.",
+          "projects/my-project/monitoredResourceDescriptors/.",
+          "projects/my-project/monitoredResourceDescriptors/..",
+          "projects/my-project/monitoredResourceDescriptors/instance/./my-instance/..",
+          "projects/my-project/monitoredResourceDescriptors/instance/../.."
+        }) {
+      ValidationException exception =
+          Assertions.assertThrows(
+              ValidationException.class, () -> template.instantiate("name", invalidName));
+      Truth.assertThat(exception.getMessage())
+          .isEqualTo("Value for name must not contain segments that are exactly . or ..");
+    }
+  }
+
+  @Test
+  void instantiateAllowsSafeDotsAndPercentEncodesReservedChars() {
+    PathTemplate template = PathTemplate.create("/v1/{x=projects/*/databases/*/documents/**}");
+    Truth.assertThat(
+            template.instantiate("x", "projects/sys-prod-123/databases/default/documents/my.txt"))
+        .isEqualTo("v1/projects/sys-prod-123/databases/default/documents/my.txt");
+    Truth.assertThat(
+            template.instantiate(
+                "x", "projects/sys-prod-123/databases/default/documents/my..file.txt"))
+        .isEqualTo("v1/projects/sys-prod-123/databases/default/documents/my..file.txt");
+    Truth.assertThat(
+            template.instantiate(
+                "x", "projects/sys-prod-123/databases/default/documents/doc?key=val"))
+        .isEqualTo("v1/projects/sys-prod-123/databases/default/documents/doc%3Fkey%3Dval");
+    Truth.assertThat(
+            template.instantiate("x", "projects/sys-prod-123/databases/default/documents/doc#frag"))
+        .isEqualTo("v1/projects/sys-prod-123/databases/default/documents/doc%23frag");
+    Truth.assertThat(
+            template.instantiate(
+                "x", "projects/sys-prod-123/databases/default/documents/doc with space"))
+        .isEqualTo("v1/projects/sys-prod-123/databases/default/documents/doc%20with%20space");
+    Truth.assertThat(
+            template.instantiate(
+                "x", "projects/sys-prod-123/databases/default/documents/%2e%2e/escape-db"))
+        .isEqualTo("v1/projects/sys-prod-123/databases/default/documents/%252e%252e/escape-db");
+  }
+
+  @Test
   void instantiateNotEscapeForUnboundedWildcard() {
     PathTemplate template = PathTemplate.create("buckets/*/objects/**");
     Truth.assertThat(template.instantiate("$0", "f/o/o", "$1", "b/a/r"))
