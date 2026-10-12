@@ -107,7 +107,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
     this.attemptSpanName = attemptSpanName;
-    this.operationSpanName = resolveOperationSpanName(attemptSpanName);
+    this.operationSpanName = resolveOperationSpanName(apiTracerContext);
     this.attemptAttributes = new HashMap<>();
     this.parentContext = Context.current();
     buildAttributes();
@@ -130,18 +130,15 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   }
 
   /**
-   * Derives the operation-level span name from the attempt span name.
+   * Resolves the operation-level span name from the tracer context.
    *
-   * @param attemptSpanName the attempt span name
+   * @param apiTracerContext the tracer context containing method metadata
    * @return the operation span name
    */
-  private static String resolveOperationSpanName(String attemptSpanName) {
-    if (!Strings.isNullOrEmpty(attemptSpanName)) {
-      if (attemptSpanName.endsWith("/attempt")) {
-        String name = attemptSpanName.substring(0, attemptSpanName.length() - "/attempt".length());
-        return name.isEmpty() ? "operation" : name;
-      }
-      return "attempt".equals(attemptSpanName) ? "operation" : attemptSpanName;
+  private static String resolveOperationSpanName(ApiTracerContext apiTracerContext) {
+    String fullMethodName = apiTracerContext.fullMethodName();
+    if (!Strings.isNullOrEmpty(fullMethodName)) {
+      return fullMethodName.replace('/', '.');
     }
     return "operation";
   }

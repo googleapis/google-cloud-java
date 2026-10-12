@@ -91,7 +91,7 @@ class OpenTelemetryTracingTracerTest {
     lenient()
         .when(operationSpan.storeInContext(any(io.opentelemetry.context.Context.class)))
         .thenAnswer(invocation -> invocation.getArgument(0));
-    lenient().when(tracer.spanBuilder("Service/Method")).thenReturn(operationSpanBuilder);
+    lenient().when(tracer.spanBuilder("operation")).thenReturn(operationSpanBuilder);
 
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
@@ -766,5 +766,21 @@ class OpenTelemetryTracingTracerTest {
     assertThat(carrier).containsKey("traceparent");
     assertThat(carrier.get("traceparent")).contains("00000000000000000000000000000003");
     assertThat(carrier.get("traceparent")).contains("0000000000000004");
+  }
+
+  @Test
+  void testOperationSpanName_replacesSlashWithDotInFullMethodName() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
+            .setFullMethodName(
+                "google.cloud.secretmanager.v1.SecretManagerService/AccessSecretVersion")
+            .setTransport(ApiTracerContext.Transport.GRPC)
+            .build();
+
+    new OpenTelemetryTracingTracer(tracer, context);
+
+    verify(tracer)
+        .spanBuilder("google.cloud.secretmanager.v1.SecretManagerService.AccessSecretVersion");
   }
 }
