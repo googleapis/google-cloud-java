@@ -140,7 +140,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     if (!Strings.isNullOrEmpty(fullMethodName)) {
       return fullMethodName.replace('/', '.');
     }
-    return "operation";
+    return "Client Request";
   }
 
   /**

@@ -91,7 +91,7 @@ class OpenTelemetryTracingTracerTest {
     lenient()
         .when(operationSpan.storeInContext(any(io.opentelemetry.context.Context.class)))
         .thenAnswer(invocation -> invocation.getArgument(0));
-    lenient().when(tracer.spanBuilder("operation")).thenReturn(operationSpanBuilder);
+    lenient().when(tracer.spanBuilder("Client Request")).thenReturn(operationSpanBuilder);
 
     openTelemetryTracingTracer =
         new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
