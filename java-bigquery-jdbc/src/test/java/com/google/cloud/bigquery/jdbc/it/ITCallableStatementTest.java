@@ -447,20 +447,17 @@ public class ITCallableStatementTest extends ITBase {
 
   @Test
   public void testSetterGetterTimestampCal() throws SQLException {
-    TimeZone originalTz = TimeZone.getDefault();
-    try {
-      TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-      CallableStatement callableStatement =
-          this.bigQueryConnection.prepareCall("call testProc('?')");
-      assertNotNull(callableStatement);
-      Timestamp expected = new Timestamp(1700000000000L);
-      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-      callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
-      Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
-      assertEquals(expected, actual);
-    } finally {
-      TimeZone.setDefault(originalTz);
-    }
+    TimeZone testZone =
+        TimeZone.getDefault().hasSameRules(TimeZone.getTimeZone("Asia/Tokyo"))
+            ? TimeZone.getTimeZone("America/New_York")
+            : TimeZone.getTimeZone("Asia/Tokyo");
+    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
+    assertNotNull(callableStatement);
+    Timestamp expected = new Timestamp(1700000000000L);
+    Calendar cal = Calendar.getInstance(testZone);
+    callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
+    Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
+    assertEquals(expected, actual);
   }
 
   // Block B Tests

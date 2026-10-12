@@ -826,18 +826,12 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    TimeZone originalJvmZone = TimeZone.getDefault();
-    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-    try {
-      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-      Timestamp expected = new Timestamp(1700000000000L);
+    Calendar cal = getNonDefaultCalendar();
+    Timestamp expected = new Timestamp(1700000000000L);
 
-      statement.getParameterHandler().setParameter(1, expected, Timestamp.class);
-      Timestamp actual = statement.getTimestamp(1, cal);
-      assertEquals(expected, actual);
-    } finally {
-      TimeZone.setDefault(originalJvmZone);
-    }
+    statement.getParameterHandler().setParameter(1, expected, Timestamp.class);
+    Timestamp actual = statement.getTimestamp(1, cal);
+    assertEquals(expected, actual);
   }
 
   @Test
@@ -845,21 +839,15 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    TimeZone originalJvmZone = TimeZone.getDefault();
-    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-    try {
-      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-      Timestamp expected = new Timestamp(1700000000000L);
+    Calendar cal = getNonDefaultCalendar();
+    Timestamp expected = new Timestamp(1700000000000L);
 
-      statement
-          .getParameterHandler()
-          .setParameter(
-              GET_PARAM_KEY, expected, Timestamp.class, BigQueryStatementParameterType.IN, 0);
-      Timestamp actual = statement.getTimestamp(GET_PARAM_KEY, cal);
-      assertEquals(expected, actual);
-    } finally {
-      TimeZone.setDefault(originalJvmZone);
-    }
+    statement
+        .getParameterHandler()
+        .setParameter(
+            GET_PARAM_KEY, expected, Timestamp.class, BigQueryStatementParameterType.IN, 0);
+    Timestamp actual = statement.getTimestamp(GET_PARAM_KEY, cal);
+    assertEquals(expected, actual);
   }
 
   @Test
@@ -1068,23 +1056,25 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    TimeZone originalJvmZone = TimeZone.getDefault();
-    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-    try {
-      Timestamp expectedTimestamp = new Timestamp(1700000000000L);
-      Calendar expectedCal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
+    Timestamp expectedTimestamp = new Timestamp(1700000000000L);
+    Calendar expectedCal = getNonDefaultCalendar();
 
-      statement.setTimestamp(PARAM_KEY, expectedTimestamp, expectedCal);
-      Timestamp actual = statement.getTimestamp(PARAM_KEY);
-      assertEquals(expectedTimestamp, actual);
-      actual = statement.getTimestamp(PARAM_KEY, expectedCal);
-      assertEquals(expectedTimestamp, actual);
-    } finally {
-      TimeZone.setDefault(originalJvmZone);
-    }
+    statement.setTimestamp(PARAM_KEY, expectedTimestamp, expectedCal);
+    Timestamp actual = statement.getTimestamp(PARAM_KEY);
+    assertEquals(expectedTimestamp, actual);
+    actual = statement.getTimestamp(PARAM_KEY, expectedCal);
+    assertEquals(expectedTimestamp, actual);
   }
 
   ////////// Private helper methods ////////////////////////
+  private static Calendar getNonDefaultCalendar() {
+    TimeZone testZone =
+        TimeZone.getDefault().hasSameRules(TimeZone.getTimeZone("Asia/Tokyo"))
+            ? TimeZone.getTimeZone("America/New_York")
+            : TimeZone.getTimeZone("Asia/Tokyo");
+    return Calendar.getInstance(testZone);
+  }
+
   private void registerOutParamIndexHelper(
       int paramIndex, int javaSqlType, Class<?> javaType, StandardSQLTypeName sqlType, int scale)
       throws SQLException {

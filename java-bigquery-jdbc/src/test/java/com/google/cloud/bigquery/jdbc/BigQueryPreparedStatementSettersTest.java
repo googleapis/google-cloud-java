@@ -236,21 +236,19 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testSetTimestampWithCalendar() throws Exception {
-    TimeZone originalJvmZone = TimeZone.getDefault();
-    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-    try {
-      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-      cal.setTimeInMillis(1000000L);
-      long originalMillis = cal.getTimeInMillis();
-      Timestamp ts = new Timestamp(1700000000000L);
+    TimeZone testZone =
+        TimeZone.getDefault().hasSameRules(TimeZone.getTimeZone("Asia/Tokyo"))
+            ? TimeZone.getTimeZone("America/New_York")
+            : TimeZone.getTimeZone("Asia/Tokyo");
+    Calendar cal = Calendar.getInstance(testZone);
+    cal.setTimeInMillis(1000000L);
+    long originalMillis = cal.getTimeInMillis();
+    Timestamp ts = new Timestamp(1700000000000L);
 
-      preparedStatement.setTimestamp(1, ts, cal);
-      assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(1));
-      assertEquals(ts, preparedStatement.parameterHandler.getParameter(1));
-      assertEquals(originalMillis, cal.getTimeInMillis());
-    } finally {
-      TimeZone.setDefault(originalJvmZone);
-    }
+    preparedStatement.setTimestamp(1, ts, cal);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(ts, preparedStatement.parameterHandler.getParameter(1));
+    assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
   @Test
