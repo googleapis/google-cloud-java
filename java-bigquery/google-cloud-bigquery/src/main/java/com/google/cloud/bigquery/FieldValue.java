@@ -378,13 +378,31 @@ public class FieldValue implements Serializable {
     return new FieldValue(attribute, value, useInt64Timestamps);
   }
 
+  private static final Object NULL_CELL_SENTINEL = Data.nullOf(Object.class);
+
   static FieldValue fromPb(Object cellPb) {
     return fromPb(cellPb, null, false);
   }
 
   @SuppressWarnings("unchecked")
   static FieldValue fromPb(Object cellPb, Field recordSchema, Boolean useInt64Timestamps) {
-    if (Data.isNull(cellPb)) {
+    // Fast-path for TableCell instances (for example, when constructed directly in unit tests or
+    // returned by custom BigQueryRpc implementations). TableCell extends GenericJson ->
+    // GenericData, which implements Map<String, Object>. Without this check, a TableCell falls
+    // into the `cellPb instanceof Map` branch below and triggers reflective ClassInfo/FieldInfo
+    // lookups on "f" and "v" before recursing on the unwrapped value.
+    if (cellPb instanceof com.google.api.services.bigquery.model.TableCell) {
+      cellPb = ((com.google.api.services.bigquery.model.TableCell) cellPb).getV();
+    }
+    // Check `cellPb == null` and `cellPb == NULL_CELL_SENTINEL` before calling
+    // `Data.isNull(cellPb)`:
+    // 1. `Data.isNull(null)` returns `false`, so unwrapped `null` references must be handled first.
+    // 2. `Data.nullOf(Object.class)` is the sentinel used by google-http-client (and
+    //    HttpBigQueryRpc's streaming cell parser) for JSON `null` values in `Object`-typed fields
+    //    (`TableCell.v`). Checking reference equality (`==`) avoids `Data.isNull`'s
+    //    `ConcurrentHashMap.get` lookup on every null cell while still falling back to
+    //    `Data.isNull` for typed null sentinels such as `Data.nullOf(String.class)`.
+    if (cellPb == null || cellPb == NULL_CELL_SENTINEL || Data.isNull(cellPb)) {
       return FieldValue.of(Attribute.PRIMITIVE, null, useInt64Timestamps);
     }
     if (cellPb instanceof String) {
@@ -412,8 +430,7 @@ public class FieldValue implements Serializable {
             FieldValueList.fromPb(
                 (List<Object>) cellMapPb.get("f"), subFieldsSchema, useInt64Timestamps));
       }
-      // This should never be the case when we are processing a first level table field (i.e. a
-      // row's field, not a record sub-field)
+      // Fallback for generic Map representations of a cell wrapper {"v": ...}.
       if (cellMapPb.containsKey("v")) {
         return FieldValue.fromPb(cellMapPb.get("v"), recordSchema, useInt64Timestamps);
       }

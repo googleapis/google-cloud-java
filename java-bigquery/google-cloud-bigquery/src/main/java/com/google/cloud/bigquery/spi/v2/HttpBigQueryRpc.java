@@ -22,6 +22,7 @@ import static java.net.HttpURLConnection.HTTP_OK;
 import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.googleapis.services.json.AbstractGoogleJsonClientRequest;
 import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -31,8 +32,15 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.JsonParser;
+import com.google.api.client.json.JsonToken;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.ClassInfo;
+import com.google.api.client.util.Data;
+import com.google.api.client.util.FieldInfo;
+import com.google.api.client.util.Types;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.services.bigquery.Bigquery;
@@ -62,6 +70,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableList;
 import com.google.api.services.bigquery.model.TableReference;
+import com.google.api.services.bigquery.model.TableRow;
 import com.google.api.services.bigquery.model.TestIamPermissionsRequest;
 import com.google.api.services.bigquery.model.TestIamPermissionsResponse;
 import com.google.cloud.Tuple;
@@ -80,7 +89,11 @@ import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -1457,7 +1470,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           if (span != null) {
             span.setAttribute("bq.rpc.page_token", bqListRequest.getPageToken());
           }
-          return bqListRequest.execute();
+          return executeAndParseRowResponse(bqListRequest, TableDataList.class);
         });
   }
 
@@ -1519,7 +1532,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           if (span != null) {
             span.setAttribute("bq.rpc.page_token", bqListRequest.getPageToken());
           }
-          return bqListRequest.execute();
+          return executeAndParseRowResponse(bqListRequest, TableDataList.class);
         });
   }
 
@@ -1860,7 +1873,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           if (span != null) {
             span.setAttribute("bq.rpc.page_token", queryRequest.getPageToken());
           }
-          return queryRequest.execute();
+          return executeAndParseRowResponse(queryRequest, GetQueryResultsResponse.class);
         });
   }
 
@@ -1913,7 +1926,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
           if (span != null) {
             span.setAttribute("bq.rpc.page_token", queryRequest.getPageToken());
           }
-          return queryRequest.execute();
+          return executeAndParseRowResponse(queryRequest, GetQueryResultsResponse.class);
         });
   }
 
@@ -1951,8 +1964,240 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             queryRequest.getUriTemplate(),
             null),
         span -> {
-          return queryRequest.execute();
+          return executeAndParseRowResponse(queryRequest, QueryResponse.class);
         });
+  }
+
+  /**
+   * Executes a BigQuery REST request that returns row data ({@link TableDataList}, {@link
+   * QueryResponse}, or {@link GetQueryResultsResponse}) and parses its JSON stream directly without
+   * reflectively instantiating {@link com.google.api.services.bigquery.model.TableCell} wrappers
+   * for every cell.
+   *
+   * <p>Why this exists:
+   *
+   * <ul>
+   *   <li>Standard {@code request.execute()} uses {@code google-http-client}'s reflective {@link
+   *       JsonParser#parse}, which calls {@link Data#newMapInstance(Class)} -> {@link
+   *       Types#newInstance(Class)} for every cell in every row.
+   *   <li>Because {@code TableCell} extends {@link GenericJson} -> {@link
+   *       com.google.api.client.util.GenericData}, each cell allocation reflectively invokes {@code
+   *       Class.getDeclaredConstructor()} (allocating a {@code Class[0]} array) and constructs an
+   *       {@code EnumSet}, an {@code ArrayMap} for {@code unknownFields}, and the {@code TableCell}
+   *       wrapper itself (4 object allocations per cell, plus extra {@code ArrayMap} wrappers for
+   *       every nested {@code RECORD} or {@code REPEATED} value).
+   *   <li>Immediately after RPC deserialization, {@code FieldValueList.fromPb} and {@code
+   *       FieldValue.fromPb} unwrap {@code cell.getV()} and discard the {@code TableCell}.
+   * </ul>
+   *
+   * <p>By streaming the {@code "rows"} array with {@link #parseTableRows(JsonParser)} while
+   * delegating all top-level metadata fields ({@code schema}, {@code pageToken}, {@code totalRows},
+   * {@code jobReference}, {@code errors}, etc.) to {@link ClassInfo}/{@link JsonParser}, we
+   * preserve 100% compatibility on response metadata while eliminating 4 object allocations and
+   * reflective constructor calls per cell.
+   */
+  private <T extends GenericJson> T executeAndParseRowResponse(
+      AbstractGoogleJsonClientRequest<T> request, Class<T> responseClass) throws IOException {
+    HttpResponse response = request.executeUnparsed();
+    try (InputStream content = response.getContent()) {
+      if (content == null) {
+        return null;
+      }
+      try (JsonParser parser =
+          bigquery.getJsonFactory().createJsonParser(content, response.getContentCharset())) {
+        return parseRowResponse(parser, responseClass);
+      }
+    } finally {
+      response.disconnect();
+    }
+  }
+
+  /**
+   * Parses a top-level BigQuery JSON response object ({@link TableDataList}, {@link QueryResponse},
+   * or {@link GetQueryResultsResponse}), routing the {@code "rows"} field to {@link
+   * #parseTableRows(JsonParser)} and all other fields to {@code google-http-client}'s standard
+   * {@link ClassInfo}/{@link FieldInfo} metadata binding.
+   */
+  private static <T extends GenericJson> T parseRowResponse(
+      JsonParser parser, Class<T> responseClass) throws IOException {
+    JsonToken token = parser.getCurrentToken();
+    if (token == null) {
+      token = parser.nextToken();
+    }
+    if (token == null) {
+      return null;
+    }
+    T result = Types.newInstance(responseClass);
+    result.setFactory(parser.getFactory());
+    if (token != JsonToken.START_OBJECT) {
+      parser.skipChildren();
+      return result;
+    }
+    ClassInfo classInfo = ClassInfo.of(responseClass);
+    while (parser.nextToken() == JsonToken.FIELD_NAME) {
+      String fieldName = parser.getText();
+      parser.nextToken();
+      if ("rows".equals(fieldName)) {
+        FieldInfo rowsField = classInfo.getFieldInfo("rows");
+        if (rowsField != null) {
+          rowsField.setValue(result, parseTableRows(parser));
+        } else {
+          result.set("rows", parseTableRows(parser));
+        }
+        continue;
+      }
+      FieldInfo fieldInfo = classInfo.getFieldInfo(fieldName);
+      if (fieldInfo != null) {
+        JsonToken valueToken = parser.getCurrentToken();
+        if (valueToken == JsonToken.VALUE_NULL) {
+          fieldInfo.setValue(result, Data.nullOf(fieldInfo.getType()));
+        } else if (valueToken == JsonToken.VALUE_STRING
+            && Data.isPrimitive(fieldInfo.getGenericType())) {
+          // Handles both String fields and @JsonString-annotated 64-bit integer fields
+          // (such as totalRows, totalBytesProcessed, creationTime, etc.). Calling
+          // `parser.parse(Type, false)` directly on a @JsonString field fails because
+          // `JsonParser.parse(Type, boolean)` passes `Field = null` to `parseValue`.
+          fieldInfo.setValue(
+              result, Data.parsePrimitiveValue(fieldInfo.getGenericType(), parser.getText()));
+        } else {
+          fieldInfo.setValue(result, parser.parse(fieldInfo.getGenericType(), false));
+        }
+      } else {
+        // Preserve any unrecognized top-level JSON fields in GenericData.unknownFields.
+        result.set(fieldName, parser.parse(Object.class, false));
+      }
+    }
+    return result;
+  }
+
+  /**
+   * Parses the BigQuery REST v2 {@code "rows"} JSON array into a list of {@link TableRow} objects.
+   *
+   * <p>Per the BigQuery v2 REST Discovery schema, each {@code TableRow} is serialized as {@code
+   * {"f": [{"v": ...}, {"v": ...}, ...]}}. Note that {@code TableRow.getF()} has a declared generic
+   * return type of {@code List<TableCell>}, but its sole consumers in {@code java-bigquery} ({@code
+   * BigQueryImpl.transformTableData} and {@code ConnectionImpl.getIterableFieldValueList}) pass
+   * {@code rowPb.getF()} directly to {@code FieldValueList.fromPb(List<?> rowPb, ...)} -> {@code
+   * FieldValue.fromPb(Object cellPb, ...)}. Storing the unwrapped cell values in {@code
+   * TableRow.setF((List) cells)} avoids allocating tens of millions of transient {@code TableCell}
+   * and {@code ArrayMap} wrappers per query.
+   */
+  @SuppressWarnings({"unchecked", "rawtypes"})
+  private static List<TableRow> parseTableRows(JsonParser parser) throws IOException {
+    if (parser.getCurrentToken() != JsonToken.START_ARRAY) {
+      parser.skipChildren();
+      return null;
+    }
+    List<TableRow> rows = new ArrayList<>();
+    int expectedCols = 16;
+    while (parser.nextToken() != JsonToken.END_ARRAY) {
+      if (parser.getCurrentToken() != JsonToken.START_OBJECT) {
+        parser.skipChildren();
+        continue;
+      }
+      List<Object> cells = null;
+      while (parser.nextToken() == JsonToken.FIELD_NAME) {
+        String rowField = parser.getText();
+        parser.nextToken();
+        if ("f".equals(rowField) && parser.getCurrentToken() == JsonToken.START_ARRAY) {
+          // Pre-size each row's cell list from the previous row's column count to avoid
+          // ArrayList resizing across rows of the same table/query schema.
+          cells = new ArrayList<>(expectedCols);
+          while (parser.nextToken() != JsonToken.END_ARRAY) {
+            cells.add(parseCellValue(parser));
+          }
+          expectedCols = cells.size();
+        } else {
+          parser.skipChildren();
+        }
+      }
+      TableRow row = new TableRow();
+      if (cells != null) {
+        row.setF((List) cells);
+      }
+      rows.add(row);
+    }
+    return rows;
+  }
+
+  private static final Object JSON_NULL = Data.nullOf(Object.class);
+
+  /**
+   * Recursively parses a single BigQuery REST v2 {@code TableCell} (or nested value) and unwraps
+   * single-key {@code {"v": ...}} cell envelopes on the fly.
+   *
+   * <p>In the BigQuery REST v2 wire format, a cell in {@code "f"} takes one of four shapes:
+   *
+   * <ol>
+   *   <li><b>Primitive scalar</b>: {@code {"v": "123"}} -> unwraps directly to {@code String}
+   *       {@code "123"}.
+   *   <li><b>Null value</b>: {@code {"v": null}} -> unwraps to {@code Data.nullOf(Object.class)}
+   *       (matching {@code google-http-client}'s null sentinel so {@code Data.isNull(cell)} and
+   *       {@code FieldValue.fromPb} behave identically).
+   *   <li><b>REPEATED (ARRAY)</b>: {@code {"v": [{"v": "a"}, {"v": "b"}]}} -> unwraps outer {@code
+   *       "v"} to a {@code List<Object>} whose elements are recursively unwrapped ({@code ["a",
+   *       "b"]}, or {@code List<Map<String, Object>>} for {@code ARRAY<STRUCT>}).
+   *   <li><b>RECORD (STRUCT)</b>: {@code {"v": {"f": [{"v": "x"}, {"v": "y"}]}}} -> outer {@code
+   *       "v"} unwraps to the inner struct object, which is represented as {@code
+   *       Collections.singletonMap("f", subFields)} (12-byte singleton map instead of a reflective
+   *       {@code ArrayMap}) as expected by {@code FieldValue.fromPb}'s {@code
+   *       cellMapPb.containsKey("f")} check.
+   * </ol>
+   */
+  private static Object parseCellValue(JsonParser parser) throws IOException {
+    JsonToken token = parser.getCurrentToken();
+    if (token == null || token == JsonToken.VALUE_NULL) {
+      return JSON_NULL;
+    }
+    if (token == JsonToken.START_OBJECT) {
+      Object unwrappedValue = null;
+      boolean hasValue = false;
+      Map<String, Object> mapValue = null;
+      while (parser.nextToken() == JsonToken.FIELD_NAME) {
+        String key = parser.getText();
+        parser.nextToken();
+        if ("v".equals(key) && mapValue == null) {
+          unwrappedValue = parseCellValue(parser);
+          hasValue = true;
+        } else if ("f".equals(key) && !hasValue && mapValue == null) {
+          // A RECORD (STRUCT) value is encoded as {"f": [{"v": sub1}, {"v": sub2}, ...]}.
+          // FieldValue.fromPb identifies RECORD values by checking `cellPb instanceof Map` and
+          // `cellMapPb.containsKey("f")`. Using Collections.singletonMap("f", subFields) satisfies
+          // that contract without allocating a HashMap or ArrayMap.
+          List<Object> subFields = new ArrayList<>();
+          if (parser.getCurrentToken() == JsonToken.START_ARRAY) {
+            while (parser.nextToken() != JsonToken.END_ARRAY) {
+              subFields.add(parseCellValue(parser));
+            }
+          } else {
+            parser.skipChildren();
+          }
+          mapValue = Collections.singletonMap("f", subFields);
+        } else {
+          // Fallback in case an object contains unexpected extra keys alongside "v" or "f".
+          if (mapValue == null) {
+            mapValue = new HashMap<>();
+            if (hasValue) {
+              mapValue.put("v", unwrappedValue);
+              hasValue = false;
+            }
+          }
+          mapValue.put(key, parseCellValue(parser));
+        }
+      }
+      if (mapValue != null) {
+        return mapValue;
+      }
+      return hasValue ? unwrappedValue : Collections.emptyMap();
+    }
+    if (token == JsonToken.START_ARRAY) {
+      List<Object> list = new ArrayList<>();
+      while (parser.nextToken() != JsonToken.END_ARRAY) {
+        list.add(parseCellValue(parser));
+      }
+      return list;
+    }
+    return parser.getText();
   }
 
   @Override

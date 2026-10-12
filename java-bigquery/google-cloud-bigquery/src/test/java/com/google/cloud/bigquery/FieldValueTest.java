@@ -234,4 +234,18 @@ public class FieldValueTest {
       System.out.println(FieldValue.parseCanonicalInterval(entry.getKey()));
     }
   }
+
+  @Test
+  public void testFromPbUnwrappedCells() {
+    assertEquals(FieldValue.fromPb(BOOLEAN_FIELD), FieldValue.fromPb("false"));
+    assertEquals(FieldValue.fromPb(NULL_FIELD), FieldValue.fromPb(null));
+    assertEquals(FieldValue.fromPb(NULL_FIELD), FieldValue.fromPb(Data.nullOf(Object.class)));
+    assertEquals(
+        FieldValue.fromPb(NULL_FIELD),
+        FieldValue.fromPb(new TableCell().setV(Data.nullOf(Object.class))));
+    assertEquals(FieldValue.fromPb(REPEATED_FIELD), FieldValue.fromPb(ImmutableList.of("1", "1")));
+    assertEquals(
+        FieldValue.fromPb(RECORD_FIELD),
+        FieldValue.fromPb(ImmutableMap.of("f", ImmutableList.of("1.5", "42"))));
+  }
 }
