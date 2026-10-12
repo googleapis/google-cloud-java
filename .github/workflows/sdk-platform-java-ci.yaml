@@ -23,6 +23,7 @@ jobs:
           library:
             - 'sdk-platform-java/**'
             - 'google-auth-library-java/**'
+            - 'java-shared-config/**'
             - '.github/workflows/sdk-platform-java-ci.yaml'
   units:
     needs: filter
