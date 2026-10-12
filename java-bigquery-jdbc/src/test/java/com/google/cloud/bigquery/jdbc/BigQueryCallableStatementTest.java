@@ -33,6 +33,7 @@ import java.sql.*;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -825,12 +826,18 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Calendar cal = Calendar.getInstance();
-    Timestamp expected = new Timestamp(cal.getTimeInMillis());
+    TimeZone originalJvmZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
+    try {
+      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
+      Timestamp expected = new Timestamp(1700000000000L);
 
-    statement.getParameterHandler().setParameter(1, expected, Timestamp.class);
-    Timestamp actual = statement.getTimestamp(1, cal);
-    assertEquals(expected, actual);
+      statement.getParameterHandler().setParameter(1, expected, Timestamp.class);
+      Timestamp actual = statement.getTimestamp(1, cal);
+      assertEquals(expected, actual);
+    } finally {
+      TimeZone.setDefault(originalJvmZone);
+    }
   }
 
   @Test
@@ -838,15 +845,21 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Calendar cal = Calendar.getInstance();
-    Timestamp expected = new Timestamp(cal.getTimeInMillis());
+    TimeZone originalJvmZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
+    try {
+      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
+      Timestamp expected = new Timestamp(1700000000000L);
 
-    statement
-        .getParameterHandler()
-        .setParameter(
-            GET_PARAM_KEY, expected, Timestamp.class, BigQueryStatementParameterType.IN, 0);
-    Timestamp actual = statement.getTimestamp(GET_PARAM_KEY, cal);
-    assertEquals(expected, actual);
+      statement
+          .getParameterHandler()
+          .setParameter(
+              GET_PARAM_KEY, expected, Timestamp.class, BigQueryStatementParameterType.IN, 0);
+      Timestamp actual = statement.getTimestamp(GET_PARAM_KEY, cal);
+      assertEquals(expected, actual);
+    } finally {
+      TimeZone.setDefault(originalJvmZone);
+    }
   }
 
   @Test
@@ -1055,14 +1068,20 @@ public class BigQueryCallableStatementTest {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Timestamp expectedTimestamp = Timestamp.valueOf("2026-07-17 12:34:56.789");
-    Calendar expectedCal = Calendar.getInstance();
+    TimeZone originalJvmZone = TimeZone.getDefault();
+    TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
+    try {
+      Timestamp expectedTimestamp = new Timestamp(1700000000000L);
+      Calendar expectedCal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
 
-    statement.setTimestamp(PARAM_KEY, expectedTimestamp, expectedCal);
-    Timestamp actual = statement.getTimestamp(PARAM_KEY);
-    assertNotNull(actual);
-    actual = statement.getTimestamp(PARAM_KEY, expectedCal);
-    assertNotNull(actual);
+      statement.setTimestamp(PARAM_KEY, expectedTimestamp, expectedCal);
+      Timestamp actual = statement.getTimestamp(PARAM_KEY);
+      assertEquals(expectedTimestamp, actual);
+      actual = statement.getTimestamp(PARAM_KEY, expectedCal);
+      assertEquals(expectedTimestamp, actual);
+    } finally {
+      TimeZone.setDefault(originalJvmZone);
+    }
   }
 
   ////////// Private helper methods ////////////////////////

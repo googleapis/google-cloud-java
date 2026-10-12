@@ -644,8 +644,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar)
       throws SQLException {
     checkClosed();
-    setTimestamp(
-        parameterIndex, BigQueryTemporalUtility.convertTimestampWithCalendar(value, calendar));
+    setTimestamp(parameterIndex, value);
   }
 
   @Override
