@@ -205,4 +205,34 @@ public interface LocationMetadataOrBuilder
    * @return The hasOntapProxy.
    */
   boolean getHasOntapProxy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the flex performance tier of this location.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for flexPerformanceTier.
+   */
+  int getFlexPerformanceTierValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates the flex performance tier of this location.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier flex_performance_tier = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The flexPerformanceTier.
+   */
+  com.google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTier getFlexPerformanceTier();
 }

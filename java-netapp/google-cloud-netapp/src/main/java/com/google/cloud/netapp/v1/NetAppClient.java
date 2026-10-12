@@ -316,6 +316,45 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StartSplit</td>
+ *      <td><p> Splits a clone volume from its source volume. This operation will only work for volumes which have clone_details set(clones). For volumes that are not clones, this operation will return an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> startSplitAsync(StartSplitRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> startSplitAsync(VolumeName name)
+ *           <li><p> startSplitAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> startSplitOperationCallable()
+ *           <li><p> startSplitCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSplitStatus</td>
+ *      <td><p> Retrieves the current state, progress, and details of a split operation for a volume. This method is relevant when the volume is a clone. For volumes that are not clones, this method will return an error.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSplitStatus(GetSplitStatusRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSplitStatus(VolumeName name)
+ *           <li><p> getSplitStatus(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSplitStatusCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> EstablishVolumePeering</td>
  *      <td><p> Establish volume peering. This is used to establish cluster and svm peerings between the GCNV and OnPrem clusters.</td>
  *      <td>
@@ -1333,7 +1372,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ExecuteOntapPost</td>
- *      <td><p> `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.</td>
+ *      <td><p> `ExecuteOntapPost` sends the ONTAP `POST` request to the `StoragePool` cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1347,7 +1386,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ExecuteOntapGet</td>
- *      <td><p> `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.</td>
+ *      <td><p> `ExecuteOntapGet` sends the ONTAP `GET` request to the `StoragePool` cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1361,7 +1400,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ExecuteOntapDelete</td>
- *      <td><p> `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.</td>
+ *      <td><p> `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the `StoragePool` cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1375,7 +1414,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ExecuteOntapPatch</td>
- *      <td><p> `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.</td>
+ *      <td><p> `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the `StoragePool` cluster.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1384,6 +1423,66 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> executeOntapPatchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RestoreVolume</td>
+ *      <td><p> Restores a backup to an ONTAP-mode volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> restoreVolumeAsync(RestoreVolumeRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> restoreVolumeAsync(StoragePoolName name, BackupSource backupSource, OntapVolumeTarget ontapVolumeTarget)
+ *           <li><p> restoreVolumeAsync(String name, BackupSource backupSource, OntapVolumeTarget ontapVolumeTarget)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> restoreVolumeOperationCallable()
+ *           <li><p> restoreVolumeCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBackupConfigs</td>
+ *      <td><p> Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBackupConfigs(ListBackupConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBackupConfigs(StoragePoolName parent)
+ *           <li><p> listBackupConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBackupConfigsPagedCallable()
+ *           <li><p> listBackupConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBackupConfig</td>
+ *      <td><p> Updates the backup configuration for an ONTAP-mode volume.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBackupConfigAsync(UpdateBackupConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupConfigAsync(StoragePoolName name, String volumeUuid, BackupConfig backupConfig, FieldMask updateMask)
+ *           <li><p> updateBackupConfigAsync(String name, String volumeUuid, BackupConfig backupConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBackupConfigOperationCallable()
+ *           <li><p> updateBackupConfigCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -3231,6 +3330,275 @@ public class NetAppClient implements BackgroundResource {
    */
   public final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable() {
     return stub.revertVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Splits a clone volume from its source volume. This operation will only work for volumes which
+   * have clone_details set(clones). For volumes that are not clones, this operation will return an
+   * error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   Volume response = netAppClient.startSplitAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full name of the clone volume to be split from its source. Format:
+   *     projects/{project_number}/locations/{location}/volumes/{volume_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> startSplitAsync(
+      @Nullable VolumeName name) {
+    StartSplitRequest request =
+        StartSplitRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return startSplitAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Splits a clone volume from its source volume. This operation will only work for volumes which
+   * have clone_details set(clones). For volumes that are not clones, this operation will return an
+   * error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   Volume response = netAppClient.startSplitAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full name of the clone volume to be split from its source. Format:
+   *     projects/{project_number}/locations/{location}/volumes/{volume_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> startSplitAsync(String name) {
+    StartSplitRequest request = StartSplitRequest.newBuilder().setName(name).build();
+    return startSplitAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Splits a clone volume from its source volume. This operation will only work for volumes which
+   * have clone_details set(clones). For volumes that are not clones, this operation will return an
+   * error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   StartSplitRequest request =
+   *       StartSplitRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   Volume response = netAppClient.startSplitAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Volume, OperationMetadata> startSplitAsync(
+      StartSplitRequest request) {
+    return startSplitOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Splits a clone volume from its source volume. This operation will only work for volumes which
+   * have clone_details set(clones). For volumes that are not clones, this operation will return an
+   * error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   StartSplitRequest request =
+   *       StartSplitRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   OperationFuture<Volume, OperationMetadata> future =
+   *       netAppClient.startSplitOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Volume response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationCallable() {
+    return stub.startSplitOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Splits a clone volume from its source volume. This operation will only work for volumes which
+   * have clone_details set(clones). For volumes that are not clones, this operation will return an
+   * error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   StartSplitRequest request =
+   *       StartSplitRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.startSplitCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<StartSplitRequest, Operation> startSplitCallable() {
+    return stub.startSplitCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the current state, progress, and details of a split operation for a volume. This
+   * method is relevant when the volume is a clone. For volumes that are not clones, this method
+   * will return an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+   *   SplitStatus response = netAppClient.getSplitStatus(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full name of the volume. Format:
+   *     projects/{project_number}/locations/{location}/volumes/{volume_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SplitStatus getSplitStatus(@Nullable VolumeName name) {
+    GetSplitStatusRequest request =
+        GetSplitStatusRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getSplitStatus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the current state, progress, and details of a split operation for a volume. This
+   * method is relevant when the volume is a clone. For volumes that are not clones, this method
+   * will return an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString();
+   *   SplitStatus response = netAppClient.getSplitStatus(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The full name of the volume. Format:
+   *     projects/{project_number}/locations/{location}/volumes/{volume_id}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SplitStatus getSplitStatus(String name) {
+    GetSplitStatusRequest request = GetSplitStatusRequest.newBuilder().setName(name).build();
+    return getSplitStatus(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the current state, progress, and details of a split operation for a volume. This
+   * method is relevant when the volume is a clone. For volumes that are not clones, this method
+   * will return an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetSplitStatusRequest request =
+   *       GetSplitStatusRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   SplitStatus response = netAppClient.getSplitStatus(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SplitStatus getSplitStatus(GetSplitStatusRequest request) {
+    return getSplitStatusCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the current state, progress, and details of a split operation for a volume. This
+   * method is relevant when the volume is a clone. For volumes that are not clones, this method
+   * will return an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   GetSplitStatusRequest request =
+   *       GetSplitStatusRequest.newBuilder()
+   *           .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+   *           .build();
+   *   ApiFuture<SplitStatus> future = netAppClient.getSplitStatusCallable().futureCall(request);
+   *   // Do something.
+   *   SplitStatus response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSplitStatusRequest, SplitStatus> getSplitStatusCallable() {
+    return stub.getSplitStatusCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -10558,7 +10926,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   * `ExecuteOntapPost` sends the ONTAP `POST` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10587,7 +10955,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapPost` dispatches the ONTAP `POST` request to the `StoragePool` cluster.
+   * `ExecuteOntapPost` sends the ONTAP `POST` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10617,7 +10985,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   * `ExecuteOntapGet` sends the ONTAP `GET` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10643,7 +11011,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapGet` dispatches the ONTAP `GET` request to the `StoragePool` cluster.
+   * `ExecuteOntapGet` sends the ONTAP `GET` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10670,7 +11038,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10696,7 +11064,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapDelete` dispatches the ONTAP `DELETE` request to the `StoragePool` cluster.
+   * `ExecuteOntapDelete` sends the ONTAP `DELETE` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10723,7 +11091,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10752,7 +11120,7 @@ public class NetAppClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * `ExecuteOntapPatch` dispatches the ONTAP `PATCH` request to the `StoragePool` cluster.
+   * `ExecuteOntapPatch` sends the ONTAP `PATCH` request to the `StoragePool` cluster.
    *
    * <p>Sample code:
    *
@@ -10778,6 +11146,529 @@ public class NetAppClient implements BackgroundResource {
   public final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchCallable() {
     return stub.executeOntapPatchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a backup to an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   StoragePoolName name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+   *   BackupSource backupSource = BackupSource.newBuilder().build();
+   *   OntapVolumeTarget ontapVolumeTarget = OntapVolumeTarget.newBuilder().build();
+   *   RestoreVolumeResponse response =
+   *       netAppClient.restoreVolumeAsync(name, backupSource, ontapVolumeTarget).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ONTAP mode storage pool, in the format of
+   *     `projects/{project}/locations/{location}/storagePools/{storage_pool}`
+   * @param backupSource The backup source of the restore operation.
+   * @param ontapVolumeTarget The ONTAP volume target of the restore operation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVolumeResponse, OperationMetadata> restoreVolumeAsync(
+      @Nullable StoragePoolName name,
+      BackupSource backupSource,
+      OntapVolumeTarget ontapVolumeTarget) {
+    RestoreVolumeRequest request =
+        RestoreVolumeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBackupSource(backupSource)
+            .setOntapVolumeTarget(ontapVolumeTarget)
+            .build();
+    return restoreVolumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a backup to an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString();
+   *   BackupSource backupSource = BackupSource.newBuilder().build();
+   *   OntapVolumeTarget ontapVolumeTarget = OntapVolumeTarget.newBuilder().build();
+   *   RestoreVolumeResponse response =
+   *       netAppClient.restoreVolumeAsync(name, backupSource, ontapVolumeTarget).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the ONTAP mode storage pool, in the format of
+   *     `projects/{project}/locations/{location}/storagePools/{storage_pool}`
+   * @param backupSource The backup source of the restore operation.
+   * @param ontapVolumeTarget The ONTAP volume target of the restore operation.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVolumeResponse, OperationMetadata> restoreVolumeAsync(
+      String name, BackupSource backupSource, OntapVolumeTarget ontapVolumeTarget) {
+    RestoreVolumeRequest request =
+        RestoreVolumeRequest.newBuilder()
+            .setName(name)
+            .setBackupSource(backupSource)
+            .setOntapVolumeTarget(ontapVolumeTarget)
+            .build();
+    return restoreVolumeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a backup to an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreVolumeRequest request =
+   *       RestoreVolumeRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   RestoreVolumeResponse response = netAppClient.restoreVolumeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RestoreVolumeResponse, OperationMetadata> restoreVolumeAsync(
+      RestoreVolumeRequest request) {
+    return restoreVolumeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a backup to an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreVolumeRequest request =
+   *       RestoreVolumeRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   OperationFuture<RestoreVolumeResponse, OperationMetadata> future =
+   *       netAppClient.restoreVolumeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RestoreVolumeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationCallable() {
+    return stub.restoreVolumeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a backup to an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   RestoreVolumeRequest request =
+   *       RestoreVolumeRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.restoreVolumeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreVolumeRequest, Operation> restoreVolumeCallable() {
+    return stub.restoreVolumeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   StoragePoolName parent = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+   *   for (VolumeBackupConfig element : netAppClient.listBackupConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The ONTAP StoragePool for which to retrieve backup configuration
+   *     information, in the format
+   *     `projects/{project}/locations/{location}/storagePools/{storage_pool}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupConfigsPagedResponse listBackupConfigs(@Nullable StoragePoolName parent) {
+    ListBackupConfigsRequest request =
+        ListBackupConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBackupConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String parent = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString();
+   *   for (VolumeBackupConfig element : netAppClient.listBackupConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The ONTAP StoragePool for which to retrieve backup configuration
+   *     information, in the format
+   *     `projects/{project}/locations/{location}/storagePools/{storage_pool}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupConfigsPagedResponse listBackupConfigs(String parent) {
+    ListBackupConfigsRequest request =
+        ListBackupConfigsRequest.newBuilder().setParent(parent).build();
+    return listBackupConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupConfigsRequest request =
+   *       ListBackupConfigsRequest.newBuilder()
+   *           .setParent(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (VolumeBackupConfig element : netAppClient.listBackupConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupConfigsPagedResponse listBackupConfigs(ListBackupConfigsRequest request) {
+    return listBackupConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupConfigsRequest request =
+   *       ListBackupConfigsRequest.newBuilder()
+   *           .setParent(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<VolumeBackupConfig> future =
+   *       netAppClient.listBackupConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (VolumeBackupConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsPagedResponse>
+      listBackupConfigsPagedCallable() {
+    return stub.listBackupConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists backup configurations for all volumes in an ONTAP-mode Storage Pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   ListBackupConfigsRequest request =
+   *       ListBackupConfigsRequest.newBuilder()
+   *           .setParent(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListBackupConfigsResponse response = netAppClient.listBackupConfigsCallable().call(request);
+   *     for (VolumeBackupConfig element : response.getVolumeBackupConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsCallable() {
+    return stub.listBackupConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the backup configuration for an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   StoragePoolName name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+   *   String volumeUuid = "volumeUuid-1552535051";
+   *   BackupConfig backupConfig = BackupConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBackupConfigResponse response =
+   *       netAppClient.updateBackupConfigAsync(name, volumeUuid, backupConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the StoragePool, in the format:
+   *     projects/{projectNumber}/locations/{locationId}/storagePools/{poolId}
+   * @param volumeUuid Required. The UUID of the ONTAP-mode volume.
+   * @param backupConfig Required. Backup configuration to apply.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     BackupConfig for the Volume. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigAsync(
+          @Nullable StoragePoolName name,
+          String volumeUuid,
+          BackupConfig backupConfig,
+          FieldMask updateMask) {
+    UpdateBackupConfigRequest request =
+        UpdateBackupConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setVolumeUuid(volumeUuid)
+            .setBackupConfig(backupConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBackupConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the backup configuration for an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   String name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString();
+   *   String volumeUuid = "volumeUuid-1552535051";
+   *   BackupConfig backupConfig = BackupConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBackupConfigResponse response =
+   *       netAppClient.updateBackupConfigAsync(name, volumeUuid, backupConfig, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the StoragePool, in the format:
+   *     projects/{projectNumber}/locations/{locationId}/storagePools/{poolId}
+   * @param volumeUuid Required. The UUID of the ONTAP-mode volume.
+   * @param backupConfig Required. Backup configuration to apply.
+   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   *     BackupConfig for the Volume. The fields specified in the update_mask are relative to the
+   *     resource, not the full request. A field will be overwritten if it is in the mask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigAsync(
+          String name, String volumeUuid, BackupConfig backupConfig, FieldMask updateMask) {
+    UpdateBackupConfigRequest request =
+        UpdateBackupConfigRequest.newBuilder()
+            .setName(name)
+            .setVolumeUuid(volumeUuid)
+            .setBackupConfig(backupConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateBackupConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the backup configuration for an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupConfigRequest request =
+   *       UpdateBackupConfigRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setVolumeUuid("volumeUuid-1552535051")
+   *           .setBackupConfig(BackupConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   UpdateBackupConfigResponse response = netAppClient.updateBackupConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigAsync(UpdateBackupConfigRequest request) {
+    return updateBackupConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the backup configuration for an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupConfigRequest request =
+   *       UpdateBackupConfigRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setVolumeUuid("volumeUuid-1552535051")
+   *           .setBackupConfig(BackupConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<UpdateBackupConfigResponse, OperationMetadata> future =
+   *       netAppClient.updateBackupConfigOperationCallable().futureCall(request);
+   *   // Do something.
+   *   UpdateBackupConfigResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationCallable() {
+    return stub.updateBackupConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the backup configuration for an ONTAP-mode volume.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetAppClient netAppClient = NetAppClient.create()) {
+   *   UpdateBackupConfigRequest request =
+   *       UpdateBackupConfigRequest.newBuilder()
+   *           .setName(StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+   *           .setVolumeUuid("volumeUuid-1552535051")
+   *           .setBackupConfig(BackupConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = netAppClient.updateBackupConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBackupConfigRequest, Operation> updateBackupConfigCallable() {
+    return stub.updateBackupConfigCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -11866,6 +12757,93 @@ public class NetAppClient implements BackgroundResource {
     protected ListHostGroupsFixedSizeCollection createCollection(
         @Nullable List<ListHostGroupsPage> pages, int collectionSize) {
       return new ListHostGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupConfigsRequest,
+          ListBackupConfigsResponse,
+          VolumeBackupConfig,
+          ListBackupConfigsPage,
+          ListBackupConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupConfigsPagedResponse> createAsync(
+        PageContext<ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>
+            context,
+        ApiFuture<ListBackupConfigsResponse> futureResponse) {
+      ApiFuture<ListBackupConfigsPage> futurePage =
+          ListBackupConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBackupConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBackupConfigsPagedResponse(ListBackupConfigsPage page) {
+      super(page, ListBackupConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupConfigsPage
+      extends AbstractPage<
+          ListBackupConfigsRequest,
+          ListBackupConfigsResponse,
+          VolumeBackupConfig,
+          ListBackupConfigsPage> {
+
+    private ListBackupConfigsPage(
+        @Nullable
+            PageContext<ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>
+            context,
+        @Nullable ListBackupConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupConfigsPage createEmptyPage() {
+      return new ListBackupConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupConfigsPage createPage(
+        @Nullable
+            PageContext<ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>
+            context,
+        @Nullable ListBackupConfigsResponse response) {
+      return new ListBackupConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupConfigsPage> createPageAsync(
+        @Nullable
+            PageContext<ListBackupConfigsRequest, ListBackupConfigsResponse, VolumeBackupConfig>
+            context,
+        ApiFuture<ListBackupConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupConfigsRequest,
+          ListBackupConfigsResponse,
+          VolumeBackupConfig,
+          ListBackupConfigsPage,
+          ListBackupConfigsFixedSizeCollection> {
+
+    private ListBackupConfigsFixedSizeCollection(
+        @Nullable List<ListBackupConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupConfigsFixedSizeCollection createCollection(
+        @Nullable List<ListBackupConfigsPage> pages, int collectionSize) {
+      return new ListBackupConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -1635,8 +1635,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Mode of the storage pool. This field is used to control whether
-   * the user can perform the ONTAP operations on the storage pool using the
-   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * the user can perform ONTAP operations on the storage pool using the GCNV
+   * ONTAP Mode APIs. If not specified during creation, it defaults to
    * `DEFAULT`.
    * </pre>
    *
@@ -1656,8 +1656,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Mode of the storage pool. This field is used to control whether
-   * the user can perform the ONTAP operations on the storage pool using the
-   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * the user can perform ONTAP operations on the storage pool using the GCNV
+   * ONTAP Mode APIs. If not specified during creation, it defaults to
    * `DEFAULT`.
    * </pre>
    *
@@ -1677,8 +1677,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Mode of the storage pool. This field is used to control whether
-   * the user can perform the ONTAP operations on the storage pool using the
-   * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+   * the user can perform ONTAP operations on the storage pool using the GCNV
+   * ONTAP Mode APIs. If not specified during creation, it defaults to
    * `DEFAULT`.
    * </pre>
    *
@@ -5875,8 +5875,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Mode of the storage pool. This field is used to control whether
-     * the user can perform the ONTAP operations on the storage pool using the
-     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * the user can perform ONTAP operations on the storage pool using the GCNV
+     * ONTAP Mode APIs. If not specified during creation, it defaults to
      * `DEFAULT`.
      * </pre>
      *
@@ -5896,8 +5896,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Mode of the storage pool. This field is used to control whether
-     * the user can perform the ONTAP operations on the storage pool using the
-     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * the user can perform ONTAP operations on the storage pool using the GCNV
+     * ONTAP Mode APIs. If not specified during creation, it defaults to
      * `DEFAULT`.
      * </pre>
      *
@@ -5917,8 +5917,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Mode of the storage pool. This field is used to control whether
-     * the user can perform the ONTAP operations on the storage pool using the
-     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * the user can perform ONTAP operations on the storage pool using the GCNV
+     * ONTAP Mode APIs. If not specified during creation, it defaults to
      * `DEFAULT`.
      * </pre>
      *
@@ -5941,8 +5941,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Mode of the storage pool. This field is used to control whether
-     * the user can perform the ONTAP operations on the storage pool using the
-     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * the user can perform ONTAP operations on the storage pool using the GCNV
+     * ONTAP Mode APIs. If not specified during creation, it defaults to
      * `DEFAULT`.
      * </pre>
      *
@@ -5963,8 +5963,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Mode of the storage pool. This field is used to control whether
-     * the user can perform the ONTAP operations on the storage pool using the
-     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * the user can perform ONTAP operations on the storage pool using the GCNV
+     * ONTAP Mode APIs. If not specified during creation, it defaults to
      * `DEFAULT`.
      * </pre>
      *
@@ -5990,8 +5990,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Mode of the storage pool. This field is used to control whether
-     * the user can perform the ONTAP operations on the storage pool using the
-     * GCNV ONTAP Mode APIs. If not specified during creation, it defaults to
+     * the user can perform ONTAP operations on the storage pool using the GCNV
+     * ONTAP Mode APIs. If not specified during creation, it defaults to
      * `DEFAULT`.
      * </pre>
      *

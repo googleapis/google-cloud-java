@@ -63,6 +63,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     secretEnv_ = com.google.protobuf.LazyStringArrayList.emptyList();
     volumes_ = java.util.Collections.emptyList();
     defaultLogsBucketBehavior_ = 0;
+    workerRelease_ = "";
+    resolvedWorkerRelease_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1284,6 +1286,66 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. The release or release channel used to run the
+     * Build. This is set to the same value as
+     * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+     * access.
+     * </pre>
+     *
+     * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The workerRelease.
+     */
+    java.lang.String getWorkerRelease();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. The release or release channel used to run the
+     * Build. This is set to the same value as
+     * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+     * access.
+     * </pre>
+     *
+     * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for workerRelease.
+     */
+    com.google.protobuf.ByteString getWorkerReleaseBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. Worker release resolved from the release
+     * channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resolvedWorkerRelease.
+     */
+    java.lang.String getResolvedWorkerRelease();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. Worker release resolved from the release
+     * channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resolvedWorkerRelease.
+     */
+    com.google.protobuf.ByteString getResolvedWorkerReleaseBytes();
   }
 
   /**
@@ -1322,6 +1384,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
 
     private PoolOption() {
       name_ = "";
+      workerRelease_ = "";
+      resolvedWorkerRelease_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1400,6 +1464,120 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int WORKER_RELEASE_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object workerRelease_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. The release or release channel used to run the
+     * Build. This is set to the same value as
+     * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+     * access.
+     * </pre>
+     *
+     * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The workerRelease.
+     */
+    @java.lang.Override
+    public java.lang.String getWorkerRelease() {
+      java.lang.Object ref = workerRelease_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerRelease_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. The release or release channel used to run the
+     * Build. This is set to the same value as
+     * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+     * access.
+     * </pre>
+     *
+     * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for workerRelease.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getWorkerReleaseBytes() {
+      java.lang.Object ref = workerRelease_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workerRelease_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOLVED_WORKER_RELEASE_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object resolvedWorkerRelease_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. Worker release resolved from the release
+     * channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The resolvedWorkerRelease.
+     */
+    @java.lang.Override
+    public java.lang.String getResolvedWorkerRelease() {
+      java.lang.Object ref = resolvedWorkerRelease_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resolvedWorkerRelease_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. OUTPUT_ONLY. Worker release resolved from the release
+     * channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for resolvedWorkerRelease.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getResolvedWorkerReleaseBytes() {
+      java.lang.Object ref = resolvedWorkerRelease_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resolvedWorkerRelease_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1417,6 +1595,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerRelease_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, workerRelease_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resolvedWorkerRelease_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, resolvedWorkerRelease_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1428,6 +1612,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerRelease_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, workerRelease_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resolvedWorkerRelease_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, resolvedWorkerRelease_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1446,6 +1636,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
           (com.google.cloudbuild.v1.BuildOptions.PoolOption) obj;
 
       if (!getName().equals(other.getName())) return false;
+      if (!getWorkerRelease().equals(other.getWorkerRelease())) return false;
+      if (!getResolvedWorkerRelease().equals(other.getResolvedWorkerRelease())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1459,6 +1651,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + WORKER_RELEASE_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerRelease().hashCode();
+      hash = (37 * hash) + RESOLVED_WORKER_RELEASE_FIELD_NUMBER;
+      hash = (53 * hash) + getResolvedWorkerRelease().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1604,6 +1800,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         name_ = "";
+        workerRelease_ = "";
+        resolvedWorkerRelease_ = "";
         return this;
       }
 
@@ -1643,6 +1841,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.name_ = name_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.workerRelease_ = workerRelease_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.resolvedWorkerRelease_ = resolvedWorkerRelease_;
+        }
       }
 
       @java.lang.Override
@@ -1661,6 +1865,16 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getWorkerRelease().isEmpty()) {
+          workerRelease_ = other.workerRelease_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getResolvedWorkerRelease().isEmpty()) {
+          resolvedWorkerRelease_ = other.resolvedWorkerRelease_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1695,6 +1909,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 34:
+                {
+                  workerRelease_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  resolvedWorkerRelease_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1841,6 +2067,253 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         name_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object workerRelease_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. The release or release channel used to run the
+       * Build. This is set to the same value as
+       * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+       * access.
+       * </pre>
+       *
+       * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The workerRelease.
+       */
+      public java.lang.String getWorkerRelease() {
+        java.lang.Object ref = workerRelease_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          workerRelease_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. The release or release channel used to run the
+       * Build. This is set to the same value as
+       * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+       * access.
+       * </pre>
+       *
+       * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for workerRelease.
+       */
+      public com.google.protobuf.ByteString getWorkerReleaseBytes() {
+        java.lang.Object ref = workerRelease_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          workerRelease_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. The release or release channel used to run the
+       * Build. This is set to the same value as
+       * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+       * access.
+       * </pre>
+       *
+       * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The workerRelease to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerRelease(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workerRelease_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. The release or release channel used to run the
+       * Build. This is set to the same value as
+       * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+       * access.
+       * </pre>
+       *
+       * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWorkerRelease() {
+        workerRelease_ = getDefaultInstance().getWorkerRelease();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. The release or release channel used to run the
+       * Build. This is set to the same value as
+       * `PrivatePoolV1Config.WorkerConfig.worker_release` for the UI to easily
+       * access.
+       * </pre>
+       *
+       * <code>string worker_release = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for workerRelease to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWorkerReleaseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        workerRelease_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resolvedWorkerRelease_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. Worker release resolved from the release
+       * channel.
+       * </pre>
+       *
+       * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The resolvedWorkerRelease.
+       */
+      public java.lang.String getResolvedWorkerRelease() {
+        java.lang.Object ref = resolvedWorkerRelease_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resolvedWorkerRelease_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. Worker release resolved from the release
+       * channel.
+       * </pre>
+       *
+       * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for resolvedWorkerRelease.
+       */
+      public com.google.protobuf.ByteString getResolvedWorkerReleaseBytes() {
+        java.lang.Object ref = resolvedWorkerRelease_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          resolvedWorkerRelease_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. Worker release resolved from the release
+       * channel.
+       * </pre>
+       *
+       * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The resolvedWorkerRelease to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResolvedWorkerRelease(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resolvedWorkerRelease_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. Worker release resolved from the release
+       * channel.
+       * </pre>
+       *
+       * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResolvedWorkerRelease() {
+        resolvedWorkerRelease_ = getDefaultInstance().getResolvedWorkerRelease();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. OUTPUT_ONLY. Worker release resolved from the release
+       * channel.
+       * </pre>
+       *
+       * <code>string resolved_worker_release = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for resolvedWorkerRelease to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResolvedWorkerReleaseBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        resolvedWorkerRelease_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2252,7 +2725,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2279,7 +2752,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -2756,6 +3229,114 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     return enableStructuredLogging_;
   }
 
+  public static final int WORKER_RELEASE_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workerRelease_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to specify which release or release channel
+   * (rapid|regular|stable) to use to run this build.
+   * </pre>
+   *
+   * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The workerRelease.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkerRelease() {
+    java.lang.Object ref = workerRelease_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workerRelease_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to specify which release or release channel
+   * (rapid|regular|stable) to use to run this build.
+   * </pre>
+   *
+   * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for workerRelease.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkerReleaseBytes() {
+    java.lang.Object ref = workerRelease_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workerRelease_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESOLVED_WORKER_RELEASE_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resolvedWorkerRelease_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Worker release resolved from the release channel.
+   * </pre>
+   *
+   * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The resolvedWorkerRelease.
+   */
+  @java.lang.Override
+  public java.lang.String getResolvedWorkerRelease() {
+    java.lang.Object ref = resolvedWorkerRelease_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resolvedWorkerRelease_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Worker release resolved from the release channel.
+   * </pre>
+   *
+   * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for resolvedWorkerRelease.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResolvedWorkerReleaseBytes() {
+    java.lang.Object ref = resolvedWorkerRelease_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resolvedWorkerRelease_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2829,6 +3410,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     }
     if (enableStructuredLogging_ != false) {
       output.writeBool(23, enableStructuredLogging_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerRelease_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 25, workerRelease_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resolvedWorkerRelease_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 26, resolvedWorkerRelease_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2915,6 +3502,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     if (enableStructuredLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, enableStructuredLogging_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(workerRelease_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(25, workerRelease_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resolvedWorkerRelease_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(26, resolvedWorkerRelease_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2949,6 +3542,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     if (!getVolumesList().equals(other.getVolumesList())) return false;
     if (defaultLogsBucketBehavior_ != other.defaultLogsBucketBehavior_) return false;
     if (getEnableStructuredLogging() != other.getEnableStructuredLogging()) return false;
+    if (!getWorkerRelease().equals(other.getWorkerRelease())) return false;
+    if (!getResolvedWorkerRelease().equals(other.getResolvedWorkerRelease())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3002,6 +3597,10 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + defaultLogsBucketBehavior_;
     hash = (37 * hash) + ENABLE_STRUCTURED_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStructuredLogging());
+    hash = (37 * hash) + WORKER_RELEASE_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkerRelease().hashCode();
+    hash = (37 * hash) + RESOLVED_WORKER_RELEASE_FIELD_NUMBER;
+    hash = (53 * hash) + getResolvedWorkerRelease().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3177,6 +3776,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00002000);
       defaultLogsBucketBehavior_ = 0;
       enableStructuredLogging_ = false;
+      workerRelease_ = "";
+      resolvedWorkerRelease_ = "";
       return this;
     }
 
@@ -3275,6 +3876,12 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.enableStructuredLogging_ = enableStructuredLogging_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.workerRelease_ = workerRelease_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.resolvedWorkerRelease_ = resolvedWorkerRelease_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3386,6 +3993,16 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
       }
       if (other.getEnableStructuredLogging() != false) {
         setEnableStructuredLogging(other.getEnableStructuredLogging());
+      }
+      if (!other.getWorkerRelease().isEmpty()) {
+        workerRelease_ = other.workerRelease_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (!other.getResolvedWorkerRelease().isEmpty()) {
+        resolvedWorkerRelease_ = other.resolvedWorkerRelease_;
+        bitField0_ |= 0x00020000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3529,6 +4146,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case 184
+            case 202:
+              {
+                workerRelease_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 202
+            case 210:
+              {
+                resolvedWorkerRelease_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4441,7 +5070,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -4467,7 +5096,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -4493,7 +5122,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -4518,7 +5147,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4539,7 +5168,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */
@@ -6019,6 +6648,238 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
     public Builder clearEnableStructuredLogging() {
       bitField0_ = (bitField0_ & ~0x00008000);
       enableStructuredLogging_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object workerRelease_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify which release or release channel
+     * (rapid|regular|stable) to use to run this build.
+     * </pre>
+     *
+     * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The workerRelease.
+     */
+    public java.lang.String getWorkerRelease() {
+      java.lang.Object ref = workerRelease_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerRelease_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify which release or release channel
+     * (rapid|regular|stable) to use to run this build.
+     * </pre>
+     *
+     * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for workerRelease.
+     */
+    public com.google.protobuf.ByteString getWorkerReleaseBytes() {
+      java.lang.Object ref = workerRelease_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workerRelease_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify which release or release channel
+     * (rapid|regular|stable) to use to run this build.
+     * </pre>
+     *
+     * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The workerRelease to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkerRelease(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      workerRelease_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify which release or release channel
+     * (rapid|regular|stable) to use to run this build.
+     * </pre>
+     *
+     * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkerRelease() {
+      workerRelease_ = getDefaultInstance().getWorkerRelease();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Option to specify which release or release channel
+     * (rapid|regular|stable) to use to run this build.
+     * </pre>
+     *
+     * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for workerRelease to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkerReleaseBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      workerRelease_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resolvedWorkerRelease_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Worker release resolved from the release channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The resolvedWorkerRelease.
+     */
+    public java.lang.String getResolvedWorkerRelease() {
+      java.lang.Object ref = resolvedWorkerRelease_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resolvedWorkerRelease_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Worker release resolved from the release channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for resolvedWorkerRelease.
+     */
+    public com.google.protobuf.ByteString getResolvedWorkerReleaseBytes() {
+      java.lang.Object ref = resolvedWorkerRelease_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resolvedWorkerRelease_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Worker release resolved from the release channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The resolvedWorkerRelease to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedWorkerRelease(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      resolvedWorkerRelease_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Worker release resolved from the release channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResolvedWorkerRelease() {
+      resolvedWorkerRelease_ = getDefaultInstance().getResolvedWorkerRelease();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Worker release resolved from the release channel.
+     * </pre>
+     *
+     * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for resolvedWorkerRelease to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedWorkerReleaseBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      resolvedWorkerRelease_ = value;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
