@@ -25,7 +25,6 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
-import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
@@ -33,10 +32,12 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadTransportBridge;
 import com.google.protobuf.TypeRegistry;
 import com.google.showcase.v1beta1.UploadMediaRequest;
 import com.google.showcase.v1beta1.UploadMediaResponse;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -97,48 +98,42 @@ class HttpJsonResumableUploadServiceResumableUploadStub implements BackgroundRes
       uploadMediaCallable;
 
   public static HttpJsonResumableUploadServiceResumableUploadStub create(
-      ResumableUploadServiceStubSettings settings) throws IOException {
-    if (settings
-        .getTransportChannelProvider()
-        .getTransportName()
-        .equals(HttpJsonTransportChannel.getHttpJsonTransportName())) {
+      ResumableUploadServiceStubSettings settings) {
+    ClientContext clientContext;
+    try {
+      clientContext =
+          ResumableUploadTransportBridge.createUploadClientContext(
+              settings,
+              InstantiatingHttpJsonChannelProvider.newBuilder().build(),
+              ApiClientHeaderProvider.newBuilder()
+                  .setGeneratedLibToken(
+                      "gapic",
+                      GaxProperties.getLibraryVersion(ResumableUploadServiceStubSettings.class))
+                  .setTransportToken(
+                      GaxHttpJsonProperties.getHttpJsonTokenName(),
+                      GaxHttpJsonProperties.getHttpJsonVersion())
+                  .build());
+    } catch (IOException e) {
       return new HttpJsonResumableUploadServiceResumableUploadStub(
-          ClientContext.create(settings), settings);
+          ResumableUploadTransportBridge.failingCallable(e),
+          new BackgroundResourceAggregation(Collections.emptyList()));
     }
-    return new HttpJsonResumableUploadServiceResumableUploadStub(
-        deriveHttpJsonClientContext(settings), settings);
-  }
-
-  private static ClientContext deriveHttpJsonClientContext(
-      ResumableUploadServiceStubSettings settings) throws IOException {
-    return ClientContext.create(
-        settings.toBuilder()
-            .setHttpJsonInternalHeaderProvider(
-                ApiClientHeaderProvider.newBuilder()
-                    .setGeneratedLibToken(
-                        "gapic",
-                        GaxProperties.getLibraryVersion(ResumableUploadServiceStubSettings.class))
-                    .setTransportToken(
-                        GaxHttpJsonProperties.getHttpJsonTokenName(),
-                        GaxHttpJsonProperties.getHttpJsonVersion())
-                    .build())
-            .setTransportChannelProvider(InstantiatingHttpJsonChannelProvider.newBuilder().build())
-            .build());
-  }
-
-  private HttpJsonResumableUploadServiceResumableUploadStub(
-      ClientContext clientContext, ResumableUploadServiceStubSettings settings) {
     HttpJsonCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaTransportSettings =
         HttpJsonCallSettings.<UploadMediaRequest, UploadMediaResponse>newBuilder()
             .setMethodDescriptor(uploadMediaMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
-    this.uploadMediaCallable =
+    return new HttpJsonResumableUploadServiceResumableUploadStub(
         HttpJsonCallableFactory.createResumableUploadCallable(
-            uploadMediaTransportSettings, settings.uploadMediaSettings(), clientContext);
+            uploadMediaTransportSettings, settings.uploadMediaSettings(), clientContext),
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources()));
+  }
 
-    this.backgroundResources =
-        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  private HttpJsonResumableUploadServiceResumableUploadStub(
+      ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable,
+      BackgroundResource backgroundResources) {
+    this.uploadMediaCallable = uploadMediaCallable;
+    this.backgroundResources = backgroundResources;
   }
 
   public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
