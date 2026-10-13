@@ -288,9 +288,10 @@ public class BigQueryPreparedStatementSettersTest {
     preparedStatement.setObject(2, localTime);
     assertEquals(Time.class, preparedStatement.parameterHandler.getType(2));
 
+    // LocalDateTime is bound as STRING so it is accepted by both DATETIME and TIMESTAMP columns.
     LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
     preparedStatement.setObject(3, localDateTime);
-    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
 
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
@@ -471,5 +472,28 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(1, batchConfig.getPositionalParameters().size());
     assertEquals(
         "2024-01-01 12:34:56.123456789Z", batchConfig.getPositionalParameters().get(0).getValue());
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Kolkata"})
+  public void testSetObjectLocalDateTime_bindsDigitsAsString_inAnyJvmZone(String zone)
+      throws SQLException {
+    TimeZone previous = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(zone));
+      preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000));
+      assertEquals(
+          "2025-01-01 12:34:56.123000", preparedStatement.parameterHandler.getParameter(1));
+      assertEquals(StandardSQLTypeName.STRING, preparedStatement.parameterHandler.getSqlType(1));
+    } finally {
+      TimeZone.setDefault(previous);
+    }
+  }
+
+  @Test
+  public void testSetObjectLocalDateTime_zeroSecondsStillHasFullDigits() throws SQLException {
+    // LocalDateTime.toString() would print "2025-01-01T12:00"; BigQuery needs full HH:mm:ss.SSSSSS.
+    preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 0));
+    assertEquals("2025-01-01 12:00:00.000000", preparedStatement.parameterHandler.getParameter(1));
   }
 }

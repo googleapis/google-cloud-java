@@ -27,6 +27,7 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -55,6 +56,15 @@ class BigQueryParameterHandler {
   // requires exactly six fraction digits and rejects any offset.
   private static final DateTimeFormatter DATETIME_MICROS =
       DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+
+  /**
+   * Renders a zone-less wall clock as the six-fraction-digit string BigQuery parses for DATETIME
+   * (and, read as UTC, for TIMESTAMP). Sub-microsecond digits are truncated, which is all DATETIME
+   * can hold. No zone is consulted, so the digits are the same in every JVM.
+   */
+  static String formatDateTimeDigits(LocalDateTime value) {
+    return DATETIME_MICROS.format(value);
+  }
 
   BigQueryParameterHandler(int parameterCount) {
     this(parameterCount, false);

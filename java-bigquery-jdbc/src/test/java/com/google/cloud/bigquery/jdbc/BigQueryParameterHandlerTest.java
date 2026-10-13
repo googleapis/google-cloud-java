@@ -25,6 +25,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
@@ -334,5 +335,31 @@ public class BigQueryParameterHandlerTest {
     assertEquals(
         "2024-01-01 12:34:56.123456789012", config.getPositionalParameters().get(1).getValue());
     assertEquals(StandardSQLTypeName.TIMESTAMP, config.getPositionalParameters().get(1).getType());
+  }
+
+  @Test
+  public void testFormatDateTimeDigits_isZoneFreeAndFixedWidth() {
+    TimeZone saved = TimeZone.getDefault();
+    try {
+      for (String zone : new String[] {"UTC", "America/New_York", "Asia/Kolkata"}) {
+        TimeZone.setDefault(TimeZone.getTimeZone(zone));
+        assertEquals(
+            "2025-01-01 12:34:56.123000",
+            BigQueryParameterHandler.formatDateTimeDigits(
+                LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000)),
+            zone);
+      }
+    } finally {
+      TimeZone.setDefault(saved);
+    }
+    // LocalDateTime.toString() would print "2025-01-01T12:00"; BigQuery needs full HH:mm:ss.SSSSSS.
+    assertEquals(
+        "2025-01-01 12:00:00.000000",
+        BigQueryParameterHandler.formatDateTimeDigits(LocalDateTime.of(2025, 1, 1, 12, 0)));
+    // Sub-microsecond digits are truncated, not rounded.
+    assertEquals(
+        "2025-01-01 12:00:00.123456",
+        BigQueryParameterHandler.formatDateTimeDigits(
+            LocalDateTime.of(2025, 1, 1, 12, 0, 0, 123_456_789)));
   }
 }
