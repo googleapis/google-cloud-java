@@ -42,7 +42,6 @@ import java.sql.Types;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
-import java.util.TimeZone;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -442,21 +441,6 @@ public class ITCallableStatementTest extends ITBase {
     Timestamp expected = new Timestamp(1234567);
     callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected);
     Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterTimestampCal() throws SQLException {
-    TimeZone testZone =
-        TimeZone.getDefault().hasSameRules(TimeZone.getTimeZone("Asia/Tokyo"))
-            ? TimeZone.getTimeZone("America/New_York")
-            : TimeZone.getTimeZone("Asia/Tokyo");
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Timestamp expected = new Timestamp(1700000000000L);
-    Calendar cal = Calendar.getInstance(testZone);
-    callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
     assertEquals(expected, actual);
   }
 

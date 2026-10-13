@@ -53,6 +53,8 @@ import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryPreparedStatementSettersTest {
 
@@ -234,13 +236,10 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
-  @Test
-  public void testSetTimestampWithCalendar() throws Exception {
-    TimeZone testZone =
-        TimeZone.getDefault().hasSameRules(TimeZone.getTimeZone("Asia/Tokyo"))
-            ? TimeZone.getTimeZone("America/New_York")
-            : TimeZone.getTimeZone("Asia/Tokyo");
-    Calendar cal = Calendar.getInstance(testZone);
+  @ParameterizedTest
+  @ValueSource(strings = {"America/New_York", "Asia/Tokyo"})
+  public void testSetTimestampWithCalendar(String zoneId) throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
     cal.setTimeInMillis(1000000L);
     long originalMillis = cal.getTimeInMillis();
     Timestamp ts = new Timestamp(1700000000000L);
