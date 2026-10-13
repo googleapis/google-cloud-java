@@ -112,10 +112,11 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
   }
 
   static FieldValueList fromPb(List<?> rowPb, FieldList schema) {
-    return fromPb(rowPb, schema, false);
+    return fromPb(rowPb, schema, DataFormatOptions.newBuilder().build());
   }
 
-  static FieldValueList fromPb(List<?> rowPb, FieldList schema, Boolean useInt64Timestamps) {
+  static FieldValueList fromPb(
+      List<?> rowPb, FieldList schema, DataFormatOptions dataFormatOptions) {
     List<FieldValue> row = new ArrayList<>(rowPb.size());
     if (schema != null) {
       if (schema.size() != rowPb.size()) {
@@ -124,11 +125,11 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
       Iterator<Field> schemaIter = schema.iterator();
       Iterator<?> rowPbIter = rowPb.iterator();
       while (rowPbIter.hasNext() && schemaIter.hasNext()) {
-        row.add(FieldValue.fromPb(rowPbIter.next(), schemaIter.next(), useInt64Timestamps));
+        row.add(FieldValue.fromPb(rowPbIter.next(), schemaIter.next(), dataFormatOptions));
       }
     } else {
       for (Object cellPb : rowPb) {
-        row.add(FieldValue.fromPb(cellPb, null, useInt64Timestamps));
+        row.add(FieldValue.fromPb(cellPb, null, dataFormatOptions));
       }
     }
 

@@ -2208,9 +2208,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, pageOptionMap),
               cursor,
               transformTableData(
-                  result.getRows(),
-                  schema,
-                  serviceOptions.getDataFormatOptions().useInt64Timestamp())),
+                  result.getRows(), schema, serviceOptions.getDataFormatOptions())),
           result.getTotalRows());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -2218,7 +2216,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   private static Iterable<FieldValueList> transformTableData(
-      Iterable<TableRow> tableDataPb, final Schema schema, boolean useInt64Timestamps) {
+      Iterable<TableRow> tableDataPb,
+      final Schema schema,
+      final DataFormatOptions dataFormatOptions) {
     return ImmutableList.copyOf(
         Iterables.transform(
             tableDataPb != null ? tableDataPb : ImmutableList.<TableRow>of(),
@@ -2227,7 +2227,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
               @Override
               public FieldValueList apply(TableRow rowPb) {
-                return FieldValueList.fromPb(rowPb.getF(), fields, useInt64Timestamps);
+                return FieldValueList.fromPb(rowPb.getF(), fields, dataFormatOptions);
               }
             }));
   }
@@ -2485,9 +2485,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   new QueryPageFetcher(jobId, schema, getOptions(), cursor, optionMap(options)),
                   cursor,
                   transformTableData(
-                      results.getRows(),
-                      schema,
-                      getOptions().getDataFormatOptions().useInt64Timestamp())))
+                      results.getRows(), schema, getOptions().getDataFormatOptions())))
           .setJobId(jobId)
           .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
           .build();
@@ -2500,9 +2498,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
                 null,
                 transformTableData(
-                    results.getRows(),
-                    schema,
-                    getOptions().getDataFormatOptions().useInt64Timestamp())))
+                    results.getRows(), schema, getOptions().getDataFormatOptions())))
         // Return the JobID of the successful job
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)

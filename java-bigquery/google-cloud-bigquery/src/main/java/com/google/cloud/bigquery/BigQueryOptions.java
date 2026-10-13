@@ -41,7 +41,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private final String location;
   // set the option ThrowNotFound when you want to throw the exception when the value not found
   private boolean setThrowNotFound;
-  private boolean useInt64Timestamps;
   private DataFormatOptions dataFormatOptions;
   private JobCreationMode defaultJobCreationMode = JobCreationMode.JOB_CREATION_MODE_UNSPECIFIED;
   private boolean enableOpenTelemetryTracing;
@@ -172,7 +171,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private BigQueryOptions(Builder builder) {
     super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
     this.location = builder.location;
-    this.useInt64Timestamps = builder.useInt64Timestamps;
     this.enableOpenTelemetryTracing = builder.enableOpenTelemetryTracing;
     this.openTelemetryTracer = builder.openTelemetryTracer;
     if (builder.resultRetryAlgorithm != null) {
@@ -249,7 +247,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
    */
   @ObsoleteApi("Use Builder#setDataFormatOptions(DataFormatOptions) instead")
   public void setUseInt64Timestamps(boolean useInt64Timestamps) {
-    this.useInt64Timestamps = useInt64Timestamps;
     // Because this setter exists outside the Builder, DataFormatOptions needs be rebuilt to
     // account for this setting.
     this.dataFormatOptions =

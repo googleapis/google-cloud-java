@@ -26,7 +26,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.Instant;
@@ -76,13 +75,14 @@ public class FieldValue implements Serializable {
   }
 
   private FieldValue(Attribute attribute, Object value) {
-    this(attribute, value, false);
+    this(attribute, value, DataFormatOptions.newBuilder().build());
   }
 
-  private FieldValue(Attribute attribute, Object value, Boolean useInt64Timestamps) {
+  private FieldValue(Attribute attribute, Object value, DataFormatOptions dataFormatOptions) {
     this.attribute = checkNotNull(attribute);
     this.value = value;
-    this.useInt64Timestamps = useInt64Timestamps;
+    this.useInt64Timestamps =
+        dataFormatOptions != null && dataFormatOptions.useInt64Timestamp();
   }
 
   /**
@@ -219,10 +219,14 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   public long getTimestampValue() {
     if (useInt64Timestamps) {
-      return new BigInteger(getStringValue()).longValue();
+      // When useInt64Timestamp is enabled, the backend returns timestamps as signed 64-bit integer
+      // (INT64) microseconds since epoch (e.g. "1408452095220000"), which always fits within a
+      // primitive long. Parse directly with Long.parseLong to avoid allocating a BigInteger per
+      // cell.
+      return Long.parseLong(getStringValue());
     }
-    // timestamps are encoded in the format 1408452095.22 where the integer part is seconds since
-    // epoch (e.g. 1408452095.22 == 2014-08-19 07:41:35.220 -05:00)
+    // By default (useInt64Timestamp = false), timestamps are encoded as floating-point seconds
+    // since epoch (e.g. 1408452095.22 == 2014-08-19 07:41:35.220 -05:00).
     BigDecimal secondsWithMicro = new BigDecimal(getStringValue());
     // Rounding the BigDecimal to the nearest whole number before setting the longValue in order to
     // address TimeStamp rounding issue described in
@@ -370,22 +374,33 @@ public class FieldValue implements Serializable {
    */
   @BetaApi
   public static FieldValue of(Attribute attribute, Object value) {
-    return of(attribute, value, false);
+    return of(attribute, value, DataFormatOptions.newBuilder().build());
   }
 
   @BetaApi
   public static FieldValue of(Attribute attribute, Object value, Boolean useInt64Timestamps) {
-    return new FieldValue(attribute, value, useInt64Timestamps);
+    return of(
+        attribute,
+        value,
+        DataFormatOptions.newBuilder()
+            .useInt64Timestamp(Boolean.TRUE.equals(useInt64Timestamps))
+            .build());
+  }
+
+  static FieldValue of(
+      Attribute attribute, Object value, DataFormatOptions dataFormatOptions) {
+    return new FieldValue(attribute, value, dataFormatOptions);
   }
 
   static FieldValue fromPb(Object cellPb) {
-    return fromPb(cellPb, null, false);
+    return fromPb(cellPb, null, DataFormatOptions.newBuilder().build());
   }
 
   @SuppressWarnings("unchecked")
-  static FieldValue fromPb(Object cellPb, Field recordSchema, Boolean useInt64Timestamps) {
+  static FieldValue fromPb(
+      Object cellPb, Field recordSchema, DataFormatOptions dataFormatOptions) {
     if (Data.isNull(cellPb)) {
-      return FieldValue.of(Attribute.PRIMITIVE, null, useInt64Timestamps);
+      return FieldValue.of(Attribute.PRIMITIVE, null, dataFormatOptions);
     }
     if (cellPb instanceof String) {
       if ((recordSchema != null)
@@ -394,14 +409,14 @@ public class FieldValue implements Serializable {
         return FieldValue.of(
             Attribute.RANGE,
             Range.of((String) cellPb, recordSchema.getRangeElementType()),
-            useInt64Timestamps);
+            dataFormatOptions);
       }
-      return FieldValue.of(Attribute.PRIMITIVE, cellPb, useInt64Timestamps);
+      return FieldValue.of(Attribute.PRIMITIVE, cellPb, dataFormatOptions);
     }
     if (cellPb instanceof List) {
       return FieldValue.of(
           Attribute.REPEATED,
-          FieldValueList.fromPb((List<Object>) cellPb, null, useInt64Timestamps));
+          FieldValueList.fromPb((List<Object>) cellPb, null, dataFormatOptions));
     }
     if (cellPb instanceof Map) {
       Map<String, Object> cellMapPb = (Map<String, Object>) cellPb;
@@ -410,12 +425,12 @@ public class FieldValue implements Serializable {
         return FieldValue.of(
             Attribute.RECORD,
             FieldValueList.fromPb(
-                (List<Object>) cellMapPb.get("f"), subFieldsSchema, useInt64Timestamps));
+                (List<Object>) cellMapPb.get("f"), subFieldsSchema, dataFormatOptions));
       }
       // This should never be the case when we are processing a first level table field (i.e. a
       // row's field, not a record sub-field)
       if (cellMapPb.containsKey("v")) {
-        return FieldValue.fromPb(cellMapPb.get("v"), recordSchema, useInt64Timestamps);
+        return FieldValue.fromPb(cellMapPb.get("v"), recordSchema, dataFormatOptions);
       }
     }
     throw new IllegalArgumentException("Unexpected table cell format");

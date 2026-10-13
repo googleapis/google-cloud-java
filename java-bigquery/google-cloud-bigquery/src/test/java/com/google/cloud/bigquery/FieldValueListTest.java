@@ -75,16 +75,19 @@ class FieldValueListTest {
       ImmutableMap.of(
           "v", "99999999999999999999999999999999999999.99999999999999999999999999999999999999");
 
+  private final DataFormatOptions losslessOptions =
+      DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
   private final FieldValue booleanFv = FieldValue.of(Attribute.PRIMITIVE, "false");
   private final FieldValue booleanLosslessTimestampFv =
-      FieldValue.of(Attribute.PRIMITIVE, "false", true);
+      FieldValue.of(Attribute.PRIMITIVE, "false", losslessOptions);
   private final FieldValue integerFv = FieldValue.of(Attribute.PRIMITIVE, "1");
   private final FieldValue integerLosslessTimestampFv =
-      FieldValue.of(Attribute.PRIMITIVE, "1", true);
+      FieldValue.of(Attribute.PRIMITIVE, "1", losslessOptions);
   private final FieldValue floatFv = FieldValue.of(Attribute.PRIMITIVE, "1.5");
   private final FieldValue stringFv = FieldValue.of(Attribute.PRIMITIVE, "string");
   private final FieldValue timestampFv = FieldValue.of(Attribute.PRIMITIVE, "42");
-  private final FieldValue losslessTimestampFv = FieldValue.of(Attribute.PRIMITIVE, "42", true);
+  private final FieldValue losslessTimestampFv =
+      FieldValue.of(Attribute.PRIMITIVE, "42", losslessOptions);
   private final FieldValue bytesFv = FieldValue.of(Attribute.PRIMITIVE, BYTES_BASE64);
   private final FieldValue nullFv = FieldValue.of(Attribute.PRIMITIVE, null);
   private final FieldValue repeatedFv =
@@ -144,11 +147,11 @@ class FieldValueListTest {
     // Schema does not influence values equality
     assertEquals(fieldValues, FieldValueList.fromPb(fieldValuesPb, null));
 
-    assertNotEquals(fieldValues, FieldValueList.fromPb(fieldValuesPb, null, true));
+    assertNotEquals(fieldValues, FieldValueList.fromPb(fieldValuesPb, null, losslessOptions));
 
     assertEquals(
         fieldValuesLosslessTimestamp,
-        FieldValueList.fromPb(fieldValuesLosslessTimestampPb, null, true));
+        FieldValueList.fromPb(fieldValuesLosslessTimestampPb, null, losslessOptions));
   }
 
   @Test
