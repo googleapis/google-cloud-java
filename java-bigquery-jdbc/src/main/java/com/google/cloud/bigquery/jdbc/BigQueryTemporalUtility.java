@@ -478,24 +478,4 @@ final class BigQueryTemporalUtility {
     targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
     return new Time(targetCal.getTimeInMillis());
   }
-
-  /**
-   * Converts a java.sql.Timestamp by shifting its wall-clock fields into the target Calendar's
-   * timezone per JDBC specification while preserving nanosecond precision.
-   */
-  static Timestamp convertTimestampWithCalendar(Timestamp timestamp, Calendar cal) {
-    if (timestamp == null || cal == null) {
-      return timestamp;
-    }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
-    if (systemZone.equals(targetZone)) {
-      return timestamp;
-    }
-    LocalDateTime ldt = timestamp.toLocalDateTime();
-    ZonedDateTime zdt = ldt.atZone(targetZone);
-    Timestamp adjustedTimestamp = Timestamp.from(zdt.toInstant());
-    adjustedTimestamp.setNanos(timestamp.getNanos());
-    return adjustedTimestamp;
-  }
 }
