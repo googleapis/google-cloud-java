@@ -46,7 +46,6 @@ final class RewindableStreamBuffer {
 
   private final InputStream inputStream;
   private final int chunkSize;
-  private final String uploadUrl;
   private final byte[] buffer;
 
   private long bufferBaseOffset;
@@ -54,11 +53,10 @@ final class RewindableStreamBuffer {
   private boolean isFinal;
   private boolean streamExhausted;
 
-  RewindableStreamBuffer(InputStream inputStream, int chunkSize, String uploadUrl) {
+  RewindableStreamBuffer(InputStream inputStream, int chunkSize) {
     this.inputStream = checkNotNull(inputStream, "inputStream must not be null");
     checkArgument(chunkSize > 0, "chunkSize must be > 0");
     this.chunkSize = chunkSize;
-    this.uploadUrl = checkNotNull(uploadUrl, "uploadUrl must not be null");
     this.buffer = new byte[chunkSize];
     this.bufferBaseOffset = 0L;
     this.payloadLength = 0;
@@ -95,17 +93,16 @@ final class RewindableStreamBuffer {
     if (committedOffset < bufferBaseOffset) {
       throw new IllegalStateException(
           String.format(
-              "Server committed offset %d is below buffer base offset %d for upload URL %s; cannot"
-                  + " rewind stream before buffer base",
-              committedOffset, bufferBaseOffset, uploadUrl));
+              "Server committed offset %d is below buffer base offset %d, which the server already"
+                  + " acknowledged; the upload cannot continue and must be restarted.",
+              committedOffset, bufferBaseOffset));
     }
 
     if (committedOffset > bufferBaseOffset + payloadLength) {
       throw new IllegalStateException(
           String.format(
-              "Server committed offset %d is beyond current buffer window [%d, %d] for upload URL"
-                  + " %s",
-              committedOffset, bufferBaseOffset, bufferBaseOffset + payloadLength, uploadUrl));
+              "Server committed offset %d is beyond current buffer window [%d, %d]",
+              committedOffset, bufferBaseOffset, bufferBaseOffset + payloadLength));
     }
 
     int committedWithinBuffer = (int) (committedOffset - bufferBaseOffset);
