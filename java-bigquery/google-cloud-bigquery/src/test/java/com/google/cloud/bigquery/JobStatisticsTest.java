@@ -177,8 +177,18 @@ public class JobStatisticsTest {
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
   private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
   private static final String UNUSED_INDEX_USAGE_MODE = "UNUSED";
+  private static final IndexUnusedReason INDEX_UNUSED_REASON =
+      IndexUnusedReason.newBuilder()
+          .setIndexName("idx_search")
+          .setCode("BASE_TABLE_TOO_SMALL")
+          .setMessage("Base table is too small to use search index")
+          .setBaseTableId(DDL_TARGET_TABLE)
+          .build();
   private static final SearchStats SEARCH_STATS =
-      SearchStats.newBuilder().setIndexUsageMode(UNUSED_INDEX_USAGE_MODE).build();
+      SearchStats.newBuilder()
+          .setIndexUsageMode(UNUSED_INDEX_USAGE_MODE)
+          .setIndexUnusedReasons(ImmutableList.of(INDEX_UNUSED_REASON))
+          .build();
 
   private static final MetadataCacheStats METADATA_CACHE_STATS =
       MetadataCacheStats.newBuilder()
@@ -186,6 +196,8 @@ public class JobStatisticsTest {
               ImmutableList.of(
                   TableMetadataCacheUsage.newBuilder().setExplanation("test explanation").build()))
           .build();
+  private static final ReservationUsage RESERVATION_USAGE =
+      ReservationUsage.newBuilder().setName(NAME).setSlotMs(SLOTMS).build();
 
   private static final QueryStatistics QUERY_STATISTICS =
       QueryStatistics.newBuilder()
@@ -213,6 +225,7 @@ public class JobStatisticsTest {
           .setSchema(SCHEMA)
           .setSearchStats(SEARCH_STATS)
           .setMetadataCacheStats(METADATA_CACHE_STATS)
+          .setReservationUsage(ImmutableList.of(RESERVATION_USAGE))
           .build();
   private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE =
       QueryStatistics.newBuilder()
@@ -262,8 +275,6 @@ public class JobStatisticsTest {
           .setEvaluationKind(EVALUATIONKIND_TYPE_EXPRESSION)
           .setStackFrames(ImmutableList.of(EXPRESSION_STACK_FRAME))
           .build();
-  private static final ReservationUsage RESERVATION_USAGE =
-      ReservationUsage.newBuilder().setName(NAME).setSlotMs(SLOTMS).build();
 
   private static final TransactionInfo TRANSACTION_INFO =
       TransactionInfo.newbuilder().setTransactionId(TRANSACTION_ID).build();
@@ -460,8 +471,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getQueryPlan(), value.getQueryPlan());
     assertEquals(expected.getReferencedTables(), value.getReferencedTables());
     assertEquals(expected.getSchema(), value.getSchema());
-    assertEquals(
-        expected.getSearchStats().getIndexUsageMode(), value.getSearchStats().getIndexUsageMode());
+    assertEquals(expected.getSearchStats(), value.getSearchStats());
     assertEquals(expected.getMetadataCacheStats(), value.getMetadataCacheStats());
     assertEquals(expected.getStatementType(), value.getStatementType());
     assertEquals(expected.getTimeline(), value.getTimeline());
@@ -479,6 +489,7 @@ public class JobStatisticsTest {
     assertEquals(expected.getNumChildJobs(), value.getNumChildJobs());
     assertEquals(expected.getParentJobId(), value.getParentJobId());
     assertEquals(expected.getScriptStatistics(), value.getScriptStatistics());
+    assertEquals(expected.getReservationUsage(), value.getReservationUsage());
     assertEquals(expected.getTotalSlotMs(), value.getTotalSlotMs());
   }
 

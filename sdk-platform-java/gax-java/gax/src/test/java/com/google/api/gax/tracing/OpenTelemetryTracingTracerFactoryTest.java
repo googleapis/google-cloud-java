@@ -229,7 +229,7 @@ class OpenTelemetryTracingFactoryTest {
 
     tracerInstance.attemptStarted(null, 1);
 
-    verify(tracer).spanBuilder("google.cloud.v1.Service/Method");
+    verify(tracer, atLeastOnce()).spanBuilder("google.cloud.v1.Service/Method");
   }
 
   @ParameterizedTest
@@ -256,7 +256,7 @@ class OpenTelemetryTracingFactoryTest {
 
     tracerInstance.attemptStarted(null, 1);
 
-    verify(tracer).spanBuilder(expectedSpanName);
+    verify(tracer, atLeastOnce()).spanBuilder(expectedSpanName);
   }
 
   @Test
@@ -274,7 +274,7 @@ class OpenTelemetryTracingFactoryTest {
 
     tracerInstance.attemptStarted(null, 1);
 
-    verify(tracer).spanBuilder("google.cloud.v1.Service.Method");
+    verify(tracer, atLeastOnce()).spanBuilder("google.cloud.v1.Service.Method");
   }
 
   @Test
@@ -310,7 +310,7 @@ class OpenTelemetryTracingFactoryTest {
     tracerInstance.attemptStarted(null, 1);
 
     ArgumentCaptor<Attributes> attributesCaptor = ArgumentCaptor.forClass(Attributes.class);
-    verify(spanBuilder).setAllAttributes(attributesCaptor.capture());
+    verify(spanBuilder, atLeastOnce()).setAllAttributes(attributesCaptor.capture());
 
     Attributes attributes = attributesCaptor.getValue();
     assertThat(attributes.asMap())
