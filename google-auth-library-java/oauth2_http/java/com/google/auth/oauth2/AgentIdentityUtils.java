@@ -91,10 +91,7 @@ final class AgentIdentityUtils {
    */
   static final String GOOGLE_API_USE_CLIENT_CERTIFICATE = "GOOGLE_API_USE_CLIENT_CERTIFICATE";
 
-  private static final String DEFAULT_WELL_KNOWN_DIR =
-      "/var/run/secrets/workload-spiffe-credentials/";
-
-  private static volatile String wellKnownDir = DEFAULT_WELL_KNOWN_DIR;
+  private static volatile String wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
 
   /**
    * File name of the combined certificate chain and private key bundle that GKE delivers to the
@@ -110,7 +107,7 @@ final class AgentIdentityUtils {
   static final String GKE_CREDENTIAL_BUNDLE_FILE = "x509.credential-bundle.private-key.pem";
 
   private static volatile String gkeCredentialBundlePath =
-      Paths.get(DEFAULT_WELL_KNOWN_DIR, GKE_CREDENTIAL_BUNDLE_FILE).toString();
+      Paths.get(wellKnownDir, GKE_CREDENTIAL_BUNDLE_FILE).toString();
 
   // Retries for verifying certificate and private key matching during atomic key rotation.
   private static final int CERT_KEY_MATCH_RETRIES = 3;
@@ -921,9 +918,8 @@ final class AgentIdentityUtils {
   /** Resets all static state and overrides for testing. */
   @VisibleForTesting
   static void resetForTest() {
-    wellKnownDir = DEFAULT_WELL_KNOWN_DIR;
-    gkeCredentialBundlePath =
-        Paths.get(DEFAULT_WELL_KNOWN_DIR, GKE_CREDENTIAL_BUNDLE_FILE).toString();
+    wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+    gkeCredentialBundlePath = Paths.get(wellKnownDir, GKE_CREDENTIAL_BUNDLE_FILE).toString();
     environmentProvider = SystemEnvironmentProvider.getInstance();
     propertyProvider = SystemPropertyProvider.getInstance();
     timeService = Thread::sleep;
