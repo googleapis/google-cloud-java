@@ -21,6 +21,8 @@ import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -55,6 +57,8 @@ class TableBase implements AutoCloseable {
       mutateRowDescriptor;
   private final VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
       checkAndMutateRowDescriptor;
+  private final VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse>
+      mutateRowsDescriptor;
 
   static <ReqT extends Message> TableBase createAndStart(
       ReqT openReq,
@@ -63,6 +67,7 @@ class TableBase implements AutoCloseable {
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
       VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
           checkAndMutateRowDescriptor,
+      VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse> mutateRowsDescriptor,
       FeatureFlags featureFlags,
       ClientInfo clientInfo,
       ClientConfigurationManager configManager,
@@ -100,6 +105,7 @@ class TableBase implements AutoCloseable {
         readRowDescriptor,
         mutateRowDescriptor,
         checkAndMutateRowDescriptor,
+        mutateRowsDescriptor,
         metrics,
         timer,
         userCallbackExecutor);
@@ -112,6 +118,7 @@ class TableBase implements AutoCloseable {
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
       VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
           checkAndMutateRowDescriptor,
+      VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse> mutateRowsDescriptor,
       Metrics metrics,
       BigtableTimer timer,
       Executor userCallbackExecutor) {
@@ -119,6 +126,7 @@ class TableBase implements AutoCloseable {
     this.readRowDescriptor = readRowDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
     this.checkAndMutateRowDescriptor = checkAndMutateRowDescriptor;
+    this.mutateRowsDescriptor = mutateRowsDescriptor;
     this.metrics = metrics;
     this.timer = timer;
     this.userCallbackExecutor = userCallbackExecutor;
@@ -172,6 +180,21 @@ class TableBase implements AutoCloseable {
         metrics.newTableTracer(sessionPool.getInfo(), checkAndMutateRowDescriptor, deadline);
     // CheckAndMutateRow is not idempotent and must never be retried.
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
+        .start(req, listener);
+  }
+
+  public void mutateRows(
+      SessionMutateRowsRequest req,
+      VRpcListener<SessionMutateRowsResponse> listener,
+      Deadline deadline) {
+    RetryingVRpc<SessionMutateRowsRequest, SessionMutateRowsResponse> retry =
+        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowsDescriptor), timer);
+    boolean idempotent = Util.isIdempotent(req);
+    VRpcTracer tracer =
+        metrics.newTableTracer(sessionPool.getInfo(), mutateRowsDescriptor, deadline);
+
+    new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent)
         .start(req, listener);
   }
 }

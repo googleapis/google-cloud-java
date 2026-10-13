@@ -22,6 +22,8 @@ import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -77,6 +79,7 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
             VRpcDescriptor.READ_ROW_AUTH_VIEW,
             VRpcDescriptor.MUTATE_ROW_AUTH_VIEW,
             VRpcDescriptor.CHECK_AND_MUTATE_ROW_AUTH_VIEW,
+            VRpcDescriptor.MUTATE_ROWS_AUTH_VIEW,
             featureFlags,
             clientInfo,
             configManager,
@@ -117,6 +120,13 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
       SessionCheckAndMutateRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionCheckAndMutateRowResponse> f = new UnaryResponseFuture<>();
     base.checkAndMutateRow(req, f, deadline);
+    return f;
+  }
+
+  public CompletableFuture<SessionMutateRowsResponse> mutateRows(
+      SessionMutateRowsRequest req, Deadline deadline) {
+    UnaryResponseFuture<SessionMutateRowsResponse> f = new UnaryResponseFuture<>();
+    base.mutateRows(req, f, deadline);
     return f;
   }
 

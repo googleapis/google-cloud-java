@@ -24,7 +24,9 @@ import com.google.bigtable.v2.Cell;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.Column;
 import com.google.bigtable.v2.Family;
+import com.google.bigtable.v2.Idempotency;
 import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.Row;
@@ -32,12 +34,15 @@ import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.bigtable.v2.TableRequest;
 import com.google.bigtable.v2.TableResponse;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.rpc.Status;
 import org.junit.jupiter.api.Test;
 
 class VRpcDescriptorTest {
@@ -214,6 +219,106 @@ class VRpcDescriptorTest {
                 .setFamilyName("f")
                 .setColumnQualifier(ByteString.copyFromUtf8("c"))
                 .setValue(ByteString.copyFromUtf8("v")))
+        .build();
+  }
+
+  @Test
+  void testMutateRows() throws InvalidProtocolBufferException {
+    assertThat(VRpcDescriptor.MUTATE_ROWS.getSessionDescriptor())
+        .isEqualTo(VRpcDescriptor.TABLE_SESSION);
+
+    TableResponse tableResp =
+        TableResponse.newBuilder()
+            .setMutateRows(
+                SessionMutateRowsResponse.newBuilder()
+                    .addEntries(
+                        SessionMutateRowsResponse.Entry.newBuilder()
+                            .setIndex(0)
+                            .setStatus(Status.newBuilder().setCode(0).build())))
+            .build();
+    assertThat(VRpcDescriptor.MUTATE_ROWS.decode(tableResp.toByteString()))
+        .isEqualTo(tableResp.getMutateRows());
+
+    SessionMutateRowsRequest req = sampleMutateRowsRequest();
+    assertThat(TableRequest.parseFrom(VRpcDescriptor.MUTATE_ROWS.encode(req)))
+        .isEqualTo(TableRequest.newBuilder().setMutateRows(req).build());
+  }
+
+  @Test
+  void testMutateRowsAuthView() throws InvalidProtocolBufferException {
+    assertThat(VRpcDescriptor.MUTATE_ROWS_AUTH_VIEW.getSessionDescriptor())
+        .isEqualTo(VRpcDescriptor.AUTHORIZED_VIEW_SESSION);
+
+    AuthorizedViewResponse authViewResp =
+        AuthorizedViewResponse.newBuilder()
+            .setMutateRows(
+                SessionMutateRowsResponse.newBuilder()
+                    .addEntries(
+                        SessionMutateRowsResponse.Entry.newBuilder()
+                            .setIndex(0)
+                            .setStatus(Status.newBuilder().setCode(0).build())))
+            .build();
+    assertThat(VRpcDescriptor.MUTATE_ROWS_AUTH_VIEW.decode(authViewResp.toByteString()))
+        .isEqualTo(authViewResp.getMutateRows());
+
+    SessionMutateRowsRequest req = sampleMutateRowsRequest();
+    assertThat(AuthorizedViewRequest.parseFrom(VRpcDescriptor.MUTATE_ROWS_AUTH_VIEW.encode(req)))
+        .isEqualTo(AuthorizedViewRequest.newBuilder().setMutateRows(req).build());
+  }
+
+  @Test
+  void testToLegacyProtoMutateRows() {
+    SessionMutateRowsRequest req = sampleMutateRowsRequest();
+    MutateRowsRequest legacyReq =
+        (MutateRowsRequest) VRpcDescriptor.MUTATE_ROWS.toLegacyProto("table1", "app1", req);
+    assertThat(legacyReq.getTableName()).isEqualTo("table1");
+    assertThat(legacyReq.getAuthorizedViewName()).isEmpty();
+    assertThat(legacyReq.getAppProfileId()).isEqualTo("app1");
+    assertThat(legacyReq.getEntriesCount()).isEqualTo(1);
+    assertThat(legacyReq.getEntries(0).getRowKey()).isEqualTo(req.getEntries(0).getKey());
+    assertThat(legacyReq.getEntries(0).getMutationsList())
+        .isEqualTo(req.getEntries(0).getMutationsList());
+  }
+
+  @Test
+  void testToLegacyProtoMutateRowsAuthView() {
+    SessionMutateRowsRequest req = sampleMutateRowsRequest();
+    MutateRowsRequest legacyReq =
+        (MutateRowsRequest)
+            VRpcDescriptor.MUTATE_ROWS_AUTH_VIEW.toLegacyProto("view1", "app1", req);
+    assertThat(legacyReq.getAuthorizedViewName()).isEqualTo("view1");
+    assertThat(legacyReq.getTableName()).isEmpty();
+    assertThat(legacyReq.getAppProfileId()).isEqualTo("app1");
+    assertThat(legacyReq.getEntriesCount()).isEqualTo(1);
+    assertThat(legacyReq.getEntries(0).getRowKey()).isEqualTo(req.getEntries(0).getKey());
+    assertThat(legacyReq.getEntries(0).getMutationsList())
+        .isEqualTo(req.getEntries(0).getMutationsList());
+  }
+
+  @Test
+  void testToLegacyProtoMutateRowsWithIdempotency() {
+    Idempotency idempotency =
+        Idempotency.newBuilder().setToken(ByteString.copyFromUtf8("token123")).build();
+    SessionMutateRowsRequest req =
+        SessionMutateRowsRequest.newBuilder()
+            .addEntries(
+                SessionMutateRowsRequest.Entry.newBuilder()
+                    .setKey(ByteString.copyFromUtf8("rowkey1"))
+                    .addMutations(sampleSetCell())
+                    .setIdempotency(idempotency))
+            .build();
+    MutateRowsRequest legacyReq =
+        (MutateRowsRequest) VRpcDescriptor.MUTATE_ROWS.toLegacyProto("table1", "app1", req);
+    assertThat(legacyReq.getEntries(0).hasIdempotency()).isTrue();
+    assertThat(legacyReq.getEntries(0).getIdempotency()).isEqualTo(idempotency);
+  }
+
+  private static SessionMutateRowsRequest sampleMutateRowsRequest() {
+    return SessionMutateRowsRequest.newBuilder()
+        .addEntries(
+            SessionMutateRowsRequest.Entry.newBuilder()
+                .setKey(ByteString.copyFromUtf8("rowkey1"))
+                .addMutations(sampleSetCell()))
         .build();
   }
 }

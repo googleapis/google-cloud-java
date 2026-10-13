@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.Mutation;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
 import io.grpc.Metadata;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -70,6 +71,15 @@ public class Util {
       }
       // mutations with system timestamps are not idempotent
       if (mutation.hasSetCell() && mutation.getSetCell().getTimestampMicros() == -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public static boolean isIdempotent(SessionMutateRowsRequest req) {
+    for (SessionMutateRowsRequest.Entry entry : req.getEntriesList()) {
+      if (!isIdempotent(entry.getMutationsList())) {
         return false;
       }
     }
