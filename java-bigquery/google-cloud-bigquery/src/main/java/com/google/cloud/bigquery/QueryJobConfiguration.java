@@ -1130,19 +1130,25 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return builder.build();
   }
 
+  // Returns null when unparameterized so callers omit queryParameters from the serialized request.
+  List<QueryParameter> toQueryParametersPb() {
+    if (!positionalParameters.isEmpty()) {
+      return Lists.transform(positionalParameters, POSITIONAL_PARAMETER_TO_PB_FUNCTION);
+    }
+    if (!namedParameters.isEmpty()) {
+      return Lists.transform(namedParameters.entrySet().asList(), NAMED_PARAMETER_TO_PB_FUNCTION);
+    }
+    return null;
+  }
+
   @Override
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
     com.google.api.services.bigquery.model.JobConfiguration configurationPb =
         new com.google.api.services.bigquery.model.JobConfiguration();
     JobConfigurationQuery queryConfigurationPb = new JobConfigurationQuery();
     queryConfigurationPb.setQuery(query);
-    if (!positionalParameters.isEmpty()) {
-      List<QueryParameter> queryParametersPb =
-          Lists.transform(positionalParameters, POSITIONAL_PARAMETER_TO_PB_FUNCTION);
-      queryConfigurationPb.setQueryParameters(queryParametersPb);
-    } else if (!namedParameters.isEmpty()) {
-      List<QueryParameter> queryParametersPb =
-          Lists.transform(namedParameters.entrySet().asList(), NAMED_PARAMETER_TO_PB_FUNCTION);
+    List<QueryParameter> queryParametersPb = toQueryParametersPb();
+    if (queryParametersPb != null) {
       queryConfigurationPb.setQueryParameters(queryParametersPb);
     }
     if (parameterMode != null) {

@@ -1479,7 +1479,7 @@ class ConnectionImpl implements Connection {
     configurationPb.setQuery(queryConfigurationPb);
 
     com.google.api.services.bigquery.model.Job jobPb =
-        JobInfo.of(QueryJobConfiguration.fromPb(configurationPb)).toPb();
+        new com.google.api.services.bigquery.model.Job().setConfiguration(configurationPb);
     com.google.api.services.bigquery.model.Job queryJob;
     try {
       queryJob =
@@ -1523,7 +1523,7 @@ class ConnectionImpl implements Connection {
     configurationPb.setQuery(queryConfigurationPb);
 
     com.google.api.services.bigquery.model.Job jobPb =
-        JobInfo.of(QueryJobConfiguration.fromPb(configurationPb)).toPb();
+        new com.google.api.services.bigquery.model.Job().setConfiguration(configurationPb);
 
     com.google.api.services.bigquery.model.Job dryRunJob;
     try {

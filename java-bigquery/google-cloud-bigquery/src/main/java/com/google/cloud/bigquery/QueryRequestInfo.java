@@ -51,6 +51,14 @@ final class QueryRequestInfo {
 
   QueryRequestInfo(
       QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
+    this(config, dataFormatOptions, config.getJobCreationMode());
+  }
+
+  // Accepts defaultJobCreationMode directly so callers avoid cloning config when mode is unset.
+  QueryRequestInfo(
+      QueryJobConfiguration config,
+      com.google.cloud.bigquery.DataFormatOptions dataFormatOptions,
+      JobCreationMode defaultJobCreationMode) {
     this.config = config;
     this.connectionProperties = config.getConnectionProperties();
     this.defaultDataset = config.getDefaultDataset();
@@ -59,12 +67,13 @@ final class QueryRequestInfo {
     this.maximumBytesBilled = config.getMaximumBytesBilled();
     this.maxResults = config.getMaxResults();
     this.query = config.getQuery();
-    this.queryParameters = config.toPb().getQuery().getQueryParameters();
+    this.queryParameters = config.toQueryParametersPb();
     this.requestId = UUID.randomUUID().toString();
     this.createSession = config.createSession();
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
-    this.jobCreationMode = config.getJobCreationMode();
+    this.jobCreationMode =
+        config.getJobCreationMode() != null ? config.getJobCreationMode() : defaultJobCreationMode;
     this.formatOptions = dataFormatOptions != null ? dataFormatOptions.toPb() : null;
     this.reservation = config.getReservation();
     this.jobTimeoutMs = config.getJobTimeoutMs();

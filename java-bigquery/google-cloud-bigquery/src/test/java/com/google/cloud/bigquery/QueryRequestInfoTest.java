@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.services.bigquery.model.QueryRequest;
@@ -221,6 +222,44 @@ public class QueryRequestInfoTest {
             DataFormatOptions.newBuilder().useInt64Timestamp(true).build());
     QueryRequest requestLosslessTsPb = requestInfoLosslessTs.toPb();
     assertTrue(requestLosslessTsPb.getFormatOptions().getUseInt64Timestamp());
+  }
+
+  @Test
+  public void testDefaultJobCreationModeAndParameters() {
+    QueryJobConfiguration unparameterizedConfig = QueryJobConfiguration.of(QUERY);
+    QueryRequestInfo infoWithDefault =
+        new QueryRequestInfo(
+            unparameterizedConfig,
+            DataFormatOptions.newBuilder().build(),
+            JobCreationMode.JOB_CREATION_OPTIONAL);
+    QueryRequest requestPb = infoWithDefault.toPb();
+    assertEquals("JOB_CREATION_OPTIONAL", requestPb.getJobCreationMode());
+    assertNull(requestPb.getQueryParameters());
+
+    QueryRequestInfo explicitModeInfo =
+        new QueryRequestInfo(
+            QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED,
+            DataFormatOptions.newBuilder().build(),
+            JobCreationMode.JOB_CREATION_OPTIONAL);
+    assertEquals("JOB_CREATION_REQUIRED", explicitModeInfo.toPb().getJobCreationMode());
+
+    QueryJobConfiguration namedParamConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setNamedParameters(NAME_PARAMETER).build();
+    QueryRequestInfo namedInfo =
+        new QueryRequestInfo(namedParamConfig, DataFormatOptions.newBuilder().build());
+    assertEquals(
+        namedParamConfig.toPb().getQuery().getQueryParameters(),
+        namedInfo.toPb().getQueryParameters());
+
+    QueryJobConfiguration positionalParamConfig =
+        QueryJobConfiguration.newBuilder(QUERY)
+            .setPositionalParameters(POSITIONAL_PARAMETER)
+            .build();
+    QueryRequestInfo positionalInfo =
+        new QueryRequestInfo(positionalParamConfig, DataFormatOptions.newBuilder().build());
+    assertEquals(
+        positionalParamConfig.toPb().getQuery().getQueryParameters(),
+        positionalInfo.toPb().getQueryParameters());
   }
 
   /*

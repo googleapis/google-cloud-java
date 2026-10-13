@@ -2721,14 +2721,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       throws InterruptedException, JobException {
     Job.checkNotDryRun(configuration, "query");
 
-    // If JobCreationMode is not explicitly set, update it with default value;
-    if (configuration.getJobCreationMode() == null) {
-      configuration =
-          configuration.toBuilder()
-              .setJobCreationMode(getOptions().getDefaultJobCreationMode())
-              .build();
-    }
-
     Span querySpan = null;
     if (getOptions().isOpenTelemetryTracingEnabled()
         && getOptions().getOpenTelemetryTracer() != null) {
@@ -2745,7 +2737,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       // the slow fallback path (jobs.insert API). We will opt to use it if the configuration
       // and JobId allow (i.e. if all parameters passed in configuration are supported).
       QueryRequestInfo requestInfo =
-          new QueryRequestInfo(configuration, getOptions().getDataFormatOptions());
+          new QueryRequestInfo(
+              configuration,
+              getOptions().getDataFormatOptions(),
+              getOptions().getDefaultJobCreationMode());
       // Fast query path is not possible if job is specified in the JobID object.
       // Respect Job field value in JobId specified by user.
       // Specifying it will force the query to take the slower path.
@@ -2817,17 +2812,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               .startSpan();
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
-      // Ensure default JobCreationMode is JOB_CREATION_OPTIONAL
-      QueryJobConfiguration arrowConfig = configuration;
-      if (arrowConfig.getJobCreationMode() == null) {
-        arrowConfig =
-            configuration.toBuilder()
-                .setJobCreationMode(QueryJobConfiguration.JobCreationMode.JOB_CREATION_OPTIONAL)
-                .build();
-      }
-
       QueryRequestInfo requestInfo =
-          new QueryRequestInfo(arrowConfig, getOptions().getDataFormatOptions());
+          new QueryRequestInfo(
+              configuration,
+              getOptions().getDataFormatOptions(),
+              QueryJobConfiguration.JobCreationMode.JOB_CREATION_OPTIONAL);
 
       // 2. Check if fast-path query execution is supported (no destination table or custom job ID)
       boolean useFastPath =
@@ -2977,7 +2966,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       } else {
         // Fallback Path: Submit query job via jobs.insert and stream destination table via Storage
         // Read API
-        Job job = create(JobInfo.of(jobId, arrowConfig), options);
+        Job job = create(JobInfo.of(jobId, configuration), options);
         Job completedJob = job.waitFor();
 
         if (completedJob == null) {
@@ -2995,7 +2984,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               ((QueryJobConfiguration) completedJob.getConfiguration()).getDestinationTable();
         }
         if (destinationTable == null) {
-          destinationTable = arrowConfig.getDestinationTable();
+          destinationTable = configuration.getDestinationTable();
         }
         if (destinationTable == null) {
           throw new BigQueryException(0, "Unable to resolve destination table for fallback query");
