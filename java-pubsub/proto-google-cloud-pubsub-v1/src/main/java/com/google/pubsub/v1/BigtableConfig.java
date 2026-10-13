@@ -24,13 +24,9 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * Configuration for a Bigtable subscription. The Pub/Sub message will be
- * written to a Bigtable row as follows:
- * - row key: subscription name, message ID hash, and message ID delimited by
- * `#`.
- * - columns: message bytes written to a single column family `data` with an
- * empty-string column qualifier.
- * - cell timestamp: the message publish timestamp.
+ * Configuration for a Bigtable subscription, which will write a Pub/Sub message
+ * to a Bigtable row. See the ColumnFamilyMapping documentation below for
+ * details on how the row keys and columns will be written.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.BigtableConfig}
@@ -386,6 +382,2788 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.pubsub.v1.BigtableConfig.State)
   }
 
+  public interface ColumnFamilyMappingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the field names of
+     * the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rowKeySchema field is set.
+     */
+    boolean hasRowKeySchema();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the field names of
+     * the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rowKeySchema.
+     */
+    com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema getRowKeySchema();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the field names of
+     * the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder
+        getRowKeySchemaOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the given key fields
+     * and delimiter. All key fields must be present in the message;
+     * otherwise, the message remains in the subscription backlog.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the delimitedKey field is set.
+     */
+    boolean hasDelimitedKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the given key fields
+     * and delimiter. All key fields must be present in the message;
+     * otherwise, the message remains in the subscription backlog.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The delimitedKey.
+     */
+    com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey getDelimitedKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the given key fields
+     * and delimiter. All key fields must be present in the message;
+     * otherwise, the message remains in the subscription backlog.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder
+        getDelimitedKeyOrBuilder();
+
+    com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.KeyDefinitionCase
+        getKeyDefinitionCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for writing a Pub/Sub message to a Bigtable row with a
+   * user-defined key and writing to column families.
+   *
+   * If this field is set:
+   *
+   * - The subscription messages must be formatted as JSON.
+   * - The row key mapping is configured in the `key_definition` section.
+   * - The top-level fields will be written either:
+   * - By default, they will be written to the `data` column family with the
+   * field name as the column qualifier.
+   * - But if the field name matches an existing column family (except for
+   * the default `data` column), then that field will be written to that
+   * column family, either as a scalar or its next level nested fields if
+   * it's a JSON object.
+   * - The cell timestamp will be the message publish timestamp.
+   *
+   * If the field is not set, the default behavior is to write:
+   *
+   * - row key: subscription name, message ID hash, and message ID delimited by
+   * `#`.
+   * - columns: message bytes written to a single column family `data` with an
+   * empty-string column qualifier.
+   * - cell timestamp: the message publish timestamp.
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.BigtableConfig.ColumnFamilyMapping}
+   */
+  public static final class ColumnFamilyMapping extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping)
+      ColumnFamilyMappingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "ColumnFamilyMapping");
+    }
+
+    // Use ColumnFamilyMapping.newBuilder() to construct.
+    private ColumnFamilyMapping(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ColumnFamilyMapping() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.class,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder.class);
+    }
+
+    public interface RowKeySchemaOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+        com.google.protobuf.MessageOrBuilder {}
+
+    /**
+     *
+     *
+     * <pre>
+     * Row key definition that reads the input message fields based on the field
+     * names of the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema}
+     */
+    public static final class RowKeySchema extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+        RowKeySchemaOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "RowKeySchema");
+      }
+
+      // Use RowKeySchema.newBuilder() to construct.
+      private RowKeySchema(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RowKeySchema() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_RowKeySchema_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_RowKeySchema_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.class,
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder.class);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)) {
+          return super.equals(obj);
+        }
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema other =
+            (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema) obj;
+
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Row key definition that reads the input message fields based on the field
+       * names of the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * Protobuf type {@code google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.pubsub.v1.PubsubProto
+              .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_RowKeySchema_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.pubsub.v1.PubsubProto
+              .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_RowKeySchema_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.class,
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.pubsub.v1.PubsubProto
+              .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_RowKeySchema_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+            getDefaultInstanceForType() {
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema build() {
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema buildPartial() {
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema result =
+              new com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema(this);
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema) {
+            return mergeFrom(
+                (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema other) {
+          if (other
+              == com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+                  .getDefaultInstance()) return this;
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+      private static final com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema();
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RowKeySchema> PARSER =
+          new com.google.protobuf.AbstractParser<RowKeySchema>() {
+            @java.lang.Override
+            public RowKeySchema parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RowKeySchema> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RowKeySchema> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface DelimitedKeyOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the keyFields.
+       */
+      java.util.List<java.lang.String> getKeyFieldsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of keyFields.
+       */
+      int getKeyFieldsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The keyFields at the given index.
+       */
+      java.lang.String getKeyFields(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the keyFields at the given index.
+       */
+      com.google.protobuf.ByteString getKeyFieldsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Byte sequence used to delimit concatenated fields. Must be
+       * specified if multiple key fields are used. The delimiter must contain
+       * at least 1 character and at most 50 characters.
+       * </pre>
+       *
+       * <code>bytes delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The delimiter.
+       */
+      com.google.protobuf.ByteString getDelimiter();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Row key definition based on fields from the message.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey}
+     */
+    public static final class DelimitedKey extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+        DelimitedKeyOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "DelimitedKey");
+      }
+
+      // Use DelimitedKey.newBuilder() to construct.
+      private DelimitedKey(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DelimitedKey() {
+        keyFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        delimiter_ = com.google.protobuf.ByteString.EMPTY;
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_DelimitedKey_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_DelimitedKey_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.class,
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder.class);
+      }
+
+      public static final int KEY_FIELDS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList keyFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the keyFields.
+       */
+      public com.google.protobuf.ProtocolStringList getKeyFieldsList() {
+        return keyFields_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of keyFields.
+       */
+      public int getKeyFieldsCount() {
+        return keyFields_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The keyFields at the given index.
+       */
+      public java.lang.String getKeyFields(int index) {
+        return keyFields_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The key fields to construct from the row key. The fields must
+       * be present in the message as a top-level field, i.e. JSON path
+       * expressions will not traverse into nested objects.
+       * </pre>
+       *
+       * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the keyFields at the given index.
+       */
+      public com.google.protobuf.ByteString getKeyFieldsBytes(int index) {
+        return keyFields_.getByteString(index);
+      }
+
+      public static final int DELIMITER_FIELD_NUMBER = 2;
+      private com.google.protobuf.ByteString delimiter_ = com.google.protobuf.ByteString.EMPTY;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Byte sequence used to delimit concatenated fields. Must be
+       * specified if multiple key fields are used. The delimiter must contain
+       * at least 1 character and at most 50 characters.
+       * </pre>
+       *
+       * <code>bytes delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The delimiter.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDelimiter() {
+        return delimiter_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < keyFields_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, keyFields_.getRaw(i));
+        }
+        if (!delimiter_.isEmpty()) {
+          output.writeBytes(2, delimiter_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < keyFields_.size(); i++) {
+            dataSize += computeStringSizeNoTag(keyFields_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getKeyFieldsList().size();
+        }
+        if (!delimiter_.isEmpty()) {
+          size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, delimiter_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)) {
+          return super.equals(obj);
+        }
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey other =
+            (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey) obj;
+
+        if (!getKeyFieldsList().equals(other.getKeyFieldsList())) return false;
+        if (!getDelimiter().equals(other.getDelimiter())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getKeyFieldsCount() > 0) {
+          hash = (37 * hash) + KEY_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getKeyFieldsList().hashCode();
+        }
+        hash = (37 * hash) + DELIMITER_FIELD_NUMBER;
+        hash = (53 * hash) + getDelimiter().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Row key definition based on fields from the message.
+       * </pre>
+       *
+       * Protobuf type {@code google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.pubsub.v1.PubsubProto
+              .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_DelimitedKey_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.pubsub.v1.PubsubProto
+              .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_DelimitedKey_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.class,
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          keyFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          delimiter_ = com.google.protobuf.ByteString.EMPTY;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.pubsub.v1.PubsubProto
+              .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_DelimitedKey_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+            getDefaultInstanceForType() {
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey build() {
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey buildPartial() {
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey result =
+              new com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            keyFields_.makeImmutable();
+            result.keyFields_ = keyFields_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.delimiter_ = delimiter_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey) {
+            return mergeFrom(
+                (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey other) {
+          if (other
+              == com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+                  .getDefaultInstance()) return this;
+          if (!other.keyFields_.isEmpty()) {
+            if (keyFields_.isEmpty()) {
+              keyFields_ = other.keyFields_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureKeyFieldsIsMutable();
+              keyFields_.addAll(other.keyFields_);
+            }
+            onChanged();
+          }
+          if (!other.getDelimiter().isEmpty()) {
+            setDelimiter(other.getDelimiter());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureKeyFieldsIsMutable();
+                    keyFields_.add(s);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    delimiter_ = input.readBytes();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList keyFields_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureKeyFieldsIsMutable() {
+          if (!keyFields_.isModifiable()) {
+            keyFields_ = new com.google.protobuf.LazyStringArrayList(keyFields_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the keyFields.
+         */
+        public com.google.protobuf.ProtocolStringList getKeyFieldsList() {
+          keyFields_.makeImmutable();
+          return keyFields_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of keyFields.
+         */
+        public int getKeyFieldsCount() {
+          return keyFields_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The keyFields at the given index.
+         */
+        public java.lang.String getKeyFields(int index) {
+          return keyFields_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the keyFields at the given index.
+         */
+        public com.google.protobuf.ByteString getKeyFieldsBytes(int index) {
+          return keyFields_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The keyFields to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKeyFields(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureKeyFieldsIsMutable();
+          keyFields_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The keyFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addKeyFields(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureKeyFieldsIsMutable();
+          keyFields_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param values The keyFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllKeyFields(java.lang.Iterable<java.lang.String> values) {
+          ensureKeyFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, keyFields_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearKeyFields() {
+          keyFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The key fields to construct from the row key. The fields must
+         * be present in the message as a top-level field, i.e. JSON path
+         * expressions will not traverse into nested objects.
+         * </pre>
+         *
+         * <code>repeated string key_fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes of the keyFields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addKeyFieldsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureKeyFieldsIsMutable();
+          keyFields_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.ByteString delimiter_ = com.google.protobuf.ByteString.EMPTY;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Byte sequence used to delimit concatenated fields. Must be
+         * specified if multiple key fields are used. The delimiter must contain
+         * at least 1 character and at most 50 characters.
+         * </pre>
+         *
+         * <code>bytes delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The delimiter.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getDelimiter() {
+          return delimiter_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Byte sequence used to delimit concatenated fields. Must be
+         * specified if multiple key fields are used. The delimiter must contain
+         * at least 1 character and at most 50 characters.
+         * </pre>
+         *
+         * <code>bytes delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The delimiter to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDelimiter(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          delimiter_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Byte sequence used to delimit concatenated fields. Must be
+         * specified if multiple key fields are used. The delimiter must contain
+         * at least 1 character and at most 50 characters.
+         * </pre>
+         *
+         * <code>bytes delimiter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDelimiter() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          delimiter_ = getDefaultInstance().getDelimiter();
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+      private static final com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey();
+      }
+
+      public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DelimitedKey> PARSER =
+          new com.google.protobuf.AbstractParser<DelimitedKey>() {
+            @java.lang.Override
+            public DelimitedKey parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DelimitedKey> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DelimitedKey> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int keyDefinitionCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object keyDefinition_;
+
+    public enum KeyDefinitionCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      ROW_KEY_SCHEMA(1),
+      DELIMITED_KEY(2),
+      KEYDEFINITION_NOT_SET(0);
+      private final int value;
+
+      private KeyDefinitionCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static KeyDefinitionCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static KeyDefinitionCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return ROW_KEY_SCHEMA;
+          case 2:
+            return DELIMITED_KEY;
+          case 0:
+            return KEYDEFINITION_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public KeyDefinitionCase getKeyDefinitionCase() {
+      return KeyDefinitionCase.forNumber(keyDefinitionCase_);
+    }
+
+    public static final int ROW_KEY_SCHEMA_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the field names of
+     * the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rowKeySchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasRowKeySchema() {
+      return keyDefinitionCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the field names of
+     * the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rowKeySchema.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema getRowKeySchema() {
+      if (keyDefinitionCase_ == 1) {
+        return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+            keyDefinition_;
+      }
+      return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the field names of
+     * the table's structured row key
+     * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+     * Note that if the field is nullable in the structured row key, then it
+     * need not be present in the message; null will be used instead.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder
+        getRowKeySchemaOrBuilder() {
+      if (keyDefinitionCase_ == 1) {
+        return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+            keyDefinition_;
+      }
+      return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          .getDefaultInstance();
+    }
+
+    public static final int DELIMITED_KEY_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the given key fields
+     * and delimiter. All key fields must be present in the message;
+     * otherwise, the message remains in the subscription backlog.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the delimitedKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasDelimitedKey() {
+      return keyDefinitionCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the given key fields
+     * and delimiter. All key fields must be present in the message;
+     * otherwise, the message remains in the subscription backlog.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The delimitedKey.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey getDelimitedKey() {
+      if (keyDefinitionCase_ == 2) {
+        return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+            keyDefinition_;
+      }
+      return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the row key is constructed from the given key fields
+     * and delimiter. All key fields must be present in the message;
+     * otherwise, the message remains in the subscription backlog.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder
+        getDelimitedKeyOrBuilder() {
+      if (keyDefinitionCase_ == 2) {
+        return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+            keyDefinition_;
+      }
+      return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (keyDefinitionCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema) keyDefinition_);
+      }
+      if (keyDefinitionCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey) keyDefinition_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (keyDefinitionCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+                    keyDefinition_);
+      }
+      if (keyDefinitionCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+                    keyDefinition_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping other =
+          (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) obj;
+
+      if (!getKeyDefinitionCase().equals(other.getKeyDefinitionCase())) return false;
+      switch (keyDefinitionCase_) {
+        case 1:
+          if (!getRowKeySchema().equals(other.getRowKeySchema())) return false;
+          break;
+        case 2:
+          if (!getDelimitedKey().equals(other.getDelimitedKey())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (keyDefinitionCase_) {
+        case 1:
+          hash = (37 * hash) + ROW_KEY_SCHEMA_FIELD_NUMBER;
+          hash = (53 * hash) + getRowKeySchema().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + DELIMITED_KEY_FIELD_NUMBER;
+          hash = (53 * hash) + getDelimitedKey().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for writing a Pub/Sub message to a Bigtable row with a
+     * user-defined key and writing to column families.
+     *
+     * If this field is set:
+     *
+     * - The subscription messages must be formatted as JSON.
+     * - The row key mapping is configured in the `key_definition` section.
+     * - The top-level fields will be written either:
+     * - By default, they will be written to the `data` column family with the
+     * field name as the column qualifier.
+     * - But if the field name matches an existing column family (except for
+     * the default `data` column), then that field will be written to that
+     * column family, either as a scalar or its next level nested fields if
+     * it's a JSON object.
+     * - The cell timestamp will be the message publish timestamp.
+     *
+     * If the field is not set, the default behavior is to write:
+     *
+     * - row key: subscription name, message ID hash, and message ID delimited by
+     * `#`.
+     * - columns: message bytes written to a single column family `data` with an
+     * empty-string column qualifier.
+     * - cell timestamp: the message publish timestamp.
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.BigtableConfig.ColumnFamilyMapping}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping)
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.class,
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder.class);
+      }
+
+      // Construct using com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (rowKeySchemaBuilder_ != null) {
+          rowKeySchemaBuilder_.clear();
+        }
+        if (delimitedKeyBuilder_ != null) {
+          delimitedKeyBuilder_.clear();
+        }
+        keyDefinitionCase_ = 0;
+        keyDefinition_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_BigtableConfig_ColumnFamilyMapping_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping getDefaultInstanceForType() {
+        return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping build() {
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping buildPartial() {
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping result =
+            new com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping result) {
+        result.keyDefinitionCase_ = keyDefinitionCase_;
+        result.keyDefinition_ = this.keyDefinition_;
+        if (keyDefinitionCase_ == 1 && rowKeySchemaBuilder_ != null) {
+          result.keyDefinition_ = rowKeySchemaBuilder_.build();
+        }
+        if (keyDefinitionCase_ == 2 && delimitedKeyBuilder_ != null) {
+          result.keyDefinition_ = delimitedKeyBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) {
+          return mergeFrom((com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping other) {
+        if (other == com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance())
+          return this;
+        switch (other.getKeyDefinitionCase()) {
+          case ROW_KEY_SCHEMA:
+            {
+              mergeRowKeySchema(other.getRowKeySchema());
+              break;
+            }
+          case DELIMITED_KEY:
+            {
+              mergeDelimitedKey(other.getDelimitedKey());
+              break;
+            }
+          case KEYDEFINITION_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetRowKeySchemaFieldBuilder().getBuilder(), extensionRegistry);
+                  keyDefinitionCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetDelimitedKeyFieldBuilder().getBuilder(), extensionRegistry);
+                  keyDefinitionCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int keyDefinitionCase_ = 0;
+      private java.lang.Object keyDefinition_;
+
+      public KeyDefinitionCase getKeyDefinitionCase() {
+        return KeyDefinitionCase.forNumber(keyDefinitionCase_);
+      }
+
+      public Builder clearKeyDefinition() {
+        keyDefinitionCase_ = 0;
+        keyDefinition_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder>
+          rowKeySchemaBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the rowKeySchema field is set.
+       */
+      @java.lang.Override
+      public boolean hasRowKeySchema() {
+        return keyDefinitionCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The rowKeySchema.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+          getRowKeySchema() {
+        if (rowKeySchemaBuilder_ == null) {
+          if (keyDefinitionCase_ == 1) {
+            return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+                keyDefinition_;
+          }
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+              .getDefaultInstance();
+        } else {
+          if (keyDefinitionCase_ == 1) {
+            return rowKeySchemaBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRowKeySchema(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema value) {
+        if (rowKeySchemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          keyDefinition_ = value;
+          onChanged();
+        } else {
+          rowKeySchemaBuilder_.setMessage(value);
+        }
+        keyDefinitionCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRowKeySchema(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder
+              builderForValue) {
+        if (rowKeySchemaBuilder_ == null) {
+          keyDefinition_ = builderForValue.build();
+          onChanged();
+        } else {
+          rowKeySchemaBuilder_.setMessage(builderForValue.build());
+        }
+        keyDefinitionCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRowKeySchema(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema value) {
+        if (rowKeySchemaBuilder_ == null) {
+          if (keyDefinitionCase_ == 1
+              && keyDefinition_
+                  != com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+                      .getDefaultInstance()) {
+            keyDefinition_ =
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.newBuilder(
+                        (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+                            keyDefinition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            keyDefinition_ = value;
+          }
+          onChanged();
+        } else {
+          if (keyDefinitionCase_ == 1) {
+            rowKeySchemaBuilder_.mergeFrom(value);
+          } else {
+            rowKeySchemaBuilder_.setMessage(value);
+          }
+        }
+        keyDefinitionCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRowKeySchema() {
+        if (rowKeySchemaBuilder_ == null) {
+          if (keyDefinitionCase_ == 1) {
+            keyDefinitionCase_ = 0;
+            keyDefinition_ = null;
+            onChanged();
+          }
+        } else {
+          if (keyDefinitionCase_ == 1) {
+            keyDefinitionCase_ = 0;
+            keyDefinition_ = null;
+          }
+          rowKeySchemaBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder
+          getRowKeySchemaBuilder() {
+        return internalGetRowKeySchemaFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder
+          getRowKeySchemaOrBuilder() {
+        if ((keyDefinitionCase_ == 1) && (rowKeySchemaBuilder_ != null)) {
+          return rowKeySchemaBuilder_.getMessageOrBuilder();
+        } else {
+          if (keyDefinitionCase_ == 1) {
+            return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+                keyDefinition_;
+          }
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the field names of
+       * the table's structured row key
+       * ({$universe.dns_names.final_documentation_domain}/bigtable/docs/manage-row-key-schemas).
+       * Note that if the field is nullable in the structured row key, then it
+       * need not be present in the message; null will be used instead.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema row_key_schema = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder>
+          internalGetRowKeySchemaFieldBuilder() {
+        if (rowKeySchemaBuilder_ == null) {
+          if (!(keyDefinitionCase_ == 1)) {
+            keyDefinition_ =
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema
+                    .getDefaultInstance();
+          }
+          rowKeySchemaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema,
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema.Builder,
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchemaOrBuilder>(
+                  (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.RowKeySchema)
+                      keyDefinition_,
+                  getParentForChildren(),
+                  isClean());
+          keyDefinition_ = null;
+        }
+        keyDefinitionCase_ = 1;
+        onChanged();
+        return rowKeySchemaBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder>
+          delimitedKeyBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the delimitedKey field is set.
+       */
+      @java.lang.Override
+      public boolean hasDelimitedKey() {
+        return keyDefinitionCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The delimitedKey.
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+          getDelimitedKey() {
+        if (delimitedKeyBuilder_ == null) {
+          if (keyDefinitionCase_ == 2) {
+            return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+                keyDefinition_;
+          }
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+              .getDefaultInstance();
+        } else {
+          if (keyDefinitionCase_ == 2) {
+            return delimitedKeyBuilder_.getMessage();
+          }
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDelimitedKey(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey value) {
+        if (delimitedKeyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          keyDefinition_ = value;
+          onChanged();
+        } else {
+          delimitedKeyBuilder_.setMessage(value);
+        }
+        keyDefinitionCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDelimitedKey(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder
+              builderForValue) {
+        if (delimitedKeyBuilder_ == null) {
+          keyDefinition_ = builderForValue.build();
+          onChanged();
+        } else {
+          delimitedKeyBuilder_.setMessage(builderForValue.build());
+        }
+        keyDefinitionCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeDelimitedKey(
+          com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey value) {
+        if (delimitedKeyBuilder_ == null) {
+          if (keyDefinitionCase_ == 2
+              && keyDefinition_
+                  != com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+                      .getDefaultInstance()) {
+            keyDefinition_ =
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.newBuilder(
+                        (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+                            keyDefinition_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            keyDefinition_ = value;
+          }
+          onChanged();
+        } else {
+          if (keyDefinitionCase_ == 2) {
+            delimitedKeyBuilder_.mergeFrom(value);
+          } else {
+            delimitedKeyBuilder_.setMessage(value);
+          }
+        }
+        keyDefinitionCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDelimitedKey() {
+        if (delimitedKeyBuilder_ == null) {
+          if (keyDefinitionCase_ == 2) {
+            keyDefinitionCase_ = 0;
+            keyDefinition_ = null;
+            onChanged();
+          }
+        } else {
+          if (keyDefinitionCase_ == 2) {
+            keyDefinitionCase_ = 0;
+            keyDefinition_ = null;
+          }
+          delimitedKeyBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder
+          getDelimitedKeyBuilder() {
+        return internalGetDelimitedKeyFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder
+          getDelimitedKeyOrBuilder() {
+        if ((keyDefinitionCase_ == 2) && (delimitedKeyBuilder_ != null)) {
+          return delimitedKeyBuilder_.getMessageOrBuilder();
+        } else {
+          if (keyDefinitionCase_ == 2) {
+            return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+                keyDefinition_;
+          }
+          return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set, the row key is constructed from the given key fields
+       * and delimiter. All key fields must be present in the message;
+       * otherwise, the message remains in the subscription backlog.
+       * </pre>
+       *
+       * <code>
+       * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey delimited_key = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder,
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder>
+          internalGetDelimitedKeyFieldBuilder() {
+        if (delimitedKeyBuilder_ == null) {
+          if (!(keyDefinitionCase_ == 2)) {
+            keyDefinition_ =
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey
+                    .getDefaultInstance();
+          }
+          delimitedKeyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey,
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey.Builder,
+                  com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKeyOrBuilder>(
+                  (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.DelimitedKey)
+                      keyDefinition_,
+                  getParentForChildren(),
+                  isClean());
+          keyDefinition_ = null;
+        }
+        keyDefinitionCase_ = 2;
+        onChanged();
+        return delimitedKeyBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.BigtableConfig.ColumnFamilyMapping)
+    private static final com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping();
+    }
+
+    public static com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ColumnFamilyMapping> PARSER =
+        new com.google.protobuf.AbstractParser<ColumnFamilyMapping>() {
+          @java.lang.Override
+          public ColumnFamilyMapping parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ColumnFamilyMapping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ColumnFamilyMapping> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int messageMappingCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object messageMapping_;
+
+  public enum MessageMappingCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    COLUMN_FAMILY_MAPPING(6),
+    MESSAGEMAPPING_NOT_SET(0);
+    private final int value;
+
+    private MessageMappingCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MessageMappingCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static MessageMappingCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return COLUMN_FAMILY_MAPPING;
+        case 0:
+          return MESSAGEMAPPING_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public MessageMappingCase getMessageMappingCase() {
+    return MessageMappingCase.forNumber(messageMappingCase_);
+  }
+
   public static final int TABLE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -589,6 +3367,73 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
     return writeMetadata_;
   }
 
+  public static final int COLUMN_FAMILY_MAPPING_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration that allows writing row keys and/or columns based
+   * on fields in the input message. The input message format must be JSON if
+   * this field is set.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the columnFamilyMapping field is set.
+   */
+  @java.lang.Override
+  public boolean hasColumnFamilyMapping() {
+    return messageMappingCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration that allows writing row keys and/or columns based
+   * on fields in the input message. The input message format must be JSON if
+   * this field is set.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The columnFamilyMapping.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping getColumnFamilyMapping() {
+    if (messageMappingCase_ == 6) {
+      return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_;
+    }
+    return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration that allows writing row keys and/or columns based
+   * on fields in the input message. The input message format must be JSON if
+   * this field is set.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder
+      getColumnFamilyMappingOrBuilder() {
+    if (messageMappingCase_ == 6) {
+      return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_;
+    }
+    return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+  }
+
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
 
@@ -661,6 +3506,10 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
     if (writeMetadata_ != false) {
       output.writeBool(5, writeMetadata_);
     }
+    if (messageMappingCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -685,6 +3534,11 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
     if (writeMetadata_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, writeMetadata_);
     }
+    if (messageMappingCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -705,6 +3559,14 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
     if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
     if (getWriteMetadata() != other.getWriteMetadata()) return false;
     if (state_ != other.state_) return false;
+    if (!getMessageMappingCase().equals(other.getMessageMappingCase())) return false;
+    switch (messageMappingCase_) {
+      case 6:
+        if (!getColumnFamilyMapping().equals(other.getColumnFamilyMapping())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -726,6 +3588,14 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWriteMetadata());
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    switch (messageMappingCase_) {
+      case 6:
+        hash = (37 * hash) + COLUMN_FAMILY_MAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + getColumnFamilyMapping().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -830,13 +3700,9 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Configuration for a Bigtable subscription. The Pub/Sub message will be
-   * written to a Bigtable row as follows:
-   * - row key: subscription name, message ID hash, and message ID delimited by
-   * `#`.
-   * - columns: message bytes written to a single column family `data` with an
-   * empty-string column qualifier.
-   * - cell timestamp: the message publish timestamp.
+   * Configuration for a Bigtable subscription, which will write a Pub/Sub message
+   * to a Bigtable row. See the ColumnFamilyMapping documentation below for
+   * details on how the row keys and columns will be written.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.BigtableConfig}
@@ -875,7 +3741,12 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       appProfileId_ = "";
       serviceAccountEmail_ = "";
       writeMetadata_ = false;
+      if (columnFamilyMappingBuilder_ != null) {
+        columnFamilyMappingBuilder_.clear();
+      }
       state_ = 0;
+      messageMappingCase_ = 0;
+      messageMapping_ = null;
       return this;
     }
 
@@ -905,6 +3776,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -923,8 +3795,16 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.writeMetadata_ = writeMetadata_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.state_ = state_;
+      }
+    }
+
+    private void buildPartialOneofs(com.google.pubsub.v1.BigtableConfig result) {
+      result.messageMappingCase_ = messageMappingCase_;
+      result.messageMapping_ = this.messageMapping_;
+      if (messageMappingCase_ == 6 && columnFamilyMappingBuilder_ != null) {
+        result.messageMapping_ = columnFamilyMappingBuilder_.build();
       }
     }
 
@@ -960,6 +3840,17 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      switch (other.getMessageMappingCase()) {
+        case COLUMN_FAMILY_MAPPING:
+          {
+            mergeColumnFamilyMapping(other.getColumnFamilyMapping());
+            break;
+          }
+        case MESSAGEMAPPING_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1008,7 +3899,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
             case 32:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 40:
@@ -1017,6 +3908,13 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
+            case 50:
+              {
+                input.readMessage(
+                    internalGetColumnFamilyMappingFieldBuilder().getBuilder(), extensionRegistry);
+                messageMappingCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1031,6 +3929,20 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int messageMappingCase_ = 0;
+    private java.lang.Object messageMapping_;
+
+    public MessageMappingCase getMessageMappingCase() {
+      return MessageMappingCase.forNumber(messageMappingCase_);
+    }
+
+    public Builder clearMessageMapping() {
+      messageMappingCase_ = 0;
+      messageMapping_ = null;
+      onChanged();
       return this;
     }
 
@@ -1490,6 +4402,266 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping,
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder,
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder>
+        columnFamilyMappingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the columnFamilyMapping field is set.
+     */
+    @java.lang.Override
+    public boolean hasColumnFamilyMapping() {
+      return messageMappingCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The columnFamilyMapping.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping getColumnFamilyMapping() {
+      if (columnFamilyMappingBuilder_ == null) {
+        if (messageMappingCase_ == 6) {
+          return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_;
+        }
+        return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+      } else {
+        if (messageMappingCase_ == 6) {
+          return columnFamilyMappingBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setColumnFamilyMapping(
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping value) {
+      if (columnFamilyMappingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        messageMapping_ = value;
+        onChanged();
+      } else {
+        columnFamilyMappingBuilder_.setMessage(value);
+      }
+      messageMappingCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setColumnFamilyMapping(
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder builderForValue) {
+      if (columnFamilyMappingBuilder_ == null) {
+        messageMapping_ = builderForValue.build();
+        onChanged();
+      } else {
+        columnFamilyMappingBuilder_.setMessage(builderForValue.build());
+      }
+      messageMappingCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeColumnFamilyMapping(
+        com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping value) {
+      if (columnFamilyMappingBuilder_ == null) {
+        if (messageMappingCase_ == 6
+            && messageMapping_
+                != com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance()) {
+          messageMapping_ =
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.newBuilder(
+                      (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          messageMapping_ = value;
+        }
+        onChanged();
+      } else {
+        if (messageMappingCase_ == 6) {
+          columnFamilyMappingBuilder_.mergeFrom(value);
+        } else {
+          columnFamilyMappingBuilder_.setMessage(value);
+        }
+      }
+      messageMappingCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearColumnFamilyMapping() {
+      if (columnFamilyMappingBuilder_ == null) {
+        if (messageMappingCase_ == 6) {
+          messageMappingCase_ = 0;
+          messageMapping_ = null;
+          onChanged();
+        }
+      } else {
+        if (messageMappingCase_ == 6) {
+          messageMappingCase_ = 0;
+          messageMapping_ = null;
+        }
+        columnFamilyMappingBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder
+        getColumnFamilyMappingBuilder() {
+      return internalGetColumnFamilyMappingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder
+        getColumnFamilyMappingOrBuilder() {
+      if ((messageMappingCase_ == 6) && (columnFamilyMappingBuilder_ != null)) {
+        return columnFamilyMappingBuilder_.getMessageOrBuilder();
+      } else {
+        if (messageMappingCase_ == 6) {
+          return (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_;
+        }
+        return com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration that allows writing row keys and/or columns based
+     * on fields in the input message. The input message format must be JSON if
+     * this field is set.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.BigtableConfig.ColumnFamilyMapping column_family_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping,
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder,
+            com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder>
+        internalGetColumnFamilyMappingFieldBuilder() {
+      if (columnFamilyMappingBuilder_ == null) {
+        if (!(messageMappingCase_ == 6)) {
+          messageMapping_ =
+              com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.getDefaultInstance();
+        }
+        columnFamilyMappingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping,
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping.Builder,
+                com.google.pubsub.v1.BigtableConfig.ColumnFamilyMappingOrBuilder>(
+                (com.google.pubsub.v1.BigtableConfig.ColumnFamilyMapping) messageMapping_,
+                getParentForChildren(),
+                isClean());
+        messageMapping_ = null;
+      }
+      messageMappingCase_ = 6;
+      onChanged();
+      return columnFamilyMappingBuilder_;
+    }
+
     private int state_ = 0;
 
     /**
@@ -1528,7 +4700,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1573,7 +4745,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1594,7 +4766,7 @@ public final class BigtableConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       state_ = 0;
       onChanged();
       return this;

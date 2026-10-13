@@ -293,7 +293,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
    * </code>
    *
    * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute is
-   *     deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
+   *     deprecated. See google/cloud/dataproc/v1/clusters.proto;l=756
    * @return The enableConfidentialCompute.
    */
   @java.lang.Override
@@ -701,7 +701,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute
-     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
+     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=756
      * @return The enableConfidentialCompute.
      */
     @java.lang.Override
@@ -723,7 +723,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute
-     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
+     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=756
      * @param value The enableConfidentialCompute to set.
      * @return This builder for chaining.
      */
@@ -749,7 +749,7 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * </code>
      *
      * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute
-     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
+     *     is deprecated. See google/cloud/dataproc/v1/clusters.proto;l=756
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
