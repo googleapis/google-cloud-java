@@ -308,8 +308,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           this.rowCount++;
           return true;
         }
-      } catch (BigQueryJdbcException ex) {
-        throw ex; // already wrapped once; don't re-wrap
       } catch (SQLException ex) {
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
