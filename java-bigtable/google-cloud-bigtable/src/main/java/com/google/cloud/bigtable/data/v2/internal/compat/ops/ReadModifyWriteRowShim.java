@@ -15,8 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
+import com.google.bigtable.v2.OpenAuthorizedViewRequest;
+import com.google.bigtable.v2.OpenTableRequest.Permission;
 import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
+import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
+import com.google.cloud.bigtable.data.v2.internal.api.Client;
+import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -28,23 +33,38 @@ import java.util.concurrent.CompletableFuture;
 public class ReadModifyWriteRowShim
     implements UnaryShim<ReadModifyWriteRow, SessionReadModifyWriteRowResponse> {
 
-  private final ReadWriteSessionPools pools;
+  private final SessionPoolMap<TableId, TableAsync> tables;
+  private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
 
-  public ReadModifyWriteRowShim(ReadWriteSessionPools pools) {
-    this.pools = pools;
+  public ReadModifyWriteRowShim(Client client) {
+    // ReadModifyWriteRow reads and modifies cells and returns the row, so it needs
+    // read + write access on the session.
+    tables =
+        new SessionPoolMap<>(
+            k -> client.openTableAsync(k.getTableId(), Permission.PERMISSION_READ_WRITE));
+    authViews =
+        new SessionPoolMap<>(
+            k ->
+                client.openAuthorizedViewAsync(
+                    k.getTableId(),
+                    k.getAuthorizedViewId(),
+                    OpenAuthorizedViewRequest.Permission.PERMISSION_READ_WRITE));
   }
 
   @Override
-  public void close() {}
+  public void close() {
+    tables.invalidateAll();
+    authViews.invalidateAll();
+  }
 
   @Override
   public boolean supports(ReadModifyWriteRow request) {
     TargetId targetId = request.getTargetId();
     SessionPool<?> pool;
     if (targetId instanceof TableId) {
-      pool = pools.tables.get((TableId) targetId).getSessionPool();
+      pool = tables.get((TableId) targetId).getSessionPool();
     } else if (targetId instanceof AuthorizedViewId) {
-      pool = pools.authViews.get((AuthorizedViewId) targetId).getSessionPool();
+      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
     } else {
       return false;
     }
@@ -58,10 +78,10 @@ public class ReadModifyWriteRowShim
     SessionReadModifyWriteRowRequest innerReq = request.toSessionProto();
 
     if (targetId instanceof TableId) {
-      return pools.tables.apply((TableId) targetId, t -> t.readModifyWriteRow(innerReq, deadline));
+      return tables.apply((TableId) targetId, t -> t.readModifyWriteRow(innerReq, deadline));
     }
     if (targetId instanceof AuthorizedViewId) {
-      return pools.authViews.apply(
+      return authViews.apply(
           (AuthorizedViewId) targetId, v -> v.readModifyWriteRow(innerReq, deadline));
     }
 
