@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [ListViewabilityProviders][] containing matching
+ * Response object for `ListViewabilityProviders` containing matching
  * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider] objects.
  * </pre>
  *
@@ -427,7 +427,7 @@ public final class ListViewabilityProvidersResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Response object for [ListViewabilityProviders][] containing matching
+   * Response object for `ListViewabilityProviders` containing matching
    * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider] objects.
    * </pre>
    *

@@ -32,7 +32,7 @@ public interface CustomPacingGoalOrBuilder
    * <pre>
    * Optional. The start date and time of the goal. This field is required
    * unless
-   * [use_line_item_start_time][google.ads.admanager.v1.CustomPacingGoal.use_line_item_start_time]
+   * [useLineItemStartTime][google.ads.admanager.v1.CustomPacingGoal.use_line_item_start_time]
    * is true.
    * </pre>
    *
@@ -50,7 +50,7 @@ public interface CustomPacingGoalOrBuilder
    * <pre>
    * Optional. The start date and time of the goal. This field is required
    * unless
-   * [use_line_item_start_time][google.ads.admanager.v1.CustomPacingGoal.use_line_item_start_time]
+   * [useLineItemStartTime][google.ads.admanager.v1.CustomPacingGoal.use_line_item_start_time]
    * is true.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface CustomPacingGoalOrBuilder
    * <pre>
    * Optional. The start date and time of the goal. This field is required
    * unless
-   * [use_line_item_start_time][google.ads.admanager.v1.CustomPacingGoal.use_line_item_start_time]
+   * [useLineItemStartTime][google.ads.admanager.v1.CustomPacingGoal.use_line_item_start_time]
    * is true.
    * </pre>
    *
@@ -82,10 +82,12 @@ public interface CustomPacingGoalOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Whether the [LineItem.start_time] should be used for
-   * the start date and time of this goal. This field is not persisted and if it
-   * is set to true, the [start_time] field will be populated by the line item's
-   * start time.
+   * Optional. Input only. Whether the
+   * [LineItem.startTime][google.ads.admanager.v1.LineItem.start_time] should be
+   * used for the start date and time of this goal. This field is not persisted
+   * and if it is set to true, the
+   * [startTime][google.ads.admanager.v1.CustomPacingGoal.start_time] field will
+   * be populated by the line item's start time.
    * </pre>
    *
    * <code>
@@ -100,10 +102,12 @@ public interface CustomPacingGoalOrBuilder
    *
    *
    * <pre>
-   * Optional. Input only. Whether the [LineItem.start_time] should be used for
-   * the start date and time of this goal. This field is not persisted and if it
-   * is set to true, the [start_time] field will be populated by the line item's
-   * start time.
+   * Optional. Input only. Whether the
+   * [LineItem.startTime][google.ads.admanager.v1.LineItem.start_time] should be
+   * used for the start date and time of this goal. This field is not persisted
+   * and if it is set to true, the
+   * [startTime][google.ads.admanager.v1.CustomPacingGoal.start_time] field will
+   * be populated by the line item's start time.
    * </pre>
    *
    * <code>

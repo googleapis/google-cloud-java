@@ -2629,6 +2629,8 @@ public class BigQueryImplTest {
     assertFalse(result.hasNextPage());
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
+    assertThat(result.getTotalBytesProcessed()).isEqualTo(42L);
+    assertThat(result.getCacheHit()).isFalse();
     for (FieldValueList row : result.getValues()) {
       assertThat(row.get(0).getBooleanValue()).isFalse();
       assertThat(row.get(1).getLongValue()).isEqualTo(1);
@@ -3513,6 +3515,7 @@ public class BigQueryImplTest {
                     .setQuery(
                         new com.google.api.services.bigquery.model.JobStatistics2()
                             .setStatementType("SELECT")
+                            .setCacheHit(true)
                             .setTotalBytesBilled(100L)
                             .setTotalBytesProcessed(200L)));
 
@@ -3604,6 +3607,7 @@ public class BigQueryImplTest {
     assertEquals(50L, result.getTotalSlotMs().longValue());
     assertEquals(100L, result.getTotalBytesBilled().longValue());
     assertEquals(200L, result.getTotalBytesProcessed().longValue());
+    assertTrue(result.getCacheHit());
     assertEquals(StatementType.SELECT, result.getStatementType());
   }
 

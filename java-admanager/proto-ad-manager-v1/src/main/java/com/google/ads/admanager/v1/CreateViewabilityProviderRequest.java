@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [CreateViewabilityProvider][] method.
+ * Request object for `CreateViewabilityProvider` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.CreateViewabilityProviderRequest}
@@ -378,7 +378,7 @@ public final class CreateViewabilityProviderRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Request object for [CreateViewabilityProvider][] method.
+   * Request object for `CreateViewabilityProvider` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.CreateViewabilityProviderRequest}

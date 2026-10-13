@@ -16,6 +16,7 @@
 
 package com.google.cloud.apptopology.v1;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
@@ -269,6 +270,106 @@ public class AppTopologyClientHttpJsonTest {
     try {
       String name = "projects/project-5707/locations/location-5707/domains/domain-5707/schema";
       client.getSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exploreSchemaTest() throws Exception {
+    NodeType responsesElement = NodeType.newBuilder().build();
+    ExploreSchemaResponse expectedResponse =
+        ExploreSchemaResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodeTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SchemaName name = SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+
+    ExploreSchemaPagedResponse pagedListResponse = client.exploreSchema(name);
+
+    List<NodeType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodeTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exploreSchemaExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SchemaName name = SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+      client.exploreSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exploreSchemaTest2() throws Exception {
+    NodeType responsesElement = NodeType.newBuilder().build();
+    ExploreSchemaResponse expectedResponse =
+        ExploreSchemaResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllNodeTypes(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-5707/locations/location-5707/domains/domain-5707/schema";
+
+    ExploreSchemaPagedResponse pagedListResponse = client.exploreSchema(name);
+
+    List<NodeType> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getNodeTypesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exploreSchemaExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-5707/locations/location-5707/domains/domain-5707/schema";
+      client.exploreSchema(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

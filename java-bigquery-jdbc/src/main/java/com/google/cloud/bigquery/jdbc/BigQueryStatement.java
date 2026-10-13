@@ -904,6 +904,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               arrowResultSet, referenceQueueArrowRs, populateBufferWorker));
       arrowResultSet.setJobId(currentJobId);
       arrowResultSet.setQueryId(results.getQueryId());
+      if (job == null && currentJobId == null) {
+        arrowResultSet.setQueryStatistics(results.extractQueryStatistics());
+      }
       return arrowResultSet;
 
     } catch (Exception | OutOfMemoryError ex) {
@@ -1189,6 +1192,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
             job);
     jsonResultSet.setJobId(jobId);
     jsonResultSet.setQueryId(results.getQueryId());
+    if (job == null && jobId == null) {
+      jsonResultSet.setQueryStatistics(results.extractQueryStatistics());
+    }
     jsonResultSetFinalizers.add(
         new BigQueryResultSetFinalizers.JsonResultSetFinalizer(
             jsonResultSet, referenceQueueJsonRs, jsonWorkers));

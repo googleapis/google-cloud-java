@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for 'CreateEntitySignalsMapping' method.
+ * Request object for `CreateEntitySignalsMapping` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.CreateEntitySignalsMappingRequest}
@@ -371,7 +371,7 @@ public final class CreateEntitySignalsMappingRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request object for 'CreateEntitySignalsMapping' method.
+   * Request object for `CreateEntitySignalsMapping` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.CreateEntitySignalsMappingRequest}

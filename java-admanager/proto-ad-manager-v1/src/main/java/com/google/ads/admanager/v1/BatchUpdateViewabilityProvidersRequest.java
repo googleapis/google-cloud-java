@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [BatchUpdateViewabilityProviders][] method.
+ * Request object for `BatchUpdateViewabilityProviders` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchUpdateViewabilityProvidersRequest}
@@ -83,7 +83,7 @@ public final class BatchUpdateViewabilityProvidersRequest
    *
    * <pre>
    * Required. The parent resource where
-   * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+   * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
    * updated. Format: `networks/{network_code}` The parent field in the
    * UpdateViewabilityProviderRequest must match this field.
    * </pre>
@@ -112,7 +112,7 @@ public final class BatchUpdateViewabilityProvidersRequest
    *
    * <pre>
    * Required. The parent resource where
-   * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+   * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
    * updated. Format: `networks/{network_code}` The parent field in the
    * UpdateViewabilityProviderRequest must match this field.
    * </pre>
@@ -412,7 +412,7 @@ public final class BatchUpdateViewabilityProvidersRequest
    *
    *
    * <pre>
-   * Request object for [BatchUpdateViewabilityProviders][] method.
+   * Request object for `BatchUpdateViewabilityProviders` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchUpdateViewabilityProvidersRequest}
@@ -634,7 +634,7 @@ public final class BatchUpdateViewabilityProvidersRequest
      *
      * <pre>
      * Required. The parent resource where
-     * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+     * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
      * updated. Format: `networks/{network_code}` The parent field in the
      * UpdateViewabilityProviderRequest must match this field.
      * </pre>
@@ -662,7 +662,7 @@ public final class BatchUpdateViewabilityProvidersRequest
      *
      * <pre>
      * Required. The parent resource where
-     * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+     * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
      * updated. Format: `networks/{network_code}` The parent field in the
      * UpdateViewabilityProviderRequest must match this field.
      * </pre>
@@ -690,7 +690,7 @@ public final class BatchUpdateViewabilityProvidersRequest
      *
      * <pre>
      * Required. The parent resource where
-     * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+     * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
      * updated. Format: `networks/{network_code}` The parent field in the
      * UpdateViewabilityProviderRequest must match this field.
      * </pre>
@@ -717,7 +717,7 @@ public final class BatchUpdateViewabilityProvidersRequest
      *
      * <pre>
      * Required. The parent resource where
-     * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+     * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
      * updated. Format: `networks/{network_code}` The parent field in the
      * UpdateViewabilityProviderRequest must match this field.
      * </pre>
@@ -740,7 +740,7 @@ public final class BatchUpdateViewabilityProvidersRequest
      *
      * <pre>
      * Required. The parent resource where
-     * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be
+     * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be
      * updated. Format: `networks/{network_code}` The parent field in the
      * UpdateViewabilityProviderRequest must match this field.
      * </pre>

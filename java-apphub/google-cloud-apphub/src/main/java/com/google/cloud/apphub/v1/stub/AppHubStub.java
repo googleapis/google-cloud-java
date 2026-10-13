@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1.stub;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -28,6 +29,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apphub.v1.Application;
+import com.google.cloud.apphub.v1.Boundary;
 import com.google.cloud.apphub.v1.CreateApplicationRequest;
 import com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.CreateServiceRequest;
@@ -40,9 +42,12 @@ import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse;
 import com.google.cloud.apphub.v1.DiscoveredService;
 import com.google.cloud.apphub.v1.DiscoveredWorkload;
+import com.google.cloud.apphub.v1.ExtendedMetadataSchema;
 import com.google.cloud.apphub.v1.GetApplicationRequest;
+import com.google.cloud.apphub.v1.GetBoundaryRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredServiceRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest;
+import com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest;
 import com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.GetServiceRequest;
 import com.google.cloud.apphub.v1.GetWorkloadRequest;
@@ -52,6 +57,8 @@ import com.google.cloud.apphub.v1.ListDiscoveredServicesRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredServicesResponse;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse;
 import com.google.cloud.apphub.v1.ListServicesRequest;
@@ -68,6 +75,7 @@ import com.google.cloud.apphub.v1.OperationMetadata;
 import com.google.cloud.apphub.v1.Service;
 import com.google.cloud.apphub.v1.ServiceProjectAttachment;
 import com.google.cloud.apphub.v1.UpdateApplicationRequest;
+import com.google.cloud.apphub.v1.UpdateBoundaryRequest;
 import com.google.cloud.apphub.v1.UpdateServiceRequest;
 import com.google.cloud.apphub.v1.UpdateWorkloadRequest;
 import com.google.cloud.apphub.v1.Workload;
@@ -327,6 +335,36 @@ public abstract class AppHubStub implements BackgroundResource {
 
   public UnaryCallable<DeleteApplicationRequest, Operation> deleteApplicationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteApplicationCallable()");
+  }
+
+  public UnaryCallable<GetBoundaryRequest, Boundary> getBoundaryCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBoundaryCallable()");
+  }
+
+  public OperationCallable<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBoundaryOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateBoundaryRequest, Operation> updateBoundaryCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBoundaryCallable()");
+  }
+
+  public UnaryCallable<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: getExtendedMetadataSchemaCallable()");
+  }
+
+  public UnaryCallable<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listExtendedMetadataSchemasPagedCallable()");
+  }
+
+  public UnaryCallable<ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listExtendedMetadataSchemasCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -608,8 +608,87 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetBoundary</td>
+ *      <td><p> Gets a Boundary.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getBoundary(GetBoundaryRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getBoundary(BoundaryName name)
+ *           <li><p> getBoundary(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getBoundaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateBoundary</td>
+ *      <td><p> Updates a Boundary.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateBoundaryAsync(UpdateBoundaryRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateBoundaryAsync(Boundary boundary, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateBoundaryOperationCallable()
+ *           <li><p> updateBoundaryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetExtendedMetadataSchema</td>
+ *      <td><p> Gets an Extended Metadata Schema.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getExtendedMetadataSchema(GetExtendedMetadataSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getExtendedMetadataSchema(ExtendedMetadataSchemaName name)
+ *           <li><p> getExtendedMetadataSchema(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getExtendedMetadataSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListExtendedMetadataSchemas</td>
+ *      <td><p> Lists Extended Metadata Schemas available in a host project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listExtendedMetadataSchemas(ListExtendedMetadataSchemasRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listExtendedMetadataSchemas(LocationName parent)
+ *           <li><p> listExtendedMetadataSchemas(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listExtendedMetadataSchemasPagedCallable()
+ *           <li><p> listExtendedMetadataSchemasCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2626,7 +2705,7 @@ public class AppHubClient implements BackgroundResource {
    * }</pre>
    *
    * @param service Required. The resource being updated.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
    *     Service resource by the update. The fields specified in the update_mask are relative to the
    *     resource, not the full request. The API changes the values of the fields as specified in
    *     the update_mask. The API ignores the values of all fields not covered by the update_mask.
@@ -3787,7 +3866,7 @@ public class AppHubClient implements BackgroundResource {
    * }</pre>
    *
    * @param workload Required. The resource being updated.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
    *     Workload resource by the update. The fields specified in the update_mask are relative to
    *     the resource, not the full request. The API changes the values of the fields as specified
    *     in the update_mask. The API ignores the values of all fields not covered by the
@@ -4522,7 +4601,7 @@ public class AppHubClient implements BackgroundResource {
    * }</pre>
    *
    * @param application Required. The resource being updated.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
    *     Application resource by the update. The fields specified in the update_mask are relative to
    *     the resource, not the full request. The API changes the values of the fields as specified
    *     in the update_mask. The API ignores the values of all fields not covered by the
@@ -4779,7 +4858,555 @@ public class AppHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Gets a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   BoundaryName name = BoundaryName.of("[PROJECT]", "[LOCATION]");
+   *   Boundary response = appHubClient.getBoundary(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the boundary to retrieve. Format:
+   *     `projects/{project}/locations/{location}/boundary`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Boundary getBoundary(@Nullable BoundaryName name) {
+    GetBoundaryRequest request =
+        GetBoundaryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getBoundary(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   String name = BoundaryName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Boundary response = appHubClient.getBoundary(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the boundary to retrieve. Format:
+   *     `projects/{project}/locations/{location}/boundary`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Boundary getBoundary(String name) {
+    GetBoundaryRequest request = GetBoundaryRequest.newBuilder().setName(name).build();
+    return getBoundary(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   GetBoundaryRequest request =
+   *       GetBoundaryRequest.newBuilder()
+   *           .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   Boundary response = appHubClient.getBoundary(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Boundary getBoundary(GetBoundaryRequest request) {
+    return getBoundaryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   GetBoundaryRequest request =
+   *       GetBoundaryRequest.newBuilder()
+   *           .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<Boundary> future = appHubClient.getBoundaryCallable().futureCall(request);
+   *   // Do something.
+   *   Boundary response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetBoundaryRequest, Boundary> getBoundaryCallable() {
+    return stub.getBoundaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   Boundary boundary = Boundary.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Boundary response = appHubClient.updateBoundaryAsync(boundary, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param boundary Required. The boundary to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     Boundary resource by the update. The fields specified in the update_mask are relative to
+   *     the resource, not the full request. A field will be overwritten if it is in the mask. If
+   *     the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Boundary, OperationMetadata> updateBoundaryAsync(
+      Boundary boundary, FieldMask updateMask) {
+    UpdateBoundaryRequest request =
+        UpdateBoundaryRequest.newBuilder().setBoundary(boundary).setUpdateMask(updateMask).build();
+    return updateBoundaryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   UpdateBoundaryRequest request =
+   *       UpdateBoundaryRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBoundary(Boundary.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Boundary response = appHubClient.updateBoundaryAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Boundary, OperationMetadata> updateBoundaryAsync(
+      UpdateBoundaryRequest request) {
+    return updateBoundaryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   UpdateBoundaryRequest request =
+   *       UpdateBoundaryRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBoundary(Boundary.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Boundary, OperationMetadata> future =
+   *       appHubClient.updateBoundaryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Boundary response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationCallable() {
+    return stub.updateBoundaryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a Boundary.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   UpdateBoundaryRequest request =
+   *       UpdateBoundaryRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setBoundary(Boundary.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = appHubClient.updateBoundaryCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateBoundaryRequest, Operation> updateBoundaryCallable() {
+    return stub.updateBoundaryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Extended Metadata Schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   ExtendedMetadataSchemaName name =
+   *       ExtendedMetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]");
+   *   ExtendedMetadataSchema response = appHubClient.getExtendedMetadataSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Schema resource name. Format:
+   *     `projects/{project}/locations/{location}/extendedMetadataSchemas/{extended_metadata_schema}`.
+   *     <p>`{extended_metadata_schema}` has the format `"apphub.googleapis.com/{SchemaName}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExtendedMetadataSchema getExtendedMetadataSchema(
+      @Nullable ExtendedMetadataSchemaName name) {
+    GetExtendedMetadataSchemaRequest request =
+        GetExtendedMetadataSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getExtendedMetadataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Extended Metadata Schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   String name =
+   *       ExtendedMetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+   *           .toString();
+   *   ExtendedMetadataSchema response = appHubClient.getExtendedMetadataSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Schema resource name. Format:
+   *     `projects/{project}/locations/{location}/extendedMetadataSchemas/{extended_metadata_schema}`.
+   *     <p>`{extended_metadata_schema}` has the format `"apphub.googleapis.com/{SchemaName}"`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExtendedMetadataSchema getExtendedMetadataSchema(String name) {
+    GetExtendedMetadataSchemaRequest request =
+        GetExtendedMetadataSchemaRequest.newBuilder().setName(name).build();
+    return getExtendedMetadataSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Extended Metadata Schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   GetExtendedMetadataSchemaRequest request =
+   *       GetExtendedMetadataSchemaRequest.newBuilder()
+   *           .setName(
+   *               ExtendedMetadataSchemaName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   ExtendedMetadataSchema response = appHubClient.getExtendedMetadataSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExtendedMetadataSchema getExtendedMetadataSchema(
+      GetExtendedMetadataSchemaRequest request) {
+    return getExtendedMetadataSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Extended Metadata Schema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   GetExtendedMetadataSchemaRequest request =
+   *       GetExtendedMetadataSchemaRequest.newBuilder()
+   *           .setName(
+   *               ExtendedMetadataSchemaName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ExtendedMetadataSchema> future =
+   *       appHubClient.getExtendedMetadataSchemaCallable().futureCall(request);
+   *   // Do something.
+   *   ExtendedMetadataSchema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaCallable() {
+    return stub.getExtendedMetadataSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Extended Metadata Schemas available in a host project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ExtendedMetadataSchema element :
+   *       appHubClient.listExtendedMetadataSchemas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Project and location to list Extended Metadata Schemas on. Expected
+   *     format: `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExtendedMetadataSchemasPagedResponse listExtendedMetadataSchemas(
+      @Nullable LocationName parent) {
+    ListExtendedMetadataSchemasRequest request =
+        ListExtendedMetadataSchemasRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listExtendedMetadataSchemas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Extended Metadata Schemas available in a host project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ExtendedMetadataSchema element :
+   *       appHubClient.listExtendedMetadataSchemas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Project and location to list Extended Metadata Schemas on. Expected
+   *     format: `projects/{project}/locations/{location}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExtendedMetadataSchemasPagedResponse listExtendedMetadataSchemas(String parent) {
+    ListExtendedMetadataSchemasRequest request =
+        ListExtendedMetadataSchemasRequest.newBuilder().setParent(parent).build();
+    return listExtendedMetadataSchemas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Extended Metadata Schemas available in a host project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   ListExtendedMetadataSchemasRequest request =
+   *       ListExtendedMetadataSchemasRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ExtendedMetadataSchema element :
+   *       appHubClient.listExtendedMetadataSchemas(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListExtendedMetadataSchemasPagedResponse listExtendedMetadataSchemas(
+      ListExtendedMetadataSchemasRequest request) {
+    return listExtendedMetadataSchemasPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Extended Metadata Schemas available in a host project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   ListExtendedMetadataSchemasRequest request =
+   *       ListExtendedMetadataSchemasRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ExtendedMetadataSchema> future =
+   *       appHubClient.listExtendedMetadataSchemasPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ExtendedMetadataSchema element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasPagedCallable() {
+    return stub.listExtendedMetadataSchemasPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Extended Metadata Schemas available in a host project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppHubClient appHubClient = AppHubClient.create()) {
+   *   ListExtendedMetadataSchemasRequest request =
+   *       ListExtendedMetadataSchemasRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListExtendedMetadataSchemasResponse response =
+   *         appHubClient.listExtendedMetadataSchemasCallable().call(request);
+   *     for (ExtendedMetadataSchema element : response.getExtendedMetadataSchemasList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+      listExtendedMetadataSchemasCallable() {
+    return stub.listExtendedMetadataSchemasCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -4814,6 +5441,18 @@ public class AppHubClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -4846,6 +5485,18 @@ public class AppHubClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -5670,6 +6321,106 @@ public class AppHubClient implements BackgroundResource {
     protected ListApplicationsFixedSizeCollection createCollection(
         @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       return new ListApplicationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListExtendedMetadataSchemasPagedResponse
+      extends AbstractPagedListResponse<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ExtendedMetadataSchema,
+          ListExtendedMetadataSchemasPage,
+          ListExtendedMetadataSchemasFixedSizeCollection> {
+
+    public static ApiFuture<ListExtendedMetadataSchemasPagedResponse> createAsync(
+        PageContext<
+                ListExtendedMetadataSchemasRequest,
+                ListExtendedMetadataSchemasResponse,
+                ExtendedMetadataSchema>
+            context,
+        ApiFuture<ListExtendedMetadataSchemasResponse> futureResponse) {
+      ApiFuture<ListExtendedMetadataSchemasPage> futurePage =
+          ListExtendedMetadataSchemasPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListExtendedMetadataSchemasPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListExtendedMetadataSchemasPagedResponse(ListExtendedMetadataSchemasPage page) {
+      super(page, ListExtendedMetadataSchemasFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListExtendedMetadataSchemasPage
+      extends AbstractPage<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ExtendedMetadataSchema,
+          ListExtendedMetadataSchemasPage> {
+
+    private ListExtendedMetadataSchemasPage(
+        @Nullable
+            PageContext<
+                ListExtendedMetadataSchemasRequest,
+                ListExtendedMetadataSchemasResponse,
+                ExtendedMetadataSchema>
+            context,
+        @Nullable ListExtendedMetadataSchemasResponse response) {
+      super(context, response);
+    }
+
+    private static ListExtendedMetadataSchemasPage createEmptyPage() {
+      return new ListExtendedMetadataSchemasPage(null, null);
+    }
+
+    @Override
+    protected ListExtendedMetadataSchemasPage createPage(
+        @Nullable
+            PageContext<
+                ListExtendedMetadataSchemasRequest,
+                ListExtendedMetadataSchemasResponse,
+                ExtendedMetadataSchema>
+            context,
+        @Nullable ListExtendedMetadataSchemasResponse response) {
+      return new ListExtendedMetadataSchemasPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListExtendedMetadataSchemasPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListExtendedMetadataSchemasRequest,
+                ListExtendedMetadataSchemasResponse,
+                ExtendedMetadataSchema>
+            context,
+        ApiFuture<ListExtendedMetadataSchemasResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListExtendedMetadataSchemasFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ExtendedMetadataSchema,
+          ListExtendedMetadataSchemasPage,
+          ListExtendedMetadataSchemasFixedSizeCollection> {
+
+    private ListExtendedMetadataSchemasFixedSizeCollection(
+        @Nullable List<ListExtendedMetadataSchemasPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListExtendedMetadataSchemasFixedSizeCollection createEmptyCollection() {
+      return new ListExtendedMetadataSchemasFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListExtendedMetadataSchemasFixedSizeCollection createCollection(
+        @Nullable List<ListExtendedMetadataSchemasPage> pages, int collectionSize) {
+      return new ListExtendedMetadataSchemasFixedSizeCollection(pages, collectionSize);
     }
   }
 

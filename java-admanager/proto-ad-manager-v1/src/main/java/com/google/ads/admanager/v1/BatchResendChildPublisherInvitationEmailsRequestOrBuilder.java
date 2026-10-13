@@ -61,7 +61,7 @@ public interface BatchResendChildPublisherInvitationEmailsRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] that should be
    * resent invitation emails. Format:
    * `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
@@ -79,7 +79,7 @@ public interface BatchResendChildPublisherInvitationEmailsRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] that should be
    * resent invitation emails. Format:
    * `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
@@ -97,7 +97,7 @@ public interface BatchResendChildPublisherInvitationEmailsRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] that should be
    * resent invitation emails. Format:
    * `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
@@ -116,7 +116,7 @@ public interface BatchResendChildPublisherInvitationEmailsRequestOrBuilder
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] that should be
    * resent invitation emails. Format:
    * `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>

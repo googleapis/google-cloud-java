@@ -31,6 +31,9 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    * <pre>
    * Optional. Only return ads with the given status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+   * enabled.
    * </pre>
    *
    * <code>
@@ -46,6 +49,9 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    * <pre>
    * Optional. Only return ads with the given status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+   * enabled.
    * </pre>
    *
    * <code>
@@ -61,6 +67,9 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    * <pre>
    * Optional. Only return ads with the given status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is not
+   * enabled.
    * </pre>
    *
    * <code>
@@ -75,10 +84,9 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only return ads with the given manual review status. Only
-   * available for networks with Manual Creative Review enabled. For more
-   * information, see
-   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * Optional. Only return ads with the given manual review status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
    * </pre>
    *
    * <code>
@@ -93,10 +101,9 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only return ads with the given manual review status. Only
-   * available for networks with Manual Creative Review enabled. For more
-   * information, see
-   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * Optional. Only return ads with the given manual review status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
    * </pre>
    *
    * <code>
@@ -111,10 +118,9 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Only return ads with the given manual review status. Only
-   * available for networks with Manual Creative Review enabled. For more
-   * information, see
-   * https://support.google.com/admanager/answer/2586531#manual-creative-review.
+   * Optional. Only return ads with the given manual review status.
+   * Use this filter for web properties where [Manual Creative Review
+   * (MCR)](https://support.google.com/admanager/answer/2913553) is enabled.
    * </pre>
    *
    * <code>
@@ -293,9 +299,8 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    * <pre>
    * Optional. If provided, only return ads that served within the given date
-   * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days. This filter does not
-   * apply to the PENDING manual review status.
+   * range (inclusive). The date range must be within the last 30 days. If not
+   * provided, the date range will be the last 30 days.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -310,9 +315,8 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    * <pre>
    * Optional. If provided, only return ads that served within the given date
-   * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days. This filter does not
-   * apply to the PENDING manual review status.
+   * range (inclusive). The date range must be within the last 30 days. If not
+   * provided, the date range will be the last 30 days.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -327,9 +331,8 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    *
    * <pre>
    * Optional. If provided, only return ads that served within the given date
-   * range (inclusive). The  date range must be within the last 30 days. If not
-   * provided, the date range will be the last 30 days. This filter does not
-   * apply to the PENDING manual review status.
+   * range (inclusive). The date range must be within the last 30 days. If not
+   * provided, the date range will be the last 30 days.
    * </pre>
    *
    * <code>.google.type.Interval date_time_range = 6 [(.google.api.field_behavior) = OPTIONAL];
@@ -452,6 +455,533 @@ public interface SearchAdReviewCenterAdsRequestOrBuilder
    * @return The buyerAccountId at the given index.
    */
   long getBuyerAccountId(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the adResponseId.
+   */
+  java.util.List<java.lang.String> getAdResponseIdList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of adResponseId.
+   */
+  int getAdResponseIdCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The adResponseId at the given index.
+   */
+  java.lang.String getAdResponseId(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, only return ads with the given ad response IDs.
+   * This filter is exclusive and cannot be combined with any other filters.
+   * Maximum of 10 IDs can be specified.
+   * </pre>
+   *
+   * <code>repeated string ad_response_id = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the adResponseId at the given index.
+   */
+  com.google.protobuf.ByteString getAdResponseIdBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the advertiserDisplayNames.
+   */
+  java.util.List<java.lang.String> getAdvertiserDisplayNamesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of advertiserDisplayNames.
+   */
+  int getAdvertiserDisplayNamesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The advertiserDisplayNames at the given index.
+   */
+  java.lang.String getAdvertiserDisplayNames(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given
+   * advertiser names.
+   * </pre>
+   *
+   * <code>repeated string advertiser_display_names = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advertiserDisplayNames at the given index.
+   */
+  com.google.protobuf.ByteString getAdvertiserDisplayNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the languageCodes.
+   */
+  java.util.List<java.lang.String> getLanguageCodesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of languageCodes.
+   */
+  int getLanguageCodesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
+   */
+  java.lang.String getLanguageCodes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given language codes.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
+   */
+  com.google.protobuf.ByteString getLanguageCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the regionCodes.
+   */
+  java.util.List<java.lang.String> getRegionCodesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of regionCodes.
+   */
+  int getRegionCodesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regionCodes at the given index.
+   */
+  java.lang.String getRegionCodes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives serving in the
+   * given region codes.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regionCodes at the given index.
+   */
+  com.google.protobuf.ByteString getRegionCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the adTypes.
+   */
+  java.util.List<com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+      getAdTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of adTypes.
+   */
+  int getAdTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The adTypes at the given index.
+   */
+  com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat getAdTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for adTypes.
+   */
+  java.util.List<java.lang.Integer> getAdTypesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives with the given ad
+   * types.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of adTypes at the given index.
+   */
+  int getAdTypesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the advertiserApps.
+   */
+  java.util.List<java.lang.String> getAdvertiserAppsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of advertiserApps.
+   */
+  int getAdvertiserAppsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The advertiserApps at the given index.
+   */
+  java.lang.String getAdvertiserApps(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives promoting the given
+   * app.
+   * </pre>
+   *
+   * <code>repeated string advertiser_apps = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the advertiserApps at the given index.
+   */
+  com.google.protobuf.ByteString getAdvertiserAppsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the publisherDomains.
+   */
+  java.util.List<java.lang.String> getPublisherDomainsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of publisherDomains.
+   */
+  int getPublisherDomainsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The publisherDomains at the given index.
+   */
+  java.lang.String getPublisherDomains(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives belonging to the
+   * given publisher domain.
+   * </pre>
+   *
+   * <code>repeated string publisher_domains = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the publisherDomains at the given index.
+   */
+  com.google.protobuf.ByteString getPublisherDomainsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives which appeared for
+   * the first time within the past X days. Must be within the last 30 days (1
+   * to 30, inclusive).
+   * </pre>
+   *
+   * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the newInLastDays field is set.
+   */
+  boolean hasNewInLastDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives which appeared for
+   * the first time within the past X days. Must be within the last 30 days (1
+   * to 30, inclusive).
+   * </pre>
+   *
+   * <code>optional int32 new_in_last_days = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The newInLastDays.
+   */
+  int getNewInLastDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the labelIds.
+   */
+  java.util.List<java.lang.String> getLabelIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of labelIds.
+   */
+  int getLabelIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labelIds at the given index.
+   */
+  java.lang.String getLabelIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If provided, restrict the search to creatives associated with the
+   * given custom label IDs.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labelIds at the given index.
+   */
+  com.google.protobuf.ByteString getLabelIdsBytes(int index);
 
   com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest.AdReviewStatusCase
       getAdReviewStatusCase();

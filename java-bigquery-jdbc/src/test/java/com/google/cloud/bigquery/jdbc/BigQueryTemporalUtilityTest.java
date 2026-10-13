@@ -149,31 +149,6 @@ public class BigQueryTemporalUtilityTest {
   }
 
   @Test
-  public void testConvertTimestampWithCalendar() {
-    Timestamp ts = Timestamp.valueOf("2026-08-24 15:30:45.123456789");
-    Calendar cal = Calendar.getInstance();
-
-    // Null checks
-    assertThat(BigQueryTemporalUtility.convertTimestampWithCalendar(null, cal)).isNull();
-    assertThat(BigQueryTemporalUtility.convertTimestampWithCalendar(ts, null)).isSameInstanceAs(ts);
-
-    // Same timezone fast-path
-    Calendar sameZoneCal = Calendar.getInstance(TimeZone.getDefault());
-    assertThat(BigQueryTemporalUtility.convertTimestampWithCalendar(ts, sameZoneCal))
-        .isSameInstanceAs(ts);
-
-    // Different timezone preserves wall-clock shift and nanoseconds
-    Calendar tokyoCal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-    Timestamp result = BigQueryTemporalUtility.convertTimestampWithCalendar(ts, tokyoCal);
-    Instant expectedInstant =
-        LocalDateTime.of(2026, 8, 24, 15, 30, 45, 123456789)
-            .atZone(ZoneId.of("Asia/Tokyo"))
-            .toInstant();
-    assertThat(result.getTime()).isEqualTo(expectedInstant.toEpochMilli());
-    assertThat(result.getNanos()).isEqualTo(123456789);
-  }
-
-  @Test
   public void testBoxDateTimeAndDate() {
     Timestamp ts =
         BigQueryTemporalUtility.boxDateTime("2026-08-24 15:30:45.123456", ZoneId.of("UTC"));

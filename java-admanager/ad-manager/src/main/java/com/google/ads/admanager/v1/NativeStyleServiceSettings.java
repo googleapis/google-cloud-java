@@ -102,10 +102,20 @@ public class NativeStyleServiceSettings extends ClientSettings<NativeStyleServic
     return ((NativeStyleServiceStubSettings) getStubSettings()).listNativeStylesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createNativeStyle. */
+  public UnaryCallSettings<CreateNativeStyleRequest, NativeStyle> createNativeStyleSettings() {
+    return ((NativeStyleServiceStubSettings) getStubSettings()).createNativeStyleSettings();
+  }
+
   /** Returns the object with the settings used for calls to batchCreateNativeStyles. */
   public UnaryCallSettings<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesSettings() {
     return ((NativeStyleServiceStubSettings) getStubSettings()).batchCreateNativeStylesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNativeStyle. */
+  public UnaryCallSettings<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleSettings() {
+    return ((NativeStyleServiceStubSettings) getStubSettings()).updateNativeStyleSettings();
   }
 
   /** Returns the object with the settings used for calls to batchUpdateNativeStyles. */
@@ -242,11 +252,23 @@ public class NativeStyleServiceSettings extends ClientSettings<NativeStyleServic
       return getStubSettingsBuilder().listNativeStylesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createNativeStyle. */
+    public UnaryCallSettings.Builder<CreateNativeStyleRequest, NativeStyle>
+        createNativeStyleSettings() {
+      return getStubSettingsBuilder().createNativeStyleSettings();
+    }
+
     /** Returns the builder for the settings used for calls to batchCreateNativeStyles. */
     public UnaryCallSettings.Builder<
             BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
         batchCreateNativeStylesSettings() {
       return getStubSettingsBuilder().batchCreateNativeStylesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNativeStyle. */
+    public UnaryCallSettings.Builder<UpdateNativeStyleRequest, NativeStyle>
+        updateNativeStyleSettings() {
+      return getStubSettingsBuilder().updateNativeStyleSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateNativeStyles. */

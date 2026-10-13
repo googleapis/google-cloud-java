@@ -134,6 +134,52 @@ public final class AppTopologyGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.apptopology.v1.ExploreSchemaRequest,
+          com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+      getExploreSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExploreSchema",
+      requestType = com.google.cloud.apptopology.v1.ExploreSchemaRequest.class,
+      responseType = com.google.cloud.apptopology.v1.ExploreSchemaResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.apptopology.v1.ExploreSchemaRequest,
+          com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+      getExploreSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.apptopology.v1.ExploreSchemaRequest,
+            com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+        getExploreSchemaMethod;
+    if ((getExploreSchemaMethod = AppTopologyGrpc.getExploreSchemaMethod) == null) {
+      synchronized (AppTopologyGrpc.class) {
+        if ((getExploreSchemaMethod = AppTopologyGrpc.getExploreSchemaMethod) == null) {
+          AppTopologyGrpc.getExploreSchemaMethod =
+              getExploreSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.apptopology.v1.ExploreSchemaRequest,
+                          com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExploreSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apptopology.v1.ExploreSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apptopology.v1.ExploreSchemaResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new AppTopologyMethodDescriptorSupplier("ExploreSchema"))
+                      .build();
+        }
+      }
+    }
+    return getExploreSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.apptopology.v1.GetDomainRequest, com.google.cloud.apptopology.v1.Domain>
       getGetDomainMethod;
 
@@ -324,6 +370,22 @@ public final class AppTopologyGrpc {
      *
      *
      * <pre>
+     * Explores the topology schema starting from given node types or label names
+     * up to a specified hop depth.
+     * </pre>
+     */
+    default void exploreSchema(
+        com.google.cloud.apptopology.v1.ExploreSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExploreSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified topology domain.
      * </pre>
      */
@@ -427,6 +489,24 @@ public final class AppTopologyGrpc {
      *
      *
      * <pre>
+     * Explores the topology schema starting from given node types or label names
+     * up to a specified hop depth.
+     * </pre>
+     */
+    public void exploreSchema(
+        com.google.cloud.apptopology.v1.ExploreSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExploreSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified topology domain.
      * </pre>
      */
@@ -514,6 +594,21 @@ public final class AppTopologyGrpc {
      *
      *
      * <pre>
+     * Explores the topology schema starting from given node types or label names
+     * up to a specified hop depth.
+     * </pre>
+     */
+    public com.google.cloud.apptopology.v1.ExploreSchemaResponse exploreSchema(
+        com.google.cloud.apptopology.v1.ExploreSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExploreSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified topology domain.
      * </pre>
      */
@@ -589,6 +684,20 @@ public final class AppTopologyGrpc {
         com.google.cloud.apptopology.v1.GetSchemaRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Explores the topology schema starting from given node types or label names
+     * up to a specified hop depth.
+     * </pre>
+     */
+    public com.google.cloud.apptopology.v1.ExploreSchemaResponse exploreSchema(
+        com.google.cloud.apptopology.v1.ExploreSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExploreSchemaMethod(), getCallOptions(), request);
     }
 
     /**
@@ -679,6 +788,21 @@ public final class AppTopologyGrpc {
      *
      *
      * <pre>
+     * Explores the topology schema starting from given node types or label names
+     * up to a specified hop depth.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.apptopology.v1.ExploreSchemaResponse>
+        exploreSchema(com.google.cloud.apptopology.v1.ExploreSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExploreSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves the specified topology domain.
      * </pre>
      */
@@ -707,8 +831,9 @@ public final class AppTopologyGrpc {
 
   private static final int METHODID_GENERATE_DISCOVERED_RESOURCES_TOPOLOGY = 0;
   private static final int METHODID_GET_SCHEMA = 1;
-  private static final int METHODID_GET_DOMAIN = 2;
-  private static final int METHODID_LIST_DOMAINS = 3;
+  private static final int METHODID_EXPLORE_SCHEMA = 2;
+  private static final int METHODID_GET_DOMAIN = 3;
+  private static final int METHODID_LIST_DOMAINS = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -738,6 +863,12 @@ public final class AppTopologyGrpc {
           serviceImpl.getSchema(
               (com.google.cloud.apptopology.v1.GetSchemaRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.apptopology.v1.Schema>)
+                  responseObserver);
+          break;
+        case METHODID_EXPLORE_SCHEMA:
+          serviceImpl.exploreSchema(
+              (com.google.cloud.apptopology.v1.ExploreSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.apptopology.v1.ExploreSchemaResponse>)
                   responseObserver);
           break;
         case METHODID_GET_DOMAIN:
@@ -783,6 +914,13 @@ public final class AppTopologyGrpc {
                 new MethodHandlers<
                     com.google.cloud.apptopology.v1.GetSchemaRequest,
                     com.google.cloud.apptopology.v1.Schema>(service, METHODID_GET_SCHEMA)))
+        .addMethod(
+            getExploreSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apptopology.v1.ExploreSchemaRequest,
+                    com.google.cloud.apptopology.v1.ExploreSchemaResponse>(
+                    service, METHODID_EXPLORE_SCHEMA)))
         .addMethod(
             getGetDomainMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -849,6 +987,7 @@ public final class AppTopologyGrpc {
                       .setSchemaDescriptor(new AppTopologyFileDescriptorSupplier())
                       .addMethod(getGenerateDiscoveredResourcesTopologyMethod())
                       .addMethod(getGetSchemaMethod())
+                      .addMethod(getExploreSchemaMethod())
                       .addMethod(getGetDomainMethod())
                       .addMethod(getListDomainsMethod())
                       .build();

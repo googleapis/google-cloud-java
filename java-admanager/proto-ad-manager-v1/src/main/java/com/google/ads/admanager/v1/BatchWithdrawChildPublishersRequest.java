@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request message for [BatchWithdrawChildPublishers][] method.
+ * Request message for `BatchWithdrawChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchWithdrawChildPublishersRequest}
@@ -140,7 +140,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -159,7 +159,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -178,7 +178,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -198,7 +198,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -394,7 +394,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
    *
    *
    * <pre>
-   * Request message for [BatchWithdrawChildPublishers][] method.
+   * Request message for `BatchWithdrawChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchWithdrawChildPublishersRequest}
@@ -702,7 +702,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -722,7 +722,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -741,7 +741,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -761,7 +761,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -781,7 +781,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -809,7 +809,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -836,7 +836,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -860,7 +860,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -883,7 +883,7 @@ public final class BatchWithdrawChildPublishersRequest extends com.google.protob
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *

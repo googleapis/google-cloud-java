@@ -52,6 +52,24 @@ public class TestLogger implements Logger, LoggingEventAware {
     return messageList;
   }
 
+  /**
+   * Returns the most recent log level recorded by this test logger.
+   *
+   * @return the SLF4J {@link Level} or null if no level has been recorded
+   */
+  public Level getLevel() {
+    return level;
+  }
+
+  /**
+   * Sets or clears the log level recorded by this test logger.
+   *
+   * @param level the SLF4J {@link Level} to set
+   */
+  public void setLevel(Level level) {
+    this.level = level;
+  }
+
   Map<String, Object> keyValuePairsMap = new HashMap<>();
 
   public Map<String, String> getMDCMap() {
@@ -261,7 +279,7 @@ public class TestLogger implements Logger, LoggingEventAware {
 
   @Override
   public boolean isErrorEnabled() {
-    return false;
+    return true;
   }
 
   @Override

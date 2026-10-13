@@ -39,7 +39,7 @@
  *
  * <p>======================= AdReviewCenterAdServiceClient =======================
  *
- * <p>Service Description: Provides methods for handling AdReviewCenterAd objects.
+ * <p>Service Description: Provides methods for handling `AdReviewCenterAd` objects.
  *
  * <p>Sample for AdReviewCenterAdServiceClient:
  *
@@ -52,10 +52,8 @@
  * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
  *     AdReviewCenterAdServiceClient.create()) {
  *   WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
- *   for (AdReviewCenterAd element :
- *       adReviewCenterAdServiceClient.searchAdReviewCenterAds(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   FetchAdReviewCenterCustomLabelsResponse response =
+ *       adReviewCenterAdServiceClient.fetchAdReviewCenterCustomLabels(parent);
  * }
  * }</pre>
  *
@@ -393,6 +391,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= CreativeServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `Creative` objects.
+ *
+ * <p>Sample for CreativeServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CreativeServiceClient creativeServiceClient = CreativeServiceClient.create()) {
+ *   CreativeName name = CreativeName.of("[NETWORK_CODE]", "[CREATIVE]");
+ *   Creative response = creativeServiceClient.getCreative(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CreativeSetServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `CreativeSet` objects.
@@ -646,6 +662,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= ForecastServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling forecasting actions.
+ *
+ * <p>Sample for ForecastServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ForecastServiceClient forecastServiceClient = ForecastServiceClient.create()) {
+ *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+ *   RunAvailabilityForecastResponse response =
+ *       forecastServiceClient.runAvailabilityForecast(parent);
+ * }
+ * }</pre>
+ *
  * <p>======================= GeoTargetServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `GeoTarget` objects.
@@ -682,6 +717,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= LineItemCreativeAssociationServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `LineItemCreativeAssociation` objects.
+ *
+ * <p>Sample for LineItemCreativeAssociationServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LineItemCreativeAssociationServiceClient lineItemCreativeAssociationServiceClient =
+ *     LineItemCreativeAssociationServiceClient.create()) {
+ *   LineItemCreativeAssociationName name =
+ *       LineItemCreativeAssociationName.of("[NETWORK_CODE]", "[LINE_ITEM]", "[CREATIVE]");
+ *   LineItemCreativeAssociation response =
+ *       lineItemCreativeAssociationServiceClient.getLineItemCreativeAssociation(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= LineItemServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `LineItem` objects.
@@ -697,6 +753,25 @@
  * try (LineItemServiceClient lineItemServiceClient = LineItemServiceClient.create()) {
  *   LineItemName name = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
  *   LineItem response = lineItemServiceClient.getLineItem(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= LineItemTemplateServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `LineItemTemplate` objects.
+ *
+ * <p>Sample for LineItemTemplateServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LineItemTemplateServiceClient lineItemTemplateServiceClient =
+ *     LineItemTemplateServiceClient.create()) {
+ *   LineItemTemplateName name = LineItemTemplateName.of("[NETWORK_CODE]", "[LINE_ITEM_TEMPLATE]");
+ *   LineItemTemplate response = lineItemTemplateServiceClient.getLineItemTemplate(name);
  * }
  * }</pre>
  *

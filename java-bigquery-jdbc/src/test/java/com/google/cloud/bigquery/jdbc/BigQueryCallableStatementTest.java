@@ -33,8 +33,11 @@ import java.sql.*;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryCallableStatementTest {
 
@@ -820,26 +823,28 @@ public class BigQueryCallableStatementTest {
     assertEquals(expected, actual);
   }
 
-  @Test
-  public void testGetTimestampParamWithCalByIndex() throws SQLException {
+  @ParameterizedTest
+  @ValueSource(strings = {"America/New_York", "Asia/Tokyo"})
+  public void testGetTimestampParamWithCalByIndex(String zoneId) throws SQLException {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Calendar cal = Calendar.getInstance();
-    Timestamp expected = new Timestamp(cal.getTimeInMillis());
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
+    Timestamp expected = new Timestamp(1700000000000L);
 
     statement.getParameterHandler().setParameter(1, expected, Timestamp.class);
     Timestamp actual = statement.getTimestamp(1, cal);
     assertEquals(expected, actual);
   }
 
-  @Test
-  public void testGetTimestampParamWithCalByName() throws SQLException {
+  @ParameterizedTest
+  @ValueSource(strings = {"America/New_York", "Asia/Tokyo"})
+  public void testGetTimestampParamWithCalByName(String zoneId) throws SQLException {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Calendar cal = Calendar.getInstance();
-    Timestamp expected = new Timestamp(cal.getTimeInMillis());
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
+    Timestamp expected = new Timestamp(1700000000000L);
 
     statement
         .getParameterHandler()
@@ -1050,22 +1055,24 @@ public class BigQueryCallableStatementTest {
     assertEquals(expected, actual);
   }
 
-  @Test
-  public void testSetTimestampCalParamByName() throws SQLException {
+  @ParameterizedTest
+  @ValueSource(strings = {"America/New_York", "Asia/Tokyo"})
+  public void testSetTimestampCalParamByName(String zoneId) throws SQLException {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Timestamp expectedTimestamp = Timestamp.valueOf("2026-07-17 12:34:56.789");
-    Calendar expectedCal = Calendar.getInstance();
+    Timestamp expectedTimestamp = new Timestamp(1700000000000L);
+    Calendar expectedCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
 
     statement.setTimestamp(PARAM_KEY, expectedTimestamp, expectedCal);
     Timestamp actual = statement.getTimestamp(PARAM_KEY);
-    assertNotNull(actual);
+    assertEquals(expectedTimestamp, actual);
     actual = statement.getTimestamp(PARAM_KEY, expectedCal);
-    assertNotNull(actual);
+    assertEquals(expectedTimestamp, actual);
   }
 
   ////////// Private helper methods ////////////////////////
+
   private void registerOutParamIndexHelper(
       int paramIndex, int javaSqlType, Class<?> javaType, StandardSQLTypeName sqlType, int scale)
       throws SQLException {

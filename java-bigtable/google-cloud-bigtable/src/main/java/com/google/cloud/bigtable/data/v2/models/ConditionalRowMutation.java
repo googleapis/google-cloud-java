@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
@@ -153,6 +154,34 @@ public final class ConditionalRowMutation implements Serializable {
    * <p>This method is considered an internal implementation detail and not meant to be used by
    * applications.
    */
+  @InternalApi
+  public TargetId getTargetId() {
+    return targetId;
+  }
+
+  /**
+   * Creates the {@link SessionCheckAndMutateRowRequest} protobuf used by the session-based data
+   * path.
+   *
+   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * applications.
+   */
+  @InternalApi
+  public SessionCheckAndMutateRowRequest toSessionProto() {
+    Preconditions.checkState(
+        !builder.getTrueMutationsList().isEmpty() || !builder.getFalseMutationsList().isEmpty(),
+        "ConditionalRowMutations must have `then` or `otherwise` mutations.");
+    SessionCheckAndMutateRowRequest.Builder sessionBuilder =
+        SessionCheckAndMutateRowRequest.newBuilder()
+            .setKey(builder.getRowKey())
+            .addAllTrueMutations(builder.getTrueMutationsList())
+            .addAllFalseMutations(builder.getFalseMutationsList());
+    if (builder.hasPredicateFilter()) {
+      sessionBuilder.setPredicateFilter(builder.getPredicateFilter());
+    }
+    return sessionBuilder.build();
+  }
+
   @InternalApi
   public CheckAndMutateRowRequest toProto(RequestContext requestContext) {
     Preconditions.checkState(

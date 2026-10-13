@@ -65,6 +65,14 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_beyondcorp_appconnectors_v1_DeleteAppConnectorRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_beyondcorp_appconnectors_v1_ReportStatusRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_beyondcorp_appconnectors_v1_ReportStatusRequest_fieldAccessorTable;
@@ -105,18 +113,18 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
           + "o\032\031google/api/resource.proto\032Lgoogle/clo"
           + "ud/beyondcorp/appconnectors/v1/app_connector_instance_config.proto\032<google/cloud"
           + "/beyondcorp/appconnectors/v1/resource_in"
-          + "fo.proto\032#google/longrunning/operations.proto\032"
+          + "fo.proto\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\267\001\n"
           + "\030ListAppConnectorsRequest\022>\n"
-          + "\006parent\030\001 \001(\tB.\340"
-          + "A\002\372A(\022&beyondcorp.googleapis.com/AppConnector\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&beyondcorp.googleapis.com/AppConnector\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\231\001\n"
           + "\031ListAppConnectorsResponse\022N\n"
-          + "\016app_connectors\030\001 \003(\01326.googl"
-          + "e.cloud.beyondcorp.appconnectors.v1.AppConnector\022\027\n"
+          + "\016app_connectors\030\001"
+          + " \003(\01326.google.cloud.beyondcorp.appconnectors.v1.AppConnector\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"V\n"
           + "\026GetAppConnectorRequest\022<\n"
@@ -126,48 +134,52 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
           + "\006parent\030\001 \001("
           + "\tB.\340A\002\372A(\022&beyondcorp.googleapis.com/AppConnector\022\035\n"
           + "\020app_connector_id\030\002 \001(\tB\003\340A\001\022R\n\r"
-          + "app_connector\030\003"
-          + " \001(\01326.google.cloud.beyondcorp.appconnectors.v1.AppConnectorB\003\340A\002\022\027\n\n"
+          + "app_connector\030\003 \001(\0132"
+          + "6.google.cloud.beyondcorp.appconnectors.v1.AppConnectorB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\022\032\n\r"
           + "validate_only\030\005 \001(\010B\003\340A\001\"\332\001\n"
           + "\031UpdateAppConnectorRequest\0224\n"
-          + "\013update_mask\030\001"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022R\n\r"
-          + "app_connector\030\002 \001(\01326.google"
-          + ".cloud.beyondcorp.appconnectors.v1.AppConnectorB\003\340A\002\022\027\n\n"
-          + "request_id\030\003 \001(\tB\003\340A\001\022\032\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022R\n"
           + "\r"
+          + "app_connector\030\002 \001(\01326.google.cloud.beyo"
+          + "ndcorp.appconnectors.v1.AppConnectorB\003\340A\002\022\027\n\n"
+          + "request_id\030\003 \001(\tB\003\340A\001\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\216\001\n"
           + "\031DeleteAppConnectorRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&beyondcorp.googleapis.com/AppConnector\022\027\n"
-          + "\n"
+          + "&beyondcorp.googleapis.com/AppConnector\022\027\n\n"
           + "request_id\030\002 \001(\tB\003\340A\001\022\032\n\r"
-          + "validate_only\030\003 \001(\010B\003\340A\001\"\345\001\n"
+          + "validate_only\030\003 \001(\010B\003\340A\001\"e\n"
+          + "\034ResolveInstanceConfigRequest\022E\n\r"
+          + "app_connector\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&beyondcorp.googleapis.com/AppConnector\"~\n"
+          + "\035ResolveInstanceConfigResponse\022]\n"
+          + "\017instance_config\030\001 \001(\013"
+          + "2D.google.cloud.beyondcorp.appconnectors.v1.AppConnectorInstanceConfig\"\345\001\n"
           + "\023ReportStatusRequest\022E\n\r"
           + "app_connector\030\001 \001(\tB.\340A\002\372A(\n"
           + "&beyondcorp.googleapis.com/AppConnector\022R\n\r"
-          + "resource_info\030\002"
-          + " \001(\01326.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoB\003\340A\002\022\027\n\n"
+          + "resource_info\030\002 \001(\01326.google.cl"
+          + "oud.beyondcorp.appconnectors.v1.ResourceInfoB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\"\313\007\n"
           + "\014AppConnector\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022W\n"
-          + "\006labels\030\004 \003"
-          + "(\0132B.google.cloud.beyondcorp.appconnectors.v1.AppConnector.LabelsEntryB\003\340A\001\022\031\n"
+          + "\006labels\030\004 \003(\0132B.google.cloud.be"
+          + "yondcorp.appconnectors.v1.AppConnector.LabelsEntryB\003\340A\001\022\031\n"
           + "\014display_name\030\005 \001(\tB\003\340A\001\022\020\n"
           + "\003uid\030\006 \001(\tB\003\340A\003\022P\n"
-          + "\005state\030\007 \001(\0162<.google.cloud.beyondcor"
-          + "p.appconnectors.v1.AppConnector.StateB\003\340A\003\022a\n"
-          + "\016principal_info\030\010 \001(\0132D.google.clou"
-          + "d.beyondcorp.appconnectors.v1.AppConnector.PrincipalInfoB\003\340A\002\022R\n\r"
-          + "resource_info\030\013"
-          + " \001(\01326.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoB\003\340A\001\032\250\001\n\r"
+          + "\005state\030\007 \001(\0162<.go"
+          + "ogle.cloud.beyondcorp.appconnectors.v1.AppConnector.StateB\003\340A\003\022a\n"
+          + "\016principal_info\030\010 \001(\0132D.google.cloud.beyondcorp.appconn"
+          + "ectors.v1.AppConnector.PrincipalInfoB\003\340A\002\022R\n\r"
+          + "resource_info\030\013 \001(\01326.google.cloud."
+          + "beyondcorp.appconnectors.v1.ResourceInfoB\003\340A\001\032\250\001\n\r"
           + "PrincipalInfo\022n\n"
-          + "\017service_account\030\001 \001(\0132S.google.cl"
-          + "oud.beyondcorp.appconnectors.v1.AppConnector.PrincipalInfo.ServiceAccountH\000\032\037\n"
+          + "\017service_account\030\001 \001(\0132S.google.cloud.beyondcorp.appco"
+          + "nnectors.v1.AppConnector.PrincipalInfo.ServiceAccountH\000\032\037\n"
           + "\016ServiceAccount\022\r\n"
           + "\005email\030\001 \001(\tB\006\n"
           + "\004type\032-\n"
@@ -181,8 +193,8 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
           + "\010UPDATING\020\003\022\014\n"
           + "\010DELETING\020\004\022\010\n"
           + "\004DOWN\020\005:r\352Ao\n"
-          + "&beyondcorp.googleapis.com/AppConnector\022Eprojects/{pro"
-          + "ject}/locations/{location}/appConnectors/{app_connector}\"\214\002\n"
+          + "&beyondcorp.googleapis.com/AppConn"
+          + "ector\022Eprojects/{project}/locations/{location}/appConnectors/{app_connector}\"\214\002\n"
           + "\035AppConnectorOperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
@@ -190,46 +202,52 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\0032\336\014\n"
-          + "\024AppConnectorsService\022\340\001\n"
-          + "\021ListAppConnectors\022B.google.cloud.beyondcorp"
-          + ".appconnectors.v1.ListAppConnectorsRequest\032C.google.cloud.beyondcorp.appconnecto"
-          + "rs.v1.ListAppConnectorsResponse\"B\332A\006pare"
-          + "nt\202\323\344\223\0023\0221/v1/{parent=projects/*/locations/*}/appConnectors\022\315\001\n"
-          + "\017GetAppConnector\022@.google.cloud.beyondcorp.appconnectors."
-          + "v1.GetAppConnectorRequest\0326.google.cloud.beyondcorp.appconnectors.v1.AppConnecto"
-          + "r\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=projects/*/locations/*/appConnectors/*}\022\233\002\n"
-          + "\022CreateAppConnector\022C.google.cloud.beyondcorp.app"
-          + "connectors.v1.CreateAppConnectorRequest\032\035.google.longrunning.Operation\"\240\001\312A-\n"
-          + "\014AppConnector\022\035AppConnectorOperationMetadat"
-          + "a\332A%parent,app_connector,app_connector_i"
-          + "d\202\323\344\223\002B\"1/v1/{parent=projects/*/locations/*}/appConnectors:\r"
-          + "app_connector\022\235\002\n"
-          + "\022UpdateAppConnector\022C.google.cloud.beyondco"
-          + "rp.appconnectors.v1.UpdateAppConnectorRe"
-          + "quest\032\035.google.longrunning.Operation\"\242\001\312A-\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\0032\213\017\n"
+          + "\024AppConnectorsService\022\343\001\n"
+          + "\021ListAppConnectors\022B.google.cloud.beyondcorp.appconnectors.v1.Li"
+          + "stAppConnectorsRequest\032C.google.cloud.beyondcorp.appconnectors.v1.ListAppConnect"
+          + "orsResponse\"E\210\002\001\332A\006parent\202\323\344\223\0023\0221/v1/{pa"
+          + "rent=projects/*/locations/*}/appConnectors\022\320\001\n"
+          + "\017GetAppConnector\022@.google.cloud.beyondcorp.appconnectors.v1.GetAppConnecto"
+          + "rRequest\0326.google.cloud.beyondcorp.appco"
+          + "nnectors.v1.AppConnector\"C\210\002\001\332A\004name\202\323\344\223"
+          + "\0023\0221/v1/{name=projects/*/locations/*/appConnectors/*}\022\236\002\n"
+          + "\022CreateAppConnector\022C.google.cloud.beyondcorp.appconnectors.v1."
+          + "CreateAppConnectorRequest\032\035.google.longrunning.Operation\"\243\001\210\002\001\312A-\n"
+          + "\014AppConnector\022\035AppConnectorOperationMetadata\332A%parent,"
+          + "app_connector,app_connector_id\202\323\344\223\002B\"1/v"
+          + "1/{parent=projects/*/locations/*}/appConnectors:\r"
+          + "app_connector\022\240\002\n"
+          + "\022UpdateAppConnector\022C.google.cloud.beyondcorp.appconne"
+          + "ctors.v1.UpdateAppConnectorRequest\032\035.google.longrunning.Operation\"\245\001\210\002\001\312A-\n"
+          + "\014AppConnector\022\035AppConnectorOperationMetadata\332"
+          + "A\031app_connector,update_mask\202\323\344\223\002P2?/v1/{"
+          + "app_connector.name=projects/*/locations/*/appConnectors/*}:\r"
+          + "app_connector\022\366\001\n"
+          + "\022DeleteAppConnector\022C.google.cloud.beyondco"
+          + "rp.appconnectors.v1.DeleteAppConnectorRe"
+          + "quest\032\035.google.longrunning.Operation\"|\210\002\001\312A6\n"
+          + "\025google.protobuf.Empty\022\035AppConnecto"
+          + "rOperationMetadata\332A\004name\202\323\344\223\0023*1/v1/{na"
+          + "me=projects/*/locations/*/appConnectors/*}\022\225\002\n"
+          + "\025ResolveInstanceConfig\022F.google.cloud.beyondcorp.appconnectors.v1.ResolveI"
+          + "nstanceConfigRequest\032G.google.cloud.beyo"
+          + "ndcorp.appconnectors.v1.ResolveInstanceConfigResponse\"k\210\002\001\332A\r"
+          + "app_connector\202\323\344\223\002R\022P/v1/{app_connector=projects/*/location"
+          + "s/*/appConnectors/*}:resolveInstanceConfig\022\222\002\n"
+          + "\014ReportStatus\022=.google.cloud.beyondcorp.appconnectors.v1.ReportStatusReque"
+          + "st\032\035.google.longrunning.Operation\"\243\001\210\002\001\312A-\n"
           + "\014AppConnector\022\035AppConnectorOperationM"
-          + "etadata\332A\031app_connector,update_mask\202\323\344\223\002"
-          + "P2?/v1/{app_connector.name=projects/*/locations/*/appConnectors/*}:\r"
-          + "app_connector\022\363\001\n"
-          + "\022DeleteAppConnector\022C.google.cloud.beyondcorp.appconnectors.v1.DeleteAppCon"
-          + "nectorRequest\032\035.google.longrunning.Operation\"y\312A6\n"
-          + "\025google.protobuf.Empty\022\035AppCon"
-          + "nectorOperationMetadata\332A\004name\202\323\344\223\0023*1/v"
-          + "1/{name=projects/*/locations/*/appConnectors/*}\022\217\002\n"
-          + "\014ReportStatus\022=.google.cloud.beyondcorp.appconnectors.v1.ReportStatus"
-          + "Request\032\035.google.longrunning.Operation\"\240\001\312A-\n"
-          + "\014AppConnector\022\035AppConnectorOperatio"
-          + "nMetadata\332A\033app_connector,resource_info\202"
-          + "\323\344\223\002L\"G/v1/{app_connector=projects/*/loc"
-          + "ations/*/appConnectors/*}:reportStatus:\001"
-          + "*\032M\312A\031beyondcorp.googleapis.com\322A.https:"
-          + "//www.googleapis.com/auth/cloud-platformB\244\002\n"
-          + ",com.google.cloud.beyondcorp.appconnectors.v1B\031AppConnectorsServiceProtoP\001ZR"
-          + "cloud.google.com/go/beyondcorp/appconnectors/apiv1/appconnectorspb;appconnectors"
-          + "pb\252\002(Google.Cloud.BeyondCorp.AppConnecto"
-          + "rs.V1\312\002(Google\\Cloud\\BeyondCorp\\AppConne"
-          + "ctors\\V1\352\002,Google::Cloud::BeyondCorp::AppConnectors::V1b\006proto3"
+          + "etadata\332A\033app_connector,resource_info\202\323\344"
+          + "\223\002L\"G/v1/{app_connector=projects/*/locat"
+          + "ions/*/appConnectors/*}:reportStatus:\001*\032"
+          + "P\210\002\001\312A\031beyondcorp.googleapis.com\322A.https"
+          + "://www.googleapis.com/auth/cloud-platformB\244\002\n"
+          + ",com.google.cloud.beyondcorp.appconnectors.v1B\031AppConnectorsServiceProtoP\001Z"
+          + "Rcloud.google.com/go/beyondcorp/appconnectors/apiv1/appconnectorspb;appconnector"
+          + "spb\252\002(Google.Cloud.BeyondCorp.AppConnect"
+          + "ors.V1\312\002(Google\\Cloud\\BeyondCorp\\AppConn"
+          + "ectors\\V1\352\002,Google::Cloud::BeyondCorp::AppConnectors::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -243,6 +261,7 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
                   .getDescriptor(),
               com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -294,8 +313,24 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
             new java.lang.String[] {
               "Name", "RequestId", "ValidateOnly",
             });
-    internal_static_google_cloud_beyondcorp_appconnectors_v1_ReportStatusRequest_descriptor =
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigRequest_descriptor =
         getDescriptor().getMessageType(6);
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigRequest_descriptor,
+            new java.lang.String[] {
+              "AppConnector",
+            });
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigResponse_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_beyondcorp_appconnectors_v1_ResolveInstanceConfigResponse_descriptor,
+            new java.lang.String[] {
+              "InstanceConfig",
+            });
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ReportStatusRequest_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_beyondcorp_appconnectors_v1_ReportStatusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_beyondcorp_appconnectors_v1_ReportStatusRequest_descriptor,
@@ -303,7 +338,7 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
               "AppConnector", "ResourceInfo", "RequestId", "ValidateOnly",
             });
     internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnector_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnector_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnector_descriptor,
@@ -346,7 +381,7 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
               "Key", "Value",
             });
     internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnectorOperationMetadata_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnectorOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_beyondcorp_appconnectors_v1_AppConnectorOperationMetadata_descriptor,
@@ -367,6 +402,7 @@ public final class AppConnectorsServiceProto extends com.google.protobuf.Generat
     com.google.cloud.beyondcorp.appconnectors.v1.AppConnectorInstanceConfigProto.getDescriptor();
     com.google.cloud.beyondcorp.appconnectors.v1.ResourceInfoProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

@@ -202,6 +202,45 @@ public class MockParticipantsImpl extends ParticipantsImplBase {
   }
 
   @Override
+  public StreamObserver<StreamingReactiveCompanionSuggestionsRequest>
+      streamingReactiveCompanionSuggestions(
+          final StreamObserver<StreamingReactiveCompanionSuggestionsResponse> responseObserver) {
+    StreamObserver<StreamingReactiveCompanionSuggestionsRequest> requestObserver =
+        new StreamObserver<StreamingReactiveCompanionSuggestionsRequest>() {
+          @Override
+          public void onNext(StreamingReactiveCompanionSuggestionsRequest value) {
+            requests.add(value);
+            final Object response = responses.remove();
+            if (response instanceof StreamingReactiveCompanionSuggestionsResponse) {
+              responseObserver.onNext(((StreamingReactiveCompanionSuggestionsResponse) response));
+            } else if (response instanceof Exception) {
+              responseObserver.onError(((Exception) response));
+            } else {
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method"
+                              + " StreamingReactiveCompanionSuggestions, expected %s or %s",
+                          response == null ? "null" : response.getClass().getName(),
+                          StreamingReactiveCompanionSuggestionsResponse.class.getName(),
+                          Exception.class.getName())));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
+  }
+
+  @Override
   public StreamObserver<BidiStreamingAnalyzeContentRequest> bidiStreamingAnalyzeContent(
       final StreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver) {
     StreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =

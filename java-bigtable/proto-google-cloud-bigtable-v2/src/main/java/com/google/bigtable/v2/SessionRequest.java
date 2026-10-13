@@ -80,6 +80,8 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
     OPEN_SESSION(1),
     CLOSE_SESSION(2),
     VIRTUAL_RPC(3),
+    CONTINUE_VIRTUAL_RPC(4),
+    CANCEL_VIRTUAL_RPC(5),
     PAYLOAD_NOT_SET(0);
     private final int value;
 
@@ -105,6 +107,10 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
           return CLOSE_SESSION;
         case 3:
           return VIRTUAL_RPC;
+        case 4:
+          return CONTINUE_VIRTUAL_RPC;
+        case 5:
+          return CANCEL_VIRTUAL_RPC;
         case 0:
           return PAYLOAD_NOT_SET;
         default:
@@ -223,6 +229,75 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
     return com.google.bigtable.v2.VirtualRpcRequest.getDefaultInstance();
   }
 
+  public static final int CONTINUE_VIRTUAL_RPC_FIELD_NUMBER = 4;
+
+  /**
+   * <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code>
+   *
+   * @return Whether the continueVirtualRpc field is set.
+   */
+  @java.lang.Override
+  public boolean hasContinueVirtualRpc() {
+    return payloadCase_ == 4;
+  }
+
+  /**
+   * <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code>
+   *
+   * @return The continueVirtualRpc.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.ContinueVirtualRpcRequest getContinueVirtualRpc() {
+    if (payloadCase_ == 4) {
+      return (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_;
+    }
+    return com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance();
+  }
+
+  /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+  @java.lang.Override
+  public com.google.bigtable.v2.ContinueVirtualRpcRequestOrBuilder
+      getContinueVirtualRpcOrBuilder() {
+    if (payloadCase_ == 4) {
+      return (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_;
+    }
+    return com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance();
+  }
+
+  public static final int CANCEL_VIRTUAL_RPC_FIELD_NUMBER = 5;
+
+  /**
+   * <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code>
+   *
+   * @return Whether the cancelVirtualRpc field is set.
+   */
+  @java.lang.Override
+  public boolean hasCancelVirtualRpc() {
+    return payloadCase_ == 5;
+  }
+
+  /**
+   * <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code>
+   *
+   * @return The cancelVirtualRpc.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.CancelVirtualRpcRequest getCancelVirtualRpc() {
+    if (payloadCase_ == 5) {
+      return (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_;
+    }
+    return com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance();
+  }
+
+  /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+  @java.lang.Override
+  public com.google.bigtable.v2.CancelVirtualRpcRequestOrBuilder getCancelVirtualRpcOrBuilder() {
+    if (payloadCase_ == 5) {
+      return (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_;
+    }
+    return com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -245,6 +320,12 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
     }
     if (payloadCase_ == 3) {
       output.writeMessage(3, (com.google.bigtable.v2.VirtualRpcRequest) payload_);
+    }
+    if (payloadCase_ == 4) {
+      output.writeMessage(4, (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_);
+    }
+    if (payloadCase_ == 5) {
+      output.writeMessage(5, (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -269,6 +350,16 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.bigtable.v2.VirtualRpcRequest) payload_);
+    }
+    if (payloadCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_);
+    }
+    if (payloadCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -296,6 +387,12 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
       case 3:
         if (!getVirtualRpc().equals(other.getVirtualRpc())) return false;
         break;
+      case 4:
+        if (!getContinueVirtualRpc().equals(other.getContinueVirtualRpc())) return false;
+        break;
+      case 5:
+        if (!getCancelVirtualRpc().equals(other.getCancelVirtualRpc())) return false;
+        break;
       case 0:
       default:
     }
@@ -322,6 +419,14 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
       case 3:
         hash = (37 * hash) + VIRTUAL_RPC_FIELD_NUMBER;
         hash = (53 * hash) + getVirtualRpc().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + CONTINUE_VIRTUAL_RPC_FIELD_NUMBER;
+        hash = (53 * hash) + getContinueVirtualRpc().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + CANCEL_VIRTUAL_RPC_FIELD_NUMBER;
+        hash = (53 * hash) + getCancelVirtualRpc().hashCode();
         break;
       case 0:
       default:
@@ -474,6 +579,12 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
       if (virtualRpcBuilder_ != null) {
         virtualRpcBuilder_.clear();
       }
+      if (continueVirtualRpcBuilder_ != null) {
+        continueVirtualRpcBuilder_.clear();
+      }
+      if (cancelVirtualRpcBuilder_ != null) {
+        cancelVirtualRpcBuilder_.clear();
+      }
       payloadCase_ = 0;
       payload_ = null;
       return this;
@@ -527,6 +638,12 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
       if (payloadCase_ == 3 && virtualRpcBuilder_ != null) {
         result.payload_ = virtualRpcBuilder_.build();
       }
+      if (payloadCase_ == 4 && continueVirtualRpcBuilder_ != null) {
+        result.payload_ = continueVirtualRpcBuilder_.build();
+      }
+      if (payloadCase_ == 5 && cancelVirtualRpcBuilder_ != null) {
+        result.payload_ = cancelVirtualRpcBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -555,6 +672,16 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
         case VIRTUAL_RPC:
           {
             mergeVirtualRpc(other.getVirtualRpc());
+            break;
+          }
+        case CONTINUE_VIRTUAL_RPC:
+          {
+            mergeContinueVirtualRpc(other.getContinueVirtualRpc());
+            break;
+          }
+        case CANCEL_VIRTUAL_RPC:
+          {
+            mergeCancelVirtualRpc(other.getCancelVirtualRpc());
             break;
           }
         case PAYLOAD_NOT_SET:
@@ -609,6 +736,20 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
                 payloadCase_ = 3;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetContinueVirtualRpcFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 4;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetCancelVirtualRpcFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1089,6 +1230,307 @@ public final class SessionRequest extends com.google.protobuf.GeneratedMessage
       payloadCase_ = 3;
       onChanged();
       return virtualRpcBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.ContinueVirtualRpcRequest,
+            com.google.bigtable.v2.ContinueVirtualRpcRequest.Builder,
+            com.google.bigtable.v2.ContinueVirtualRpcRequestOrBuilder>
+        continueVirtualRpcBuilder_;
+
+    /**
+     * <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code>
+     *
+     * @return Whether the continueVirtualRpc field is set.
+     */
+    @java.lang.Override
+    public boolean hasContinueVirtualRpc() {
+      return payloadCase_ == 4;
+    }
+
+    /**
+     * <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code>
+     *
+     * @return The continueVirtualRpc.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.ContinueVirtualRpcRequest getContinueVirtualRpc() {
+      if (continueVirtualRpcBuilder_ == null) {
+        if (payloadCase_ == 4) {
+          return (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_;
+        }
+        return com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 4) {
+          return continueVirtualRpcBuilder_.getMessage();
+        }
+        return com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance();
+      }
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    public Builder setContinueVirtualRpc(com.google.bigtable.v2.ContinueVirtualRpcRequest value) {
+      if (continueVirtualRpcBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        continueVirtualRpcBuilder_.setMessage(value);
+      }
+      payloadCase_ = 4;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    public Builder setContinueVirtualRpc(
+        com.google.bigtable.v2.ContinueVirtualRpcRequest.Builder builderForValue) {
+      if (continueVirtualRpcBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        continueVirtualRpcBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 4;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    public Builder mergeContinueVirtualRpc(com.google.bigtable.v2.ContinueVirtualRpcRequest value) {
+      if (continueVirtualRpcBuilder_ == null) {
+        if (payloadCase_ == 4
+            && payload_ != com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance()) {
+          payload_ =
+              com.google.bigtable.v2.ContinueVirtualRpcRequest.newBuilder(
+                      (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 4) {
+          continueVirtualRpcBuilder_.mergeFrom(value);
+        } else {
+          continueVirtualRpcBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 4;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    public Builder clearContinueVirtualRpc() {
+      if (continueVirtualRpcBuilder_ == null) {
+        if (payloadCase_ == 4) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 4) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        continueVirtualRpcBuilder_.clear();
+      }
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    public com.google.bigtable.v2.ContinueVirtualRpcRequest.Builder getContinueVirtualRpcBuilder() {
+      return internalGetContinueVirtualRpcFieldBuilder().getBuilder();
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    @java.lang.Override
+    public com.google.bigtable.v2.ContinueVirtualRpcRequestOrBuilder
+        getContinueVirtualRpcOrBuilder() {
+      if ((payloadCase_ == 4) && (continueVirtualRpcBuilder_ != null)) {
+        return continueVirtualRpcBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 4) {
+          return (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_;
+        }
+        return com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance();
+      }
+    }
+
+    /** <code>.google.bigtable.v2.ContinueVirtualRpcRequest continue_virtual_rpc = 4;</code> */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.ContinueVirtualRpcRequest,
+            com.google.bigtable.v2.ContinueVirtualRpcRequest.Builder,
+            com.google.bigtable.v2.ContinueVirtualRpcRequestOrBuilder>
+        internalGetContinueVirtualRpcFieldBuilder() {
+      if (continueVirtualRpcBuilder_ == null) {
+        if (!(payloadCase_ == 4)) {
+          payload_ = com.google.bigtable.v2.ContinueVirtualRpcRequest.getDefaultInstance();
+        }
+        continueVirtualRpcBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.v2.ContinueVirtualRpcRequest,
+                com.google.bigtable.v2.ContinueVirtualRpcRequest.Builder,
+                com.google.bigtable.v2.ContinueVirtualRpcRequestOrBuilder>(
+                (com.google.bigtable.v2.ContinueVirtualRpcRequest) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 4;
+      onChanged();
+      return continueVirtualRpcBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.CancelVirtualRpcRequest,
+            com.google.bigtable.v2.CancelVirtualRpcRequest.Builder,
+            com.google.bigtable.v2.CancelVirtualRpcRequestOrBuilder>
+        cancelVirtualRpcBuilder_;
+
+    /**
+     * <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code>
+     *
+     * @return Whether the cancelVirtualRpc field is set.
+     */
+    @java.lang.Override
+    public boolean hasCancelVirtualRpc() {
+      return payloadCase_ == 5;
+    }
+
+    /**
+     * <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code>
+     *
+     * @return The cancelVirtualRpc.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.CancelVirtualRpcRequest getCancelVirtualRpc() {
+      if (cancelVirtualRpcBuilder_ == null) {
+        if (payloadCase_ == 5) {
+          return (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_;
+        }
+        return com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 5) {
+          return cancelVirtualRpcBuilder_.getMessage();
+        }
+        return com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance();
+      }
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    public Builder setCancelVirtualRpc(com.google.bigtable.v2.CancelVirtualRpcRequest value) {
+      if (cancelVirtualRpcBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        cancelVirtualRpcBuilder_.setMessage(value);
+      }
+      payloadCase_ = 5;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    public Builder setCancelVirtualRpc(
+        com.google.bigtable.v2.CancelVirtualRpcRequest.Builder builderForValue) {
+      if (cancelVirtualRpcBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        cancelVirtualRpcBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 5;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    public Builder mergeCancelVirtualRpc(com.google.bigtable.v2.CancelVirtualRpcRequest value) {
+      if (cancelVirtualRpcBuilder_ == null) {
+        if (payloadCase_ == 5
+            && payload_ != com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance()) {
+          payload_ =
+              com.google.bigtable.v2.CancelVirtualRpcRequest.newBuilder(
+                      (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 5) {
+          cancelVirtualRpcBuilder_.mergeFrom(value);
+        } else {
+          cancelVirtualRpcBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 5;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    public Builder clearCancelVirtualRpc() {
+      if (cancelVirtualRpcBuilder_ == null) {
+        if (payloadCase_ == 5) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 5) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        cancelVirtualRpcBuilder_.clear();
+      }
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    public com.google.bigtable.v2.CancelVirtualRpcRequest.Builder getCancelVirtualRpcBuilder() {
+      return internalGetCancelVirtualRpcFieldBuilder().getBuilder();
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    @java.lang.Override
+    public com.google.bigtable.v2.CancelVirtualRpcRequestOrBuilder getCancelVirtualRpcOrBuilder() {
+      if ((payloadCase_ == 5) && (cancelVirtualRpcBuilder_ != null)) {
+        return cancelVirtualRpcBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 5) {
+          return (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_;
+        }
+        return com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance();
+      }
+    }
+
+    /** <code>.google.bigtable.v2.CancelVirtualRpcRequest cancel_virtual_rpc = 5;</code> */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.CancelVirtualRpcRequest,
+            com.google.bigtable.v2.CancelVirtualRpcRequest.Builder,
+            com.google.bigtable.v2.CancelVirtualRpcRequestOrBuilder>
+        internalGetCancelVirtualRpcFieldBuilder() {
+      if (cancelVirtualRpcBuilder_ == null) {
+        if (!(payloadCase_ == 5)) {
+          payload_ = com.google.bigtable.v2.CancelVirtualRpcRequest.getDefaultInstance();
+        }
+        cancelVirtualRpcBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.v2.CancelVirtualRpcRequest,
+                com.google.bigtable.v2.CancelVirtualRpcRequest.Builder,
+                com.google.bigtable.v2.CancelVirtualRpcRequestOrBuilder>(
+                (com.google.bigtable.v2.CancelVirtualRpcRequest) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 5;
+      onChanged();
+      return cancelVirtualRpcBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.SessionRequest)

@@ -31,10 +31,9 @@ public interface BatchCreateChildPublishersRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource where
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-   * Format: `networks/{network_code}`
-   * The parent field in the CreateChildPublisherRequest must match this
-   * field.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+   * Format: `networks/{network_code}` The parent field in the
+   * CreateChildPublisherRequest must match this field.
    * </pre>
    *
    * <code>
@@ -50,10 +49,9 @@ public interface BatchCreateChildPublishersRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource where
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-   * Format: `networks/{network_code}`
-   * The parent field in the CreateChildPublisherRequest must match this
-   * field.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+   * Format: `networks/{network_code}` The parent field in the
+   * CreateChildPublisherRequest must match this field.
    * </pre>
    *
    * <code>

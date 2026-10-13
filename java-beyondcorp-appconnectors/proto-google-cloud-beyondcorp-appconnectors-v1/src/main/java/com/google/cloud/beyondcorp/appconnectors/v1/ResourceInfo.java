@@ -24,16 +24,11 @@ package com.google.cloud.beyondcorp.appconnectors.v1;
  *
  *
  * <pre>
- * ResourceInfo represents the information/status of an app connector resource.
- * Such as:
- * - remote_agent
- * - container
- * - runtime
- * - appgateway
- * - appconnector
- * - appconnection
- * - tunnel
- * - logagent
+ * ResourceInfo represents the information or status of an app connector
+ * resource component that's used to report on various parts of the system. For
+ * example, ResourceInfo can be used to convey the status of a remote_agent,
+ * including the status of an appgateway for an runtime environment in a
+ * container instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.beyondcorp.appconnectors.v1.ResourceInfo}
@@ -572,16 +567,11 @@ public final class ResourceInfo extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * ResourceInfo represents the information/status of an app connector resource.
-   * Such as:
-   * - remote_agent
-   * - container
-   * - runtime
-   * - appgateway
-   * - appconnector
-   * - appconnection
-   * - tunnel
-   * - logagent
+   * ResourceInfo represents the information or status of an app connector
+   * resource component that's used to report on various parts of the system. For
+   * example, ResourceInfo can be used to convey the status of a remote_agent,
+   * including the status of an appgateway for an runtime environment in a
+   * container instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.beyondcorp.appconnectors.v1.ResourceInfo}

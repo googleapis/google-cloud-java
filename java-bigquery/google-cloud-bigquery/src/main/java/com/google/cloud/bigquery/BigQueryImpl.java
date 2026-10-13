@@ -2529,7 +2529,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setTotalSlotMs(results.getTotalSlotMs())
         .setNumDmlAffectedRows(results.getNumDmlAffectedRows())
         .setSessionInfo(
-            results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null);
+            results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null)
+        .setCacheHit(results.getCacheHit());
   }
 
   private static long getNumRows(com.google.api.services.bigquery.model.QueryResponse results) {
@@ -3102,6 +3103,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     Long totalBytesProcessed = stats != null ? stats.getTotalBytesProcessed() : null;
     Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
     Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
+    Boolean cacheHit = stats != null ? stats.getCacheHit() : null;
     SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
 
     // If the completed job is a DDL or DML statement, return immediately without
@@ -3120,6 +3122,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setTotalBytesProcessed(totalBytesProcessed)
           .setTotalSlotMs(totalSlotMs)
           .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setCacheHit(cacheHit)
           .setSessionInfo(sessionInfo)
           .build();
     }
@@ -3186,6 +3189,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setTotalBytesProcessed(totalBytesProcessed)
           .setTotalSlotMs(totalSlotMs)
           .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setCacheHit(cacheHit)
           .setSessionInfo(sessionInfo)
           .build();
     }
@@ -3234,6 +3238,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setTotalBytesProcessed(totalBytesProcessed)
         .setTotalSlotMs(totalSlotMs)
         .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setCacheHit(cacheHit)
         .setSessionInfo(sessionInfo)
         .build();
   }
