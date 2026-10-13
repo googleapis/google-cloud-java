@@ -19,8 +19,12 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.common.collect.Lists;
+import java.util.Collections;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 
 class FieldListTest {
@@ -120,5 +124,23 @@ class FieldListTest {
     assertNotEquals(fieldsSchema, FieldList.of(fieldSchema1, fieldSchema3));
 
     assertEquals(fieldsSchema, FieldList.fromPb(fieldsSchema.toPb()));
+  }
+
+  @Test
+  void testSingleEvaluationAndReuseInOf() {
+    assertSame(fieldsSchema, FieldList.of(fieldsSchema));
+    assertSame(fieldsSchema, Schema.of(fieldsSchema).getFields());
+
+    AtomicInteger transformCount = new AtomicInteger();
+    FieldList list =
+        FieldList.of(
+            Lists.transform(
+                Collections.singletonList(fieldSchema1),
+                field -> {
+                  transformCount.incrementAndGet();
+                  return field;
+                }));
+    assertEquals(1, list.size());
+    assertEquals(1, transformCount.get());
   }
 }
