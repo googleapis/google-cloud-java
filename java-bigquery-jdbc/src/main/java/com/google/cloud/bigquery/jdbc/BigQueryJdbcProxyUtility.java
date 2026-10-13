@@ -256,8 +256,12 @@ final class BigQueryJdbcProxyUtility {
       }
     } else if (CONSCRYPT_PROVIDER != null) {
       try {
+        TrustManagerFactory trustManagerFactory =
+            TrustManagerFactory.getInstance(
+                TrustManagerFactory.getDefaultAlgorithm(), CONSCRYPT_PROVIDER);
+        trustManagerFactory.init((KeyStore) null);
         SSLContext sslContext = SSLContext.getInstance("TLS", CONSCRYPT_PROVIDER);
-        sslContext.init(null, null, null);
+        sslContext.init(null, trustManagerFactory.getTrustManagers(), null);
         SSLConnectionSocketFactory sslSocketFactory = createSslConnectionSocketFactory(sslContext);
         httpClientBuilder.setConnectionManager(
             PoolingHttpClientConnectionManagerBuilder.create()
