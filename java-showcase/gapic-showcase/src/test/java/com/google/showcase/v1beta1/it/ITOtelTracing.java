@@ -414,7 +414,7 @@ class ITOtelTracing {
     assertThrows(UnavailableException.class, () -> grpcClient.echo(echoRequest));
 
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
+    assertThat(spans).hasSize(attempts + 1); // attempts CLIENT spans + 1 INTERNAL operation span
 
     // This single span represents the successful retry, which has resend_count=1
     // The first attempt has no resend_count. The subsequent retries will have a
@@ -492,7 +492,7 @@ class ITOtelTracing {
     assertThrows(InvalidArgumentException.class, () -> httpClient.echo(echoRequest));
 
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
+    assertThat(spans).hasSize(attempts + 1); // attempts CLIENT spans + 1 INTERNAL operation span
 
     // This single span represents the successful retry, which has resend_count=1
     // The first attempt has no resend_count. The subsequent retries will have a
@@ -708,25 +708,29 @@ class ITOtelTracing {
           () -> grpcClient.echo(errorRequest));
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).hasSize(2);
+      assertThat(spans).hasSize(4);
 
-      SpanData grpcSuccessSpan = spans.get(0);
-      assertThat(
-              grpcSuccessSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo("OK");
+      for (int i = 0; i < 2; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.stringKey(
+                            ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo("OK");
+      }
 
-      SpanData grpcErrorSpan = spans.get(1);
-      assertThat(
-              grpcErrorSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo("INVALID_ARGUMENT");
+      for (int i = 2; i < 4; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.stringKey(
+                            ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo("INVALID_ARGUMENT");
+      }
     }
   }
 
@@ -749,23 +753,29 @@ class ITOtelTracing {
           () -> httpClient.echo(errorRequest));
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).hasSize(2);
+      assertThat(spans).hasSize(4);
 
-      SpanData httpSuccessSpan = spans.get(0);
-      assertThat(
-              httpSuccessSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo(200L);
+      for (int i = 0; i < 2; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.longKey(
+                            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo(200L);
+      }
 
-      SpanData httpErrorSpan = spans.get(1);
-      assertThat(
-              httpErrorSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo((long) StatusCode.Code.INVALID_ARGUMENT.getHttpStatusCode());
+      for (int i = 2; i < 4; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.longKey(
+                            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo((long) StatusCode.Code.INVALID_ARGUMENT.getHttpStatusCode());
+      }
     }
   }
 
