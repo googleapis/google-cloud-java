@@ -17,7 +17,9 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.v2.Idempotency;
 import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
@@ -313,5 +315,55 @@ public class BulkMutationTest {
       mutation.setCell("f", "q" + i, "value");
     }
     bulkMutation.add("key", mutation);
+  }
+
+  @Test
+  public void testGetTargetId() {
+    BulkMutation mutation = BulkMutation.create(TABLE_ID);
+    assertThat(mutation.getTargetId()).isEqualTo(TABLE_ID);
+
+    AuthorizedViewId viewId = AuthorizedViewId.of(TABLE_ID, AUTHORIZED_VIEW_ID);
+    mutation = BulkMutation.create(viewId);
+    assertThat(mutation.getTargetId()).isEqualTo(viewId);
+  }
+
+  @Test
+  public void testToSessionProto() {
+    BulkMutation m =
+        BulkMutation.create(TABLE_ID)
+            .add(
+                "key-a",
+                Mutation.create()
+                    .setCell("fake-family1", "fake-qualifier1", 1_000, "fake-value1")
+                    .setCell("fake-family2", "fake-qualifier2", 2_000, "fake-value2"))
+            .add(
+                ByteString.copyFromUtf8("key-b"),
+                Mutation.create().setCell("fake-family3", "fake-qualifier3", 3_000, "fake-value3"));
+
+    SessionMutateRowsRequest sessionReq = m.toSessionProto();
+    assertThat(sessionReq.getEntriesCount()).isEqualTo(2);
+    assertThat(sessionReq.getEntries(0).getKey()).isEqualTo(ByteString.copyFromUtf8("key-a"));
+    assertThat(sessionReq.getEntries(0).getMutationsCount()).isEqualTo(2);
+    assertThat(sessionReq.getEntries(1).getKey()).isEqualTo(ByteString.copyFromUtf8("key-b"));
+    assertThat(sessionReq.getEntries(1).getMutationsCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void testToSessionProtoWithIdempotency() {
+    Idempotency idempotency =
+        Idempotency.newBuilder().setToken(ByteString.copyFromUtf8("token123")).build();
+    MutateRowsRequest proto =
+        MutateRowsRequest.newBuilder()
+            .setTableName("projects/p/instances/i/tables/t")
+            .addEntries(
+                MutateRowsRequest.Entry.newBuilder()
+                    .setRowKey(ByteString.copyFromUtf8("key-a"))
+                    .setIdempotency(idempotency))
+            .build();
+    BulkMutation m = BulkMutation.fromProto(proto);
+    SessionMutateRowsRequest sessionReq = m.toSessionProto();
+    assertThat(sessionReq.getEntriesCount()).isEqualTo(1);
+    assertThat(sessionReq.getEntries(0).hasIdempotency()).isTrue();
+    assertThat(sessionReq.getEntries(0).getIdempotency()).isEqualTo(idempotency);
   }
 }

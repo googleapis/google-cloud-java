@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal.compat;
 
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
@@ -36,4 +37,7 @@ public interface Shim {
 
   UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings);
+
+  UnaryCallable<BulkMutation, Void> decorateMutateRows(
+      UnaryCallable<BulkMutation, Void> classic, UnaryCallSettings<?, ?> settings);
 }

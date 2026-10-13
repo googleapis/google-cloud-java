@@ -23,6 +23,8 @@ import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -75,6 +77,7 @@ public class TableAsync implements AutoCloseable, Closeable {
             VRpcDescriptor.READ_ROW,
             VRpcDescriptor.MUTATE_ROW,
             VRpcDescriptor.CHECK_AND_MUTATE_ROW,
+            VRpcDescriptor.MUTATE_ROWS,
             featureFlags,
             clientInfo,
             configManager,
@@ -130,6 +133,14 @@ public class TableAsync implements AutoCloseable, Closeable {
       SessionCheckAndMutateRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionCheckAndMutateRowResponse> f = new UnaryResponseFuture<>();
     base.checkAndMutateRow(req, f, deadline);
+    return f;
+  }
+
+  // TODO: get deadline from compatibility layer
+  public CompletableFuture<SessionMutateRowsResponse> mutateRows(
+      SessionMutateRowsRequest req, Deadline deadline) {
+    UnaryResponseFuture<SessionMutateRowsResponse> f = new UnaryResponseFuture<>();
+    base.mutateRows(req, f, deadline);
     return f;
   }
 }
