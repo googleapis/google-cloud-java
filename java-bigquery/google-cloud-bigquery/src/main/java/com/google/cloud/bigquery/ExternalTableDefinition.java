@@ -42,33 +42,16 @@ import javax.annotation.Nullable;
 public abstract class ExternalTableDefinition extends TableDefinition {
 
   static final Function<ExternalDataConfiguration, ExternalTableDefinition>
-      FROM_EXTERNAL_DATA_FUNCTION =
-          new Function<ExternalDataConfiguration, ExternalTableDefinition>() {
-            @Override
-            public ExternalTableDefinition apply(ExternalDataConfiguration pb) {
-              return ExternalTableDefinition.fromExternalDataConfiguration(pb);
-            }
-          };
+      FROM_EXTERNAL_DATA_FUNCTION = ExternalTableDefinition::fromExternalDataConfiguration;
   static final Function<ExternalTableDefinition, ExternalDataConfiguration>
-      TO_EXTERNAL_DATA_FUNCTION =
-          new Function<ExternalTableDefinition, ExternalDataConfiguration>() {
-            @Override
-            public ExternalDataConfiguration apply(ExternalTableDefinition tableInfo) {
-              return tableInfo.toExternalDataConfigurationPb();
-            }
-          };
+      TO_EXTERNAL_DATA_FUNCTION = ExternalTableDefinition::toExternalDataConfigurationPb;
 
   private static final long serialVersionUID = -5951580238459622025L;
 
   public static final class SourceColumnMatch extends StringEnumValue {
     private static final long serialVersionUID = 818920627219751207L;
     private static final ApiFunction<String, SourceColumnMatch> CONSTRUCTOR =
-        new ApiFunction<String, SourceColumnMatch>() {
-          @Override
-          public SourceColumnMatch apply(String constant) {
-            return new SourceColumnMatch(constant);
-          }
-        };
+        SourceColumnMatch::new;
 
     private static final StringEnumType<SourceColumnMatch> type =
         new StringEnumType<SourceColumnMatch>(SourceColumnMatch.class, CONSTRUCTOR);
@@ -898,7 +881,7 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       builder.setTimeFormat(externalDataConfiguration.getTimeFormat());
     }
     if (externalDataConfiguration.getTimestampFormat() != null) {
-      builder.setTimestampFormat(externalDataConfiguration.getTimeFormat());
+      builder.setTimestampFormat(externalDataConfiguration.getTimestampFormat());
     }
     if (externalDataConfiguration.getCsvOptions() != null) {
       if (externalDataConfiguration.getCsvOptions().getSourceColumnMatch() != null) {

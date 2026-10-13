@@ -269,6 +269,18 @@ public abstract class ApiTracerContext {
   }
 
   /**
+   * @return a map of attributes to be included in operation-level spans
+   */
+  Map<String, Object> getOperationAttributes() {
+    Map<String, Object> attributes = getMetricsAttributes();
+    if (!Strings.isNullOrEmpty(destinationResourceId())) {
+      attributes.put(
+          ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE, destinationResourceId());
+    }
+    return attributes;
+  }
+
+  /**
    * Merges this context with another context. The values in the other context take precedence.
    *
    * @param other the other context to merge with
