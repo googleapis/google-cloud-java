@@ -409,7 +409,8 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    // Built from an Instant so the expected UTC rendering does not depend on the JVM zone.
+    Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
 
     QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
@@ -418,7 +419,7 @@ public class BigQueryPreparedStatementSettersTest {
 
     assertEquals(1, config.getPositionalParameters().size());
     assertEquals(
-        "2024-01-01 12:34:56.123456789", config.getPositionalParameters().get(0).getValue());
+        "2024-01-01 12:34:56.123456789Z", config.getPositionalParameters().get(0).getValue());
   }
 
   @Test
@@ -434,7 +435,7 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(nonPicosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
 
     QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
@@ -442,7 +443,7 @@ public class BigQueryPreparedStatementSettersTest {
     QueryJobConfiguration config = builder.build();
 
     assertEquals(1, config.getPositionalParameters().size());
-    assertEquals("2024-01-01 12:34:56.123456", config.getPositionalParameters().get(0).getValue());
+    assertEquals("2024-01-01 12:34:56.123456Z", config.getPositionalParameters().get(0).getValue());
   }
 
   @Test
@@ -458,13 +459,13 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    ps.setTimestamp(1, Timestamp.valueOf("2024-01-01 12:34:56.123456789"));
+    ps.setTimestamp(1, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z")));
     ps.addBatch();
 
     QueryJobConfiguration batchConfig =
         ps.getStandardBatchJobConfiguration("INSERT INTO t (col) VALUES (?)");
     assertEquals(1, batchConfig.getPositionalParameters().size());
     assertEquals(
-        "2024-01-01 12:34:56.123456789", batchConfig.getPositionalParameters().get(0).getValue());
+        "2024-01-01 12:34:56.123456789Z", batchConfig.getPositionalParameters().get(0).getValue());
   }
 }

@@ -22,9 +22,15 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 class BigQueryParameterHandler {
@@ -32,6 +38,23 @@ class BigQueryParameterHandler {
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;
+  // Precompiled and immutable (DateTimeFormatter is thread-safe). Building a formatter from a
+  // pattern is the expensive step; formatting with one is ~1 µs.
+  //
+  // TIMESTAMP parameters are ALWAYS rendered in UTC with a trailing 'Z'. 'XXX' prints 'Z' for a
+  // zero offset and a numeric offset otherwise, so the label can never lie about the digits. UTC
+  // is used because QueryParameterValue's lenient TIMESTAMP validator rejects non-zero offsets
+  // written with a colon (e.g. "-05:00"), while both it and BigQuery accept 'Z'. Rendering in UTC
+  // also makes the output independent of the JVM default zone. The absolute instant is preserved,
+  // which is all a BigQuery TIMESTAMP stores.
+  private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX");
+  private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX");
+  // BigQuery DATETIME is a zone-less wall clock with microsecond precision only; its validator
+  // requires exactly six fraction digits and rejects any offset.
+  private static final DateTimeFormatter DATETIME_MICROS =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
 
   BigQueryParameterHandler(int parameterCount) {
     this(parameterCount, false);
@@ -103,16 +126,41 @@ class BigQueryParameterHandler {
     if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
       return ((Number) parameterValue).doubleValue();
     }
-    if (parameterValue instanceof Timestamp) {
-      return formatTimestampParameter((Timestamp) parameterValue, enableTimestampPicos);
-    }
-    if (sqlType == StandardSQLTypeName.TIMESTAMP && parameterValue instanceof String) {
-      String str = ((String) parameterValue).trim();
-      if (str.length() > 10 && str.charAt(10) == 'T') {
-        str = str.substring(0, 10) + ' ' + str.substring(11);
+    if (sqlType == StandardSQLTypeName.TIMESTAMP) {
+      // Every instant-carrying type is reduced to its Instant and rendered in UTC, so BigQuery
+      // reconstructs the exact moment regardless of the JVM default zone. The digits and the 'Z'
+      // label are derived together from the same Instant and cannot disagree.
+      if (parameterValue instanceof Timestamp) {
+        return formatInstantUtc(((Timestamp) parameterValue).toInstant(), enableTimestampPicos);
       }
-      return BigQueryTemporalUtility.truncateFractionalSeconds(str, enableTimestampPicos ? 12 : 6);
+      if (parameterValue instanceof OffsetDateTime) {
+        return formatInstantUtc(
+            ((OffsetDateTime) parameterValue).toInstant(), enableTimestampPicos);
+      }
+      if (parameterValue instanceof ZonedDateTime) {
+        return formatInstantUtc(((ZonedDateTime) parameterValue).toInstant(), enableTimestampPicos);
+      }
+      if (parameterValue instanceof Instant) {
+        return formatInstantUtc((Instant) parameterValue, enableTimestampPicos);
+      }
+      if (parameterValue instanceof String) {
+        String str = ((String) parameterValue).trim();
+        if (str.length() > 10 && str.charAt(10) == 'T') {
+          str = str.substring(0, 10) + ' ' + str.substring(11);
+        }
+        return BigQueryTemporalUtility.truncateFractionalSeconds(
+            str, enableTimestampPicos ? 12 : 6);
+      }
     }
+
+    if (parameterValue instanceof Timestamp) {
+      // Non-TIMESTAMP slot; in practice only DATETIME, a zone-less wall clock. Emit the JVM-local
+      // digits with the exact 6-digit fraction the DATETIME validator requires. No offset is
+      // appended because DATETIME has no zone to carry one. Sub-microsecond digits are truncated,
+      // matching prior behaviour.
+      return DATETIME_MICROS.format(((Timestamp) parameterValue).toLocalDateTime());
+    }
+
     if (parameterValue instanceof Time) {
       String timeStr = parameterValue.toString();
       if (timeStr.length() == 8) {
@@ -120,19 +168,17 @@ class BigQueryParameterHandler {
       }
       return timeStr;
     }
-    if (parameterValue instanceof java.sql.Date || parameterValue instanceof java.util.Date) {
+    if (parameterValue instanceof Date || parameterValue instanceof java.util.Date) {
       return parameterValue.toString();
     }
     return parameterValue;
   }
 
-  private static String formatTimestampParameter(Timestamp ts, boolean enableTimestampPicos) {
-    if (enableTimestampPicos) {
-      return ts.toString();
-    }
-    Timestamp copy = new Timestamp(ts.getTime());
-    copy.setNanos((ts.getNanos() / 1000) * 1000);
-    return copy.toString();
+  /** Renders an absolute instant as UTC wall-clock digits with a trailing 'Z'. */
+  private static String formatInstantUtc(Instant instant, boolean enableTimestampPicos) {
+    // Fixed-width 'S' truncates (does not round), matching the legacy nanos/1000*1000 behaviour.
+    return (enableTimestampPicos ? TIMESTAMP_NANOS_UTC : TIMESTAMP_MICROS_UTC)
+        .format(instant.atOffset(ZoneOffset.UTC));
   }
 
   private BigQueryJdbcParameter getOrCreateParameter(int parameterIndex) {
