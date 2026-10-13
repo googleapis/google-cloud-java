@@ -71,6 +71,7 @@ public class MaterializedViewAsync implements AutoCloseable, Closeable {
             /* mutateRowDescriptor= */ null, // Materialized views are read-only
             /* checkAndMutateRowDescriptor= */ null,
             /* readModifyWriteRowDescriptor= */ null,
+            /* mutateRowsDescriptor= */ null,
             featureFlags,
             clientInfo,
             configManager,
