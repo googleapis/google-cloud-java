@@ -19,10 +19,11 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import java.io.Serializable;
 import java.util.AbstractList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -36,31 +37,40 @@ public final class FieldList extends AbstractList<Field> implements Serializable
   private final List<Field> fields;
   private final Map<String, Integer> nameIndex;
 
-  private static class CaseInsensitiveMap extends HashMap<String, Integer> {
-    @Override
-    public Integer put(String key, Integer value) {
-      return super.put(key.toLowerCase(), value);
-    }
-
-    @Override
-    public Integer get(Object key) {
-      return super.get(key.toString().toLowerCase());
-    }
-  }
-
   private FieldList(Iterable<Field> fields) {
     this.fields = ImmutableList.copyOf(fields);
-    Map<String, Integer> caseInsensitiveMap = new CaseInsensitiveMap();
-    int index = 0;
-    // Iterate this.fields (already materialized) instead of the input Iterable.
-    // Callers may pass a lazy view (e.g. Lists.transform), which would otherwise re-run
-    // and deserialize fields a second time.
-    for (Field field : this.fields) {
-      caseInsensitiveMap.put(field.getName(), index);
-      index++;
+    int size = this.fields.size();
+    // Pre-store both exact-case (e.g., "UserName") and lowercase ("username") keys once when
+    // building the schema. getIndex(name) runs on every row cell access, so probing a single map
+    // first avoids allocating a lowercased String or scanning characters on each lookup.
+    // Iterates materialized this.fields (by index) so lazy Iterable inputs run only once.
+    Map<String, Integer> indexMap = Maps.newHashMapWithExpectedSize(size * 2);
+    boolean hasCaseCollision = false;
+    for (int i = 0; i < size; i++) {
+      String name = this.fields.get(i).getName();
+      String lowerName = name.toLowerCase(Locale.ROOT);
+      if (indexMap.put(lowerName, i) != null) {
+        hasCaseCollision = true;
+      }
+      if (!name.equals(lowerName)) {
+        indexMap.put(name, i);
+      }
+    }
+    if (hasCaseCollision) {
+      // Previously, nameIndex only stored lowercase keys, so a duplicate case-insensitive field
+      // (e.g., "FOO" at index 0 followed by "foo" at index 1) caused both names to resolve to 1.
+      // Because exact-case keys are stored separately above, rewrite them to match that
+      // last-writer-wins behavior whenever a collision occurs.
+      for (int i = 0; i < size; i++) {
+        String name = this.fields.get(i).getName();
+        String lowerName = name.toLowerCase(Locale.ROOT);
+        if (!name.equals(lowerName)) {
+          indexMap.put(name, indexMap.get(lowerName));
+        }
+      }
     }
 
-    this.nameIndex = caseInsensitiveMap;
+    this.nameIndex = indexMap;
   }
 
   /**
@@ -90,7 +100,12 @@ public final class FieldList extends AbstractList<Field> implements Serializable
   public int getIndex(String name) {
     Integer index = nameIndex.get(name);
     if (index == null) {
-      throw new IllegalArgumentException("Field with name '" + name + "' was not found");
+      // Exact schema names and all-lowercase names hit above without allocation; only callers
+      // passing another casing (e.g., "uSeRnAmE") or an unknown column fall back here.
+      index = nameIndex.get(name.toLowerCase(Locale.ROOT));
+      if (index == null) {
+        throw new IllegalArgumentException("Field with name '" + name + "' was not found");
+      }
     }
     return index;
   }

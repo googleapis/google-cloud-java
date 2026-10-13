@@ -143,4 +143,35 @@ class FieldListTest {
     assertEquals(1, list.size());
     assertEquals(1, transformCount.get());
   }
+
+  @Test
+  void testGetIndexExactLowerAndMixedCase() {
+    assertEquals(0, fieldsSchema.getIndex(FIELD_NAME1));
+    assertEquals(1, fieldsSchema.getIndex(FIELD_NAME2));
+    assertEquals(2, fieldsSchema.getIndex(FIELD_NAME3));
+    assertEquals(0, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE1));
+    assertEquals(1, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE2));
+    assertEquals(2, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE3));
+    assertEquals(0, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE4));
+    assertEquals(1, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE5));
+    assertEquals(2, fieldsSchema.getIndex(FIELD_NAME_CASE_INSENSITIVE6));
+    assertThrows(IllegalArgumentException.class, () -> fieldsSchema.getIndex(FIELD_NAME4));
+  }
+
+  @Test
+  void testGetIndexCaseCollisionPreservesLastWriterWins() {
+    FieldList upperThenLower =
+        FieldList.of(
+            Field.of("FOO", LegacySQLTypeName.STRING), Field.of("foo", LegacySQLTypeName.STRING));
+    assertEquals(1, upperThenLower.getIndex("FOO"));
+    assertEquals(1, upperThenLower.getIndex("foo"));
+    assertEquals(1, upperThenLower.getIndex("Foo"));
+
+    FieldList lowerThenUpper =
+        FieldList.of(
+            Field.of("foo", LegacySQLTypeName.STRING), Field.of("FOO", LegacySQLTypeName.STRING));
+    assertEquals(1, lowerThenUpper.getIndex("foo"));
+    assertEquals(1, lowerThenUpper.getIndex("FOO"));
+    assertEquals(1, lowerThenUpper.getIndex("Foo"));
+  }
 }
