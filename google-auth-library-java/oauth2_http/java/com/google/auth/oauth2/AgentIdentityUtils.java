@@ -91,21 +91,26 @@ final class AgentIdentityUtils {
    */
   static final String GOOGLE_API_USE_CLIENT_CERTIFICATE = "GOOGLE_API_USE_CLIENT_CERTIFICATE";
 
-  private static volatile String wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+  private static final String DEFAULT_WELL_KNOWN_DIR =
+      "/var/run/secrets/workload-spiffe-credentials/";
+
+  private static volatile String wellKnownDir = DEFAULT_WELL_KNOWN_DIR;
 
   /**
    * File name of the combined certificate chain and private key bundle that GKE delivers to the
    * well-known directory for pods with Agent Identity (Pod Certificates).
    *
    * <p>When {@link #GOOGLE_API_CERTIFICATE_CONFIG} is unset and no well-known gcloud certificate
-   * configuration file exists, the presence of this bundle establishes mTLS intent on its own (no
-   * {@link #GOOGLE_API_USE_CLIENT_CERTIFICATE} required). It is never polled for, because GKE
-   * delivers it before the container starts and polling on its absence would delay every workload
-   * without Agent Identity. It must be a readable, non-empty file. When present and allowed, it
-   * takes precedence over the other well-known files, matching the certificate the transport
-   * presents.
+   * configuration file exists, the presence of this bundle auto-enables mTLS on its own (no {@link
+   * #GOOGLE_API_USE_CLIENT_CERTIFICATE} required). It is never polled for, because GKE delivers it
+   * before the container starts and polling on its absence would delay every workload without Agent
+   * Identity. It must be a readable, non-empty file. When present and allowed, it takes precedence
+   * over the other well-known files, matching the certificate the transport presents.
    */
   static final String GKE_CREDENTIAL_BUNDLE_FILE = "x509.credential-bundle.private-key.pem";
+
+  private static volatile String gkeCredentialBundlePath =
+      Paths.get(DEFAULT_WELL_KNOWN_DIR, GKE_CREDENTIAL_BUNDLE_FILE).toString();
 
   // Retries for verifying certificate and private key matching during atomic key rotation.
   private static final int CERT_KEY_MATCH_RETRIES = 3;
@@ -298,27 +303,9 @@ final class AgentIdentityUtils {
     }
   }
 
-  /** Returns the path of the GKE credential bundle in the well-known directory. */
-  private static String getGkeCredentialBundlePath() {
-    return Paths.get(wellKnownDir, GKE_CREDENTIAL_BUNDLE_FILE).toString();
-  }
-
   /** Returns {@code true} if {@code path} is the GKE credential bundle in the well-known dir. */
   private static boolean isGkeCredentialBundle(final @Nullable String path) {
-    return path != null && getGkeCredentialBundlePath().equals(path);
-  }
-
-  /**
-   * Returns {@code true} if the GKE credential bundle is a readable, non-empty regular file.
-   * Mirrors the readiness check the transport uses (see {@link MtlsUtils#getWorkloadCertPath}).
-   */
-  private static boolean isGkeCredentialBundleReady(final String path) {
-    Path bundle = Paths.get(path);
-    try {
-      return Files.isRegularFile(bundle) && Files.isReadable(bundle) && Files.size(bundle) > 0;
-    } catch (IOException e) {
-      return false;
-    }
+    return path != null && gkeCredentialBundlePath.equals(path);
   }
 
   /**
@@ -332,11 +319,11 @@ final class AgentIdentityUtils {
   }
 
   /**
-   * Returns whether mTLS intent is established for resolved certificate paths: either they came
-   * from a workload certificate config, or they point at the GKE credential bundle (whose presence
-   * establishes intent on its own).
+   * Returns whether mTLS can be enabled automatically without {@link
+   * #GOOGLE_API_USE_CLIENT_CERTIFICATE} being set to {@code "true"}: either the paths came from a
+   * workload certificate config, or they point at the GKE credential bundle.
    */
-  private static boolean isMtlsIntentEstablished(
+  private static boolean canAutoEnableMtls(
       final boolean hasWorkloadConfig, final @Nullable String certPath) {
     return hasWorkloadConfig || isGkeCredentialBundle(certPath);
   }
@@ -380,7 +367,7 @@ final class AgentIdentityUtils {
       // matching metadata, so certsPresent is guaranteed to be true here.
       if (!shouldEnableMtls(
           /* certsPresent= */ true,
-          /* configExists= */ isMtlsIntentEstablished(
+          canAutoEnableMtls(
               initialCached.configMetadata != null, initialCached.certMetadata.getPath()))) {
         return null;
       }
@@ -388,10 +375,10 @@ final class AgentIdentityUtils {
     }
 
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath, initialCached);
-    boolean configExists = isMtlsIntentEstablished(paths.hasWorkloadConfig(), paths.getCertPath());
+    boolean autoEnableMtls = canAutoEnableMtls(paths.hasWorkloadConfig(), paths.getCertPath());
     boolean certsPresent = !Strings.isNullOrEmpty(paths.getCertPath());
 
-    if (!shouldEnableMtls(certsPresent, configExists)) {
+    if (!shouldEnableMtls(certsPresent, autoEnableMtls)) {
       if (isMtlsExplicitlyDisabled()) {
         mtlsDisabledEvaluated = true;
       }
@@ -714,25 +701,42 @@ final class AgentIdentityUtils {
   /** Searches for certificates at well-known locations with retry logic. */
   private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
       final @Nullable CachedAgentIdentityInfo initialCached) throws IOException {
-    if (!isMtlsExplicitlyEnabled()) {
-      // Without a config file (configExists == false), mTLS is only enabled when
-      // GOOGLE_API_USE_CLIENT_CERTIFICATE is explicitly "true", or, when it is unset, implicitly by
-      // the presence of the GKE credential bundle.
+    if (isMtlsExplicitlyDisabled()) {
       initialStartupCompleted = true;
-      if (isMtlsExplicitlyDisabled()) {
-        return new ResolvedCertAndKeyPaths(null, null, false);
-      }
-      return getGkeCredentialBundlePathIfPresent(initialCached);
+      return new ResolvedCertAndKeyPaths(null, null, false);
     }
 
-    // The GKE bundle is checked once, without polling, and before the other well-known files: when
-    // allowed, it is the certificate the transport presents for mTLS (see
-    // MtlsUtils#getWorkloadCertPath).
-    String gkeBundlePath = getGkeCredentialBundlePath();
-    if (isGkeCredentialBundleAllowed() && isGkeCredentialBundleReady(gkeBundlePath)) {
+    // Unlike the Cloud Run well-known files below (which may be delivered asynchronously and are
+    // polled for up to 30s on initial startup), GKE mounts the Pod Certificate volume before the
+    // container starts, so we perform a single immediate check per call without startup polling.
+    // When found, we mark initialStartupCompleted = true so subsequent refreshes during rotation do
+    // not enter the 30s startup polling loop.
+    boolean gkeBundleAllowed = isGkeCredentialBundleAllowed();
+    String gkeBundlePath = gkeCredentialBundlePath;
+    if (gkeBundleAllowed && MtlsUtils.isGkeCredentialBundleReady(gkeBundlePath)) {
       initialStartupCompleted = true;
       // GKE combined bundle file contains both certificate chain and private key
       return new ResolvedCertAndKeyPaths(gkeBundlePath, gkeBundlePath, false);
+    }
+
+    if (!isMtlsExplicitlyEnabled()) {
+      // Without a config file or GOOGLE_API_USE_CLIENT_CERTIFICATE="true", only the GKE credential
+      // bundle can auto-enable mTLS. If a GKE credential was previously cached and the bundle is
+      // transiently unavailable (e.g. mid-rotation), return the cached paths so
+      // loadAndVerifyCredentials can fall back to the cached credential.
+      initialStartupCompleted = true;
+      CachedAgentIdentityInfo fallbackCached =
+          AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
+      if (gkeBundleAllowed
+          && fallbackCached != null
+          && fallbackCached.configMetadata == null
+          && fallbackCached.certMetadata != null
+          && fallbackCached.keyMetadata != null
+          && isGkeCredentialBundle(fallbackCached.certMetadata.getPath())) {
+        return new ResolvedCertAndKeyPaths(
+            fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
+      }
+      return new ResolvedCertAndKeyPaths(null, null, false);
     }
 
     String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
@@ -796,8 +800,7 @@ final class AgentIdentityUtils {
         && fallbackCached.keyMetadata != null
         // A cached GKE credential is only reused while the GKE bundle is still allowed (no
         // certificate configuration exists), matching the certificate the transport presents.
-        && (!isGkeCredentialBundle(fallbackCached.certMetadata.getPath())
-            || isGkeCredentialBundleAllowed())) {
+        && (!isGkeCredentialBundle(fallbackCached.certMetadata.getPath()) || gkeBundleAllowed)) {
       return new ResolvedCertAndKeyPaths(
           fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }
@@ -811,42 +814,6 @@ final class AgentIdentityUtils {
   }
 
   /**
-   * Implicit GKE discovery used when {@link #GOOGLE_API_CERTIFICATE_CONFIG} and {@link
-   * #GOOGLE_API_USE_CLIENT_CERTIFICATE} are both unset: returns the GKE credential bundle as both
-   * certificate and key if it is a readable, non-empty file and no well-known gcloud certificate
-   * configuration file exists. Checked once without polling (see {@link
-   * #GKE_CREDENTIAL_BUNDLE_FILE}).
-   *
-   * <p>The readability and precedence rules mirror {@link MtlsUtils#getWorkloadCertPath}, so tokens
-   * are only bound to the GKE certificate when the transport also uses it for mTLS. If the bundle
-   * is transiently unavailable (e.g. mid-rotation) after a GKE credential was cached, the cached
-   * paths are returned so {@link #loadAndVerifyCredentials} can fall back to the cached credential.
-   */
-  private static ResolvedCertAndKeyPaths getGkeCredentialBundlePathIfPresent(
-      final @Nullable CachedAgentIdentityInfo initialCached) {
-    // Checked first so that neither a fresh nor a cached GKE credential is used once a certificate
-    // configuration exists (the transport would then present that configuration's certificate).
-    if (!isGkeCredentialBundleAllowed()) {
-      return new ResolvedCertAndKeyPaths(null, null, false);
-    }
-    String gkeBundlePath = getGkeCredentialBundlePath();
-    if (isGkeCredentialBundleReady(gkeBundlePath)) {
-      return new ResolvedCertAndKeyPaths(gkeBundlePath, gkeBundlePath, false);
-    }
-    CachedAgentIdentityInfo fallbackCached =
-        AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
-    if (fallbackCached != null
-        && fallbackCached.configMetadata == null
-        && fallbackCached.certMetadata != null
-        && fallbackCached.keyMetadata != null
-        && isGkeCredentialBundle(fallbackCached.certMetadata.getPath())) {
-      return new ResolvedCertAndKeyPaths(
-          fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
-    }
-    return new ResolvedCertAndKeyPaths(null, null, false);
-  }
-
-  /**
    * Determines if mTLS should be enabled based on environment variables and certificate presence.
    *
    * <p>Note that {@code configExists} is required even when {@code certsPresent} is {@code true}:
@@ -856,7 +823,7 @@ final class AgentIdentityUtils {
    * certsPresent == true} even from the well-known directory ({@code configExists == false}).
    *
    * <p>Callers pass {@code configExists == true} for the GKE credential bundle as well (see {@link
-   * #GKE_CREDENTIAL_BUNDLE_FILE}), since its presence establishes mTLS intent on its own.
+   * #GKE_CREDENTIAL_BUNDLE_FILE}), since its presence auto-enables mTLS on its own.
    */
   static boolean shouldEnableMtls(final boolean certsPresent, final boolean configExists)
       throws IOException {
@@ -954,7 +921,9 @@ final class AgentIdentityUtils {
   /** Resets all static state and overrides for testing. */
   @VisibleForTesting
   static void resetForTest() {
-    wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+    wellKnownDir = DEFAULT_WELL_KNOWN_DIR;
+    gkeCredentialBundlePath =
+        Paths.get(DEFAULT_WELL_KNOWN_DIR, GKE_CREDENTIAL_BUNDLE_FILE).toString();
     environmentProvider = SystemEnvironmentProvider.getInstance();
     propertyProvider = SystemPropertyProvider.getInstance();
     timeService = Thread::sleep;
@@ -977,6 +946,7 @@ final class AgentIdentityUtils {
   @VisibleForTesting
   static void setWellKnownDir(final String dir) {
     wellKnownDir = dir;
+    gkeCredentialBundlePath = Paths.get(dir, GKE_CREDENTIAL_BUNDLE_FILE).toString();
     resetCachedState();
   }
 

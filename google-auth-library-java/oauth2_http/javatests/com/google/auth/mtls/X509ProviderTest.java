@@ -268,6 +268,29 @@ class X509ProviderTest {
   }
 
   @Test
+  void x509Provider_defaultGcloudConfig_takesPrecedenceOverGkeCredentialBundle(
+      @TempDir Path tempDir) throws Exception {
+    Path bundle = writeGkeBundle(tempDir, false);
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    try {
+      Path gcloudDir = tempDir.resolve("home").resolve(".config").resolve("gcloud");
+      Files.createDirectories(gcloudDir);
+      Files.write(
+          gcloudDir.resolve("certificate_config.json"),
+          "{\"cert_configs\":{\"enterprise_certificates\":{}}}".getBytes(UTF_8));
+
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      CertificateSourceUnavailableException e =
+          assertThrows(CertificateSourceUnavailableException.class, testProvider::getKeyStore);
+      assertFalse(String.valueOf(e.getMessage()).contains("GKE"));
+    } finally {
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+    }
+  }
+
+  @Test
   void x509Provider_overridePath_ignoresGkeCredentialBundle(@TempDir Path tempDir)
       throws Exception {
     Path bundle = writeGkeBundle(tempDir, false);
