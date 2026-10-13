@@ -326,6 +326,9 @@ class ConnectionWorker implements AutoCloseable {
     @GuardedBy("lock")
     private long windowedQueuedRetriesMax;
 
+    @GuardedBy("lock")
+    private long windowedInflightBytesMax;
+
     private long windowedConnectionAttemptCount;
     private long windowedConnectionClosedCount;
 
@@ -335,6 +338,13 @@ class ConnectionWorker implements AutoCloseable {
       }
       if (currentRetryCount > windowedQueuedRetriesMax) {
         windowedQueuedRetriesMax = currentRetryCount;
+      }
+    }
+
+    @GuardedBy("lock")
+    void updateInflightBytesMax(long currentInflightBytes) {
+      if (currentInflightBytes > windowedInflightBytesMax) {
+        windowedInflightBytesMax = currentInflightBytes;
       }
     }
 
@@ -380,7 +390,7 @@ class ConnectionWorker implements AutoCloseable {
       long responseCount;
       long queuedRequestCountMax;
       long queuedRetryCountMax; // How many active waiting or inflight requests are retries
-      long inflightBytes;
+      long inflightBytesMax;
       long connectionAttemptCount;
       long connectionClosedCount;
       boolean isConnected; // snapshot at instant metrics are gathered
@@ -399,7 +409,7 @@ class ConnectionWorker implements AutoCloseable {
       healthCheckFields.queuedRequestCountMax = windowedQueuedRequestsMax;
       healthCheckFields.queuedRetryCountMax = windowedQueuedRetriesMax;
       healthCheckFields.msecLongestResponseWaitTime = windowedMilliResponseWaitTimeMax;
-      healthCheckFields.inflightBytes = inflightBytes.get();
+      healthCheckFields.inflightBytesMax = windowedInflightBytesMax;
       healthCheckFields.requestsSentCount = windowedRequestsSent;
       healthCheckFields.responseCount = windowedResponsesAcked;
       if (HEALTH_CHECK_INTERVAL.toMillis() > 0) {
@@ -425,7 +435,7 @@ class ConnectionWorker implements AutoCloseable {
      */
     private boolean checkThresholds(HealthCheckFields healthCheckFields) {
       if ((healthCheckFields.queuedRequestCountMax >= queuedRequestsThreshold)
-          || (healthCheckFields.inflightBytes >= queuedBytesThreshold)
+          || (healthCheckFields.inflightBytesMax >= queuedBytesThreshold)
           || (healthCheckFields.msecLongestResponseWaitTime >= responseWaitTimeThreshold.toMillis())
           || (healthCheckFields.msecMaxLatency >= latencyThreshold.toMillis())
           || (healthCheckFields.connectionAttemptCount >= connectionAttemptThreshold)
@@ -479,6 +489,7 @@ class ConnectionWorker implements AutoCloseable {
       windowedConnectionClosedCount = 0;
       windowedQueuedRequestsMax = 0;
       windowedQueuedRetriesMax = 0;
+      windowedInflightBytesMax = 0;
     }
 
     /*
@@ -785,6 +796,7 @@ class ConnectionWorker implements AutoCloseable {
       AppendRequestAndResponse requestWrapper, boolean addToFront) {
     this.inflightRequests.incrementAndGet();
     this.inflightBytes.addAndGet(requestWrapper.messageSize);
+    healthCheckMetrics.updateInflightBytesMax(this.inflightBytes.get());
     hasMessageInWaitingQueue.signal();
     requestProfilerHook.startOperation(
         RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
@@ -932,6 +944,7 @@ class ConnectionWorker implements AutoCloseable {
       requestProfilerHook.startOperation(RequestProfiler.OperationName.WAIT_QUEUE, requestUniqueId);
       this.inflightRequests.incrementAndGet();
       this.inflightBytes.addAndGet(requestWrapper.messageSize);
+      healthCheckMetrics.updateInflightBytesMax(this.inflightBytes.get());
       requestWrapper.placedInWaitingQueueTime = Instant.now();
       waitingRequestQueue.addLast(requestWrapper);
       healthCheckMetrics.updateWindowedQueuedRequestsMax(
@@ -1156,6 +1169,8 @@ class ConnectionWorker implements AutoCloseable {
     boolean firstRequestForTableOrSchemaSwitch = true;
 
     while (!waitingQueueDrained()) {
+      long queuedRequestsCount = 0;
+      ClientStats.WindowStats windowStats = null;
       this.lock.lock();
       try {
         hasMessageInWaitingQueue.await(100, TimeUnit.MILLISECONDS);
@@ -1202,6 +1217,11 @@ class ConnectionWorker implements AutoCloseable {
           this.inflightRequestQueue.add(requestWrapper);
           localQueue.addLast(requestWrapper);
           healthCheckMetrics.updateRequestsSent(requestWrapper.messageSize);
+        }
+        if (!localQueue.isEmpty()) {
+          queuedRequestsCount =
+              inflightRequestQueue.size(); // waitingRequestQueue is empty so can be omitted here
+          windowStats = createWindowStats();
         }
       } catch (InterruptedException e) {
         log.warning(
@@ -1289,6 +1309,13 @@ class ConnectionWorker implements AutoCloseable {
         }
         firstRequestForTableOrSchemaSwitch = false;
 
+        ClientStats clientStats =
+            createClientStats(wrapper.requestSendTimeStamp, queuedRequestsCount, windowStats);
+        windowStats = null;
+        if (!clientStats.equals(ClientStats.getDefaultInstance())) {
+          originalRequestBuilder.setClientStats(clientStats);
+        }
+
         requestProfilerHook.startOperation(
             RequestProfiler.OperationName.RESPONSE_LATENCY, requestUniqueId);
 
@@ -1305,6 +1332,69 @@ class ConnectionWorker implements AutoCloseable {
       }
     }
     cleanupConnectionAndRequests(/* avoidBlocking= */ false);
+  }
+
+  private static ClientStats createClientStats(
+      @Nullable Instant requestSendTimeStamp,
+      long queuedRequestsCount,
+      @Nullable ClientStats.WindowStats windowStats) {
+    ClientStats.Builder clientStatsBuilder = ClientStats.newBuilder();
+    ClientStats.RequestStats requestStats =
+        createRequestStats(requestSendTimeStamp, queuedRequestsCount);
+    if (!requestStats.equals(ClientStats.RequestStats.getDefaultInstance())) {
+      clientStatsBuilder.setRequestStats(requestStats);
+    }
+    if (windowStats != null && !windowStats.equals(ClientStats.WindowStats.getDefaultInstance())) {
+      clientStatsBuilder.setWindowStats(windowStats);
+    }
+    return clientStatsBuilder.build();
+  }
+
+  private static ClientStats.RequestStats createRequestStats(
+      @Nullable Instant requestSendTimeStamp, long queuedRequestsCount) {
+    ClientStats.RequestStats.Builder requestStatsBuilder = ClientStats.RequestStats.newBuilder();
+    if (requestSendTimeStamp != null) {
+      requestStatsBuilder.setSendTimeMillis(requestSendTimeStamp.toEpochMilli());
+    }
+    if (queuedRequestsCount > 0) {
+      requestStatsBuilder.setQueuedRequestsCount(queuedRequestsCount);
+    }
+    return requestStatsBuilder.build();
+  }
+
+  @GuardedBy("lock")
+  private ClientStats.WindowStats createWindowStats() {
+    ClientStats.WindowStats.Builder windowStatsBuilder = ClientStats.WindowStats.newBuilder();
+    if (healthCheckMetrics.windowedMilliLatencyMax > 0) {
+      windowStatsBuilder.setMaxResponseLatencyMillis(healthCheckMetrics.windowedMilliLatencyMax);
+    }
+    long avgResponseLatencyMillis =
+        healthCheckMetrics.windowedResponsesAcked > 0
+            ? healthCheckMetrics.windowedMilliLatencySum / healthCheckMetrics.windowedResponsesAcked
+            : 0;
+    if (avgResponseLatencyMillis > 0) {
+      windowStatsBuilder.setAvgResponseLatencyMillis(avgResponseLatencyMillis);
+    }
+    if (healthCheckMetrics.windowedMilliResponseWaitTimeMax > 0) {
+      windowStatsBuilder.setLongestWaitNoResponseMillis(
+          healthCheckMetrics.windowedMilliResponseWaitTimeMax);
+    }
+    if (healthCheckMetrics.windowedRequestsSent > 0) {
+      windowStatsBuilder.setRequestsSentCount(healthCheckMetrics.windowedRequestsSent);
+    }
+    if (healthCheckMetrics.windowedResponsesAcked > 0) {
+      windowStatsBuilder.setResponsesReceivedCount(healthCheckMetrics.windowedResponsesAcked);
+    }
+    if (healthCheckMetrics.windowedRequestsSentBytes > 0) {
+      windowStatsBuilder.setBytesSentCount(healthCheckMetrics.windowedRequestsSentBytes);
+    }
+    long windowStartTimeEpochMillis = healthCheckMetrics.healthCheckTimeStamp.toEpochMilli();
+    windowStatsBuilder.setWindowStartTimeEpochMillis(windowStartTimeEpochMillis);
+    long windowMillis = Instant.now().toEpochMilli() - windowStartTimeEpochMillis;
+    if (windowMillis >= 0) {
+      windowStatsBuilder.setWindowMillis(windowMillis);
+    }
+    return windowStatsBuilder.build();
   }
 
   @Nullable
