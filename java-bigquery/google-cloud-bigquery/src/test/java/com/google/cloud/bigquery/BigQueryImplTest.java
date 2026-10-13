@@ -2687,6 +2687,8 @@ public class BigQueryImplTest {
     TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
     assertTrue(result.hasNextPage());
     assertNotNull(result.getNextPageToken());
+    verify(bigqueryRpcMock, never())
+        .getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
     assertNotNull(result.getNextPage());
 
     QueryRequest requestPb = requestPbCapture.getValue();
@@ -2702,6 +2704,87 @@ public class BigQueryImplTest {
             PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR)));
     verify(bigqueryRpcMock)
         .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
+  void testFastQueryMultiplePagesFirstPageOnlySkipsGetJob()
+      throws InterruptedException, IOException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobReference(queryJob.toPb())
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(CURSOR)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(2L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    assertTrue(result.hasNextPage());
+    assertEquals(CURSOR, result.getNextPageToken());
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(2L);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    verify(bigqueryRpcMock)
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+    verify(bigqueryRpcMock, never())
+        .getJobSkipExceptionTranslation(any(), any(), any(), any());
+    verify(bigqueryRpcMock, never())
+        .listTableDataSkipExceptionTranslation(any(), any(), any(), any());
+  }
+
+  @Test
+  void testFastQueryMultiplePagesCachesDestinationTable()
+      throws InterruptedException, IOException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    when(bigqueryRpcMock.getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+        .thenReturn(COMPLETE_QUERY_JOB.toPb());
+    when(bigqueryRpcMock.listTableDataSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR))))
+        .thenReturn(
+            new TableDataList()
+                .setPageToken(null)
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(2L));
+
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobReference(queryJob.toPb())
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(CURSOR)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(2L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult firstPage = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    assertNotNull(firstPage.getNextPage());
+    assertNotNull(firstPage.getNextPage());
+
+    // Destination table is cached after the first getNextPage() call, so jobs.get is only called
+    // once even if getNextPage() is invoked multiple times on the first page.
+    verify(bigqueryRpcMock, times(1))
+        .getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
+    verify(bigqueryRpcMock, times(2))
+        .listTableDataSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR)));
   }
 
   @Test
