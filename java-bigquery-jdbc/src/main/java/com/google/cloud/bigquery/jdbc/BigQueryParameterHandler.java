@@ -33,35 +33,26 @@ import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 class BigQueryParameterHandler {
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;
-  // Precompiled and immutable (DateTimeFormatter is thread-safe). Building a formatter from a
-  // pattern is the expensive step; formatting with one is ~1 µs.
-  //
-  // TIMESTAMP parameters are ALWAYS rendered in UTC with a trailing 'Z'. 'XXX' prints 'Z' for a
-  // zero offset and a numeric offset otherwise, so the label can never lie about the digits. UTC
-  // is used because QueryParameterValue's lenient TIMESTAMP validator rejects non-zero offsets
-  // written with a colon (e.g. "-05:00"), while both it and BigQuery accept 'Z'. Rendering in UTC
-  // also makes the output independent of the JVM default zone. The absolute instant is preserved,
-  // which is all a BigQuery TIMESTAMP stores.
+  // TIMESTAMP is rendered in UTC with a trailing 'Z': the instant is preserved, the output does not
+  // depend on the JVM zone, and QueryParameterValue's validator accepts 'Z' but rejects "-05:00".
+  // Locale.ROOT marks these as wire formats; the patterns are numeric-only, so it is a guard, not
+  // a fix.
   private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX");
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
   private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX");
-  // BigQuery DATETIME is a zone-less wall clock with microsecond precision only; its validator
-  // requires exactly six fraction digits and rejects any offset.
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
+  // DATETIME is a zone-less wall clock; the validator requires six fraction digits and no offset.
   private static final DateTimeFormatter DATETIME_MICROS =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
 
-  /**
-   * Renders a zone-less wall clock as the six-fraction-digit string BigQuery parses for DATETIME
-   * (and, read as UTC, for TIMESTAMP). Sub-microsecond digits are truncated, which is all DATETIME
-   * can hold. No zone is consulted, so the digits are the same in every JVM.
-   */
+  /** Wall-clock digits for DATETIME (read as UTC if sent to TIMESTAMP). Nanos are truncated. */
   static String formatDateTimeDigits(LocalDateTime value) {
     return DATETIME_MICROS.format(value);
   }
@@ -137,9 +128,7 @@ class BigQueryParameterHandler {
       return ((Number) parameterValue).doubleValue();
     }
     if (sqlType == StandardSQLTypeName.TIMESTAMP) {
-      // Every instant-carrying type is reduced to its Instant and rendered in UTC, so BigQuery
-      // reconstructs the exact moment regardless of the JVM default zone. The digits and the 'Z'
-      // label are derived together from the same Instant and cannot disagree.
+      // Reduce to an Instant and render in UTC so digits and 'Z' can never disagree.
       if (parameterValue instanceof Timestamp) {
         return formatInstantUtc(((Timestamp) parameterValue).toInstant(), enableTimestampPicos);
       }
@@ -164,10 +153,8 @@ class BigQueryParameterHandler {
     }
 
     if (parameterValue instanceof Timestamp) {
-      // Non-TIMESTAMP slot; in practice only DATETIME, a zone-less wall clock. Emit the JVM-local
-      // digits with the exact 6-digit fraction the DATETIME validator requires. No offset is
-      // appended because DATETIME has no zone to carry one. Sub-microsecond digits are truncated,
-      // matching prior behaviour.
+      // DATETIME slot: JVM-local wall-clock digits, six-digit fraction, no offset (prior
+      // behaviour).
       return DATETIME_MICROS.format(((Timestamp) parameterValue).toLocalDateTime());
     }
 
