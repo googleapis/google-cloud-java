@@ -301,26 +301,16 @@ final class AgentIdentityUtils {
   }
 
   /** Returns {@code true} if {@code path} is the GKE credential bundle in the well-known dir. */
-  private static boolean isGkeCredentialBundle(final @Nullable String path) {
+  static boolean isGkeCredentialBundle(final @Nullable String path) {
     return path != null && gkeCredentialBundlePath.equals(path);
   }
 
   /**
-   * Returns {@code true} if the GKE credential bundle may be used: no well-known gcloud certificate
-   * configuration file exists (it would otherwise be the transport's mTLS certificate source, see
-   * {@link MtlsUtils#hasCertificateConfiguration}). Callers only reach this when {@link
-   * #GOOGLE_API_CERTIFICATE_CONFIG} is unset.
+   * Returns whether the resolved certificate paths came from a workload certificate configuration
+   * or point at the GKE credential bundle (either of which can enable mTLS without {@link
+   * #GOOGLE_API_USE_CLIENT_CERTIFICATE} being set to {@code "true"}).
    */
-  private static boolean isGkeCredentialBundleAllowed() {
-    return !MtlsUtils.hasCertificateConfiguration(environmentProvider, propertyProvider);
-  }
-
-  /**
-   * Returns whether mTLS can be enabled automatically without {@link
-   * #GOOGLE_API_USE_CLIENT_CERTIFICATE} being set to {@code "true"}: either the paths came from a
-   * workload certificate config, or they point at the GKE credential bundle.
-   */
-  private static boolean canAutoEnableMtls(
+  private static boolean hasWorkloadConfigOrGkeBundle(
       final boolean hasWorkloadConfig, final @Nullable String certPath) {
     return hasWorkloadConfig || isGkeCredentialBundle(certPath);
   }
@@ -362,20 +352,21 @@ final class AgentIdentityUtils {
       }
       // isCachedInfoValid() verified that the cached certificate file still exists on disk with
       // matching metadata, so certsPresent is guaranteed to be true here.
-      if (!shouldEnableMtls(
-          /* certsPresent= */ true,
-          canAutoEnableMtls(
-              initialCached.configMetadata != null, initialCached.certMetadata.getPath()))) {
+      boolean hasConfigOrGkeBundle =
+          hasWorkloadConfigOrGkeBundle(
+              initialCached.configMetadata != null, initialCached.certMetadata.getPath());
+      if (!shouldEnableMtls(/* certsPresent= */ true, hasConfigOrGkeBundle)) {
         return null;
       }
       return initialCached.certInfo;
     }
 
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath, initialCached);
-    boolean autoEnableMtls = canAutoEnableMtls(paths.hasWorkloadConfig(), paths.getCertPath());
+    boolean hasConfigOrGkeBundle =
+        hasWorkloadConfigOrGkeBundle(paths.hasWorkloadConfig(), paths.getCertPath());
     boolean certsPresent = !Strings.isNullOrEmpty(paths.getCertPath());
 
-    if (!shouldEnableMtls(certsPresent, autoEnableMtls)) {
+    if (!shouldEnableMtls(certsPresent, hasConfigOrGkeBundle)) {
       if (isMtlsExplicitlyDisabled()) {
         mtlsDisabledEvaluated = true;
       }
@@ -708,7 +699,10 @@ final class AgentIdentityUtils {
     // container starts, so we perform a single immediate check per call without startup polling.
     // When found, we mark initialStartupCompleted = true so subsequent refreshes during rotation do
     // not enter the 30s startup polling loop.
-    boolean gkeBundleAllowed = isGkeCredentialBundleAllowed();
+    // The GKE credential bundle is only used when no well-known gcloud certificate configuration
+    // file exists (it would otherwise be the transport's mTLS certificate source).
+    boolean gkeBundleAllowed =
+        !MtlsUtils.hasCertificateConfiguration(environmentProvider, propertyProvider);
     String gkeBundlePath = gkeCredentialBundlePath;
     if (gkeBundleAllowed && MtlsUtils.isGkeCredentialBundleReady(gkeBundlePath)) {
       initialStartupCompleted = true;
@@ -726,10 +720,8 @@ final class AgentIdentityUtils {
           AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
       if (gkeBundleAllowed
           && fallbackCached != null
-          && fallbackCached.configMetadata == null
-          && fallbackCached.certMetadata != null
-          && fallbackCached.keyMetadata != null
-          && isGkeCredentialBundle(fallbackCached.certMetadata.getPath())) {
+          && fallbackCached.canUseWellKnownFallback()
+          && fallbackCached.isGkeCredentialBundle) {
         return new ResolvedCertAndKeyPaths(
             fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
       }
@@ -792,12 +784,10 @@ final class AgentIdentityUtils {
     CachedAgentIdentityInfo fallbackCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
     if (fallbackCached != null
-        && fallbackCached.configMetadata == null
-        && fallbackCached.certMetadata != null
-        && fallbackCached.keyMetadata != null
+        && fallbackCached.canUseWellKnownFallback()
         // A cached GKE credential is only reused while the GKE bundle is still allowed (no
         // certificate configuration exists), matching the certificate the transport presents.
-        && (!isGkeCredentialBundle(fallbackCached.certMetadata.getPath()) || gkeBundleAllowed)) {
+        && (!fallbackCached.isGkeCredentialBundle || gkeBundleAllowed)) {
       return new ResolvedCertAndKeyPaths(
           fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }

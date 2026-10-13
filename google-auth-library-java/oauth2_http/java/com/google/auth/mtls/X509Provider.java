@@ -156,7 +156,15 @@ public class X509Provider implements MtlsProvider {
           MtlsUtils.getWorkloadCertificateConfiguration(
               envProvider, propProvider, certConfigPathOverride);
     } catch (CertificateSourceUnavailableException configUnavailable) {
+      // Only fall back to the GKE credential bundle when created for the mTLS transport
+      // (allowGkeCredentialBundle == true, rather than public X.509 WIF constructors) and when no
+      // explicit certificate configuration path override was passed to the constructor.
       if (allowGkeCredentialBundle && certConfigPathOverride == null) {
+        // getWorkloadCertificateConfiguration also throws CertificateSourceUnavailableException
+        // when GOOGLE_API_CERTIFICATE_CONFIG is explicitly set or when a well-known
+        // certificate_config.json exists with only a non-workload (e.g. ECP) configuration;
+        // getGkeCredentialBundlePath checks hasCertificateConfiguration so we do not fall back to
+        // the GKE bundle in those cases.
         String gkeCredentialBundlePath =
             MtlsUtils.getGkeCredentialBundlePath(envProvider, propProvider);
         if (gkeCredentialBundlePath != null) {
@@ -165,10 +173,19 @@ public class X509Provider implements MtlsProvider {
           } catch (FileNotFoundException e) {
             // The bundle was removed (e.g. mid-rotation) after the availability check.
             throw new CertificateSourceUnavailableException(
-                "GKE credential bundle is no longer available: " + gkeCredentialBundlePath, e);
+                "GKE credential bundle at "
+                    + gkeCredentialBundlePath
+                    + " was removed before it could be read (for example, during certificate"
+                    + " rotation). Retry the request or verify that the GKE Pod Certificate volume"
+                    + " is mounted.",
+                e);
           } catch (Exception e) {
             throw new IOException(
-                "X509Provider: Unable to load GKE credential bundle: " + gkeCredentialBundlePath,
+                "X509Provider: Unable to load GKE credential bundle at "
+                    + gkeCredentialBundlePath
+                    + ". Verify that the file contains a valid PEM-encoded X.509 certificate chain"
+                    + " and PKCS#8 private key, or set GOOGLE_API_USE_CLIENT_CERTIFICATE=false to"
+                    + " disable mTLS.",
                 e);
           }
         }
