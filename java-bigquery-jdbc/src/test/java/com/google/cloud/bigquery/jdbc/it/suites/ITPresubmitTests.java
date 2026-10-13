@@ -44,6 +44,7 @@ import org.junit.platform.suite.api.Suite;
   ITLocalSslValidationTest.class,
   ITPcntTest.class,
   ITResultSetMetadataTest.class,
-  ITStatementTest.class
+  ITStatementTest.class,
+  ITTimestampTimeZoneTest.class
 })
 public class ITPresubmitTests {}
