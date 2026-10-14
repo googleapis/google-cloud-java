@@ -81,7 +81,11 @@ import org.jspecify.annotations.Nullable;
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
  *
- * <p>Fetches access tokens from the Google Compute Engine metadata server.
+ * <p>Fetches access tokens from the Google Compute Engine metadata server. When a workload
+ * certificate for an agent identity is available, requests certificate-bound access tokens and ID
+ * tokens by default (see {@code IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN} and the <a
+ * href="https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library">Google
+ * Auth Library guide</a>).
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
  */
@@ -490,6 +494,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
    *     <br>
    *     IdTokenProvider.Option.FORMAT_FULL<br>
    *     IdTokenProvider.Option.LICENSES_TRUE<br>
+   *     IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN (request an ID token that is not bound to the
+   *     agent identity certificate)<br>
    *     If no options are set, the defaults are "&amp;format=standard&amp;licenses=false"
    * @throws IOException if the attempt to get an IdToken failed
    * @return IdToken object which includes the raw id_token, JsonWebSignature
@@ -497,7 +503,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
   @Override
   public IdToken idTokenWithAudience(
       String targetAudience, @Nullable List<IdTokenProvider.Option> options) throws IOException {
-    String boundTokenPayload = AgentIdentityUtils.getBoundTokenPayload();
+    // Checked before getBoundTokenPayload() so an opted-out target skips the certificate lookup.
+    boolean bindIdToken =
+        options == null || !options.contains(IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN);
+    String boundTokenPayload = bindIdToken ? AgentIdentityUtils.getBoundTokenPayload() : null;
     GenericUrl documentUrl = new GenericUrl(getIdentityDocumentUrl());
     if (boundTokenPayload != null) {
       documentUrl.set("format", "full");
