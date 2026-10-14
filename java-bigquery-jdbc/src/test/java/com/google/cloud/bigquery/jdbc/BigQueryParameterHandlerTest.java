@@ -33,6 +33,8 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryParameterHandlerTest {
 
@@ -185,8 +187,10 @@ public class BigQueryParameterHandlerTest {
     assertEquals("2024-01-01 12:34:56.123456Z", microsFormatted);
   }
 
-  @Test
-  public void testFormatValueForQueryParameter_timestampPreservesInstantAcrossJvmZones() {
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Kolkata"})
+  public void testFormatValueForQueryParameter_timestampPreservesInstantAcrossJvmZones(
+      String zone) {
     // The core Model A invariant: the string we send must decode back to the exact instant that
     // was bound, regardless of the JVM default zone. Before the fix, a JVM in America/New_York
     // sent bare local digits that BigQuery read as UTC, shifting the instant by five hours.
@@ -194,15 +198,13 @@ public class BigQueryParameterHandlerTest {
     DateTimeFormatter parser = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX");
     TimeZone saved = TimeZone.getDefault();
     try {
-      for (String zone : new String[] {"UTC", "America/New_York", "Asia/Kolkata"}) {
-        TimeZone.setDefault(TimeZone.getTimeZone(zone));
-        String out =
-            (String)
-                BigQueryParameterHandler.formatValueForQueryParameter(
-                    Timestamp.from(original), StandardSQLTypeName.TIMESTAMP, false);
-        assertEquals("2024-01-01 17:34:56.123456Z", out, "zone=" + zone);
-        assertEquals(original, OffsetDateTime.parse(out, parser).toInstant(), "zone=" + zone);
-      }
+      TimeZone.setDefault(TimeZone.getTimeZone(zone));
+      String out =
+          (String)
+              BigQueryParameterHandler.formatValueForQueryParameter(
+                  Timestamp.from(original), StandardSQLTypeName.TIMESTAMP, false);
+      assertEquals("2024-01-01 17:34:56.123456Z", out, "zone=" + zone);
+      assertEquals(original, OffsetDateTime.parse(out, parser).toInstant(), "zone=" + zone);
     } finally {
       TimeZone.setDefault(saved);
     }
@@ -236,8 +238,10 @@ public class BigQueryParameterHandlerTest {
             Timestamp.from(moment), StandardSQLTypeName.TIMESTAMP, false));
   }
 
-  @Test
-  public void testFormatValueForQueryParameter_timestampAcceptedByClientLibraryValidator() {
+  @ParameterizedTest
+  @ValueSource(booleans = {false, true})
+  public void testFormatValueForQueryParameter_timestampAcceptedByClientLibraryValidator(
+      boolean picos) {
     // QueryParameterValue's TIMESTAMP validator rejects non-zero colon offsets such as "-05:00".
     // Force a non-UTC JVM zone and prove the emitted string still passes validation; this is the
     // scenario that previously threw IllegalArgumentException from configureParameters.
@@ -245,14 +249,12 @@ public class BigQueryParameterHandlerTest {
     TimeZone saved = TimeZone.getDefault();
     try {
       TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-      for (boolean picos : new boolean[] {false, true}) {
-        String out =
-            (String)
-                BigQueryParameterHandler.formatValueForQueryParameter(
-                    ts, StandardSQLTypeName.TIMESTAMP, picos);
-        // Throws IllegalArgumentException if the format is not accepted.
-        assertEquals(out, QueryParameterValue.timestamp(out).getValue());
-      }
+      String out =
+          (String)
+              BigQueryParameterHandler.formatValueForQueryParameter(
+                  ts, StandardSQLTypeName.TIMESTAMP, picos);
+      // Throws IllegalArgumentException if the format is not accepted.
+      assertEquals(out, QueryParameterValue.timestamp(out).getValue());
     } finally {
       TimeZone.setDefault(saved);
     }
@@ -337,18 +339,17 @@ public class BigQueryParameterHandlerTest {
     assertEquals(StandardSQLTypeName.TIMESTAMP, config.getPositionalParameters().get(1).getType());
   }
 
-  @Test
-  public void testFormatDateTimeDigits_isZoneFreeAndFixedWidth() {
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Kolkata"})
+  public void testFormatDateTimeDigits_isZoneFreeAndFixedWidth(String zone) {
     TimeZone saved = TimeZone.getDefault();
     try {
-      for (String zone : new String[] {"UTC", "America/New_York", "Asia/Kolkata"}) {
-        TimeZone.setDefault(TimeZone.getTimeZone(zone));
-        assertEquals(
-            "2025-01-01 12:34:56.123000",
-            BigQueryParameterHandler.formatDateTimeDigits(
-                LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000)),
-            zone);
-      }
+      TimeZone.setDefault(TimeZone.getTimeZone(zone));
+      assertEquals(
+          "2025-01-01 12:34:56.123000",
+          BigQueryParameterHandler.formatDateTimeDigits(
+              LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000)),
+          zone);
     } finally {
       TimeZone.setDefault(saved);
     }

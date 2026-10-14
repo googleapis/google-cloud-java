@@ -48,6 +48,8 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -280,22 +282,43 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testSetObjectWithJavaTime() throws Exception {
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?, ?");
     LocalDate localDate = LocalDate.of(2025, 12, 3);
     preparedStatement.setObject(1, localDate);
     assertEquals(Date.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Date.valueOf(localDate), preparedStatement.parameterHandler.getParameter(1));
 
     LocalTime localTime = LocalTime.of(12, 30, 0);
     preparedStatement.setObject(2, localTime);
     assertEquals(Time.class, preparedStatement.parameterHandler.getType(2));
+    assertEquals(Time.valueOf(localTime), preparedStatement.parameterHandler.getParameter(2));
 
     // LocalDateTime is bound as STRING so it is accepted by both DATETIME and TIMESTAMP columns.
     LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
     preparedStatement.setObject(3, localDateTime);
     assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(
+        BigQueryParameterHandler.formatDateTimeDigits(localDateTime),
+        preparedStatement.parameterHandler.getParameter(3));
 
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
     assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(4));
+    assertEquals(Timestamp.from(instant), preparedStatement.parameterHandler.getParameter(4));
+
+    OffsetDateTime offsetDateTime = OffsetDateTime.now();
+    preparedStatement.setObject(5, offsetDateTime);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(5));
+    assertEquals(
+        Timestamp.from(offsetDateTime.toInstant()),
+        preparedStatement.parameterHandler.getParameter(5));
+
+    ZonedDateTime zonedDateTime = ZonedDateTime.now();
+    preparedStatement.setObject(6, zonedDateTime);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(6));
+    assertEquals(
+        Timestamp.from(zonedDateTime.toInstant()),
+        preparedStatement.parameterHandler.getParameter(6));
   }
 
   // Verifies standard DML QueryJobConfiguration creates positional parameters with null values when

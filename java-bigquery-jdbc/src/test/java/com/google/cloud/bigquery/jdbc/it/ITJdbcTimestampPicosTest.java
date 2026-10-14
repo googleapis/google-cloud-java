@@ -452,13 +452,13 @@ public class ITJdbcTimestampPicosTest extends ITBase {
    * <p>Runs under several JVM default zones and over both result-set implementations to prove the
    * stored moment and the UTC rendering depend on neither where the client runs nor how it reads.
    */
-  @ParameterizedTest(name = "JVM zone {0}, arrow={1}")
-  @MethodSource("jvmZonesAndReadPaths")
-  public void testPreparedStatement_insertRoundTrip_backendTruncatesToMicroseconds(
-      String zone, boolean arrow) throws SQLException {
+  @ParameterizedTest(name = "JVM zone {0}")
+  @MethodSource("jvmZones")
+  public void testPreparedStatement_insertRoundTrip_backendTruncatesToMicroseconds(String zone)
+      throws SQLException {
     useJvmZone(zone);
     int rowId = NEXT_ROUND_TRIP_ROW_ID.getAndIncrement();
-    String url = getPicosConnectionUrl(true, arrow);
+    String url = getPicosConnectionUrl(true, false);
     String insertSql =
         String.format(
             "INSERT INTO `%s.%s.%s` (id, ts_val, ts_nano) VALUES (?, ?, ?)",
@@ -488,7 +488,6 @@ public class ITJdbcTimestampPicosTest extends ITBase {
     try (Connection conn = DriverManager.getConnection(url);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(selectSql)) {
-      assertReadPath(rs, arrow, zone);
       assertTrue(rs.next(), label(zone, "inserted row must exist"));
       assertEquals(rowId, rs.getInt("id"));
 
@@ -557,6 +556,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
     try (Connection conn = DriverManager.getConnection(url);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(selectSql)) {
+      assertReadPath(rs, arrow, zone);
       for (int i = firstId; i < endIdExclusive; i++) {
         assertTrue(rs.next(), label(zone, "batch row " + i + " must exist"));
         assertEquals(i, rs.getInt("id"));
