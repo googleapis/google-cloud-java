@@ -35,16 +35,24 @@ import java.sql.Statement;
 import java.sql.Struct;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.TimeZone;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 @Tag("disable_tpc")
 public class ITJdbcTimestampPicosTest extends ITBase {
@@ -126,6 +134,28 @@ public class ITJdbcTimestampPicosTest extends ITBase {
           + "  ts_nano TIMESTAMP(12)\n"
           + ");\n";
 
+  // Row ids 100.. are reserved for the per-zone insert round-trip test; each invocation inserts
+  // and reads back its own row. Row ids 200.. are reserved for the per-zone batch test, five per
+  // invocation. The setString test uses 300.
+  private static final AtomicInteger NEXT_ROUND_TRIP_ROW_ID = new AtomicInteger(100);
+  private static final AtomicInteger NEXT_BATCH_ROW_ID = new AtomicInteger(200);
+  private static final int BATCH_SIZE = 5;
+
+  private TimeZone originalJvmZone;
+
+  private static Stream<String> jvmZones() {
+    return Stream.of("UTC", "America/New_York", "Asia/Kolkata", "Pacific/Auckland");
+  }
+
+  /**
+   * Every JVM zone crossed with both result-set implementations, so a regression that only affects
+   * the Arrow (Storage Read API) deserializer is caught as well as one in the REST/JSON path.
+   */
+  private static Stream<Arguments> jvmZonesAndReadPaths() {
+    return jvmZones()
+        .flatMap(zone -> Stream.of(Arguments.of(zone, false), Arguments.of(zone, true)));
+  }
+
   @BeforeAll
   public static void setUpTestFixtures() throws InterruptedException {
     DATASET = ITBase.getSharedDataset();
@@ -157,6 +187,24 @@ public class ITJdbcTimestampPicosTest extends ITBase {
     }
   }
 
+  @BeforeEach
+  public void saveJvmZone() {
+    originalJvmZone = TimeZone.getDefault();
+  }
+
+  @AfterEach
+  public void restoreJvmZone() {
+    TimeZone.setDefault(originalJvmZone);
+  }
+
+  private static void useJvmZone(String zone) {
+    TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(zone)));
+  }
+
+  private static String label(String zone, String rule) {
+    return "[JVM " + zone + "] " + rule;
+  }
+
   private static String getPicosConnectionUrl(boolean picosEnabled, boolean arrowEnabled) {
     return ITBase.connectionUrl
         + "EnableTimestampPicos="
@@ -165,6 +213,22 @@ public class ITJdbcTimestampPicosTest extends ITBase {
         + (arrowEnabled
             ? ITBase.FORCE_READ_API_PROPERTIES + "MaxResults=1;"
             : "EnableHighThroughputAPI=0;");
+  }
+
+  /**
+   * Guards against a silent fallback to the REST/JSON path when the Arrow path was requested, which
+   * would let the remaining assertions pass without ever exercising Arrow deserialization.
+   */
+  private static void assertReadPath(ResultSet rs, boolean arrowExpected, String zone) {
+    boolean isArrow = rs.getClass().getName().contains("BigQueryArrowResultSet");
+    assertEquals(
+        arrowExpected,
+        isArrow,
+        label(
+            zone,
+            (arrowExpected ? "expected the Arrow path" : "expected the JSON path")
+                + " but got "
+                + rs.getClass().getSimpleName()));
   }
 
   /**
@@ -384,93 +448,128 @@ public class ITJdbcTimestampPicosTest extends ITBase {
   /**
    * BigQuery truncates {@code TIMESTAMP}-typed query parameters to microseconds, even against a
    * {@code TIMESTAMP(12)} column (b/419328655). Update the expectations when the backend fix lands.
+   *
+   * <p>Runs under several JVM default zones and over both result-set implementations to prove the
+   * stored moment and the UTC rendering depend on neither where the client runs nor how it reads.
    */
-  @Test
-  @Tag("advanced")
-  public void testPreparedStatement_insertRoundTrip_backendTruncatesToMicroseconds()
-      throws SQLException {
-    String url = getPicosConnectionUrl(true, false);
+  @ParameterizedTest(name = "JVM zone {0}, arrow={1}")
+  @MethodSource("jvmZonesAndReadPaths")
+  public void testPreparedStatement_insertRoundTrip_backendTruncatesToMicroseconds(
+      String zone, boolean arrow) throws SQLException {
+    useJvmZone(zone);
+    int rowId = NEXT_ROUND_TRIP_ROW_ID.getAndIncrement();
+    String url = getPicosConnectionUrl(true, arrow);
     String insertSql =
         String.format(
             "INSERT INTO `%s.%s.%s` (id, ts_val, ts_nano) VALUES (?, ?, ?)",
             DEFAULT_CATALOG, DATASET, INSERT_TABLE_NAME);
-
     String selectSql =
         String.format(
-            "SELECT id, ts_val, ts_nano FROM `%s.%s.%s` WHERE id = 100",
-            DEFAULT_CATALOG, DATASET, INSERT_TABLE_NAME);
+            "SELECT id, ts_val, ts_nano FROM `%s.%s.%s` WHERE id = %d",
+            DEFAULT_CATALOG, DATASET, INSERT_TABLE_NAME, rowId);
 
+    // Both parameters denote the same UTC instant. BigQuery reads a zone-less string as UTC, so
+    // the java.sql.Timestamp is built from an explicit UTC Instant rather than Timestamp.valueOf,
+    // which would interpret the digits in the JVM default zone and store a different instant.
     String picosInsertVal = "2026-08-10 15:30:45.123456789012";
-    Timestamp nanoTimestamp = Timestamp.valueOf("2026-08-10 15:30:45.123456789");
+    Timestamp nanoTimestamp = Timestamp.from(Instant.parse("2026-08-10T15:30:45.123456789Z"));
+    // What the backend actually keeps after truncating the parameter to microseconds.
+    Instant expectedStoredInstant = Instant.parse("2026-08-10T15:30:45.123456Z");
+    String expectedUtcString = "2026-08-10 15:30:45.123456000000";
 
     try (Connection conn = DriverManager.getConnection(url);
         PreparedStatement ps = conn.prepareStatement(insertSql)) {
-
-      ps.setInt(1, 100);
+      ps.setInt(1, rowId);
       ps.setObject(2, picosInsertVal, Types.TIMESTAMP);
       ps.setTimestamp(3, nanoTimestamp);
-      int rows = ps.executeUpdate();
-      assertEquals(1, rows);
+      assertEquals(1, ps.executeUpdate(), label(zone, "one row inserted"));
     }
 
     try (Connection conn = DriverManager.getConnection(url);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(selectSql)) {
+      assertReadPath(rs, arrow, zone);
+      assertTrue(rs.next(), label(zone, "inserted row must exist"));
+      assertEquals(rowId, rs.getInt("id"));
 
-      assertTrue(rs.next());
-      assertEquals(100, rs.getInt("id"));
       assertEquals(
-          "2026-08-10 15:30:45.123456000000",
+          expectedStoredInstant,
+          rs.getTimestamp("ts_val").toInstant(),
+          label(zone, "string parameter must store 15:30:45 UTC, truncated to micros"));
+      assertEquals(
+          expectedStoredInstant,
+          rs.getTimestamp("ts_nano").toInstant(),
+          label(zone, "Timestamp parameter must store the same moment as the string"));
+
+      assertEquals(
+          expectedUtcString,
           rs.getString("ts_val"),
-          "Backend truncates TIMESTAMP parameters to microseconds; see b/419328655");
+          label(zone, "backend truncates TIMESTAMP parameters to microseconds; b/419328655"));
       assertEquals(
-          "2026-08-10 15:30:45.123456000000",
+          expectedUtcString,
           rs.getString("ts_nano"),
-          "Nanosecond tail of a java.sql.Timestamp parameter is truncated by the backend too");
+          label(zone, "nanosecond tail of a java.sql.Timestamp parameter is truncated too"));
     }
   }
 
-  @Test
-  @Tag("advanced")
-  public void testPreparedStatement_batchInsertRoundTrip() throws SQLException {
-    String url = getPicosConnectionUrl(true, false);
+  /**
+   * Batched {@code setTimestamp} / {@code setObject(String, TIMESTAMP)} must store the same moment
+   * under every JVM default zone, and each batched row must be independently retrievable through
+   * both result-set implementations.
+   */
+  @ParameterizedTest(name = "JVM zone {0}, arrow={1}")
+  @MethodSource("jvmZonesAndReadPaths")
+  public void testPreparedStatement_batchInsertRoundTrip(String zone, boolean arrow)
+      throws SQLException {
+    useJvmZone(zone);
+    int firstId = NEXT_BATCH_ROW_ID.getAndAdd(BATCH_SIZE);
+    int endIdExclusive = firstId + BATCH_SIZE;
+    String url = getPicosConnectionUrl(true, arrow);
     String insertSql =
         String.format(
             "INSERT INTO `%s.%s.%s` (id, ts_val, ts_nano) VALUES (?, ?, ?)",
             DEFAULT_CATALOG, DATASET, INSERT_TABLE_NAME);
 
+    // Same UTC moment for every row; see the single-row test for why Timestamp.valueOf is avoided.
+    Timestamp nanoTimestamp = Timestamp.from(Instant.parse("2026-09-01T10:00:00.123456789Z"));
+    Instant expectedNanoInstant = Instant.parse("2026-09-01T10:00:00.123456Z");
+
     try (Connection conn = DriverManager.getConnection(url);
         PreparedStatement ps = conn.prepareStatement(insertSql)) {
-
-      for (int i = 200; i < 205; i++) {
+      for (int i = firstId; i < endIdExclusive; i++) {
         ps.setInt(1, i);
         // Only the microsecond component survives truncation, so it identifies the row.
         ps.setObject(
             2, "2026-09-01 10:00:00." + String.format("%06d", i) + "789012", Types.TIMESTAMP);
-        ps.setTimestamp(3, Timestamp.valueOf("2026-09-01 10:00:00.123456789"));
+        ps.setTimestamp(3, nanoTimestamp);
         ps.addBatch();
       }
 
       int[] updateCounts = ps.executeBatch();
-      assertEquals(5, updateCounts.length);
+      assertEquals(BATCH_SIZE, updateCounts.length, label(zone, "one update count per row"));
     }
 
     String selectSql =
         String.format(
-            "SELECT id, ts_val FROM `%s.%s.%s` WHERE id >= 200 AND id < 205 ORDER BY id",
-            DEFAULT_CATALOG, DATASET, INSERT_TABLE_NAME);
+            "SELECT id, ts_val, ts_nano FROM `%s.%s.%s` WHERE id >= %d AND id < %d ORDER BY id",
+            DEFAULT_CATALOG, DATASET, INSERT_TABLE_NAME, firstId, endIdExclusive);
 
     try (Connection conn = DriverManager.getConnection(url);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(selectSql)) {
-
-      for (int i = 200; i < 205; i++) {
-        assertTrue(rs.next(), "Batch row " + i + " must exist");
+      for (int i = firstId; i < endIdExclusive; i++) {
+        assertTrue(rs.next(), label(zone, "batch row " + i + " must exist"));
         assertEquals(i, rs.getInt("id"));
         assertEquals(
-            "2026-09-01 10:00:00." + String.format("%06d", i) + "000000", rs.getString("ts_val"));
+            "2026-09-01 10:00:00." + String.format("%06d", i) + "000000",
+            rs.getString("ts_val"),
+            label(zone, "string parameter is read as UTC and truncated to micros"));
+        assertEquals(
+            expectedNanoInstant,
+            rs.getTimestamp("ts_nano").toInstant(),
+            label(zone, "batched setTimestamp must store the same moment in every JVM zone"));
       }
-      assertFalse(rs.next(), "Exactly five batched rows are expected");
+      assertFalse(rs.next(), label(zone, "exactly " + BATCH_SIZE + " batched rows are expected"));
     }
   }
 

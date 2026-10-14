@@ -63,11 +63,6 @@ public class ITCallableStatementTest extends ITBase {
       "IT_CALLABLE_STMT_PROC_DML_DELETE_TEST";
   private static final String CALLABLE_STMT_DML_TABLE_NAME = "IT_CALLABLE_STMT_PROC_DML_TABLE";
 
-  // The Calendar tests pin the JVM zone so the Calendar always differs from it; otherwise the
-  // driver skips the conversion.
-  private static final ZoneId CALENDAR_TEST_JVM_ZONE = ZoneId.of("America/New_York");
-  private static final ZoneId CALENDAR_ZONE = ZoneId.of("Asia/Tokyo");
-
   static Connection bigQueryConnection;
   static BigQuery bigQuery;
   static Statement bigQueryStatement;
