@@ -25,7 +25,7 @@ package com.google.ads.admanager.v1;
  *
  * <pre>
  * Wrapper message for
- * [CdnSecurityPolicy][google.ads.admanager.v1.CdnSecurityPolicy]
+ * [CdnSecurityPolicyType][google.ads.admanager.v1.CdnSecurityPolicyTypeEnum.CdnSecurityPolicyType]
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.CdnSecurityPolicyTypeEnum}
@@ -425,7 +425,7 @@ public final class CdnSecurityPolicyTypeEnum extends com.google.protobuf.Generat
    *
    * <pre>
    * Wrapper message for
-   * [CdnSecurityPolicy][google.ads.admanager.v1.CdnSecurityPolicy]
+   * [CdnSecurityPolicyType][google.ads.admanager.v1.CdnSecurityPolicyTypeEnum.CdnSecurityPolicyType]
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.CdnSecurityPolicyTypeEnum}

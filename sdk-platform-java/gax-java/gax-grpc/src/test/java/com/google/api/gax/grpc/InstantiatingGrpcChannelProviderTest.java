@@ -710,6 +710,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         InstantiatingGrpcChannelProvider.newBuilder()
             .setAttemptDirectPathXds()
             .setAttemptDirectPath(true)
+            .setEnvProvider(name -> null)
             .setHeaderProvider(
                 mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
             .setExecutor(mock(Executor.class))

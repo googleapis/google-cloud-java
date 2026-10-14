@@ -20,6 +20,10 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.CalendarModeAdviceResponse;
 import com.google.cloud.compute.v1.CalendarModeAdviceRpcRequest;
+import com.google.cloud.compute.v1.CapacityAdviceResponse;
+import com.google.cloud.compute.v1.CapacityAdviceRpcRequest;
+import com.google.cloud.compute.v1.CapacityHistoryAdviceRequest;
+import com.google.cloud.compute.v1.CapacityHistoryResponse;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 
@@ -36,6 +40,15 @@ public abstract class AdviceStub implements BackgroundResource {
   public UnaryCallable<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
       calendarModeCallable() {
     throw new UnsupportedOperationException("Not implemented: calendarModeCallable()");
+  }
+
+  public UnaryCallable<CapacityAdviceRpcRequest, CapacityAdviceResponse> capacityCallable() {
+    throw new UnsupportedOperationException("Not implemented: capacityCallable()");
+  }
+
+  public UnaryCallable<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: capacityHistoryCallable()");
   }
 
   @Override

@@ -529,4 +529,43 @@ class ApiTracerContextTest {
     assertThat(result.destinationResourceId()).isEqualTo("extracted-id-2");
     assertThat(counter[0]).isEqualTo(2);
   }
+
+  @Test
+  void testGetOperationAttributes() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.newBuilder().setRepository("test-repo").build())
+            .setServerAddress("test-address")
+            .setServerPort(443)
+            .setServiceName("test-service")
+            .setTransport(ApiTracerContext.Transport.HTTP)
+            .setHttpMethod("POST")
+            .setHttpPathTemplate("/v1/{name}:access")
+            .setFullMethodName("google.test.v1.TestService/Access")
+            .setUrlDomain("test.googleapis.com")
+            .setDestinationResourceIdSupplier(() -> "projects/p/secrets/s")
+            .build();
+
+    Map<String, Object> attributes = context.getOperationAttributes();
+
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE, "test-address");
+    assertThat(attributes).containsEntry(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE, 443);
+    assertThat(attributes).containsEntry(ObservabilityAttributes.REPO_ATTRIBUTE, "test-repo");
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, "test-service");
+    assertThat(attributes).containsEntry(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, "http");
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE, "google.test.v1.TestService/Access");
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, "test.googleapis.com");
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE, "/v1/{name}:access");
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE,
+            "//test.googleapis.com/projects/p/secrets/s");
+    assertThat(attributes).doesNotContainKey(ObservabilityAttributes.HTTP_METHOD_ATTRIBUTE);
+  }
 }

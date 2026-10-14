@@ -25,7 +25,7 @@ package com.google.ads.admanager.v1;
  *
  * <pre>
  * Wrapper message for
- * [ThirdPartyDataDeclarationTypeEnum][google.ads.admanager.v1.ThirdPartyDataDeclarationTypeEnum]
+ * [ThirdPartyDataDeclarationType][google.ads.admanager.v1.ThirdPartyDataDeclarationTypeEnum.ThirdPartyDataDeclarationType]
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ThirdPartyDataDeclarationTypeEnum}
@@ -404,7 +404,7 @@ public final class ThirdPartyDataDeclarationTypeEnum extends com.google.protobuf
    *
    * <pre>
    * Wrapper message for
-   * [ThirdPartyDataDeclarationTypeEnum][google.ads.admanager.v1.ThirdPartyDataDeclarationTypeEnum]
+   * [ThirdPartyDataDeclarationType][google.ads.admanager.v1.ThirdPartyDataDeclarationTypeEnum.ThirdPartyDataDeclarationType]
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ThirdPartyDataDeclarationTypeEnum}

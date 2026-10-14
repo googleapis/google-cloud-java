@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionHealthAggregationPolicies API.
  *
+ * <p>This client uses RegionHealthAggregationPolicies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -365,7 +367,6 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, HealthAggregationPoliciesScopedList> element :
@@ -409,7 +410,6 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, HealthAggregationPoliciesScopedList>> future =
@@ -454,7 +454,6 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -923,7 +922,6 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (HealthAggregationPolicy element :
    *       regionHealthAggregationPoliciesClient.list(request).iterateAll()) {
@@ -961,7 +959,6 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<HealthAggregationPolicy> future =
    *       regionHealthAggregationPoliciesClient.listPagedCallable().futureCall(request);
@@ -999,7 +996,6 @@ public class RegionHealthAggregationPoliciesClient implements BackgroundResource
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     HealthAggregationPolicyList response =

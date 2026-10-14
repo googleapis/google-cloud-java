@@ -44,7 +44,6 @@ public class AsyncListPaged {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setReservation("reservation-1563081780")
-              .setReturnPartialSuccess(true)
               .setZone("zone3744684")
               .build();
       while (true) {

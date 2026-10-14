@@ -33,6 +33,7 @@ import com.google.api.client.http.HttpMethods;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.QueryStatusRequest;
 import com.google.api.gax.resumable.QueryStatusResponse;
+import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ClientContext;
@@ -63,7 +64,6 @@ class ResumableUploadQueryStatusCallable<ResponseT>
   private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
   private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
   private static final String UPLOAD_SIZE_RECEIVED_HEADER = "X-Goog-Upload-Size-Received";
-  private static final String STATUS_FINAL = "final";
   private static final String COMMAND_QUERY = "query";
 
   private static final Map<String, List<String>> QUERY_STATUS_HEADERS =
@@ -182,7 +182,7 @@ class ResumableUploadQueryStatusCallable<ResponseT>
 
     private final ResumableUploadHttpJsonFuture<QueryStatusResponse<ResponseT>> future;
     private final HttpResponseParser<ResponseT> responseParser;
-    @Nullable private String uploadStatus = null;
+    private ResumableUploadStatus uploadStatus = ResumableUploadStatus.UNKNOWN;
     @Nullable private Long committedOffset = null;
     @Nullable private Throwable headerParsingException;
     private String responseBody = "";
@@ -197,7 +197,9 @@ class ResumableUploadQueryStatusCallable<ResponseT>
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
       Map<String, Object> headers = responseHeaders.getHeaders();
-      this.uploadStatus = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER);
+      this.uploadStatus =
+          ResumableUploadStatus.fromHeader(
+              HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER));
       try {
         this.committedOffset = parseSizeReceived(responseHeaders);
       } catch (Throwable t) {
@@ -220,19 +222,19 @@ class ResumableUploadQueryStatusCallable<ResponseT>
             future.setException(headerParsingException);
             return;
           }
-          boolean isComplete = STATUS_FINAL.equalsIgnoreCase(uploadStatus);
-          if (isComplete) {
-            QueryStatusResponse.Builder<ResponseT> queryResponseBuilder =
-                QueryStatusResponse.<ResponseT>newBuilder().setComplete(true);
+          if (uploadStatus == ResumableUploadStatus.FINAL) {
             InputStream stream =
                 new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
-            queryResponseBuilder.setResponse(responseParser.parse(stream));
-            future.set(queryResponseBuilder.build());
+            future.set(
+                QueryStatusResponse.<ResponseT>newBuilder()
+                    .setUploadStatus(uploadStatus)
+                    .setResponse(responseParser.parse(stream))
+                    .build());
           } else if (committedOffset != null) {
             future.set(
                 QueryStatusResponse.<ResponseT>newBuilder()
-                    .setComplete(false)
                     .setCommittedOffset(committedOffset)
+                    .setUploadStatus(uploadStatus)
                     .build());
           } else {
             future.setException(

@@ -79,13 +79,6 @@ This verify check compares the current checked-in files in `java-showcase` again
 Make sure you have **Go** installed and available in your `PATH` (see the [Requirements](#requirements) section), then run the following setup steps from the repository root:
 
 ```shell
-# Setup and activate Python virtual environment
-python -m venv .venv
-source .venv/bin/activate
-
-# Configure pip for external sources
-pip config --venv set global.extra-index-url https://pypi.org/simple
-
 # Install and configure Java tools (takes around 5 mins)
 V=$(go run github.com/googleapis/librarian/cmd/librarian@latest config get version)
 go run github.com/googleapis/librarian/cmd/librarian@${V} install

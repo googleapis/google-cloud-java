@@ -112,6 +112,17 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
     UNDEFINED_TYPE(0),
     /** <code>BARE_METAL_LINUX_COMPATIBLE = 354232740;</code> */
     BARE_METAL_LINUX_COMPATIBLE(354232740),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the guest OS is capable of Bare Metal Secure AI (BMSAI)
+     * confidential computing.
+     * </pre>
+     *
+     * <code>BMSAI_CAPABLE = 449302109;</code>
+     */
+    BMSAI_CAPABLE(449302109),
     /** <code>CCA_CAPABLE = 79012270;</code> */
     CCA_CAPABLE(79012270),
     /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
@@ -179,6 +190,18 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
 
     /** <code>BARE_METAL_LINUX_COMPATIBLE = 354232740;</code> */
     public static final int BARE_METAL_LINUX_COMPATIBLE_VALUE = 354232740;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the guest OS is capable of Bare Metal Secure AI (BMSAI)
+     * confidential computing.
+     * </pre>
+     *
+     * <code>BMSAI_CAPABLE = 449302109;</code>
+     */
+    public static final int BMSAI_CAPABLE_VALUE = 449302109;
 
     /** <code>CCA_CAPABLE = 79012270;</code> */
     public static final int CCA_CAPABLE_VALUE = 79012270;
@@ -265,6 +288,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_TYPE;
         case 354232740:
           return BARE_METAL_LINUX_COMPATIBLE;
+        case 449302109:
+          return BMSAI_CAPABLE;
         case 79012270:
           return CCA_CAPABLE;
         case 531767259:

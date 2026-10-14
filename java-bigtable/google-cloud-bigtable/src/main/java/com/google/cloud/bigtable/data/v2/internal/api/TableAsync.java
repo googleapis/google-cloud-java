@@ -19,8 +19,12 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.OpenTableRequest;
 import com.google.bigtable.v2.OpenTableRequest.Permission;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -72,6 +76,8 @@ public class TableAsync implements AutoCloseable, Closeable {
             VRpcDescriptor.TABLE_SESSION,
             VRpcDescriptor.READ_ROW,
             VRpcDescriptor.MUTATE_ROW,
+            VRpcDescriptor.CHECK_AND_MUTATE_ROW,
+            VRpcDescriptor.READ_MODIFY_WRITE_ROW,
             featureFlags,
             clientInfo,
             configManager,
@@ -99,7 +105,6 @@ public class TableAsync implements AutoCloseable, Closeable {
     return base.getSessionPool();
   }
 
-  // TODO: get deadline from compatibility layer
   // Currently these are the deadlines from gax:
   // ApiCallContext#timeout (attempt timeout)
   // ApiCallContext#RetrySettings#totalTimeout
@@ -114,11 +119,24 @@ public class TableAsync implements AutoCloseable, Closeable {
     return f;
   }
 
-  // TODO: get deadline from compatibility layer
   public CompletableFuture<SessionMutateRowResponse> mutateRow(
       SessionMutateRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionMutateRowResponse> f = new UnaryResponseFuture<>();
     base.mutateRow(req, f, deadline);
+    return f;
+  }
+
+  public CompletableFuture<SessionCheckAndMutateRowResponse> checkAndMutateRow(
+      SessionCheckAndMutateRowRequest req, Deadline deadline) {
+    UnaryResponseFuture<SessionCheckAndMutateRowResponse> f = new UnaryResponseFuture<>();
+    base.checkAndMutateRow(req, f, deadline);
+    return f;
+  }
+
+  public CompletableFuture<SessionReadModifyWriteRowResponse> readModifyWriteRow(
+      SessionReadModifyWriteRowRequest req, Deadline deadline) {
+    UnaryResponseFuture<SessionReadModifyWriteRowResponse> f = new UnaryResponseFuture<>();
+    base.readModifyWriteRow(req, f, deadline);
     return f;
   }
 }

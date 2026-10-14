@@ -21,8 +21,12 @@ import static com.google.ads.admanager.v1.AdReviewCenterAdServiceClient.SearchAd
 import com.google.ads.admanager.v1.BatchAdReviewCenterAdsOperationMetadata;
 import com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsResponse;
+import com.google.ads.admanager.v1.BatchApplyAdReviewCenterCustomLabelsRequest;
+import com.google.ads.admanager.v1.BatchApplyAdReviewCenterCustomLabelsResponse;
 import com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsResponse;
+import com.google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsRequest;
+import com.google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponse;
 import com.google.api.gax.core.BackgroundResource;
@@ -87,6 +91,20 @@ public abstract class AdReviewCenterAdServiceStub implements BackgroundResource 
       batchBlockAdReviewCenterAdsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: batchBlockAdReviewCenterAdsCallable()");
+  }
+
+  public UnaryCallable<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchAdReviewCenterCustomLabelsCallable()");
+  }
+
+  public UnaryCallable<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchApplyAdReviewCenterCustomLabelsCallable()");
   }
 
   @Override

@@ -512,12 +512,6 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                             if (request.hasParentId()) {
                               serializer.putQueryParam(fields, "parentId", request.getParentId());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -620,12 +614,6 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                             }
                             if (request.hasParentId()) {
                               serializer.putQueryParam(fields, "parentId", request.getParentId());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })

@@ -95,6 +95,34 @@ public interface SchedulingOrBuilder
   int getAvailabilityDomain();
 
   /**
+   *
+   *
+   * <pre>
+   * This optional flag exposes the hashed physical host ID in the
+   * ResourceStatus resource of the VM.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return Whether the exposeHostTopology field is set.
+   */
+  boolean hasExposeHostTopology();
+
+  /**
+   *
+   *
+   * <pre>
+   * This optional flag exposes the hashed physical host ID in the
+   * ResourceStatus resource of the VM.
+   * </pre>
+   *
+   * <code>optional bool expose_host_topology = 428530155;</code>
+   *
+   * @return The exposeHostTopology.
+   */
+  boolean getExposeHostTopology();
+
+  /**
    * <code>
    * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
    * </code>

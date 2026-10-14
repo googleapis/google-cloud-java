@@ -217,7 +217,7 @@ import org.jspecify.annotations.Nullable;
  *      <td><p> Batch rejects [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
  * <p>  Only pending or active [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be rejected. Expired, rejected, and withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
  * <p>  This method is only intended to be called in response to a child user rejecting an invitation and exists to support the rejection of [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that are not yet associated with an Ad Manager network.
- * <p>  To sever the relationship from the parent publisher's side, use [BatchWithdrawChildPublisher][].</td>
+ * <p>  To sever the relationship from the parent publisher's side, use `BatchWithdrawChildPublishers`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -236,8 +236,8 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchWithdrawChildPublishers</td>
- *      <td><p> Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
- * <p>  Only expired, pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.</td>
+ *      <td><p> Batch withdraws [ChildPublishers][google.ads.admanager.v1.ChildPublisher].
+ * <p>  Only expired, pending, and accepted [ChildPublishers][google.ads.admanager.v1.ChildPublisher] can be withdrawn. Rejected or withdrawn [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be ignored.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -490,7 +490,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -525,7 +525,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher]. Format:
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -812,7 +812,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created. Format:
    *     `networks/{network_code}` The parent field in the CreateChildPublisherRequest must match
    *     this field.
    * @param requests Required. The [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects
@@ -851,7 +851,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created. Format:
    *     `networks/{network_code}` The parent field in the CreateChildPublisherRequest must match
    *     this field.
    * @param requests Required. The [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects
@@ -1052,7 +1052,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated. Format:
    *     `networks/{network_code}` The parent field in the UpdateChildPublisherRequest must match
    *     this field.
    * @param requests Required. The [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects
@@ -1091,7 +1091,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated. Format:
    *     `networks/{network_code}` The parent field in the UpdateChildPublisherRequest must match
    *     this field.
    * @param requests Required. The [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects
@@ -1198,7 +1198,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    *
    * @param parent Required. Format: `networks/{network_code}`
    * @param names Required. Resource names of the
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be resent invitation
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] that should be resent invitation
    *     emails. Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1239,7 +1239,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    *
    * @param parent Required. Format: `networks/{network_code}`
    * @param names Required. Resource names of the
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be resent invitation
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] that should be resent invitation
    *     emails. Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1509,7 +1509,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * Ad Manager network.
    *
    * <p>To sever the relationship from the parent publisher's side, use
-   * [BatchWithdrawChildPublisher][].
+   * `BatchWithdrawChildPublishers`.
    *
    * <p>Sample code:
    *
@@ -1530,7 +1530,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    *
    * @param parent Required. Format: `networks/{network_code}`
    * @param names Required. Resource names of the
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject. Format:
    *     `networks/{network_code}/childPublisher/{child_publisher_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1558,7 +1558,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * Ad Manager network.
    *
    * <p>To sever the relationship from the parent publisher's side, use
-   * [BatchWithdrawChildPublisher][].
+   * `BatchWithdrawChildPublishers`.
    *
    * <p>Sample code:
    *
@@ -1579,7 +1579,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    *
    * @param parent Required. Format: `networks/{network_code}`
    * @param names Required. Resource names of the
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject. Format:
    *     `networks/{network_code}/childPublisher/{child_publisher_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1604,7 +1604,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * Ad Manager network.
    *
    * <p>To sever the relationship from the parent publisher's side, use
-   * [BatchWithdrawChildPublisher][].
+   * `BatchWithdrawChildPublishers`.
    *
    * <p>Sample code:
    *
@@ -1648,7 +1648,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    * Ad Manager network.
    *
    * <p>To sever the relationship from the parent publisher's side, use
-   * [BatchWithdrawChildPublisher][].
+   * `BatchWithdrawChildPublishers`.
    *
    * <p>Sample code:
    *
@@ -1679,11 +1679,11 @@ public class ChildPublisherServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * Batch withdraws [ChildPublishers][google.ads.admanager.v1.ChildPublisher].
    *
    * <p>Only expired, pending, and accepted
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
-   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] can be withdrawn. Rejected or
+   * withdrawn [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be ignored.
    *
    * <p>Sample code:
    *
@@ -1704,7 +1704,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    *
    * @param parent Required. Format: `networks/{network_code}`
    * @param names Required. Resource names of the
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw. Format:
    *     `networks/{network_code}/childPublisher/{child_publisher_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1720,11 +1720,11 @@ public class ChildPublisherServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * Batch withdraws [ChildPublishers][google.ads.admanager.v1.ChildPublisher].
    *
    * <p>Only expired, pending, and accepted
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
-   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] can be withdrawn. Rejected or
+   * withdrawn [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be ignored.
    *
    * <p>Sample code:
    *
@@ -1745,7 +1745,7 @@ public class ChildPublisherServiceClient implements BackgroundResource {
    *
    * @param parent Required. Format: `networks/{network_code}`
    * @param names Required. Resource names of the
-   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw. Format:
+   *     [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to withdraw. Format:
    *     `networks/{network_code}/childPublisher/{child_publisher_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1761,11 +1761,11 @@ public class ChildPublisherServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * Batch withdraws [ChildPublishers][google.ads.admanager.v1.ChildPublisher].
    *
    * <p>Only expired, pending, and accepted
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
-   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] can be withdrawn. Rejected or
+   * withdrawn [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be ignored.
    *
    * <p>Sample code:
    *
@@ -1797,11 +1797,11 @@ public class ChildPublisherServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   * Batch withdraws [ChildPublishers][google.ads.admanager.v1.ChildPublisher].
    *
    * <p>Only expired, pending, and accepted
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
-   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] can be withdrawn. Rejected or
+   * withdrawn [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be ignored.
    *
    * <p>Sample code:
    *

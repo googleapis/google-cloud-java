@@ -98,7 +98,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The client connected to this peer via an external network
-     * (e.g. outside Google Coud).
+     * (e.g. outside Google Cloud).
      * </pre>
      *
      * <code>TRANSPORT_TYPE_EXTERNAL = 1;</code>
@@ -196,7 +196,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The client connected to this peer via an external network
-     * (e.g. outside Google Coud).
+     * (e.g. outside Google Cloud).
      * </pre>
      *
      * <code>TRANSPORT_TYPE_EXTERNAL = 1;</code>

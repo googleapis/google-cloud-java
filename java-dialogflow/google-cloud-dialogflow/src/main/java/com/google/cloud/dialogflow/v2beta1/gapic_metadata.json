@@ -71,6 +71,36 @@
         }
       }
     },
+    "CompanionAgents": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompanionAgentsClient",
+          "rpcs": {
+            "CreateCompanionAgent": {
+              "methods": ["createCompanionAgent", "createCompanionAgent", "createCompanionAgent", "createCompanionAgentCallable"]
+            },
+            "DeleteCompanionAgent": {
+              "methods": ["deleteCompanionAgent", "deleteCompanionAgent", "deleteCompanionAgent", "deleteCompanionAgentCallable"]
+            },
+            "GetCompanionAgent": {
+              "methods": ["getCompanionAgent", "getCompanionAgent", "getCompanionAgent", "getCompanionAgentCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCompanionAgents": {
+              "methods": ["listCompanionAgents", "listCompanionAgents", "listCompanionAgents", "listCompanionAgentsPagedCallable", "listCompanionAgentsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCompanionAgent": {
+              "methods": ["updateCompanionAgent", "updateCompanionAgent", "updateCompanionAgentCallable"]
+            }
+          }
+        }
+      }
+    },
     "Contexts": {
       "clients": {
         "grpc": {
@@ -504,6 +534,9 @@
             },
             "StreamingAnalyzeContent": {
               "methods": ["streamingAnalyzeContentCallable"]
+            },
+            "StreamingReactiveCompanionSuggestions": {
+              "methods": ["streamingReactiveCompanionSuggestionsCallable"]
             },
             "SuggestArticles": {
               "methods": ["suggestArticles", "suggestArticles", "suggestArticles", "suggestArticlesCallable"]

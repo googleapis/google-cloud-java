@@ -42,7 +42,6 @@ public class AsyncListUsable {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .setServiceProject("serviceProject1947145892")
               .build();
       ApiFuture<UsableSubnetwork> future =

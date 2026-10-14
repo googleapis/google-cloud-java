@@ -28,10 +28,12 @@ import com.google.ads.admanager.v1.BatchDeactivateNativeStylesRequest;
 import com.google.ads.admanager.v1.BatchDeactivateNativeStylesResponse;
 import com.google.ads.admanager.v1.BatchUpdateNativeStylesRequest;
 import com.google.ads.admanager.v1.BatchUpdateNativeStylesResponse;
+import com.google.ads.admanager.v1.CreateNativeStyleRequest;
 import com.google.ads.admanager.v1.GetNativeStyleRequest;
 import com.google.ads.admanager.v1.ListNativeStylesRequest;
 import com.google.ads.admanager.v1.ListNativeStylesResponse;
 import com.google.ads.admanager.v1.NativeStyle;
+import com.google.ads.admanager.v1.UpdateNativeStyleRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -138,6 +140,43 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateNativeStyleRequest, NativeStyle>
+      createNativeStyleMethodDescriptor =
+          ApiMethodDescriptor.<CreateNativeStyleRequest, NativeStyle>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.NativeStyleService/CreateNativeStyle")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateNativeStyleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/nativeStyles",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateNativeStyleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateNativeStyleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("nativeStyle", request.getNativeStyle(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NativeStyle>newBuilder()
+                      .setDefaultInstance(NativeStyle.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesMethodDescriptor =
@@ -174,6 +213,45 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<BatchCreateNativeStylesResponse>newBuilder()
                       .setDefaultInstance(BatchCreateNativeStylesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateNativeStyleRequest, NativeStyle>
+      updateNativeStyleMethodDescriptor =
+          ApiMethodDescriptor.<UpdateNativeStyleRequest, NativeStyle>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.NativeStyleService/UpdateNativeStyle")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateNativeStyleRequest>newBuilder()
+                      .setPath(
+                          "/v1/{nativeStyle.name=networks/*/nativeStyles/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateNativeStyleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "nativeStyle.name", request.getNativeStyle().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateNativeStyleRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("nativeStyle", request.getNativeStyle(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<NativeStyle>newBuilder()
+                      .setDefaultInstance(NativeStyle.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -343,8 +421,10 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
       listNativeStylesCallable;
   private final UnaryCallable<ListNativeStylesRequest, ListNativeStylesPagedResponse>
       listNativeStylesPagedCallable;
+  private final UnaryCallable<CreateNativeStyleRequest, NativeStyle> createNativeStyleCallable;
   private final UnaryCallable<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesCallable;
+  private final UnaryCallable<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleCallable;
   private final UnaryCallable<BatchUpdateNativeStylesRequest, BatchUpdateNativeStylesResponse>
       batchUpdateNativeStylesCallable;
   private final UnaryCallable<BatchActivateNativeStylesRequest, BatchActivateNativeStylesResponse>
@@ -422,6 +502,18 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CreateNativeStyleRequest, NativeStyle> createNativeStyleTransportSettings =
+        HttpJsonCallSettings.<CreateNativeStyleRequest, NativeStyle>newBuilder()
+            .setMethodDescriptor(createNativeStyleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     HttpJsonCallSettings<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
         batchCreateNativeStylesTransportSettings =
             HttpJsonCallSettings
@@ -436,6 +528,18 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleTransportSettings =
+        HttpJsonCallSettings.<UpdateNativeStyleRequest, NativeStyle>newBuilder()
+            .setMethodDescriptor(updateNativeStyleMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "native_style.name", String.valueOf(request.getNativeStyle().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<BatchUpdateNativeStylesRequest, BatchUpdateNativeStylesResponse>
         batchUpdateNativeStylesTransportSettings =
             HttpJsonCallSettings
@@ -503,10 +607,20 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
     this.listNativeStylesPagedCallable =
         callableFactory.createPagedCallable(
             listNativeStylesTransportSettings, settings.listNativeStylesSettings(), clientContext);
+    this.createNativeStyleCallable =
+        callableFactory.createUnaryCallable(
+            createNativeStyleTransportSettings,
+            settings.createNativeStyleSettings(),
+            clientContext);
     this.batchCreateNativeStylesCallable =
         callableFactory.createUnaryCallable(
             batchCreateNativeStylesTransportSettings,
             settings.batchCreateNativeStylesSettings(),
+            clientContext);
+    this.updateNativeStyleCallable =
+        callableFactory.createUnaryCallable(
+            updateNativeStyleTransportSettings,
+            settings.updateNativeStyleSettings(),
             clientContext);
     this.batchUpdateNativeStylesCallable =
         callableFactory.createUnaryCallable(
@@ -538,7 +652,9 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getNativeStyleMethodDescriptor);
     methodDescriptors.add(listNativeStylesMethodDescriptor);
+    methodDescriptors.add(createNativeStyleMethodDescriptor);
     methodDescriptors.add(batchCreateNativeStylesMethodDescriptor);
+    methodDescriptors.add(updateNativeStyleMethodDescriptor);
     methodDescriptors.add(batchUpdateNativeStylesMethodDescriptor);
     methodDescriptors.add(batchActivateNativeStylesMethodDescriptor);
     methodDescriptors.add(batchDeactivateNativeStylesMethodDescriptor);
@@ -564,9 +680,19 @@ public class HttpJsonNativeStyleServiceStub extends NativeStyleServiceStub {
   }
 
   @Override
+  public UnaryCallable<CreateNativeStyleRequest, NativeStyle> createNativeStyleCallable() {
+    return createNativeStyleCallable;
+  }
+
+  @Override
   public UnaryCallable<BatchCreateNativeStylesRequest, BatchCreateNativeStylesResponse>
       batchCreateNativeStylesCallable() {
     return batchCreateNativeStylesCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateNativeStyleRequest, NativeStyle> updateNativeStyleCallable() {
+    return updateNativeStyleCallable;
   }
 
   @Override

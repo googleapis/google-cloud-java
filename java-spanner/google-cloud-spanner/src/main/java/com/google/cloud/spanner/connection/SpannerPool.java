@@ -176,6 +176,7 @@ public class SpannerPool {
     private final boolean enableEndToEndTracing;
     private final String clientCertificate;
     private final String clientCertificateKey;
+    private final String caCertificate;
     private final SpannerOptions.InstanceType instanceType;
     private final Boolean enableDirectAccess;
     private final String universeDomain;
@@ -221,6 +222,7 @@ public class SpannerPool {
       this.enableEndToEndTracing = options.isEndToEndTracingEnabled();
       this.clientCertificate = options.getClientCertificate();
       this.clientCertificateKey = options.getClientCertificateKey();
+      this.caCertificate = options.getCaCertificate();
       this.instanceType = options.getInstanceType();
       this.enableDirectAccess = options.isEnableDirectAccess();
       this.universeDomain = options.getUniverseDomain();
@@ -261,6 +263,7 @@ public class SpannerPool {
           && Objects.equals(this.enableEndToEndTracing, other.enableEndToEndTracing)
           && Objects.equals(this.clientCertificate, other.clientCertificate)
           && Objects.equals(this.clientCertificateKey, other.clientCertificateKey)
+          && Objects.equals(this.caCertificate, other.caCertificate)
           && Objects.equals(this.instanceType, other.instanceType)
           && Objects.equals(this.enableDirectAccess, other.enableDirectAccess)
           && Objects.equals(this.universeDomain, other.universeDomain)
@@ -296,6 +299,7 @@ public class SpannerPool {
           this.enableEndToEndTracing,
           this.clientCertificate,
           this.clientCertificateKey,
+          this.caCertificate,
           this.instanceType,
           this.enableDirectAccess,
           this.universeDomain,
@@ -537,8 +541,11 @@ public class SpannerPool {
       // Set a custom channel configurator to allow http instead of https.
       builder.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
     }
-    if (key.clientCertificate != null && key.clientCertificateKey != null) {
+    if (key.clientCertificate != null || key.clientCertificateKey != null) {
       builder.useClientCert(key.clientCertificate, key.clientCertificateKey);
+    }
+    if (key.caCertificate != null) {
+      builder.setCaCertificate(key.caCertificate);
     }
     if (key.instanceType != null) {
       builder.setType(key.instanceType);

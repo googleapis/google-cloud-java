@@ -16,6 +16,8 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
+
 import com.google.ads.admanager.v1.stub.UserServiceStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -24,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
@@ -88,6 +91,46 @@ public class UserServiceSettings extends ClientSettings<UserServiceSettings> {
   /** Returns the object with the settings used for calls to getUser. */
   public UnaryCallSettings<GetUserRequest, User> getUserSettings() {
     return ((UserServiceStubSettings) getStubSettings()).getUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsers. */
+  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).listUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUser. */
+  public UnaryCallSettings<CreateUserRequest, User> createUserSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).createUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateUsers. */
+  public UnaryCallSettings<BatchCreateUsersRequest, BatchCreateUsersResponse>
+      batchCreateUsersSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).batchCreateUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateUsers. */
+  public UnaryCallSettings<BatchActivateUsersRequest, BatchActivateUsersResponse>
+      batchActivateUsersSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).batchActivateUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateUsers. */
+  public UnaryCallSettings<BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+      batchDeactivateUsersSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).batchDeactivateUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateUser. */
+  public UnaryCallSettings<UpdateUserRequest, User> updateUserSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).updateUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateUsers. */
+  public UnaryCallSettings<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+      batchUpdateUsersSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).batchUpdateUsersSettings();
   }
 
   public static final UserServiceSettings create(UserServiceStubSettings stub) throws IOException {
@@ -189,6 +232,46 @@ public class UserServiceSettings extends ClientSettings<UserServiceSettings> {
     /** Returns the builder for the settings used for calls to getUser. */
     public UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings() {
       return getStubSettingsBuilder().getUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsers. */
+    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings() {
+      return getStubSettingsBuilder().listUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUser. */
+    public UnaryCallSettings.Builder<CreateUserRequest, User> createUserSettings() {
+      return getStubSettingsBuilder().createUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateUsers. */
+    public UnaryCallSettings.Builder<BatchCreateUsersRequest, BatchCreateUsersResponse>
+        batchCreateUsersSettings() {
+      return getStubSettingsBuilder().batchCreateUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateUsers. */
+    public UnaryCallSettings.Builder<BatchActivateUsersRequest, BatchActivateUsersResponse>
+        batchActivateUsersSettings() {
+      return getStubSettingsBuilder().batchActivateUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateUsers. */
+    public UnaryCallSettings.Builder<BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+        batchDeactivateUsersSettings() {
+      return getStubSettingsBuilder().batchDeactivateUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateUser. */
+    public UnaryCallSettings.Builder<UpdateUserRequest, User> updateUserSettings() {
+      return getStubSettingsBuilder().updateUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateUsers. */
+    public UnaryCallSettings.Builder<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+        batchUpdateUsersSettings() {
+      return getStubSettingsBuilder().batchUpdateUsersSettings();
     }
 
     @Override

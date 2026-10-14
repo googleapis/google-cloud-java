@@ -2173,7 +2173,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The requested device
+   * Required. The requested device.
    * </pre>
    *
    * <code>
@@ -2191,7 +2191,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The requested device
+   * Required. The requested device.
    * </pre>
    *
    * <code>
@@ -2211,7 +2211,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The requested device
+   * Required. The requested device.
    * </pre>
    *
    * <code>
@@ -2223,6 +2223,65 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
     return androidDevice_ == null
         ? com.google.cloud.devicestreaming.v1.AndroidDevice.getDefaultInstance()
         : androidDevice_;
+  }
+
+  public static final int CLIENT_INFO_FIELD_NUMBER = 21;
+  private com.google.cloud.devicestreaming.v1.ClientInfo clientInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the client which invoked the device session.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasClientInfo() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the client which invoked the device session.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.devicestreaming.v1.ClientInfo getClientInfo() {
+    return clientInfo_ == null
+        ? com.google.cloud.devicestreaming.v1.ClientInfo.getDefaultInstance()
+        : clientInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information about the client which invoked the device session.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.devicestreaming.v1.ClientInfoOrBuilder getClientInfoOrBuilder() {
+    return clientInfo_ == null
+        ? com.google.cloud.devicestreaming.v1.ClientInfo.getDefaultInstance()
+        : clientInfo_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2271,6 +2330,9 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(15, getAndroidDevice());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(21, getClientInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2316,6 +2378,9 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getAndroidDevice());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getClientInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2351,6 +2416,10 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
     if (hasAndroidDevice() != other.hasAndroidDevice()) return false;
     if (hasAndroidDevice()) {
       if (!getAndroidDevice().equals(other.getAndroidDevice())) return false;
+    }
+    if (hasClientInfo() != other.hasClientInfo()) return false;
+    if (hasClientInfo()) {
+      if (!getClientInfo().equals(other.getClientInfo())) return false;
     }
     if (!getExpirationCase().equals(other.getExpirationCase())) return false;
     switch (expirationCase_) {
@@ -2399,6 +2468,10 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
     if (hasAndroidDevice()) {
       hash = (37 * hash) + ANDROID_DEVICE_FIELD_NUMBER;
       hash = (53 * hash) + getAndroidDevice().hashCode();
+    }
+    if (hasClientInfo()) {
+      hash = (37 * hash) + CLIENT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getClientInfo().hashCode();
     }
     switch (expirationCase_) {
       case 13:
@@ -2558,6 +2631,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
         internalGetCreateTimeFieldBuilder();
         internalGetActiveStartTimeFieldBuilder();
         internalGetAndroidDeviceFieldBuilder();
+        internalGetClientInfoFieldBuilder();
       }
     }
 
@@ -2600,6 +2674,11 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
       if (androidDeviceBuilder_ != null) {
         androidDeviceBuilder_.dispose();
         androidDeviceBuilder_ = null;
+      }
+      clientInfo_ = null;
+      if (clientInfoBuilder_ != null) {
+        clientInfoBuilder_.dispose();
+        clientInfoBuilder_ = null;
       }
       expirationCase_ = 0;
       expiration_ = null;
@@ -2685,6 +2764,10 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
             androidDeviceBuilder_ == null ? androidDevice_ : androidDeviceBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.clientInfo_ = clientInfoBuilder_ == null ? clientInfo_ : clientInfoBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2763,6 +2846,9 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasAndroidDevice()) {
         mergeAndroidDevice(other.getAndroidDevice());
+      }
+      if (other.hasClientInfo()) {
+        mergeClientInfo(other.getClientInfo());
       }
       switch (other.getExpirationCase()) {
         case TTL:
@@ -2880,6 +2966,13 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 122
+            case 170:
+              {
+                input.readMessage(
+                    internalGetClientInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4826,7 +4919,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4843,7 +4936,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4866,7 +4959,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4891,7 +4984,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4914,7 +5007,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4945,7 +5038,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4967,7 +5060,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -4984,7 +5077,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -5005,7 +5098,7 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The requested device
+     * Required. The requested device.
      * </pre>
      *
      * <code>
@@ -5027,6 +5120,219 @@ public final class DeviceSession extends com.google.protobuf.GeneratedMessage
         androidDevice_ = null;
       }
       return androidDeviceBuilder_;
+    }
+
+    private com.google.cloud.devicestreaming.v1.ClientInfo clientInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.devicestreaming.v1.ClientInfo,
+            com.google.cloud.devicestreaming.v1.ClientInfo.Builder,
+            com.google.cloud.devicestreaming.v1.ClientInfoOrBuilder>
+        clientInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the clientInfo field is set.
+     */
+    public boolean hasClientInfo() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The clientInfo.
+     */
+    public com.google.cloud.devicestreaming.v1.ClientInfo getClientInfo() {
+      if (clientInfoBuilder_ == null) {
+        return clientInfo_ == null
+            ? com.google.cloud.devicestreaming.v1.ClientInfo.getDefaultInstance()
+            : clientInfo_;
+      } else {
+        return clientInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientInfo(com.google.cloud.devicestreaming.v1.ClientInfo value) {
+      if (clientInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        clientInfo_ = value;
+      } else {
+        clientInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setClientInfo(
+        com.google.cloud.devicestreaming.v1.ClientInfo.Builder builderForValue) {
+      if (clientInfoBuilder_ == null) {
+        clientInfo_ = builderForValue.build();
+      } else {
+        clientInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeClientInfo(com.google.cloud.devicestreaming.v1.ClientInfo value) {
+      if (clientInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && clientInfo_ != null
+            && clientInfo_ != com.google.cloud.devicestreaming.v1.ClientInfo.getDefaultInstance()) {
+          getClientInfoBuilder().mergeFrom(value);
+        } else {
+          clientInfo_ = value;
+        }
+      } else {
+        clientInfoBuilder_.mergeFrom(value);
+      }
+      if (clientInfo_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearClientInfo() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      clientInfo_ = null;
+      if (clientInfoBuilder_ != null) {
+        clientInfoBuilder_.dispose();
+        clientInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.devicestreaming.v1.ClientInfo.Builder getClientInfoBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetClientInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.devicestreaming.v1.ClientInfoOrBuilder getClientInfoOrBuilder() {
+      if (clientInfoBuilder_ != null) {
+        return clientInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return clientInfo_ == null
+            ? com.google.cloud.devicestreaming.v1.ClientInfo.getDefaultInstance()
+            : clientInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Information about the client which invoked the device session.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.devicestreaming.v1.ClientInfo client_info = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.devicestreaming.v1.ClientInfo,
+            com.google.cloud.devicestreaming.v1.ClientInfo.Builder,
+            com.google.cloud.devicestreaming.v1.ClientInfoOrBuilder>
+        internalGetClientInfoFieldBuilder() {
+      if (clientInfoBuilder_ == null) {
+        clientInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.devicestreaming.v1.ClientInfo,
+                com.google.cloud.devicestreaming.v1.ClientInfo.Builder,
+                com.google.cloud.devicestreaming.v1.ClientInfoOrBuilder>(
+                getClientInfo(), getParentForChildren(), isClean());
+        clientInfo_ = null;
+      }
+      return clientInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.devicestreaming.v1.DeviceSession)

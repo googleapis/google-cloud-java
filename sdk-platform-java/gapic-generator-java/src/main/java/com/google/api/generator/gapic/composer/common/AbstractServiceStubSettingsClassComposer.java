@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.BatchedRequestIssuer;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.BatchingDescriptor;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
@@ -132,6 +133,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
   private static final String BATCHING_DESC_PATTERN = "%s_BATCHING_DESC";
   private static final String PAGE_STR_DESC_PATTERN = "%s_PAGE_STR_DESC";
   private static final String PAGED_RESPONSE_FACTORY_PATTERN = "%s_PAGE_STR_FACT";
+  private static final String SETTINGS_METHOD_NAME_PATTERN = "%sSettings";
   private static final String NESTED_BUILDER_CLASS_NAME = "Builder";
   private static final String NESTED_UNARY_METHOD_SETTINGS_BUILDERS_VAR_NAME =
       "unaryMethodSettingsBuilders";
@@ -444,7 +446,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     // list.
     List<Method> publicMethods =
         service.methods().stream()
-            .filter(m -> m.isInternalApi() == false)
+            .filter(m -> !m.isInternalApi() && !m.isResumableUpload())
             .collect(Collectors.toList());
     Optional<Method> methodOpt =
         publicMethods.isEmpty()
@@ -519,7 +521,8 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
           !Objects.isNull(serviceConfig) && serviceConfig.hasBatchingSetting(service, method);
       TypeNode settingsType =
           getCallSettingsType(method, typeStore, hasBatchingSettings, isNestedClass);
-      String varName = String.format("%sSettings", JavaStyle.toLowerCamelCase(method.name()));
+      String varName =
+          String.format(SETTINGS_METHOD_NAME_PATTERN, JavaStyle.toLowerCamelCase(method.name()));
       if (method.isDeprecated()) {
         deprecatedSettingVarNames.add(varName);
       }
@@ -1538,6 +1541,9 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             service, serviceConfig, nestedMethodSettingsMemberVarExprs, typeStore));
     nestedClassMethods.addAll(createNestedClassCreateDefaultMethods(service, typeStore));
     nestedClassMethods.add(createNestedClassInitDefaultsMethod(service, serviceConfig, typeStore));
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      nestedClassMethods.add(createNestedClassSetHttpJsonInternalHeaderProviderMethod(typeStore));
+    }
     nestedClassMethods.add(createNestedClassApplyToAllUnaryMethodsMethod(superType, typeStore));
     nestedClassMethods.add(createNestedClassUnaryMethodSettingsBuilderGetterMethod());
     nestedClassMethods.addAll(
@@ -1573,7 +1579,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                 "No batching setting found for service %s, method %s",
                 service.name(), method.name()));
         String settingsGetterMethodName =
-            String.format("%sSettings", JavaStyle.toLowerCamelCase(method.name()));
+            String.format(SETTINGS_METHOD_NAME_PATTERN, JavaStyle.toLowerCamelCase(method.name()));
         bodyStatements.add(
             ExprStatement.withExpr(
                 RetrySettingsComposer.createBatchingBuilderSettingsExpr(
@@ -2016,6 +2022,37 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
         .build();
   }
 
+  /**
+   * Creates the {@code setHttpJsonInternalHeaderProvider} method on the settings Builder. Emitted
+   * only for services with resumable upload methods.
+   */
+  private static MethodDefinition createNestedClassSetHttpJsonInternalHeaderProviderMethod(
+      TypeStore typeStore) {
+    TypeNode builderType = typeStore.get(NESTED_BUILDER_CLASS_NAME);
+    VariableExpr httpJsonInternalHeaderProviderVarExpr =
+        VariableExpr.withVariable(
+            Variable.builder()
+                .setType(FIXED_TYPESTORE.get("HeaderProvider"))
+                .setName("httpJsonInternalHeaderProvider")
+                .build());
+
+    return MethodDefinition.builder()
+        .setHeaderCommentStatements(
+            SettingsCommentComposer.SET_HTTP_JSON_INTERNAL_HEADER_PROVIDER_METHOD_COMMENT)
+        .setAnnotations(Arrays.asList(AnnotationNode.withType(FIXED_TYPESTORE.get("InternalApi"))))
+        .setScope(ScopeNode.PROTECTED)
+        .setReturnType(builderType)
+        .setName("setHttpJsonInternalHeaderProvider")
+        .setArguments(httpJsonInternalHeaderProviderVarExpr.toBuilder().setIsDecl(true).build())
+        .setReturnExpr(
+            MethodInvocationExpr.builder()
+                .setMethodName("setInternalHeaderProvider")
+                .setArguments(httpJsonInternalHeaderProviderVarExpr)
+                .setReturnType(builderType)
+                .build())
+        .build();
+  }
+
   private static MethodDefinition createNestedClassApplyToAllUnaryMethodsMethod(
       TypeNode superType, TypeStore typeStore) {
     List<Reference> apiFunctionTypeGenerics = new ArrayList<>();
@@ -2201,6 +2238,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             GaxProperties.class,
             Generated.class,
             GoogleCredentialsProvider.class,
+            HeaderProvider.class,
             IOException.class,
             ImmutableList.class,
             ImmutableMap.class,

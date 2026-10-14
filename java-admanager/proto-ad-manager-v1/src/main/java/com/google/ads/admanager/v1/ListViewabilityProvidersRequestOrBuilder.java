@@ -31,7 +31,7 @@ public interface ListViewabilityProvidersRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of
-   * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s.
+   * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider].
    * Format: `networks/{network_code}`
    * </pre>
    *
@@ -48,7 +48,7 @@ public interface ListViewabilityProvidersRequestOrBuilder
    *
    * <pre>
    * Required. The parent, which owns this collection of
-   * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s.
+   * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider].
    * Format: `networks/{network_code}`
    * </pre>
    *
@@ -65,9 +65,9 @@ public interface ListViewabilityProvidersRequestOrBuilder
    *
    * <pre>
    * Optional. The maximum number of
-   * [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s to
+   * [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] to
    * return. The service may return fewer than this value. If unspecified, at
-   * most 50 [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s
+   * most 50 [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider]
    * will be returned. The maximum value is 1000; values above 1000 will be
    * coerced to 1000.
    * </pre>
@@ -82,12 +82,11 @@ public interface ListViewabilityProvidersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous
-   * [ListViewabilityProviders][] call. Provide this to retrieve the subsequent
-   * page.
+   * Optional. A page token, received from a previous `ListViewabilityProviders`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * [ListViewabilityProviders][] must match the call that provided the page
+   * `ListViewabilityProviders` must match the call that provided the page
    * token.
    * </pre>
    *
@@ -101,12 +100,11 @@ public interface ListViewabilityProvidersRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous
-   * [ListViewabilityProviders][] call. Provide this to retrieve the subsequent
-   * page.
+   * Optional. A page token, received from a previous `ListViewabilityProviders`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
-   * [ListViewabilityProviders][] must match the call that provided the page
+   * `ListViewabilityProviders` must match the call that provided the page
    * token.
    * </pre>
    *

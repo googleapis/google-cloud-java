@@ -287,4 +287,414 @@ public interface AdReviewCenterAdOrBuilder
    * @return The bytes for previewUrl.
    */
   com.google.protobuf.ByteString getPreviewUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the assetPreviewUrls.
+   */
+  java.util.List<java.lang.String> getAssetPreviewUrlsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of assetPreviewUrls.
+   */
+  int getAssetPreviewUrlsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The assetPreviewUrls at the given index.
+   */
+  java.lang.String getAssetPreviewUrls(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The preview URLs that can be embedded or accessed directly
+   * which will present the rendered contents of the ad, each with a different
+   * asset. These URLs expire 72 hours after being retrieved.
+   * </pre>
+   *
+   * <code>repeated string asset_preview_urls = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the assetPreviewUrls at the given index.
+   */
+  com.google.protobuf.ByteString getAssetPreviewUrlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+   * detected advertiser for Google Display Network (GDN) ads, and individual
+   * network name for real-time bidding (RTB) ads.
+   * </pre>
+   *
+   * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The advertiserDisplayName.
+   */
+  java.lang.String getAdvertiserDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The advertiser name of the Ad Review Center ad. Specifies the
+   * detected advertiser for Google Display Network (GDN) ads, and individual
+   * network name for real-time bidding (RTB) ads.
+   * </pre>
+   *
+   * <code>string advertiser_display_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for advertiserDisplayName.
+   */
+  com.google.protobuf.ByteString getAdvertiserDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the languageCodes.
+   */
+  java.util.List<java.lang.String> getLanguageCodesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of languageCodes.
+   */
+  int getLanguageCodesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The languageCodes at the given index.
+   */
+  java.lang.String getLanguageCodes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The language codes of the Ad Review Center ad. Languages
+   * detected are represented by their BCP 47 code. For example, 'en', 'fr',
+   * 'es-419', or 'zh-cn'.
+   * </pre>
+   *
+   * <code>repeated string language_codes = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the languageCodes at the given index.
+   */
+  com.google.protobuf.ByteString getLanguageCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the regionCodes.
+   */
+  java.util.List<java.lang.String> getRegionCodesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of regionCodes.
+   */
+  int getRegionCodesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The regionCodes at the given index.
+   */
+  java.lang.String getRegionCodes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The region codes of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string region_codes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the regionCodes at the given index.
+   */
+  com.google.protobuf.ByteString getRegionCodesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the adTypes.
+   */
+  java.util.List<com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat>
+      getAdTypesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of adTypes.
+   */
+  int getAdTypesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The adTypes at the given index.
+   */
+  com.google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat getAdTypes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for adTypes.
+   */
+  java.util.List<java.lang.Integer> getAdTypesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ad types of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.ArcCreativeFormatEnum.ArcCreativeFormat ad_types = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of adTypes at the given index.
+   */
+  int getAdTypesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the destinationUrls.
+   */
+  java.util.List<java.lang.String> getDestinationUrlsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of destinationUrls.
+   */
+  int getDestinationUrlsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The destinationUrls at the given index.
+   */
+  java.lang.String getDestinationUrls(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The destination URLs of the Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string destination_urls = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the destinationUrls at the given index.
+   */
+  com.google.protobuf.ByteString getDestinationUrlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the labelIds.
+   */
+  java.util.List<java.lang.String> getLabelIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of labelIds.
+   */
+  int getLabelIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labelIds at the given index.
+   */
+  java.lang.String getLabelIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The
+   * [labelIds][google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse.CustomLabel.label_id]
+   * associated with this Ad Review Center ad.
+   * </pre>
+   *
+   * <code>repeated string label_ids = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labelIds at the given index.
+   */
+  com.google.protobuf.ByteString getLabelIdsBytes(int index);
 }

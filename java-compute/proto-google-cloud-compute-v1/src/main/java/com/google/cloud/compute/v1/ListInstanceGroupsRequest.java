@@ -585,51 +585,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return Whether the returnPartialSuccess field is set.
-   */
-  @java.lang.Override
-  public boolean hasReturnPartialSuccess() {
-    return ((bitField0_ & 0x00000010) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return The returnPartialSuccess.
-   */
-  @java.lang.Override
-  public boolean getReturnPartialSuccess() {
-    return returnPartialSuccess_;
-  }
-
   public static final int ZONE_FIELD_NUMBER = 3744684;
 
   @SuppressWarnings("serial")
@@ -717,9 +672,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 336120696, filter_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeBool(517198390, returnPartialSuccess_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -746,10 +698,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(336120696, filter_);
-    }
-    if (((bitField0_ & 0x00000010) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -784,10 +732,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
       if (!getPageToken().equals(other.getPageToken())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
-    if (hasReturnPartialSuccess()) {
-      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
-    }
     if (!getZone().equals(other.getZone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -818,10 +762,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    if (hasReturnPartialSuccess()) {
-      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
-    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -970,7 +910,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
       orderBy_ = "";
       pageToken_ = "";
       project_ = "";
-      returnPartialSuccess_ = false;
       zone_ = "";
       return this;
     }
@@ -1029,10 +968,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
         result.project_ = project_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.returnPartialSuccess_ = returnPartialSuccess_;
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.zone_ = zone_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1074,12 +1009,9 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000010;
         onChanged();
       }
-      if (other.hasReturnPartialSuccess()) {
-        setReturnPartialSuccess(other.getReturnPartialSuccess());
-      }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1111,7 +1043,7 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 29957474
             case 159957578:
@@ -1144,12 +1076,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000001;
                 break;
               } // case -1606001726
-            case -157380176:
-              {
-                returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case -157380176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2160,98 +2086,6 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
       return this;
     }
 
-    private boolean returnPartialSuccess_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return Whether the returnPartialSuccess field is set.
-     */
-    @java.lang.Override
-    public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return The returnPartialSuccess.
-     */
-    @java.lang.Override
-    public boolean getReturnPartialSuccess() {
-      return returnPartialSuccess_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @param value The returnPartialSuccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReturnPartialSuccess(boolean value) {
-
-      returnPartialSuccess_ = value;
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      returnPartialSuccess_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object zone_ = "";
 
     /**
@@ -2320,7 +2154,7 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2339,7 +2173,7 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2363,7 +2197,7 @@ public final class ListInstanceGroupsRequest extends com.google.protobuf.Generat
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

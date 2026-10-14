@@ -25,6 +25,10 @@ package com.google.shopping.merchant.products.v1;
  *
  * <pre>
  * A message that represents loyalty program.
+ *
+ * For more information on loyalty programs, see
+ * [Overview of loyalty
+ * programs](/merchant/api/guides/loyalty/loyalty-programs).
  * </pre>
  *
  * Protobuf type {@code google.shopping.merchant.products.v1.LoyaltyProgram}
@@ -761,6 +765,10 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * A message that represents loyalty program.
+   *
+   * For more information on loyalty programs, see
+   * [Overview of loyalty
+   * programs](/merchant/api/guides/loyalty/loyalty-programs).
    * </pre>
    *
    * Protobuf type {@code google.shopping.merchant.products.v1.LoyaltyProgram}

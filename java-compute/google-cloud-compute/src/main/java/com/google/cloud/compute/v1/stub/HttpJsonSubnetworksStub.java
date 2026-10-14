@@ -118,12 +118,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             if (request.hasServiceProjectNumber()) {
                               serializer.putQueryParam(
                                   fields,
@@ -420,12 +414,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             if (request.hasViews()) {
                               serializer.putQueryParam(fields, "views", request.getViews());
                             }
@@ -476,12 +464,6 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                             }
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             if (request.hasServiceProject()) {
                               serializer.putQueryParam(

@@ -347,7 +347,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateReadRow(classic, rowAdapter, shimSettings);
+        .decorateReadRow(classic, rowAdapter, shimSettings)
+        .withDefaultCallContext(
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(retrySettings));
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
@@ -673,7 +678,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateMutateRow(classic, perOpSettings.mutateRowSettings);
+        .decorateMutateRow(classic, perOpSettings.mutateRowSettings)
+        .withDefaultCallContext(
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(perOpSettings.mutateRowSettings.getRetrySettings()));
   }
 
   /**
@@ -918,14 +928,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
-    return createUnaryCallable(
-        BigtableGrpc.getCheckAndMutateRowMethod(),
-        req ->
-            composeRequestParams(
-                req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-        perOpSettings.checkAndMutateRowSettings,
-        req -> req.toProto(requestContext),
-        CheckAndMutateRowResponse::getPredicateMatched);
+    UnaryCallable<ConditionalRowMutation, Boolean> classic =
+        createUnaryCallable(
+            BigtableGrpc.getCheckAndMutateRowMethod(),
+            req ->
+                composeRequestParams(
+                    req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+            perOpSettings.checkAndMutateRowSettings,
+            req -> req.toProto(requestContext),
+            CheckAndMutateRowResponse::getPredicateMatched);
+
+    return bigtableClientContext
+        .getSessionShim()
+        .decorateCheckAndMutateRow(classic, perOpSettings.checkAndMutateRowSettings);
   }
 
   /**
@@ -941,14 +956,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
     DefaultRowAdapter rowAdapter = new DefaultRowAdapter();
 
-    return createUnaryCallable(
-        BigtableGrpc.getReadModifyWriteRowMethod(),
-        req ->
-            composeRequestParams(
-                req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-        perOpSettings.readModifyWriteRowSettings,
-        req -> req.toProto(requestContext),
-        resp -> rowAdapter.createRowFromProto(resp.getRow()));
+    UnaryCallable<ReadModifyWriteRow, Row> classic =
+        createUnaryCallable(
+            BigtableGrpc.getReadModifyWriteRowMethod(),
+            req ->
+                composeRequestParams(
+                    req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+            perOpSettings.readModifyWriteRowSettings,
+            req -> req.toProto(requestContext),
+            resp -> rowAdapter.createRowFromProto(resp.getRow()));
+
+    return bigtableClientContext
+        .getSessionShim()
+        .decorateReadModifyWriteRow(classic, rowAdapter, perOpSettings.readModifyWriteRowSettings);
   }
 
   /**

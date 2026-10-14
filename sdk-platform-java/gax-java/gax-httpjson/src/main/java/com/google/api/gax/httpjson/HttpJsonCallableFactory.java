@@ -41,7 +41,6 @@ import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -230,7 +229,7 @@ public class HttpJsonCallableFactory {
    * generated code.
    *
    * @param httpJsonCallSettings the http/json call settings
-   * @param callSettings settings configuring chunk size
+   * @param callSettings {@link UnaryCallSettings} to configure the method-level settings with
    * @param clientContext client context providing default call context
    * @return {@link ResumableUploadCallable} callable object
    */
@@ -238,11 +237,11 @@ public class HttpJsonCallableFactory {
   public static <RequestT, ResponseT>
       ResumableUploadCallable<RequestT, ResponseT> createResumableUploadCallable(
           HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-          ResumableUploadCallSettings callSettings,
+          UnaryCallSettings<RequestT, ResponseT> callSettings,
           ClientContext clientContext) {
     ResumableUploadClient<RequestT, ResponseT> uploadClient =
         HttpJsonResumableUploadClient.create(
-            clientContext, httpJsonCallSettings.getMethodDescriptor());
+            clientContext, httpJsonCallSettings.getMethodDescriptor(), callSettings);
     return Callables.resumableUpload(uploadClient, callSettings, clientContext);
   }
 

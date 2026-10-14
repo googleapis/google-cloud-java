@@ -30,7 +30,7 @@ public interface UpdateWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * Workload resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request.
@@ -41,7 +41,7 @@ public interface UpdateWorkloadRequestOrBuilder
    * previously had.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -52,7 +52,7 @@ public interface UpdateWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * Workload resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request.
@@ -63,7 +63,7 @@ public interface UpdateWorkloadRequestOrBuilder
    * previously had.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -74,7 +74,7 @@ public interface UpdateWorkloadRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * Workload resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request.
@@ -85,7 +85,7 @@ public interface UpdateWorkloadRequestOrBuilder
    * previously had.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
@@ -149,7 +149,9 @@ public interface UpdateWorkloadRequestOrBuilder
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The requestId.
    */
@@ -174,7 +176,9 @@ public interface UpdateWorkloadRequestOrBuilder
    * not supported (00000000-0000-0000-0000-000000000000).
    * </pre>
    *
-   * <code>string request_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
    *
    * @return The bytes for requestId.
    */

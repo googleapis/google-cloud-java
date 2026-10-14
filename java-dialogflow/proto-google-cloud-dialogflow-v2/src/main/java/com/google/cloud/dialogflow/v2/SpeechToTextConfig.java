@@ -75,6 +75,1662 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dialogflow.v2.SpeechToTextConfig.Builder.class);
   }
 
+  public interface GeminiAsrConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Gemini ASR model ID used for transcription.
+     * This value overrides the default model ID configured on the server.
+     * Example: "gemini-3-flash-lite-asr-preview"
+     * </pre>
+     *
+     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelId.
+     */
+    java.lang.String getModelId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Gemini ASR model ID used for transcription.
+     * This value overrides the default model ID configured on the server.
+     * Example: "gemini-3-flash-lite-asr-preview"
+     * </pre>
+     *
+     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelId.
+     */
+    com.google.protobuf.ByteString getModelIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required duration of detected silence (or non-speech)
+     * before end-of-speech is committed.
+     * </pre>
+     *
+     * <code>int32 silence_duration_ms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The silenceDurationMs.
+     */
+    int getSilenceDurationMs();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required duration of detected speech before start-of-speech
+     * is committed.
+     * </pre>
+     *
+     * <code>int32 prefix_padding_ms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The prefixPaddingMs.
+     */
+    int getPrefixPaddingMs();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for startOfSpeechSensitivity.
+     */
+    int getStartOfSpeechSensitivityValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The startOfSpeechSensitivity.
+     */
+    com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+        getStartOfSpeechSensitivity();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. End of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for endOfSpeechSensitivity.
+     */
+    int getEndOfSpeechSensitivityValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. End of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endOfSpeechSensitivity.
+     */
+    com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+        getEndOfSpeechSensitivity();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for using Gemini ASR models served via Vertex AI. This
+   * message is used to override the default Gemini ASR model or provide
+   * additional advanced parameters.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig}
+   */
+  public static final class GeminiAsrConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig)
+      GeminiAsrConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "GeminiAsrConfig");
+    }
+
+    // Use GeminiAsrConfig.newBuilder() to construct.
+    private GeminiAsrConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private GeminiAsrConfig() {
+      modelId_ = "";
+      startOfSpeechSensitivity_ = 0;
+      endOfSpeechSensitivity_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2_SpeechToTextConfig_GeminiAsrConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.v2.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2_SpeechToTextConfig_GeminiAsrConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.class,
+              com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Start of speech sensitivity.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity}
+     */
+    public enum StartSensitivity implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The default is START_SENSITIVITY_LOW.
+       * </pre>
+       *
+       * <code>START_SENSITIVITY_UNSPECIFIED = 0;</code>
+       */
+      START_SENSITIVITY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection will detect the start of speech more often.
+       * </pre>
+       *
+       * <code>START_SENSITIVITY_HIGH = 1;</code>
+       */
+      START_SENSITIVITY_HIGH(1),
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection will detect the start of speech less often.
+       * </pre>
+       *
+       * <code>START_SENSITIVITY_LOW = 2;</code>
+       */
+      START_SENSITIVITY_LOW(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "StartSensitivity");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The default is START_SENSITIVITY_LOW.
+       * </pre>
+       *
+       * <code>START_SENSITIVITY_UNSPECIFIED = 0;</code>
+       */
+      public static final int START_SENSITIVITY_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection will detect the start of speech more often.
+       * </pre>
+       *
+       * <code>START_SENSITIVITY_HIGH = 1;</code>
+       */
+      public static final int START_SENSITIVITY_HIGH_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection will detect the start of speech less often.
+       * </pre>
+       *
+       * <code>START_SENSITIVITY_LOW = 2;</code>
+       */
+      public static final int START_SENSITIVITY_LOW_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static StartSensitivity valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static StartSensitivity forNumber(int value) {
+        switch (value) {
+          case 0:
+            return START_SENSITIVITY_UNSPECIFIED;
+          case 1:
+            return START_SENSITIVITY_HIGH;
+          case 2:
+            return START_SENSITIVITY_LOW;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<StartSensitivity>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<StartSensitivity>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<StartSensitivity>() {
+                public StartSensitivity findValueByNumber(int number) {
+                  return StartSensitivity.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final StartSensitivity[] VALUES = values();
+
+      public static StartSensitivity valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private StartSensitivity(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * End of speech sensitivity.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity}
+     */
+    public enum EndSensitivity implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The default is END_SENSITIVITY_LOW.
+       * </pre>
+       *
+       * <code>END_SENSITIVITY_UNSPECIFIED = 0;</code>
+       */
+      END_SENSITIVITY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection ends speech more often.
+       * </pre>
+       *
+       * <code>END_SENSITIVITY_HIGH = 1;</code>
+       */
+      END_SENSITIVITY_HIGH(1),
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection ends speech less often.
+       * </pre>
+       *
+       * <code>END_SENSITIVITY_LOW = 2;</code>
+       */
+      END_SENSITIVITY_LOW(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "EndSensitivity");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The default is END_SENSITIVITY_LOW.
+       * </pre>
+       *
+       * <code>END_SENSITIVITY_UNSPECIFIED = 0;</code>
+       */
+      public static final int END_SENSITIVITY_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection ends speech more often.
+       * </pre>
+       *
+       * <code>END_SENSITIVITY_HIGH = 1;</code>
+       */
+      public static final int END_SENSITIVITY_HIGH_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Automatic detection ends speech less often.
+       * </pre>
+       *
+       * <code>END_SENSITIVITY_LOW = 2;</code>
+       */
+      public static final int END_SENSITIVITY_LOW_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EndSensitivity valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EndSensitivity forNumber(int value) {
+        switch (value) {
+          case 0:
+            return END_SENSITIVITY_UNSPECIFIED;
+          case 1:
+            return END_SENSITIVITY_HIGH;
+          case 2:
+            return END_SENSITIVITY_LOW;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EndSensitivity> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EndSensitivity>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EndSensitivity>() {
+                public EndSensitivity findValueByNumber(int number) {
+                  return EndSensitivity.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final EndSensitivity[] VALUES = values();
+
+      public static EndSensitivity valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EndSensitivity(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity)
+    }
+
+    public static final int MODEL_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Gemini ASR model ID used for transcription.
+     * This value overrides the default model ID configured on the server.
+     * Example: "gemini-3-flash-lite-asr-preview"
+     * </pre>
+     *
+     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelId.
+     */
+    @java.lang.Override
+    public java.lang.String getModelId() {
+      java.lang.Object ref = modelId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Gemini ASR model ID used for transcription.
+     * This value overrides the default model ID configured on the server.
+     * Example: "gemini-3-flash-lite-asr-preview"
+     * </pre>
+     *
+     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelIdBytes() {
+      java.lang.Object ref = modelId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SILENCE_DURATION_MS_FIELD_NUMBER = 2;
+    private int silenceDurationMs_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required duration of detected silence (or non-speech)
+     * before end-of-speech is committed.
+     * </pre>
+     *
+     * <code>int32 silence_duration_ms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The silenceDurationMs.
+     */
+    @java.lang.Override
+    public int getSilenceDurationMs() {
+      return silenceDurationMs_;
+    }
+
+    public static final int PREFIX_PADDING_MS_FIELD_NUMBER = 3;
+    private int prefixPaddingMs_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The required duration of detected speech before start-of-speech
+     * is committed.
+     * </pre>
+     *
+     * <code>int32 prefix_padding_ms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The prefixPaddingMs.
+     */
+    @java.lang.Override
+    public int getPrefixPaddingMs() {
+      return prefixPaddingMs_;
+    }
+
+    public static final int START_OF_SPEECH_SENSITIVITY_FIELD_NUMBER = 4;
+    private int startOfSpeechSensitivity_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for startOfSpeechSensitivity.
+     */
+    @java.lang.Override
+    public int getStartOfSpeechSensitivityValue() {
+      return startOfSpeechSensitivity_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Start of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The startOfSpeechSensitivity.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+        getStartOfSpeechSensitivity() {
+      com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity result =
+          com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+              .forNumber(startOfSpeechSensitivity_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int END_OF_SPEECH_SENSITIVITY_FIELD_NUMBER = 5;
+    private int endOfSpeechSensitivity_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. End of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for endOfSpeechSensitivity.
+     */
+    @java.lang.Override
+    public int getEndOfSpeechSensitivityValue() {
+      return endOfSpeechSensitivity_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. End of speech sensitivity.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endOfSpeechSensitivity.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+        getEndOfSpeechSensitivity() {
+      com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity result =
+          com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+              .forNumber(endOfSpeechSensitivity_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(modelId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, modelId_);
+      }
+      if (silenceDurationMs_ != 0) {
+        output.writeInt32(2, silenceDurationMs_);
+      }
+      if (prefixPaddingMs_ != 0) {
+        output.writeInt32(3, prefixPaddingMs_);
+      }
+      if (startOfSpeechSensitivity_
+          != com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+              .START_SENSITIVITY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, startOfSpeechSensitivity_);
+      }
+      if (endOfSpeechSensitivity_
+          != com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+              .END_SENSITIVITY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(5, endOfSpeechSensitivity_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(modelId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, modelId_);
+      }
+      if (silenceDurationMs_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, silenceDurationMs_);
+      }
+      if (prefixPaddingMs_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, prefixPaddingMs_);
+      }
+      if (startOfSpeechSensitivity_
+          != com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+              .START_SENSITIVITY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, startOfSpeechSensitivity_);
+      }
+      if (endOfSpeechSensitivity_
+          != com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+              .END_SENSITIVITY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, endOfSpeechSensitivity_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig other =
+          (com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig) obj;
+
+      if (!getModelId().equals(other.getModelId())) return false;
+      if (getSilenceDurationMs() != other.getSilenceDurationMs()) return false;
+      if (getPrefixPaddingMs() != other.getPrefixPaddingMs()) return false;
+      if (startOfSpeechSensitivity_ != other.startOfSpeechSensitivity_) return false;
+      if (endOfSpeechSensitivity_ != other.endOfSpeechSensitivity_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getModelId().hashCode();
+      hash = (37 * hash) + SILENCE_DURATION_MS_FIELD_NUMBER;
+      hash = (53 * hash) + getSilenceDurationMs();
+      hash = (37 * hash) + PREFIX_PADDING_MS_FIELD_NUMBER;
+      hash = (53 * hash) + getPrefixPaddingMs();
+      hash = (37 * hash) + START_OF_SPEECH_SENSITIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + startOfSpeechSensitivity_;
+      hash = (37 * hash) + END_OF_SPEECH_SENSITIVITY_FIELD_NUMBER;
+      hash = (53 * hash) + endOfSpeechSensitivity_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for using Gemini ASR models served via Vertex AI. This
+     * message is used to override the default Gemini ASR model or provide
+     * additional advanced parameters.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig)
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2.AudioConfigProto
+            .internal_static_google_cloud_dialogflow_v2_SpeechToTextConfig_GeminiAsrConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.v2.AudioConfigProto
+            .internal_static_google_cloud_dialogflow_v2_SpeechToTextConfig_GeminiAsrConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.class,
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        modelId_ = "";
+        silenceDurationMs_ = 0;
+        prefixPaddingMs_ = 0;
+        startOfSpeechSensitivity_ = 0;
+        endOfSpeechSensitivity_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2.AudioConfigProto
+            .internal_static_google_cloud_dialogflow_v2_SpeechToTextConfig_GeminiAsrConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig build() {
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig buildPartial() {
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig result =
+            new com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.modelId_ = modelId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.silenceDurationMs_ = silenceDurationMs_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.prefixPaddingMs_ = prefixPaddingMs_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.startOfSpeechSensitivity_ = startOfSpeechSensitivity_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.endOfSpeechSensitivity_ = endOfSpeechSensitivity_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig other) {
+        if (other
+            == com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+                .getDefaultInstance()) return this;
+        if (!other.getModelId().isEmpty()) {
+          modelId_ = other.modelId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getSilenceDurationMs() != 0) {
+          setSilenceDurationMs(other.getSilenceDurationMs());
+        }
+        if (other.getPrefixPaddingMs() != 0) {
+          setPrefixPaddingMs(other.getPrefixPaddingMs());
+        }
+        if (other.startOfSpeechSensitivity_ != 0) {
+          setStartOfSpeechSensitivityValue(other.getStartOfSpeechSensitivityValue());
+        }
+        if (other.endOfSpeechSensitivity_ != 0) {
+          setEndOfSpeechSensitivityValue(other.getEndOfSpeechSensitivityValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  modelId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  silenceDurationMs_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  prefixPaddingMs_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              case 32:
+                {
+                  startOfSpeechSensitivity_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 40:
+                {
+                  endOfSpeechSensitivity_ = input.readEnum();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 40
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object modelId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Gemini ASR model ID used for transcription.
+       * This value overrides the default model ID configured on the server.
+       * Example: "gemini-3-flash-lite-asr-preview"
+       * </pre>
+       *
+       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelId.
+       */
+      public java.lang.String getModelId() {
+        java.lang.Object ref = modelId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Gemini ASR model ID used for transcription.
+       * This value overrides the default model ID configured on the server.
+       * Example: "gemini-3-flash-lite-asr-preview"
+       * </pre>
+       *
+       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelId.
+       */
+      public com.google.protobuf.ByteString getModelIdBytes() {
+        java.lang.Object ref = modelId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Gemini ASR model ID used for transcription.
+       * This value overrides the default model ID configured on the server.
+       * Example: "gemini-3-flash-lite-asr-preview"
+       * </pre>
+       *
+       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The modelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Gemini ASR model ID used for transcription.
+       * This value overrides the default model ID configured on the server.
+       * Example: "gemini-3-flash-lite-asr-preview"
+       * </pre>
+       *
+       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelId() {
+        modelId_ = getDefaultInstance().getModelId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The Gemini ASR model ID used for transcription.
+       * This value overrides the default model ID configured on the server.
+       * Example: "gemini-3-flash-lite-asr-preview"
+       * </pre>
+       *
+       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for modelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int silenceDurationMs_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required duration of detected silence (or non-speech)
+       * before end-of-speech is committed.
+       * </pre>
+       *
+       * <code>int32 silence_duration_ms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The silenceDurationMs.
+       */
+      @java.lang.Override
+      public int getSilenceDurationMs() {
+        return silenceDurationMs_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required duration of detected silence (or non-speech)
+       * before end-of-speech is committed.
+       * </pre>
+       *
+       * <code>int32 silence_duration_ms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The silenceDurationMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSilenceDurationMs(int value) {
+
+        silenceDurationMs_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required duration of detected silence (or non-speech)
+       * before end-of-speech is committed.
+       * </pre>
+       *
+       * <code>int32 silence_duration_ms = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSilenceDurationMs() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        silenceDurationMs_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int prefixPaddingMs_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required duration of detected speech before start-of-speech
+       * is committed.
+       * </pre>
+       *
+       * <code>int32 prefix_padding_ms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The prefixPaddingMs.
+       */
+      @java.lang.Override
+      public int getPrefixPaddingMs() {
+        return prefixPaddingMs_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required duration of detected speech before start-of-speech
+       * is committed.
+       * </pre>
+       *
+       * <code>int32 prefix_padding_ms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The prefixPaddingMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPrefixPaddingMs(int value) {
+
+        prefixPaddingMs_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The required duration of detected speech before start-of-speech
+       * is committed.
+       * </pre>
+       *
+       * <code>int32 prefix_padding_ms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPrefixPaddingMs() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        prefixPaddingMs_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int startOfSpeechSensitivity_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Start of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for startOfSpeechSensitivity.
+       */
+      @java.lang.Override
+      public int getStartOfSpeechSensitivityValue() {
+        return startOfSpeechSensitivity_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Start of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for startOfSpeechSensitivity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartOfSpeechSensitivityValue(int value) {
+        startOfSpeechSensitivity_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Start of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The startOfSpeechSensitivity.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+          getStartOfSpeechSensitivity() {
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity result =
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+                .forNumber(startOfSpeechSensitivity_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Start of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The startOfSpeechSensitivity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartOfSpeechSensitivity(
+          com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        startOfSpeechSensitivity_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Start of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.StartSensitivity start_of_speech_sensitivity = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStartOfSpeechSensitivity() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        startOfSpeechSensitivity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endOfSpeechSensitivity_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. End of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for endOfSpeechSensitivity.
+       */
+      @java.lang.Override
+      public int getEndOfSpeechSensitivityValue() {
+        return endOfSpeechSensitivity_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. End of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for endOfSpeechSensitivity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndOfSpeechSensitivityValue(int value) {
+        endOfSpeechSensitivity_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. End of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The endOfSpeechSensitivity.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+          getEndOfSpeechSensitivity() {
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity result =
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+                .forNumber(endOfSpeechSensitivity_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. End of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The endOfSpeechSensitivity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndOfSpeechSensitivity(
+          com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        endOfSpeechSensitivity_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. End of speech sensitivity.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity end_of_speech_sensitivity = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndOfSpeechSensitivity() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        endOfSpeechSensitivity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig)
+    private static final com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig();
+    }
+
+    public static com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<GeminiAsrConfig> PARSER =
+        new com.google.protobuf.AbstractParser<GeminiAsrConfig>() {
+          @java.lang.Override
+          public GeminiAsrConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<GeminiAsrConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GeminiAsrConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int SPEECH_MODEL_VARIANT_FIELD_NUMBER = 1;
   private int speechModelVariant_ = 0;
 
@@ -469,6 +2125,92 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     return useTimeoutBasedEndpointing_;
   }
 
+  public static final int GEMINI_ASR_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig geminiAsrConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+   * overriding the default Gemini ASR model or providing additional advanced
+   * parameters. This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the geminiAsrConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGeminiAsrConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+   * overriding the default Gemini ASR model or providing additional advanced
+   * parameters. This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The geminiAsrConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig() {
+    return geminiAsrConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+        : geminiAsrConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+   * overriding the default Gemini ASR model or providing additional advanced
+   * parameters. This field is only used when `use_gemini_asr` is true.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+      getGeminiAsrConfigOrBuilder() {
+    return geminiAsrConfig_ == null
+        ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+        : geminiAsrConfig_;
+  }
+
+  public static final int USE_GEMINI_ASR_FIELD_NUMBER = 16;
+  private boolean useGeminiAsr_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, Gemini ASR will be used for transcription instead of
+   * Cloud Speech-to-Text.
+   * </pre>
+   *
+   * <code>bool use_gemini_asr = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useGeminiAsr.
+   */
+  @java.lang.Override
+  public boolean getUseGeminiAsr() {
+    return useGeminiAsr_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -509,6 +2251,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
     if (useTimeoutBasedEndpointing_ != false) {
       output.writeBool(11, useTimeoutBasedEndpointing_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(15, getGeminiAsrConfig());
+    }
+    if (useGeminiAsr_ != false) {
+      output.writeBool(16, useGeminiAsr_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -552,6 +2300,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(11, useTimeoutBasedEndpointing_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getGeminiAsrConfig());
+    }
+    if (useGeminiAsr_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, useGeminiAsr_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -576,6 +2330,11 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (getEnableWordInfo() != other.getEnableWordInfo()) return false;
     if (getUseTimeoutBasedEndpointing() != other.getUseTimeoutBasedEndpointing()) return false;
+    if (hasGeminiAsrConfig() != other.hasGeminiAsrConfig()) return false;
+    if (hasGeminiAsrConfig()) {
+      if (!getGeminiAsrConfig().equals(other.getGeminiAsrConfig())) return false;
+    }
+    if (getUseGeminiAsr() != other.getUseGeminiAsr()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -605,6 +2364,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWordInfo());
     hash = (37 * hash) + USE_TIMEOUT_BASED_ENDPOINTING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTimeoutBasedEndpointing());
+    if (hasGeminiAsrConfig()) {
+      hash = (37 * hash) + GEMINI_ASR_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGeminiAsrConfig().hashCode();
+    }
+    hash = (37 * hash) + USE_GEMINI_ASR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseGeminiAsr());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -736,10 +2501,19 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.dialogflow.v2.SpeechToTextConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetGeminiAsrConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -754,6 +2528,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       languageCode_ = "";
       enableWordInfo_ = false;
       useTimeoutBasedEndpointing_ = false;
+      geminiAsrConfig_ = null;
+      if (geminiAsrConfigBuilder_ != null) {
+        geminiAsrConfigBuilder_.dispose();
+        geminiAsrConfigBuilder_ = null;
+      }
+      useGeminiAsr_ = false;
       return this;
     }
 
@@ -815,6 +2595,16 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.useTimeoutBasedEndpointing_ = useTimeoutBasedEndpointing_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.geminiAsrConfig_ =
+            geminiAsrConfigBuilder_ == null ? geminiAsrConfig_ : geminiAsrConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.useGeminiAsr_ = useGeminiAsr_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -864,6 +2654,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       if (other.getUseTimeoutBasedEndpointing() != false) {
         setUseTimeoutBasedEndpointing(other.getUseTimeoutBasedEndpointing());
+      }
+      if (other.hasGeminiAsrConfig()) {
+        mergeGeminiAsrConfig(other.getGeminiAsrConfig());
+      }
+      if (other.getUseGeminiAsr() != false) {
+        setUseGeminiAsr(other.getUseGeminiAsr());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -940,6 +2736,19 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000080;
                 break;
               } // case 88
+            case 122:
+              {
+                input.readMessage(
+                    internalGetGeminiAsrConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 122
+            case 128:
+              {
+                useGeminiAsr_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1945,6 +3754,302 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public Builder clearUseTimeoutBasedEndpointing() {
       bitField0_ = (bitField0_ & ~0x00000080);
       useTimeoutBasedEndpointing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig geminiAsrConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder>
+        geminiAsrConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the geminiAsrConfig field is set.
+     */
+    public boolean hasGeminiAsrConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The geminiAsrConfig.
+     */
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig getGeminiAsrConfig() {
+      if (geminiAsrConfigBuilder_ == null) {
+        return geminiAsrConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+            : geminiAsrConfig_;
+      } else {
+        return geminiAsrConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiAsrConfig(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig value) {
+      if (geminiAsrConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        geminiAsrConfig_ = value;
+      } else {
+        geminiAsrConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGeminiAsrConfig(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder builderForValue) {
+      if (geminiAsrConfigBuilder_ == null) {
+        geminiAsrConfig_ = builderForValue.build();
+      } else {
+        geminiAsrConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGeminiAsrConfig(
+        com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig value) {
+      if (geminiAsrConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && geminiAsrConfig_ != null
+            && geminiAsrConfig_
+                != com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
+                    .getDefaultInstance()) {
+          getGeminiAsrConfigBuilder().mergeFrom(value);
+        } else {
+          geminiAsrConfig_ = value;
+        }
+      } else {
+        geminiAsrConfigBuilder_.mergeFrom(value);
+      }
+      if (geminiAsrConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGeminiAsrConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      geminiAsrConfig_ = null;
+      if (geminiAsrConfigBuilder_ != null) {
+        geminiAsrConfigBuilder_.dispose();
+        geminiAsrConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder
+        getGeminiAsrConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetGeminiAsrConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder
+        getGeminiAsrConfigOrBuilder() {
+      if (geminiAsrConfigBuilder_ != null) {
+        return geminiAsrConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return geminiAsrConfig_ == null
+            ? com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.getDefaultInstance()
+            : geminiAsrConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for using Gemini ASR models served via Vertex AI,
+     * overriding the default Gemini ASR model or providing additional advanced
+     * parameters. This field is only used when `use_gemini_asr` is true.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig gemini_asr_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder,
+            com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder>
+        internalGetGeminiAsrConfigFieldBuilder() {
+      if (geminiAsrConfigBuilder_ == null) {
+        geminiAsrConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig,
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.Builder,
+                com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfigOrBuilder>(
+                getGeminiAsrConfig(), getParentForChildren(), isClean());
+        geminiAsrConfig_ = null;
+      }
+      return geminiAsrConfigBuilder_;
+    }
+
+    private boolean useGeminiAsr_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text.
+     * </pre>
+     *
+     * <code>bool use_gemini_asr = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The useGeminiAsr.
+     */
+    @java.lang.Override
+    public boolean getUseGeminiAsr() {
+      return useGeminiAsr_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text.
+     * </pre>
+     *
+     * <code>bool use_gemini_asr = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The useGeminiAsr to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseGeminiAsr(boolean value) {
+
+      useGeminiAsr_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, Gemini ASR will be used for transcription instead of
+     * Cloud Speech-to-Text.
+     * </pre>
+     *
+     * <code>bool use_gemini_asr = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseGeminiAsr() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      useGeminiAsr_ = false;
       onChanged();
       return this;
     }

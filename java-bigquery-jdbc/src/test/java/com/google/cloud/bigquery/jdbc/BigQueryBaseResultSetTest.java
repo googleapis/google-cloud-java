@@ -322,4 +322,23 @@ public class BigQueryBaseResultSetTest {
 
     assertThat(resultSet.getJobId()).isEqualTo(newJobId);
   }
+
+  @Test
+  public void testQueryStatisticsWithPrePopulatedStatisticsForStatelessQuery() {
+    QueryStatistics statelessStats = mock(QueryStatistics.class);
+    doReturn(10485760L).when(statelessStats).getTotalBytesProcessed();
+    doReturn(false).when(statelessStats).getCacheHit();
+    doReturn(250L).when(statelessStats).getTotalSlotMs();
+    resultSet.setQueryId("stateless-query-id");
+    resultSet.setQueryStatistics(statelessStats);
+
+    assertThat(resultSet.getJobId()).isNull();
+    assertThat(resultSet.getJob()).isNull();
+    QueryStatistics stats = resultSet.getQueryStatistics();
+    assertThat(stats).isSameInstanceAs(statelessStats);
+    assertThat(stats.getTotalBytesProcessed()).isEqualTo(10485760L);
+    assertThat(stats.getCacheHit()).isFalse();
+    assertThat(stats.getTotalSlotMs()).isEqualTo(250L);
+    verify(bigQuery, never()).getJob(any(JobId.class));
+  }
 }

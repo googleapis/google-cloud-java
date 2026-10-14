@@ -49,6 +49,10 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_parametermanager_v1_Parameter_LabelsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_Parameter_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_Parameter_TagsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_parametermanager_v1_ListParametersRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_parametermanager_v1_ListParametersRequest_fieldAccessorTable;
@@ -112,6 +116,78 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_parametermanager_v1_DeleteParameterVersionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_parametermanager_v1_DeleteParameterVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_Template_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_Template_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_Template_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_Template_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_ListTemplatesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_ListTemplatesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_ListTemplatesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_ListTemplatesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_GetTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_GetTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_CreateTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_CreateTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_UpdateTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_UpdateTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_DeleteTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_DeleteTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_TemplateVersion_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_TemplateVersion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_TemplateVersionPayload_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_TemplateVersionPayload_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_GetTemplateVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_GetTemplateVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_CreateTemplateVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_CreateTemplateVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_UpdateTemplateVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_UpdateTemplateVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_DeleteTemplateVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_DeleteTemplateVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -128,7 +204,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "vior.proto\032\033google/api/field_info.proto\032"
           + "\031google/api/resource.proto\032*google/iam/v"
           + "1/resource_policy_member.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\346\004\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\343\005\n"
           + "\tParameter\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -140,17 +216,22 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "policy_member\030\006 \001(\013"
           + "2#.google.iam.v1.ResourcePolicyMemberB\003\340A\003\022?\n"
           + "\007kms_key\030\007 \001(\tB)\340A\001\372A#\n"
-          + "!cloudkms.googleapis.com/CryptoKeyH\000\210\001\001\032-\n"
+          + "!cloudkms.googleapis.com/CryptoKeyH\000\210\001\001\022N\n"
+          + "\004tags\030\010 \003(\01325.google.cloud.parametermanager.v1.Parameter.TagsEntryB"
+          + "\t\340A\004\340A\005\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\206\001\352A\202\001\n"
-          + ")parametermanager.googleapis.com/Param"
-          + "eter\022>projects/{project}/locations/{location}/parameters/{parameter}*\n"
+          + ")parametermanager.googleapis.com/"
+          + "Parameter\022>projects/{project}/locations/{location}/parameters/{parameter}*\n"
           + "parameters2\tparameterB\n\n"
           + "\010_kms_key\"\267\001\n"
           + "\025ListParametersRequest\022A\n"
-          + "\006parent\030\001 \001("
-          + "\tB1\340A\002\372A+\022)parametermanager.googleapis.com/Parameter\022\026\n"
+          + "\006parent\030\001 \001(\tB1\340A\002\372A+\022)"
+          + "parametermanager.googleapis.com/Parameter\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -171,33 +252,42 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\264\001\n"
           + "\026UpdateParameterRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022C\n"
-          + "\tparameter\030\002 "
-          + "\001(\0132+.google.cloud.parametermanager.v1.ParameterB\003\340A\002\022\037\n\n"
+          + "\tparameter\030\002"
+          + " \001(\0132+.google.cloud.parametermanager.v1.ParameterB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"z\n"
           + "\026DeleteParameterRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")parametermanager.googleapis.com/Parameter\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\361\003\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\313\005\n"
           + "\020ParameterVersion\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\025\n"
           + "\010disabled\030\004 \001(\010B\003\340A\001\022R\n"
-          + "\007payload\030\005 \001(\01329"
-          + ".google.cloud.parametermanager.v1.ParameterVersionPayloadB\006\340A\002\340A\005\022$\n"
-          + "\017kms_key_version\030\006 \001("
-          + "\tB\006\340A\003\340A\001H\000\210\001\001:\270\001\352A\264\001\n"
-          + "0parametermanager.googleapis.com/ParameterVersion"
-          + "\022[projects/{project}/locations/{location}/parameters/{parameter}/versions/{param"
-          + "eter_version}*\021parameterVersions2\020parameterVersionB\022\n"
-          + "\020_kms_key_version\",\n"
+          + "\007payload\030\005 "
+          + "\001(\01329.google.cloud.parametermanager.v1.ParameterVersionPayloadB\006\340A\002\340A\005\022$\n"
+          + "\017kms_key_version\030\006 \001(\tB\006\340A\003\340A\001H\000\210\001\001\022g\n"
+          + "\017checksum_source\030\007 \001(\0162A.google.cloud.parameterma"
+          + "nager.v1.ParameterVersion.ChecksumSourceB\006\340A\001\340A\003H\001\210\001\001\"[\n"
+          + "\016ChecksumSource\022\037\n"
+          + "\033CHECKSUM_SOURCE_UNSPECIFIED\020\000\022\024\n"
+          + "\020SERVER_GENERATED\020\001\022\022\n"
+          + "\016USER_SPECIFIED\020\002:\270\001\352A\264\001\n"
+          + "0parametermanager.googleapis.com/ParameterVers"
+          + "ion\022[projects/{project}/locations/{location}/parameters/{parameter}/versions/{pa"
+          + "rameter_version}*\021parameterVersions2\020parameterVersionB\022\n"
+          + "\020_kms_key_versionB\022\n"
+          + "\020_checksum_source\"[\n"
           + "\027ParameterVersionPayload\022\021\n"
-          + "\004data\030\001 \001(\014B\003\340A\002\"\305\001\n"
+          + "\004data\030\001 \001(\014B\003\340A\002\022\035\n"
+          + "\013data_crc32c\030\003 \001(\003B\003\340A\001H\000\210\001\001B\016\n"
+          + "\014_data_crc32c\"\305\001\n"
           + "\034ListParameterVersionsRequest\022H\n"
-          + "\006parent\030\001 \001("
-          + "\tB8\340A\002\372A2\0220parametermanager.googleapis.com/ParameterVersion\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "\006parent\030\001 \001(\tB8\340A\002"
+          + "\372A2\0220parametermanager.googleapis.com/ParameterVersion\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\242\001\n"
@@ -216,91 +306,244 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
           + "\036RenderParameterVersionResponse\022S\n"
           + "\021parameter_version\030\001 \001(\tB8\340A\003\372A2\n"
           + "0parametermanager.googleapis.com/ParameterVersion\022J\n"
-          + "\007payload\030\002"
-          + " \001(\01329.google.cloud.parametermanager.v1.ParameterVersionPayload\022\035\n"
+          + "\007payload\030\002 \001(\01329.go"
+          + "ogle.cloud.parametermanager.v1.ParameterVersionPayload\022\035\n"
           + "\020rendered_payload\030\003 \001(\014B\003\340A\003\"\201\002\n"
           + "\035CreateParameterVersionRequest\022H\n"
-          + "\006parent\030\001 \001(\tB8\340A\002\372A2\0220param"
-          + "etermanager.googleapis.com/ParameterVersion\022!\n"
+          + "\006parent\030\001 \001("
+          + "\tB8\340A\002\372A2\0220parametermanager.googleapis.com/ParameterVersion\022!\n"
           + "\024parameter_version_id\030\002 \001(\tB\003\340A\002\022R\n"
-          + "\021parameter_version\030\003 \001(\01322.google.cloud"
-          + ".parametermanager.v1.ParameterVersionB\003\340A\002\022\037\n\n"
+          + "\021parameter_version\030\003"
+          + " \001(\01322.google.cloud.parametermanager.v1.ParameterVersionB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\312\001\n"
           + "\035UpdateParameterVersionRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022R\n"
-          + "\021parameter_version\030\002 \001(\01322.google."
-          + "cloud.parametermanager.v1.ParameterVersionB\003\340A\002\022\037\n\n"
+          + "\021parameter_version\030\002"
+          + " \001(\01322.google.cloud.parametermanager.v1.ParameterVersionB\003\340A\002\022\037\n"
+          + "\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\210\001\n"
           + "\035DeleteParameterVersionRequest\022F\n"
           + "\004name\030\001 \001(\tB8\340A\002\372A2\n"
           + "0parametermanager.googleapis.com/ParameterVersion\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001*X\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\317\003\n"
+          + "\010Template\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022K\n"
+          + "\006labels\030\004"
+          + " \003(\01326.google.cloud.parametermanager.v1.Template.LabelsEntryB\003\340A\001\022E\n"
+          + "\006format\030\005 \001"
+          + "(\01620.google.cloud.parametermanager.v1.TemplateFormatB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\200\001\352A}\n"
+          + "(parametermanager.googleapis.com/Template\022<projec"
+          + "ts/{project}/locations/{location}/templates/{template}*"
+          + "\ttemplates2\010template\"\265\001\n"
+          + "\024ListTemplatesRequest\022@\n"
+          + "\006parent\030\001 \001(\tB0\340A"
+          + "\002\372A*\022(parametermanager.googleapis.com/Template\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\211\001\n"
+          + "\025ListTemplatesResponse\022=\n"
+          + "\ttemplates\030\001 \003(\0132*.google.cloud.parametermanager.v1.Template\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"T\n"
+          + "\022GetTemplateRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(parametermanager.googleapis.com/Template\"\327\001\n"
+          + "\025CreateTemplateRequest\022@\n"
+          + "\006parent\030\001 \001("
+          + "\tB0\340A\002\372A*\022(parametermanager.googleapis.com/Template\022\030\n"
+          + "\013template_id\030\002 \001(\tB\003\340A\002\022A\n"
+          + "\010template\030\003"
+          + " \001(\0132*.google.cloud.parametermanager.v1.TemplateB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\261\001\n"
+          + "\025UpdateTemplateRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022A\n"
+          + "\010template\030\002 \001("
+          + "\0132*.google.cloud.parametermanager.v1.TemplateB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"x\n"
+          + "\025DeleteTemplateRequest\022>\n"
+          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(parametermanager.googleapis.com/Template\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\257\003\n"
+          + "\017TemplateVersion\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\025\n"
+          + "\010disabled\030\004 \001(\010B\003\340A\001\022Q\n"
+          + "\007payload\030\005 \001(\01328.googl"
+          + "e.cloud.parametermanager.v1.TemplateVersionPayloadB\006\340A\002\340A\005:\262\001\352A\256\001\n"
+          + "/parametermanager.googleapis.com/TemplateVersion\022Xproj"
+          + "ects/{project}/locations/{location}/templates/{template}/versions/{template_vers"
+          + "ion}*\020templateVersions2\017templateVersion\"+\n"
+          + "\026TemplateVersionPayload\022\021\n"
+          + "\004data\030\001 \001(\014B\003\340A\002\"\303\001\n"
+          + "\033ListTemplateVersionsRequest\022G\n"
+          + "\006parent\030\001 \001("
+          + "\tB7\340A\002\372A1\022/parametermanager.googleapis.com/TemplateVersion\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\237\001\n"
+          + "\034ListTemplateVersionsResponse\022L\n"
+          + "\021template_versions\030\001"
+          + " \003(\01321.google.cloud.parametermanager.v1.TemplateVersion\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"\235\001\n"
+          + "\031GetTemplateVersionRequest\022E\n"
+          + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/parametermanager.googleapis.com/TemplateVersion\0229\n"
+          + "\004view\030\002 \001(\0162"
+          + "&.google.cloud.parametermanager.v1.ViewB\003\340A\001\"\374\001\n"
+          + "\034CreateTemplateVersionRequest\022G\n"
+          + "\006parent\030\001 \001("
+          + "\tB7\340A\002\372A1\022/parametermanager.googleapis.com/TemplateVersion\022 \n"
+          + "\023template_version_id\030\002 \001(\tB\003\340A\002\022P\n"
+          + "\020template_version\030\003"
+          + " \001(\01321.google.cloud.parametermanager.v1.TemplateVersionB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\307\001\n"
+          + "\034UpdateTemplateVersionRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022P\n"
+          + "\020template_version\030\002"
+          + " \001(\01321.google.cloud.parametermanager.v1.TemplateVersionB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\206\001\n"
+          + "\034DeleteTemplateVersionRequest\022E\n"
+          + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/parametermanager.googleapis.com/TemplateVersion\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\272\001\n"
+          + "\034RenderTemplateVersionRequest\022E\n"
+          + "\004name\030\001 \001(\tB7\340A\002\372A1\n"
+          + "/parametermanager.googleapis.com/TemplateVersion\022S\n"
+          + "\021parameter_version\030\002 \001(\tB8\340A\002\372A2\n"
+          + "0parametermanager.googleapis.com/ParameterVersion\"\376\002\n"
+          + "\035RenderTemplateVersionResponse\022N\n"
+          + "\020template_version\030\001 \001(\tB4\372A1\n"
+          + "/parametermanager.googleapis.com/TemplateVersion\022I\n"
+          + "\007payload\030\002 \001(\01328"
+          + ".google.cloud.parametermanager.v1.TemplateVersionPayload\022\035\n"
+          + "\020rendered_payload\030\003 \001(\014B\003\340A\003\022N\n"
+          + "\017template_format\030\004 \001(\01620.googl"
+          + "e.cloud.parametermanager.v1.TemplateFormatB\003\340A\003\022S\n"
+          + "\021parameter_version\030\005 \001(\tB8\340A\003\372A2\n"
+          + "0parametermanager.googleapis.com/ParameterVersion*X\n"
           + "\017ParameterFormat\022 \n"
           + "\034PARAMETER_FORMAT_UNSPECIFIED\020\000\022\017\n"
           + "\013UNFORMATTED\020\001\022\010\n"
           + "\004YAML\020\002\022\010\n"
-          + "\004JSON\020\003*1\n"
+          + "\004JSON\020\003*e\n"
+          + "\016TemplateFormat\022\037\n"
+          + "\033TEMPLATE_FORMAT_UNSPECIFIED\020\000\022\030\n"
+          + "\024TEMPLATE_FORMAT_YAML\020\001\022\030\n"
+          + "\024TEMPLATE_FORMAT_JSON\020\002*1\n"
           + "\004View\022\024\n"
           + "\020VIEW_UNSPECIFIED\020\000\022\t\n"
           + "\005BASIC\020\001\022\010\n"
-          + "\004FULL\020\0022\335\023\n"
+          + "\004FULL\020\0022\235&\n"
           + "\020ParameterManager\022\304\001\n"
-          + "\016ListParameters\0227.google.cloud.parametermanager.v1.List"
-          + "ParametersRequest\0328.google.cloud.paramet"
-          + "ermanager.v1.ListParametersResponse\"?\332A\006"
-          + "parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/parameters\022\261\001\n"
-          + "\014GetParameter\0225.google.cloud.parametermanager.v1.GetPara"
-          + "meterRequest\032+.google.cloud.parameterman"
-          + "ager.v1.Parameter\"=\332A\004name\202\323\344\223\0020\022./v1/{n"
-          + "ame=projects/*/locations/*/parameters/*}\022\333\001\n"
-          + "\017CreateParameter\0228.google.cloud.parametermanager.v1.CreateParameterRequest\032+"
-          + ".google.cloud.parametermanager.v1.Parame"
-          + "ter\"a\332A\035parent,parameter,parameter_id\202\323\344"
-          + "\223\002;\"./v1/{parent=projects/*/locations/*}/parameters:\tparameter\022\335\001\n"
-          + "\017UpdateParameter\0228.google.cloud.parametermanager.v1.Up"
-          + "dateParameterRequest\032+.google.cloud.para"
-          + "metermanager.v1.Parameter\"c\332A\025parameter,"
-          + "update_mask\202\323\344\223\002E28/v1/{parameter.name=projects/*/locations/*/parameters/*}:"
-          + "\tparameter\022\242\001\n"
-          + "\017DeleteParameter\0228.google.cloud.parametermanager.v1.DeleteParameterReq"
-          + "uest\032\026.google.protobuf.Empty\"=\332A\004name\202\323\344"
-          + "\223\0020*./v1/{name=projects/*/locations/*/parameters/*}\022\344\001\n"
-          + "\025ListParameterVersions\022>.google.cloud.parametermanager.v1.ListPar"
-          + "ameterVersionsRequest\032?.google.cloud.parametermanager.v1.ListParameterVersionsRe"
-          + "sponse\"J\332A\006parent\202\323\344\223\002;\0229/v1/{parent=pro"
-          + "jects/*/locations/*/parameters/*}/versions\022\321\001\n"
-          + "\023GetParameterVersion\022<.google.cloud.parametermanager.v1.GetParameterVersio"
-          + "nRequest\0322.google.cloud.parametermanager"
-          + ".v1.ParameterVersion\"H\332A\004name\202\323\344\223\002;\0229/v1"
-          + "/{name=projects/*/locations/*/parameters/*/versions/*}\022\354\001\n"
-          + "\026RenderParameterVersion\022?.google.cloud.parametermanager.v1.Ren"
-          + "derParameterVersionRequest\032@.google.cloud.parametermanager.v1.RenderParameterVer"
-          + "sionResponse\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=p"
-          + "rojects/*/locations/*/parameters/*/versions/*}:render\022\224\002\n"
-          + "\026CreateParameterVersion\022?.google.cloud.parametermanager.v1.Crea"
-          + "teParameterVersionRequest\0322.google.cloud"
-          + ".parametermanager.v1.ParameterVersion\"\204\001"
-          + "\332A-parent,parameter_version,parameter_ve"
-          + "rsion_id\202\323\344\223\002N\"9/v1/{parent=projects/*/l"
-          + "ocations/*/parameters/*}/versions:\021parameter_version\022\226\002\n"
-          + "\026UpdateParameterVersion\022?.google.cloud.parametermanager.v1.Updat"
-          + "eParameterVersionRequest\0322.google.cloud."
-          + "parametermanager.v1.ParameterVersion\"\206\001\332"
-          + "A\035parameter_version,update_mask\202\323\344\223\002`2K/"
-          + "v1/{parameter_version.name=projects/*/lo"
-          + "cations/*/parameters/*/versions/*}:\021parameter_version\022\273\001\n"
-          + "\026DeleteParameterVersion\022?.google.cloud.parametermanager.v1.Dele"
-          + "teParameterVersionRequest\032\026.google.proto"
-          + "buf.Empty\"H\332A\004name\202\323\344\223\002;*9/v1/{name=proj"
-          + "ects/*/locations/*/parameters/*/versions"
-          + "/*}\032S\312A\037parametermanager.googleapis.com\322"
-          + "A.https://www.googleapis.com/auth/cloud-platformB\356\002\n"
-          + "$com.google.cloud.parametermanager.v1B\013V1mainProtoP\001ZPcloud.google.c"
-          + "om/go/parametermanager/apiv1/parametermanagerpb;parametermanagerpb\252\002"
-          + " Google.Cloud.ParameterManager.V1\312\002 Google\\Cloud\\Par"
-          + "ameterManager\\V1\352\002#Google::Cloud::ParameterManager::V1\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locatio"
-          + "ns/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
+          + "\016ListParameters\0227.google.cloud.paramete"
+          + "rmanager.v1.ListParametersRequest\0328.google.cloud.parametermanager.v1.ListParamet"
+          + "ersResponse\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/parameters\022\261\001\n"
+          + "\014GetParameter\0225.google.cloud.parameterma"
+          + "nager.v1.GetParameterRequest\032+.google.cl"
+          + "oud.parametermanager.v1.Parameter\"=\332A\004na"
+          + "me\202\323\344\223\0020\022./v1/{name=projects/*/locations/*/parameters/*}\022\333\001\n"
+          + "\017CreateParameter\0228.google.cloud.parametermanager.v1.CreatePa"
+          + "rameterRequest\032+.google.cloud.parameterm"
+          + "anager.v1.Parameter\"a\332A\035parent,parameter"
+          + ",parameter_id\202\323\344\223\002;\"./v1/{parent=projects/*/locations/*}/parameters:"
+          + "\tparameter\022\335\001\n"
+          + "\017UpdateParameter\0228.google.cloud.parame"
+          + "termanager.v1.UpdateParameterRequest\032+.google.cloud.parametermanager.v1.Paramete"
+          + "r\"c\332A\025parameter,update_mask\202\323\344\223\002E28/v1/{"
+          + "parameter.name=projects/*/locations/*/parameters/*}:\tparameter\022\242\001\n"
+          + "\017DeleteParameter\0228.google.cloud.parametermanager.v1.De"
+          + "leteParameterRequest\032\026.google.protobuf.E"
+          + "mpty\"=\332A\004name\202\323\344\223\0020*./v1/{name=projects/*/locations/*/parameters/*}\022\344\001\n"
+          + "\025ListParameterVersions\022>.google.cloud.parameterma"
+          + "nager.v1.ListParameterVersionsRequest\032?.google.cloud.parametermanager.v1.ListPar"
+          + "ameterVersionsResponse\"J\332A\006parent\202\323\344\223\002;\022"
+          + "9/v1/{parent=projects/*/locations/*/parameters/*}/versions\022\321\001\n"
+          + "\023GetParameterVersion\022<.google.cloud.parametermanager.v1.Ge"
+          + "tParameterVersionRequest\0322.google.cloud."
+          + "parametermanager.v1.ParameterVersion\"H\332A"
+          + "\004name\202\323\344\223\002;\0229/v1/{name=projects/*/locations/*/parameters/*/versions/*}\022\354\001\n"
+          + "\026RenderParameterVersion\022?.google.cloud.paramet"
+          + "ermanager.v1.RenderParameterVersionRequest\032@.google.cloud.parametermanager.v1.Re"
+          + "nderParameterVersionResponse\"O\332A\004name\202\323\344"
+          + "\223\002B\022@/v1/{name=projects/*/locations/*/parameters/*/versions/*}:render\022\224\002\n"
+          + "\026CreateParameterVersion\022?.google.cloud.paramete"
+          + "rmanager.v1.CreateParameterVersionRequest\0322.google.cloud.parametermanager.v1.Par"
+          + "ameterVersion\"\204\001\332A-parent,parameter_vers"
+          + "ion,parameter_version_id\202\323\344\223\002N\"9/v1/{par"
+          + "ent=projects/*/locations/*/parameters/*}/versions:\021parameter_version\022\226\002\n"
+          + "\026UpdateParameterVersion\022?.google.cloud.parameter"
+          + "manager.v1.UpdateParameterVersionRequest\0322.google.cloud.parametermanager.v1.Para"
+          + "meterVersion\"\206\001\332A\035parameter_version,upda"
+          + "te_mask\202\323\344\223\002`2K/v1/{parameter_version.na"
+          + "me=projects/*/locations/*/parameters/*/versions/*}:\021parameter_version\022\273\001\n"
+          + "\026DeleteParameterVersion\022?.google.cloud.paramete"
+          + "rmanager.v1.DeleteParameterVersionReques"
+          + "t\032\026.google.protobuf.Empty\"H\332A\004name\202\323\344\223\002;"
+          + "*9/v1/{name=projects/*/locations/*/parameters/*/versions/*}\022\300\001\n\r"
+          + "ListTemplates\0226.google.cloud.parametermanager.v1.ListTem"
+          + "platesRequest\0327.google.cloud.parameterma"
+          + "nager.v1.ListTemplatesResponse\">\332A\006paren"
+          + "t\202\323\344\223\002/\022-/v1/{parent=projects/*/locations/*}/templates\022\255\001\n"
+          + "\013GetTemplate\0224.google.cloud.parametermanager.v1.GetTemplateReq"
+          + "uest\032*.google.cloud.parametermanager.v1."
+          + "Template\"<\332A\004name\202\323\344\223\002/\022-/v1/{name=projects/*/locations/*/templates/*}\022\324\001\n"
+          + "\016CreateTemplate\0227.google.cloud.parametermanage"
+          + "r.v1.CreateTemplateRequest\032*.google.clou"
+          + "d.parametermanager.v1.Template\"]\332A\033paren"
+          + "t,template,template_id\202\323\344\223\0029\"-/v1/{paren"
+          + "t=projects/*/locations/*}/templates:\010template\022\326\001\n"
+          + "\016UpdateTemplate\0227.google.cloud.parametermanager.v1.UpdateTemplateReques"
+          + "t\032*.google.cloud.parametermanager.v1.Tem"
+          + "plate\"_\332A\024template,update_mask\202\323\344\223\002B26/v"
+          + "1/{template.name=projects/*/locations/*/templates/*}:\010template\022\237\001\n"
+          + "\016DeleteTemplate\0227.google.cloud.parametermanager.v1.Del"
+          + "eteTemplateRequest\032\026.google.protobuf.Emp"
+          + "ty\"<\332A\004name\202\323\344\223\002/*-/v1/{name=projects/*/locations/*/templates/*}\022\340\001\n"
+          + "\024ListTemplateVersions\022=.google.cloud.parametermanage"
+          + "r.v1.ListTemplateVersionsRequest\032>.google.cloud.parametermanager.v1.ListTemplate"
+          + "VersionsResponse\"I\332A\006parent\202\323\344\223\002:\0228/v1/{"
+          + "parent=projects/*/locations/*/templates/*}/versions\022\315\001\n"
+          + "\022GetTemplateVersion\022;.google.cloud.parametermanager.v1.GetTemplat"
+          + "eVersionRequest\0321.google.cloud.parameter"
+          + "manager.v1.TemplateVersion\"G\332A\004name\202\323\344\223\002"
+          + ":\0228/v1/{name=projects/*/locations/*/templates/*/versions/*}\022\215\002\n"
+          + "\025CreateTemplateVersion\022>.google.cloud.parametermanager.v1"
+          + ".CreateTemplateVersionRequest\0321.google.cloud.parametermanager.v1.TemplateVersion"
+          + "\"\200\001\332A+parent,template_version,template_v"
+          + "ersion_id\202\323\344\223\002L\"8/v1/{parent=projects/*/"
+          + "locations/*/templates/*}/versions:\020template_version\022\217\002\n"
+          + "\025UpdateTemplateVersion\022>.google.cloud.parametermanager.v1.UpdateT"
+          + "emplateVersionRequest\0321.google.cloud.par"
+          + "ametermanager.v1.TemplateVersion\"\202\001\332A\034te"
+          + "mplate_version,update_mask\202\323\344\223\002]2I/v1/{t"
+          + "emplate_version.name=projects/*/location"
+          + "s/*/templates/*/versions/*}:\020template_version\022\270\001\n"
+          + "\025DeleteTemplateVersion\022>.google.cloud.parametermanager.v1.DeleteTemplat"
+          + "eVersionRequest\032\026.google.protobuf.Empty\""
+          + "G\332A\004name\202\323\344\223\002:*8/v1/{name=projects/*/locations/*/templates/*/versions/*}\022\350\001\n"
+          + "\025RenderTemplateVersion\022>.google.cloud.parame"
+          + "termanager.v1.RenderTemplateVersionRequest\032?.google.cloud.parametermanager.v1.Re"
+          + "nderTemplateVersionResponse\"N\332A\004name\202\323\344\223"
+          + "\002A\022?/v1/{name=projects/*/locations/*/tem"
+          + "plates/*/versions/*}:render\032S\312A\037paramete"
+          + "rmanager.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\356\002\n"
+          + "$com.google.cloud.parametermanager.v1B\013V1mai"
+          + "nProtoP\001ZPcloud.google.com/go/parameterm"
+          + "anager/apiv1/parametermanagerpb;parametermanagerpb\252\002"
+          + " Google.Cloud.ParameterManager.V1\312\002 Google\\Cloud\\ParameterManager\\V1"
+          + "\352\002#Google::Cloud::ParameterManager::V1\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{location}/ke"
+          + "yRings/{key_ring}/cryptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -322,13 +565,28 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_parametermanager_v1_Parameter_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "Labels", "Format", "PolicyMember", "KmsKey",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "Format",
+              "PolicyMember",
+              "KmsKey",
+              "Tags",
             });
     internal_static_google_cloud_parametermanager_v1_Parameter_LabelsEntry_descriptor =
         internal_static_google_cloud_parametermanager_v1_Parameter_descriptor.getNestedType(0);
     internal_static_google_cloud_parametermanager_v1_Parameter_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_parametermanager_v1_Parameter_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_parametermanager_v1_Parameter_TagsEntry_descriptor =
+        internal_static_google_cloud_parametermanager_v1_Parameter_descriptor.getNestedType(1);
+    internal_static_google_cloud_parametermanager_v1_Parameter_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_Parameter_TagsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -386,7 +644,13 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_parametermanager_v1_ParameterVersion_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "Disabled", "Payload", "KmsKeyVersion",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Disabled",
+              "Payload",
+              "KmsKeyVersion",
+              "ChecksumSource",
             });
     internal_static_google_cloud_parametermanager_v1_ParameterVersionPayload_descriptor =
         getDescriptor().getMessageType(8);
@@ -394,7 +658,7 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_parametermanager_v1_ParameterVersionPayload_descriptor,
             new java.lang.String[] {
-              "Data",
+              "Data", "DataCrc32C",
             });
     internal_static_google_cloud_parametermanager_v1_ListParameterVersionsRequest_descriptor =
         getDescriptor().getMessageType(9);
@@ -459,6 +723,150 @@ public final class V1mainProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_parametermanager_v1_DeleteParameterVersionRequest_descriptor,
             new java.lang.String[] {
               "Name", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_Template_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_cloud_parametermanager_v1_Template_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_Template_descriptor,
+            new java.lang.String[] {
+              "Name", "CreateTime", "UpdateTime", "Labels", "Format",
+            });
+    internal_static_google_cloud_parametermanager_v1_Template_LabelsEntry_descriptor =
+        internal_static_google_cloud_parametermanager_v1_Template_descriptor.getNestedType(0);
+    internal_static_google_cloud_parametermanager_v1_Template_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_Template_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_parametermanager_v1_ListTemplatesRequest_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_cloud_parametermanager_v1_ListTemplatesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_ListTemplatesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_parametermanager_v1_ListTemplatesResponse_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_cloud_parametermanager_v1_ListTemplatesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_ListTemplatesResponse_descriptor,
+            new java.lang.String[] {
+              "Templates", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_parametermanager_v1_GetTemplateRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_cloud_parametermanager_v1_GetTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_GetTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_parametermanager_v1_CreateTemplateRequest_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_cloud_parametermanager_v1_CreateTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_CreateTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "TemplateId", "Template", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_UpdateTemplateRequest_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_cloud_parametermanager_v1_UpdateTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_UpdateTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "Template", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_DeleteTemplateRequest_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_cloud_parametermanager_v1_DeleteTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_DeleteTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_TemplateVersion_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_cloud_parametermanager_v1_TemplateVersion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_TemplateVersion_descriptor,
+            new java.lang.String[] {
+              "Name", "CreateTime", "UpdateTime", "Disabled", "Payload",
+            });
+    internal_static_google_cloud_parametermanager_v1_TemplateVersionPayload_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_cloud_parametermanager_v1_TemplateVersionPayload_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_TemplateVersionPayload_descriptor,
+            new java.lang.String[] {
+              "Data",
+            });
+    internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsRequest_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsResponse_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_ListTemplateVersionsResponse_descriptor,
+            new java.lang.String[] {
+              "TemplateVersions", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_parametermanager_v1_GetTemplateVersionRequest_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_cloud_parametermanager_v1_GetTemplateVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_GetTemplateVersionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "View",
+            });
+    internal_static_google_cloud_parametermanager_v1_CreateTemplateVersionRequest_descriptor =
+        getDescriptor().getMessageType(29);
+    internal_static_google_cloud_parametermanager_v1_CreateTemplateVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_CreateTemplateVersionRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "TemplateVersionId", "TemplateVersion", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_UpdateTemplateVersionRequest_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_cloud_parametermanager_v1_UpdateTemplateVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_UpdateTemplateVersionRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "TemplateVersion", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_DeleteTemplateVersionRequest_descriptor =
+        getDescriptor().getMessageType(31);
+    internal_static_google_cloud_parametermanager_v1_DeleteTemplateVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_DeleteTemplateVersionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionRequest_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "ParameterVersion",
+            });
+    internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionResponse_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_parametermanager_v1_RenderTemplateVersionResponse_descriptor,
+            new java.lang.String[] {
+              "TemplateVersion", "Payload", "RenderedPayload", "TemplateFormat", "ParameterVersion",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

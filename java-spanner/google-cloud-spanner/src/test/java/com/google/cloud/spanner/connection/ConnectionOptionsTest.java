@@ -1637,4 +1637,18 @@ public class ConnectionOptionsTest {
             .build();
     assertNull(defaultOptions.getGrpcKeepAliveTimeout());
   }
+
+  @Test
+  public void testCertificateAndTrustOptions() {
+    ConnectionOptions optionsFromUri =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?clientCertificate=/path/to/client.crt;clientKey=/path/to/client.key;caCertificate=/path/to/ca.crt")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals("/path/to/client.crt", optionsFromUri.getClientCertificate());
+    assertEquals("/path/to/client.key", optionsFromUri.getClientCertificateKey());
+    assertEquals("/path/to/ca.crt", optionsFromUri.getCaCertificate());
+  }
 }

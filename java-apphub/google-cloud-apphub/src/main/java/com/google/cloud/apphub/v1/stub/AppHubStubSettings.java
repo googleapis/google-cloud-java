@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1.stub;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -56,6 +57,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apphub.v1.Application;
+import com.google.cloud.apphub.v1.Boundary;
 import com.google.cloud.apphub.v1.CreateApplicationRequest;
 import com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.CreateServiceRequest;
@@ -68,9 +70,12 @@ import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse;
 import com.google.cloud.apphub.v1.DiscoveredService;
 import com.google.cloud.apphub.v1.DiscoveredWorkload;
+import com.google.cloud.apphub.v1.ExtendedMetadataSchema;
 import com.google.cloud.apphub.v1.GetApplicationRequest;
+import com.google.cloud.apphub.v1.GetBoundaryRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredServiceRequest;
 import com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest;
+import com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest;
 import com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest;
 import com.google.cloud.apphub.v1.GetServiceRequest;
 import com.google.cloud.apphub.v1.GetWorkloadRequest;
@@ -80,6 +85,8 @@ import com.google.cloud.apphub.v1.ListDiscoveredServicesRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredServicesResponse;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest;
 import com.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest;
+import com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest;
 import com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse;
 import com.google.cloud.apphub.v1.ListServicesRequest;
@@ -96,6 +103,7 @@ import com.google.cloud.apphub.v1.OperationMetadata;
 import com.google.cloud.apphub.v1.Service;
 import com.google.cloud.apphub.v1.ServiceProjectAttachment;
 import com.google.cloud.apphub.v1.UpdateApplicationRequest;
+import com.google.cloud.apphub.v1.UpdateBoundaryRequest;
 import com.google.cloud.apphub.v1.UpdateServiceRequest;
 import com.google.cloud.apphub.v1.UpdateWorkloadRequest;
 import com.google.cloud.apphub.v1.Workload;
@@ -283,6 +291,17 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
   private final UnaryCallSettings<DeleteApplicationRequest, Operation> deleteApplicationSettings;
   private final OperationCallSettings<DeleteApplicationRequest, Empty, OperationMetadata>
       deleteApplicationOperationSettings;
+  private final UnaryCallSettings<GetBoundaryRequest, Boundary> getBoundarySettings;
+  private final UnaryCallSettings<UpdateBoundaryRequest, Operation> updateBoundarySettings;
+  private final OperationCallSettings<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationSettings;
+  private final UnaryCallSettings<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaSettings;
+  private final PagedCallSettings<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -529,6 +548,53 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ExtendedMetadataSchema>
+      LIST_EXTENDED_METADATA_SCHEMAS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListExtendedMetadataSchemasRequest,
+              ListExtendedMetadataSchemasResponse,
+              ExtendedMetadataSchema>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExtendedMetadataSchemasRequest injectToken(
+                ListExtendedMetadataSchemasRequest payload, String token) {
+              return ListExtendedMetadataSchemasRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListExtendedMetadataSchemasRequest injectPageSize(
+                ListExtendedMetadataSchemasRequest payload, int pageSize) {
+              return ListExtendedMetadataSchemasRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExtendedMetadataSchemasRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExtendedMetadataSchemasResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ExtendedMetadataSchema> extractResources(
+                ListExtendedMetadataSchemasResponse payload) {
+              return payload.getExtendedMetadataSchemasList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -699,6 +765,35 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
                       PageContext.create(
                           callable, LIST_APPLICATIONS_PAGE_STR_DESC, request, context);
               return ListApplicationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ListExtendedMetadataSchemasPagedResponse>
+      LIST_EXTENDED_METADATA_SCHEMAS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExtendedMetadataSchemasRequest,
+              ListExtendedMetadataSchemasResponse,
+              ListExtendedMetadataSchemasPagedResponse>() {
+            @Override
+            public ApiFuture<ListExtendedMetadataSchemasPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListExtendedMetadataSchemasRequest, ListExtendedMetadataSchemasResponse>
+                    callable,
+                ListExtendedMetadataSchemasRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExtendedMetadataSchemasResponse> futureResponse) {
+              PageContext<
+                      ListExtendedMetadataSchemasRequest,
+                      ListExtendedMetadataSchemasResponse,
+                      ExtendedMetadataSchema>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EXTENDED_METADATA_SCHEMAS_PAGE_STR_DESC, request, context);
+              return ListExtendedMetadataSchemasPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -948,6 +1043,37 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
     return deleteApplicationOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getBoundary. */
+  public UnaryCallSettings<GetBoundaryRequest, Boundary> getBoundarySettings() {
+    return getBoundarySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBoundary. */
+  public UnaryCallSettings<UpdateBoundaryRequest, Operation> updateBoundarySettings() {
+    return updateBoundarySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBoundary. */
+  public OperationCallSettings<UpdateBoundaryRequest, Boundary, OperationMetadata>
+      updateBoundaryOperationSettings() {
+    return updateBoundaryOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getExtendedMetadataSchema. */
+  public UnaryCallSettings<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+      getExtendedMetadataSchemaSettings() {
+    return getExtendedMetadataSchemaSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExtendedMetadataSchemas. */
+  public PagedCallSettings<
+          ListExtendedMetadataSchemasRequest,
+          ListExtendedMetadataSchemasResponse,
+          ListExtendedMetadataSchemasPagedResponse>
+      listExtendedMetadataSchemasSettings() {
+    return listExtendedMetadataSchemasSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1133,6 +1259,12 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
     deleteApplicationSettings = settingsBuilder.deleteApplicationSettings().build();
     deleteApplicationOperationSettings =
         settingsBuilder.deleteApplicationOperationSettings().build();
+    getBoundarySettings = settingsBuilder.getBoundarySettings().build();
+    updateBoundarySettings = settingsBuilder.updateBoundarySettings().build();
+    updateBoundaryOperationSettings = settingsBuilder.updateBoundaryOperationSettings().build();
+    getExtendedMetadataSchemaSettings = settingsBuilder.getExtendedMetadataSchemaSettings().build();
+    listExtendedMetadataSchemasSettings =
+        settingsBuilder.listExtendedMetadataSchemasSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1244,6 +1376,19 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
         deleteApplicationSettings;
     private final OperationCallSettings.Builder<DeleteApplicationRequest, Empty, OperationMetadata>
         deleteApplicationOperationSettings;
+    private final UnaryCallSettings.Builder<GetBoundaryRequest, Boundary> getBoundarySettings;
+    private final UnaryCallSettings.Builder<UpdateBoundaryRequest, Operation>
+        updateBoundarySettings;
+    private final OperationCallSettings.Builder<UpdateBoundaryRequest, Boundary, OperationMetadata>
+        updateBoundaryOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+        getExtendedMetadataSchemaSettings;
+    private final PagedCallSettings.Builder<
+            ListExtendedMetadataSchemasRequest,
+            ListExtendedMetadataSchemasResponse,
+            ListExtendedMetadataSchemasPagedResponse>
+        listExtendedMetadataSchemasSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1344,6 +1489,12 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
       updateApplicationOperationSettings = OperationCallSettings.newBuilder();
       deleteApplicationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteApplicationOperationSettings = OperationCallSettings.newBuilder();
+      getBoundarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBoundarySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateBoundaryOperationSettings = OperationCallSettings.newBuilder();
+      getExtendedMetadataSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listExtendedMetadataSchemasSettings =
+          PagedCallSettings.newBuilder(LIST_EXTENDED_METADATA_SCHEMAS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1379,6 +1530,10 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
               getApplicationSettings,
               updateApplicationSettings,
               deleteApplicationSettings,
+              getBoundarySettings,
+              updateBoundarySettings,
+              getExtendedMetadataSchemaSettings,
+              listExtendedMetadataSchemasSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1436,6 +1591,12 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
       updateApplicationOperationSettings = settings.updateApplicationOperationSettings.toBuilder();
       deleteApplicationSettings = settings.deleteApplicationSettings.toBuilder();
       deleteApplicationOperationSettings = settings.deleteApplicationOperationSettings.toBuilder();
+      getBoundarySettings = settings.getBoundarySettings.toBuilder();
+      updateBoundarySettings = settings.updateBoundarySettings.toBuilder();
+      updateBoundaryOperationSettings = settings.updateBoundaryOperationSettings.toBuilder();
+      getExtendedMetadataSchemaSettings = settings.getExtendedMetadataSchemaSettings.toBuilder();
+      listExtendedMetadataSchemasSettings =
+          settings.listExtendedMetadataSchemasSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1471,6 +1632,10 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
               getApplicationSettings,
               updateApplicationSettings,
               deleteApplicationSettings,
+              getBoundarySettings,
+              updateBoundarySettings,
+              getExtendedMetadataSchemaSettings,
+              listExtendedMetadataSchemasSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1637,6 +1802,26 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
           .deleteApplicationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getBoundarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateBoundarySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getExtendedMetadataSchemaSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listExtendedMetadataSchemasSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1929,6 +2114,30 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .updateBoundaryOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateBoundaryRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Boundary.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -2182,6 +2391,37 @@ public class AppHubStubSettings extends StubSettings<AppHubStubSettings> {
     public OperationCallSettings.Builder<DeleteApplicationRequest, Empty, OperationMetadata>
         deleteApplicationOperationSettings() {
       return deleteApplicationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBoundary. */
+    public UnaryCallSettings.Builder<GetBoundaryRequest, Boundary> getBoundarySettings() {
+      return getBoundarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBoundary. */
+    public UnaryCallSettings.Builder<UpdateBoundaryRequest, Operation> updateBoundarySettings() {
+      return updateBoundarySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBoundary. */
+    public OperationCallSettings.Builder<UpdateBoundaryRequest, Boundary, OperationMetadata>
+        updateBoundaryOperationSettings() {
+      return updateBoundaryOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getExtendedMetadataSchema. */
+    public UnaryCallSettings.Builder<GetExtendedMetadataSchemaRequest, ExtendedMetadataSchema>
+        getExtendedMetadataSchemaSettings() {
+      return getExtendedMetadataSchemaSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listExtendedMetadataSchemas. */
+    public PagedCallSettings.Builder<
+            ListExtendedMetadataSchemasRequest,
+            ListExtendedMetadataSchemasResponse,
+            ListExtendedMetadataSchemasPagedResponse>
+        listExtendedMetadataSchemasSettings() {
+      return listExtendedMetadataSchemasSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

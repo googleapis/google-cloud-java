@@ -44,6 +44,102 @@ public final class CreativeMessagesProto extends com.google.protobuf.GeneratedFi
       internal_static_google_ads_admanager_v1_Creative_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_Creative_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AdExchangeCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AdExchangeCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AdSenseCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AdSenseCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AspectRatioImageCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AspectRatioImageCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AudioCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AudioCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_AudioRedirectCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_AudioRedirectCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ClickTrackingCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ClickTrackingCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CustomCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CustomCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_Html5CreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_Html5CreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ImageCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ImageCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ImageOverlayCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ImageOverlayCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ImageRedirectCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ImageRedirectCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ImageRedirectOverlayCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ImageRedirectOverlayCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_InternalRedirectCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_InternalRedirectCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_LegacyDfpCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_LegacyDfpCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ProgrammaticCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ProgrammaticCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_RichMediaStudioCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_RichMediaStudioCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_SetTopBoxCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_SetTopBoxCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_TemplateCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_TemplateCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ThirdPartyCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ThirdPartyCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_VastRedirectCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_VastRedirectCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_VideoCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_VideoCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_VideoRedirectCreativeDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_VideoRedirectCreativeDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_VastInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_VastInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BuyerPlacementConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BuyerPlacementConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -55,40 +151,852 @@ public final class CreativeMessagesProto extends com.google.protobuf.GeneratedFi
     java.lang.String[] descriptorData = {
       "\n"
           + "/google/ads/admanager/v1/creative_messa"
-          + "ges.proto\022\027google.ads.admanager.v1\032\037goog"
-          + "le/api/field_behavior.proto\032\031google/api/resource.proto\"\271\001\n"
-          + "\010Creative\022\021\n"
+          + "ges.proto\022\027google.ads.admanager.v1\032+goog"
+          + "le/ads/admanager/v1/applied_label.proto\032,google/ads/admanager/v1/creative_asset."
+          + "proto\032,google/ads/admanager/v1/creative_enums.proto\0322google/ads/admanager/v1/cre"
+          + "ative_placeholder.proto\032Ogoogle/ads/admanager/v1/creative_third_party_data_decla"
+          + "ration_status_enum.proto\0323google/ads/admanager/v1/custom_creative_asset.proto\0320g"
+          + "oogle/ads/admanager/v1/custom_field_value.proto\032,google/ads/admanager/v1/deliver"
+          + "y_enums.proto\032Ogoogle/ads/admanager/v1/rich_media_studio_creative_billing_attrib"
+          + "ute_enum.proto\032Dgoogle/ads/admanager/v1/rich_media_studio_creative_format_enum.p"
+          + "roto\0328google/ads/admanager/v1/rich_media"
+          + "_studio_messages.proto\032\"google/ads/adman"
+          + "ager/v1/size.proto\0324google/ads/admanager/v1/skippable_ad_type_enum.proto\032:google"
+          + "/ads/admanager/v1/third_party_data_declaration.proto\0325google/ads/admanager/v1/va"
+          + "st_redirect_type_enum.proto\0320google/ads/"
+          + "admanager/v1/video_tracking_url.proto\032\037g"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032\036google/protobuf/durat"
+          + "ion.proto\032\037google/protobuf/timestamp.proto\"\266\030\n"
+          + "\010Creative\022W\n"
+          + "\024ad_exchange_creative\030\024"
+          + " \001(\01322.google.ads.admanager.v1.AdExchangeCreativeDetailsB\003\340A\001H\000\022Q\n"
+          + "\021ad_sense_creative\030\026"
+          + " \001(\0132/.google.ads.admanager.v1.AdSenseCreativeDetailsB\003\340A\001H\000\022d\n"
+          + "\033aspect_ratio_image_creative\030\027 \001(\01328.google.ads.ad"
+          + "manager.v1.AspectRatioImageCreativeDetailsB\003\340A\001H\000\022L\n"
+          + "\016audio_creative\030\030 \001(\0132-.goog"
+          + "le.ads.admanager.v1.AudioCreativeDetailsB\003\340A\001H\000\022]\n"
+          + "\027audio_redirect_creative\030\031 \001(\013"
+          + "25.google.ads.admanager.v1.AudioRedirectCreativeDetailsB\003\340A\001H\000\022]\n"
+          + "\027click_tracking_creative\030\032"
+          + " \001(\01325.google.ads.admanager.v1.ClickTrackingCreativeDetailsB\003\340A\001H\000\022N\n"
+          + "\017custom_creative\030\022"
+          + " \001(\0132..google.ads.admanager.v1.CustomCreativeDetailsB\003\340A\001H\000\022L\n"
+          + "\016html5_creative\030!"
+          + " \001(\0132-.google.ads.admanager.v1.Html5CreativeDetailsB\003\340A\001H\000\022L\n"
+          + "\016image_creative\030\023"
+          + " \001(\0132-.google.ads.admanager.v1.ImageCreativeDetailsB\003\340A\001H\000\022[\n"
+          + "\026image_overlay_creative\030# \001(\01324.google.ads.a"
+          + "dmanager.v1.ImageOverlayCreativeDetailsB\003\340A\001H\000\022]\n"
+          + "\027image_redirect_creative\030$ \001(\0132"
+          + "5.google.ads.admanager.v1.ImageRedirectCreativeDetailsB\003\340A\001H\000\022l\n"
+          + "\037image_redirect_overlay_creative\030% \001(\0132<.google.ads.adma"
+          + "nager.v1.ImageRedirectOverlayCreativeDetailsB\003\340A\001H\000\022c\n"
+          + "\032internal_redirect_creative\030&"
+          + " \001(\01328.google.ads.admanager.v1.InternalRedirectCreativeDetailsB\003\340A\001H\000\022U\n"
+          + "\023legacy_dfp_creative\030\' \001(\01321.google.ads.adman"
+          + "ager.v1.LegacyDfpCreativeDetailsB\003\340A\001H\000\022Z\n"
+          + "\025programmatic_creative\030* \001(\01324.google."
+          + "ads.admanager.v1.ProgrammaticCreativeDetailsB\003\340A\001H\000\022b\n"
+          + "\032rich_media_studio_creative\030+"
+          + " \001(\01327.google.ads.admanager.v1.RichMediaStudioCreativeDetailsB\003\340A\001H\000\022V\n"
+          + "\024set_top_box_creative\030. \001(\01321.google.ads.adman"
+          + "ager.v1.SetTopBoxCreativeDetailsB\003\340A\001H\000\022R\n"
+          + "\021template_creative\030/ \001(\01320.google.ads."
+          + "admanager.v1.TemplateCreativeDetailsB\003\340A\001H\000\022W\n"
+          + "\024third_party_creative\0300 \001(\01322.goog"
+          + "le.ads.admanager.v1.ThirdPartyCreativeDetailsB\003\340A\001H\000\022[\n"
+          + "\026vast_redirect_creative\0301"
+          + " \001(\01324.google.ads.admanager.v1.VastRedirectCreativeDetailsB\003\340A\001H\000\022L\n"
+          + "\016video_creative\0303"
+          + " \001(\0132-.google.ads.admanager.v1.VideoCreativeDetailsB\003\340A\001H\000\022]\n"
+          + "\027video_redirect_creative\0305 \001(\01325.google.ads.admanager."
+          + "v1.VideoRedirectCreativeDetailsB\003\340A\001H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
-          + "\014display_name\030\010 \001(\tB\003\340A\002H\000\210\001\001:i\352Af\n"
+          + "\014display_name\030\010 \001(\tB\003\340A\002H\001\210\001\001\022A\n\n"
+          + "advertiser\030\002 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/CompanyH\002\210\001\001\0224\n"
+          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022K\n"
+          + "\023custom_field_values\030L \003(\0132"
+          + ").google.ads.admanager.v1.CustomFieldValueB\003\340A\001\022\035\n"
+          + "\013preview_url\030\004 \001(\tB\003\340A\003H\003\210\001\001\0223\n"
+          + "\004size\030\005"
+          + " \001(\0132\035.google.ads.admanager.v1.SizeB\006\340A\002\340A\005\022]\n"
+          + "\034third_party_data_declaration\030;"
+          + " \001(\01322.google.ads.admanager.v1.ThirdPartyDataDeclarationB\003\340A\001\022\243\001\n"
+          + "#third_party_data_declaration_status\030< \001(\0162l.googl"
+          + "e.ads.admanager.v1.CreativeThirdPartyDat"
+          + "aDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatusB\003\340A\003H\004\210\001\001\022@\n"
+          + ".self_declared_european_union_political_content\030\r"
+          + " \001(\010B\003\340A\001H\005\210\001\001\022\'\n"
+          + "\022ad_badging_enabled\030\021"
+          + " \001(\010B\006\340A\001\340A\007H\006\210\001\001\022B\n"
+          + "\016applied_labels\0308 "
+          + "\003(\0132%.google.ads.admanager.v1.AppliedLabelB\003\340A\001\022R\n"
+          + "\026buyer_placement_config\030Q \001(\0132"
+          + "-.google.ads.admanager.v1.BuyerPlacementConfigB\003\340A\001:i\352Af\n"
           + "!admanager.googleapis.com/Creative\022,networks/{network_code}/creatives/{creative}*"
-          + "\tcreatives2\010creativeB\017\n\r"
-          + "_display_nameB\311\001\n"
-          + "\033com.google.ads.admanager.v1B\025CreativeMessagesProtoP\001Z@google.golang.org/g"
-          + "enproto/googleapis/ads/admanager/v1;adma"
-          + "nager\252\002\027Google.Ads.AdManager.V1\312\002\027Google"
-          + "\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\tcreatives2\010creativeB\t\n"
+          + "\007detailsB\017\n\r"
+          + "_display_nameB\r\n"
+          + "\013_advertiserB\016\n"
+          + "\014_preview_urlB&\n"
+          + "$_third_party_data_declaration_statusB1\n"
+          + "/_self_declared_european_union_political_contentB\025\n"
+          + "\023_ad_badging_enabled\"\260\002\n"
+          + "\031AdExchangeCreativeDetails\022!\n"
+          + "\017native_eligible\030\001 \001(\010B\003\340A\001H\000\210\001\001\022\036\n"
+          + "\014interstitial\030\002 \001(\010B\003\340A\001H\001\210\001\001\022,\n"
+          + "\032allows_all_requested_sizes\030\003"
+          + " \001(\010B\003\340A\001H\002\210\001\001\022\031\n"
+          + "\007slot_id\030\004 \001(\tB\003\340A\003H\003\210\001\001\022\"\n"
+          + "\020backfill_snippet\030\005 \001(\tB\003\340A\001H\004\210\001\001B\022\n"
+          + "\020_native_eligibleB\017\n"
+          + "\r"
+          + "_interstitialB\035\n"
+          + "\033_allows_all_requested_sizesB\n\n"
+          + "\010_slot_idB\023\n"
+          + "\021_backfill_snippet\"x\n"
+          + "\026AdSenseCreativeDetails\022\031\n"
+          + "\007slot_id\030\001 \001(\tB\003\340A\003H\000\210\001\001\022\"\n"
+          + "\020backfill_snippet\030\002 \001(\tB\003\340A\001H\001\210\001\001B\n\n"
+          + "\010_slot_idB\023\n"
+          + "\021_backfill_snippet\"\214\003\n"
+          + "\037AspectRatioImageCreativeDetails\022\032\n"
+          + "\010alt_text\030\001 \001(\tB\003\340A\001H\000\210\001\001\022!\n"
+          + "\017destination_url\030\002 \001(\tB\003\340A\001H\001\210\001\001\022z\n"
+          + "\024destination_url_type\030\003 \001(\0162R.google.ads.admanager.v1.Crea"
+          + "tiveDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\002\210\001\001\022A\n"
+          + "\014image_assets\030\004"
+          + " \003(\0132&.google.ads.admanager.v1.CreativeAssetB\003\340A\002\0221\n"
+          + "$third_party_impression_tracking_urls\030\005 \003(\tB\003\340A\001B\013\n"
+          + "\t_alt_textB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_type\"Q\n"
+          + "\024AudioCreativeDetails\0229\n"
+          + "\tvast_info\030\001 \001(\0132!.google.ads.admanager.v1.VastInfoB\003\340A\001\"Y\n"
+          + "\034AudioRedirectCreativeDetails\0229\n"
+          + "\tvast_info\030\001 \001(\0132!.google.ads.admanager.v1.VastInfoB\003\340A\001\"[\n"
+          + "\034ClickTrackingCreativeDetails\022$\n"
+          + "\022click_tracking_url\030\001 \001(\tB\003\340A\001H\000\210\001\001B\025\n"
+          + "\023_click_tracking_url\"\243\006\n"
+          + "\025CustomCreativeDetails\022\036\n"
+          + "\014html_snippet\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\035\n"
+          + "\020amp_html_snippet\030\002 \001(\tH\001\210\001\001\022\031\n"
+          + "\014interstitial\030\003 \001(\010H\002\210\001\001\022!\n"
+          + "\017destination_url\030\014 \001(\tB\003\340A\001H\003\210\001\001\022z\n"
+          + "\024destination_url_type\030\r"
+          + " \001(\0162R.google.ads.admanager.v1.Creati"
+          + "veDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\004\210\001\001\022\'\n"
+          + "\025safe_frame_compatible\030\005 \001(\010B\003\340A\004H\005\210\001\001\0221\n"
+          + "\037effective_safe_frame_compatible\030\006"
+          + " \001(\010B\003\340A\003H\006\210\001\001\0221\n"
+          + "$third_party_impression_tracking_urls\030\007 \003(\tB\003\340A\001\022v\n"
+          + "\022locked_orientation\030\010 \001(\0162P.googl"
+          + "e.ads.admanager.v1.CreativeLockedOrienta"
+          + "tionEnum.CreativeLockedOrientationB\003\340A\001H\007\210\001\001\022Q\n"
+          + "\026custom_creative_assets\030\016 \003(\0132,.g"
+          + "oogle.ads.admanager.v1.CustomCreativeAssetB\003\340A\001B\017\n\r"
+          + "_html_snippetB\023\n"
+          + "\021_amp_html_snippetB\017\n\r"
+          + "_interstitialB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_typeB\030\n"
+          + "\026_safe_frame_compatibleB\"\n"
+          + " _effective_safe_frame_compatibleB\025\n"
+          + "\023_locked_orientation\"\372\003\n"
+          + "\024Html5CreativeDetails\022v\n"
+          + "\022locked_orientation\030\001 \001(\0162P.google.ads.admanager.v1.Creative"
+          + "LockedOrientationEnum.CreativeLockedOrientationB\003\340A\001H\000\210\001\001\022\037\n\r"
+          + "override_size\030\002 \001(\010B\003\340A\001H\001\210\001\001\0221\n"
+          + "$third_party_impression_tracking_urls\030\003 \003(\tB\003\340A\001\0220\n"
+          + "\036third_party_click_tracking_url\030\004 \001("
+          + "\tB\003\340A\001H\002\210\001\001\022\'\n"
+          + "\025safe_frame_compatible\030\007 \001(\010B\003\340A\001H\003\210\001\001\022E\n"
+          + "\013html5_asset\030\010"
+          + " \001(\0132&.google.ads.admanager.v1.CreativeAssetB\003\340A\002H\004\210\001\001B\025\n"
+          + "\023_locked_orientationB\020\n"
+          + "\016_override_sizeB!\n"
+          + "\037_third_party_click_tracking_urlB\030\n"
+          + "\026_safe_frame_compatibleB\016\n"
+          + "\014_html5_asset\"\307\005\n"
+          + "\024ImageCreativeDetails\022\025\n"
+          + "\010alt_text\030\001 \001(\tH\000\210\001\001\022!\n"
+          + "\017destination_url\030\010 \001(\tB\003\340A\001H\001\210\001\001\022z\n"
+          + "\024destination_url_type\030\t \001(\0162R.google.ads.admanager.v1"
+          + ".CreativeDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\002\210\001\001\0221\n"
+          + "$third_party_impression_tracking_urls\030\003 \003(\tB\003\340A\001\022%\n"
+          + "\023amp_destination_url\030\004 \001(\tB\003\340A\001H\003\210\001\001\022v\n"
+          + "\022locked_orientation\030\005 \001(\0162P.google.ads."
+          + "admanager.v1.CreativeLockedOrientationEn"
+          + "um.CreativeLockedOrientationB\003\340A\001H\004\210\001\001\022C\n"
+          + "\023primary_image_asset\030\006"
+          + " \001(\0132&.google.ads.admanager.v1.CreativeAsset\022F\n"
+          + "\026secondary_image_assets\030\007"
+          + " \003(\0132&.google.ads.admanager.v1.CreativeAsset\022\037\n\r"
+          + "override_size\030\n"
+          + " \001(\010B\003\340A\001H\005\210\001\001B\013\n"
+          + "\t_alt_textB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_typeB\026\n"
+          + "\024_amp_destination_urlB\025\n"
+          + "\023_locked_orientationB\020\n"
+          + "\016_override_size\"\313\t\n"
+          + "\033ImageOverlayCreativeDetails\022v\n"
+          + "\022locked_orientation\030\001 \001(\0162P.google.ads.admanager.v1.CreativeLockedOrie"
+          + "ntationEnum.CreativeLockedOrientationB\003\340A\001H\000\210\001\001\022!\n"
+          + "\017destination_url\030\003 \001(\tB\003\340A\001H\001\210\001\001\022z\n"
+          + "\024destination_url_type\030\004 \001(\0162R.googl"
+          + "e.ads.admanager.v1.CreativeDestinationUr"
+          + "lTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\002\210\001\001\022\037\n\r"
+          + "override_size\030\005 \001(\010B\003\340A\001H\003\210\001\001\022H\n"
+          + "\023primary_image_asset\030\006"
+          + " \001(\0132&.google.ads.admanager.v1.CreativeAssetB\003\340A\002\022+\n"
+          + "\031creative_set_display_name\030\007 \001(\tB\003\340A\003H\004\210\001\001\022G\n"
+          + "\014creative_set\030\010 \001(\tB,\340A\003\372A&\n"
+          + "$admanager.googleapis.com/CreativeSetH\005\210\001\001\022F\n"
+          + "\023companion_creatives\030\t \003(\tB)\340A\003\372A#\n"
+          + "!admanager.googleapis.com/Creative\022E\n\r"
+          + "tracking_urls\030\n"
+          + " \003(\0132).google.ads.admanager.v1.VideoTrackingUrlB\003\340A\001\022#\n"
+          + "\021custom_parameters\030\013 \001(\tB\003\340A\001H\006\210\001\001\0220\n"
+          + "\010duration\030\014 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022N\n"
+          + "\023expected_companions\030\r"
+          + " \003(\0132,.google.ads.admanager.v1.CreativePlaceholderB\003\340A\001\022\202\001\n"
+          + "\"expected_companion_delivery_option\030\016 \001(\0162L.google.ads."
+          + "admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOptionB\003\340A\003H\007\210\001\001\022\"\n"
+          + "\020vast_preview_url\030\020 \001(\tB\003\340A\003H\010\210\001\001B\025\n"
+          + "\023_locked_orientationB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_typeB\020\n"
+          + "\016_override_sizeB\034\n"
+          + "\032_creative_set_display_nameB\017\n\r"
+          + "_creative_setB\024\n"
+          + "\022_custom_parametersB%\n"
+          + "#_expected_companion_delivery_optionB\023\n"
+          + "\021_vast_preview_url\"\361\002\n"
+          + "\034ImageRedirectCreativeDetails\022!\n"
+          + "\017destination_url\030\005 \001(\tB\003\340A\001H\000\210\001\001\022z\n"
+          + "\024destination_url_type\030\006 \001(\0162R.google.ads.adm"
+          + "anager.v1.CreativeDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\001\210\001\001\022\032\n"
+          + "\010alt_text\030\002 \001(\tB\003\340A\001H\002\210\001\001\022\033\n"
+          + "\timage_url\030\003 \001(\tB\003\340A\002H\003\210\001\001\0221\n"
+          + "$third_party_impression_tracking_urls\030\004 \003(\tB\003\340A\001B\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_typeB\013\n"
+          + "\t_alt_textB\014\n\n"
+          + "_image_url\"\320\010\n"
+          + "#ImageRedirectOverlayCreativeDetails\022!\n"
+          + "\017destination_url\030\002 \001(\tB\003\340A\001H\000\210\001\001\022z\n"
+          + "\024destination_url_type\030\003 \001(\0162R.google.ads.admanager.v1.CreativeDes"
+          + "tinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\001\210\001\001\022\033\n"
+          + "\timage_url\030\001 \001(\tB\003\340A\002H\002\210\001\001\022;\n\n"
+          + "asset_size\030\007"
+          + " \001(\0132\035.google.ads.admanager.v1.SizeB\003\340A\001H\003\210\001\001\0225\n"
+          + "\010duration\030\010"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H\004\210\001\001\022E\n\r"
+          + "tracking_urls\030\t"
+          + " \003(\0132).google.ads.admanager.v1.VideoTrackingUrlB\003\340A\001\022#\n"
+          + "\021custom_parameters\030\n"
+          + " \001(\tB\003\340A\001H\005\210\001\001\022N\n"
+          + "\023expected_companions\030\013"
+          + " \003(\0132,.google.ads.admanager.v1.CreativePlaceholderB\003\340A\001\022\202\001\n"
+          + "\"expected_companion_delivery_option\030\014 \001(\0162L.goo"
+          + "gle.ads.admanager.v1.CompanionDeliveryOp"
+          + "tionEnum.CompanionDeliveryOptionB\003\340A\003H\006\210\001\001\022\"\n"
+          + "\020vast_preview_url\030\016 \001(\tB\003\340A\003H\007\210\001\001\022+\n"
+          + "\031creative_set_display_name\030\004 \001(\tB\003\340A\003H\010\210\001\001\022G\n"
+          + "\014creative_set\030\005 \001(\tB,\340A\003\372A&\n"
+          + "$admanager.googleapis.com/CreativeSetH\t\210\001\001\022F\n"
+          + "\023companion_creatives\030\006 \003(\tB)\340A\001\372A#\n"
+          + "!admanager.googleapis.com/CreativeB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_typeB\014\n\n"
+          + "_image_urlB\r\n"
+          + "\013_asset_sizeB\013\n"
+          + "\t_durationB\024\n"
+          + "\022_custom_parametersB%\n"
+          + "#_expected_companion_delivery_optionB\023\n"
+          + "\021_vast_preview_urlB\034\n"
+          + "\032_creative_set_display_nameB\017\n\r"
+          + "_creative_set\"\334\005\n"
+          + "\037InternalRedirectCreativeDetails\022v\n"
+          + "\022locked_orientation\030\001 \001(\0162P.google.ad"
+          + "s.admanager.v1.CreativeLockedOrientation"
+          + "Enum.CreativeLockedOrientationB\003\340A\001H\000\210\001\001\022;\n\n"
+          + "asset_size\030\005"
+          + " \001(\0132\035.google.ads.admanager.v1.SizeB\003\340A\003H\001\210\001\001\022\'\n"
+          + "\025internal_redirect_url\030\006 \001(\tB\003\340A\002H\002\210\001\001\022\037\n\r"
+          + "override_size\030\007 \001(\010B\003\340A\001H\003\210\001\001\022\036\n"
+          + "\014interstitial\030\002 \001(\010B\003\340A\001H\004\210\001\001\022k\n"
+          + "\017ssl_scan_result\030\003 \001(\0162H.googl"
+          + "e.ads.admanager.v1.CreativeSslScanResultEnum.CreativeSslScanResultB\003\340A\003H\005\210\001\001\022k\n"
+          + "\023ssl_manual_override\030\004 \001(\0162D.google.ads.a"
+          + "dmanager.v1.CreativeSslOverrideEnum.CreativeSslOverrideB\003\340A\001H\006\210\001\001\0221\n"
+          + "$third_party_impression_tracking_urls\030\010 \003(\tB\003\340A\001B\025\n"
+          + "\023_locked_orientationB\r\n"
+          + "\013_asset_sizeB\030\n"
+          + "\026_internal_redirect_urlB\020\n"
+          + "\016_override_sizeB\017\n\r"
+          + "_interstitialB\022\n"
+          + "\020_ssl_scan_resultB\026\n"
+          + "\024_ssl_manual_override\"\032\n"
+          + "\030LegacyDfpCreativeDetails\"\035\n"
+          + "\033ProgrammaticCreativeDetails\"\343\013\n"
+          + "\036RichMediaStudioCreativeDetails\022v\n"
+          + "\022locked_orientation\030\001 \001(\0162P.google.ads.adman"
+          + "ager.v1.CreativeLockedOrientationEnum.CreativeLockedOrientationB\003\340A\001H\000\210\001\001\022$\n"
+          + "\022studio_creative_id\030\003 \001(\003B\003\340A\003H\001\210\001\001\022{\n"
+          + "\017creative_format\030\004 \001(\0162X.google.ads.admanager."
+          + "v1.RichMediaStudioCreativeFormatEnum.RichMediaStudioCreativeFormatB\003\340A\001H\002\210\001\001\022!\n"
+          + "\017total_file_size\030\006 \001(\003B\003\340A\003H\003\210\001\001\022\030\n"
+          + "\013ad_tag_keys\030\007 \003(\tB\003\340A\001\022\036\n"
+          + "\021custom_key_values\030\010 \003(\tB\003\340A\001\022\034\n\n"
+          + "survey_url\030\t \001(\tB\003\340A\001H\004\210\001\001\022%\n"
+          + "\023all_impressions_url\030\n"
+          + " \001(\tB\003\340A\001H\005\210\001\001\022,\n"
+          + "\032rich_media_impressions_url\030\013 \001(\tB\003\340A\001H\006\210\001\001\022.\n"
+          + "\034backup_image_impressions_url\030\014 \001("
+          + "\tB\003\340A\001H\007\210\001\001\022\036\n"
+          + "\014override_css\030\r"
+          + " \001(\tB\003\340A\001H\010\210\001\001\022/\n"
+          + "\035required_flash_plugin_version\030\016 \001(\tB\003\340A\003H\t\210\001\001\0225\n"
+          + "\010duration\030\017 \001(\0132\031.google.protobuf.DurationB\003\340A\001H\n"
+          + "\210\001\001\022\221\001\n"
+          + "\021billing_attribute\030\020 \001(\0162l.google.ads.admanager."
+          + "v1.RichMediaStudioCreativeBillingAttribu"
+          + "teEnum.RichMediaStudioCreativeBillingAttributeB\003\340A\001H\013\210\001\001\022q\n"
+          + "(rich_media_studio_child_asset_properties\030\021 \003(\0132:.google.ads."
+          + "admanager.v1.RichMediaStudioChildAssetPropertyB\003\340A\003\022k\n"
+          + "\017ssl_scan_result\030\022 \001(\0162H.google.ads.admanager.v1.CreativeSslScanRe"
+          + "sultEnum.CreativeSslScanResultB\003\340A\003H\014\210\001\001\022k\n"
+          + "\023ssl_manual_override\030\023 \001(\0162D.google.a"
+          + "ds.admanager.v1.CreativeSslOverrideEnum.CreativeSslOverrideB\003\340A\001H\r"
+          + "\210\001\001B\025\n"
+          + "\023_locked_orientationB\025\n"
+          + "\023_studio_creative_idB\022\n"
+          + "\020_creative_formatB\022\n"
+          + "\020_total_file_sizeB\r\n"
+          + "\013_survey_urlB\026\n"
+          + "\024_all_impressions_urlB\035\n"
+          + "\033_rich_media_impressions_urlB\037\n"
+          + "\035_backup_image_impressions_urlB\017\n\r"
+          + "_override_cssB \n"
+          + "\036_required_flash_plugin_versionB\013\n"
+          + "\t_durationB\024\n"
+          + "\022_billing_attributeB\022\n"
+          + "\020_ssl_scan_resultB\026\n"
+          + "\024_ssl_manual_override\"U\n"
+          + "\030SetTopBoxCreativeDetails\0229\n"
+          + "\tvast_info\030\001"
+          + " \001(\0132!.google.ads.admanager.v1.VastInfoB\003\340A\001\"\263\003\n"
+          + "\027TemplateCreativeDetails\022%\n"
+          + "\023amp_destination_url\030\001 \001(\tB\003\340A\001H\000\210\001\001\022v\n"
+          + "\022locked_orientation\030\002 \001(\0162P.google.ads.admanager.v1.Cre"
+          + "ativeLockedOrientationEnum.CreativeLockedOrientationB\003\340A\001H\001\210\001\001\022!\n"
+          + "\017destination_url\030\022 \001(\tB\003\340A\001H\002\210\001\001\022z\n"
+          + "\024destination_url_type\030\023 \001(\0162R.google.ads.admanager.v1.Creati"
+          + "veDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\003\210\001\001B\026\n"
+          + "\024_amp_destination_urlB\025\n"
+          + "\023_locked_orientationB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_type\"\206\007\n"
+          + "\031ThirdPartyCreativeDetails\022\024\n"
+          + "\007snippet\030\004 \001(\tH\000\210\001\001\022\"\n"
+          + "\020expanded_snippet\030\005 \001(\tB\003\340A\003H\001\210\001\001\022v\n"
+          + "\022locked_orientation\030\001 \001(\0162P.google.a"
+          + "ds.admanager.v1.CreativeLockedOrientatio"
+          + "nEnum.CreativeLockedOrientationB\003\340A\001H\002\210\001\001\022k\n"
+          + "\017ssl_scan_result\030\002 \001(\0162H.google.ads."
+          + "admanager.v1.CreativeSslScanResultEnum.CreativeSslScanResultB\003\340A\003H\003\210\001\001\022k\n"
+          + "\023ssl_manual_override\030\003 \001(\0162D.google.ads.admanag"
+          + "er.v1.CreativeSslOverrideEnum.CreativeSslOverrideB\003\340A\001H\004\210\001\001\022\'\n"
+          + "\025safe_frame_compatible\030\006 \001(\010B\003\340A\001H\005\210\001\001\0221\n"
+          + "$third_party_impression_tracking_urls\030\007 \003(\tB\003\340A\001\022\"\n"
+          + "\020amp_redirect_url\030\010 \001(\tB\003\340A\001H\006\210\001\001\022!\n"
+          + "\017destination_url\030\n"
+          + " \001(\tB\003\340A\001H\007\210\001\001\022z\n"
+          + "\024destination_url_type\030\013 \001(\0162R.google.ads.admanager.v1.C"
+          + "reativeDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\010\210\001\001B\n\n"
+          + "\010_snippetB\023\n"
+          + "\021_expanded_snippetB\025\n"
+          + "\023_locked_orientationB\022\n"
+          + "\020_ssl_scan_resultB\026\n"
+          + "\024_ssl_manual_overrideB\030\n"
+          + "\026_safe_frame_compatibleB\023\n"
+          + "\021_amp_redirect_urlB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_type\"\321\006\n"
+          + "\033VastRedirectCreativeDetails\022\036\n"
+          + "\014vast_xml_url\030\026 \001(\tB\003\340A\002H\000\210\001\001\022d\n"
+          + "\022vast_redirect_type\030\004 \001(\0162>.google."
+          + "ads.admanager.v1.VastRedirectTypeEnum.VastRedirectTypeB\003\340A\002H\001\210\001\001\0220\n"
+          + "\010duration\030\005 \001(\0132\031.google.protobuf.DurationB\003\340A\002\022&\n"
+          + "\024vast_pricing_enabled\030\010 \001(\010B\003\340A\001H\002\210\001\001\022,\n"
+          + "\032programmatic_demand_source\030\t \001(\010B\003\340A\001H\003\210\001\001\0221\n"
+          + "\037server_side_unwrapping_disabled\030\n"
+          + " \001(\010B\003\340A\001H\004\210\001\001\022E\n\r"
+          + "tracking_urls\030\014 \003(\0132).goo"
+          + "gle.ads.admanager.v1.VideoTrackingUrlB\003\340A\001\022\"\n"
+          + "\020vast_preview_url\030\020 \001(\tB\003\340A\003H\005\210\001\001\022\027\n"
+          + "\005audio\030\025 \001(\010B\003\340A\001H\006\210\001\001\022!\n"
+          + "\017destination_url\030\002 \001(\tB\003\340A\001H\007\210\001\001\022z\n"
+          + "\024destination_url_type\030\003 \001(\0162R.google.ads.admanager.v1.Creat"
+          + "iveDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H\010\210\001\001B\017\n\r"
+          + "_vast_xml_urlB\025\n"
+          + "\023_vast_redirect_typeB\027\n"
+          + "\025_vast_pricing_enabledB\035\n"
+          + "\033_programmatic_demand_sourceB\"\n"
+          + " _server_side_unwrapping_disabledB\023\n"
+          + "\021_vast_preview_urlB\010\n"
+          + "\006_audioB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_type\"Q\n"
+          + "\024VideoCreativeDetails\0229\n"
+          + "\tvast_info\030\001 \001(\0132!.google.ads.admanager.v1.VastInfoB\003\340A\001\"Y\n"
+          + "\034VideoRedirectCreativeDetails\0229\n"
+          + "\tvast_info\030\001"
+          + " \001(\0132!.google.ads.admanager.v1.VastInfoB\003\340A\001\"\370\007\n"
+          + "\010VastInfo\0220\n"
+          + "\010duration\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022)\n"
+          + "\027allow_duration_override\030\002 \001(\010B\003\340A\001H\000\210\001\001\022E\n\r"
+          + "tracking_urls\030\003"
+          + " \003(\0132).google.ads.admanager.v1.VideoTrackingUrlB\003\340A\001\022#\n"
+          + "\021custom_parameters\030\004 \001(\tB\003\340A\001H\001\210\001\001\022\027\n"
+          + "\005ad_id\030\005 \001(\tB\003\340A\001H\002\210\001\001\022T\n\n"
+          + "ad_id_type\030\006 \001(\01626.google.ads.adm"
+          + "anager.v1.VastAdIdTypeEnum.VastAdIdTypeB\003\340A\001H\003\210\001\001\022a\n"
+          + "\021skippable_ad_type\030\007 \001(\0162<.g"
+          + "oogle.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdTypeB\003\340A\001H\004\210\001\001\022\"\n"
+          + "\020vast_preview_url\030\010 \001(\tB\003\340A\003H\005\210\001\001\022+\n"
+          + "\031creative_set_display_name\030\016 \001(\tB\003\340A\003H\006\210\001\001\022G\n"
+          + "\014creative_set\030\017 \001(\tB,\340A\003\372A&\n"
+          + "$admanager.googleapis.com/CreativeSetH\007\210\001\001\022!\n"
+          + "\017destination_url\030\020 \001(\tB\003\340A\001H\010\210\001\001\022z\n"
+          + "\024destination_url_type\030\021 \001(\0162R.google.ads.admanager.v1.Creati"
+          + "veDestinationUrlTypeEnum.CreativeDestinationUrlTypeB\003\340A\001H"
+          + "\t\210\001\001\022F\n"
+          + "\023companion_creatives\030\022 \003(\tB)\340A\001\372A#\n"
+          + "!admanager.googleapis.com/CreativeB\032\n"
+          + "\030_allow_duration_overrideB\024\n"
+          + "\022_custom_parametersB\010\n"
+          + "\006_ad_idB\r\n"
+          + "\013_ad_id_typeB\024\n"
+          + "\022_skippable_ad_typeB\023\n"
+          + "\021_vast_preview_urlB\034\n"
+          + "\032_creative_set_display_nameB\017\n\r"
+          + "_creative_setB\022\n"
+          + "\020_destination_urlB\027\n"
+          + "\025_destination_url_type\"\214\001\n"
+          + "\024BuyerPlacementConfig\022\036\n"
+          + "\014placement_id\030\001 \001(\tB\003\340A\001H\000\210\001\001\022(\n"
+          + "\026placement_display_name\030\002 \001(\tB\003\340A\001H\001\210\001\001B\017\n\r"
+          + "_placement_idB\031\n"
+          + "\027_placement_display_nameB\311\001\n"
+          + "\033com.google.ads.admanager.v1B\025",
+      "CreativeMessagesProtoP\001Z@google.golang.o"
+          + "rg/genproto/googleapis/ads/admanager/v1;"
+          + "admanager\252\002\027Google.Ads.AdManager.V1\312\002\027Go"
+          + "ogle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdM"
+          + "anager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor(),
+              com.google.ads.admanager.v1.CreativeAssetProto.getDescriptor(),
+              com.google.ads.admanager.v1.CreativeEnumsProto.getDescriptor(),
+              com.google.ads.admanager.v1.CreativePlaceholderProto.getDescriptor(),
+              com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnumProto
+                  .getDescriptor(),
+              com.google.ads.admanager.v1.CustomCreativeAssetProto.getDescriptor(),
+              com.google.ads.admanager.v1.CustomFieldValueProto.getDescriptor(),
+              com.google.ads.admanager.v1.DeliveryEnumsProto.getDescriptor(),
+              com.google.ads.admanager.v1.RichMediaStudioCreativeBillingAttributeEnumProto
+                  .getDescriptor(),
+              com.google.ads.admanager.v1.RichMediaStudioCreativeFormatEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.RichMediaStudioMessagesProto.getDescriptor(),
+              com.google.ads.admanager.v1.SizeProto.getDescriptor(),
+              com.google.ads.admanager.v1.SkippableAdTypeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.ThirdPartyDataDeclarationProto.getDescriptor(),
+              com.google.ads.admanager.v1.VastRedirectTypeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.VideoTrackingUrlProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_Creative_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_ads_admanager_v1_Creative_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Creative_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName",
+              "AdExchangeCreative",
+              "AdSenseCreative",
+              "AspectRatioImageCreative",
+              "AudioCreative",
+              "AudioRedirectCreative",
+              "ClickTrackingCreative",
+              "CustomCreative",
+              "Html5Creative",
+              "ImageCreative",
+              "ImageOverlayCreative",
+              "ImageRedirectCreative",
+              "ImageRedirectOverlayCreative",
+              "InternalRedirectCreative",
+              "LegacyDfpCreative",
+              "ProgrammaticCreative",
+              "RichMediaStudioCreative",
+              "SetTopBoxCreative",
+              "TemplateCreative",
+              "ThirdPartyCreative",
+              "VastRedirectCreative",
+              "VideoCreative",
+              "VideoRedirectCreative",
+              "Name",
+              "DisplayName",
+              "Advertiser",
+              "UpdateTime",
+              "CustomFieldValues",
+              "PreviewUrl",
+              "Size",
+              "ThirdPartyDataDeclaration",
+              "ThirdPartyDataDeclarationStatus",
+              "SelfDeclaredEuropeanUnionPoliticalContent",
+              "AdBadgingEnabled",
+              "AppliedLabels",
+              "BuyerPlacementConfig",
+              "Details",
+            });
+    internal_static_google_ads_admanager_v1_AdExchangeCreativeDetails_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_ads_admanager_v1_AdExchangeCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AdExchangeCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "NativeEligible",
+              "Interstitial",
+              "AllowsAllRequestedSizes",
+              "SlotId",
+              "BackfillSnippet",
+            });
+    internal_static_google_ads_admanager_v1_AdSenseCreativeDetails_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_AdSenseCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AdSenseCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "SlotId", "BackfillSnippet",
+            });
+    internal_static_google_ads_admanager_v1_AspectRatioImageCreativeDetails_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_AspectRatioImageCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AspectRatioImageCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "AltText",
+              "DestinationUrl",
+              "DestinationUrlType",
+              "ImageAssets",
+              "ThirdPartyImpressionTrackingUrls",
+            });
+    internal_static_google_ads_admanager_v1_AudioCreativeDetails_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_AudioCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AudioCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "VastInfo",
+            });
+    internal_static_google_ads_admanager_v1_AudioRedirectCreativeDetails_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_AudioRedirectCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_AudioRedirectCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "VastInfo",
+            });
+    internal_static_google_ads_admanager_v1_ClickTrackingCreativeDetails_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_ClickTrackingCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ClickTrackingCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "ClickTrackingUrl",
+            });
+    internal_static_google_ads_admanager_v1_CustomCreativeDetails_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_CustomCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CustomCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "HtmlSnippet",
+              "AmpHtmlSnippet",
+              "Interstitial",
+              "DestinationUrl",
+              "DestinationUrlType",
+              "SafeFrameCompatible",
+              "EffectiveSafeFrameCompatible",
+              "ThirdPartyImpressionTrackingUrls",
+              "LockedOrientation",
+              "CustomCreativeAssets",
+            });
+    internal_static_google_ads_admanager_v1_Html5CreativeDetails_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_Html5CreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_Html5CreativeDetails_descriptor,
+            new java.lang.String[] {
+              "LockedOrientation",
+              "OverrideSize",
+              "ThirdPartyImpressionTrackingUrls",
+              "ThirdPartyClickTrackingUrl",
+              "SafeFrameCompatible",
+              "Html5Asset",
+            });
+    internal_static_google_ads_admanager_v1_ImageCreativeDetails_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_ImageCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ImageCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "AltText",
+              "DestinationUrl",
+              "DestinationUrlType",
+              "ThirdPartyImpressionTrackingUrls",
+              "AmpDestinationUrl",
+              "LockedOrientation",
+              "PrimaryImageAsset",
+              "SecondaryImageAssets",
+              "OverrideSize",
+            });
+    internal_static_google_ads_admanager_v1_ImageOverlayCreativeDetails_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_ImageOverlayCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ImageOverlayCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "LockedOrientation",
+              "DestinationUrl",
+              "DestinationUrlType",
+              "OverrideSize",
+              "PrimaryImageAsset",
+              "CreativeSetDisplayName",
+              "CreativeSet",
+              "CompanionCreatives",
+              "TrackingUrls",
+              "CustomParameters",
+              "Duration",
+              "ExpectedCompanions",
+              "ExpectedCompanionDeliveryOption",
+              "VastPreviewUrl",
+            });
+    internal_static_google_ads_admanager_v1_ImageRedirectCreativeDetails_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_ImageRedirectCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ImageRedirectCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "DestinationUrl",
+              "DestinationUrlType",
+              "AltText",
+              "ImageUrl",
+              "ThirdPartyImpressionTrackingUrls",
+            });
+    internal_static_google_ads_admanager_v1_ImageRedirectOverlayCreativeDetails_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_ImageRedirectOverlayCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ImageRedirectOverlayCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "DestinationUrl",
+              "DestinationUrlType",
+              "ImageUrl",
+              "AssetSize",
+              "Duration",
+              "TrackingUrls",
+              "CustomParameters",
+              "ExpectedCompanions",
+              "ExpectedCompanionDeliveryOption",
+              "VastPreviewUrl",
+              "CreativeSetDisplayName",
+              "CreativeSet",
+              "CompanionCreatives",
+            });
+    internal_static_google_ads_admanager_v1_InternalRedirectCreativeDetails_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_ads_admanager_v1_InternalRedirectCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_InternalRedirectCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "LockedOrientation",
+              "AssetSize",
+              "InternalRedirectUrl",
+              "OverrideSize",
+              "Interstitial",
+              "SslScanResult",
+              "SslManualOverride",
+              "ThirdPartyImpressionTrackingUrls",
+            });
+    internal_static_google_ads_admanager_v1_LegacyDfpCreativeDetails_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_ads_admanager_v1_LegacyDfpCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_LegacyDfpCreativeDetails_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_ProgrammaticCreativeDetails_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_ads_admanager_v1_ProgrammaticCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ProgrammaticCreativeDetails_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_RichMediaStudioCreativeDetails_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_ads_admanager_v1_RichMediaStudioCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_RichMediaStudioCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "LockedOrientation",
+              "StudioCreativeId",
+              "CreativeFormat",
+              "TotalFileSize",
+              "AdTagKeys",
+              "CustomKeyValues",
+              "SurveyUrl",
+              "AllImpressionsUrl",
+              "RichMediaImpressionsUrl",
+              "BackupImageImpressionsUrl",
+              "OverrideCss",
+              "RequiredFlashPluginVersion",
+              "Duration",
+              "BillingAttribute",
+              "RichMediaStudioChildAssetProperties",
+              "SslScanResult",
+              "SslManualOverride",
+            });
+    internal_static_google_ads_admanager_v1_SetTopBoxCreativeDetails_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_ads_admanager_v1_SetTopBoxCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_SetTopBoxCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "VastInfo",
+            });
+    internal_static_google_ads_admanager_v1_TemplateCreativeDetails_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_ads_admanager_v1_TemplateCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_TemplateCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "AmpDestinationUrl", "LockedOrientation", "DestinationUrl", "DestinationUrlType",
+            });
+    internal_static_google_ads_admanager_v1_ThirdPartyCreativeDetails_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_ads_admanager_v1_ThirdPartyCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ThirdPartyCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "Snippet",
+              "ExpandedSnippet",
+              "LockedOrientation",
+              "SslScanResult",
+              "SslManualOverride",
+              "SafeFrameCompatible",
+              "ThirdPartyImpressionTrackingUrls",
+              "AmpRedirectUrl",
+              "DestinationUrl",
+              "DestinationUrlType",
+            });
+    internal_static_google_ads_admanager_v1_VastRedirectCreativeDetails_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_ads_admanager_v1_VastRedirectCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_VastRedirectCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "VastXmlUrl",
+              "VastRedirectType",
+              "Duration",
+              "VastPricingEnabled",
+              "ProgrammaticDemandSource",
+              "ServerSideUnwrappingDisabled",
+              "TrackingUrls",
+              "VastPreviewUrl",
+              "Audio",
+              "DestinationUrl",
+              "DestinationUrlType",
+            });
+    internal_static_google_ads_admanager_v1_VideoCreativeDetails_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_ads_admanager_v1_VideoCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_VideoCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "VastInfo",
+            });
+    internal_static_google_ads_admanager_v1_VideoRedirectCreativeDetails_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_ads_admanager_v1_VideoRedirectCreativeDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_VideoRedirectCreativeDetails_descriptor,
+            new java.lang.String[] {
+              "VastInfo",
+            });
+    internal_static_google_ads_admanager_v1_VastInfo_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_ads_admanager_v1_VastInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_VastInfo_descriptor,
+            new java.lang.String[] {
+              "Duration",
+              "AllowDurationOverride",
+              "TrackingUrls",
+              "CustomParameters",
+              "AdId",
+              "AdIdType",
+              "SkippableAdType",
+              "VastPreviewUrl",
+              "CreativeSetDisplayName",
+              "CreativeSet",
+              "DestinationUrl",
+              "DestinationUrlType",
+              "CompanionCreatives",
+            });
+    internal_static_google_ads_admanager_v1_BuyerPlacementConfig_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_ads_admanager_v1_BuyerPlacementConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BuyerPlacementConfig_descriptor,
+            new java.lang.String[] {
+              "PlacementId", "PlacementDisplayName",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor();
+    com.google.ads.admanager.v1.CreativeAssetProto.getDescriptor();
+    com.google.ads.admanager.v1.CreativeEnumsProto.getDescriptor();
+    com.google.ads.admanager.v1.CreativePlaceholderProto.getDescriptor();
+    com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.CustomCreativeAssetProto.getDescriptor();
+    com.google.ads.admanager.v1.CustomFieldValueProto.getDescriptor();
+    com.google.ads.admanager.v1.DeliveryEnumsProto.getDescriptor();
+    com.google.ads.admanager.v1.RichMediaStudioCreativeBillingAttributeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.RichMediaStudioCreativeFormatEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.RichMediaStudioMessagesProto.getDescriptor();
+    com.google.ads.admanager.v1.SizeProto.getDescriptor();
+    com.google.ads.admanager.v1.SkippableAdTypeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.ThirdPartyDataDeclarationProto.getDescriptor();
+    com.google.ads.admanager.v1.VastRedirectTypeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.VideoTrackingUrlProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

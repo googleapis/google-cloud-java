@@ -40,6 +40,7 @@ import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.StreamingRetryAlgorithm;
+import java.time.Duration;
 import java.util.Collection;
 import org.jspecify.annotations.NullMarked;
 
@@ -277,7 +278,7 @@ public class Callables {
    * generated code.
    *
    * @param uploadClient client executing the wire-level upload protocol
-   * @param callSettings settings configuring chunk size
+   * @param callSettings {@link UnaryCallSettings} to configure the method-level settings with
    * @param clientContext {@link ClientContext} to use to connect to the service.
    * @return {@link ResumableUploadCallable} callable object
    */
@@ -285,9 +286,15 @@ public class Callables {
   @InternalApi
   public static <RequestT, ResponseT> ResumableUploadCallable<RequestT, ResponseT> resumableUpload(
       ResumableUploadClient<RequestT, ResponseT> uploadClient,
-      ResumableUploadCallSettings callSettings,
+      UnaryCallSettings<RequestT, ResponseT> callSettings,
       ClientContext clientContext) {
-    return new ResumableUploadCallableImpl<>(uploadClient, callSettings, clientContext);
+    ResumableUploadOptions.Builder defaultOptionsBuilder = ResumableUploadOptions.newBuilder();
+    Duration totalTimeout = callSettings.getRetrySettings().getTotalTimeoutDuration();
+    if (totalTimeout != null && !totalTimeout.isZero() && !totalTimeout.isNegative()) {
+      defaultOptionsBuilder.setGlobalTimeout(totalTimeout);
+    }
+    return new ResumableUploadCallableImpl<>(
+        uploadClient, defaultOptionsBuilder.build(), clientContext);
   }
 
   private static boolean areRetriesDisabled(

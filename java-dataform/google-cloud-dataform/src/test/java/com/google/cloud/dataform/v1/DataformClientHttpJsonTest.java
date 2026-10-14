@@ -1602,6 +1602,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1661,6 +1662,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1720,6 +1722,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1783,6 +1786,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1846,6 +1850,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1867,6 +1872,7 @@ public class DataformClientHttpJsonTest {
             .setKmsKeyName("kmsKeyName412586233")
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1914,6 +1920,7 @@ public class DataformClientHttpJsonTest {
               .setKmsKeyName("kmsKeyName412586233")
               .setDataEncryptionState(DataEncryptionState.newBuilder().build())
               .setInternalMetadata("internalMetadata6789388")
+              .setEndUserAuthConfig(Repository.EndUserAuthConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepository(repository, updateMask);

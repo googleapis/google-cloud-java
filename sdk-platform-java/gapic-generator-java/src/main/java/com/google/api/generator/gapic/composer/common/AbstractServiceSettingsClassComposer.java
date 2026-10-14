@@ -153,7 +153,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
     // list.
     List<Method> publicMethods =
         service.methods().stream()
-            .filter(m -> m.isInternalApi() == false)
+            .filter(m -> !m.isInternalApi() && !m.isResumableUpload())
             .collect(Collectors.toList());
     Optional<Method> methodOpt =
         publicMethods.isEmpty()

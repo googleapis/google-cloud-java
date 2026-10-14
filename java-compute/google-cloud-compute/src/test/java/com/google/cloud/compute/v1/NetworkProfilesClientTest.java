@@ -89,7 +89,6 @@ public class NetworkProfilesClientTest {
             .setProfileType(NetworkProfileProfileType.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setSelfLinkWithId("selfLinkWithId-776809081")
-            .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);
 

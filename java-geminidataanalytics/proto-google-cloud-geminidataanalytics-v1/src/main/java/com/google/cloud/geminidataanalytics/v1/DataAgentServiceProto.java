@@ -76,6 +76,26 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
       internal_static_google_cloud_geminidataanalytics_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,7 +115,7 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
           + "/data_agent.proto\032\036google/iam/v1/iam_pol"
           + "icy.proto\032\032google/iam/v1/policy.proto\032#g"
           + "oogle/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\325\001\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\306\002\n"
           + "\025ListDataAgentsRequest\022D\n"
           + "\006parent\030\001 \001("
           + "\tB4\340A\002\372A.\022,geminidataanalytics.googleapis.com/DataAgent\022\026\n"
@@ -103,22 +123,24 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\031\n"
-          + "\014show_deleted\030\006 \001(\010B\003\340A\001\"\220\001\n"
+          + "\014show_deleted\030\006 \001(\010B\003\340A\001\022o\n"
+          + "\016creator_filter\030\010 \001(\0162R.google.cloud.geminidataanal"
+          + "ytics.v1.ListAccessibleDataAgentsRequest.CreatorFilterB\003\340A\001\"\220\001\n"
           + "\026ListDataAgentsResponse\022C\n"
-          + "\013data_agents\030\001 \003(\0132..goo"
-          + "gle.cloud.geminidataanalytics.v1.DataAgent\022\027\n"
+          + "\013data_agents\030\001"
+          + " \003(\0132..google.cloud.geminidataanalytics.v1.DataAgent\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\006\"\263\003\n"
           + "\037ListAccessibleDataAgentsRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4\340A\002\372A.\022,gemin"
-          + "idataanalytics.googleapis.com/DataAgent\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB4\340A\002\372A.\022,geminidataanalytics.googleapis.com/DataAgent\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\031\n"
           + "\014show_deleted\030\006 \001(\010B\003\340A\001\022o\n"
-          + "\016creator_filter\030\007 \001(\0162R.google.cloud.g"
-          + "eminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilterB\003\340A\001\"a\n\r"
+          + "\016creator_filter\030\007 \001(\0162R.google.cloud.geminida"
+          + "taanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilterB\003\340A\001\"a\n\r"
           + "CreatorFilter\022\036\n"
           + "\032CREATOR_FILTER_UNSPECIFIED\020\000\022\010\n"
           + "\004NONE\020\001\022\020\n"
@@ -136,14 +158,15 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
           + "\006parent\030\001 \001("
           + "\tB4\340A\002\372A.\022,geminidataanalytics.googleapis.com/DataAgent\022\032\n\r"
           + "data_agent_id\030\002 \001(\tB\003\340A\001\022G\n\n"
-          + "data_agent\030\003"
-          + " \001(\0132..google.cloud.geminidataanalytics.v1.DataAgentB\003\340A\002\022\037\n\n"
+          + "data_agent\030\003 \001(\0132.."
+          + "google.cloud.geminidataanalytics.v1.DataAgentB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\270\001\n"
           + "\026UpdateDataAgentRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022G\n\n"
-          + "data_agent\030\002 \001(\0132..google"
-          + ".cloud.geminidataanalytics.v1.DataAgentB\003\340A\002\022\037\n\n"
+          + "data_agent\030\002"
+          + " \001(\0132..google.cloud.geminidataanalytics.v1.DataAgentB\003\340A\002\022\037\n"
+          + "\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"}\n"
           + "\026DeleteDataAgentRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
@@ -156,66 +179,96 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\0032\244\023\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003\"\354\001\n"
+          + "\037SetAgentOpsObservabilityRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\036\n"
+          + "\021telemetry_enabled\030\002 \001(\010B\003\340A\001\022\035\n"
+          + "\020data_source_type\030\003 \001(\tB\003\340A\002\022\031\n"
+          + "\014bqaa_enabled\030\004 \001(\010B\003\340A\001\0224\n"
+          + "\013update_mask\030\005 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\"\n"
+          + " SetAgentOpsObservabilityResponse\"\"\n"
+          + " SetAgentOpsObservabilityMetadata\"\200\001\n"
+          + "$RetrieveAgentOpsObservabilityRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\035\n"
+          + "\020data_source_type\030\002 \001(\tB\003\340A\002\"\356\001\n"
+          + "%RetrieveAgentOpsObservabilityResponse\022\036\n"
+          + "\021telemetry_enabled\030\001 \001(\010B\003\340A\003\022\035\n"
+          + "\020bigquery_enabled\030\003 \001(\010B\003\340A\003\022 \n"
+          + "\023cloud_trace_enabled\030\004 \001(\010B\003\340A\003\022%\n"
+          + "\030cloud_monitoring_enabled\030\005 \001(\010B\003\340A\003\022\"\n"
+          + "\025cloud_logging_enabled\030\006 \001(\010B\003\340A\003\022\031\n"
+          + "\014bqaa_enabled\030\007 \001(\010B\003\340A\0032\227\030\n"
           + "\020DataAgentService\022\312\001\n"
-          + "\016ListDataAgents\022:.google.cloud.geminidataanalytics.v1.ListDataAgentsRequ"
-          + "est\032;.google.cloud.geminidataanalytics.v"
-          + "1.ListDataAgentsResponse\"?\332A\006parent\202\323\344\223\002"
-          + "0\022./v1/{parent=projects/*/locations/*}/dataAgents\022\367\001\n"
-          + "\030ListAccessibleDataAgents\022D.google.cloud.geminidataanalytics.v1.Lis"
-          + "tAccessibleDataAgentsRequest\032E.google.cloud.geminidataanalytics.v1.ListAccessibl"
-          + "eDataAgentsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v"
-          + "1/{parent=projects/*/locations/*}/dataAgents:listAccessible\022\267\001\n"
-          + "\014GetDataAgent\0228.google.cloud.geminidataanalytics.v1.GetDa"
-          + "taAgentRequest\032..google.cloud.geminidata"
-          + "analytics.v1.DataAgent\"=\332A\004name\202\323\344\223\0020\022./"
-          + "v1/{name=projects/*/locations/*/dataAgents/*}\022\365\001\n"
-          + "\017CreateDataAgent\022;.google.cloud.geminidataanalytics.v1.CreateDataAgentR"
-          + "equest\032\035.google.longrunning.Operation\"\205\001\312A\036\n"
-          + "\tDataAgent\022\021OperationMetadata\332A\037pare"
-          + "nt,data_agent,data_agent_id\202\323\344\223\002<\"./v1/{"
-          + "parent=projects/*/locations/*}/dataAgents:\n"
+          + "\016ListDataAgents\022:.google.cloud.geminidataanalytics.v1.ListDataAgentsRequest\032"
+          + ";.google.cloud.geminidataanalytics.v1.Li"
+          + "stDataAgentsResponse\"?\332A\006parent\202\323\344\223\0020\022./"
+          + "v1/{parent=projects/*/locations/*}/dataAgents\022\367\001\n"
+          + "\030ListAccessibleDataAgents\022D.google.cloud.geminidataanalytics.v1.ListAcc"
+          + "essibleDataAgentsRequest\032E.google.cloud.geminidataanalytics.v1.ListAccessibleDat"
+          + "aAgentsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{p"
+          + "arent=projects/*/locations/*}/dataAgents:listAccessible\022\267\001\n"
+          + "\014GetDataAgent\0228.google.cloud.geminidataanalytics.v1.GetDataAg"
+          + "entRequest\032..google.cloud.geminidataanal"
+          + "ytics.v1.DataAgent\"=\332A\004name\202\323\344\223\0020\022./v1/{"
+          + "name=projects/*/locations/*/dataAgents/*}\022\365\001\n"
+          + "\017CreateDataAgent\022;.google.cloud.gem"
+          + "inidataanalytics.v1.CreateDataAgentRequest\032\035.google.longrunning.Operation\"\205\001\312A\036\n"
+          + "\tDataAgent\022\021OperationMetadata\332A\037parent,d"
+          + "ata_agent,data_agent_id\202\323\344\223\002<\"./v1/{parent=projects/*/locations/*}/dataAgents:\n"
           + "data_agent\022\363\001\n"
-          + "\023CreateDataAgentSync\022;.google.cloud.geminidataanalytics.v1.Crea"
-          + "teDataAgentRequest\032..google.cloud.gemini"
-          + "dataanalytics.v1.DataAgent\"o\332A\037parent,da"
-          + "ta_agent,data_agent_id\202\323\344\223\002G\"9/v1/{paren"
-          + "t=projects/*/locations/*}/dataAgents:createSync:\n"
+          + "\023CreateDataAgentSync\022;.google.cloud.geminidataanalytics.v1.CreateDa"
+          + "taAgentRequest\032..google.cloud.geminidata"
+          + "analytics.v1.DataAgent\"o\332A\037parent,data_a"
+          + "gent,data_agent_id\202\323\344\223\002G\"9/v1/{parent=pr"
+          + "ojects/*/locations/*}/dataAgents:createSync:\n"
           + "data_agent\022\367\001\n"
-          + "\017UpdateDataAgent\022;.google.cloud.geminidataanalytics.v1.Up"
-          + "dateDataAgentRequest\032\035.google.longrunning.Operation\"\207\001\312A\036\n"
-          + "\tDataAgent\022\021OperationM"
-          + "etadata\332A\026data_agent,update_mask\202\323\344\223\002G29"
-          + "/v1/{data_agent.name=projects/*/locations/*/dataAgents/*}:\n"
+          + "\017UpdateDataAgent\022;.google.cloud.geminidataanalytics.v1.Update"
+          + "DataAgentRequest\032\035.google.longrunning.Operation\"\207\001\312A\036\n"
+          + "\tDataAgent\022\021OperationMetad"
+          + "ata\332A\026data_agent,update_mask\202\323\344\223\002G29/v1/"
+          + "{data_agent.name=projects/*/locations/*/dataAgents/*}:\n"
           + "data_agent\022\365\001\n"
-          + "\023UpdateDataAgentSync\022;.google.cloud.geminidataa"
-          + "nalytics.v1.UpdateDataAgentRequest\032..google.cloud.geminidataanalytics.v1.DataAge"
-          + "nt\"q\332A\026data_agent,update_mask\202\323\344\223\002R2D/v1"
-          + "/{data_agent.name=projects/*/locations/*/dataAgents/*}:updateSync:\n"
+          + "\023UpdateDataAgentSync\022;.google.cloud.geminidataanaly"
+          + "tics.v1.UpdateDataAgentRequest\032..google.cloud.geminidataanalytics.v1.DataAgent\"q"
+          + "\332A\026data_agent,update_mask\202\323\344\223\002R2D/v1/{da"
+          + "ta_agent.name=projects/*/locations/*/dataAgents/*}:updateSync:\n"
           + "data_agent\022\331\001\n"
-          + "\017DeleteDataAgent\022;.google.cloud.geminid"
-          + "ataanalytics.v1.DeleteDataAgentRequest\032\035.google.longrunning.Operation\"j\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\0020*./v1/{name=projects/*/locations/*/dataAgents/*}\022\264\001\n"
-          + "\023DeleteDataAgentSync\022;.google.cloud.geminidataanalytics.v1."
-          + "DeleteDataAgentRequest\032\026.google.protobuf"
-          + ".Empty\"H\332A\004name\202\323\344\223\002;*9/v1/{name=project"
-          + "s/*/locations/*/dataAgents/*}:deleteSync\022\240\001\n"
-          + "\014GetIamPolicy\022\".google.iam.v1.GetIam"
-          + "PolicyRequest\032\025.google.iam.v1.Policy\"U\332A"
-          + "\010resource\202\323\344\223\002D\"?/v1/{resource=projects/"
-          + "*/locations/*/dataAgents/*}:getIamPolicy:\001*\022\240\001\n"
-          + "\014SetIamPolicy\022\".google.iam.v1.Set"
-          + "IamPolicyRequest\032\025.google.iam.v1.Policy\""
-          + "U\332A\010resource\202\323\344\223\002D\"?/v1/{resource=projec"
-          + "ts/*/locations/*/dataAgents/*}:setIamPol"
-          + "icy:\001*\032V\312A\"geminidataanalytics.googleapi"
-          + "s.com\322A.https://www.googleapis.com/auth/cloud-platformB\222\002\n"
-          + "\'com.google.cloud.geminidataanalytics.v1B\025DataAgentServiceProt"
-          + "oP\001ZYcloud.google.com/go/geminidataanalytics/apiv1/geminidataanalyticspb;geminid"
-          + "ataanalyticspb\252\002#Google.Cloud.GeminiData"
-          + "Analytics.V1\312\002#Google\\Cloud\\GeminiDataAn"
-          + "alytics\\V1\352\002&Google::Cloud::GeminiDataAnalytics::V1b\006proto3"
+          + "\017DeleteDataAgent\022;.google.cloud.geminidataa"
+          + "nalytics.v1.DeleteDataAgentRequest\032\035.google.longrunning.Operation\"j\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202"
+          + "\323\344\223\0020*./v1/{name=projects/*/locations/*/dataAgents/*}\022\264\001\n"
+          + "\023DeleteDataAgentSync\022;.google.cloud.geminidataanalytics.v1.Dele"
+          + "teDataAgentRequest\032\026.google.protobuf.Emp"
+          + "ty\"H\332A\004name\202\323\344\223\002;*9/v1/{name=projects/*/locations/*/dataAgents/*}:deleteSync\022\240\001\n"
+          + "\014GetIamPolicy\022\".google.iam.v1.GetIamPoli"
+          + "cyRequest\032\025.google.iam.v1.Policy\"U\332A\010res"
+          + "ource\202\323\344\223\002D\"?/v1/{resource=projects/*/lo"
+          + "cations/*/dataAgents/*}:getIamPolicy:\001*\022\240\001\n"
+          + "\014SetIamPolicy\022\".google.iam.v1.SetIamP"
+          + "olicyRequest\032\025.google.iam.v1.Policy\"U\332A\010"
+          + "resource\202\323\344\223\002D\"?/v1/{resource=projects/*"
+          + "/locations/*/dataAgents/*}:setIamPolicy:\001*\022\322\002\n"
+          + "\030SetAgentOpsObservability\022D.google.cloud.geminidataanalytics.v1.SetAgentOp"
+          + "sObservabilityRequest\032\035.google.longrunning.Operation\"\320\001\312AD\n"
+          + " SetAgentOpsObservabilityResponse\022 SetAgentOpsObservabilityMe"
+          + "tadata\332A)parent,telemetry_enabled,data_s"
+          + "ource_type\202\323\344\223\002W\"R/v1/{parent=projects/*"
+          + "/locations/*}/observabilitySettings:setAgentOpsObservability:\001*\022\233\002\n"
+          + "\035RetrieveAgentOpsObservability\022I.google.cloud.geminid"
+          + "ataanalytics.v1.RetrieveAgentOpsObservabilityRequest\032J.google.cloud.geminidataan"
+          + "alytics.v1.RetrieveAgentOpsObservability"
+          + "Response\"c\332A\027parent,data_source_type\202\323\344\223"
+          + "\002C\022A/v1/{parent=projects/*/locations/*}:"
+          + "retrieveAgentOpsObservability\032V\312A\"gemini"
+          + "dataanalytics.googleapis.com\322A.https://w"
+          + "ww.googleapis.com/auth/cloud-platformB\222\002\n"
+          + "\'com.google.cloud.geminidataanalytics.v1B\025DataAgentServiceProtoP\001ZYcloud.google"
+          + ".com/go/geminidataanalytics/apiv1/geminidataanalyticspb;geminidataanalyticspb\252\002#"
+          + "Google.Cloud.GeminiDataAnalytics.V1\312\002#Go"
+          + "ogle\\Cloud\\GeminiDataAnalytics\\V1\352\002&Goog"
+          + "le::Cloud::GeminiDataAnalytics::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -240,7 +293,13 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1_ListDataAgentsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "ShowDeleted",
+              "Parent",
+              "PageSize",
+              "PageToken",
+              "Filter",
+              "OrderBy",
+              "ShowDeleted",
+              "CreatorFilter",
             });
     internal_static_google_cloud_geminidataanalytics_v1_ListDataAgentsResponse_descriptor =
         getDescriptor().getMessageType(1);
@@ -317,6 +376,47 @@ public final class DataAgentServiceProto extends com.google.protobuf.GeneratedFi
               "StatusMessage",
               "RequestedCancellation",
               "ApiVersion",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "TelemetryEnabled", "DataSourceType", "BqaaEnabled", "UpdateMask",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityResponse_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityMetadata_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_SetAgentOpsObservabilityMetadata_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "DataSourceType",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityResponse_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1_RetrieveAgentOpsObservabilityResponse_descriptor,
+            new java.lang.String[] {
+              "TelemetryEnabled",
+              "BigqueryEnabled",
+              "CloudTraceEnabled",
+              "CloudMonitoringEnabled",
+              "CloudLoggingEnabled",
+              "BqaaEnabled",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

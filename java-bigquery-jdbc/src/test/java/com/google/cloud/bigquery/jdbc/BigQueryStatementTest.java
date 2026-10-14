@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -223,6 +224,10 @@ public class BigQueryStatementTest {
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
     testExecutorService = Executors.newSingleThreadExecutor();
     doReturn(testExecutorService).when(bigQueryConnection).getExecutorService();
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(bigQueryConnection)
+        .getSessionStateSnapshot();
+
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
@@ -500,6 +505,47 @@ public class BigQueryStatementTest {
     expectedLabels.put("extraKey1", "extraVal1");
 
     assertTrue(Maps.difference(expectedLabels, jobConfig.getLabels()).areEqual());
+  }
+
+  @Test
+  public void testExecute_legacySqlWithEnableTimestampPicos_throwsException() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
+    doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
+    doReturn(true).when(mockConn).isEnableTimestampPicos();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    BigQueryJdbcException ex =
+        assertThrows(BigQueryJdbcException.class, () -> statement.execute("select 1"));
+    assertTrue(ex.getMessage().contains("Picosecond data is incompatible with Legacy SQL"));
+    assertTrue(ex.getMessage().contains("please set QueryDialect to SQL"));
+  }
+
+  @Test
+  public void testGetJobConfig_standardSql_setsUseLegacySqlFalse() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
+    doReturn("SQL").when(mockConn).getQueryDialect();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    QueryJobConfiguration jobConfig = statement.getJobConfig("select 1").build();
+    assertNotNull(jobConfig);
+    assertFalse(jobConfig.useLegacySql());
+  }
+
+  @Test
+  public void testGetJobConfig_legacySql_setsUseLegacySqlTrue() {
+    BigQueryConnection mockConn = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty()).when(mockConn).getSessionStateSnapshot();
+    doReturn("BIG_QUERY").when(mockConn).getQueryDialect();
+
+    BigQueryStatement statement = new BigQueryStatement(mockConn);
+
+    QueryJobConfiguration jobConfig = statement.getJobConfig("select 1").build();
+    assertNotNull(jobConfig);
+    assertTrue(jobConfig.useLegacySql());
   }
 
   @Test
@@ -1164,7 +1210,7 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder("CREATE TEMP TABLE t1 (id INT64)").build();
     bigQueryStatement.executeJob(jobConfig);
 
-    verify(bigQueryConnection).updateSessionInfo("session_xyz_123");
+    verify(bigQueryConnection).initSessionInfo("session_xyz_123");
   }
 
   @Test
@@ -1223,5 +1269,53 @@ public class BigQueryStatementTest {
     doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
     BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
     assertTrue(statement.isEnableTimestampPicos());
+  }
+
+  @Test
+  public void testJoblessQueryPopulatesQueryStatistics() throws Exception {
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    BigQueryStatement joblessStatement = new BigQueryStatement(bigQueryConnection);
+
+    Schema expectedSchema = Schema.of(fieldList);
+    SessionInfo expectedSessionInfo = mock(SessionInfo.class);
+    doReturn("session_abc").when(expectedSessionInfo).getSessionId();
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn("stateless-query-id").when(tableResultMock).getQueryId();
+    doReturn(null).when(tableResultMock).getJobId();
+    doReturn(expectedSchema).when(tableResultMock).getSchema();
+    doReturn(1L).when(tableResultMock).getTotalRows();
+    doReturn(ImmutableList.<FieldValueList>of()).when(tableResultMock).getValues();
+    doReturn(StatementType.SELECT).when(tableResultMock).getStatementType();
+    QueryStatistics expectedStats = mock(QueryStatistics.class);
+    doReturn(10485760L).when(expectedStats).getTotalBytesProcessed();
+    doReturn(10485760L).when(expectedStats).getTotalBytesBilled();
+    doReturn(320L).when(expectedStats).getTotalSlotMs();
+    doReturn(false).when(expectedStats).getCacheHit();
+    doReturn(StatementType.SELECT).when(expectedStats).getStatementType();
+    doReturn(expectedSessionInfo).when(expectedStats).getSessionInfo();
+    doReturn(expectedSchema).when(expectedStats).getSchema();
+    doReturn(expectedStats).when(tableResultMock).extractQueryStatistics();
+
+    doReturn(tableResultMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    ResultSet rs = joblessStatement.executeQuery("SELECT * FROM test");
+    assertNotNull(rs);
+    BigQueryResultSet bqRs = rs.unwrap(BigQueryResultSet.class);
+    assertNull(bqRs.getJobId());
+    assertEquals("stateless-query-id", bqRs.getQueryId());
+
+    QueryStatistics stats = bqRs.getQueryStatistics();
+    assertNotNull(stats);
+    assertEquals(10485760L, stats.getTotalBytesProcessed().longValue());
+    assertEquals(10485760L, stats.getTotalBytesBilled().longValue());
+    assertEquals(320L, stats.getTotalSlotMs().longValue());
+    assertFalse(stats.getCacheHit());
+    assertEquals(StatementType.SELECT, stats.getStatementType());
+    assertEquals(expectedSessionInfo, stats.getSessionInfo());
+    assertEquals(expectedSchema, stats.getSchema());
+
+    verify(bigquery, Mockito.never()).getJob(any(JobId.class));
   }
 }

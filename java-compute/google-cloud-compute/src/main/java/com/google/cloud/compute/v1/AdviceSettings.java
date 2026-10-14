@@ -91,6 +91,17 @@ public class AdviceSettings extends ClientSettings<AdviceSettings> {
     return ((AdviceStubSettings) getStubSettings()).calendarModeSettings();
   }
 
+  /** Returns the object with the settings used for calls to capacity. */
+  public UnaryCallSettings<CapacityAdviceRpcRequest, CapacityAdviceResponse> capacitySettings() {
+    return ((AdviceStubSettings) getStubSettings()).capacitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to capacityHistory. */
+  public UnaryCallSettings<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+      capacityHistorySettings() {
+    return ((AdviceStubSettings) getStubSettings()).capacityHistorySettings();
+  }
+
   public static final AdviceSettings create(AdviceStubSettings stub) throws IOException {
     return new AdviceSettings.Builder(stub.toBuilder()).build();
   }
@@ -191,6 +202,18 @@ public class AdviceSettings extends ClientSettings<AdviceSettings> {
     public UnaryCallSettings.Builder<CalendarModeAdviceRpcRequest, CalendarModeAdviceResponse>
         calendarModeSettings() {
       return getStubSettingsBuilder().calendarModeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to capacity. */
+    public UnaryCallSettings.Builder<CapacityAdviceRpcRequest, CapacityAdviceResponse>
+        capacitySettings() {
+      return getStubSettingsBuilder().capacitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to capacityHistory. */
+    public UnaryCallSettings.Builder<CapacityHistoryAdviceRequest, CapacityHistoryResponse>
+        capacityHistorySettings() {
+      return getStubSettingsBuilder().capacityHistorySettings();
     }
 
     @Override

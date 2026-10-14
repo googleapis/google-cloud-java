@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionInstanceTemplates API.
  *
+ * <p>This client uses RegionInstanceTemplates version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -681,7 +683,6 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstanceTemplate element : regionInstanceTemplatesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -719,7 +720,6 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstanceTemplate> future =
    *       regionInstanceTemplatesClient.listPagedCallable().futureCall(request);
@@ -758,7 +758,6 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     InstanceTemplateList response = regionInstanceTemplatesClient.listCallable().call(request);

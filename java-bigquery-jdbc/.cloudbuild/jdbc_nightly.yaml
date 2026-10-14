@@ -25,12 +25,14 @@ steps:
   timeout: 10000s
   entrypoint: 'bash'
   args: ['java-bigquery-jdbc/.cloudbuild/scripts/jdbc-nightly.sh']
-  secretEnv: ['SA_EMAIL', 'KMS_RESOURCE_PATH', 'SA_SECRET']
+  secretEnv: ['SA_EMAIL', 'SA_EMAIL_NO_READAPI', 'KMS_RESOURCE_PATH', 'SA_SECRET']
 
 availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/jdbc-presubmit-sa-email/versions/latest
     env: 'SA_EMAIL'
+  - versionName: projects/$PROJECT_ID/secrets/jdbc-presubmit-sa-email-no-readapi/versions/latest
+    env: 'SA_EMAIL_NO_READAPI'
   - versionName: projects/$PROJECT_ID/secrets/kms_resource_path/versions/latest
     env: 'KMS_RESOURCE_PATH'
   - versionName: projects/$PROJECT_ID/secrets/GoogleJDBCServiceAccountSecret/versions/latest

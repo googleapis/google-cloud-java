@@ -381,6 +381,7 @@ public class CatalogServiceClientTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -429,6 +430,7 @@ public class CatalogServiceClientTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     mockCatalogService.addResponse(expectedResponse);
 
@@ -477,6 +479,7 @@ public class CatalogServiceClientTest {
             .setLastDenylistImportOperation("lastDenylistImportOperation1262341570")
             .setAllowlistInputConfig(CompletionDataInputConfig.newBuilder().build())
             .setLastAllowlistImportOperation("lastAllowlistImportOperation1624716689")
+            .setEnableAgentPrompts(true)
             .build();
     mockCatalogService.addResponse(expectedResponse);
 

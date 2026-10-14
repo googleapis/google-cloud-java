@@ -45,6 +45,7 @@ import com.google.cloud.bigquery.Acl;
 import com.google.cloud.bigquery.Acl.DatasetAclEntity;
 import com.google.cloud.bigquery.Acl.Expr;
 import com.google.cloud.bigquery.Acl.User;
+import com.google.cloud.bigquery.ArrowQueryResult;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
@@ -118,6 +119,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.QueryResultsFormat;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.RangePartitioning;
 import com.google.cloud.bigquery.Routine;
@@ -203,6 +205,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -5301,6 +5304,8 @@ class ITBigQueryTest {
     Job job = bigquery.create(JobInfo.of(queryConfig));
     JobStatistics.QueryStatistics statistics = job.getStatistics();
 
+    assertNotNull(statistics.getQueryParameters());
+    assertEquals(7, statistics.getQueryParameters().size());
     assertNotNull(statistics.getTotalBytesProcessed());
   }
 
@@ -7495,6 +7500,207 @@ class ITBigQueryTest {
     ((Job) result).cancel();
     // Allow 2 seconds of timeout value to account for random delays
     assertTrue(millis < 1_000_000 * 2);
+  }
+
+  @Test
+  void testQueryResultsFormatArrow() throws InterruptedException {
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
+      assertNotNull(result);
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+        assertEquals(1, root.getRowCount());
+      }
+      assertEquals(1, batchCount);
+      assertEquals(1, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryResultsFormatArrowMultiPage() throws InterruptedException {
+    // Under fast-query execution, the initial REST response defaults to a 10 MB payload limit.
+    // Setting maxResults limits the initial page to 5,000 rows, forcing the remaining 10,000 rows
+    // to stream across multiple batches via the BigQuery Storage Read API.
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .setMaxResults(5000L)
+            .build();
+    try (ArrowQueryResult result = bigquery.queryArrow(config)) {
+      assertNotNull(result);
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+      }
+      assertTrue(batchCount > 1);
+      assertEquals(15000, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormat() throws InterruptedException {
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(1, result.getTotalRows());
+    List<FieldValueList> rows = ImmutableList.copyOf(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("hello", row.get("name").getStringValue());
+    assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatMultiPage() throws InterruptedException {
+    // Under fast-query execution, the initial REST response defaults to a 10 MB payload limit.
+    // Setting maxResults limits the initial page to 5,000 rows, forcing the remaining 10,000 rows
+    // to stream across multiple pages via tabledata.list with Arrow format.
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .setMaxResults(5000L)
+            .build();
+    TableResult result = bigquery.query(config);
+    assertNotNull(result);
+    assertEquals(15000, result.getTotalRows());
+
+    int pageCount = 0;
+    long count = 0;
+    TableResult currentPage = result;
+    while (currentPage != null) {
+      pageCount++;
+      for (FieldValueList row : currentPage.getValues()) {
+        count++;
+        assertEquals(count, row.get("x").getLongValue());
+      }
+      currentPage = currentPage.hasNextPage() ? currentPage.getNextPage() : null;
+    }
+    assertTrue(pageCount > 1);
+    assertEquals(15000, count);
+  }
+
+  @Test
+  void testQueryResultsFormatArrowFallback() throws InterruptedException {
+    String query = "SELECT 1 as id, 'fallback' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    JobId customJobId =
+        JobId.of("arrow_it_fallback_" + UUID.randomUUID().toString().replace("-", "_"));
+    try (ArrowQueryResult result = bigquery.queryArrow(config, customJobId)) {
+      assertNotNull(result);
+      assertNotNull(result.getArrowSchema());
+      assertNotNull(result.getJobId());
+      assertEquals(customJobId.getJob(), result.getJobId().getJob());
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+        assertEquals(1, root.getRowCount());
+      }
+      assertEquals(1, batchCount);
+      assertEquals(1, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatFallback() throws InterruptedException {
+    String query = "SELECT 1 as id, 'fallback' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    JobId customJobId =
+        JobId.of("row_it_fallback_" + UUID.randomUUID().toString().replace("-", "_"));
+    TableResult result = bigquery.query(config, customJobId);
+    assertNotNull(result);
+    assertNotNull(result.getJobId());
+    assertEquals(customJobId.getJob(), result.getJobId().getJob());
+    assertEquals(1, result.getTotalRows());
+    List<FieldValueList> rows = ImmutableList.copyOf(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("fallback", row.get("name").getStringValue());
+    assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
+  }
+
+  @Test
+  void testQueryResultsFormatArrowFallbackMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(5000L)
+            .build();
+    JobId customJobId =
+        JobId.of("arrow_it_fallback_mp_" + UUID.randomUUID().toString().replace("-", "_"));
+    try (ArrowQueryResult result = bigquery.queryArrow(config, customJobId)) {
+      assertNotNull(result);
+      assertNotNull(result.getJobId());
+      assertEquals(customJobId.getJob(), result.getJobId().getJob());
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+      }
+      assertTrue(batchCount > 1);
+      assertEquals(15000, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatFallbackMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(5000L)
+            .build();
+    JobId customJobId =
+        JobId.of("row_it_fallback_mp_" + UUID.randomUUID().toString().replace("-", "_"));
+    TableResult result = bigquery.query(config, customJobId);
+    assertNotNull(result);
+    assertNotNull(result.getJobId());
+    assertEquals(customJobId.getJob(), result.getJobId().getJob());
+    assertEquals(15000, result.getTotalRows());
+
+    int pageCount = 0;
+    long count = 0;
+    TableResult currentPage = result;
+    while (currentPage != null) {
+      pageCount++;
+      for (FieldValueList row : currentPage.getValues()) {
+        count++;
+        assertEquals(count, row.get("x").getLongValue());
+      }
+      currentPage = currentPage.hasNextPage() ? currentPage.getNextPage() : null;
+    }
+    assertTrue(pageCount > 1);
+    assertEquals(15000, count);
   }
 
   @Test

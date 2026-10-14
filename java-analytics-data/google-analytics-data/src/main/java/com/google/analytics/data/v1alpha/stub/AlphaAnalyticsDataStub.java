@@ -22,6 +22,8 @@ import static com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient.ListRep
 
 import com.google.analytics.data.v1alpha.AudienceList;
 import com.google.analytics.data.v1alpha.AudienceListMetadata;
+import com.google.analytics.data.v1alpha.ChatRequest;
+import com.google.analytics.data.v1alpha.ChatResponse;
 import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
@@ -164,6 +166,10 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
 
   public UnaryCallable<ListReportTasksRequest, ListReportTasksResponse> listReportTasksCallable() {
     throw new UnsupportedOperationException("Not implemented: listReportTasksCallable()");
+  }
+
+  public UnaryCallable<ChatRequest, ChatResponse> chatCallable() {
+    throw new UnsupportedOperationException("Not implemented: chatCallable()");
   }
 
   public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {

@@ -41,7 +41,6 @@ public class SyncGetXpnResources {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .build();
       for (XpnResourceId element : projectsClient.getXpnResources(request).iterateAll()) {
         // doThingsWith(element);

@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListMessagePinsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
@@ -41,6 +42,7 @@ import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
+import com.google.chat.v1.CreateMessagePinRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSectionRequest;
@@ -48,6 +50,7 @@ import com.google.chat.v1.CreateSpaceRequest;
 import com.google.chat.v1.CustomEmoji;
 import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
+import com.google.chat.v1.DeleteMessagePinRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
@@ -69,6 +72,8 @@ import com.google.chat.v1.ListCustomEmojisRequest;
 import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
+import com.google.chat.v1.ListMessagePinsRequest;
+import com.google.chat.v1.ListMessagePinsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
@@ -86,6 +91,7 @@ import com.google.chat.v1.MarkAsAwayRequest;
 import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MessagePin;
 import com.google.chat.v1.MoveSectionItemRequest;
 import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
@@ -406,6 +412,40 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListMessagePinsRequest, ListMessagePinsResponse>
+      listMessagePinsMethodDescriptor =
+          MethodDescriptor.<ListMessagePinsRequest, ListMessagePinsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/ListMessagePins")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMessagePinsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMessagePinsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateMessagePinRequest, MessagePin>
+      createMessagePinMethodDescriptor =
+          MethodDescriptor.<CreateMessagePinRequest, MessagePin>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/CreateMessagePin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMessagePinRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MessagePin.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteMessagePinRequest, Empty>
+      deleteMessagePinMethodDescriptor =
+          MethodDescriptor.<DeleteMessagePinRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/DeleteMessagePin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteMessagePinRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<CreateCustomEmojiRequest, CustomEmoji>
       createCustomEmojiMethodDescriptor =
           MethodDescriptor.<CreateCustomEmojiRequest, CustomEmoji>newBuilder()
@@ -708,6 +748,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<ListReactionsRequest, ListReactionsPagedResponse>
       listReactionsPagedCallable;
   private final UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable;
+  private final UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse>
+      listMessagePinsCallable;
+  private final UnaryCallable<ListMessagePinsRequest, ListMessagePinsPagedResponse>
+      listMessagePinsPagedCallable;
+  private final UnaryCallable<CreateMessagePinRequest, MessagePin> createMessagePinCallable;
+  private final UnaryCallable<DeleteMessagePinRequest, Empty> deleteMessagePinCallable;
   private final UnaryCallable<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiCallable;
   private final UnaryCallable<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiCallable;
   private final UnaryCallable<ListCustomEmojisRequest, ListCustomEmojisResponse>
@@ -1029,6 +1075,40 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     GrpcCallSettings<DeleteReactionRequest, Empty> deleteReactionTransportSettings =
         GrpcCallSettings.<DeleteReactionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteReactionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListMessagePinsRequest, ListMessagePinsResponse>
+        listMessagePinsTransportSettings =
+            GrpcCallSettings.<ListMessagePinsRequest, ListMessagePinsResponse>newBuilder()
+                .setMethodDescriptor(listMessagePinsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<CreateMessagePinRequest, MessagePin> createMessagePinTransportSettings =
+        GrpcCallSettings.<CreateMessagePinRequest, MessagePin>newBuilder()
+            .setMethodDescriptor(createMessagePinMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<DeleteMessagePinRequest, Empty> deleteMessagePinTransportSettings =
+        GrpcCallSettings.<DeleteMessagePinRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteMessagePinMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1392,6 +1472,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.deleteReactionCallable =
         callableFactory.createUnaryCallable(
             deleteReactionTransportSettings, settings.deleteReactionSettings(), clientContext);
+    this.listMessagePinsCallable =
+        callableFactory.createUnaryCallable(
+            listMessagePinsTransportSettings, settings.listMessagePinsSettings(), clientContext);
+    this.listMessagePinsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMessagePinsTransportSettings, settings.listMessagePinsSettings(), clientContext);
+    this.createMessagePinCallable =
+        callableFactory.createUnaryCallable(
+            createMessagePinTransportSettings, settings.createMessagePinSettings(), clientContext);
+    this.deleteMessagePinCallable =
+        callableFactory.createUnaryCallable(
+            deleteMessagePinTransportSettings, settings.deleteMessagePinSettings(), clientContext);
     this.createCustomEmojiCallable =
         callableFactory.createUnaryCallable(
             createCustomEmojiTransportSettings,
@@ -1669,6 +1761,27 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteReactionRequest, Empty> deleteReactionCallable() {
     return deleteReactionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse> listMessagePinsCallable() {
+    return listMessagePinsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMessagePinsRequest, ListMessagePinsPagedResponse>
+      listMessagePinsPagedCallable() {
+    return listMessagePinsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMessagePinRequest, MessagePin> createMessagePinCallable() {
+    return createMessagePinCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMessagePinRequest, Empty> deleteMessagePinCallable() {
+    return deleteMessagePinCallable;
   }
 
   @Override

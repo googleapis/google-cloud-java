@@ -1022,7 +1022,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     insertStmt.setShort(10, (short) 34);
     insertStmt.setBytes(11, new byte[] {0x3, 0x4});
     insertStmt.setObject(12, 6.28d);
-    insertStmt.setObject(13, false);
+    // calling setObject with null value without Type should now work with inferred Types.
+    insertStmt.setObject(13, null);
     insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
@@ -1043,6 +1044,91 @@ public class ITBigQueryJDBCTest extends ITBase {
     updateStmt.setInt(2, 222);
     boolean updateStatus = updateStmt.execute();
     assertFalse(updateStatus);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
+  public void testPreparedQueryWithExtraPositionalParameterCharacter() throws SQLException {
+    String TABLE_NAME = "JDBC_PREPARED_EXTRA_PARAM_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+
+    // This query would report an incorrect parameter count if dryRun is not used to infer parameter
+    // count
+    String selectQuery =
+        String.format("SELECT 'Hello, ?World!' AS message, ? FROM %s.%s", DATASET, TABLE_NAME);
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement selectStmt = bigQueryConnection.prepareStatement(selectQuery);
+
+    // Tests that parameter Metadata is populated before query execution and setter.
+    ParameterMetaData parameterMetaData = selectStmt.getParameterMetaData();
+    assertNotNull(parameterMetaData);
+    assertEquals(1, parameterMetaData.getParameterCount());
+
+    // Tests that ResultSet Schema is populated before query execution
+    ResultSetMetaData resultSetMetaData = selectStmt.getMetaData();
+    assertEquals("message", resultSetMetaData.getColumnName(1));
+    assertEquals(Types.NVARCHAR, resultSetMetaData.getColumnType(1));
+
+    selectStmt.setString(1, "StringField");
+    ResultSet selectResult2 = selectStmt.executeQuery();
+    assertNotNull(selectResult2);
+
+    boolean dropStatus = bigQueryStatement.execute(dropQuery);
+    assertFalse(dropStatus);
+  }
+
+  @Test
+  public void testPreparedInferredParameterTypes() throws SQLException {
+
+    String TABLE_NAME = "JDBC_PREPARED_PARAMETER_INFER_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NumericField` NUMERIC, "
+                + "`BigNumericField` BIGNUMERIC, `DateField` DATE, `TimeField` TIME, `DateTimeField` DATETIME, `TimestampField` TIMESTAMP, `ArrayField` ARRAY<STRING>, `StructField` STRUCT<subField STRING>, "
+                + "`JsonField` JSON, `GeographyField` GEOGRAPHY, `IntervalField` INTERVAL, `RangeField` RANGE<DATE>);",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (StringField, IntegerField, BytesField, DoubleField, BooleanField, NumericField, BigNumericField, "
+                + "DateField, TimeField, DateTimeField, TimestampField, ArrayField, StructField, JsonField, GeographyField, IntervalField, RangeField) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);",
+            DATASET, TABLE_NAME);
+
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+    int[] expectedValues = {
+      -9, -5, -3, 8, 16, 2, 2, 91, 92, 93, 93, 2003, 2002, 1111, 1111, 1111, 1111
+    };
+
+    boolean createStatus = bigQueryStatement.execute(createQuery);
+    assertFalse(createStatus);
+
+    PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+    ParameterMetaData parameterMetaData = insertStmt.getParameterMetaData();
+    for (int i = 0; i < parameterMetaData.getParameterCount(); i++) {
+      assertEquals(expectedValues[i], parameterMetaData.getParameterType(i + 1));
+    }
+
+    // Testing an Exception is thrown if not all values are set.
+    insertStmt.setString(1, "String1");
+    insertStmt.setInt(2, 111);
+    insertStmt.setObject(4, 1.5);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    assertThrows(BigQueryJdbcException.class, insertStmt::execute);
 
     boolean dropStatus = bigQueryStatement.execute(dropQuery);
     assertFalse(dropStatus);
@@ -2932,6 +3018,32 @@ public class ITBigQueryJDBCTest extends ITBase {
         for (File f : remaining) {
           f.delete();
         }
+      }
+    }
+  }
+
+  @Test
+  public void testSessionAbortedOnConnectionClose() throws SQLException {
+    String sessionId;
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      try (Statement statement = connection.createStatement()) {
+        statement.execute("CREATE TEMP TABLE session_temp_table (id INT64);");
+      }
+      BigQueryConnection bqConn = connection.unwrap(BigQueryConnection.class);
+      assertNotNull(bqConn.getSessionInfoConnectionProperty());
+      sessionId = bqConn.getSessionInfoConnectionProperty().getValue();
+      assertNotNull(sessionId);
+    }
+
+    // After connection is closed, the session is aborted on the BigQuery server.
+    // Attaching to the same session_id in a new connection should fail when running a query.
+    String urlWithAbortedSession =
+        connection_uri + "EnableSession=1;QueryProperties=session_id=" + sessionId + ";";
+    try (Connection newConnection = DriverManager.getConnection(urlWithAbortedSession)) {
+      try (Statement statement = newConnection.createStatement()) {
+        SQLException ex =
+            assertThrows(
+                SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
       }
     }
   }

@@ -122,6 +122,7 @@ public interface ListPrivateAuctionDealsRequestOrBuilder
    *
    * **Filterable fields:**
    *
+   * * `archived`
    * * `auctionPriorityEnabled`
    * * `blockOverrideEnabled`
    * * `buyerAccountId`
@@ -133,6 +134,7 @@ public interface ListPrivateAuctionDealsRequestOrBuilder
    * * `privateAuctionDealId`
    * * `privateAuctionDisplayName`
    * * `privateAuctionId`
+   * * `publisherFloorExempt`
    * * `status`
    * * `updateTime`
    * </pre>
@@ -153,6 +155,7 @@ public interface ListPrivateAuctionDealsRequestOrBuilder
    *
    * **Filterable fields:**
    *
+   * * `archived`
    * * `auctionPriorityEnabled`
    * * `blockOverrideEnabled`
    * * `buyerAccountId`
@@ -164,6 +167,7 @@ public interface ListPrivateAuctionDealsRequestOrBuilder
    * * `privateAuctionDealId`
    * * `privateAuctionDisplayName`
    * * `privateAuctionId`
+   * * `publisherFloorExempt`
    * * `status`
    * * `updateTime`
    * </pre>

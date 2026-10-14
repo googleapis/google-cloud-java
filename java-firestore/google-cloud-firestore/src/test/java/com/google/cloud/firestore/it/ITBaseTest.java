@@ -82,6 +82,7 @@ public abstract class ITBaseTest {
   public static FirestoreOptions.Builder getOptionsBuilder() {
     FirestoreOptions.Builder optionsBuilder = FirestoreOptions.newBuilder();
 
+    optionsBuilder = optionsBuilder.setProjectId("java-review");
     String dbPropertyName = "FIRESTORE_DATABASE_ID";
     String namedDb = System.getProperty(dbPropertyName);
     if (namedDb == null) {

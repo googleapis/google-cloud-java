@@ -37,8 +37,14 @@
             "BatchAllowAdReviewCenterAds": {
               "methods": ["batchAllowAdReviewCenterAdsAsync", "batchAllowAdReviewCenterAdsAsync", "batchAllowAdReviewCenterAdsAsync", "batchAllowAdReviewCenterAdsOperationCallable", "batchAllowAdReviewCenterAdsCallable"]
             },
+            "BatchApplyAdReviewCenterCustomLabels": {
+              "methods": ["batchApplyAdReviewCenterCustomLabels", "batchApplyAdReviewCenterCustomLabels", "batchApplyAdReviewCenterCustomLabels", "batchApplyAdReviewCenterCustomLabelsCallable"]
+            },
             "BatchBlockAdReviewCenterAds": {
               "methods": ["batchBlockAdReviewCenterAdsAsync", "batchBlockAdReviewCenterAdsAsync", "batchBlockAdReviewCenterAdsAsync", "batchBlockAdReviewCenterAdsOperationCallable", "batchBlockAdReviewCenterAdsCallable"]
+            },
+            "FetchAdReviewCenterCustomLabels": {
+              "methods": ["fetchAdReviewCenterCustomLabels", "fetchAdReviewCenterCustomLabels", "fetchAdReviewCenterCustomLabels", "fetchAdReviewCenterCustomLabelsCallable"]
             },
             "SearchAdReviewCenterAds": {
               "methods": ["searchAdReviewCenterAds", "searchAdReviewCenterAds", "searchAdReviewCenterAds", "searchAdReviewCenterAdsPagedCallable", "searchAdReviewCenterAdsCallable"]
@@ -205,6 +211,9 @@
             "BatchRejectAudienceSegments": {
               "methods": ["batchRejectAudienceSegments", "batchRejectAudienceSegments", "batchRejectAudienceSegments", "batchRejectAudienceSegmentsCallable"]
             },
+            "BatchUpdateAudienceSegments": {
+              "methods": ["batchUpdateAudienceSegments", "batchUpdateAudienceSegments", "batchUpdateAudienceSegments", "batchUpdateAudienceSegmentsCallable"]
+            },
             "CreateAudienceSegment": {
               "methods": ["createAudienceSegment", "createAudienceSegment", "createAudienceSegment", "createAudienceSegmentCallable"]
             },
@@ -213,6 +222,9 @@
             },
             "ListAudienceSegments": {
               "methods": ["listAudienceSegments", "listAudienceSegments", "listAudienceSegments", "listAudienceSegmentsPagedCallable", "listAudienceSegmentsCallable"]
+            },
+            "UpdateAudienceSegment": {
+              "methods": ["updateAudienceSegment", "updateAudienceSegment", "updateAudienceSegmentCallable"]
             }
           }
         }
@@ -509,6 +521,27 @@
         }
       }
     },
+    "CreativeService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CreativeServiceClient",
+          "rpcs": {
+            "BatchActivateCreatives": {
+              "methods": ["batchActivateCreatives", "batchActivateCreatives", "batchActivateCreatives", "batchActivateCreativesCallable"]
+            },
+            "BatchDeactivateCreatives": {
+              "methods": ["batchDeactivateCreatives", "batchDeactivateCreatives", "batchDeactivateCreatives", "batchDeactivateCreativesCallable"]
+            },
+            "GetCreative": {
+              "methods": ["getCreative", "getCreative", "getCreative", "getCreativeCallable"]
+            },
+            "ListCreatives": {
+              "methods": ["listCreatives", "listCreatives", "listCreatives", "listCreativesPagedCallable", "listCreativesCallable"]
+            }
+          }
+        }
+      }
+    },
     "CreativeSetService": {
       "clients": {
         "grpc": {
@@ -743,6 +776,18 @@
         }
       }
     },
+    "DaiSessionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DaiSessionServiceClient",
+          "rpcs": {
+            "GetDaiSession": {
+              "methods": ["getDaiSession", "getDaiSession", "getDaiSession", "getDaiSessionCallable"]
+            }
+          }
+        }
+      }
+    },
     "DeviceCapabilityService": {
       "clients": {
         "grpc": {
@@ -815,6 +860,24 @@
         }
       }
     },
+    "ForecastService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ForecastServiceClient",
+          "rpcs": {
+            "RunAvailabilityForecast": {
+              "methods": ["runAvailabilityForecast", "runAvailabilityForecast", "runAvailabilityForecast", "runAvailabilityForecastCallable"]
+            },
+            "RunDeliveryForecast": {
+              "methods": ["runDeliveryForecast", "runDeliveryForecast", "runDeliveryForecast", "runDeliveryForecastCallable"]
+            },
+            "RunTrafficData": {
+              "methods": ["runTrafficData", "runTrafficData", "runTrafficData", "runTrafficDataCallable"]
+            }
+          }
+        }
+      }
+    },
     "GeoTargetService": {
       "clients": {
         "grpc": {
@@ -863,16 +926,88 @@
         }
       }
     },
+    "LineItemCreativeAssociationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LineItemCreativeAssociationServiceClient",
+          "rpcs": {
+            "GetLineItemCreativeAssociation": {
+              "methods": ["getLineItemCreativeAssociation", "getLineItemCreativeAssociation", "getLineItemCreativeAssociation", "getLineItemCreativeAssociationCallable"]
+            },
+            "ListLineItemCreativeAssociations": {
+              "methods": ["listLineItemCreativeAssociations", "listLineItemCreativeAssociations", "listLineItemCreativeAssociations", "listLineItemCreativeAssociationsPagedCallable", "listLineItemCreativeAssociationsCallable"]
+            }
+          }
+        }
+      }
+    },
     "LineItemService": {
       "clients": {
         "grpc": {
           "libraryClient": "LineItemServiceClient",
           "rpcs": {
+            "BatchActivateLineItems": {
+              "methods": ["batchActivateLineItems", "batchActivateLineItems", "batchActivateLineItems", "batchActivateLineItemsCallable"]
+            },
+            "BatchArchiveLineItems": {
+              "methods": ["batchArchiveLineItems", "batchArchiveLineItems", "batchArchiveLineItems", "batchArchiveLineItemsCallable"]
+            },
+            "BatchCreateLineItems": {
+              "methods": ["batchCreateLineItems", "batchCreateLineItems", "batchCreateLineItems", "batchCreateLineItemsCallable"]
+            },
+            "BatchDeleteLineItems": {
+              "methods": ["batchDeleteLineItems", "batchDeleteLineItems", "batchDeleteLineItems", "batchDeleteLineItemsCallable"]
+            },
+            "BatchPauseLineItems": {
+              "methods": ["batchPauseLineItems", "batchPauseLineItems", "batchPauseLineItems", "batchPauseLineItemsCallable"]
+            },
+            "BatchReleaseLineItems": {
+              "methods": ["batchReleaseLineItems", "batchReleaseLineItems", "batchReleaseLineItems", "batchReleaseLineItemsCallable"]
+            },
+            "BatchReserveAndOverbookLineItems": {
+              "methods": ["batchReserveAndOverbookLineItems", "batchReserveAndOverbookLineItems", "batchReserveAndOverbookLineItems", "batchReserveAndOverbookLineItemsCallable"]
+            },
+            "BatchReserveLineItems": {
+              "methods": ["batchReserveLineItems", "batchReserveLineItems", "batchReserveLineItems", "batchReserveLineItemsCallable"]
+            },
+            "BatchResumeAndOverbookLineItems": {
+              "methods": ["batchResumeAndOverbookLineItems", "batchResumeAndOverbookLineItems", "batchResumeAndOverbookLineItems", "batchResumeAndOverbookLineItemsCallable"]
+            },
+            "BatchResumeLineItems": {
+              "methods": ["batchResumeLineItems", "batchResumeLineItems", "batchResumeLineItems", "batchResumeLineItemsCallable"]
+            },
+            "BatchUnarchiveLineItems": {
+              "methods": ["batchUnarchiveLineItems", "batchUnarchiveLineItems", "batchUnarchiveLineItems", "batchUnarchiveLineItemsCallable"]
+            },
+            "BatchUpdateLineItems": {
+              "methods": ["batchUpdateLineItems", "batchUpdateLineItems", "batchUpdateLineItems", "batchUpdateLineItemsCallable"]
+            },
+            "CreateLineItem": {
+              "methods": ["createLineItem", "createLineItem", "createLineItem", "createLineItemCallable"]
+            },
             "GetLineItem": {
               "methods": ["getLineItem", "getLineItem", "getLineItem", "getLineItemCallable"]
             },
             "ListLineItems": {
               "methods": ["listLineItems", "listLineItems", "listLineItems", "listLineItemsPagedCallable", "listLineItemsCallable"]
+            },
+            "UpdateLineItem": {
+              "methods": ["updateLineItem", "updateLineItem", "updateLineItemCallable"]
+            }
+          }
+        }
+      }
+    },
+    "LineItemTemplateService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LineItemTemplateServiceClient",
+          "rpcs": {
+            "GetLineItemTemplate": {
+              "methods": ["getLineItemTemplate", "getLineItemTemplate", "getLineItemTemplate", "getLineItemTemplateCallable"]
+            },
+            "ListLineItemTemplates": {
+              "methods": ["listLineItemTemplates", "listLineItemTemplates", "listLineItemTemplates", "listLineItemTemplatesPagedCallable", "listLineItemTemplatesCallable"]
             }
           }
         }
@@ -1012,11 +1147,17 @@
             "BatchUpdateNativeStyles": {
               "methods": ["batchUpdateNativeStyles", "batchUpdateNativeStyles", "batchUpdateNativeStyles", "batchUpdateNativeStylesCallable"]
             },
+            "CreateNativeStyle": {
+              "methods": ["createNativeStyle", "createNativeStyle", "createNativeStyle", "createNativeStyleCallable"]
+            },
             "GetNativeStyle": {
               "methods": ["getNativeStyle", "getNativeStyle", "getNativeStyle", "getNativeStyleCallable"]
             },
             "ListNativeStyles": {
               "methods": ["listNativeStyles", "listNativeStyles", "listNativeStyles", "listNativeStylesPagedCallable", "listNativeStylesCallable"]
+            },
+            "UpdateNativeStyle": {
+              "methods": ["updateNativeStyle", "updateNativeStyle", "updateNativeStyleCallable"]
             }
           }
         }
@@ -1498,8 +1639,29 @@
         "grpc": {
           "libraryClient": "UserServiceClient",
           "rpcs": {
+            "BatchActivateUsers": {
+              "methods": ["batchActivateUsers", "batchActivateUsers", "batchActivateUsers", "batchActivateUsersCallable"]
+            },
+            "BatchCreateUsers": {
+              "methods": ["batchCreateUsers", "batchCreateUsers", "batchCreateUsers", "batchCreateUsersCallable"]
+            },
+            "BatchDeactivateUsers": {
+              "methods": ["batchDeactivateUsers", "batchDeactivateUsers", "batchDeactivateUsers", "batchDeactivateUsersCallable"]
+            },
+            "BatchUpdateUsers": {
+              "methods": ["batchUpdateUsers", "batchUpdateUsers", "batchUpdateUsers", "batchUpdateUsersCallable"]
+            },
+            "CreateUser": {
+              "methods": ["createUser", "createUser", "createUser", "createUserCallable"]
+            },
             "GetUser": {
               "methods": ["getUser", "getUser", "getUser", "getUserCallable"]
+            },
+            "ListUsers": {
+              "methods": ["listUsers", "listUsers", "listUsers", "listUsersPagedCallable", "listUsersCallable"]
+            },
+            "UpdateUser": {
+              "methods": ["updateUser", "updateUser", "updateUserCallable"]
             }
           }
         }

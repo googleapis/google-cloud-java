@@ -58,9 +58,10 @@ public interface DefaultThirdPartyDataDeclarationOrBuilder
    *
    *
    * <pre>
-   * Optional. Returns the default [ThirdPartyDataDeclaration] for this network.
-   * If this setting has never been updated on your network, then this API
-   * response will be unset.
+   * Optional. Returns the default
+   * [ThirdPartyDataDeclaration][google.ads.admanager.v1.ThirdPartyDataDeclaration]
+   * for this network. If this setting has never been updated on your network,
+   * then this API response will be unset.
    * </pre>
    *
    * <code>
@@ -75,9 +76,10 @@ public interface DefaultThirdPartyDataDeclarationOrBuilder
    *
    *
    * <pre>
-   * Optional. Returns the default [ThirdPartyDataDeclaration] for this network.
-   * If this setting has never been updated on your network, then this API
-   * response will be unset.
+   * Optional. Returns the default
+   * [ThirdPartyDataDeclaration][google.ads.admanager.v1.ThirdPartyDataDeclaration]
+   * for this network. If this setting has never been updated on your network,
+   * then this API response will be unset.
    * </pre>
    *
    * <code>
@@ -92,9 +94,10 @@ public interface DefaultThirdPartyDataDeclarationOrBuilder
    *
    *
    * <pre>
-   * Optional. Returns the default [ThirdPartyDataDeclaration] for this network.
-   * If this setting has never been updated on your network, then this API
-   * response will be unset.
+   * Optional. Returns the default
+   * [ThirdPartyDataDeclaration][google.ads.admanager.v1.ThirdPartyDataDeclaration]
+   * for this network. If this setting has never been updated on your network,
+   * then this API response will be unset.
    * </pre>
    *
    * <code>

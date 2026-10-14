@@ -49,10 +49,14 @@ import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
+import com.google.protobuf.util.Timestamps;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
+import com.google.pubsub.v1.PubsubClientTelemetry;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
@@ -63,6 +67,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -104,6 +109,8 @@ import java.util.logging.Logger;
 public class Publisher implements PublisherInterface {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
   private LoggingUtil loggingUtil = new LoggingUtil();
+
+  @VisibleForTesting static final String TELEMETRY_HEADER_KEY = "x-goog-pubsub-client-telemetry";
 
   private static final String GZIP_COMPRESSION = "gzip";
 
@@ -540,6 +547,20 @@ public class Publisher implements PublisherInterface {
     }
   }
 
+  private Map<String, List<String>> createTelemetryHeader(
+      long publishBatchStartTime, int attemptNumber) {
+    PubsubClientTelemetry telemetry =
+        PubsubClientTelemetry.newBuilder()
+            .setPublishOperation(
+                PubsubClientTelemetry.PublishOperation.newBuilder()
+                    .setHedgedAttemptCount(attemptNumber)
+                    .setPublishStartTime(Timestamps.fromMillis(publishBatchStartTime))
+                    .build())
+            .build();
+    String encodedHeader = Base64.getEncoder().encodeToString(telemetry.toByteArray());
+    return ImmutableMap.of(TELEMETRY_HEADER_KEY, ImmutableList.of(encodedHeader));
+  }
+
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
     return publishCall(outstandingBatch, 0, null);
   }
@@ -561,7 +582,9 @@ public class Publisher implements PublisherInterface {
           outstandingBatch.getMessageWrappers().get(0));
       context = context.withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
-
+    context =
+        context.withExtraHeaders(
+            createTelemetryHeader(outstandingBatch.creationTime, attemptNumber));
     int numMessagesInBatch = outstandingBatch.size();
     List<PubsubMessage> pubsubMessagesList = new ArrayList<PubsubMessage>(numMessagesInBatch);
     List<PubsubMessageWrapper> messageWrappers = outstandingBatch.getMessageWrappers();

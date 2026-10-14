@@ -157,6 +157,14 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_analytics_data_v1beta_SamplingMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_analytics_data_v1beta_SamplingMetadata_fieldAccessorTable;
@@ -380,7 +388,7 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
           + "\006WEEKLY\020\002\022\013\n"
           + "\007MONTHLY\020\003\"*\n"
           + "\024CohortReportSettings\022\022\n\n"
-          + "accumulate\030\001 \001(\010\"\226\006\n"
+          + "accumulate\030\001 \001(\010\"\361\016\n"
           + "\020ResponseMetaData\022 \n"
           + "\030data_loss_from_other_row\030\003 \001(\010\022r\n"
           + "\033schema_restriction_response\030\004 \001(\013"
@@ -391,18 +399,52 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
           + "\014empty_reason\030\007 \001(\tH\003\210\001\001\022$\n"
           + "\027subject_to_thresholding\030\010 \001(\010H\004\210\001\001\022J\n"
           + "\022sampling_metadatas\030\t"
-          + " \003(\0132..google.analytics.data.v1beta.SamplingMetadata\032\275\002\n"
+          + " \003(\0132..google.analytics.data.v1beta.SamplingMetadata\022d\n"
+          + "\027data_truncation_reasons\030\n"
+          + " \003(\0132C.google.analy"
+          + "tics.data.v1beta.ResponseMetaData.DataTruncationReason\032\275\002\n"
           + "\031SchemaRestrictionResponse\022\204\001\n"
-          + "\032active_metric_restrictions\030\001 \003(\0132`.google.analytics.d"
-          + "ata.v1beta.ResponseMetaData.SchemaRestri"
-          + "ctionResponse.ActiveMetricRestriction\032\230\001\n"
+          + "\032active_metric_restrictions\030\001 \003("
+          + "\0132`.google.analytics.data.v1beta.Respons"
+          + "eMetaData.SchemaRestrictionResponse.ActiveMetricRestriction\032\230\001\n"
           + "\027ActiveMetricRestriction\022\030\n"
           + "\013metric_name\030\001 \001(\tH\000\210\001\001\022S\n"
-          + "\027restricted_metric_types\030\002"
-          + " \003(\01622.google.analytics.data.v1beta.RestrictedMetricTypeB\016\n"
-          + "\014_metric_nameB\036\n"
+          + "\027restricted_metric_types\030\002 \003(\01622.google.anal"
+          + "ytics.data.v1beta.RestrictedMetricTypeB\016\n"
+          + "\014_metric_name\032\362\007\n"
+          + "\024DataTruncationReason\022y\n"
+          + "\024data_truncation_type\030\001 \001(\0162V.google.a"
+          + "nalytics.data.v1beta.ResponseMetaData.Da"
+          + "taTruncationReason.DataTruncationTypeH\000\210\001\001\022$\n"
+          + "\027data_truncation_message\030\002 \001(\tH\001\210\001\001\022!\n"
+          + "\024data_truncation_date\030\003 \001(\tH\002\210\001\001\022\200\001\n"
+          + "\033data_truncation_date_ranges\030\004 \003(\0132[.goog"
+          + "le.analytics.data.v1beta.ResponseMetaDat"
+          + "a.DataTruncationReason.DataTruncationDateRange\032e\n"
+          + "\027DataTruncationDateRange\022\027\n\n"
+          + "start_date\030\001 \001(\tH\000\210\001\001\022\025\n"
+          + "\010end_date\030\002 \001(\tH\001\210\001\001B\r\n"
+          + "\013_start_dateB\013\n"
+          + "\t_end_date\"\335\003\n"
+          + "\022DataTruncationType\022$\n"
+          + " DATA_TRUNCATION_TYPE_UNSPECIFIED\020\000\022+\n"
+          + "\'DATA_TRUNCATION_TYPE_RULES_BASED_MODELS\020\001\0220\n"
+          + ",DATA_TRUNCATION_TYPE_DATA_DRIVEN_ATTRIBUTION\020\002\022\036\n"
+          + "\032DATA_TRUNCATION_TYPE_DV360\020\003\022\036\n"
+          + "\032DATA_TRUNCATION_TYPE_CM360\020\004\0226\n"
+          + "2DATA_TRUNCATION_TYPE_ITEM_SCOPED_ECOMMERCE_METRICS\020\005\0227\n"
+          + "3DATA_TRUNCATION_TYPE_EVENT_SCOPED_ECOMMERCE_METRICS\020\006\022#\n"
+          + "\037DATA_TRUNCATION_TYPE_DATE_RANGE\020\007\022!\n"
+          + "\035DATA_TRUNCATION_TYPE_PROPERTY\020\010\022$\n"
+          + " DATA_TRUNCATION_TYPE_CONVERSIONS\020\t\022#\n"
+          + "\037DATA_TRUNCATION_TYPE_GOOGLE_ADS\020\n"
+          + "B\027\n"
+          + "\025_data_truncation_typeB\032\n"
+          + "\030_data_truncation_messageB\027\n"
+          + "\025_data_truncation_dateB\036\n"
           + "\034_schema_restriction_responseB\020\n"
-          + "\016_currency_codeB\014\n\n"
+          + "\016_currency_codeB\014\n"
+          + "\n"
           + "_time_zoneB\017\n\r"
           + "_empty_reasonB\032\n"
           + "\030_subject_to_thresholding\"K\n"
@@ -467,8 +509,8 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
           + "\004type\030\005 \001(\0162(.google.analytics.data.v1beta.MetricType\022\022\n\n"
           + "expression\030\006 \001(\t\022\031\n"
           + "\021custom_definition\030\007 \001(\010\022S\n"
-          + "\017blocked_reasons\030\010 \003(\0162:.google.an"
-          + "alytics.data.v1beta.MetricMetadata.BlockedReason\022\020\n"
+          + "\017blocked_reasons\030\010 \003(\0162:.google.analyti"
+          + "cs.data.v1beta.MetricMetadata.BlockedReason\022\020\n"
           + "\010category\030\n"
           + " \001(\t\"\\\n\r"
           + "BlockedReason\022\036\n"
@@ -487,8 +529,8 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
           + "\023_dimension_metadataB\020\n"
           + "\016_compatibility\"\320\001\n"
           + "\023MetricCompatibility\022J\n"
-          + "\017metric_metadata\030\001 \001(\0132,.google."
-          + "analytics.data.v1beta.MetricMetadataH\000\210\001\001\022G\n\r"
+          + "\017metric_metadata\030\001"
+          + " \001(\0132,.google.analytics.data.v1beta.MetricMetadataH\000\210\001\001\022G\n\r"
           + "compatibility\030\002"
           + " \001(\0162+.google.analytics.data.v1beta.CompatibilityH\001\210\001\001B\022\n"
           + "\020_metric_metadataB\020\n"
@@ -523,8 +565,8 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
           + "\031COMPATIBILITY_UNSPECIFIED\020\000\022\016\n\n"
           + "COMPATIBLE\020\001\022\020\n"
           + "\014INCOMPATIBLE\020\002By\n"
-          + " com.google.analytics.data.v1betaB\021ReportingApiProtoP\001Z@googl"
-          + "e.golang.org/genproto/googleapis/analytics/data/v1beta;datab\006proto3"
+          + " com.google.analytics.data.v1betaB\021ReportingApiProtoP\001Z@google.gol"
+          + "ang.org/genproto/googleapis/analytics/data/v1beta;datab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -757,6 +799,7 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
               "EmptyReason",
               "SubjectToThresholding",
               "SamplingMetadatas",
+              "DataTruncationReasons",
             });
     internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_descriptor =
         internal_static_google_analytics_data_v1beta_ResponseMetaData_descriptor.getNestedType(0);
@@ -774,6 +817,26 @@ public final class ReportingApiProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_analytics_data_v1beta_ResponseMetaData_SchemaRestrictionResponse_ActiveMetricRestriction_descriptor,
             new java.lang.String[] {
               "MetricName", "RestrictedMetricTypes",
+            });
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor =
+        internal_static_google_analytics_data_v1beta_ResponseMetaData_descriptor.getNestedType(1);
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor,
+            new java.lang.String[] {
+              "DataTruncationType",
+              "DataTruncationMessage",
+              "DataTruncationDate",
+              "DataTruncationDateRanges",
+            });
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_descriptor =
+        internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor
+            .getNestedType(0);
+    internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_descriptor,
+            new java.lang.String[] {
+              "StartDate", "EndDate",
             });
     internal_static_google_analytics_data_v1beta_SamplingMetadata_descriptor =
         getDescriptor().getMessageType(16);

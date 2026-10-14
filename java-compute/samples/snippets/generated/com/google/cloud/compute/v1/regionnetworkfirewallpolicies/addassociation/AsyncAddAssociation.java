@@ -39,6 +39,7 @@ public class AsyncAddAssociation {
         RegionNetworkFirewallPoliciesClient.create()) {
       AddAssociationRegionNetworkFirewallPolicyRequest request =
           AddAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+              .setAssociatedPolicyToBeReplaced("associatedPolicyToBeReplaced1754581094")
               .setFirewallPolicy("firewallPolicy1819692626")
               .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
               .setProject("project-309310695")

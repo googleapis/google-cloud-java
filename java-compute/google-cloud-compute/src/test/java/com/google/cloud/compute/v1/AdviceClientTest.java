@@ -121,4 +121,109 @@ public class AdviceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void capacityTest() throws Exception {
+    CapacityAdviceResponse expectedResponse =
+        CapacityAdviceResponse.newBuilder()
+            .addAllRecommendations(new ArrayList<CapacityAdviceResponseRecommendation>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    CapacityAdviceRequest capacityAdviceRequestResource =
+        CapacityAdviceRequest.newBuilder().build();
+
+    CapacityAdviceResponse actualResponse =
+        client.capacity(project, region, capacityAdviceRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void capacityExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      CapacityAdviceRequest capacityAdviceRequestResource =
+          CapacityAdviceRequest.newBuilder().build();
+      client.capacity(project, region, capacityAdviceRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void capacityHistoryTest() throws Exception {
+    CapacityHistoryResponse expectedResponse =
+        CapacityHistoryResponse.newBuilder()
+            .setLocation("location1901043637")
+            .setMachineType("machineType-218117087")
+            .addAllPreemptionHistory(new ArrayList<CapacityHistoryResponsePreemptionRecord>())
+            .addAllPriceHistory(new ArrayList<CapacityHistoryResponsePriceRecord>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String region = "region-9622";
+    CapacityHistoryRequest capacityHistoryRequestResource =
+        CapacityHistoryRequest.newBuilder().build();
+
+    CapacityHistoryResponse actualResponse =
+        client.capacityHistory(project, region, capacityHistoryRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void capacityHistoryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String region = "region-9622";
+      CapacityHistoryRequest capacityHistoryRequestResource =
+          CapacityHistoryRequest.newBuilder().build();
+      client.capacityHistory(project, region, capacityHistoryRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

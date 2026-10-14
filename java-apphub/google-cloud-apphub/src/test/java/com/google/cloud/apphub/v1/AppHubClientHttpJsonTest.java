@@ -19,6 +19,7 @@ package com.google.cloud.apphub.v1;
 import static com.google.cloud.apphub.v1.AppHubClient.ListApplicationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredServicesPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListDiscoveredWorkloadsPagedResponse;
+import static com.google.cloud.apphub.v1.AppHubClient.ListExtendedMetadataSchemasPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListLocationsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServiceProjectAttachmentsPagedResponse;
 import static com.google.cloud.apphub.v1.AppHubClient.ListServicesPagedResponse;
@@ -2451,6 +2452,8 @@ public class AppHubClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2512,6 +2515,8 @@ public class AppHubClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2573,6 +2578,8 @@ public class AppHubClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2624,6 +2631,8 @@ public class AppHubClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2675,6 +2684,8 @@ public class AppHubClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2694,6 +2705,8 @@ public class AppHubClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setScope(Scope.newBuilder().build())
             .setUid("uid115792")
+            .setApplicationProperties(ApplicationProperties.newBuilder().build())
+            .setApplicationType(ApplicationType.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2733,6 +2746,8 @@ public class AppHubClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setScope(Scope.newBuilder().build())
               .setUid("uid115792")
+              .setApplicationProperties(ApplicationProperties.newBuilder().build())
+              .setApplicationType(ApplicationType.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateApplicationAsync(application, updateMask).get();
@@ -2828,6 +2843,365 @@ public class AppHubClientHttpJsonTest {
       client.deleteApplicationAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getBoundaryTest() throws Exception {
+    Boundary expectedResponse =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BoundaryName name = BoundaryName.of("[PROJECT]", "[LOCATION]");
+
+    Boundary actualResponse = client.getBoundary(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBoundaryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BoundaryName name = BoundaryName.of("[PROJECT]", "[LOCATION]");
+      client.getBoundary(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBoundaryTest2() throws Exception {
+    Boundary expectedResponse =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3121/locations/location-3121/boundary";
+
+    Boundary actualResponse = client.getBoundary(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBoundaryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3121/locations/location-3121/boundary";
+      client.getBoundary(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBoundaryTest() throws Exception {
+    Boundary expectedResponse =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBoundaryTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Boundary boundary =
+        Boundary.newBuilder()
+            .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Boundary actualResponse = client.updateBoundaryAsync(boundary, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBoundaryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Boundary boundary =
+          Boundary.newBuilder()
+              .setName(BoundaryName.of("[PROJECT]", "[LOCATION]").toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBoundaryAsync(boundary, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaTest() throws Exception {
+    ExtendedMetadataSchema expectedResponse =
+        ExtendedMetadataSchema.newBuilder()
+            .setName(
+                ExtendedMetadataSchemaName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+                    .toString())
+            .setJsonSchema("jsonSchema435994793")
+            .setSchemaVersion(1684719674)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExtendedMetadataSchemaName name =
+        ExtendedMetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]");
+
+    ExtendedMetadataSchema actualResponse = client.getExtendedMetadataSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExtendedMetadataSchemaName name =
+          ExtendedMetadataSchemaName.of("[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]");
+      client.getExtendedMetadataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaTest2() throws Exception {
+    ExtendedMetadataSchema expectedResponse =
+        ExtendedMetadataSchema.newBuilder()
+            .setName(
+                ExtendedMetadataSchemaName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXTENDED_METADATA_SCHEMA]")
+                    .toString())
+            .setJsonSchema("jsonSchema435994793")
+            .setSchemaVersion(1684719674)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3306/locations/location-3306/extendedMetadataSchemas/extendedMetadataSchema-3306";
+
+    ExtendedMetadataSchema actualResponse = client.getExtendedMetadataSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getExtendedMetadataSchemaExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3306/locations/location-3306/extendedMetadataSchemas/extendedMetadataSchema-3306";
+      client.getExtendedMetadataSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasTest() throws Exception {
+    ExtendedMetadataSchema responsesElement = ExtendedMetadataSchema.newBuilder().build();
+    ListExtendedMetadataSchemasResponse expectedResponse =
+        ListExtendedMetadataSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExtendedMetadataSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListExtendedMetadataSchemasPagedResponse pagedListResponse =
+        client.listExtendedMetadataSchemas(parent);
+
+    List<ExtendedMetadataSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExtendedMetadataSchemasList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listExtendedMetadataSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasTest2() throws Exception {
+    ExtendedMetadataSchema responsesElement = ExtendedMetadataSchema.newBuilder().build();
+    ListExtendedMetadataSchemasResponse expectedResponse =
+        ListExtendedMetadataSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllExtendedMetadataSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListExtendedMetadataSchemasPagedResponse pagedListResponse =
+        client.listExtendedMetadataSchemas(parent);
+
+    List<ExtendedMetadataSchema> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getExtendedMetadataSchemasList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listExtendedMetadataSchemasExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listExtendedMetadataSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

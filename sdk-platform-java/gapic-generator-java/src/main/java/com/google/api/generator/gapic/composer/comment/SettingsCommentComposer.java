@@ -41,13 +41,19 @@ public class SettingsCommentComposer {
   private static final String CLASS_HEADER_DEFAULT_ADDRESS_PORT_PATTERN =
       "The default service address (%s) and default port (%d) are used.";
   private static final String CLASS_HEADER_SAMPLE_CODE_PATTERN =
-      "For example, to set the [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings) of %s:";
+      "For example, to set the"
+          + " [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)"
+          + " of %s:";
 
   private static final String CLASS_HEADER_LRO_SAMPLE_CODE_PATTERN =
-      "To configure the RetrySettings of a Long Running Operation method, create an OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to configure the RetrySettings for %s:";
+      "To configure the RetrySettings of a Long Running Operation method, create an"
+          + " OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For"
+          + " example, to configure the RetrySettings for %s:";
 
   private static final String CLASS_HEADER_SAMPLE_CODE_SUFFIX =
-      "Please refer to the [Client Side Retry Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting retries.";
+      "Please refer to the [Client Side Retry"
+          + " Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support"
+          + " in setting retries.";
 
   private static final String CLASS_HEADER_BUILDER_DESCRIPTION =
       "The builder of this class is recursive, so contained classes are themselves builders. When"
@@ -77,6 +83,10 @@ public class SettingsCommentComposer {
 
   public static final CommentStatement DEFAULT_CREDENTIALS_PROVIDER_BUILDER_METHOD_COMMENT =
       toCommentStatement("Returns a builder for the default credentials for this service.");
+
+  public static final CommentStatement SET_HTTP_JSON_INTERNAL_HEADER_PROVIDER_METHOD_COMMENT =
+      toCommentStatement(
+          "Sets the internal HeaderProvider for HTTP/JSON. Does not change the transport.");
 
   public static final CommentStatement DEFAULT_TRANSPORT_PROVIDER_BUILDER_METHOD_COMMENT =
       toCommentStatement("Returns a builder for the default ChannelProvider for this service.");

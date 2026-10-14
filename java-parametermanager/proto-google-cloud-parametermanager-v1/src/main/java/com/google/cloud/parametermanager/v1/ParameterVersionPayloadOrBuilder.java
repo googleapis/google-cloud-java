@@ -38,4 +38,34 @@ public interface ParameterVersionPayloadOrBuilder
    * @return The data.
    */
   com.google.protobuf.ByteString getData();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Optional] The integrity checksum of the payload.
+   * If provided, the server will verify that the checksum matches the payload.
+   * If not provided, the server will generate the checksum.
+   * </pre>
+   *
+   * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the dataCrc32c field is set.
+   */
+  boolean hasDataCrc32C();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. [Optional] The integrity checksum of the payload.
+   * If provided, the server will verify that the checksum matches the payload.
+   * If not provided, the server will generate the checksum.
+   * </pre>
+   *
+   * <code>optional int64 data_crc32c = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dataCrc32c.
+   */
+  long getDataCrc32C();
 }

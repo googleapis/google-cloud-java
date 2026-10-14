@@ -108,12 +108,6 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             if (request.hasServiceProjectNumber()) {
                               serializer.putQueryParam(
                                   fields,
@@ -310,12 +304,6 @@ public class HttpJsonTargetVpnGatewaysStub extends TargetVpnGatewaysStub {
                             }
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })

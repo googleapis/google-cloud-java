@@ -296,6 +296,73 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1.DynamicField> getDynamicFieldsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1.DynamicField getDynamicFields(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDynamicFieldsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder>
+      getDynamicFieldsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder getDynamicFieldsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The primary identifier for the query resource in Looker, used for
    * API operations. Maps to `id` (or `slug`) in the Looker API `Query`
    * resource.

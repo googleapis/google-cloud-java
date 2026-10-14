@@ -525,6 +525,29 @@ public class SessionImplTest {
   }
 
   @Test
+  void missedHeartbeatDeliversUnavailableStatus() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    OpenSessionRequest openSessionRequest =
+        OpenSessionRequest.newBuilder()
+            .setPayload(OpenFakeSessionRequest.getDefaultInstance().toByteString())
+            .build();
+    session.start(openSessionRequest, new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    session.forceClose(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_MISSED_HEARTBEAT)
+            .setDescription("missed heartbeat")
+            .build());
+
+    Status status = sessionListener.popUntil(Status.class);
+    assertThat(status.getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+  }
+
+  @Test
   void testCancel() throws Exception {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
 
@@ -864,17 +887,10 @@ public class SessionImplTest {
     capturing.executors.get(0).execute(capturing.tasks.get(0));
 
     // The session must force-close and drive the listener to a terminal Status.
-    assertWithMessage("terminal status should be delivered after open timeout")
-        .that(sessionListener.popUntil(Status.class))
-        .isNotNull();
-    sw.reset().start();
-    while (session.getState() != Session.SessionState.WAIT_SERVER_CLOSE
-        && session.getState() != Session.SessionState.CLOSED
-        && sw.elapsed(TimeUnit.SECONDS) < 5) {
-      Thread.sleep(10);
-    }
-    assertThat(session.getState())
-        .isAnyOf(Session.SessionState.WAIT_SERVER_CLOSE, Session.SessionState.CLOSED);
+    Status status = sessionListener.popUntil(Status.class);
+    assertThat(status.getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+    assertThat(sessionListener.getLastPrevState()).isEqualTo(Session.SessionState.STARTING);
+    assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
   }
 
   // endregion

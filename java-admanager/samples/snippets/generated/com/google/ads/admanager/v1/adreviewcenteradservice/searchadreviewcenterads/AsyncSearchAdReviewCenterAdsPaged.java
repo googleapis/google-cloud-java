@@ -19,6 +19,7 @@ package com.google.ads.admanager.v1.samples;
 // [START admanager_v1_generated_AdReviewCenterAdService_SearchAdReviewCenterAds_Paged_async]
 import com.google.ads.admanager.v1.AdReviewCenterAd;
 import com.google.ads.admanager.v1.AdReviewCenterAdServiceClient;
+import com.google.ads.admanager.v1.ArcCreativeFormatEnum;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponse;
 import com.google.ads.admanager.v1.WebPropertyName;
@@ -49,6 +50,15 @@ public class AsyncSearchAdReviewCenterAdsPaged {
               .setDateTimeRange(Interval.newBuilder().build())
               .addAllSearchText(new ArrayList<String>())
               .addAllBuyerAccountId(new ArrayList<Long>())
+              .addAllAdResponseId(new ArrayList<String>())
+              .addAllAdvertiserDisplayNames(new ArrayList<String>())
+              .addAllLanguageCodes(new ArrayList<String>())
+              .addAllRegionCodes(new ArrayList<String>())
+              .addAllAdTypes(new ArrayList<ArcCreativeFormatEnum.ArcCreativeFormat>())
+              .addAllAdvertiserApps(new ArrayList<String>())
+              .addAllPublisherDomains(new ArrayList<String>())
+              .setNewInLastDays(575817221)
+              .addAllLabelIds(new ArrayList<String>())
               .build();
       while (true) {
         SearchAdReviewCenterAdsResponse response =
