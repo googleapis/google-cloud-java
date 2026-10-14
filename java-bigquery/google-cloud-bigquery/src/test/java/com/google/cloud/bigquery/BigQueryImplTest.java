@@ -2738,15 +2738,13 @@ public class BigQueryImplTest {
 
     verify(bigqueryRpcMock)
         .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
-    verify(bigqueryRpcMock, never())
-        .getJobSkipExceptionTranslation(any(), any(), any(), any());
+    verify(bigqueryRpcMock, never()).getJobSkipExceptionTranslation(any(), any(), any(), any());
     verify(bigqueryRpcMock, never())
         .listTableDataSkipExceptionTranslation(any(), any(), any(), any());
   }
 
   @Test
-  void testFastQueryMultiplePagesCachesDestinationTable()
-      throws InterruptedException, IOException {
+  void testFastQueryMultiplePagesCachesDestinationTable() throws InterruptedException, IOException {
     JobId queryJob = JobId.of(PROJECT, JOB);
     when(bigqueryRpcMock.getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
         .thenReturn(COMPLETE_QUERY_JOB.toPb());
