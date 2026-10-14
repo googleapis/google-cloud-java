@@ -410,9 +410,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the HLS media. This attribute will be empty if the
-   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * HLS media.
+   * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have HLS media.
    * </pre>
    *
    * <code>
@@ -430,9 +431,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the HLS media. This attribute will be empty if the
-   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * HLS media.
+   * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have HLS media.
    * </pre>
    *
    * <code>
@@ -451,9 +453,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the HLS media. This attribute will be empty if the
-   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * HLS media.
+   * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have HLS media.
    * </pre>
    *
    * <code>
@@ -471,9 +474,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the HLS media. This attribute will be empty if the
-   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * HLS media.
+   * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have HLS media.
    * </pre>
    *
    * <code>
@@ -491,9 +495,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the HLS media. This attribute will be empty if the
-   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * HLS media.
+   * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have HLS media.
    * </pre>
    *
    * <code>
@@ -653,9 +658,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the DASH media. This attribute will be empty if
-   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * DASH media.
+   * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+   * is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have DASH media.
    * </pre>
    *
    * <code>
@@ -673,9 +680,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the DASH media. This attribute will be empty if
-   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * DASH media.
+   * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+   * is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have DASH media.
    * </pre>
    *
    * <code>
@@ -694,9 +703,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the DASH media. This attribute will be empty if
-   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * DASH media.
+   * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+   * is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have DASH media.
    * </pre>
    *
    * <code>
@@ -714,9 +725,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the DASH media. This attribute will be empty if
-   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * DASH media.
+   * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+   * is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have DASH media.
    * </pre>
    *
    * <code>
@@ -734,9 +747,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of any errors that occurred during the most recent
    * DAI ingestion process of the DASH media. This attribute will be empty if
-   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-   * not eligible for dynamic ad insertion or if the `Content` does not have
-   * DASH media.
+   * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+   * is
+   * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+   * or if the `Content` is not eligible for dynamic ad insertion or if the
+   * `Content` does not have DASH media.
    * </pre>
    *
    * <code>
@@ -2837,9 +2852,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -2860,9 +2876,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -2883,9 +2900,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -2906,9 +2924,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -2935,9 +2954,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -2962,9 +2982,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -2991,9 +3012,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3020,9 +3042,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3047,9 +3070,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3074,9 +3098,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3101,9 +3126,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3127,9 +3153,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3153,9 +3180,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3172,9 +3200,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3196,9 +3225,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3220,9 +3250,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3240,9 +3271,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3260,9 +3292,10 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the HLS media. This attribute will be empty if the
-     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * HLS media.
+     * [hlsIngestStatus][google.ads.admanager.v1.Content.hls_ingest_status] is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have HLS media.
      * </pre>
      *
      * <code>
@@ -3695,9 +3728,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3718,9 +3753,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3741,9 +3778,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3764,9 +3803,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3794,9 +3835,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3821,9 +3864,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3850,9 +3895,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3880,9 +3927,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3907,9 +3956,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3934,9 +3985,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3961,9 +4014,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -3987,9 +4042,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -4013,9 +4070,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -4033,9 +4092,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -4057,9 +4118,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -4081,9 +4144,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -4101,9 +4166,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>
@@ -4122,9 +4189,11 @@ public final class Content extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of any errors that occurred during the most recent
      * DAI ingestion process of the DASH media. This attribute will be empty if
-     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
-     * not eligible for dynamic ad insertion or if the `Content` does not have
-     * DASH media.
+     * the [dashIngestStatus][google.ads.admanager.v1.Content.dash_ingest_status]
+     * is
+     * [DaiIngestStatusEnum.DaiIngestStatus.SUCCESS][google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.SUCCESS]
+     * or if the `Content` is not eligible for dynamic ad insertion or if the
+     * `Content` does not have DASH media.
      * </pre>
      *
      * <code>

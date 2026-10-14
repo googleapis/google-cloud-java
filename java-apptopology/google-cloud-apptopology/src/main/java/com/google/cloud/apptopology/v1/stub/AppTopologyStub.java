@@ -16,12 +16,15 @@
 
 package com.google.cloud.apptopology.v1.stub;
 
+import static com.google.cloud.apptopology.v1.AppTopologyClient.ExploreSchemaPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListDomainsPagedResponse;
 import static com.google.cloud.apptopology.v1.AppTopologyClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apptopology.v1.Domain;
+import com.google.cloud.apptopology.v1.ExploreSchemaRequest;
+import com.google.cloud.apptopology.v1.ExploreSchemaResponse;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyRequest;
 import com.google.cloud.apptopology.v1.GenerateDiscoveredResourcesTopologyResponse;
 import com.google.cloud.apptopology.v1.GetDomainRequest;
@@ -55,6 +58,15 @@ public abstract class AppTopologyStub implements BackgroundResource {
 
   public UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
     throw new UnsupportedOperationException("Not implemented: getSchemaCallable()");
+  }
+
+  public UnaryCallable<ExploreSchemaRequest, ExploreSchemaPagedResponse>
+      exploreSchemaPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: exploreSchemaPagedCallable()");
+  }
+
+  public UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaCallable() {
+    throw new UnsupportedOperationException("Not implemented: exploreSchemaCallable()");
   }
 
   public UnaryCallable<GetDomainRequest, Domain> getDomainCallable() {

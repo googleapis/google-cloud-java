@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response message for [BatchRenegotiateChildPublisherAgreements][] method.
+ * Response message for `BatchRenegotiateChildPublisherAgreements` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsResponse}
@@ -234,7 +234,7 @@ public final class BatchRenegotiateChildPublisherAgreementsResponse
    *
    *
    * <pre>
-   * Response message for [BatchRenegotiateChildPublisherAgreements][] method.
+   * Response message for `BatchRenegotiateChildPublisherAgreements` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsResponse}

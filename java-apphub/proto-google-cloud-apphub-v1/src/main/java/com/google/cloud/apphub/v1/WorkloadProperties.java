@@ -62,6 +62,18 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         .internal_static_google_cloud_apphub_v1_WorkloadProperties_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 5:
+        return internalGetExtendedMetadata();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -72,6 +84,7 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
             com.google.cloud.apphub.v1.WorkloadProperties.Builder.class);
   }
 
+  private int bitField0_;
   public static final int GCP_PROJECT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -237,6 +250,260 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int FUNCTIONAL_TYPE_FIELD_NUMBER = 4;
+  private com.google.cloud.apphub.v1.FunctionalType functionalType_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the functionalType field is set.
+   */
+  @java.lang.Override
+  public boolean hasFunctionalType() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The functionalType.
+   */
+  @java.lang.Override
+  public com.google.cloud.apphub.v1.FunctionalType getFunctionalType() {
+    return functionalType_ == null
+        ? com.google.cloud.apphub.v1.FunctionalType.getDefaultInstance()
+        : functionalType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apphub.v1.FunctionalTypeOrBuilder getFunctionalTypeOrBuilder() {
+    return functionalType_ == null
+        ? com.google.cloud.apphub.v1.FunctionalType.getDefaultInstance()
+        : functionalType_;
+  }
+
+  public static final int EXTENDED_METADATA_FIELD_NUMBER = 5;
+
+  private static final class ExtendedMetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>newDefaultInstance(
+                    com.google.cloud.apphub.v1.WorkloadProto
+                        .internal_static_google_cloud_apphub_v1_WorkloadProperties_ExtendedMetadataEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.cloud.apphub.v1.ExtendedMetadata.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+      extendedMetadata_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+      internalGetExtendedMetadata() {
+    if (extendedMetadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ExtendedMetadataDefaultEntryHolder.defaultEntry);
+    }
+    return extendedMetadata_;
+  }
+
+  public int getExtendedMetadataCount() {
+    return internalGetExtendedMetadata().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsExtendedMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetExtendedMetadata().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getExtendedMetadataMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+      getExtendedMetadata() {
+    return getExtendedMetadataMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+      getExtendedMetadataMap() {
+    return internalGetExtendedMetadata().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.apphub.v1.ExtendedMetadata getExtendedMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.apphub.v1.ExtendedMetadata defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata> map =
+        internalGetExtendedMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Additional metadata specific to the resource type.
+   * The key is a string that identifies the type of metadata and the value is
+   * the metadata contents specific to that type.
+   * Key format: `apphub.googleapis.com/{metadataType}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apphub.v1.ExtendedMetadata getExtendedMetadataOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata> map =
+        internalGetExtendedMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int IDENTITY_FIELD_NUMBER = 6;
+  private com.google.cloud.apphub.v1.Identity identity_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity associated with the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the identity field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdentity() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity associated with the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The identity.
+   */
+  @java.lang.Override
+  public com.google.cloud.apphub.v1.Identity getIdentity() {
+    return identity_ == null ? com.google.cloud.apphub.v1.Identity.getDefaultInstance() : identity_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The identity associated with the workload.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apphub.v1.IdentityOrBuilder getIdentityOrBuilder() {
+    return identity_ == null ? com.google.cloud.apphub.v1.Identity.getDefaultInstance() : identity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -260,6 +527,14 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, zone_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(4, getFunctionalType());
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetExtendedMetadata(), ExtendedMetadataDefaultEntryHolder.defaultEntry, 5);
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getIdentity());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -277,6 +552,23 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, zone_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getFunctionalType());
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata> entry :
+        internalGetExtendedMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+          extendedMetadata__ =
+              ExtendedMetadataDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, extendedMetadata__);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getIdentity());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -297,6 +589,15 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     if (!getGcpProject().equals(other.getGcpProject())) return false;
     if (!getLocation().equals(other.getLocation())) return false;
     if (!getZone().equals(other.getZone())) return false;
+    if (hasFunctionalType() != other.hasFunctionalType()) return false;
+    if (hasFunctionalType()) {
+      if (!getFunctionalType().equals(other.getFunctionalType())) return false;
+    }
+    if (!internalGetExtendedMetadata().equals(other.internalGetExtendedMetadata())) return false;
+    if (hasIdentity() != other.hasIdentity()) return false;
+    if (hasIdentity()) {
+      if (!getIdentity().equals(other.getIdentity())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,6 +615,18 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getLocation().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
+    if (hasFunctionalType()) {
+      hash = (37 * hash) + FUNCTIONAL_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getFunctionalType().hashCode();
+    }
+    if (!internalGetExtendedMetadata().getMap().isEmpty()) {
+      hash = (37 * hash) + EXTENDED_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetExtendedMetadata().hashCode();
+    }
+    if (hasIdentity()) {
+      hash = (37 * hash) + IDENTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getIdentity().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -433,6 +746,28 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
           .internal_static_google_cloud_apphub_v1_WorkloadProperties_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetExtendedMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetMutableExtendedMetadata();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -444,10 +779,20 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.apphub.v1.WorkloadProperties.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetFunctionalTypeFieldBuilder();
+        internalGetIdentityFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -457,6 +802,17 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       gcpProject_ = "";
       location_ = "";
       zone_ = "";
+      functionalType_ = null;
+      if (functionalTypeBuilder_ != null) {
+        functionalTypeBuilder_.dispose();
+        functionalTypeBuilder_ = null;
+      }
+      internalGetMutableExtendedMetadata().clear();
+      identity_ = null;
+      if (identityBuilder_ != null) {
+        identityBuilder_.dispose();
+        identityBuilder_ = null;
+      }
       return this;
     }
 
@@ -502,6 +858,21 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.zone_ = zone_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.functionalType_ =
+            functionalTypeBuilder_ == null ? functionalType_ : functionalTypeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.extendedMetadata_ =
+            internalGetExtendedMetadata().build(ExtendedMetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.identity_ = identityBuilder_ == null ? identity_ : identityBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -530,6 +901,14 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
         zone_ = other.zone_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasFunctionalType()) {
+        mergeFunctionalType(other.getFunctionalType());
+      }
+      internalGetMutableExtendedMetadata().mergeFrom(other.internalGetExtendedMetadata());
+      bitField0_ |= 0x00000010;
+      if (other.hasIdentity()) {
+        mergeIdentity(other.getIdentity());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -575,6 +954,34 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetFunctionalTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+                    extendedMetadata__ =
+                        input.readMessage(
+                            ExtendedMetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableExtendedMetadata()
+                    .ensureBuilderMap()
+                    .put(extendedMetadata__.getKey(), extendedMetadata__.getValue());
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetIdentityFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -940,6 +1347,719 @@ public final class WorkloadProperties extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.apphub.v1.FunctionalType functionalType_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apphub.v1.FunctionalType,
+            com.google.cloud.apphub.v1.FunctionalType.Builder,
+            com.google.cloud.apphub.v1.FunctionalTypeOrBuilder>
+        functionalTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the functionalType field is set.
+     */
+    public boolean hasFunctionalType() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The functionalType.
+     */
+    public com.google.cloud.apphub.v1.FunctionalType getFunctionalType() {
+      if (functionalTypeBuilder_ == null) {
+        return functionalType_ == null
+            ? com.google.cloud.apphub.v1.FunctionalType.getDefaultInstance()
+            : functionalType_;
+      } else {
+        return functionalTypeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFunctionalType(com.google.cloud.apphub.v1.FunctionalType value) {
+      if (functionalTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        functionalType_ = value;
+      } else {
+        functionalTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFunctionalType(
+        com.google.cloud.apphub.v1.FunctionalType.Builder builderForValue) {
+      if (functionalTypeBuilder_ == null) {
+        functionalType_ = builderForValue.build();
+      } else {
+        functionalTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeFunctionalType(com.google.cloud.apphub.v1.FunctionalType value) {
+      if (functionalTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && functionalType_ != null
+            && functionalType_ != com.google.cloud.apphub.v1.FunctionalType.getDefaultInstance()) {
+          getFunctionalTypeBuilder().mergeFrom(value);
+        } else {
+          functionalType_ = value;
+        }
+      } else {
+        functionalTypeBuilder_.mergeFrom(value);
+      }
+      if (functionalType_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFunctionalType() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      functionalType_ = null;
+      if (functionalTypeBuilder_ != null) {
+        functionalTypeBuilder_.dispose();
+        functionalTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apphub.v1.FunctionalType.Builder getFunctionalTypeBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetFunctionalTypeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apphub.v1.FunctionalTypeOrBuilder getFunctionalTypeOrBuilder() {
+      if (functionalTypeBuilder_ != null) {
+        return functionalTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return functionalType_ == null
+            ? com.google.cloud.apphub.v1.FunctionalType.getDefaultInstance()
+            : functionalType_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.FunctionalType functional_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apphub.v1.FunctionalType,
+            com.google.cloud.apphub.v1.FunctionalType.Builder,
+            com.google.cloud.apphub.v1.FunctionalTypeOrBuilder>
+        internalGetFunctionalTypeFieldBuilder() {
+      if (functionalTypeBuilder_ == null) {
+        functionalTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.apphub.v1.FunctionalType,
+                com.google.cloud.apphub.v1.FunctionalType.Builder,
+                com.google.cloud.apphub.v1.FunctionalTypeOrBuilder>(
+                getFunctionalType(), getParentForChildren(), isClean());
+        functionalType_ = null;
+      }
+      return functionalTypeBuilder_;
+    }
+
+    private static final class ExtendedMetadataConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder,
+            com.google.cloud.apphub.v1.ExtendedMetadata> {
+      @java.lang.Override
+      public com.google.cloud.apphub.v1.ExtendedMetadata build(
+          com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder val) {
+        if (val instanceof com.google.cloud.apphub.v1.ExtendedMetadata) {
+          return (com.google.cloud.apphub.v1.ExtendedMetadata) val;
+        }
+        return ((com.google.cloud.apphub.v1.ExtendedMetadata.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+          defaultEntry() {
+        return ExtendedMetadataDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final ExtendedMetadataConverter extendedMetadataConverter =
+        new ExtendedMetadataConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder,
+            com.google.cloud.apphub.v1.ExtendedMetadata,
+            com.google.cloud.apphub.v1.ExtendedMetadata.Builder>
+        extendedMetadata_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder,
+            com.google.cloud.apphub.v1.ExtendedMetadata,
+            com.google.cloud.apphub.v1.ExtendedMetadata.Builder>
+        internalGetExtendedMetadata() {
+      if (extendedMetadata_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(extendedMetadataConverter);
+      }
+      return extendedMetadata_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder,
+            com.google.cloud.apphub.v1.ExtendedMetadata,
+            com.google.cloud.apphub.v1.ExtendedMetadata.Builder>
+        internalGetMutableExtendedMetadata() {
+      if (extendedMetadata_ == null) {
+        extendedMetadata_ = new com.google.protobuf.MapFieldBuilder<>(extendedMetadataConverter);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return extendedMetadata_;
+    }
+
+    public int getExtendedMetadataCount() {
+      return internalGetExtendedMetadata().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsExtendedMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetExtendedMetadata().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getExtendedMetadataMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+        getExtendedMetadata() {
+      return getExtendedMetadataMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+        getExtendedMetadataMap() {
+      return internalGetExtendedMetadata().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.apphub.v1.ExtendedMetadata getExtendedMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.apphub.v1.ExtendedMetadata defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder> map =
+          internalGetMutableExtendedMetadata().ensureBuilderMap();
+      return map.containsKey(key) ? extendedMetadataConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apphub.v1.ExtendedMetadata getExtendedMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder> map =
+          internalGetMutableExtendedMetadata().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return extendedMetadataConverter.build(map.get(key));
+    }
+
+    public Builder clearExtendedMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      internalGetMutableExtendedMetadata().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeExtendedMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableExtendedMetadata().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata>
+        getMutableExtendedMetadata() {
+      bitField0_ |= 0x00000010;
+      return internalGetMutableExtendedMetadata().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putExtendedMetadata(
+        java.lang.String key, com.google.cloud.apphub.v1.ExtendedMetadata value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableExtendedMetadata().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllExtendedMetadata(
+        java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadata> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableExtendedMetadata().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Additional metadata specific to the resource type.
+     * The key is a string that identifies the type of metadata and the value is
+     * the metadata contents specific to that type.
+     * Key format: `apphub.googleapis.com/{metadataType}`
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.apphub.v1.ExtendedMetadata&gt; extended_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apphub.v1.ExtendedMetadata.Builder putExtendedMetadataBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder>
+          builderMap = internalGetMutableExtendedMetadata().ensureBuilderMap();
+      com.google.cloud.apphub.v1.ExtendedMetadataOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.apphub.v1.ExtendedMetadata.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.apphub.v1.ExtendedMetadata) {
+        entry = ((com.google.cloud.apphub.v1.ExtendedMetadata) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.apphub.v1.ExtendedMetadata.Builder) entry;
+    }
+
+    private com.google.cloud.apphub.v1.Identity identity_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apphub.v1.Identity,
+            com.google.cloud.apphub.v1.Identity.Builder,
+            com.google.cloud.apphub.v1.IdentityOrBuilder>
+        identityBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the identity field is set.
+     */
+    public boolean hasIdentity() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The identity.
+     */
+    public com.google.cloud.apphub.v1.Identity getIdentity() {
+      if (identityBuilder_ == null) {
+        return identity_ == null
+            ? com.google.cloud.apphub.v1.Identity.getDefaultInstance()
+            : identity_;
+      } else {
+        return identityBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdentity(com.google.cloud.apphub.v1.Identity value) {
+      if (identityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        identity_ = value;
+      } else {
+        identityBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setIdentity(com.google.cloud.apphub.v1.Identity.Builder builderForValue) {
+      if (identityBuilder_ == null) {
+        identity_ = builderForValue.build();
+      } else {
+        identityBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeIdentity(com.google.cloud.apphub.v1.Identity value) {
+      if (identityBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && identity_ != null
+            && identity_ != com.google.cloud.apphub.v1.Identity.getDefaultInstance()) {
+          getIdentityBuilder().mergeFrom(value);
+        } else {
+          identity_ = value;
+        }
+      } else {
+        identityBuilder_.mergeFrom(value);
+      }
+      if (identity_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearIdentity() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      identity_ = null;
+      if (identityBuilder_ != null) {
+        identityBuilder_.dispose();
+        identityBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apphub.v1.Identity.Builder getIdentityBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetIdentityFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apphub.v1.IdentityOrBuilder getIdentityOrBuilder() {
+      if (identityBuilder_ != null) {
+        return identityBuilder_.getMessageOrBuilder();
+      } else {
+        return identity_ == null
+            ? com.google.cloud.apphub.v1.Identity.getDefaultInstance()
+            : identity_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The identity associated with the workload.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apphub.v1.Identity identity = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.apphub.v1.Identity,
+            com.google.cloud.apphub.v1.Identity.Builder,
+            com.google.cloud.apphub.v1.IdentityOrBuilder>
+        internalGetIdentityFieldBuilder() {
+      if (identityBuilder_ == null) {
+        identityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.apphub.v1.Identity,
+                com.google.cloud.apphub.v1.Identity.Builder,
+                com.google.cloud.apphub.v1.IdentityOrBuilder>(
+                getIdentity(), getParentForChildren(), isClean());
+        identity_ = null;
+      }
+      return identityBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.apphub.v1.WorkloadProperties)

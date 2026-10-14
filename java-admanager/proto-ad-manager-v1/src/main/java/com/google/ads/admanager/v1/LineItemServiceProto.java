@@ -52,6 +52,106 @@ public final class LineItemServiceProto extends com.google.protobuf.GeneratedFil
       internal_static_google_ads_admanager_v1_ListLineItemsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateLineItemRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateLineItemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateLineItemRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateLineItemRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchPauseLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchPauseLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchPauseLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchPauseLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeleteLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeleteLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchReserveLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchReserveLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchReserveLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchReserveLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchReleaseLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchReleaseLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchReleaseLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchReleaseLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveLineItemsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -67,7 +167,8 @@ public final class LineItemServiceProto extends com.google.protobuf.GeneratedFil
           + "le/ads/admanager/v1/line_item_messages.p"
           + "roto\032\034google/api/annotations.proto\032\027goog"
           + "le/api/client.proto\032\037google/api/field_be"
-          + "havior.proto\032\031google/api/resource.proto\"M\n"
+          + "havior.proto\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\"M\n"
           + "\022GetLineItemRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!admanager.googleapis.com/LineItem\"\300\001\n"
@@ -82,22 +183,159 @@ public final class LineItemServiceProto extends com.google.protobuf.GeneratedFil
           + "\025ListLineItemsResponse\0225\n\n"
           + "line_items\030\001 \003(\0132!.google.ads.admanager.v1.LineItem\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\304\003\n"
+          + "total_size\030\003 \001(\005\"\214\001\n"
+          + "\025CreateLineItemRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0229\n"
+          + "\tline_item\030\002"
+          + " \001(\0132!.google.ads.admanager.v1.LineItemB\003\340A\002\"\236\001\n"
+          + "\033BatchCreateLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022E\n"
+          + "\010requests\030\002 \003(\0132..googl"
+          + "e.ads.admanager.v1.CreateLineItemRequestB\003\340A\002\"U\n"
+          + "\034BatchCreateLineItemsResponse\0225\n"
+          + "\n"
+          + "line_items\030\001 \003(\0132!.google.ads.admanager.v1.LineItem\"\210\001\n"
+          + "\025UpdateLineItemRequest\0229\n"
+          + "\tline_item\030\001 \001(\0132!.google.ads.admanager.v1.LineItemB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\236\001\n"
+          + "\033BatchUpdateLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022E\n"
+          + "\010requests\030\002"
+          + " \003(\0132..google.ads.admanager.v1.UpdateLineItemRequestB\003\340A\002\"U\n"
+          + "\034BatchUpdateLineItemsResponse\0225\n\n"
+          + "line_items\030\001 \003(\0132!.google.ads.admanager.v1.LineItem\"\223\001\n"
+          + "\035BatchActivateLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\" \n"
+          + "\036BatchActivateLineItemsResponse\"\220\001\n"
+          + "\032BatchPauseLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"\035\n"
+          + "\033BatchPauseLineItemsResponse\"\221\001\n"
+          + "\033BatchResumeLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"\036\n"
+          + "\034BatchResumeLineItemsResponse\"\234\001\n"
+          + "&BatchResumeAndOverbookLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\")\n"
+          + "\'BatchResumeAndOverbookLineItemsResponse\"\221\001\n"
+          + "\033BatchDeleteLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"\222\001\n"
+          + "\034BatchReserveLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"\037\n"
+          + "\035BatchReserveLineItemsResponse\"\235\001\n"
+          + "\'BatchReserveAndOverbookLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"*\n"
+          + "(BatchReserveAndOverbookLineItemsResponse\"\222\001\n"
+          + "\034BatchReleaseLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"\037\n"
+          + "\035BatchReleaseLineItemsResponse\"\222\001\n"
+          + "\034BatchArchiveLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"\037\n"
+          + "\035BatchArchiveLineItemsResponse\"\224\001\n"
+          + "\036BatchUnarchiveLineItemsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0228\n"
+          + "\005names\030\002 \003(\tB)\340A\002\372A#\n"
+          + "!admanager.googleapis.com/LineItem\"!\n"
+          + "\037BatchUnarchiveLineItemsResponse2\304\032\n"
           + "\017LineItemService\022\217\001\n"
-          + "\013GetLineItem\022+.google.ads.admanager.v1.GetLineItemRequest\032"
-          + "!.google.ads.admanager.v1.LineItem\"0\332A\004n"
-          + "ame\202\323\344\223\002#\022!/v1/{name=networks/*/lineItems/*}\022\242\001\n\r"
-          + "ListLineItems\022-.google.ads.admanager.v1.ListLineItemsRequest\032..google.a"
-          + "ds.admanager.v1.ListLineItemsResponse\"2\332"
-          + "A\006parent\202\323\344\223\002#\022!/v1/{parent=networks/*}/"
-          + "lineItems\032z\312A\030admanager.googleapis.com\322A"
-          + "\\https://www.googleapis.com/auth/admanag"
-          + "er,https://www.googleapis.com/auth/admanager.readonlyB\310\001\n"
-          + "\033com.google.ads.admanager.v1B\024LineItemServiceProtoP\001Z@google.go"
-          + "lang.org/genproto/googleapis/ads/admanag"
-          + "er/v1;admanager\252\002\027Google.Ads.AdManager.V"
-          + "1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ad"
-          + "s::AdManager::V1b\006proto3"
+          + "\013GetLineItem\022+.google.ads.admanager.v1.GetLineItemRequest\032!.google.ad"
+          + "s.admanager.v1.LineItem\"0\332A\004name\202\323\344\223\002#\022!/v1/{name=networks/*/lineItems/*}\022\242\001\n\r"
+          + "ListLineItems\022-.google.ads.admanager.v1.Li"
+          + "stLineItemsRequest\032..google.ads.admanage"
+          + "r.v1.ListLineItemsResponse\"2\332A\006parent\202\323\344"
+          + "\223\002#\022!/v1/{parent=networks/*}/lineItems\022\254\001\n"
+          + "\016CreateLineItem\022..google.ads.admanager"
+          + ".v1.CreateLineItemRequest\032!.google.ads.a"
+          + "dmanager.v1.LineItem\"G\332A\020parent,line_ite"
+          + "m\202\323\344\223\002.\"!/v1/{parent=networks/*}/lineItems:\tline_item\022\317\001\n"
+          + "\024BatchCreateLineItems\0224.google.ads.admanager.v1.BatchCreateLine"
+          + "ItemsRequest\0325.google.ads.admanager.v1.B"
+          + "atchCreateLineItemsResponse\"J\332A\017parent,r"
+          + "equests\202\323\344\223\0022\"-/v1/{parent=networks/*}/lineItems:batchCreate:\001*\022\273\001\n"
+          + "\016UpdateLineItem\022..google.ads.admanager.v1.UpdateLineI"
+          + "temRequest\032!.google.ads.admanager.v1.Lin"
+          + "eItem\"V\332A\025line_item,update_mask\202\323\344\223\00282+/"
+          + "v1/{line_item.name=networks/*/lineItems/*}:\tline_item\022\317\001\n"
+          + "\024BatchUpdateLineItems\0224.google.ads.admanager.v1.BatchUpdateLine"
+          + "ItemsRequest\0325.google.ads.admanager.v1.B"
+          + "atchUpdateLineItemsResponse\"J\332A\017parent,r"
+          + "equests\202\323\344\223\0022\"-/v1/{parent=networks/*}/lineItems:batchUpdate:\001*\022\324\001\n"
+          + "\026BatchActivateLineItems\0226.google.ads.admanager.v1.Bat"
+          + "chActivateLineItemsRequest\0327.google.ads.admanager.v1.BatchActivateLineItemsRespo"
+          + "nse\"I\332A\014parent,names\202\323\344\223\0024\"//v1/{parent="
+          + "networks/*}/lineItems:batchActivate:\001*\022\310\001\n"
+          + "\023BatchPauseLineItems\0223.google.ads.adma"
+          + "nager.v1.BatchPauseLineItemsRequest\0324.google.ads.admanager.v1.BatchPauseLineItem"
+          + "sResponse\"F\332A\014parent,names\202\323\344\223\0021\",/v1/{p"
+          + "arent=networks/*}/lineItems:batchPause:\001*\022\314\001\n"
+          + "\024BatchResumeLineItems\0224.google.ads.admanager.v1.BatchResumeLineItemsRequest"
+          + "\0325.google.ads.admanager.v1.BatchResumeLi"
+          + "neItemsResponse\"G\332A\014parent,names\202\323\344\223\0022\"-"
+          + "/v1/{parent=networks/*}/lineItems:batchResume:\001*\022\370\001\n"
+          + "\037BatchResumeAndOverbookLineItems\022?.google.ads.admanager.v1.BatchResu"
+          + "meAndOverbookLineItemsRequest\032@.google.ads.admanager.v1.BatchResumeAndOverbookLi"
+          + "neItemsResponse\"R\332A\014parent,names\202\323\344\223\002=\"8"
+          + "/v1/{parent=networks/*}/lineItems:batchResumeAndOverbook:\001*\022\255\001\n"
+          + "\024BatchDeleteLineItems\0224.google.ads.admanager.v1.BatchDele"
+          + "teLineItemsRequest\032\026.google.protobuf.Emp"
+          + "ty\"G\332A\014parent,names\202\323\344\223\0022\"-/v1/{parent=networks/*}/lineItems:batchDelete:\001*\022\320\001\n"
+          + "\025BatchReserveLineItems\0225.google.ads.adman"
+          + "ager.v1.BatchReserveLineItemsRequest\0326.google.ads.admanager.v1.BatchReserveLineI"
+          + "temsResponse\"H\332A\014parent,names\202\323\344\223\0023\"./v1"
+          + "/{parent=networks/*}/lineItems:batchReserve:\001*\022\374\001\n"
+          + " BatchReserveAndOverbookLineItems\022@.google.ads.admanager.v1.BatchReser"
+          + "veAndOverbookLineItemsRequest\032A.google.ads.admanager.v1.BatchReserveAndOverbookL"
+          + "ineItemsResponse\"S\332A\014parent,names\202\323\344\223\002>\""
+          + "9/v1/{parent=networks/*}/lineItems:batchReserveAndOverbook:\001*\022\320\001\n"
+          + "\025BatchReleaseLineItems\0225.google.ads.admanager.v1.BatchR"
+          + "eleaseLineItemsRequest\0326.google.ads.admanager.v1.BatchReleaseLineItemsResponse\"H"
+          + "\332A\014parent,names\202\323\344\223\0023\"./v1/{parent=networks/*}/lineItems:batchRelease:\001*\022\320\001\n"
+          + "\025BatchArchiveLineItems\0225.google.ads.admanage"
+          + "r.v1.BatchArchiveLineItemsRequest\0326.google.ads.admanager.v1.BatchArchiveLineItem"
+          + "sResponse\"H\332A\014parent,names\202\323\344\223\0023\"./v1/{p"
+          + "arent=networks/*}/lineItems:batchArchive:\001*\022\330\001\n"
+          + "\027BatchUnarchiveLineItems\0227.google.ads.admanager.v1.BatchUnarchiveLineItem"
+          + "sRequest\0328.google.ads.admanager.v1.Batch"
+          + "UnarchiveLineItemsResponse\"J\332A\014parent,na"
+          + "mes\202\323\344\223\0025\"0/v1/{parent=networks/*}/lineI"
+          + "tems:batchUnarchive:\001*\032z\312A\030admanager.goo"
+          + "gleapis.com\322A\\https://www.googleapis.com"
+          + "/auth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\310\001\n"
+          + "\033com.google.ads.admanager.v1B\024LineItemServiceProto"
+          + "P\001Z@google.golang.org/genproto/googleapi"
+          + "s/ads/admanager/v1;admanager\252\002\027Google.Ad"
+          + "s.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1"
+          + "\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -108,6 +346,8 @@ public final class LineItemServiceProto extends com.google.protobuf.GeneratedFil
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetLineItemRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -133,12 +373,196 @@ public final class LineItemServiceProto extends com.google.protobuf.GeneratedFil
             new java.lang.String[] {
               "LineItems", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateLineItemRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_CreateLineItemRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateLineItemRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "LineItem",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchCreateLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateLineItemsResponse_descriptor,
+            new java.lang.String[] {
+              "LineItems",
+            });
+    internal_static_google_ads_admanager_v1_UpdateLineItemRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateLineItemRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateLineItemRequest_descriptor,
+            new java.lang.String[] {
+              "LineItem", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateLineItemsResponse_descriptor,
+            new java.lang.String[] {
+              "LineItems",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchActivateLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchPauseLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_BatchPauseLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchPauseLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchPauseLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_BatchPauseLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchPauseLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchResumeLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_ads_admanager_v1_BatchResumeLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchResumeLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_ads_admanager_v1_BatchResumeLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeAndOverbookLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeleteLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_ads_admanager_v1_BatchDeleteLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeleteLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchReserveLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_ads_admanager_v1_BatchReserveLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchReserveLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchReserveLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_ads_admanager_v1_BatchReserveLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchReserveLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchReserveAndOverbookLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchReleaseLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_ads_admanager_v1_BatchReleaseLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchReleaseLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchReleaseLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_ads_admanager_v1_BatchReleaseLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchReleaseLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchArchiveLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_ads_admanager_v1_BatchArchiveLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchArchiveLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_ads_admanager_v1_BatchArchiveLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveLineItemsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsRequest_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsResponse_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUnarchiveLineItemsResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.LineItemMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

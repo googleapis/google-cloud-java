@@ -53,6 +53,10 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_ServiceProperties_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_ServiceProperties_ExtendedMetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_ServiceProperties_ExtendedMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apphub_v1_DiscoveredService_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_DiscoveredService_fieldAccessorTable;
@@ -70,7 +74,8 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "google.cloud.apphub.v1\032\037google/api/field"
           + "_behavior.proto\032\033google/api/field_info.p"
           + "roto\032\031google/api/resource.proto\032\'google/"
-          + "cloud/apphub/v1/attributes.proto\032\037google/protobuf/timestamp.proto\"\233\006\n"
+          + "cloud/apphub/v1/attributes.proto\032\'google"
+          + "/cloud/apphub/v1/properties.proto\032\037google/protobuf/timestamp.proto\"\233\006\n"
           + "\007Service\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
@@ -80,8 +85,8 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\022service_properties\030\005"
           + " \001(\0132).google.cloud.apphub.v1.ServicePropertiesB\003\340A\003\022;\n\n"
           + "attributes\030\006 \001(\0132\".google.cloud.apphub.v1.AttributesB\003\340A\001\022N\n"
-          + "\022discovered_service\030\007 \001(\tB2\340A\002\340A\005\372A)\022"
-          + "\'apphub.googleapis.com/DiscoveredService\0224\n"
+          + "\022discovered_service\030\007 \001(\tB2\340A\002\340A\005\372A)"
+          + "\022\'apphub.googleapis.com/DiscoveredService\0224\n"
           + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
           + "\003uid\030\n"
@@ -93,27 +98,38 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\014\n"
           + "\010DETACHED\020\004:\215\001\352A\211\001\n"
-          + "\035apphub.googleapis.com/Service\022Uprojects/{project}/locations/{location}/a"
-          + "pplications/{application}/services/{service}*\010services2\007service\"$\n"
+          + "\035apphub.googleapis.com/Service\022Uprojects/{project}/locations/{location}/"
+          + "applications/{application}/services/{service}*\010services2\007service\"$\n"
           + "\020ServiceReference\022\020\n"
-          + "\003uri\030\001 \001(\tB\003\340A\003\"W\n"
+          + "\003uri\030\001 \001(\tB\003\340A\003\"\344\003\n"
           + "\021ServiceProperties\022\030\n"
           + "\013gcp_project\030\001 \001(\tB\003\340A\003\022\025\n"
           + "\010location\030\002 \001(\tB\003\340A\003\022\021\n"
-          + "\004zone\030\003 \001(\tB\003\340A\003\"\344\002\n"
+          + "\004zone\030\003 \001(\tB\003\340A\003\022D\n"
+          + "\017functional_type\030\004"
+          + " \001(\0132&.google.cloud.apphub.v1.FunctionalTypeB\003\340A\003\022H\n"
+          + "\021registration_type\030\005"
+          + " \001(\0132(.google.cloud.apphub.v1.RegistrationTypeB\003\340A\003\022_\n"
+          + "\021extended_metadata\030\006 "
+          + "\003(\0132?.google.cloud.apphub.v1.ServiceProperties.ExtendedMetadataEntryB\003\340A\003\0227\n"
+          + "\010identity\030\007 \001(\0132 .google.cloud.apphub.v1.IdentityB\003\340A\003\032a\n"
+          + "\025ExtendedMetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0227\n"
+          + "\005value\030\002"
+          + " \001(\0132(.google.cloud.apphub.v1.ExtendedMetadata:\0028\001\"\344\002\n"
           + "\021DiscoveredService\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022H\n"
           + "\021service_reference\030\002"
           + " \001(\0132(.google.cloud.apphub.v1.ServiceReferenceB\003\340A\003\022J\n"
           + "\022service_properties\030\003"
           + " \001(\0132).google.cloud.apphub.v1.ServicePropertiesB\003\340A\003:\245\001\352A\241\001\n"
-          + "\'apphub.googleapis.com/DiscoveredService\022Oprojects/"
-          + "{project}/locations/{location}/discovere"
-          + "dServices/{discovered_service}*\022discoveredServices2\021discoveredServiceB\256\001\n"
-          + "\032com.google.cloud.apphub.v1B\014ServiceProtoP\001Z2cl"
-          + "oud.google.com/go/apphub/apiv1/apphubpb;"
-          + "apphubpb\252\002\026Google.Cloud.AppHub.V1\312\002\026Goog"
-          + "le\\Cloud\\AppHub\\V1\352\002\031Google::Cloud::AppHub::V1b\006proto3"
+          + "\'apphub.googleapis.com/DiscoveredService\022Oprojects/{"
+          + "project}/locations/{location}/discovered"
+          + "Services/{discovered_service}*\022discoveredServices2\021discoveredServiceB\256\001\n"
+          + "\032com.google.cloud.apphub.v1B\014ServiceProtoP\001Z2clo"
+          + "ud.google.com/go/apphub/apiv1/apphubpb;a"
+          + "pphubpb\252\002\026Google.Cloud.AppHub.V1\312\002\026Googl"
+          + "e\\Cloud\\AppHub\\V1\352\002\031Google::Cloud::AppHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +139,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.apphub.v1.AttributesProto.getDescriptor(),
+              com.google.cloud.apphub.v1.PropertiesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_apphub_v1_Service_descriptor = getDescriptor().getMessageType(0);
@@ -156,7 +173,21 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apphub_v1_ServiceProperties_descriptor,
             new java.lang.String[] {
-              "GcpProject", "Location", "Zone",
+              "GcpProject",
+              "Location",
+              "Zone",
+              "FunctionalType",
+              "RegistrationType",
+              "ExtendedMetadata",
+              "Identity",
+            });
+    internal_static_google_cloud_apphub_v1_ServiceProperties_ExtendedMetadataEntry_descriptor =
+        internal_static_google_cloud_apphub_v1_ServiceProperties_descriptor.getNestedType(0);
+    internal_static_google_cloud_apphub_v1_ServiceProperties_ExtendedMetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_ServiceProperties_ExtendedMetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_apphub_v1_DiscoveredService_descriptor =
         getDescriptor().getMessageType(3);
@@ -171,6 +202,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.apphub.v1.AttributesProto.getDescriptor();
+    com.google.cloud.apphub.v1.PropertiesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

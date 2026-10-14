@@ -184,6 +184,20 @@ function test_should_test_all_modules {
     exit 1
   fi
 
+  # Shared config
+  TEST_MODIFIED_FILES="java-shared-config/java-shared-config/pom.xml"
+  if ! should_test_all_modules; then
+    echo "should_test_all_modules should return true for java-shared-config change"
+    exit 1
+  fi
+
+  # Prefix collision check: sibling paths starting with java-shared-config must not match
+  TEST_MODIFIED_FILES="java-shared-config-extra/pom.xml"
+  if should_test_all_modules; then
+    echo "should_test_all_modules should return false for java-shared-config prefix match"
+    exit 1
+  fi
+
   # Core SDK platform
   TEST_MODIFIED_FILES="sdk-platform-java/gapic-generator/src/main/Foo.java"
   if ! should_test_all_modules; then

@@ -30,6 +30,1041 @@ public interface CreativeOrBuilder
    *
    *
    * <pre>
+   * Optional. An Ad Exchange dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the adExchangeCreative field is set.
+   */
+  boolean hasAdExchangeCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Ad Exchange dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The adExchangeCreative.
+   */
+  com.google.ads.admanager.v1.AdExchangeCreativeDetails getAdExchangeCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An Ad Exchange dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdExchangeCreativeDetails ad_exchange_creative = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AdExchangeCreativeDetailsOrBuilder getAdExchangeCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An AdSense dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the adSenseCreative field is set.
+   */
+  boolean hasAdSenseCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An AdSense dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The adSenseCreative.
+   */
+  com.google.ads.admanager.v1.AdSenseCreativeDetails getAdSenseCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An AdSense dynamic allocation creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AdSenseCreativeDetails ad_sense_creative = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AdSenseCreativeDetailsOrBuilder getAdSenseCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative intended for mobile platforms that displays an
+   * image, whose size is defined as an aspect ratio. It can have multiple
+   * images whose dimensions conform to that aspect ratio.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the aspectRatioImageCreative field is set.
+   */
+  boolean hasAspectRatioImageCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative intended for mobile platforms that displays an
+   * image, whose size is defined as an aspect ratio. It can have multiple
+   * images whose dimensions conform to that aspect ratio.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The aspectRatioImageCreative.
+   */
+  com.google.ads.admanager.v1.AspectRatioImageCreativeDetails getAspectRatioImageCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative intended for mobile platforms that displays an
+   * image, whose size is defined as an aspect ratio. It can have multiple
+   * images whose dimensions conform to that aspect ratio.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AspectRatioImageCreativeDetails aspect_ratio_image_creative = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AspectRatioImageCreativeDetailsOrBuilder
+      getAspectRatioImageCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the audioCreative field is set.
+   */
+  boolean hasAudioCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The audioCreative.
+   */
+  com.google.ads.admanager.v1.AudioCreativeDetails getAudioCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioCreativeDetails audio_creative = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudioCreativeDetailsOrBuilder getAudioCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the audioRedirectCreative field is set.
+   */
+  boolean hasAudioRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The audioRedirectCreative.
+   */
+  com.google.ads.admanager.v1.AudioRedirectCreativeDetails getAudioRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted audio ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.AudioRedirectCreativeDetails audio_redirect_creative = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AudioRedirectCreativeDetailsOrBuilder
+      getAudioRedirectCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A creative that is used for tracking clicks on ads that are
+   * served directly from the customers' web servers or media servers. NOTE:
+   * The size attribute is not used for click tracking creative and it will
+   * not be persisted upon save.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clickTrackingCreative field is set.
+   */
+  boolean hasClickTrackingCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A creative that is used for tracking clicks on ads that are
+   * served directly from the customers' web servers or media servers. NOTE:
+   * The size attribute is not used for click tracking creative and it will
+   * not be persisted upon save.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clickTrackingCreative.
+   */
+  com.google.ads.admanager.v1.ClickTrackingCreativeDetails getClickTrackingCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A creative that is used for tracking clicks on ads that are
+   * served directly from the customers' web servers or media servers. NOTE:
+   * The size attribute is not used for click tracking creative and it will
+   * not be persisted upon save.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ClickTrackingCreativeDetails click_tracking_creative = 26 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ClickTrackingCreativeDetailsOrBuilder
+      getClickTrackingCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a custom HTML snippet and file assets.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customCreative field is set.
+   */
+  boolean hasCustomCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a custom HTML snippet and file assets.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customCreative.
+   */
+  com.google.ads.admanager.v1.CustomCreativeDetails getCustomCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a custom HTML snippet and file assets.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.CustomCreativeDetails custom_creative = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CustomCreativeDetailsOrBuilder getCustomCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+   * third party impression trackers, and a third party click tracker.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the html5Creative field is set.
+   */
+  boolean hasHtml5Creative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+   * third party impression trackers, and a third party click tracker.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The html5Creative.
+   */
+  com.google.ads.admanager.v1.Html5CreativeDetails getHtml5Creative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains a zipped HTML5 bundle asset, a list of
+   * third party impression trackers, and a third party click tracker.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Html5CreativeDetails html5_creative = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.Html5CreativeDetailsOrBuilder getHtml5CreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that displays an image.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageCreative field is set.
+   */
+  boolean hasImageCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that displays an image.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageCreative.
+   */
+  com.google.ads.admanager.v1.ImageCreativeDetails getImageCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that displays an image.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageCreativeDetails image_creative = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ImageCreativeDetailsOrBuilder getImageCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that displays an image and is served via
+   * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+   * on top of.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageOverlayCreative field is set.
+   */
+  boolean hasImageOverlayCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that displays an image and is served via
+   * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+   * on top of.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageOverlayCreative.
+   */
+  com.google.ads.admanager.v1.ImageOverlayCreativeDetails getImageOverlayCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that displays an image and is served via
+   * VAST 2.0 XML. Overlays cover part of the video content they are displayed
+   * on top of.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageOverlayCreativeDetails image_overlay_creative = 35 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ImageOverlayCreativeDetailsOrBuilder
+      getImageOverlayCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that loads an image asset from a specified URL.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageRedirectCreative field is set.
+   */
+  boolean hasImageRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that loads an image asset from a specified URL.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageRedirectCreative.
+   */
+  com.google.ads.admanager.v1.ImageRedirectCreativeDetails getImageRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that loads an image asset from a specified URL.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectCreativeDetails image_redirect_creative = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ImageRedirectCreativeDetailsOrBuilder
+      getImageRedirectCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that loads an image asset from a specified
+   * URL and is served via VAST XML. Overlays cover part of the video content
+   * they are displayed on top of. This creative is read only.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageRedirectOverlayCreative field is set.
+   */
+  boolean hasImageRedirectOverlayCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that loads an image asset from a specified
+   * URL and is served via VAST XML. Overlays cover part of the video content
+   * they are displayed on top of. This creative is read only.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageRedirectOverlayCreative.
+   */
+  com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails getImageRedirectOverlayCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An overlay Creative that loads an image asset from a specified
+   * URL and is served via VAST XML. Overlays cover part of the video content
+   * they are displayed on top of. This creative is read only.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ImageRedirectOverlayCreativeDetails image_redirect_overlay_creative = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ImageRedirectOverlayCreativeDetailsOrBuilder
+      getImageRedirectOverlayCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative hosted by Campaign Manager 360.
+   *
+   * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+   * retrieve a creative asset. However, Campaign Manager 360 tags are not
+   * sent to the user's browser. Instead, they are processed internally within
+   * the Google Marketing Platform system.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the internalRedirectCreative field is set.
+   */
+  boolean hasInternalRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative hosted by Campaign Manager 360.
+   *
+   * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+   * retrieve a creative asset. However, Campaign Manager 360 tags are not
+   * sent to the user's browser. Instead, they are processed internally within
+   * the Google Marketing Platform system.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The internalRedirectCreative.
+   */
+  com.google.ads.admanager.v1.InternalRedirectCreativeDetails getInternalRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative hosted by Campaign Manager 360.
+   *
+   * Similar to third-party creatives, a Campaign Manager 360 tag is used to
+   * retrieve a creative asset. However, Campaign Manager 360 tags are not
+   * sent to the user's browser. Instead, they are processed internally within
+   * the Google Marketing Platform system.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.InternalRedirectCreativeDetails internal_redirect_creative = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.InternalRedirectCreativeDetailsOrBuilder
+      getInternalRedirectCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that isn't supported by Google DFP, but was migrated
+   * from DART. Creatives of this type cannot be created or modified.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the legacyDfpCreative field is set.
+   */
+  boolean hasLegacyDfpCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that isn't supported by Google DFP, but was migrated
+   * from DART. Creatives of this type cannot be created or modified.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The legacyDfpCreative.
+   */
+  com.google.ads.admanager.v1.LegacyDfpCreativeDetails getLegacyDfpCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that isn't supported by Google DFP, but was migrated
+   * from DART. Creatives of this type cannot be created or modified.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.LegacyDfpCreativeDetails legacy_dfp_creative = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.LegacyDfpCreativeDetailsOrBuilder getLegacyDfpCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative used for programmatic trafficking. This creative
+   * will be auto-created with the right approval from the buyer. This
+   * creative cannot be created through the API. This creative can be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the programmaticCreative field is set.
+   */
+  boolean hasProgrammaticCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative used for programmatic trafficking. This creative
+   * will be auto-created with the right approval from the buyer. This
+   * creative cannot be created through the API. This creative can be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The programmaticCreative.
+   */
+  com.google.ads.admanager.v1.ProgrammaticCreativeDetails getProgrammaticCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative used for programmatic trafficking. This creative
+   * will be auto-created with the right approval from the buyer. This
+   * creative cannot be created through the API. This creative can be updated.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ProgrammaticCreativeDetails programmatic_creative = 42 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ProgrammaticCreativeDetailsOrBuilder
+      getProgrammaticCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by a Rich Media Studio. You cannot
+   * create this creative, but you can update some fields of this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the richMediaStudioCreative field is set.
+   */
+  boolean hasRichMediaStudioCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by a Rich Media Studio. You cannot
+   * create this creative, but you can update some fields of this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The richMediaStudioCreative.
+   */
+  com.google.ads.admanager.v1.RichMediaStudioCreativeDetails getRichMediaStudioCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by a Rich Media Studio. You cannot
+   * create this creative, but you can update some fields of this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RichMediaStudioCreativeDetails rich_media_studio_creative = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.RichMediaStudioCreativeDetailsOrBuilder
+      getRichMediaStudioCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that will be served into cable set-top boxes. There
+   * are no assets for this creative type, as they are hosted by external
+   * cable systems.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the setTopBoxCreative field is set.
+   */
+  boolean hasSetTopBoxCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that will be served into cable set-top boxes. There
+   * are no assets for this creative type, as they are hosted by external
+   * cable systems.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The setTopBoxCreative.
+   */
+  com.google.ads.admanager.v1.SetTopBoxCreativeDetails getSetTopBoxCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that will be served into cable set-top boxes. There
+   * are no assets for this creative type, as they are hosted by external
+   * cable systems.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.SetTopBoxCreativeDetails set_top_box_creative = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.SetTopBoxCreativeDetailsOrBuilder getSetTopBoxCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by the specified creative template.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the templateCreative field is set.
+   */
+  boolean hasTemplateCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by the specified creative template.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The templateCreative.
+   */
+  com.google.ads.admanager.v1.TemplateCreativeDetails getTemplateCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is created by the specified creative template.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.TemplateCreativeDetails template_creative = 47 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.TemplateCreativeDetailsOrBuilder getTemplateCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is served by a 3rd-party vendor.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyCreative field is set.
+   */
+  boolean hasThirdPartyCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is served by a 3rd-party vendor.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyCreative.
+   */
+  com.google.ads.admanager.v1.ThirdPartyCreativeDetails getThirdPartyCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that is served by a 3rd-party vendor.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyCreativeDetails third_party_creative = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ThirdPartyCreativeDetailsOrBuilder getThirdPartyCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that points to an externally hosted VAST ad and is
+   * served via VAST XML as a VAST Wrapper.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vastRedirectCreative field is set.
+   */
+  boolean hasVastRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that points to an externally hosted VAST ad and is
+   * served via VAST XML as a VAST Wrapper.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vastRedirectCreative.
+   */
+  com.google.ads.admanager.v1.VastRedirectCreativeDetails getVastRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that points to an externally hosted VAST ad and is
+   * served via VAST XML as a VAST Wrapper.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VastRedirectCreativeDetails vast_redirect_creative = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.VastRedirectCreativeDetailsOrBuilder
+      getVastRedirectCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the videoCreative field is set.
+   */
+  boolean hasVideoCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The videoCreative.
+   */
+  com.google.ads.admanager.v1.VideoCreativeDetails getVideoCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains Ad Manager hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoCreativeDetails video_creative = 51 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.VideoCreativeDetailsOrBuilder getVideoCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the videoRedirectCreative field is set.
+   */
+  boolean hasVideoRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The videoRedirectCreative.
+   */
+  com.google.ads.admanager.v1.VideoRedirectCreativeDetails getVideoRedirectCreative();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Creative that contains externally hosted video ads and is
+   * served via VAST XML.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.VideoRedirectCreativeDetails video_redirect_creative = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.VideoRedirectCreativeDetailsOrBuilder
+      getVideoRedirectCreativeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the Creative.
    * Format: `networks/{network_code}/creatives/{creative_id}`
    * </pre>
@@ -95,4 +1130,549 @@ public interface CreativeOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the advertiser field is set.
+   */
+  boolean hasAdvertiser();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The advertiser.
+   */
+  java.lang.String getAdvertiser();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this Creative belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for advertiser.
+   */
+  com.google.protobuf.ByteString getAdvertiserBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instant this Creative was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instant this Creative was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instant this Creative was last modified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.CustomFieldValue> getCustomFieldValuesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CustomFieldValue getCustomFieldValues(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCustomFieldValuesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.CustomFieldValueOrBuilder>
+      getCustomFieldValuesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The values of the custom fields associated with this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CustomFieldValue custom_field_values = 76 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CustomFieldValueOrBuilder getCustomFieldValuesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of the creative for previewing the media.
+   * </pre>
+   *
+   * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the previewUrl field is set.
+   */
+  boolean hasPreviewUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of the creative for previewing the media.
+   * </pre>
+   *
+   * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The previewUrl.
+   */
+  java.lang.String getPreviewUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The URL of the creative for previewing the media.
+   * </pre>
+   *
+   * <code>optional string preview_url = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for previewUrl.
+   */
+  com.google.protobuf.ByteString getPreviewUrlBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The Size of the creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the size field is set.
+   */
+  boolean hasSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The Size of the creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The size.
+   */
+  com.google.ads.admanager.v1.Size getSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The Size of the creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.Size size = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.ads.admanager.v1.SizeOrBuilder getSizeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The third party companies associated with this creative.
+   * This is distinct from any associated companies that Google may detect
+   * programmatically.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyDataDeclaration field is set.
+   */
+  boolean hasThirdPartyDataDeclaration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The third party companies associated with this creative.
+   * This is distinct from any associated companies that Google may detect
+   * programmatically.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyDataDeclaration.
+   */
+  com.google.ads.admanager.v1.ThirdPartyDataDeclaration getThirdPartyDataDeclaration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The third party companies associated with this creative.
+   * This is distinct from any associated companies that Google may detect
+   * programmatically.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ThirdPartyDataDeclaration third_party_data_declaration = 59 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ThirdPartyDataDeclarationOrBuilder
+      getThirdPartyDataDeclarationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+   * when compared with the set of third party companies detected via automated
+   * scanning.
+   *
+   * For example, if automated scanning detects more companies than have been
+   * declared, this status will be
+   * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the thirdPartyDataDeclarationStatus field is set.
+   */
+  boolean hasThirdPartyDataDeclarationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+   * when compared with the set of third party companies detected via automated
+   * scanning.
+   *
+   * For example, if automated scanning detects more companies than have been
+   * declared, this status will be
+   * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for thirdPartyDataDeclarationStatus.
+   */
+  int getThirdPartyDataDeclarationStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the publisher's `ThirdPartyDataDeclaration`,
+   * when compared with the set of third party companies detected via automated
+   * scanning.
+   *
+   * For example, if automated scanning detects more companies than have been
+   * declared, this status will be
+   * [CreativeThirdPartyDataDeclarationStatus.INCOMPLETE][google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus.INCOMPLETE].
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum.CreativeThirdPartyDataDeclarationStatus third_party_data_declaration_status = 60 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The thirdPartyDataDeclarationStatus.
+   */
+  com.google.ads.admanager.v1.CreativeThirdPartyDataDeclarationStatusEnum
+          .CreativeThirdPartyDataDeclarationStatus
+      getThirdPartyDataDeclarationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this creative contains self-declared European Union
+   * political content.
+   * </pre>
+   *
+   * <code>
+   * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the selfDeclaredEuropeanUnionPoliticalContent field is set.
+   */
+  boolean hasSelfDeclaredEuropeanUnionPoliticalContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this creative contains self-declared European Union
+   * political content.
+   * </pre>
+   *
+   * <code>
+   * optional bool self_declared_european_union_political_content = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The selfDeclaredEuropeanUnionPoliticalContent.
+   */
+  boolean getSelfDeclaredEuropeanUnionPoliticalContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Whether the creative has ad badging enabled.
+   *
+   * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+   * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+   * FlashOverlayCreative, GraphicalInterstitialCreative,
+   * LegacyDfpCreative, MobileAdNetworkCreative,
+   * MobileVideoInterstitialCreative, SdkMediationCreative, and
+   * FlashCreative types.
+   *
+   * Defaults to true for all other creative types.
+   * </pre>
+   *
+   * <code>
+   * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the adBadgingEnabled field is set.
+   */
+  boolean hasAdBadgingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Whether the creative has ad badging enabled.
+   *
+   * Defaults to false for VastRedirectCreative, ThirdPartyCreative,
+   * AudioRedirectCreative, ProgrammaticCreative, LegacyDfpMobileCreative,
+   * FlashOverlayCreative, GraphicalInterstitialCreative,
+   * LegacyDfpCreative, MobileAdNetworkCreative,
+   * MobileVideoInterstitialCreative, SdkMediationCreative, and
+   * FlashCreative types.
+   *
+   * Defaults to true for all other creative types.
+   * </pre>
+   *
+   * <code>
+   * optional bool ad_badging_enabled = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The adBadgingEnabled.
+   */
+  boolean getAdBadgingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAppliedLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+      getAppliedLabelsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this creative.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 56 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AppliedLabelOrBuilder getAppliedLabelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The buyer placement configuration for this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the buyerPlacementConfig field is set.
+   */
+  boolean hasBuyerPlacementConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The buyer placement configuration for this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The buyerPlacementConfig.
+   */
+  com.google.ads.admanager.v1.BuyerPlacementConfig getBuyerPlacementConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The buyer placement configuration for this creative.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.BuyerPlacementConfig buyer_placement_config = 81 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.BuyerPlacementConfigOrBuilder getBuyerPlacementConfigOrBuilder();
+
+  com.google.ads.admanager.v1.Creative.DetailsCase getDetailsCase();
 }

@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -484,6 +485,182 @@ public class AudienceSegmentServiceClientTest {
       String parent = "networks/network-5450";
       List<CreateAudienceSegmentRequest> requests = new ArrayList<>();
       client.batchCreateAudienceSegments(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAudienceSegmentTest() throws Exception {
+    AudienceSegment expectedResponse =
+        AudienceSegment.newBuilder()
+            .setName(AudienceSegmentName.of("[NETWORK_CODE]", "[AUDIENCE_SEGMENT]").toString())
+            .setSharedId(-1581568203)
+            .setDisplayName("displayName1714148973")
+            .addAllCategoryIds(new ArrayList<Long>())
+            .setDescription("description-1724546052")
+            .setSize(3530753)
+            .setMobileWebSize(-1281165047)
+            .setIdfaSize(582571914)
+            .setAdIdSize(1772250249)
+            .setPpidSize(-1292388699)
+            .setDataProviderDisplayName("dataProviderDisplayName-1798710350")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AudienceSegment audienceSegment =
+        AudienceSegment.newBuilder()
+            .setName(AudienceSegmentName.of("[NETWORK_CODE]", "[AUDIENCE_SEGMENT]").toString())
+            .setSharedId(-1581568203)
+            .setDisplayName("displayName1714148973")
+            .addAllCategoryIds(new ArrayList<Long>())
+            .setDescription("description-1724546052")
+            .setSize(3530753)
+            .setMobileWebSize(-1281165047)
+            .setIdfaSize(582571914)
+            .setAdIdSize(1772250249)
+            .setPpidSize(-1292388699)
+            .setDataProviderDisplayName("dataProviderDisplayName-1798710350")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AudienceSegment actualResponse = client.updateAudienceSegment(audienceSegment, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAudienceSegmentExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AudienceSegment audienceSegment =
+          AudienceSegment.newBuilder()
+              .setName(AudienceSegmentName.of("[NETWORK_CODE]", "[AUDIENCE_SEGMENT]").toString())
+              .setSharedId(-1581568203)
+              .setDisplayName("displayName1714148973")
+              .addAllCategoryIds(new ArrayList<Long>())
+              .setDescription("description-1724546052")
+              .setSize(3530753)
+              .setMobileWebSize(-1281165047)
+              .setIdfaSize(582571914)
+              .setAdIdSize(1772250249)
+              .setPpidSize(-1292388699)
+              .setDataProviderDisplayName("dataProviderDisplayName-1798710350")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAudienceSegment(audienceSegment, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateAudienceSegmentsTest() throws Exception {
+    BatchUpdateAudienceSegmentsResponse expectedResponse =
+        BatchUpdateAudienceSegmentsResponse.newBuilder()
+            .addAllAudienceSegments(new ArrayList<AudienceSegment>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateAudienceSegmentRequest> requests = new ArrayList<>();
+
+    BatchUpdateAudienceSegmentsResponse actualResponse =
+        client.batchUpdateAudienceSegments(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateAudienceSegmentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateAudienceSegmentRequest> requests = new ArrayList<>();
+      client.batchUpdateAudienceSegments(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateAudienceSegmentsTest2() throws Exception {
+    BatchUpdateAudienceSegmentsResponse expectedResponse =
+        BatchUpdateAudienceSegmentsResponse.newBuilder()
+            .addAllAudienceSegments(new ArrayList<AudienceSegment>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateAudienceSegmentRequest> requests = new ArrayList<>();
+
+    BatchUpdateAudienceSegmentsResponse actualResponse =
+        client.batchUpdateAudienceSegments(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateAudienceSegmentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateAudienceSegmentRequest> requests = new ArrayList<>();
+      client.batchUpdateAudienceSegments(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
