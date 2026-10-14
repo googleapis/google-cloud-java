@@ -222,6 +222,24 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
+  /**
+   * Returns whether the given transport factory should be managed and upgraded to {@link
+   * MtlsHttpTransportFactory} when mTLS is configured:
+   *
+   * <ul>
+   *   <li>{@code null}, {@link OAuth2Utils#HTTP_TRANSPORT_FACTORY}, or {@link
+   *       OAuth2Utils.DefaultHttpTransportFactory}: no custom transport factory was provided, so
+   *       mTLS credentials should upgrade to {@link MtlsHttpTransportFactory}.
+   *   <li>Exact class {@link MtlsHttpTransportFactory}: standard mTLS transport (including when
+   *       cloning an already-initialized mTLS credential via {@link #toBuilder()} or {@link
+   *       #createScoped}), which should be refreshed per cycle with the latest {@link KeyStore}.
+   *   <li>An {@link MtlsHttpTransportFactory} (or subclass) without a {@link KeyStore} loaded yet.
+   * </ul>
+   *
+   * <p>Conversely, if a caller supplies a custom {@link HttpTransportFactory} or a custom {@link
+   * MtlsHttpTransportFactory} subclass pre-configured with its own {@link KeyStore}, this returns
+   * {@code false} so the caller's custom transport is preserved.
+   */
   static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
         || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
@@ -233,6 +251,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   @VisibleForTesting
   boolean shouldUseMtlsTransportFactory() {
+    // Also check for a keyless MtlsHttpTransportFactory because a custom MtlsHttpTransportFactory
+    // subclass constructed with a KeyStore has useMtlsTransportFactory == false at build time, but
+    // deserialization in ExternalAccountCredentials.readObject() re-instantiates it via its no-arg
+    // constructor without a KeyStore.
     return this.useMtlsTransportFactory
         || (this.transportFactory instanceof MtlsHttpTransportFactory
             && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
@@ -327,19 +349,14 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       throws IOException {
     ImpersonatedCredentials effectiveImpersonated = targetImpersonated;
     try {
-      HttpTransportFactory cycleTransportFactory =
-          explicitTransportFactory != null ? explicitTransportFactory : this.transportFactory;
       if (explicitTransportFactory == null
+          && pinnedKeyStore == null
           && this.x509Provider != null
           && shouldUseMtlsTransportFactory()) {
-        if (pinnedKeyStore == null) {
-          pinnedKeyStore = this.x509Provider.getKeyStore();
-        }
-        cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
-        if (!hasInitializedMtlsTransport()) {
-          this.transportFactory = cycleTransportFactory;
-        }
+        pinnedKeyStore = this.x509Provider.getKeyStore();
       }
+      HttpTransportFactory cycleTransportFactory =
+          resolveCycleTransportFactory(explicitTransportFactory, pinnedKeyStore);
 
       if (effectiveImpersonated == null) {
         effectiveImpersonated = getImpersonatedCredentials();
@@ -349,45 +366,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             pinnedKeyStore != null ? cycleTransportFactory : null, pinnedKeyStore);
       }
 
-      // Read subject and actor tokens, atomically if from the same file supplier.
-      String subjectToken;
-      String actorToken = null;
-      if (this.subjectTokenSupplier instanceof FileIdentityPoolSubjectTokenSupplier
-          && this.actorTokenSupplier == this.subjectTokenSupplier) {
-        FileIdentityPoolSubjectTokenSupplier.TokenPair tokens =
-            ((FileIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
-                .readTokens(supplierContext);
-        subjectToken = tokens.subject;
-        actorToken = tokens.actor;
-      } else {
-        if (this.subjectTokenSupplier instanceof CertificateIdentityPoolSubjectTokenSupplier
-            && pinnedKeyStore != null) {
-          subjectToken =
-              ((CertificateIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
-                  .getSubjectToken(supplierContext, pinnedKeyStore);
-        } else {
-          subjectToken = retrieveSubjectToken();
-        }
-        if (this.actorTokenSupplier != null) {
-          actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
-        }
-      }
-
-      StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
-          StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
-              .setAudience(getAudience());
-
-      if (actorToken != null && this.actorTokenType != null) {
-        stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
-      }
-
-      Collection<String> scopes = getScopes();
-      if (scopes != null && !scopes.isEmpty()) {
-        stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
-      }
-
-      return exchangeExternalCredentialForAccessToken(
-          stsTokenExchangeRequest.build(), cycleTransportFactory);
+      FileIdentityPoolSubjectTokenSupplier.TokenPair tokens =
+          retrieveSubjectAndActorTokens(pinnedKeyStore);
+      return buildAndExchangeStsRequest(tokens.subject, tokens.actor, cycleTransportFactory);
     } catch (IOException | RuntimeException e) {
       boolean isInitialKeyStoreLoadFailure =
           pinnedKeyStore == null && isRetryableTransportException(e);
@@ -439,6 +420,65 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       }
       throw e;
     }
+  }
+
+  private HttpTransportFactory resolveCycleTransportFactory(
+      @Nullable HttpTransportFactory explicitTransportFactory, @Nullable KeyStore pinnedKeyStore) {
+    if (explicitTransportFactory != null) {
+      return explicitTransportFactory;
+    }
+    if (pinnedKeyStore != null && this.x509Provider != null && shouldUseMtlsTransportFactory()) {
+      HttpTransportFactory cycleTransportFactory = createMtlsTransportFactory(pinnedKeyStore);
+      if (!hasInitializedMtlsTransport()) {
+        this.transportFactory = cycleTransportFactory;
+      }
+      return cycleTransportFactory;
+    }
+    return this.transportFactory;
+  }
+
+  private FileIdentityPoolSubjectTokenSupplier.TokenPair retrieveSubjectAndActorTokens(
+      @Nullable KeyStore pinnedKeyStore) throws IOException {
+    // Read subject and actor tokens, atomically if from the same file supplier.
+    if (this.subjectTokenSupplier instanceof FileIdentityPoolSubjectTokenSupplier
+        && this.actorTokenSupplier == this.subjectTokenSupplier) {
+      return ((FileIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
+          .readTokens(supplierContext);
+    }
+    String subjectToken;
+    if (this.subjectTokenSupplier instanceof CertificateIdentityPoolSubjectTokenSupplier
+        && pinnedKeyStore != null) {
+      subjectToken =
+          ((CertificateIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
+              .getSubjectToken(supplierContext, pinnedKeyStore);
+    } else {
+      subjectToken = retrieveSubjectToken();
+    }
+    String actorToken =
+        this.actorTokenSupplier != null
+            ? this.actorTokenSupplier.getActorToken(supplierContext)
+            : null;
+    return new FileIdentityPoolSubjectTokenSupplier.TokenPair(subjectToken, actorToken);
+  }
+
+  private AccessToken buildAndExchangeStsRequest(
+      String subjectToken, @Nullable String actorToken, HttpTransportFactory cycleTransportFactory)
+      throws IOException {
+    StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
+        StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
+            .setAudience(getAudience());
+
+    if (actorToken != null && this.actorTokenType != null) {
+      stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+    }
+
+    Collection<String> scopes = getScopes();
+    if (scopes != null && !scopes.isEmpty()) {
+      stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
+    }
+
+    return exchangeExternalCredentialForAccessToken(
+        stsTokenExchangeRequest.build(), cycleTransportFactory);
   }
 
   @Override
@@ -624,6 +664,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       // FileIdentityPoolSubjectTokenSupplier instance for atomic token reads.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
+      // Preserve the original mTLS flag across clones because super(credentials) copies
+      // credentials.transportFactory, which may already be resolved via ServiceLoader or
+      // createMtlsTransportFactory rather than null.
       this.useMtlsTransportFactory = credentials.useMtlsTransportFactory;
       this.isClonedTransportInitialized = credentials.hasInitializedMtlsTransport();
     }

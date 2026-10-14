@@ -301,6 +301,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     } else {
       sourceBuilder = IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this);
     }
+    // The intermediate STS access token on sourceCredentials is used to authenticate to the IAM
+    // Credentials generateAccessToken endpoint, which requires the cloud-platform scope (whereas
+    // this.scopes are passed to ImpersonatedCredentials below for the final impersonated token).
     sourceBuilder
         .setServiceAccountImpersonationUrl(null)
         .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
@@ -541,10 +544,23 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   /**
    * Refreshes the access token using the specified transport factory for per-cycle transport
-   * pinning. {@link AwsCredentials} and {@link PluggableAuthCredentials} delegate {@link
+   * pinning.
+   *
+   * <p>When {@code serviceAccountImpersonationUrl} is configured, the outer {@link
+   * ExternalAccountCredentials} delegates token refresh to its internal {@link
+   * ImpersonatedCredentials}, which in turn calls back into its cloned {@code sourceCredentials}
+   * (typed as {@link ExternalAccountCredentials} with {@code serviceAccountImpersonationUrl ==
+   * null}) via {@link #refreshAccessToken(HttpTransportFactory, KeyStore)} so the intermediate STS
+   * token exchange and the IAM {@code generateAccessToken} request share the same pinned transport
+   * and {@link KeyStore}.
+   *
+   * <p>{@link AwsCredentials} and {@link PluggableAuthCredentials} delegate {@link
    * #refreshAccessToken()} into this method, while {@link IdentityPoolCredentials} coordinates
-   * per-cycle transport pinning and retries directly. This default implementation delegates back to
-   * {@link #refreshAccessToken()} for any custom subclasses that do not override this method.
+   * per-cycle transport pinning and retries directly. Because {@link ExternalAccountCredentials} is
+   * a {@code public abstract} class with {@code protected} constructors and these hooks are
+   * intentionally package-private, a default implementation delegating to {@link
+   * #refreshAccessToken()} is provided so external subclasses outside this package remain
+   * compilable.
    *
    * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
    * @return the refreshed access token
