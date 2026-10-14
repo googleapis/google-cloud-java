@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -37,9 +38,12 @@ import java.sql.Timestamp;
 import java.sql.Types;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -612,6 +616,57 @@ public class ITJdbcTimestampPicosTest extends ITBase {
           picosValue,
           rs.getString("ts_val"),
           "setString must preserve all 12 fractional digits end to end");
+    }
+  }
+
+  /**
+   * Temporal accessors on a {@code TIMESTAMP(12)} value truncate to the Java type's precision. The
+   * value is a moment, so a Calendar does not change the result.
+   */
+  @Test
+  @Tag("advanced")
+  public void testTemporalAccessors_picosEnabled_truncateToJavaPrecision() throws SQLException {
+    String url = getPicosConnectionUrl(true, false);
+    String query =
+        String.format(
+            "SELECT ts_picos FROM `%s.%s.%s` WHERE id = 1", DEFAULT_CATALOG, DATASET, TABLE_NAME);
+    Instant moment = Instant.parse("2025-01-01T12:34:56.123456789Z");
+    ZonedDateTime local = moment.atZone(ZoneId.systemDefault());
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
+
+    try (Connection conn = DriverManager.getConnection(url);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query)) {
+
+      assertTrue(rs.next());
+      assertAll(
+          () -> assertEquals(moment, rs.getTimestamp("ts_picos").toInstant(), "getTimestamp"),
+          () -> assertEquals(moment, rs.getObject("ts_picos", Instant.class), "getObject(Instant)"),
+          () ->
+              assertEquals(
+                  moment,
+                  rs.getObject("ts_picos", OffsetDateTime.class).toInstant(),
+                  "getObject(OffsetDateTime)"),
+          () ->
+              assertEquals(
+                  local.toLocalDateTime(),
+                  rs.getObject("ts_picos", LocalDateTime.class),
+                  "getObject(LocalDateTime)"),
+          () -> assertEquals(local.toLocalDate(), rs.getDate("ts_picos").toLocalDate(), "getDate"),
+          () ->
+              assertEquals(
+                  local.toLocalTime().withNano(0), rs.getTime("ts_picos").toLocalTime(), "getTime"),
+          () ->
+              assertEquals(
+                  moment, rs.getTimestamp("ts_picos", cal).toInstant(), "getTimestamp(cal)"),
+          () ->
+              assertEquals(
+                  local.toLocalDate(), rs.getDate("ts_picos", cal).toLocalDate(), "getDate(cal)"),
+          () ->
+              assertEquals(
+                  local.toLocalTime().withNano(0),
+                  rs.getTime("ts_picos", cal).toLocalTime(),
+                  "getTime(cal)"));
     }
   }
 

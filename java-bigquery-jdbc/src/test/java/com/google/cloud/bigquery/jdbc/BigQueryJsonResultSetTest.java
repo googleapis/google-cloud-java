@@ -51,9 +51,13 @@ import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
@@ -66,6 +70,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryJsonResultSetTest {
 
@@ -699,5 +704,78 @@ public class BigQueryJsonResultSetTest {
     BigQueryJsonResultSet rs = createJsonResultSet(fields, row, true);
     assertThat(rs.next()).isTrue();
     assertThat(rs.getString("rangeDate")).isEqualTo("[2023-01-01, 2023-01-31)");
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testCalendarGettersOnWallClockTypesUseCalendarZone(String jvmZone)
+      throws SQLException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      FieldList fields =
+          FieldList.of(
+              Field.of("d", StandardSQLTypeName.DATE),
+              Field.of("t", StandardSQLTypeName.TIME),
+              Field.of("dt", StandardSQLTypeName.DATETIME));
+      FieldValueList row =
+          FieldValueList.of(
+              ImmutableList.of(
+                  FieldValue.of(Attribute.PRIMITIVE, "2000-02-15"),
+                  FieldValue.of(Attribute.PRIMITIVE, "10:30:45"),
+                  FieldValue.of(Attribute.PRIMITIVE, "2025-01-01 12:34:56.123000")),
+              fields);
+      BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
+      assertThat(rs.next()).isTrue();
+
+      Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      Calendar laCal = Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles"));
+      ZoneId laZone = ZoneId.of("America/Los_Angeles");
+
+      assertThat(rs.getDate("d", utcCal).getTime()).isEqualTo(950572800000L);
+      assertThat(rs.getDate("d", laCal).getTime()).isEqualTo(950601600000L);
+      assertThat(rs.getTime("t", utcCal).getTime()).isEqualTo(37845000L);
+      assertThat(rs.getTime("t", laCal).getTime()).isEqualTo(66645000L);
+
+      LocalDateTime dtDigits = LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000);
+      assertThat(rs.getTimestamp("dt", laCal).toInstant())
+          .isEqualTo(dtDigits.atZone(laZone).toInstant());
+      assertThat(
+              Instant.ofEpochMilli(rs.getDate("dt", laCal).getTime()).atZone(laZone).toLocalDate())
+          .isEqualTo(LocalDate.of(2025, 1, 1));
+      assertThat(
+              Instant.ofEpochMilli(rs.getTime("dt", laCal).getTime())
+                  .atZone(laZone)
+                  .toLocalTime()
+                  .withNano(0))
+          .isEqualTo(LocalTime.of(12, 34, 56));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testCalendarGettersOnTimestampIgnoreCalendar(String jvmZone) throws SQLException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      FieldList fields = FieldList.of(Field.of("ts", StandardSQLTypeName.TIMESTAMP));
+      Instant ref = Instant.parse("2025-01-01T12:34:56.123Z");
+      FieldValueList row =
+          FieldValueList.of(
+              ImmutableList.of(FieldValue.of(Attribute.PRIMITIVE, "1735734896.123000")), fields);
+      BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
+      assertThat(rs.next()).isTrue();
+
+      Calendar laCal = Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles"));
+      ZonedDateTime local = ref.atZone(ZoneId.of(jvmZone));
+
+      assertThat(rs.getTimestamp("ts", laCal).toInstant()).isEqualTo(ref);
+      assertThat(rs.getDate("ts", laCal).toLocalDate()).isEqualTo(local.toLocalDate());
+      assertThat(rs.getTime("ts", laCal).toLocalTime()).isEqualTo(local.toLocalTime().withNano(0));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
   }
 }

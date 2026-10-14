@@ -296,6 +296,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   public abstract Object getObject(int columnIndex) throws SQLException;
 
+  protected Object getObject(int columnIndex, ZoneId zone) throws SQLException {
+    return getObject(columnIndex);
+  }
+
   @Override
   public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
     LOG.finestTrace("getObject");
@@ -564,13 +568,19 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return bytes == null ? null : new ByteArrayInputStream(bytes);
   }
 
+  private static ZoneId getEffectiveZone(StandardSQLTypeName bqType, Calendar cal) {
+    return (cal == null || bqType == StandardSQLTypeName.TIMESTAMP)
+        ? null
+        : cal.getTimeZone().toZoneId();
+  }
+
   @Override
   public Date getDate(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getDate");
+    StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+    ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex);
-      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      Object value = getObject(columnIndex, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Date.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Date.class, e);
@@ -580,10 +590,13 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Time getTime(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTime");
+    StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+    if (bqType == StandardSQLTypeName.INT64) {
+      throw createCoercionException(columnIndex, Time.class, null);
+    }
+    ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex);
-      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      Object value = getObject(columnIndex, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Time.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Time.class, e);
@@ -593,10 +606,13 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTimestamp");
+    StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+    if (bqType == StandardSQLTypeName.INT64) {
+      throw createCoercionException(columnIndex, Timestamp.class, null);
+    }
+    ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex);
-      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      Object value = getObject(columnIndex, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Timestamp.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Timestamp.class, e);
