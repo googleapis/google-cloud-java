@@ -709,7 +709,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     boolean usedCachedStsToken = false;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
       ExternalAccountCredentials externalSource = ensureExternalSourceScoped();
-      if (cycleTransportFactory == null) {
+      if (cycleTransportFactory == null || !(externalSource instanceof IdentityPoolCredentials)) {
         try {
           externalSource.refreshIfExpired();
         } catch (IOException e) {
@@ -717,9 +717,10 @@ public class ImpersonatedCredentials extends GoogleCredentials
         }
         adapter = new HttpCredentialsAdapter(externalSource);
       } else {
+        IdentityPoolCredentials identityPoolSource = (IdentityPoolCredentials) externalSource;
         AccessToken intermediateAccessToken = null;
         synchronized (this) {
-          if (isCachedStsTokenReusable(externalSource, pinnedKeyStore)) {
+          if (isCachedStsTokenReusable(identityPoolSource, pinnedKeyStore)) {
             intermediateAccessToken = this.cachedStsAccessToken;
             usedCachedStsToken = true;
           }
@@ -727,7 +728,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
         if (intermediateAccessToken == null) {
           try {
             intermediateAccessToken =
-                externalSource.refreshAccessToken(effectiveTransportFactory, pinnedKeyStore);
+                identityPoolSource.refreshAccessToken(effectiveTransportFactory, pinnedKeyStore);
           } catch (IOException e) {
             throw new IOException("Unable to refresh sourceCredentials", e);
           }
@@ -737,8 +738,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
         GoogleCredentials authCredentials =
             new GoogleCredentials(
                 GoogleCredentials.newBuilder()
-                    .setQuotaProjectId(externalSource.getQuotaProjectId())
-                    .setUniverseDomain(externalSource.getUniverseDomain())) {
+                    .setQuotaProjectId(identityPoolSource.getQuotaProjectId())
+                    .setUniverseDomain(identityPoolSource.getUniverseDomain())) {
               @Override
               public AccessToken refreshAccessToken() {
                 return tokenToUse;

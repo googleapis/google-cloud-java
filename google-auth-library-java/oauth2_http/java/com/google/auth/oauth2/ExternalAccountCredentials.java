@@ -46,7 +46,6 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
-import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -540,40 +539,6 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       }
     }
     return local;
-  }
-
-  /**
-   * Refreshes the access token using the specified transport factory for per-cycle transport
-   * pinning.
-   *
-   * <p>When {@code serviceAccountImpersonationUrl} is configured, the outer {@link
-   * ExternalAccountCredentials} delegates token refresh to its internal {@link
-   * ImpersonatedCredentials}, which in turn calls back into its cloned {@code sourceCredentials}
-   * (typed as {@link ExternalAccountCredentials} with {@code serviceAccountImpersonationUrl ==
-   * null}) via {@link #refreshAccessToken(HttpTransportFactory, KeyStore)} so the intermediate STS
-   * token exchange and the IAM {@code generateAccessToken} request share the same pinned transport
-   * and {@link KeyStore}.
-   *
-   * <p>{@link AwsCredentials} and {@link PluggableAuthCredentials} delegate {@link
-   * #refreshAccessToken()} into this method, while {@link IdentityPoolCredentials} coordinates
-   * per-cycle transport pinning and retries directly. Because {@link ExternalAccountCredentials} is
-   * a {@code public abstract} class with {@code protected} constructors and these hooks are
-   * intentionally package-private, a default implementation delegating to {@link
-   * #refreshAccessToken()} is provided so external subclasses outside this package remain
-   * compilable.
-   *
-   * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
-   * @return the refreshed access token
-   * @throws IOException if the token refresh fails
-   */
-  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
-    return refreshAccessToken();
-  }
-
-  AccessToken refreshAccessToken(
-      HttpTransportFactory cycleTransportFactory, @Nullable KeyStore pinnedKeyStore)
-      throws IOException {
-    return refreshAccessToken(cycleTransportFactory);
   }
 
   /**
