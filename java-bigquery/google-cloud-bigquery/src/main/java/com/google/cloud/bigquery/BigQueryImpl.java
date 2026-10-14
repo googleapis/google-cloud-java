@@ -2207,8 +2207,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           new PageImpl<>(
               new TableDataPageFetcher(tableId, schema, serviceOptions, cursor, pageOptionMap),
               cursor,
-              transformTableData(
-                  result.getRows(), schema, serviceOptions.getDataFormatOptions())),
+              transformTableData(result.getRows(), schema, serviceOptions.getDataFormatOptions())),
           result.getTotalRows());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -2497,8 +2496,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             new PageImpl<>(
                 new TableDataPageFetcher(null, schema, getOptions(), null, optionMap(options)),
                 null,
-                transformTableData(
-                    results.getRows(), schema, getOptions().getDataFormatOptions())))
+                transformTableData(results.getRows(), schema, getOptions().getDataFormatOptions())))
         // Return the JobID of the successful job
         .setJobId(
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)

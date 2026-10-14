@@ -81,8 +81,7 @@ public class FieldValue implements Serializable {
   private FieldValue(Attribute attribute, Object value, DataFormatOptions dataFormatOptions) {
     this.attribute = checkNotNull(attribute);
     this.value = value;
-    this.useInt64Timestamps =
-        dataFormatOptions != null && dataFormatOptions.useInt64Timestamp();
+    this.useInt64Timestamps = dataFormatOptions != null && dataFormatOptions.useInt64Timestamp();
   }
 
   /**
@@ -387,8 +386,7 @@ public class FieldValue implements Serializable {
             .build());
   }
 
-  static FieldValue of(
-      Attribute attribute, Object value, DataFormatOptions dataFormatOptions) {
+  static FieldValue of(Attribute attribute, Object value, DataFormatOptions dataFormatOptions) {
     return new FieldValue(attribute, value, dataFormatOptions);
   }
 
@@ -397,8 +395,7 @@ public class FieldValue implements Serializable {
   }
 
   @SuppressWarnings("unchecked")
-  static FieldValue fromPb(
-      Object cellPb, Field recordSchema, DataFormatOptions dataFormatOptions) {
+  static FieldValue fromPb(Object cellPb, Field recordSchema, DataFormatOptions dataFormatOptions) {
     if (Data.isNull(cellPb)) {
       return FieldValue.of(Attribute.PRIMITIVE, null, dataFormatOptions);
     }
