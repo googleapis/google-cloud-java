@@ -650,7 +650,8 @@ class PathTemplateTest {
         Assertions.assertThrows(
             ValidationException.class,
             () -> template.instantiate("project", "my-project", "region", "."));
-    Truth.assertThat(dotException.getMessage()).isEqualTo("Invalid value . for region.");
+    Truth.assertThat(dotException.getMessage())
+        .isEqualTo("Value for region must not contain segments that are exactly . or ..");
   }
 
   @Test
@@ -661,7 +662,8 @@ class PathTemplateTest {
         Assertions.assertThrows(
             ValidationException.class,
             () -> template.instantiate("project", "my-project", "region", ".."));
-    Truth.assertThat(dotDotException.getMessage()).isEqualTo("Invalid value .. for region.");
+    Truth.assertThat(dotDotException.getMessage())
+        .isEqualTo("Value for region must not contain segments that are exactly . or ..");
   }
 
   @Test
@@ -673,7 +675,7 @@ class PathTemplateTest {
             ValidationException.class,
             () -> template.instantiate("parent", "projects/my-project/locations/."));
     Truth.assertThat(dotException.getMessage())
-        .isEqualTo("Invalid value projects/my-project/locations/. for parent.");
+        .isEqualTo("Value for parent must not contain segments that are exactly . or ..");
   }
 
   @Test
@@ -685,7 +687,7 @@ class PathTemplateTest {
             ValidationException.class,
             () -> template.instantiate("parent", "projects/my-project/locations/.."));
     Truth.assertThat(dotDotException.getMessage())
-        .isEqualTo("Invalid value projects/my-project/locations/.. for parent.");
+        .isEqualTo("Value for parent must not contain segments that are exactly . or ..");
   }
 
   @Test

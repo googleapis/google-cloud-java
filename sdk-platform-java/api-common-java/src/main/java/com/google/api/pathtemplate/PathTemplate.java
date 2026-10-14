@@ -888,16 +888,14 @@ public class PathTemplate {
                   || nextNext.kind() != SegmentKind.END_BINDING;
           restore(iterator, iterator.nextIndex() - 2);
           if (!pathEscape) {
-            validatePathSegment(var, value, value, false);
+            validatePathSegment(var, value);
             result.append(encodeUrl(value));
           } else {
-            boolean hasPathWildcard =
-                next.kind() == SegmentKind.PATH_WILDCARD || hasPathWildcard(iterator);
             // For a path wildcard or path of length greater 1, split the value and escape
             // every sub-segment.
             boolean first = true;
             for (String subSeg : SLASH_SPLITTER.split(value)) {
-              validatePathSegment(var, value, subSeg, hasPathWildcard);
+              validatePathSegment(var, subSeg);
               if (!first) {
                 result.append('/');
               }
@@ -1214,31 +1212,10 @@ public class PathTemplate {
 
   private static final PercentEscaper URL_ESCAPER = new PercentEscaper("-_.~", false);
 
-  private static boolean hasPathWildcard(ListIterator<Segment> iterator) {
-    int start = iterator.nextIndex();
-    boolean found = false;
-    while (iterator.hasNext()) {
-      Segment seg = iterator.next();
-      if (seg.kind() == SegmentKind.END_BINDING) {
-        break;
-      }
-      if (seg.kind() == SegmentKind.PATH_WILDCARD) {
-        found = true;
-        break;
-      }
-    }
-    restore(iterator, start);
-    return found;
-  }
-
-  private static void validatePathSegment(
-      String var, String fullValue, String segment, boolean hasPathWildcard) {
+  private static void validatePathSegment(String var, String segment) {
     if (".".equals(segment) || "..".equals(segment)) {
-      if (hasPathWildcard) {
-        throw new ValidationException(
-            "Value for %s must not contain segments that are exactly . or ..", var);
-      }
-      throw new ValidationException("Invalid value %s for %s.", fullValue, var);
+      throw new ValidationException(
+          "Value for %s must not contain segments that are exactly . or ..", var);
     }
   }
 
