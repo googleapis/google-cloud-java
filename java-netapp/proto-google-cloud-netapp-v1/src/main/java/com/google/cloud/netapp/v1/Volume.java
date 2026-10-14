@@ -522,6 +522,36 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      * @return The sharedSpaceGib.
      */
     long getSharedSpaceGib();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the clone split operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for splitState.
+     */
+    int getSplitStateValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the clone split operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The splitState.
+     */
+    com.google.cloud.netapp.v1.SplitState getSplitState();
   }
 
   /**
@@ -557,6 +587,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     private CloneDetails() {
       sourceSnapshot_ = "";
       sourceVolume_ = "";
+      splitState_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -716,6 +747,47 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       return sharedSpaceGib_;
     }
 
+    public static final int SPLIT_STATE_FIELD_NUMBER = 4;
+    private int splitState_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the clone split operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for splitState.
+     */
+    @java.lang.Override
+    public int getSplitStateValue() {
+      return splitState_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current state of the clone split operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The splitState.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.SplitState getSplitState() {
+      com.google.cloud.netapp.v1.SplitState result =
+          com.google.cloud.netapp.v1.SplitState.forNumber(splitState_);
+      return result == null ? com.google.cloud.netapp.v1.SplitState.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -739,6 +811,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       if (sharedSpaceGib_ != 0L) {
         output.writeInt64(3, sharedSpaceGib_);
       }
+      if (splitState_
+          != com.google.cloud.netapp.v1.SplitState.SPLIT_STATE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(4, splitState_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -756,6 +832,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       }
       if (sharedSpaceGib_ != 0L) {
         size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, sharedSpaceGib_);
+      }
+      if (splitState_
+          != com.google.cloud.netapp.v1.SplitState.SPLIT_STATE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, splitState_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -776,6 +856,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       if (!getSourceSnapshot().equals(other.getSourceSnapshot())) return false;
       if (!getSourceVolume().equals(other.getSourceVolume())) return false;
       if (getSharedSpaceGib() != other.getSharedSpaceGib()) return false;
+      if (splitState_ != other.splitState_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -793,6 +874,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getSourceVolume().hashCode();
       hash = (37 * hash) + SHARED_SPACE_GIB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSharedSpaceGib());
+      hash = (37 * hash) + SPLIT_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + splitState_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -936,6 +1019,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         sourceSnapshot_ = "";
         sourceVolume_ = "";
         sharedSpaceGib_ = 0L;
+        splitState_ = 0;
         return this;
       }
 
@@ -981,6 +1065,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.sharedSpaceGib_ = sharedSpaceGib_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.splitState_ = splitState_;
+        }
       }
 
       @java.lang.Override
@@ -1008,6 +1095,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         }
         if (other.getSharedSpaceGib() != 0L) {
           setSharedSpaceGib(other.getSharedSpaceGib());
+        }
+        if (other.splitState_ != 0) {
+          setSplitStateValue(other.getSplitStateValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1053,6 +1143,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 24
+              case 32:
+                {
+                  splitState_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1389,6 +1485,111 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       public Builder clearSharedSpaceGib() {
         bitField0_ = (bitField0_ & ~0x00000004);
         sharedSpaceGib_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int splitState_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current state of the clone split operation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for splitState.
+       */
+      @java.lang.Override
+      public int getSplitStateValue() {
+        return splitState_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current state of the clone split operation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for splitState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSplitStateValue(int value) {
+        splitState_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current state of the clone split operation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The splitState.
+       */
+      @java.lang.Override
+      public com.google.cloud.netapp.v1.SplitState getSplitState() {
+        com.google.cloud.netapp.v1.SplitState result =
+            com.google.cloud.netapp.v1.SplitState.forNumber(splitState_);
+        return result == null ? com.google.cloud.netapp.v1.SplitState.UNRECOGNIZED : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current state of the clone split operation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The splitState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSplitState(com.google.cloud.netapp.v1.SplitState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        splitState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The current state of the clone split operation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.netapp.v1.SplitState split_state = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSplitState() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        splitState_ = 0;
         onChanged();
         return this;
       }

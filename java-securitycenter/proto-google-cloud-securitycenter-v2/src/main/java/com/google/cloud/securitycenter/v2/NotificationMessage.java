@@ -281,6 +281,25 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         : resource_;
   }
 
+  public static final int DELETED_FINDING_FIELD_NUMBER = 5;
+  private boolean deletedFinding_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the finding is deleted.
+   * </pre>
+   *
+   * <code>bool deleted_finding = 5;</code>
+   *
+   * @return The deletedFinding.
+   */
+  @java.lang.Override
+  public boolean getDeletedFinding() {
+    return deletedFinding_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -304,6 +323,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getResource());
     }
+    if (deletedFinding_ != false) {
+      output.writeBool(5, deletedFinding_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -323,6 +345,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getResource());
+    }
+    if (deletedFinding_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, deletedFinding_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -345,6 +370,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
     if (hasResource()) {
       if (!getResource().equals(other.getResource())) return false;
     }
+    if (getDeletedFinding() != other.getDeletedFinding()) return false;
     if (!getEventCase().equals(other.getEventCase())) return false;
     switch (eventCase_) {
       case 2:
@@ -370,6 +396,8 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
       hash = (53 * hash) + getResource().hashCode();
     }
+    hash = (37 * hash) + DELETED_FINDING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletedFinding());
     switch (eventCase_) {
       case 2:
         hash = (37 * hash) + FINDING_FIELD_NUMBER;
@@ -537,6 +565,7 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
+      deletedFinding_ = false;
       eventCase_ = 0;
       event_ = null;
       return this;
@@ -584,6 +613,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         result.resource_ = resourceBuilder_ == null ? resource_ : resourceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.deletedFinding_ = deletedFinding_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -615,6 +647,9 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
       }
       if (other.hasResource()) {
         mergeResource(other.getResource());
+      }
+      if (other.getDeletedFinding() != false) {
+        setDeletedFinding(other.getDeletedFinding());
       }
       switch (other.getEventCase()) {
         case FINDING:
@@ -672,6 +707,12 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 40:
+              {
+                deletedFinding_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1235,6 +1276,62 @@ public final class NotificationMessage extends com.google.protobuf.GeneratedMess
         resource_ = null;
       }
       return resourceBuilder_;
+    }
+
+    private boolean deletedFinding_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the finding is deleted.
+     * </pre>
+     *
+     * <code>bool deleted_finding = 5;</code>
+     *
+     * @return The deletedFinding.
+     */
+    @java.lang.Override
+    public boolean getDeletedFinding() {
+      return deletedFinding_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the finding is deleted.
+     * </pre>
+     *
+     * <code>bool deleted_finding = 5;</code>
+     *
+     * @param value The deletedFinding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletedFinding(boolean value) {
+
+      deletedFinding_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the finding is deleted.
+     * </pre>
+     *
+     * <code>bool deleted_finding = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletedFinding() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      deletedFinding_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v2.NotificationMessage)

@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * Oracle data source configuration
+ * Configuration for syncing data from an Oracle source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.OracleSourceConfig}
@@ -4016,7 +4016,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle objects to include in the stream.
+   * The Oracle objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -4032,7 +4032,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle objects to include in the stream.
+   * The Oracle objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -4050,7 +4050,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle objects to include in the stream.
+   * The Oracle objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -4069,7 +4069,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle objects to exclude from the stream.
+   * The Oracle objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -4085,7 +4085,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle objects to exclude from the stream.
+   * The Oracle objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -4103,7 +4103,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle objects to exclude from the stream.
+   * The Oracle objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -4686,7 +4686,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Oracle data source configuration
+   * Configuration for syncing data from an Oracle source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.OracleSourceConfig}
@@ -5030,7 +5030,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5045,7 +5045,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5066,7 +5066,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5089,7 +5089,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5110,7 +5110,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5138,7 +5138,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5158,7 +5158,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5173,7 +5173,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5192,7 +5192,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to include in the stream.
+     * The Oracle objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms include_objects = 1;</code>
@@ -5225,7 +5225,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5240,7 +5240,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5261,7 +5261,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5284,7 +5284,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5305,7 +5305,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5333,7 +5333,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5353,7 +5353,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5368,7 +5368,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>
@@ -5387,7 +5387,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Oracle objects to exclude from the stream.
+     * The Oracle objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleRdbms exclude_objects = 2;</code>

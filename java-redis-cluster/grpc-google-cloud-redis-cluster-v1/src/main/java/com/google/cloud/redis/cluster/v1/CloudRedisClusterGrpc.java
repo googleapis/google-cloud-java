@@ -92,6 +92,53 @@ public final class CloudRedisClusterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest,
+          com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+      getListAclPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAclPolicies",
+      requestType = com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest,
+          com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+      getListAclPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest,
+            com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+        getListAclPoliciesMethod;
+    if ((getListAclPoliciesMethod = CloudRedisClusterGrpc.getListAclPoliciesMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListAclPoliciesMethod = CloudRedisClusterGrpc.getListAclPoliciesMethod) == null) {
+          CloudRedisClusterGrpc.getListAclPoliciesMethod =
+              getListAclPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest,
+                          com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAclPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListAclPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListAclPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.cluster.v1.GetClusterRequest,
           com.google.cloud.redis.cluster.v1.Cluster>
       getGetClusterMethod;
@@ -135,6 +182,52 @@ public final class CloudRedisClusterGrpc {
       }
     }
     return getGetClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetAclPolicyRequest,
+          com.google.cloud.redis.cluster.v1.AclPolicy>
+      getGetAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAclPolicy",
+      requestType = com.google.cloud.redis.cluster.v1.GetAclPolicyRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.AclPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetAclPolicyRequest,
+          com.google.cloud.redis.cluster.v1.AclPolicy>
+      getGetAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.GetAclPolicyRequest,
+            com.google.cloud.redis.cluster.v1.AclPolicy>
+        getGetAclPolicyMethod;
+    if ((getGetAclPolicyMethod = CloudRedisClusterGrpc.getGetAclPolicyMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetAclPolicyMethod = CloudRedisClusterGrpc.getGetAclPolicyMethod) == null) {
+          CloudRedisClusterGrpc.getGetAclPolicyMethod =
+              getGetAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.GetAclPolicyRequest,
+                          com.google.cloud.redis.cluster.v1.AclPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.GetAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.AclPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetAclPolicyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -182,6 +275,52 @@ public final class CloudRedisClusterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest,
+          com.google.longrunning.Operation>
+      getUpdateAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAclPolicy",
+      requestType = com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest,
+          com.google.longrunning.Operation>
+      getUpdateAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest,
+            com.google.longrunning.Operation>
+        getUpdateAclPolicyMethod;
+    if ((getUpdateAclPolicyMethod = CloudRedisClusterGrpc.getUpdateAclPolicyMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getUpdateAclPolicyMethod = CloudRedisClusterGrpc.getUpdateAclPolicyMethod) == null) {
+          CloudRedisClusterGrpc.getUpdateAclPolicyMethod =
+              getUpdateAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("UpdateAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAclPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.cluster.v1.DeleteClusterRequest, com.google.longrunning.Operation>
       getDeleteClusterMethod;
 
@@ -226,6 +365,153 @@ public final class CloudRedisClusterGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest,
+          com.google.longrunning.Operation>
+      getDeleteAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAclPolicy",
+      requestType = com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest,
+          com.google.longrunning.Operation>
+      getDeleteAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest,
+            com.google.longrunning.Operation>
+        getDeleteAclPolicyMethod;
+    if ((getDeleteAclPolicyMethod = CloudRedisClusterGrpc.getDeleteAclPolicyMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getDeleteAclPolicyMethod = CloudRedisClusterGrpc.getDeleteAclPolicyMethod) == null) {
+          CloudRedisClusterGrpc.getDeleteAclPolicyMethod =
+              getDeleteAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("DeleteAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAclPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest,
+          com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+      getGetAclPolicyRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAclPolicyRevision",
+      requestType = com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.AclPolicyRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest,
+          com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+      getGetAclPolicyRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest,
+            com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+        getGetAclPolicyRevisionMethod;
+    if ((getGetAclPolicyRevisionMethod = CloudRedisClusterGrpc.getGetAclPolicyRevisionMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetAclPolicyRevisionMethod = CloudRedisClusterGrpc.getGetAclPolicyRevisionMethod)
+            == null) {
+          CloudRedisClusterGrpc.getGetAclPolicyRevisionMethod =
+              getGetAclPolicyRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest,
+                          com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAclPolicyRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.AclPolicyRevision
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetAclPolicyRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetAclPolicyRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest,
+          com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+      getListAclPolicyRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAclPolicyRevisions",
+      requestType = com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest,
+          com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+      getListAclPolicyRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest,
+            com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+        getListAclPolicyRevisionsMethod;
+    if ((getListAclPolicyRevisionsMethod = CloudRedisClusterGrpc.getListAclPolicyRevisionsMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListAclPolicyRevisionsMethod =
+                CloudRedisClusterGrpc.getListAclPolicyRevisionsMethod)
+            == null) {
+          CloudRedisClusterGrpc.getListAclPolicyRevisionsMethod =
+              getListAclPolicyRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest,
+                          com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAclPolicyRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListAclPolicyRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListAclPolicyRevisionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.redis.cluster.v1.CreateClusterRequest, com.google.longrunning.Operation>
       getCreateClusterMethod;
 
@@ -267,6 +553,52 @@ public final class CloudRedisClusterGrpc {
       }
     }
     return getCreateClusterMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest,
+          com.google.cloud.redis.cluster.v1.AclPolicy>
+      getCreateAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAclPolicy",
+      requestType = com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.AclPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest,
+          com.google.cloud.redis.cluster.v1.AclPolicy>
+      getCreateAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest,
+            com.google.cloud.redis.cluster.v1.AclPolicy>
+        getCreateAclPolicyMethod;
+    if ((getCreateAclPolicyMethod = CloudRedisClusterGrpc.getCreateAclPolicyMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getCreateAclPolicyMethod = CloudRedisClusterGrpc.getCreateAclPolicyMethod) == null) {
+          CloudRedisClusterGrpc.getCreateAclPolicyMethod =
+              getCreateAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest,
+                          com.google.cloud.redis.cluster.v1.AclPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.AclPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("CreateAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAclPolicyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -754,6 +1086,377 @@ public final class CloudRedisClusterGrpc {
     return getBackupClusterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest,
+          com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTokenAuthUsers",
+      requestType = com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest,
+          com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest,
+            com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+        getListTokenAuthUsersMethod;
+    if ((getListTokenAuthUsersMethod = CloudRedisClusterGrpc.getListTokenAuthUsersMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListTokenAuthUsersMethod = CloudRedisClusterGrpc.getListTokenAuthUsersMethod)
+            == null) {
+          CloudRedisClusterGrpc.getListTokenAuthUsersMethod =
+              getListTokenAuthUsersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest,
+                          com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTokenAuthUsers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListTokenAuthUsers"))
+                      .build();
+        }
+      }
+    }
+    return getListTokenAuthUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest,
+          com.google.cloud.redis.cluster.v1.TokenAuthUser>
+      getGetTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTokenAuthUser",
+      requestType = com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.TokenAuthUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest,
+          com.google.cloud.redis.cluster.v1.TokenAuthUser>
+      getGetTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest,
+            com.google.cloud.redis.cluster.v1.TokenAuthUser>
+        getGetTokenAuthUserMethod;
+    if ((getGetTokenAuthUserMethod = CloudRedisClusterGrpc.getGetTokenAuthUserMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetTokenAuthUserMethod = CloudRedisClusterGrpc.getGetTokenAuthUserMethod) == null) {
+          CloudRedisClusterGrpc.getGetTokenAuthUserMethod =
+              getGetTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest,
+                          com.google.cloud.redis.cluster.v1.TokenAuthUser>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.TokenAuthUser.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getGetTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListAuthTokensRequest,
+          com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+      getListAuthTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthTokens",
+      requestType = com.google.cloud.redis.cluster.v1.ListAuthTokensRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.ListAuthTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.ListAuthTokensRequest,
+          com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+      getListAuthTokensMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.ListAuthTokensRequest,
+            com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+        getListAuthTokensMethod;
+    if ((getListAuthTokensMethod = CloudRedisClusterGrpc.getListAuthTokensMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListAuthTokensMethod = CloudRedisClusterGrpc.getListAuthTokensMethod) == null) {
+          CloudRedisClusterGrpc.getListAuthTokensMethod =
+              getListAuthTokensMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.ListAuthTokensRequest,
+                          com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuthTokens"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListAuthTokensRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.ListAuthTokensResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListAuthTokens"))
+                      .build();
+        }
+      }
+    }
+    return getListAuthTokensMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetAuthTokenRequest,
+          com.google.cloud.redis.cluster.v1.AuthToken>
+      getGetAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthToken",
+      requestType = com.google.cloud.redis.cluster.v1.GetAuthTokenRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1.AuthToken.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.GetAuthTokenRequest,
+          com.google.cloud.redis.cluster.v1.AuthToken>
+      getGetAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.GetAuthTokenRequest,
+            com.google.cloud.redis.cluster.v1.AuthToken>
+        getGetAuthTokenMethod;
+    if ((getGetAuthTokenMethod = CloudRedisClusterGrpc.getGetAuthTokenMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetAuthTokenMethod = CloudRedisClusterGrpc.getGetAuthTokenMethod) == null) {
+          CloudRedisClusterGrpc.getGetAuthTokenMethod =
+              getGetAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.GetAuthTokenRequest,
+                          com.google.cloud.redis.cluster.v1.AuthToken>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.GetAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.AuthToken.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddTokenAuthUser",
+      requestType = com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getAddTokenAuthUserMethod;
+    if ((getAddTokenAuthUserMethod = CloudRedisClusterGrpc.getAddTokenAuthUserMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getAddTokenAuthUserMethod = CloudRedisClusterGrpc.getAddTokenAuthUserMethod) == null) {
+          CloudRedisClusterGrpc.getAddTokenAuthUserMethod =
+              getAddTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("AddTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getAddTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTokenAuthUser",
+      requestType = com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getDeleteTokenAuthUserMethod;
+    if ((getDeleteTokenAuthUserMethod = CloudRedisClusterGrpc.getDeleteTokenAuthUserMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getDeleteTokenAuthUserMethod = CloudRedisClusterGrpc.getDeleteTokenAuthUserMethod)
+            == null) {
+          CloudRedisClusterGrpc.getDeleteTokenAuthUserMethod =
+              getDeleteTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("DeleteTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.AddAuthTokenRequest, com.google.longrunning.Operation>
+      getAddAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddAuthToken",
+      requestType = com.google.cloud.redis.cluster.v1.AddAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.AddAuthTokenRequest, com.google.longrunning.Operation>
+      getAddAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.AddAuthTokenRequest, com.google.longrunning.Operation>
+        getAddAuthTokenMethod;
+    if ((getAddAuthTokenMethod = CloudRedisClusterGrpc.getAddAuthTokenMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getAddAuthTokenMethod = CloudRedisClusterGrpc.getAddAuthTokenMethod) == null) {
+          CloudRedisClusterGrpc.getAddAuthTokenMethod =
+              getAddAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.AddAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.AddAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("AddAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getAddAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAuthToken",
+      requestType = com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest,
+            com.google.longrunning.Operation>
+        getDeleteAuthTokenMethod;
+    if ((getDeleteAuthTokenMethod = CloudRedisClusterGrpc.getDeleteAuthTokenMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getDeleteAuthTokenMethod = CloudRedisClusterGrpc.getDeleteAuthTokenMethod) == null) {
+          CloudRedisClusterGrpc.getDeleteAuthTokenMethod =
+              getDeleteAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("DeleteAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAuthTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudRedisClusterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudRedisClusterStub> factory =
@@ -852,6 +1555,26 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    default void listAclPolicies(
+        com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAclPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the details of a specific Redis cluster.
      * </pre>
      */
@@ -859,6 +1582,20 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1.GetClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.Cluster> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Redis Cluster ACL policy.
+     * </pre>
+     */
+    default void getAclPolicy(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAclPolicyMethod(), responseObserver);
     }
 
     /**
@@ -882,6 +1619,27 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation applies the updated ACL policy to all of the linked clusters.
+     * If Memorystore can apply the policy to all clusters, then the operation
+     * returns a SUCCESS status. If Memorystore can't apply the policy to all
+     * clusters, then to ensure eventual consistency, Memorystore uses
+     * reconciliation to apply the policy to the failed clusters.
+     * Completed longrunning.Operation will contain the new ACL policy object in
+     * the response field.
+     * </pre>
+     */
+    default void updateAclPolicy(
+        com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAclPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis cluster. Cluster stops serving and data is
      * deleted.
      * </pre>
@@ -891,6 +1649,53 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to a cluster.
+     * </pre>
+     */
+    default void deleteAclPolicy(
+        com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAclPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    default void getAclPolicyRevision(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAclPolicyRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    default void listAclPolicyRevisions(
+        com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAclPolicyRevisionsMethod(), responseObserver);
     }
 
     /**
@@ -911,6 +1716,22 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    default void createAclPolicy(
+        com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAclPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1072,6 +1893,121 @@ public final class CloudRedisClusterGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBackupClusterMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    default void listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTokenAuthUsersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    default void getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    default void listAuthTokens(
+        com.google.cloud.redis.cluster.v1.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuthTokensMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    default void getAuthToken(
+        com.google.cloud.redis.cluster.v1.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AuthToken> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    default void addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    default void deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    default void addAuthToken(
+        com.google.cloud.redis.cluster.v1.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    default void deleteAuthToken(
+        com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAuthTokenMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1157,6 +2093,28 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public void listAclPolicies(
+        com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAclPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the details of a specific Redis cluster.
      * </pre>
      */
@@ -1165,6 +2123,22 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.Cluster> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetClusterMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Redis Cluster ACL policy.
+     * </pre>
+     */
+    public void getAclPolicy(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAclPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
     }
 
     /**
@@ -1190,6 +2164,29 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation applies the updated ACL policy to all of the linked clusters.
+     * If Memorystore can apply the policy to all clusters, then the operation
+     * returns a SUCCESS status. If Memorystore can't apply the policy to all
+     * clusters, then to ensure eventual consistency, Memorystore uses
+     * reconciliation to apply the policy to the failed clusters.
+     * Completed longrunning.Operation will contain the new ACL policy object in
+     * the response field.
+     * </pre>
+     */
+    public void updateAclPolicy(
+        com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAclPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis cluster. Cluster stops serving and data is
      * deleted.
      * </pre>
@@ -1199,6 +2196,59 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to a cluster.
+     * </pre>
+     */
+    public void deleteAclPolicy(
+        com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAclPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public void getAclPolicyRevision(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAclPolicyRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public void listAclPolicyRevisions(
+        com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAclPolicyRevisionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1221,6 +2271,24 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public void createAclPolicy(
+        com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAclPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1403,6 +2471,137 @@ public final class CloudRedisClusterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public void listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public void getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public void listAuthTokens(
+        com.google.cloud.redis.cluster.v1.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public void getAuthToken(
+        com.google.cloud.redis.cluster.v1.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AuthToken> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public void addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public void deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public void addAuthToken(
+        com.google.cloud.redis.cluster.v1.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public void deleteAuthToken(
+        com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1459,6 +2658,25 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse listAclPolicies(
+        com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAclPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the details of a specific Redis cluster.
      * </pre>
      */
@@ -1467,6 +2685,20 @@ public final class CloudRedisClusterGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Redis Cluster ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicy getAclPolicy(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAclPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1490,6 +2722,27 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation applies the updated ACL policy to all of the linked clusters.
+     * If Memorystore can apply the policy to all clusters, then the operation
+     * returns a SUCCESS status. If Memorystore can't apply the policy to all
+     * clusters, then to ensure eventual consistency, Memorystore uses
+     * reconciliation to apply the policy to the failed clusters.
+     * Completed longrunning.Operation will contain the new ACL policy object in
+     * the response field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAclPolicy(
+        com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis cluster. Cluster stops serving and data is
      * deleted.
      * </pre>
@@ -1499,6 +2752,50 @@ public final class CloudRedisClusterGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to a cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAclPolicy(
+        com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicyRevision getAclPolicyRevision(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAclPolicyRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse listAclPolicyRevisions(
+        com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAclPolicyRevisionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1519,6 +2816,22 @@ public final class CloudRedisClusterGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicy createAclPolicy(
+        com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAclPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1678,6 +2991,118 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBackupClusterMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.redis.cluster.v1.ListAuthTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AuthToken getAuthToken(
+        com.google.cloud.redis.cluster.v1.GetAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.redis.cluster.v1.AddAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1733,6 +3158,24 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse listAclPolicies(
+        com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAclPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the details of a specific Redis cluster.
      * </pre>
      */
@@ -1740,6 +3183,19 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1.GetClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Redis Cluster ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicy getAclPolicy(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAclPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1762,6 +3218,26 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation applies the updated ACL policy to all of the linked clusters.
+     * If Memorystore can apply the policy to all clusters, then the operation
+     * returns a SUCCESS status. If Memorystore can't apply the policy to all
+     * clusters, then to ensure eventual consistency, Memorystore uses
+     * reconciliation to apply the policy to the failed clusters.
+     * Completed longrunning.Operation will contain the new ACL policy object in
+     * the response field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAclPolicy(
+        com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis cluster. Cluster stops serving and data is
      * deleted.
      * </pre>
@@ -1770,6 +3246,47 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1.DeleteClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to a cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAclPolicy(
+        com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicyRevision getAclPolicyRevision(
+        com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAclPolicyRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse listAclPolicyRevisions(
+        com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAclPolicyRevisionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1789,6 +3306,21 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1.CreateClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AclPolicy createAclPolicy(
+        com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAclPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1940,6 +3472,110 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBackupClusterMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.redis.cluster.v1.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1.AuthToken getAuthToken(
+        com.google.cloud.redis.cluster.v1.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.redis.cluster.v1.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1995,6 +3631,25 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>
+        listAclPolicies(com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAclPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the details of a specific Redis cluster.
      * </pre>
      */
@@ -2003,6 +3658,20 @@ public final class CloudRedisClusterGrpc {
         getCluster(com.google.cloud.redis.cluster.v1.GetClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Redis Cluster ACL policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.AclPolicy>
+        getAclPolicy(com.google.cloud.redis.cluster.v1.GetAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAclPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2025,6 +3694,26 @@ public final class CloudRedisClusterGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation applies the updated ACL policy to all of the linked clusters.
+     * If Memorystore can apply the policy to all clusters, then the operation
+     * returns a SUCCESS status. If Memorystore can't apply the policy to all
+     * clusters, then to ensure eventual consistency, Memorystore uses
+     * reconciliation to apply the policy to the failed clusters.
+     * Completed longrunning.Operation will contain the new ACL policy object in
+     * the response field.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAclPolicy(com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAclPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a specific Redis cluster. Cluster stops serving and data is
      * deleted.
      * </pre>
@@ -2033,6 +3722,51 @@ public final class CloudRedisClusterGrpc {
         deleteCluster(com.google.cloud.redis.cluster.v1.DeleteClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to a cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAclPolicy(com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAclPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.AclPolicyRevision>
+        getAclPolicyRevision(
+            com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAclPolicyRevisionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisions(
+            com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAclPolicyRevisionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2052,6 +3786,22 @@ public final class CloudRedisClusterGrpc {
         createCluster(com.google.cloud.redis.cluster.v1.CreateClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateClusterMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.AclPolicy>
+        createAclPolicy(com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAclPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2211,23 +3961,146 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBackupClusterMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>
+        listTokenAuthUsers(com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.TokenAuthUser>
+        getTokenAuthUser(com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>
+        listAuthTokens(com.google.cloud.redis.cluster.v1.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1.AuthToken>
+        getAuthToken(com.google.cloud.redis.cluster.v1.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addTokenAuthUser(com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteTokenAuthUser(com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addAuthToken(com.google.cloud.redis.cluster.v1.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAuthToken(com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
-  private static final int METHODID_GET_CLUSTER = 1;
-  private static final int METHODID_UPDATE_CLUSTER = 2;
-  private static final int METHODID_DELETE_CLUSTER = 3;
-  private static final int METHODID_CREATE_CLUSTER = 4;
-  private static final int METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY = 5;
-  private static final int METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY = 6;
-  private static final int METHODID_RESCHEDULE_CLUSTER_MAINTENANCE = 7;
-  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 8;
-  private static final int METHODID_GET_BACKUP_COLLECTION = 9;
-  private static final int METHODID_LIST_BACKUPS = 10;
-  private static final int METHODID_GET_BACKUP = 11;
-  private static final int METHODID_DELETE_BACKUP = 12;
-  private static final int METHODID_EXPORT_BACKUP = 13;
-  private static final int METHODID_BACKUP_CLUSTER = 14;
+  private static final int METHODID_LIST_ACL_POLICIES = 1;
+  private static final int METHODID_GET_CLUSTER = 2;
+  private static final int METHODID_GET_ACL_POLICY = 3;
+  private static final int METHODID_UPDATE_CLUSTER = 4;
+  private static final int METHODID_UPDATE_ACL_POLICY = 5;
+  private static final int METHODID_DELETE_CLUSTER = 6;
+  private static final int METHODID_DELETE_ACL_POLICY = 7;
+  private static final int METHODID_GET_ACL_POLICY_REVISION = 8;
+  private static final int METHODID_LIST_ACL_POLICY_REVISIONS = 9;
+  private static final int METHODID_CREATE_CLUSTER = 10;
+  private static final int METHODID_CREATE_ACL_POLICY = 11;
+  private static final int METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY = 12;
+  private static final int METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY = 13;
+  private static final int METHODID_RESCHEDULE_CLUSTER_MAINTENANCE = 14;
+  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 15;
+  private static final int METHODID_GET_BACKUP_COLLECTION = 16;
+  private static final int METHODID_LIST_BACKUPS = 17;
+  private static final int METHODID_GET_BACKUP = 18;
+  private static final int METHODID_DELETE_BACKUP = 19;
+  private static final int METHODID_EXPORT_BACKUP = 20;
+  private static final int METHODID_BACKUP_CLUSTER = 21;
+  private static final int METHODID_LIST_TOKEN_AUTH_USERS = 22;
+  private static final int METHODID_GET_TOKEN_AUTH_USER = 23;
+  private static final int METHODID_LIST_AUTH_TOKENS = 24;
+  private static final int METHODID_GET_AUTH_TOKEN = 25;
+  private static final int METHODID_ADD_TOKEN_AUTH_USER = 26;
+  private static final int METHODID_DELETE_TOKEN_AUTH_USER = 27;
+  private static final int METHODID_ADD_AUTH_TOKEN = 28;
+  private static final int METHODID_DELETE_AUTH_TOKEN = 29;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2252,10 +4125,23 @@ public final class CloudRedisClusterGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.ListClustersResponse>)
                   responseObserver);
           break;
+        case METHODID_LIST_ACL_POLICIES:
+          serviceImpl.listAclPolicies(
+              (com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>)
+                  responseObserver);
+          break;
         case METHODID_GET_CLUSTER:
           serviceImpl.getCluster(
               (com.google.cloud.redis.cluster.v1.GetClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.Cluster>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ACL_POLICY:
+          serviceImpl.getAclPolicy(
+              (com.google.cloud.redis.cluster.v1.GetAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicy>)
                   responseObserver);
           break;
         case METHODID_UPDATE_CLUSTER:
@@ -2263,15 +4149,44 @@ public final class CloudRedisClusterGrpc {
               (com.google.cloud.redis.cluster.v1.UpdateClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_UPDATE_ACL_POLICY:
+          serviceImpl.updateAclPolicy(
+              (com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_DELETE_CLUSTER:
           serviceImpl.deleteCluster(
               (com.google.cloud.redis.cluster.v1.DeleteClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_DELETE_ACL_POLICY:
+          serviceImpl.deleteAclPolicy(
+              (com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_ACL_POLICY_REVISION:
+          serviceImpl.getAclPolicyRevision(
+              (com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicyRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ACL_POLICY_REVISIONS:
+          serviceImpl.listAclPolicyRevisions(
+              (com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_CLUSTER:
           serviceImpl.createCluster(
               (com.google.cloud.redis.cluster.v1.CreateClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_ACL_POLICY:
+          serviceImpl.createAclPolicy(
+              (com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AclPolicy>)
+                  responseObserver);
           break;
         case METHODID_GET_CLUSTER_CERTIFICATE_AUTHORITY:
           serviceImpl.getClusterCertificateAuthority(
@@ -2332,6 +4247,52 @@ public final class CloudRedisClusterGrpc {
               (com.google.cloud.redis.cluster.v1.BackupClusterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_LIST_TOKEN_AUTH_USERS:
+          serviceImpl.listTokenAuthUsers(
+              (com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TOKEN_AUTH_USER:
+          serviceImpl.getTokenAuthUser(
+              (com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.TokenAuthUser>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTH_TOKENS:
+          serviceImpl.listAuthTokens(
+              (com.google.cloud.redis.cluster.v1.ListAuthTokensRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTH_TOKEN:
+          serviceImpl.getAuthToken(
+              (com.google.cloud.redis.cluster.v1.GetAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1.AuthToken>)
+                  responseObserver);
+          break;
+        case METHODID_ADD_TOKEN_AUTH_USER:
+          serviceImpl.addTokenAuthUser(
+              (com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_TOKEN_AUTH_USER:
+          serviceImpl.deleteTokenAuthUser(
+              (com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ADD_AUTH_TOKEN:
+          serviceImpl.addAuthToken(
+              (com.google.cloud.redis.cluster.v1.AddAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTH_TOKEN:
+          serviceImpl.deleteAuthToken(
+              (com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -2358,11 +4319,24 @@ public final class CloudRedisClusterGrpc {
                     com.google.cloud.redis.cluster.v1.ListClustersResponse>(
                     service, METHODID_LIST_CLUSTERS)))
         .addMethod(
+            getListAclPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest,
+                    com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse>(
+                    service, METHODID_LIST_ACL_POLICIES)))
+        .addMethod(
             getGetClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.redis.cluster.v1.GetClusterRequest,
                     com.google.cloud.redis.cluster.v1.Cluster>(service, METHODID_GET_CLUSTER)))
+        .addMethod(
+            getGetAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.GetAclPolicyRequest,
+                    com.google.cloud.redis.cluster.v1.AclPolicy>(service, METHODID_GET_ACL_POLICY)))
         .addMethod(
             getUpdateClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2370,17 +4344,50 @@ public final class CloudRedisClusterGrpc {
                     com.google.cloud.redis.cluster.v1.UpdateClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_CLUSTER)))
         .addMethod(
+            getUpdateAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ACL_POLICY)))
+        .addMethod(
             getDeleteClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.redis.cluster.v1.DeleteClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_CLUSTER)))
         .addMethod(
+            getDeleteAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ACL_POLICY)))
+        .addMethod(
+            getGetAclPolicyRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest,
+                    com.google.cloud.redis.cluster.v1.AclPolicyRevision>(
+                    service, METHODID_GET_ACL_POLICY_REVISION)))
+        .addMethod(
+            getListAclPolicyRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest,
+                    com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse>(
+                    service, METHODID_LIST_ACL_POLICY_REVISIONS)))
+        .addMethod(
             getCreateClusterMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.redis.cluster.v1.CreateClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_CLUSTER)))
+        .addMethod(
+            getCreateAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest,
+                    com.google.cloud.redis.cluster.v1.AclPolicy>(
+                    service, METHODID_CREATE_ACL_POLICY)))
         .addMethod(
             getGetClusterCertificateAuthorityMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2447,6 +4454,57 @@ public final class CloudRedisClusterGrpc {
                 new MethodHandlers<
                     com.google.cloud.redis.cluster.v1.BackupClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_BACKUP_CLUSTER)))
+        .addMethod(
+            getListTokenAuthUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest,
+                    com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse>(
+                    service, METHODID_LIST_TOKEN_AUTH_USERS)))
+        .addMethod(
+            getGetTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest,
+                    com.google.cloud.redis.cluster.v1.TokenAuthUser>(
+                    service, METHODID_GET_TOKEN_AUTH_USER)))
+        .addMethod(
+            getListAuthTokensMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.ListAuthTokensRequest,
+                    com.google.cloud.redis.cluster.v1.ListAuthTokensResponse>(
+                    service, METHODID_LIST_AUTH_TOKENS)))
+        .addMethod(
+            getGetAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.GetAuthTokenRequest,
+                    com.google.cloud.redis.cluster.v1.AuthToken>(service, METHODID_GET_AUTH_TOKEN)))
+        .addMethod(
+            getAddTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_TOKEN_AUTH_USER)))
+        .addMethod(
+            getDeleteTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TOKEN_AUTH_USER)))
+        .addMethod(
+            getAddAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.AddAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_AUTH_TOKEN)))
+        .addMethod(
+            getDeleteAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AUTH_TOKEN)))
         .build();
   }
 
@@ -2499,10 +4557,17 @@ public final class CloudRedisClusterGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new CloudRedisClusterFileDescriptorSupplier())
                       .addMethod(getListClustersMethod())
+                      .addMethod(getListAclPoliciesMethod())
                       .addMethod(getGetClusterMethod())
+                      .addMethod(getGetAclPolicyMethod())
                       .addMethod(getUpdateClusterMethod())
+                      .addMethod(getUpdateAclPolicyMethod())
                       .addMethod(getDeleteClusterMethod())
+                      .addMethod(getDeleteAclPolicyMethod())
+                      .addMethod(getGetAclPolicyRevisionMethod())
+                      .addMethod(getListAclPolicyRevisionsMethod())
                       .addMethod(getCreateClusterMethod())
+                      .addMethod(getCreateAclPolicyMethod())
                       .addMethod(getGetClusterCertificateAuthorityMethod())
                       .addMethod(getGetSharedRegionalCertificateAuthorityMethod())
                       .addMethod(getRescheduleClusterMaintenanceMethod())
@@ -2513,6 +4578,14 @@ public final class CloudRedisClusterGrpc {
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getExportBackupMethod())
                       .addMethod(getBackupClusterMethod())
+                      .addMethod(getListTokenAuthUsersMethod())
+                      .addMethod(getGetTokenAuthUserMethod())
+                      .addMethod(getListAuthTokensMethod())
+                      .addMethod(getGetAuthTokenMethod())
+                      .addMethod(getAddTokenAuthUserMethod())
+                      .addMethod(getDeleteTokenAuthUserMethod())
+                      .addMethod(getAddAuthTokenMethod())
+                      .addMethod(getDeleteAuthTokenMethod())
                       .build();
         }
       }

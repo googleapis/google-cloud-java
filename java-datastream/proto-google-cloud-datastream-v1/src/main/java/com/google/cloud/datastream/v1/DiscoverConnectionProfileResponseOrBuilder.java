@@ -248,6 +248,83 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    */
   com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbClusterOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+   *
+   * @return Whether the spannerDatabase field is set.
+   */
+  boolean hasSpannerDatabase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+   *
+   * @return The spannerDatabase.
+   */
+  com.google.cloud.datastream.v1.SpannerDatabase getSpannerDatabase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+   */
+  com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder getSpannerDatabaseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched source catalog. This is mainly used to represent SaaS sources
+   * databases.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+   *
+   * @return Whether the sourceCatalog field is set.
+   */
+  boolean hasSourceCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched source catalog. This is mainly used to represent SaaS sources
+   * databases.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+   *
+   * @return The sourceCatalog.
+   */
+  com.google.cloud.datastream.v1.SourceCatalog getSourceCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched source catalog. This is mainly used to represent SaaS sources
+   * databases.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+   */
+  com.google.cloud.datastream.v1.SourceCatalogOrBuilder getSourceCatalogOrBuilder();
+
   com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();
 }

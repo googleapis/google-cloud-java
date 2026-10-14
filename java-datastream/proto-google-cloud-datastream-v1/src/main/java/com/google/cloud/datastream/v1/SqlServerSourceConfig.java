@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * SQLServer data source configuration
+ * Configuration for syncing data from a SQLServer source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.SqlServerSourceConfig}
@@ -126,7 +126,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer objects to include in the stream.
+   * The SQLServer objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -142,7 +142,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer objects to include in the stream.
+   * The SQLServer objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -160,7 +160,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer objects to include in the stream.
+   * The SQLServer objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -179,7 +179,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer objects to exclude from the stream.
+   * The SQLServer objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -195,7 +195,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer objects to exclude from the stream.
+   * The SQLServer objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -213,7 +213,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer objects to exclude from the stream.
+   * The SQLServer objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -614,7 +614,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * SQLServer data source configuration
+   * Configuration for syncing data from a SQLServer source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.SqlServerSourceConfig}
@@ -898,7 +898,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -913,7 +913,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -934,7 +934,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -957,7 +957,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -978,7 +978,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -1007,7 +1007,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -1027,7 +1027,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -1042,7 +1042,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -1061,7 +1061,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to include in the stream.
+     * The SQLServer objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms include_objects = 1;</code>
@@ -1094,7 +1094,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1109,7 +1109,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1130,7 +1130,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1153,7 +1153,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1174,7 +1174,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1203,7 +1203,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1223,7 +1223,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1238,7 +1238,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>
@@ -1257,7 +1257,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * SQLServer objects to exclude from the stream.
+     * The SQLServer objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerRdbms exclude_objects = 2;</code>

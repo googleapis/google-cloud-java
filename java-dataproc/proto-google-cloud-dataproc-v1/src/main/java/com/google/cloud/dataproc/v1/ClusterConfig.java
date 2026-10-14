@@ -1844,6 +1844,319 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     return auxiliaryNodeGroups_.get(index);
   }
 
+  public static final int MASTER_FLEXIBLE_CONFIG_FIELD_NUMBER = 31;
+  private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig masterFlexibleConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for the cluster's
+   * master instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration across node groups:
+   * * For single-node clusters: `master_flexible_config` must be specified, and
+   * no worker configs should be set.
+   * * For multi-node (standard) clusters: both `master_flexible_config` and
+   * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+   * must be specified. Mixing standard and flexible configs across node
+   * groups is not allowed.
+   *
+   * Only one of
+   * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+   * `master_flexible_config` can be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the masterFlexibleConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMasterFlexibleConfig() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for the cluster's
+   * master instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration across node groups:
+   * * For single-node clusters: `master_flexible_config` must be specified, and
+   * no worker configs should be set.
+   * * For multi-node (standard) clusters: both `master_flexible_config` and
+   * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+   * must be specified. Mixing standard and flexible configs across node
+   * groups is not allowed.
+   *
+   * Only one of
+   * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+   * `master_flexible_config` can be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The masterFlexibleConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig getMasterFlexibleConfig() {
+    return masterFlexibleConfig_ == null
+        ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+        : masterFlexibleConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for the cluster's
+   * master instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration across node groups:
+   * * For single-node clusters: `master_flexible_config` must be specified, and
+   * no worker configs should be set.
+   * * For multi-node (standard) clusters: both `master_flexible_config` and
+   * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+   * must be specified. Mixing standard and flexible configs across node
+   * groups is not allowed.
+   *
+   * Only one of
+   * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+   * `master_flexible_config` can be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
+      getMasterFlexibleConfigOrBuilder() {
+    return masterFlexibleConfig_ == null
+        ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+        : masterFlexibleConfig_;
+  }
+
+  public static final int WORKER_FLEXIBLE_CONFIG_FIELD_NUMBER = 32;
+  private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig workerFlexibleConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for the cluster's
+   * worker instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration. `num_instances` represents the
+   * desired capacity of the worker group and is mutable via cluster updates and
+   * autoscaling.
+   *
+   * Only one of
+   * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+   * `worker_flexible_config` can be set.
+   *
+   * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+   * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+   * and `worker_flexible_config` must be specified. Mixing standard and
+   * flexible configs across node groups is not allowed. Single-node clusters do
+   * not specify worker configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workerFlexibleConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkerFlexibleConfig() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for the cluster's
+   * worker instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration. `num_instances` represents the
+   * desired capacity of the worker group and is mutable via cluster updates and
+   * autoscaling.
+   *
+   * Only one of
+   * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+   * `worker_flexible_config` can be set.
+   *
+   * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+   * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+   * and `worker_flexible_config` must be specified. Mixing standard and
+   * flexible configs across node groups is not allowed. Single-node clusters do
+   * not specify worker configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workerFlexibleConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig getWorkerFlexibleConfig() {
+    return workerFlexibleConfig_ == null
+        ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+        : workerFlexibleConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for the cluster's
+   * worker instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration. `num_instances` represents the
+   * desired capacity of the worker group and is mutable via cluster updates and
+   * autoscaling.
+   *
+   * Only one of
+   * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+   * `worker_flexible_config` can be set.
+   *
+   * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+   * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+   * and `worker_flexible_config` must be specified. Mixing standard and
+   * flexible configs across node groups is not allowed. Single-node clusters do
+   * not specify worker configs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
+      getWorkerFlexibleConfigOrBuilder() {
+    return workerFlexibleConfig_ == null
+        ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+        : workerFlexibleConfig_;
+  }
+
+  public static final int SECONDARY_WORKER_FLEXIBLE_CONFIG_FIELD_NUMBER = 33;
+  private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondaryWorkerFlexibleConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for a cluster's
+   * secondary worker instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration. `num_instances` represents the
+   * desired capacity of the secondary worker group and is mutable via cluster
+   * updates and autoscaling.
+   *
+   * Only one of
+   * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+   * or `secondary_worker_flexible_config` can be set.
+   *
+   * In High Obtainability (HO) mode, secondary workers are optional. If
+   * secondary workers are used in an HO cluster, they must be configured using
+   * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the secondaryWorkerFlexibleConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSecondaryWorkerFlexibleConfig() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for a cluster's
+   * secondary worker instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration. `num_instances` represents the
+   * desired capacity of the secondary worker group and is mutable via cluster
+   * updates and autoscaling.
+   *
+   * Only one of
+   * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+   * or `secondary_worker_flexible_config` can be set.
+   *
+   * In High Obtainability (HO) mode, secondary workers are optional. If
+   * secondary workers are used in an HO cluster, they must be configured using
+   * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The secondaryWorkerFlexibleConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig
+      getSecondaryWorkerFlexibleConfig() {
+    return secondaryWorkerFlexibleConfig_ == null
+        ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+        : secondaryWorkerFlexibleConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The High Obtainability (HO) config settings for a cluster's
+   * secondary worker instances.
+   *
+   * In High Obtainability (HO) mode, flexible configs are the single source of
+   * truth for desired cluster configuration. `num_instances` represents the
+   * desired capacity of the secondary worker group and is mutable via cluster
+   * updates and autoscaling.
+   *
+   * Only one of
+   * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+   * or `secondary_worker_flexible_config` can be set.
+   *
+   * In High Obtainability (HO) mode, secondary workers are optional. If
+   * secondary workers are used in an HO cluster, they must be configured using
+   * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
+      getSecondaryWorkerFlexibleConfigOrBuilder() {
+    return secondaryWorkerFlexibleConfig_ == null
+        ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+        : secondaryWorkerFlexibleConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1919,6 +2232,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     if (engine_
         != com.google.cloud.dataproc.v1.ClusterConfig.Engine.ENGINE_UNSPECIFIED.getNumber()) {
       output.writeEnum(30, engine_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(31, getMasterFlexibleConfig());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(32, getWorkerFlexibleConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(33, getSecondaryWorkerFlexibleConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1996,6 +2318,19 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         != com.google.cloud.dataproc.v1.ClusterConfig.Engine.ENGINE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(30, engine_);
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(31, getMasterFlexibleConfig());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, getWorkerFlexibleConfig());
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              33, getSecondaryWorkerFlexibleConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2067,6 +2402,20 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
       if (!getDataprocMetricConfig().equals(other.getDataprocMetricConfig())) return false;
     }
     if (!getAuxiliaryNodeGroupsList().equals(other.getAuxiliaryNodeGroupsList())) return false;
+    if (hasMasterFlexibleConfig() != other.hasMasterFlexibleConfig()) return false;
+    if (hasMasterFlexibleConfig()) {
+      if (!getMasterFlexibleConfig().equals(other.getMasterFlexibleConfig())) return false;
+    }
+    if (hasWorkerFlexibleConfig() != other.hasWorkerFlexibleConfig()) return false;
+    if (hasWorkerFlexibleConfig()) {
+      if (!getWorkerFlexibleConfig().equals(other.getWorkerFlexibleConfig())) return false;
+    }
+    if (hasSecondaryWorkerFlexibleConfig() != other.hasSecondaryWorkerFlexibleConfig())
+      return false;
+    if (hasSecondaryWorkerFlexibleConfig()) {
+      if (!getSecondaryWorkerFlexibleConfig().equals(other.getSecondaryWorkerFlexibleConfig()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2143,6 +2492,18 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
     if (getAuxiliaryNodeGroupsCount() > 0) {
       hash = (37 * hash) + AUXILIARY_NODE_GROUPS_FIELD_NUMBER;
       hash = (53 * hash) + getAuxiliaryNodeGroupsList().hashCode();
+    }
+    if (hasMasterFlexibleConfig()) {
+      hash = (37 * hash) + MASTER_FLEXIBLE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMasterFlexibleConfig().hashCode();
+    }
+    if (hasWorkerFlexibleConfig()) {
+      hash = (37 * hash) + WORKER_FLEXIBLE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getWorkerFlexibleConfig().hashCode();
+    }
+    if (hasSecondaryWorkerFlexibleConfig()) {
+      hash = (37 * hash) + SECONDARY_WORKER_FLEXIBLE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSecondaryWorkerFlexibleConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2299,6 +2660,9 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         internalGetMetastoreConfigFieldBuilder();
         internalGetDataprocMetricConfigFieldBuilder();
         internalGetAuxiliaryNodeGroupsFieldBuilder();
+        internalGetMasterFlexibleConfigFieldBuilder();
+        internalGetWorkerFlexibleConfigFieldBuilder();
+        internalGetSecondaryWorkerFlexibleConfigFieldBuilder();
       }
     }
 
@@ -2385,6 +2749,21 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         auxiliaryNodeGroupsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00040000);
+      masterFlexibleConfig_ = null;
+      if (masterFlexibleConfigBuilder_ != null) {
+        masterFlexibleConfigBuilder_.dispose();
+        masterFlexibleConfigBuilder_ = null;
+      }
+      workerFlexibleConfig_ = null;
+      if (workerFlexibleConfigBuilder_ != null) {
+        workerFlexibleConfigBuilder_.dispose();
+        workerFlexibleConfigBuilder_ = null;
+      }
+      secondaryWorkerFlexibleConfig_ = null;
+      if (secondaryWorkerFlexibleConfigBuilder_ != null) {
+        secondaryWorkerFlexibleConfigBuilder_.dispose();
+        secondaryWorkerFlexibleConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2525,6 +2904,27 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
                 : dataprocMetricConfigBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.masterFlexibleConfig_ =
+            masterFlexibleConfigBuilder_ == null
+                ? masterFlexibleConfig_
+                : masterFlexibleConfigBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.workerFlexibleConfig_ =
+            workerFlexibleConfigBuilder_ == null
+                ? workerFlexibleConfig_
+                : workerFlexibleConfigBuilder_.build();
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.secondaryWorkerFlexibleConfig_ =
+            secondaryWorkerFlexibleConfigBuilder_ == null
+                ? secondaryWorkerFlexibleConfig_
+                : secondaryWorkerFlexibleConfigBuilder_.build();
+        to_bitField0_ |= 0x00004000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2648,6 +3048,15 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
             auxiliaryNodeGroupsBuilder_.addAllMessages(other.auxiliaryNodeGroups_);
           }
         }
+      }
+      if (other.hasMasterFlexibleConfig()) {
+        mergeMasterFlexibleConfig(other.getMasterFlexibleConfig());
+      }
+      if (other.hasWorkerFlexibleConfig()) {
+        mergeWorkerFlexibleConfig(other.getWorkerFlexibleConfig());
+      }
+      if (other.hasSecondaryWorkerFlexibleConfig()) {
+        mergeSecondaryWorkerFlexibleConfig(other.getSecondaryWorkerFlexibleConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2817,6 +3226,28 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 240
+            case 250:
+              {
+                input.readMessage(
+                    internalGetMasterFlexibleConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 250
+            case 258:
+              {
+                input.readMessage(
+                    internalGetWorkerFlexibleConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 258
+            case 266:
+              {
+                input.readMessage(
+                    internalGetSecondaryWorkerFlexibleConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 266
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7147,6 +7578,1057 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessage
         auxiliaryNodeGroups_ = null;
       }
       return auxiliaryNodeGroupsBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig masterFlexibleConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>
+        masterFlexibleConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the masterFlexibleConfig field is set.
+     */
+    public boolean hasMasterFlexibleConfig() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The masterFlexibleConfig.
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig getMasterFlexibleConfig() {
+      if (masterFlexibleConfigBuilder_ == null) {
+        return masterFlexibleConfig_ == null
+            ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+            : masterFlexibleConfig_;
+      } else {
+        return masterFlexibleConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMasterFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
+      if (masterFlexibleConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        masterFlexibleConfig_ = value;
+      } else {
+        masterFlexibleConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMasterFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder builderForValue) {
+      if (masterFlexibleConfigBuilder_ == null) {
+        masterFlexibleConfig_ = builderForValue.build();
+      } else {
+        masterFlexibleConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMasterFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
+      if (masterFlexibleConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && masterFlexibleConfig_ != null
+            && masterFlexibleConfig_
+                != com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()) {
+          getMasterFlexibleConfigBuilder().mergeFrom(value);
+        } else {
+          masterFlexibleConfig_ = value;
+        }
+      } else {
+        masterFlexibleConfigBuilder_.mergeFrom(value);
+      }
+      if (masterFlexibleConfig_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMasterFlexibleConfig() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      masterFlexibleConfig_ = null;
+      if (masterFlexibleConfigBuilder_ != null) {
+        masterFlexibleConfigBuilder_.dispose();
+        masterFlexibleConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder
+        getMasterFlexibleConfigBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetMasterFlexibleConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
+        getMasterFlexibleConfigOrBuilder() {
+      if (masterFlexibleConfigBuilder_ != null) {
+        return masterFlexibleConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return masterFlexibleConfig_ == null
+            ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+            : masterFlexibleConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * master instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration across node groups:
+     * * For single-node clusters: `master_flexible_config` must be specified, and
+     * no worker configs should be set.
+     * * For multi-node (standard) clusters: both `master_flexible_config` and
+     * [worker_flexible_config][google.cloud.dataproc.v1.ClusterConfig.worker_flexible_config]
+     * must be specified. Mixing standard and flexible configs across node
+     * groups is not allowed.
+     *
+     * Only one of
+     * [master_config][google.cloud.dataproc.v1.ClusterConfig.master_config] or
+     * `master_flexible_config` can be set.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig master_flexible_config = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>
+        internalGetMasterFlexibleConfigFieldBuilder() {
+      if (masterFlexibleConfigBuilder_ == null) {
+        masterFlexibleConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>(
+                getMasterFlexibleConfig(), getParentForChildren(), isClean());
+        masterFlexibleConfig_ = null;
+      }
+      return masterFlexibleConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig workerFlexibleConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>
+        workerFlexibleConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workerFlexibleConfig field is set.
+     */
+    public boolean hasWorkerFlexibleConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workerFlexibleConfig.
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig getWorkerFlexibleConfig() {
+      if (workerFlexibleConfigBuilder_ == null) {
+        return workerFlexibleConfig_ == null
+            ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+            : workerFlexibleConfig_;
+      } else {
+        return workerFlexibleConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkerFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
+      if (workerFlexibleConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        workerFlexibleConfig_ = value;
+      } else {
+        workerFlexibleConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkerFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder builderForValue) {
+      if (workerFlexibleConfigBuilder_ == null) {
+        workerFlexibleConfig_ = builderForValue.build();
+      } else {
+        workerFlexibleConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkerFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
+      if (workerFlexibleConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && workerFlexibleConfig_ != null
+            && workerFlexibleConfig_
+                != com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()) {
+          getWorkerFlexibleConfigBuilder().mergeFrom(value);
+        } else {
+          workerFlexibleConfig_ = value;
+        }
+      } else {
+        workerFlexibleConfigBuilder_.mergeFrom(value);
+      }
+      if (workerFlexibleConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkerFlexibleConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      workerFlexibleConfig_ = null;
+      if (workerFlexibleConfigBuilder_ != null) {
+        workerFlexibleConfigBuilder_.dispose();
+        workerFlexibleConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder
+        getWorkerFlexibleConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetWorkerFlexibleConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
+        getWorkerFlexibleConfigOrBuilder() {
+      if (workerFlexibleConfigBuilder_ != null) {
+        return workerFlexibleConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return workerFlexibleConfig_ == null
+            ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+            : workerFlexibleConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for the cluster's
+     * worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the worker group and is mutable via cluster updates and
+     * autoscaling.
+     *
+     * Only one of
+     * [worker_config][google.cloud.dataproc.v1.ClusterConfig.worker_config] or
+     * `worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, for multi-node (standard) clusters, both
+     * [master_flexible_config][google.cloud.dataproc.v1.ClusterConfig.master_flexible_config]
+     * and `worker_flexible_config` must be specified. Mixing standard and
+     * flexible configs across node groups is not allowed. Single-node clusters do
+     * not specify worker configs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig worker_flexible_config = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>
+        internalGetWorkerFlexibleConfigFieldBuilder() {
+      if (workerFlexibleConfigBuilder_ == null) {
+        workerFlexibleConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>(
+                getWorkerFlexibleConfig(), getParentForChildren(), isClean());
+        workerFlexibleConfig_ = null;
+      }
+      return workerFlexibleConfigBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondaryWorkerFlexibleConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>
+        secondaryWorkerFlexibleConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the secondaryWorkerFlexibleConfig field is set.
+     */
+    public boolean hasSecondaryWorkerFlexibleConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secondaryWorkerFlexibleConfig.
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig
+        getSecondaryWorkerFlexibleConfig() {
+      if (secondaryWorkerFlexibleConfigBuilder_ == null) {
+        return secondaryWorkerFlexibleConfig_ == null
+            ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+            : secondaryWorkerFlexibleConfig_;
+      } else {
+        return secondaryWorkerFlexibleConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSecondaryWorkerFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
+      if (secondaryWorkerFlexibleConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        secondaryWorkerFlexibleConfig_ = value;
+      } else {
+        secondaryWorkerFlexibleConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSecondaryWorkerFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder builderForValue) {
+      if (secondaryWorkerFlexibleConfigBuilder_ == null) {
+        secondaryWorkerFlexibleConfig_ = builderForValue.build();
+      } else {
+        secondaryWorkerFlexibleConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSecondaryWorkerFlexibleConfig(
+        com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig value) {
+      if (secondaryWorkerFlexibleConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && secondaryWorkerFlexibleConfig_ != null
+            && secondaryWorkerFlexibleConfig_
+                != com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()) {
+          getSecondaryWorkerFlexibleConfigBuilder().mergeFrom(value);
+        } else {
+          secondaryWorkerFlexibleConfig_ = value;
+        }
+      } else {
+        secondaryWorkerFlexibleConfigBuilder_.mergeFrom(value);
+      }
+      if (secondaryWorkerFlexibleConfig_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSecondaryWorkerFlexibleConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      secondaryWorkerFlexibleConfig_ = null;
+      if (secondaryWorkerFlexibleConfigBuilder_ != null) {
+        secondaryWorkerFlexibleConfigBuilder_.dispose();
+        secondaryWorkerFlexibleConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder
+        getSecondaryWorkerFlexibleConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return internalGetSecondaryWorkerFlexibleConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder
+        getSecondaryWorkerFlexibleConfigOrBuilder() {
+      if (secondaryWorkerFlexibleConfigBuilder_ != null) {
+        return secondaryWorkerFlexibleConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return secondaryWorkerFlexibleConfig_ == null
+            ? com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.getDefaultInstance()
+            : secondaryWorkerFlexibleConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The High Obtainability (HO) config settings for a cluster's
+     * secondary worker instances.
+     *
+     * In High Obtainability (HO) mode, flexible configs are the single source of
+     * truth for desired cluster configuration. `num_instances` represents the
+     * desired capacity of the secondary worker group and is mutable via cluster
+     * updates and autoscaling.
+     *
+     * Only one of
+     * [secondary_worker_config][google.cloud.dataproc.v1.ClusterConfig.secondary_worker_config]
+     * or `secondary_worker_flexible_config` can be set.
+     *
+     * In High Obtainability (HO) mode, secondary workers are optional. If
+     * secondary workers are used in an HO cluster, they must be configured using
+     * `secondary_worker_flexible_config` (not `secondary_worker_config`).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.FlexibleInstanceGroupConfig secondary_worker_flexible_config = 33 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>
+        internalGetSecondaryWorkerFlexibleConfigFieldBuilder() {
+      if (secondaryWorkerFlexibleConfigBuilder_ == null) {
+        secondaryWorkerFlexibleConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig,
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfig.Builder,
+                com.google.cloud.dataproc.v1.FlexibleInstanceGroupConfigOrBuilder>(
+                getSecondaryWorkerFlexibleConfig(), getParentForChildren(), isClean());
+        secondaryWorkerFlexibleConfig_ = null;
+      }
+      return secondaryWorkerFlexibleConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.ClusterConfig)
