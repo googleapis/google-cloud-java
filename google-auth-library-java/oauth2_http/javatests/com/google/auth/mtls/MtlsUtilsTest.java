@@ -39,12 +39,26 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 class MtlsUtilsTest {
 
   @TempDir Path tempDir;
+
+  @BeforeEach
+  void setUp() {
+    // Never consult the real GKE well-known path from tests.
+    MtlsUtils.setGkeCredentialBundlePathForTesting(
+        tempDir.resolve("no-gke-bundle").resolve("bundle.pem").toString());
+  }
+
+  @AfterEach
+  void tearDown() {
+    MtlsUtils.setGkeCredentialBundlePathForTesting(null);
+  }
 
   @Test
   void getCertificatePath_succeeds() throws IOException {
@@ -737,5 +751,125 @@ class MtlsUtilsTest {
     assertNull(MtlsUtils.getCertificateFingerprint(null));
     assertNull(MtlsUtils.getCertificateFingerprint("/nonexistent/file.crt"));
     assertNull(MtlsUtils.getCertificateFingerprint(tempDir.toString())); // Directory
+  }
+
+  // --- GKE Credential Bundle Tests ---
+
+  private PropertyProvider homeInTempDir() {
+    return (name, def) -> {
+      if ("user.home".equals(name)) return tempDir.resolve("home").toString();
+      if ("os.name".equals(name)) return "Linux";
+      return def;
+    };
+  }
+
+  private Path writeGkeBundle() throws IOException {
+    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
+    Files.write(bundle, "bundle".getBytes());
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    return bundle;
+  }
+
+  private void writeDefaultGcloudConfig(String content) throws IOException {
+    Path gcloudDir = tempDir.resolve("home").resolve(".config").resolve("gcloud");
+    Files.createDirectories(gcloudDir);
+    Files.write(gcloudDir.resolve("certificate_config.json"), content.getBytes());
+  }
+
+  @Test
+  void getWorkloadCertPath_noConfig_gkeBundlePresent_returnsBundlePath() throws IOException {
+    Path bundle = writeGkeBundle();
+    EnvironmentProvider envProvider = name -> null;
+
+    assertEquals(bundle.toString(), MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+    assertTrue(MtlsUtils.useMtlsClientCertificate(envProvider, homeInTempDir()));
+  }
+
+  @Test
+  void getWorkloadCertPath_noConfig_gkeBundleAbsent_returnsNull() {
+    MtlsUtils.setGkeCredentialBundlePathForTesting(tempDir.resolve("missing.pem").toString());
+    EnvironmentProvider envProvider = name -> null;
+
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, homeInTempDir()));
+  }
+
+  @Test
+  void getWorkloadCertPath_gkeBundleIsDirectory_returnsNull() throws IOException {
+    Path dir = Files.createDirectory(tempDir.resolve("x509.credential-bundle.private-key.pem"));
+    MtlsUtils.setGkeCredentialBundlePathForTesting(dir.toString());
+
+    assertNull(MtlsUtils.getWorkloadCertPath(name -> null, homeInTempDir()));
+  }
+
+  @Test
+  void getWorkloadCertPath_gkeBundleEmpty_returnsNull() throws IOException {
+    Path bundle = Files.createFile(tempDir.resolve("x509.credential-bundle.private-key.pem"));
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    EnvironmentProvider envProvider = name -> null;
+
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, homeInTempDir()));
+    assertNull(MtlsUtils.getGkeCredentialBundlePath(envProvider, homeInTempDir()));
+  }
+
+  @Test
+  void getWorkloadCertPath_useClientCertFalse_ignoresGkeBundle() throws IOException {
+    writeGkeBundle();
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "false" : null;
+
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, homeInTempDir()));
+  }
+
+  @Test
+  void getWorkloadCertPath_defaultConfigWithoutWorkload_ignoresGkeBundle() throws IOException {
+    writeGkeBundle();
+    writeDefaultGcloudConfig("{\"cert_configs\":{\"enterprise_certificates\":{\"libs\":[]}}}");
+
+    assertNull(MtlsUtils.getWorkloadCertPath(name -> null, homeInTempDir()));
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfig_takesPrecedenceOverGkeBundle() throws IOException {
+    writeGkeBundle();
+    Path certFile = Files.write(tempDir.resolve("cert.pem"), "cert".getBytes());
+    Path keyFile = Files.write(tempDir.resolve("key.pem"), "key".getBytes());
+    Path configFile = tempDir.resolve("config.json");
+    Files.write(
+        configFile,
+        ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+                + certFile
+                + "\",\"key_path\":\""
+                + keyFile
+                + "\"}}}")
+            .getBytes());
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+
+    assertEquals(certFile.toString(), MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+  }
+
+  @Test
+  void hasCertificateConfiguration_reflectsExplicitEnvAndDefaultFile() throws IOException {
+    assertFalse(MtlsUtils.hasCertificateConfiguration(name -> null, homeInTempDir()));
+    assertTrue(
+        MtlsUtils.hasCertificateConfiguration(
+            name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? "/any/path.json" : null,
+            homeInTempDir()));
+
+    writeDefaultGcloudConfig("{}");
+    assertTrue(MtlsUtils.hasCertificateConfiguration(name -> null, homeInTempDir()));
+  }
+
+  @Test
+  void getGkeCredentialBundlePath_onlyWhenNoConfiguration() throws IOException {
+    Path bundle = writeGkeBundle();
+    assertEquals(
+        bundle.toString(), MtlsUtils.getGkeCredentialBundlePath(name -> null, homeInTempDir()));
+
+    writeDefaultGcloudConfig("{}");
+    assertNull(MtlsUtils.getGkeCredentialBundlePath(name -> null, homeInTempDir()));
   }
 }

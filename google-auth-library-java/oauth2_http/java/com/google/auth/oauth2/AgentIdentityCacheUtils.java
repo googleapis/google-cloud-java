@@ -167,6 +167,12 @@ final class AgentIdentityCacheUtils {
     final @Nullable CertInfo certInfo;
 
     /**
+     * Whether {@link #certMetadata} points to the well-known GKE credential bundle path ({@link
+     * AgentIdentityUtils#isGkeCredentialBundle}).
+     */
+    final boolean isGkeCredentialBundle;
+
+    /**
      * Constructs a cached snapshot of Agent Identity evaluation state and file metadata.
      *
      * @param configMetadata filesystem metadata of the certificate config file, or {@code null}
@@ -190,6 +196,16 @@ final class AgentIdentityCacheUtils {
       this.keyMetadata = keyMetadata;
       this.shouldRequestBoundToken = shouldRequestBoundToken;
       this.certInfo = certInfo;
+      this.isGkeCredentialBundle =
+          certMetadata != null && AgentIdentityUtils.isGkeCredentialBundle(certMetadata.getPath());
+    }
+
+    /**
+     * Returns {@code true} if this cached entry was discovered from the well-known directory (not a
+     * certificate config file) and has both certificate and key metadata available for fallback.
+     */
+    boolean canUseWellKnownFallback() {
+      return configMetadata == null && certMetadata != null && keyMetadata != null;
     }
   }
 
