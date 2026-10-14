@@ -212,7 +212,7 @@ final class OpenTelemetryBootstrappingUtils {
           StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION,
           StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION,
           StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATION_TTFB,
+          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION);
