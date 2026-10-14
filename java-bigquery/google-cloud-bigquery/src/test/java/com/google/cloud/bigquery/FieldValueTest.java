@@ -134,18 +134,20 @@ public class FieldValueTest {
 
   @Test
   public void testInt64Timestamp() {
+    DataFormatOptions losslessOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
     FieldValue lossyFieldValue =
         FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1.9954383398377106E10");
     long lossy = lossyFieldValue.getTimestampValue();
 
     FieldValue losslessFieldValue =
-        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "19954383398377106", true);
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "19954383398377106", losslessOptions);
     long lossless = losslessFieldValue.getTimestampValue();
 
     assertEquals(lossy, lossless);
 
     FieldValue fieldValue =
-        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "19954383398377106", true);
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "19954383398377106", losslessOptions);
     long received = fieldValue.getTimestampValue();
     long expected = 19954383398377106L;
     assertEquals(expected, received);
@@ -155,9 +157,11 @@ public class FieldValueTest {
   public void testLosslessMaxTimestamp() {
     // Test the lossless behavior (useInt64Timestamps = true)
     // The backend returns a 64-bit integer string for microseconds when this option is enabled
+    DataFormatOptions losslessOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
     String losslessTimestampString = "253402300799999999";
     FieldValue losslessValue =
-        FieldValue.of(FieldValue.Attribute.PRIMITIVE, losslessTimestampString, true);
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, losslessTimestampString, losslessOptions);
 
     // Exactly matches the microsecond equivalent of 9999-12-31 23:59:59.999999
     assertEquals(253402300799999999L, losslessValue.getTimestampValue());
