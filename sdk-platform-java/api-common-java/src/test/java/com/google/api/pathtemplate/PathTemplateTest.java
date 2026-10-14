@@ -643,15 +643,9 @@ class PathTemplateTest {
   }
 
   @Test
-  void instantiateRejectsDotAndDoubleDotInSingleWildcard() {
+  void instantiateRejectsDotInSingleWildcard() {
     PathTemplate template =
         PathTemplate.create("/compute/v1/projects/{project}/regions/{region}/addresses");
-    ValidationException dotDotException =
-        Assertions.assertThrows(
-            ValidationException.class,
-            () -> template.instantiate("project", "my-project", "region", ".."));
-    Truth.assertThat(dotDotException.getMessage()).isEqualTo("Invalid value .. for region.");
-
     ValidationException dotException =
         Assertions.assertThrows(
             ValidationException.class,
@@ -660,7 +654,18 @@ class PathTemplateTest {
   }
 
   @Test
-  void instantiateRejectsDotAndDoubleDotInMultiSegmentWildcard() {
+  void instantiateRejectsDoubleDotInSingleWildcard() {
+    PathTemplate template =
+        PathTemplate.create("/compute/v1/projects/{project}/regions/{region}/addresses");
+    ValidationException dotDotException =
+        Assertions.assertThrows(
+            ValidationException.class,
+            () -> template.instantiate("project", "my-project", "region", ".."));
+    Truth.assertThat(dotDotException.getMessage()).isEqualTo("Invalid value .. for region.");
+  }
+
+  @Test
+  void instantiateRejectsDotInMultiSegmentWildcard() {
     PathTemplate template =
         PathTemplate.create("/v2/{parent=projects/*/locations/*}/content:inspect");
     ValidationException dotException =
@@ -669,7 +674,12 @@ class PathTemplateTest {
             () -> template.instantiate("parent", "projects/my-project/locations/."));
     Truth.assertThat(dotException.getMessage())
         .isEqualTo("Invalid value projects/my-project/locations/. for parent.");
+  }
 
+  @Test
+  void instantiateRejectsDoubleDotInMultiSegmentWildcard() {
+    PathTemplate template =
+        PathTemplate.create("/v2/{parent=projects/*/locations/*}/content:inspect");
     ValidationException dotDotException =
         Assertions.assertThrows(
             ValidationException.class,
@@ -679,14 +689,31 @@ class PathTemplateTest {
   }
 
   @Test
-  void instantiateRejectsDotAndDoubleDotInPathWildcard() {
+  void instantiateRejectsDotInPathWildcard() {
+    PathTemplate template =
+        PathTemplate.create("/v3/{name=projects/*/monitoredResourceDescriptors/**}");
+    for (String invalidName :
+        new String[] {
+          "projects/my-project/monitoredResourceDescriptors/instance/my-instance/.",
+          "projects/my-project/monitoredResourceDescriptors/.",
+          "projects/my-project/monitoredResourceDescriptors/instance/./my-instance",
+          "projects/my-project/monitoredResourceDescriptors/ . "
+        }) {
+      ValidationException exception =
+          Assertions.assertThrows(
+              ValidationException.class, () -> template.instantiate("name", invalidName));
+      Truth.assertThat(exception.getMessage())
+          .isEqualTo("Value for name must not contain segments that are exactly . or ..");
+    }
+  }
+
+  @Test
+  void instantiateRejectsDoubleDotInPathWildcard() {
     PathTemplate template =
         PathTemplate.create("/v3/{name=projects/*/monitoredResourceDescriptors/**}");
     for (String invalidName :
         new String[] {
           "projects/my-project/monitoredResourceDescriptors/instance/my-instance/..",
-          "projects/my-project/monitoredResourceDescriptors/instance/my-instance/.",
-          "projects/my-project/monitoredResourceDescriptors/.",
           "projects/my-project/monitoredResourceDescriptors/..",
           "projects/my-project/monitoredResourceDescriptors/instance/./my-instance/..",
           "projects/my-project/monitoredResourceDescriptors/instance/../..",
