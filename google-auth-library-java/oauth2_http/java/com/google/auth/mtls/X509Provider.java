@@ -96,12 +96,12 @@ public class X509Provider implements MtlsProvider {
   }
 
   /**
-   * Creates an X.509 provider for the client transport layer. In addition to the locations checked
-   * by {@link #X509Provider()}, it falls back to the GKE credential bundle when no certificate
-   * configuration is present, so that the transport uses the same certificate that {@link
+   * Creates an X.509 provider that, in addition to the locations checked by {@link
+   * #X509Provider()}, falls back to the GKE credential bundle when no certificate configuration is
+   * present, so that the transport uses the same certificate that {@link
    * MtlsUtils#getWorkloadCertPath} reports for certificate-bound tokens.
    */
-  static X509Provider createForTransport() {
+  static X509Provider createWithGkeCredentialBundleFallback() {
     return new X509Provider(
         SystemEnvironmentProvider.getInstance(), SystemPropertyProvider.getInstance(), null, true);
   }
@@ -137,7 +137,7 @@ public class X509Provider implements MtlsProvider {
    *   <li>The path pointed to by the "GOOGLE_API_CERTIFICATE_CONFIG" environment variable
    *   <li>The well known gcloud location for the certificate configuration file.
    *   <li>If none of the above is configured or present, and this provider was created with {@link
-   *       #createForTransport()}, the GKE credential bundle at {@code
+   *       #createWithGkeCredentialBundleFallback()}, the GKE credential bundle at {@code
    *       /var/run/secrets/workload-spiffe-credentials/x509.credential-bundle.private-key.pem},
    *       which contains both the certificate chain and the private key.
    * </ul>
@@ -150,26 +150,48 @@ public class X509Provider implements MtlsProvider {
    */
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
-    if (allowGkeCredentialBundle && certConfigPathOverride == null) {
-      String gkeCredentialBundlePath =
-          MtlsUtils.getGkeCredentialBundlePath(envProvider, propProvider);
-      if (gkeCredentialBundlePath != null) {
-        try (InputStream bundleStream = new FileInputStream(new File(gkeCredentialBundlePath))) {
-          return MtlsKeyStoreUtils.createMtlsKeyStore(bundleStream);
-        } catch (FileNotFoundException e) {
-          // The bundle was removed (e.g. mid-rotation) after the availability check.
-          throw new CertificateSourceUnavailableException(
-              "GKE credential bundle is no longer available: " + gkeCredentialBundlePath, e);
-        } catch (Exception e) {
-          throw new IOException(
-              "X509Provider: Unable to load GKE credential bundle: " + gkeCredentialBundlePath, e);
+    WorkloadCertificateConfiguration workloadCertConfig;
+    try {
+      workloadCertConfig =
+          MtlsUtils.getWorkloadCertificateConfiguration(
+              envProvider, propProvider, certConfigPathOverride);
+    } catch (CertificateSourceUnavailableException configUnavailable) {
+      // Only fall back to the GKE credential bundle when created for the mTLS transport
+      // (allowGkeCredentialBundle == true, rather than public X.509 WIF constructors) and when no
+      // explicit certificate configuration path override was passed to the constructor.
+      if (allowGkeCredentialBundle && certConfigPathOverride == null) {
+        // getWorkloadCertificateConfiguration also throws CertificateSourceUnavailableException
+        // when GOOGLE_API_CERTIFICATE_CONFIG is explicitly set or when a well-known
+        // certificate_config.json exists with only a non-workload (e.g. ECP) configuration;
+        // getGkeCredentialBundlePath checks hasCertificateConfiguration so we do not fall back to
+        // the GKE bundle in those cases.
+        String gkeCredentialBundlePath =
+            MtlsUtils.getGkeCredentialBundlePath(envProvider, propProvider);
+        if (gkeCredentialBundlePath != null) {
+          try (InputStream bundleStream = new FileInputStream(new File(gkeCredentialBundlePath))) {
+            return MtlsKeyStoreUtils.createMtlsKeyStore(bundleStream);
+          } catch (FileNotFoundException e) {
+            // The bundle was removed (e.g. mid-rotation) after the availability check.
+            throw new CertificateSourceUnavailableException(
+                "GKE credential bundle at "
+                    + gkeCredentialBundlePath
+                    + " was removed before it could be read (for example, during certificate"
+                    + " rotation). Retry the request or verify that the GKE Pod Certificate volume"
+                    + " is mounted.",
+                e);
+          } catch (Exception e) {
+            throw new IOException(
+                "X509Provider: Unable to load GKE credential bundle at "
+                    + gkeCredentialBundlePath
+                    + ". Verify that the file contains a valid PEM-encoded X.509 certificate chain"
+                    + " and PKCS#8 private key, or set GOOGLE_API_USE_CLIENT_CERTIFICATE=false to"
+                    + " disable mTLS.",
+                e);
+          }
         }
       }
+      throw configUnavailable;
     }
-
-    WorkloadCertificateConfiguration workloadCertConfig =
-        MtlsUtils.getWorkloadCertificateConfiguration(
-            envProvider, propProvider, certConfigPathOverride);
 
     // Read the certificate and private key file paths into streams.
     try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));

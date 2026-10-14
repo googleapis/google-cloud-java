@@ -67,6 +67,7 @@ public class MtlsUtils {
   static final String GKE_CREDENTIAL_BUNDLE_PATH =
       "/var/run/secrets/workload-spiffe-credentials/x509.credential-bundle.private-key.pem";
 
+  // Overridable via setGkeCredentialBundlePathForTesting so unit tests can point to a temp file.
   private static volatile String gkeCredentialBundlePath = GKE_CREDENTIAL_BUNDLE_PATH;
 
   private MtlsUtils() {
@@ -107,12 +108,21 @@ public class MtlsUtils {
   }
 
   /**
+   * Returns {@code true} if the GKE credential bundle at {@code path} is a readable, non-empty
+   * regular file.
+   */
+  public static boolean isGkeCredentialBundleReady(String path) {
+    File bundle = new File(path);
+    return bundle.isFile() && bundle.canRead() && bundle.length() > 0;
+  }
+
+  /**
    * Returns the GKE credential bundle path if it is a readable, non-empty regular file, otherwise
    * null.
    */
   private static @Nullable String findGkeCredentialBundle() {
-    File bundle = new File(gkeCredentialBundlePath);
-    return bundle.isFile() && bundle.canRead() && bundle.length() > 0 ? bundle.getPath() : null;
+    String path = gkeCredentialBundlePath;
+    return isGkeCredentialBundleReady(path) ? path : null;
   }
 
   /** Overrides the GKE credential bundle path for testing; {@code null} restores the default. */

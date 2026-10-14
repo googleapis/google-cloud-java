@@ -54,7 +54,7 @@ public class DefaultMtlsProviderFactory {
     // Note: The caller should handle CertificateSourceUnavailableException gracefully, since
     // it is an expected error case. All other IOExceptions are unexpected and should be surfaced
     // up the call stack.
-    MtlsProvider mtlsProvider = X509Provider.createForTransport();
+    MtlsProvider mtlsProvider = X509Provider.createWithGkeCredentialBundleFallback();
     if (mtlsProvider.isAvailable()) {
       return mtlsProvider;
     }
