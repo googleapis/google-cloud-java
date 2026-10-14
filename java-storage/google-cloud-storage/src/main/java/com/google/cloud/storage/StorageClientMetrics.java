@@ -46,24 +46,18 @@ final class StorageClientMetrics {
       AttributeKey.stringKey("gcp.storage.operation");
   static final AttributeKey<String> KEY_GCP_CLIENT_METHOD =
       AttributeKey.stringKey("gcp.client.method");
-  static final AttributeKey<String> KEY_RPC_METHOD =
-      AttributeKey.stringKey("rpc.method");
-  static final AttributeKey<String> KEY_RPC_SYSTEM_NAME =
-      AttributeKey.stringKey("rpc.system.name");
+  static final AttributeKey<String> KEY_RPC_METHOD = AttributeKey.stringKey("rpc.method");
+  static final AttributeKey<String> KEY_RPC_SYSTEM_NAME = AttributeKey.stringKey("rpc.system.name");
   static final AttributeKey<String> KEY_RPC_RESPONSE_STATUS_CODE =
       AttributeKey.stringKey("rpc.response.status_code");
   static final AttributeKey<String> KEY_HTTP_REQUEST_METHOD =
       AttributeKey.stringKey("http.request.method");
   static final AttributeKey<Long> KEY_HTTP_RESPONSE_STATUS_CODE =
       AttributeKey.longKey("http.response.status_code");
-  static final AttributeKey<String> KEY_SERVER_ADDRESS =
-      AttributeKey.stringKey("server.address");
-  static final AttributeKey<Long> KEY_SERVER_PORT =
-      AttributeKey.longKey("server.port");
-  static final AttributeKey<String> KEY_ERROR_TYPE =
-      AttributeKey.stringKey("error.type");
-  static final AttributeKey<String> KEY_NETWORK_PATH =
-      AttributeKey.stringKey("network.path");
+  static final AttributeKey<String> KEY_SERVER_ADDRESS = AttributeKey.stringKey("server.address");
+  static final AttributeKey<Long> KEY_SERVER_PORT = AttributeKey.longKey("server.port");
+  static final AttributeKey<String> KEY_ERROR_TYPE = AttributeKey.stringKey("error.type");
+  static final AttributeKey<String> KEY_NETWORK_PATH = AttributeKey.stringKey("network.path");
   static final AttributeKey<String> KEY_NETWORK_IO_DIRECTION =
       AttributeKey.stringKey("network.io.direction");
 
@@ -105,8 +99,7 @@ final class StorageClientMetrics {
       "gcp.storage.client.server.unreached";
   static final String METRIC_GCP_STORAGE_CLIENT_STALL_DURATION =
       "gcp.storage.client.stall.duration";
-  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_IO =
-      "gcp.storage.client.network.io";
+  static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_IO = "gcp.storage.client.network.io";
   static final String METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION =
       "gcp.storage.client.auth.credential_refresh.duration";
 
@@ -133,10 +126,7 @@ final class StorageClientMetrics {
   static StorageClientMetrics create(
       MeterProvider meterProvider, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
     return create(
-        meterProvider,
-        UUID.randomUUID().toString(),
-        enableOtelMetrics,
-        enableOtelDebugMetrics);
+        meterProvider, UUID.randomUUID().toString(), enableOtelMetrics, enableOtelDebugMetrics);
   }
 
   static StorageClientMetrics create(
@@ -160,8 +150,7 @@ final class StorageClientMetrics {
         meter, clientAttributes, enableOtelMetrics, enableOtelDebugMetrics);
   }
 
-  StorageClientMetrics(
-      Meter meter, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
+  StorageClientMetrics(Meter meter, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
     this(
         meter,
         Attributes.builder()
@@ -185,8 +174,7 @@ final class StorageClientMetrics {
       this.rpcClientCallDuration =
           meter
               .histogramBuilder(METRIC_RPC_CLIENT_CALL_DURATION)
-              .setDescription(
-                  "Duration of a single gRPC client call attempt to Cloud Storage.")
+              .setDescription("Duration of a single gRPC client call attempt to Cloud Storage.")
               .setUnit("s")
               .setExplicitBucketBoundariesAdvice(
                   OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())
@@ -194,8 +182,7 @@ final class StorageClientMetrics {
       this.httpClientRequestDuration =
           meter
               .histogramBuilder(METRIC_HTTP_CLIENT_REQUEST_DURATION)
-              .setDescription(
-                  "Duration of a single HTTP request attempt to Cloud Storage.")
+              .setDescription("Duration of a single HTTP request attempt to Cloud Storage.")
               .setUnit("s")
               .setExplicitBucketBoundariesAdvice(
                   OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries())

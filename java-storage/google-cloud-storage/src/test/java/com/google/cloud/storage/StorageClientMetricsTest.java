@@ -246,8 +246,7 @@ public final class StorageClientMetricsTest {
         .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
     assertThat(metricsMap)
         .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED);
-    assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
+    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
   }
 
   @Test
