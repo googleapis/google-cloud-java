@@ -344,6 +344,129 @@ public interface MongodbProfileOrBuilder
   com.google.cloud.datastream.v1.StandardConnectionFormatOrBuilder
       getStandardConnectionFormatOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAdditionalOptionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsAdditionalOptions(java.lang.String key);
+
+  /** Use {@link #getAdditionalOptionsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getAdditionalOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getAdditionalOptionsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getAdditionalOptionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getAdditionalOptionsOrThrow(java.lang.String key);
+
   com.google.cloud.datastream.v1.MongodbProfile.MongodbConnectionFormatCase
       getMongodbConnectionFormatCase();
 }

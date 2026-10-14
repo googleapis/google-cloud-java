@@ -30,7 +30,7 @@ public interface MysqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL objects to retrieve from the source.
+   * The MySQL objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -43,7 +43,7 @@ public interface MysqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL objects to retrieve from the source.
+   * The MySQL objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -56,7 +56,7 @@ public interface MysqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL objects to retrieve from the source.
+   * The MySQL objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -67,7 +67,7 @@ public interface MysqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL objects to exclude from the stream.
+   * The MySQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -80,7 +80,7 @@ public interface MysqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL objects to exclude from the stream.
+   * The MySQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -93,7 +93,7 @@ public interface MysqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MySQL objects to exclude from the stream.
+   * The MySQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>

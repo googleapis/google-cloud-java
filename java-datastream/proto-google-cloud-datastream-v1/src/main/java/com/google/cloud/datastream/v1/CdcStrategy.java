@@ -1011,6 +1011,94 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder getMysqlGtidPositionOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+     * </code>
+     *
+     * @return Whether the mongodbChangeStreamPosition field is set.
+     */
+    boolean hasMongodbChangeStreamPosition();
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+     * </code>
+     *
+     * @return The mongodbChangeStreamPosition.
+     */
+    com.google.cloud.datastream.v1.MongodbChangeStreamPosition getMongodbChangeStreamPosition();
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+     * </code>
+     */
+    com.google.cloud.datastream.v1.MongodbChangeStreamPositionOrBuilder
+        getMongodbChangeStreamPositionOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spanner change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the spannerChangeStreamPosition field is set.
+     */
+    boolean hasSpannerChangeStreamPosition();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spanner change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The spannerChangeStreamPosition.
+     */
+    com.google.cloud.datastream.v1.SpannerChangeStreamPosition getSpannerChangeStreamPosition();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spanner change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.datastream.v1.SpannerChangeStreamPositionOrBuilder
+        getSpannerChangeStreamPositionOrBuilder();
+
     com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition.PositionCase getPositionCase();
   }
 
@@ -1074,6 +1162,8 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
       ORACLE_SCN_POSITION(102),
       SQL_SERVER_LSN_POSITION(103),
       MYSQL_GTID_POSITION(104),
+      MONGODB_CHANGE_STREAM_POSITION(105),
+      SPANNER_CHANGE_STREAM_POSITION(106),
       POSITION_NOT_SET(0);
       private final int value;
 
@@ -1101,6 +1191,10 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
             return SQL_SERVER_LSN_POSITION;
           case 104:
             return MYSQL_GTID_POSITION;
+          case 105:
+            return MONGODB_CHANGE_STREAM_POSITION;
+          case 106:
+            return SPANNER_CHANGE_STREAM_POSITION;
           case 0:
             return POSITION_NOT_SET;
           default:
@@ -1336,6 +1430,130 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
     }
 
+    public static final int MONGODB_CHANGE_STREAM_POSITION_FIELD_NUMBER = 105;
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+     * </code>
+     *
+     * @return Whether the mongodbChangeStreamPosition field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbChangeStreamPosition() {
+      return positionCase_ == 105;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+     * </code>
+     *
+     * @return The mongodbChangeStreamPosition.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbChangeStreamPosition
+        getMongodbChangeStreamPosition() {
+      if (positionCase_ == 105) {
+        return (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_;
+      }
+      return com.google.cloud.datastream.v1.MongodbChangeStreamPosition.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbChangeStreamPositionOrBuilder
+        getMongodbChangeStreamPositionOrBuilder() {
+      if (positionCase_ == 105) {
+        return (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_;
+      }
+      return com.google.cloud.datastream.v1.MongodbChangeStreamPosition.getDefaultInstance();
+    }
+
+    public static final int SPANNER_CHANGE_STREAM_POSITION_FIELD_NUMBER = 106;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spanner change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the spannerChangeStreamPosition field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerChangeStreamPosition() {
+      return positionCase_ == 106;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spanner change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The spannerChangeStreamPosition.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerChangeStreamPosition
+        getSpannerChangeStreamPosition() {
+      if (positionCase_ == 106) {
+        return (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_;
+      }
+      return com.google.cloud.datastream.v1.SpannerChangeStreamPosition.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Spanner change stream position to start replicating from.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerChangeStreamPositionOrBuilder
+        getSpannerChangeStreamPositionOrBuilder() {
+      if (positionCase_ == 106) {
+        return (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_;
+      }
+      return com.google.cloud.datastream.v1.SpannerChangeStreamPosition.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1361,6 +1579,14 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
       }
       if (positionCase_ == 104) {
         output.writeMessage(104, (com.google.cloud.datastream.v1.MysqlGtidPosition) position_);
+      }
+      if (positionCase_ == 105) {
+        output.writeMessage(
+            105, (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_);
+      }
+      if (positionCase_ == 106) {
+        output.writeMessage(
+            106, (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1390,6 +1616,16 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 104, (com.google.cloud.datastream.v1.MysqlGtidPosition) position_);
+      }
+      if (positionCase_ == 105) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                105, (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_);
+      }
+      if (positionCase_ == 106) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                106, (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1421,6 +1657,14 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
         case 104:
           if (!getMysqlGtidPosition().equals(other.getMysqlGtidPosition())) return false;
           break;
+        case 105:
+          if (!getMongodbChangeStreamPosition().equals(other.getMongodbChangeStreamPosition()))
+            return false;
+          break;
+        case 106:
+          if (!getSpannerChangeStreamPosition().equals(other.getSpannerChangeStreamPosition()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -1451,6 +1695,14 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
         case 104:
           hash = (37 * hash) + MYSQL_GTID_POSITION_FIELD_NUMBER;
           hash = (53 * hash) + getMysqlGtidPosition().hashCode();
+          break;
+        case 105:
+          hash = (37 * hash) + MONGODB_CHANGE_STREAM_POSITION_FIELD_NUMBER;
+          hash = (53 * hash) + getMongodbChangeStreamPosition().hashCode();
+          break;
+        case 106:
+          hash = (37 * hash) + SPANNER_CHANGE_STREAM_POSITION_FIELD_NUMBER;
+          hash = (53 * hash) + getSpannerChangeStreamPosition().hashCode();
           break;
         case 0:
         default:
@@ -1610,6 +1862,12 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
         if (mysqlGtidPositionBuilder_ != null) {
           mysqlGtidPositionBuilder_.clear();
         }
+        if (mongodbChangeStreamPositionBuilder_ != null) {
+          mongodbChangeStreamPositionBuilder_.clear();
+        }
+        if (spannerChangeStreamPositionBuilder_ != null) {
+          spannerChangeStreamPositionBuilder_.clear();
+        }
         positionCase_ = 0;
         position_ = null;
         return this;
@@ -1670,6 +1928,12 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
         if (positionCase_ == 104 && mysqlGtidPositionBuilder_ != null) {
           result.position_ = mysqlGtidPositionBuilder_.build();
         }
+        if (positionCase_ == 105 && mongodbChangeStreamPositionBuilder_ != null) {
+          result.position_ = mongodbChangeStreamPositionBuilder_.build();
+        }
+        if (positionCase_ == 106 && spannerChangeStreamPositionBuilder_ != null) {
+          result.position_ = spannerChangeStreamPositionBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1707,6 +1971,16 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
           case MYSQL_GTID_POSITION:
             {
               mergeMysqlGtidPosition(other.getMysqlGtidPosition());
+              break;
+            }
+          case MONGODB_CHANGE_STREAM_POSITION:
+            {
+              mergeMongodbChangeStreamPosition(other.getMongodbChangeStreamPosition());
+              break;
+            }
+          case SPANNER_CHANGE_STREAM_POSITION:
+            {
+              mergeSpannerChangeStreamPosition(other.getSpannerChangeStreamPosition());
               break;
             }
           case POSITION_NOT_SET:
@@ -1769,6 +2043,22 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
                   positionCase_ = 104;
                   break;
                 } // case 834
+              case 842:
+                {
+                  input.readMessage(
+                      internalGetMongodbChangeStreamPositionFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  positionCase_ = 105;
+                  break;
+                } // case 842
+              case 850:
+                {
+                  input.readMessage(
+                      internalGetSpannerChangeStreamPositionFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  positionCase_ = 106;
+                  break;
+                } // case 850
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2696,6 +2986,494 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessage
         positionCase_ = 104;
         onChanged();
         return mysqlGtidPositionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.MongodbChangeStreamPosition,
+              com.google.cloud.datastream.v1.MongodbChangeStreamPosition.Builder,
+              com.google.cloud.datastream.v1.MongodbChangeStreamPositionOrBuilder>
+          mongodbChangeStreamPositionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       *
+       * @return Whether the mongodbChangeStreamPosition field is set.
+       */
+      @java.lang.Override
+      public boolean hasMongodbChangeStreamPosition() {
+        return positionCase_ == 105;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       *
+       * @return The mongodbChangeStreamPosition.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MongodbChangeStreamPosition
+          getMongodbChangeStreamPosition() {
+        if (mongodbChangeStreamPositionBuilder_ == null) {
+          if (positionCase_ == 105) {
+            return (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_;
+          }
+          return com.google.cloud.datastream.v1.MongodbChangeStreamPosition.getDefaultInstance();
+        } else {
+          if (positionCase_ == 105) {
+            return mongodbChangeStreamPositionBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.MongodbChangeStreamPosition.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      public Builder setMongodbChangeStreamPosition(
+          com.google.cloud.datastream.v1.MongodbChangeStreamPosition value) {
+        if (mongodbChangeStreamPositionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          position_ = value;
+          onChanged();
+        } else {
+          mongodbChangeStreamPositionBuilder_.setMessage(value);
+        }
+        positionCase_ = 105;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      public Builder setMongodbChangeStreamPosition(
+          com.google.cloud.datastream.v1.MongodbChangeStreamPosition.Builder builderForValue) {
+        if (mongodbChangeStreamPositionBuilder_ == null) {
+          position_ = builderForValue.build();
+          onChanged();
+        } else {
+          mongodbChangeStreamPositionBuilder_.setMessage(builderForValue.build());
+        }
+        positionCase_ = 105;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      public Builder mergeMongodbChangeStreamPosition(
+          com.google.cloud.datastream.v1.MongodbChangeStreamPosition value) {
+        if (mongodbChangeStreamPositionBuilder_ == null) {
+          if (positionCase_ == 105
+              && position_
+                  != com.google.cloud.datastream.v1.MongodbChangeStreamPosition
+                      .getDefaultInstance()) {
+            position_ =
+                com.google.cloud.datastream.v1.MongodbChangeStreamPosition.newBuilder(
+                        (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            position_ = value;
+          }
+          onChanged();
+        } else {
+          if (positionCase_ == 105) {
+            mongodbChangeStreamPositionBuilder_.mergeFrom(value);
+          } else {
+            mongodbChangeStreamPositionBuilder_.setMessage(value);
+          }
+        }
+        positionCase_ = 105;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      public Builder clearMongodbChangeStreamPosition() {
+        if (mongodbChangeStreamPositionBuilder_ == null) {
+          if (positionCase_ == 105) {
+            positionCase_ = 0;
+            position_ = null;
+            onChanged();
+          }
+        } else {
+          if (positionCase_ == 105) {
+            positionCase_ = 0;
+            position_ = null;
+          }
+          mongodbChangeStreamPositionBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.MongodbChangeStreamPosition.Builder
+          getMongodbChangeStreamPositionBuilder() {
+        return internalGetMongodbChangeStreamPositionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MongodbChangeStreamPositionOrBuilder
+          getMongodbChangeStreamPositionOrBuilder() {
+        if ((positionCase_ == 105) && (mongodbChangeStreamPositionBuilder_ != null)) {
+          return mongodbChangeStreamPositionBuilder_.getMessageOrBuilder();
+        } else {
+          if (positionCase_ == 105) {
+            return (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_;
+          }
+          return com.google.cloud.datastream.v1.MongodbChangeStreamPosition.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.MongodbChangeStreamPosition mongodb_change_stream_position = 105;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.MongodbChangeStreamPosition,
+              com.google.cloud.datastream.v1.MongodbChangeStreamPosition.Builder,
+              com.google.cloud.datastream.v1.MongodbChangeStreamPositionOrBuilder>
+          internalGetMongodbChangeStreamPositionFieldBuilder() {
+        if (mongodbChangeStreamPositionBuilder_ == null) {
+          if (!(positionCase_ == 105)) {
+            position_ =
+                com.google.cloud.datastream.v1.MongodbChangeStreamPosition.getDefaultInstance();
+          }
+          mongodbChangeStreamPositionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.datastream.v1.MongodbChangeStreamPosition,
+                  com.google.cloud.datastream.v1.MongodbChangeStreamPosition.Builder,
+                  com.google.cloud.datastream.v1.MongodbChangeStreamPositionOrBuilder>(
+                  (com.google.cloud.datastream.v1.MongodbChangeStreamPosition) position_,
+                  getParentForChildren(),
+                  isClean());
+          position_ = null;
+        }
+        positionCase_ = 105;
+        onChanged();
+        return mongodbChangeStreamPositionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.SpannerChangeStreamPosition,
+              com.google.cloud.datastream.v1.SpannerChangeStreamPosition.Builder,
+              com.google.cloud.datastream.v1.SpannerChangeStreamPositionOrBuilder>
+          spannerChangeStreamPositionBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the spannerChangeStreamPosition field is set.
+       */
+      @java.lang.Override
+      public boolean hasSpannerChangeStreamPosition() {
+        return positionCase_ == 106;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The spannerChangeStreamPosition.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SpannerChangeStreamPosition
+          getSpannerChangeStreamPosition() {
+        if (spannerChangeStreamPositionBuilder_ == null) {
+          if (positionCase_ == 106) {
+            return (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_;
+          }
+          return com.google.cloud.datastream.v1.SpannerChangeStreamPosition.getDefaultInstance();
+        } else {
+          if (positionCase_ == 106) {
+            return spannerChangeStreamPositionBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.SpannerChangeStreamPosition.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSpannerChangeStreamPosition(
+          com.google.cloud.datastream.v1.SpannerChangeStreamPosition value) {
+        if (spannerChangeStreamPositionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          position_ = value;
+          onChanged();
+        } else {
+          spannerChangeStreamPositionBuilder_.setMessage(value);
+        }
+        positionCase_ = 106;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSpannerChangeStreamPosition(
+          com.google.cloud.datastream.v1.SpannerChangeStreamPosition.Builder builderForValue) {
+        if (spannerChangeStreamPositionBuilder_ == null) {
+          position_ = builderForValue.build();
+          onChanged();
+        } else {
+          spannerChangeStreamPositionBuilder_.setMessage(builderForValue.build());
+        }
+        positionCase_ = 106;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSpannerChangeStreamPosition(
+          com.google.cloud.datastream.v1.SpannerChangeStreamPosition value) {
+        if (spannerChangeStreamPositionBuilder_ == null) {
+          if (positionCase_ == 106
+              && position_
+                  != com.google.cloud.datastream.v1.SpannerChangeStreamPosition
+                      .getDefaultInstance()) {
+            position_ =
+                com.google.cloud.datastream.v1.SpannerChangeStreamPosition.newBuilder(
+                        (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            position_ = value;
+          }
+          onChanged();
+        } else {
+          if (positionCase_ == 106) {
+            spannerChangeStreamPositionBuilder_.mergeFrom(value);
+          } else {
+            spannerChangeStreamPositionBuilder_.setMessage(value);
+          }
+        }
+        positionCase_ = 106;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSpannerChangeStreamPosition() {
+        if (spannerChangeStreamPositionBuilder_ == null) {
+          if (positionCase_ == 106) {
+            positionCase_ = 0;
+            position_ = null;
+            onChanged();
+          }
+        } else {
+          if (positionCase_ == 106) {
+            positionCase_ = 0;
+            position_ = null;
+          }
+          spannerChangeStreamPositionBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.SpannerChangeStreamPosition.Builder
+          getSpannerChangeStreamPositionBuilder() {
+        return internalGetSpannerChangeStreamPositionFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SpannerChangeStreamPositionOrBuilder
+          getSpannerChangeStreamPositionOrBuilder() {
+        if ((positionCase_ == 106) && (spannerChangeStreamPositionBuilder_ != null)) {
+          return spannerChangeStreamPositionBuilder_.getMessageOrBuilder();
+        } else {
+          if (positionCase_ == 106) {
+            return (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_;
+          }
+          return com.google.cloud.datastream.v1.SpannerChangeStreamPosition.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Spanner change stream position to start replicating from.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.SpannerChangeStreamPosition spanner_change_stream_position = 106 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.SpannerChangeStreamPosition,
+              com.google.cloud.datastream.v1.SpannerChangeStreamPosition.Builder,
+              com.google.cloud.datastream.v1.SpannerChangeStreamPositionOrBuilder>
+          internalGetSpannerChangeStreamPositionFieldBuilder() {
+        if (spannerChangeStreamPositionBuilder_ == null) {
+          if (!(positionCase_ == 106)) {
+            position_ =
+                com.google.cloud.datastream.v1.SpannerChangeStreamPosition.getDefaultInstance();
+          }
+          spannerChangeStreamPositionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.datastream.v1.SpannerChangeStreamPosition,
+                  com.google.cloud.datastream.v1.SpannerChangeStreamPosition.Builder,
+                  com.google.cloud.datastream.v1.SpannerChangeStreamPositionOrBuilder>(
+                  (com.google.cloud.datastream.v1.SpannerChangeStreamPosition) position_,
+                  getParentForChildren(),
+                  isClean());
+          position_ = null;
+        }
+        positionCase_ = 106;
+        onChanged();
+        return spannerChangeStreamPositionBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition)

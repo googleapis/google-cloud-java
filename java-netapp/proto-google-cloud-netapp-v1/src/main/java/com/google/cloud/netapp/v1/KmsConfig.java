@@ -478,7 +478,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. Name of the KmsConfig.
+   * Identifier. Name of the `KmsConfig`.
    * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
    * </pre>
    *
@@ -503,7 +503,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. Name of the KmsConfig.
+   * Identifier. Name of the `KmsConfig`.
    * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
    * </pre>
    *
@@ -537,7 +537,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
    * </pre>
    *
-   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The cryptoKeyName.
    */
@@ -562,7 +564,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
    * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
    * </pre>
    *
-   * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for cryptoKeyName.
    */
@@ -1551,7 +1555,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. Name of the KmsConfig.
+     * Identifier. Name of the `KmsConfig`.
      * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
@@ -1575,7 +1579,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. Name of the KmsConfig.
+     * Identifier. Name of the `KmsConfig`.
      * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
@@ -1599,7 +1603,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. Name of the KmsConfig.
+     * Identifier. Name of the `KmsConfig`.
      * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
@@ -1622,7 +1626,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. Name of the KmsConfig.
+     * Identifier. Name of the `KmsConfig`.
      * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
@@ -1641,7 +1645,7 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. Name of the KmsConfig.
+     * Identifier. Name of the `KmsConfig`.
      * Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
      * </pre>
      *
@@ -1671,7 +1675,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The cryptoKeyName.
      */
@@ -1695,7 +1701,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for cryptoKeyName.
      */
@@ -1719,7 +1727,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The cryptoKeyName to set.
      * @return This builder for chaining.
@@ -1742,7 +1752,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1761,7 +1773,9 @@ public final class KmsConfig extends com.google.protobuf.GeneratedMessage
      * `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
      * </pre>
      *
-     * <code>string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string crypto_key_name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for cryptoKeyName to set.
      * @return This builder for chaining.

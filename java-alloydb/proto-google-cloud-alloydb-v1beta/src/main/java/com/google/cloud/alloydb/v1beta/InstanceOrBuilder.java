@@ -780,6 +780,59 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. Instance level Query Insights information, which is read-only
+   * and available in the output only. Contains the effective query insights
+   * settings for this instance, by merging customer's provided
+   * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the queryInsightsInfo field is set.
+   */
+  boolean hasQueryInsightsInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level Query Insights information, which is read-only
+   * and available in the output only. Contains the effective query insights
+   * settings for this instance, by merging customer's provided
+   * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The queryInsightsInfo.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceInfo getQueryInsightsInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level Query Insights information, which is read-only
+   * and available in the output only. Contains the effective query insights
+   * settings for this instance, by merging customer's provided
+   * `QueryInsightsInstanceConfig` with the Query Insights defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceInfo query_insights_info = 47 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.QueryInsightsInstanceInfoOrBuilder
+      getQueryInsightsInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for observability.
    * </pre>
    *
@@ -819,6 +872,59 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceConfigOrBuilder
       getObservabilityConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level observability information, contains the
+   * effective values of observability settings for this instance, by merging
+   * customer's provided `ObservabilityInstanceConfig` with the
+   * Observability defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the observabilityInstanceInfo field is set.
+   */
+  boolean hasObservabilityInstanceInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level observability information, contains the
+   * effective values of observability settings for this instance, by merging
+   * customer's provided `ObservabilityInstanceConfig` with the
+   * Observability defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The observabilityInstanceInfo.
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceInfo getObservabilityInstanceInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instance level observability information, contains the
+   * effective values of observability settings for this instance, by merging
+   * customer's provided `ObservabilityInstanceConfig` with the
+   * Observability defaults.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceInfo observability_instance_info = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.Instance.ObservabilityInstanceInfoOrBuilder
+      getObservabilityInstanceInfoOrBuilder();
 
   /**
    *
@@ -1291,7 +1397,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1393
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1472
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1310,7 +1416,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1393
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1472
    * @return The geminiConfig.
    */
   @java.lang.Deprecated

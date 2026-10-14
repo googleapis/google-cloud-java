@@ -1215,6 +1215,27 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         .getDefaultInstance();
   }
 
+  public static final int DELETION_NOTIFICATIONS_ENABLED_FIELD_NUMBER = 7;
+  private boolean deletionNotificationsEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the notifications will be sent for deleted
+   * findings. When enabled, the filter defined in the streaming config is still
+   * respected when sending deletion notifications.
+   * </pre>
+   *
+   * <code>bool deletion_notifications_enabled = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionNotificationsEnabled.
+   */
+  @java.lang.Override
+  public boolean getDeletionNotificationsEnabled() {
+    return deletionNotificationsEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1245,6 +1266,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       output.writeMessage(
           5, (com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig) notifyConfig_);
     }
+    if (deletionNotificationsEnabled_ != false) {
+      output.writeBool(7, deletionNotificationsEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1273,6 +1297,10 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
               (com.google.cloud.securitycenter.v1.NotificationConfig.StreamingConfig)
                   notifyConfig_);
     }
+    if (deletionNotificationsEnabled_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(7, deletionNotificationsEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1293,6 +1321,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getPubsubTopic().equals(other.getPubsubTopic())) return false;
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (getDeletionNotificationsEnabled() != other.getDeletionNotificationsEnabled()) return false;
     if (!getNotifyConfigCase().equals(other.getNotifyConfigCase())) return false;
     switch (notifyConfigCase_) {
       case 5:
@@ -1320,6 +1349,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getPubsubTopic().hashCode();
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
+    hash = (37 * hash) + DELETION_NOTIFICATIONS_ENABLED_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionNotificationsEnabled());
     switch (notifyConfigCase_) {
       case 5:
         hash = (37 * hash) + STREAMING_CONFIG_FIELD_NUMBER;
@@ -1479,6 +1511,7 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (streamingConfigBuilder_ != null) {
         streamingConfigBuilder_.clear();
       }
+      deletionNotificationsEnabled_ = false;
       notifyConfigCase_ = 0;
       notifyConfig_ = null;
       return this;
@@ -1530,6 +1563,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.deletionNotificationsEnabled_ = deletionNotificationsEnabled_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.securitycenter.v1.NotificationConfig result) {
@@ -1572,6 +1608,9 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
         serviceAccount_ = other.serviceAccount_;
         bitField0_ |= 0x00000008;
         onChanged();
+      }
+      if (other.getDeletionNotificationsEnabled() != false) {
+        setDeletionNotificationsEnabled(other.getDeletionNotificationsEnabled());
       }
       switch (other.getNotifyConfigCase()) {
         case STREAMING_CONFIG:
@@ -1641,6 +1680,12 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
                 notifyConfigCase_ = 5;
                 break;
               } // case 42
+            case 56:
+              {
+                deletionNotificationsEnabled_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2404,6 +2449,71 @@ public final class NotificationConfig extends com.google.protobuf.GeneratedMessa
       notifyConfigCase_ = 5;
       onChanged();
       return streamingConfigBuilder_;
+    }
+
+    private boolean deletionNotificationsEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the notifications will be sent for deleted
+     * findings. When enabled, the filter defined in the streaming config is still
+     * respected when sending deletion notifications.
+     * </pre>
+     *
+     * <code>bool deletion_notifications_enabled = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The deletionNotificationsEnabled.
+     */
+    @java.lang.Override
+    public boolean getDeletionNotificationsEnabled() {
+      return deletionNotificationsEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the notifications will be sent for deleted
+     * findings. When enabled, the filter defined in the streaming config is still
+     * respected when sending deletion notifications.
+     * </pre>
+     *
+     * <code>bool deletion_notifications_enabled = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The deletionNotificationsEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionNotificationsEnabled(boolean value) {
+
+      deletionNotificationsEnabled_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the notifications will be sent for deleted
+     * findings. When enabled, the filter defined in the streaming config is still
+     * respected when sending deletion notifications.
+     * </pre>
+     *
+     * <code>bool deletion_notifications_enabled = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionNotificationsEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      deletionNotificationsEnabled_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.NotificationConfig)

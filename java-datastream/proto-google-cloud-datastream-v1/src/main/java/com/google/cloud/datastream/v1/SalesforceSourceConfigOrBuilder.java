@@ -30,7 +30,7 @@ public interface SalesforceSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Salesforce objects to retrieve from the source.
+   * The Salesforce objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -43,7 +43,7 @@ public interface SalesforceSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Salesforce objects to retrieve from the source.
+   * The Salesforce objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -56,7 +56,7 @@ public interface SalesforceSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Salesforce objects to retrieve from the source.
+   * The Salesforce objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -67,7 +67,7 @@ public interface SalesforceSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Salesforce objects to exclude from the stream.
+   * The Salesforce objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -80,7 +80,7 @@ public interface SalesforceSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Salesforce objects to exclude from the stream.
+   * The Salesforce objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -93,7 +93,7 @@ public interface SalesforceSourceConfigOrBuilder
    *
    *
    * <pre>
-   * Salesforce objects to exclude from the stream.
+   * The Salesforce objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -105,8 +105,8 @@ public interface SalesforceSourceConfigOrBuilder
    *
    * <pre>
    * Required. Salesforce objects polling interval. The interval at which new
-   * changes will be polled for each object. The duration must be between 5
-   * minutes and 24 hours.
+   * changes will be polled for each object. The duration must be from `5
+   * minutes` to `24 hours`, inclusive.
    * </pre>
    *
    * <code>.google.protobuf.Duration polling_interval = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -121,8 +121,8 @@ public interface SalesforceSourceConfigOrBuilder
    *
    * <pre>
    * Required. Salesforce objects polling interval. The interval at which new
-   * changes will be polled for each object. The duration must be between 5
-   * minutes and 24 hours.
+   * changes will be polled for each object. The duration must be from `5
+   * minutes` to `24 hours`, inclusive.
    * </pre>
    *
    * <code>.google.protobuf.Duration polling_interval = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -137,8 +137,8 @@ public interface SalesforceSourceConfigOrBuilder
    *
    * <pre>
    * Required. Salesforce objects polling interval. The interval at which new
-   * changes will be polled for each object. The duration must be between 5
-   * minutes and 24 hours.
+   * changes will be polled for each object. The duration must be from `5
+   * minutes` to `24 hours`, inclusive.
    * </pre>
    *
    * <code>.google.protobuf.Duration polling_interval = 3 [(.google.api.field_behavior) = REQUIRED];

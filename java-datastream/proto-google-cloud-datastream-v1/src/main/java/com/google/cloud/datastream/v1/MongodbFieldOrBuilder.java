@@ -30,7 +30,7 @@ public interface MongodbFieldOrBuilder
    *
    *
    * <pre>
-   * Field name.
+   * The field name.
    * </pre>
    *
    * <code>string field = 1;</code>
@@ -43,7 +43,7 @@ public interface MongodbFieldOrBuilder
    *
    *
    * <pre>
-   * Field name.
+   * The field name.
    * </pre>
    *
    * <code>string field = 1;</code>
