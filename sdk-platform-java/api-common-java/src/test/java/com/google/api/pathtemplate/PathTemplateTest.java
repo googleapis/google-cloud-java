@@ -689,7 +689,8 @@ class PathTemplateTest {
           "projects/my-project/monitoredResourceDescriptors/.",
           "projects/my-project/monitoredResourceDescriptors/..",
           "projects/my-project/monitoredResourceDescriptors/instance/./my-instance/..",
-          "projects/my-project/monitoredResourceDescriptors/instance/../.."
+          "projects/my-project/monitoredResourceDescriptors/instance/../..",
+          "projects/my-project/monitoredResourceDescriptors/ .. "
         }) {
       ValidationException exception =
           Assertions.assertThrows(

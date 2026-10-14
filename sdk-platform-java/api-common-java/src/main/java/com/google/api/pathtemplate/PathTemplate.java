@@ -881,7 +881,6 @@ public class PathTemplate {
             continueLast = true;
             continue;
           }
-          boolean hasPathWildcard = hasPathWildcard(iterator);
           Segment next = iterator.next();
           Segment nextNext = iterator.next();
           boolean pathEscape =
@@ -889,9 +888,11 @@ public class PathTemplate {
                   || nextNext.kind() != SegmentKind.END_BINDING;
           restore(iterator, iterator.nextIndex() - 2);
           if (!pathEscape) {
-            validatePathSegment(var, value, value, hasPathWildcard);
+            validatePathSegment(var, value, value, false);
             result.append(encodeUrl(value));
           } else {
+            boolean hasPathWildcard =
+                next.kind() == SegmentKind.PATH_WILDCARD || hasPathWildcard(iterator);
             // For a path wildcard or path of length greater 1, split the value and escape
             // every sub-segment.
             boolean first = true;
@@ -1223,6 +1224,7 @@ public class PathTemplate {
       }
       if (seg.kind() == SegmentKind.PATH_WILDCARD) {
         found = true;
+        break;
       }
     }
     restore(iterator, start);
