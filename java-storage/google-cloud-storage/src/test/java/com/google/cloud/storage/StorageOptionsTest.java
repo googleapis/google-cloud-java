@@ -44,15 +44,13 @@ public final class StorageOptionsTest {
     HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
     assertThat(httpOptions.isEnableOtelMetrics()).isFalse();
     assertThat(httpOptions.isEnableOtelDebugMetrics()).isFalse();
-    assertThat(httpOptions.getMeterProvider())
-        .isEqualTo(httpOptions.getOpenTelemetry().getMeterProvider());
+    assertThat(httpOptions.getMeterProvider()).isNull();
     assertThat(httpOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
 
     GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
     assertThat(grpcOptions.isEnableOtelMetrics()).isFalse();
     assertThat(grpcOptions.isEnableOtelDebugMetrics()).isFalse();
-    assertThat(grpcOptions.getMeterProvider())
-        .isEqualTo(grpcOptions.getOpenTelemetry().getMeterProvider());
+    assertThat(grpcOptions.getMeterProvider()).isNull();
     assertThat(grpcOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
   }
 
@@ -99,7 +97,7 @@ public final class StorageOptionsTest {
   }
 
   @Test
-  public void precedence_envTakesPrecedenceOverBuilder() {
+  public void precedence_builderTakesPrecedenceOverEnv() {
     Map<String, String> env = new HashMap<>();
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
@@ -110,16 +108,16 @@ public final class StorageOptionsTest {
             .setEnableOtelMetrics(false)
             .setEnableOtelDebugMetrics(false)
             .build();
-    assertThat(httpDisabled.isEnableOtelMetrics()).isTrue();
-    assertThat(httpDisabled.isEnableOtelDebugMetrics()).isTrue();
+    assertThat(httpDisabled.isEnableOtelMetrics()).isFalse();
+    assertThat(httpDisabled.isEnableOtelDebugMetrics()).isFalse();
 
     GrpcStorageOptions grpcDisabled =
         GrpcStorageOptions.grpc()
             .setEnableOtelMetrics(false)
             .setEnableOtelDebugMetrics(false)
             .build();
-    assertThat(grpcDisabled.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcDisabled.isEnableOtelDebugMetrics()).isTrue();
+    assertThat(grpcDisabled.isEnableOtelMetrics()).isFalse();
+    assertThat(grpcDisabled.isEnableOtelDebugMetrics()).isFalse();
 
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "false");
@@ -129,16 +127,16 @@ public final class StorageOptionsTest {
             .setEnableOtelMetrics(true)
             .setEnableOtelDebugMetrics(true)
             .build();
-    assertThat(httpEnabled.isEnableOtelMetrics()).isFalse();
-    assertThat(httpEnabled.isEnableOtelDebugMetrics()).isFalse();
+    assertThat(httpEnabled.isEnableOtelMetrics()).isTrue();
+    assertThat(httpEnabled.isEnableOtelDebugMetrics()).isTrue();
 
     GrpcStorageOptions grpcEnabled =
         GrpcStorageOptions.grpc()
             .setEnableOtelMetrics(true)
             .setEnableOtelDebugMetrics(true)
             .build();
-    assertThat(grpcEnabled.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcEnabled.isEnableOtelDebugMetrics()).isFalse();
+    assertThat(grpcEnabled.isEnableOtelMetrics()).isTrue();
+    assertThat(grpcEnabled.isEnableOtelDebugMetrics()).isTrue();
   }
 
   @Test
@@ -186,7 +184,11 @@ public final class StorageOptionsTest {
       assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isTrue();
       Map<String, String> env = new HashMap<>();
       env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, val);
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isTrue();
+      // When builderSetting is null, env var is parsed and respected
+      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isTrue();
+      // When builderSetting is provided, builder takes precedence over env var
+      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
+      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
     }
 
     String[] falseValues = {"0", "f", "F", "false", "FALSE", "False", "  false  "};
@@ -194,7 +196,11 @@ public final class StorageOptionsTest {
       assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isFalse();
       Map<String, String> env = new HashMap<>();
       env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, val);
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isFalse();
+      // When builderSetting is null, env var is parsed and respected
+      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isFalse();
+      // When builderSetting is provided, builder takes precedence over env var
+      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
+      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
     }
 
     String[] invalidValues = {"invalid", "2", "yes", "no", "enabled", ""};
@@ -202,13 +208,16 @@ public final class StorageOptionsTest {
       assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isNull();
       Map<String, String> env = new HashMap<>();
       env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, val);
-      // Unrecognized values fall back to builder setting
+      // Unrecognized values fall back to builder setting if provided
       assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
       assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
       // When builder setting is null, falls back to default false
       assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isFalse();
     }
 
+    // When both are absent/null, default is false
+    Map<String, String> emptyEnv = new HashMap<>();
+    assertThat(StorageMetricsConfig.isEnableOtelMetrics(emptyEnv::get, null)).isFalse();
     assertThat(StorageMetricsConfig.parseBooleanValue(null, "TEST_VAR")).isNull();
   }
 
@@ -318,6 +327,22 @@ public final class StorageOptionsTest {
             .setMetricInterval(Duration.ofSeconds(30))
             .build();
     assertThat(grpcCustom.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+
+    // Accept intervals < 60s when explicit openTelemetry is configured
+    io.opentelemetry.api.OpenTelemetry customOtel = io.opentelemetry.api.OpenTelemetry.noop();
+    HttpStorageOptions httpCustomOtel =
+        HttpStorageOptions.http()
+            .setOpenTelemetry(customOtel)
+            .setMetricInterval(Duration.ofSeconds(30))
+            .build();
+    assertThat(httpCustomOtel.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+
+    GrpcStorageOptions grpcCustomOtel =
+        GrpcStorageOptions.grpc()
+            .setOpenTelemetry(customOtel)
+            .setMetricInterval(Duration.ofSeconds(30))
+            .build();
+    assertThat(grpcCustomOtel.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
   }
 
   @Test
@@ -342,12 +367,8 @@ public final class StorageOptionsTest {
 
     assertThat(deserializedHttp).isNotNull();
     assertThat(deserializedHttp.isEnableOtelMetrics()).isTrue();
-    // Transient meterProvider does not carry over; falls back to openTelemetry.getMeterProvider()
-    // without NPE
-    assertThat(deserializedHttp.getMeterProvider()).isNotNull();
-    assertThat(deserializedHttp.getMeterProvider()).isNotSameInstanceAs(customMeterProvider);
-    assertThat(deserializedHttp.getMeterProvider())
-        .isEqualTo(deserializedHttp.getOpenTelemetry().getMeterProvider());
+    // Transient meterProvider does not carry over; returns null
+    assertThat(deserializedHttp.getMeterProvider()).isNull();
 
     GrpcStorageOptions grpcOptions =
         GrpcStorageOptions.grpc()
@@ -368,15 +389,13 @@ public final class StorageOptionsTest {
 
     assertThat(deserializedGrpc).isNotNull();
     assertThat(deserializedGrpc.isEnableOtelMetrics()).isTrue();
-    assertThat(deserializedGrpc.getMeterProvider()).isNotNull();
-    assertThat(deserializedGrpc.getMeterProvider()).isNotSameInstanceAs(customMeterProvider);
-    assertThat(deserializedGrpc.getMeterProvider())
-        .isEqualTo(deserializedGrpc.getOpenTelemetry().getMeterProvider());
+    // Transient meterProvider does not carry over; returns null
+    assertThat(deserializedGrpc.getMeterProvider()).isNull();
   }
 
   @Test
   public void deserializationWithNullMetricInterval_defaultsToSixtySeconds() throws Exception {
-    Field httpBuilderField = HttpStorageOptions.Builder.class.getDeclaredField("metricInterval");
+    Field httpBuilderField = StorageOptions.Builder.class.getDeclaredField("metricInterval");
     httpBuilderField.setAccessible(true);
     HttpStorageOptions.Builder httpBuilder = HttpStorageOptions.http();
     httpBuilderField.set(httpBuilder, null);
@@ -402,7 +421,7 @@ public final class StorageOptionsTest {
     assertThat(defaultHttp).isEqualTo(deserializedHttp);
     assertThat(deserializedHttp.hashCode()).isEqualTo(defaultHttp.hashCode());
 
-    Field grpcBuilderField = GrpcStorageOptions.Builder.class.getDeclaredField("metricInterval");
+    Field grpcBuilderField = StorageOptions.Builder.class.getDeclaredField("metricInterval");
     grpcBuilderField.setAccessible(true);
     GrpcStorageOptions.Builder grpcBuilder = GrpcStorageOptions.grpc();
     grpcBuilderField.set(grpcBuilder, null);
