@@ -42,11 +42,11 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.net.URI;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -55,9 +55,9 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>By default, attempts to exchange the external credential for a GCP access token.
  *
- * <p>Note: Actor token extraction is currently restricted to file-based JSON credential sources
- * over mTLS endpoints. When configuring certificate-bound OAuth 2.0 tokens, ensure your transport
- * layer is configured for mTLS in tandem.
+ * <p>Note: Actor token extraction from credential configuration files is currently restricted to
+ * file-based JSON credential sources. When configuring certificate-bound OAuth 2.0 tokens, ensure
+ * your transport layer and endpoints are configured for mTLS in tandem.
  */
 @NullMarked
 public class IdentityPoolCredentials extends ExternalAccountCredentials {
@@ -104,10 +104,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Store the x509Provider and useMtlsTransportFactory flag for per-cycle cert pinning and
     // deserialization recovery.
     this.x509Provider = builder.x509Provider;
-    this.useMtlsTransportFactory =
-        builder.useMtlsTransportFactory != null
-            ? builder.useMtlsTransportFactory
-            : isDefaultOrMtlsTransportFactory(builder.transportFactory);
+    this.useMtlsTransportFactory = builder.useMtlsTransportFactory;
 
     // Initialize based on the source type
     if (builder.subjectTokenSupplier != null) {
@@ -171,43 +168,6 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       throw new IllegalArgumentException(
           "An actorTokenSupplier must be specified when an actorTokenType is configured.");
     }
-
-    if (this.actorTokenSupplier != null && !isMtlsConfigured()) {
-      throw new IllegalArgumentException(
-          "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
-              + " configuration in the credential source or provide an MtlsHttpTransportFactory"
-              + " constructed with a KeyStore.");
-    }
-
-    if (this.actorTokenSupplier != null) {
-      validateMtlsEndpoint(getTokenUrl(), "tokenUrl");
-      if (getServiceAccountImpersonationUrl() != null) {
-        validateMtlsEndpoint(getServiceAccountImpersonationUrl(), "serviceAccountImpersonationUrl");
-      }
-    }
-  }
-
-  private static void validateMtlsEndpoint(@Nullable String url, String fieldName) {
-    if (url == null) {
-      return;
-    }
-    String host = URI.create(url).getHost();
-    // For Google Default Universe (googleapis.com), actor tokens require mTLS binding so plain
-    // public endpoints (lacking '.mtls.' or Private Service Connect '.p.') are rejected early.
-    // Non-GDU domains (e.g. custom universes or TPC) may use different hostname conventions.
-    if (host != null
-        && host.endsWith("googleapis.com")
-        && !host.contains(".mtls.")
-        && !host.contains(".p.")) {
-      throw new IllegalArgumentException(
-          "The "
-              + fieldName
-              + " endpoint ("
-              + url
-              + ") cannot be used with actor tokens because it is a plain public Google API"
-              + " endpoint. Please use an mTLS endpoint (e.g. containing '.mtls.') or Private"
-              + " Service Connect (containing '.p.').");
-    }
   }
 
   /**
@@ -242,7 +202,6 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    */
   static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
-        || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
         || transportFactory.getClass() == MtlsHttpTransportFactory.class
         || (transportFactory instanceof MtlsHttpTransportFactory
@@ -266,7 +225,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    * Returns whether a clone of this credential can skip reading the KeyStore because the transport
    * factory is already initialized (an mTLS factory with a KeyStore, or a custom non-mTLS factory).
    */
-  boolean hasInitializedMtlsTransport() {
+  private boolean hasInitializedMtlsTransport() {
     return this.x509Provider != null
         && (!shouldUseMtlsTransportFactory()
             || (this.transportFactory instanceof MtlsHttpTransportFactory
@@ -463,8 +422,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
             .setAudience(getAudience());
 
-    if (actorToken != null && this.actorTokenType != null) {
-      stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+    if (this.actorTokenSupplier != null) {
+      if (actorToken == null || actorToken.trim().isEmpty()) {
+        throw new IOException("The provided actor token cannot be null or empty.");
+      }
+      stsTokenExchangeRequest.setActingParty(
+          new ActingParty(actorToken, Objects.requireNonNull(this.actorTokenType)));
     }
 
     Collection<String> scopes = getScopes();
@@ -640,7 +603,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
-    private @Nullable Boolean useMtlsTransportFactory;
+    private boolean useMtlsTransportFactory = true;
     private boolean isClonedTransportInitialized;
 
     Builder() {}
@@ -653,10 +616,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       } else if (credentials.actorTokenSupplier != credentials.subjectTokenSupplier) {
         this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
-      // Note: when credentialSource is present, subjectTokenSupplier and file-based
-      // actorTokenSupplier are intentionally NOT copied here. They will be reconstructed from
-      // credentialSource during build(), which ensures they share the same
-      // FileIdentityPoolSubjectTokenSupplier instance for atomic token reads.
+      // Note: when credentialSource is present and actorTokenSupplier was reconstructed from the
+      // same FileIdentityPoolSubjectTokenSupplier instance as subjectTokenSupplier, neither is
+      // copied here so they can be reconstructed together during build() for atomic token reads.
+      // When a distinct actorTokenSupplier was explicitly provided alongside credentialSource, it
+      // is preserved above so createScoped() / toBuilder() do not drop it.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
       // Preserve the original mTLS flag across clones because super(credentials) copies
@@ -696,12 +660,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
 
     /**
-     * Sets the actor token supplier used for certificate-bound OAuth 2.0 token exchanges. The
-     * supplier provides an actor token representing the entity on whose behalf the subject is
-     * acting.
+     * Sets the actor token supplier used for OAuth 2.0 token exchanges. The supplier provides an
+     * actor token representing the acting party that acts on behalf of the subject.
      *
-     * <p>An actor token supplier must be paired with an {@link #setActorTokenType actor token type}
-     * and requires an mTLS-configured transport.
+     * <p>An actor token supplier must be paired with an {@link #setActorTokenType actor token
+     * type}.
      *
      * @param actorTokenSupplier the supplier to use for retrieving actor tokens
      * @return this {@code Builder} object
@@ -768,6 +731,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
     @CanIgnoreReturnValue
     public Builder setCredentialSource(IdentityPoolCredentialSource credentialSource) {
+      if (this.credentialSource != null && this.credentialSource != credentialSource) {
+        this.x509Provider = null;
+        if (this.useMtlsTransportFactory) {
+          this.transportFactory = null;
+        }
+      }
       super.setCredentialSource(credentialSource);
       this.isClonedTransportInitialized = false;
       return this;

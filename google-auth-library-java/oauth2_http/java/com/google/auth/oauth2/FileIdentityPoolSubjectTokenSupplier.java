@@ -172,7 +172,12 @@ class FileIdentityPoolSubjectTokenSupplier
               + " must be a String but was: "
               + value.getClass().getName());
     }
-    return (String) value;
+    String token = (String) value;
+    if (token.trim().isEmpty()) {
+      throw new IOException(
+          "Invalid token field value. Empty token was found for field: " + fieldName);
+    }
+    return token;
   }
 
   /** Used primarily for UrlIdentityPoolSubjectTokenSupplier */
@@ -195,19 +200,7 @@ class FileIdentityPoolSubjectTokenSupplier
       GenericJson fileContents =
           parser.parseAndClose(in, StandardCharsets.UTF_8, GenericJson.class);
 
-      Object value = fileContents.get(targetFieldName);
-      if (value == null || Data.isNull(value)) {
-        throw new IOException(
-            "Invalid token field name. No token was found for field: " + targetFieldName);
-      }
-      if (!(value instanceof String)) {
-        throw new IOException(
-            "Token field value for "
-                + targetFieldName
-                + " must be a String but was: "
-                + value.getClass().getName());
-      }
-      return (String) value;
+      return extractField(fileContents, targetFieldName);
     }
   }
 
