@@ -602,13 +602,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
         List<String> updatedScopes =
             currentScopes != null ? new ArrayList<>(currentScopes) : new ArrayList<>();
         updatedScopes.add(OAuth2Utils.CLOUD_PLATFORM_SCOPE);
-        GoogleCredentials scoped = this.sourceCredentials.createScoped(updatedScopes);
-        if (scoped.getAccessToken() != null) {
-          // createScoped() copies any existing access token, which was minted without
-          // CLOUD_PLATFORM_SCOPE. Clear it so refreshIfExpired() mints a correctly scoped token.
-          scoped = scoped.toBuilder().setAccessToken(null).build();
-        }
-        this.sourceCredentials = scoped;
+        // createScoped() copies any existing access token, which was minted without
+        // CLOUD_PLATFORM_SCOPE. Clear it so refreshIfExpired() mints a correctly scoped token.
+        this.sourceCredentials =
+            this.sourceCredentials.createScoped(updatedScopes).toBuilder()
+                .setAccessToken(null)
+                .build();
       }
       return (ExternalAccountCredentials) this.sourceCredentials;
     }

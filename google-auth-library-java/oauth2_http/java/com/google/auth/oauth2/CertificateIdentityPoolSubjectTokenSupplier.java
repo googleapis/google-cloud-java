@@ -103,8 +103,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
     }
   }
 
-  private static @Nullable String extractAndEncodeLeafCertificate(@Nullable KeyStore keyStore)
-      throws IOException {
+  private static @Nullable String extractAndEncodeLeafCertificate(@Nullable KeyStore keyStore) {
     if (keyStore == null) {
       return null;
     }
@@ -128,7 +127,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
       }
       return null;
     } catch (KeyStoreException | CertificateEncodingException e) {
-      throw new IOException("Failed to extract leaf certificate from pinned KeyStore", e);
+      return null;
     }
   }
 

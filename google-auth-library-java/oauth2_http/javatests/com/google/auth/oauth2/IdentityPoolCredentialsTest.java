@@ -5665,6 +5665,17 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
           mockTransportFactory,
           pinningInstances);
     }
+
+    @Override
+    public Builder toBuilder() {
+      return new IdentityPoolCredentials.Builder(this) {
+        @Override
+        public IdentityPoolCredentials build() {
+          return new PinningInstanceRecordingCredentials(
+              this, mockTransportFactory, pinningInstances);
+        }
+      };
+    }
   }
 
   /** Decides, for the Nth IAM call, whether the mock IAM endpoint returns 401. */
