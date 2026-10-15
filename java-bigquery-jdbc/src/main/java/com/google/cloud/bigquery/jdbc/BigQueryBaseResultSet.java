@@ -308,6 +308,12 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
       if (value == null) {
         return null;
       }
+      if (type != null && !type.isInstance(value)) {
+        StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+        if (bqType == StandardSQLTypeName.TIMESTAMP) {
+          return BigQueryTypeRegistry.convert(value, bqType, type, null);
+        }
+      }
       return BigQueryTypeRegistry.convert(value, type);
     } catch (RuntimeException e) {
       throw createCoercionException(columnIndex, type, e);
@@ -458,43 +464,17 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Date getDate(int columnIndex) throws SQLException {
-    LOG.finestTrace("getDate");
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Date.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, Date.class, e);
-    }
+    return getDate(columnIndex, null);
   }
 
   @Override
   public Time getTime(int columnIndex) throws SQLException {
-    LOG.finestTrace("getTime");
-    StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
-    if (type == StandardSQLTypeName.INT64) {
-      throw createCoercionException(columnIndex, Time.class, null);
-    }
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Time.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, Time.class, e);
-    }
+    return getTime(columnIndex, null);
   }
 
   @Override
   public Timestamp getTimestamp(int columnIndex) throws SQLException {
-    LOG.finestTrace("getTimestamp");
-    StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
-    if (type == StandardSQLTypeName.INT64) {
-      throw createCoercionException(columnIndex, Timestamp.class, null);
-    }
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Timestamp.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, Timestamp.class, e);
-    }
+    return getTimestamp(columnIndex, null);
   }
 
   @Override

@@ -555,9 +555,15 @@ public class BigQueryJsonResultSetTest {
     assertThat(rs.getObject(1)).isEqualTo("2023-03-30 11:14:19.123456789123");
     assertThat(rs.getObject("picosTs", String.class)).isEqualTo("2023-03-30 11:14:19.123456789123");
 
-    Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
+    Timestamp expectedTs = Timestamp.from(Instant.parse("2023-03-30T11:14:19.123456789Z"));
+    ZonedDateTime expectedLocal = expectedTs.toInstant().atZone(ZoneId.systemDefault());
     assertThat(rs.getTimestamp("picosTs")).isEqualTo(expectedTs);
     assertThat(rs.getObject("picosTs", Timestamp.class)).isEqualTo(expectedTs);
+    assertThat(rs.getObject("picosTs", LocalDateTime.class))
+        .isEqualTo(expectedLocal.toLocalDateTime());
+    assertThat(rs.getDate("picosTs").toLocalDate()).isEqualTo(expectedLocal.toLocalDate());
+    assertThat(rs.getTime("picosTs").toLocalTime())
+        .isEqualTo(expectedLocal.toLocalTime().withNano(0));
   }
 
   @Test

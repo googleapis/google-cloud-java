@@ -293,7 +293,10 @@ final class BigQueryTypeRegistry {
             } else if (val instanceof java.util.Date) {
               return new Timestamp(((java.util.Date) val).getTime()).toLocalDateTime();
             } else if (val instanceof String) {
-              return LocalDateTime.parse(((String) val).replace(' ', 'T'));
+              String isoString =
+                  BigQueryTemporalUtility.truncateFractionalSeconds(
+                      ((String) val).replace(' ', 'T'), 9);
+              return LocalDateTime.parse(isoString);
             } else {
               throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
             }
