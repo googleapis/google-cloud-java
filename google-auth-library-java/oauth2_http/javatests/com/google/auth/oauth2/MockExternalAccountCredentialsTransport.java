@@ -89,10 +89,20 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
   private final Queue<String> refreshTokenSequence = new ArrayDeque<>();
   private final Queue<List<String>> scopeSequence = new ArrayDeque<>();
+  private final Queue<Integer> stsStatusCodeSequence = new ArrayDeque<>();
   private final List<MockLowLevelHttpRequest> requests = new ArrayList<>();
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;
+  private String expectedIamScope = OAuth2Utils.CLOUD_PLATFORM_SCOPE;
+
+  public void setExpectedIamScope(String expectedIamScope) {
+    this.expectedIamScope = expectedIamScope;
+  }
+
+  public void addStsStatusCodeSequence(Integer... statusCodes) {
+    Collections.addAll(stsStatusCodeSequence, statusCodes);
+  }
 
   public void addResponseErrorSequence(IOException... errors) {
     Collections.addAll(responseErrorSequence, errors);
@@ -178,6 +188,19 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
               assertNotNull(query.get("subject_token_type"));
               assertNotNull(query.get("subject_token"));
 
+              int statusCode =
+                  !stsStatusCodeSequence.isEmpty() ? stsStatusCodeSequence.poll() : 200;
+              if (statusCode != 200) {
+                GenericJson errorResponse = new GenericJson();
+                errorResponse.setFactory(JSON_FACTORY);
+                errorResponse.put("error", "invalid_token");
+                errorResponse.put("error_description", "Invalid or expired client certificate.");
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(statusCode)
+                    .setContentType(Json.MEDIA_TYPE)
+                    .setContent(errorResponse.toPrettyString());
+              }
+
               GenericJson response = new GenericJson();
               response.setFactory(JSON_FACTORY);
               response.put("token_type", TOKEN_TYPE);
@@ -201,9 +224,7 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   OAuth2Utils.JSON_FACTORY
                       .createJsonParser(getContentAsString())
                       .parseAndClose(GenericJson.class);
-              assertEquals(
-                  OAuth2Utils.CLOUD_PLATFORM_SCOPE,
-                  ((ArrayList<String>) query.get("scope")).get(0));
+              assertEquals(expectedIamScope, ((ArrayList<String>) query.get("scope")).get(0));
               assertEquals(1, getHeaders().get("authorization").size());
               assertTrue(getHeaders().containsKey("authorization"));
               assertNotNull(getHeaders().get("authorization").get(0));
