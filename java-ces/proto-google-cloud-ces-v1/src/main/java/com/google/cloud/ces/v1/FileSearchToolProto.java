@@ -55,19 +55,19 @@ public final class FileSearchToolProto extends com.google.protobuf.GeneratedFile
     java.lang.String[] descriptorData = {
       "\n"
           + "*google/cloud/ces/v1/file_search_tool.p"
-          + "roto\022\023google.cloud.ces.v1\032\037google/api/field_behavior.proto\"\357\001\n"
-          + "\016FileSearchTool\022H\n"
+          + "roto\022\023google.cloud.ces.v1\032\037google/api/field_behavior.proto\"\363\001\n"
+          + "\016FileSearchTool\022I\n"
           + "\013corpus_type\030\003"
-          + " \001(\0162..google.cloud.ces.v1.FileSearchTool.CorpusTypeB\003\340A\001\022\021\n"
-          + "\004name\030\004 \001(\tB\003\340A\002\022\030\n"
-          + "\013description\030\005 \001(\tB\003\340A\001\022\030\n"
-          + "\013file_corpus\030\006 \001(\tB\003\340A\001\"L\n\n"
+          + " \001(\0162..google.cloud.ces.v1.FileSearchTool.CorpusTypeB\004\342A\001\001\022\022\n"
+          + "\004name\030\004 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013description\030\005 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013file_corpus\030\006 \001(\tB\004\342A\001\001\"L\n\n"
           + "CorpusType\022\033\n"
           + "\027CORPUS_TYPE_UNSPECIFIED\020\000\022\016\n\n"
           + "USER_OWNED\020\001\022\021\n\r"
           + "FULLY_MANAGED\020\002B[\n"
-          + "\027com.google.cloud.ces.v1B\023FileSearchToolProtoP\001Z)cloud.go"
-          + "ogle.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "\027com.google.cloud.ces.v1B\023FileSearchToolProtoP\001Z)clou"
+          + "d.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

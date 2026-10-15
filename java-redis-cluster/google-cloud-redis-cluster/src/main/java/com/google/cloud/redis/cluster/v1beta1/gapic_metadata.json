@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "CloudRedisClusterClient",
           "rpcs": {
+            "AddAuthToken": {
+              "methods": ["addAuthTokenAsync", "addAuthTokenAsync", "addAuthTokenAsync", "addAuthTokenOperationCallable", "addAuthTokenCallable"]
+            },
+            "AddTokenAuthUser": {
+              "methods": ["addTokenAuthUserAsync", "addTokenAuthUserAsync", "addTokenAuthUserAsync", "addTokenAuthUserAsync", "addTokenAuthUserAsync", "addTokenAuthUserOperationCallable", "addTokenAuthUserCallable"]
+            },
             "BackupCluster": {
               "methods": ["backupClusterAsync", "backupClusterAsync", "backupClusterAsync", "backupClusterOperationCallable", "backupClusterCallable"]
             },
@@ -22,11 +28,17 @@
             "DeleteAclPolicy": {
               "methods": ["deleteAclPolicyAsync", "deleteAclPolicyAsync", "deleteAclPolicyAsync", "deleteAclPolicyOperationCallable", "deleteAclPolicyCallable"]
             },
+            "DeleteAuthToken": {
+              "methods": ["deleteAuthTokenAsync", "deleteAuthTokenAsync", "deleteAuthTokenAsync", "deleteAuthTokenOperationCallable", "deleteAuthTokenCallable"]
+            },
             "DeleteBackup": {
               "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
             },
             "DeleteCluster": {
               "methods": ["deleteClusterAsync", "deleteClusterAsync", "deleteClusterAsync", "deleteClusterOperationCallable", "deleteClusterCallable"]
+            },
+            "DeleteTokenAuthUser": {
+              "methods": ["deleteTokenAuthUserAsync", "deleteTokenAuthUserAsync", "deleteTokenAuthUserAsync", "deleteTokenAuthUserOperationCallable", "deleteTokenAuthUserCallable"]
             },
             "ExportBackup": {
               "methods": ["exportBackupAsync", "exportBackupOperationCallable", "exportBackupCallable"]
@@ -36,6 +48,9 @@
             },
             "GetAclPolicyRevision": {
               "methods": ["getAclPolicyRevision", "getAclPolicyRevision", "getAclPolicyRevision", "getAclPolicyRevisionCallable"]
+            },
+            "GetAuthToken": {
+              "methods": ["getAuthToken", "getAuthToken", "getAuthToken", "getAuthTokenCallable"]
             },
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
@@ -55,11 +70,17 @@
             "GetSharedRegionalCertificateAuthority": {
               "methods": ["getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthority", "getSharedRegionalCertificateAuthorityCallable"]
             },
+            "GetTokenAuthUser": {
+              "methods": ["getTokenAuthUser", "getTokenAuthUser", "getTokenAuthUser", "getTokenAuthUserCallable"]
+            },
             "ListAclPolicies": {
               "methods": ["listAclPolicies", "listAclPolicies", "listAclPolicies", "listAclPoliciesPagedCallable", "listAclPoliciesCallable"]
             },
             "ListAclPolicyRevisions": {
               "methods": ["listAclPolicyRevisions", "listAclPolicyRevisions", "listAclPolicyRevisions", "listAclPolicyRevisionsPagedCallable", "listAclPolicyRevisionsCallable"]
+            },
+            "ListAuthTokens": {
+              "methods": ["listAuthTokens", "listAuthTokens", "listAuthTokens", "listAuthTokensPagedCallable", "listAuthTokensCallable"]
             },
             "ListBackupCollections": {
               "methods": ["listBackupCollections", "listBackupCollections", "listBackupCollections", "listBackupCollectionsPagedCallable", "listBackupCollectionsCallable"]
@@ -72,6 +93,9 @@
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTokenAuthUsers": {
+              "methods": ["listTokenAuthUsers", "listTokenAuthUsers", "listTokenAuthUsers", "listTokenAuthUsersPagedCallable", "listTokenAuthUsersCallable"]
             },
             "RescheduleClusterMaintenance": {
               "methods": ["rescheduleClusterMaintenanceAsync", "rescheduleClusterMaintenanceAsync", "rescheduleClusterMaintenanceAsync", "rescheduleClusterMaintenanceOperationCallable", "rescheduleClusterMaintenanceCallable"]

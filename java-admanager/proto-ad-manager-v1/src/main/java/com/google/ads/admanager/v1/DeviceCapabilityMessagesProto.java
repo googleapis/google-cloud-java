@@ -53,22 +53,22 @@ public final class DeviceCapabilityMessagesProto extends com.google.protobuf.Gen
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/ads/admanager/v1/device_capabil"
-          + "ity_messages.proto\022\027google.ads.admanager"
-          + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\"\356\001\n\020DeviceCapabi"
-          + "lity\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\036\n\014display_name\030"
-          + "\002 \001(\tB\003\340A\003H\000\210\001\001:\225\001\352A\221\001\n)admanager.google"
-          + "apis.com/DeviceCapability\022>networks/{net"
-          + "work_code}/deviceCapabilities/{device_ca"
-          + "pability}*\022deviceCapabilities2\020deviceCap"
-          + "abilityB\017\n\r_display_nameB\321\001\n\033com.google."
-          + "ads.admanager.v1B\035DeviceCapabilityMessag"
-          + "esProtoP\001Z@google.golang.org/genproto/go"
-          + "ogleapis/ads/admanager/v1;admanager\252\002\027Go"
-          + "ogle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMan"
-          + "ager\\V1\352\002\032Google::Ads::AdManager::V1b\006pr"
-          + "oto3"
+      "\n"
+          + "8google/ads/admanager/v1/device_capability_messages.proto\022\027google.ads.admanager"
+          + ".v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\360\001\n"
+          + "\020DeviceCapability\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\037\n"
+          + "\014display_name\030\002 \001("
+          + "\tB\004\342A\001\003H\000\210\001\001:\225\001\352A\221\001\n"
+          + ")admanager.googleapis.com/DeviceCapability\022>networks/{n"
+          + "etwork_code}/deviceCapabilities/{device_"
+          + "capability}*\022deviceCapabilities2\020deviceCapabilityB\017\n\r"
+          + "_display_nameB\321\001\n"
+          + "\033com.google.ads.admanager.v1B\035DeviceCapabilityMess"
+          + "agesProtoP\001Z@google.golang.org/genproto/"
+          + "googleapis/ads/admanager/v1;admanager\252\002\027"
+          + "Google.Ads.AdManager.V1\312\002\027Google\\Ads\\AdM"
+          + "anager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -63,9 +63,9 @@ public final class TypeProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "\034google/spanner/v1/type.proto\022\021google.s"
-          + "panner.v1\032\037google/api/field_behavior.proto\"\367\001\n"
-          + "\004Type\022.\n"
-          + "\004code\030\001 \001(\0162\033.google.spanner.v1.TypeCodeB\003\340A\002\0223\n"
+          + "panner.v1\032\037google/api/field_behavior.proto\"\370\001\n"
+          + "\004Type\022/\n"
+          + "\004code\030\001 \001(\0162\033.google.spanner.v1.TypeCodeB\004\342A\001\002\0223\n"
           + "\022array_element_type\030\002 \001(\0132\027.google.spanner.v1.Type\0222\n"
           + "\013struct_type\030\003 \001(\0132\035.google.spanner.v1.StructType\022>\n"
           + "\017type_annotation\030\004 \001(\0162%.google.spanner.v1.TypeAnnotationCode\022\026\n"
@@ -100,10 +100,10 @@ public final class TypeProto extends com.google.protobuf.GeneratedFile {
           + "PG_NUMERIC\020\002\022\014\n"
           + "\010PG_JSONB\020\003\022\n\n"
           + "\006PG_OID\020\004B\254\001\n"
-          + "\025com.google.spanner.v1B\tTypeProtoP\001Z5cloud.goog"
-          + "le.com/go/spanner/apiv1/spannerpb;spanne"
-          + "rpb\252\002\027Google.Cloud.Spanner.V1\312\002\027Google\\C"
-          + "loud\\Spanner\\V1\352\002\032Google::Cloud::Spanner::V1b\006proto3"
+          + "\025com.google.spanner.v1B\tTypeProtoP\001Z5cloud.goo"
+          + "gle.com/go/spanner/apiv1/spannerpb;spann"
+          + "erpb\252\002\027Google.Cloud.Spanner.V1\312\002\027Google\\"
+          + "Cloud\\Spanner\\V1\352\002\032Google::Cloud::Spanner::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

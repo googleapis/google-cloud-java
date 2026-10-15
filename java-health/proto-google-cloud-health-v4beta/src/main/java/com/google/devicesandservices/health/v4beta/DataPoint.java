@@ -122,7 +122,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     OVULATION_TEST(50),
     SYMPTOMS(52),
     MOODS(53),
-    SKIN_TEMPERATURE(54),
     SKIN_TEMPERATURE_SENSORS(60),
     DATA_NOT_SET(0);
     private final int value;
@@ -227,8 +226,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
           return SYMPTOMS;
         case 53:
           return MOODS;
-        case 54:
-          return SKIN_TEMPERATURE;
         case 60:
           return SKIN_TEMPERATURE_SENSORS;
         case 0:
@@ -2903,70 +2900,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     return com.google.devicesandservices.health.v4beta.Moods.getDefaultInstance();
   }
 
-  public static final int SKIN_TEMPERATURE_FIELD_NUMBER = 54;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Data for points in the `skin-temperature` sample data type
-   * collection.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the skinTemperature field is set.
-   */
-  @java.lang.Override
-  public boolean hasSkinTemperature() {
-    return dataCase_ == 54;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Data for points in the `skin-temperature` sample data type
-   * collection.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The skinTemperature.
-   */
-  @java.lang.Override
-  public com.google.devicesandservices.health.v4beta.SkinTemperature getSkinTemperature() {
-    if (dataCase_ == 54) {
-      return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-    }
-    return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Data for points in the `skin-temperature` sample data type
-   * collection.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder
-      getSkinTemperatureOrBuilder() {
-    if (dataCase_ == 54) {
-      return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-    }
-    return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-  }
-
   public static final int SKIN_TEMPERATURE_SENSORS_FIELD_NUMBER = 60;
 
   /**
@@ -3047,11 +2980,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -3090,11 +3030,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -3344,9 +3291,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     if (dataCase_ == 53) {
       output.writeMessage(53, (com.google.devicesandservices.health.v4beta.Moods) data_);
     }
-    if (dataCase_ == 54) {
-      output.writeMessage(54, (com.google.devicesandservices.health.v4beta.SkinTemperature) data_);
-    }
     if (dataCase_ == 60) {
       output.writeMessage(
           60, (com.google.devicesandservices.health.v4beta.SkinTemperatureSensors) data_);
@@ -3577,11 +3521,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               53, (com.google.devicesandservices.health.v4beta.Moods) data_);
     }
-    if (dataCase_ == 54) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              54, (com.google.devicesandservices.health.v4beta.SkinTemperature) data_);
-    }
     if (dataCase_ == 60) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3739,9 +3678,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         break;
       case 53:
         if (!getMoods().equals(other.getMoods())) return false;
-        break;
-      case 54:
-        if (!getSkinTemperature().equals(other.getSkinTemperature())) return false;
         break;
       case 60:
         if (!getSkinTemperatureSensors().equals(other.getSkinTemperatureSensors())) return false;
@@ -3934,10 +3870,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       case 53:
         hash = (37 * hash) + MOODS_FIELD_NUMBER;
         hash = (53 * hash) + getMoods().hashCode();
-        break;
-      case 54:
-        hash = (37 * hash) + SKIN_TEMPERATURE_FIELD_NUMBER;
-        hash = (53 * hash) + getSkinTemperature().hashCode();
         break;
       case 60:
         hash = (37 * hash) + SKIN_TEMPERATURE_SENSORS_FIELD_NUMBER;
@@ -4223,9 +4155,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       if (moodsBuilder_ != null) {
         moodsBuilder_.clear();
       }
-      if (skinTemperatureBuilder_ != null) {
-        skinTemperatureBuilder_.clear();
-      }
       if (skinTemperatureSensorsBuilder_ != null) {
         skinTemperatureSensorsBuilder_.clear();
       }
@@ -4281,11 +4210,11 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial1(com.google.devicesandservices.health.v4beta.DataPoint result) {
       int from_bitField1_ = bitField1_;
-      if (((from_bitField1_ & 0x00001000) != 0)) {
+      if (((from_bitField1_ & 0x00000800) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField1_ & 0x00002000) != 0)) {
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         result.dataSource_ = dataSourceBuilder_ == null ? dataSource_ : dataSourceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -4421,9 +4350,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       if (dataCase_ == 53 && moodsBuilder_ != null) {
         result.data_ = moodsBuilder_.build();
       }
-      if (dataCase_ == 54 && skinTemperatureBuilder_ != null) {
-        result.data_ = skinTemperatureBuilder_.build();
-      }
       if (dataCase_ == 60 && skinTemperatureSensorsBuilder_ != null) {
         result.data_ = skinTemperatureSensorsBuilder_.build();
       }
@@ -4444,7 +4370,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       if (other.hasDataSource()) {
@@ -4661,11 +4587,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
             mergeMoods(other.getMoods());
             break;
           }
-        case SKIN_TEMPERATURE:
-          {
-            mergeSkinTemperature(other.getSkinTemperature());
-            break;
-          }
         case SKIN_TEMPERATURE_SENSORS:
           {
             mergeSkinTemperatureSensors(other.getSkinTemperatureSensors());
@@ -4705,14 +4626,14 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 10
             case 26:
               {
                 input.readMessage(
                     internalGetDataSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00002000;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 26
             case 34:
@@ -5004,13 +4925,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
                 dataCase_ = 53;
                 break;
               } // case 426
-            case 434:
-              {
-                input.readMessage(
-                    internalGetSkinTemperatureFieldBuilder().getBuilder(), extensionRegistry);
-                dataCase_ = 54;
-                break;
-              } // case 434
             case 482:
               {
                 input.readMessage(
@@ -15467,257 +15381,6 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
-            com.google.devicesandservices.health.v4beta.SkinTemperature,
-            com.google.devicesandservices.health.v4beta.SkinTemperature.Builder,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder>
-        skinTemperatureBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the skinTemperature field is set.
-     */
-    @java.lang.Override
-    public boolean hasSkinTemperature() {
-      return dataCase_ == 54;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The skinTemperature.
-     */
-    @java.lang.Override
-    public com.google.devicesandservices.health.v4beta.SkinTemperature getSkinTemperature() {
-      if (skinTemperatureBuilder_ == null) {
-        if (dataCase_ == 54) {
-          return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-      } else {
-        if (dataCase_ == 54) {
-          return skinTemperatureBuilder_.getMessage();
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperature value) {
-      if (skinTemperatureBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        data_ = value;
-        onChanged();
-      } else {
-        skinTemperatureBuilder_.setMessage(value);
-      }
-      dataCase_ = 54;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperature.Builder builderForValue) {
-      if (skinTemperatureBuilder_ == null) {
-        data_ = builderForValue.build();
-        onChanged();
-      } else {
-        skinTemperatureBuilder_.setMessage(builderForValue.build());
-      }
-      dataCase_ = 54;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder mergeSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperature value) {
-      if (skinTemperatureBuilder_ == null) {
-        if (dataCase_ == 54
-            && data_
-                != com.google.devicesandservices.health.v4beta.SkinTemperature
-                    .getDefaultInstance()) {
-          data_ =
-              com.google.devicesandservices.health.v4beta.SkinTemperature.newBuilder(
-                      (com.google.devicesandservices.health.v4beta.SkinTemperature) data_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          data_ = value;
-        }
-        onChanged();
-      } else {
-        if (dataCase_ == 54) {
-          skinTemperatureBuilder_.mergeFrom(value);
-        } else {
-          skinTemperatureBuilder_.setMessage(value);
-        }
-      }
-      dataCase_ = 54;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearSkinTemperature() {
-      if (skinTemperatureBuilder_ == null) {
-        if (dataCase_ == 54) {
-          dataCase_ = 0;
-          data_ = null;
-          onChanged();
-        }
-      } else {
-        if (dataCase_ == 54) {
-          dataCase_ = 0;
-          data_ = null;
-        }
-        skinTemperatureBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.devicesandservices.health.v4beta.SkinTemperature.Builder
-        getSkinTemperatureBuilder() {
-      return internalGetSkinTemperatureFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder
-        getSkinTemperatureOrBuilder() {
-      if ((dataCase_ == 54) && (skinTemperatureBuilder_ != null)) {
-        return skinTemperatureBuilder_.getMessageOrBuilder();
-      } else {
-        if (dataCase_ == 54) {
-          return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Data for points in the `skin-temperature` sample data type
-     * collection.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.devicesandservices.health.v4beta.SkinTemperature,
-            com.google.devicesandservices.health.v4beta.SkinTemperature.Builder,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder>
-        internalGetSkinTemperatureFieldBuilder() {
-      if (skinTemperatureBuilder_ == null) {
-        if (!(dataCase_ == 54)) {
-          data_ = com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-        }
-        skinTemperatureBuilder_ =
-            new com.google.protobuf.SingleFieldBuilder<
-                com.google.devicesandservices.health.v4beta.SkinTemperature,
-                com.google.devicesandservices.health.v4beta.SkinTemperature.Builder,
-                com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder>(
-                (com.google.devicesandservices.health.v4beta.SkinTemperature) data_,
-                getParentForChildren(),
-                isClean());
-        data_ = null;
-      }
-      dataCase_ = 54;
-      onChanged();
-      return skinTemperatureBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4beta.SkinTemperatureSensors,
             com.google.devicesandservices.health.v4beta.SkinTemperatureSensors.Builder,
             com.google.devicesandservices.health.v4beta.SkinTemperatureSensorsOrBuilder>
@@ -15987,11 +15650,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -16029,11 +15699,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -16071,11 +15748,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -16097,7 +15781,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -16112,11 +15796,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -16134,7 +15825,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -16149,11 +15840,18 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -16176,7 +15874,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -16202,7 +15900,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      * @return Whether the dataSource field is set.
      */
     public boolean hasDataSource() {
-      return ((bitField1_ & 0x00002000) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
 
     /**
@@ -16248,7 +15946,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       } else {
         dataSourceBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -16271,7 +15969,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
       } else {
         dataSourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -16289,7 +15987,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDataSource(com.google.devicesandservices.health.v4beta.DataSource value) {
       if (dataSourceBuilder_ == null) {
-        if (((bitField1_ & 0x00002000) != 0)
+        if (((bitField1_ & 0x00001000) != 0)
             && dataSource_ != null
             && dataSource_
                 != com.google.devicesandservices.health.v4beta.DataSource.getDefaultInstance()) {
@@ -16301,7 +15999,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
         dataSourceBuilder_.mergeFrom(value);
       }
       if (dataSource_ != null) {
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -16319,7 +16017,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearDataSource() {
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00001000);
       dataSource_ = null;
       if (dataSourceBuilder_ != null) {
         dataSourceBuilder_.dispose();
@@ -16341,7 +16039,7 @@ public final class DataPoint extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.devicesandservices.health.v4beta.DataSource.Builder getDataSourceBuilder() {
-      bitField1_ |= 0x00002000;
+      bitField1_ |= 0x00001000;
       onChanged();
       return internalGetDataSourceFieldBuilder().getBuilder();
     }
