@@ -175,11 +175,10 @@ public class MtlsUtils {
    *       certificate or private key files. This is treated as an unrecoverable misconfiguration.
    *   <li><b>{@code null} (Safe fallback / fail open):</b> Client certificates are explicitly
    *       disabled via {@code GOOGLE_API_USE_CLIENT_CERTIFICATE} (any non-empty value other than
-   *       {@code "true"}), no explicit configuration
-   *       is set and neither the default well-known configuration file nor a readable GKE
-   *       credential bundle exists on disk, or the configuration specifies an non-workload source
-   *       (e.g., ECP/PKCS11 without a {@code workload} section). Callers can proceed without
-   *       workload certificate file polling.
+   *       {@code "true"}), no explicit configuration is set and neither the default well-known
+   *       configuration file nor a readable GKE credential bundle exists on disk, or the
+   *       configuration specifies an non-workload source (e.g., ECP/PKCS11 without a {@code
+   *       workload} section). Callers can proceed without workload certificate file polling.
    * </ol>
    */
   public static @Nullable String getWorkloadCertPath(

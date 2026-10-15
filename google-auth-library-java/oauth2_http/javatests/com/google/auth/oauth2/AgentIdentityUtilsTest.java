@@ -71,7 +71,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
@@ -1217,8 +1216,9 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_explicitMtlsEnabled_missingPrivateKey_returnsNullWithoutPolling()
-      throws Exception {
+  public void
+      getAgentIdentityCertInfo_explicitMtlsEnabled_missingPrivateKey_returnsNullWithoutPolling()
+          throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
