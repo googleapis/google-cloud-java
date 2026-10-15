@@ -131,9 +131,8 @@ public class MtlsUtils {
     gkeCredentialBundlePath = path != null ? path : GKE_CREDENTIAL_BUNDLE_PATH;
   }
 
-  private static boolean isUseClientCertificateExplicitlyDisabled(EnvironmentProvider envProvider) {
-    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+  private static boolean isUseClientCertificateExplicitlyDisabled(
+      @Nullable String useClientCertificate) {
     return !Strings.isNullOrEmpty(useClientCertificate)
         && !"true".equalsIgnoreCase(useClientCertificate);
   }
@@ -146,14 +145,15 @@ public class MtlsUtils {
    */
   public static boolean useMtlsClientCertificate(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
-    if (isUseClientCertificateExplicitlyDisabled(envProvider)) {
+    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+    if (isUseClientCertificateExplicitlyDisabled(useClientCertificate)) {
       return false;
     }
     if (getWorkloadCertPath(envProvider, propProvider) != null) {
       return true;
     }
-    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    return rawVal != null && "true".equalsIgnoreCase(rawVal.trim());
+    return "true".equalsIgnoreCase(useClientCertificate);
   }
 
   /**
@@ -184,7 +184,9 @@ public class MtlsUtils {
    */
   public static @Nullable String getWorkloadCertPath(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
-    if (isUseClientCertificateExplicitlyDisabled(envProvider)) {
+    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+    if (isUseClientCertificateExplicitlyDisabled(useClientCertificate)) {
       return null;
     }
 

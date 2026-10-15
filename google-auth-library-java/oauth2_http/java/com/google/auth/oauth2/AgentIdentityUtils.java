@@ -774,7 +774,11 @@ final class AgentIdentityUtils {
           "Permission denied reading well-known certificates. Falling back to unbound token.");
       return new ResolvedCertAndKeyPaths(null, null, false);
     } catch (Exception e) {
-      // Fall through to cached credential fallback or unbound fallback
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.FINE,
+          Collections.emptyMap(),
+          "Unexpected error checking well-known certificates: " + e.getMessage());
     }
     initialStartupCompleted = true;
 
