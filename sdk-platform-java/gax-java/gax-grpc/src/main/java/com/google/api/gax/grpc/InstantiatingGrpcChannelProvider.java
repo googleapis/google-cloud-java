@@ -723,6 +723,13 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
   @InternalApi("For internal use by google-cloud-java clients only")
   public ManagedChannelBuilder<?> createChannelBuilder() throws IOException {
+    int colon = endpoint.lastIndexOf(':');
+    if (colon < 0) {
+      throw new IllegalStateException("invalid endpoint - should have been validated: " + endpoint);
+    }
+    int port = Integer.parseInt(endpoint.substring(colon + 1));
+    String serviceAddress = endpoint.substring(0, colon);
+
     ManagedChannelBuilder<?> builder;
 
     // Check DirectPath traffic.
@@ -742,22 +749,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
         // google-c2p: CloudToProd(C2P) Directpath. This scheme is defined in
         // io.grpc.googleapis.GoogleCloudToProdNameResolverProvider.
         // This resolver target must not have a port number.
-        String target;
-        String serviceAddress;
-        if (endpoint.startsWith("google-c2p:///")) {
-          target = endpoint;
-          int queryIdx = endpoint.indexOf('?');
-          serviceAddress =
-              queryIdx > 0
-                  ? endpoint.substring("google-c2p:///".length(), queryIdx)
-                  : endpoint.substring("google-c2p:///".length());
-        } else {
-          int colon = endpoint.lastIndexOf(':');
-          serviceAddress = colon >= 0 ? endpoint.substring(0, colon) : endpoint;
-          target = "google-c2p:///" + serviceAddress;
-          if (isAttemptDirectPathXdsOverInterconnect()) {
-            target += "?force-xds";
-          }
+        String target = "google-c2p:///" + serviceAddress;
+        if (isAttemptDirectPathXdsOverInterconnect()) {
+          target += "?force-xds";
         }
         builder = Grpc.newChannelBuilder(target, channelCreds);
         if (isAttemptDirectPathXdsOverInterconnect()
@@ -765,13 +759,6 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
           builder.overrideAuthority(serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, "."));
         }
       } else {
-        int colon = endpoint.lastIndexOf(':');
-        if (colon < 0) {
-          throw new IllegalStateException(
-              "invalid endpoint - should have been validated: " + endpoint);
-        }
-        int port = Integer.parseInt(endpoint.substring(colon + 1));
-        String serviceAddress = endpoint.substring(0, colon);
         builder = Grpc.newChannelBuilderForAddress(serviceAddress, port, channelCreds);
         builder.defaultServiceConfig(directPathServiceConfig);
       }
@@ -780,29 +767,6 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       builder.keepAliveTime(DIRECT_PATH_KEEP_ALIVE_TIME_SECONDS, TimeUnit.SECONDS);
       builder.keepAliveTimeout(DIRECT_PATH_KEEP_ALIVE_TIMEOUT_SECONDS, TimeUnit.SECONDS);
     } else {
-      int colon = endpoint.lastIndexOf(':');
-      if (colon < 0) {
-        throw new IllegalStateException(
-            "invalid endpoint - should have been validated: " + endpoint);
-      }
-      int port = Integer.parseInt(endpoint.substring(colon + 1));
-      String serviceAddress = endpoint.substring(0, colon);
-
-      if (isDirectPathEnabled() || isAttemptDirectPathXdsOverInterconnect()) {
-        LOG.log(
-            Level.WARNING,
-            "DirectPath was requested but is not available. Falling back to CloudPath.");
-      }
-      String fallbackEndpoint = endpoint;
-      String fallbackMtlsEndpoint = mtlsEndpoint;
-      if (serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
-        serviceAddress = serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
-        fallbackEndpoint = serviceAddress + ":" + port;
-        if (fallbackMtlsEndpoint != null
-            && fallbackMtlsEndpoint.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
-          fallbackMtlsEndpoint = fallbackMtlsEndpoint.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
-        }
-      }
       ChannelCredentials channelCredentials;
       try {
         // Try and create credentials via DCA. See https://google.aip.dev/auth/4114.
@@ -812,7 +776,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       }
       if (channelCredentials != null) {
         // Create the channel using channel credentials created via DCA.
-        builder = Grpc.newChannelBuilder(fallbackEndpoint, channelCredentials);
+        builder = Grpc.newChannelBuilder(endpoint, channelCredentials);
       } else {
         // Could not create channel credentials via DCA. In accordance with
         // https://google.aip.dev/auth/4115, if credentials not available through
@@ -830,7 +794,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
           }
           // Connect to the MTLS endpoint when using S2A because S2A is used to perform an MTLS
           // handshake.
-          builder = Grpc.newChannelBuilder(fallbackMtlsEndpoint, channelCredentials);
+          builder = Grpc.newChannelBuilder(mtlsEndpoint, channelCredentials);
         } else {
           // Use default if we cannot initialize channel credentials via DCA or S2A.
           builder = ManagedChannelBuilder.forAddress(serviceAddress, port);

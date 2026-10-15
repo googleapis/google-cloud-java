@@ -1095,79 +1095,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   }
 
   @Test
-  public void getTransportChannel_customUriSchemeTarget_noRewrite()
-      throws IOException, InterruptedException {
-    System.setProperty("os.name", "Not Linux");
-    EnvironmentProvider envProvider =
-        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
-    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
-        .thenReturn("false");
-    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
-    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
-        new java.util.concurrent.atomic.AtomicReference<>();
-    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
-        channelBuilder -> {
-          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
-          return channelBuilder;
-        };
-
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setCertificateBasedAccess(certificateBasedAccess)
-            .setAttemptDirectPath(true)
-            .setAttemptDirectPathXdsOverInterconnect(true)
-            .setCredentials(credentials)
-            .setEndpoint("google-c2p:///storage-direct.googleapis.com?force-xds")
-            .setEnvProvider(envProvider)
-            .setChannelConfigurator(channelConfigurator);
-
-    InstantiatingGrpcChannelProvider provider =
-        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
-
-    InstantiatingGrpcChannelProvider configuredProvider =
-        (InstantiatingGrpcChannelProvider)
-            provider
-                .withHeaders(Collections.<String, String>emptyMap())
-                .withEndpoint("google-c2p:///storage-direct.googleapis.com?force-xds");
-
-    TransportChannel transportChannel = configuredProvider.getTransportChannel();
-    transportChannel.shutdownNow();
-    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
-
-    Truth.assertThat(capturedTarget.get())
-        .contains("google-c2p:///storage-direct.googleapis.com?force-xds");
-  }
-
-  @Test
-  void testLogDirectPathFallbackWarning() throws Exception {
-    FakeLogHandler logHandler = new FakeLogHandler();
-    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
-    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
-    EnvironmentProvider envProvider =
-        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
-    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
-        .thenReturn("false");
-    InstantiatingGrpcChannelProvider provider =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setAttemptDirectPath(true)
-            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
-            .setExecutor(mock(Executor.class))
-            .setEndpoint(DEFAULT_ENDPOINT)
-            .setCertificateBasedAccess(certificateBasedAccess)
-            .setEnvProvider(envProvider)
-            .build();
-
-    TransportChannel transportChannel = provider.getTransportChannel();
-
-    assertThat(logHandler.getAllMessages())
-        .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
-    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
-
-    transportChannel.close();
-    transportChannel.awaitTermination(10, TimeUnit.SECONDS);
-  }
-
-  @Test
   public void canUseDirectPath_isNotOnComputeEngine_invalidOsNameSystemProperty() {
     System.setProperty("os.name", "Not Linux");
     EnvironmentProvider envProvider =
@@ -1707,10 +1634,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   void canUseDirectPath_interconnectEnabledButDirectPathDisabled_fallsBackToCloudPath()
       throws Exception {
-    FakeLogHandler logHandler = new FakeLogHandler();
-    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
-    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
-
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -1727,13 +1650,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setEnvProvider(envProvider)
             .build();
 
-    TransportChannel transportChannel = provider.getTransportChannel();
-    transportChannel.close();
-    transportChannel.awaitTermination(10, TimeUnit.SECONDS);
-
-    assertThat(logHandler.getAllMessages())
-        .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
-    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
     String authority = extractAuthorityFromChannelBuilder(provider.createChannelBuilder());
     Truth.assertThat(authority).isNotEqualTo("storage.googleapis.com");
   }
@@ -1741,10 +1658,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   void canUseDirectPath_interconnectAndDirectPathEnabledButNonGduUniverse_fallsBackToCloudPath()
       throws Exception {
-    FakeLogHandler logHandler = new FakeLogHandler();
-    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
-    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
-
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
@@ -1761,13 +1674,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setEnvProvider(envProvider)
             .build();
 
-    TransportChannel transportChannel = provider.getTransportChannel();
-    transportChannel.close();
-    transportChannel.awaitTermination(10, TimeUnit.SECONDS);
-
-    assertThat(logHandler.getAllMessages())
-        .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
-    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
     String authority = extractAuthorityFromChannelBuilder(provider.createChannelBuilder());
     Truth.assertThat(authority).isNotEqualTo("storage.googleapis.com");
   }
@@ -1819,7 +1726,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
     Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
-        .isEqualTo("bigtable.googleapis.com:443");
+        .isEqualTo("bigtable-direct.googleapis.com:443");
   }
 
   private static class FakeLogHandler extends Handler {
