@@ -298,9 +298,9 @@ class X509ProviderTest {
     Files.write(
         config,
         ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
-                + new File(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH).getAbsolutePath()
+                + MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH
                 + "\",\"key_path\":\""
-                + new File(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH).getAbsolutePath()
+                + MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH
                 + "\"}}}")
             .getBytes(UTF_8));
 
