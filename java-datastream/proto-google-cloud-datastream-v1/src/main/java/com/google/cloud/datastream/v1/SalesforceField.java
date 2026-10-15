@@ -80,7 +80,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Field name.
+   * The field name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -104,7 +104,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Field name.
+   * The field name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -557,7 +557,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Field name.
+     * The field name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -580,7 +580,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Field name.
+     * The field name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -603,7 +603,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Field name.
+     * The field name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -625,7 +625,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Field name.
+     * The field name.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -643,7 +643,7 @@ public final class SalesforceField extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Field name.
+     * The field name.
      * </pre>
      *
      * <code>string name = 1;</code>

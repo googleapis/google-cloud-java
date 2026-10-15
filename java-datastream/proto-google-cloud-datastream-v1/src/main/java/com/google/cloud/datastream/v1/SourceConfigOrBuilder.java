@@ -282,5 +282,208 @@ public interface SourceConfigOrBuilder
    */
   com.google.cloud.datastream.v1.MongodbSourceConfigOrBuilder getMongodbSourceConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+   *
+   * @return Whether the spannerSourceConfig field is set.
+   */
+  boolean hasSpannerSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+   *
+   * @return The spannerSourceConfig.
+   */
+  com.google.cloud.datastream.v1.SpannerSourceConfig getSpannerSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+   */
+  com.google.cloud.datastream.v1.SpannerSourceConfigOrBuilder getSpannerSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dataverse data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+   *
+   * @return Whether the dataverseSourceConfig field is set.
+   */
+  boolean hasDataverseSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dataverse data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+   *
+   * @return The dataverseSourceConfig.
+   */
+  com.google.cloud.datastream.v1.DataverseSourceConfig getDataverseSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Dataverse data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+   */
+  com.google.cloud.datastream.v1.DataverseSourceConfigOrBuilder getDataverseSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Marketing Cloud data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+   * </code>
+   *
+   * @return Whether the salesforceMarketingCloudSourceConfig field is set.
+   */
+  boolean hasSalesforceMarketingCloudSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Marketing Cloud data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+   * </code>
+   *
+   * @return The salesforceMarketingCloudSourceConfig.
+   */
+  com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+      getSalesforceMarketingCloudSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Marketing Cloud data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfigOrBuilder
+      getSalesforceMarketingCloudSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceNow data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+   * </code>
+   *
+   * @return Whether the serviceNowSourceConfig field is set.
+   */
+  boolean hasServiceNowSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceNow data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+   * </code>
+   *
+   * @return The serviceNowSourceConfig.
+   */
+  com.google.cloud.datastream.v1.ServiceNowSourceConfig getServiceNowSourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceNow data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.ServiceNowSourceConfigOrBuilder
+      getServiceNowSourceConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Workday data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workdaySourceConfig field is set.
+   */
+  boolean hasWorkdaySourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Workday data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workdaySourceConfig.
+   */
+  com.google.cloud.datastream.v1.WorkdaySourceConfig getWorkdaySourceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Workday data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.WorkdaySourceConfigOrBuilder getWorkdaySourceConfigOrBuilder();
+
   com.google.cloud.datastream.v1.SourceConfig.SourceStreamConfigCase getSourceStreamConfigCase();
 }

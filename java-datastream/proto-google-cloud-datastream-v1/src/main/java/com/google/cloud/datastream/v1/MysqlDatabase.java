@@ -80,7 +80,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Database name.
+   * The database name.
    * </pre>
    *
    * <code>string database = 1;</code>
@@ -104,7 +104,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Database name.
+   * The database name.
    * </pre>
    *
    * <code>string database = 1;</code>
@@ -586,7 +586,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Database name.
+     * The database name.
      * </pre>
      *
      * <code>string database = 1;</code>
@@ -609,7 +609,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Database name.
+     * The database name.
      * </pre>
      *
      * <code>string database = 1;</code>
@@ -632,7 +632,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Database name.
+     * The database name.
      * </pre>
      *
      * <code>string database = 1;</code>
@@ -654,7 +654,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Database name.
+     * The database name.
      * </pre>
      *
      * <code>string database = 1;</code>
@@ -672,7 +672,7 @@ public final class MysqlDatabase extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Database name.
+     * The database name.
      * </pre>
      *
      * <code>string database = 1;</code>

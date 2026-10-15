@@ -30,7 +30,7 @@ public interface PostgresqlSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema name.
+   * The schema name.
    * </pre>
    *
    * <code>string schema = 1;</code>
@@ -43,7 +43,7 @@ public interface PostgresqlSchemaOrBuilder
    *
    *
    * <pre>
-   * Schema name.
+   * The schema name.
    * </pre>
    *
    * <code>string schema = 1;</code>

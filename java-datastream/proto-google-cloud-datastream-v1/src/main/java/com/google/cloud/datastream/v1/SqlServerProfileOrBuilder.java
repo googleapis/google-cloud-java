@@ -149,6 +149,49 @@ public interface SqlServerProfileOrBuilder
    *
    *
    * <pre>
+   * Optional. SSL configuration for the SQLServer connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sslConfig field is set.
+   */
+  boolean hasSslConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the SQLServer connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sslConfig.
+   */
+  com.google.cloud.datastream.v1.SqlServerSslConfig getSslConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the SQLServer connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SqlServerSslConfigOrBuilder getSslConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. A reference to a Secret Manager resource name storing the
    * SQLServer connection password. Mutually exclusive with the `password`
    * field.

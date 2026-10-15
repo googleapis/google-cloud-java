@@ -80,7 +80,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Object name.
+   * The object name.
    * </pre>
    *
    * <code>string object_name = 1;</code>
@@ -104,7 +104,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Object name.
+   * The object name.
    * </pre>
    *
    * <code>string object_name = 1;</code>
@@ -603,7 +603,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object name.
+     * The object name.
      * </pre>
      *
      * <code>string object_name = 1;</code>
@@ -626,7 +626,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object name.
+     * The object name.
      * </pre>
      *
      * <code>string object_name = 1;</code>
@@ -649,7 +649,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object name.
+     * The object name.
      * </pre>
      *
      * <code>string object_name = 1;</code>
@@ -671,7 +671,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object name.
+     * The object name.
      * </pre>
      *
      * <code>string object_name = 1;</code>
@@ -689,7 +689,7 @@ public final class SalesforceObject extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Object name.
+     * The object name.
      * </pre>
      *
      * <code>string object_name = 1;</code>

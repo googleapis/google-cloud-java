@@ -248,13 +248,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private class QueryPageFetcher extends Thread implements NextPageFetcher<FieldValueList> {
+  private class QueryPageFetcher implements NextPageFetcher<FieldValueList> {
 
     private static final long serialVersionUID = -8501991114794410114L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
     private final BigQueryOptions serviceOptions;
-    private Job job;
-    private final TableId table;
+    private final JobId jobId;
+    private TableId table;
     private final Schema schema;
 
     QueryPageFetcher(
@@ -266,20 +266,26 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.requestOptions =
           PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-      this.job = getJob(jobId);
-      this.table = ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
+      this.jobId = jobId;
       this.schema = schema;
     }
 
     @Override
     public Page<FieldValueList> getNextPage() {
-      while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
-        try {
-          sleep(5000);
-        } catch (InterruptedException ex) {
-          throw new RuntimeException(ex.getMessage());
-        }
-        job = job.reload();
+      // Lazily resolve the destination table on the first getNextPage() call rather than in the
+      // constructor. All first-page rows and metadata on TableResult are already populated from
+      // QueryResponse (jobs.query), and the destination table is only ever used here to call
+      // listTableData() for subsequent pages. Deferring getJob(jobId) is therefore behaviorally
+      // identical when iterating multiple pages while avoiding an unused blocking jobs.get RPC
+      // when only the first page is consumed.
+      //
+      // Historically, getNextPage() also polled job.reload() with a 5s sleep until State.DONE
+      // (from before queryRpc() checked results.getJobComplete()). Because QueryPageFetcher is
+      // only created when results.getJobComplete() is true, the job is already complete and does
+      // not need status polling.
+      if (table == null) {
+        Job job = getJob(jobId);
+        table = ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
       }
       return listTableData(table, schema, serviceOptions, requestOptions).x();
     }
@@ -2456,7 +2462,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     long numRows;
     Schema schema;
-    if (results.getJobComplete() && results.getSchema() != null) {
+    if (Boolean.TRUE.equals(results.getJobComplete()) && results.getSchema() != null) {
       schema = Schema.fromPb(results.getSchema());
       if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
         numRows = 0L;
@@ -2470,8 +2476,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       // return the schema, fallback. Some operations don't return the schema and can be optimized
       // here, but this is left as future work.
       JobId jobId = JobId.fromPb(results.getJobReference());
-      Job job = getJob(jobId, options);
-      return job;
+      return getJob(jobId, options);
     }
 
     if (results.getPageToken() != null) {

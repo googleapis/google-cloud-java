@@ -60,11 +60,11 @@ public interface ListStreamObjectsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of objects to return. Default is 50.
+   * Optional. Maximum number of objects to return. Default is 50.
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -74,15 +74,15 @@ public interface ListStreamObjectsRequestOrBuilder
    *
    *
    * <pre>
-   * Page token received from a previous `ListStreamObjectsRequest` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListStreamObjectsRequest`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
    * `ListStreamObjectsRequest` must match the call that provided the page
    * token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -92,15 +92,15 @@ public interface ListStreamObjectsRequestOrBuilder
    *
    *
    * <pre>
-   * Page token received from a previous `ListStreamObjectsRequest` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListStreamObjectsRequest`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
    * `ListStreamObjectsRequest` must match the call that provided the page
    * token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

@@ -30,7 +30,7 @@ public interface MongodbDatabaseOrBuilder
    *
    *
    * <pre>
-   * Database name.
+   * The database name.
    * </pre>
    *
    * <code>string database = 1;</code>
@@ -43,7 +43,7 @@ public interface MongodbDatabaseOrBuilder
    *
    *
    * <pre>
-   * Database name.
+   * The database name.
    * </pre>
    *
    * <code>string database = 1;</code>

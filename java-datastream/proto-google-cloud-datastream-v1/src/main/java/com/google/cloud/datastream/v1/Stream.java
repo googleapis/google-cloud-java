@@ -57,6 +57,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
     state_ = 0;
     errors_ = java.util.Collections.emptyList();
     customerManagedEncryptionKey_ = "";
+    ruleSets_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -628,6 +629,83 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbExcludedObjectsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+     *
+     * @return Whether the spannerExcludedObjects field is set.
+     */
+    boolean hasSpannerExcludedObjects();
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+     *
+     * @return The spannerExcludedObjects.
+     */
+    com.google.cloud.datastream.v1.SpannerDatabase getSpannerExcludedObjects();
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+     */
+    com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder getSpannerExcludedObjectsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source catalog data source objects to avoid backfilling. This is mainly
+     * used to represent SaaS applications objects.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+     *
+     * @return Whether the saasExcludedObjects field is set.
+     */
+    boolean hasSaasExcludedObjects();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source catalog data source objects to avoid backfilling. This is mainly
+     * used to represent SaaS applications objects.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+     *
+     * @return The saasExcludedObjects.
+     */
+    com.google.cloud.datastream.v1.SourceCatalog getSaasExcludedObjects();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source catalog data source objects to avoid backfilling. This is mainly
+     * used to represent SaaS applications objects.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+     */
+    com.google.cloud.datastream.v1.SourceCatalogOrBuilder getSaasExcludedObjectsOrBuilder();
+
     com.google.cloud.datastream.v1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
@@ -695,6 +773,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
       SQL_SERVER_EXCLUDED_OBJECTS(4),
       SALESFORCE_EXCLUDED_OBJECTS(5),
       MONGODB_EXCLUDED_OBJECTS(6),
+      SPANNER_EXCLUDED_OBJECTS(7),
+      SAAS_EXCLUDED_OBJECTS(9),
       EXCLUDEDOBJECTS_NOT_SET(0);
       private final int value;
 
@@ -726,6 +806,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
             return SALESFORCE_EXCLUDED_OBJECTS;
           case 6:
             return MONGODB_EXCLUDED_OBJECTS;
+          case 7:
+            return SPANNER_EXCLUDED_OBJECTS;
+          case 9:
+            return SAAS_EXCLUDED_OBJECTS;
           case 0:
             return EXCLUDEDOBJECTS_NOT_SET;
           default:
@@ -1070,6 +1154,118 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
     }
 
+    public static final int SPANNER_EXCLUDED_OBJECTS_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+     *
+     * @return Whether the spannerExcludedObjects field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerExcludedObjects() {
+      return excludedObjectsCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+     *
+     * @return The spannerExcludedObjects.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerDatabase getSpannerExcludedObjects() {
+      if (excludedObjectsCase_ == 7) {
+        return (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source objects to avoid backfilling.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder
+        getSpannerExcludedObjectsOrBuilder() {
+      if (excludedObjectsCase_ == 7) {
+        return (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+    }
+
+    public static final int SAAS_EXCLUDED_OBJECTS_FIELD_NUMBER = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Source catalog data source objects to avoid backfilling. This is mainly
+     * used to represent SaaS applications objects.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+     *
+     * @return Whether the saasExcludedObjects field is set.
+     */
+    @java.lang.Override
+    public boolean hasSaasExcludedObjects() {
+      return excludedObjectsCase_ == 9;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source catalog data source objects to avoid backfilling. This is mainly
+     * used to represent SaaS applications objects.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+     *
+     * @return The saasExcludedObjects.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceCatalog getSaasExcludedObjects() {
+      if (excludedObjectsCase_ == 9) {
+        return (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source catalog data source objects to avoid backfilling. This is mainly
+     * used to represent SaaS applications objects.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceCatalogOrBuilder getSaasExcludedObjectsOrBuilder() {
+      if (excludedObjectsCase_ == 9) {
+        return (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1101,6 +1297,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
       }
       if (excludedObjectsCase_ == 6) {
         output.writeMessage(6, (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 7) {
+        output.writeMessage(7, (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 9) {
+        output.writeMessage(9, (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1141,6 +1343,16 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 6, (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_);
       }
+      if (excludedObjectsCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                7, (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 9) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                9, (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1180,6 +1392,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         case 6:
           if (!getMongodbExcludedObjects().equals(other.getMongodbExcludedObjects())) return false;
           break;
+        case 7:
+          if (!getSpannerExcludedObjects().equals(other.getSpannerExcludedObjects())) return false;
+          break;
+        case 9:
+          if (!getSaasExcludedObjects().equals(other.getSaasExcludedObjects())) return false;
+          break;
         case 0:
         default:
       }
@@ -1218,6 +1436,14 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         case 6:
           hash = (37 * hash) + MONGODB_EXCLUDED_OBJECTS_FIELD_NUMBER;
           hash = (53 * hash) + getMongodbExcludedObjects().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + SPANNER_EXCLUDED_OBJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getSpannerExcludedObjects().hashCode();
+          break;
+        case 9:
+          hash = (37 * hash) + SAAS_EXCLUDED_OBJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getSaasExcludedObjects().hashCode();
           break;
         case 0:
         default:
@@ -1382,6 +1608,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         if (mongodbExcludedObjectsBuilder_ != null) {
           mongodbExcludedObjectsBuilder_.clear();
         }
+        if (spannerExcludedObjectsBuilder_ != null) {
+          spannerExcludedObjectsBuilder_.clear();
+        }
+        if (saasExcludedObjectsBuilder_ != null) {
+          saasExcludedObjectsBuilder_.clear();
+        }
         excludedObjectsCase_ = 0;
         excludedObjects_ = null;
         return this;
@@ -1445,6 +1677,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         if (excludedObjectsCase_ == 6 && mongodbExcludedObjectsBuilder_ != null) {
           result.excludedObjects_ = mongodbExcludedObjectsBuilder_.build();
         }
+        if (excludedObjectsCase_ == 7 && spannerExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = spannerExcludedObjectsBuilder_.build();
+        }
+        if (excludedObjectsCase_ == 9 && saasExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = saasExcludedObjectsBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1489,6 +1727,16 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
           case MONGODB_EXCLUDED_OBJECTS:
             {
               mergeMongodbExcludedObjects(other.getMongodbExcludedObjects());
+              break;
+            }
+          case SPANNER_EXCLUDED_OBJECTS:
+            {
+              mergeSpannerExcludedObjects(other.getSpannerExcludedObjects());
+              break;
+            }
+          case SAAS_EXCLUDED_OBJECTS:
+            {
+              mergeSaasExcludedObjects(other.getSaasExcludedObjects());
               break;
             }
           case EXCLUDEDOBJECTS_NOT_SET:
@@ -1570,6 +1818,21 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
                   excludedObjectsCase_ = 6;
                   break;
                 } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      internalGetSpannerExcludedObjectsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  excludedObjectsCase_ = 7;
+                  break;
+                } // case 58
+              case 74:
+                {
+                  input.readMessage(
+                      internalGetSaasExcludedObjectsFieldBuilder().getBuilder(), extensionRegistry);
+                  excludedObjectsCase_ = 9;
+                  break;
+                } // case 74
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2934,6 +3197,458 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         return mongodbExcludedObjectsBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.SpannerDatabase,
+              com.google.cloud.datastream.v1.SpannerDatabase.Builder,
+              com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder>
+          spannerExcludedObjectsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       *
+       * @return Whether the spannerExcludedObjects field is set.
+       */
+      @java.lang.Override
+      public boolean hasSpannerExcludedObjects() {
+        return excludedObjectsCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       *
+       * @return The spannerExcludedObjects.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SpannerDatabase getSpannerExcludedObjects() {
+        if (spannerExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 7) {
+            return (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+        } else {
+          if (excludedObjectsCase_ == 7) {
+            return spannerExcludedObjectsBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      public Builder setSpannerExcludedObjects(
+          com.google.cloud.datastream.v1.SpannerDatabase value) {
+        if (spannerExcludedObjectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          excludedObjects_ = value;
+          onChanged();
+        } else {
+          spannerExcludedObjectsBuilder_.setMessage(value);
+        }
+        excludedObjectsCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      public Builder setSpannerExcludedObjects(
+          com.google.cloud.datastream.v1.SpannerDatabase.Builder builderForValue) {
+        if (spannerExcludedObjectsBuilder_ == null) {
+          excludedObjects_ = builderForValue.build();
+          onChanged();
+        } else {
+          spannerExcludedObjectsBuilder_.setMessage(builderForValue.build());
+        }
+        excludedObjectsCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      public Builder mergeSpannerExcludedObjects(
+          com.google.cloud.datastream.v1.SpannerDatabase value) {
+        if (spannerExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 7
+              && excludedObjects_
+                  != com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance()) {
+            excludedObjects_ =
+                com.google.cloud.datastream.v1.SpannerDatabase.newBuilder(
+                        (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            excludedObjects_ = value;
+          }
+          onChanged();
+        } else {
+          if (excludedObjectsCase_ == 7) {
+            spannerExcludedObjectsBuilder_.mergeFrom(value);
+          } else {
+            spannerExcludedObjectsBuilder_.setMessage(value);
+          }
+        }
+        excludedObjectsCase_ = 7;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      public Builder clearSpannerExcludedObjects() {
+        if (spannerExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 7) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+            onChanged();
+          }
+        } else {
+          if (excludedObjectsCase_ == 7) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+          }
+          spannerExcludedObjectsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      public com.google.cloud.datastream.v1.SpannerDatabase.Builder
+          getSpannerExcludedObjectsBuilder() {
+        return internalGetSpannerExcludedObjectsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder
+          getSpannerExcludedObjectsOrBuilder() {
+        if ((excludedObjectsCase_ == 7) && (spannerExcludedObjectsBuilder_ != null)) {
+          return spannerExcludedObjectsBuilder_.getMessageOrBuilder();
+        } else {
+          if (excludedObjectsCase_ == 7) {
+            return (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Spanner data source objects to avoid backfilling.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_excluded_objects = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.SpannerDatabase,
+              com.google.cloud.datastream.v1.SpannerDatabase.Builder,
+              com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder>
+          internalGetSpannerExcludedObjectsFieldBuilder() {
+        if (spannerExcludedObjectsBuilder_ == null) {
+          if (!(excludedObjectsCase_ == 7)) {
+            excludedObjects_ = com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+          }
+          spannerExcludedObjectsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.datastream.v1.SpannerDatabase,
+                  com.google.cloud.datastream.v1.SpannerDatabase.Builder,
+                  com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder>(
+                  (com.google.cloud.datastream.v1.SpannerDatabase) excludedObjects_,
+                  getParentForChildren(),
+                  isClean());
+          excludedObjects_ = null;
+        }
+        excludedObjectsCase_ = 7;
+        onChanged();
+        return spannerExcludedObjectsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.SourceCatalog,
+              com.google.cloud.datastream.v1.SourceCatalog.Builder,
+              com.google.cloud.datastream.v1.SourceCatalogOrBuilder>
+          saasExcludedObjectsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       *
+       * @return Whether the saasExcludedObjects field is set.
+       */
+      @java.lang.Override
+      public boolean hasSaasExcludedObjects() {
+        return excludedObjectsCase_ == 9;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       *
+       * @return The saasExcludedObjects.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceCatalog getSaasExcludedObjects() {
+        if (saasExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 9) {
+            return (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+        } else {
+          if (excludedObjectsCase_ == 9) {
+            return saasExcludedObjectsBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      public Builder setSaasExcludedObjects(com.google.cloud.datastream.v1.SourceCatalog value) {
+        if (saasExcludedObjectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          excludedObjects_ = value;
+          onChanged();
+        } else {
+          saasExcludedObjectsBuilder_.setMessage(value);
+        }
+        excludedObjectsCase_ = 9;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      public Builder setSaasExcludedObjects(
+          com.google.cloud.datastream.v1.SourceCatalog.Builder builderForValue) {
+        if (saasExcludedObjectsBuilder_ == null) {
+          excludedObjects_ = builderForValue.build();
+          onChanged();
+        } else {
+          saasExcludedObjectsBuilder_.setMessage(builderForValue.build());
+        }
+        excludedObjectsCase_ = 9;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      public Builder mergeSaasExcludedObjects(com.google.cloud.datastream.v1.SourceCatalog value) {
+        if (saasExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 9
+              && excludedObjects_
+                  != com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance()) {
+            excludedObjects_ =
+                com.google.cloud.datastream.v1.SourceCatalog.newBuilder(
+                        (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            excludedObjects_ = value;
+          }
+          onChanged();
+        } else {
+          if (excludedObjectsCase_ == 9) {
+            saasExcludedObjectsBuilder_.mergeFrom(value);
+          } else {
+            saasExcludedObjectsBuilder_.setMessage(value);
+          }
+        }
+        excludedObjectsCase_ = 9;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      public Builder clearSaasExcludedObjects() {
+        if (saasExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 9) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+            onChanged();
+          }
+        } else {
+          if (excludedObjectsCase_ == 9) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+          }
+          saasExcludedObjectsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      public com.google.cloud.datastream.v1.SourceCatalog.Builder getSaasExcludedObjectsBuilder() {
+        return internalGetSaasExcludedObjectsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceCatalogOrBuilder
+          getSaasExcludedObjectsOrBuilder() {
+        if ((excludedObjectsCase_ == 9) && (saasExcludedObjectsBuilder_ != null)) {
+          return saasExcludedObjectsBuilder_.getMessageOrBuilder();
+        } else {
+          if (excludedObjectsCase_ == 9) {
+            return (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source catalog data source objects to avoid backfilling. This is mainly
+       * used to represent SaaS applications objects.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceCatalog saas_excluded_objects = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.SourceCatalog,
+              com.google.cloud.datastream.v1.SourceCatalog.Builder,
+              com.google.cloud.datastream.v1.SourceCatalogOrBuilder>
+          internalGetSaasExcludedObjectsFieldBuilder() {
+        if (saasExcludedObjectsBuilder_ == null) {
+          if (!(excludedObjectsCase_ == 9)) {
+            excludedObjects_ = com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+          }
+          saasExcludedObjectsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.datastream.v1.SourceCatalog,
+                  com.google.cloud.datastream.v1.SourceCatalog.Builder,
+                  com.google.cloud.datastream.v1.SourceCatalogOrBuilder>(
+                  (com.google.cloud.datastream.v1.SourceCatalog) excludedObjects_,
+                  getParentForChildren(),
+                  isClean());
+          excludedObjects_ = null;
+        }
+        excludedObjectsCase_ = 9;
+        onChanged();
+        return saasExcludedObjectsBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.Stream.BackfillAllStrategy)
     }
 
@@ -3366,6 +4081,3481 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.cloud.datastream.v1.Stream.BackfillNoneStrategy getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RuleSetOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.Stream.RuleSet)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+        getCustomizationRulesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule getCustomizationRules(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    int getCustomizationRulesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+        getCustomizationRulesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder
+        getCustomizationRulesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Object filter to apply the customization rules to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the objectFilter field is set.
+     */
+    boolean hasObjectFilter();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Object filter to apply the customization rules to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The objectFilter.
+     */
+    com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter getObjectFilter();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Object filter to apply the customization rules to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder getObjectFilterOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A set of rules to apply to a set of objects.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.Stream.RuleSet}
+   */
+  public static final class RuleSet extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.Stream.RuleSet)
+      RuleSetOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RuleSet");
+    }
+
+    // Use RuleSet.newBuilder() to construct.
+    private RuleSet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RuleSet() {
+      customizationRules_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_Stream_RuleSet_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_Stream_RuleSet_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.Stream.RuleSet.class,
+              com.google.cloud.datastream.v1.Stream.RuleSet.Builder.class);
+    }
+
+    public interface ObjectFilterOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Specific source object identifier.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+       * </code>
+       *
+       * @return Whether the sourceObjectIdentifier field is set.
+       */
+      boolean hasSourceObjectIdentifier();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specific source object identifier.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+       * </code>
+       *
+       * @return The sourceObjectIdentifier.
+       */
+      com.google.cloud.datastream.v1.SourceObjectIdentifier getSourceObjectIdentifier();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specific source object identifier.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+       * </code>
+       */
+      com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder
+          getSourceObjectIdentifierOrBuilder();
+
+      com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.FilterTypeCase getFilterTypeCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Object filter to apply the rules to.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter}
+     */
+    public static final class ObjectFilter extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter)
+        ObjectFilterOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "ObjectFilter");
+      }
+
+      // Use ObjectFilter.newBuilder() to construct.
+      private ObjectFilter(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ObjectFilter() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_ObjectFilter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_ObjectFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.class,
+                com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder.class);
+      }
+
+      private int filterTypeCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object filterType_;
+
+      public enum FilterTypeCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        SOURCE_OBJECT_IDENTIFIER(1),
+        FILTERTYPE_NOT_SET(0);
+        private final int value;
+
+        private FilterTypeCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static FilterTypeCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static FilterTypeCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return SOURCE_OBJECT_IDENTIFIER;
+            case 0:
+              return FILTERTYPE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public FilterTypeCase getFilterTypeCase() {
+        return FilterTypeCase.forNumber(filterTypeCase_);
+      }
+
+      public static final int SOURCE_OBJECT_IDENTIFIER_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specific source object identifier.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+       * </code>
+       *
+       * @return Whether the sourceObjectIdentifier field is set.
+       */
+      @java.lang.Override
+      public boolean hasSourceObjectIdentifier() {
+        return filterTypeCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specific source object identifier.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+       * </code>
+       *
+       * @return The sourceObjectIdentifier.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier getSourceObjectIdentifier() {
+        if (filterTypeCase_ == 1) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specific source object identifier.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder
+          getSourceObjectIdentifierOrBuilder() {
+        if (filterTypeCase_ == 1) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (filterTypeCase_ == 1) {
+          output.writeMessage(
+              1, (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (filterTypeCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter other =
+            (com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter) obj;
+
+        if (!getFilterTypeCase().equals(other.getFilterTypeCase())) return false;
+        switch (filterTypeCase_) {
+          case 1:
+            if (!getSourceObjectIdentifier().equals(other.getSourceObjectIdentifier()))
+              return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (filterTypeCase_) {
+          case 1:
+            hash = (37 * hash) + SOURCE_OBJECT_IDENTIFIER_FIELD_NUMBER;
+            hash = (53 * hash) + getSourceObjectIdentifier().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Object filter to apply the rules to.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter)
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_Stream_RuleSet_ObjectFilter_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_Stream_RuleSet_ObjectFilter_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.class,
+                  com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder.class);
+        }
+
+        // Construct using com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (sourceObjectIdentifierBuilder_ != null) {
+            sourceObjectIdentifierBuilder_.clear();
+          }
+          filterTypeCase_ = 0;
+          filterType_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_Stream_RuleSet_ObjectFilter_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter
+            getDefaultInstanceForType() {
+          return com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter build() {
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter buildPartial() {
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter result =
+              new com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter result) {
+          result.filterTypeCase_ = filterTypeCase_;
+          result.filterType_ = this.filterType_;
+          if (filterTypeCase_ == 1 && sourceObjectIdentifierBuilder_ != null) {
+            result.filterType_ = sourceObjectIdentifierBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter) {
+            return mergeFrom((com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter other) {
+          if (other
+              == com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.getDefaultInstance())
+            return this;
+          switch (other.getFilterTypeCase()) {
+            case SOURCE_OBJECT_IDENTIFIER:
+              {
+                mergeSourceObjectIdentifier(other.getSourceObjectIdentifier());
+                break;
+              }
+            case FILTERTYPE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetSourceObjectIdentifierFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    filterTypeCase_ = 1;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int filterTypeCase_ = 0;
+        private java.lang.Object filterType_;
+
+        public FilterTypeCase getFilterTypeCase() {
+          return FilterTypeCase.forNumber(filterTypeCase_);
+        }
+
+        public Builder clearFilterType() {
+          filterTypeCase_ = 0;
+          filterType_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder>
+            sourceObjectIdentifierBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         *
+         * @return Whether the sourceObjectIdentifier field is set.
+         */
+        @java.lang.Override
+        public boolean hasSourceObjectIdentifier() {
+          return filterTypeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         *
+         * @return The sourceObjectIdentifier.
+         */
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.SourceObjectIdentifier getSourceObjectIdentifier() {
+          if (sourceObjectIdentifierBuilder_ == null) {
+            if (filterTypeCase_ == 1) {
+              return (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_;
+            }
+            return com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance();
+          } else {
+            if (filterTypeCase_ == 1) {
+              return sourceObjectIdentifierBuilder_.getMessage();
+            }
+            return com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        public Builder setSourceObjectIdentifier(
+            com.google.cloud.datastream.v1.SourceObjectIdentifier value) {
+          if (sourceObjectIdentifierBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            filterType_ = value;
+            onChanged();
+          } else {
+            sourceObjectIdentifierBuilder_.setMessage(value);
+          }
+          filterTypeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        public Builder setSourceObjectIdentifier(
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder builderForValue) {
+          if (sourceObjectIdentifierBuilder_ == null) {
+            filterType_ = builderForValue.build();
+            onChanged();
+          } else {
+            sourceObjectIdentifierBuilder_.setMessage(builderForValue.build());
+          }
+          filterTypeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        public Builder mergeSourceObjectIdentifier(
+            com.google.cloud.datastream.v1.SourceObjectIdentifier value) {
+          if (sourceObjectIdentifierBuilder_ == null) {
+            if (filterTypeCase_ == 1
+                && filterType_
+                    != com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance()) {
+              filterType_ =
+                  com.google.cloud.datastream.v1.SourceObjectIdentifier.newBuilder(
+                          (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              filterType_ = value;
+            }
+            onChanged();
+          } else {
+            if (filterTypeCase_ == 1) {
+              sourceObjectIdentifierBuilder_.mergeFrom(value);
+            } else {
+              sourceObjectIdentifierBuilder_.setMessage(value);
+            }
+          }
+          filterTypeCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        public Builder clearSourceObjectIdentifier() {
+          if (sourceObjectIdentifierBuilder_ == null) {
+            if (filterTypeCase_ == 1) {
+              filterTypeCase_ = 0;
+              filterType_ = null;
+              onChanged();
+            }
+          } else {
+            if (filterTypeCase_ == 1) {
+              filterTypeCase_ = 0;
+              filterType_ = null;
+            }
+            sourceObjectIdentifierBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        public com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder
+            getSourceObjectIdentifierBuilder() {
+          return internalGetSourceObjectIdentifierFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder
+            getSourceObjectIdentifierOrBuilder() {
+          if ((filterTypeCase_ == 1) && (sourceObjectIdentifierBuilder_ != null)) {
+            return sourceObjectIdentifierBuilder_.getMessageOrBuilder();
+          } else {
+            if (filterTypeCase_ == 1) {
+              return (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_;
+            }
+            return com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specific source object identifier.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object_identifier = 1;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder>
+            internalGetSourceObjectIdentifierFieldBuilder() {
+          if (sourceObjectIdentifierBuilder_ == null) {
+            if (!(filterTypeCase_ == 1)) {
+              filterType_ =
+                  com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance();
+            }
+            sourceObjectIdentifierBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.datastream.v1.SourceObjectIdentifier,
+                    com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder,
+                    com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder>(
+                    (com.google.cloud.datastream.v1.SourceObjectIdentifier) filterType_,
+                    getParentForChildren(),
+                    isClean());
+            filterType_ = null;
+          }
+          filterTypeCase_ = 1;
+          onChanged();
+          return sourceObjectIdentifierBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter)
+      private static final com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter();
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ObjectFilter> PARSER =
+          new com.google.protobuf.AbstractParser<ObjectFilter>() {
+            @java.lang.Override
+            public ObjectFilter parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ObjectFilter> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ObjectFilter> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface CustomizationRuleOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery partitioning rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+       *
+       * @return Whether the bigqueryPartitioning field is set.
+       */
+      boolean hasBigqueryPartitioning();
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery partitioning rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+       *
+       * @return The bigqueryPartitioning.
+       */
+      com.google.cloud.datastream.v1.BigQueryPartitioning getBigqueryPartitioning();
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery partitioning rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+       */
+      com.google.cloud.datastream.v1.BigQueryPartitioningOrBuilder
+          getBigqueryPartitioningOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery clustering rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+       *
+       * @return Whether the bigqueryClustering field is set.
+       */
+      boolean hasBigqueryClustering();
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery clustering rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+       *
+       * @return The bigqueryClustering.
+       */
+      com.google.cloud.datastream.v1.BigQueryClustering getBigqueryClustering();
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery clustering rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+       */
+      com.google.cloud.datastream.v1.BigQueryClusteringOrBuilder getBigqueryClusteringOrBuilder();
+
+      com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.RuleCase getRuleCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A customization rule to apply to a set of objects.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule}
+     */
+    public static final class CustomizationRule extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule)
+        CustomizationRuleOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "CustomizationRule");
+      }
+
+      // Use CustomizationRule.newBuilder() to construct.
+      private CustomizationRule(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CustomizationRule() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_CustomizationRule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_CustomizationRule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.class,
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder.class);
+      }
+
+      private int ruleCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object rule_;
+
+      public enum RuleCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        BIGQUERY_PARTITIONING(1),
+        BIGQUERY_CLUSTERING(2),
+        RULE_NOT_SET(0);
+        private final int value;
+
+        private RuleCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static RuleCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static RuleCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return BIGQUERY_PARTITIONING;
+            case 2:
+              return BIGQUERY_CLUSTERING;
+            case 0:
+              return RULE_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public RuleCase getRuleCase() {
+        return RuleCase.forNumber(ruleCase_);
+      }
+
+      public static final int BIGQUERY_PARTITIONING_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery partitioning rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+       *
+       * @return Whether the bigqueryPartitioning field is set.
+       */
+      @java.lang.Override
+      public boolean hasBigqueryPartitioning() {
+        return ruleCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery partitioning rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+       *
+       * @return The bigqueryPartitioning.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryPartitioning getBigqueryPartitioning() {
+        if (ruleCase_ == 1) {
+          return (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery partitioning rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryPartitioningOrBuilder
+          getBigqueryPartitioningOrBuilder() {
+        if (ruleCase_ == 1) {
+          return (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance();
+      }
+
+      public static final int BIGQUERY_CLUSTERING_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery clustering rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+       *
+       * @return Whether the bigqueryClustering field is set.
+       */
+      @java.lang.Override
+      public boolean hasBigqueryClustering() {
+        return ruleCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery clustering rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+       *
+       * @return The bigqueryClustering.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryClustering getBigqueryClustering() {
+        if (ruleCase_ == 2) {
+          return (com.google.cloud.datastream.v1.BigQueryClustering) rule_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * BigQuery clustering rule.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.BigQueryClusteringOrBuilder
+          getBigqueryClusteringOrBuilder() {
+        if (ruleCase_ == 2) {
+          return (com.google.cloud.datastream.v1.BigQueryClustering) rule_;
+        }
+        return com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (ruleCase_ == 1) {
+          output.writeMessage(1, (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_);
+        }
+        if (ruleCase_ == 2) {
+          output.writeMessage(2, (com.google.cloud.datastream.v1.BigQueryClustering) rule_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (ruleCase_ == 1) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  1, (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_);
+        }
+        if (ruleCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.cloud.datastream.v1.BigQueryClustering) rule_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule other =
+            (com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule) obj;
+
+        if (!getRuleCase().equals(other.getRuleCase())) return false;
+        switch (ruleCase_) {
+          case 1:
+            if (!getBigqueryPartitioning().equals(other.getBigqueryPartitioning())) return false;
+            break;
+          case 2:
+            if (!getBigqueryClustering().equals(other.getBigqueryClustering())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (ruleCase_) {
+          case 1:
+            hash = (37 * hash) + BIGQUERY_PARTITIONING_FIELD_NUMBER;
+            hash = (53 * hash) + getBigqueryPartitioning().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + BIGQUERY_CLUSTERING_FIELD_NUMBER;
+            hash = (53 * hash) + getBigqueryClustering().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A customization rule to apply to a set of objects.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule)
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_Stream_RuleSet_CustomizationRule_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_Stream_RuleSet_CustomizationRule_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.class,
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (bigqueryPartitioningBuilder_ != null) {
+            bigqueryPartitioningBuilder_.clear();
+          }
+          if (bigqueryClusteringBuilder_ != null) {
+            bigqueryClusteringBuilder_.clear();
+          }
+          ruleCase_ = 0;
+          rule_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.datastream.v1.DatastreamResourcesProto
+              .internal_static_google_cloud_datastream_v1_Stream_RuleSet_CustomizationRule_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+            getDefaultInstanceForType() {
+          return com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule build() {
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule buildPartial() {
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule result =
+              new com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule result) {
+          result.ruleCase_ = ruleCase_;
+          result.rule_ = this.rule_;
+          if (ruleCase_ == 1 && bigqueryPartitioningBuilder_ != null) {
+            result.rule_ = bigqueryPartitioningBuilder_.build();
+          }
+          if (ruleCase_ == 2 && bigqueryClusteringBuilder_ != null) {
+            result.rule_ = bigqueryClusteringBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule) {
+            return mergeFrom(
+                (com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule other) {
+          if (other
+              == com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+                  .getDefaultInstance()) return this;
+          switch (other.getRuleCase()) {
+            case BIGQUERY_PARTITIONING:
+              {
+                mergeBigqueryPartitioning(other.getBigqueryPartitioning());
+                break;
+              }
+            case BIGQUERY_CLUSTERING:
+              {
+                mergeBigqueryClustering(other.getBigqueryClustering());
+                break;
+              }
+            case RULE_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetBigqueryPartitioningFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    ruleCase_ = 1;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetBigqueryClusteringFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    ruleCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int ruleCase_ = 0;
+        private java.lang.Object rule_;
+
+        public RuleCase getRuleCase() {
+          return RuleCase.forNumber(ruleCase_);
+        }
+
+        public Builder clearRule() {
+          ruleCase_ = 0;
+          rule_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.BigQueryPartitioning,
+                com.google.cloud.datastream.v1.BigQueryPartitioning.Builder,
+                com.google.cloud.datastream.v1.BigQueryPartitioningOrBuilder>
+            bigqueryPartitioningBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         *
+         * @return Whether the bigqueryPartitioning field is set.
+         */
+        @java.lang.Override
+        public boolean hasBigqueryPartitioning() {
+          return ruleCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         *
+         * @return The bigqueryPartitioning.
+         */
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.BigQueryPartitioning getBigqueryPartitioning() {
+          if (bigqueryPartitioningBuilder_ == null) {
+            if (ruleCase_ == 1) {
+              return (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_;
+            }
+            return com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance();
+          } else {
+            if (ruleCase_ == 1) {
+              return bigqueryPartitioningBuilder_.getMessage();
+            }
+            return com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        public Builder setBigqueryPartitioning(
+            com.google.cloud.datastream.v1.BigQueryPartitioning value) {
+          if (bigqueryPartitioningBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            rule_ = value;
+            onChanged();
+          } else {
+            bigqueryPartitioningBuilder_.setMessage(value);
+          }
+          ruleCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        public Builder setBigqueryPartitioning(
+            com.google.cloud.datastream.v1.BigQueryPartitioning.Builder builderForValue) {
+          if (bigqueryPartitioningBuilder_ == null) {
+            rule_ = builderForValue.build();
+            onChanged();
+          } else {
+            bigqueryPartitioningBuilder_.setMessage(builderForValue.build());
+          }
+          ruleCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        public Builder mergeBigqueryPartitioning(
+            com.google.cloud.datastream.v1.BigQueryPartitioning value) {
+          if (bigqueryPartitioningBuilder_ == null) {
+            if (ruleCase_ == 1
+                && rule_
+                    != com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance()) {
+              rule_ =
+                  com.google.cloud.datastream.v1.BigQueryPartitioning.newBuilder(
+                          (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              rule_ = value;
+            }
+            onChanged();
+          } else {
+            if (ruleCase_ == 1) {
+              bigqueryPartitioningBuilder_.mergeFrom(value);
+            } else {
+              bigqueryPartitioningBuilder_.setMessage(value);
+            }
+          }
+          ruleCase_ = 1;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        public Builder clearBigqueryPartitioning() {
+          if (bigqueryPartitioningBuilder_ == null) {
+            if (ruleCase_ == 1) {
+              ruleCase_ = 0;
+              rule_ = null;
+              onChanged();
+            }
+          } else {
+            if (ruleCase_ == 1) {
+              ruleCase_ = 0;
+              rule_ = null;
+            }
+            bigqueryPartitioningBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        public com.google.cloud.datastream.v1.BigQueryPartitioning.Builder
+            getBigqueryPartitioningBuilder() {
+          return internalGetBigqueryPartitioningFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.BigQueryPartitioningOrBuilder
+            getBigqueryPartitioningOrBuilder() {
+          if ((ruleCase_ == 1) && (bigqueryPartitioningBuilder_ != null)) {
+            return bigqueryPartitioningBuilder_.getMessageOrBuilder();
+          } else {
+            if (ruleCase_ == 1) {
+              return (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_;
+            }
+            return com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery partitioning rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryPartitioning bigquery_partitioning = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.BigQueryPartitioning,
+                com.google.cloud.datastream.v1.BigQueryPartitioning.Builder,
+                com.google.cloud.datastream.v1.BigQueryPartitioningOrBuilder>
+            internalGetBigqueryPartitioningFieldBuilder() {
+          if (bigqueryPartitioningBuilder_ == null) {
+            if (!(ruleCase_ == 1)) {
+              rule_ = com.google.cloud.datastream.v1.BigQueryPartitioning.getDefaultInstance();
+            }
+            bigqueryPartitioningBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.datastream.v1.BigQueryPartitioning,
+                    com.google.cloud.datastream.v1.BigQueryPartitioning.Builder,
+                    com.google.cloud.datastream.v1.BigQueryPartitioningOrBuilder>(
+                    (com.google.cloud.datastream.v1.BigQueryPartitioning) rule_,
+                    getParentForChildren(),
+                    isClean());
+            rule_ = null;
+          }
+          ruleCase_ = 1;
+          onChanged();
+          return bigqueryPartitioningBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.BigQueryClustering,
+                com.google.cloud.datastream.v1.BigQueryClustering.Builder,
+                com.google.cloud.datastream.v1.BigQueryClusteringOrBuilder>
+            bigqueryClusteringBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         *
+         * @return Whether the bigqueryClustering field is set.
+         */
+        @java.lang.Override
+        public boolean hasBigqueryClustering() {
+          return ruleCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         *
+         * @return The bigqueryClustering.
+         */
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.BigQueryClustering getBigqueryClustering() {
+          if (bigqueryClusteringBuilder_ == null) {
+            if (ruleCase_ == 2) {
+              return (com.google.cloud.datastream.v1.BigQueryClustering) rule_;
+            }
+            return com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance();
+          } else {
+            if (ruleCase_ == 2) {
+              return bigqueryClusteringBuilder_.getMessage();
+            }
+            return com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        public Builder setBigqueryClustering(
+            com.google.cloud.datastream.v1.BigQueryClustering value) {
+          if (bigqueryClusteringBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            rule_ = value;
+            onChanged();
+          } else {
+            bigqueryClusteringBuilder_.setMessage(value);
+          }
+          ruleCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        public Builder setBigqueryClustering(
+            com.google.cloud.datastream.v1.BigQueryClustering.Builder builderForValue) {
+          if (bigqueryClusteringBuilder_ == null) {
+            rule_ = builderForValue.build();
+            onChanged();
+          } else {
+            bigqueryClusteringBuilder_.setMessage(builderForValue.build());
+          }
+          ruleCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        public Builder mergeBigqueryClustering(
+            com.google.cloud.datastream.v1.BigQueryClustering value) {
+          if (bigqueryClusteringBuilder_ == null) {
+            if (ruleCase_ == 2
+                && rule_
+                    != com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance()) {
+              rule_ =
+                  com.google.cloud.datastream.v1.BigQueryClustering.newBuilder(
+                          (com.google.cloud.datastream.v1.BigQueryClustering) rule_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              rule_ = value;
+            }
+            onChanged();
+          } else {
+            if (ruleCase_ == 2) {
+              bigqueryClusteringBuilder_.mergeFrom(value);
+            } else {
+              bigqueryClusteringBuilder_.setMessage(value);
+            }
+          }
+          ruleCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        public Builder clearBigqueryClustering() {
+          if (bigqueryClusteringBuilder_ == null) {
+            if (ruleCase_ == 2) {
+              ruleCase_ = 0;
+              rule_ = null;
+              onChanged();
+            }
+          } else {
+            if (ruleCase_ == 2) {
+              ruleCase_ = 0;
+              rule_ = null;
+            }
+            bigqueryClusteringBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        public com.google.cloud.datastream.v1.BigQueryClustering.Builder
+            getBigqueryClusteringBuilder() {
+          return internalGetBigqueryClusteringFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.datastream.v1.BigQueryClusteringOrBuilder
+            getBigqueryClusteringOrBuilder() {
+          if ((ruleCase_ == 2) && (bigqueryClusteringBuilder_ != null)) {
+            return bigqueryClusteringBuilder_.getMessageOrBuilder();
+          } else {
+            if (ruleCase_ == 2) {
+              return (com.google.cloud.datastream.v1.BigQueryClustering) rule_;
+            }
+            return com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * BigQuery clustering rule.
+         * </pre>
+         *
+         * <code>.google.cloud.datastream.v1.BigQueryClustering bigquery_clustering = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.BigQueryClustering,
+                com.google.cloud.datastream.v1.BigQueryClustering.Builder,
+                com.google.cloud.datastream.v1.BigQueryClusteringOrBuilder>
+            internalGetBigqueryClusteringFieldBuilder() {
+          if (bigqueryClusteringBuilder_ == null) {
+            if (!(ruleCase_ == 2)) {
+              rule_ = com.google.cloud.datastream.v1.BigQueryClustering.getDefaultInstance();
+            }
+            bigqueryClusteringBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.datastream.v1.BigQueryClustering,
+                    com.google.cloud.datastream.v1.BigQueryClustering.Builder,
+                    com.google.cloud.datastream.v1.BigQueryClusteringOrBuilder>(
+                    (com.google.cloud.datastream.v1.BigQueryClustering) rule_,
+                    getParentForChildren(),
+                    isClean());
+            rule_ = null;
+          }
+          ruleCase_ = 2;
+          onChanged();
+          return bigqueryClusteringBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule)
+      private static final com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule();
+      }
+
+      public static com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CustomizationRule> PARSER =
+          new com.google.protobuf.AbstractParser<CustomizationRule>() {
+            @java.lang.Override
+            public CustomizationRule parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CustomizationRule> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CustomizationRule> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int CUSTOMIZATION_RULES_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+        customizationRules_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+        getCustomizationRulesList() {
+      return customizationRules_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+        getCustomizationRulesOrBuilderList() {
+      return customizationRules_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public int getCustomizationRulesCount() {
+      return customizationRules_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule getCustomizationRules(
+        int index) {
+      return customizationRules_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. List of customization rules to apply.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder
+        getCustomizationRulesOrBuilder(int index) {
+      return customizationRules_.get(index);
+    }
+
+    public static final int OBJECT_FILTER_FIELD_NUMBER = 2;
+    private com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter objectFilter_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Object filter to apply the customization rules to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the objectFilter field is set.
+     */
+    @java.lang.Override
+    public boolean hasObjectFilter() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Object filter to apply the customization rules to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The objectFilter.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter getObjectFilter() {
+      return objectFilter_ == null
+          ? com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.getDefaultInstance()
+          : objectFilter_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Object filter to apply the customization rules to.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder
+        getObjectFilterOrBuilder() {
+      return objectFilter_ == null
+          ? com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.getDefaultInstance()
+          : objectFilter_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < customizationRules_.size(); i++) {
+        output.writeMessage(1, customizationRules_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getObjectFilter());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < customizationRules_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, customizationRules_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getObjectFilter());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.datastream.v1.Stream.RuleSet)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.Stream.RuleSet other =
+          (com.google.cloud.datastream.v1.Stream.RuleSet) obj;
+
+      if (!getCustomizationRulesList().equals(other.getCustomizationRulesList())) return false;
+      if (hasObjectFilter() != other.hasObjectFilter()) return false;
+      if (hasObjectFilter()) {
+        if (!getObjectFilter().equals(other.getObjectFilter())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCustomizationRulesCount() > 0) {
+        hash = (37 * hash) + CUSTOMIZATION_RULES_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomizationRulesList().hashCode();
+      }
+      if (hasObjectFilter()) {
+        hash = (37 * hash) + OBJECT_FILTER_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectFilter().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.datastream.v1.Stream.RuleSet prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of rules to apply to a set of objects.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.Stream.RuleSet}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.Stream.RuleSet)
+        com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.Stream.RuleSet.class,
+                com.google.cloud.datastream.v1.Stream.RuleSet.Builder.class);
+      }
+
+      // Construct using com.google.cloud.datastream.v1.Stream.RuleSet.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetCustomizationRulesFieldBuilder();
+          internalGetObjectFilterFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (customizationRulesBuilder_ == null) {
+          customizationRules_ = java.util.Collections.emptyList();
+        } else {
+          customizationRules_ = null;
+          customizationRulesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        objectFilter_ = null;
+        if (objectFilterBuilder_ != null) {
+          objectFilterBuilder_.dispose();
+          objectFilterBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_Stream_RuleSet_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.Stream.RuleSet getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.Stream.RuleSet.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.Stream.RuleSet build() {
+        com.google.cloud.datastream.v1.Stream.RuleSet result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.Stream.RuleSet buildPartial() {
+        com.google.cloud.datastream.v1.Stream.RuleSet result =
+            new com.google.cloud.datastream.v1.Stream.RuleSet(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.datastream.v1.Stream.RuleSet result) {
+        if (customizationRulesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            customizationRules_ = java.util.Collections.unmodifiableList(customizationRules_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.customizationRules_ = customizationRules_;
+        } else {
+          result.customizationRules_ = customizationRulesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.google.cloud.datastream.v1.Stream.RuleSet result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.objectFilter_ =
+              objectFilterBuilder_ == null ? objectFilter_ : objectFilterBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.datastream.v1.Stream.RuleSet) {
+          return mergeFrom((com.google.cloud.datastream.v1.Stream.RuleSet) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.datastream.v1.Stream.RuleSet other) {
+        if (other == com.google.cloud.datastream.v1.Stream.RuleSet.getDefaultInstance())
+          return this;
+        if (customizationRulesBuilder_ == null) {
+          if (!other.customizationRules_.isEmpty()) {
+            if (customizationRules_.isEmpty()) {
+              customizationRules_ = other.customizationRules_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCustomizationRulesIsMutable();
+              customizationRules_.addAll(other.customizationRules_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.customizationRules_.isEmpty()) {
+            if (customizationRulesBuilder_.isEmpty()) {
+              customizationRulesBuilder_.dispose();
+              customizationRulesBuilder_ = null;
+              customizationRules_ = other.customizationRules_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              customizationRulesBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetCustomizationRulesFieldBuilder()
+                      : null;
+            } else {
+              customizationRulesBuilder_.addAllMessages(other.customizationRules_);
+            }
+          }
+        }
+        if (other.hasObjectFilter()) {
+          mergeObjectFilter(other.getObjectFilter());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule m =
+                      input.readMessage(
+                          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.parser(),
+                          extensionRegistry);
+                  if (customizationRulesBuilder_ == null) {
+                    ensureCustomizationRulesIsMutable();
+                    customizationRules_.add(m);
+                  } else {
+                    customizationRulesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetObjectFilterFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+          customizationRules_ = java.util.Collections.emptyList();
+
+      private void ensureCustomizationRulesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          customizationRules_ =
+              new java.util.ArrayList<
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>(
+                  customizationRules_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule,
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder,
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+          customizationRulesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+          getCustomizationRulesList() {
+        if (customizationRulesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(customizationRules_);
+        } else {
+          return customizationRulesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public int getCustomizationRulesCount() {
+        if (customizationRulesBuilder_ == null) {
+          return customizationRules_.size();
+        } else {
+          return customizationRulesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule getCustomizationRules(
+          int index) {
+        if (customizationRulesBuilder_ == null) {
+          return customizationRules_.get(index);
+        } else {
+          return customizationRulesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setCustomizationRules(
+          int index, com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule value) {
+        if (customizationRulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.set(index, value);
+          onChanged();
+        } else {
+          customizationRulesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setCustomizationRules(
+          int index,
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder builderForValue) {
+        if (customizationRulesBuilder_ == null) {
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          customizationRulesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addCustomizationRules(
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule value) {
+        if (customizationRulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.add(value);
+          onChanged();
+        } else {
+          customizationRulesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addCustomizationRules(
+          int index, com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule value) {
+        if (customizationRulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.add(index, value);
+          onChanged();
+        } else {
+          customizationRulesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addCustomizationRules(
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder builderForValue) {
+        if (customizationRulesBuilder_ == null) {
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.add(builderForValue.build());
+          onChanged();
+        } else {
+          customizationRulesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addCustomizationRules(
+          int index,
+          com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder builderForValue) {
+        if (customizationRulesBuilder_ == null) {
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          customizationRulesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder addAllCustomizationRules(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+              values) {
+        if (customizationRulesBuilder_ == null) {
+          ensureCustomizationRulesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customizationRules_);
+          onChanged();
+        } else {
+          customizationRulesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearCustomizationRules() {
+        if (customizationRulesBuilder_ == null) {
+          customizationRules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          customizationRulesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder removeCustomizationRules(int index) {
+        if (customizationRulesBuilder_ == null) {
+          ensureCustomizationRulesIsMutable();
+          customizationRules_.remove(index);
+          onChanged();
+        } else {
+          customizationRulesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder
+          getCustomizationRulesBuilder(int index) {
+        return internalGetCustomizationRulesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder
+          getCustomizationRulesOrBuilder(int index) {
+        if (customizationRulesBuilder_ == null) {
+          return customizationRules_.get(index);
+        } else {
+          return customizationRulesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+          getCustomizationRulesOrBuilderList() {
+        if (customizationRulesBuilder_ != null) {
+          return customizationRulesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(customizationRules_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder
+          addCustomizationRulesBuilder() {
+        return internalGetCustomizationRulesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder
+          addCustomizationRulesBuilder(int index) {
+        return internalGetCustomizationRulesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. List of customization rules to apply.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder>
+          getCustomizationRulesBuilderList() {
+        return internalGetCustomizationRulesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule,
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder,
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+          internalGetCustomizationRulesFieldBuilder() {
+        if (customizationRulesBuilder_ == null) {
+          customizationRulesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule,
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder,
+                  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>(
+                  customizationRules_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          customizationRules_ = null;
+        }
+        return customizationRulesBuilder_;
+      }
+
+      private com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter objectFilter_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter,
+              com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder,
+              com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder>
+          objectFilterBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return Whether the objectFilter field is set.
+       */
+      public boolean hasObjectFilter() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The objectFilter.
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter getObjectFilter() {
+        if (objectFilterBuilder_ == null) {
+          return objectFilter_ == null
+              ? com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.getDefaultInstance()
+              : objectFilter_;
+        } else {
+          return objectFilterBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setObjectFilter(
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter value) {
+        if (objectFilterBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          objectFilter_ = value;
+        } else {
+          objectFilterBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder setObjectFilter(
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder builderForValue) {
+        if (objectFilterBuilder_ == null) {
+          objectFilter_ = builderForValue.build();
+        } else {
+          objectFilterBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder mergeObjectFilter(
+          com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter value) {
+        if (objectFilterBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && objectFilter_ != null
+              && objectFilter_
+                  != com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter
+                      .getDefaultInstance()) {
+            getObjectFilterBuilder().mergeFrom(value);
+          } else {
+            objectFilter_ = value;
+          }
+        } else {
+          objectFilterBuilder_.mergeFrom(value);
+        }
+        if (objectFilter_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public Builder clearObjectFilter() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        objectFilter_ = null;
+        if (objectFilterBuilder_ != null) {
+          objectFilterBuilder_.dispose();
+          objectFilterBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder
+          getObjectFilterBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetObjectFilterFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      public com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder
+          getObjectFilterOrBuilder() {
+        if (objectFilterBuilder_ != null) {
+          return objectFilterBuilder_.getMessageOrBuilder();
+        } else {
+          return objectFilter_ == null
+              ? com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.getDefaultInstance()
+              : objectFilter_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. Object filter to apply the customization rules to.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter object_filter = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter,
+              com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder,
+              com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder>
+          internalGetObjectFilterFieldBuilder() {
+        if (objectFilterBuilder_ == null) {
+          objectFilterBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter,
+                  com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilter.Builder,
+                  com.google.cloud.datastream.v1.Stream.RuleSet.ObjectFilterOrBuilder>(
+                  getObjectFilter(), getParentForChildren(), isClean());
+          objectFilter_ = null;
+        }
+        return objectFilterBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.Stream.RuleSet)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.Stream.RuleSet)
+    private static final com.google.cloud.datastream.v1.Stream.RuleSet DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.datastream.v1.Stream.RuleSet();
+    }
+
+    public static com.google.cloud.datastream.v1.Stream.RuleSet getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RuleSet> PARSER =
+        new com.google.protobuf.AbstractParser<RuleSet>() {
+          @java.lang.Override
+          public RuleSet parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RuleSet> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RuleSet> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.Stream.RuleSet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -4312,6 +8502,92 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
     return satisfiesPzi_;
   }
 
+  public static final int RULE_SETS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet> ruleSets_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet> getRuleSetsList() {
+    return ruleSets_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder>
+      getRuleSetsOrBuilderList() {
+    return ruleSets_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRuleSetsCount() {
+    return ruleSets_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.Stream.RuleSet getRuleSets(int index) {
+    return ruleSets_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder getRuleSetsOrBuilder(int index) {
+    return ruleSets_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4363,6 +8639,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(16, satisfiesPzi_);
+    }
+    for (int i = 0; i < ruleSets_.size(); i++) {
+      output.writeMessage(19, ruleSets_.get(i));
     }
     if (backfillStrategyCase_ == 101) {
       output.writeMessage(
@@ -4428,6 +8707,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, satisfiesPzi_);
     }
+    for (int i = 0; i < ruleSets_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, ruleSets_.get(i));
+    }
     if (backfillStrategyCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4491,6 +8773,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
     if (hasSatisfiesPzi()) {
       if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
+    if (!getRuleSetsList().equals(other.getRuleSetsList())) return false;
     if (!getBackfillStrategyCase().equals(other.getBackfillStrategyCase())) return false;
     switch (backfillStrategyCase_) {
       case 101:
@@ -4558,6 +8841,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
     if (hasSatisfiesPzi()) {
       hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    }
+    if (getRuleSetsCount() > 0) {
+      hash = (37 * hash) + RULE_SETS_FIELD_NUMBER;
+      hash = (53 * hash) + getRuleSetsList().hashCode();
     }
     switch (backfillStrategyCase_) {
       case 101:
@@ -4739,6 +9026,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         internalGetDestinationConfigFieldBuilder();
         internalGetErrorsFieldBuilder();
         internalGetLastRecoveryTimeFieldBuilder();
+        internalGetRuleSetsFieldBuilder();
       }
     }
 
@@ -4791,6 +9079,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
       }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      if (ruleSetsBuilder_ == null) {
+        ruleSets_ = java.util.Collections.emptyList();
+      } else {
+        ruleSets_ = null;
+        ruleSetsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00008000);
       backfillStrategyCase_ = 0;
       backfillStrategy_ = null;
       return this;
@@ -4838,6 +9133,15 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
+      }
+      if (ruleSetsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)) {
+          ruleSets_ = java.util.Collections.unmodifiableList(ruleSets_);
+          bitField0_ = (bitField0_ & ~0x00008000);
+        }
+        result.ruleSets_ = ruleSets_;
+      } else {
+        result.ruleSets_ = ruleSetsBuilder_.build();
       }
     }
 
@@ -4988,6 +9292,33 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
       if (other.hasSatisfiesPzi()) {
         setSatisfiesPzi(other.getSatisfiesPzi());
       }
+      if (ruleSetsBuilder_ == null) {
+        if (!other.ruleSets_.isEmpty()) {
+          if (ruleSets_.isEmpty()) {
+            ruleSets_ = other.ruleSets_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+          } else {
+            ensureRuleSetsIsMutable();
+            ruleSets_.addAll(other.ruleSets_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.ruleSets_.isEmpty()) {
+          if (ruleSetsBuilder_.isEmpty()) {
+            ruleSetsBuilder_.dispose();
+            ruleSetsBuilder_ = null;
+            ruleSets_ = other.ruleSets_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+            ruleSetsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetRuleSetsFieldBuilder()
+                    : null;
+          } else {
+            ruleSetsBuilder_.addAllMessages(other.ruleSets_);
+          }
+        }
+      }
       switch (other.getBackfillStrategyCase()) {
         case BACKFILL_ALL:
           {
@@ -5126,6 +9457,19 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00004000;
                 break;
               } // case 128
+            case 154:
+              {
+                com.google.cloud.datastream.v1.Stream.RuleSet m =
+                    input.readMessage(
+                        com.google.cloud.datastream.v1.Stream.RuleSet.parser(), extensionRegistry);
+                if (ruleSetsBuilder_ == null) {
+                  ensureRuleSetsIsMutable();
+                  ruleSets_.add(m);
+                } else {
+                  ruleSetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
             case 810:
               {
                 input.readMessage(
@@ -7902,6 +12246,410 @@ public final class Stream extends com.google.protobuf.GeneratedMessage
       satisfiesPzi_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet> ruleSets_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRuleSetsIsMutable() {
+      if (!((bitField0_ & 0x00008000) != 0)) {
+        ruleSets_ =
+            new java.util.ArrayList<com.google.cloud.datastream.v1.Stream.RuleSet>(ruleSets_);
+        bitField0_ |= 0x00008000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.datastream.v1.Stream.RuleSet,
+            com.google.cloud.datastream.v1.Stream.RuleSet.Builder,
+            com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder>
+        ruleSetsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet> getRuleSetsList() {
+      if (ruleSetsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(ruleSets_);
+      } else {
+        return ruleSetsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getRuleSetsCount() {
+      if (ruleSetsBuilder_ == null) {
+        return ruleSets_.size();
+      } else {
+        return ruleSetsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet getRuleSets(int index) {
+      if (ruleSetsBuilder_ == null) {
+        return ruleSets_.get(index);
+      } else {
+        return ruleSetsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRuleSets(int index, com.google.cloud.datastream.v1.Stream.RuleSet value) {
+      if (ruleSetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleSetsIsMutable();
+        ruleSets_.set(index, value);
+        onChanged();
+      } else {
+        ruleSetsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRuleSets(
+        int index, com.google.cloud.datastream.v1.Stream.RuleSet.Builder builderForValue) {
+      if (ruleSetsBuilder_ == null) {
+        ensureRuleSetsIsMutable();
+        ruleSets_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleSetsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRuleSets(com.google.cloud.datastream.v1.Stream.RuleSet value) {
+      if (ruleSetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleSetsIsMutable();
+        ruleSets_.add(value);
+        onChanged();
+      } else {
+        ruleSetsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRuleSets(int index, com.google.cloud.datastream.v1.Stream.RuleSet value) {
+      if (ruleSetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRuleSetsIsMutable();
+        ruleSets_.add(index, value);
+        onChanged();
+      } else {
+        ruleSetsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRuleSets(
+        com.google.cloud.datastream.v1.Stream.RuleSet.Builder builderForValue) {
+      if (ruleSetsBuilder_ == null) {
+        ensureRuleSetsIsMutable();
+        ruleSets_.add(builderForValue.build());
+        onChanged();
+      } else {
+        ruleSetsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRuleSets(
+        int index, com.google.cloud.datastream.v1.Stream.RuleSet.Builder builderForValue) {
+      if (ruleSetsBuilder_ == null) {
+        ensureRuleSetsIsMutable();
+        ruleSets_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        ruleSetsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllRuleSets(
+        java.lang.Iterable<? extends com.google.cloud.datastream.v1.Stream.RuleSet> values) {
+      if (ruleSetsBuilder_ == null) {
+        ensureRuleSetsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ruleSets_);
+        onChanged();
+      } else {
+        ruleSetsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRuleSets() {
+      if (ruleSetsBuilder_ == null) {
+        ruleSets_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+      } else {
+        ruleSetsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeRuleSets(int index) {
+      if (ruleSetsBuilder_ == null) {
+        ensureRuleSetsIsMutable();
+        ruleSets_.remove(index);
+        onChanged();
+      } else {
+        ruleSetsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.Builder getRuleSetsBuilder(int index) {
+      return internalGetRuleSetsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder getRuleSetsOrBuilder(int index) {
+      if (ruleSetsBuilder_ == null) {
+        return ruleSets_.get(index);
+      } else {
+        return ruleSetsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder>
+        getRuleSetsOrBuilderList() {
+      if (ruleSetsBuilder_ != null) {
+        return ruleSetsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(ruleSets_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.Builder addRuleSetsBuilder() {
+      return internalGetRuleSetsFieldBuilder()
+          .addBuilder(com.google.cloud.datastream.v1.Stream.RuleSet.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.Builder addRuleSetsBuilder(int index) {
+      return internalGetRuleSetsFieldBuilder()
+          .addBuilder(index, com.google.cloud.datastream.v1.Stream.RuleSet.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rule sets to apply to the stream.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.Builder>
+        getRuleSetsBuilderList() {
+      return internalGetRuleSetsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.datastream.v1.Stream.RuleSet,
+            com.google.cloud.datastream.v1.Stream.RuleSet.Builder,
+            com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder>
+        internalGetRuleSetsFieldBuilder() {
+      if (ruleSetsBuilder_ == null) {
+        ruleSetsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.datastream.v1.Stream.RuleSet,
+                com.google.cloud.datastream.v1.Stream.RuleSet.Builder,
+                com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder>(
+                ruleSets_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+        ruleSets_ = null;
+      }
+      return ruleSetsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.Stream)

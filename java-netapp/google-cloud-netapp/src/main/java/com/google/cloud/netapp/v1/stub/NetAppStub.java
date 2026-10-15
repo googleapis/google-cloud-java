@@ -17,6 +17,7 @@
 package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
@@ -82,12 +83,15 @@ import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
+import com.google.cloud.netapp.v1.GetSplitStatusRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
 import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
+import com.google.cloud.netapp.v1.ListBackupConfigsRequest;
+import com.google.cloud.netapp.v1.ListBackupConfigsResponse;
 import com.google.cloud.netapp.v1.ListBackupPoliciesRequest;
 import com.google.cloud.netapp.v1.ListBackupPoliciesResponse;
 import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
@@ -113,15 +117,21 @@ import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
 import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
+import com.google.cloud.netapp.v1.RestoreVolumeRequest;
+import com.google.cloud.netapp.v1.RestoreVolumeResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
+import com.google.cloud.netapp.v1.SplitStatus;
+import com.google.cloud.netapp.v1.StartSplitRequest;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigResponse;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
@@ -274,6 +284,19 @@ public abstract class NetAppStub implements BackgroundResource {
 
   public UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable() {
     throw new UnsupportedOperationException("Not implemented: revertVolumeCallable()");
+  }
+
+  public OperationCallable<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: startSplitOperationCallable()");
+  }
+
+  public UnaryCallable<StartSplitRequest, Operation> startSplitCallable() {
+    throw new UnsupportedOperationException("Not implemented: startSplitCallable()");
+  }
+
+  public UnaryCallable<GetSplitStatusRequest, SplitStatus> getSplitStatusCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSplitStatusCallable()");
   }
 
   public OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
@@ -751,6 +774,35 @@ public abstract class NetAppStub implements BackgroundResource {
   public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchCallable() {
     throw new UnsupportedOperationException("Not implemented: executeOntapPatchCallable()");
+  }
+
+  public OperationCallable<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreVolumeOperationCallable()");
+  }
+
+  public UnaryCallable<RestoreVolumeRequest, Operation> restoreVolumeCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreVolumeCallable()");
+  }
+
+  public UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsPagedResponse>
+      listBackupConfigsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupConfigsCallable()");
+  }
+
+  public OperationCallable<UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateBackupConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateBackupConfigRequest, Operation> updateBackupConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBackupConfigCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

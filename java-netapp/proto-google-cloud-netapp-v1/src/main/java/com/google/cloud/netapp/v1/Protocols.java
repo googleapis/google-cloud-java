@@ -81,6 +81,16 @@ public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ISCSI = 4;</code>
    */
   ISCSI(4),
+  /**
+   *
+   *
+   * <pre>
+   * NVMe protocol
+   * </pre>
+   *
+   * <code>NVME = 5;</code>
+   */
+  NVME(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -149,6 +159,17 @@ public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int ISCSI_VALUE = 4;
 
+  /**
+   *
+   *
+   * <pre>
+   * NVMe protocol
+   * </pre>
+   *
+   * <code>NVME = 5;</code>
+   */
+  public static final int NVME_VALUE = 5;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -183,6 +204,8 @@ public enum Protocols implements com.google.protobuf.ProtocolMessageEnum {
         return SMB;
       case 4:
         return ISCSI;
+      case 5:
+        return NVME;
       default:
         return null;
     }

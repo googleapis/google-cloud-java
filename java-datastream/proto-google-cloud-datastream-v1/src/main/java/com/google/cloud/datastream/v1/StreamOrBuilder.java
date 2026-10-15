@@ -631,5 +631,71 @@ public interface StreamOrBuilder
    */
   boolean getSatisfiesPzi();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet> getRuleSetsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.Stream.RuleSet getRuleSets(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getRuleSetsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder>
+      getRuleSetsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rule sets to apply to the stream.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet rule_sets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.Stream.RuleSetOrBuilder getRuleSetsOrBuilder(int index);
+
   com.google.cloud.datastream.v1.Stream.BackfillStrategyCase getBackfillStrategyCase();
 }

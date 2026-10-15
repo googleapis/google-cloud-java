@@ -272,7 +272,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
    * @return The workerPool.
    */
   @java.lang.Deprecated
@@ -288,7 +288,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2579
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2590
    * @return The bytes for workerPool.
    */
   @java.lang.Deprecated
@@ -656,4 +656,58 @@ public interface BuildOptionsOrBuilder
    * @return The enableStructuredLogging.
    */
   boolean getEnableStructuredLogging();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to specify which release or release channel
+   * (rapid|regular|stable) to use to run this build.
+   * </pre>
+   *
+   * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The workerRelease.
+   */
+  java.lang.String getWorkerRelease();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Option to specify which release or release channel
+   * (rapid|regular|stable) to use to run this build.
+   * </pre>
+   *
+   * <code>string worker_release = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for workerRelease.
+   */
+  com.google.protobuf.ByteString getWorkerReleaseBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Worker release resolved from the release channel.
+   * </pre>
+   *
+   * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The resolvedWorkerRelease.
+   */
+  java.lang.String getResolvedWorkerRelease();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Worker release resolved from the release channel.
+   * </pre>
+   *
+   * <code>string resolved_worker_release = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for resolvedWorkerRelease.
+   */
+  com.google.protobuf.ByteString getResolvedWorkerReleaseBytes();
 }

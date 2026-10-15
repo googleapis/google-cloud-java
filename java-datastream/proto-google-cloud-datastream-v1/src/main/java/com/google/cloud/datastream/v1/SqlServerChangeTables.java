@@ -68,6 +68,752 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
             com.google.cloud.datastream.v1.SqlServerChangeTables.Builder.class);
   }
 
+  public interface SqlServerDdlConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, Datastream will automatically create a new
+     * capture instance when DDL is detected on a table.The customer will be
+     * responsible for deleting it so that the next set of DDLs can be handled.
+     * The default is false and it means that DDL's will not be handled .
+     * </pre>
+     *
+     * <code>
+     * bool auto_create_new_capture_instance_on_ddl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoCreateNewCaptureInstanceOnDdl.
+     */
+    boolean getAutoCreateNewCaptureInstanceOnDdl();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, Datastream will automatically delete the old
+     * capture instance after creating a new one to support a DDL change. The
+     * default is false and means that the customer has to delete the old
+     * capture instance manually.
+     * </pre>
+     *
+     * <code>bool auto_delete_old_capture_instance = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoDeleteOldCaptureInstance.
+     */
+    boolean getAutoDeleteOldCaptureInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * DDL configuration for change tables.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig}
+   */
+  public static final class SqlServerDdlConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig)
+      SqlServerDdlConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SqlServerDdlConfig");
+    }
+
+    // Use SqlServerDdlConfig.newBuilder() to construct.
+    private SqlServerDdlConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SqlServerDdlConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SqlServerChangeTables_SqlServerDdlConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SqlServerChangeTables_SqlServerDdlConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.class,
+              com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder
+                  .class);
+    }
+
+    public static final int AUTO_CREATE_NEW_CAPTURE_INSTANCE_ON_DDL_FIELD_NUMBER = 1;
+    private boolean autoCreateNewCaptureInstanceOnDdl_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, Datastream will automatically create a new
+     * capture instance when DDL is detected on a table.The customer will be
+     * responsible for deleting it so that the next set of DDLs can be handled.
+     * The default is false and it means that DDL's will not be handled .
+     * </pre>
+     *
+     * <code>
+     * bool auto_create_new_capture_instance_on_ddl = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoCreateNewCaptureInstanceOnDdl.
+     */
+    @java.lang.Override
+    public boolean getAutoCreateNewCaptureInstanceOnDdl() {
+      return autoCreateNewCaptureInstanceOnDdl_;
+    }
+
+    public static final int AUTO_DELETE_OLD_CAPTURE_INSTANCE_FIELD_NUMBER = 2;
+    private boolean autoDeleteOldCaptureInstance_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, Datastream will automatically delete the old
+     * capture instance after creating a new one to support a DDL change. The
+     * default is false and means that the customer has to delete the old
+     * capture instance manually.
+     * </pre>
+     *
+     * <code>bool auto_delete_old_capture_instance = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoDeleteOldCaptureInstance.
+     */
+    @java.lang.Override
+    public boolean getAutoDeleteOldCaptureInstance() {
+      return autoDeleteOldCaptureInstance_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (autoCreateNewCaptureInstanceOnDdl_ != false) {
+        output.writeBool(1, autoCreateNewCaptureInstanceOnDdl_);
+      }
+      if (autoDeleteOldCaptureInstance_ != false) {
+        output.writeBool(2, autoDeleteOldCaptureInstance_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (autoCreateNewCaptureInstanceOnDdl_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                1, autoCreateNewCaptureInstanceOnDdl_);
+      }
+      if (autoDeleteOldCaptureInstance_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(2, autoDeleteOldCaptureInstance_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig other =
+          (com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig) obj;
+
+      if (getAutoCreateNewCaptureInstanceOnDdl() != other.getAutoCreateNewCaptureInstanceOnDdl())
+        return false;
+      if (getAutoDeleteOldCaptureInstance() != other.getAutoDeleteOldCaptureInstance())
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTO_CREATE_NEW_CAPTURE_INSTANCE_ON_DDL_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getAutoCreateNewCaptureInstanceOnDdl());
+      hash = (37 * hash) + AUTO_DELETE_OLD_CAPTURE_INSTANCE_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoDeleteOldCaptureInstance());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DDL configuration for change tables.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig)
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SqlServerChangeTables_SqlServerDdlConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SqlServerChangeTables_SqlServerDdlConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.class,
+                com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        autoCreateNewCaptureInstanceOnDdl_ = false;
+        autoDeleteOldCaptureInstance_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SqlServerChangeTables_SqlServerDdlConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig build() {
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+          buildPartial() {
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig result =
+            new com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.autoCreateNewCaptureInstanceOnDdl_ = autoCreateNewCaptureInstanceOnDdl_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.autoDeleteOldCaptureInstance_ = autoDeleteOldCaptureInstance_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig other) {
+        if (other
+            == com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+                .getDefaultInstance()) return this;
+        if (other.getAutoCreateNewCaptureInstanceOnDdl() != false) {
+          setAutoCreateNewCaptureInstanceOnDdl(other.getAutoCreateNewCaptureInstanceOnDdl());
+        }
+        if (other.getAutoDeleteOldCaptureInstance() != false) {
+          setAutoDeleteOldCaptureInstance(other.getAutoDeleteOldCaptureInstance());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  autoCreateNewCaptureInstanceOnDdl_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  autoDeleteOldCaptureInstance_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean autoCreateNewCaptureInstanceOnDdl_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, Datastream will automatically create a new
+       * capture instance when DDL is detected on a table.The customer will be
+       * responsible for deleting it so that the next set of DDLs can be handled.
+       * The default is false and it means that DDL's will not be handled .
+       * </pre>
+       *
+       * <code>
+       * bool auto_create_new_capture_instance_on_ddl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The autoCreateNewCaptureInstanceOnDdl.
+       */
+      @java.lang.Override
+      public boolean getAutoCreateNewCaptureInstanceOnDdl() {
+        return autoCreateNewCaptureInstanceOnDdl_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, Datastream will automatically create a new
+       * capture instance when DDL is detected on a table.The customer will be
+       * responsible for deleting it so that the next set of DDLs can be handled.
+       * The default is false and it means that DDL's will not be handled .
+       * </pre>
+       *
+       * <code>
+       * bool auto_create_new_capture_instance_on_ddl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The autoCreateNewCaptureInstanceOnDdl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAutoCreateNewCaptureInstanceOnDdl(boolean value) {
+
+        autoCreateNewCaptureInstanceOnDdl_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, Datastream will automatically create a new
+       * capture instance when DDL is detected on a table.The customer will be
+       * responsible for deleting it so that the next set of DDLs can be handled.
+       * The default is false and it means that DDL's will not be handled .
+       * </pre>
+       *
+       * <code>
+       * bool auto_create_new_capture_instance_on_ddl = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAutoCreateNewCaptureInstanceOnDdl() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        autoCreateNewCaptureInstanceOnDdl_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean autoDeleteOldCaptureInstance_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, Datastream will automatically delete the old
+       * capture instance after creating a new one to support a DDL change. The
+       * default is false and means that the customer has to delete the old
+       * capture instance manually.
+       * </pre>
+       *
+       * <code>bool auto_delete_old_capture_instance = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The autoDeleteOldCaptureInstance.
+       */
+      @java.lang.Override
+      public boolean getAutoDeleteOldCaptureInstance() {
+        return autoDeleteOldCaptureInstance_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, Datastream will automatically delete the old
+       * capture instance after creating a new one to support a DDL change. The
+       * default is false and means that the customer has to delete the old
+       * capture instance manually.
+       * </pre>
+       *
+       * <code>bool auto_delete_old_capture_instance = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The autoDeleteOldCaptureInstance to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAutoDeleteOldCaptureInstance(boolean value) {
+
+        autoDeleteOldCaptureInstance_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If set to true, Datastream will automatically delete the old
+       * capture instance after creating a new one to support a DDL change. The
+       * default is false and means that the customer has to delete the old
+       * capture instance manually.
+       * </pre>
+       *
+       * <code>bool auto_delete_old_capture_instance = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAutoDeleteOldCaptureInstance() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        autoDeleteOldCaptureInstance_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig)
+    private static final com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig();
+    }
+
+    public static com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SqlServerDdlConfig> PARSER =
+        new com.google.protobuf.AbstractParser<SqlServerDdlConfig>() {
+          @java.lang.Override
+          public SqlServerDdlConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SqlServerDdlConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SqlServerDdlConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
+  public static final int DDL_CONFIG_FIELD_NUMBER = 1;
+  private com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddlConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DDL configuration for change tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ddlConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDdlConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DDL configuration for change tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ddlConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig getDdlConfig() {
+    return ddlConfig_ == null
+        ? com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+            .getDefaultInstance()
+        : ddlConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DDL configuration for change tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder
+      getDdlConfigOrBuilder() {
+    return ddlConfig_ == null
+        ? com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+            .getDefaultInstance()
+        : ddlConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -82,6 +828,9 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(1, getDdlConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -91,6 +840,9 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDdlConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -107,6 +859,10 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
     com.google.cloud.datastream.v1.SqlServerChangeTables other =
         (com.google.cloud.datastream.v1.SqlServerChangeTables) obj;
 
+    if (hasDdlConfig() != other.hasDdlConfig()) return false;
+    if (hasDdlConfig()) {
+      if (!getDdlConfig().equals(other.getDdlConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -118,6 +874,10 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDdlConfig()) {
+      hash = (37 * hash) + DDL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDdlConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -248,15 +1008,30 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
     }
 
     // Construct using com.google.cloud.datastream.v1.SqlServerChangeTables.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetDdlConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      ddlConfig_ = null;
+      if (ddlConfigBuilder_ != null) {
+        ddlConfigBuilder_.dispose();
+        ddlConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -284,8 +1059,21 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datastream.v1.SqlServerChangeTables buildPartial() {
       com.google.cloud.datastream.v1.SqlServerChangeTables result =
           new com.google.cloud.datastream.v1.SqlServerChangeTables(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.datastream.v1.SqlServerChangeTables result) {
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.ddlConfig_ = ddlConfigBuilder_ == null ? ddlConfig_ : ddlConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -301,6 +1089,9 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
     public Builder mergeFrom(com.google.cloud.datastream.v1.SqlServerChangeTables other) {
       if (other == com.google.cloud.datastream.v1.SqlServerChangeTables.getDefaultInstance())
         return this;
+      if (other.hasDdlConfig()) {
+        mergeDdlConfig(other.getDdlConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -327,6 +1118,13 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(
+                    internalGetDdlConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -342,6 +1140,230 @@ public final class SqlServerChangeTables extends com.google.protobuf.GeneratedMe
         onChanged();
       } // finally
       return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddlConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig,
+            com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder,
+            com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder>
+        ddlConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the ddlConfig field is set.
+     */
+    public boolean hasDdlConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The ddlConfig.
+     */
+    public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig getDdlConfig() {
+      if (ddlConfigBuilder_ == null) {
+        return ddlConfig_ == null
+            ? com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+                .getDefaultInstance()
+            : ddlConfig_;
+      } else {
+        return ddlConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDdlConfig(
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig value) {
+      if (ddlConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ddlConfig_ = value;
+      } else {
+        ddlConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDdlConfig(
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder
+            builderForValue) {
+      if (ddlConfigBuilder_ == null) {
+        ddlConfig_ = builderForValue.build();
+      } else {
+        ddlConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDdlConfig(
+        com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig value) {
+      if (ddlConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && ddlConfig_ != null
+            && ddlConfig_
+                != com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+                    .getDefaultInstance()) {
+          getDdlConfigBuilder().mergeFrom(value);
+        } else {
+          ddlConfig_ = value;
+        }
+      } else {
+        ddlConfigBuilder_.mergeFrom(value);
+      }
+      if (ddlConfig_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDdlConfig() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      ddlConfig_ = null;
+      if (ddlConfigBuilder_ != null) {
+        ddlConfigBuilder_.dispose();
+        ddlConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder
+        getDdlConfigBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetDdlConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder
+        getDdlConfigOrBuilder() {
+      if (ddlConfigBuilder_ != null) {
+        return ddlConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return ddlConfig_ == null
+            ? com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig
+                .getDefaultInstance()
+            : ddlConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DDL configuration for change tables.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig,
+            com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder,
+            com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder>
+        internalGetDdlConfigFieldBuilder() {
+      if (ddlConfigBuilder_ == null) {
+        ddlConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig,
+                com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig.Builder,
+                com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder>(
+                getDdlConfig(), getParentForChildren(), isClean());
+        ddlConfig_ = null;
+      }
+      return ddlConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SqlServerChangeTables)

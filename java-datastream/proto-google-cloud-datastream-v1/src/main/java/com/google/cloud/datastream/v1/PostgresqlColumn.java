@@ -80,7 +80,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Column name.
+   * The column name.
    * </pre>
    *
    * <code>string column = 1;</code>
@@ -104,7 +104,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Column name.
+   * The column name.
    * </pre>
    *
    * <code>string column = 1;</code>
@@ -763,7 +763,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -786,7 +786,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -809,7 +809,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -831,7 +831,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -849,7 +849,7 @@ public final class PostgresqlColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>

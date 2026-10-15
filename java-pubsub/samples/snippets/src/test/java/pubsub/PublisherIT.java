@@ -129,5 +129,10 @@ public class PublisherIT {
     // Test publish with gRPC compression.
     PublishWithGrpcCompressionExample.publishWithGrpcCompressionExample(projectId, topicId);
     assertThat(bout.toString()).contains("Published a compressed message of message ID: ");
+
+    bout.reset();
+    // Test publish with hedging settings.
+    PublishWithHedgingSettingsExample.publishWithHedgingSettingsExample(projectId, topicId);
+    assertThat(bout.toString()).contains("Published a message with hedging settings: ");
   }
 }

@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * Salesforce profile
+ * Profile for connecting to a Salesforce source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.SalesforceProfile}
@@ -70,6 +70,7 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
             com.google.cloud.datastream.v1.SalesforceProfile.Builder.class);
   }
 
+  @java.lang.Deprecated
   public interface UserCredentialsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SalesforceProfile.UserCredentials)
@@ -228,11 +229,13 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Username-password credentials.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `Oauth2ClientCredentials` instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.SalesforceProfile.UserCredentials}
    */
+  @java.lang.Deprecated
   public static final class UserCredentials extends com.google.protobuf.GeneratedMessage
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SalesforceProfile.UserCredentials)
@@ -768,7 +771,8 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Username-password credentials.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `Oauth2ClientCredentials` instead.
      * </pre>
      *
      * Protobuf type {@code google.cloud.datastream.v1.SalesforceProfile.UserCredentials}
@@ -2758,6 +2762,7 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     USER_CREDENTIALS(2),
     OAUTH2_CLIENT_CREDENTIALS(3),
     CREDENTIALS_NOT_SET(0);
@@ -2858,15 +2863,20 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * User-password authentication.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `oauth2_client_credentials` instead.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1.SalesforceProfile.user_credentials is deprecated. See
+   *     google/cloud/datastream/v1/datastream_resources.proto;l=251
    * @return Whether the userCredentials field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasUserCredentials() {
     return credentialsCase_ == 2;
   }
@@ -2875,15 +2885,20 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * User-password authentication.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `oauth2_client_credentials` instead.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1.SalesforceProfile.user_credentials is deprecated. See
+   *     google/cloud/datastream/v1/datastream_resources.proto;l=251
    * @return The userCredentials.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials getUserCredentials() {
     if (credentialsCase_ == 2) {
       return (com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials) credentials_;
@@ -2895,13 +2910,16 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * User-password authentication.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `oauth2_client_credentials` instead.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.datastream.v1.SalesforceProfile.UserCredentialsOrBuilder
       getUserCredentialsOrBuilder() {
     if (credentialsCase_ == 2) {
@@ -3184,7 +3202,7 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Salesforce profile
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.SalesforceProfile}
@@ -3516,15 +3534,20 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1.SalesforceProfile.user_credentials is deprecated. See
+     *     google/cloud/datastream/v1/datastream_resources.proto;l=251
      * @return Whether the userCredentials field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasUserCredentials() {
       return credentialsCase_ == 2;
     }
@@ -3533,15 +3556,20 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.datastream.v1.SalesforceProfile.user_credentials is deprecated. See
+     *     google/cloud/datastream/v1/datastream_resources.proto;l=251
      * @return The userCredentials.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials getUserCredentials() {
       if (userCredentialsBuilder_ == null) {
         if (credentialsCase_ == 2) {
@@ -3562,12 +3590,15 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setUserCredentials(
         com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials value) {
       if (userCredentialsBuilder_ == null) {
@@ -3587,12 +3618,15 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setUserCredentials(
         com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials.Builder builderForValue) {
       if (userCredentialsBuilder_ == null) {
@@ -3609,12 +3643,15 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeUserCredentials(
         com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials value) {
       if (userCredentialsBuilder_ == null) {
@@ -3647,12 +3684,15 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearUserCredentials() {
       if (userCredentialsBuilder_ == null) {
         if (credentialsCase_ == 2) {
@@ -3674,12 +3714,15 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials.Builder
         getUserCredentialsBuilder() {
       return internalGetUserCredentialsFieldBuilder().getBuilder();
@@ -3689,13 +3732,16 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.datastream.v1.SalesforceProfile.UserCredentialsOrBuilder
         getUserCredentialsOrBuilder() {
       if ((credentialsCase_ == 2) && (userCredentialsBuilder_ != null)) {
@@ -3713,10 +3759,12 @@ public final class SalesforceProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * User-password authentication.
+     * Deprecated: Salesforce is retiring Username-Password authentication.
+     * Use `oauth2_client_credentials` instead.
      * </pre>
      *
-     * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

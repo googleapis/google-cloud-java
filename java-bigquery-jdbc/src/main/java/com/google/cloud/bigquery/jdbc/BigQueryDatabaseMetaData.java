@@ -3929,7 +3929,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
    *     for querying BigQuery's metadata.
    * @see BigQueryConnection#isFilterTablesOnDefaultDataset()
    */
-  Tuple<String, String> determineEffectiveCatalogAndSchema(String catalog, String schemaPattern) {
+  Tuple<String, String> determineEffectiveCatalogAndSchema(String catalog, String schemaPattern)
+      throws BigQueryJdbcException {
     String effectiveCatalog = catalog;
     String effectiveSchemaPattern = schemaPattern;
 
@@ -4279,7 +4280,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Thread.currentThread().interrupt();
       LOG.warning(
           "Fetcher thread interrupted while waiting for tasks. Attempting to cancel remaining tasks.");
-      throw new SQLException("Metadata fetch interrupted.", e);
+      throw new BigQueryJdbcException("Metadata fetch interrupted.", e);
     } finally {
       for (Future<?> future : taskFutures) {
         if (!future.isDone()) {
@@ -4298,6 +4299,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       populateQueue(collectedResults, queue, resultSchemaFields);
       signalEndOfData(queue, resultSchemaFields);
       return queue;
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new BigQueryJdbcException("Error during metadata fetch", e);
     } catch (Exception e) {
       if (e instanceof SQLException) {
         throw (SQLException) e;
@@ -4358,7 +4362,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return datasets != null ? datasets : Collections.emptyList();
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      throw new SQLException(
+      throw new BigQueryJdbcException(
           "Interrupted while fetching matching datasets for project " + project, e);
     } catch (Exception e) {
       throw new SQLException("Failed to fetch matching datasets for project " + project, e);
@@ -4667,7 +4671,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throw new SQLException("Error while fetching metadata", e);
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      throw new SQLException("Interrupted while processing routines.", e);
+      throw new BigQueryJdbcException("Interrupted while processing routines.", e);
     } finally {
       activeFutures.forEach(future -> future.cancel(true));
     }
@@ -4796,7 +4800,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throw new SQLException("Error while fetching metadata", e);
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      throw new SQLException("Interrupted while processing tables.", e);
+      throw new BigQueryJdbcException("Interrupted while processing tables.", e);
     } finally {
       activeFutures.forEach(future -> future.cancel(true));
     }
