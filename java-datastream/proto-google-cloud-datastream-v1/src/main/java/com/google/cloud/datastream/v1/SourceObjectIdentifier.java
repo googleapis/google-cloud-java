@@ -4970,6 +4970,857 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     }
   }
 
+  public interface SpannerObjectIdentifierOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The schema.
+     */
+    java.lang.String getSchema();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for schema.
+     */
+    com.google.protobuf.ByteString getSchemaBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
+     */
+    java.lang.String getTable();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
+     */
+    com.google.protobuf.ByteString getTableBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier}
+   */
+  public static final class SpannerObjectIdentifier extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+      SpannerObjectIdentifierOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SpannerObjectIdentifier");
+    }
+
+    // Use SpannerObjectIdentifier.newBuilder() to construct.
+    private SpannerObjectIdentifier(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SpannerObjectIdentifier() {
+      schema_ = "";
+      table_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SpannerObjectIdentifier_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.datastream.v1.DatastreamResourcesProto
+          .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SpannerObjectIdentifier_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.class,
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.Builder
+                  .class);
+    }
+
+    public static final int SCHEMA_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object schema_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The schema.
+     */
+    @java.lang.Override
+    public java.lang.String getSchema() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        schema_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema name.
+     * </pre>
+     *
+     * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for schema.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSchemaBytes() {
+      java.lang.Object ref = schema_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        schema_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object table_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The table.
+     */
+    @java.lang.Override
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The table name.
+     * </pre>
+     *
+     * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for table.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(schema_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, schema_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(table_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, table_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(schema_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, schema_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(table_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, table_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier other =
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier) obj;
+
+      if (!getSchema().equals(other.getSchema())) return false;
+      if (!getTable().equals(other.getTable())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getSchema().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifierOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SpannerObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SpannerObjectIdentifier_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.class,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        schema_ = "";
+        table_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.datastream.v1.DatastreamResourcesProto
+            .internal_static_google_cloud_datastream_v1_SourceObjectIdentifier_SpannerObjectIdentifier_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+          getDefaultInstanceForType() {
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier build() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+          buildPartial() {
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier result =
+            new com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schema_ = schema_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.table_ = table_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier) {
+          return mergeFrom(
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier other) {
+        if (other
+            == com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+                .getDefaultInstance()) return this;
+        if (!other.getSchema().isEmpty()) {
+          schema_ = other.schema_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  schema_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  table_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object schema_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The schema.
+       */
+      public java.lang.String getSchema() {
+        java.lang.Object ref = schema_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          schema_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for schema.
+       */
+      public com.google.protobuf.ByteString getSchemaBytes() {
+        java.lang.Object ref = schema_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          schema_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchema(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schema_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSchema() {
+        schema_ = getDefaultInstance().getSchema();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The schema name.
+       * </pre>
+       *
+       * <code>string schema = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for schema to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSchemaBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        schema_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The table.
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for table.
+       */
+      public com.google.protobuf.ByteString getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTable(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        table_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTable() {
+        table_ = getDefaultInstance().getTable();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The table name.
+       * </pre>
+       *
+       * <code>string table = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for table to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        table_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+    private static final com.google.cloud.datastream.v1.SourceObjectIdentifier
+            .SpannerObjectIdentifier
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier();
+    }
+
+    public static com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SpannerObjectIdentifier> PARSER =
+        new com.google.protobuf.AbstractParser<SpannerObjectIdentifier>() {
+          @java.lang.Override
+          public SpannerObjectIdentifier parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SpannerObjectIdentifier> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SpannerObjectIdentifier> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int sourceIdentifierCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -4985,6 +5836,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     SQL_SERVER_IDENTIFIER(4),
     SALESFORCE_IDENTIFIER(5),
     MONGODB_IDENTIFIER(6),
+    SPANNER_IDENTIFIER(7),
     SOURCEIDENTIFIER_NOT_SET(0);
     private final int value;
 
@@ -5016,6 +5868,8 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return SALESFORCE_IDENTIFIER;
         case 6:
           return MONGODB_IDENTIFIER;
+        case 7:
+          return SPANNER_IDENTIFIER;
         case 0:
           return SOURCEIDENTIFIER_NOT_SET;
         default:
@@ -5428,6 +6282,72 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         .getDefaultInstance();
   }
 
+  public static final int SPANNER_IDENTIFIER_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+   * </code>
+   *
+   * @return Whether the spannerIdentifier field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpannerIdentifier() {
+    return sourceIdentifierCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+   * </code>
+   *
+   * @return The spannerIdentifier.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+      getSpannerIdentifier() {
+    if (sourceIdentifierCase_ == 7) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifierOrBuilder
+      getSpannerIdentifierOrBuilder() {
+    if (sourceIdentifierCase_ == 7) {
+      return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+          sourceIdentifier_;
+    }
+    return com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5476,6 +6396,12 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       output.writeMessage(
           6,
           (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
+              sourceIdentifier_);
+    }
+    if (sourceIdentifierCase_ == 7) {
+      output.writeMessage(
+          7,
+          (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
               sourceIdentifier_);
     }
     getUnknownFields().writeTo(output);
@@ -5529,6 +6455,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
               (com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifier)
                   sourceIdentifier_);
     }
+    if (sourceIdentifierCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7,
+              (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+                  sourceIdentifier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5564,6 +6497,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         break;
       case 6:
         if (!getMongodbIdentifier().equals(other.getMongodbIdentifier())) return false;
+        break;
+      case 7:
+        if (!getSpannerIdentifier().equals(other.getSpannerIdentifier())) return false;
         break;
       case 0:
       default:
@@ -5603,6 +6539,10 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       case 6:
         hash = (37 * hash) + MONGODB_IDENTIFIER_FIELD_NUMBER;
         hash = (53 * hash) + getMongodbIdentifier().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + SPANNER_IDENTIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getSpannerIdentifier().hashCode();
         break;
       case 0:
       default:
@@ -5766,6 +6706,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       if (mongodbIdentifierBuilder_ != null) {
         mongodbIdentifierBuilder_.clear();
       }
+      if (spannerIdentifierBuilder_ != null) {
+        spannerIdentifierBuilder_.clear();
+      }
       sourceIdentifierCase_ = 0;
       sourceIdentifier_ = null;
       return this;
@@ -5828,6 +6771,9 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       if (sourceIdentifierCase_ == 6 && mongodbIdentifierBuilder_ != null) {
         result.sourceIdentifier_ = mongodbIdentifierBuilder_.build();
       }
+      if (sourceIdentifierCase_ == 7 && spannerIdentifierBuilder_ != null) {
+        result.sourceIdentifier_ = spannerIdentifierBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -5872,6 +6818,11 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         case MONGODB_IDENTIFIER:
           {
             mergeMongodbIdentifier(other.getMongodbIdentifier());
+            break;
+          }
+        case SPANNER_IDENTIFIER:
+          {
+            mergeSpannerIdentifier(other.getSpannerIdentifier());
             break;
           }
         case SOURCEIDENTIFIER_NOT_SET:
@@ -5947,6 +6898,13 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
                 sourceIdentifierCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetSpannerIdentifierFieldBuilder().getBuilder(), extensionRegistry);
+                sourceIdentifierCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7527,6 +8485,263 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 6;
       onChanged();
       return mongodbIdentifierBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifierOrBuilder>
+        spannerIdentifierBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     *
+     * @return Whether the spannerIdentifier field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerIdentifier() {
+      return sourceIdentifierCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     *
+     * @return The spannerIdentifier.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+        getSpannerIdentifier() {
+      if (spannerIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 7) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+            .getDefaultInstance();
+      } else {
+        if (sourceIdentifierCase_ == 7) {
+          return spannerIdentifierBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    public Builder setSpannerIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier value) {
+      if (spannerIdentifierBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceIdentifier_ = value;
+        onChanged();
+      } else {
+        spannerIdentifierBuilder_.setMessage(value);
+      }
+      sourceIdentifierCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    public Builder setSpannerIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.Builder
+            builderForValue) {
+      if (spannerIdentifierBuilder_ == null) {
+        sourceIdentifier_ = builderForValue.build();
+        onChanged();
+      } else {
+        spannerIdentifierBuilder_.setMessage(builderForValue.build());
+      }
+      sourceIdentifierCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    public Builder mergeSpannerIdentifier(
+        com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier value) {
+      if (spannerIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 7
+            && sourceIdentifier_
+                != com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+                    .getDefaultInstance()) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+                  .newBuilder(
+                      (com.google.cloud.datastream.v1.SourceObjectIdentifier
+                              .SpannerObjectIdentifier)
+                          sourceIdentifier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceIdentifier_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceIdentifierCase_ == 7) {
+          spannerIdentifierBuilder_.mergeFrom(value);
+        } else {
+          spannerIdentifierBuilder_.setMessage(value);
+        }
+      }
+      sourceIdentifierCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    public Builder clearSpannerIdentifier() {
+      if (spannerIdentifierBuilder_ == null) {
+        if (sourceIdentifierCase_ == 7) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceIdentifierCase_ == 7) {
+          sourceIdentifierCase_ = 0;
+          sourceIdentifier_ = null;
+        }
+        spannerIdentifierBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.Builder
+        getSpannerIdentifierBuilder() {
+      return internalGetSpannerIdentifierFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifierOrBuilder
+        getSpannerIdentifierOrBuilder() {
+      if ((sourceIdentifierCase_ == 7) && (spannerIdentifierBuilder_ != null)) {
+        return spannerIdentifierBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceIdentifierCase_ == 7) {
+          return (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+              sourceIdentifier_;
+        }
+        return com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source object identifier.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier.Builder,
+            com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifierOrBuilder>
+        internalGetSpannerIdentifierFieldBuilder() {
+      if (spannerIdentifierBuilder_ == null) {
+        if (!(sourceIdentifierCase_ == 7)) {
+          sourceIdentifier_ =
+              com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+                  .getDefaultInstance();
+        }
+        spannerIdentifierBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+                    .Builder,
+                com.google.cloud.datastream.v1.SourceObjectIdentifier
+                    .SpannerObjectIdentifierOrBuilder>(
+                (com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier)
+                    sourceIdentifier_,
+                getParentForChildren(),
+                isClean());
+        sourceIdentifier_ = null;
+      }
+      sourceIdentifierCase_ = 7;
+      onChanged();
+      return spannerIdentifierBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceObjectIdentifier)

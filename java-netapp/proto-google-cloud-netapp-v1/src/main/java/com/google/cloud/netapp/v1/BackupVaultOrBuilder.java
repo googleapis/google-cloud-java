@@ -251,12 +251,12 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Output only. Region in which the backup vault is created.
+   * Optional. Region in which the backup vault is created.
    * Format: `projects/{project_id}/locations/{location}`
    * </pre>
    *
    * <code>
-   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The sourceRegion.
@@ -267,12 +267,12 @@ public interface BackupVaultOrBuilder
    *
    *
    * <pre>
-   * Output only. Region in which the backup vault is created.
+   * Optional. Region in which the backup vault is created.
    * Format: `projects/{project_id}/locations/{location}`
    * </pre>
    *
    * <code>
-   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for sourceRegion.

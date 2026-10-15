@@ -17,6 +17,7 @@
 package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
@@ -87,12 +88,15 @@ import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
+import com.google.cloud.netapp.v1.GetSplitStatusRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
 import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
+import com.google.cloud.netapp.v1.ListBackupConfigsRequest;
+import com.google.cloud.netapp.v1.ListBackupConfigsResponse;
 import com.google.cloud.netapp.v1.ListBackupPoliciesRequest;
 import com.google.cloud.netapp.v1.ListBackupPoliciesResponse;
 import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
@@ -118,15 +122,21 @@ import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
 import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
+import com.google.cloud.netapp.v1.RestoreVolumeRequest;
+import com.google.cloud.netapp.v1.RestoreVolumeResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
+import com.google.cloud.netapp.v1.SplitStatus;
+import com.google.cloud.netapp.v1.StartSplitRequest;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigResponse;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
@@ -295,6 +305,26 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/RevertVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(RevertVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<StartSplitRequest, Operation> startSplitMethodDescriptor =
+      MethodDescriptor.<StartSplitRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.netapp.v1.NetApp/StartSplit")
+          .setRequestMarshaller(ProtoUtils.marshaller(StartSplitRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<GetSplitStatusRequest, SplitStatus>
+      getSplitStatusMethodDescriptor =
+          MethodDescriptor.<GetSplitStatusRequest, SplitStatus>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetSplitStatus")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSplitStatusRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(SplitStatus.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -939,6 +969,40 @@ public class GrpcNetAppStub extends NetAppStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RestoreVolumeRequest, Operation>
+      restoreVolumeMethodDescriptor =
+          MethodDescriptor.<RestoreVolumeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/RestoreVolume")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreVolumeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsMethodDescriptor =
+          MethodDescriptor.<ListBackupConfigsRequest, ListBackupConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListBackupConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListBackupConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateBackupConfigRequest, Operation>
+      updateBackupConfigMethodDescriptor =
+          MethodDescriptor.<UpdateBackupConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackupConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateBackupConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -998,6 +1062,10 @@ public class GrpcNetAppStub extends NetAppStub {
   private final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable;
   private final OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable;
+  private final UnaryCallable<StartSplitRequest, Operation> startSplitCallable;
+  private final OperationCallable<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationCallable;
+  private final UnaryCallable<GetSplitStatusRequest, SplitStatus> getSplitStatusCallable;
   private final UnaryCallable<EstablishVolumePeeringRequest, Operation>
       establishVolumePeeringCallable;
   private final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
@@ -1161,6 +1229,17 @@ public class GrpcNetAppStub extends NetAppStub {
       executeOntapDeleteCallable;
   private final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchCallable;
+  private final UnaryCallable<RestoreVolumeRequest, Operation> restoreVolumeCallable;
+  private final OperationCallable<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationCallable;
+  private final UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsCallable;
+  private final UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsPagedResponse>
+      listBackupConfigsPagedCallable;
+  private final UnaryCallable<UpdateBackupConfigRequest, Operation> updateBackupConfigCallable;
+  private final OperationCallable<
+          UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1342,6 +1421,28 @@ public class GrpcNetAppStub extends NetAppStub {
     GrpcCallSettings<RevertVolumeRequest, Operation> revertVolumeTransportSettings =
         GrpcCallSettings.<RevertVolumeRequest, Operation>newBuilder()
             .setMethodDescriptor(revertVolumeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<StartSplitRequest, Operation> startSplitTransportSettings =
+        GrpcCallSettings.<StartSplitRequest, Operation>newBuilder()
+            .setMethodDescriptor(startSplitMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetSplitStatusRequest, SplitStatus> getSplitStatusTransportSettings =
+        GrpcCallSettings.<GetSplitStatusRequest, SplitStatus>newBuilder()
+            .setMethodDescriptor(getSplitStatusMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1999,6 +2100,40 @@ public class GrpcNetAppStub extends NetAppStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<RestoreVolumeRequest, Operation> restoreVolumeTransportSettings =
+        GrpcCallSettings.<RestoreVolumeRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreVolumeMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListBackupConfigsRequest, ListBackupConfigsResponse>
+        listBackupConfigsTransportSettings =
+            GrpcCallSettings.<ListBackupConfigsRequest, ListBackupConfigsResponse>newBuilder()
+                .setMethodDescriptor(listBackupConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateBackupConfigRequest, Operation> updateBackupConfigTransportSettings =
+        GrpcCallSettings.<UpdateBackupConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -2129,6 +2264,18 @@ public class GrpcNetAppStub extends NetAppStub {
             settings.revertVolumeOperationSettings(),
             clientContext,
             operationsStub);
+    this.startSplitCallable =
+        callableFactory.createUnaryCallable(
+            startSplitTransportSettings, settings.startSplitSettings(), clientContext);
+    this.startSplitOperationCallable =
+        callableFactory.createOperationCallable(
+            startSplitTransportSettings,
+            settings.startSplitOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getSplitStatusCallable =
+        callableFactory.createUnaryCallable(
+            getSplitStatusTransportSettings, settings.getSplitStatusSettings(), clientContext);
     this.establishVolumePeeringCallable =
         callableFactory.createUnaryCallable(
             establishVolumePeeringTransportSettings,
@@ -2586,6 +2733,36 @@ public class GrpcNetAppStub extends NetAppStub {
             executeOntapPatchTransportSettings,
             settings.executeOntapPatchSettings(),
             clientContext);
+    this.restoreVolumeCallable =
+        callableFactory.createUnaryCallable(
+            restoreVolumeTransportSettings, settings.restoreVolumeSettings(), clientContext);
+    this.restoreVolumeOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreVolumeTransportSettings,
+            settings.restoreVolumeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listBackupConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupConfigsTransportSettings,
+            settings.listBackupConfigsSettings(),
+            clientContext);
+    this.listBackupConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupConfigsTransportSettings,
+            settings.listBackupConfigsSettings(),
+            clientContext);
+    this.updateBackupConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupConfigTransportSettings,
+            settings.updateBackupConfigSettings(),
+            clientContext);
+    this.updateBackupConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupConfigTransportSettings,
+            settings.updateBackupConfigOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2735,6 +2912,22 @@ public class GrpcNetAppStub extends NetAppStub {
   public OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable() {
     return revertVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartSplitRequest, Operation> startSplitCallable() {
+    return startSplitCallable;
+  }
+
+  @Override
+  public OperationCallable<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationCallable() {
+    return startSplitOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSplitStatusRequest, SplitStatus> getSplitStatusCallable() {
+    return getSplitStatusCallable;
   }
 
   @Override
@@ -3296,6 +3489,40 @@ public class GrpcNetAppStub extends NetAppStub {
   public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchCallable() {
     return executeOntapPatchCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreVolumeRequest, Operation> restoreVolumeCallable() {
+    return restoreVolumeCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationCallable() {
+    return restoreVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsCallable() {
+    return listBackupConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsPagedResponse>
+      listBackupConfigsPagedCallable() {
+    return listBackupConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupConfigRequest, Operation> updateBackupConfigCallable() {
+    return updateBackupConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationCallable() {
+    return updateBackupConfigOperationCallable;
   }
 
   @Override

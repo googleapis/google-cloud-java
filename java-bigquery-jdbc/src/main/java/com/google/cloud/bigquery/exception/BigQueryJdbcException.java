@@ -68,16 +68,32 @@ public class BigQueryJdbcException extends SQLException {
   }
 
   /**
-   * Constructs a new BigQueryJdbcException with the specified cause and a detail message of
-   * (cause==null ? null : cause.toString())
+   * Constructs a new BigQueryJdbcException with the specified cause and a detail message of {@code
+   * cause.toString()}. If {@code cause} is already a BigQueryJdbcException it is copied rather than
+   * wrapped, so re-throwing through this constructor does not nest the exception a second time.
    *
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(Throwable cause) {
     super(
-        cause == null ? null : cause.getMessage(),
-        BigQueryJdbcExceptionUtils.sqlStateForCause(cause),
-        cause);
+        cause == null
+            ? null
+            : (cause instanceof BigQueryJdbcException
+                ? cause.getMessage()
+                : (cause.getMessage() != null ? cause.getMessage() : cause.toString())),
+        cause instanceof SQLException && ((SQLException) cause).getSQLState() != null
+            ? ((SQLException) cause).getSQLState()
+            : BigQueryJdbcExceptionUtils.sqlStateForCause(cause),
+        cause instanceof SQLException
+            ? ((SQLException) cause).getErrorCode()
+            : (cause instanceof BigQueryException ? ((BigQueryException) cause).getCode() : 0),
+        cause instanceof BigQueryJdbcException ? cause.getCause() : cause);
+    if (cause instanceof BigQueryJdbcException) {
+      this.bigQueryException = ((BigQueryJdbcException) cause).bigQueryException;
+      setStackTrace(cause.getStackTrace());
+    } else if (cause instanceof BigQueryException) {
+      this.bigQueryException = (BigQueryException) cause;
+    }
   }
 
   public BigQueryException getBigQueryException() {

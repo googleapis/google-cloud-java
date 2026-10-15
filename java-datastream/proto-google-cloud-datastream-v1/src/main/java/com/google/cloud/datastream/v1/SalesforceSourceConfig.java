@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * Salesforce source configuration
+ * Configuration for syncing data from a Salesforce source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.SalesforceSourceConfig}
@@ -76,7 +76,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce objects to retrieve from the source.
+   * The Salesforce objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -92,7 +92,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce objects to retrieve from the source.
+   * The Salesforce objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -110,7 +110,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce objects to retrieve from the source.
+   * The Salesforce objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -129,7 +129,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce objects to exclude from the stream.
+   * The Salesforce objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -145,7 +145,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce objects to exclude from the stream.
+   * The Salesforce objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -163,7 +163,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce objects to exclude from the stream.
+   * The Salesforce objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -183,8 +183,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Salesforce objects polling interval. The interval at which new
-   * changes will be polled for each object. The duration must be between 5
-   * minutes and 24 hours.
+   * changes will be polled for each object. The duration must be from `5
+   * minutes` to `24 hours`, inclusive.
    * </pre>
    *
    * <code>.google.protobuf.Duration polling_interval = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -202,8 +202,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Salesforce objects polling interval. The interval at which new
-   * changes will be polled for each object. The duration must be between 5
-   * minutes and 24 hours.
+   * changes will be polled for each object. The duration must be from `5
+   * minutes` to `24 hours`, inclusive.
    * </pre>
    *
    * <code>.google.protobuf.Duration polling_interval = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -223,8 +223,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. Salesforce objects polling interval. The interval at which new
-   * changes will be polled for each object. The duration must be between 5
-   * minutes and 24 hours.
+   * changes will be polled for each object. The duration must be from `5
+   * minutes` to `24 hours`, inclusive.
    * </pre>
    *
    * <code>.google.protobuf.Duration polling_interval = 3 [(.google.api.field_behavior) = REQUIRED];
@@ -435,7 +435,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Salesforce source configuration
+   * Configuration for syncing data from a Salesforce source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.SalesforceSourceConfig}
@@ -650,7 +650,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -665,7 +665,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -686,7 +686,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -709,7 +709,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -730,7 +730,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -759,7 +759,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -779,7 +779,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -794,7 +794,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -813,7 +813,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to retrieve from the source.
+     * The Salesforce objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg include_objects = 1;</code>
@@ -846,7 +846,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -861,7 +861,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -882,7 +882,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -905,7 +905,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -926,7 +926,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -955,7 +955,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -975,7 +975,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -990,7 +990,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -1009,7 +1009,7 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Salesforce objects to exclude from the stream.
+     * The Salesforce objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceOrg exclude_objects = 2;</code>
@@ -1043,8 +1043,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1062,8 +1062,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1087,8 +1087,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1114,8 +1114,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1138,8 +1138,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1170,8 +1170,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1194,8 +1194,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1213,8 +1213,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>
@@ -1236,8 +1236,8 @@ public final class SalesforceSourceConfig extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. Salesforce objects polling interval. The interval at which new
-     * changes will be polled for each object. The duration must be between 5
-     * minutes and 24 hours.
+     * changes will be polled for each object. The duration must be from `5
+     * minutes` to `24 hours`, inclusive.
      * </pre>
      *
      * <code>

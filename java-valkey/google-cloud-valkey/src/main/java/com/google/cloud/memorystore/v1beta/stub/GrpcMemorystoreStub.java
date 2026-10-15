@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1beta.stub;
 
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupsPagedResponse;
@@ -36,6 +38,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1beta.AclPolicy;
+import com.google.cloud.memorystore.v1beta.AclPolicyRevision;
 import com.google.cloud.memorystore.v1beta.AddAuthTokenRequest;
 import com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1beta.AuthToken;
@@ -43,13 +47,17 @@ import com.google.cloud.memorystore.v1beta.Backup;
 import com.google.cloud.memorystore.v1beta.BackupCollection;
 import com.google.cloud.memorystore.v1beta.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1beta.CertificateAuthority;
+import com.google.cloud.memorystore.v1beta.CreateAclPolicyRequest;
 import com.google.cloud.memorystore.v1beta.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1beta.DeleteAclPolicyRequest;
 import com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest;
 import com.google.cloud.memorystore.v1beta.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1beta.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1beta.ExportBackupRequest;
 import com.google.cloud.memorystore.v1beta.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1beta.GetAclPolicyRequest;
+import com.google.cloud.memorystore.v1beta.GetAclPolicyRevisionRequest;
 import com.google.cloud.memorystore.v1beta.GetAuthTokenRequest;
 import com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1beta.GetBackupRequest;
@@ -58,6 +66,10 @@ import com.google.cloud.memorystore.v1beta.GetInstanceRequest;
 import com.google.cloud.memorystore.v1beta.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1beta.Instance;
+import com.google.cloud.memorystore.v1beta.ListAclPoliciesRequest;
+import com.google.cloud.memorystore.v1beta.ListAclPoliciesResponse;
+import com.google.cloud.memorystore.v1beta.ListAclPolicyRevisionsRequest;
+import com.google.cloud.memorystore.v1beta.ListAclPolicyRevisionsResponse;
 import com.google.cloud.memorystore.v1beta.ListAuthTokensRequest;
 import com.google.cloud.memorystore.v1beta.ListAuthTokensResponse;
 import com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest;
@@ -73,6 +85,7 @@ import com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1beta.StartMigrationRequest;
 import com.google.cloud.memorystore.v1beta.TokenAuthUser;
+import com.google.cloud.memorystore.v1beta.UpdateAclPolicyRequest;
 import com.google.cloud.memorystore.v1beta.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -94,6 +107,18 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcMemorystoreStub extends MemorystoreStub {
+  private static final MethodDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesMethodDescriptor =
+          MethodDescriptor.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/ListAclPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAclPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAclPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
       listInstancesMethodDescriptor =
           MethodDescriptor.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -106,6 +131,16 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetAclPolicyRequest, AclPolicy>
+      getAclPolicyMethodDescriptor =
+          MethodDescriptor.<GetAclPolicyRequest, AclPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/GetAclPolicy")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AclPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
       MethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -114,6 +149,17 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<CreateAclPolicyRequest, AclPolicy>
+      createAclPolicyMethodDescriptor =
+          MethodDescriptor.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/CreateAclPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AclPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
       createInstanceMethodDescriptor =
@@ -126,6 +172,17 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateAclPolicyRequest, Operation>
+      updateAclPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateAclPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/UpdateAclPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
       updateInstanceMethodDescriptor =
           MethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
@@ -134,6 +191,43 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteAclPolicyRequest, Operation>
+      deleteAclPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteAclPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/DeleteAclPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionMethodDescriptor =
+          MethodDescriptor.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memorystore.v1beta.Memorystore/GetAclPolicyRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAclPolicyRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AclPolicyRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.memorystore.v1beta.Memorystore/ListAclPolicyRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAclPolicyRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAclPolicyRevisionsResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -396,16 +490,34 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
+  private final UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable;
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable;
+  private final UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable;
+  private final OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable;
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
   private final OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable;
+  private final UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable;
+  private final OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable;
+  private final UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
@@ -511,6 +623,18 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
+    GrpcCallSettings<ListAclPoliciesRequest, ListAclPoliciesResponse>
+        listAclPoliciesTransportSettings =
+            GrpcCallSettings.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listAclPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
             .setMethodDescriptor(listInstancesMethodDescriptor)
@@ -521,6 +645,17 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicyTransportSettings =
+        GrpcCallSettings.<GetAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(getAclPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -533,6 +668,17 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicyTransportSettings =
+        GrpcCallSettings.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(createAclPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(createInstanceMethodDescriptor)
@@ -544,6 +690,16 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicyTransportSettings =
+        GrpcCallSettings.<UpdateAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAclPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl_policy.name", String.valueOf(request.getAclPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateInstanceMethodDescriptor)
@@ -554,6 +710,42 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicyTransportSettings =
+        GrpcCallSettings.<DeleteAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAclPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionTransportSettings =
+            GrpcCallSettings.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+                .setMethodDescriptor(getAclPolicyRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listAclPolicyRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
@@ -817,15 +1009,27 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
                 })
             .build();
 
+    this.listAclPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
+    this.listAclPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.listInstancesPagedCallable =
         callableFactory.createPagedCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
+    this.getAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyTransportSettings, settings.getAclPolicySettings(), clientContext);
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.createAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAclPolicyTransportSettings, settings.createAclPolicySettings(), clientContext);
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
             createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
@@ -833,6 +1037,15 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
         callableFactory.createOperationCallable(
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateAclPolicyTransportSettings, settings.updateAclPolicySettings(), clientContext);
+    this.updateAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAclPolicyTransportSettings,
+            settings.updateAclPolicyOperationSettings(),
             clientContext,
             operationsStub);
     this.updateInstanceCallable =
@@ -844,6 +1057,30 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
             settings.updateInstanceOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclPolicyTransportSettings, settings.deleteAclPolicySettings(), clientContext);
+    this.deleteAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAclPolicyTransportSettings,
+            settings.deleteAclPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getAclPolicyRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyRevisionTransportSettings,
+            settings.getAclPolicyRevisionSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -1022,6 +1259,17 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
   }
 
   @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    return listAclPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    return listAclPoliciesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return listInstancesCallable;
   }
@@ -1033,8 +1281,18 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
   }
 
   @Override
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    return getAclPolicyCallable;
+  }
+
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    return createAclPolicyCallable;
   }
 
   @Override
@@ -1049,6 +1307,17 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
   }
 
   @Override
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    return updateAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    return updateAclPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     return updateInstanceCallable;
   }
@@ -1057,6 +1326,35 @@ public class GrpcMemorystoreStub extends MemorystoreStub {
   public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable() {
     return updateInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    return deleteAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    return deleteAclPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    return getAclPolicyRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    return listAclPolicyRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    return listAclPolicyRevisionsPagedCallable;
   }
 
   @Override

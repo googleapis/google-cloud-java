@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * MongoDB source configuration.
+ * Configuration for syncing data from a MongoDB source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.MongodbSourceConfig}
@@ -51,7 +51,9 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
     super(builder);
   }
 
-  private MongodbSourceConfig() {}
+  private MongodbSourceConfig() {
+    jsonMode_ = 0;
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
@@ -76,7 +78,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB collections to include in the stream.
+   * The MongoDB collections to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -92,7 +94,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB collections to include in the stream.
+   * The MongoDB collections to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -110,7 +112,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB collections to include in the stream.
+   * The MongoDB collections to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -129,7 +131,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB collections to exclude from the stream.
+   * The MongoDB collections to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -145,7 +147,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB collections to exclude from the stream.
+   * The MongoDB collections to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -163,7 +165,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB collections to exclude from the stream.
+   * The MongoDB collections to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -196,6 +198,47 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
     return maxConcurrentBackfillTasks_;
   }
 
+  public static final int JSON_MODE_FIELD_NUMBER = 4;
+  private int jsonMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. MongoDB JSON mode to use for the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for jsonMode.
+   */
+  @java.lang.Override
+  public int getJsonModeValue() {
+    return jsonMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. MongoDB JSON mode to use for the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The jsonMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbJsonMode getJsonMode() {
+    com.google.cloud.datastream.v1.MongodbJsonMode result =
+        com.google.cloud.datastream.v1.MongodbJsonMode.forNumber(jsonMode_);
+    return result == null ? com.google.cloud.datastream.v1.MongodbJsonMode.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -219,6 +262,11 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
     if (maxConcurrentBackfillTasks_ != 0) {
       output.writeInt32(3, maxConcurrentBackfillTasks_);
     }
+    if (jsonMode_
+        != com.google.cloud.datastream.v1.MongodbJsonMode.MONGODB_JSON_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(4, jsonMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -237,6 +285,11 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
     if (maxConcurrentBackfillTasks_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxConcurrentBackfillTasks_);
+    }
+    if (jsonMode_
+        != com.google.cloud.datastream.v1.MongodbJsonMode.MONGODB_JSON_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, jsonMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -263,6 +316,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
       if (!getExcludeObjects().equals(other.getExcludeObjects())) return false;
     }
     if (getMaxConcurrentBackfillTasks() != other.getMaxConcurrentBackfillTasks()) return false;
+    if (jsonMode_ != other.jsonMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -284,6 +338,8 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER;
     hash = (53 * hash) + getMaxConcurrentBackfillTasks();
+    hash = (37 * hash) + JSON_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + jsonMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -389,7 +445,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * MongoDB source configuration.
+   * Configuration for syncing data from a MongoDB source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.MongodbSourceConfig}
@@ -445,6 +501,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
         excludeObjectsBuilder_ = null;
       }
       maxConcurrentBackfillTasks_ = 0;
+      jsonMode_ = 0;
       return this;
     }
 
@@ -495,6 +552,9 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maxConcurrentBackfillTasks_ = maxConcurrentBackfillTasks_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.jsonMode_ = jsonMode_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -519,6 +579,9 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
       }
       if (other.getMaxConcurrentBackfillTasks() != 0) {
         setMaxConcurrentBackfillTasks(other.getMaxConcurrentBackfillTasks());
+      }
+      if (other.jsonMode_ != 0) {
+        setJsonModeValue(other.getJsonModeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -566,6 +629,12 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                jsonMode_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -596,7 +665,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -611,7 +680,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -632,7 +701,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -655,7 +724,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -676,7 +745,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -705,7 +774,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -725,7 +794,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -740,7 +809,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -759,7 +828,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to include in the stream.
+     * The MongoDB collections to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -792,7 +861,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -807,7 +876,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -828,7 +897,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -851,7 +920,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -872,7 +941,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -901,7 +970,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -921,7 +990,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -936,7 +1005,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -955,7 +1024,7 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * MongoDB collections to exclude from the stream.
+     * The MongoDB collections to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -1038,6 +1107,111 @@ public final class MongodbSourceConfig extends com.google.protobuf.GeneratedMess
     public Builder clearMaxConcurrentBackfillTasks() {
       bitField0_ = (bitField0_ & ~0x00000004);
       maxConcurrentBackfillTasks_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int jsonMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. MongoDB JSON mode to use for the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for jsonMode.
+     */
+    @java.lang.Override
+    public int getJsonModeValue() {
+      return jsonMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. MongoDB JSON mode to use for the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for jsonMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonModeValue(int value) {
+      jsonMode_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. MongoDB JSON mode to use for the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The jsonMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbJsonMode getJsonMode() {
+      com.google.cloud.datastream.v1.MongodbJsonMode result =
+          com.google.cloud.datastream.v1.MongodbJsonMode.forNumber(jsonMode_);
+      return result == null ? com.google.cloud.datastream.v1.MongodbJsonMode.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. MongoDB JSON mode to use for the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The jsonMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonMode(com.google.cloud.datastream.v1.MongodbJsonMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      jsonMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. MongoDB JSON mode to use for the stream.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJsonMode() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      jsonMode_ = 0;
       onChanged();
       return this;
     }

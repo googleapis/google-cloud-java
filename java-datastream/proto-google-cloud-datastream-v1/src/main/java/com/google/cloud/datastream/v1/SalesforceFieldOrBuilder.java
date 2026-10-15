@@ -30,7 +30,7 @@ public interface SalesforceFieldOrBuilder
    *
    *
    * <pre>
-   * Field name.
+   * The field name.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -43,7 +43,7 @@ public interface SalesforceFieldOrBuilder
    *
    *
    * <pre>
-   * Field name.
+   * The field name.
    * </pre>
    *
    * <code>string name = 1;</code>
