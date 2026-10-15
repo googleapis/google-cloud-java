@@ -219,7 +219,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
    */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
-  @Disabled
   public void testSetTimeWithCalendar_sendsTimeInCalendarZone(String zone) throws SQLException {
     useJvmZone(zone);
     Time time = Time.valueOf("12:34:56");

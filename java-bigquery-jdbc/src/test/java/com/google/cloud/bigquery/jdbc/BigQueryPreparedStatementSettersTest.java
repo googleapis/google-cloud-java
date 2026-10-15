@@ -226,15 +226,20 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
-  @Test
-  public void testSetTimeWithCalendar() throws Exception {
-    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testSetTimeWithCalendar(String zoneId) throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
     cal.setTimeInMillis(1000000L);
     long originalMillis = cal.getTimeInMillis();
-    Time time = new Time(43200000L); // 12:00:00
+    Calendar sourceCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
+    sourceCal.clear();
+    sourceCal.set(1970, Calendar.JANUARY, 1, 12, 34, 56);
+    Time time = new Time(sourceCal.getTimeInMillis());
 
     preparedStatement.setTime(1, time, cal);
     assertEquals(Time.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals("12:34:56", preparedStatement.parameterHandler.getParameter(1).toString());
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
