@@ -104,10 +104,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Store the x509Provider and useMtlsTransportFactory flag for per-cycle cert pinning and
     // deserialization recovery.
     this.x509Provider = builder.x509Provider;
-    this.useMtlsTransportFactory =
-        builder.useMtlsTransportFactory != null
-            ? builder.useMtlsTransportFactory
-            : isDefaultOrMtlsTransportFactory(builder.transportFactory);
+    this.useMtlsTransportFactory = builder.useMtlsTransportFactory;
 
     // Initialize based on the source type
     if (builder.subjectTokenSupplier != null) {
@@ -205,7 +202,6 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    */
   static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
     return transportFactory == null
-        || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
         || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
         || transportFactory.getClass() == MtlsHttpTransportFactory.class
         || (transportFactory instanceof MtlsHttpTransportFactory
@@ -229,7 +225,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    * Returns whether a clone of this credential can skip reading the KeyStore because the transport
    * factory is already initialized (an mTLS factory with a KeyStore, or a custom non-mTLS factory).
    */
-  boolean hasInitializedMtlsTransport() {
+  private boolean hasInitializedMtlsTransport() {
     return this.x509Provider != null
         && (!shouldUseMtlsTransportFactory()
             || (this.transportFactory instanceof MtlsHttpTransportFactory
@@ -607,7 +603,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     private @Nullable IdentityPoolActorTokenSupplier actorTokenSupplier;
     private @Nullable String actorTokenType;
     private @Nullable X509Provider x509Provider;
-    private @Nullable Boolean useMtlsTransportFactory;
+    private boolean useMtlsTransportFactory = true;
     private boolean isClonedTransportInitialized;
 
     Builder() {}
@@ -737,9 +733,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     public Builder setCredentialSource(IdentityPoolCredentialSource credentialSource) {
       if (this.credentialSource != null && this.credentialSource != credentialSource) {
         this.x509Provider = null;
-        if (Boolean.TRUE.equals(this.useMtlsTransportFactory)
-            || (this.useMtlsTransportFactory == null
-                && isDefaultOrMtlsTransportFactory(this.transportFactory))) {
+        if (this.useMtlsTransportFactory) {
           this.transportFactory = null;
         }
       }
