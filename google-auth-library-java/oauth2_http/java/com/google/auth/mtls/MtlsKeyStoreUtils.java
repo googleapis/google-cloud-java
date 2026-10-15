@@ -40,34 +40,40 @@ import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.KeyStore;
 import java.security.PrivateKey;
+import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Builds the mTLS {@link KeyStore} from PEM-encoded certificates and a private key.
  *
  * <p>This replaces {@code com.google.api.client.util.SecurityUtils#createMtlsKeyStore}, which keeps
- * only the first certificate. Here the key entry holds every certificate in the input, so the
- * intermediate certificates are presented too. Some peers (for example, another workload that
- * trusts only a root CA) need them to verify the client certificate.
+ * only the first certificate. Here the key entry holds every distinct certificate in the input, so
+ * the intermediate certificates are presented too. Some peers (for example, another workload that
+ * trusts only a root CA) need them to verify the client certificate. Because every certificate in
+ * the input is sent in the TLS handshake, the input should hold only the leaf certificate and its
+ * intermediates.
  *
  * <p>Everything else matches the upstream method: key store type (JKS), alias, empty password,
  * accepted key format (PKCS#8 {@code PRIVATE KEY}), which private key is chosen, and error
  * messages. Any input that the upstream method accepted is still accepted, even though more of it
  * is now used: once a certificate and a private key have been found (the point where the upstream
- * method stopped reading), a malformed or unreadable later section ends the input instead of
- * failing, and an extra certificate that cannot be parsed is left out of the chain. Unlike the
- * upstream method, the input is decoded as UTF-8 rather than the platform default charset, and it
- * is read to the end.
+ * method stopped reading), a malformed later PEM section ends the input instead of failing, and an
+ * extra certificate that cannot be parsed is left out of the chain. Unlike the upstream method, the
+ * input is decoded as UTF-8 rather than the platform default charset, and it is read to the end.
  */
 @NullMarked
 final class MtlsKeyStoreUtils {
+
+  private static final Logger LOGGER = Logger.getLogger(MtlsKeyStoreUtils.class.getName());
 
   private MtlsKeyStoreUtils() {}
 
@@ -76,30 +82,29 @@ final class MtlsKeyStoreUtils {
    *
    * @param certAndKey PEM input containing one or more {@code CERTIFICATE} sections and a PKCS#8
    *     {@code PRIVATE KEY} section, in any order. The first certificate must be the one that
-   *     matches the private key (the leaf); the remaining certificates are kept in input order as
-   *     the rest of the chain. If there are several private keys, the one used is the same as
-   *     upstream: the last one before the first certificate, or else the first one after it. The
+   *     matches the private key (the leaf); the remaining distinct certificates are kept in input
+   *     order as the rest of the chain. If there are several private keys, the one used is the same
+   *     as upstream: the last one before the first certificate, or else the first one after it. The
    *     stream is read to the end and is not closed.
    * @throws IllegalArgumentException if the input has no certificate or no private key, or if a PEM
-   *     section before that point is malformed
+   *     section before both a certificate and a private key have been read is malformed
    * @throws GeneralSecurityException if the first certificate or the private key cannot be parsed,
    *     or the key store cannot be created
-   * @throws IOException if the input cannot be read before a certificate and a private key are
-   *     found
+   * @throws IOException if the input cannot be read
    */
   static KeyStore createMtlsKeyStore(InputStream certAndKey)
       throws GeneralSecurityException, IOException {
     List<byte[]> certificates = new ArrayList<>();
-    byte @Nullable [] privateKey = null;
+    byte[] privateKey = null;
     PemReader reader = new PemReader(new InputStreamReader(certAndKey, StandardCharsets.UTF_8));
     while (true) {
       PemReader.Section section;
       try {
         section = reader.readNextSection();
-      } catch (IllegalArgumentException | IOException e) {
+      } catch (IllegalArgumentException e) {
         if (!certificates.isEmpty() && privateKey != null) {
-          // Malformed or unreadable trailing content after a usable certificate and key: stop
-          // here, as the upstream method (which stopped reading at this point) would have.
+          // Malformed trailing content after a usable certificate and key: stop here, as the
+          // upstream method (which stopped reading at this point) would have.
           break;
         }
         throw e;
@@ -108,7 +113,10 @@ final class MtlsKeyStoreUtils {
         break;
       }
       if ("CERTIFICATE".equals(section.getTitle())) {
-        certificates.add(section.getBase64DecodedBytes());
+        byte[] certBytes = section.getBase64DecodedBytes();
+        if (!containsCertificate(certificates, certBytes)) {
+          certificates.add(certBytes);
+        }
       } else if ("PRIVATE KEY".equals(section.getTitle())
           && (privateKey == null || certificates.isEmpty())) {
         // Same choice as upstream: a later key replaces an earlier one until the first certificate
@@ -132,6 +140,7 @@ final class MtlsKeyStoreUtils {
       } catch (CertificateException | RuntimeException e) {
         // The upstream method never parsed extra certificates; leave this one out rather than
         // fail.
+        LOGGER.log(Level.FINE, "Skipping unparsable extra certificate in mTLS chain", e);
       }
     }
     PrivateKey key =
@@ -144,8 +153,21 @@ final class MtlsKeyStoreUtils {
     return keyStore;
   }
 
+  private static boolean containsCertificate(List<byte[]> certificates, byte[] candidate) {
+    for (byte[] existing : certificates) {
+      if (Arrays.equals(existing, candidate)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   private static X509Certificate parseCertificate(CertificateFactory certFactory, byte[] der)
       throws CertificateException {
-    return (X509Certificate) certFactory.generateCertificate(new ByteArrayInputStream(der));
+    Certificate cert = certFactory.generateCertificate(new ByteArrayInputStream(der));
+    if (cert == null) {
+      throw new CertificateException("Empty certificate");
+    }
+    return (X509Certificate) cert;
   }
 }

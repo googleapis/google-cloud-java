@@ -37,17 +37,20 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.client.util.SecurityUtils;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FilterInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
-import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Signature;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
@@ -77,12 +80,39 @@ class MtlsKeyStoreUtilsTest {
   }
 
   @Test
+  void createMtlsKeyStore_threeCertificates_keepsFullChainInOrder() throws Exception {
+    KeyStore keyStore =
+        MtlsKeyStoreUtils.createMtlsKeyStore(
+            stream(read(CHAIN_CERT_PATH), read(SINGLE_CERT_PATH), read(CHAIN_KEY_PATH)));
+
+    Certificate[] chain = keyStore.getCertificateChain(onlyAlias(keyStore));
+    assertEquals(3, chain.length);
+    assertEquals("CN=Test Leaf", subject(chain[0]));
+    assertEquals("CN=Test Intermediate CA", subject(chain[1]));
+    assertEquals(
+        subject(
+            SecurityUtils.createMtlsKeyStore(stream(read(SINGLE_CERT_PATH), read(SINGLE_KEY_PATH)))
+                .getCertificate("alias")),
+        subject(chain[2]));
+  }
+
+  @Test
+  void createMtlsKeyStore_duplicateCertificates_deduplicated() throws Exception {
+    // Simulates X509Provider concatenating cert_path and key_path when both point to the same
+    // combined PEM bundle.
+    String combinedBundle = read(CHAIN_CERT_PATH) + "\n" + read(CHAIN_KEY_PATH);
+    KeyStore keyStore =
+        MtlsKeyStoreUtils.createMtlsKeyStore(stream(combinedBundle, combinedBundle));
+
+    assertLeafThenIntermediate(keyStore);
+  }
+
+  @Test
   void upstreamCreateMtlsKeyStore_keepsOnlyLeaf() throws Exception {
     // Documents why MtlsKeyStoreUtils exists. If google-http-client starts keeping the full chain,
     // this fails and the helper can be replaced by the upstream method again.
     KeyStore keyStore =
-        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
-            stream(read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH)));
+        SecurityUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH)));
 
     assertEquals(1, keyStore.getCertificateChain(onlyAlias(keyStore)).length);
   }
@@ -111,8 +141,7 @@ class MtlsKeyStoreUtilsTest {
     KeyStore keyStore =
         MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(SINGLE_CERT_PATH), read(SINGLE_KEY_PATH)));
     KeyStore expected =
-        com.google.api.client.util.SecurityUtils.createMtlsKeyStore(
-            stream(read(SINGLE_CERT_PATH), read(SINGLE_KEY_PATH)));
+        SecurityUtils.createMtlsKeyStore(stream(read(SINGLE_CERT_PATH), read(SINGLE_KEY_PATH)));
 
     String alias = onlyAlias(keyStore);
     assertEquals(Collections.list(expected.aliases()), Collections.list(keyStore.aliases()));
@@ -143,10 +172,13 @@ class MtlsKeyStoreUtilsTest {
         String.join("\n", read(SINGLE_KEY_PATH), read(CHAIN_KEY_PATH), read(CHAIN_CERT_PATH));
 
     KeyStore keyStore = MtlsKeyStoreUtils.createMtlsKeyStore(stream(input));
-    KeyStore upstream = com.google.api.client.util.SecurityUtils.createMtlsKeyStore(stream(input));
+    KeyStore upstream = SecurityUtils.createMtlsKeyStore(stream(input));
 
-    assertEquals("EC", keyStore.getKey(onlyAlias(keyStore), new char[] {}).getAlgorithm());
-    assertEquals("EC", upstream.getKey(onlyAlias(upstream), new char[] {}).getAlgorithm());
+    byte[] expectedKeyBytes = expectedChainKeyEncoded();
+    assertArrayEquals(
+        expectedKeyBytes, keyStore.getKey(onlyAlias(keyStore), new char[] {}).getEncoded());
+    assertArrayEquals(
+        expectedKeyBytes, upstream.getKey(onlyAlias(upstream), new char[] {}).getEncoded());
     assertLeafThenIntermediate(keyStore);
   }
 
@@ -159,10 +191,9 @@ class MtlsKeyStoreUtilsTest {
         String.join("\n", read(CHAIN_KEY_PATH), read(SINGLE_KEY_PATH), read(CHAIN_CERT_PATH));
 
     assertThrows(
-        GeneralSecurityException.class, () -> MtlsKeyStoreUtils.createMtlsKeyStore(stream(input)));
+        InvalidKeySpecException.class, () -> MtlsKeyStoreUtils.createMtlsKeyStore(stream(input)));
     assertThrows(
-        GeneralSecurityException.class,
-        () -> com.google.api.client.util.SecurityUtils.createMtlsKeyStore(stream(input)));
+        InvalidKeySpecException.class, () -> SecurityUtils.createMtlsKeyStore(stream(input)));
   }
 
   @Test
@@ -171,23 +202,70 @@ class MtlsKeyStoreUtilsTest {
         String.join("\n", read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH), read(SINGLE_KEY_PATH));
 
     KeyStore keyStore = MtlsKeyStoreUtils.createMtlsKeyStore(stream(input));
-    KeyStore upstream = com.google.api.client.util.SecurityUtils.createMtlsKeyStore(stream(input));
+    KeyStore upstream = SecurityUtils.createMtlsKeyStore(stream(input));
 
-    assertEquals("EC", keyStore.getKey(onlyAlias(keyStore), new char[] {}).getAlgorithm());
-    assertEquals("EC", upstream.getKey(onlyAlias(upstream), new char[] {}).getAlgorithm());
+    byte[] expectedKeyBytes = expectedChainKeyEncoded();
+    assertArrayEquals(
+        expectedKeyBytes, keyStore.getKey(onlyAlias(keyStore), new char[] {}).getEncoded());
+    assertArrayEquals(
+        expectedKeyBytes, upstream.getKey(onlyAlias(upstream), new char[] {}).getEncoded());
     assertLeafThenIntermediate(keyStore);
   }
 
   @Test
   void createMtlsKeyStore_malformedTrailingSection_ignored() throws Exception {
     // A section with no end tag after a usable certificate and key. The upstream method stopped
-    // reading before reaching it, so it must not cause a failure now.
+    // reading before reaching it, so it must not cause a failure now. Putting the intermediate
+    // after the key also checks that reading continues past the first certificate and key.
+    String[] leafAndIntermediate =
+        read(CHAIN_CERT_PATH).split("(?<=-----END CERTIFICATE-----)\r?\n");
     KeyStore keyStore =
         MtlsKeyStoreUtils.createMtlsKeyStore(
             stream(
-                read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH), "-----BEGIN CERTIFICATE-----\nAAAA"));
+                leafAndIntermediate[0],
+                read(CHAIN_KEY_PATH),
+                leafAndIntermediate[1],
+                "-----BEGIN CERTIFICATE-----\nAAAA"));
 
-    assertEquals(2, keyStore.getCertificateChain(onlyAlias(keyStore)).length);
+    assertLeafThenIntermediate(keyStore);
+  }
+
+  @Test
+  void createMtlsKeyStore_malformedSectionAfterOnlyCertificate_throws() throws Exception {
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            MtlsKeyStoreUtils.createMtlsKeyStore(
+                stream(read(CHAIN_CERT_PATH), "-----BEGIN PRIVATE KEY-----\nAAAA")));
+  }
+
+  @Test
+  void createMtlsKeyStore_malformedSectionAfterOnlyKey_throws() throws Exception {
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            MtlsKeyStoreUtils.createMtlsKeyStore(
+                stream(read(CHAIN_KEY_PATH), "-----BEGIN CERTIFICATE-----\nAAAA")));
+  }
+
+  @Test
+  void createMtlsKeyStore_ioExceptionAfterCertAndKey_throws() throws Exception {
+    String[] leafAndIntermediate =
+        read(CHAIN_CERT_PATH).split("(?<=-----END CERTIFICATE-----)\r?\n");
+    byte[] validPrefix = (read(CHAIN_KEY_PATH) + "\n" + leafAndIntermediate[0]).getBytes(UTF_8);
+    InputStream failingStream =
+        new FilterInputStream(new ByteArrayInputStream(validPrefix)) {
+          @Override
+          public int read(byte[] b, int off, int len) throws IOException {
+            int n = super.read(b, off, len);
+            if (n == -1) {
+              throw new IOException("disk read error while reading intermediate");
+            }
+            return n;
+          }
+        };
+
+    assertThrows(IOException.class, () -> MtlsKeyStoreUtils.createMtlsKeyStore(failingStream));
   }
 
   @Test
@@ -195,9 +273,11 @@ class MtlsKeyStoreUtilsTest {
     String[] leafAndIntermediate =
         read(CHAIN_CERT_PATH).split("(?<=-----END CERTIFICATE-----)\r?\n");
     String bad = "-----BEGIN CERTIFICATE-----\nAAAA\n-----END CERTIFICATE-----";
+    String empty = "-----BEGIN CERTIFICATE-----\n-----END CERTIFICATE-----";
     KeyStore keyStore =
         MtlsKeyStoreUtils.createMtlsKeyStore(
-            stream(leafAndIntermediate[0], bad, leafAndIntermediate[1], read(CHAIN_KEY_PATH)));
+            stream(
+                leafAndIntermediate[0], bad, empty, leafAndIntermediate[1], read(CHAIN_KEY_PATH)));
 
     assertLeafThenIntermediate(keyStore);
   }
@@ -251,6 +331,12 @@ class MtlsKeyStoreUtilsTest {
     String alias = keyStore.aliases().nextElement();
     assertNotNull(keyStore.getCertificateChain(alias));
     return alias;
+  }
+
+  private static byte[] expectedChainKeyEncoded() throws Exception {
+    KeyStore expected =
+        SecurityUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), read(CHAIN_KEY_PATH)));
+    return expected.getKey(onlyAlias(expected), new char[] {}).getEncoded();
   }
 
   private static String subject(Certificate certificate) {

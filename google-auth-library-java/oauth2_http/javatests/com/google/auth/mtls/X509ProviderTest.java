@@ -249,13 +249,12 @@ class X509ProviderTest {
   @Test
   void x509Provider_gkeCredentialBundleWithIntermediate_keepsFullChain(@TempDir Path tempDir)
       throws Exception {
-    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
-    Files.write(
-        bundle,
-        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
-                + "\n"
-                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH))
-            .getBytes(UTF_8));
+    Path bundle =
+        writeGkeBundle(
+            tempDir,
+            MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH,
+            MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH,
+            /* keyFirst= */ false);
     MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
     try {
       X509Provider testProvider =
@@ -273,13 +272,12 @@ class X509ProviderTest {
   void x509Provider_keyFirstGkeCredentialBundleWithIntermediate_keepsFullChain(
       @TempDir Path tempDir) throws Exception {
     // GKE pod certificate bundles put the private key before the certificate chain.
-    Path bundle = tempDir.resolve("x509.credential-bundle.private-key.pem");
-    Files.write(
-        bundle,
-        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH)
-                + "\n"
-                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH))
-            .getBytes(UTF_8));
+    Path bundle =
+        writeGkeBundle(
+            tempDir,
+            MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH,
+            MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH,
+            /* keyFirst= */ true);
     MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
     try {
       X509Provider testProvider =
@@ -420,12 +418,23 @@ class X509ProviderTest {
   }
 
   private static Path writeGkeBundle(Path dir, boolean keyFirst) throws IOException {
-    return writeGkeBundleAt(dir.resolve("x509.credential-bundle.private-key.pem"), keyFirst);
+    return writeGkeBundle(dir, TEST_CERT_PATH, TEST_KEY_PATH, keyFirst);
+  }
+
+  private static Path writeGkeBundle(Path dir, String certPath, String keyPath, boolean keyFirst)
+      throws IOException {
+    return writeGkeBundleAt(
+        dir.resolve("x509.credential-bundle.private-key.pem"), certPath, keyPath, keyFirst);
   }
 
   private static Path writeGkeBundleAt(Path bundle, boolean keyFirst) throws IOException {
-    String cert = new String(Files.readAllBytes(new File(TEST_CERT_PATH).toPath()), UTF_8);
-    String key = new String(Files.readAllBytes(new File(TEST_KEY_PATH).toPath()), UTF_8);
+    return writeGkeBundleAt(bundle, TEST_CERT_PATH, TEST_KEY_PATH, keyFirst);
+  }
+
+  private static Path writeGkeBundleAt(
+      Path bundle, String certPath, String keyPath, boolean keyFirst) throws IOException {
+    String cert = new String(Files.readAllBytes(new File(certPath).toPath()), UTF_8);
+    String key = new String(Files.readAllBytes(new File(keyPath).toPath()), UTF_8);
     String content = keyFirst ? key + "\n" + cert : cert + "\n" + key;
     Files.write(bundle, content.getBytes(UTF_8));
     return bundle;

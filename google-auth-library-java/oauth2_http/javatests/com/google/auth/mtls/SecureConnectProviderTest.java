@@ -35,11 +35,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.io.ByteArrayInputStream;
+import com.google.auth.TestUtils;
+import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -112,17 +112,49 @@ class SecureConnectProviderTest {
 
   @Test
   void testGetKeyStore_certificateChain_keepsFullChain() throws Exception {
-    byte[] stdout =
-        (MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
-                + "\n"
-                + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH))
-            .getBytes(StandardCharsets.UTF_8);
+    String stdout =
+        MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
+            + "\n"
+            + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH);
     SecureConnectProvider.ProcessProvider processProvider =
-        metadata -> new TestCertProviderCommandProcess(0, false, new ByteArrayInputStream(stdout));
+        metadata ->
+            new TestCertProviderCommandProcess(0, false, TestUtils.stringToInputStream(stdout));
 
     KeyStore store =
-        SecureConnectProvider.getKeyStore(
-            new ByteArrayInputStream("{}".getBytes(StandardCharsets.UTF_8)), processProvider);
+        SecureConnectProvider.getKeyStore(TestUtils.stringToInputStream("{}"), processProvider);
+
+    MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
+  }
+
+  @Test
+  void testGetKeyStore_stdoutHeldOpenAfterBufferedBytes_doesNotReadToEof() throws Exception {
+    String stdout =
+        MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
+            + "\n"
+            + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH);
+    InputStream neverEndingStdout =
+        new FilterInputStream(TestUtils.stringToInputStream(stdout)) {
+          @Override
+          public int read() throws IOException {
+            if (available() == 0) {
+              throw new AssertionError("Attempted to read past buffered stdout bytes");
+            }
+            return super.read();
+          }
+
+          @Override
+          public int read(byte[] b, int off, int len) throws IOException {
+            if (available() == 0) {
+              throw new AssertionError("Attempted to read past buffered stdout bytes");
+            }
+            return super.read(b, off, len);
+          }
+        };
+    SecureConnectProvider.ProcessProvider processProvider =
+        metadata -> new TestCertProviderCommandProcess(0, false, neverEndingStdout);
+
+    KeyStore store =
+        SecureConnectProvider.getKeyStore(TestUtils.stringToInputStream("{}"), processProvider);
 
     MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
   }
