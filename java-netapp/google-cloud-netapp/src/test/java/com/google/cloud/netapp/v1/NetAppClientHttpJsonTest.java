@@ -17,6 +17,7 @@
 package com.google.cloud.netapp.v1;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
@@ -1762,6 +1763,284 @@ public class NetAppClientHttpJsonTest {
       client.revertVolumeAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startSplitTest() throws Exception {
+    Volume expectedResponse =
+        Volume.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setShareName("shareName-1582221558")
+            .setPsaRange("psaRange-534274785")
+            .setStoragePool(
+                StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setNetwork("network1843485230")
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setCapacityGib(498394811)
+            .setExportPolicy(ExportPolicy.newBuilder().build())
+            .addAllProtocols(new ArrayList<Protocols>())
+            .addAllSmbSettings(new ArrayList<SMBSettings>())
+            .addAllMountOptions(new ArrayList<MountOption>())
+            .setUnixPermissions("unixPermissions882114012")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setSnapshotPolicy(SnapshotPolicy.newBuilder().build())
+            .setSnapReserve(-1429587641)
+            .setSnapshotDirectory(true)
+            .setUsedGib(-279083970)
+            .setSecurityStyle(SecurityStyle.forNumber(0))
+            .setKerberosEnabled(true)
+            .setLdapEnabled(true)
+            .setActiveDirectory(
+                ActiveDirectoryName.of("[PROJECT]", "[LOCATION]", "[ACTIVE_DIRECTORY]").toString())
+            .setRestoreParameters(RestoreParameters.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setEncryptionType(EncryptionType.forNumber(0))
+            .setHasReplication(true)
+            .setBackupConfig(BackupConfig.newBuilder().build())
+            .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startSplitTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+
+    Volume actualResponse = client.startSplitAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startSplitExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      client.startSplitAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startSplitTest2() throws Exception {
+    Volume expectedResponse =
+        Volume.newBuilder()
+            .setName(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
+            .setStateDetails("stateDetails1730982001")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setShareName("shareName-1582221558")
+            .setPsaRange("psaRange-534274785")
+            .setStoragePool(
+                StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]").toString())
+            .setNetwork("network1843485230")
+            .setServiceLevel(ServiceLevel.forNumber(0))
+            .setCapacityGib(498394811)
+            .setExportPolicy(ExportPolicy.newBuilder().build())
+            .addAllProtocols(new ArrayList<Protocols>())
+            .addAllSmbSettings(new ArrayList<SMBSettings>())
+            .addAllMountOptions(new ArrayList<MountOption>())
+            .setUnixPermissions("unixPermissions882114012")
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setSnapshotPolicy(SnapshotPolicy.newBuilder().build())
+            .setSnapReserve(-1429587641)
+            .setSnapshotDirectory(true)
+            .setUsedGib(-279083970)
+            .setSecurityStyle(SecurityStyle.forNumber(0))
+            .setKerberosEnabled(true)
+            .setLdapEnabled(true)
+            .setActiveDirectory(
+                ActiveDirectoryName.of("[PROJECT]", "[LOCATION]", "[ACTIVE_DIRECTORY]").toString())
+            .setRestoreParameters(RestoreParameters.newBuilder().build())
+            .setKmsConfig(KmsConfigName.of("[PROJECT]", "[LOCATION]", "[KMS_CONFIG]").toString())
+            .setEncryptionType(EncryptionType.forNumber(0))
+            .setHasReplication(true)
+            .setBackupConfig(BackupConfig.newBuilder().build())
+            .addAllRestrictedActions(new ArrayList<RestrictedAction>())
+            .setLargeCapacity(true)
+            .setMultipleEndpoints(true)
+            .setTieringPolicy(TieringPolicy.newBuilder().build())
+            .setReplicaZone("replicaZone-1063236476")
+            .setZone("zone3744684")
+            .setColdTierSizeGib(212809252)
+            .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setCacheParameters(CacheParameters.newBuilder().build())
+            .setHotTierSizeUsedGib(-151116719)
+            .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
+            .setCloneDetails(Volume.CloneDetails.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startSplitTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4193/locations/location-4193/volumes/volume-4193";
+
+    Volume actualResponse = client.startSplitAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startSplitExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4193/locations/location-4193/volumes/volume-4193";
+      client.startSplitAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getSplitStatusTest() throws Exception {
+    SplitStatus expectedResponse =
+        SplitStatus.newBuilder()
+            .setSplitState(SplitState.forNumber(0))
+            .setStateDetails("stateDetails1730982001")
+            .setProgressPercent(-2137894861)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+
+    SplitStatus actualResponse = client.getSplitStatus(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSplitStatusExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      VolumeName name = VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]");
+      client.getSplitStatus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSplitStatusTest2() throws Exception {
+    SplitStatus expectedResponse =
+        SplitStatus.newBuilder()
+            .setSplitState(SplitState.forNumber(0))
+            .setStateDetails("stateDetails1730982001")
+            .setProgressPercent(-2137894861)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-4193/locations/location-4193/volumes/volume-4193";
+
+    SplitStatus actualResponse = client.getSplitStatus(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSplitStatusExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4193/locations/location-4193/volumes/volume-4193";
+      client.getSplitStatus(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -5033,6 +5312,7 @@ public class NetAppClientHttpJsonTest {
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+            .setOntapSource(OntapSource.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5100,6 +5380,7 @@ public class NetAppClientHttpJsonTest {
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+            .setOntapSource(OntapSource.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5167,6 +5448,7 @@ public class NetAppClientHttpJsonTest {
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+            .setOntapSource(OntapSource.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5225,6 +5507,7 @@ public class NetAppClientHttpJsonTest {
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+            .setOntapSource(OntapSource.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5477,6 +5760,7 @@ public class NetAppClientHttpJsonTest {
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+            .setOntapSource(OntapSource.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5503,6 +5787,7 @@ public class NetAppClientHttpJsonTest {
             .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+            .setOntapSource(OntapSource.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5549,6 +5834,7 @@ public class NetAppClientHttpJsonTest {
               .setVolumeRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setBackupRegion(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setEnforcedRetentionEndTime(Timestamp.newBuilder().build())
+              .setOntapSource(OntapSource.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();
@@ -7290,6 +7576,322 @@ public class NetAppClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void restoreVolumeTest() throws Exception {
+    RestoreVolumeResponse expectedResponse = RestoreVolumeResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreVolumeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    StoragePoolName name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+    BackupSource backupSource = BackupSource.newBuilder().build();
+    OntapVolumeTarget ontapVolumeTarget = OntapVolumeTarget.newBuilder().build();
+
+    RestoreVolumeResponse actualResponse =
+        client.restoreVolumeAsync(name, backupSource, ontapVolumeTarget).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restoreVolumeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StoragePoolName name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+      BackupSource backupSource = BackupSource.newBuilder().build();
+      OntapVolumeTarget ontapVolumeTarget = OntapVolumeTarget.newBuilder().build();
+      client.restoreVolumeAsync(name, backupSource, ontapVolumeTarget).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void restoreVolumeTest2() throws Exception {
+    RestoreVolumeResponse expectedResponse = RestoreVolumeResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("restoreVolumeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1868/locations/location-1868/storagePools/storagePool-1868";
+    BackupSource backupSource = BackupSource.newBuilder().build();
+    OntapVolumeTarget ontapVolumeTarget = OntapVolumeTarget.newBuilder().build();
+
+    RestoreVolumeResponse actualResponse =
+        client.restoreVolumeAsync(name, backupSource, ontapVolumeTarget).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void restoreVolumeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1868/locations/location-1868/storagePools/storagePool-1868";
+      BackupSource backupSource = BackupSource.newBuilder().build();
+      OntapVolumeTarget ontapVolumeTarget = OntapVolumeTarget.newBuilder().build();
+      client.restoreVolumeAsync(name, backupSource, ontapVolumeTarget).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBackupConfigsTest() throws Exception {
+    VolumeBackupConfig responsesElement = VolumeBackupConfig.newBuilder().build();
+    ListBackupConfigsResponse expectedResponse =
+        ListBackupConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVolumeBackupConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    StoragePoolName parent = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+
+    ListBackupConfigsPagedResponse pagedListResponse = client.listBackupConfigs(parent);
+
+    List<VolumeBackupConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVolumeBackupConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StoragePoolName parent = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+      client.listBackupConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupConfigsTest2() throws Exception {
+    VolumeBackupConfig responsesElement = VolumeBackupConfig.newBuilder().build();
+    ListBackupConfigsResponse expectedResponse =
+        ListBackupConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllVolumeBackupConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-7693/locations/location-7693/storagePools/storagePool-7693";
+
+    ListBackupConfigsPagedResponse pagedListResponse = client.listBackupConfigs(parent);
+
+    List<VolumeBackupConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getVolumeBackupConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-7693/locations/location-7693/storagePools/storagePool-7693";
+      client.listBackupConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateBackupConfigTest() throws Exception {
+    UpdateBackupConfigResponse expectedResponse =
+        UpdateBackupConfigResponse.newBuilder()
+            .setVolumeUuid("volumeUuid-1552535051")
+            .setBackupConfig(BackupConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBackupConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    StoragePoolName name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+    String volumeUuid = "volumeUuid-1552535051";
+    BackupConfig backupConfig = BackupConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    UpdateBackupConfigResponse actualResponse =
+        client.updateBackupConfigAsync(name, volumeUuid, backupConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBackupConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StoragePoolName name = StoragePoolName.of("[PROJECT]", "[LOCATION]", "[STORAGE_POOL]");
+      String volumeUuid = "volumeUuid-1552535051";
+      BackupConfig backupConfig = BackupConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBackupConfigAsync(name, volumeUuid, backupConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateBackupConfigTest2() throws Exception {
+    UpdateBackupConfigResponse expectedResponse =
+        UpdateBackupConfigResponse.newBuilder()
+            .setVolumeUuid("volumeUuid-1552535051")
+            .setBackupConfig(BackupConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateBackupConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1868/locations/location-1868/storagePools/storagePool-1868";
+    String volumeUuid = "volumeUuid-1552535051";
+    BackupConfig backupConfig = BackupConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    UpdateBackupConfigResponse actualResponse =
+        client.updateBackupConfigAsync(name, volumeUuid, backupConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateBackupConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1868/locations/location-1868/storagePools/storagePool-1868";
+      String volumeUuid = "volumeUuid-1552535051";
+      BackupConfig backupConfig = BackupConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateBackupConfigAsync(name, volumeUuid, backupConfig, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

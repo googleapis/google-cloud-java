@@ -17,6 +17,7 @@
 package com.google.cloud.netapp.v1;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
@@ -255,6 +256,22 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   public OperationCallSettings<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationSettings() {
     return ((NetAppStubSettings) getStubSettings()).revertVolumeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startSplit. */
+  public UnaryCallSettings<StartSplitRequest, Operation> startSplitSettings() {
+    return ((NetAppStubSettings) getStubSettings()).startSplitSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startSplit. */
+  public OperationCallSettings<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).startSplitOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSplitStatus. */
+  public UnaryCallSettings<GetSplitStatusRequest, SplitStatus> getSplitStatusSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getSplitStatusSettings();
   }
 
   /** Returns the object with the settings used for calls to establishVolumePeering. */
@@ -787,6 +804,36 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     return ((NetAppStubSettings) getStubSettings()).executeOntapPatchSettings();
   }
 
+  /** Returns the object with the settings used for calls to restoreVolume. */
+  public UnaryCallSettings<RestoreVolumeRequest, Operation> restoreVolumeSettings() {
+    return ((NetAppStubSettings) getStubSettings()).restoreVolumeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreVolume. */
+  public OperationCallSettings<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).restoreVolumeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupConfigs. */
+  public PagedCallSettings<
+          ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+      listBackupConfigsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listBackupConfigsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupConfig. */
+  public UnaryCallSettings<UpdateBackupConfigRequest, Operation> updateBackupConfigSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackupConfig. */
+  public OperationCallSettings<
+          UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).updateBackupConfigOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1036,6 +1083,22 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public OperationCallSettings.Builder<RevertVolumeRequest, Volume, OperationMetadata>
         revertVolumeOperationSettings() {
       return getStubSettingsBuilder().revertVolumeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startSplit. */
+    public UnaryCallSettings.Builder<StartSplitRequest, Operation> startSplitSettings() {
+      return getStubSettingsBuilder().startSplitSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startSplit. */
+    public OperationCallSettings.Builder<StartSplitRequest, Volume, OperationMetadata>
+        startSplitOperationSettings() {
+      return getStubSettingsBuilder().startSplitOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSplitStatus. */
+    public UnaryCallSettings.Builder<GetSplitStatusRequest, SplitStatus> getSplitStatusSettings() {
+      return getStubSettingsBuilder().getSplitStatusSettings();
     }
 
     /** Returns the builder for the settings used for calls to establishVolumePeering. */
@@ -1584,6 +1647,38 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
     public UnaryCallSettings.Builder<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
         executeOntapPatchSettings() {
       return getStubSettingsBuilder().executeOntapPatchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreVolume. */
+    public UnaryCallSettings.Builder<RestoreVolumeRequest, Operation> restoreVolumeSettings() {
+      return getStubSettingsBuilder().restoreVolumeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreVolume. */
+    public OperationCallSettings.Builder<
+            RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+        restoreVolumeOperationSettings() {
+      return getStubSettingsBuilder().restoreVolumeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupConfigs. */
+    public PagedCallSettings.Builder<
+            ListBackupConfigsRequest, ListBackupConfigsResponse, ListBackupConfigsPagedResponse>
+        listBackupConfigsSettings() {
+      return getStubSettingsBuilder().listBackupConfigsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupConfig. */
+    public UnaryCallSettings.Builder<UpdateBackupConfigRequest, Operation>
+        updateBackupConfigSettings() {
+      return getStubSettingsBuilder().updateBackupConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackupConfig. */
+    public OperationCallSettings.Builder<
+            UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+        updateBackupConfigOperationSettings() {
+      return getStubSettingsBuilder().updateBackupConfigOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -27,7 +27,7 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.BlockingQueue;
@@ -227,7 +227,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         // Advance the cursor,Potentially blocking operation
         this.cursor = this.buffer.take();
         if (this.cursor.getException() != null) {
-          throw new BigQueryJdbcRuntimeException(this.cursor.getException());
+          throw backgroundFetchError(this.cursor.getException());
         }
         this.rowCnt++;
         // Check for end of stream
@@ -240,8 +240,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         return true;
 
       } catch (InterruptedException e) {
-
-        throw new BigQueryJdbcRuntimeException(
+        Thread.currentThread().interrupt();
+        throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
             e);
       }

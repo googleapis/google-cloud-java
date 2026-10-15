@@ -30,7 +30,7 @@ public interface MongodbSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MongoDB collections to include in the stream.
+   * The MongoDB collections to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -43,7 +43,7 @@ public interface MongodbSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MongoDB collections to include in the stream.
+   * The MongoDB collections to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -56,7 +56,7 @@ public interface MongodbSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MongoDB collections to include in the stream.
+   * The MongoDB collections to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster include_objects = 1;</code>
@@ -67,7 +67,7 @@ public interface MongodbSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MongoDB collections to exclude from the stream.
+   * The MongoDB collections to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -80,7 +80,7 @@ public interface MongodbSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MongoDB collections to exclude from the stream.
+   * The MongoDB collections to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -93,7 +93,7 @@ public interface MongodbSourceConfigOrBuilder
    *
    *
    * <pre>
-   * MongoDB collections to exclude from the stream.
+   * The MongoDB collections to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbCluster exclude_objects = 2;</code>
@@ -114,4 +114,34 @@ public interface MongodbSourceConfigOrBuilder
    * @return The maxConcurrentBackfillTasks.
    */
   int getMaxConcurrentBackfillTasks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. MongoDB JSON mode to use for the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for jsonMode.
+   */
+  int getJsonModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. MongoDB JSON mode to use for the stream.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.MongodbJsonMode json_mode = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The jsonMode.
+   */
+  com.google.cloud.datastream.v1.MongodbJsonMode getJsonMode();
 }

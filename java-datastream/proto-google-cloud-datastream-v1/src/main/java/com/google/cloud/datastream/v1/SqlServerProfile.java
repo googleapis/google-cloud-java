@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * SQLServer database profile.
+ * Profile for connecting to a SQLServer source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.SqlServerProfile}
@@ -74,6 +74,7 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datastream.v1.SqlServerProfile.Builder.class);
   }
 
+  private int bitField0_;
   public static final int HOSTNAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -307,6 +308,65 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SSL_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.datastream.v1.SqlServerSslConfig sslConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the SQLServer connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sslConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSslConfig() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the SQLServer connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sslConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerSslConfig getSslConfig() {
+    return sslConfig_ == null
+        ? com.google.cloud.datastream.v1.SqlServerSslConfig.getDefaultInstance()
+        : sslConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. SSL configuration for the SQLServer connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SqlServerSslConfigOrBuilder getSslConfigOrBuilder() {
+    return sslConfig_ == null
+        ? com.google.cloud.datastream.v1.SqlServerSslConfig.getDefaultInstance()
+        : sslConfig_;
+  }
+
   public static final int SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -395,6 +455,9 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(database_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, database_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getSslConfig());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(secretManagerStoredPassword_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, secretManagerStoredPassword_);
     }
@@ -422,6 +485,9 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(database_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, database_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSslConfig());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(secretManagerStoredPassword_)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(7, secretManagerStoredPassword_);
@@ -447,6 +513,10 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     if (!getUsername().equals(other.getUsername())) return false;
     if (!getPassword().equals(other.getPassword())) return false;
     if (!getDatabase().equals(other.getDatabase())) return false;
+    if (hasSslConfig() != other.hasSslConfig()) return false;
+    if (hasSslConfig()) {
+      if (!getSslConfig().equals(other.getSslConfig())) return false;
+    }
     if (!getSecretManagerStoredPassword().equals(other.getSecretManagerStoredPassword()))
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -470,6 +540,10 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getPassword().hashCode();
     hash = (37 * hash) + DATABASE_FIELD_NUMBER;
     hash = (53 * hash) + getDatabase().hashCode();
+    if (hasSslConfig()) {
+      hash = (37 * hash) + SSL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSslConfig().hashCode();
+    }
     hash = (37 * hash) + SECRET_MANAGER_STORED_PASSWORD_FIELD_NUMBER;
     hash = (53 * hash) + getSecretManagerStoredPassword().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -577,7 +651,7 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * SQLServer database profile.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.SqlServerProfile}
@@ -602,10 +676,19 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.datastream.v1.SqlServerProfile.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetSslConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -617,6 +700,11 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       username_ = "";
       password_ = "";
       database_ = "";
+      sslConfig_ = null;
+      if (sslConfigBuilder_ != null) {
+        sslConfigBuilder_.dispose();
+        sslConfigBuilder_ = null;
+      }
       secretManagerStoredPassword_ = "";
       return this;
     }
@@ -669,9 +757,15 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.database_ = database_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.secretManagerStoredPassword_ = secretManagerStoredPassword_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -710,9 +804,12 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.hasSslConfig()) {
+        mergeSslConfig(other.getSslConfig());
+      }
       if (!other.getSecretManagerStoredPassword().isEmpty()) {
         secretManagerStoredPassword_ = other.secretManagerStoredPassword_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -771,10 +868,17 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetSslConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
             case 58:
               {
                 secretManagerStoredPassword_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -1301,6 +1405,220 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.datastream.v1.SqlServerSslConfig sslConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SqlServerSslConfig,
+            com.google.cloud.datastream.v1.SqlServerSslConfig.Builder,
+            com.google.cloud.datastream.v1.SqlServerSslConfigOrBuilder>
+        sslConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sslConfig field is set.
+     */
+    public boolean hasSslConfig() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sslConfig.
+     */
+    public com.google.cloud.datastream.v1.SqlServerSslConfig getSslConfig() {
+      if (sslConfigBuilder_ == null) {
+        return sslConfig_ == null
+            ? com.google.cloud.datastream.v1.SqlServerSslConfig.getDefaultInstance()
+            : sslConfig_;
+      } else {
+        return sslConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSslConfig(com.google.cloud.datastream.v1.SqlServerSslConfig value) {
+      if (sslConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sslConfig_ = value;
+      } else {
+        sslConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSslConfig(
+        com.google.cloud.datastream.v1.SqlServerSslConfig.Builder builderForValue) {
+      if (sslConfigBuilder_ == null) {
+        sslConfig_ = builderForValue.build();
+      } else {
+        sslConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSslConfig(com.google.cloud.datastream.v1.SqlServerSslConfig value) {
+      if (sslConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && sslConfig_ != null
+            && sslConfig_
+                != com.google.cloud.datastream.v1.SqlServerSslConfig.getDefaultInstance()) {
+          getSslConfigBuilder().mergeFrom(value);
+        } else {
+          sslConfig_ = value;
+        }
+      } else {
+        sslConfigBuilder_.mergeFrom(value);
+      }
+      if (sslConfig_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSslConfig() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      sslConfig_ = null;
+      if (sslConfigBuilder_ != null) {
+        sslConfigBuilder_.dispose();
+        sslConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SqlServerSslConfig.Builder getSslConfigBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetSslConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SqlServerSslConfigOrBuilder getSslConfigOrBuilder() {
+      if (sslConfigBuilder_ != null) {
+        return sslConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return sslConfig_ == null
+            ? com.google.cloud.datastream.v1.SqlServerSslConfig.getDefaultInstance()
+            : sslConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. SSL configuration for the SQLServer connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SqlServerSslConfig ssl_config = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SqlServerSslConfig,
+            com.google.cloud.datastream.v1.SqlServerSslConfig.Builder,
+            com.google.cloud.datastream.v1.SqlServerSslConfigOrBuilder>
+        internalGetSslConfigFieldBuilder() {
+      if (sslConfigBuilder_ == null) {
+        sslConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SqlServerSslConfig,
+                com.google.cloud.datastream.v1.SqlServerSslConfig.Builder,
+                com.google.cloud.datastream.v1.SqlServerSslConfigOrBuilder>(
+                getSslConfig(), getParentForChildren(), isClean());
+        sslConfig_ = null;
+      }
+      return sslConfigBuilder_;
+    }
+
     private java.lang.Object secretManagerStoredPassword_ = "";
 
     /**
@@ -1375,7 +1693,7 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       secretManagerStoredPassword_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1396,7 +1714,7 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSecretManagerStoredPassword() {
       secretManagerStoredPassword_ = getDefaultInstance().getSecretManagerStoredPassword();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1422,7 +1740,7 @@ public final class SqlServerProfile extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       secretManagerStoredPassword_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

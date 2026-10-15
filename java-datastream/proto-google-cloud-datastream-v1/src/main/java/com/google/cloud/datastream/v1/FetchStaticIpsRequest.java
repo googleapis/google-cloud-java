@@ -137,10 +137,10 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Maximum number of Ips to return, will likely not be specified.
+   * Optional. Maximum number of Ips to return, will likely not be specified.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -158,11 +158,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A page token, received from a previous `ListStaticIps` call.
+   * Optional. A page token, received from a previous `ListStaticIps` call.
    * will likely not be specified.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -183,11 +183,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * A page token, received from a previous `ListStaticIps` call.
+   * Optional. A page token, received from a previous `ListStaticIps` call.
    * will likely not be specified.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -692,10 +692,10 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Maximum number of Ips to return, will likely not be specified.
+     * Optional. Maximum number of Ips to return, will likely not be specified.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -708,10 +708,10 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Maximum number of Ips to return, will likely not be specified.
+     * Optional. Maximum number of Ips to return, will likely not be specified.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -728,10 +728,10 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Maximum number of Ips to return, will likely not be specified.
+     * Optional. Maximum number of Ips to return, will likely not be specified.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -748,11 +748,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A page token, received from a previous `ListStaticIps` call.
+     * Optional. A page token, received from a previous `ListStaticIps` call.
      * will likely not be specified.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -772,11 +772,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A page token, received from a previous `ListStaticIps` call.
+     * Optional. A page token, received from a previous `ListStaticIps` call.
      * will likely not be specified.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -796,11 +796,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A page token, received from a previous `ListStaticIps` call.
+     * Optional. A page token, received from a previous `ListStaticIps` call.
      * will likely not be specified.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -819,11 +819,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A page token, received from a previous `ListStaticIps` call.
+     * Optional. A page token, received from a previous `ListStaticIps` call.
      * will likely not be specified.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -838,11 +838,11 @@ public final class FetchStaticIpsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * A page token, received from a previous `ListStaticIps` call.
+     * Optional. A page token, received from a previous `ListStaticIps` call.
      * will likely not be specified.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

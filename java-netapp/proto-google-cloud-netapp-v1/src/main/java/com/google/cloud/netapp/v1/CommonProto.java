@@ -59,14 +59,19 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "#google/cloud/netapp/v1/common.proto\022\026g"
-          + "oogle.cloud.netapp.v1\032\037google/api/field_behavior.proto\"\345\001\n"
+          + "oogle.cloud.netapp.v1\032\037google/api/field_behavior.proto\"\222\003\n"
           + "\020LocationMetadata\022K\n"
           + "\030supported_service_levels\030\001"
           + " \003(\0162$.google.cloud.netapp.v1.ServiceLevelB\003\340A\003\022P\n"
           + "\032supported_flex_performance\030\002"
           + " \003(\0162\'.google.cloud.netapp.v1.FlexPerformanceB\003\340A\003\022\024\n"
           + "\007has_vcp\030\003 \001(\010B\003\340A\003\022\034\n"
-          + "\017has_ontap_proxy\030\004 \001(\010B\003\340A\003\"%\n"
+          + "\017has_ontap_proxy\030\004 \001(\010B\003\340A\003\022`\n"
+          + "\025flex_performance_tier\030\005 \001(\0162<."
+          + "google.cloud.netapp.v1.LocationMetadata.FlexPerformanceTierB\003\340A\003\"I\n"
+          + "\023FlexPerformanceTier\022%\n"
+          + "!FLEX_PERFORMANCE_TIER_UNSPECIFIED\020\000\022\013\n"
+          + "\007LIMITED\020\001\"%\n"
           + "\014UserCommands\022\025\n"
           + "\010commands\030\001 \003(\tB\003\340A\003*_\n"
           + "\014ServiceLevel\022\035\n"
@@ -108,10 +113,10 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\005LINUX\020\001\022\013\n"
           + "\007WINDOWS\020\002\022\010\n"
           + "\004ESXI\020\003B\255\001\n"
-          + "\032com.google.cloud.netapp.v1B\013CommonProtoP\001Z2cloud.google.com/go/netapp/apiv"
-          + "1/netapppb;netapppb\252\002\026Google.Cloud.NetAp"
-          + "p.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google::"
-          + "Cloud::NetApp::V1b\006proto3"
+          + "\032com.google.cloud.netapp.v1B\013CommonProtoP\001Z2cloud.google.com/g"
+          + "o/netapp/apiv1/netapppb;netapppb\252\002\026Googl"
+          + "e.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetApp\\"
+          + "V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -125,7 +130,11 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_LocationMetadata_descriptor,
             new java.lang.String[] {
-              "SupportedServiceLevels", "SupportedFlexPerformance", "HasVcp", "HasOntapProxy",
+              "SupportedServiceLevels",
+              "SupportedFlexPerformance",
+              "HasVcp",
+              "HasOntapProxy",
+              "FlexPerformanceTier",
             });
     internal_static_google_cloud_netapp_v1_UserCommands_descriptor =
         getDescriptor().getMessageType(1);

@@ -467,7 +467,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
 
     connection.close();
-    assertThrows(IllegalStateException.class, connection::createStatement);
+    assertThrows(SQLException.class, connection::createStatement);
   }
 
   @Test
@@ -477,7 +477,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
 
     connection.close();
-    assertThrows(IllegalStateException.class, () -> connection.createStatement(1, 1, 1));
+    assertThrows(SQLException.class, () -> connection.createStatement(1, 1, 1));
   }
 
   @Test
@@ -487,7 +487,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
 
     connection.close();
-    assertThrows(IllegalStateException.class, () -> connection.createStatement(1, 1));
+    assertThrows(SQLException.class, () -> connection.createStatement(1, 1));
   }
 
   @Test
@@ -496,14 +496,14 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(session_enabled_connection_uri)
             .unwrap(BigQueryConnection.class);
     connection.close();
-    assertThrows(IllegalStateException.class, () -> connection.setAutoCommit(true));
+    assertThrows(SQLException.class, () -> connection.setAutoCommit(true));
   }
 
   @Test
   public void testSetCommitToFalseWithoutSessionEnabledThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
         DriverManager.getConnection(connection_uri).unwrap(BigQueryConnection.class);
-    assertThrows(IllegalStateException.class, () -> connection.setAutoCommit(false));
+    assertThrows(SQLException.class, () -> connection.setAutoCommit(false));
     connection.close();
   }
 
@@ -513,14 +513,14 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(session_enabled_connection_uri)
             .unwrap(BigQueryConnection.class);
     connection.close();
-    assertThrows(IllegalStateException.class, connection::commit);
+    assertThrows(SQLException.class, connection::commit);
   }
 
   @Test
   public void testCommitToFalseWithoutSessionEnabledThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
         DriverManager.getConnection(connection_uri).unwrap(BigQueryConnection.class);
-    assertThrows(IllegalStateException.class, connection::commit);
+    assertThrows(SQLException.class, connection::commit);
     connection.close();
   }
 
@@ -529,7 +529,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     BigQueryConnection connection =
         DriverManager.getConnection(session_enabled_connection_uri)
             .unwrap(BigQueryConnection.class);
-    assertThrows(IllegalStateException.class, connection::commit);
+    assertThrows(SQLException.class, connection::commit);
     connection.close();
   }
 
@@ -581,14 +581,14 @@ public class ITBigQueryJDBCTest extends ITBase {
         DriverManager.getConnection(session_enabled_connection_uri)
             .unwrap(BigQueryConnection.class);
     connection.close();
-    assertThrows(IllegalStateException.class, connection::rollback);
+    assertThrows(SQLException.class, connection::rollback);
   }
 
   @Test
   public void testRollbackToFalseWithoutSessionEnabledThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
         DriverManager.getConnection(connection_uri).unwrap(BigQueryConnection.class);
-    assertThrows(IllegalStateException.class, connection::rollback);
+    assertThrows(SQLException.class, connection::rollback);
     connection.close();
   }
 
@@ -597,7 +597,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     BigQueryConnection connection =
         DriverManager.getConnection(session_enabled_connection_uri)
             .unwrap(BigQueryConnection.class);
-    assertThrows(IllegalStateException.class, connection::rollback);
+    assertThrows(SQLException.class, connection::rollback);
     connection.close();
   }
 
@@ -717,8 +717,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     connection.close();
     assertThrows(
-        IllegalStateException.class,
-        () -> connection.unwrap(BigQueryConnection.class).getLocation());
+        SQLException.class, () -> connection.unwrap(BigQueryConnection.class).getLocation());
     connection.close();
   }
 
@@ -729,8 +728,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     connection.close();
     assertThrows(
-        IllegalStateException.class,
-        () -> connection.unwrap(BigQueryConnection.class).getDefaultDataset());
+        SQLException.class, () -> connection.unwrap(BigQueryConnection.class).getDefaultDataset());
   }
 
   @Test
@@ -739,7 +737,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
 
     connection.close();
-    assertThrows(IllegalStateException.class, connection::getAutoCommit);
+    assertThrows(SQLException.class, connection::getAutoCommit);
   }
 
   @Test
@@ -748,7 +746,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
 
     connection.close();
-    assertThrows(IllegalStateException.class, () -> connection.setAutoCommit(true));
+    assertThrows(SQLException.class, () -> connection.setAutoCommit(true));
   }
 
   @Test

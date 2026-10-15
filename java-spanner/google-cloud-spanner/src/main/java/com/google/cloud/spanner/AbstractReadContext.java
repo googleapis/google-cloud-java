@@ -57,13 +57,11 @@ import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
-import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
@@ -573,72 +571,11 @@ abstract class AbstractReadContext
       } finally {
         txnLock.unlock();
       }
-      // Make sure that we decrement the counter exactly once, either
-      // when the query is actually executed, or when the result set is closed,
-      // or if something goes wrong when creating the result set.
-      final AtomicBoolean decremented = new AtomicBoolean(false);
-      final AtomicBoolean closedBeforeUse = new AtomicBoolean(false);
       try {
         return new AsyncResultSetImpl(
-            executorProvider,
-            () -> {
-              if (closedBeforeUse.get()) {
-                return ResultSets.forRows(Type.struct(), Collections.emptyList());
-              }
-              try {
-                ResultSet resultSet = resultSetSupplier.get();
-                if (!shouldUseInlinedBegin() && decremented.compareAndSet(false, true)) {
-                  decrementPendingStartsAndSignal();
-                }
-                return resultSet;
-              } catch (Throwable throwable) {
-                if (decremented.compareAndSet(false, true)) {
-                  decrementPendingStartsAndSignal();
-                }
-                throw throwable;
-              }
-            },
-            bufferRows) {
-          @Override
-          boolean initiateStreaming(StreamMessageListener streamMessageListener) {
-            try {
-              return super.initiateStreaming(streamMessageListener);
-            } finally {
-              if (decremented.compareAndSet(false, true)) {
-                decrementPendingStartsAndSignal();
-              }
-            }
-          }
-
-          @Override
-          public boolean next() throws SpannerException {
-            try {
-              return super.next();
-            } finally {
-              if (decremented.compareAndSet(false, true)) {
-                decrementPendingStartsAndSignal();
-              }
-            }
-          }
-
-          @Override
-          public void close() {
-            if (!isUsed()) {
-              closedBeforeUse.set(true);
-            }
-            try {
-              super.close();
-            } finally {
-              if (!isUsed() && decremented.compareAndSet(false, true)) {
-                decrementPendingStartsAndSignal();
-              }
-            }
-          }
-        };
+            executorProvider, resultSetSupplier, bufferRows, this::decrementPendingStartsAndSignal);
       } catch (Throwable throwable) {
-        if (decremented.compareAndSet(false, true)) {
-          decrementPendingStartsAndSignal();
-        }
+        decrementPendingStartsAndSignal();
         throw throwable;
       }
     }

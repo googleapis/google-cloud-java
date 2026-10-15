@@ -55,6 +55,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
     name_ = "";
     displayName_ = "";
     errors_ = java.util.Collections.emptyList();
+    customizationRules_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -479,6 +480,107 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
         : sourceObject_;
   }
 
+  public static final int CUSTOMIZATION_RULES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+      customizationRules_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+      getCustomizationRulesList() {
+    return customizationRules_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+      getCustomizationRulesOrBuilderList() {
+    return customizationRules_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCustomizationRulesCount() {
+    return customizationRules_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule getCustomizationRules(
+      int index) {
+    return customizationRules_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder
+      getCustomizationRulesOrBuilder(int index) {
+    return customizationRules_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -514,6 +616,9 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(8, getSourceObject());
     }
+    for (int i = 0; i < customizationRules_.size(); i++) {
+      output.writeMessage(9, customizationRules_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -543,6 +648,10 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSourceObject());
+    }
+    for (int i = 0; i < customizationRules_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(9, customizationRules_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -579,6 +688,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
     if (hasSourceObject()) {
       if (!getSourceObject().equals(other.getSourceObject())) return false;
     }
+    if (!getCustomizationRulesList().equals(other.getCustomizationRulesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -613,6 +723,10 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
     if (hasSourceObject()) {
       hash = (37 * hash) + SOURCE_OBJECT_FIELD_NUMBER;
       hash = (53 * hash) + getSourceObject().hashCode();
+    }
+    if (getCustomizationRulesCount() > 0) {
+      hash = (37 * hash) + CUSTOMIZATION_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomizationRulesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -760,6 +874,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
         internalGetErrorsFieldBuilder();
         internalGetBackfillJobFieldBuilder();
         internalGetSourceObjectFieldBuilder();
+        internalGetCustomizationRulesFieldBuilder();
       }
     }
 
@@ -796,6 +911,13 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
         sourceObjectBuilder_.dispose();
         sourceObjectBuilder_ = null;
       }
+      if (customizationRulesBuilder_ == null) {
+        customizationRules_ = java.util.Collections.emptyList();
+      } else {
+        customizationRules_ = null;
+        customizationRulesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -840,6 +962,15 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
         result.errors_ = errors_;
       } else {
         result.errors_ = errorsBuilder_.build();
+      }
+      if (customizationRulesBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          customizationRules_ = java.util.Collections.unmodifiableList(customizationRules_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.customizationRules_ = customizationRules_;
+      } else {
+        result.customizationRules_ = customizationRulesBuilder_.build();
       }
     }
 
@@ -934,6 +1065,33 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
       if (other.hasSourceObject()) {
         mergeSourceObject(other.getSourceObject());
       }
+      if (customizationRulesBuilder_ == null) {
+        if (!other.customizationRules_.isEmpty()) {
+          if (customizationRules_.isEmpty()) {
+            customizationRules_ = other.customizationRules_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureCustomizationRulesIsMutable();
+            customizationRules_.addAll(other.customizationRules_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.customizationRules_.isEmpty()) {
+          if (customizationRulesBuilder_.isEmpty()) {
+            customizationRulesBuilder_.dispose();
+            customizationRulesBuilder_ = null;
+            customizationRules_ = other.customizationRules_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            customizationRulesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCustomizationRulesFieldBuilder()
+                    : null;
+          } else {
+            customizationRulesBuilder_.addAllMessages(other.customizationRules_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1013,6 +1171,20 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 74:
+              {
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule m =
+                    input.readMessage(
+                        com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.parser(),
+                        extensionRegistry);
+                if (customizationRulesBuilder_ == null) {
+                  ensureCustomizationRulesIsMutable();
+                  customizationRules_.add(m);
+                } else {
+                  customizationRulesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2479,6 +2651,468 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessage
         sourceObject_ = null;
       }
       return sourceObjectBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+        customizationRules_ = java.util.Collections.emptyList();
+
+    private void ensureCustomizationRulesIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        customizationRules_ =
+            new java.util.ArrayList<
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>(
+                customizationRules_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule,
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder,
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+        customizationRulesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+        getCustomizationRulesList() {
+      if (customizationRulesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(customizationRules_);
+      } else {
+        return customizationRulesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getCustomizationRulesCount() {
+      if (customizationRulesBuilder_ == null) {
+        return customizationRules_.size();
+      } else {
+        return customizationRulesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule getCustomizationRules(
+        int index) {
+      if (customizationRulesBuilder_ == null) {
+        return customizationRules_.get(index);
+      } else {
+        return customizationRulesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomizationRules(
+        int index, com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule value) {
+      if (customizationRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.set(index, value);
+        onChanged();
+      } else {
+        customizationRulesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCustomizationRules(
+        int index,
+        com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder builderForValue) {
+      if (customizationRulesBuilder_ == null) {
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        customizationRulesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomizationRules(
+        com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule value) {
+      if (customizationRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.add(value);
+        onChanged();
+      } else {
+        customizationRulesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomizationRules(
+        int index, com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule value) {
+      if (customizationRulesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.add(index, value);
+        onChanged();
+      } else {
+        customizationRulesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomizationRules(
+        com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder builderForValue) {
+      if (customizationRulesBuilder_ == null) {
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.add(builderForValue.build());
+        onChanged();
+      } else {
+        customizationRulesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCustomizationRules(
+        int index,
+        com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder builderForValue) {
+      if (customizationRulesBuilder_ == null) {
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        customizationRulesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllCustomizationRules(
+        java.lang.Iterable<
+                ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+            values) {
+      if (customizationRulesBuilder_ == null) {
+        ensureCustomizationRulesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customizationRules_);
+        onChanged();
+      } else {
+        customizationRulesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCustomizationRules() {
+      if (customizationRulesBuilder_ == null) {
+        customizationRules_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        customizationRulesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeCustomizationRules(int index) {
+      if (customizationRulesBuilder_ == null) {
+        ensureCustomizationRulesIsMutable();
+        customizationRules_.remove(index);
+        onChanged();
+      } else {
+        customizationRulesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder
+        getCustomizationRulesBuilder(int index) {
+      return internalGetCustomizationRulesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder
+        getCustomizationRulesOrBuilder(int index) {
+      if (customizationRulesBuilder_ == null) {
+        return customizationRules_.get(index);
+      } else {
+        return customizationRulesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+        getCustomizationRulesOrBuilderList() {
+      if (customizationRulesBuilder_ != null) {
+        return customizationRulesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(customizationRules_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder
+        addCustomizationRulesBuilder() {
+      return internalGetCustomizationRulesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder
+        addCustomizationRulesBuilder(int index) {
+      return internalGetCustomizationRulesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The customization rules for the object. These rules are
+     * derived from the parent Stream's `rule_sets` and represent the intended
+     * configuration for the object.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder>
+        getCustomizationRulesBuilderList() {
+      return internalGetCustomizationRulesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule,
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder,
+            com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+        internalGetCustomizationRulesFieldBuilder() {
+      if (customizationRulesBuilder_ == null) {
+        customizationRulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule,
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule.Builder,
+                com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>(
+                customizationRules_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        customizationRules_ = null;
+      }
+      return customizationRulesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.StreamObject)

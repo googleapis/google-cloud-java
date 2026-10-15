@@ -56,10 +56,10 @@ public interface GcsProfileOrBuilder
    *
    *
    * <pre>
-   * The root path inside the Cloud Storage bucket.
+   * Optional. The root path inside the Cloud Storage bucket.
    * </pre>
    *
-   * <code>string root_path = 2;</code>
+   * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The rootPath.
    */
@@ -69,10 +69,10 @@ public interface GcsProfileOrBuilder
    *
    *
    * <pre>
-   * The root path inside the Cloud Storage bucket.
+   * Optional. The root path inside the Cloud Storage bucket.
    * </pre>
    *
-   * <code>string root_path = 2;</code>
+   * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for rootPath.
    */

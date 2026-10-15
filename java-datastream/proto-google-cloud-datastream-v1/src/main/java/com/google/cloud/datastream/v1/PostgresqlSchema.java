@@ -80,7 +80,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Schema name.
+   * The schema name.
    * </pre>
    *
    * <code>string schema = 1;</code>
@@ -104,7 +104,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Schema name.
+   * The schema name.
    * </pre>
    *
    * <code>string schema = 1;</code>
@@ -589,7 +589,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Schema name.
+     * The schema name.
      * </pre>
      *
      * <code>string schema = 1;</code>
@@ -612,7 +612,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Schema name.
+     * The schema name.
      * </pre>
      *
      * <code>string schema = 1;</code>
@@ -635,7 +635,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Schema name.
+     * The schema name.
      * </pre>
      *
      * <code>string schema = 1;</code>
@@ -657,7 +657,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Schema name.
+     * The schema name.
      * </pre>
      *
      * <code>string schema = 1;</code>
@@ -675,7 +675,7 @@ public final class PostgresqlSchema extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Schema name.
+     * The schema name.
      * </pre>
      *
      * <code>string schema = 1;</code>

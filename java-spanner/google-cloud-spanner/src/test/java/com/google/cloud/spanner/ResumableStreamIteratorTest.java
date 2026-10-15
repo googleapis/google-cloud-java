@@ -795,8 +795,7 @@ public class ResumableStreamIteratorTest {
 
     assertFalse(resumableStreamIterator.isDataAvailable());
 
-    java.util.concurrent.ExecutorService feeder =
-        java.util.concurrent.Executors.newSingleThreadExecutor();
+    ExecutorService feeder = Executors.newSingleThreadExecutor();
     try {
       feeder.submit(
           () -> {

@@ -359,6 +359,11 @@ public class AsyncResultSetImplTest {
     final AtomicInteger callbackCounter = new AtomicInteger();
     final BlockingDeque<Object> queue = new LinkedBlockingDeque<>(1);
     final AtomicBoolean paused = new AtomicBoolean();
+    // Clearing the paused flag and calling resume() must be atomic with respect to the callback
+    // setting the paused flag. Otherwise, the test thread could clear the flag before the callback
+    // sets it, and then call resume() after the callback returned PAUSE. The next callback would
+    // then see a stale paused flag, even though resume() was correctly called.
+    final Object pauseLock = new Object();
     try (AsyncResultSetImpl rs =
         new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
       ApiFuture<Void> callbackResult =
@@ -370,7 +375,9 @@ public class AsyncResultSetImplTest {
                 try {
                   switch (resultSet.tryNext()) {
                     case OK:
-                      paused.set(true);
+                      synchronized (pauseLock) {
+                        paused.set(true);
+                      }
                       queue.put(new Object());
                       return CallbackResponse.PAUSE;
                     case DONE:
@@ -391,8 +398,10 @@ public class AsyncResultSetImplTest {
           rowCounter++;
         }
         Thread.yield();
-        paused.set(false);
-        rs.resume();
+        synchronized (pauseLock) {
+          paused.set(false);
+          rs.resume();
+        }
       }
       // Empty the queue to ensure we count all elements.
       while (queue.poll() != null) {
@@ -516,6 +525,40 @@ public class AsyncResultSetImplTest {
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
       assertThat(se.getMessage()).contains("async test");
       assertThat(callbackCounter.get()).isEqualTo(1);
+    }
+  }
+
+  @Test
+  public void callbackReturnsErrorWhileBufferIsFull_shouldStopProducer() throws Exception {
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    // Return more rows than fit in the buffer, so the producer will wait for the buffer to be
+    // consumed by the callback. The callback fails instead of consuming any rows.
+    final int simulatedRows = AsyncResultSetImpl.DEFAULT_BUFFER_SIZE * 10;
+    final AtomicInteger producedRows = new AtomicInteger();
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenAnswer(ignored -> producedRows.incrementAndGet() <= simulatedRows);
+    when(delegate.getCurrentRowAsStruct()).thenReturn(mock(Struct.class));
+    try (AsyncResultSetImpl rs =
+        new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> result =
+          rs.setCallback(
+              executor,
+              ignored -> {
+                throw new RuntimeException("async test");
+              });
+      // The result must complete with the error from the callback. Before the fix, the producer
+      // would keep waiting for the (full) buffer to be consumed, and the result never completed.
+      ExecutionException e =
+          assertThrows(ExecutionException.class, () -> result.get(30L, TimeUnit.SECONDS));
+      assertThat(e.getCause()).isInstanceOf(SpannerException.class);
+      SpannerException se = (SpannerException) e.getCause();
+      assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
+      assertThat(se.getMessage()).contains("async test");
+      // The producer should stop and release the underlying result set.
+      Mockito.verify(delegate).close();
+      assertThat(producedRows.get()).isLessThan(simulatedRows);
+    } finally {
+      executor.shutdown();
     }
   }
 
@@ -1330,14 +1373,19 @@ public class AsyncResultSetImplTest {
   }
 
   @Test
-  public void testIsUsed() throws Exception {
+  public void testOnStartOrClose() throws Exception {
     ResultSet delegate = mock(ResultSet.class);
     when(delegate.next()).thenReturn(true, false);
     when(delegate.getCurrentRowAsStruct()).thenReturn(mock(Struct.class));
+    AtomicInteger asyncNotifications = new AtomicInteger();
 
     try (AsyncResultSetImpl asyncResultSet =
-        new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
-      assertFalse(asyncResultSet.isUsed());
+        new AsyncResultSetImpl(
+            simpleProvider,
+            () -> delegate,
+            AsyncResultSetImpl.DEFAULT_BUFFER_SIZE,
+            asyncNotifications::incrementAndGet)) {
+      assertEquals(0, asyncNotifications.get());
       ExecutorService executor = Executors.newSingleThreadExecutor();
       try {
         ApiFuture<Void> future =
@@ -1347,24 +1395,29 @@ public class AsyncResultSetImplTest {
                   resultSet.tryNext();
                   return CallbackResponse.DONE;
                 });
-        assertTrue(asyncResultSet.isUsed());
         future.get(5, TimeUnit.SECONDS);
-        assertTrue(asyncResultSet.isUsed());
+        assertEquals(1, asyncNotifications.get());
       } finally {
         executor.shutdown();
       }
     }
+    assertEquals(1, asyncNotifications.get());
 
     ResultSet delegateSync = mock(ResultSet.class);
     when(delegateSync.next()).thenReturn(true, false);
     when(delegateSync.getCurrentRowAsStruct()).thenReturn(mock(Struct.class));
+    AtomicInteger syncNotifications = new AtomicInteger();
     try (AsyncResultSetImpl asyncResultSetSync =
         new AsyncResultSetImpl(
-            simpleProvider, delegateSync, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
-      assertFalse(asyncResultSetSync.isUsed());
+            simpleProvider,
+            () -> delegateSync,
+            AsyncResultSetImpl.DEFAULT_BUFFER_SIZE,
+            syncNotifications::incrementAndGet)) {
+      assertEquals(0, syncNotifications.get());
       assertTrue(asyncResultSetSync.next());
-      assertTrue(asyncResultSetSync.isUsed());
+      assertEquals(1, syncNotifications.get());
     }
+    assertEquals(1, syncNotifications.get());
   }
 
   @Test
