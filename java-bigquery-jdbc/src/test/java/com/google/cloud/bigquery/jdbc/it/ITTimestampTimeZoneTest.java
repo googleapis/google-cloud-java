@@ -413,7 +413,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
   }
 
   /** For DATETIME, DATE and TIME the Calendar is the zone the digits are interpreted in. */
-  @Disabled
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testCalendarGettersOnWallClockTypes_useCalendarZone(String zone) throws SQLException {
@@ -452,7 +451,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
   }
 
   /** A TIMESTAMP is already a moment, so the Calendar does not change the result. */
-  @Disabled
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testCalendarGettersOnTimestamp_matchNoCalendarGetters(String zone)

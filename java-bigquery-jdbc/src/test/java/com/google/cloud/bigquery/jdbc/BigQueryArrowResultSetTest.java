@@ -43,10 +43,14 @@ import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
@@ -55,10 +59,12 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
+import org.apache.arrow.vector.DateDayVector;
 import org.apache.arrow.vector.DateMilliVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.Float8Vector;
 import org.apache.arrow.vector.IntVector;
+import org.apache.arrow.vector.TimeMicroVector;
 import org.apache.arrow.vector.TimeMilliVector;
 import org.apache.arrow.vector.TimeStampMicroVector;
 import org.apache.arrow.vector.VarBinaryVector;
@@ -76,6 +82,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryArrowResultSetTest {
 
@@ -545,5 +552,110 @@ public class BigQueryArrowResultSetTest {
     assertThat(rs.next()).isTrue();
     assertThat(rs.getString("timeStampField")).isEqualTo("1970-01-01 00:00:00.010000");
     assertThat(rs.getObject("timeStampField")).isEqualTo(new Timestamp(10L));
+  }
+
+  private BigQueryArrowResultSet createTemporalArrowResultSet(Instant ref)
+      throws SQLException, IOException {
+    RootAllocator allocator = new RootAllocator();
+    DateDayVector dateVec = new DateDayVector("d", allocator);
+    dateVec.allocateNew(1);
+    dateVec.set(0, (int) LocalDate.of(2000, 2, 16).toEpochDay());
+    dateVec.setValueCount(1);
+
+    TimeMicroVector timeVec = new TimeMicroVector("t", allocator);
+    timeVec.allocateNew(1);
+    timeVec.set(0, LocalTime.of(10, 30, 46).toNanoOfDay() / 1_000L);
+    timeVec.setValueCount(1);
+
+    long refMicros = ref.getEpochSecond() * 1_000_000L + ref.getNano() / 1_000L;
+    TimeStampMicroVector dtVec = new TimeStampMicroVector("dt", allocator);
+    dtVec.allocateNew(1);
+    dtVec.set(0, refMicros);
+    dtVec.setValueCount(1);
+
+    TimeStampMicroVector tsVec = new TimeStampMicroVector("ts", allocator);
+    tsVec.allocateNew(1);
+    tsVec.set(0, refMicros);
+    tsVec.setValueCount(1);
+
+    VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(dateVec, timeVec, dtVec, tsVec));
+    ArrowRecordBatch batch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+            .build();
+    BlockingQueue<BigQueryArrowBatchWrapper> arrowBuffer = new LinkedBlockingDeque<>();
+    arrowBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+    arrowBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+    Schema schema =
+        Schema.of(
+            Field.of("d", StandardSQLTypeName.DATE),
+            Field.of("t", StandardSQLTypeName.TIME),
+            Field.of("dt", StandardSQLTypeName.DATETIME),
+            Field.of("ts", StandardSQLTypeName.TIMESTAMP));
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+    return BigQueryArrowResultSet.of(
+        schema, arrowSchema, 1, statement, arrowBuffer, mock(Future.class), null);
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testCalendarGettersOnWallClockTypesUseCalendarZone(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      BigQueryArrowResultSet rs =
+          createTemporalArrowResultSet(Instant.parse("2025-01-01T12:34:56.123Z"));
+      assertThat(rs.next()).isTrue();
+
+      Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      Calendar laCal = Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles"));
+      ZoneId laZone = ZoneId.of("America/Los_Angeles");
+
+      assertThat(rs.getDate("d", utcCal).getTime()).isEqualTo(950659200000L);
+      assertThat(rs.getDate("d", laCal).getTime()).isEqualTo(950688000000L);
+      assertThat(rs.getTime("t", utcCal).getTime()).isEqualTo(37846000L);
+      assertThat(rs.getTime("t", laCal).getTime()).isEqualTo(66646000L);
+
+      LocalDateTime dtDigits = LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000);
+      assertThat(rs.getTimestamp("dt", laCal).toInstant())
+          .isEqualTo(dtDigits.atZone(laZone).toInstant());
+      assertThat(
+              Instant.ofEpochMilli(rs.getDate("dt", laCal).getTime()).atZone(laZone).toLocalDate())
+          .isEqualTo(LocalDate.of(2025, 1, 1));
+      assertThat(
+              Instant.ofEpochMilli(rs.getTime("dt", laCal).getTime())
+                  .atZone(laZone)
+                  .toLocalTime()
+                  .withNano(0))
+          .isEqualTo(LocalTime.of(12, 34, 56));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testCalendarGettersOnTimestampIgnoreCalendar(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      Instant ref = Instant.parse("2025-01-01T12:34:56.123Z");
+      BigQueryArrowResultSet rs = createTemporalArrowResultSet(ref);
+      assertThat(rs.next()).isTrue();
+
+      Calendar laCal = Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles"));
+      ZonedDateTime local = ref.atZone(ZoneId.of(jvmZone));
+
+      assertThat(rs.getTimestamp("ts", laCal).toInstant()).isEqualTo(ref);
+      assertThat(rs.getDate("ts", laCal).toLocalDate()).isEqualTo(local.toLocalDate());
+      assertThat(rs.getTime("ts", laCal).toLocalTime()).isEqualTo(local.toLocalTime().withNano(0));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
   }
 }

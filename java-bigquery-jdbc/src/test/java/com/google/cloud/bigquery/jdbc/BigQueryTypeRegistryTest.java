@@ -223,4 +223,44 @@ public class BigQueryTypeRegistryTest {
                 epochMicros, StandardSQLTypeName.TIMESTAMP, Instant.class, null))
         .isEqualTo(microsInstant);
   }
+
+  @Test
+  public void testDatetimeAndTimestampCrossTypeConversionWithZone() throws Exception {
+    ZoneId utc = ZoneId.of("UTC");
+    ZoneId la = ZoneId.of("America/Los_Angeles");
+
+    Date dtDateUtc =
+        BigQueryTypeRegistry.convert(
+            "2000-02-15 10:30:45", StandardSQLTypeName.DATETIME, Date.class, utc);
+    Date dtDateLa =
+        BigQueryTypeRegistry.convert(
+            "2000-02-15 10:30:45", StandardSQLTypeName.DATETIME, Date.class, la);
+    assertThat(dtDateUtc.getTime()).isEqualTo(950572800000L);
+    assertThat(dtDateLa.getTime()).isEqualTo(950601600000L);
+
+    Time dtTimeUtc =
+        BigQueryTypeRegistry.convert(
+            "2000-02-15 10:30:45", StandardSQLTypeName.DATETIME, Time.class, utc);
+    Time dtTimeLa =
+        BigQueryTypeRegistry.convert(
+            "2000-02-15 10:30:45", StandardSQLTypeName.DATETIME, Time.class, la);
+    assertThat(dtTimeUtc.getTime()).isEqualTo(37845000L);
+    assertThat(dtTimeLa.getTime()).isEqualTo(66645000L);
+
+    Date tsDateUtc =
+        BigQueryTypeRegistry.convert(
+            "2025-01-01 12:34:56Z", StandardSQLTypeName.TIMESTAMP, Date.class, utc);
+    Date tsDateLa =
+        BigQueryTypeRegistry.convert(
+            "2025-01-01 12:34:56Z", StandardSQLTypeName.TIMESTAMP, Date.class, la);
+    assertThat(tsDateUtc).isEqualTo(tsDateLa);
+
+    Time tsTimeUtc =
+        BigQueryTypeRegistry.convert(
+            "2025-01-01 12:34:56Z", StandardSQLTypeName.TIMESTAMP, Time.class, utc);
+    Time tsTimeLa =
+        BigQueryTypeRegistry.convert(
+            "2025-01-01 12:34:56Z", StandardSQLTypeName.TIMESTAMP, Time.class, la);
+    assertThat(tsTimeUtc).isEqualTo(tsTimeLa);
+  }
 }

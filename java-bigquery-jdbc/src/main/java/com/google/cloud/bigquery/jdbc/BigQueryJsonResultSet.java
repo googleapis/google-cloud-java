@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.ZoneId;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 
@@ -250,6 +251,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
+    return getObject(columnIndex, (ZoneId) null);
+  }
+
+  @Override
+  protected Object getObject(int columnIndex, ZoneId zone) throws SQLException {
     // columnIndex is SQL index starting at 1
     checkClosed();
     LOG.finestTrace("getObject");
@@ -277,7 +283,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       if (this.enableTimestampPicos && isRangeTimestamp(arrayField)) {
         return formatRangeTimestamp(value);
       }
-      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), zone);
     }
 
     Field fieldSchema = this.schemaFieldList.get(columnIndex - 1);
@@ -298,7 +304,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value.getStringValue(), true);
     }
-    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
+    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), zone);
   }
 
   static String formatRangeTimestamp(FieldValue value) throws SQLException {
