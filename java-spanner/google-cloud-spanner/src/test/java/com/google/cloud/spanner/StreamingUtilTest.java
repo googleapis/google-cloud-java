@@ -90,4 +90,18 @@ public class StreamingUtilTest {
     assertTrue(StreamingUtil.initiateStreaming(forwarder, listener));
     verify(underlyingStreamingResultSet).initiateStreaming(listener);
   }
+
+  @Test
+  public void testIsDataAvailableOnForwardingResultSetSubclassOverridingIsDataAvailable() {
+    ResultSet nonStreamingDelegate = mock(ResultSet.class);
+    ForwardingResultSet customForwarder =
+        new ForwardingResultSet(nonStreamingDelegate) {
+          @Override
+          public boolean isDataAvailable() {
+            return false;
+          }
+        };
+
+    assertFalse(StreamingUtil.isDataAvailable(customForwarder));
+  }
 }

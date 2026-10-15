@@ -41,24 +41,29 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   private static final Logger logger = Logger.getLogger(GrpcStreamIterator.class.getName());
   static final PartialResultSet END_OF_STREAM = PartialResultSet.newBuilder().build();
   private final int prefetchChunks;
-  private AsyncResultSet.StreamMessageListener streamMessageListener;
+  private volatile AsyncResultSet.StreamMessageListener streamMessageListener;
 
   private final ConsumerImpl consumer;
   private final BlockingQueue<PartialResultSet> stream;
   private final Statement statement;
 
   private volatile SpannerRpc.StreamingCall call;
+  private volatile boolean callInitialized;
   private volatile boolean withBeginTransaction;
   private final boolean lastStatement;
+  private boolean closed;
+  private boolean callCleared;
+  @Nullable private String closeMessage;
   private TimeUnit streamWaitTimeoutUnit;
   private long streamWaitTimeoutValue;
   private volatile SpannerException error;
   private volatile boolean done;
+  private volatile boolean endOfStreamReached;
 
   @VisibleForTesting
   GrpcStreamIterator(
       boolean lastStatement, int prefetchChunks, boolean cancelQueryWhenClientIsClosed) {
-    this(null, lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed);
+    this(null, lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed, false);
   }
 
   @VisibleForTesting
@@ -67,9 +72,20 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
       boolean lastStatement,
       int prefetchChunks,
       boolean cancelQueryWhenClientIsClosed) {
+    this(statement, lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed, false);
+  }
+
+  @VisibleForTesting
+  GrpcStreamIterator(
+      Statement statement,
+      boolean lastStatement,
+      int prefetchChunks,
+      boolean cancelQueryWhenClientIsClosed,
+      boolean withBeginTransaction) {
     this.statement = statement;
     this.lastStatement = lastStatement;
     this.prefetchChunks = prefetchChunks;
+    this.withBeginTransaction = withBeginTransaction;
     this.consumer = new ConsumerImpl(cancelQueryWhenClientIsClosed);
     // One extra to allow for END_OF_STREAM message.
     this.stream = new LinkedBlockingQueue<>(prefetchChunks + 1);
@@ -84,39 +100,67 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   }
 
   public void setCall(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
-    this.call = call;
-    this.withBeginTransaction = withBeginTransaction;
-    ApiCallContext callContext = call.getCallContext();
-    Duration streamWaitTimeout =
-        callContext == null ? null : callContext.getStreamWaitTimeoutDuration();
-    if (streamWaitTimeout != null) {
-      // Determine the timeout unit to use. This reduces the precision to seconds if the timeout
-      // value is more than 1 second, which is lower than the precision that would normally be
-      // used by the stream watchdog (which uses a precision of 10 seconds by default).
-      if (streamWaitTimeout.getSeconds() > 0L) {
-        streamWaitTimeoutValue = streamWaitTimeout.getSeconds();
-        streamWaitTimeoutUnit = TimeUnit.SECONDS;
-      } else if (streamWaitTimeout.getNano() > 0) {
-        streamWaitTimeoutValue = streamWaitTimeout.getNano();
-        streamWaitTimeoutUnit = TimeUnit.NANOSECONDS;
+    boolean shouldCancel;
+    String messageToCancel;
+    synchronized (this) {
+      this.withBeginTransaction = withBeginTransaction;
+      if (!this.callCleared) {
+        this.call = call;
       }
-      // Note that if the stream-wait-timeout is zero, we won't set a timeout at all.
-      // That is consistent with ApiCallContext#withStreamWaitTimeout(Duration.ZERO).
+      this.callInitialized = true;
+      ApiCallContext callContext = call.getCallContext();
+      Duration streamWaitTimeout =
+          callContext == null ? null : callContext.getStreamWaitTimeoutDuration();
+      if (streamWaitTimeout != null) {
+        // Determine the timeout unit to use. This reduces the precision to seconds if the timeout
+        // value is more than 1 second, which is lower than the precision that would normally be
+        // used by the stream watchdog (which uses a precision of 10 seconds by default).
+        if (streamWaitTimeout.getSeconds() > 0L) {
+          streamWaitTimeoutValue = streamWaitTimeout.getSeconds();
+          streamWaitTimeoutUnit = TimeUnit.SECONDS;
+        } else if (streamWaitTimeout.getNano() > 0) {
+          streamWaitTimeoutValue = streamWaitTimeout.getNano();
+          streamWaitTimeoutUnit = TimeUnit.NANOSECONDS;
+        }
+        // Note that if the stream-wait-timeout is zero, we won't set a timeout at all.
+        // That is consistent with ApiCallContext#withStreamWaitTimeout(Duration.ZERO).
+      }
+      shouldCancel = this.closed && !this.callCleared;
+      messageToCancel = this.closeMessage;
+    }
+    if (shouldCancel) {
+      call.cancel(messageToCancel);
+      return;
+    }
+    PartialResultSet pending = stream.peek();
+    if (pending != null) {
+      onStreamMessage(pending);
     }
   }
 
   @Override
   public void close(@Nullable String message) {
-    if (call != null) {
-      call.cancel(message);
+    SpannerRpc.StreamingCall callToCancel = null;
+    synchronized (this) {
+      if (!closed) {
+        closed = true;
+        closeMessage = message;
+        callToCancel = this.call;
+      }
+    }
+    if (callToCancel != null) {
+      callToCancel.cancel(message);
     }
   }
 
   @Override
   @InternalApi
   public void requestPrefetchChunks() {
-    Preconditions.checkState(call != null, "The StreamingCall object is not initialized");
-    call.request(prefetchChunks);
+    Preconditions.checkState(callInitialized, "The StreamingCall object is not initialized");
+    SpannerRpc.StreamingCall currentCall = this.call;
+    if (currentCall != null) {
+      currentCall.request(prefetchChunks);
+    }
   }
 
   @Override
@@ -131,7 +175,14 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
 
   @Override
   public boolean isDataAvailable() {
-    return !stream.isEmpty() || error != null || done;
+    return canPollWithoutBlocking()
+        || ((callInitialized || streamMessageListener == null) && error != null);
+  }
+
+  @Override
+  public boolean canPollWithoutBlocking() {
+    return (callInitialized || streamMessageListener == null)
+        && (endOfStreamReached || (!stream.isEmpty() && error == null));
   }
 
   @Override
@@ -152,19 +203,31 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
     if (next != END_OF_STREAM) {
-      call.request(1);
+      SpannerRpc.StreamingCall currentCall = this.call;
+      if (currentCall != null) {
+        currentCall.request(1);
+      }
+      if (next.getLast()) {
+        // All done - close() no longer needs to cancel the call.
+        synchronized (this) {
+          callCleared = true;
+          call = null;
+        }
+      }
       return next;
     }
 
     // All done - close() no longer needs to cancel the call.
-    call = null;
+    synchronized (this) {
+      callCleared = true;
+      call = null;
+    }
 
     if (error != null) {
-      done = true;
       throw SpannerExceptionFactory.asSpannerException(error);
     }
 
-    done = true;
+    endOfStreamReached = true;
     endOfData();
     return null;
   }
@@ -172,7 +235,9 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   private void addToStream(PartialResultSet results) {
     // We assume that nothing from the user will interrupt gRPC event threads.
     Uninterruptibles.putUninterruptibly(stream, results);
-    onStreamMessage(results);
+    if (callInitialized) {
+      onStreamMessage(results);
+    }
   }
 
   private class ConsumerImpl implements SpannerRpc.ResultStreamConsumer {
@@ -184,17 +249,28 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
 
     @Override
     public void onPartialResultSet(PartialResultSet results) {
+      boolean isLast = results.getLast();
+      if (isLast) {
+        synchronized (GrpcStreamIterator.this) {
+          done = true;
+        }
+      }
       addToStream(results);
-      if (results.getLast()) {
-        done = true;
+      if (isLast) {
         addToStream(END_OF_STREAM);
       }
     }
 
     @Override
     public void onCompleted() {
-      if (!done) {
-        done = true;
+      boolean shouldAddEndOfStream = false;
+      synchronized (GrpcStreamIterator.this) {
+        if (!done) {
+          done = true;
+          shouldAddEndOfStream = true;
+        }
+      }
+      if (shouldAddEndOfStream) {
         addToStream(END_OF_STREAM);
       }
     }
@@ -211,7 +287,16 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
         }
       }
       error = exception;
-      addToStream(END_OF_STREAM);
+      boolean shouldAddEndOfStream = false;
+      synchronized (GrpcStreamIterator.this) {
+        if (!done) {
+          done = true;
+          shouldAddEndOfStream = true;
+        }
+      }
+      if (shouldAddEndOfStream) {
+        addToStream(END_OF_STREAM);
+      }
     }
 
     @Override

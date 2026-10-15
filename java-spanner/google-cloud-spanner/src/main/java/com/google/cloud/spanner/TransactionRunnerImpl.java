@@ -894,6 +894,15 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
 
     @Override
+    void onStartFailed(boolean withBeginTransaction, Throwable throwable) {
+      if (withBeginTransaction
+          && transactionIdFuture != null
+          && !this.transactionIdFuture.isDone()) {
+        this.transactionIdFuture.setException(throwable);
+      }
+    }
+
+    @Override
     public void buffer(Mutation mutation) {
       synchronized (committingLock) {
         if (committing) {

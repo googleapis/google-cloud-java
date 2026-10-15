@@ -93,4 +93,46 @@ public class GrpcValueIteratorTest {
     when(stream.isDataAvailable()).thenReturn(true);
     assertTrue(iterator.isDataAvailable());
   }
+
+  @Test
+  public void testIsDataAvailableWhenCurrentEndsWithChunkedValueAndStreamHasNoData() {
+    PartialResultSet prs1 =
+        PartialResultSet.newBuilder()
+            .setMetadata(
+                ResultSetMetadata.newBuilder()
+                    .setRowType(
+                        StructType.newBuilder()
+                            .addFields(
+                                Field.newBuilder()
+                                    .setName("col")
+                                    .setType(Type.newBuilder().setCode(TypeCode.STRING)))))
+            .addValues(Value.newBuilder().setStringValue("complete_val"))
+            .addValues(Value.newBuilder().setStringValue("chunked_part_1_"))
+            .setChunkedValue(true)
+            .build();
+    PartialResultSet prs2 =
+        PartialResultSet.newBuilder()
+            .addValues(Value.newBuilder().setStringValue("chunked_part_2"))
+            .build();
+    when(stream.hasNext()).thenReturn(true, true, false);
+    when(stream.next()).thenReturn(prs1, prs2);
+
+    GrpcValueIterator iterator = new GrpcValueIterator(stream, listener);
+    when(stream.isDataAvailable()).thenReturn(false);
+
+    // Read the first complete value; pos is now 1 (pointing to the last value in prs1, which has
+    // chunked_value = true).
+    assertTrue(iterator.hasNext());
+    assertEquals("complete_val", iterator.next().getStringValue());
+
+    // Because the remaining value in prs1 is chunked and stream.isDataAvailable() is false,
+    // advancing the iterator would block waiting for prs2, so isDataAvailable() must be false.
+    assertFalse(iterator.isDataAvailable());
+
+    // Once prs2 is available on the stream, isDataAvailable() becomes true.
+    when(stream.isDataAvailable()).thenReturn(true);
+    assertTrue(iterator.isDataAvailable());
+    assertTrue(iterator.hasNext());
+    assertEquals("chunked_part_1_chunked_part_2", iterator.next().getStringValue());
+  }
 }

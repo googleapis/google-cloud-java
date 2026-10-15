@@ -29,12 +29,8 @@ final class StreamingUtil {
   }
 
   static boolean isDataAvailable(ResultSet resultSet) {
-    ResultSet delegate = resultSet;
-    while (delegate instanceof ForwardingResultSet) {
-      delegate = ((ForwardingResultSet) delegate).getDelegate();
-    }
-    if (delegate instanceof StreamingResultSet) {
-      return ((StreamingResultSet) delegate).isDataAvailable();
+    if (resultSet instanceof StreamingResultSet) {
+      return ((StreamingResultSet) resultSet).isDataAvailable();
     }
     return true;
   }

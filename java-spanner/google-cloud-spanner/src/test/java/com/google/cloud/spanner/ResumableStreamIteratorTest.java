@@ -57,6 +57,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -772,9 +774,13 @@ public class ResumableStreamIteratorTest {
     // Empty stream -> false
     assertFalse(resumableStreamIterator.isDataAvailable());
 
-    // Chunk without resume token arrives -> immediately available because GrpcStreamIterator has
-    // data
+    // Chunk without resume token arrives -> drained into buffer, but not flushable yet until a
+    // resume token or EOF arrives (or maxBufferSize is exceeded).
     grpcStream.consumer().onPartialResultSet(resultSet(null, "a"));
+    assertFalse(resumableStreamIterator.isDataAvailable());
+    assertEquals(1, resumableStreamIterator.buffer.size());
+
+    grpcStream.consumer().onCompleted();
     assertTrue(resumableStreamIterator.isDataAvailable());
   }
 
@@ -868,7 +874,7 @@ public class ResumableStreamIteratorTest {
 
     assertFalse(resumableStreamIterator.hasNext());
     assertTrue(resumableStreamIterator.isClosed());
-    verify(streamIterator).close(null);
+    verify(streamIterator).close("cancelled while starting stream");
   }
 
   @Test
@@ -880,9 +886,9 @@ public class ResumableStreamIteratorTest {
     @SuppressWarnings("unchecked")
     AbstractResultSet.CloseableIterator<PartialResultSet> streamIterator =
         mock(AbstractResultSet.CloseableIterator.class);
-    resumableStreamIterator.setStream(streamIterator);
+    assertFalse(resumableStreamIterator.setStream(streamIterator));
 
-    verify(streamIterator).close(null);
+    verify(streamIterator).close("already closed");
   }
 
   @Test
@@ -1402,6 +1408,298 @@ public class ResumableStreamIteratorTest {
     }
     when(streamIterator.isDataAvailable()).thenReturn(false);
     assertTrue(resumableStreamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void startStreamFailureAfterSetStreamDoesNotLeaveStaleStream() {
+    AtomicInteger startCount = new AtomicInteger();
+    ResumableStreamIterator iterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
+            setStream(stream);
+            if (startCount.incrementAndGet() == 1) {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.DEADLINE_EXCEEDED,
+                  "Simulated failure in getTransactionSelector() or rpc.executeQuery()");
+            }
+            SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+            stream.setCall(call, false);
+            stream.consumer().onPartialResultSet(resultSet(ByteString.copyFromUtf8("r1"), "val1"));
+            stream.consumer().onCompleted();
+            return stream;
+          }
+        };
+
+    assertThrows(SpannerException.class, () -> iterator.initiateStreaming(null));
+    // A subsequent attempt to consume or check availability must not be stuck on the unstarted
+    // GrpcStreamIterator from the failed first attempt.
+    assertFalse(iterator.isDataAvailable());
+    ExecutorService testExecutor = Executors.newSingleThreadExecutor();
+    try {
+      assertTrue(testExecutor.submit(iterator::hasNext).get(1, TimeUnit.SECONDS));
+      assertEquals("val1", iterator.next().getValues(0).getStringValue());
+    } catch (Exception e) {
+      throw new AssertionError("iterator.hasNext() got stuck after failed startStream()", e);
+    } finally {
+      testExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void closeBeforeSetCallCancelsUnderlyingCallWithMessage() {
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    ResumableStreamIterator iterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
+            setStream(stream);
+            // Simulate concurrent close(message) while rpc.executeQuery() is in flight before
+            // stream.setCall(call, ...) is invoked.
+            close("Cancelled by test");
+            stream.setCall(call, false);
+            return stream;
+          }
+        };
+
+    iterator.initiateStreaming(null);
+    verify(call).cancel("Cancelled by test");
+  }
+
+  @Test
+  public void isWithBeginTransactionAndIsLastStatementPreservedAfterClose() {
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    ResumableStreamIterator iterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
+            setStream(stream);
+            stream.setCall(call, /* withBeginTransaction= */ true);
+            return stream;
+          }
+        };
+
+    iterator.initiateStreaming(null);
+    assertTrue(iterator.isWithBeginTransaction());
+    assertTrue(iterator.isLastStatement());
+
+    iterator.close("closed");
+    assertTrue(iterator.isWithBeginTransaction());
+    assertTrue(iterator.isLastStatement());
+  }
+
+  @Test
+  public void closeAfterLastTrueWithResumeTokenDoesNotCancelUnderlyingCall() {
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    ResumableStreamIterator iterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
+            setStream(stream);
+            stream.setCall(call, /* withBeginTransaction= */ false);
+            PartialResultSet.Builder builder =
+                PartialResultSet.newBuilder()
+                    .setResumeToken(ByteString.copyFromUtf8("r1"))
+                    .setLast(true);
+            for (int i = 0; i < 20; i++) {
+              builder.addValuesBuilder().setStringValue("v" + i);
+            }
+            stream.consumer().onPartialResultSet(builder.build());
+            return stream;
+          }
+        };
+
+    assertTrue(iterator.hasNext());
+    PartialResultSet prs = iterator.next();
+    assertEquals(20, prs.getValuesCount());
+    // Closing before calling hasNext() a second time should not cancel the stream because the
+    // PartialResultSet had last=true.
+    iterator.close("closed early");
+    Mockito.verify(call, Mockito.never()).cancel(Mockito.any());
+  }
+
+  @Test
+  public void closeWithMultipleChunksCancelsUnlessLastTrueChunkWasConsumed() {
+    for (boolean consumeSecondChunk : new boolean[] {false, true}) {
+      SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+      ResumableStreamIterator iterator =
+          new ResumableStreamIterator(
+              10,
+              "",
+              new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+              new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+              DefaultErrorHandler.INSTANCE,
+              SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+              SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+              NoopRequestIdCreator.INSTANCE) {
+            @Override
+            AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+                @Nullable ByteString resumeToken,
+                AsyncResultSet.StreamMessageListener streamMessageListener,
+                XGoogSpannerRequestId requestId) {
+              GrpcStreamIterator stream =
+                  new GrpcStreamIterator(
+                      /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
+              setStream(stream);
+              stream.setCall(call, /* withBeginTransaction= */ false);
+              PartialResultSet firstChunk =
+                  PartialResultSet.newBuilder()
+                      .setResumeToken(ByteString.copyFromUtf8("r1"))
+                      .setLast(false)
+                      .addValues(Value.newBuilder().setStringValue("v1"))
+                      .build();
+              PartialResultSet secondChunk =
+                  PartialResultSet.newBuilder()
+                      .setResumeToken(ByteString.copyFromUtf8("r2"))
+                      .setLast(true)
+                      .addValues(Value.newBuilder().setStringValue("v2"))
+                      .build();
+              stream.consumer().onPartialResultSet(firstChunk);
+              stream.consumer().onPartialResultSet(secondChunk);
+              return stream;
+            }
+          };
+
+      assertTrue(iterator.hasNext());
+      assertEquals("v1", iterator.next().getValues(0).getStringValue());
+      if (consumeSecondChunk) {
+        assertTrue(iterator.hasNext());
+        assertEquals("v2", iterator.next().getValues(0).getStringValue());
+      }
+      iterator.close("closed");
+      if (consumeSecondChunk) {
+        Mockito.verify(call, Mockito.never()).cancel(Mockito.any());
+      } else {
+        verify(call).cancel("closed");
+      }
+    }
+  }
+
+  @Test
+  public void lastTrueConsumedBeforeSetCallDoesNotCancelWhenClosedBeforeOrAfterSetCall() {
+    for (boolean closeBeforeSetCall : new boolean[] {true, false}) {
+      SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+      GrpcStreamIterator stream =
+          new GrpcStreamIterator(
+              /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
+      stream
+          .consumer()
+          .onPartialResultSet(
+              PartialResultSet.newBuilder()
+                  .setResumeToken(ByteString.copyFromUtf8("r1"))
+                  .setLast(true)
+                  .addValues(Value.newBuilder().setStringValue("v1"))
+                  .build());
+      assertTrue(stream.hasNext());
+      assertEquals("v1", stream.next().getValues(0).getStringValue());
+      if (closeBeforeSetCall) {
+        stream.close("closed before setCall");
+      }
+      stream.setCall(call, /* withBeginTransaction= */ false);
+      if (!closeBeforeSetCall) {
+        stream.close("closed after setCall");
+      }
+      Mockito.verify(call, Mockito.never()).cancel(Mockito.any());
+    }
+  }
+
+  @Test
+  public void concurrentResetDuringStartStreamDoesNotOverwriteStreamOrRequestPrefetch() {
+    @SuppressWarnings("unchecked")
+    AbstractResultSet.CloseableIterator<PartialResultSet> initialStream =
+        mock(AbstractResultSet.CloseableIterator.class);
+    @SuppressWarnings("unchecked")
+    AbstractResultSet.CloseableIterator<PartialResultSet> retryStream =
+        mock(AbstractResultSet.CloseableIterator.class);
+    AtomicInteger startCount = new AtomicInteger();
+
+    ResumableStreamIterator iterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            if (startCount.incrementAndGet() == 1) {
+              assertTrue(setStream(initialStream));
+              // Simulate a concurrent consumer thread resetting and replacing the stream before
+              // the first startStream() returns to startGrpcStreaming().
+              setStream(retryStream);
+              return initialStream;
+            }
+            return retryStream;
+          }
+        };
+
+    iterator.initiateStreaming(null);
+    Mockito.verify(initialStream, Mockito.never()).requestPrefetchChunks();
+    iterator.close("closing");
+    verify(retryStream).close("closing");
+    Mockito.verify(initialStream, Mockito.never()).close(Mockito.any());
   }
 
   static PartialResultSet resultSet(@Nullable ByteString resumeToken, String... data) {

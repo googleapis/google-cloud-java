@@ -57,6 +57,7 @@ import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
+import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
@@ -576,21 +577,55 @@ abstract class AbstractReadContext
       // when the query is actually executed, or when the result set is closed,
       // or if something goes wrong when creating the result set.
       final AtomicBoolean decremented = new AtomicBoolean(false);
+      final AtomicBoolean closedBeforeUse = new AtomicBoolean(false);
       try {
         return new AsyncResultSetImpl(
             executorProvider,
             () -> {
+              if (closedBeforeUse.get()) {
+                return ResultSets.forRows(Type.struct(), Collections.emptyList());
+              }
               try {
-                return resultSetSupplier.get();
-              } finally {
+                ResultSet resultSet = resultSetSupplier.get();
+                if (!shouldUseInlinedBegin() && decremented.compareAndSet(false, true)) {
+                  decrementPendingStartsAndSignal();
+                }
+                return resultSet;
+              } catch (Throwable throwable) {
                 if (decremented.compareAndSet(false, true)) {
                   decrementPendingStartsAndSignal();
                 }
+                throw throwable;
               }
             },
             bufferRows) {
           @Override
+          boolean initiateStreaming(StreamMessageListener streamMessageListener) {
+            try {
+              return super.initiateStreaming(streamMessageListener);
+            } finally {
+              if (decremented.compareAndSet(false, true)) {
+                decrementPendingStartsAndSignal();
+              }
+            }
+          }
+
+          @Override
+          public boolean next() throws SpannerException {
+            try {
+              return super.next();
+            } finally {
+              if (decremented.compareAndSet(false, true)) {
+                decrementPendingStartsAndSignal();
+              }
+            }
+          }
+
+          @Override
           public void close() {
+            if (!isUsed()) {
+              closedBeforeUse.set(true);
+            }
             try {
               super.close();
             } finally {
@@ -1295,16 +1330,6 @@ abstract class AbstractReadContext
               @Nullable ByteString resumeToken,
               AsyncResultSet.StreamMessageListener streamListener,
               XGoogSpannerRequestId requestId) {
-            GrpcStreamIterator stream =
-                new GrpcStreamIterator(
-                    statement,
-                    request.getLastStatement(),
-                    prefetchChunks,
-                    cancelQueryWhenClientIsClosed);
-            setStream(stream);
-            if (streamListener != null) {
-              stream.registerListener(streamListener);
-            }
             if (partitionToken != null) {
               request.setPartitionToken(partitionToken);
             }
@@ -1319,6 +1344,24 @@ abstract class AbstractReadContext
               request.setTransaction(selector);
             }
             boolean withBeginTransaction = request.getTransaction().hasBegin();
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    statement,
+                    request.getLastStatement(),
+                    prefetchChunks,
+                    cancelQueryWhenClientIsClosed,
+                    withBeginTransaction);
+            if (streamListener != null) {
+              stream.registerListener(streamListener);
+            }
+            if (!setStream(stream)) {
+              onStartFailed(
+                  withBeginTransaction,
+                  SpannerExceptionFactory.newSpannerException(
+                      ErrorCode.FAILED_PRECONDITION,
+                      "ResultSet was closed before a transaction id was returned"));
+              return stream;
+            }
             SpannerRpc.StreamingCall call;
             try {
               call =
@@ -1534,13 +1577,6 @@ abstract class AbstractReadContext
               @Nullable ByteString resumeToken,
               AsyncResultSet.StreamMessageListener streamListener,
               XGoogSpannerRequestId requestId) {
-            GrpcStreamIterator stream =
-                new GrpcStreamIterator(
-                    lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed);
-            setStream(stream);
-            if (streamListener != null) {
-              stream.registerListener(streamListener);
-            }
             TransactionSelector selector = null;
             if (resumeToken != null) {
               builder.setResumeToken(resumeToken);
@@ -1553,6 +1589,24 @@ abstract class AbstractReadContext
             }
             builder.setRequestOptions(buildRequestOptions(readOptions));
             boolean withBeginTransaction = builder.getTransaction().hasBegin();
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    null,
+                    lastStatement,
+                    prefetchChunks,
+                    cancelQueryWhenClientIsClosed,
+                    withBeginTransaction);
+            if (streamListener != null) {
+              stream.registerListener(streamListener);
+            }
+            if (!setStream(stream)) {
+              onStartFailed(
+                  withBeginTransaction,
+                  SpannerExceptionFactory.newSpannerException(
+                      ErrorCode.FAILED_PRECONDITION,
+                      "ResultSet was closed before a transaction id was returned"));
+              return stream;
+            }
             SpannerRpc.StreamingCall call;
             try {
               call =

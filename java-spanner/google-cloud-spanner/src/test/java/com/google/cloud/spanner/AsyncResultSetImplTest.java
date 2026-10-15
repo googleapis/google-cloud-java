@@ -38,14 +38,24 @@ import com.google.api.gax.core.ExecutorProvider;
 import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.CursorState;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
+import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
+import com.google.cloud.spanner.XGoogSpannerRequestId.NoopRequestIdCreator;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.StreamingCall;
+import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Function;
 import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
+import com.google.spanner.v1.MultiplexedSessionPrecommitToken;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
+import com.google.spanner.v1.Transaction;
+import io.opencensus.trace.Tracing;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -1743,6 +1753,9 @@ public class AsyncResultSetImplTest {
           @Override
           public boolean next() {
             if (currentRow < totalRowCount) {
+              assertTrue(
+                  "next() should not be called when data is not available",
+                  currentRow < availableRows.get());
               currentRow++;
               currentStruct = Struct.newBuilder().set("ID").to((long) currentRow).build();
               return true;
@@ -1816,6 +1829,7 @@ public class AsyncResultSetImplTest {
       assertNull(future.get(30, TimeUnit.SECONDS));
       assertTrue(doneReceived.get());
       assertEquals(totalRowCount, rowsReceived.get());
+      assertEquals(totalRowCount, availableRows.get());
     } finally {
       feederExecutor.shutdownNow();
       callbackExecutor.shutdown();
@@ -2408,5 +2422,975 @@ public class AsyncResultSetImplTest {
       callbackExecutor.shutdown();
       assertTrue(callbackExecutor.awaitTermination(5, TimeUnit.SECONDS));
     }
+  }
+
+  private static ResultSetMetadata createTestMetadata(Type.StructField... fields) {
+    return ResultSetMetadata.newBuilder()
+        .setRowType(Type.struct(fields).toProto().getStructType())
+        .build();
+  }
+
+  private static Value stringProtoValue(String value) {
+    return Value.newBuilder().setStringValue(value).build();
+  }
+
+  private static TraceWrapper createTestTracer() {
+    SpannerOptions.resetActiveTracingFramework();
+    SpannerOptions.enableOpenTelemetryTraces();
+    return new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false);
+  }
+
+  private static AbstractResultSet.Listener createNoOpListener() {
+    return new AbstractResultSet.Listener() {
+      @Override
+      public void onTransactionMetadata(Transaction transaction, boolean shouldIncludeId) {}
+
+      @Override
+      public SpannerException onError(
+          SpannerException e, boolean withBeginTransaction, boolean lastStatement) {
+        return e;
+      }
+
+      @Override
+      public void onDone(boolean withBeginTransaction) {}
+
+      @Override
+      public void onPrecommitToken(MultiplexedSessionPrecommitToken token) {}
+    };
+  }
+
+  @Test
+  public void testSingleThreadExecutorDoesNotDeadlockOnChunkWithoutResumeToken() throws Exception {
+    ExecutorService callbackExecutor = Executors.newSingleThreadExecutor();
+    ExecutorProvider singleThreadProvider =
+        SpannerOptions.createAsyncExecutorProvider(1, 1L, TimeUnit.SECONDS);
+    ScheduledExecutorService producerExecutor = singleThreadProvider.getExecutor();
+    ResumableStreamIterator resumableStreamIterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(Span.class)),
+            createTestTracer(),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
+            setStream(stream);
+            if (streamMessageListener != null) {
+              stream.registerListener(streamMessageListener);
+            }
+            stream.setCall(mock(StreamingCall.class), false);
+            // Deliver first chunk WITHOUT a resume token.
+            stream
+                .consumer()
+                .onPartialResultSet(
+                    PartialResultSet.newBuilder()
+                        .setMetadata(createTestMetadata(Type.StructField.of("col1", Type.string())))
+                        .addValues(stringProtoValue("row1"))
+                        .build());
+            // Schedule second chunk WITH a resume token on the same 1-thread producer executor.
+            // If ProduceRowsRunnable blocks on stream.take() when consuming chunk 1, this task will
+            // never execute.
+            producerExecutor.execute(
+                () -> {
+                  stream
+                      .consumer()
+                      .onPartialResultSet(
+                          PartialResultSet.newBuilder()
+                              .setResumeToken(ByteString.copyFromUtf8("token1"))
+                              .addValues(stringProtoValue("row2"))
+                              .build());
+                  stream.consumer().onCompleted();
+                });
+            return stream;
+          }
+        };
+
+    GrpcResultSet grpcResultSet = new GrpcResultSet(resumableStreamIterator, createNoOpListener());
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(singleThreadProvider, grpcResultSet, 10)) {
+      List<String> rows = new ArrayList<>();
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              callbackExecutor,
+              resultSet -> {
+                while (true) {
+                  switch (resultSet.tryNext()) {
+                    case OK:
+                      rows.add(resultSet.getString(0));
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+
+      assertNull(future.get(1, TimeUnit.SECONDS));
+      assertEquals(Arrays.asList("row1", "row2"), rows);
+    } finally {
+      producerExecutor.shutdownNow();
+      callbackExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testSingleThreadExecutorDoesNotDeadlockOnSplitRowAcrossChunks() throws Exception {
+    ExecutorService callbackExecutor = Executors.newSingleThreadExecutor();
+    ExecutorProvider singleThreadProvider =
+        SpannerOptions.createAsyncExecutorProvider(1, 1L, TimeUnit.SECONDS);
+    ScheduledExecutorService producerExecutor = singleThreadProvider.getExecutor();
+    ResumableStreamIterator resumableStreamIterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(Span.class)),
+            createTestTracer(),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
+            setStream(stream);
+            if (streamMessageListener != null) {
+              stream.registerListener(streamMessageListener);
+            }
+            stream.setCall(mock(StreamingCall.class), false);
+            // 2-column table: first chunk has Row 1 (2 values) + first column of Row 2 (1 value).
+            stream
+                .consumer()
+                .onPartialResultSet(
+                    PartialResultSet.newBuilder()
+                        .setMetadata(
+                            createTestMetadata(
+                                Type.StructField.of("col1", Type.string()),
+                                Type.StructField.of("col2", Type.string())))
+                        .setResumeToken(ByteString.copyFromUtf8("token1"))
+                        .addValues(stringProtoValue("r1c1"))
+                        .addValues(stringProtoValue("r1c2"))
+                        .addValues(stringProtoValue("r2c1"))
+                        .build());
+            // Schedule second chunk (with second column of Row 2) on the same 1-thread producer
+            // executor.
+            producerExecutor.execute(
+                () -> {
+                  stream
+                      .consumer()
+                      .onPartialResultSet(
+                          PartialResultSet.newBuilder()
+                              .setResumeToken(ByteString.copyFromUtf8("token2"))
+                              .addValues(stringProtoValue("r2c2"))
+                              .build());
+                  stream.consumer().onCompleted();
+                });
+            return stream;
+          }
+        };
+
+    GrpcResultSet grpcResultSet = new GrpcResultSet(resumableStreamIterator, createNoOpListener());
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(singleThreadProvider, grpcResultSet, 10)) {
+      List<String> rows = new ArrayList<>();
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              callbackExecutor,
+              resultSet -> {
+                while (true) {
+                  switch (resultSet.tryNext()) {
+                    case OK:
+                      rows.add(resultSet.getString(0) + ":" + resultSet.getString(1));
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+
+      assertNull(future.get(1, TimeUnit.SECONDS));
+      assertEquals(Arrays.asList("r1c1:r1c2", "r2c1:r2c2"), rows);
+    } finally {
+      producerExecutor.shutdownNow();
+      callbackExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testSingleThreadExecutorDoesNotDeadlockOnChunkedValue() throws Exception {
+    ExecutorService callbackExecutor = Executors.newSingleThreadExecutor();
+    ExecutorProvider singleThreadProvider =
+        SpannerOptions.createAsyncExecutorProvider(1, 1L, TimeUnit.SECONDS);
+    ScheduledExecutorService producerExecutor = singleThreadProvider.getExecutor();
+    ResumableStreamIterator resumableStreamIterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(Span.class)),
+            createTestTracer(),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
+            setStream(stream);
+            if (streamMessageListener != null) {
+              stream.registerListener(streamMessageListener);
+            }
+            stream.setCall(mock(StreamingCall.class), false);
+            // First chunk has a chunked value requiring a continuation chunk.
+            stream
+                .consumer()
+                .onPartialResultSet(
+                    PartialResultSet.newBuilder()
+                        .setMetadata(createTestMetadata(Type.StructField.of("col1", Type.string())))
+                        .setResumeToken(ByteString.copyFromUtf8("token1"))
+                        .addValues(stringProtoValue("hello_"))
+                        .setChunkedValue(true)
+                        .build());
+            // Schedule continuation chunk on the same 1-thread producer executor.
+            producerExecutor.execute(
+                () -> {
+                  stream
+                      .consumer()
+                      .onPartialResultSet(
+                          PartialResultSet.newBuilder()
+                              .setResumeToken(ByteString.copyFromUtf8("token2"))
+                              .addValues(stringProtoValue("world"))
+                              .build());
+                  stream.consumer().onCompleted();
+                });
+            return stream;
+          }
+        };
+
+    GrpcResultSet grpcResultSet = new GrpcResultSet(resumableStreamIterator, createNoOpListener());
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(singleThreadProvider, grpcResultSet, 10)) {
+      List<String> rows = new ArrayList<>();
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              callbackExecutor,
+              resultSet -> {
+                while (true) {
+                  switch (resultSet.tryNext()) {
+                    case OK:
+                      rows.add(resultSet.getString(0));
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+
+      assertNull(future.get(1, TimeUnit.SECONDS));
+      assertEquals(Collections.singletonList("hello_world"), rows);
+    } finally {
+      producerExecutor.shutdownNow();
+      callbackExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testMessageArrivingBeforeSetCallDoesNotThrowNpeOrLoseBeginTransaction()
+      throws Exception {
+    ExecutorService multiThreadExecutor = Executors.newFixedThreadPool(4);
+    ExecutorProvider multiThreadProvider =
+        new ExecutorProvider() {
+          @Override
+          public boolean shouldAutoClose() {
+            return false;
+          }
+
+          @Override
+          public ScheduledExecutorService getExecutor() {
+            return Executors.newScheduledThreadPool(4);
+          }
+        };
+    AtomicBoolean transactionMetadataShouldIncludeId = new AtomicBoolean(false);
+    CountDownLatch messageProcessedLatch = new CountDownLatch(1);
+
+    ResumableStreamIterator resumableStreamIterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(Span.class)),
+            createTestTracer(),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
+            setStream(stream);
+            if (streamMessageListener != null) {
+              stream.registerListener(streamMessageListener);
+            }
+            // Simulate gRPC thread delivering PartialResultSet inside rpc.executeQuery() BEFORE
+            // stream.setCall(call, true) executes on the caller thread.
+            Future<?> grpcCallbackFuture =
+                multiThreadExecutor.submit(
+                    () -> {
+                      stream
+                          .consumer()
+                          .onPartialResultSet(
+                              PartialResultSet.newBuilder()
+                                  .setMetadata(
+                                      ResultSetMetadata.newBuilder()
+                                          .setRowType(
+                                              Type.struct(
+                                                      Type.StructField.of("col1", Type.string()))
+                                                  .toProto()
+                                                  .getStructType())
+                                          .setTransaction(
+                                              Transaction.newBuilder()
+                                                  .setId(ByteString.copyFromUtf8("tx1"))))
+                                  .setResumeToken(ByteString.copyFromUtf8("token1"))
+                                  .addValues(stringProtoValue("v1"))
+                                  .build());
+                      stream.consumer().onCompleted();
+                      messageProcessedLatch.countDown();
+                    });
+            try {
+              assertTrue(messageProcessedLatch.await(2, TimeUnit.SECONDS));
+              grpcCallbackFuture.get(2, TimeUnit.SECONDS);
+              // Give ProduceRowsRunnable a brief moment to react if it was prematurely triggered
+              // before setCall.
+              Thread.sleep(50);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+            stream.setCall(mock(StreamingCall.class), /* withBeginTransaction= */ true);
+            return stream;
+          }
+        };
+
+    AbstractResultSet.Listener listener =
+        new AbstractResultSet.Listener() {
+          @Override
+          public void onTransactionMetadata(Transaction transaction, boolean shouldIncludeId) {
+            transactionMetadataShouldIncludeId.set(shouldIncludeId);
+          }
+
+          @Override
+          public SpannerException onError(
+              SpannerException e, boolean withBeginTransaction, boolean lastStatement) {
+            return e;
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {}
+
+          @Override
+          public void onPrecommitToken(MultiplexedSessionPrecommitToken token) {}
+        };
+
+    GrpcResultSet grpcResultSet = new GrpcResultSet(resumableStreamIterator, listener);
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(multiThreadProvider, grpcResultSet, 10)) {
+      List<String> rows = new ArrayList<>();
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              multiThreadExecutor,
+              resultSet -> {
+                while (true) {
+                  switch (resultSet.tryNext()) {
+                    case OK:
+                      rows.add(resultSet.getString(0));
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+
+      assertNull(future.get(5, TimeUnit.SECONDS));
+      assertEquals(Collections.singletonList("v1"), rows);
+      assertTrue(
+          "Expected onTransactionMetadata to receive shouldIncludeId=true",
+          transactionMetadataShouldIncludeId.get());
+    } finally {
+      multiThreadExecutor.shutdown();
+      assertTrue(multiThreadExecutor.awaitTermination(5, TimeUnit.SECONDS));
+    }
+  }
+
+  @Test
+  public void testSinglePartialResultSetWithLastTrueAndMoreThanBufferRowsDoesNotCancelStream()
+      throws Exception {
+    StreamingCall call = mock(StreamingCall.class);
+    ResumableStreamIterator resumableStreamIterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenTelemetrySpan(mock(Span.class)),
+            createTestTracer(),
+            DefaultErrorHandler.INSTANCE,
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
+            setStream(stream);
+            if (streamMessageListener != null) {
+              stream.registerListener(streamMessageListener);
+            }
+            stream.setCall(call, false);
+            PartialResultSet.Builder builder =
+                PartialResultSet.newBuilder()
+                    .setMetadata(
+                        ResultSetMetadata.newBuilder()
+                            .setRowType(
+                                Type.struct(Type.StructField.of("col1", Type.string()))
+                                    .toProto()
+                                    .getStructType()))
+                    .setResumeToken(ByteString.copyFromUtf8("r1"))
+                    .setLast(true);
+            for (int i = 0; i < 20; i++) {
+              builder.addValues(stringProtoValue("row-" + i));
+            }
+            stream.consumer().onPartialResultSet(builder.build());
+            return stream;
+          }
+        };
+
+    GrpcResultSet grpcResultSet =
+        new GrpcResultSet(resumableStreamIterator, mock(AbstractResultSet.Listener.class));
+    ExecutorService callbackExecutor = Executors.newSingleThreadExecutor();
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, grpcResultSet, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      List<String> rows = new ArrayList<>();
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              callbackExecutor,
+              resultSet -> {
+                if (resultSet.tryNext() == CursorState.OK) {
+                  rows.add(resultSet.getString(0));
+                  return CallbackResponse.DONE;
+                }
+                return CallbackResponse.CONTINUE;
+              });
+
+      assertNull(future.get(5, TimeUnit.SECONDS));
+      assertEquals(Collections.singletonList("row-0"), rows);
+      verify(call, Mockito.never()).cancel(any());
+    } finally {
+      callbackExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testMultiplePartialResultSetsWithLastTrueCancelBehavior() throws Exception {
+    for (boolean stopAfterFirstRow : new boolean[] {true, false}) {
+      StreamingCall call = mock(StreamingCall.class);
+      ResumableStreamIterator resumableStreamIterator =
+          new ResumableStreamIterator(
+              10,
+              "",
+              new OpenTelemetrySpan(mock(Span.class)),
+              createTestTracer(),
+              DefaultErrorHandler.INSTANCE,
+              SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetrySettings(),
+              SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+              NoopRequestIdCreator.INSTANCE) {
+            @Override
+            AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+                ByteString resumeToken,
+                AsyncResultSet.StreamMessageListener streamMessageListener,
+                XGoogSpannerRequestId requestId) {
+              GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
+              setStream(stream);
+              if (streamMessageListener != null) {
+                stream.registerListener(streamMessageListener);
+              }
+              stream.setCall(call, false);
+              PartialResultSet.Builder firstChunk =
+                  PartialResultSet.newBuilder()
+                      .setMetadata(
+                          ResultSetMetadata.newBuilder()
+                              .setRowType(
+                                  Type.struct(Type.StructField.of("col1", Type.string()))
+                                      .toProto()
+                                      .getStructType()))
+                      .setResumeToken(ByteString.copyFromUtf8("r1"))
+                      .setLast(false);
+              for (int i = 0; i < 15; i++) {
+                firstChunk.addValues(stringProtoValue("row-" + i));
+              }
+              PartialResultSet.Builder secondChunk =
+                  PartialResultSet.newBuilder()
+                      .setResumeToken(ByteString.copyFromUtf8("r2"))
+                      .setLast(true);
+              for (int i = 15; i < 20; i++) {
+                secondChunk.addValues(stringProtoValue("row-" + i));
+              }
+              stream.consumer().onPartialResultSet(firstChunk.build());
+              stream.consumer().onPartialResultSet(secondChunk.build());
+              return stream;
+            }
+          };
+
+      GrpcResultSet grpcResultSet =
+          new GrpcResultSet(resumableStreamIterator, mock(AbstractResultSet.Listener.class));
+      ExecutorService callbackExecutor = Executors.newSingleThreadExecutor();
+      try (AsyncResultSetImpl asyncResultSet =
+          new AsyncResultSetImpl(
+              simpleProvider, grpcResultSet, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+        List<String> rows = new ArrayList<>();
+        ApiFuture<Void> future =
+            asyncResultSet.setCallback(
+                callbackExecutor,
+                resultSet -> {
+                  while (true) {
+                    switch (resultSet.tryNext()) {
+                      case OK:
+                        rows.add(resultSet.getString(0));
+                        if (stopAfterFirstRow || rows.size() == 20) {
+                          return CallbackResponse.DONE;
+                        }
+                        break;
+                      case NOT_READY:
+                        return CallbackResponse.CONTINUE;
+                      case DONE:
+                        return CallbackResponse.DONE;
+                    }
+                  }
+                });
+
+        assertNull(future.get(5, TimeUnit.SECONDS));
+        if (stopAfterFirstRow) {
+          assertEquals(Collections.singletonList("row-0"), rows);
+          verify(call, times(1)).cancel(any());
+        } else {
+          assertEquals(20, rows.size());
+          verify(call, Mockito.never()).cancel(any());
+        }
+      } finally {
+        callbackExecutor.shutdownNow();
+      }
+    }
+  }
+
+  @Test
+  public void testCloseWithAutoCloseExecutorAndThrowingDelegate() {
+    ScheduledExecutorService service = mock(ScheduledExecutorService.class);
+    when(mockedProvider.getExecutor()).thenReturn(service);
+    when(mockedProvider.shouldAutoClose()).thenReturn(true);
+    ResultSet delegate = mock(ResultSet.class);
+    doThrow(new RuntimeException("close error")).when(delegate).close();
+    AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(mockedProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE);
+    resultSet.close();
+    verify(delegate).close();
+    verify(service).shutdown();
+  }
+
+  @Test
+  public void testProducerScheduleRejected() {
+    ScheduledExecutorService service = mock(ScheduledExecutorService.class);
+    when(mockedProvider.getExecutor()).thenReturn(service);
+    AtomicInteger executeCount = new AtomicInteger();
+    Mockito.doAnswer(
+            invocation -> {
+              Runnable runnable = invocation.getArgument(0);
+              if (executeCount.incrementAndGet() == 1) {
+                runnable.run();
+                return null;
+              }
+              throw new RejectedExecutionException("producer rejected");
+            })
+        .when(service)
+        .execute(any(Runnable.class));
+
+    ResultSet delegate = mock(ResultSet.class);
+    AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(mockedProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE);
+    ApiFuture<Void> future =
+        resultSet.setCallback(
+            Runnable::run,
+            cursor -> {
+              cursor.tryNext();
+              return CallbackResponse.DONE;
+            });
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertTrue(exception.getCause() instanceof SpannerException);
+    verify(delegate).close();
+  }
+
+  @Test
+  public void testProduceRowsStoppedBeforeRun() throws Exception {
+    List<Runnable> producerTasks = new ArrayList<>();
+    ScheduledExecutorService service = mock(ScheduledExecutorService.class);
+    when(mockedProvider.getExecutor()).thenReturn(service);
+    Mockito.doAnswer(
+            invocation -> {
+              Runnable runnable = invocation.getArgument(0);
+              if (producerTasks.isEmpty()) {
+                producerTasks.add(runnable);
+                runnable.run();
+              } else {
+                producerTasks.add(runnable);
+              }
+              return null;
+            })
+        .when(service)
+        .execute(any(Runnable.class));
+
+    ResultSet delegate = mock(ResultSet.class);
+    AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(mockedProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE);
+    ApiFuture<Void> future =
+        resultSet.setCallback(
+            Runnable::run,
+            cursor -> {
+              cursor.tryNext();
+              return CallbackResponse.DONE;
+            });
+    assertEquals(2, producerTasks.size());
+    resultSet.cancel();
+    // Now run the queued ProduceRowsRunnable after cancellation; it should exit immediately.
+    producerTasks.get(1).run();
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+    assertEquals(ErrorCode.CANCELLED, ((SpannerException) exception.getCause()).getErrorCode());
+  }
+
+  @Test
+  public void testCallbackReturnsNull() {
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenReturn(false);
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future = resultSet.setCallback(Runnable::run, cursor -> null);
+      ExecutionException exception =
+          assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+      assertTrue(exception.getCause() instanceof SpannerException);
+    }
+  }
+
+  @Test
+  public void testCallbackRunnableEdgeCases() throws Exception {
+    // 1. CallbackRunnable starts when cursorReturnedDoneOrException is already true.
+    List<Runnable> callbackTasks = new ArrayList<>();
+    ResultSet delegate1 = mock(ResultSet.class);
+    StreamingResultSet streamingDelegate1 = mock(StreamingResultSet.class);
+    when(streamingDelegate1.initiateStreaming(any())).thenReturn(true);
+    when(streamingDelegate1.isDataAvailable()).thenReturn(false);
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, streamingDelegate1, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(callbackTasks::add, cursor -> CallbackResponse.DONE);
+      resultSet.cancel();
+      assertEquals(1, callbackTasks.size());
+      // Calling tryNext() when cancelled sets cursorReturnedDoneOrException = true before callback
+      // runs.
+      assertThrows(SpannerException.class, resultSet::tryNext);
+      // Calling cancel() again calls checkCompletion() while callbackScheduled is still true.
+      resultSet.cancel();
+      callbackTasks.get(0).run();
+      ExecutionException exception =
+          assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+      assertEquals(ErrorCode.CANCELLED, ((SpannerException) exception.getCause()).getErrorCode());
+    }
+
+    // 2. Callback throws non-SpannerException and non-CANCELLED SpannerException when cancelled.
+    for (Throwable toThrow :
+        new Throwable[] {
+          new RuntimeException("custom runtime error"),
+          SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, "custom internal error")
+        }) {
+      StreamingResultSet streamingDelegate = mock(StreamingResultSet.class);
+      when(streamingDelegate.initiateStreaming(any())).thenReturn(true);
+      when(streamingDelegate.isDataAvailable()).thenReturn(false);
+      try (AsyncResultSetImpl resultSet =
+          new AsyncResultSetImpl(
+              simpleProvider, streamingDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+        ApiFuture<Void> future =
+            resultSet.setCallback(
+                Runnable::run,
+                cursor -> {
+                  throw (RuntimeException) toThrow;
+                });
+        resultSet.cancel();
+        ExecutionException exception =
+            assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+        assertTrue(exception.getCause() instanceof SpannerException);
+        assertNotNull(exception.getCause().getMessage());
+      }
+    }
+
+    // 3. cancel() called inside callback.cursorReady(), returning DONE vs CONTINUE, and
+    // getCurrentRowAsStruct() called while state == State.CANCELLED.
+    for (CallbackResponse responseOnCancel :
+        new CallbackResponse[] {CallbackResponse.DONE, CallbackResponse.CONTINUE}) {
+      ResultSet rowDelegate = mock(ResultSet.class);
+      Struct row = Struct.newBuilder().set("col").to("val").build();
+      when(rowDelegate.next()).thenReturn(true, false);
+      when(rowDelegate.getCurrentRowAsStruct()).thenReturn(row);
+      try (AsyncResultSetImpl resultSet =
+          new AsyncResultSetImpl(
+              simpleProvider, rowDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+        AtomicInteger calls = new AtomicInteger();
+        ApiFuture<Void> future =
+            resultSet.setCallback(
+                Runnable::run,
+                cursor -> {
+                  if (calls.incrementAndGet() == 1) {
+                    assertEquals(CursorState.OK, cursor.tryNext());
+                    resultSet.cancel();
+                    // Verify getCurrentRowAsStruct() is allowed when state == State.CANCELLED.
+                    assertEquals(row, cursor.getCurrentRowAsStruct());
+                    if (responseOnCancel == CallbackResponse.DONE) {
+                      assertThrows(SpannerException.class, cursor::tryNext);
+                      // Calling cancel() while cursorReturnedDoneOrException && callbackRunning.
+                      resultSet.cancel();
+                    }
+                    return responseOnCancel;
+                  }
+                  cursor.tryNext();
+                  return CallbackResponse.DONE;
+                });
+        ExecutionException exception =
+            assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+        assertEquals(ErrorCode.CANCELLED, ((SpannerException) exception.getCause()).getErrorCode());
+      }
+    }
+
+    // 4. tryNext() returns DONE, but callback returns CONTINUE instead of DONE.
+    when(delegate1.next()).thenReturn(false);
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(simpleProvider, delegate1, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              Runnable::run,
+              cursor -> {
+                assertEquals(CursorState.DONE, cursor.tryNext());
+                return CallbackResponse.CONTINUE;
+              });
+      assertNull(future.get(5, TimeUnit.SECONDS));
+    }
+
+    // 5. Callback consumes the only buffered row and returns CONTINUE without calling tryNext() a
+    // second time, when finished == true vs when executionException != null.
+    Struct singleRow = Struct.newBuilder().set("col").to("val").build();
+    ResultSet finishedAfterOneRowDelegate = mock(ResultSet.class);
+    when(finishedAfterOneRowDelegate.next()).thenReturn(true, false);
+    when(finishedAfterOneRowDelegate.getCurrentRowAsStruct()).thenReturn(singleRow);
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, finishedAfterOneRowDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              Runnable::run,
+              cursor -> {
+                if (cursor.tryNext() == CursorState.OK) {
+                  return CallbackResponse.CONTINUE;
+                }
+                return CallbackResponse.DONE;
+              });
+      assertNull(future.get(5, TimeUnit.SECONDS));
+    }
+
+    CountDownLatch delegateClosed = new CountDownLatch(1);
+    ResultSet errorAfterOneRowDelegate = mock(ResultSet.class);
+    when(errorAfterOneRowDelegate.next())
+        .thenReturn(true)
+        .thenThrow(new RuntimeException("error on second row"));
+    when(errorAfterOneRowDelegate.getCurrentRowAsStruct()).thenReturn(singleRow);
+    Mockito.doAnswer(
+            invocation -> {
+              delegateClosed.countDown();
+              return null;
+            })
+        .when(errorAfterOneRowDelegate)
+        .close();
+    ExecutorService singleThreadCallbackExecutor = Executors.newSingleThreadExecutor();
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, errorAfterOneRowDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              singleThreadCallbackExecutor,
+              cursor -> {
+                try {
+                  assertTrue(delegateClosed.await(5, TimeUnit.SECONDS));
+                } catch (InterruptedException e) {
+                  throw SpannerExceptionFactory.propagateInterrupt(e);
+                }
+                if (cursor.tryNext() == CursorState.OK) {
+                  return CallbackResponse.CONTINUE;
+                }
+                return CallbackResponse.DONE;
+              });
+      assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+    } finally {
+      singleThreadCallbackExecutor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testSetExecutionExceptionWhenAlreadyFailedOrStopped() throws Exception {
+    // 1. Producer fails with exception AND callback executor rejects execution ->
+    // setExecutionException called twice (second time when executionException != null).
+    ResultSet failingDelegate = mock(ResultSet.class);
+    when(failingDelegate.next()).thenThrow(new RuntimeException("delegate error"));
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, failingDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              command -> {
+                throw new RejectedExecutionException("callback rejected");
+              },
+              cursor -> CallbackResponse.DONE);
+      ExecutionException exception =
+          assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+      assertTrue(exception.getCause() instanceof SpannerException);
+    }
+
+    // 2. Producer fails with exception AFTER resultSet is cancelled (state.shouldStop == true).
+    CountDownLatch inNext = new CountDownLatch(1);
+    CountDownLatch proceedNext = new CountDownLatch(1);
+    ResultSet cancelWhileNextDelegate = mock(ResultSet.class);
+    when(cancelWhileNextDelegate.next())
+        .thenAnswer(
+            invocation -> {
+              inNext.countDown();
+              assertTrue(proceedNext.await(5, TimeUnit.SECONDS));
+              throw new RuntimeException("error after cancel");
+            });
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, cancelWhileNextDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              Runnable::run,
+              cursor -> {
+                cursor.tryNext();
+                return CallbackResponse.DONE;
+              });
+      assertTrue(inNext.await(5, TimeUnit.SECONDS));
+      resultSet.cancel();
+      proceedNext.countDown();
+      ExecutionException exception =
+          assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));
+      assertEquals(ErrorCode.CANCELLED, ((SpannerException) exception.getCause()).getErrorCode());
+    }
+  }
+
+  @Test
+  public void testToListAsyncClosedAndNotReadyAndInterrupted() throws Exception {
+    ResultSet delegate = mock(ResultSet.class);
+    AsyncResultSetImpl closedResultSet =
+        new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE);
+    // Calling getCurrentRowAsStruct() before next() or callback throws IllegalStateException.
+    assertThrows(IllegalStateException.class, closedResultSet::getCurrentRowAsStruct);
+    closedResultSet.close();
+    assertThrows(
+        IllegalStateException.class,
+        () -> closedResultSet.toListAsync(reader -> reader.getString(0), Runnable::run));
+
+    // Calling cancel(), resume(), or toListAsync() in State.SYNC throws IllegalStateException.
+    ResultSet syncDelegate = mock(ResultSet.class);
+    when(syncDelegate.next()).thenReturn(false);
+    try (AsyncResultSetImpl syncResultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, syncDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      assertFalse(syncResultSet.next());
+      assertThrows(IllegalStateException.class, syncResultSet::cancel);
+      assertThrows(IllegalStateException.class, syncResultSet::resume);
+      assertThrows(
+          IllegalStateException.class,
+          () -> syncResultSet.toListAsync(reader -> reader.getString(0), Runnable::run));
+    }
+
+    // Test CreateListCallback receiving NOT_READY when buffer size is 1 and there are 3 rows.
+    ResultSet multiRowDelegate = mock(ResultSet.class);
+    Struct row = Struct.newBuilder().set("col").to("val").build();
+    when(multiRowDelegate.next()).thenReturn(true, true, true, false);
+    when(multiRowDelegate.getCurrentRowAsStruct()).thenReturn(row);
+    ExecutorService callbackExecutor = Executors.newSingleThreadExecutor();
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(simpleProvider, multiRowDelegate, 1)) {
+      List<String> list =
+          resultSet
+              .toListAsync(reader -> reader.getString(0), callbackExecutor)
+              .get(5, TimeUnit.SECONDS);
+      assertEquals(3, list.size());
+    } finally {
+      callbackExecutor.shutdownNow();
+    }
+
+    // Test toList() when calling thread is interrupted.
+    StreamingResultSet blockingDelegate = mock(StreamingResultSet.class);
+    when(blockingDelegate.initiateStreaming(any())).thenReturn(true);
+    when(blockingDelegate.isDataAvailable()).thenReturn(false);
+    try (AsyncResultSetImpl resultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, blockingDelegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      Thread.currentThread().interrupt();
+      try {
+        SpannerException exception =
+            assertThrows(
+                SpannerException.class, () -> resultSet.toList(reader -> reader.getString(0)));
+        assertEquals(ErrorCode.UNKNOWN, exception.getErrorCode());
+      } finally {
+        Thread.interrupted();
+        resultSet.cancel();
+      }
+    }
+  }
+
+  @Test
+  public void testGrpcStreamIteratorOnErrorAfterLastDoesNotDeadlockWhenQueueFull() {
+    GrpcStreamIterator stream = new GrpcStreamIterator(false, 1, false);
+    StreamingCall call = mock(StreamingCall.class);
+    stream.setCall(call, false);
+    PartialResultSet lastChunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("r1"))
+            .setLast(true)
+            .build();
+    // With prefetchChunks = 1, queue capacity is 2.
+    // onPartialResultSet with last=true adds lastChunk AND END_OF_STREAM, filling the queue.
+    stream.consumer().onPartialResultSet(lastChunk);
+    // Calling onError after last=true must not block trying to add another END_OF_STREAM.
+    stream
+        .consumer()
+        .onError(SpannerExceptionFactory.newSpannerException(ErrorCode.CANCELLED, "cancelled"));
+    assertTrue(stream.hasNext());
+    assertEquals(lastChunk, stream.next());
+    assertThrows(SpannerException.class, stream::hasNext);
   }
 }

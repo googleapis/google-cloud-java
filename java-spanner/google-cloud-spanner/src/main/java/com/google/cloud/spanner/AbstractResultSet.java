@@ -174,6 +174,14 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
     default boolean isDataAvailable() {
       return true;
     }
+
+    /**
+     * Returns true if {@link #hasNext()} and {@link #next()} can be called immediately to yield a
+     * result or EOF without blocking on network I/O and without throwing a stream error.
+     */
+    default boolean canPollWithoutBlocking() {
+      return false;
+    }
   }
 
   static double valueProtoToFloat64(com.google.protobuf.Value proto) {
