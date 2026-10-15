@@ -25,16 +25,41 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
 import java.time.Period;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.util.TimeZone;
+import java.util.stream.Stream;
 import org.apache.arrow.vector.PeriodDuration;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 public class BigQueryTypeRegistryTest {
+
+  private TimeZone originalJvmZone;
+
+  private static Stream<String> jvmZones() {
+    return Stream.of("UTC", "America/New_York", "Asia/Kolkata", "Pacific/Auckland");
+  }
+
+  @BeforeEach
+  public void saveJvmZone() {
+    originalJvmZone = TimeZone.getDefault();
+  }
+
+  @AfterEach
+  public void restoreJvmZone() {
+    TimeZone.setDefault(originalJvmZone);
+  }
 
   @Test
   public void testIntervalFormatting() throws Exception {
@@ -137,5 +162,65 @@ public class BigQueryTypeRegistryTest {
         () ->
             BigQueryTypeRegistry.convert(
                 "bad_number", StandardSQLTypeName.INT64, Integer.class, null));
+  }
+
+  /**
+   * Read-side guard for TIMESTAMP coercions. The result sets hand the registry zone-less UTC digits
+   * for {@code TIMESTAMP(12)} (see {@code BigQueryJsonResultSet.getObject}) and epoch microseconds
+   * from Arrow; both must resolve to the same instant regardless of the JVM default zone. The
+   * write-side counterpart lives in {@link BigQueryParameterHandlerTest}.
+   *
+   * <p>Without this, a coercion that silently starts depending on {@code ZoneId.systemDefault()}
+   * (for example by falling through to {@code Timestamp.valueOf}) passes every unit test that pins
+   * the JVM to UTC and is only caught by the integration suite.
+   */
+  @ParameterizedTest(name = "JVM zone {0}")
+  @MethodSource("jvmZones")
+  public void testTimestampReadCoercionsAreJvmZoneInvariant(String zone) throws Exception {
+    TimeZone.setDefault(TimeZone.getTimeZone(zone));
+
+    // The instant the backend holds, expressed at the precision each input shape carries.
+    Instant nanosInstant = Instant.parse("2026-08-10T15:30:45.123456789Z");
+    Instant microsInstant = Instant.parse("2026-08-10T15:30:45.123456Z");
+
+    // Shapes the result sets pass in for a TIMESTAMP(12) column.
+    String picosUtcString = "2026-08-10 15:30:45.123456789012"; // formatTimestampValue output
+    String paddedMicrosString = "2026-08-10 15:30:45.123456000000"; // micros value, picos padded
+    String epochDecimalString = nanosInstant.getEpochSecond() + ".123456789012"; // raw JSON
+    long epochMicros =
+        microsInstant.getEpochSecond() * 1_000_000L + microsInstant.getNano() / 1_000L; // Arrow
+
+    // getTimestamp(): class-based lookup, sub-nanosecond digits truncated.
+    assertThat(BigQueryTypeRegistry.convert(picosUtcString, Timestamp.class).toInstant())
+        .isEqualTo(nanosInstant);
+    assertThat(BigQueryTypeRegistry.convert(paddedMicrosString, Timestamp.class).toInstant())
+        .isEqualTo(microsInstant);
+    assertThat(BigQueryTypeRegistry.convert(epochDecimalString, Timestamp.class).toInstant())
+        .isEqualTo(nanosInstant);
+
+    // getObject(col, <JSR-310 type>): the fast path must agree and must stay anchored to UTC.
+    assertThat(BigQueryTypeRegistry.convert(picosUtcString, Instant.class)).isEqualTo(nanosInstant);
+    OffsetDateTime odt = BigQueryTypeRegistry.convert(picosUtcString, OffsetDateTime.class);
+    assertThat(odt.toInstant()).isEqualTo(nanosInstant);
+    assertThat(odt.getOffset()).isEqualTo(ZoneOffset.UTC);
+    ZonedDateTime zdt = BigQueryTypeRegistry.convert(picosUtcString, ZonedDateTime.class);
+    assertThat(zdt.toInstant()).isEqualTo(nanosInstant);
+    assertThat(zdt.getZone()).isEqualTo(ZoneOffset.UTC);
+
+    // ResultSet hot path keyed by BigQuery type, for both the string and the Arrow Long shape.
+    assertThat(
+            BigQueryTypeRegistry.convert(
+                    picosUtcString, StandardSQLTypeName.TIMESTAMP, Timestamp.class, null)
+                .toInstant())
+        .isEqualTo(nanosInstant);
+    assertThat(
+            BigQueryTypeRegistry.convert(
+                    epochMicros, StandardSQLTypeName.TIMESTAMP, Timestamp.class, null)
+                .toInstant())
+        .isEqualTo(microsInstant);
+    assertThat(
+            BigQueryTypeRegistry.convert(
+                epochMicros, StandardSQLTypeName.TIMESTAMP, Instant.class, null))
+        .isEqualTo(microsInstant);
   }
 }

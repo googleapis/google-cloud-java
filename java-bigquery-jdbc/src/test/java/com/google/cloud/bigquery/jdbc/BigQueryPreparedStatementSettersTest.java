@@ -48,6 +48,8 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -280,21 +282,43 @@ public class BigQueryPreparedStatementSettersTest {
 
   @Test
   public void testSetObjectWithJavaTime() throws Exception {
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?, ?");
     LocalDate localDate = LocalDate.of(2025, 12, 3);
     preparedStatement.setObject(1, localDate);
     assertEquals(Date.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Date.valueOf(localDate), preparedStatement.parameterHandler.getParameter(1));
 
     LocalTime localTime = LocalTime.of(12, 30, 0);
     preparedStatement.setObject(2, localTime);
     assertEquals(Time.class, preparedStatement.parameterHandler.getType(2));
+    assertEquals(Time.valueOf(localTime), preparedStatement.parameterHandler.getParameter(2));
 
+    // LocalDateTime is bound as STRING so it is accepted by both DATETIME and TIMESTAMP columns.
     LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
     preparedStatement.setObject(3, localDateTime);
-    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(
+        BigQueryParameterHandler.formatDateTimeDigits(localDateTime),
+        preparedStatement.parameterHandler.getParameter(3));
 
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
     assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(4));
+    assertEquals(Timestamp.from(instant), preparedStatement.parameterHandler.getParameter(4));
+
+    OffsetDateTime offsetDateTime = OffsetDateTime.now();
+    preparedStatement.setObject(5, offsetDateTime);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(5));
+    assertEquals(
+        Timestamp.from(offsetDateTime.toInstant()),
+        preparedStatement.parameterHandler.getParameter(5));
+
+    ZonedDateTime zonedDateTime = ZonedDateTime.now();
+    preparedStatement.setObject(6, zonedDateTime);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(6));
+    assertEquals(
+        Timestamp.from(zonedDateTime.toInstant()),
+        preparedStatement.parameterHandler.getParameter(6));
   }
 
   // Verifies standard DML QueryJobConfiguration creates positional parameters with null values when
@@ -413,7 +437,8 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    // Built from an Instant so the expected UTC rendering does not depend on the JVM zone.
+    Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
 
     QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
@@ -422,7 +447,7 @@ public class BigQueryPreparedStatementSettersTest {
 
     assertEquals(1, config.getPositionalParameters().size());
     assertEquals(
-        "2024-01-01 12:34:56.123456789", config.getPositionalParameters().get(0).getValue());
+        "2024-01-01 12:34:56.123456789Z", config.getPositionalParameters().get(0).getValue());
   }
 
   @Test
@@ -438,7 +463,7 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(nonPicosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
 
     QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
@@ -446,7 +471,7 @@ public class BigQueryPreparedStatementSettersTest {
     QueryJobConfiguration config = builder.build();
 
     assertEquals(1, config.getPositionalParameters().size());
-    assertEquals("2024-01-01 12:34:56.123456", config.getPositionalParameters().get(0).getValue());
+    assertEquals("2024-01-01 12:34:56.123456Z", config.getPositionalParameters().get(0).getValue());
   }
 
   @Test
@@ -462,13 +487,36 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    ps.setTimestamp(1, Timestamp.valueOf("2024-01-01 12:34:56.123456789"));
+    ps.setTimestamp(1, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z")));
     ps.addBatch();
 
     QueryJobConfiguration batchConfig =
         ps.getStandardBatchJobConfiguration("INSERT INTO t (col) VALUES (?)");
     assertEquals(1, batchConfig.getPositionalParameters().size());
     assertEquals(
-        "2024-01-01 12:34:56.123456789", batchConfig.getPositionalParameters().get(0).getValue());
+        "2024-01-01 12:34:56.123456789Z", batchConfig.getPositionalParameters().get(0).getValue());
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Kolkata"})
+  public void testSetObjectLocalDateTime_bindsDigitsAsString_inAnyJvmZone(String zone)
+      throws SQLException {
+    TimeZone previous = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(zone));
+      preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000));
+      assertEquals(
+          "2025-01-01 12:34:56.123000", preparedStatement.parameterHandler.getParameter(1));
+      assertEquals(StandardSQLTypeName.STRING, preparedStatement.parameterHandler.getSqlType(1));
+    } finally {
+      TimeZone.setDefault(previous);
+    }
+  }
+
+  @Test
+  public void testSetObjectLocalDateTime_zeroSecondsStillHasFullDigits() throws SQLException {
+    // LocalDateTime.toString() would print "2025-01-01T12:00"; BigQuery needs full HH:mm:ss.SSSSSS.
+    preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 0));
+    assertEquals("2025-01-01 12:00:00.000000", preparedStatement.parameterHandler.getParameter(1));
   }
 }

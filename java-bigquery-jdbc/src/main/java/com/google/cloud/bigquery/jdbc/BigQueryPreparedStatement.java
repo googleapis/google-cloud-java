@@ -371,7 +371,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       return true;
     }
     if (value instanceof LocalDateTime) {
-      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) value));
+      // Bound as STRING, not DATETIME, to avoid a breaking change: a STRING is accepted by both
+      // DATETIME and TIMESTAMP columns, whereas a typed DATETIME would reject the TIMESTAMP
+      // inserts that work today. The digits are sent unchanged; no JVM zone is involved.
+      setString(
+          parameterIndex, BigQueryParameterHandler.formatDateTimeDigits((LocalDateTime) value));
       return true;
     }
     if (value instanceof OffsetDateTime) {
