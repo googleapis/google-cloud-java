@@ -58,9 +58,17 @@ final class BigQueryTemporalUtility {
    * provided timezone (or JVM default if null).
    */
   public static Timestamp boxDateTime(String val, ZoneId zoneId) {
-    ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
     String isoString = truncateFractionalSeconds(val.replace(' ', 'T'), 9);
-    return Timestamp.from(LocalDateTime.parse(isoString).atZone(targetZone).toInstant());
+    return boxDateTime(LocalDateTime.parse(isoString), zoneId);
+  }
+
+  /**
+   * Converts a civil {@link LocalDateTime} into a {@link Timestamp} by anchoring it to the provided
+   * timezone (or JVM default if null).
+   */
+  static Timestamp boxDateTime(LocalDateTime localDateTime, ZoneId zoneId) {
+    ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
+    return Timestamp.from(localDateTime.atZone(targetZone).toInstant());
   }
 
   /**
@@ -68,8 +76,28 @@ final class BigQueryTemporalUtility {
    * provided timezone (or JVM default if null).
    */
   public static Date boxDate(String val, ZoneId zoneId) {
+    return boxDate(LocalDate.parse(val), zoneId);
+  }
+
+  /**
+   * Converts a civil {@link LocalDate} into a {@link Date} by anchoring it to midnight of the
+   * provided timezone (or JVM default if null).
+   */
+  static Date boxDate(LocalDate localDate, ZoneId zoneId) {
     ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
-    return new Date(LocalDate.parse(val).atStartOfDay(targetZone).toInstant().toEpochMilli());
+    return new Date(localDate.atStartOfDay(targetZone).toInstant().toEpochMilli());
+  }
+
+  /**
+   * Converts a civil {@link LocalTime} into a {@link Time} anchored to 1970-01-01 in the provided
+   * timezone (or JVM default if null).
+   */
+  static Time boxTime(LocalTime localTime, ZoneId zoneId) {
+    if (zoneId == null) {
+      return Time.valueOf(localTime);
+    }
+    long millisOfDay = localTime.toNanoOfDay() / 1_000_000;
+    return new Time(getLocalMillis(millisOfDay, zoneId));
   }
 
   /**
