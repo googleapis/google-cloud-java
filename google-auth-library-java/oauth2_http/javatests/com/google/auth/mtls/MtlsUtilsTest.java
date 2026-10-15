@@ -824,6 +824,17 @@ class MtlsUtilsTest {
   }
 
   @Test
+  void getWorkloadCertPath_useClientCertNonTrueValues_disablesMtls() throws IOException {
+    writeGkeBundle();
+    for (String disabledVal : new String[] {"0", "no", "FALSE", "off", "random"}) {
+      EnvironmentProvider envProvider =
+          name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? disabledVal : null;
+      assertNull(MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+      assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, homeInTempDir()));
+    }
+  }
+
+  @Test
   void getWorkloadCertPath_defaultConfigWithoutWorkload_ignoresGkeBundle() throws IOException {
     writeGkeBundle();
     writeDefaultGcloudConfig("{\"cert_configs\":{\"enterprise_certificates\":{\"libs\":[]}}}");

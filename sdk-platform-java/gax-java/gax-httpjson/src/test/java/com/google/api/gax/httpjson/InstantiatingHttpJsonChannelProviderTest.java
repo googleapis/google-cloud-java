@@ -480,6 +480,25 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
+  void getTransportChannel_whenDefaultMtlsProviderThrowsIOException_propagatesIOException()
+      throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    IOException expected = new IOException("Corrupt PEM file");
+    Mockito.when(certificateBasedAccess.createDefaultMtlsProvider()).thenThrow(expected);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IOException thrown = assertThrows(IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).isSameInstanceAs(expected);
+  }
+
+  @Test
   void createHttpTransport_withMtlsKeyStore_returnsMtlsTransport()
       throws IOException, GeneralSecurityException {
     Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);

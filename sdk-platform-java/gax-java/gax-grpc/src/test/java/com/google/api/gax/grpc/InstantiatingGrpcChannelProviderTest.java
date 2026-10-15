@@ -1443,6 +1443,28 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(thrown).hasMessageThat().contains("Failed to initialize mTLS channel credentials");
   }
 
+  @Test
+  void createChannelBuilder_whenDefaultMtlsProviderThrowsIOException_propagatesIOException()
+      throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    IOException expected = new IOException("Corrupt PEM file");
+    Mockito.when(mtlsCertificateBasedAccess.createDefaultMtlsProvider()).thenThrow(expected);
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    IOException thrown = assertThrows(IOException.class, provider::createChannelBuilder);
+    assertThat(thrown).isSameInstanceAs(expected);
+  }
+
   private static class FakeLogHandler extends Handler {
 
     List<LogRecord> records = new ArrayList<>();

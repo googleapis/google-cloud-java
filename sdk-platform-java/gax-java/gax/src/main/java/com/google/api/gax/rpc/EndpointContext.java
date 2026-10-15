@@ -34,7 +34,6 @@ import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.auth.Credentials;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
-import com.google.auth.mtls.DefaultMtlsProviderFactory;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.auto.value.AutoValue;
@@ -42,7 +41,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.net.HostAndPort;
 import java.io.IOException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -65,7 +63,11 @@ public abstract class EndpointContext {
   // static block initialization for exception handling
   static {
     try {
-      INSTANCE = EndpointContext.newBuilder().setServiceName("").build();
+      INSTANCE =
+          EndpointContext.newBuilder()
+              .setServiceName("")
+              .setCertificateBasedAccess(new CertificateBasedAccess(name -> "false"))
+              .build();
     } catch (IOException e) {
       throw new RuntimeException("Unable to create a default empty EndpointContext", e);
     }
@@ -309,16 +311,9 @@ public abstract class EndpointContext {
       if (certificateBasedAccess.useMtlsClientCertificate()) {
         if (mtlsProvider == null) {
           try {
-            mtlsProvider = DefaultMtlsProviderFactory.create();
+            mtlsProvider = certificateBasedAccess.createDefaultMtlsProvider();
           } catch (CertificateSourceUnavailableException e) {
             // This is okay. Leave mtlsProvider as null;
-          } catch (IOException e) {
-            LOG.log(
-                Level.WARNING,
-                "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
-            LOG.log(
-                Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize. Falling back to non-mTLS channel.");
           }
         }
       }

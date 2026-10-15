@@ -286,14 +286,36 @@ final class AgentIdentityUtils {
     return !Strings.isNullOrEmpty(useClientCert) && !"true".equalsIgnoreCase(useClientCert);
   }
 
+  /**
+   * Resolves symlinks along all existing prefix components of {@code path}, preserving any trailing
+   * non-existent path elements (matching Python's {@code os.path.realpath} behavior before startup
+   * files are created).
+   */
+  private static Path resolveRealPathAllowingMissing(final Path path) {
+    Path normalized = path.toAbsolutePath().normalize();
+    Path current = normalized;
+    while (current != null) {
+      try {
+        Path realCurrent = current.toRealPath();
+        Path relative = current.relativize(normalized);
+        return relative.toString().isEmpty()
+            ? realCurrent
+            : realCurrent.resolve(relative).normalize();
+      } catch (IOException e) {
+        current = current.getParent();
+      }
+    }
+    return normalized;
+  }
+
   /** Checks whether the given path resides within the well-known certificate directory. */
   private static boolean isPathInWellKnownDir(final @Nullable String pathStr) {
     if (Strings.isNullOrEmpty(pathStr)) {
       return false;
     }
     try {
-      Path path = Paths.get(pathStr).toAbsolutePath().normalize();
-      Path wellKnown = Paths.get(wellKnownDir).toAbsolutePath().normalize();
+      Path path = resolveRealPathAllowingMissing(Paths.get(pathStr));
+      Path wellKnown = resolveRealPathAllowingMissing(Paths.get(wellKnownDir));
       return path.startsWith(wellKnown);
     } catch (Exception e) {
       return false;
@@ -686,7 +708,7 @@ final class AgentIdentityUtils {
         lastParseException);
   }
 
-  /** Searches for certificates at well-known locations with retry logic. */
+  /** Searches for certificates at well-known locations. */
   private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
       final @Nullable CachedAgentIdentityInfo initialCached) throws IOException {
     if (isMtlsExplicitlyDisabled()) {
@@ -694,11 +716,11 @@ final class AgentIdentityUtils {
       return new ResolvedCertAndKeyPaths(null, null, false);
     }
 
-    // Unlike the Cloud Run well-known files below (which may be delivered asynchronously and are
-    // polled for up to 30s on initial startup), GKE mounts the Pod Certificate volume before the
-    // container starts, so we perform a single immediate check per call without startup polling.
-    // When found, we mark initialStartupCompleted = true so subsequent refreshes during rotation do
-    // not enter the 30s startup polling loop.
+    // Startup polling is only performed when GOOGLE_API_CERTIFICATE_CONFIG is set and points to the
+    // well-known directory (see getPathsFromConfigWithRetry). When GOOGLE_API_CERTIFICATE_CONFIG is
+    // unset, GKE mounts the Pod Certificate volume before the container starts (and on GCE an empty
+    // well-known directory may exist without any certificates ever being delivered), so we perform
+    // a single immediate check without startup polling.
     // The GKE credential bundle is only used when no well-known gcloud certificate configuration
     // file exists (it would otherwise be the transport's mTLS certificate source).
     boolean gkeBundleAllowed =
@@ -732,52 +754,27 @@ final class AgentIdentityUtils {
     String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
     String keyOnlyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
 
-    boolean shouldPoll = !initialStartupCompleted;
-    int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
-
-    boolean warned = false;
-    for (int cycle = 0; cycle < maxCycles; cycle++) {
-      try {
-        if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(bundlePath))) {
-          initialStartupCompleted = true;
-          // Combined bundle file contains both certificate chain and private key
-          return new ResolvedCertAndKeyPaths(bundlePath, bundlePath, false);
-        }
-        if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certOnlyPath))
-            && AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(keyOnlyPath))) {
-          initialStartupCompleted = true;
-          return new ResolvedCertAndKeyPaths(certOnlyPath, keyOnlyPath, false);
-        }
-      } catch (AccessDeniedException e) {
+    try {
+      if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(bundlePath))) {
         initialStartupCompleted = true;
-        LoggingUtils.log(
-            LOGGER_PROVIDER,
-            Level.FINE,
-            Collections.emptyMap(),
-            "Permission denied reading well-known certificates. Falling back to unbound token.");
-        return new ResolvedCertAndKeyPaths(null, null, false);
-      } catch (Exception e) {
-        // Fall through to retry
+        // Combined bundle file contains both certificate chain and private key
+        return new ResolvedCertAndKeyPaths(bundlePath, bundlePath, false);
       }
-
-      if (cycle + 1 < maxCycles) {
-        if (shouldPoll && !warned) {
-          LoggingUtils.log(
-              LOGGER_PROVIDER,
-              Level.FINE,
-              Collections.emptyMap(),
-              String.format(
-                  "Well-known certificate file not found at %s. Retrying for up to %d seconds.",
-                  wellKnownDir, TOTAL_TIMEOUT_MS / 1000));
-          warned = true;
-        }
-        try {
-          timeService.sleep(getSleepIntervalMs(cycle));
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-          throw new IOException("Interrupted while waiting for well-known certificate files.", e);
-        }
+      if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certOnlyPath))
+          && AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(keyOnlyPath))) {
+        initialStartupCompleted = true;
+        return new ResolvedCertAndKeyPaths(certOnlyPath, keyOnlyPath, false);
       }
+    } catch (AccessDeniedException e) {
+      initialStartupCompleted = true;
+      LoggingUtils.log(
+          LOGGER_PROVIDER,
+          Level.FINE,
+          Collections.emptyMap(),
+          "Permission denied reading well-known certificates. Falling back to unbound token.");
+      return new ResolvedCertAndKeyPaths(null, null, false);
+    } catch (Exception e) {
+      // Fall through to cached credential fallback or unbound fallback
     }
     initialStartupCompleted = true;
 
@@ -792,12 +789,7 @@ final class AgentIdentityUtils {
           fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }
 
-    throw new IOException(
-        String.format(
-            "Unable to find well-known Agent Identity certificate file at %s for bound token"
-                + " request. Token binding protection is failing. You can turn off this"
-                + " protection by setting %s to false to fall back to unbound tokens.",
-            wellKnownDir, GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN));
+    return new ResolvedCertAndKeyPaths(null, null, false);
   }
 
   /**

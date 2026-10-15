@@ -743,4 +743,20 @@ class EndpointContextTest {
         defaultEndpointContextBuilder.setUniverseDomain("random.com").build();
     Truth.assertThat(endpointContext.getUrlDomain()).isEqualTo("test.random.com");
   }
+
+  @Test
+  void endpointContextBuild_whenDefaultMtlsProviderThrowsIOException_propagatesIOException()
+      throws Exception {
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    IOException expected = new IOException("Corrupt PEM file");
+    Mockito.when(certificateBasedAccess.createDefaultMtlsProvider()).thenThrow(expected);
+
+    EndpointContext.Builder builder =
+        defaultEndpointContextBuilder
+            .setMtlsProvider(null)
+            .setCertificateBasedAccess(certificateBasedAccess);
+    IOException actual = assertThrows(IOException.class, builder::build);
+    Truth.assertThat(actual).isSameInstanceAs(expected);
+  }
 }
