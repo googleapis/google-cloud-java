@@ -96,16 +96,12 @@ final class BigQueryTemporalUtility {
     // Legacy JDBC 3.0 API (Calendar provided):
     // Use legacy Calendar manipulation to intentionally replicate old JVM historical DST quirks
     // for January 1, 1970, ensuring strict backwards compatibility for legacy ORMs.
-    Calendar targetCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
-    targetCal.set(Calendar.YEAR, 1970);
-    targetCal.set(Calendar.MONTH, Calendar.JANUARY);
-    targetCal.set(Calendar.DAY_OF_MONTH, 1);
-    targetCal.set(Calendar.HOUR_OF_DAY, localTime.getHour());
-    targetCal.set(Calendar.MINUTE, localTime.getMinute());
-    targetCal.set(Calendar.SECOND, localTime.getSecond());
-    targetCal.set(Calendar.MILLISECOND, localTime.getNano() / 1_000_000);
-
-    return new Time(targetCal.getTimeInMillis());
+    return createTimeInCalendar(
+        Calendar.getInstance(TimeZone.getTimeZone(zoneId)),
+        localTime.getHour(),
+        localTime.getMinute(),
+        localTime.getSecond(),
+        localTime.getNano() / 1_000_000);
   }
 
   /**
@@ -460,23 +456,12 @@ final class BigQueryTemporalUtility {
     if (time == null || cal == null) {
       return time;
     }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    TimeZone systemZone = TimeZone.getDefault();
+    TimeZone targetZone = cal.getTimeZone();
     if (systemZone.equals(targetZone)) {
       return time;
     }
-    Calendar defaultCal = Calendar.getInstance();
-    defaultCal.setTime(time);
-
-    Calendar targetCal = getSafeCalendar(cal);
-    targetCal.set(Calendar.YEAR, 1970);
-    targetCal.set(Calendar.MONTH, Calendar.JANUARY);
-    targetCal.set(Calendar.DAY_OF_MONTH, 1);
-    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
-    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
-    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
-    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
-    return new Time(targetCal.getTimeInMillis());
+    return shiftTimeBetweenCalendars(time, Calendar.getInstance(), getSafeCalendar(cal));
   }
 
   /**
@@ -493,13 +478,33 @@ final class BigQueryTemporalUtility {
     if (time == null || cal == null) {
       return time;
     }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    TimeZone systemZone = TimeZone.getDefault();
+    TimeZone targetZone = cal.getTimeZone();
     if (systemZone.equals(targetZone)) {
       return time;
     }
-    LocalTime localTime = Instant.ofEpochMilli(time.getTime()).atZone(targetZone).toLocalTime();
-    ZonedDateTime zdt = localTime.atDate(LocalDate.of(1970, 1, 1)).atZone(systemZone);
-    return new Time(zdt.toInstant().toEpochMilli());
+    return shiftTimeBetweenCalendars(time, getSafeCalendar(cal), Calendar.getInstance());
+  }
+
+  private static Time shiftTimeBetweenCalendars(Time time, Calendar sourceCal, Calendar destCal) {
+    sourceCal.setTime(time);
+    return createTimeInCalendar(
+        destCal,
+        sourceCal.get(Calendar.HOUR_OF_DAY),
+        sourceCal.get(Calendar.MINUTE),
+        sourceCal.get(Calendar.SECOND),
+        sourceCal.get(Calendar.MILLISECOND));
+  }
+
+  private static Time createTimeInCalendar(
+      Calendar destCal, int hour, int minute, int second, int millisecond) {
+    destCal.set(Calendar.YEAR, 1970);
+    destCal.set(Calendar.MONTH, Calendar.JANUARY);
+    destCal.set(Calendar.DAY_OF_MONTH, 1);
+    destCal.set(Calendar.HOUR_OF_DAY, hour);
+    destCal.set(Calendar.MINUTE, minute);
+    destCal.set(Calendar.SECOND, second);
+    destCal.set(Calendar.MILLISECOND, millisecond);
+    return new Time(destCal.getTimeInMillis());
   }
 }
