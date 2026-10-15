@@ -164,12 +164,20 @@ final class TelemetryConfiguration {
       }
 
       // 2. Environment Variables (overrides connection properties)
-      String envEnabled = System.getenv("BIGQUERY_JDBC_TELEMETRY_ENABLED");
-      this.enabled = TelemetryPropertyUtility.convertStringToBoolean(envEnabled, enabled);
+      try {
+        String envEnabled = System.getenv("BIGQUERY_JDBC_TELEMETRY_ENABLED");
+        this.enabled = TelemetryPropertyUtility.convertStringToBoolean(envEnabled, enabled);
+      } catch (SecurityException e) {
+        // Ignore and proceed
+      }
 
       // 3. JVM System Properties (highest precedence)
-      String sysEnabled = System.getProperty("BIGQUERY_JDBC_TELEMETRY_ENABLED");
-      this.enabled = TelemetryPropertyUtility.convertStringToBoolean(sysEnabled, enabled);
+      try {
+        String sysEnabled = System.getProperty("BIGQUERY_JDBC_TELEMETRY_ENABLED");
+        this.enabled = TelemetryPropertyUtility.convertStringToBoolean(sysEnabled, enabled);
+      } catch (SecurityException e) {
+        // Ignore and proceed
+      }
 
       return this;
     }
