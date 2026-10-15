@@ -47,6 +47,9 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class OAuthException extends GoogleAuthException {
 
+  // Matches the computed value in released versions so previously serialized instances still load.
+  private static final long serialVersionUID = -5276727039237496975L;
+
   private final String errorCode;
   @Nullable private final String errorDescription;
   @Nullable private final String errorUri;

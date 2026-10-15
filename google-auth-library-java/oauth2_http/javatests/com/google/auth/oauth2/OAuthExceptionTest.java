@@ -36,6 +36,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.auth.TestUtils;
 import java.io.IOException;
+import java.io.ObjectStreamClass;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link OAuthException}. */
@@ -128,5 +129,12 @@ final class OAuthExceptionTest {
 
     String expectedMessage = String.format(BASE_MESSAGE_FORMAT, "errorCode");
     assertEquals(expectedMessage, e.getMessage());
+  }
+
+  @Test
+  void serialVersionUID_matchesReleasedVersions() {
+    assertEquals(
+        -5276727039237496975L,
+        ObjectStreamClass.lookup(OAuthException.class).getSerialVersionUID());
   }
 }
