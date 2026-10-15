@@ -206,7 +206,7 @@ public abstract class AbstractMockServerTest {
         StatementResult.query(SELECT_RANDOM_STATEMENT, RANDOM_RESULT_SET));
     mockSpanner.putStatementResult(StatementResult.query(SELECT1_STATEMENT, SELECT1_RESULTSET));
     mockSpanner.putStatementResult(
-        StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+        MockSpannerServiceImpl.StatementResult.detectMetadataResult(Dialect.GOOGLE_STANDARD_SQL));
 
     futureParentHandlers = Logger.getLogger(AbstractFuture.class.getName()).getUseParentHandlers();
     exceptionRunnableParentHandlers =

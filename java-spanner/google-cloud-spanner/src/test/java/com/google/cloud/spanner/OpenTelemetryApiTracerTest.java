@@ -144,6 +144,8 @@ public class OpenTelemetryApiTracerTest extends AbstractMockServerTest {
             .build()
             .getService();
     client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    client.getDialect();
+    spanExporter.reset();
   }
 
   @Test
@@ -437,6 +439,8 @@ public class OpenTelemetryApiTracerTest extends AbstractMockServerTest {
             .build()
             .getService();
     DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    client.getDialect();
+    spanExporter.reset();
 
     try (ResultSet resultSet = client.singleUse().executeQuery(SELECT_RANDOM)) {
       assertTrue(resultSet.next());
