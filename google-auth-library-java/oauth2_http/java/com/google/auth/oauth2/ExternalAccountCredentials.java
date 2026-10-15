@@ -46,7 +46,6 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
-import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -301,6 +300,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     } else {
       sourceBuilder = IdentityPoolCredentials.newBuilder((IdentityPoolCredentials) this);
     }
+    // The intermediate STS access token on sourceCredentials is used to authenticate to the IAM
+    // Credentials generateAccessToken endpoint, which requires the cloud-platform scope (whereas
+    // this.scopes are passed to ImpersonatedCredentials below for the final impersonated token).
     sourceBuilder
         .setServiceAccountImpersonationUrl(null)
         .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
@@ -537,27 +539,6 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       }
     }
     return local;
-  }
-
-  /**
-   * Refreshes the access token using the specified transport factory for per-cycle transport
-   * pinning. {@link AwsCredentials} and {@link PluggableAuthCredentials} delegate {@link
-   * #refreshAccessToken()} into this method, while {@link IdentityPoolCredentials} coordinates
-   * per-cycle transport pinning and retries directly. This default implementation delegates back to
-   * {@link #refreshAccessToken()} for any custom subclasses that do not override this method.
-   *
-   * @param cycleTransportFactory the HTTP transport factory to use for this refresh cycle
-   * @return the refreshed access token
-   * @throws IOException if the token refresh fails
-   */
-  AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) throws IOException {
-    return refreshAccessToken();
-  }
-
-  AccessToken refreshAccessToken(
-      HttpTransportFactory cycleTransportFactory, @Nullable KeyStore pinnedKeyStore)
-      throws IOException {
-    return refreshAccessToken(cycleTransportFactory);
   }
 
   /**
