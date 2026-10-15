@@ -478,4 +478,28 @@ final class BigQueryTemporalUtility {
     targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
     return new Time(targetCal.getTimeInMillis());
   }
+
+  /**
+   * Converts a {@link Time} for writing/inbound parameter setting operations (e.g., {@code
+   * setTime(..., Calendar)}) by extracting its local time fields as interpreted in the target
+   * {@link Calendar}'s timezone and normalizing them back into 1970-01-01 in the system-default
+   * timezone.
+   *
+   * @param time the time instant specified relative to the target Calendar
+   * @param cal the Calendar containing the source timezone
+   * @return the normalized Time on 1970-01-01 in the system-default timezone
+   */
+  static Time convertTimeToCalendar(Time time, Calendar cal) {
+    if (time == null || cal == null) {
+      return time;
+    }
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
+      return time;
+    }
+    LocalTime localTime = Instant.ofEpochMilli(time.getTime()).atZone(targetZone).toLocalTime();
+    ZonedDateTime zdt = localTime.atDate(LocalDate.of(1970, 1, 1)).atZone(systemZone);
+    return new Time(zdt.toInstant().toEpochMilli());
+  }
 }
