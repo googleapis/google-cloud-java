@@ -22,7 +22,7 @@ name: Repository Config & Code Sanity
 jobs:
   gitignore_correctness:
     # Generated files should not match .gitignore
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -47,7 +47,7 @@ jobs:
 
   generate-readme:
     # Ensure generate-readme.py runs fine
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -61,7 +61,7 @@ jobs:
     - run: python3 generate-readme.py
 
   group_id_check_for_maps_libraries:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -91,7 +91,7 @@ jobs:
         echo "All group IDs start with com.google.maps. Good."
 
   package_name_check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:

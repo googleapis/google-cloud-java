@@ -30,7 +30,7 @@ name: ci
 jobs:
   # detect whether or not we should run generated (non-handwritten) unit tests
   generated-libraries-filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       pull-requests: read
     # Set job outputs to values from filter step
@@ -64,7 +64,7 @@ jobs:
             - '.kokoro/**'
   # compile all modules across supported Java versions as a fast smoke test
   units:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: generated-libraries-filter
     strategy:
       fail-fast: false
@@ -86,7 +86,7 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: generated-libraries-filter
     name: "units (8)"
     steps:
@@ -117,7 +117,7 @@ jobs:
   changes:
     needs: generated-libraries-filter
     if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       pull-requests: read
     outputs:
@@ -253,7 +253,7 @@ jobs:
           java-shared-config:
             - 'java-shared-config/**'
   split-units:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: changes
     strategy:
       fail-fast: false
@@ -275,7 +275,7 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.package}}-${{matrix.java}}
   split-units-8:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     name: "split-units"
     needs: changes
     strategy:
@@ -321,7 +321,7 @@ jobs:
         JOB_NAME: units-8-runtime-${{matrix.java}}
       working-directory: ${{matrix.package}}
   split-clirr:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: changes
     strategy:
       matrix:
@@ -341,7 +341,7 @@ jobs:
         JOB_TYPE: clirr
         JOB_NAME: clirr-${{matrix.package}}
   split-dependencies:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     needs: changes
     strategy:
       matrix:
@@ -392,7 +392,7 @@ jobs:
   lint:
     needs: generated-libraries-filter
     if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
@@ -412,7 +412,7 @@ jobs:
   enforcer:
     needs: generated-libraries-filter
     if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
@@ -430,7 +430,7 @@ jobs:
       needs.generated-libraries-filter.outputs.runnable == 'true' &&
       github.head_ref == 'release-please--branches--main' &&
       !endsWith(github.event.pull_request.title, 'SNAPSHOT')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
@@ -450,7 +450,7 @@ jobs:
   gapic-libraries-bom:
     needs: generated-libraries-filter
     if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:

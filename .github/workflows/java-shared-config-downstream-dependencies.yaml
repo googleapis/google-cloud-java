@@ -11,7 +11,7 @@ env:
   BUILD_SUBDIR: java-shared-config
 jobs:
   filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
@@ -27,7 +27,7 @@ jobs:
   dependencies:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:

@@ -11,7 +11,7 @@ on:
 
 jobs:
   changelog-generation-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - name: Checkout code
       uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0

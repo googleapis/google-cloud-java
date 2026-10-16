@@ -15,7 +15,7 @@ env:
   BUILD_SUBDIR: java-shared-config
 jobs:
   filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
@@ -31,7 +31,7 @@ jobs:
   build:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
@@ -83,7 +83,7 @@ jobs:
   lint:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:
@@ -140,7 +140,7 @@ jobs:
   javadoc-with-doclet:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       fail-fast: false
       matrix:

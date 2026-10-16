@@ -11,7 +11,7 @@ env:
   BUILD_SUBDIR: java-spanner-jdbc
 jobs:
   filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
@@ -27,7 +27,7 @@ jobs:
   tests-against-emulator:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     services:
       emulator:

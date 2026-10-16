@@ -8,7 +8,7 @@ name: sdk-platform-java Unmanaged dependency check
 
 jobs:
   filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       run_check: ${{ steps.filter.outputs.run_check }}
     steps:
@@ -28,7 +28,7 @@ jobs:
   unmanaged_dependency_check:
     needs: filter
     if: ${{ needs.filter.outputs.run_check == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:

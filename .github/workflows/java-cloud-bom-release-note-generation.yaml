@@ -19,7 +19,7 @@ jobs:
 
   release-note-generation:
     if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/') }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
       pull-requests: write

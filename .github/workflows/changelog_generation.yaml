@@ -10,7 +10,7 @@ name: CHANGELOG.md generation upon Release Please pull requests
 
 jobs:
   print-github-context:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
@@ -18,7 +18,7 @@ jobs:
           echo "$EVENT_CONTEXT" | jq .
 
   changelog-generation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     permissions:
       contents: write
       pull-requests: write

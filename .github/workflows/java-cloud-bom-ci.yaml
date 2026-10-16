@@ -27,7 +27,7 @@ env:
   MAVEN_OPTS: -Xmx4g
 jobs:
   filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
@@ -46,7 +46,7 @@ jobs:
   dependencies:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         java: [17]
@@ -67,7 +67,7 @@ jobs:
   bom-content-test:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' && github.repository_owner == 'googleapis' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -97,7 +97,7 @@ jobs:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' && github.repository_owner == 'googleapis' }}
     name: BomContentAssertionsTest (Test for assertion logic in BomContentTest)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -120,7 +120,7 @@ jobs:
   test-invalid-bom:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -149,7 +149,7 @@ jobs:
   dashboard:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -167,7 +167,7 @@ jobs:
   shared-dependencies-convergence:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' && github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:

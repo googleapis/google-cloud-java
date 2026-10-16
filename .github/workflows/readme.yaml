@@ -23,7 +23,7 @@ on:
 name: readme
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1

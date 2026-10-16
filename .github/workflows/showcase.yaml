@@ -9,7 +9,7 @@ on:
 name: showcase
 jobs:
   filter:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:

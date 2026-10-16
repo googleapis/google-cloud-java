@@ -24,7 +24,7 @@ on:
 name: versions check
 jobs:
   unmanaged-versions-check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
     - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       with:
@@ -37,7 +37,7 @@ jobs:
   # this check should be skipped. Note that the "autorelease: snapshot" label
   # was added after the pull request is created.
   existing-versions-check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     if: |
       github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main' &&
       !endsWith(github.event.pull_request.title, 'SNAPSHOT')
