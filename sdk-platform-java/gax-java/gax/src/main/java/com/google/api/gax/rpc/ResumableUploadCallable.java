@@ -85,6 +85,16 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
    *
+   * <p>Resuming queries the server for the last committed byte offset and skips the stream forward
+   * to that offset before resuming chunk transmission. {@code payload} must supply a stream
+   * positioned at byte {@code 0} of the original payload.
+   *
+   * <p>Because server chunk granularity is not re-derived on resume, callers resuming an upload
+   * should configure the initial session's effective chunk size (from {@link
+   * ResumableUploadFuture#getEffectiveChunkSize()} or {@link
+   * ResumableUploadProgress#getEffectiveChunkSize()}) via {@link
+   * ResumableUploadOptions.Builder#setChunkSize(int)}.
+   *
    * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
    * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
    * cancellation.
