@@ -79,6 +79,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.KeyValuePair;
@@ -238,6 +239,7 @@ public class ITComputeGoldenSignals extends BaseTest {
    * Tests that a successful compute operation generates traces that are correctly exported to Cloud
    * Trace.
    */
+  @Ignore("Flaky test: b/574587624")
   @Test
   public void testComputeOperationTracing() throws Exception {
     String localTraceId = generateRandomHexString(32);
