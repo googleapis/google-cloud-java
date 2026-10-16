@@ -5956,6 +5956,27 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
   }
 
   /**
+   * Asynchronously set up a new {@link BlobReadSession} for the specified {@link BlobId}, {@link
+   * ReadProjectionConfig} and {@code options}.
+   *
+   * <p>This is a "fast-open" version of {@link #blobReadSession(BlobId, BlobSourceOption...)} which
+   * allows the initial read to be started at the same time as the session is opened.
+   *
+   * @param id the blob to read from
+   * @param config the configuration for the initial read
+   * @param options blob source options
+   * @since 2.65.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @TransportCompatibility({Transport.GRPC})
+  default <Projection> ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id, ReadProjectionConfig<Projection> config, BlobSourceOption... options) {
+    return throwGrpcOnly(
+        fmtMethodName(
+            "blobReadSession", BlobId.class, ReadProjectionConfig.class, BlobSourceOption.class));
+  }
+
+  /**
    * Create a new {@link BlobAppendableUpload} for the specified {@code blobInfo} and {@code
    * options}.
    *
