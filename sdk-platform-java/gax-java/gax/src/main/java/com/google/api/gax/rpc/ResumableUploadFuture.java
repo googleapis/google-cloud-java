@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalExtensionOnly;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -43,9 +44,19 @@ import org.jspecify.annotations.Nullable;
  * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @BetaApi
+@InternalExtensionOnly
 @NullMarked
 public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
 
-  /** Returns the upload session URL, or {@code null} if session initiation is in progress. */
+  /**
+   * Returns the upload session URL, or {@code null} if session initiation is in progress or did not
+   * complete successfully.
+   */
   @Nullable String getUploadSessionUrl();
+
+  /**
+   * Returns the effective chunk size in bytes aligned to the server's chunk granularity, or {@code
+   * null} if session initiation is in progress or did not complete successfully.
+   */
+  @Nullable Integer getEffectiveChunkSize();
 }
