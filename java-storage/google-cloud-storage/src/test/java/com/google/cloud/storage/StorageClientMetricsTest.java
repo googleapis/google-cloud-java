@@ -197,56 +197,60 @@ public final class StorageClientMetricsTest {
     // Verify standard latency histograms have custom latency boundaries and slash names
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION.replace(".", "/"),
+        StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION.replace(".", "/"),
+        StorageClientMetrics.METRIC_HTTP_CLIENT_REQUEST_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION.replace(".", "/"),
+        StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
-        metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB.replace(".", "/"),
-        expectedLatencyBoundaries);
+        metricsMap, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB, expectedLatencyBoundaries);
 
     // Verify debug latency histograms have custom latency boundaries and slash names
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION.replace(".", "/"),
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION.replace(".", "/"),
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_STALL_DURATION,
         expectedLatencyBoundaries);
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION.replace(
-            ".", "/"),
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION,
         expectedLatencyBoundaries);
 
     // Verify size histograms have custom size boundaries and slash names
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE.replace(".", "/"),
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE,
         expectedSizeBoundaries);
     assertHistogramBoundaries(
         metricsMap,
-        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE.replace(".", "/"),
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE,
         expectedSizeBoundaries);
 
     // Verify counter metrics
-    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
-    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES);
-    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
     assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE);
+        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS.replace(".", "/"));
     assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED);
-    assertThat(metricsMap).containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO);
+        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS.replace(".", "/"));
+    assertThat(metricsMap)
+        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES.replace(".", "/"));
+    assertThat(metricsMap)
+        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS.replace(".", "/"));
+    assertThat(metricsMap)
+        .containsKey(
+            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE.replace(".", "/"));
+    assertThat(metricsMap)
+        .containsKey(
+            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/"));
+    assertThat(metricsMap)
+        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO.replace(".", "/"));
   }
 
   @Test
@@ -357,8 +361,9 @@ public final class StorageClientMetricsTest {
 
   private static void assertHistogramBoundaries(
       Map<String, MetricData> metricsMap, String metricName, List<Double> expectedBoundaries) {
-    assertThat(metricsMap).containsKey(metricName);
-    MetricData metricData = metricsMap.get(metricName);
+    String viewName = metricName.replace(".", "/");
+    assertThat(metricsMap).containsKey(viewName);
+    MetricData metricData = metricsMap.get(viewName);
     HistogramPointData pointData = metricData.getHistogramData().getPoints().iterator().next();
     assertThat(pointData.getBoundaries()).isEqualTo(expectedBoundaries);
   }
