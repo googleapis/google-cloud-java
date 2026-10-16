@@ -81,8 +81,7 @@ import org.junit.jupiter.api.Test;
  * GOOGLE_APPLICATION_CREDENTIALS to point to the same service account keys used in the setup script
  * (workloadidentityfederation-setup). These tests call GCS to get bucket information. The bucket
  * name must be provided through the GCS_BUCKET environment variable. The mTLS tests use {@code
- * testresources/mtls/certificate_config.json} by default and can optionally be overridden via the
- * GOOGLE_API_CERTIFICATE_CONFIG environment variable.
+ * testresources/mtls/certificate_config.json}.
  */
 final class ITWorkloadIdentityFederationTest {
 
@@ -320,8 +319,7 @@ final class ITWorkloadIdentityFederationTest {
    */
   @Test
   void identityPoolCredentials_withCertificateBoundWorkloadAndActorToken() throws Exception {
-    String certConfigPath = getMtlsCertificateConfigPath();
-    KeyStore keyStore = new X509Provider(certConfigPath).getKeyStore();
+    KeyStore keyStore = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH).getKeyStore();
     String certThumbprint = computeCertThumbprint(keyStore);
     String subjectToken =
         generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ true);
@@ -364,7 +362,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", certConfigPath);
+      certificate.put("certificate_config_location", DEFAULT_MTLS_CERT_CONFIG_PATH);
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -391,7 +389,7 @@ final class ITWorkloadIdentityFederationTest {
    */
   @Test
   void identityPoolCredentials_withProgrammaticMtlsAndActorToken() throws Exception {
-    X509Provider x509Provider = new X509Provider(getMtlsCertificateConfigPath());
+    X509Provider x509Provider = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH);
     KeyStore keyStore = x509Provider.getKeyStore();
     String certThumbprint = computeCertThumbprint(keyStore);
     IdentityPoolSubjectTokenSupplier tokenSupplier =
@@ -432,8 +430,7 @@ final class ITWorkloadIdentityFederationTest {
   @Test
   void identityPoolCredentials_directSts_withCertificateBoundWorkloadAndActorToken()
       throws Exception {
-    String certConfigPath = getMtlsCertificateConfigPath();
-    KeyStore keyStore = new X509Provider(certConfigPath).getKeyStore();
+    KeyStore keyStore = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH).getKeyStore();
     String certThumbprint = computeCertThumbprint(keyStore);
     String subjectToken =
         generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ true);
@@ -473,7 +470,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", certConfigPath);
+      certificate.put("certificate_config_location", DEFAULT_MTLS_CERT_CONFIG_PATH);
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -498,7 +495,7 @@ final class ITWorkloadIdentityFederationTest {
    */
   @Test
   void identityPoolCredentials_directSts_withProgrammaticMtlsAndActorToken() throws Exception {
-    X509Provider x509Provider = new X509Provider(getMtlsCertificateConfigPath());
+    X509Provider x509Provider = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH);
     KeyStore keyStore = x509Provider.getKeyStore();
     String certThumbprint = computeCertThumbprint(keyStore);
     IdentityPoolSubjectTokenSupplier tokenSupplier =
@@ -626,14 +623,6 @@ final class ITWorkloadIdentityFederationTest {
     config.put("credential_source", credentialSource);
 
     return config;
-  }
-
-  private String getMtlsCertificateConfigPath() {
-    String certConfigPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
-    if (certConfigPath == null || certConfigPath.isEmpty()) {
-      certConfigPath = DEFAULT_MTLS_CERT_CONFIG_PATH;
-    }
-    return certConfigPath;
   }
 
   private String computeCertThumbprint(KeyStore keyStore) throws IOException {
