@@ -37,19 +37,23 @@ public class AsyncChat {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EchoClient echoClient = EchoClient.create()) {
-      BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatCallable().call();
-      EchoRequest request =
-          EchoRequest.newBuilder()
-              .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-              .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-              .setSeverity(Severity.forNumber(0))
-              .setFoobar(Foobar.newBuilder().build())
-              .build();
-      bidiStream.send(request);
-      for (EchoResponse response : bidiStream) {
-        // Do something when a response is received.
-      }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    EchoClient echoClient = EchoClient.create();
+    BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatCallable().call();
+    EchoRequest request =
+        EchoRequest.newBuilder()
+            .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+            .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+            .setSeverity(Severity.forNumber(0))
+            .setFoobar(Foobar.newBuilder().build())
+            .build();
+    bidiStream.send(request);
+    for (EchoResponse response : bidiStream) {
+      // Do something when a response is received.
     }
   }
 }

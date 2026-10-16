@@ -77,10 +77,10 @@ public class ServiceClientClassComposer extends AbstractServiceClientClassCompos
     return ServiceClientCommentComposer.createClassHeaderComments(
         grpcRpcsToJavaMethodNames,
         service,
-        SampleCodeWriter.writeInlineSample(classMethodSampleCode.body()),
-        SampleCodeWriter.writeInlineSample(credentialsSampleCode.body()),
-        SampleCodeWriter.writeInlineSample(endpointSampleCode.body()),
-        SampleCodeWriter.writeInlineSample(transportSampleCode.body()),
+        SampleCodeWriter.writeInlineSample(classMethodSampleCode),
+        SampleCodeWriter.writeInlineSample(credentialsSampleCode),
+        SampleCodeWriter.writeInlineSample(endpointSampleCode),
+        SampleCodeWriter.writeInlineSample(transportSampleCode),
         "gRPC",
         "REST (HTTP1.1/JSON)");
   }
