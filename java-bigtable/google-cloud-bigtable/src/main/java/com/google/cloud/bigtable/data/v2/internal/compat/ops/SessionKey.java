@@ -15,17 +15,18 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
+import com.google.auto.value.AutoValue;
 import com.google.bigtable.v2.OpenAuthorizedViewRequest;
 import com.google.bigtable.v2.OpenMaterializedViewRequest;
 import com.google.bigtable.v2.OpenTableRequest;
-import java.util.Objects;
 
 /**
  * Cache key for {@link SessionPoolMap}: pairs a target ID with the {@link Permission} required by
  * the operation. Two callers that request the same ID and the same permission get the same
  * session-pool handle, regardless of which shim they came from.
  */
-public final class SessionKey<T> {
+@AutoValue
+public abstract class SessionKey<T> {
 
   /** The access permission requested when opening a session for a given target. */
   public enum Permission {
@@ -72,37 +73,11 @@ public final class SessionKey<T> {
     }
   }
 
-  private final T id;
-  private final Permission permission;
+  public abstract T id();
 
-  public SessionKey(T id, Permission permission) {
-    this.id = id;
-    this.permission = permission;
-  }
+  public abstract Permission permission();
 
-  public T id() {
-    return id;
-  }
-
-  public Permission permission() {
-    return permission;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof SessionKey)) return false;
-    SessionKey<?> that = (SessionKey<?>) o;
-    return Objects.equals(id, that.id) && permission == that.permission;
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, permission);
-  }
-
-  @Override
-  public String toString() {
-    return "SessionKey{id=" + id + ", permission=" + permission + "}";
+  public static <T> SessionKey<T> of(T id, Permission permission) {
+    return new AutoValue_SessionKey<>(id, permission);
   }
 }

@@ -73,15 +73,15 @@ public class SessionPoolMap {
 
   /** Returns the cached handle, opening the pool on first use. Loader throws surface as-is. */
   public TableAsync get(TableId id, SessionKey.Permission p) {
-    return getUnchecked(tables, new SessionKey<>(id, p));
+    return getUnchecked(tables, SessionKey.of(id, p));
   }
 
   public AuthorizedViewAsync get(AuthorizedViewId id, SessionKey.Permission p) {
-    return getUnchecked(authViews, new SessionKey<>(id, p));
+    return getUnchecked(authViews, SessionKey.of(id, p));
   }
 
   public MaterializedViewAsync get(MaterializedViewId id, SessionKey.Permission p) {
-    return getUnchecked(matViews, new SessionKey<>(id, p));
+    return getUnchecked(matViews, SessionKey.of(id, p));
   }
 
   // --- apply (for call() — opens the pool lazily on first use) ---
@@ -94,21 +94,21 @@ public class SessionPoolMap {
    */
   public <R> CompletableFuture<R> apply(
       TableId id, SessionKey.Permission p, Function<TableAsync, CompletableFuture<R>> op) {
-    return applyUnchecked(tables, new SessionKey<>(id, p), op);
+    return applyUnchecked(tables, SessionKey.of(id, p), op);
   }
 
   public <R> CompletableFuture<R> apply(
       AuthorizedViewId id,
       SessionKey.Permission p,
       Function<AuthorizedViewAsync, CompletableFuture<R>> op) {
-    return applyUnchecked(authViews, new SessionKey<>(id, p), op);
+    return applyUnchecked(authViews, SessionKey.of(id, p), op);
   }
 
   public <R> CompletableFuture<R> apply(
       MaterializedViewId id,
       SessionKey.Permission p,
       Function<MaterializedViewAsync, CompletableFuture<R>> op) {
-    return applyUnchecked(matViews, new SessionKey<>(id, p), op);
+    return applyUnchecked(matViews, SessionKey.of(id, p), op);
   }
 
   /** Evicts all entries, triggering Closeable.close on each via the cache's removal listener. */
