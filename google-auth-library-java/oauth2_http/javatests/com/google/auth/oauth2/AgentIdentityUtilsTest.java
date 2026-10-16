@@ -1051,17 +1051,19 @@ class AgentIdentityUtilsTest {
     writeWorkloadConfig(configFile, targetCertPath, targetKeyPath);
     envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
 
+    // Populate after sleep 4 and 5 so loadAndVerifyCredentials's 3 attempts (2 sleeps) cannot
+    // mask a broken 0-byte startup poll check.
     FakeTimeService fakeTime = new FakeTimeService();
     fakeTime.setOnSleepCallback(
         () -> {
-          if (fakeTime.getSleepCount() == 1) {
+          if (fakeTime.getSleepCount() == 4) {
             try {
               // First populate only cert; key is still 0 bytes
               copyResource("agent/agent_spiffe_cert.pem", targetCertPath);
             } catch (Exception e) {
               throw new RuntimeException(e);
             }
-          } else if (fakeTime.getSleepCount() == 2) {
+          } else if (fakeTime.getSleepCount() == 5) {
             try {
               // Then populate key
               copyResource("agent/agent_spiffe_key.pem", targetKeyPath);
@@ -1074,7 +1076,7 @@ class AgentIdentityUtilsTest {
 
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
-    assertEquals(2, fakeTime.getSleepCount());
+    assertEquals(5, fakeTime.getSleepCount());
   }
 
   @Test

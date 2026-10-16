@@ -287,9 +287,9 @@ final class AgentIdentityUtils {
   }
 
   /**
-   * Resolves symlinks along all existing prefix components of {@code path}, preserving any trailing
-   * non-existent path elements (matching Python's {@code os.path.realpath} behavior before startup
-   * files are created).
+   * Resolves symlinks on existing ancestor directories of {@code path} (for example, {@code
+   * /var/run} to {@code /run} before startup files are created), preserving any trailing
+   * non-existent path elements.
    */
   private static Path resolveRealPathAllowingMissing(final Path path) {
     Path normalized = path.toAbsolutePath().normalize();
