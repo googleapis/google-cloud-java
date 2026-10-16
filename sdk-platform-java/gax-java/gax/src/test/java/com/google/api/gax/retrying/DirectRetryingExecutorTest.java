@@ -29,7 +29,19 @@
  */
 package com.google.api.gax.retrying;
 
+import static com.google.api.gax.retrying.FailingCallable.FAST_RETRY_SETTINGS;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import com.google.api.core.CurrentMillisClock;
+import java.io.InterruptedIOException;
+import java.net.SocketTimeoutException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Test;
 
 class DirectRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
@@ -44,5 +56,62 @@ class DirectRetryingExecutorTest extends AbstractRetryingExecutorTest {
     return new RetryAlgorithm<>(
         new TestResultRetryAlgorithm<String>(apocalypseCountDown, apocalypseException),
         new ExponentialRetryAlgorithm(retrySettings, CurrentMillisClock.getDefaultClock()));
+  }
+
+  /**
+   * Runs {@code callable} under an algorithm that retries a {@link SocketTimeoutException} and
+   * nothing else, so the test sees which exception the algorithm was given.
+   */
+  private RetryingFuture<String> runRetryingTimeouts(Callable<String> callable) {
+    setUp(false);
+    RetryAlgorithm<String> algorithm =
+        new RetryAlgorithm<>(
+            new BasicResultRetryAlgorithm<String>() {
+              @Override
+              public boolean shouldRetry(Throwable prevThrowable, String prevResponse) {
+                return prevThrowable instanceof SocketTimeoutException;
+              }
+            },
+            new ExponentialRetryAlgorithm(
+                FAST_RETRY_SETTINGS, CurrentMillisClock.getDefaultClock()));
+    RetryingExecutorWithContext<String> executor = getExecutor(algorithm);
+    RetryingFuture<String> future = executor.createFuture(callable, retryingContext);
+    future.setAttemptFuture(executor.submit(future));
+    return future;
+  }
+
+  @Test
+  void testSocketTimeoutReachesTheRetryAlgorithm() throws Exception {
+    AtomicInteger calls = new AtomicInteger();
+    try {
+      RetryingFuture<String> future =
+          runRetryingTimeouts(
+              () -> {
+                if (calls.getAndIncrement() == 0) {
+                  throw new SocketTimeoutException("Read timed out");
+                }
+                return "SUCCESS";
+              });
+      assertFalse(Thread.currentThread().isInterrupted());
+      assertEquals("SUCCESS", future.get());
+      assertEquals(2, calls.get());
+    } finally {
+      Thread.interrupted();
+    }
+  }
+
+  @Test
+  void testInterruptedIOExceptionStillFailsAsInterrupted() {
+    try {
+      RetryingFuture<String> future =
+          runRetryingTimeouts(
+              () -> {
+                throw new InterruptedIOException("interrupted");
+              });
+      ExecutionException e = assertThrows(ExecutionException.class, future::get);
+      assertInstanceOf(InterruptedException.class, e.getCause());
+    } finally {
+      Thread.interrupted();
+    }
   }
 }
