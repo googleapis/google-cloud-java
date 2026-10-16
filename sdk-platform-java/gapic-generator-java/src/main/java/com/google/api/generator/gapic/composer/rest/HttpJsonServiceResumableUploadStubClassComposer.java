@@ -23,7 +23,6 @@ import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
 import com.google.api.gax.httpjson.HttpJsonCallableFactory;
-import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
@@ -31,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadTransportBridge;
 import com.google.api.generator.engine.ast.AnnotationNode;
 import com.google.api.generator.engine.ast.AssignmentExpr;
 import com.google.api.generator.engine.ast.ClassDefinition;
@@ -39,7 +39,6 @@ import com.google.api.generator.engine.ast.ConcreteReference;
 import com.google.api.generator.engine.ast.EmptyLineStatement;
 import com.google.api.generator.engine.ast.Expr;
 import com.google.api.generator.engine.ast.ExprStatement;
-import com.google.api.generator.engine.ast.IfStatement;
 import com.google.api.generator.engine.ast.JavaDocComment;
 import com.google.api.generator.engine.ast.MethodDefinition;
 import com.google.api.generator.engine.ast.MethodInvocationExpr;
@@ -49,6 +48,7 @@ import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.ThisObjectValue;
+import com.google.api.generator.engine.ast.TryCatchStatement;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
 import com.google.api.generator.engine.ast.Variable;
@@ -68,6 +68,7 @@ import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -95,13 +96,13 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
           BackgroundResourceAggregation.class,
           BetaApi.class,
           ClientContext.class,
+          Collections.class,
           GaxHttpJsonProperties.class,
           GaxProperties.class,
           Generated.class,
           HashMap.class,
           HttpJsonCallSettings.class,
           HttpJsonCallableFactory.class,
-          HttpJsonTransportChannel.class,
           InstantiatingHttpJsonChannelProvider.class,
           InternalApi.class,
           InterruptedException.class,
@@ -112,6 +113,7 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
           ProtoMessageResponseParser.class,
           ProtoRestSerializer.class,
           ResumableUploadCallable.class,
+          ResumableUploadTransportBridge.class,
           TimeUnit.class,
           TypeRegistry.class);
 
@@ -120,7 +122,6 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
   private static final String BUILD_METHOD_NAME = "build";
   private static final String NEW_BUILDER_METHOD_NAME = "newBuilder";
 
-  private static final String DERIVE_CLIENT_CONTEXT_METHOD_NAME = "deriveHttpJsonClientContext";
   private static final String STUB_SETTINGS_PATTERN = "%sStubSettings";
   private static final String RESUMABLE_UPLOAD_STUB_PATTERN = "HttpJson%sResumableUploadStub";
 
@@ -252,16 +253,17 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
 
     // Methods
     List<MethodDefinition> methodDefinitions = new ArrayList<>();
-    methodDefinitions.addAll(createStaticCreatorMethods(service, typeStore, className));
     methodDefinitions.addAll(
-        createConstructorMethods(
+        createStaticCreatorMethods(
             service,
             typeStore,
             className,
-            backgroundResourcesVarExpr,
             callableClassMembers,
             protoMethodNameToDescriptorVarExprs,
             resumableUploadMethods));
+    methodDefinitions.addAll(
+        createConstructorMethods(
+            typeStore, className, backgroundResourcesVarExpr, callableClassMembers));
     methodDefinitions.addAll(createCallableGetterMethods(callableClassMembers));
     methodDefinitions.addAll(createBackgroundResourceMethods(backgroundResourcesVarExpr));
 
@@ -282,60 +284,179 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
   }
 
   private static List<MethodDefinition> createStaticCreatorMethods(
-      Service service, TypeStore typeStore, String className) {
+      Service service,
+      TypeStore typeStore,
+      String className,
+      Map<String, VariableExpr> callableClassMembers,
+      Map<String, VariableExpr> protoMethodNameToDescriptorVarExprs,
+      List<Method> resumableUploadMethods) {
     TypeNode thisClassType = typeStore.get(className);
     TypeNode clientContextType = FIXED_TYPESTORE.get(ClientContext.class.getSimpleName());
-    TypeNode transportChannelType =
-        FIXED_TYPESTORE.get(HttpJsonTransportChannel.class.getSimpleName());
     TypeNode stubSettingsType = typeStore.get(String.format(STUB_SETTINGS_PATTERN, service.name()));
 
     VariableExpr settingsVarExpr =
         VariableExpr.withVariable(
             Variable.builder().setName("settings").setType(stubSettingsType).build());
 
-    Expr getTransportNameExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(settingsVarExpr)
-            .setMethodName("getTransportChannelProvider")
-            .build();
-    getTransportNameExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(getTransportNameExpr)
-            .setMethodName("getTransportName")
-            .build();
+    VariableExpr catchIoExceptionVarExpr =
+        VariableExpr.withVariable(
+            Variable.builder()
+                .setName("e")
+                .setType(FIXED_TYPESTORE.get(IOException.class.getSimpleName()))
+                .build());
 
-    Expr isHttpJsonConditionExpr =
+    List<Expr> contextFailureCtorArgs = new ArrayList<>();
+    for (Method method : resumableUploadMethods) {
+      String javaStyleName = JavaStyle.toLowerCamelCase(method.name());
+      VariableExpr callableVarExpr =
+          callableClassMembers.get(String.format("%sCallable", javaStyleName));
+      contextFailureCtorArgs.add(
+          MethodInvocationExpr.builder()
+              .setStaticReferenceType(
+                  FIXED_TYPESTORE.get(ResumableUploadTransportBridge.class.getSimpleName()))
+              .setMethodName("failingCallable")
+              .setArguments(Arrays.asList(catchIoExceptionVarExpr))
+              .setReturnType(callableVarExpr.type())
+              .build());
+    }
+    MethodInvocationExpr emptyListExpr =
         MethodInvocationExpr.builder()
-            .setExprReferenceExpr(getTransportNameExpr)
-            .setMethodName("equals")
-            .setArguments(
-                MethodInvocationExpr.builder()
-                    .setStaticReferenceType(transportChannelType)
-                    .setMethodName("getHttpJsonTransportName")
-                    .build())
-            .setReturnType(TypeNode.BOOLEAN)
+            .setStaticReferenceType(FIXED_TYPESTORE.get(Collections.class.getSimpleName()))
+            .setMethodName("emptyList")
             .build();
+    contextFailureCtorArgs.add(
+        NewObjectExpr.builder()
+            .setType(FIXED_TYPESTORE.get(BackgroundResourceAggregation.class.getSimpleName()))
+            .setArguments(Arrays.asList(emptyListExpr))
+            .build());
+
+    VariableExpr clientContextVarExpr =
+        VariableExpr.withVariable(
+            Variable.builder().setName("clientContext").setType(clientContextType).build());
 
     Statement createHttpJsonContextStmt =
-        IfStatement.builder()
-            .setConditionExpr(isHttpJsonConditionExpr)
-            .setBody(
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(clientContextVarExpr)
+                .setValueExpr(
+                    createUploadClientContextExpr(service, stubSettingsType, settingsVarExpr))
+                .build());
+
+    List<Statement> createBodyStatements = new ArrayList<>();
+    createBodyStatements.add(
+        ExprStatement.withExpr(clientContextVarExpr.toBuilder().setIsDecl(true).build()));
+    createBodyStatements.add(
+        TryCatchStatement.builder()
+            .setTryBody(Arrays.asList(createHttpJsonContextStmt))
+            .addCatch(
+                catchIoExceptionVarExpr.toBuilder().setIsDecl(true).build(),
                 Arrays.asList(
                     ExprStatement.withExpr(
                         ReturnExpr.withExpr(
                             NewObjectExpr.builder()
                                 .setType(thisClassType)
-                                .setArguments(
-                                    Arrays.asList(
-                                        MethodInvocationExpr.builder()
-                                            .setStaticReferenceType(clientContextType)
-                                            .setMethodName("create")
-                                            .setArguments(Arrays.asList(settingsVarExpr))
-                                            .setReturnType(clientContextType)
-                                            .build(),
-                                        settingsVarExpr))
+                                .setArguments(contextFailureCtorArgs)
                                 .build()))))
+            .build());
+
+    List<Expr> ctorArgs = new ArrayList<>();
+    for (Method method : resumableUploadMethods) {
+      String javaStyleName = JavaStyle.toLowerCamelCase(method.name());
+      VariableExpr descriptorVarExpr = protoMethodNameToDescriptorVarExprs.get(method.name());
+      VariableExpr callableVarExpr =
+          callableClassMembers.get(String.format("%sCallable", javaStyleName));
+
+      TypeNode httpJsonCallSettingsType =
+          TypeNode.withReference(
+              ConcreteReference.builder()
+                  .setClazz(HttpJsonCallSettings.class)
+                  .setGenerics(
+                      Arrays.asList(
+                          method.inputType().reference(), method.outputType().reference()))
+                  .build());
+
+      VariableExpr transportSettingsVarExpr =
+          VariableExpr.builder()
+              .setVariable(
+                  Variable.builder()
+                      .setName(String.format("%sTransportSettings", javaStyleName))
+                      .setType(httpJsonCallSettingsType)
+                      .build())
+              .setIsDecl(true)
+              .build();
+
+      MethodInvocationExpr callSettingsBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setStaticReferenceType(
+                  FIXED_TYPESTORE.get(HttpJsonCallSettings.class.getSimpleName()))
+              .setGenerics(
+                  Arrays.asList(method.inputType().reference(), method.outputType().reference()))
+              .setMethodName(NEW_BUILDER_METHOD_NAME)
+              .build();
+      callSettingsBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(callSettingsBuilderExpr)
+              .setMethodName("setMethodDescriptor")
+              .setArguments(Arrays.asList(descriptorVarExpr))
+              .build();
+      callSettingsBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(callSettingsBuilderExpr)
+              .setMethodName("setTypeRegistry")
+              .setArguments(
+                  Arrays.asList(
+                      VariableExpr.builder()
+                          .setVariable(
+                              Variable.builder()
+                                  .setName("typeRegistry")
+                                  .setType(FIXED_TYPESTORE.get(TypeRegistry.class.getSimpleName()))
+                                  .build())
+                          .build()))
+              .build();
+      callSettingsBuilderExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(callSettingsBuilderExpr)
+              .setMethodName(BUILD_METHOD_NAME)
+              .setReturnType(httpJsonCallSettingsType)
+              .build();
+
+      createBodyStatements.add(
+          ExprStatement.withExpr(
+              AssignmentExpr.builder()
+                  .setVariableExpr(transportSettingsVarExpr)
+                  .setValueExpr(callSettingsBuilderExpr)
+                  .build()));
+
+      MethodInvocationExpr getSettingsExpr =
+          MethodInvocationExpr.builder()
+              .setExprReferenceExpr(settingsVarExpr)
+              .setMethodName(String.format("%sSettings", javaStyleName))
+              .build();
+
+      ctorArgs.add(
+          MethodInvocationExpr.builder()
+              .setStaticReferenceType(
+                  FIXED_TYPESTORE.get(HttpJsonCallableFactory.class.getSimpleName()))
+              .setMethodName("createResumableUploadCallable")
+              .setArguments(
+                  Arrays.asList(
+                      transportSettingsVarExpr.toBuilder().setIsDecl(false).build(),
+                      getSettingsExpr,
+                      clientContextVarExpr))
+              .setReturnType(callableVarExpr.type())
+              .build());
+    }
+
+    MethodInvocationExpr getBackgroundResourcesExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(clientContextVarExpr)
+            .setMethodName("getBackgroundResources")
             .build();
+    ctorArgs.add(
+        NewObjectExpr.builder()
+            .setType(FIXED_TYPESTORE.get(BackgroundResourceAggregation.class.getSimpleName()))
+            .setArguments(Arrays.asList(getBackgroundResourcesExpr))
+            .build());
 
     MethodDefinition createMethod =
         MethodDefinition.builder()
@@ -343,30 +464,16 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
             .setIsStatic(true)
             .setReturnType(thisClassType)
             .setName("create")
-            .setThrowsExceptions(
-                Arrays.asList(FIXED_TYPESTORE.get(IOException.class.getSimpleName())))
             .setArguments(Arrays.asList(settingsVarExpr.toBuilder().setIsDecl(true).build()))
-            .setBody(Arrays.asList(createHttpJsonContextStmt))
+            .setBody(createBodyStatements)
             .setReturnExpr(
-                NewObjectExpr.builder()
-                    .setType(thisClassType)
-                    .setArguments(
-                        Arrays.asList(
-                            MethodInvocationExpr.builder()
-                                .setMethodName(DERIVE_CLIENT_CONTEXT_METHOD_NAME)
-                                .setArguments(Arrays.asList(settingsVarExpr))
-                                .setReturnType(clientContextType)
-                                .build(),
-                            settingsVarExpr))
-                    .build())
+                NewObjectExpr.builder().setType(thisClassType).setArguments(ctorArgs).build())
             .build();
 
-    return Arrays.asList(
-        createMethod,
-        createDeriveHttpJsonClientContextMethod(service, stubSettingsType, settingsVarExpr));
+    return Arrays.asList(createMethod);
   }
 
-  private static MethodDefinition createDeriveHttpJsonClientContextMethod(
+  private static Expr createUploadClientContextExpr(
       Service service, TypeNode stubSettingsType, VariableExpr settingsVarExpr) {
     TypeNode clientContextType = FIXED_TYPESTORE.get(ClientContext.class.getSimpleName());
 
@@ -439,195 +546,51 @@ public class HttpJsonServiceResumableUploadStubClassComposer implements ClassCom
             .setMethodName(BUILD_METHOD_NAME)
             .build();
 
-    Expr settingsBuilderExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(settingsVarExpr)
-            .setMethodName("toBuilder")
-            .build();
-    settingsBuilderExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(settingsBuilderExpr)
-            .setMethodName("setHttpJsonInternalHeaderProvider")
-            .setArguments(internalHeadersExpr)
-            .build();
-    settingsBuilderExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(settingsBuilderExpr)
-            .setMethodName("setTransportChannelProvider")
-            .setArguments(channelProviderExpr)
-            .build();
-    settingsBuilderExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(settingsBuilderExpr)
-            .setMethodName(BUILD_METHOD_NAME)
-            .setReturnType(stubSettingsType)
-            .build();
-
-    Expr returnExpr =
-        MethodInvocationExpr.builder()
-            .setStaticReferenceType(clientContextType)
-            .setMethodName("create")
-            .setArguments(settingsBuilderExpr)
-            .setReturnType(clientContextType)
-            .build();
-
-    return MethodDefinition.builder()
-        .setScope(ScopeNode.PRIVATE)
-        .setIsStatic(true)
+    return MethodInvocationExpr.builder()
+        .setStaticReferenceType(
+            FIXED_TYPESTORE.get(ResumableUploadTransportBridge.class.getSimpleName()))
+        .setMethodName("createUploadClientContext")
+        .setArguments(settingsVarExpr, channelProviderExpr, internalHeadersExpr)
         .setReturnType(clientContextType)
-        .setName(DERIVE_CLIENT_CONTEXT_METHOD_NAME)
-        .setThrowsExceptions(Arrays.asList(FIXED_TYPESTORE.get(IOException.class.getSimpleName())))
-        .setArguments(Arrays.asList(settingsVarExpr.toBuilder().setIsDecl(true).build()))
-        .setReturnExpr(returnExpr)
         .build();
   }
 
   private static List<MethodDefinition> createConstructorMethods(
-      Service service,
       TypeStore typeStore,
       String className,
       VariableExpr backgroundResourcesVarExpr,
-      Map<String, VariableExpr> callableClassMembers,
-      Map<String, VariableExpr> protoMethodNameToDescriptorVarExprs,
-      List<Method> resumableUploadMethods) {
+      Map<String, VariableExpr> callableClassMembers) {
     TypeNode thisClassType = typeStore.get(className);
-    TypeNode clientContextType = FIXED_TYPESTORE.get(ClientContext.class.getSimpleName());
-    TypeNode stubSettingsType = typeStore.get(String.format(STUB_SETTINGS_PATTERN, service.name()));
-
-    VariableExpr clientContextVarExpr =
-        VariableExpr.withVariable(
-            Variable.builder().setName("clientContext").setType(clientContextType).build());
-    VariableExpr settingsVarExpr =
-        VariableExpr.withVariable(
-            Variable.builder().setName("settings").setType(stubSettingsType).build());
-
     Expr thisExpr = ValueExpr.withValue(ThisObjectValue.withType(thisClassType));
+
+    List<VariableExpr> ctorArgs = new ArrayList<>();
     List<Statement> ctorStatements = new ArrayList<>();
 
-    for (Method method : resumableUploadMethods) {
-      String javaStyleName = JavaStyle.toLowerCamelCase(method.name());
-      VariableExpr descriptorVarExpr = protoMethodNameToDescriptorVarExprs.get(method.name());
-      VariableExpr callableVarExpr =
-          callableClassMembers.get(String.format("%sCallable", javaStyleName));
-
-      TypeNode httpJsonCallSettingsType =
-          TypeNode.withReference(
-              ConcreteReference.builder()
-                  .setClazz(HttpJsonCallSettings.class)
-                  .setGenerics(
-                      Arrays.asList(
-                          method.inputType().reference(), method.outputType().reference()))
-                  .build());
-
-      VariableExpr transportSettingsVarExpr =
-          VariableExpr.builder()
-              .setVariable(
-                  Variable.builder()
-                      .setName(String.format("%sTransportSettings", javaStyleName))
-                      .setType(httpJsonCallSettingsType)
-                      .build())
-              .setIsDecl(true)
-              .build();
-
-      MethodInvocationExpr callSettingsBuilderExpr =
-          MethodInvocationExpr.builder()
-              .setStaticReferenceType(
-                  FIXED_TYPESTORE.get(HttpJsonCallSettings.class.getSimpleName()))
-              .setGenerics(
-                  Arrays.asList(method.inputType().reference(), method.outputType().reference()))
-              .setMethodName(NEW_BUILDER_METHOD_NAME)
-              .build();
-      callSettingsBuilderExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(callSettingsBuilderExpr)
-              .setMethodName("setMethodDescriptor")
-              .setArguments(Arrays.asList(descriptorVarExpr))
-              .build();
-      callSettingsBuilderExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(callSettingsBuilderExpr)
-              .setMethodName("setTypeRegistry")
-              .setArguments(
-                  Arrays.asList(
-                      VariableExpr.builder()
-                          .setVariable(
-                              Variable.builder()
-                                  .setName("typeRegistry")
-                                  .setType(FIXED_TYPESTORE.get(TypeRegistry.class.getSimpleName()))
-                                  .build())
-                          .build()))
-              .build();
-      callSettingsBuilderExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(callSettingsBuilderExpr)
-              .setMethodName(BUILD_METHOD_NAME)
-              .setReturnType(httpJsonCallSettingsType)
-              .build();
-
-      ctorStatements.add(
-          ExprStatement.withExpr(
-              AssignmentExpr.builder()
-                  .setVariableExpr(transportSettingsVarExpr)
-                  .setValueExpr(callSettingsBuilderExpr)
-                  .build()));
-
-      MethodInvocationExpr getSettingsExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(settingsVarExpr)
-              .setMethodName(String.format("%sSettings", javaStyleName))
-              .build();
-
-      MethodInvocationExpr createCallableExpr =
-          MethodInvocationExpr.builder()
-              .setStaticReferenceType(
-                  FIXED_TYPESTORE.get(HttpJsonCallableFactory.class.getSimpleName()))
-              .setMethodName("createResumableUploadCallable")
-              .setArguments(
-                  Arrays.asList(
-                      transportSettingsVarExpr.toBuilder().setIsDecl(false).build(),
-                      getSettingsExpr,
-                      clientContextVarExpr))
-              .setReturnType(callableVarExpr.type())
-              .build();
-
+    for (VariableExpr callableVarExpr : callableClassMembers.values()) {
+      ctorArgs.add(callableVarExpr.toBuilder().setIsDecl(true).build());
       ctorStatements.add(
           ExprStatement.withExpr(
               AssignmentExpr.builder()
                   .setVariableExpr(
                       callableVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
-                  .setValueExpr(createCallableExpr)
+                  .setValueExpr(callableVarExpr)
                   .build()));
-      ctorStatements.add(EMPTY_LINE_STATEMENT);
     }
 
-    MethodInvocationExpr getBackgroundResourcesExpr =
-        MethodInvocationExpr.builder()
-            .setExprReferenceExpr(clientContextVarExpr)
-            .setMethodName("getBackgroundResources")
-            .build();
-
-    Expr newBackgroundResourceExpr =
-        NewObjectExpr.builder()
-            .setType(FIXED_TYPESTORE.get(BackgroundResourceAggregation.class.getSimpleName()))
-            .setArguments(Arrays.asList(getBackgroundResourcesExpr))
-            .build();
-
+    ctorArgs.add(backgroundResourcesVarExpr.toBuilder().setIsDecl(true).build());
     ctorStatements.add(
         ExprStatement.withExpr(
             AssignmentExpr.builder()
                 .setVariableExpr(
                     backgroundResourcesVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
-                .setValueExpr(newBackgroundResourceExpr)
+                .setValueExpr(backgroundResourcesVarExpr)
                 .build()));
 
     return Arrays.asList(
         MethodDefinition.constructorBuilder()
             .setScope(ScopeNode.PRIVATE)
             .setReturnType(thisClassType)
-            .setArguments(
-                Arrays.asList(
-                    clientContextVarExpr.toBuilder().setIsDecl(true).build(),
-                    settingsVarExpr.toBuilder().setIsDecl(true).build()))
+            .setArguments(ctorArgs)
             .setBody(ctorStatements)
             .build());
   }
