@@ -330,7 +330,8 @@ final class BigQueryTypeRegistry {
           // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
           if (targetClass == Instant.class
               || targetClass == OffsetDateTime.class
-              || targetClass == ZonedDateTime.class) {
+              || targetClass == ZonedDateTime.class
+              || targetClass == String.class) {
             Instant instant;
             if (val instanceof Instant) {
               instant = (Instant) val;
@@ -360,6 +361,9 @@ final class BigQueryTypeRegistry {
             }
             if (targetClass == ZonedDateTime.class) {
               return instant.atZone(ZoneOffset.UTC);
+            }
+            if (targetClass == String.class) {
+              return TIMESTAMP_FORMATTER.format(instant.atOffset(ZoneOffset.UTC));
             }
           }
 
