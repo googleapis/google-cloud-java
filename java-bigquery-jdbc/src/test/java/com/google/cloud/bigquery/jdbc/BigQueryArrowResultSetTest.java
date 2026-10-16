@@ -47,6 +47,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Arrays;
@@ -75,6 +76,7 @@ import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.complex.impl.UnionListWriter;
 import org.apache.arrow.vector.types.pojo.FieldType;
 import org.apache.arrow.vector.util.JsonStringArrayList;
+import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -654,6 +656,117 @@ public class BigQueryArrowResultSetTest {
       assertThat(rs.getTimestamp("ts", laCal).toInstant()).isEqualTo(ref);
       assertThat(rs.getDate("ts", laCal).toLocalDate()).isEqualTo(local.toLocalDate());
       assertThat(rs.getTime("ts", laCal).toLocalTime()).isEqualTo(local.toLocalTime().withNano(0));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testGetStringOnTimestampAndDatetimeAcrossJvmZones(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      Instant ref = Instant.parse("2025-01-01T12:34:56.123Z");
+      BigQueryArrowResultSet rs = createTemporalArrowResultSet(ref);
+      assertThat(rs.next()).isTrue();
+
+      assertThat(rs.getString("ts")).isEqualTo("2025-01-01 12:34:56.123000");
+      assertThat(rs.getObject("ts", String.class)).isEqualTo("2025-01-01 12:34:56.123000");
+      assertThat(rs.getString("dt")).isEqualTo("2025-01-01 12:34:56.123000");
+
+      long tsMicros = ref.getEpochSecond() * 1_000_000L + ref.getNano() / 1_000L;
+      LocalDateTime dtLocal = LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000);
+
+      Field tsArraySchema =
+          Field.newBuilder("ts_array", StandardSQLTypeName.TIMESTAMP)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+      JsonStringArrayList<Long> tsList = new JsonStringArrayList<>();
+      tsList.add(tsMicros);
+      BigQueryArrowArray tsArrowArray = new BigQueryArrowArray(tsArraySchema, tsList);
+      assertThat(tsArrowArray.toString()).isEqualTo("[2025-01-01 12:34:56.123]");
+      try (ResultSet nestedTsRs = tsArrowArray.getResultSet()) {
+        assertThat(nestedTsRs.next()).isTrue();
+        assertThat(nestedTsRs.getString(2)).isEqualTo("2025-01-01 12:34:56.123000");
+      }
+
+      Field dtArraySchema =
+          Field.newBuilder("dt_array", StandardSQLTypeName.DATETIME)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+      JsonStringArrayList<LocalDateTime> dtList = new JsonStringArrayList<>();
+      dtList.add(dtLocal);
+      BigQueryArrowArray dtArrowArray = new BigQueryArrowArray(dtArraySchema, dtList);
+      assertThat(dtArrowArray.toString()).isEqualTo("[2025-01-01 12:34:56.123]");
+
+      FieldList structSchema =
+          FieldList.of(
+              Field.of("ts", StandardSQLTypeName.TIMESTAMP),
+              Field.of("dt", StandardSQLTypeName.DATETIME));
+      JsonStringHashMap<String, Object> structValues = new JsonStringHashMap<>();
+      structValues.put("ts", tsMicros);
+      structValues.put("dt", dtLocal);
+      BigQueryArrowStruct arrowStruct = new BigQueryArrowStruct(structSchema, structValues);
+      assertThat(arrowStruct.toString())
+          .isEqualTo("{\"ts\":\"2025-01-01 12:34:56.123\",\"dt\":\"2025-01-01 12:34:56.123\"}");
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testTimestampPicosAccessorsAcrossJvmZones(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      VectorSchemaRoot root = getPicosVectorSchemaRoot();
+      ArrowRecordBatch batch =
+          ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+              .build();
+      BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
+      picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+      picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+      BigQueryStatement picosStmt = mock(BigQueryStatement.class);
+      doReturn(true).when(picosStmt).isEnableTimestampPicos();
+
+      Schema schema =
+          Schema.of(
+              Field.newBuilder("picosTimestamp", StandardSQLTypeName.TIMESTAMP)
+                  .setTimestampPrecision(12L)
+                  .build());
+      ArrowSchema arrowSchema =
+          ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+      BigQueryArrowResultSet rs =
+          BigQueryArrowResultSet.of(
+              schema, arrowSchema, 1, picosStmt, picosBuffer, mock(Future.class), null);
+      assertThat(rs.next()).isTrue();
+
+      Instant expectedInstant = Instant.parse("2026-04-08T10:00:00.123456789Z");
+      ZonedDateTime expectedLocal = expectedInstant.atZone(ZoneId.of(jvmZone));
+      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/London"));
+
+      assertThat(rs.getString("picosTimestamp")).isEqualTo("2026-04-08 10:00:00.123456789123");
+      assertThat(rs.getTimestamp("picosTimestamp").toInstant()).isEqualTo(expectedInstant);
+      assertThat(rs.getTimestamp("picosTimestamp", cal).toInstant()).isEqualTo(expectedInstant);
+      assertThat(rs.getObject("picosTimestamp", Instant.class)).isEqualTo(expectedInstant);
+      assertThat(rs.getObject("picosTimestamp", OffsetDateTime.class).toInstant())
+          .isEqualTo(expectedInstant);
+      assertThat(rs.getObject("picosTimestamp", LocalDateTime.class))
+          .isEqualTo(expectedLocal.toLocalDateTime());
+      assertThat(rs.getDate("picosTimestamp").toLocalDate()).isEqualTo(expectedLocal.toLocalDate());
+      assertThat(rs.getDate("picosTimestamp", cal).toLocalDate())
+          .isEqualTo(expectedLocal.toLocalDate());
+      assertThat(rs.getTime("picosTimestamp").toLocalTime())
+          .isEqualTo(expectedLocal.toLocalTime().withNano(0));
+      assertThat(rs.getTime("picosTimestamp", cal).toLocalTime())
+          .isEqualTo(expectedLocal.toLocalTime().withNano(0));
     } finally {
       TimeZone.setDefault(originalDefault);
     }
