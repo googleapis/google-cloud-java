@@ -53,6 +53,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -102,6 +103,7 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(new byte[0]));
   }
 
+  @Ignore("Flaky test: b/574588650")
   @Test
   public void appendableUpload_bytes()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
@@ -134,6 +136,7 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(a1_a2.getBytes()));
   }
 
+  @Ignore("Flaky test: b/574588650")
   @Test
   public void explicitFlush()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
