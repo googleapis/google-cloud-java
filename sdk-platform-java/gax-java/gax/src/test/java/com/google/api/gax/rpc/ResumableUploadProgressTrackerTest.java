@@ -55,12 +55,13 @@ class ResumableUploadProgressTrackerTest {
     assertThat(initial.getState()).isEqualTo(ResumableUploadProgress.STATE_STARTING);
     assertThat(initial.getBytesUploaded()).isEqualTo(0L);
     assertThat(initial.getUploadUrl()).isNull();
+    assertThat(initial.getEffectiveChunkSize()).isNull();
   }
 
   @Test
   void testProgressUpdates() {
     ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
-    tracker.onStarted("https://upload.url/test");
+    tracker.onStarted("https://upload.url/test", 256);
 
     List<Long> byteUpdates = new ArrayList<>();
     tracker.addListener(
@@ -73,12 +74,13 @@ class ResumableUploadProgressTrackerTest {
     // Advance to 200 bytes
     tracker.onChunkUploaded(200L);
     assertThat(byteUpdates).containsExactly(0L, 100L, 200L).inOrder();
+    assertThat(tracker.getProgress().getEffectiveChunkSize()).isEqualTo(256);
   }
 
   @Test
   void testListenerExceptionSafety_doesNotDisruptSubsequentUpdates() {
     ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
-    tracker.onStarted("https://upload.url/test");
+    tracker.onStarted("https://upload.url/test", 256);
 
     AtomicInteger errorCount = new AtomicInteger(0);
     List<String> safeReceived = new ArrayList<>();
@@ -110,7 +112,7 @@ class ResumableUploadProgressTrackerTest {
   @Test
   void testTerminalState_noNotificationsAfterFinalized() {
     ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
-    tracker.onStarted("https://upload.url/test");
+    tracker.onStarted("https://upload.url/test", 512);
 
     List<String> received = new ArrayList<>();
     tracker.addListener(status -> received.add(status.getState()), MoreExecutors.directExecutor());
@@ -139,7 +141,7 @@ class ResumableUploadProgressTrackerTest {
     tracker.addListener(
         status -> observed.set(tracker.getProgress()), MoreExecutors.directExecutor());
 
-    tracker.onStarted("https://upload.url/reentrancy");
+    tracker.onStarted("https://upload.url/reentrancy", 1024);
     assertThat(observed.get()).isNotNull();
     assertThat(observed.get().getState()).isEqualTo(ResumableUploadProgress.STATE_STARTED);
     assertThat(observed.get().getUploadUrl()).isEqualTo("https://upload.url/reentrancy");
@@ -162,7 +164,7 @@ class ResumableUploadProgressTrackerTest {
           },
           executor);
 
-      tracker.onStarted("https://upload.url/custom-executor");
+      tracker.onStarted("https://upload.url/custom-executor", 256);
       assertThat(latch.await(5, TimeUnit.SECONDS)).isTrue();
 
       synchronized (states) {
