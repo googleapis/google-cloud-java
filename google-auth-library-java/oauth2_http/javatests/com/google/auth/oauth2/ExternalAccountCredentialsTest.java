@@ -1117,6 +1117,23 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void buildImpersonatedCredentials_withQuotaProjectId() {
+    for (GenericJson json :
+        Arrays.asList(
+            buildJsonIdentityPoolCredential(),
+            buildJsonAwsCredential(),
+            buildJsonPluggableAuthCredential())) {
+      json.put("service_account_impersonation_url", SERVICE_ACCOUNT_IMPERSONATION_URL);
+      json.put("quota_project_id", "quotaProjectId");
+      ImpersonatedCredentials impersonated =
+          ExternalAccountCredentials.fromJson(json, transportFactory)
+              .buildImpersonatedCredentials();
+      assertEquals("quotaProjectId", impersonated.getQuotaProjectId());
+      assertNull(impersonated.getSourceCredentials().getQuotaProjectId());
+    }
+  }
+
+  @Test
   void serialize() throws IOException, ClassNotFoundException {
     Map<String, Object> impersonationOpts =
         new HashMap<String, Object>() {
