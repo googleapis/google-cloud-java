@@ -110,6 +110,21 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
 
   void start() {
     progressTracker.onStarted(uploadUrl, chunkSize);
+    registerCancellationListener();
+    try {
+      buffer.fill();
+      transmitChunk();
+    } catch (Throwable t) {
+      uploadResultFuture.setException(t);
+    }
+  }
+
+  void resume() {
+    registerCancellationListener();
+    queryStatus(/* isInitialResume= */ true);
+  }
+
+  private void registerCancellationListener() {
     uploadResultFuture.addListener(
         () -> {
           Future<?> inFlight = inFlightFuture;
@@ -118,12 +133,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
-    try {
-      buffer.fill();
-      transmitChunk();
-    } catch (Throwable t) {
-      uploadResultFuture.setException(t);
-    }
   }
 
   private void transmitChunk() {
@@ -200,7 +209,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       }
       tryRegisterInFlightFuture(
           executor.schedule(
-              this::queryStatus,
+              () -> queryStatus(/* isInitialResume= */ false),
               recoverySettings.getRandomizedRetryDelayDuration().toNanos(),
               TimeUnit.NANOSECONDS));
     } catch (Throwable t) {
@@ -208,7 +217,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     }
   }
 
-  private void queryStatus() {
+  private void queryStatus(boolean isInitialResume) {
     try {
       if (uploadResultFuture.isDone()) {
         return;
@@ -228,7 +237,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
                 return;
               }
               try {
-                handleQueryResponse(queryResponse);
+                handleQueryResponse(queryResponse, isInitialResume);
               } catch (Throwable t) {
                 uploadResultFuture.setException(t);
               }
@@ -261,8 +270,8 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     return true;
   }
 
-  private void handleQueryResponse(QueryStatusResponse<ResponseT> queryResponse)
-      throws IOException {
+  private void handleQueryResponse(
+      QueryStatusResponse<ResponseT> queryResponse, boolean isInitialResume) throws IOException {
     if (queryResponse.getUploadStatus() == ResumableUploadStatus.UNKNOWN) {
       throw new IllegalStateException("Query status response missing X-Goog-Upload-Status header");
     }
@@ -277,7 +286,11 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           "Incomplete query status response did not include a committed offset");
     }
     progressTracker.onOffsetReceived(committedOffset);
-    buffer.realignTo(committedOffset);
+    if (isInitialResume) {
+      buffer.resumeAt(committedOffset);
+    } else {
+      buffer.recoverAt(committedOffset);
+    }
     transmitChunk();
   }
 
