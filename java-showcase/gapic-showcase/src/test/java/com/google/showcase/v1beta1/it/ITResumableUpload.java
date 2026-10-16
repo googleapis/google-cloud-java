@@ -359,6 +359,66 @@ class ITResumableUpload {
     }
   }
 
+  @Test
+  void testResumeUpload(@TempDir Path tempDir) throws Exception {
+    int totalBytes = 600 * 1024;
+    int unalignedChunkSize = 300 * 1024;
+    Path file = createTempFile(tempDir, "it-resume.txt", totalBytes);
+    UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("it-resume.txt").build();
+    ApiCallContext failSecondChunkContext = faultInjectionContext(403, 1, SHOWCASE_CHUNK_SIZE);
+
+    ResumableUploadFuture<UploadMediaResponse> firstAttemptFuture =
+        client
+            .uploadMediaCallable()
+            .futureCall(
+                request,
+                () -> Files.newInputStream(file),
+                failSecondChunkContext,
+                ResumableUploadOptions.newBuilder().setChunkSize(unalignedChunkSize).build());
+
+    assertThrows(ExecutionException.class, () -> firstAttemptFuture.get(15, TimeUnit.SECONDS));
+    String sessionUrl = firstAttemptFuture.getUploadSessionUrl();
+    Integer effectiveChunkSize = firstAttemptFuture.getEffectiveChunkSize();
+    assertThat(sessionUrl).isNotNull();
+    assertThat(effectiveChunkSize).isEqualTo(SHOWCASE_CHUNK_SIZE);
+
+    List<ResumableUploadProgress> resumeProgress = new CopyOnWriteArrayList<>();
+    CountDownLatch finalizedLatch = new CountDownLatch(1);
+    ResumableUploadOptions resumeOptions =
+        ResumableUploadOptions.newBuilder()
+            .setChunkSize(effectiveChunkSize)
+            .setProgressListener(
+                status -> {
+                  resumeProgress.add(status);
+                  if ("FINALIZED".equals(status.getState())) {
+                    finalizedLatch.countDown();
+                  }
+                })
+            .build();
+
+    ResumableUploadFuture<UploadMediaResponse> secondAttemptFuture =
+        client
+            .uploadMediaCallable()
+            .resumeCall(sessionUrl, () -> Files.newInputStream(file), resumeOptions);
+    UploadMediaResponse response = secondAttemptFuture.get(30, TimeUnit.SECONDS);
+    assertThat(finalizedLatch.await(10, TimeUnit.SECONDS)).isTrue();
+
+    assertThat(response.getName()).isEqualTo("it-resume.txt");
+    assertThat(response.getSize()).isEqualTo(totalBytes);
+    assertThat(
+            resumeProgress.stream()
+                .map(ResumableUploadProgress::getState)
+                .collect(Collectors.toList()))
+        .containsExactly("RECOVERING", "OFFSET_RECEIVED", "UPLOADING", "FINALIZED")
+        .inOrder();
+    assertThat(
+            resumeProgress.stream()
+                .map(ResumableUploadProgress::getBytesUploaded)
+                .collect(Collectors.toList()))
+        .containsExactly(0L, 262144L, 524288L, 614400L)
+        .inOrder();
+  }
+
   private static Path createTempFile(Path dir, String fileName, byte[] data) throws IOException {
     Path path = dir.resolve(fileName);
     Files.write(path, data);

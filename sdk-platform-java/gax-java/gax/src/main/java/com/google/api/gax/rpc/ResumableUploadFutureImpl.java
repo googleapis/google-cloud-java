@@ -55,6 +55,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.function.Consumer;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -71,7 +72,6 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
 
   private final Object lock = new Object();
 
-  private final ApiFuture<ResumableUploadSession> startFuture;
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
@@ -109,20 +109,71 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       InputStreamSupplier payloadSupplier,
       ResumableUploadOptions options,
-      ClientContext clientContext,
-      ExponentialRetryAlgorithm recoveryAlgorithm) {
+      ClientContext clientContext) {
     checkNotNull(payloadSupplier, "payloadSupplier must not be null");
     ResumableUploadFutureImpl<ResponseT> future =
         new ResumableUploadFutureImpl<>(
             startFuture,
+            /* sessionUrl= */ null,
             uploadChunkCallable,
             queryStatusCallable,
             options,
-            clientContext,
-            recoveryAlgorithm,
-            ResumableUploadProgressTracker.create());
+            clientContext);
     try {
-      future.start(payloadSupplier);
+      future.initiate(
+          startFuture,
+          payloadSupplier,
+          session -> {
+            ResumableUploadChunkCoordinator<ResponseT> coordinator =
+                future.createAndRegisterCoordinator(
+                    session.getUploadUrl(), session.getChunkGranularity());
+            if (coordinator != null) {
+              coordinator.start();
+            }
+          });
+    } catch (Throwable t) {
+      future.fail(t);
+    }
+    return future;
+  }
+
+  /**
+   * Creates and initiates a resumable upload future that resumes an existing upload session from
+   * {@code sessionUrl}.
+   *
+   * <p>The stream opened from {@code payloadSupplier} is managed by the returned future and will be
+   * closed automatically upon completion, failure, or cancellation.
+   */
+  static <ResponseT> ResumableUploadFutureImpl<ResponseT> createForResume(
+      String sessionUrl,
+      ApiFuture<QueryStatusResponse<ResponseT>> queryFuture,
+      UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
+      UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
+      InputStreamSupplier payloadSupplier,
+      ResumableUploadOptions options,
+      ClientContext clientContext) {
+    checkNotNull(sessionUrl, "sessionUrl must not be null");
+    checkNotNull(payloadSupplier, "payloadSupplier must not be null");
+    ResumableUploadFutureImpl<ResponseT> future =
+        new ResumableUploadFutureImpl<>(
+            queryFuture,
+            sessionUrl,
+            uploadChunkCallable,
+            queryStatusCallable,
+            options,
+            clientContext);
+    try {
+      future.initiate(
+          queryFuture,
+          payloadSupplier,
+          queryResponse -> {
+            ResumableUploadChunkCoordinator<ResponseT> coordinator =
+                future.createAndRegisterCoordinator(
+                    sessionUrl, queryResponse.getChunkGranularity());
+            if (coordinator != null) {
+              coordinator.resume(queryResponse);
+            }
+          });
     } catch (Throwable t) {
       future.fail(t);
     }
@@ -130,14 +181,13 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private ResumableUploadFutureImpl(
-      ApiFuture<ResumableUploadSession> startFuture,
+      ApiFuture<?> initiationFuture,
+      @Nullable String sessionUrl,
       UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable,
       UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       ResumableUploadOptions options,
-      ClientContext clientContext,
-      ExponentialRetryAlgorithm recoveryAlgorithm,
-      ResumableUploadProgressTracker progressTracker) {
-    this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
+      ClientContext clientContext) {
+    this.uploadSessionUrl = sessionUrl;
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
     this.queryStatusCallable =
@@ -147,35 +197,37 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     checkNotNull(clientContext, "clientContext must not be null");
     this.callContext = clientContext.getDefaultCallContext();
     this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
-    this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
-    this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
-    this.inFlightFuture = startFuture;
+    this.recoveryAlgorithm =
+        new ExponentialRetryAlgorithm(
+            ResumableUploadCallableImpl.RETRY_SETTINGS, clientContext.getClock());
+    if (sessionUrl != null) {
+      this.progressTracker = ResumableUploadProgressTracker.createForResume(sessionUrl);
+    } else {
+      this.progressTracker = ResumableUploadProgressTracker.create();
+    }
+    this.inFlightFuture = checkNotNull(initiationFuture, "initiationFuture must not be null");
     ResumableUploadProgressListener progressListener = options.getProgressListener();
     if (progressListener != null) {
       progressTracker.addListener(progressListener, executor);
     }
   }
 
-  private void start(InputStreamSupplier payloadSupplier) throws IOException {
+  private <T> void initiate(
+      ApiFuture<T> initiationFuture,
+      InputStreamSupplier payloadSupplier,
+      Consumer<T> onSessionReady)
+      throws IOException {
     setUpGlobalTimeout();
     this.payload = checkNotNull(payloadSupplier.get(), "payload supplier returned null");
     ApiFutures.addCallback(
-        startFuture,
-        new ApiFutureCallback<ResumableUploadSession>() {
+        initiationFuture,
+        new ApiFutureCallback<T>() {
           @Override
-          public void onSuccess(ResumableUploadSession session) {
-            String sessionUrl = session.getUploadUrl();
-            int chunkSize;
+          public void onSuccess(T result) {
             try {
-              chunkSize = alignChunkSize(options.getChunkSize(), session.getChunkGranularity());
+              onSessionReady.accept(result);
             } catch (Throwable t) {
               fail(t);
-              return;
-            }
-            ResumableUploadChunkCoordinator<ResponseT> coordinator =
-                createAndRegisterCoordinator(sessionUrl, chunkSize);
-            if (coordinator != null) {
-              coordinator.start();
             }
           }
 
@@ -198,7 +250,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private @Nullable ResumableUploadChunkCoordinator<ResponseT> createAndRegisterCoordinator(
-      String sessionUrl, int chunkSize) {
+      String sessionUrl, int chunkGranularity) {
+    int chunkSize = alignChunkSize(options.getChunkSize(), chunkGranularity);
     ResumableUploadChunkCoordinator<ResponseT> coordinator =
         new ResumableUploadChunkCoordinator<>(
             uploadChunkCallable,
@@ -289,10 +342,12 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       return (ApiException) t;
     }
     String message = firstNonNull(t.getMessage(), t.getClass().getSimpleName());
-    if (sessionUrl != null) {
+    if (sessionUrl != null && chunkSize != null) {
       message =
           String.format(
               "%s (upload URL: %s, effective chunk size: %d)", message, sessionUrl, chunkSize);
+    } else if (sessionUrl != null) {
+      message = String.format("%s (upload URL: %s)", message, sessionUrl);
     }
     // Rethrow with URL and effective chunk size included in message.
     if (t instanceof ApiException) {

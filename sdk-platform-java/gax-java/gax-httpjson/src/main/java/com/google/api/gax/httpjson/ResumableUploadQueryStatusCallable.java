@@ -232,6 +232,7 @@ class ResumableUploadQueryStatusCallable<ResponseT>
             future.set(
                 QueryStatusResponse.<ResponseT>newBuilder()
                     .setUploadStatus(uploadStatus)
+                    .setCommittedOffset(committedOffset)
                     .setResponse(responseParser.parse(stream))
                     .setChunkGranularity(chunkGranularity)
                     .build());

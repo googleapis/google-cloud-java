@@ -49,51 +49,59 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   /**
    * Performs a new resumable upload asynchronously with options overrides and default call context.
    *
-   * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
-   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
-   * cancellation.
+   * <p>Streams from the provided {@code payloadSupplier} are consumed asynchronously by the
+   * returned {@link ResumableUploadFuture} and will be closed automatically upon completion,
+   * failure, or cancellation.
    *
    * @param request the request message
-   * @param payload supplier of the data payload input stream to upload and close
+   * @param payloadSupplier supplier of the data payload input stream to upload and close
    * @param options request-level upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStreamSupplier payload, @Nullable ResumableUploadOptions options) {
-    return futureCall(request, payload, null, options);
+      RequestT request,
+      InputStreamSupplier payloadSupplier,
+      @Nullable ResumableUploadOptions options) {
+    return futureCall(request, payloadSupplier, null, options);
   }
 
   /**
    * Performs a new resumable upload asynchronously with call context and options overrides.
    *
-   * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
-   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
-   * cancellation.
+   * <p>Streams from the provided {@code payloadSupplier} are consumed asynchronously by the
+   * returned {@link ResumableUploadFuture} and will be closed automatically upon completion,
+   * failure, or cancellation.
    *
    * @param request the request message
-   * @param payload supplier of the data payload input stream to upload and close
+   * @param payloadSupplier supplier of the data payload input stream to upload and close
    * @param context call context overrides; may be {@code null}
    * @param options request-level upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> futureCall(
       RequestT request,
-      InputStreamSupplier payload,
+      InputStreamSupplier payloadSupplier,
       @Nullable ApiCallContext context,
       @Nullable ResumableUploadOptions options);
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
    *
-   * <p>Streams from the provided {@code payload} are consumed asynchronously by the returned {@link
-   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
-   * cancellation.
+   * <p>Resuming queries the server for the last committed byte offset and skips the stream forward
+   * to that offset before resuming chunk transmission. {@code payloadSupplier} must supply a stream
+   * positioned at byte {@code 0} of the original payload.
+   *
+   * <p>Streams from the provided {@code payloadSupplier} are consumed asynchronously by the
+   * returned {@link ResumableUploadFuture} and will be closed automatically upon completion,
+   * failure, or cancellation.
    *
    * @param sessionUrl the upload session URL
-   * @param payload supplier of the data payload input stream to upload and close
+   * @param payloadSupplier supplier of the data payload input stream to upload and close
    * @param options upload options overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStreamSupplier payload, @Nullable ResumableUploadOptions options);
+      String sessionUrl,
+      InputStreamSupplier payloadSupplier,
+      @Nullable ResumableUploadOptions options);
 }

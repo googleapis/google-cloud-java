@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
+import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -201,6 +202,39 @@ class RewindableStreamBufferTest {
     buffer.fill();
 
     // Must greedily fill all 8 bytes despite short reads, and not be marked final yet
+    assertThat(buffer.getPayload()).hasLength(8);
+    assertThat(buffer.isFinal()).isFalse();
+    assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("01234567");
+  }
+
+  @Test
+  void testRealignTo_beforeFirstFill_skipsToCommittedOffset() throws IOException {
+    byte[] data = "0123456789ABCDEFGHIJ".getBytes(StandardCharsets.UTF_8);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
+
+    buffer.realignTo(10L);
+    assertThat(buffer.getBufferBaseOffset()).isEqualTo(10L);
+    assertThat(buffer.getPayload()).hasLength(8);
+    assertThat(buffer.isFinal()).isFalse();
+    assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("ABCDEFGH");
+  }
+
+  @Test
+  void testRealignTo_beforeFirstFill_streamShorterThanOffset_throwsEofException() {
+    byte[] data = "01234".getBytes(StandardCharsets.UTF_8);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
+
+    EOFException exception = assertThrows(EOFException.class, () -> buffer.realignTo(10L));
+    assertThat(exception).hasMessageThat().contains("10");
+  }
+
+  @Test
+  void testRealignTo_beforeFirstFill_zeroOffset_fillsFromStart() throws IOException {
+    byte[] data = "0123456789".getBytes(StandardCharsets.UTF_8);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
+
+    buffer.realignTo(0L);
+    assertThat(buffer.getBufferBaseOffset()).isEqualTo(0L);
     assertThat(buffer.getPayload()).hasLength(8);
     assertThat(buffer.isFinal()).isFalse();
     assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("01234567");
