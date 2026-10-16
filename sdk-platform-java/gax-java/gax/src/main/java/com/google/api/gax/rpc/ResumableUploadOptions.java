@@ -97,8 +97,9 @@ public abstract class ResumableUploadOptions {
   public abstract static class Builder {
     /**
      * Sets the chunk size in bytes. The payload is sent in chunks of this size, and each chunk is
-     * buffered in memory so it can be resent if the upload needs to recover. Must be positive;
-     * defaults to 8 MB.
+     * buffered in memory so it can be resent if the upload needs to recover. If the server
+     * specifies a chunk granularity, the effective chunk size is rounded down to a multiple of that
+     * granularity (or fails if smaller than the granularity). Must be positive; defaults to 8 MB.
      */
     public abstract Builder setChunkSize(int chunkSize);
 
