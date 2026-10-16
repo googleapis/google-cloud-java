@@ -43,13 +43,14 @@ import org.jspecify.annotations.NullMarked;
 public interface InputStreamSupplier {
 
   /**
-   * Opens or returns the {@link InputStream} to be read.
+   * Opens or returns the {@link InputStream} to be read, positioned at the beginning of the
+   * payload.
    *
    * <p>The returned stream is managed by the resumable upload and is closed automatically when the
    * upload succeeds, fails, times out, or is cancelled. Callers should not close the stream
    * themselves.
    *
-   * @return a non-null input stream over the payload data
+   * @return a non-null input stream positioned at byte {@code 0} of the payload data
    * @throws IOException if an I/O error occurs when opening or obtaining the stream
    */
   InputStream get() throws IOException;

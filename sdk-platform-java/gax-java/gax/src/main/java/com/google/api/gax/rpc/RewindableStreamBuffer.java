@@ -33,6 +33,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.io.ByteStreams;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -79,7 +80,34 @@ final class RewindableStreamBuffer {
   }
 
   /**
-   * Realigns the buffer window to {@code committedOffset}.
+   * Fast-forwards the underlying stream from byte {@code 0} to {@code committedOffset} and fills
+   * the first chunk when resuming an existing upload session.
+   *
+   * @param committedOffset the server's committed byte offset
+   * @throws IllegalStateException if {@code committedOffset} is negative
+   * @throws IOException if skipping or reading from the stream fails
+   */
+  void resumeAt(long committedOffset) throws IOException {
+    if (committedOffset < 0) {
+      throw new IllegalStateException(
+          String.format("Server committed offset %d must not be negative", committedOffset));
+    }
+    try {
+      ByteStreams.skipFully(inputStream, committedOffset);
+    } catch (EOFException e) {
+      throw new EOFException(
+          String.format(
+              "Stream ended before reaching server committed offset %d; ensure the supplied stream"
+                  + " is positioned at byte 0 (%s)",
+              committedOffset, e.getMessage()));
+    }
+    this.bufferBaseOffset = committedOffset;
+    this.payloadLength = 0;
+    fill();
+  }
+
+  /**
+   * Realigns the buffer window to {@code committedOffset} during in-flight error recovery.
    *
    * <p>Compacts forward within the existing buffer to discard already-committed bytes, and then
    * tops up the buffer to capacity from the underlying stream.
@@ -89,7 +117,7 @@ final class RewindableStreamBuffer {
    *     beyond the current buffer window
    * @throws IOException if reading from the stream fails
    */
-  void realignTo(long committedOffset) throws IOException {
+  void recoverAt(long committedOffset) throws IOException {
     if (committedOffset < bufferBaseOffset) {
       throw new IllegalStateException(
           String.format(

@@ -93,8 +93,22 @@ class ResumableUploadProgressTracker {
   @GuardedBy("lock")
   private ResumableUploadProgress currentStatus;
 
-  ResumableUploadProgressTracker() {
-    this.currentStatus = ResumableUploadProgress.newBuilder().build();
+  private ResumableUploadProgressTracker(ResumableUploadProgress initialStatus) {
+    this.currentStatus = checkNotNull(initialStatus, "initialStatus must not be null");
+  }
+
+  static ResumableUploadProgressTracker create() {
+    return new ResumableUploadProgressTracker(ResumableUploadProgress.newBuilder().build());
+  }
+
+  static ResumableUploadProgressTracker createForResume(String uploadUrl, int effectiveChunkSize) {
+    checkNotNull(uploadUrl, "uploadUrl must not be null");
+    return new ResumableUploadProgressTracker(
+        ResumableUploadProgress.newBuilder()
+            .setState(ResumableUploadProgress.STATE_RECOVERING)
+            .setUploadUrl(uploadUrl)
+            .setEffectiveChunkSize(effectiveChunkSize)
+            .build());
   }
 
   void addListener(ResumableUploadProgressListener listener, Executor executor) {

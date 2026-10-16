@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.ByteArrayInputStream;
+import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -93,7 +94,7 @@ class RewindableStreamBufferTest {
   }
 
   @Test
-  void testRealignToMidBufferOffset_compactsAndTopsUp() throws IOException {
+  void testRecoverAtMidBufferOffset_compactsAndTopsUp() throws IOException {
     // 20 bytes: chunk size 8
     byte[] data = "0123456789ABCDEFGHIJ".getBytes(StandardCharsets.UTF_8);
     RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
@@ -105,8 +106,8 @@ class RewindableStreamBufferTest {
 
     // Server committed 5 bytes (0..4), so next committed offset is 5.
     // Remaining uncommitted bytes in buffer: "567" (3 bytes).
-    // realignTo(5) compacts "567" to buffer[0..3) and tops up 5 more bytes ("89ABC") from stream.
-    buffer.realignTo(5L);
+    // recoverAt(5) compacts "567" to buffer[0..3) and tops up 5 more bytes ("89ABC") from stream.
+    buffer.recoverAt(5L);
     assertThat(buffer.getBufferBaseOffset()).isEqualTo(5L);
     assertThat(buffer.getPayload()).hasLength(8); // 3 remaining + 5 topped up = 8
     assertThat(buffer.isFinal()).isFalse();
@@ -114,7 +115,7 @@ class RewindableStreamBufferTest {
   }
 
   @Test
-  void testRealignToBufferBaseOffset_isNoOp() throws IOException {
+  void testRecoverAtBufferBaseOffset_isNoOp() throws IOException {
     byte[] data = "0123456789".getBytes(StandardCharsets.UTF_8);
     RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
@@ -122,15 +123,15 @@ class RewindableStreamBufferTest {
     assertThat(buffer.getPayload()).hasLength(8);
     assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("01234567");
 
-    // Realigning to exactly the buffer base offset (0) is a no-op
-    buffer.realignTo(0L);
+    // Recovering at exactly the buffer base offset (0) is a no-op
+    buffer.recoverAt(0L);
     assertThat(buffer.getBufferBaseOffset()).isEqualTo(0L);
     assertThat(buffer.getPayload()).hasLength(8);
     assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("01234567");
   }
 
   @Test
-  void testRealignToBelowBaseOffset_throwsIllegalStateException() throws IOException {
+  void testRecoverAtBelowBaseOffset_throwsIllegalStateException() throws IOException {
     byte[] data = "0123456789abcdef".getBytes(StandardCharsets.UTF_8);
     RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
@@ -141,7 +142,7 @@ class RewindableStreamBufferTest {
 
     // Server requests offset 4, which is below buffer base offset 8
     IllegalStateException exception =
-        assertThrows(IllegalStateException.class, () -> buffer.realignTo(4L));
+        assertThrows(IllegalStateException.class, () -> buffer.recoverAt(4L));
 
     assertThat(exception.getMessage()).contains("4");
     assertThat(exception.getMessage()).contains("8");
@@ -149,7 +150,7 @@ class RewindableStreamBufferTest {
   }
 
   @Test
-  void testRealignToBeyondBufferWindow_throwsIllegalStateException() throws IOException {
+  void testRecoverAtBeyondBufferWindow_throwsIllegalStateException() throws IOException {
     byte[] data = "0123456789abcdef".getBytes(StandardCharsets.UTF_8);
     RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
 
@@ -160,14 +161,14 @@ class RewindableStreamBufferTest {
 
     // Server reports committed offset 10, which is beyond current buffer window [0, 8]
     IllegalStateException exception =
-        assertThrows(IllegalStateException.class, () -> buffer.realignTo(10L));
+        assertThrows(IllegalStateException.class, () -> buffer.recoverAt(10L));
 
     assertThat(exception.getMessage()).contains("10");
     assertThat(exception.getMessage()).contains("8");
   }
 
   @Test
-  void testRealignToMidBufferOffset_reachingEofMarksFinal() throws IOException {
+  void testRecoverAtMidBufferOffset_reachingEofMarksFinal() throws IOException {
     // 10 bytes total, chunk size 8
     byte[] data = "0123456789".getBytes(StandardCharsets.UTF_8);
     RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
@@ -178,7 +179,7 @@ class RewindableStreamBufferTest {
     assertThat(buffer.isFinal()).isFalse();
 
     // Server committed 4 bytes (0..3). Compacts "4567" (4 bytes) and tops up "89" (2 bytes < space)
-    buffer.realignTo(4L);
+    buffer.recoverAt(4L);
     assertThat(buffer.getBufferBaseOffset()).isEqualTo(4L);
     assertThat(buffer.getPayload()).hasLength(6);
     assertThat(buffer.isFinal()).isTrue();
@@ -204,5 +205,26 @@ class RewindableStreamBufferTest {
     assertThat(buffer.getPayload()).hasLength(8);
     assertThat(buffer.isFinal()).isFalse();
     assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("01234567");
+  }
+
+  @Test
+  void testResumeAt_skipsCommittedBytesAndBuffersNextChunk() throws IOException {
+    byte[] data = "0123456789ABCDEFGHIJ".getBytes(StandardCharsets.UTF_8);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
+
+    buffer.resumeAt(10L);
+    assertThat(buffer.getBufferBaseOffset()).isEqualTo(10L);
+    assertThat(buffer.getPayload()).hasLength(8);
+    assertThat(buffer.isFinal()).isFalse();
+    assertThat(new String(buffer.getPayload(), StandardCharsets.UTF_8)).isEqualTo("ABCDEFGH");
+  }
+
+  @Test
+  void testResumeAt_streamShorterThanCommittedOffset_throwsEofException() {
+    byte[] data = "01234".getBytes(StandardCharsets.UTF_8);
+    RewindableStreamBuffer buffer = new RewindableStreamBuffer(new ByteArrayInputStream(data), 8);
+
+    EOFException exception = assertThrows(EOFException.class, () -> buffer.resumeAt(10L));
+    assertThat(exception).hasMessageThat().contains("10");
   }
 }
