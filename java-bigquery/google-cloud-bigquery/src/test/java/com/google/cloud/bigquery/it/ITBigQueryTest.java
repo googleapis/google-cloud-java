@@ -208,6 +208,7 @@ import java.util.logging.Logger;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.threeten.extra.PeriodDuration;
@@ -3574,6 +3575,7 @@ class ITBigQueryTest {
     assertNotNull(statistics.getQueryPlan());
   }
 
+  @Disabled("Flaky test: b/574587826")
   @Test
   void testQueryStatistics() throws InterruptedException {
     // Use CURRENT_TIMESTAMP to avoid potential caching.
