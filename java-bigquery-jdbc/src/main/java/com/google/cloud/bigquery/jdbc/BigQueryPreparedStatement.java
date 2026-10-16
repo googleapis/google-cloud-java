@@ -464,7 +464,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         writeApiExecutionBuilder
             .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
             .setErrorCode(TelemetryManager.extractErrorCode(e));
-        throw new BigQueryJdbcRuntimeException("Failed to execute batch with Write API", e);
+        throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
       } finally {
         long durationMs = System.currentTimeMillis() - startTime;
         TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
