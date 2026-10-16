@@ -39,9 +39,8 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   private ResultSetMetadata metadata;
   private GrpcStruct currRow;
   private List<Object> rowData;
-  private SpannerException error;
   private ResultSetStats statistics;
-  private boolean closed;
+  private volatile boolean closed;
 
   GrpcResultSet(CloseableIterator<PartialResultSet> iterator, Listener listener) {
     this(iterator, listener, DecodeMode.DIRECT);
@@ -75,9 +74,6 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
 
   @Override
   public boolean next() throws SpannerException {
-    if (error != null) {
-      throw asSpannerException(error);
-    }
     try {
       if (currRow == null) {
         metadata = iterator.getMetadata();
@@ -133,6 +129,11 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   }
 
   @Override
+  public boolean isDataAvailable() {
+    return closed || iterator.isDataAvailable();
+  }
+
+  @Override
   public void close() {
     synchronized (this) {
       if (closed) {
@@ -140,8 +141,8 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
       }
       closed = true;
     }
-    listener.onDone(iterator.isWithBeginTransaction());
     iterator.close("ResultSet closed");
+    listener.onDone(iterator.isWithBeginTransaction());
   }
 
   @Override
