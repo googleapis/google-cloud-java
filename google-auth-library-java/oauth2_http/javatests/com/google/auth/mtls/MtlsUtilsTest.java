@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -407,6 +408,7 @@ class MtlsUtilsTest {
     File file = configFile.toFile();
     if (file.setReadable(false)) {
       try {
+        Assumptions.assumeFalse(file.canRead(), "Current user can read any file (e.g. root)");
         EnvironmentProvider envProvider =
             name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
         PropertyProvider propProvider = (name, def) -> def;
