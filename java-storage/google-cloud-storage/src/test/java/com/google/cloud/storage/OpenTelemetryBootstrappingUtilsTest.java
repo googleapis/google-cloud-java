@@ -104,21 +104,15 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void histogramBoundaries_areValidAndIncreasing() {
     List<Double> latencyBoundaries = OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries();
     assertThat(latencyBoundaries).isNotEmpty();
-    for (int i = 1; i < latencyBoundaries.size(); i++) {
-      assertThat(latencyBoundaries.get(i)).isGreaterThan(latencyBoundaries.get(i - 1));
-    }
+    assertThat(latencyBoundaries).isInStrictOrder();
 
     List<Double> sizeBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramBoundaries();
     assertThat(sizeBoundaries).isNotEmpty();
-    for (int i = 1; i < sizeBoundaries.size(); i++) {
-      assertThat(sizeBoundaries.get(i)).isGreaterThan(sizeBoundaries.get(i - 1));
-    }
+    assertThat(sizeBoundaries).isInStrictOrder();
 
     List<Long> sizeLongBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramLongBoundaries();
     assertThat(sizeLongBoundaries).hasSize(sizeBoundaries.size());
-    for (int i = 1; i < sizeLongBoundaries.size(); i++) {
-      assertThat(sizeLongBoundaries.get(i)).isGreaterThan(sizeLongBoundaries.get(i - 1));
-    }
+    assertThat(sizeLongBoundaries).isInStrictOrder();
   }
 
   @Test
@@ -171,6 +165,24 @@ public final class OpenTelemetryBootstrappingUtilsTest {
         OpenTelemetryBootstrappingUtils.createMeterProvider(
             "monitoring.googleapis.com:443", "test-project", detectedAttributes, true)) {
       assertThat(legacyProvider.toString()).contains("api=\"grpc\"");
+    }
+  }
+
+  @Test
+  public void createClientMeterProvider_customInstanceId_attachesInstanceIdAttribute() {
+    Attributes detectedAttributes = Attributes.empty();
+    String customInstanceId = "custom-instance-12345";
+
+    try (SdkMeterProvider provider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            customInstanceId,
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "grpc")) {
+      assertThat(provider.toString()).contains("instance_id=\"" + customInstanceId + "\"");
     }
   }
 }
