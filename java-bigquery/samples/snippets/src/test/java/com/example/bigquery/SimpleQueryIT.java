@@ -52,8 +52,12 @@ public class SimpleQueryIT {
   @Test
   public void testSimpleQuery() {
     String query =
-        "SELECT corpus, count(*) as corpus_count "
-            + "FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
+        "SELECT name, SUM(number) as total_people "
+            + "FROM `bigquery-public-data.usa_names.usa_1910_2013` "
+            + "WHERE state = 'TX' "
+            + "GROUP BY name, state "
+            + "ORDER BY total_people DESC "
+            + "LIMIT 100;";
 
     SimpleQuery.simpleQuery(query);
     assertThat(bout.toString()).contains("Query ran successfully");
