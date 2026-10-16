@@ -57,15 +57,15 @@ public final class VideoTrackingUrlProto extends com.google.protobuf.GeneratedFi
           + "_url.proto\022\027google.ads.admanager.v1\0323goo"
           + "gle/ads/admanager/v1/conversion_event_en"
           + "um.proto\032\037google/api/field_behavior.prot"
-          + "o\"\201\001\n\020VideoTrackingUrl\022[\n\020conversion_eve"
+          + "o\"\203\001\n\020VideoTrackingUrl\022\\\n\020conversion_eve"
           + "nt\030\001 \001(\0162<.google.ads.admanager.v1.Conve"
-          + "rsionEventEnum.ConversionEventB\003\340A\002\022\020\n\003u"
-          + "rl\030\002 \001(\tB\003\340A\001B\311\001\n\033com.google.ads.admanag"
-          + "er.v1B\025VideoTrackingUrlProtoP\001Z@google.g"
-          + "olang.org/genproto/googleapis/ads/admana"
-          + "ger/v1;admanager\252\002\027Google.Ads.AdManager."
-          + "V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::A"
-          + "ds::AdManager::V1b\006proto3"
+          + "rsionEventEnum.ConversionEventB\004\342A\001\002\022\021\n\003"
+          + "url\030\002 \001(\tB\004\342A\001\001B\311\001\n\033com.google.ads.adman"
+          + "ager.v1B\025VideoTrackingUrlProtoP\001Z@google"
+          + ".golang.org/genproto/googleapis/ads/adma"
+          + "nager/v1;admanager\252\002\027Google.Ads.AdManage"
+          + "r.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google:"
+          + ":Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

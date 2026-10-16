@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.cloud.devtools.cloudbuild.v1.stub.HttpJsonCloudBuildStub;
+import com.google.cloudbuild.v1.ApprovalConfig;
 import com.google.cloudbuild.v1.ApprovalResult;
 import com.google.cloudbuild.v1.Artifacts;
 import com.google.cloudbuild.v1.Build;
@@ -1264,6 +1265,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1325,6 +1327,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1386,6 +1389,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1447,6 +1451,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1510,6 +1515,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1571,6 +1577,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1632,6 +1639,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1867,6 +1875,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1892,6 +1901,7 @@ public class CloudBuildClientHttpJsonTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1942,6 +1952,7 @@ public class CloudBuildClientHttpJsonTest {
               .addAllIncludedFiles(new ArrayList<String>())
               .setFilter("filter-1274492040")
               .setSourceToBuild(GitRepoSource.newBuilder().build())
+              .setApprovalConfig(ApprovalConfig.newBuilder().build())
               .setServiceAccount("serviceAccount1079137720")
               .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
               .build();

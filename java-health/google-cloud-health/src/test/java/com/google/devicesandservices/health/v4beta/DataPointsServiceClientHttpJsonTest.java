@@ -16,6 +16,7 @@
 
 package com.google.devicesandservices.health.v4beta;
 
+import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.DailyRollUpDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ListDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ReconcileDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.RollUpDataPointsPagedResponse;
@@ -624,9 +625,11 @@ public class DataPointsServiceClientHttpJsonTest {
 
   @Test
   public void dailyRollUpDataPointsTest() throws Exception {
+    DailyRollupDataPoint responsesElement = DailyRollupDataPoint.newBuilder().build();
     DailyRollUpDataPointsResponse expectedResponse =
         DailyRollUpDataPointsResponse.newBuilder()
-            .addAllRollupDataPoints(new ArrayList<DailyRollupDataPoint>())
+            .setNextPageToken("")
+            .addAllRollupDataPoints(Arrays.asList(responsesElement))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -640,8 +643,12 @@ public class DataPointsServiceClientHttpJsonTest {
             .setDataSourceFamily("dataSourceFamily586548265")
             .build();
 
-    DailyRollUpDataPointsResponse actualResponse = client.dailyRollUpDataPoints(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    DailyRollUpDataPointsPagedResponse pagedListResponse = client.dailyRollUpDataPoints(request);
+
+    List<DailyRollupDataPoint> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRollupDataPointsList().get(0), resources.get(0));
 
     List<String> actualRequests = mockService.getRequestPaths();
     Assert.assertEquals(1, actualRequests.size());

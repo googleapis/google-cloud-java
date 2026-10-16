@@ -71,6 +71,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 12:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1354,12 +1356,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A user-defined name of the dns authorization. DnsAuthorization names must
-   * be unique globally and match pattern
+   * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+   * names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1380,12 +1382,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A user-defined name of the dns authorization. DnsAuthorization names must
-   * be unique globally and match pattern
+   * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+   * names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1537,10 +1539,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -1561,10 +1563,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1575,10 +1577,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1596,10 +1598,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1622,10 +1624,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a DnsAuthorization.
+   * Optional. One or more paragraphs of text description of a DnsAuthorization.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -1646,10 +1648,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a DnsAuthorization.
+   * Optional. One or more paragraphs of text description of a DnsAuthorization.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -1803,13 +1805,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Type of DnsAuthorization. If unset during resource creation the
-   * following default will be used:
-   * - in location global: FIXED_RECORD.
+   * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+   * creation the following default will be used:
+   * - in location `global`: FIXED_RECORD,
+   * - in other locations: PER_PROJECT_RECORD.
    * </pre>
    *
    * <code>
-   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -1823,13 +1826,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Type of DnsAuthorization. If unset during resource creation the
-   * following default will be used:
-   * - in location global: FIXED_RECORD.
+   * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+   * creation the following default will be used:
+   * - in location `global`: FIXED_RECORD,
+   * - in other locations: PER_PROJECT_RECORD.
    * </pre>
    *
    * <code>
-   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The type.
@@ -1841,6 +1845,133 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     return result == null
         ? com.google.cloud.certificatemanager.v1.DnsAuthorization.Type.UNRECOGNIZED
         : result;
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 12;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.certificatemanager.v1.CertificateManagerProto
+                .internal_static_google_cloud_certificatemanager_v1_DnsAuthorization_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1882,6 +2013,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(11, type_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 12);
     getUnknownFields().writeTo(output);
   }
 
@@ -1924,6 +2057,16 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, type_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1957,6 +2100,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (!getDnsResourceRecord().equals(other.getDnsResourceRecord())) return false;
     }
     if (type_ != other.type_) return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1992,6 +2136,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2119,6 +2267,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 12:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2130,6 +2280,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 12:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2187,6 +2339,7 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
         dnsResourceRecordBuilder_ = null;
       }
       type_ = 0;
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -2255,6 +2408,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.type_ = type_;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2300,6 +2457,8 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000100;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2383,6 +2542,15 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 88
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2408,12 +2576,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the dns authorization. DnsAuthorization names must
-     * be unique globally and match pattern
+     * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+     * names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2433,12 +2601,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the dns authorization. DnsAuthorization names must
-     * be unique globally and match pattern
+     * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+     * names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2458,12 +2626,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the dns authorization. DnsAuthorization names must
-     * be unique globally and match pattern
+     * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+     * names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2482,12 +2650,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the dns authorization. DnsAuthorization names must
-     * be unique globally and match pattern
+     * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+     * names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2502,12 +2670,12 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the dns authorization. DnsAuthorization names must
-     * be unique globally and match pattern
+     * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+     * names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2977,10 +3145,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3001,10 +3169,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3015,10 +3183,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -3036,10 +3204,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3063,10 +3231,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3087,10 +3255,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3108,10 +3276,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a DnsAuthorization.
+     * Optional. Set of labels associated with a DnsAuthorization.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3125,10 +3293,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a DnsAuthorization.
+     * Optional. One or more paragraphs of text description of a DnsAuthorization.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -3148,10 +3316,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a DnsAuthorization.
+     * Optional. One or more paragraphs of text description of a DnsAuthorization.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -3171,10 +3339,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a DnsAuthorization.
+     * Optional. One or more paragraphs of text description of a DnsAuthorization.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3193,10 +3361,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a DnsAuthorization.
+     * Optional. One or more paragraphs of text description of a DnsAuthorization.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3211,10 +3379,10 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a DnsAuthorization.
+     * Optional. One or more paragraphs of text description of a DnsAuthorization.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3605,13 +3773,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Type of DnsAuthorization. If unset during resource creation the
-     * following default will be used:
-     * - in location global: FIXED_RECORD.
+     * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+     * creation the following default will be used:
+     * - in location `global`: FIXED_RECORD,
+     * - in other locations: PER_PROJECT_RECORD.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for type.
@@ -3625,13 +3794,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Type of DnsAuthorization. If unset during resource creation the
-     * following default will be used:
-     * - in location global: FIXED_RECORD.
+     * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+     * creation the following default will be used:
+     * - in location `global`: FIXED_RECORD,
+     * - in other locations: PER_PROJECT_RECORD.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for type to set.
@@ -3648,13 +3818,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Type of DnsAuthorization. If unset during resource creation the
-     * following default will be used:
-     * - in location global: FIXED_RECORD.
+     * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+     * creation the following default will be used:
+     * - in location `global`: FIXED_RECORD,
+     * - in other locations: PER_PROJECT_RECORD.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The type.
@@ -3672,13 +3843,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Type of DnsAuthorization. If unset during resource creation the
-     * following default will be used:
-     * - in location global: FIXED_RECORD.
+     * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+     * creation the following default will be used:
+     * - in location `global`: FIXED_RECORD,
+     * - in other locations: PER_PROJECT_RECORD.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The type to set.
@@ -3698,13 +3870,14 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Type of DnsAuthorization. If unset during resource creation the
-     * following default will be used:
-     * - in location global: FIXED_RECORD.
+     * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+     * creation the following default will be used:
+     * - in location `global`: FIXED_RECORD,
+     * - in other locations: PER_PROJECT_RECORD.
      * </pre>
      *
      * <code>
-     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -3713,6 +3886,213 @@ public final class DnsAuthorization extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000080);
       type_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000100;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
       return this;
     }
 

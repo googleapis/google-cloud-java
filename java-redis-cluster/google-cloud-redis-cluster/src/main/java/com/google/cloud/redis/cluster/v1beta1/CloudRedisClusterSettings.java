@@ -18,10 +18,12 @@ package com.google.cloud.redis.cluster.v1beta1;
 
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -314,6 +316,75 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
   public OperationCallSettings<BackupClusterRequest, Cluster, Any>
       backupClusterOperationSettings() {
     return ((CloudRedisClusterStubSettings) getStubSettings()).backupClusterOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTokenAuthUsers. */
+  public PagedCallSettings<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).listTokenAuthUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTokenAuthUser. */
+  public UnaryCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).getTokenAuthUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAuthTokens. */
+  public PagedCallSettings<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      listAuthTokensSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).listAuthTokensSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAuthToken. */
+  public UnaryCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).getAuthTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public UnaryCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).addTokenAuthUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public OperationCallSettings<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).addTokenAuthUserOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public UnaryCallSettings<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteTokenAuthUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public OperationCallSettings<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .deleteTokenAuthUserOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public UnaryCallSettings<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).addAuthTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public OperationCallSettings<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).addAuthTokenOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public UnaryCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteAuthTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public OperationCallSettings<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationSettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings()).deleteAuthTokenOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -623,6 +694,77 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     public OperationCallSettings.Builder<BackupClusterRequest, Cluster, Any>
         backupClusterOperationSettings() {
       return getStubSettingsBuilder().backupClusterOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTokenAuthUsers. */
+    public PagedCallSettings.Builder<
+            ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+        listTokenAuthUsersSettings() {
+      return getStubSettingsBuilder().listTokenAuthUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTokenAuthUser. */
+    public UnaryCallSettings.Builder<GetTokenAuthUserRequest, TokenAuthUser>
+        getTokenAuthUserSettings() {
+      return getStubSettingsBuilder().getTokenAuthUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthTokens. */
+    public PagedCallSettings.Builder<
+            ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+        listAuthTokensSettings() {
+      return getStubSettingsBuilder().listAuthTokensSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthToken. */
+    public UnaryCallSettings.Builder<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+      return getStubSettingsBuilder().getAuthTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public UnaryCallSettings.Builder<AddTokenAuthUserRequest, Operation>
+        addTokenAuthUserSettings() {
+      return getStubSettingsBuilder().addTokenAuthUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public OperationCallSettings.Builder<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+        addTokenAuthUserOperationSettings() {
+      return getStubSettingsBuilder().addTokenAuthUserOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public UnaryCallSettings.Builder<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserSettings() {
+      return getStubSettingsBuilder().deleteTokenAuthUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public OperationCallSettings.Builder<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+        deleteTokenAuthUserOperationSettings() {
+      return getStubSettingsBuilder().deleteTokenAuthUserOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public UnaryCallSettings.Builder<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+      return getStubSettingsBuilder().addAuthTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public OperationCallSettings.Builder<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+        addAuthTokenOperationSettings() {
+      return getStubSettingsBuilder().addAuthTokenOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public UnaryCallSettings.Builder<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+      return getStubSettingsBuilder().deleteAuthTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public OperationCallSettings.Builder<DeleteAuthTokenRequest, Empty, OperationMetadata>
+        deleteAuthTokenOperationSettings() {
+      return getStubSettingsBuilder().deleteAuthTokenOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

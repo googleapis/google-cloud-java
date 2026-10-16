@@ -1111,53 +1111,6 @@ public interface DailyRollupDataPointOrBuilder
    *
    *
    * <pre>
-   * Returned by default when rolling up data points from the
-   * `skin-temperature` data type.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-   * </code>
-   *
-   * @return Whether the skinTemperature field is set.
-   */
-  boolean hasSkinTemperature();
-
-  /**
-   *
-   *
-   * <pre>
-   * Returned by default when rolling up data points from the
-   * `skin-temperature` data type.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-   * </code>
-   *
-   * @return The skinTemperature.
-   */
-  com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue getSkinTemperature();
-
-  /**
-   *
-   *
-   * <pre>
-   * Returned by default when rolling up data points from the
-   * `skin-temperature` data type.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-   * </code>
-   */
-  com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValueOrBuilder
-      getSkinTemperatureOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Start time of the window this value aggregates over
    * </pre>
    *

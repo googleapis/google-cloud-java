@@ -55,13 +55,13 @@ public final class BigQueryExportProto extends com.google.protobuf.GeneratedFile
     java.lang.String[] descriptorData = {
       "\n"
           + "-google/cloud/ces/v1beta/bigquery_expor"
-          + "t.proto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\"Z\n"
-          + "\026BigQueryExportSettings\022\024\n"
-          + "\007enabled\030\001 \001(\010B\003\340A\001\022\024\n"
-          + "\007project\030\002 \001(\tB\003\340A\001\022\024\n"
-          + "\007dataset\030\003 \001(\tB\003\340A\001Bc\n"
-          + "\033com.google.cloud.ces.v1betaB\023BigQueryEx"
-          + "portProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "t.proto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\"]\n"
+          + "\026BigQueryExportSettings\022\025\n"
+          + "\007enabled\030\001 \001(\010B\004\342A\001\001\022\025\n"
+          + "\007project\030\002 \001(\tB\004\342A\001\001\022\025\n"
+          + "\007dataset\030\003 \001(\tB\004\342A\001\001Bc\n"
+          + "\033com.google.cloud.ces.v1betaB\023BigQueryExportProtoP\001Z-cloud.google.com/go/ces/"
+          + "apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -908,6 +908,46 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
+   * Configuration for manual approval to start a build invocation of this
+   * BuildTrigger.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+   *
+   * @return Whether the approvalConfig field is set.
+   */
+  boolean hasApprovalConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for manual approval to start a build invocation of this
+   * BuildTrigger.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+   *
+   * @return The approvalConfig.
+   */
+  com.google.cloudbuild.v1.ApprovalConfig getApprovalConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for manual approval to start a build invocation of this
+   * BuildTrigger.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+   */
+  com.google.cloudbuild.v1.ApprovalConfigOrBuilder getApprovalConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The service account used for all user-controlled operations including
    * UpdateBuildTrigger, RunBuildTrigger, CreateBuild, and CancelBuild.
    * If no service account is set and the legacy Cloud Build service account

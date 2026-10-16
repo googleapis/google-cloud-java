@@ -55,17 +55,17 @@ public final class DeliveryIndicatorProto extends com.google.protobuf.GeneratedF
     java.lang.String[] descriptorData = {
       "\n0google/ads/admanager/v1/delivery_indic"
           + "ator.proto\022\027google.ads.admanager.v1\032\037goo"
-          + "gle/api/field_behavior.proto\"\261\001\n\021Deliver"
-          + "yIndicator\022.\n\034expected_delivery_percenta"
-          + "ge\030\001 \001(\001B\003\340A\003H\000\210\001\001\022,\n\032actual_delivery_pe"
-          + "rcentage\030\002 \001(\001B\003\340A\003H\001\210\001\001B\037\n\035_expected_de"
-          + "livery_percentageB\035\n\033_actual_delivery_pe"
-          + "rcentageB\312\001\n\033com.google.ads.admanager.v1"
-          + "B\026DeliveryIndicatorProtoP\001Z@google.golan"
-          + "g.org/genproto/googleapis/ads/admanager/"
-          + "v1;admanager\252\002\027Google.Ads.AdManager.V1\312\002"
-          + "\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::"
-          + "AdManager::V1b\006proto3"
+          + "gle/api/field_behavior.proto\"\263\001\n\021Deliver"
+          + "yIndicator\022/\n\034expected_delivery_percenta"
+          + "ge\030\001 \001(\001B\004\342A\001\003H\000\210\001\001\022-\n\032actual_delivery_p"
+          + "ercentage\030\002 \001(\001B\004\342A\001\003H\001\210\001\001B\037\n\035_expected_"
+          + "delivery_percentageB\035\n\033_actual_delivery_"
+          + "percentageB\312\001\n\033com.google.ads.admanager."
+          + "v1B\026DeliveryIndicatorProtoP\001Z@google.gol"
+          + "ang.org/genproto/googleapis/ads/admanage"
+          + "r/v1;admanager\252\002\027Google.Ads.AdManager.V1"
+          + "\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads"
+          + "::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -53,18 +53,19 @@ public final class SpaceSetupProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n google/chat/v1/space_setup.proto\022\016goog"
+      "\n"
+          + " google/chat/v1/space_setup.proto\022\016goog"
           + "le.chat.v1\032\037google/api/field_behavior.pr"
-          + "oto\032\037google/chat/v1/membership.proto\032\032go"
-          + "ogle/chat/v1/space.proto\"\215\001\n\021SetUpSpaceR"
-          + "equest\022)\n\005space\030\001 \001(\0132\025.google.chat.v1.S"
-          + "paceB\003\340A\002\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001\0224\n\013me"
-          + "mberships\030\004 \003(\0132\032.google.chat.v1.Members"
-          + "hipB\003\340A\001B\250\001\n\022com.google.chat.v1B\017SpaceSe"
-          + "tupProtoP\001Z,cloud.google.com/go/chat/api"
-          + "v1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google."
-          + "Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Goo"
-          + "gle::Apps::Chat::V1b\006proto3"
+          + "oto\032\037google/chat/v1/membership.proto\032\032google/chat/v1/space.proto\"\220\001\n"
+          + "\021SetUpSpaceRequest\022*\n"
+          + "\005space\030\001 \001(\0132\025.google.chat.v1.SpaceB\004\342A\001\002\022\030\n\n"
+          + "request_id\030\002 \001(\tB\004\342A\001\001\0225\n"
+          + "\013memberships\030\004"
+          + " \003(\0132\032.google.chat.v1.MembershipB\004\342A\001\001B\250\001\n"
+          + "\022com.google.chat.v1B\017SpaceSetupProtoP\001Z,cloud.google.com/go/chat/"
+          + "apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Goog"
+          + "le.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026"
+          + "Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
