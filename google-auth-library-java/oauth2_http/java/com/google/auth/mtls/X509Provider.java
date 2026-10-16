@@ -30,7 +30,6 @@
 
 package com.google.auth.mtls;
 
-import com.google.api.client.util.SecurityUtils;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
@@ -143,7 +142,8 @@ public class X509Provider implements MtlsProvider {
    *       which contains both the certificate chain and the private key.
    * </ul>
    *
-   * @return a KeyStore containing the X.509 certificate specified by the certificate configuration.
+   * @return a KeyStore containing the X.509 certificate chain and private key from the certificate
+   *     source above.
    * @throws CertificateSourceUnavailableException if the certificate source is unavailable (ex.
    *     missing configuration file)
    * @throws IOException if a general I/O error occurs while creating the KeyStore
@@ -169,7 +169,7 @@ public class X509Provider implements MtlsProvider {
             MtlsUtils.getGkeCredentialBundlePath(envProvider, propProvider);
         if (gkeCredentialBundlePath != null) {
           try (InputStream bundleStream = new FileInputStream(new File(gkeCredentialBundlePath))) {
-            return SecurityUtils.createMtlsKeyStore(bundleStream);
+            return MtlsKeyStoreUtils.createMtlsKeyStore(bundleStream);
           } catch (FileNotFoundException e) {
             // The bundle was removed (e.g. mid-rotation) after the availability check.
             throw new CertificateSourceUnavailableException(
@@ -201,7 +201,7 @@ public class X509Provider implements MtlsProvider {
             new SequenceInputStream(certStream, privateKeyStream)) {
 
       // Build a key store using the combined stream.
-      return SecurityUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      return MtlsKeyStoreUtils.createMtlsKeyStore(certAndPrivateKeyStream);
     } catch (CertificateSourceUnavailableException e) {
       // Throw the CertificateSourceUnavailableException without wrapping.
       throw e;
