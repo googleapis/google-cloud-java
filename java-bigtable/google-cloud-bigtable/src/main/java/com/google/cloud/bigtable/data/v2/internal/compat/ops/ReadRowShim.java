@@ -15,15 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
-import com.google.bigtable.v2.OpenAuthorizedViewRequest;
-import com.google.bigtable.v2.OpenMaterializedViewRequest;
-import com.google.bigtable.v2.OpenTableRequest.Permission;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
-import com.google.cloud.bigtable.data.v2.internal.api.AuthorizedViewAsync;
-import com.google.cloud.bigtable.data.v2.internal.api.Client;
-import com.google.cloud.bigtable.data.v2.internal.api.MaterializedViewAsync;
-import com.google.cloud.bigtable.data.v2.internal.api.TableAsync;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
 import com.google.cloud.bigtable.data.v2.models.MaterializedViewId;
@@ -34,47 +27,30 @@ import io.grpc.Deadline;
 import java.util.concurrent.CompletableFuture;
 
 public class ReadRowShim implements UnaryShim<Query, SessionReadRowResponse> {
-  private final SessionPoolMap<TableId, TableAsync> tables;
-  private final SessionPoolMap<AuthorizedViewId, AuthorizedViewAsync> authViews;
-  private final SessionPoolMap<MaterializedViewId, MaterializedViewAsync> matViews;
 
-  public ReadRowShim(Client client) {
-    tables =
-        new SessionPoolMap<>(
-            k -> client.openTableAsync(k.getTableId(), Permission.PERMISSION_READ));
-    authViews =
-        new SessionPoolMap<>(
-            k ->
-                client.openAuthorizedViewAsync(
-                    k.getTableId(),
-                    k.getAuthorizedViewId(),
-                    OpenAuthorizedViewRequest.Permission.PERMISSION_READ));
-    matViews =
-        new SessionPoolMap<>(
-            k ->
-                client.openMaterializedViewAsync(
-                    k.getMaterializedViewId(),
-                    OpenMaterializedViewRequest.Permission.PERMISSION_READ));
+  private final SessionPoolMap sessionMap;
+
+  public ReadRowShim(SessionPoolMap sessionMap) {
+    this.sessionMap = sessionMap;
   }
 
   @Override
-  public void close() {
-    tables.invalidateAll();
-    authViews.invalidateAll();
-    matViews.invalidateAll();
-  }
+  public void close() {}
 
   @Override
   public boolean supports(Query request) {
     TargetId targetId = request.getTargetId();
     SessionPool<?> pool;
-    // TODO avoid double lookup
     if (targetId instanceof TableId) {
-      pool = tables.get((TableId) targetId).getSessionPool();
+      pool = sessionMap.get((TableId) targetId, SessionKey.Permission.READ).getSessionPool();
     } else if (targetId instanceof AuthorizedViewId) {
-      pool = authViews.get((AuthorizedViewId) targetId).getSessionPool();
+      pool =
+          sessionMap.get((AuthorizedViewId) targetId, SessionKey.Permission.READ).getSessionPool();
     } else if (targetId instanceof MaterializedViewId) {
-      pool = matViews.get((MaterializedViewId) targetId).getSessionPool();
+      pool =
+          sessionMap
+              .get((MaterializedViewId) targetId, SessionKey.Permission.READ)
+              .getSessionPool();
     } else {
       return false;
     }
@@ -88,13 +64,20 @@ public class ReadRowShim implements UnaryShim<Query, SessionReadRowResponse> {
     SessionReadRowRequest innerReq = query.toSessionPointProto();
 
     if (targetId instanceof TableId) {
-      return tables.apply((TableId) targetId, t -> t.readRow(innerReq, deadline));
+      return sessionMap.apply(
+          (TableId) targetId, SessionKey.Permission.READ, t -> t.readRow(innerReq, deadline));
     }
     if (targetId instanceof AuthorizedViewId) {
-      return authViews.apply((AuthorizedViewId) targetId, v -> v.readRow(innerReq, deadline));
+      return sessionMap.apply(
+          (AuthorizedViewId) targetId,
+          SessionKey.Permission.READ,
+          v -> v.readRow(innerReq, deadline));
     }
     if (targetId instanceof MaterializedViewId) {
-      return matViews.apply((MaterializedViewId) targetId, v -> v.readRow(innerReq, deadline));
+      return sessionMap.apply(
+          (MaterializedViewId) targetId,
+          SessionKey.Permission.READ,
+          v -> v.readRow(innerReq, deadline));
     }
 
     CompletableFuture<SessionReadRowResponse> f = new CompletableFuture<>();

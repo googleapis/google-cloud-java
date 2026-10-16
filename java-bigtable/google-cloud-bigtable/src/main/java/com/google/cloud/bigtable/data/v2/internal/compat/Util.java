@@ -25,7 +25,6 @@ import com.google.common.cache.RemovalListener;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import java.io.Closeable;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -46,7 +45,7 @@ public class Util {
                     V value = notification.getValue();
                     //noinspection DataFlowIssue
                     value.close();
-                  } catch (IOException e) {
+                  } catch (Exception e) {
                     // TODO log
                   }
                 })
