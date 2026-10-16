@@ -31,10 +31,10 @@
 
 package com.google.auth.oauth2;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -47,6 +47,8 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.json.webtoken.JsonWebSignature;
+import com.google.api.client.json.webtoken.JsonWebToken;
 import com.google.api.client.util.GenericData;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -58,8 +60,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.MessageDigest;
+import java.security.PrivateKey;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
 import java.time.Instant;
+import java.util.Base64;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
@@ -71,7 +80,8 @@ import org.junit.jupiter.api.Test;
  * <p>The only requirements for this test suite to run is to set the environment variable
  * GOOGLE_APPLICATION_CREDENTIALS to point to the same service account keys used in the setup script
  * (workloadidentityfederation-setup). These tests call GCS to get bucket information. The bucket
- * name must be provided through the GCS_BUCKET environment variable.
+ * name must be provided through the GCS_BUCKET environment variable. The mTLS tests use {@code
+ * testresources/mtls/certificate_config.json}.
  */
 final class ITWorkloadIdentityFederationTest {
 
@@ -83,13 +93,24 @@ final class ITWorkloadIdentityFederationTest {
 
   private static final String AWS_AUDIENCE = AUDIENCE_PREFIX + "aws-1";
   private static final String OIDC_AUDIENCE = AUDIENCE_PREFIX + "oidc-1";
+  private static final String OIDC_JWT_AUDIENCE = AUDIENCE_PREFIX + "oidc-jwt-1";
+  private static final String OIDC_JWT_ISSUER =
+      "https://storage.googleapis.com/example-oidc-issuer";
+  private static final String DEFAULT_MTLS_CERT_CONFIG_PATH =
+      "testresources/mtls/certificate_config.json";
 
   private String clientEmail;
+  private String clientId;
+  private String privateKeyId;
+  private PrivateKey privateKey;
 
   @BeforeEach
   void setup() throws IOException {
     GenericJson keys = getServiceAccountKeyFileAsJson();
     clientEmail = (String) keys.get("client_email");
+    clientId = (String) keys.get("client_id");
+    privateKeyId = (String) keys.get("private_key_id");
+    privateKey = OAuth2Utils.privateKeyFromPkcs8((String) keys.get("private_key"));
   }
 
   /**
@@ -290,16 +311,20 @@ final class ITWorkloadIdentityFederationTest {
 
   /**
    * IdentityPoolCredentials (OIDC provider with certificate-bound workload and actor token): Uses
-   * the service account to generate Google ID tokens for subject and actor tokens. Writes both
+   * the service account private key to sign OIDC JWTs for subject and actor tokens with RFC 8705
+   * certificate thumbprint binding (cnf.x5t#S256) and delegation (may_act) claims. Writes both
    * tokens to a temporary JSON file with subject_token and actor_token field names. Configures
    * certificate_config_location pointing to the certificate config. Exchanges the tokens over the
    * mTLS STS endpoint (https://sts.mtls.googleapis.com/v1/token) and calls GCS.
    */
   @Test
   void identityPoolCredentials_withCertificateBoundWorkloadAndActorToken() throws Exception {
-    String certConfigPath = getMtlsCertificateConfigPath();
-    String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
-    String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
+    KeyStore keyStore = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH).getKeyStore();
+    String certThumbprint = computeCertThumbprint(keyStore);
+    String subjectToken =
+        generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ true);
+    String actorToken =
+        generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ false);
 
     File tokenFile =
         File.createTempFile(
@@ -317,7 +342,7 @@ final class ITWorkloadIdentityFederationTest {
 
       GenericJson config = new GenericJson();
       config.put("type", "external_account");
-      config.put("audience", OIDC_AUDIENCE);
+      config.put("audience", OIDC_JWT_AUDIENCE);
       config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
       config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
       config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
@@ -337,7 +362,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", certConfigPath);
+      certificate.put("certificate_config_location", DEFAULT_MTLS_CERT_CONFIG_PATH);
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -346,7 +371,6 @@ final class ITWorkloadIdentityFederationTest {
           (IdentityPoolCredentials)
               ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
 
-      KeyStore keyStore = new X509Provider(certConfigPath).getKeyStore();
       HttpTransport mtlsTransport = new MtlsHttpTransportFactory(keyStore).create();
       callGcs(
           identityPoolCredentials,
@@ -359,26 +383,30 @@ final class ITWorkloadIdentityFederationTest {
 
   /**
    * IdentityPoolCredentials (OIDC provider with programmatic mTLS and actor token): Uses the
-   * service account to generate Google ID tokens for subject and actor tokens via suppliers.
+   * service account private key to sign OIDC JWTs for subject and actor tokens via suppliers.
    * Configures mTLS transport using MtlsHttpTransportFactory with KeyStore loaded from the mTLS
    * certificate config. Exchanges the tokens over mTLS STS endpoint and calls GCS.
    */
   @Test
   void identityPoolCredentials_withProgrammaticMtlsAndActorToken() throws Exception {
+    X509Provider x509Provider = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH);
+    KeyStore keyStore = x509Provider.getKeyStore();
+    String certThumbprint = computeCertThumbprint(keyStore);
     IdentityPoolSubjectTokenSupplier tokenSupplier =
-        context -> generateGoogleIdToken(OIDC_AUDIENCE);
-    IdentityPoolActorTokenSupplier actorSupplier = context -> generateGoogleIdToken(OIDC_AUDIENCE);
+        context ->
+            generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ true);
+    IdentityPoolActorTokenSupplier actorSupplier =
+        context ->
+            generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ false);
 
-    X509Provider x509Provider = new X509Provider(getMtlsCertificateConfigPath());
-    HttpTransportFactory transportFactory =
-        new MtlsHttpTransportFactory(x509Provider.getKeyStore());
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
 
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
             .setSubjectTokenSupplier(tokenSupplier)
             .setActorTokenSupplier(actorSupplier)
             .setActorTokenType(SubjectTokenTypes.JWT.value)
-            .setAudience(OIDC_AUDIENCE)
+            .setAudience(OIDC_JWT_AUDIENCE)
             .setSubjectTokenType(SubjectTokenTypes.JWT)
             .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
             .setServiceAccountImpersonationUrl(
@@ -401,10 +429,13 @@ final class ITWorkloadIdentityFederationTest {
    */
   @Test
   void identityPoolCredentials_directSts_withCertificateBoundWorkloadAndActorToken()
-      throws IOException {
-    String certConfigPath = getMtlsCertificateConfigPath();
-    String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
-    String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
+      throws Exception {
+    KeyStore keyStore = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH).getKeyStore();
+    String certThumbprint = computeCertThumbprint(keyStore);
+    String subjectToken =
+        generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ true);
+    String actorToken =
+        generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ false);
 
     File tokenFile =
         File.createTempFile(
@@ -424,7 +455,7 @@ final class ITWorkloadIdentityFederationTest {
 
       GenericJson config = new GenericJson();
       config.put("type", "external_account");
-      config.put("audience", OIDC_AUDIENCE);
+      config.put("audience", OIDC_JWT_AUDIENCE);
       config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
       config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
       config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
@@ -439,7 +470,7 @@ final class ITWorkloadIdentityFederationTest {
       credentialSource.put("format", format);
 
       GenericJson certificate = new GenericJson();
-      certificate.put("certificate_config_location", certConfigPath);
+      certificate.put("certificate_config_location", DEFAULT_MTLS_CERT_CONFIG_PATH);
       credentialSource.put("certificate", certificate);
 
       config.put("credential_source", credentialSource);
@@ -451,6 +482,7 @@ final class ITWorkloadIdentityFederationTest {
       AccessToken accessToken = identityPoolCredentials.refreshAccessToken();
       assertNotNull(accessToken);
       assertNotNull(accessToken.getTokenValue());
+      assertFalse(accessToken.getTokenValue().isEmpty());
     } finally {
       tokenFile.delete();
     }
@@ -463,20 +495,24 @@ final class ITWorkloadIdentityFederationTest {
    */
   @Test
   void identityPoolCredentials_directSts_withProgrammaticMtlsAndActorToken() throws Exception {
+    X509Provider x509Provider = new X509Provider(DEFAULT_MTLS_CERT_CONFIG_PATH);
+    KeyStore keyStore = x509Provider.getKeyStore();
+    String certThumbprint = computeCertThumbprint(keyStore);
     IdentityPoolSubjectTokenSupplier tokenSupplier =
-        context -> generateGoogleIdToken(OIDC_AUDIENCE);
-    IdentityPoolActorTokenSupplier actorSupplier = context -> generateGoogleIdToken(OIDC_AUDIENCE);
+        context ->
+            generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ true);
+    IdentityPoolActorTokenSupplier actorSupplier =
+        context ->
+            generateSignedOidcJwt(OIDC_JWT_AUDIENCE, certThumbprint, /* includeMayAct= */ false);
 
-    X509Provider x509Provider = new X509Provider(getMtlsCertificateConfigPath());
-    HttpTransportFactory transportFactory =
-        new MtlsHttpTransportFactory(x509Provider.getKeyStore());
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
 
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
             .setSubjectTokenSupplier(tokenSupplier)
             .setActorTokenSupplier(actorSupplier)
             .setActorTokenType(SubjectTokenTypes.JWT.value)
-            .setAudience(OIDC_AUDIENCE)
+            .setAudience(OIDC_JWT_AUDIENCE)
             .setSubjectTokenType(SubjectTokenTypes.JWT)
             .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
             .setHttpTransportFactory(transportFactory)
@@ -485,6 +521,7 @@ final class ITWorkloadIdentityFederationTest {
     AccessToken accessToken = credentials.refreshAccessToken();
     assertNotNull(accessToken);
     assertNotNull(accessToken.getTokenValue());
+    assertFalse(accessToken.getTokenValue().isEmpty());
   }
 
   private GenericJson buildIdentityPoolCredentialConfig() throws IOException {
@@ -588,12 +625,59 @@ final class ITWorkloadIdentityFederationTest {
     return config;
   }
 
-  private String getMtlsCertificateConfigPath() {
-    String certConfigPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
-    assumeTrue(
-        certConfigPath != null && !certConfigPath.isEmpty(),
-        "Skipping mTLS test: GOOGLE_API_CERTIFICATE_CONFIG env variable is not set.");
-    return certConfigPath;
+  private String computeCertThumbprint(KeyStore keyStore) throws IOException {
+    try {
+      Enumeration<String> aliases = keyStore.aliases();
+      while (aliases.hasMoreElements()) {
+        String alias = aliases.nextElement();
+        if (keyStore.isKeyEntry(alias)) {
+          Certificate[] chain = keyStore.getCertificateChain(alias);
+          Certificate cert =
+              (chain != null && chain.length > 0) ? chain[0] : keyStore.getCertificate(alias);
+          if (cert instanceof X509Certificate) {
+            byte[] digest = MessageDigest.getInstance("SHA-256").digest(cert.getEncoded());
+            return Base64.getUrlEncoder().withoutPadding().encodeToString(digest);
+          }
+        }
+      }
+    } catch (GeneralSecurityException e) {
+      throw new IOException("Failed to compute X.509 certificate SHA-256 thumbprint.", e);
+    }
+    throw new IOException("No X509Certificate found in KeyStore.");
+  }
+
+  private String generateSignedOidcJwt(String audience, String x5tS256, boolean includeMayAct)
+      throws IOException {
+    JsonWebSignature.Header header = new JsonWebSignature.Header();
+    header.setAlgorithm("RS256");
+    header.setType("JWT");
+    header.setKeyId(privateKeyId);
+
+    long nowSeconds = Instant.now().getEpochSecond();
+    JsonWebToken.Payload payload = new JsonWebToken.Payload();
+    payload.setIssuer(OIDC_JWT_ISSUER);
+    payload.setSubject(clientId);
+    payload.setAudience(audience);
+    payload.setIssuedAtTimeSeconds(nowSeconds);
+    payload.setExpirationTimeSeconds(nowSeconds + 3600);
+
+    Map<String, Object> cnf = new HashMap<>();
+    cnf.put("x5t#S256", x5tS256);
+    payload.put("cnf", cnf);
+
+    if (includeMayAct) {
+      Map<String, Object> mayAct = new HashMap<>();
+      mayAct.put("sub", clientId);
+      mayAct.put("iss", OIDC_JWT_ISSUER);
+      payload.put("may_act", mayAct);
+    }
+
+    try {
+      return JsonWebSignature.signUsingRsaSha256(
+          privateKey, OAuth2Utils.JSON_FACTORY, header, payload);
+    } catch (GeneralSecurityException e) {
+      throw new IOException("Error signing OIDC JWT with service account private key.", e);
+    }
   }
 
   private void callGcs(GoogleCredentials credentials) throws IOException {
