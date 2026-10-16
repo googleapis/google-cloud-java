@@ -1304,6 +1304,26 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
+  void testActionableErrors_nonSettingsTransportCustomization_appendsHint() {
+    ApiException startError = createApiException(401, StatusCode.Code.UNAUTHENTICATED);
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(ApiFutures.immediateFailedFuture(startError));
+    ResumableUploadCallableImpl<String, String> customizedCallable =
+        new ResumableUploadCallableImpl<>(
+            mockClient,
+            defaultSettings,
+            ResumableUploadTransportBridge.markNonSettingsTransportCustomization(clientContext));
+
+    ResumableUploadFuture<String> future =
+        customizedCallable.futureCall("resource-path", payloadOf("hello"), null);
+
+    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
+    assertThat(ex).hasCauseThat().isInstanceOf(UnauthenticatedException.class);
+    assertThat(ex).hasCauseThat().hasMessageThat().startsWith(startError.getMessage());
+    assertThat(ex).hasCauseThat().hasMessageThat().contains("outside the service Settings");
+  }
+
+  @Test
   void testUploadCallable_failureOutcome_attachesCloseExceptionViaAddSuppressed() {
     when(mockStartCallable.futureCall(any(), any()))
         .thenReturn(ApiFutures.immediateFailedFuture(new IllegalStateException("upload failed")));

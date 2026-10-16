@@ -251,14 +251,24 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private ApiException toTerminalException(Throwable t) {
-    if (t instanceof ApiException && uploadSessionUrl == null) {
+    boolean hasNonSettingsTransportCustomization =
+        ResumableUploadTransportBridge.hasNonSettingsTransportCustomization(callContext);
+    if (t instanceof ApiException
+        && uploadSessionUrl == null
+        && !hasNonSettingsTransportCustomization) {
       return (ApiException) t;
     }
     String message = firstNonNull(t.getMessage(), t.getClass().getSimpleName());
     if (uploadSessionUrl != null) {
-      message = message + " (upload URL: " + uploadSessionUrl + ")";
+      message = String.format("%s (upload URL: %s)", message, uploadSessionUrl);
     }
-    // Rethrow with URL included in message.
+    if (hasNonSettingsTransportCustomization) {
+      message =
+          String.format(
+              "%s %s",
+              message, ResumableUploadTransportBridge.NON_SETTINGS_TRANSPORT_CUSTOMIZATION_HINT);
+    }
+    // Rethrow with URL and hint included in message.
     if (t instanceof ApiException) {
       ApiException apiException = (ApiException) t;
       return ApiExceptionFactory.createException(
