@@ -80,8 +80,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final ApiCallContext callContext;
   private final ScheduledExecutorService executor;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
-  private final ResumableUploadProgressTracker progressTracker =
-      new ResumableUploadProgressTracker();
+  private final ResumableUploadProgressTracker progressTracker;
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
   private volatile @Nullable InputStream payload;
@@ -120,7 +119,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
             queryStatusCallable,
             options,
             clientContext,
-            recoveryAlgorithm);
+            recoveryAlgorithm,
+            ResumableUploadProgressTracker.create());
     try {
       future.start(payloadSupplier);
     } catch (Throwable t) {
@@ -135,7 +135,8 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
       UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable,
       ResumableUploadOptions options,
       ClientContext clientContext,
-      ExponentialRetryAlgorithm recoveryAlgorithm) {
+      ExponentialRetryAlgorithm recoveryAlgorithm,
+      ResumableUploadProgressTracker progressTracker) {
     this.startFuture = checkNotNull(startFuture, "startFuture must not be null");
     this.uploadChunkCallable =
         checkNotNull(uploadChunkCallable, "uploadChunkCallable must not be null");
@@ -147,6 +148,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     this.callContext = clientContext.getDefaultCallContext();
     this.executor = checkNotNull(clientContext.getExecutor(), "executor must not be null");
     this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
+    this.progressTracker = checkNotNull(progressTracker, "progressTracker must not be null");
     this.inFlightFuture = startFuture;
     ResumableUploadProgressListener progressListener = options.getProgressListener();
     if (progressListener != null) {
@@ -155,10 +157,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private void start(InputStreamSupplier payloadSupplier) throws IOException {
-    Duration timeout = firstNonNull(options.getGlobalTimeout(), DEFAULT_GLOBAL_TIMEOUT);
-    ScheduledFuture<?> timeoutFuture =
-        executor.schedule(this::onTimeout, timeout.toMillis(), TimeUnit.MILLISECONDS);
-    resultFuture.addListener(() -> timeoutFuture.cancel(false), MoreExecutors.directExecutor());
+    setUpGlobalTimeout();
     this.payload = checkNotNull(payloadSupplier.get(), "payload supplier returned null");
     ApiFutures.addCallback(
         startFuture,
@@ -174,43 +173,10 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
               return;
             }
             ResumableUploadChunkCoordinator<ResponseT> coordinator =
-                new ResumableUploadChunkCoordinator<>(
-                    uploadChunkCallable,
-                    queryStatusCallable,
-                    sessionUrl,
-                    payload,
-                    chunkSize,
-                    callContext,
-                    recoveryAlgorithm,
-                    executor,
-                    progressTracker);
-            ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
-            synchronized (lock) {
-              if (inFlightFuture == null) {
-                return;
-              }
-              effectiveChunkSize = chunkSize;
-              uploadSessionUrl = sessionUrl;
-              inFlightFuture = uploadFuture;
+                createAndRegisterCoordinator(sessionUrl, chunkSize);
+            if (coordinator != null) {
+              coordinator.start();
             }
-            ApiFutures.addCallback(
-                uploadFuture,
-                new ApiFutureCallback<ResponseT>() {
-                  @Override
-                  public void onSuccess(ResponseT response) {
-                    succeed(response);
-                  }
-
-                  @Override
-                  public void onFailure(Throwable t) {
-                    if (t instanceof CancellationException) {
-                      return;
-                    }
-                    fail(t);
-                  }
-                },
-                MoreExecutors.directExecutor());
-            coordinator.start();
           }
 
           @Override
@@ -222,6 +188,55 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
           }
         },
         MoreExecutors.directExecutor());
+  }
+
+  private void setUpGlobalTimeout() {
+    Duration timeout = firstNonNull(options.getGlobalTimeout(), DEFAULT_GLOBAL_TIMEOUT);
+    ScheduledFuture<?> timeoutFuture =
+        executor.schedule(this::onTimeout, timeout.toMillis(), TimeUnit.MILLISECONDS);
+    resultFuture.addListener(() -> timeoutFuture.cancel(false), MoreExecutors.directExecutor());
+  }
+
+  private @Nullable ResumableUploadChunkCoordinator<ResponseT> createAndRegisterCoordinator(
+      String sessionUrl, int chunkSize) {
+    ResumableUploadChunkCoordinator<ResponseT> coordinator =
+        new ResumableUploadChunkCoordinator<>(
+            uploadChunkCallable,
+            queryStatusCallable,
+            sessionUrl,
+            checkNotNull(payload),
+            chunkSize,
+            callContext,
+            recoveryAlgorithm,
+            executor,
+            progressTracker);
+    ApiFuture<ResponseT> uploadFuture = coordinator.getFuture();
+    synchronized (lock) {
+      if (inFlightFuture == null) {
+        return null;
+      }
+      effectiveChunkSize = chunkSize;
+      uploadSessionUrl = sessionUrl;
+      inFlightFuture = uploadFuture;
+    }
+    ApiFutures.addCallback(
+        uploadFuture,
+        new ApiFutureCallback<ResponseT>() {
+          @Override
+          public void onSuccess(ResponseT response) {
+            succeed(response);
+          }
+
+          @Override
+          public void onFailure(Throwable t) {
+            if (t instanceof CancellationException) {
+              return;
+            }
+            fail(t);
+          }
+        },
+        MoreExecutors.directExecutor());
+    return coordinator;
   }
 
   private void onTimeout() {

@@ -110,6 +110,16 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
 
   void start() {
     progressTracker.onStarted(uploadUrl, chunkSize);
+    registerCancellationListener();
+    try {
+      buffer.fill();
+      transmitChunk();
+    } catch (Throwable t) {
+      uploadResultFuture.setException(t);
+    }
+  }
+
+  private void registerCancellationListener() {
     uploadResultFuture.addListener(
         () -> {
           Future<?> inFlight = inFlightFuture;
@@ -118,12 +128,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
-    try {
-      buffer.fill();
-      transmitChunk();
-    } catch (Throwable t) {
-      uploadResultFuture.setException(t);
-    }
   }
 
   private void transmitChunk() {
