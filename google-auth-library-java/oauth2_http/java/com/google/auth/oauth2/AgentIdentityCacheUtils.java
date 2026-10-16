@@ -352,19 +352,22 @@ final class AgentIdentityCacheUtils {
   }
 
   /**
-   * Checks if a file exists and is readable, throwing {@link AccessDeniedException} if permission
-   * is denied.
+   * Checks if a file exists, is a non-empty regular file, and is readable, throwing {@link
+   * AccessDeniedException} if permission is denied.
    */
   static boolean checkExistsOrAccessDenied(final Path path) throws AccessDeniedException {
     try {
-      Files.readAttributes(path, BasicFileAttributes.class);
+      BasicFileAttributes attrs = Files.readAttributes(path, BasicFileAttributes.class);
+      if (!attrs.isRegularFile()) {
+        return false;
+      }
       if (!Files.isReadable(path)) {
         if (!Files.exists(path)) {
           return false; // Deleted mid-rotation; let the caller retry.
         }
         throw new AccessDeniedException(path.toString());
       }
-      return true;
+      return attrs.size() > 0;
     } catch (AccessDeniedException e) {
       throw e;
     } catch (IOException e) {

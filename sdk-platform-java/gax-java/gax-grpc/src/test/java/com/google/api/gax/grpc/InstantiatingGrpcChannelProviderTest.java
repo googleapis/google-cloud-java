@@ -52,6 +52,7 @@ import com.google.api.gax.rpc.testing.FakeMtlsProvider;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.http.AuthHttpConstants;
+import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.auth.oauth2.CloudShellCredentials;
 import com.google.auth.oauth2.ComputeEngineCredentials;
@@ -1441,6 +1442,50 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     IOException thrown = assertThrows(IOException.class, provider::createChannelBuilder);
     assertThat(thrown).hasMessageThat().contains("Failed to initialize mTLS channel credentials");
+  }
+
+  @Test
+  void createChannelBuilder_whenDefaultMtlsProviderThrowsIOException_propagatesIOException()
+      throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    IOException expected = new IOException("Corrupt PEM file");
+    Mockito.when(mtlsCertificateBasedAccess.createDefaultMtlsProvider()).thenThrow(expected);
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    IOException thrown = assertThrows(IOException.class, provider::createChannelBuilder);
+    assertThat(thrown).isSameInstanceAs(expected);
+  }
+
+  @Test
+  void
+      createChannelBuilder_whenDefaultMtlsProviderThrowsCertificateSourceUnavailable_fallsBackWithoutMtls()
+          throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(mtlsCertificateBasedAccess.createDefaultMtlsProvider())
+        .thenThrow(new CertificateSourceUnavailableException("No certificates on disk"));
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    assertThat(provider.createChannelBuilder()).isNotNull();
   }
 
   private static class FakeLogHandler extends Handler {

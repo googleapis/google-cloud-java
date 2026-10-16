@@ -131,16 +131,23 @@ public class MtlsUtils {
     gkeCredentialBundlePath = path != null ? path : GKE_CREDENTIAL_BUNDLE_PATH;
   }
 
+  private static boolean isUseClientCertificateExplicitlyDisabled(
+      @Nullable String useClientCertificate) {
+    return !Strings.isNullOrEmpty(useClientCertificate)
+        && !"true".equalsIgnoreCase(useClientCertificate);
+  }
+
   /**
    * Returns if mutual TLS client certificate should be used. Returns true if valid workload
    * certificates are configured or if GOOGLE_API_USE_CLIENT_CERTIFICATE is explicitly set to true
    * (e.g. for Enterprise Certificate Proxy or custom MtlsProviders), unless explicitly disabled via
-   * GOOGLE_API_USE_CLIENT_CERTIFICATE=false.
+   * GOOGLE_API_USE_CLIENT_CERTIFICATE (set to a non-empty value other than "true").
    */
   public static boolean useMtlsClientCertificate(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
-    String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    if ("false".equalsIgnoreCase(useClientCertificate)) {
+    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+    if (isUseClientCertificateExplicitlyDisabled(useClientCertificate)) {
       return false;
     }
     if (getWorkloadCertPath(envProvider, propProvider) != null) {
@@ -167,17 +174,18 @@ public class MtlsUtils {
    *       configuration file is missing, unreadable, malformed, or references missing/unreadable
    *       certificate or private key files. This is treated as an unrecoverable misconfiguration.
    *   <li><b>{@code null} (Safe fallback / fail open):</b> Client certificates are explicitly
-   *       disabled via {@code GOOGLE_API_USE_CLIENT_CERTIFICATE=false}, no explicit configuration
-   *       is set and neither the default well-known configuration file nor a readable GKE
-   *       credential bundle exists on disk, or the configuration specifies an non-workload source
-   *       (e.g., ECP/PKCS11 without a {@code workload} section). Callers can proceed without
-   *       workload certificate file polling.
+   *       disabled via {@code GOOGLE_API_USE_CLIENT_CERTIFICATE} (any non-empty value other than
+   *       {@code "true"}), no explicit configuration is set and neither the default well-known
+   *       configuration file nor a readable GKE credential bundle exists on disk, or the
+   *       configuration specifies an non-workload source (e.g., ECP/PKCS11 without a {@code
+   *       workload} section). Callers can proceed without workload certificate file polling.
    * </ol>
    */
   public static @Nullable String getWorkloadCertPath(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
-    String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    if ("false".equalsIgnoreCase(useClientCertificate)) {
+    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+    if (isUseClientCertificateExplicitlyDisabled(useClientCertificate)) {
       return null;
     }
 

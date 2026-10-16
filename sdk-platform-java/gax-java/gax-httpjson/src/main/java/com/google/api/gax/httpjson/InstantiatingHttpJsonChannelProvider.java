@@ -40,7 +40,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.auth.Credentials;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
-import com.google.auth.mtls.DefaultMtlsProviderFactory;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
@@ -51,7 +50,6 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Supplier;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -453,18 +451,23 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
         if (mtlsProvider == null) {
           // Attempt to create default MtlsProvider from environment.
           try {
-            mtlsProvider = DefaultMtlsProviderFactory.create();
+            mtlsProvider = certificateBasedAccess.createDefaultMtlsProvider();
           } catch (CertificateSourceUnavailableException e) {
             // This is okay. Leave mtlsProvider as null so that we will not auto-upgrade
             // to mTLS endpoints. See https://google.aip.dev/auth/4114.
           } catch (IOException e) {
-            LOG.log(
-                Level.WARNING,
-                "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
-            LOG.log(
-                Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize."
-                    + " Falling back to non-mTLS channel.");
+            mtlsProvider =
+                new MtlsProvider() {
+                  @Override
+                  public boolean isAvailable() throws IOException {
+                    throw e;
+                  }
+
+                  @Override
+                  public KeyStore getKeyStore() throws IOException {
+                    throw e;
+                  }
+                };
           }
         }
       }

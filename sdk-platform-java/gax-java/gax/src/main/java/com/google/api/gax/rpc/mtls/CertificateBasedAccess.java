@@ -32,8 +32,11 @@ package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
+import com.google.auth.mtls.DefaultMtlsProviderFactory;
+import com.google.auth.mtls.MtlsProvider;
 import com.google.auth.mtls.MtlsUtils;
 import com.google.auth.oauth2.PropertyProvider;
+import java.io.IOException;
 
 /**
  * Utility class for handling certificate-based access configurations.
@@ -95,5 +98,10 @@ public class CertificateBasedAccess {
    */
   public String getWorkloadCertPath() {
     return MtlsUtils.getWorkloadCertPath(getAuthEnvProvider(), getAuthPropertyProvider());
+  }
+
+  /** Creates the default {@link MtlsProvider} for the environment. */
+  public MtlsProvider createDefaultMtlsProvider() throws IOException {
+    return DefaultMtlsProviderFactory.create();
   }
 }

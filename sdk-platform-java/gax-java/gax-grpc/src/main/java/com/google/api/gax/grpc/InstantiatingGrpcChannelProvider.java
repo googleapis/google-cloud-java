@@ -46,7 +46,6 @@ import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
-import com.google.auth.mtls.DefaultMtlsProviderFactory;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.auth.oauth2.ComputeEngineCredentials;
 import com.google.auth.oauth2.SecureSessionAgent;
@@ -1408,18 +1407,23 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
         if (mtlsProvider == null) {
           // Attempt to create default MtlsProvider from environment.
           try {
-            mtlsProvider = DefaultMtlsProviderFactory.create();
+            mtlsProvider = certificateBasedAccess.createDefaultMtlsProvider();
           } catch (CertificateSourceUnavailableException e) {
             // This is okay. Leave mtlsProvider as null so that we will not auto-upgrade
             // to mTLS endpoints. See https://google.aip.dev/auth/4114.
           } catch (IOException e) {
-            LOG.log(
-                Level.WARNING,
-                "DefaultMtlsProviderFactory encountered unexpected IOException: " + e.getMessage());
-            LOG.log(
-                Level.WARNING,
-                "mTLS configuration was detected on the device, but mTLS failed to initialize."
-                    + " Falling back to non-mTLS channel.");
+            mtlsProvider =
+                new MtlsProvider() {
+                  @Override
+                  public boolean isAvailable() throws IOException {
+                    throw e;
+                  }
+
+                  @Override
+                  public KeyStore getKeyStore() throws IOException {
+                    throw e;
+                  }
+                };
           }
         }
       }
