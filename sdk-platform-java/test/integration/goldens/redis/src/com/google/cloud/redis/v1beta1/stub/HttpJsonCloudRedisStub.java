@@ -619,6 +619,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listInstances")
                 .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -631,6 +632,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getInstance")
             .build();
     HttpJsonCallSettings<GetInstanceAuthStringRequest, InstanceAuthString>
         getInstanceAuthStringTransportSettings =
@@ -644,6 +646,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("getInstanceAuthString")
                 .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -656,6 +659,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createInstance")
             .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -667,6 +671,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   builder.add("instance.name", String.valueOf(request.getInstance().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateInstance")
             .build();
     HttpJsonCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
         HttpJsonCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
@@ -679,6 +684,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("upgradeInstance")
             .build();
     HttpJsonCallSettings<ImportInstanceRequest, Operation> importInstanceTransportSettings =
         HttpJsonCallSettings.<ImportInstanceRequest, Operation>newBuilder()
@@ -690,6 +696,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("importInstance")
             .build();
     HttpJsonCallSettings<ExportInstanceRequest, Operation> exportInstanceTransportSettings =
         HttpJsonCallSettings.<ExportInstanceRequest, Operation>newBuilder()
@@ -701,6 +708,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("exportInstance")
             .build();
     HttpJsonCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
         HttpJsonCallSettings.<FailoverInstanceRequest, Operation>newBuilder()
@@ -713,6 +721,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("failoverInstance")
             .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -725,6 +734,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteInstance")
             .build();
     HttpJsonCallSettings<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceTransportSettings =
@@ -738,6 +748,7 @@ public class HttpJsonCloudRedisStub extends CloudRedisStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("rescheduleMaintenance")
                 .build();
 
     this.listInstancesCallable =

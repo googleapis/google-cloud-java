@@ -273,6 +273,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createSchema")
             .build();
     GrpcCallSettings<GetSchemaRequest, Schema> getSchemaTransportSettings =
         GrpcCallSettings.<GetSchemaRequest, Schema>newBuilder()
@@ -284,6 +285,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getSchema")
             .build();
     GrpcCallSettings<ListSchemasRequest, ListSchemasResponse> listSchemasTransportSettings =
         GrpcCallSettings.<ListSchemasRequest, ListSchemasResponse>newBuilder()
@@ -295,6 +297,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listSchemas")
             .build();
     GrpcCallSettings<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse>
         listSchemaRevisionsTransportSettings =
@@ -307,6 +310,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("listSchemaRevisions")
                 .build();
     GrpcCallSettings<CommitSchemaRequest, Schema> commitSchemaTransportSettings =
         GrpcCallSettings.<CommitSchemaRequest, Schema>newBuilder()
@@ -318,6 +322,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("commitSchema")
             .build();
     GrpcCallSettings<RollbackSchemaRequest, Schema> rollbackSchemaTransportSettings =
         GrpcCallSettings.<RollbackSchemaRequest, Schema>newBuilder()
@@ -329,6 +334,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("rollbackSchema")
             .build();
     GrpcCallSettings<DeleteSchemaRevisionRequest, Schema> deleteSchemaRevisionTransportSettings =
         GrpcCallSettings.<DeleteSchemaRevisionRequest, Schema>newBuilder()
@@ -340,6 +346,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteSchemaRevision")
             .build();
     GrpcCallSettings<DeleteSchemaRequest, Empty> deleteSchemaTransportSettings =
         GrpcCallSettings.<DeleteSchemaRequest, Empty>newBuilder()
@@ -351,6 +358,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteSchema")
             .build();
     GrpcCallSettings<ValidateSchemaRequest, ValidateSchemaResponse>
         validateSchemaTransportSettings =
@@ -363,6 +371,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("validateSchema")
                 .build();
     GrpcCallSettings<ValidateMessageRequest, ValidateMessageResponse>
         validateMessageTransportSettings =
@@ -375,6 +384,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("validateMessage")
                 .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -386,6 +396,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -397,6 +408,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -409,6 +421,7 @@ public class GrpcSchemaServiceStub extends SchemaServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createSchemaCallable =

@@ -345,6 +345,11 @@ public class ResumableUploadServiceStubSettings
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.ResumableUploadServiceClient";
+  }
+
   /** Builder for ResumableUploadServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<ResumableUploadServiceStubSettings, Builder> {

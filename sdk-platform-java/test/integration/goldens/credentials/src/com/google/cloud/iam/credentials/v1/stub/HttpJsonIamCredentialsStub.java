@@ -267,6 +267,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("generateAccessToken")
                 .build();
     HttpJsonCallSettings<GenerateIdTokenRequest, GenerateIdTokenResponse>
         generateIdTokenTransportSettings =
@@ -280,6 +281,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("generateIdToken")
                 .build();
     HttpJsonCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         HttpJsonCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
@@ -292,6 +294,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("signBlob")
             .build();
     HttpJsonCallSettings<SignJwtRequest, SignJwtResponse> signJwtTransportSettings =
         HttpJsonCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
@@ -304,6 +307,7 @@ public class HttpJsonIamCredentialsStub extends IamCredentialsStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("signJwt")
             .build();
 
     this.generateAccessTokenCallable =

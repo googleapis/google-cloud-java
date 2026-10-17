@@ -197,6 +197,7 @@ public class GrpcTestingStub extends TestingStub {
     GrpcCallSettings<CreateSessionRequest, Session> createSessionTransportSettings =
         GrpcCallSettings.<CreateSessionRequest, Session>newBuilder()
             .setMethodDescriptor(createSessionMethodDescriptor)
+            .setJavaMethodName("createSession")
             .build();
     GrpcCallSettings<GetSessionRequest, Session> getSessionTransportSettings =
         GrpcCallSettings.<GetSessionRequest, Session>newBuilder()
@@ -208,10 +209,12 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getSession")
             .build();
     GrpcCallSettings<ListSessionsRequest, ListSessionsResponse> listSessionsTransportSettings =
         GrpcCallSettings.<ListSessionsRequest, ListSessionsResponse>newBuilder()
             .setMethodDescriptor(listSessionsMethodDescriptor)
+            .setJavaMethodName("listSessions")
             .build();
     GrpcCallSettings<DeleteSessionRequest, Empty> deleteSessionTransportSettings =
         GrpcCallSettings.<DeleteSessionRequest, Empty>newBuilder()
@@ -223,6 +226,7 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteSession")
             .build();
     GrpcCallSettings<ReportSessionRequest, ReportSessionResponse> reportSessionTransportSettings =
         GrpcCallSettings.<ReportSessionRequest, ReportSessionResponse>newBuilder()
@@ -234,6 +238,7 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("reportSession")
             .build();
     GrpcCallSettings<GetTestRequest, Test> getTestTransportSettings =
         GrpcCallSettings.<GetTestRequest, Test>newBuilder()
@@ -249,6 +254,7 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getTest")
             .build();
     GrpcCallSettings<ListTestsRequest, ListTestsResponse> listTestsTransportSettings =
         GrpcCallSettings.<ListTestsRequest, ListTestsResponse>newBuilder()
@@ -260,6 +266,7 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listTests")
             .build();
     GrpcCallSettings<DeleteTestRequest, Empty> deleteTestTransportSettings =
         GrpcCallSettings.<DeleteTestRequest, Empty>newBuilder()
@@ -271,6 +278,7 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteTest")
             .build();
     GrpcCallSettings<VerifyTestRequest, VerifyTestResponse> verifyTestTransportSettings =
         GrpcCallSettings.<VerifyTestRequest, VerifyTestResponse>newBuilder()
@@ -287,6 +295,7 @@ public class GrpcTestingStub extends TestingStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("verifyTest")
             .build();
 
     this.createSessionCallable =

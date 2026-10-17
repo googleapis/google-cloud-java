@@ -169,6 +169,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listLogMetrics")
                 .build();
     GrpcCallSettings<GetLogMetricRequest, LogMetric> getLogMetricTransportSettings =
         GrpcCallSettings.<GetLogMetricRequest, LogMetric>newBuilder()
@@ -180,6 +181,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getMetricName())
+            .setJavaMethodName("getLogMetric")
             .build();
     GrpcCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricTransportSettings =
         GrpcCallSettings.<CreateLogMetricRequest, LogMetric>newBuilder()
@@ -191,6 +193,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createLogMetric")
             .build();
     GrpcCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricTransportSettings =
         GrpcCallSettings.<UpdateLogMetricRequest, LogMetric>newBuilder()
@@ -202,6 +205,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getMetricName())
+            .setJavaMethodName("updateLogMetric")
             .build();
     GrpcCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricTransportSettings =
         GrpcCallSettings.<DeleteLogMetricRequest, Empty>newBuilder()
@@ -213,6 +217,7 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getMetricName())
+            .setJavaMethodName("deleteLogMetric")
             .build();
 
     this.listLogMetricsCallable =
