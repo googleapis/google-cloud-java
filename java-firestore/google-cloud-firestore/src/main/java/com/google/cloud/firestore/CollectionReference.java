@@ -18,6 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
@@ -35,6 +36,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.DocumentMask;
 import com.google.firestore.v1.ListDocumentsRequest;
+import com.google.firestore.v1.RequestOptions;
 import java.util.Iterator;
 import java.util.Map;
 import javax.annotation.Nonnull;
@@ -132,6 +134,19 @@ public class CollectionReference extends Query {
    */
   @Nonnull
   public Iterable<DocumentReference> listDocuments() {
+    return listDocuments((FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Retrieves the list of documents in this collection with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return The list of documents in this collection.
+   */
+  @BetaApi
+  @Nonnull
+  public Iterable<DocumentReference> listDocuments(
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         rpcContext
             .getFirestore()
@@ -152,6 +167,12 @@ public class CollectionReference extends Query {
       request.setCollectionId(options.getCollectionId());
       request.setMask(DocumentMask.getDefaultInstance());
       request.setShowMissing(true);
+      RequestOptions requestOptions =
+          RequestOptionsHelper.createRequestOptions(
+              rpcContext.getFirestore().getOptions(), executionOptions);
+      if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+        request.setRequestOptions(requestOptions);
+      }
       final ListDocumentsPagedResponse response;
       FirestoreRpc client = rpcContext.getClient();
       UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse> callable =
@@ -209,6 +230,24 @@ public class CollectionReference extends Query {
    */
   @Nonnull
   public ApiFuture<DocumentReference> add(@Nonnull final Map<String, Object> fields) {
+    return add(fields, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Adds a new document to this collection with the specified data and execution options, assigning
+   * it a document ID automatically.
+   *
+   * @param fields A Map containing the data for the new document.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the DocumentReference of the newly created
+   *     document.
+   * @see #document()
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<DocumentReference> add(
+      @Nonnull final Map<String, Object> fields,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         rpcContext
             .getFirestore()
@@ -225,7 +264,10 @@ public class CollectionReference extends Query {
 
     try (Scope ignored = span.makeCurrent()) {
       final DocumentReference documentReference = document();
-      ApiFuture<WriteResult> createFuture = documentReference.create(fields);
+      ApiFuture<WriteResult> createFuture =
+          executionOptions != null
+              ? documentReference.create(fields, executionOptions)
+              : documentReference.create(fields);
       ApiFuture<DocumentReference> result =
           ApiFutures.transform(
               createFuture, writeResult -> documentReference, MoreExecutors.directExecutor());
@@ -249,12 +291,28 @@ public class CollectionReference extends Query {
    * @see #document()
    */
   public ApiFuture<DocumentReference> add(Object pojo) {
+    return add(pojo, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Adds a new document to this collection with the specified POJO as contents and execution
+   * options, assigning it a document ID automatically.
+   *
+   * @param pojo The POJO that will be used to populate the contents of the document
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the DocumentReference of the newly created
+   *     document.
+   * @see #document()
+   */
+  @BetaApi
+  public ApiFuture<DocumentReference> add(
+      Object pojo, @Nullable FirestoreExecutionOptions executionOptions) {
     Object converted = CustomClassMapper.convertToPlainJavaTypes(pojo);
     if (!(converted instanceof Map)) {
       throw FirestoreException.forInvalidArgument(
           "Can't set a document's data to an array or primitive");
     }
-    return add((Map<String, Object>) converted);
+    return add((Map<String, Object>) converted, executionOptions);
   }
 
   /** Returns a resource path pointing to this collection. */

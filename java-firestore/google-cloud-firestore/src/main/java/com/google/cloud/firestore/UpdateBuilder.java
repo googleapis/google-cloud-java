@@ -33,6 +33,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.RequestOptions;
 import com.google.firestore.v1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
@@ -611,6 +612,12 @@ public abstract class UpdateBuilder<T> {
 
   /** Commit the current batch. */
   ApiFuture<List<WriteResult>> commit(@Nullable ByteString transactionId) {
+    return commit(transactionId, null);
+  }
+
+  /** Commit the current batch with execution options. */
+  ApiFuture<List<WriteResult>> commit(
+      @Nullable ByteString transactionId, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         firestore
             .getOptions()
@@ -638,7 +645,7 @@ public abstract class UpdateBuilder<T> {
       // writes, we are ensured that no more writes will be appended after commit
       // accesses writes.
       committed = true;
-      CommitRequest request = buildCommitRequest(transactionId);
+      CommitRequest request = buildCommitRequest(transactionId, executionOptions);
 
       ApiFuture<CommitResponse> response =
           firestore.sendRequest(request, firestore.getClient().commitCallable());
@@ -661,12 +668,18 @@ public abstract class UpdateBuilder<T> {
     }
   }
 
-  private CommitRequest buildCommitRequest(ByteString transactionId) {
+  private CommitRequest buildCommitRequest(
+      ByteString transactionId, @Nullable FirestoreExecutionOptions executionOptions) {
     CommitRequest.Builder builder = CommitRequest.newBuilder();
     builder.setDatabase(firestore.getDatabaseName());
     forEachWrite(builder::addWrites);
     if (transactionId != null) {
       builder.setTransaction(transactionId);
+    }
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(firestore.getOptions(), executionOptions);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      builder.setRequestOptions(requestOptions);
     }
     return builder.build();
   }

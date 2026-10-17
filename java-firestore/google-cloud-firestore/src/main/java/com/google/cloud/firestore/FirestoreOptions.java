@@ -17,6 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
@@ -34,6 +35,8 @@ import com.google.cloud.firestore.telemetry.CompositeApiTracerFactory;
 import com.google.cloud.firestore.telemetry.MetricsUtil;
 import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.grpc.ManagedChannelBuilder;
@@ -69,6 +72,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
   private final transient @Nonnull FirestoreOpenTelemetryOptions openTelemetryOptions;
   private final transient @Nonnull com.google.cloud.firestore.telemetry.TraceUtil traceUtil;
   private final transient @Nonnull com.google.cloud.firestore.telemetry.MetricsUtil metricsUtil;
+  private final ImmutableList<String> requestTags;
 
   public static class DefaultFirestoreFactory implements FirestoreFactory {
 
@@ -158,6 +162,13 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     return metricsUtil;
   }
 
+  /** Returns the list of request tags. */
+  @BetaApi
+  @Nonnull
+  public List<String> getRequestTags() {
+    return requestTags;
+  }
+
   @Nonnull
   public FirestoreOpenTelemetryOptions getOpenTelemetryOptions() {
     return openTelemetryOptions;
@@ -171,6 +182,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     @Nullable private String emulatorHost = null;
     private boolean alwaysUseImplicitOrderBy = false;
     @Nullable private FirestoreOpenTelemetryOptions openTelemetryOptions = null;
+    @Nullable private List<String> requestTags = null;
 
     private Builder() {}
 
@@ -182,6 +194,7 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
       this.emulatorHost = options.emulatorHost;
       this.alwaysUseImplicitOrderBy = options.alwaysUseImplicitOrderBy;
       this.openTelemetryOptions = options.openTelemetryOptions;
+      this.requestTags = options.requestTags;
     }
 
     /**
@@ -271,11 +284,24 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     }
 
     /**
+     * Sets the request tags for the client.
+     *
+     * @param requestTags the request tags to set
+     * @return this builder
+     */
+    @BetaApi
+    @Nonnull
+    public Builder setRequestTags(@Nonnull List<String> requestTags) {
+      Preconditions.checkNotNull(requestTags, "requestTags cannot be null");
+      this.requestTags = ImmutableList.copyOf(requestTags);
+      return this;
+    }
+
+    /**
      * Sets the {@link FirestoreOpenTelemetryOptions} to be used for this Firestore instance.
      *
      * @param openTelemetryOptions The `FirestoreOpenTelemetryOptions` to use.
      */
-    @Nonnull
     public Builder setOpenTelemetryOptions(
         @Nonnull FirestoreOpenTelemetryOptions openTelemetryOptions) {
       this.openTelemetryOptions = openTelemetryOptions;
@@ -378,6 +404,10 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
 
     // Set up the `MetricsUtil` instance after the database ID has been set.
     this.metricsUtil = MetricsUtil.getInstance(this);
+    this.requestTags =
+        builder.requestTags != null
+            ? ImmutableList.copyOf(builder.requestTags)
+            : ImmutableList.of();
 
     if (builder.channelProvider == null) {
       ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
@@ -479,12 +509,13 @@ public final class FirestoreOptions extends ServiceOptions<Firestore, FirestoreO
     FirestoreOptions that = (FirestoreOptions) o;
     return Objects.equals(databaseId, that.databaseId)
         && Objects.equals(channelProvider, that.channelProvider)
+        && Objects.equals(requestTags, that.requestTags)
         && baseEquals(that);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(databaseId, channelProvider, baseHashCode());
+    return Objects.hash(databaseId, channelProvider, requestTags, baseHashCode());
   }
 
   @Nonnull

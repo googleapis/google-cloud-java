@@ -18,6 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptions;
 import com.google.api.gax.rpc.ApiStreamObserver;
@@ -32,6 +33,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.Cursor;
 import com.google.firestore.v1.PartitionQueryRequest;
+import com.google.firestore.v1.RequestOptions;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -72,11 +74,27 @@ public class CollectionGroup extends Query {
    */
   public void getPartitions(
       long desiredPartitionCount, final ApiStreamObserver<QueryPartition> observer) {
+    getPartitions(desiredPartitionCount, observer, null);
+  }
+
+  /**
+   * Partitions a query by returning partition cursors that can be used to run the query in
+   * parallel, with execution options.
+   *
+   * @param desiredPartitionCount The desired maximum number of partition points.
+   * @param observer a stream observer that receives the result of the Partition request.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  public void getPartitions(
+      long desiredPartitionCount,
+      final ApiStreamObserver<QueryPartition> observer,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     if (desiredPartitionCount == 1) {
       // Short circuit if the user only requested a single partition.
       observer.onNext(new QueryPartition(partitionQuery, null, null));
     } else {
-      PartitionQueryRequest request = buildRequest(desiredPartitionCount);
+      PartitionQueryRequest request = buildRequest(desiredPartitionCount, executionOptions);
 
       final PartitionQueryPagedResponse response;
       try {
@@ -100,12 +118,24 @@ public class CollectionGroup extends Query {
   }
 
   public ApiFuture<List<QueryPartition>> getPartitions(long desiredPartitionCount) {
+    return getPartitions(desiredPartitionCount, (FirestoreExecutionOptions) null);
+  }
+
+  /**
+   * Partitions a query by returning partition cursors with execution options.
+   *
+   * @param desiredPartitionCount The desired maximum number of partition points.
+   * @param executionOptions Options for executing the request.
+   */
+  @BetaApi
+  public ApiFuture<List<QueryPartition>> getPartitions(
+      long desiredPartitionCount, @Nullable FirestoreExecutionOptions executionOptions) {
     if (desiredPartitionCount == 1) {
       // Short circuit if the user only requested a single partition.
       return ApiFutures.immediateFuture(
           Collections.singletonList(new QueryPartition(partitionQuery, null, null)));
     } else {
-      PartitionQueryRequest request = buildRequest(desiredPartitionCount);
+      PartitionQueryRequest request = buildRequest(desiredPartitionCount, executionOptions);
 
       TraceUtil.Span span =
           rpcContext
@@ -152,7 +182,8 @@ public class CollectionGroup extends Query {
     }
   }
 
-  private PartitionQueryRequest buildRequest(long desiredPartitionCount) {
+  private PartitionQueryRequest buildRequest(
+      long desiredPartitionCount, @Nullable FirestoreExecutionOptions executionOptions) {
     Preconditions.checkArgument(
         desiredPartitionCount > 0, "Desired partition count must be one or greater");
 
@@ -163,6 +194,12 @@ public class CollectionGroup extends Query {
     // Since we are always returning an extra partition (with en empty endBefore cursor), we
     // reduce the desired partition count by one.
     request.setPartitionCount(desiredPartitionCount - 1);
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(
+            rpcContext.getFirestore().getOptions(), executionOptions);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      request.setRequestOptions(requestOptions);
+    }
     return request.build();
   }
 
