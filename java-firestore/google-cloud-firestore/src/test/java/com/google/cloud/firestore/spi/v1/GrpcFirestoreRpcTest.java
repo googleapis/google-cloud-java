@@ -17,18 +17,32 @@
 package com.google.cloud.firestore.spi.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.BidiStreamingCallable;
+import com.google.api.gax.rpc.ClientStream;
+import com.google.api.gax.rpc.ClientStreamReadyObserver;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.firestore.FirestoreOptions;
+import com.google.cloud.firestore.v1.FirestoreClient.ListCollectionIdsPagedResponse;
 import com.google.cloud.firestore.v1.FirestoreClient.ListDocumentsPagedResponse;
 import com.google.cloud.firestore.v1.FirestoreClient.PartitionQueryPagedResponse;
+import com.google.cloud.firestore.v1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1.stub.FirestoreStubSettings;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
@@ -40,8 +54,11 @@ import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.ExecutePipelineRequest;
 import com.google.firestore.v1.ExecutePipelineResponse;
+import com.google.firestore.v1.ListCollectionIdsRequest;
 import com.google.firestore.v1.ListDocumentsRequest;
 import com.google.firestore.v1.ListDocumentsResponse;
+import com.google.firestore.v1.ListenRequest;
+import com.google.firestore.v1.ListenResponse;
 import com.google.firestore.v1.PartitionQueryRequest;
 import com.google.firestore.v1.PartitionQueryResponse;
 import com.google.firestore.v1.RollbackRequest;
@@ -49,6 +66,8 @@ import com.google.firestore.v1.RunAggregationQueryRequest;
 import com.google.firestore.v1.RunAggregationQueryResponse;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.RunQueryResponse;
+import com.google.firestore.v1.TransactionOptions;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -287,6 +306,302 @@ public class GrpcFirestoreRpcTest {
         .containsExactlyElementsIn(expectedSettings.getRetryableCodes());
   }
 
+  @Test
+  public void commitCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<CommitRequest, CommitResponse> callable = new RecordingUnaryCallable<>();
+    when(mockStub.commitCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.commitCallable()
+        .futureCall(CommitRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+
+    rpc.commitCallable()
+        .futureCall(
+            CommitRequest.newBuilder().setTransaction(ByteString.copyFromUtf8("tx1")).build(),
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void batchWriteCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<BatchWriteRequest, BatchWriteResponse> callable =
+        new RecordingUnaryCallable<>();
+    when(mockStub.batchWriteCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.batchWriteCallable()
+        .futureCall(BatchWriteRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+  }
+
+  @Test
+  public void batchGetDocumentsCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse> callable =
+        new RecordingServerStreamingCallable<>();
+    when(mockStub.batchGetDocumentsCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.batchGetDocumentsCallable()
+        .call(BatchGetDocumentsRequest.getDefaultInstance(), null, GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+
+    rpc.batchGetDocumentsCallable()
+        .call(
+            BatchGetDocumentsRequest.newBuilder()
+                .setTransaction(ByteString.copyFromUtf8("tx1"))
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+
+    rpc.batchGetDocumentsCallable()
+        .call(
+            BatchGetDocumentsRequest.newBuilder()
+                .setNewTransaction(TransactionOptions.getDefaultInstance())
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void runQueryCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingServerStreamingCallable<RunQueryRequest, RunQueryResponse> callable =
+        new RecordingServerStreamingCallable<>();
+    when(mockStub.runQueryCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.runQueryCallable()
+        .call(RunQueryRequest.getDefaultInstance(), null, GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+
+    rpc.runQueryCallable()
+        .call(
+            RunQueryRequest.newBuilder().setTransaction(ByteString.copyFromUtf8("tx1")).build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+
+    rpc.runQueryCallable()
+        .call(
+            RunQueryRequest.newBuilder()
+                .setNewTransaction(TransactionOptions.getDefaultInstance())
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void executePipelineCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse> callable =
+        new RecordingServerStreamingCallable<>();
+    when(mockStub.executePipelineCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.executePipelineCallable()
+        .call(ExecutePipelineRequest.getDefaultInstance(), null, GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+
+    rpc.executePipelineCallable()
+        .call(
+            ExecutePipelineRequest.newBuilder()
+                .setTransaction(ByteString.copyFromUtf8("tx1"))
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+
+    rpc.executePipelineCallable()
+        .call(
+            ExecutePipelineRequest.newBuilder()
+                .setNewTransaction(TransactionOptions.getDefaultInstance())
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void runAggregationQueryCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingServerStreamingCallable<RunAggregationQueryRequest, RunAggregationQueryResponse>
+        callable = new RecordingServerStreamingCallable<>();
+    when(mockStub.runAggregationQueryCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.runAggregationQueryCallable()
+        .call(
+            RunAggregationQueryRequest.getDefaultInstance(), null, GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+
+    rpc.runAggregationQueryCallable()
+        .call(
+            RunAggregationQueryRequest.newBuilder()
+                .setTransaction(ByteString.copyFromUtf8("tx1"))
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+
+    rpc.runAggregationQueryCallable()
+        .call(
+            RunAggregationQueryRequest.newBuilder()
+                .setNewTransaction(TransactionOptions.getDefaultInstance())
+                .build(),
+            null,
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void beginTransactionCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<BeginTransactionRequest, BeginTransactionResponse> callable =
+        new RecordingUnaryCallable<>();
+    when(mockStub.beginTransactionCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.beginTransactionCallable()
+        .futureCall(BeginTransactionRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void rollbackCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<RollbackRequest, Empty> callable = new RecordingUnaryCallable<>();
+    when(mockStub.rollbackCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.rollbackCallable()
+        .futureCall(RollbackRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void listCollectionIdsPagedCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse> callable =
+        new RecordingUnaryCallable<>();
+    when(mockStub.listCollectionIdsPagedCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.listCollectionIdsPagedCallable()
+        .futureCall(ListCollectionIdsRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+  }
+
+  @Test
+  public void partitionQueryPagedCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<PartitionQueryRequest, PartitionQueryPagedResponse> callable =
+        new RecordingUnaryCallable<>();
+    when(mockStub.partitionQueryPagedCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.partitionQueryPagedCallable()
+        .futureCall(PartitionQueryRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+  }
+
+  @Test
+  public void listDocumentsPagedCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingUnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse> callable =
+        new RecordingUnaryCallable<>();
+    when(mockStub.listDocumentsPagedCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.listDocumentsPagedCallable()
+        .futureCall(ListDocumentsRequest.getDefaultInstance(), GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+
+    rpc.listDocumentsPagedCallable()
+        .futureCall(
+            ListDocumentsRequest.newBuilder()
+                .setTransaction(ByteString.copyFromUtf8("tx1"))
+                .build(),
+            GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("true");
+  }
+
+  @Test
+  public void listenCallableRoutingHeader() {
+    FirestoreStub mockStub = mock(FirestoreStub.class);
+    RecordingBidiStreamingCallable<ListenRequest, ListenResponse> callable =
+        new RecordingBidiStreamingCallable<>();
+    when(mockStub.listenCallable()).thenReturn(callable);
+    GrpcFirestoreRpc rpc = new GrpcFirestoreRpc(mockStub);
+
+    rpc.listenCallable().internalCall(null, null, GrpcCallContext.createDefault());
+    assertThat(callable.lastContext.getExtraHeaders().get("x-goog-is-transaction"))
+        .containsExactly("false");
+  }
+
+  private static class RecordingUnaryCallable<RequestT, ResponseT>
+      extends UnaryCallable<RequestT, ResponseT> {
+    ApiCallContext lastContext;
+
+    @Override
+    public ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext context) {
+      this.lastContext = context;
+      return ApiFutures.immediateFuture(null);
+    }
+  }
+
+  private static class RecordingServerStreamingCallable<RequestT, ResponseT>
+      extends ServerStreamingCallable<RequestT, ResponseT> {
+    ApiCallContext lastContext;
+
+    @Override
+    public void call(
+        RequestT request, ResponseObserver<ResponseT> responseObserver, ApiCallContext context) {
+      this.lastContext = context;
+    }
+  }
+
+  private static class RecordingBidiStreamingCallable<RequestT, ResponseT>
+      extends BidiStreamingCallable<RequestT, ResponseT> {
+    ApiCallContext lastContext;
+
+    @Override
+    public ClientStream<RequestT> internalCall(
+        ResponseObserver<ResponseT> responseObserver,
+        ClientStreamReadyObserver<RequestT> onReady,
+        ApiCallContext context) {
+      this.lastContext = context;
+      return null;
+    }
+  }
+
   private static CallableRetryData getRetryData(Object callable) throws Exception {
     String aClassName = callable.getClass().getName();
     switch (aClassName) {
@@ -296,6 +611,9 @@ public class GrpcFirestoreRpcTest {
       case "com.google.api.gax.rpc.UnaryCallable$1":
       case "com.google.api.gax.rpc.ServerStreamingCallable$1":
         return getRetryData(getViaReflection(callable, "this$0"));
+      case "com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc$1":
+      case "com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc$2":
+        return getRetryData(getViaReflection(callable, "val$callable"));
       case "com.google.api.gax.rpc.RetryingCallable":
         return new CallableRetryData(
             getRetrySettings(getViaReflection(callable, "executor")),
