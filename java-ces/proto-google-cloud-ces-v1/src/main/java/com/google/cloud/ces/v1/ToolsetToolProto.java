@@ -56,11 +56,11 @@ public final class ToolsetToolProto extends com.google.protobuf.GeneratedFile {
       "\n&google/cloud/ces/v1/toolset_tool.proto"
           + "\022\023google.cloud.ces.v1\032\037google/api/field_"
           + "behavior.proto\032\031google/api/resource.prot"
-          + "o\"X\n\013ToolsetTool\0223\n\007toolset\030\001 \001(\tB\"\340A\002\372A"
-          + "\034\n\032ces.googleapis.com/Toolset\022\024\n\007tool_id"
-          + "\030\003 \001(\tB\003\340A\001BX\n\027com.google.cloud.ces.v1B\020"
-          + "ToolsetToolProtoP\001Z)cloud.google.com/go/"
-          + "ces/apiv1/cespb;cespbb\006proto3"
+          + "o\"Z\n\013ToolsetTool\0224\n\007toolset\030\001 \001(\tB#\342A\001\002\372"
+          + "A\034\n\032ces.googleapis.com/Toolset\022\025\n\007tool_i"
+          + "d\030\003 \001(\tB\004\342A\001\001BX\n\027com.google.cloud.ces.v1"
+          + "B\020ToolsetToolProtoP\001Z)cloud.google.com/g"
+          + "o/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

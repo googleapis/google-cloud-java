@@ -83,6 +83,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
+   * ## Examples:
+   *
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
+   *
    * See
    * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
    * for examples and possible values.
@@ -114,6 +125,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
    * Required. The name of the data point to retrieve.
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
+   *
+   * ## Examples:
+   *
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *
    * See
    * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -464,6 +486,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
+     * ## Examples:
+     *
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
+     *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
      * for examples and possible values.
@@ -494,6 +527,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the data point to retrieve.
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
+     *
+     * ## Examples:
+     *
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -526,6 +570,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
+     * ## Examples:
+     *
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
+     *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
      * for examples and possible values.
@@ -556,6 +611,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
+     * ## Examples:
+     *
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
+     *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
      * for examples and possible values.
@@ -581,6 +647,17 @@ public final class GetDataPointRequest extends com.google.protobuf.GeneratedMess
      * Required. The name of the data point to retrieve.
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
+     *
+     * ## Examples:
+     *
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]

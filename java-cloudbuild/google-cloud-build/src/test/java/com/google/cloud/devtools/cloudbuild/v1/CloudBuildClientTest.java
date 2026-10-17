@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.cloudbuild.v1.ApprovalConfig;
 import com.google.cloudbuild.v1.ApprovalResult;
 import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Artifacts;
@@ -1227,6 +1228,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1282,6 +1284,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1337,6 +1340,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1392,6 +1396,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1450,6 +1455,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1505,6 +1511,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1560,6 +1567,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();
@@ -1767,6 +1775,7 @@ public class CloudBuildClientTest {
             .addAllIncludedFiles(new ArrayList<String>())
             .setFilter("filter-1274492040")
             .setSourceToBuild(GitRepoSource.newBuilder().build())
+            .setApprovalConfig(ApprovalConfig.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setRepositoryEventConfig(RepositoryEventConfig.newBuilder().build())
             .build();

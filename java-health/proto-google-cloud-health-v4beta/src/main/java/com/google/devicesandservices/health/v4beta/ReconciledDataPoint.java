@@ -113,7 +113,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
     CORE_BODY_TEMPERATURE(42),
     ACTIVE_ENERGY_BURNED(44),
     BLOOD_GLUCOSE(46),
-    SKIN_TEMPERATURE(54),
     SKIN_TEMPERATURE_SENSORS(30),
     DATA_NOT_SET(0);
     private final int value;
@@ -202,8 +201,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
           return ACTIVE_ENERGY_BURNED;
         case 46:
           return BLOOD_GLUCOSE;
-        case 54:
-          return SKIN_TEMPERATURE;
         case 30:
           return SKIN_TEMPERATURE_SENSORS;
         case 0:
@@ -2195,61 +2192,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
     return com.google.devicesandservices.health.v4beta.BloodGlucose.getDefaultInstance();
   }
 
-  public static final int SKIN_TEMPERATURE_FIELD_NUMBER = 54;
-
-  /**
-   *
-   *
-   * <pre>
-   * Data for points in the `skin-temperature` sample data type collection.
-   * </pre>
-   *
-   * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-   *
-   * @return Whether the skinTemperature field is set.
-   */
-  @java.lang.Override
-  public boolean hasSkinTemperature() {
-    return dataCase_ == 54;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Data for points in the `skin-temperature` sample data type collection.
-   * </pre>
-   *
-   * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-   *
-   * @return The skinTemperature.
-   */
-  @java.lang.Override
-  public com.google.devicesandservices.health.v4beta.SkinTemperature getSkinTemperature() {
-    if (dataCase_ == 54) {
-      return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-    }
-    return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Data for points in the `skin-temperature` sample data type collection.
-   * </pre>
-   *
-   * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-   */
-  @java.lang.Override
-  public com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder
-      getSkinTemperatureOrBuilder() {
-    if (dataCase_ == 54) {
-      return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-    }
-    return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-  }
-
   public static final int SKIN_TEMPERATURE_SENSORS_FIELD_NUMBER = 30;
 
   /**
@@ -2330,11 +2272,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -2373,11 +2322,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -2541,9 +2497,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
     }
     if (dataCase_ == 46) {
       output.writeMessage(46, (com.google.devicesandservices.health.v4beta.BloodGlucose) data_);
-    }
-    if (dataCase_ == 54) {
-      output.writeMessage(54, (com.google.devicesandservices.health.v4beta.SkinTemperature) data_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2733,11 +2686,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               46, (com.google.devicesandservices.health.v4beta.BloodGlucose) data_);
     }
-    if (dataCase_ == 54) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              54, (com.google.devicesandservices.health.v4beta.SkinTemperature) data_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2861,9 +2809,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
         break;
       case 46:
         if (!getBloodGlucose().equals(other.getBloodGlucose())) return false;
-        break;
-      case 54:
-        if (!getSkinTemperature().equals(other.getSkinTemperature())) return false;
         break;
       case 30:
         if (!getSkinTemperatureSensors().equals(other.getSkinTemperatureSensors())) return false;
@@ -3020,10 +2965,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
       case 46:
         hash = (37 * hash) + BLOOD_GLUCOSE_FIELD_NUMBER;
         hash = (53 * hash) + getBloodGlucose().hashCode();
-        break;
-      case 54:
-        hash = (37 * hash) + SKIN_TEMPERATURE_FIELD_NUMBER;
-        hash = (53 * hash) + getSkinTemperature().hashCode();
         break;
       case 30:
         hash = (37 * hash) + SKIN_TEMPERATURE_SENSORS_FIELD_NUMBER;
@@ -3276,9 +3217,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
       if (bloodGlucoseBuilder_ != null) {
         bloodGlucoseBuilder_.clear();
       }
-      if (skinTemperatureBuilder_ != null) {
-        skinTemperatureBuilder_.clear();
-      }
       if (skinTemperatureSensorsBuilder_ != null) {
         skinTemperatureSensorsBuilder_.clear();
       }
@@ -3332,7 +3270,7 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
     private void buildPartial1(
         com.google.devicesandservices.health.v4beta.ReconciledDataPoint result) {
       int from_bitField1_ = bitField1_;
-      if (((from_bitField1_ & 0x00000010) != 0)) {
+      if (((from_bitField1_ & 0x00000008) != 0)) {
         result.dataPointName_ = dataPointName_;
       }
     }
@@ -3443,9 +3381,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
       if (dataCase_ == 46 && bloodGlucoseBuilder_ != null) {
         result.data_ = bloodGlucoseBuilder_.build();
       }
-      if (dataCase_ == 54 && skinTemperatureBuilder_ != null) {
-        result.data_ = skinTemperatureBuilder_.build();
-      }
       if (dataCase_ == 30 && skinTemperatureSensorsBuilder_ != null) {
         result.data_ = skinTemperatureSensorsBuilder_.build();
       }
@@ -3468,7 +3403,7 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
         return this;
       if (!other.getDataPointName().isEmpty()) {
         dataPointName_ = other.dataPointName_;
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       switch (other.getDataCase()) {
@@ -3642,11 +3577,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
             mergeBloodGlucose(other.getBloodGlucose());
             break;
           }
-        case SKIN_TEMPERATURE:
-          {
-            mergeSkinTemperature(other.getSkinTemperature());
-            break;
-          }
         case SKIN_TEMPERATURE_SENSORS:
           {
             mergeSkinTemperatureSensors(other.getSkinTemperatureSensors());
@@ -3686,7 +3616,7 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
             case 10:
               {
                 dataPointName_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 10
             case 34:
@@ -3931,13 +3861,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
                 dataCase_ = 46;
                 break;
               } // case 370
-            case 434:
-              {
-                input.readMessage(
-                    internalGetSkinTemperatureFieldBuilder().getBuilder(), extensionRegistry);
-                dataCase_ = 54;
-                break;
-              } // case 434
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11900,230 +11823,6 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.SingleFieldBuilder<
-            com.google.devicesandservices.health.v4beta.SkinTemperature,
-            com.google.devicesandservices.health.v4beta.SkinTemperature.Builder,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder>
-        skinTemperatureBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     *
-     * @return Whether the skinTemperature field is set.
-     */
-    @java.lang.Override
-    public boolean hasSkinTemperature() {
-      return dataCase_ == 54;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     *
-     * @return The skinTemperature.
-     */
-    @java.lang.Override
-    public com.google.devicesandservices.health.v4beta.SkinTemperature getSkinTemperature() {
-      if (skinTemperatureBuilder_ == null) {
-        if (dataCase_ == 54) {
-          return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-      } else {
-        if (dataCase_ == 54) {
-          return skinTemperatureBuilder_.getMessage();
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    public Builder setSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperature value) {
-      if (skinTemperatureBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        data_ = value;
-        onChanged();
-      } else {
-        skinTemperatureBuilder_.setMessage(value);
-      }
-      dataCase_ = 54;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    public Builder setSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperature.Builder builderForValue) {
-      if (skinTemperatureBuilder_ == null) {
-        data_ = builderForValue.build();
-        onChanged();
-      } else {
-        skinTemperatureBuilder_.setMessage(builderForValue.build());
-      }
-      dataCase_ = 54;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    public Builder mergeSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperature value) {
-      if (skinTemperatureBuilder_ == null) {
-        if (dataCase_ == 54
-            && data_
-                != com.google.devicesandservices.health.v4beta.SkinTemperature
-                    .getDefaultInstance()) {
-          data_ =
-              com.google.devicesandservices.health.v4beta.SkinTemperature.newBuilder(
-                      (com.google.devicesandservices.health.v4beta.SkinTemperature) data_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          data_ = value;
-        }
-        onChanged();
-      } else {
-        if (dataCase_ == 54) {
-          skinTemperatureBuilder_.mergeFrom(value);
-        } else {
-          skinTemperatureBuilder_.setMessage(value);
-        }
-      }
-      dataCase_ = 54;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    public Builder clearSkinTemperature() {
-      if (skinTemperatureBuilder_ == null) {
-        if (dataCase_ == 54) {
-          dataCase_ = 0;
-          data_ = null;
-          onChanged();
-        }
-      } else {
-        if (dataCase_ == 54) {
-          dataCase_ = 0;
-          data_ = null;
-        }
-        skinTemperatureBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    public com.google.devicesandservices.health.v4beta.SkinTemperature.Builder
-        getSkinTemperatureBuilder() {
-      return internalGetSkinTemperatureFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    @java.lang.Override
-    public com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder
-        getSkinTemperatureOrBuilder() {
-      if ((dataCase_ == 54) && (skinTemperatureBuilder_ != null)) {
-        return skinTemperatureBuilder_.getMessageOrBuilder();
-      } else {
-        if (dataCase_ == 54) {
-          return (com.google.devicesandservices.health.v4beta.SkinTemperature) data_;
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Data for points in the `skin-temperature` sample data type collection.
-     * </pre>
-     *
-     * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.devicesandservices.health.v4beta.SkinTemperature,
-            com.google.devicesandservices.health.v4beta.SkinTemperature.Builder,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder>
-        internalGetSkinTemperatureFieldBuilder() {
-      if (skinTemperatureBuilder_ == null) {
-        if (!(dataCase_ == 54)) {
-          data_ = com.google.devicesandservices.health.v4beta.SkinTemperature.getDefaultInstance();
-        }
-        skinTemperatureBuilder_ =
-            new com.google.protobuf.SingleFieldBuilder<
-                com.google.devicesandservices.health.v4beta.SkinTemperature,
-                com.google.devicesandservices.health.v4beta.SkinTemperature.Builder,
-                com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder>(
-                (com.google.devicesandservices.health.v4beta.SkinTemperature) data_,
-                getParentForChildren(),
-                isClean());
-        data_ = null;
-      }
-      dataCase_ = 54;
-      onChanged();
-      return skinTemperatureBuilder_;
-    }
-
-    private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4beta.SkinTemperatureSensors,
             com.google.devicesandservices.health.v4beta.SkinTemperatureSensors.Builder,
             com.google.devicesandservices.health.v4beta.SkinTemperatureSensorsOrBuilder>
@@ -12393,11 +12092,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -12435,11 +12141,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -12477,11 +12190,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -12503,7 +12223,7 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       dataPointName_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12518,11 +12238,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -12540,7 +12267,7 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
      */
     public Builder clearDataPointName() {
       dataPointName_ = getDefaultInstance().getDataPointName();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -12555,11 +12282,18 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
      *
      * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
      *
-     * Example:
-     * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     * ## Examples:
      *
-     * The `{user}` ID is a system-generated identifier, as described in
-     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+     * ##
+     * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, which can be retrieved by calling
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (see
+     * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
      *
      * The `{data_type}` ID corresponds to the kebab-case version of the field
      * names in the [DataPoint
@@ -12582,7 +12316,7 @@ public final class ReconciledDataPoint extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       dataPointName_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }

@@ -55,13 +55,13 @@ public final class CodeBlockProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n.google/cloud/dialogflow/cx/v3/code_blo"
           + "ck.proto\022\035google.cloud.dialogflow.cx.v3\032"
-          + "\037google/api/field_behavior.proto\"\036\n\tCode"
-          + "Block\022\021\n\004code\030\001 \001(\tB\003\340A\001B\261\001\n!com.google."
-          + "cloud.dialogflow.cx.v3B\016CodeBlockProtoP\001"
-          + "Z1cloud.google.com/go/dialogflow/cx/apiv"
-          + "3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.Dialogfl"
-          + "ow.Cx.V3\352\002!Google::Cloud::Dialogflow::CX"
-          + "::V3b\006proto3"
+          + "\037google/api/field_behavior.proto\"\037\n\tCode"
+          + "Block\022\022\n\004code\030\001 \001(\tB\004\342A\001\001B\261\001\n!com.google"
+          + ".cloud.dialogflow.cx.v3B\016CodeBlockProtoP"
+          + "\001Z1cloud.google.com/go/dialogflow/cx/api"
+          + "v3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.Dialogf"
+          + "low.Cx.V3\352\002!Google::Cloud::Dialogflow::C"
+          + "X::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

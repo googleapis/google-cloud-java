@@ -61,6 +61,16 @@ public enum AuthorizationMode implements com.google.protobuf.ProtocolMessageEnum
    * <code>AUTH_MODE_DISABLED = 2;</code>
    */
   AUTH_MODE_DISABLED(2),
+  /**
+   *
+   *
+   * <pre>
+   * Token based authorization mode
+   * </pre>
+   *
+   * <code>AUTH_MODE_TOKEN_AUTH = 3;</code>
+   */
+  AUTH_MODE_TOKEN_AUTH(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +117,17 @@ public enum AuthorizationMode implements com.google.protobuf.ProtocolMessageEnum
    */
   public static final int AUTH_MODE_DISABLED_VALUE = 2;
 
+  /**
+   *
+   *
+   * <pre>
+   * Token based authorization mode
+   * </pre>
+   *
+   * <code>AUTH_MODE_TOKEN_AUTH = 3;</code>
+   */
+  public static final int AUTH_MODE_TOKEN_AUTH_VALUE = 3;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -137,6 +158,8 @@ public enum AuthorizationMode implements com.google.protobuf.ProtocolMessageEnum
         return AUTH_MODE_IAM_AUTH;
       case 2:
         return AUTH_MODE_DISABLED;
+      case 3:
+        return AUTH_MODE_TOKEN_AUTH;
       default:
         return null;
     }
