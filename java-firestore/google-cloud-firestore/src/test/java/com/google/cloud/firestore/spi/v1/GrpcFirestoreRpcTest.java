@@ -611,9 +611,9 @@ public class GrpcFirestoreRpcTest {
       case "com.google.api.gax.rpc.UnaryCallable$1":
       case "com.google.api.gax.rpc.ServerStreamingCallable$1":
         return getRetryData(getViaReflection(callable, "this$0"));
-      case "com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc$1":
-      case "com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc$2":
-        return getRetryData(getViaReflection(callable, "val$callable"));
+      case "com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc$RoutingMetadataUnaryCallable":
+      case "com.google.cloud.firestore.spi.v1.GrpcFirestoreRpc$RoutingMetadataServerStreamingCallable":
+        return getRetryData(getViaReflection(callable, "callable"));
       case "com.google.api.gax.rpc.RetryingCallable":
         return new CallableRetryData(
             getRetrySettings(getViaReflection(callable, "executor")),
