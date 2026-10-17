@@ -1525,5 +1525,78 @@ public interface ClusterOrBuilder
    */
   boolean getRotateServerCertificate();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy to be applied to the cluster.
+   * </pre>
+   *
+   * <code>
+   * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The aclPolicy.
+   */
+  java.lang.String getAclPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy to be applied to the cluster.
+   * </pre>
+   *
+   * <code>
+   * string acl_policy = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for aclPolicy.
+   */
+  com.google.protobuf.ByteString getAclPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the aclPolicyInfo field is set.
+   */
+  boolean hasAclPolicyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The aclPolicyInfo.
+   */
+  com.google.cloud.redis.cluster.v1beta1.AclPolicyInfo getAclPolicyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.redis.cluster.v1beta1.AclPolicyInfo acl_policy_info = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.redis.cluster.v1beta1.AclPolicyInfoOrBuilder getAclPolicyInfoOrBuilder();
+
   com.google.cloud.redis.cluster.v1beta1.Cluster.ImportSourcesCase getImportSourcesCase();
 }

@@ -30,7 +30,7 @@ public interface PostgresqlTableOrBuilder
    *
    *
    * <pre>
-   * Table name.
+   * The table name.
    * </pre>
    *
    * <code>string table = 1;</code>
@@ -43,7 +43,7 @@ public interface PostgresqlTableOrBuilder
    *
    *
    * <pre>
-   * Table name.
+   * The table name.
    * </pre>
    *
    * <code>string table = 1;</code>

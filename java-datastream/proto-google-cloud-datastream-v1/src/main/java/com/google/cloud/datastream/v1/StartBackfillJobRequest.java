@@ -70,6 +70,7 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
             com.google.cloud.datastream.v1.StartBackfillJobRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int OBJECT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -129,6 +130,71 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     }
   }
 
+  public static final int EVENT_FILTER_FIELD_NUMBER = 2;
+  private com.google.cloud.datastream.v1.EventFilter eventFilter_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional event filter. If not set, or empty, the backfill will be
+   * performed on the entire object. This is currently used for partial backfill
+   * and only supported for SQL sources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the eventFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasEventFilter() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional event filter. If not set, or empty, the backfill will be
+   * performed on the entire object. This is currently used for partial backfill
+   * and only supported for SQL sources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The eventFilter.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.EventFilter getEventFilter() {
+    return eventFilter_ == null
+        ? com.google.cloud.datastream.v1.EventFilter.getDefaultInstance()
+        : eventFilter_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional event filter. If not set, or empty, the backfill will be
+   * performed on the entire object. This is currently used for partial backfill
+   * and only supported for SQL sources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.EventFilterOrBuilder getEventFilterOrBuilder() {
+    return eventFilter_ == null
+        ? com.google.cloud.datastream.v1.EventFilter.getDefaultInstance()
+        : eventFilter_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -146,6 +212,9 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(object_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, object_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getEventFilter());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -157,6 +226,9 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(object_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, object_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEventFilter());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -175,6 +247,10 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
         (com.google.cloud.datastream.v1.StartBackfillJobRequest) obj;
 
     if (!getObject().equals(other.getObject())) return false;
+    if (hasEventFilter() != other.hasEventFilter()) return false;
+    if (hasEventFilter()) {
+      if (!getEventFilter().equals(other.getEventFilter())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -188,6 +264,10 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + OBJECT_FIELD_NUMBER;
     hash = (53 * hash) + getObject().hashCode();
+    if (hasEventFilter()) {
+      hash = (37 * hash) + EVENT_FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getEventFilter().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,10 +399,19 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.datastream.v1.StartBackfillJobRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetEventFilterFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -330,6 +419,11 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
       super.clear();
       bitField0_ = 0;
       object_ = "";
+      eventFilter_ = null;
+      if (eventFilterBuilder_ != null) {
+        eventFilterBuilder_.dispose();
+        eventFilterBuilder_ = null;
+      }
       return this;
     }
 
@@ -369,6 +463,13 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.object_ = object_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.eventFilter_ =
+            eventFilterBuilder_ == null ? eventFilter_ : eventFilterBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -388,6 +489,9 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
         object_ = other.object_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasEventFilter()) {
+        mergeEventFilter(other.getEventFilter());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -421,6 +525,13 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetEventFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -564,6 +675,237 @@ public final class StartBackfillJobRequest extends com.google.protobuf.Generated
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.datastream.v1.EventFilter eventFilter_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.EventFilter,
+            com.google.cloud.datastream.v1.EventFilter.Builder,
+            com.google.cloud.datastream.v1.EventFilterOrBuilder>
+        eventFilterBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the eventFilter field is set.
+     */
+    public boolean hasEventFilter() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The eventFilter.
+     */
+    public com.google.cloud.datastream.v1.EventFilter getEventFilter() {
+      if (eventFilterBuilder_ == null) {
+        return eventFilter_ == null
+            ? com.google.cloud.datastream.v1.EventFilter.getDefaultInstance()
+            : eventFilter_;
+      } else {
+        return eventFilterBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEventFilter(com.google.cloud.datastream.v1.EventFilter value) {
+      if (eventFilterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        eventFilter_ = value;
+      } else {
+        eventFilterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEventFilter(
+        com.google.cloud.datastream.v1.EventFilter.Builder builderForValue) {
+      if (eventFilterBuilder_ == null) {
+        eventFilter_ = builderForValue.build();
+      } else {
+        eventFilterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEventFilter(com.google.cloud.datastream.v1.EventFilter value) {
+      if (eventFilterBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && eventFilter_ != null
+            && eventFilter_ != com.google.cloud.datastream.v1.EventFilter.getDefaultInstance()) {
+          getEventFilterBuilder().mergeFrom(value);
+        } else {
+          eventFilter_ = value;
+        }
+      } else {
+        eventFilterBuilder_.mergeFrom(value);
+      }
+      if (eventFilter_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEventFilter() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      eventFilter_ = null;
+      if (eventFilterBuilder_ != null) {
+        eventFilterBuilder_.dispose();
+        eventFilterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.EventFilter.Builder getEventFilterBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetEventFilterFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.EventFilterOrBuilder getEventFilterOrBuilder() {
+      if (eventFilterBuilder_ != null) {
+        return eventFilterBuilder_.getMessageOrBuilder();
+      } else {
+        return eventFilter_ == null
+            ? com.google.cloud.datastream.v1.EventFilter.getDefaultInstance()
+            : eventFilter_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional event filter. If not set, or empty, the backfill will be
+     * performed on the entire object. This is currently used for partial backfill
+     * and only supported for SQL sources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.EventFilter,
+            com.google.cloud.datastream.v1.EventFilter.Builder,
+            com.google.cloud.datastream.v1.EventFilterOrBuilder>
+        internalGetEventFilterFieldBuilder() {
+      if (eventFilterBuilder_ == null) {
+        eventFilterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.EventFilter,
+                com.google.cloud.datastream.v1.EventFilter.Builder,
+                com.google.cloud.datastream.v1.EventFilterOrBuilder>(
+                getEventFilter(), getParentForChildren(), isClean());
+        eventFilter_ = null;
+      }
+      return eventFilterBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.StartBackfillJobRequest)

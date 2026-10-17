@@ -36,9 +36,9 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.net.PercentEscaper;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -888,12 +888,14 @@ public class PathTemplate {
                   || nextNext.kind() != SegmentKind.END_BINDING;
           restore(iterator, iterator.nextIndex() - 2);
           if (!pathEscape) {
+            validatePathSegment(var, value);
             result.append(encodeUrl(value));
           } else {
             // For a path wildcard or path of length greater 1, split the value and escape
             // every sub-segment.
             boolean first = true;
             for (String subSeg : SLASH_SPLITTER.split(value)) {
+              validatePathSegment(var, subSeg);
               if (!first) {
                 result.append('/');
               }
@@ -1208,13 +1210,18 @@ public class PathTemplate {
   // Helpers
   // =======
 
+  private static final PercentEscaper URL_ESCAPER = new PercentEscaper("-_.~", false);
+
+  private static void validatePathSegment(String var, String segment) {
+    if (".".equals(segment) || "..".equals(segment)) {
+      throw new ValidationException(
+          "Value for %s must not contain segments that are exactly . or ..", var);
+    }
+  }
+
   private String encodeUrl(String text) {
     if (urlEncoding) {
-      try {
-        return URLEncoder.encode(text, "UTF-8");
-      } catch (UnsupportedEncodingException e) {
-        throw new ValidationException("UTF-8 encoding is not supported on this platform");
-      }
+      return URL_ESCAPER.escape(text);
     } else {
       // When encoding is disabled, we accept any character except '/'
       final String INVALID_CHAR = "/";

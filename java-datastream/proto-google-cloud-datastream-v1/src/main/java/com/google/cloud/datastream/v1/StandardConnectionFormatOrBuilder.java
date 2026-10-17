@@ -30,13 +30,20 @@ public interface StandardConnectionFormatOrBuilder
    *
    *
    * <pre>
-   * Optional. Specifies whether the client connects directly to the host[:port]
-   * in the connection URI.
+   * Optional. Deprecated: Use the `additional_options` map to specify the
+   * `directConnection` parameter instead.
+   * For example: `additional_options = {"directConnection": "true"}`.
+   * Specifies whether the client connects directly to the host[:port] in the
+   * connection URI.
    * </pre>
    *
-   * <code>bool direct_connection = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool direct_connection = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.datastream.v1.StandardConnectionFormat.direct_connection is
+   *     deprecated. See google/cloud/datastream/v1/datastream_resources.proto;l=444
    * @return The directConnection.
    */
+  @java.lang.Deprecated
   boolean getDirectConnection();
 }

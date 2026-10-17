@@ -764,6 +764,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -819,6 +820,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -874,6 +876,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -938,6 +941,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1002,6 +1006,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1025,6 +1030,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1068,6 +1074,7 @@ public class DatastreamClientHttpJsonTest {
               .setLastRecoveryTime(Timestamp.newBuilder().build())
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .addAllRuleSets(new ArrayList<Stream.RuleSet>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStreamAsync(stream, updateMask).get();
@@ -1182,6 +1189,7 @@ public class DatastreamClientHttpJsonTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1248,6 +1256,7 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setBackfillJob(BackfillJob.newBuilder().build())
             .setSourceObject(SourceObjectIdentifier.newBuilder().build())
+            .addAllCustomizationRules(new ArrayList<Stream.RuleSet.CustomizationRule>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1300,6 +1309,7 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setBackfillJob(BackfillJob.newBuilder().build())
             .setSourceObject(SourceObjectIdentifier.newBuilder().build())
+            .addAllCustomizationRules(new ArrayList<Stream.RuleSet.CustomizationRule>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1353,6 +1363,7 @@ public class DatastreamClientHttpJsonTest {
             .addAllErrors(new ArrayList<Error>())
             .setBackfillJob(BackfillJob.newBuilder().build())
             .setSourceObject(SourceObjectIdentifier.newBuilder().build())
+            .addAllCustomizationRules(new ArrayList<Stream.RuleSet.CustomizationRule>())
             .build();
     mockService.addResponse(expectedResponse);
 

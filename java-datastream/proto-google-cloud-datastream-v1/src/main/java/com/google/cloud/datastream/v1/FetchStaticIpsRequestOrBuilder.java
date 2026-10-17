@@ -62,10 +62,10 @@ public interface FetchStaticIpsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of Ips to return, will likely not be specified.
+   * Optional. Maximum number of Ips to return, will likely not be specified.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -75,11 +75,11 @@ public interface FetchStaticIpsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous `ListStaticIps` call.
+   * Optional. A page token, received from a previous `ListStaticIps` call.
    * will likely not be specified.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -89,11 +89,11 @@ public interface FetchStaticIpsRequestOrBuilder
    *
    *
    * <pre>
-   * A page token, received from a previous `ListStaticIps` call.
+   * Optional. A page token, received from a previous `ListStaticIps` call.
    * will likely not be specified.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

@@ -26,12 +26,16 @@ import com.google.bigtable.v2.Column;
 import com.google.bigtable.v2.Family;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.Mutation;
+import com.google.bigtable.v2.ReadModifyWriteRowRequest;
+import com.google.bigtable.v2.ReadModifyWriteRule;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.Row;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.bigtable.v2.TableRequest;
@@ -214,6 +218,88 @@ class VRpcDescriptorTest {
                 .setFamilyName("f")
                 .setColumnQualifier(ByteString.copyFromUtf8("c"))
                 .setValue(ByteString.copyFromUtf8("v")))
+        .build();
+  }
+
+  @Test
+  void testReadModifyWriteRow() throws InvalidProtocolBufferException {
+    assertThat(VRpcDescriptor.READ_MODIFY_WRITE_ROW.getSessionDescriptor())
+        .isEqualTo(VRpcDescriptor.TABLE_SESSION);
+
+    TableResponse tableResp =
+        TableResponse.newBuilder()
+            .setReadModifyWriteRow(
+                SessionReadModifyWriteRowResponse.newBuilder()
+                    .setRow(Row.newBuilder().setKey(ByteString.copyFromUtf8("rowkey1"))))
+            .build();
+    assertThat(VRpcDescriptor.READ_MODIFY_WRITE_ROW.decode(tableResp.toByteString()))
+        .isEqualTo(tableResp.getReadModifyWriteRow());
+
+    SessionReadModifyWriteRowRequest req = sampleReadModifyWriteRowRequest();
+    assertThat(TableRequest.parseFrom(VRpcDescriptor.READ_MODIFY_WRITE_ROW.encode(req)))
+        .isEqualTo(TableRequest.newBuilder().setReadModifyWriteRow(req).build());
+  }
+
+  @Test
+  void testReadModifyWriteRowAuthView() throws InvalidProtocolBufferException {
+    assertThat(VRpcDescriptor.READ_MODIFY_WRITE_ROW_AUTH_VIEW.getSessionDescriptor())
+        .isEqualTo(VRpcDescriptor.AUTHORIZED_VIEW_SESSION);
+
+    AuthorizedViewResponse authViewResp =
+        AuthorizedViewResponse.newBuilder()
+            .setReadModifyWriteRow(
+                SessionReadModifyWriteRowResponse.newBuilder()
+                    .setRow(Row.newBuilder().setKey(ByteString.copyFromUtf8("rowkey1"))))
+            .build();
+    assertThat(VRpcDescriptor.READ_MODIFY_WRITE_ROW_AUTH_VIEW.decode(authViewResp.toByteString()))
+        .isEqualTo(authViewResp.getReadModifyWriteRow());
+
+    SessionReadModifyWriteRowRequest req = sampleReadModifyWriteRowRequest();
+    assertThat(
+            AuthorizedViewRequest.parseFrom(
+                VRpcDescriptor.READ_MODIFY_WRITE_ROW_AUTH_VIEW.encode(req)))
+        .isEqualTo(AuthorizedViewRequest.newBuilder().setReadModifyWriteRow(req).build());
+  }
+
+  @Test
+  void testToLegacyProtoReadModifyWriteRow() {
+    SessionReadModifyWriteRowRequest req = sampleReadModifyWriteRowRequest();
+    ReadModifyWriteRowRequest legacyReq =
+        (ReadModifyWriteRowRequest)
+            VRpcDescriptor.READ_MODIFY_WRITE_ROW.toLegacyProto("table1", "app1", req);
+    assertThat(legacyReq.getTableName()).isEqualTo("table1");
+    assertThat(legacyReq.getAuthorizedViewName()).isEmpty();
+    assertThat(legacyReq.getAppProfileId()).isEqualTo("app1");
+    assertThat(legacyReq.getRowKey()).isEqualTo(req.getKey());
+    assertThat(legacyReq.getRulesList()).isEqualTo(req.getRulesList());
+  }
+
+  @Test
+  void testToLegacyProtoReadModifyWriteRowAuthView() {
+    SessionReadModifyWriteRowRequest req = sampleReadModifyWriteRowRequest();
+    ReadModifyWriteRowRequest legacyReq =
+        (ReadModifyWriteRowRequest)
+            VRpcDescriptor.READ_MODIFY_WRITE_ROW_AUTH_VIEW.toLegacyProto("view1", "app1", req);
+    assertThat(legacyReq.getAuthorizedViewName()).isEqualTo("view1");
+    assertThat(legacyReq.getTableName()).isEmpty();
+    assertThat(legacyReq.getAppProfileId()).isEqualTo("app1");
+    assertThat(legacyReq.getRowKey()).isEqualTo(req.getKey());
+    assertThat(legacyReq.getRulesList()).isEqualTo(req.getRulesList());
+  }
+
+  private static SessionReadModifyWriteRowRequest sampleReadModifyWriteRowRequest() {
+    return SessionReadModifyWriteRowRequest.newBuilder()
+        .setKey(ByteString.copyFromUtf8("rowkey1"))
+        .addRules(
+            ReadModifyWriteRule.newBuilder()
+                .setFamilyName("f")
+                .setColumnQualifier(ByteString.copyFromUtf8("c"))
+                .setAppendValue(ByteString.copyFromUtf8("v")))
+        .addRules(
+            ReadModifyWriteRule.newBuilder()
+                .setFamilyName("f")
+                .setColumnQualifier(ByteString.copyFromUtf8("c2"))
+                .setIncrementAmount(1))
         .build();
   }
 }

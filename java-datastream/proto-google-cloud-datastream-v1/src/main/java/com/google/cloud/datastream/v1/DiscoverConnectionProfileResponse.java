@@ -84,6 +84,8 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     SQL_SERVER_RDBMS(103),
     SALESFORCE_ORG(104),
     MONGODB_CLUSTER(105),
+    SPANNER_DATABASE(106),
+    SOURCE_CATALOG(108),
     DATAOBJECT_NOT_SET(0);
     private final int value;
 
@@ -115,6 +117,10 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
           return SALESFORCE_ORG;
         case 105:
           return MONGODB_CLUSTER;
+        case 106:
+          return SPANNER_DATABASE;
+        case 108:
+          return SOURCE_CATALOG;
         case 0:
           return DATAOBJECT_NOT_SET;
         default:
@@ -455,6 +461,117 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
   }
 
+  public static final int SPANNER_DATABASE_FIELD_NUMBER = 106;
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+   *
+   * @return Whether the spannerDatabase field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpannerDatabase() {
+    return dataObjectCase_ == 106;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+   *
+   * @return The spannerDatabase.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SpannerDatabase getSpannerDatabase() {
+    if (dataObjectCase_ == 106) {
+      return (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder getSpannerDatabaseOrBuilder() {
+    if (dataObjectCase_ == 106) {
+      return (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+  }
+
+  public static final int SOURCE_CATALOG_FIELD_NUMBER = 108;
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched source catalog. This is mainly used to represent SaaS sources
+   * databases.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+   *
+   * @return Whether the sourceCatalog field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceCatalog() {
+    return dataObjectCase_ == 108;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched source catalog. This is mainly used to represent SaaS sources
+   * databases.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+   *
+   * @return The sourceCatalog.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceCatalog getSourceCatalog() {
+    if (dataObjectCase_ == 108) {
+      return (com.google.cloud.datastream.v1.SourceCatalog) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched source catalog. This is mainly used to represent SaaS sources
+   * databases.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SourceCatalogOrBuilder getSourceCatalogOrBuilder() {
+    if (dataObjectCase_ == 108) {
+      return (com.google.cloud.datastream.v1.SourceCatalog) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -486,6 +603,12 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
     }
     if (dataObjectCase_ == 105) {
       output.writeMessage(105, (com.google.cloud.datastream.v1.MongodbCluster) dataObject_);
+    }
+    if (dataObjectCase_ == 106) {
+      output.writeMessage(106, (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_);
+    }
+    if (dataObjectCase_ == 108) {
+      output.writeMessage(108, (com.google.cloud.datastream.v1.SourceCatalog) dataObject_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -526,6 +649,16 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               105, (com.google.cloud.datastream.v1.MongodbCluster) dataObject_);
     }
+    if (dataObjectCase_ == 106) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              106, (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_);
+    }
+    if (dataObjectCase_ == 108) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              108, (com.google.cloud.datastream.v1.SourceCatalog) dataObject_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -561,6 +694,12 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         break;
       case 105:
         if (!getMongodbCluster().equals(other.getMongodbCluster())) return false;
+        break;
+      case 106:
+        if (!getSpannerDatabase().equals(other.getSpannerDatabase())) return false;
+        break;
+      case 108:
+        if (!getSourceCatalog().equals(other.getSourceCatalog())) return false;
         break;
       case 0:
       default:
@@ -600,6 +739,14 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       case 105:
         hash = (37 * hash) + MONGODB_CLUSTER_FIELD_NUMBER;
         hash = (53 * hash) + getMongodbCluster().hashCode();
+        break;
+      case 106:
+        hash = (37 * hash) + SPANNER_DATABASE_FIELD_NUMBER;
+        hash = (53 * hash) + getSpannerDatabase().hashCode();
+        break;
+      case 108:
+        hash = (37 * hash) + SOURCE_CATALOG_FIELD_NUMBER;
+        hash = (53 * hash) + getSourceCatalog().hashCode();
         break;
       case 0:
       default:
@@ -763,6 +910,12 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       if (mongodbClusterBuilder_ != null) {
         mongodbClusterBuilder_.clear();
       }
+      if (spannerDatabaseBuilder_ != null) {
+        spannerDatabaseBuilder_.clear();
+      }
+      if (sourceCatalogBuilder_ != null) {
+        sourceCatalogBuilder_.clear();
+      }
       dataObjectCase_ = 0;
       dataObject_ = null;
       return this;
@@ -828,6 +981,12 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       if (dataObjectCase_ == 105 && mongodbClusterBuilder_ != null) {
         result.dataObject_ = mongodbClusterBuilder_.build();
       }
+      if (dataObjectCase_ == 106 && spannerDatabaseBuilder_ != null) {
+        result.dataObject_ = spannerDatabaseBuilder_.build();
+      }
+      if (dataObjectCase_ == 108 && sourceCatalogBuilder_ != null) {
+        result.dataObject_ = sourceCatalogBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -874,6 +1033,16 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
         case MONGODB_CLUSTER:
           {
             mergeMongodbCluster(other.getMongodbCluster());
+            break;
+          }
+        case SPANNER_DATABASE:
+          {
+            mergeSpannerDatabase(other.getSpannerDatabase());
+            break;
+          }
+        case SOURCE_CATALOG:
+          {
+            mergeSourceCatalog(other.getSourceCatalog());
             break;
           }
         case DATAOBJECT_NOT_SET:
@@ -949,6 +1118,20 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
                 dataObjectCase_ = 105;
                 break;
               } // case 842
+            case 850:
+              {
+                input.readMessage(
+                    internalGetSpannerDatabaseFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 106;
+                break;
+              } // case 850
+            case 866:
+              {
+                input.readMessage(
+                    internalGetSourceCatalogFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 108;
+                break;
+              } // case 866
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2288,6 +2471,451 @@ public final class DiscoverConnectionProfileResponse extends com.google.protobuf
       dataObjectCase_ = 105;
       onChanged();
       return mongodbClusterBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SpannerDatabase,
+            com.google.cloud.datastream.v1.SpannerDatabase.Builder,
+            com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder>
+        spannerDatabaseBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     *
+     * @return Whether the spannerDatabase field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerDatabase() {
+      return dataObjectCase_ == 106;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     *
+     * @return The spannerDatabase.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerDatabase getSpannerDatabase() {
+      if (spannerDatabaseBuilder_ == null) {
+        if (dataObjectCase_ == 106) {
+          return (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+      } else {
+        if (dataObjectCase_ == 106) {
+          return spannerDatabaseBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    public Builder setSpannerDatabase(com.google.cloud.datastream.v1.SpannerDatabase value) {
+      if (spannerDatabaseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataObject_ = value;
+        onChanged();
+      } else {
+        spannerDatabaseBuilder_.setMessage(value);
+      }
+      dataObjectCase_ = 106;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    public Builder setSpannerDatabase(
+        com.google.cloud.datastream.v1.SpannerDatabase.Builder builderForValue) {
+      if (spannerDatabaseBuilder_ == null) {
+        dataObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        spannerDatabaseBuilder_.setMessage(builderForValue.build());
+      }
+      dataObjectCase_ = 106;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    public Builder mergeSpannerDatabase(com.google.cloud.datastream.v1.SpannerDatabase value) {
+      if (spannerDatabaseBuilder_ == null) {
+        if (dataObjectCase_ == 106
+            && dataObject_ != com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance()) {
+          dataObject_ =
+              com.google.cloud.datastream.v1.SpannerDatabase.newBuilder(
+                      (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataObjectCase_ == 106) {
+          spannerDatabaseBuilder_.mergeFrom(value);
+        } else {
+          spannerDatabaseBuilder_.setMessage(value);
+        }
+      }
+      dataObjectCase_ = 106;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    public Builder clearSpannerDatabase() {
+      if (spannerDatabaseBuilder_ == null) {
+        if (dataObjectCase_ == 106) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataObjectCase_ == 106) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+        }
+        spannerDatabaseBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    public com.google.cloud.datastream.v1.SpannerDatabase.Builder getSpannerDatabaseBuilder() {
+      return internalGetSpannerDatabaseFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder getSpannerDatabaseOrBuilder() {
+      if ((dataObjectCase_ == 106) && (spannerDatabaseBuilder_ != null)) {
+        return spannerDatabaseBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataObjectCase_ == 106) {
+          return (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched Spanner database.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerDatabase spanner_database = 106;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SpannerDatabase,
+            com.google.cloud.datastream.v1.SpannerDatabase.Builder,
+            com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder>
+        internalGetSpannerDatabaseFieldBuilder() {
+      if (spannerDatabaseBuilder_ == null) {
+        if (!(dataObjectCase_ == 106)) {
+          dataObject_ = com.google.cloud.datastream.v1.SpannerDatabase.getDefaultInstance();
+        }
+        spannerDatabaseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SpannerDatabase,
+                com.google.cloud.datastream.v1.SpannerDatabase.Builder,
+                com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder>(
+                (com.google.cloud.datastream.v1.SpannerDatabase) dataObject_,
+                getParentForChildren(),
+                isClean());
+        dataObject_ = null;
+      }
+      dataObjectCase_ = 106;
+      onChanged();
+      return spannerDatabaseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SourceCatalog,
+            com.google.cloud.datastream.v1.SourceCatalog.Builder,
+            com.google.cloud.datastream.v1.SourceCatalogOrBuilder>
+        sourceCatalogBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     *
+     * @return Whether the sourceCatalog field is set.
+     */
+    @java.lang.Override
+    public boolean hasSourceCatalog() {
+      return dataObjectCase_ == 108;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     *
+     * @return The sourceCatalog.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceCatalog getSourceCatalog() {
+      if (sourceCatalogBuilder_ == null) {
+        if (dataObjectCase_ == 108) {
+          return (com.google.cloud.datastream.v1.SourceCatalog) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+      } else {
+        if (dataObjectCase_ == 108) {
+          return sourceCatalogBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    public Builder setSourceCatalog(com.google.cloud.datastream.v1.SourceCatalog value) {
+      if (sourceCatalogBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataObject_ = value;
+        onChanged();
+      } else {
+        sourceCatalogBuilder_.setMessage(value);
+      }
+      dataObjectCase_ = 108;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    public Builder setSourceCatalog(
+        com.google.cloud.datastream.v1.SourceCatalog.Builder builderForValue) {
+      if (sourceCatalogBuilder_ == null) {
+        dataObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        sourceCatalogBuilder_.setMessage(builderForValue.build());
+      }
+      dataObjectCase_ = 108;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    public Builder mergeSourceCatalog(com.google.cloud.datastream.v1.SourceCatalog value) {
+      if (sourceCatalogBuilder_ == null) {
+        if (dataObjectCase_ == 108
+            && dataObject_ != com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance()) {
+          dataObject_ =
+              com.google.cloud.datastream.v1.SourceCatalog.newBuilder(
+                      (com.google.cloud.datastream.v1.SourceCatalog) dataObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataObjectCase_ == 108) {
+          sourceCatalogBuilder_.mergeFrom(value);
+        } else {
+          sourceCatalogBuilder_.setMessage(value);
+        }
+      }
+      dataObjectCase_ = 108;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    public Builder clearSourceCatalog() {
+      if (sourceCatalogBuilder_ == null) {
+        if (dataObjectCase_ == 108) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataObjectCase_ == 108) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+        }
+        sourceCatalogBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    public com.google.cloud.datastream.v1.SourceCatalog.Builder getSourceCatalogBuilder() {
+      return internalGetSourceCatalogFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SourceCatalogOrBuilder getSourceCatalogOrBuilder() {
+      if ((dataObjectCase_ == 108) && (sourceCatalogBuilder_ != null)) {
+        return sourceCatalogBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataObjectCase_ == 108) {
+          return (com.google.cloud.datastream.v1.SourceCatalog) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enriched source catalog. This is mainly used to represent SaaS sources
+     * databases.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SourceCatalog source_catalog = 108;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SourceCatalog,
+            com.google.cloud.datastream.v1.SourceCatalog.Builder,
+            com.google.cloud.datastream.v1.SourceCatalogOrBuilder>
+        internalGetSourceCatalogFieldBuilder() {
+      if (sourceCatalogBuilder_ == null) {
+        if (!(dataObjectCase_ == 108)) {
+          dataObject_ = com.google.cloud.datastream.v1.SourceCatalog.getDefaultInstance();
+        }
+        sourceCatalogBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SourceCatalog,
+                com.google.cloud.datastream.v1.SourceCatalog.Builder,
+                com.google.cloud.datastream.v1.SourceCatalogOrBuilder>(
+                (com.google.cloud.datastream.v1.SourceCatalog) dataObject_,
+                getParentForChildren(),
+                isClean());
+        dataObject_ = null;
+      }
+      dataObjectCase_ = 108;
+      onChanged();
+      return sourceCatalogBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.DiscoverConnectionProfileResponse)

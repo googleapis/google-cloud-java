@@ -102,6 +102,11 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     SQL_SERVER_PROFILE(105),
     SALESFORCE_PROFILE(107),
     MONGODB_PROFILE(108),
+    SPANNER_PROFILE(109),
+    DATAVERSE_PROFILE(114),
+    SALESFORCE_MARKETING_CLOUD_PROFILE(119),
+    SERVICE_NOW_PROFILE(120),
+    WORKDAY_PROFILE(121),
     PROFILE_NOT_SET(0);
     private final int value;
 
@@ -137,6 +142,16 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           return SALESFORCE_PROFILE;
         case 108:
           return MONGODB_PROFILE;
+        case 109:
+          return SPANNER_PROFILE;
+        case 114:
+          return DATAVERSE_PROFILE;
+        case 119:
+          return SALESFORCE_MARKETING_CLOUD_PROFILE;
+        case 120:
+          return SERVICE_NOW_PROFILE;
+        case 121:
+          return WORKDAY_PROFILE;
         case 0:
           return PROFILE_NOT_SET;
         default:
@@ -603,7 +618,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Oracle ConnectionProfile configuration.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -619,7 +634,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Oracle ConnectionProfile configuration.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -638,7 +653,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Oracle ConnectionProfile configuration.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -657,7 +672,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Cloud Storage ConnectionProfile configuration.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -673,7 +688,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Cloud Storage ConnectionProfile configuration.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -692,7 +707,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Cloud Storage ConnectionProfile configuration.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -711,7 +726,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL ConnectionProfile configuration.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -727,7 +742,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL ConnectionProfile configuration.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -746,7 +761,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL ConnectionProfile configuration.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -765,7 +780,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * BigQuery Connection Profile configuration.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -781,7 +796,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * BigQuery Connection Profile configuration.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -800,7 +815,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * BigQuery Connection Profile configuration.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -819,7 +834,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * PostgreSQL Connection Profile configuration.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -835,7 +850,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * PostgreSQL Connection Profile configuration.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -854,7 +869,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * PostgreSQL Connection Profile configuration.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -873,7 +888,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * SQLServer Connection Profile configuration.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -889,7 +904,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * SQLServer Connection Profile configuration.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -908,7 +923,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * SQLServer Connection Profile configuration.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -927,7 +942,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Salesforce Connection Profile configuration.
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -943,7 +958,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Salesforce Connection Profile configuration.
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -962,7 +977,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Salesforce Connection Profile configuration.
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -981,7 +996,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MongoDB Connection Profile configuration.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -997,7 +1012,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MongoDB Connection Profile configuration.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -1016,7 +1031,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MongoDB Connection Profile configuration.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -1027,6 +1042,290 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       return (com.google.cloud.datastream.v1.MongodbProfile) profile_;
     }
     return com.google.cloud.datastream.v1.MongodbProfile.getDefaultInstance();
+  }
+
+  public static final int SPANNER_PROFILE_FIELD_NUMBER = 109;
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Spanner source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+   *
+   * @return Whether the spannerProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpannerProfile() {
+    return profileCase_ == 109;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Spanner source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+   *
+   * @return The spannerProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SpannerProfile getSpannerProfile() {
+    if (profileCase_ == 109) {
+      return (com.google.cloud.datastream.v1.SpannerProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Spanner source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SpannerProfileOrBuilder getSpannerProfileOrBuilder() {
+    if (profileCase_ == 109) {
+      return (com.google.cloud.datastream.v1.SpannerProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance();
+  }
+
+  public static final int DATAVERSE_PROFILE_FIELD_NUMBER = 114;
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Dataverse source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+   *
+   * @return Whether the dataverseProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataverseProfile() {
+    return profileCase_ == 114;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Dataverse source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+   *
+   * @return The dataverseProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.DataverseProfile getDataverseProfile() {
+    if (profileCase_ == 114) {
+      return (com.google.cloud.datastream.v1.DataverseProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Dataverse source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.DataverseProfileOrBuilder getDataverseProfileOrBuilder() {
+    if (profileCase_ == 114) {
+      return (com.google.cloud.datastream.v1.DataverseProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance();
+  }
+
+  public static final int SALESFORCE_MARKETING_CLOUD_PROFILE_FIELD_NUMBER = 119;
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Salesforce Marketing Cloud source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+   * </code>
+   *
+   * @return Whether the salesforceMarketingCloudProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesforceMarketingCloudProfile() {
+    return profileCase_ == 119;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Salesforce Marketing Cloud source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+   * </code>
+   *
+   * @return The salesforceMarketingCloudProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile
+      getSalesforceMarketingCloudProfile() {
+    if (profileCase_ == 119) {
+      return (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Salesforce Marketing Cloud source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceMarketingCloudProfileOrBuilder
+      getSalesforceMarketingCloudProfileOrBuilder() {
+    if (profileCase_ == 119) {
+      return (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.getDefaultInstance();
+  }
+
+  public static final int SERVICE_NOW_PROFILE_FIELD_NUMBER = 120;
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a ServiceNow source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+   *
+   * @return Whether the serviceNowProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceNowProfile() {
+    return profileCase_ == 120;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a ServiceNow source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+   *
+   * @return The serviceNowProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.ServiceNowProfile getServiceNowProfile() {
+    if (profileCase_ == 120) {
+      return (com.google.cloud.datastream.v1.ServiceNowProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a ServiceNow source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.ServiceNowProfileOrBuilder getServiceNowProfileOrBuilder() {
+    if (profileCase_ == 120) {
+      return (com.google.cloud.datastream.v1.ServiceNowProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance();
+  }
+
+  public static final int WORKDAY_PROFILE_FIELD_NUMBER = 121;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Profile for connecting to a Workday source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workdayProfile field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkdayProfile() {
+    return profileCase_ == 121;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Profile for connecting to a Workday source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workdayProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.WorkdayProfile getWorkdayProfile() {
+    if (profileCase_ == 121) {
+      return (com.google.cloud.datastream.v1.WorkdayProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Profile for connecting to a Workday source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.WorkdayProfileOrBuilder getWorkdayProfileOrBuilder() {
+    if (profileCase_ == 121) {
+      return (com.google.cloud.datastream.v1.WorkdayProfile) profile_;
+    }
+    return com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance();
   }
 
   public static final int STATIC_SERVICE_IP_CONNECTIVITY_FIELD_NUMBER = 200;
@@ -1262,6 +1561,22 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
     if (profileCase_ == 108) {
       output.writeMessage(108, (com.google.cloud.datastream.v1.MongodbProfile) profile_);
     }
+    if (profileCase_ == 109) {
+      output.writeMessage(109, (com.google.cloud.datastream.v1.SpannerProfile) profile_);
+    }
+    if (profileCase_ == 114) {
+      output.writeMessage(114, (com.google.cloud.datastream.v1.DataverseProfile) profile_);
+    }
+    if (profileCase_ == 119) {
+      output.writeMessage(
+          119, (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_);
+    }
+    if (profileCase_ == 120) {
+      output.writeMessage(120, (com.google.cloud.datastream.v1.ServiceNowProfile) profile_);
+    }
+    if (profileCase_ == 121) {
+      output.writeMessage(121, (com.google.cloud.datastream.v1.WorkdayProfile) profile_);
+    }
     if (connectivityCase_ == 200) {
       output.writeMessage(
           200, (com.google.cloud.datastream.v1.StaticServiceIpConnectivity) connectivity_);
@@ -1350,6 +1665,31 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               108, (com.google.cloud.datastream.v1.MongodbProfile) profile_);
     }
+    if (profileCase_ == 109) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              109, (com.google.cloud.datastream.v1.SpannerProfile) profile_);
+    }
+    if (profileCase_ == 114) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              114, (com.google.cloud.datastream.v1.DataverseProfile) profile_);
+    }
+    if (profileCase_ == 119) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              119, (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_);
+    }
+    if (profileCase_ == 120) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              120, (com.google.cloud.datastream.v1.ServiceNowProfile) profile_);
+    }
+    if (profileCase_ == 121) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              121, (com.google.cloud.datastream.v1.WorkdayProfile) profile_);
+    }
     if (connectivityCase_ == 200) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1425,6 +1765,22 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         break;
       case 108:
         if (!getMongodbProfile().equals(other.getMongodbProfile())) return false;
+        break;
+      case 109:
+        if (!getSpannerProfile().equals(other.getSpannerProfile())) return false;
+        break;
+      case 114:
+        if (!getDataverseProfile().equals(other.getDataverseProfile())) return false;
+        break;
+      case 119:
+        if (!getSalesforceMarketingCloudProfile()
+            .equals(other.getSalesforceMarketingCloudProfile())) return false;
+        break;
+      case 120:
+        if (!getServiceNowProfile().equals(other.getServiceNowProfile())) return false;
+        break;
+      case 121:
+        if (!getWorkdayProfile().equals(other.getWorkdayProfile())) return false;
         break;
       case 0:
       default:
@@ -1511,6 +1867,26 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       case 108:
         hash = (37 * hash) + MONGODB_PROFILE_FIELD_NUMBER;
         hash = (53 * hash) + getMongodbProfile().hashCode();
+        break;
+      case 109:
+        hash = (37 * hash) + SPANNER_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getSpannerProfile().hashCode();
+        break;
+      case 114:
+        hash = (37 * hash) + DATAVERSE_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getDataverseProfile().hashCode();
+        break;
+      case 119:
+        hash = (37 * hash) + SALESFORCE_MARKETING_CLOUD_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getSalesforceMarketingCloudProfile().hashCode();
+        break;
+      case 120:
+        hash = (37 * hash) + SERVICE_NOW_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceNowProfile().hashCode();
+        break;
+      case 121:
+        hash = (37 * hash) + WORKDAY_PROFILE_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkdayProfile().hashCode();
         break;
       case 0:
       default:
@@ -1743,6 +2119,21 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (mongodbProfileBuilder_ != null) {
         mongodbProfileBuilder_.clear();
       }
+      if (spannerProfileBuilder_ != null) {
+        spannerProfileBuilder_.clear();
+      }
+      if (dataverseProfileBuilder_ != null) {
+        dataverseProfileBuilder_.clear();
+      }
+      if (salesforceMarketingCloudProfileBuilder_ != null) {
+        salesforceMarketingCloudProfileBuilder_.clear();
+      }
+      if (serviceNowProfileBuilder_ != null) {
+        serviceNowProfileBuilder_.clear();
+      }
+      if (workdayProfileBuilder_ != null) {
+        workdayProfileBuilder_.clear();
+      }
       if (staticServiceIpConnectivityBuilder_ != null) {
         staticServiceIpConnectivityBuilder_.clear();
       }
@@ -1850,6 +2241,21 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       if (profileCase_ == 108 && mongodbProfileBuilder_ != null) {
         result.profile_ = mongodbProfileBuilder_.build();
       }
+      if (profileCase_ == 109 && spannerProfileBuilder_ != null) {
+        result.profile_ = spannerProfileBuilder_.build();
+      }
+      if (profileCase_ == 114 && dataverseProfileBuilder_ != null) {
+        result.profile_ = dataverseProfileBuilder_.build();
+      }
+      if (profileCase_ == 119 && salesforceMarketingCloudProfileBuilder_ != null) {
+        result.profile_ = salesforceMarketingCloudProfileBuilder_.build();
+      }
+      if (profileCase_ == 120 && serviceNowProfileBuilder_ != null) {
+        result.profile_ = serviceNowProfileBuilder_.build();
+      }
+      if (profileCase_ == 121 && workdayProfileBuilder_ != null) {
+        result.profile_ = workdayProfileBuilder_.build();
+      }
       result.connectivityCase_ = connectivityCase_;
       result.connectivity_ = this.connectivity_;
       if (connectivityCase_ == 200 && staticServiceIpConnectivityBuilder_ != null) {
@@ -1939,6 +2345,31 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
         case MONGODB_PROFILE:
           {
             mergeMongodbProfile(other.getMongodbProfile());
+            break;
+          }
+        case SPANNER_PROFILE:
+          {
+            mergeSpannerProfile(other.getSpannerProfile());
+            break;
+          }
+        case DATAVERSE_PROFILE:
+          {
+            mergeDataverseProfile(other.getDataverseProfile());
+            break;
+          }
+        case SALESFORCE_MARKETING_CLOUD_PROFILE:
+          {
+            mergeSalesforceMarketingCloudProfile(other.getSalesforceMarketingCloudProfile());
+            break;
+          }
+        case SERVICE_NOW_PROFILE:
+          {
+            mergeServiceNowProfile(other.getServiceNowProfile());
+            break;
+          }
+        case WORKDAY_PROFILE:
+          {
+            mergeWorkdayProfile(other.getWorkdayProfile());
             break;
           }
         case PROFILE_NOT_SET:
@@ -2099,6 +2530,42 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
                 profileCase_ = 108;
                 break;
               } // case 866
+            case 874:
+              {
+                input.readMessage(
+                    internalGetSpannerProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 109;
+                break;
+              } // case 874
+            case 914:
+              {
+                input.readMessage(
+                    internalGetDataverseProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 114;
+                break;
+              } // case 914
+            case 954:
+              {
+                input.readMessage(
+                    internalGetSalesforceMarketingCloudProfileFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                profileCase_ = 119;
+                break;
+              } // case 954
+            case 962:
+              {
+                input.readMessage(
+                    internalGetServiceNowProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 120;
+                break;
+              } // case 962
+            case 970:
+              {
+                input.readMessage(
+                    internalGetWorkdayProfileFieldBuilder().getBuilder(), extensionRegistry);
+                profileCase_ = 121;
+                break;
+              } // case 970
             case 1602:
               {
                 input.readMessage(
@@ -3151,7 +3618,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3167,7 +3634,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3193,7 +3660,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3216,7 +3683,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3237,7 +3704,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3270,7 +3737,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3296,7 +3763,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3309,7 +3776,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3330,7 +3797,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Oracle ConnectionProfile configuration.
+     * Profile for connecting to an Oracle source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -3369,7 +3836,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3385,7 +3852,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3411,7 +3878,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3434,7 +3901,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3455,7 +3922,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3488,7 +3955,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3514,7 +3981,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3527,7 +3994,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3548,7 +4015,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Cloud Storage ConnectionProfile configuration.
+     * Profile for connecting to a Cloud Storage destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -3587,7 +4054,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3603,7 +4070,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3629,7 +4096,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3652,7 +4119,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3673,7 +4140,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3706,7 +4173,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3732,7 +4199,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3745,7 +4212,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3766,7 +4233,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL ConnectionProfile configuration.
+     * Profile for connecting to a MySQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -3805,7 +4272,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3821,7 +4288,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3847,7 +4314,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3870,7 +4337,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3891,7 +4358,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3924,7 +4391,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3950,7 +4417,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3963,7 +4430,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -3984,7 +4451,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * BigQuery Connection Profile configuration.
+     * Profile for connecting to a BigQuery destination.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -4023,7 +4490,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4039,7 +4506,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4065,7 +4532,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4088,7 +4555,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4109,7 +4576,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4142,7 +4609,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4168,7 +4635,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4181,7 +4648,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4203,7 +4670,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * PostgreSQL Connection Profile configuration.
+     * Profile for connecting to a PostgreSQL source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -4242,7 +4709,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4258,7 +4725,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4284,7 +4751,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4307,7 +4774,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4328,7 +4795,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4361,7 +4828,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4387,7 +4854,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4400,7 +4867,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4421,7 +4888,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * SQLServer Connection Profile configuration.
+     * Profile for connecting to a SQLServer source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -4460,7 +4927,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4476,7 +4943,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4502,7 +4969,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4525,7 +4992,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4546,7 +5013,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4579,7 +5046,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4605,7 +5072,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4618,7 +5085,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4640,7 +5107,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Salesforce Connection Profile configuration.
+     * Profile for connecting to a Salesforce source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -4679,7 +5146,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4695,7 +5162,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4721,7 +5188,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4744,7 +5211,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4765,7 +5232,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4798,7 +5265,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4824,7 +5291,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4837,7 +5304,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4858,7 +5325,7 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MongoDB Connection Profile configuration.
+     * Profile for connecting to a MongoDB source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -4885,6 +5352,1141 @@ public final class ConnectionProfile extends com.google.protobuf.GeneratedMessag
       profileCase_ = 108;
       onChanged();
       return mongodbProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SpannerProfile,
+            com.google.cloud.datastream.v1.SpannerProfile.Builder,
+            com.google.cloud.datastream.v1.SpannerProfileOrBuilder>
+        spannerProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     *
+     * @return Whether the spannerProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerProfile() {
+      return profileCase_ == 109;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     *
+     * @return The spannerProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerProfile getSpannerProfile() {
+      if (spannerProfileBuilder_ == null) {
+        if (profileCase_ == 109) {
+          return (com.google.cloud.datastream.v1.SpannerProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 109) {
+          return spannerProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    public Builder setSpannerProfile(com.google.cloud.datastream.v1.SpannerProfile value) {
+      if (spannerProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        spannerProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 109;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    public Builder setSpannerProfile(
+        com.google.cloud.datastream.v1.SpannerProfile.Builder builderForValue) {
+      if (spannerProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        spannerProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 109;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    public Builder mergeSpannerProfile(com.google.cloud.datastream.v1.SpannerProfile value) {
+      if (spannerProfileBuilder_ == null) {
+        if (profileCase_ == 109
+            && profile_ != com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.SpannerProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.SpannerProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 109) {
+          spannerProfileBuilder_.mergeFrom(value);
+        } else {
+          spannerProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 109;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    public Builder clearSpannerProfile() {
+      if (spannerProfileBuilder_ == null) {
+        if (profileCase_ == 109) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 109) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        spannerProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    public com.google.cloud.datastream.v1.SpannerProfile.Builder getSpannerProfileBuilder() {
+      return internalGetSpannerProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerProfileOrBuilder getSpannerProfileOrBuilder() {
+      if ((profileCase_ == 109) && (spannerProfileBuilder_ != null)) {
+        return spannerProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 109) {
+          return (com.google.cloud.datastream.v1.SpannerProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Spanner source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SpannerProfile,
+            com.google.cloud.datastream.v1.SpannerProfile.Builder,
+            com.google.cloud.datastream.v1.SpannerProfileOrBuilder>
+        internalGetSpannerProfileFieldBuilder() {
+      if (spannerProfileBuilder_ == null) {
+        if (!(profileCase_ == 109)) {
+          profile_ = com.google.cloud.datastream.v1.SpannerProfile.getDefaultInstance();
+        }
+        spannerProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SpannerProfile,
+                com.google.cloud.datastream.v1.SpannerProfile.Builder,
+                com.google.cloud.datastream.v1.SpannerProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.SpannerProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 109;
+      onChanged();
+      return spannerProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.DataverseProfile,
+            com.google.cloud.datastream.v1.DataverseProfile.Builder,
+            com.google.cloud.datastream.v1.DataverseProfileOrBuilder>
+        dataverseProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     *
+     * @return Whether the dataverseProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataverseProfile() {
+      return profileCase_ == 114;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     *
+     * @return The dataverseProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.DataverseProfile getDataverseProfile() {
+      if (dataverseProfileBuilder_ == null) {
+        if (profileCase_ == 114) {
+          return (com.google.cloud.datastream.v1.DataverseProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 114) {
+          return dataverseProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    public Builder setDataverseProfile(com.google.cloud.datastream.v1.DataverseProfile value) {
+      if (dataverseProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        dataverseProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 114;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    public Builder setDataverseProfile(
+        com.google.cloud.datastream.v1.DataverseProfile.Builder builderForValue) {
+      if (dataverseProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataverseProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 114;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    public Builder mergeDataverseProfile(com.google.cloud.datastream.v1.DataverseProfile value) {
+      if (dataverseProfileBuilder_ == null) {
+        if (profileCase_ == 114
+            && profile_ != com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.DataverseProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.DataverseProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 114) {
+          dataverseProfileBuilder_.mergeFrom(value);
+        } else {
+          dataverseProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 114;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    public Builder clearDataverseProfile() {
+      if (dataverseProfileBuilder_ == null) {
+        if (profileCase_ == 114) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 114) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        dataverseProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    public com.google.cloud.datastream.v1.DataverseProfile.Builder getDataverseProfileBuilder() {
+      return internalGetDataverseProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.DataverseProfileOrBuilder getDataverseProfileOrBuilder() {
+      if ((profileCase_ == 114) && (dataverseProfileBuilder_ != null)) {
+        return dataverseProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 114) {
+          return (com.google.cloud.datastream.v1.DataverseProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Dataverse source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.DataverseProfile,
+            com.google.cloud.datastream.v1.DataverseProfile.Builder,
+            com.google.cloud.datastream.v1.DataverseProfileOrBuilder>
+        internalGetDataverseProfileFieldBuilder() {
+      if (dataverseProfileBuilder_ == null) {
+        if (!(profileCase_ == 114)) {
+          profile_ = com.google.cloud.datastream.v1.DataverseProfile.getDefaultInstance();
+        }
+        dataverseProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.DataverseProfile,
+                com.google.cloud.datastream.v1.DataverseProfile.Builder,
+                com.google.cloud.datastream.v1.DataverseProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.DataverseProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 114;
+      onChanged();
+      return dataverseProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.Builder,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudProfileOrBuilder>
+        salesforceMarketingCloudProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     *
+     * @return Whether the salesforceMarketingCloudProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceMarketingCloudProfile() {
+      return profileCase_ == 119;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     *
+     * @return The salesforceMarketingCloudProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile
+        getSalesforceMarketingCloudProfile() {
+      if (salesforceMarketingCloudProfileBuilder_ == null) {
+        if (profileCase_ == 119) {
+          return (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 119) {
+          return salesforceMarketingCloudProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    public Builder setSalesforceMarketingCloudProfile(
+        com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile value) {
+      if (salesforceMarketingCloudProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        salesforceMarketingCloudProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 119;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    public Builder setSalesforceMarketingCloudProfile(
+        com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.Builder builderForValue) {
+      if (salesforceMarketingCloudProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        salesforceMarketingCloudProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 119;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    public Builder mergeSalesforceMarketingCloudProfile(
+        com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile value) {
+      if (salesforceMarketingCloudProfileBuilder_ == null) {
+        if (profileCase_ == 119
+            && profile_
+                != com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile
+                    .getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 119) {
+          salesforceMarketingCloudProfileBuilder_.mergeFrom(value);
+        } else {
+          salesforceMarketingCloudProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 119;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    public Builder clearSalesforceMarketingCloudProfile() {
+      if (salesforceMarketingCloudProfileBuilder_ == null) {
+        if (profileCase_ == 119) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 119) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        salesforceMarketingCloudProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.Builder
+        getSalesforceMarketingCloudProfileBuilder() {
+      return internalGetSalesforceMarketingCloudProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceMarketingCloudProfileOrBuilder
+        getSalesforceMarketingCloudProfileOrBuilder() {
+      if ((profileCase_ == 119) && (salesforceMarketingCloudProfileBuilder_ != null)) {
+        return salesforceMarketingCloudProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 119) {
+          return (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a Salesforce Marketing Cloud source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.Builder,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudProfileOrBuilder>
+        internalGetSalesforceMarketingCloudProfileFieldBuilder() {
+      if (salesforceMarketingCloudProfileBuilder_ == null) {
+        if (!(profileCase_ == 119)) {
+          profile_ =
+              com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.getDefaultInstance();
+        }
+        salesforceMarketingCloudProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile,
+                com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile.Builder,
+                com.google.cloud.datastream.v1.SalesforceMarketingCloudProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 119;
+      onChanged();
+      return salesforceMarketingCloudProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.ServiceNowProfile,
+            com.google.cloud.datastream.v1.ServiceNowProfile.Builder,
+            com.google.cloud.datastream.v1.ServiceNowProfileOrBuilder>
+        serviceNowProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     *
+     * @return Whether the serviceNowProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceNowProfile() {
+      return profileCase_ == 120;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     *
+     * @return The serviceNowProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.ServiceNowProfile getServiceNowProfile() {
+      if (serviceNowProfileBuilder_ == null) {
+        if (profileCase_ == 120) {
+          return (com.google.cloud.datastream.v1.ServiceNowProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 120) {
+          return serviceNowProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    public Builder setServiceNowProfile(com.google.cloud.datastream.v1.ServiceNowProfile value) {
+      if (serviceNowProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        serviceNowProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 120;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    public Builder setServiceNowProfile(
+        com.google.cloud.datastream.v1.ServiceNowProfile.Builder builderForValue) {
+      if (serviceNowProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceNowProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 120;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    public Builder mergeServiceNowProfile(com.google.cloud.datastream.v1.ServiceNowProfile value) {
+      if (serviceNowProfileBuilder_ == null) {
+        if (profileCase_ == 120
+            && profile_ != com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.ServiceNowProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.ServiceNowProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 120) {
+          serviceNowProfileBuilder_.mergeFrom(value);
+        } else {
+          serviceNowProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 120;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    public Builder clearServiceNowProfile() {
+      if (serviceNowProfileBuilder_ == null) {
+        if (profileCase_ == 120) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 120) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        serviceNowProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    public com.google.cloud.datastream.v1.ServiceNowProfile.Builder getServiceNowProfileBuilder() {
+      return internalGetServiceNowProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.ServiceNowProfileOrBuilder
+        getServiceNowProfileOrBuilder() {
+      if ((profileCase_ == 120) && (serviceNowProfileBuilder_ != null)) {
+        return serviceNowProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 120) {
+          return (com.google.cloud.datastream.v1.ServiceNowProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Profile for connecting to a ServiceNow source.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.ServiceNowProfile,
+            com.google.cloud.datastream.v1.ServiceNowProfile.Builder,
+            com.google.cloud.datastream.v1.ServiceNowProfileOrBuilder>
+        internalGetServiceNowProfileFieldBuilder() {
+      if (serviceNowProfileBuilder_ == null) {
+        if (!(profileCase_ == 120)) {
+          profile_ = com.google.cloud.datastream.v1.ServiceNowProfile.getDefaultInstance();
+        }
+        serviceNowProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.ServiceNowProfile,
+                com.google.cloud.datastream.v1.ServiceNowProfile.Builder,
+                com.google.cloud.datastream.v1.ServiceNowProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.ServiceNowProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 120;
+      onChanged();
+      return serviceNowProfileBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.WorkdayProfile,
+            com.google.cloud.datastream.v1.WorkdayProfile.Builder,
+            com.google.cloud.datastream.v1.WorkdayProfileOrBuilder>
+        workdayProfileBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workdayProfile field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkdayProfile() {
+      return profileCase_ == 121;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workdayProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.WorkdayProfile getWorkdayProfile() {
+      if (workdayProfileBuilder_ == null) {
+        if (profileCase_ == 121) {
+          return (com.google.cloud.datastream.v1.WorkdayProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance();
+      } else {
+        if (profileCase_ == 121) {
+          return workdayProfileBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkdayProfile(com.google.cloud.datastream.v1.WorkdayProfile value) {
+      if (workdayProfileBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profile_ = value;
+        onChanged();
+      } else {
+        workdayProfileBuilder_.setMessage(value);
+      }
+      profileCase_ = 121;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkdayProfile(
+        com.google.cloud.datastream.v1.WorkdayProfile.Builder builderForValue) {
+      if (workdayProfileBuilder_ == null) {
+        profile_ = builderForValue.build();
+        onChanged();
+      } else {
+        workdayProfileBuilder_.setMessage(builderForValue.build());
+      }
+      profileCase_ = 121;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkdayProfile(com.google.cloud.datastream.v1.WorkdayProfile value) {
+      if (workdayProfileBuilder_ == null) {
+        if (profileCase_ == 121
+            && profile_ != com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance()) {
+          profile_ =
+              com.google.cloud.datastream.v1.WorkdayProfile.newBuilder(
+                      (com.google.cloud.datastream.v1.WorkdayProfile) profile_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          profile_ = value;
+        }
+        onChanged();
+      } else {
+        if (profileCase_ == 121) {
+          workdayProfileBuilder_.mergeFrom(value);
+        } else {
+          workdayProfileBuilder_.setMessage(value);
+        }
+      }
+      profileCase_ = 121;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkdayProfile() {
+      if (workdayProfileBuilder_ == null) {
+        if (profileCase_ == 121) {
+          profileCase_ = 0;
+          profile_ = null;
+          onChanged();
+        }
+      } else {
+        if (profileCase_ == 121) {
+          profileCase_ = 0;
+          profile_ = null;
+        }
+        workdayProfileBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.WorkdayProfile.Builder getWorkdayProfileBuilder() {
+      return internalGetWorkdayProfileFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.WorkdayProfileOrBuilder getWorkdayProfileOrBuilder() {
+      if ((profileCase_ == 121) && (workdayProfileBuilder_ != null)) {
+        return workdayProfileBuilder_.getMessageOrBuilder();
+      } else {
+        if (profileCase_ == 121) {
+          return (com.google.cloud.datastream.v1.WorkdayProfile) profile_;
+        }
+        return com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Profile for connecting to a Workday source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.WorkdayProfile,
+            com.google.cloud.datastream.v1.WorkdayProfile.Builder,
+            com.google.cloud.datastream.v1.WorkdayProfileOrBuilder>
+        internalGetWorkdayProfileFieldBuilder() {
+      if (workdayProfileBuilder_ == null) {
+        if (!(profileCase_ == 121)) {
+          profile_ = com.google.cloud.datastream.v1.WorkdayProfile.getDefaultInstance();
+        }
+        workdayProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.WorkdayProfile,
+                com.google.cloud.datastream.v1.WorkdayProfile.Builder,
+                com.google.cloud.datastream.v1.WorkdayProfileOrBuilder>(
+                (com.google.cloud.datastream.v1.WorkdayProfile) profile_,
+                getParentForChildren(),
+                isClean());
+        profile_ = null;
+      }
+      profileCase_ = 121;
+      onChanged();
+      return workdayProfileBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<

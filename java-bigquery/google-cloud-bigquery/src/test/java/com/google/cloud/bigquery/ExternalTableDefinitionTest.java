@@ -162,6 +162,10 @@ class ExternalTableDefinitionTest {
         ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
     compareExternalTableDefinition(
         externalTableDefinition, ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
+    compareExternalTableDefinition(
+        EXTERNAL_TABLE_DEFINITION.toBuilder().setMaxStaleness(null).build(),
+        ExternalTableDefinition.fromExternalDataConfiguration(
+            EXTERNAL_TABLE_DEFINITION.toExternalDataConfigurationPb()));
   }
 
   @Test
