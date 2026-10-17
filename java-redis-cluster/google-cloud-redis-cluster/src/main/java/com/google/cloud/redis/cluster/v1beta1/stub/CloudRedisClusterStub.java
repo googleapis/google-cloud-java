@@ -18,10 +18,12 @@ package com.google.cloud.redis.cluster.v1beta1.stub;
 
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -33,6 +35,9 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.redis.cluster.v1beta1.AclPolicy;
 import com.google.cloud.redis.cluster.v1beta1.AclPolicyRevision;
+import com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest;
+import com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest;
+import com.google.cloud.redis.cluster.v1beta1.AuthToken;
 import com.google.cloud.redis.cluster.v1beta1.Backup;
 import com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.BackupCollection;
@@ -41,29 +46,38 @@ import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest;
 import com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetAclPolicyRevisionRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPoliciesRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPoliciesResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPolicyRevisionsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPolicyRevisionsResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse;
 import com.google.cloud.redis.cluster.v1beta1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1beta1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1beta1.TokenAuthUser;
 import com.google.cloud.redis.cluster.v1beta1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
@@ -255,6 +269,70 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
 
   public UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable() {
     throw new UnsupportedOperationException("Not implemented: backupClusterCallable()");
+  }
+
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTokenAuthUsersPagedCallable()");
+  }
+
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listTokenAuthUsersCallable()");
+  }
+
+  public UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: getTokenAuthUserCallable()");
+  }
+
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthTokensPagedCallable()");
+  }
+
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAuthTokensCallable()");
+  }
+
+  public UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAuthTokenCallable()");
+  }
+
+  public OperationCallable<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addTokenAuthUserOperationCallable()");
+  }
+
+  public UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: addTokenAuthUserCallable()");
+  }
+
+  public OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteTokenAuthUserOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteTokenAuthUserCallable()");
+  }
+
+  public OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAuthTokenOperationCallable()");
+  }
+
+  public UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: addAuthTokenCallable()");
+  }
+
+  public OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAuthTokenOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAuthTokenCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

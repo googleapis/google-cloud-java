@@ -93,18 +93,6 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_devicesandservices_health_v4beta_BodyFatRollupValue_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_devicesandservices_health_v4beta_SkinTemperature_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_devicesandservices_health_v4beta_SkinTemperature_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_devicesandservices_health_v4beta_SkinTemperature_SkinTemperatureMetadata_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_devicesandservices_health_v4beta_SkinTemperature_SkinTemperatureMetadata_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_devicesandservices_health_v4beta_SkinTemperatureRollupValue_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_devicesandservices_health_v4beta_SkinTemperatureRollupValue_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devicesandservices_health_v4beta_SkinTemperatureSensors_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_devicesandservices_health_v4beta_SkinTemperatureSensors_fieldAccessorTable;
@@ -471,13 +459,13 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "havior.proto\032\031google/api/resource.proto\032"
           + ">google/devicesandservices/health/v4beta/data_coordinates.proto\032Agoogle/devicesa"
           + "ndservices/health/v4beta/medical_device_info.proto\032\036google/protobuf/duration.pro"
-          + "to\032\037google/protobuf/timestamp.proto\032\026google/type/date.proto\"\351\002\n"
-          + "\021ActiveZoneMinutes\022W\n"
+          + "to\032\037google/protobuf/timestamp.proto\032\026google/type/date.proto\"\354\002\n"
+          + "\021ActiveZoneMinutes\022X\n"
           + "\010interval\030\001 \001(\0132@.google.devicesands"
-          + "ervices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022f\n"
-          + "\017heart_rate_zone\030\002 \001(\0162H.go"
-          + "ogle.devicesandservices.health.v4beta.ActiveZoneMinutes.HeartRateZoneB\003\340A\002\022%\n"
-          + "\023active_zone_minutes\030\003 \001(\003B\003\340A\002H\000\210\001\001\"T\n\r"
+          + "ervices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022g\n"
+          + "\017heart_rate_zone\030\002 \001(\0162H.g"
+          + "oogle.devicesandservices.health.v4beta.ActiveZoneMinutes.HeartRateZoneB\004\342A\001\002\022&\n"
+          + "\023active_zone_minutes\030\003 \001(\003B\004\342A\001\002H\000\210\001\001\"T\n\r"
           + "HeartRateZone\022\037\n"
           + "\033HEART_RATE_ZONE_UNSPECIFIED\020\000\022\014\n"
           + "\010FAT_BURN\020\001\022\n\n"
@@ -490,17 +478,16 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\032sum_in_fat_burn_heart_zone\030\003 \001(\003H\002\210\001\001B\033\n"
           + "\031_sum_in_cardio_heart_zoneB\031\n"
           + "\027_sum_in_peak_heart_zoneB\035\n"
-          + "\033_sum_in_fat_burn_heart_zone\"\376\003\n\r"
-          + "ActiveMinutes\022W\n"
-          + "\010interval\030\001 \001(\0132@.google.devicesandserv"
-          + "ices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\202\001\n"
-          + " active_minutes_by_activity_level\030\002 \003(\0132S.google.devicesandservices.h"
-          + "ealth.v4beta.ActiveMinutes.ActiveMinutesByActivityLevelB\003\340A\002\032\266\001\n"
-          + "\034ActiveMinutesByActivityLevel\022a\n"
-          + "\016activity_level\030\001 \001(\0162D."
-          + "google.devicesandservices.health.v4beta.ActiveMinutes.ActivityLevelB\003\340A\002\022"
-          + " \n"
-          + "\016active_minutes\030\002 \001(\003B\003\340A\002H\000\210\001\001B\021\n"
+          + "\033_sum_in_fat_burn_heart_zone\"\202\004\n\r"
+          + "ActiveMinutes\022X\n"
+          + "\010interval\030\001 \001(\0132@.google.devicesands"
+          + "ervices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\203\001\n"
+          + " active_minutes_by_activity_level\030\002 \003(\0132S.google.devicesandservic"
+          + "es.health.v4beta.ActiveMinutes.ActiveMinutesByActivityLevelB\004\342A\001\002\032\270\001\n"
+          + "\034ActiveMinutesByActivityLevel\022b\n"
+          + "\016activity_level\030\001 \001(\0162D.google.devicesandservices.health.v4"
+          + "beta.ActiveMinutes.ActivityLevelB\004\342A\001\002\022!\n"
+          + "\016active_minutes\030\002 \001(\003B\004\342A\001\002H\000\210\001\001B\021\n"
           + "\017_active_minutes\"V\n\r"
           + "ActivityLevel\022\036\n"
           + "\032ACTIVITY_LEVEL_UNSPECIFIED\020\000\022\t\n"
@@ -508,19 +495,19 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\010MODERATE\020\002\022\014\n"
           + "\010VIGOROUS\020\003\"\357\002\n"
           + "\030ActiveMinutesRollupValue\022\225\001\n"
-          + "\'active_minutes_rollup_by_activity_level\030\001"
-          + " \003(\0132d.google.devicesandservices"
-          + ".health.v4beta.ActiveMinutesRollupValue.ActiveMinutesRollupByActivityLevel\032\272\001\n"
+          + "\'active_minutes_rollup_by_activity_level\030\001 \003(\0132d.google.devicesands"
+          + "ervices.health.v4beta.ActiveMinutesRollu"
+          + "pValue.ActiveMinutesRollupByActivityLevel\032\272\001\n"
           + "\"ActiveMinutesRollupByActivityLevel\022\\\n"
-          + "\016activity_level\030\001 \001(\0162D.google.devicesandser"
-          + "vices.health.v4beta.ActiveMinutes.ActivityLevel\022\037\n"
+          + "\016activity_level\030\001 \001(\0162D.google.device"
+          + "sandservices.health.v4beta.ActiveMinutes.ActivityLevel\022\037\n"
           + "\022active_minutes_sum\030\002 \001(\003H\000\210\001\001B\025\n"
-          + "\023_active_minutes_sum\"\332\002\n\r"
-          + "ActivityLevel\022W\n"
-          + "\010interval\030\001 \001(\0132@.google.devicesands"
-          + "ervices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022j\n"
-          + "\023activity_level_type\030\002 \001(\0162H.google.devicesandservices.health.v4bet"
-          + "a.ActivityLevel.ActivityLevelTypeB\003\340A\002\"\203\001\n"
+          + "\023_active_minutes_sum\"\334\002\n\r"
+          + "ActivityLevel\022X\n"
+          + "\010interval\030\001 \001(\0132@.google.devi"
+          + "cesandservices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022k\n"
+          + "\023activity_level_type\030\002 \001(\0162H.google.devicesandservices.heal"
+          + "th.v4beta.ActivityLevel.ActivityLevelTypeB\004\342A\001\002\"\203\001\n"
           + "\021ActivityLevelType\022#\n"
           + "\037ACTIVITY_LEVEL_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tSEDENTARY\020\001\022\022\n"
@@ -528,104 +515,72 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\021MODERATELY_ACTIVE\020\003\022\017\n"
           + "\013VERY_ACTIVE\020\004\"\201\003\n"
           + "\030ActivityLevelRollupValue\022\237\001\n"
-          + "-activity_level_rollups_by_activity_level_type\030\001"
-          + " \003(\0132h.google.devicesandservices.health.v4beta.ActivityLevelRollupV"
-          + "alue.ActivityLevelRollupByActivityLevelType\032\302\001\n"
+          + "-activity_level_rollups_by_activity_level_type\030\001 \003(\0132h.google.devi"
+          + "cesandservices.health.v4beta.ActivityLev"
+          + "elRollupValue.ActivityLevelRollupByActivityLevelType\032\302\001\n"
           + "&ActivityLevelRollupByActivityLevelType\022e\n"
-          + "\023activity_level_type\030\001 \001(\0162H.go"
-          + "ogle.devicesandservices.health.v4beta.ActivityLevel.ActivityLevelType\0221\n"
-          + "\016total_duration\030\002 \001(\0132\031.google.protobuf.Duration\"\234\001\n"
-          + "\010Altitude\022W\n"
-          + "\010interval\030\002 \001(\0132@.google"
-          + ".devicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\"\n"
-          + "\020gain_millimeters\030\003 \001(\003B\003\340A\002H\000\210\001\001B\023\n"
-          + "\021_gain_millimeters\"\215\001\n"
-          + "\021BasalEnergyBurned\022W\n"
-          + "\010interval\030\001 \001(\0132"
-          + "@.google.devicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\026\n"
-          + "\004kcal\030\002 \001(\001B\003\340A\002H\000\210\001\001B\007\n"
-          + "\005_kcal\"\220\001\n"
-          + "\007BodyFat\022X\n"
-          + "\013sample_time\030\002 \001(\0132>.google.devicesandserv"
-          + "ices.health.v4beta.ObservationSampleTimeB\003\340A\002\022\034\n\n"
-          + "percentage\030\003 \001(\001B\003\340A\002H\000\210\001\001B\r\n"
+          + "\023activity_level_type\030\001 \001(\0162H.google.devicesandservices.health."
+          + "v4beta.ActivityLevel.ActivityLevelType\0221\n"
+          + "\016total_duration\030\002 \001(\0132\031.google.protobuf.Duration\"\236\001\n"
+          + "\010Altitude\022X\n"
+          + "\010interval\030\002 \001(\013"
+          + "2@.google.devicesandservices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022#\n"
+          + "\020gain_millimeters\030\003 \001(\003B\004\342A\001\002H\000\210\001\001B\023\n"
+          + "\021_gain_millimeters\"\217\001\n"
+          + "\021BasalEnergyBurned\022X\n"
+          + "\010interval\030\001 \001(\0132@.google.devicesandservices.h"
+          + "ealth.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\027\n"
+          + "\004kcal\030\002 \001(\001B\004\342A\001\002H\000\210\001\001B\007\n"
+          + "\005_kcal\"\222\001\n"
+          + "\007BodyFat\022Y\n"
+          + "\013sample_time\030\002 \001(\0132>.google.d"
+          + "evicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022\035\n\n"
+          + "percentage\030\003 \001(\001B\004\342A\001\002H\000\210\001\001B\r\n"
           + "\013_percentage\"V\n"
           + "\022BodyFatRollupValue\022$\n"
           + "\027body_fat_percentage_avg\030\001 \001(\001H\000\210\001\001B\032\n"
-          + "\030_body_fat_percentage_avg\"\325\006\n"
-          + "\017SkinTemperature\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google.devicesands"
-          + "ervices.health.v4beta.ObservationSampleTimeB\003\340A\002\022%\n"
-          + "\023temperature_celsius\030\002 \001(\001B\003\340A\002H\000\210\001\001\022.\n"
-          + "\034baseline_temperature_celsius\030\003"
-          + " \001(\001B\003\340A\002H\001\210\001\001\022g\n"
-          + "\010metadata\030\004 \001(\0132P.google.devicesandservices.health.v4beta.Skin"
-          + "Temperature.SkinTemperatureMetadataB\003\340A\001\032\365\001\n"
-          + "\027SkinTemperatureMetadata\022o\n"
-          + "\024measurement_location\030\001 \001(\0162L.google.devicesandse"
-          + "rvices.health.v4beta.SkinTemperature.MeasurementLocationB\003\340A\001\022i\n"
-          + "\021measurement_state\030\002 \001(\0162I.google.devicesandservices.hea"
-          + "lth.v4beta.SkinTemperature.MeasurementStateB\003\340A\001\"f\n"
-          + "\023MeasurementLocation\022$\n"
-          + " MEASUREMENT_LOCATION_UNSPECIFIED\020\000\022\t\n"
-          + "\005OTHER\020\001\022\n\n"
-          + "\006FINGER\020\002\022\007\n"
-          + "\003TOE\020\003\022\t\n"
-          + "\005WRIST\020\004\"\216\001\n"
-          + "\020MeasurementState\022!\n"
-          + "\035MEASUREMENT_STATE_UNSPECIFIED\020\000\022\033\n"
-          + "\027MEASUREMENT_STATE_OTHER\020\001\022\035\n"
-          + "\031MEASUREMENT_STATE_AT_REST\020\002\022\033\n"
-          + "\027MEASUREMENT_STATE_SLEEP\020\003B\026\n"
-          + "\024_temperature_celsiusB\037\n"
-          + "\035_baseline_temperature_celsius\"\342\001\n"
-          + "\032SkinTemperatureRollupValue\022$\n"
-          + "\027temperature_celsius_avg\030\001 \001(\001H\000\210\001\001\022$\n"
-          + "\027temperature_celsius_max\030\002 \001(\001H\001\210\001\001\022$\n"
-          + "\027temperature_celsius_min\030\003 \001(\001H\002\210\001\001B\032\n"
-          + "\030_temperature_celsius_avgB\032\n"
-          + "\030_temperature_celsius_maxB\032\n"
-          + "\030_temperature_celsius_min\"\300\010\n"
-          + "\026SkinTemperatureSensors\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google"
-          + ".devicesandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022d\n"
-          + "\013sensor_data\030\002 \003(\0132J.google.devicesandservices.health.v4b"
-          + "eta.SkinTemperatureSensors.SensorDataB\003\340A\002\032\310\004\n"
-          + "\016SensorMetadata\022v\n"
-          + "\024measurement_location\030\001 \001(\0162S.google.devicesandservices."
-          + "health.v4beta.SkinTemperatureSensors.MeasurementLocationB\003\340A\001\022\177\n"
-          + "\021measurement_state\030\002 \001(\0162_.google.devicesandservices.hea"
-          + "lth.v4beta.SkinTemperatureSensors.SensorMetadata.MeasurementStateB\003\340A\001\022s\n"
-          + "\013sensor_type\030\003 \001(\0162Y.google.devicesandservices."
-          + "health.v4beta.SkinTemperatureSensors.SensorMetadata.SensorTypeB\003\340A\001\"X\n"
+          + "\030_body_fat_percentage_avg\"\310\010\n"
+          + "\026SkinTemperatureSensors\022Y\n"
+          + "\013sample_time\030\001 \001("
+          + "\0132>.google.devicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022e\n"
+          + "\013sensor_data\030\002 \003(\0132J.google.devicesandservices"
+          + ".health.v4beta.SkinTemperatureSensors.SensorDataB\004\342A\001\002\032\314\004\n"
+          + "\016SensorMetadata\022w\n"
+          + "\024measurement_location\030\001 \001(\0162S.google.devices"
+          + "andservices.health.v4beta.SkinTemperatureSensors.MeasurementLocationB\004\342A\001\001\022\200\001\n"
+          + "\021measurement_state\030\002 \001(\0162_.google.devicesa"
+          + "ndservices.health.v4beta.SkinTemperature"
+          + "Sensors.SensorMetadata.MeasurementStateB\004\342A\001\001\022t\n"
+          + "\013sensor_type\030\003 \001(\0162Y.google.devi"
+          + "cesandservices.health.v4beta.SkinTempera"
+          + "tureSensors.SensorMetadata.SensorTypeB\004\342A\001\001\"X\n"
           + "\020MeasurementState\022!\n"
           + "\035MEASUREMENT_STATE_UNSPECIFIED\020\000\022\t\n"
           + "\005OTHER\020\001\022\013\n"
           + "\007AT_REST\020\002\022\t\n"
-          + "\005SLEEP\020\003\"n\n"
-          + "\n"
+          + "\005SLEEP\020\003\"n\n\n"
           + "SensorType\022\033\n"
           + "\027SENSOR_TYPE_UNSPECIFIED\020\000\022\033\n"
           + "\027SKIN_TEMPERATURE_SENSOR\020\001\022&\n"
-          + "\"INTERNAL_DEVICE_TEMPERATURE_SENSOR\020\002\032\262\001\n\n"
-          + "SensorData\022%\n"
-          + "\023temperature_celsius\030\001 \001(\001B\003\340A\002H\000\210\001\001\022e\n"
-          + "\010metadata\030\002 \001(\0132N.google.devicesan"
-          + "dservices.health.v4beta.SkinTemperatureSensors.SensorMetadataB\003\340A\001B\026\n"
+          + "\"INTERNAL_DEVICE_TEMPERATURE_SENSOR\020\002\032\264\001\n\n"
+          + "SensorData\022&\n"
+          + "\023temperature_celsius\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022f\n"
+          + "\010metadata\030\002 \001(\0132N.google.devicesandservices.health.v4beta"
+          + ".SkinTemperatureSensors.SensorMetadataB\004\342A\001\001B\026\n"
           + "\024_temperature_celsius\"f\n"
           + "\023MeasurementLocation\022$\n"
           + " MEASUREMENT_LOCATION_UNSPECIFIED\020\000\022\t\n"
           + "\005OTHER\020\001\022\n\n"
           + "\006FINGER\020\002\022\007\n"
           + "\003TOE\020\003\022\t\n"
-          + "\005WRIST\020\004\"\333\004\n"
-          + "\023CoreBodyTemperature\022X\n"
-          + "\013sample_time\030\002 \001(\0132"
-          + ">.google.devicesandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022%\n"
-          + "\023temperature_celsius\030\003 \001(\001B\003\340A\002H\000\210\001\001\022s\n"
-          + "\024measurement_location\030\004 \001(\0162P.google.devicesandser"
-          + "vices.health.v4beta.CoreBodyTemperature.MeasurementLocationB\003\340A\001\022\017\n"
-          + "\002id\030\005 \001(\tB\003\340A\001\"\244\002\n"
+          + "\005WRIST\020\004\"\337\004\n"
+          + "\023CoreBodyTemperature\022Y\n"
+          + "\013sample_time\030\002 \001(\0132>.google.devicesandser"
+          + "vices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022&\n"
+          + "\023temperature_celsius\030\003 \001(\001B\004\342A\001\002H\000\210\001\001\022t\n"
+          + "\024measurement_location\030\004 \001(\0162P.google.devicesandservices.health.v4beta."
+          + "CoreBodyTemperature.MeasurementLocationB\004\342A\001\001\022\020\n"
+          + "\002id\030\005 \001(\tB\004\342A\001\001\"\244\002\n"
           + "\023MeasurementLocation\022$\n"
           + " MEASUREMENT_LOCATION_UNSPECIFIED\020\000\022\t\n"
           + "\005OTHER\020\001\022\n\n"
@@ -656,86 +611,90 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\030_temperature_celsius_maxB\032\n"
           + "\030_temperature_celsius_min\"\307\002\n"
           + "\"CaloriesInHeartRateZoneRollupValue\022\216\001\n"
-          + "\034calories_in_heart_rate_zones\030\001 \003(\0132h.google"
-          + ".devicesandservices.health.v4beta.Calori"
-          + "esInHeartRateZoneRollupValue.CaloriesInHeartRateZoneValue\032\217\001\n"
+          + "\034calories_in_heart_rate_zones\030\001 \003(\0132h.google.devicesandservice"
+          + "s.health.v4beta.CaloriesInHeartRateZoneR"
+          + "ollupValue.CaloriesInHeartRateZoneValue\032\217\001\n"
           + "\034CaloriesInHeartRateZoneValue\022S\n"
-          + "\017heart_rate_zone\030\001 \001(\0162:.go"
-          + "ogle.devicesandservices.health.v4beta.HeartRateZoneType\022\021\n"
+          + "\017heart_rate_zone\030\001"
+          + " \001(\0162:.google.devicesandservices.health.v4beta.HeartRateZoneType\022\021\n"
           + "\004kcal\030\002 \001(\001H\000\210\001\001B\007\n"
-          + "\005_kcal\"\231\003\n"
-          + "\023DailyHeartRateZones\022$\n"
-          + "\004date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022i\n"
-          + "\020heart_rate_zones\030\002 \003(\0132J.google.devicesandservices."
-          + "health.v4beta.DailyHeartRateZones.HeartRateZoneB\003\340A\002\032\360\001\n\r"
-          + "HeartRateZone\022]\n"
-          + "\024heart_rate_zone_type\030\001 \001(\0162:.google.devicesand"
-          + "services.health.v4beta.HeartRateZoneTypeB\003\340A\002\022&\n"
-          + "\024min_beats_per_minute\030\002 \001(\003B\003\340A\002H\000\210\001\001\022&\n"
-          + "\024max_beats_per_minute\030\003 \001(\003B\003\340A\002H\001\210\001\001B\027\n"
+          + "\005_kcal\"\236\003\n"
+          + "\023DailyHeartRateZones\022%\n"
+          + "\004date\030\001 \001(\0132\021.google.type.DateB\004\342A\001\002\022j\n"
+          + "\020heart_rate_zones\030\002 \003(\0132J.goo"
+          + "gle.devicesandservices.health.v4beta.DailyHeartRateZones.HeartRateZoneB\004\342A\001\002\032\363\001\n"
+          + "\r"
+          + "HeartRateZone\022^\n"
+          + "\024heart_rate_zone_type\030\001"
+          + " \001(\0162:.google.devicesandservices.health.v4beta.HeartRateZoneTypeB\004\342A\001\002\022\'\n"
+          + "\024min_beats_per_minute\030\002 \001(\003B\004\342A\001\002H\000\210\001\001\022\'\n"
+          + "\024max_beats_per_minute\030\003 \001(\003B\004\342A\001\002H\001\210\001\001B\027\n"
           + "\025_min_beats_per_minuteB\027\n"
-          + "\025_max_beats_per_minute\"\323\003\n"
-          + "\031DailyHeartRateVariability\022$\n"
-          + "\004date\030\002 \001(\0132\021.google.type.DateB\003\340A\002\022=\n"
+          + "\025_max_beats_per_minute\"\330\003\n"
+          + "\031DailyHeartRateVariability\022%\n"
+          + "\004date\030\002 \001(\0132\021.google.type.DateB\004\342A\001\002\022>\n"
           + "+average_heart_rate_variability_milliseconds\030\004"
-          + " \001(\001B\003\340A\001H\000\210\001\001\0225\n"
+          + " \001(\001B\004\342A\001\001H\000\210\001\001\0226\n"
           + "#non_rem_heart_rate_beats_per_minute\030\005"
-          + " \001(\003B\003\340A\001H\001\210\001\001\022\031\n"
-          + "\007entropy\030\006 \001(\001B\003\340A\001H\002\210\001\001\022T\n"
+          + " \001(\003B\004\342A\001\001H\001\210\001\001\022\032\n"
+          + "\007entropy\030\006 \001(\001B\004\342A\001\001H\002\210\001\001\022U\n"
           + "Bdeep_sleep_root_mean_square_of_successive_differences_milliseconds\030\007"
-          + " \001(\001B\003\340A\001H\003\210\001\001B.\n"
+          + " \001(\001B\004\342A\001\001H\003\210\001\001B.\n"
           + ",_average_heart_rate_variability_millisecondsB&\n"
           + "$_non_rem_heart_rate_beats_per_minuteB\n\n"
           + "\010_entropyBE\n"
-          + "C_deep_sleep_root_mean_square_of_successive_differences_milliseconds\"y\n"
-          + "\024DailyRespiratoryRate\022$\n"
-          + "\004date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022$\n"
-          + "\022breaths_per_minute\030\002 \001(\001B\003\340A\002H\000\210\001\001B\025\n"
-          + "\023_breaths_per_minute\"\327\002\n"
-          + "\025DailyOxygenSaturation\022$\n"
-          + "\004date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022$\n"
-          + "\022average_percentage\030\002 \001(\001B\003\340A\002H\000\210\001\001\022(\n"
-          + "\026lower_bound_percentage\030\003 \001(\001B\003\340A\002H\001\210\001\001\022(\n"
-          + "\026upper_bound_percentage\030\004 \001(\001B\003\340A\002H\002\210\001\001\022/\n"
+          + "C_deep_sleep_root_mean_square_of_successive_differences_milliseconds\"{\n"
+          + "\024DailyRespiratoryRate\022%\n"
+          + "\004date\030\001 \001(\0132\021.google.type.DateB\004\342A\001\002\022%\n"
+          + "\022breaths_per_minute\030\002 \001(\001B\004\342A\001\002H\000\210\001\001B\025\n"
+          + "\023_breaths_per_minute\"\334\002\n"
+          + "\025DailyOxygenSaturation\022%\n"
+          + "\004date\030\001 \001(\0132\021.google.type.DateB\004\342A\001\002\022%\n"
+          + "\022average_percentage\030\002 \001(\001B\004\342A\001\002H\000\210\001\001\022)\n"
+          + "\026lower_bound_percentage\030\003 \001(\001B\004\342A\001\002H\001\210\001\001\022)\n"
+          + "\026upper_bound_percentage\030\004 \001(\001B\004\342A\001\002H\002\210\001\001\0220\n"
           + "\035standard_deviation_percentage\030\005"
-          + " \001(\001B\003\340A\001H\003\210\001\001B\025\n"
+          + " \001(\001B\004\342A\001\001H\003\210\001\001B\025\n"
           + "\023_average_percentageB\031\n"
           + "\027_lower_bound_percentageB\031\n"
           + "\027_upper_bound_percentageB \n"
-          + "\036_standard_deviation_percentage\"\234\004\n"
-          + "\025DailyRestingHeartRate\022$\n"
-          + "\004date\030\002 \001(\0132\021.google.type.DateB\003\340A\002\022\"\n"
-          + "\020beats_per_minute\030\004 \001(\003B\003\340A\002H\000\210\001\001\022\214\001\n"
-          + "!daily_resting_heart_rate_metadata\030\005 \001(\0132\\.google.devicesandse"
-          + "rvices.health.v4beta.DailyRestingHeartRa"
-          + "te.DailyRestingHeartRateMetadataB\003\340A\001\032\224\002\n"
-          + "\035DailyRestingHeartRateMetadata\022\217\001\n"
-          + "\022calculation_method\030\001 \001(\0162n.google.devicesand"
-          + "services.health.v4beta.DailyRestingHeart"
-          + "Rate.DailyRestingHeartRateMetadata.CalculationMethodB\003\340A\002\"a\n"
+          + "\036_standard_deviation_percentage\"\240\004\n"
+          + "\025DailyRestingHeartRate\022%\n"
+          + "\004date\030\002 \001(\0132\021.google.type.DateB\004\342A\001\002\022#\n"
+          + "\020beats_per_minute\030\004"
+          + " \001(\003B\004\342A\001\002H\000\210\001\001\022\215\001\n"
+          + "!daily_resting_heart_rate_metadata\030\005 \001(\0132\\.google.devicesands"
+          + "ervices.health.v4beta.DailyRestingHeartR"
+          + "ate.DailyRestingHeartRateMetadataB\004\342A\001\001\032\225\002\n"
+          + "\035DailyRestingHeartRateMetadata\022\220\001\n"
+          + "\022calculation_method\030\001 \001(\0162n.google.devicesa"
+          + "ndservices.health.v4beta.DailyRestingHea"
+          + "rtRate.DailyRestingHeartRateMetadata.CalculationMethodB\004\342A\001\002\"a\n"
           + "\021CalculationMethod\022\"\n"
-          + "\036CALCULATION_METHOD_UNSPECIFIED\020\000\022\016\n\n"
+          + "\036CALCULATION_METHOD_UNSPECIFIED\020\000\022\016\n"
+          + "\n"
           + "WITH_SLEEP\020\001\022\030\n"
           + "\024ONLY_WITH_AWAKE_DATA\020\002B\023\n"
-          + "\021_beats_per_minute\"\307\002\n"
-          + " DailySleepTemperatureDerivations\022$\n"
-          + "\004date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022-\n"
+          + "\021_beats_per_minute\"\313\002\n"
+          + " DailySleepTemperatureDerivations\022%\n"
+          + "\004date\030\001 \001(\0132\021.google.type.DateB\004\342A\001\002\022.\n"
           + "\033nightly_temperature_celsius\030\002"
-          + " \001(\001B\003\340A\002H\000\210\001\001\022.\n"
+          + " \001(\001B\004\342A\001\002H\000\210\001\001\022/\n"
           + "\034baseline_temperature_celsius\030\003"
-          + " \001(\001B\003\340A\001H\001\210\001\001\0225\n"
+          + " \001(\001B\004\342A\001\001H\001\210\001\001\0226\n"
           + "#relative_nightly_stddev_30d_celsius\030\004"
-          + " \001(\001B\003\340A\001H\002\210\001\001B\036\n"
+          + " \001(\001B\004\342A\001\001H\002\210\001\001B\036\n"
           + "\034_nightly_temperature_celsiusB\037\n"
           + "\035_baseline_temperature_celsiusB&\n"
-          + "$_relative_nightly_stddev_30d_celsius\"\241\003\n"
-          + "\013DailyVO2Max\022$\n"
-          + "\004date\030\001 \001(\0132\021.google.type.DateB\003\340A\002\022\031\n"
-          + "\007vo2_max\030\002 \001(\001B\003\340A\002H\000\210\001\001\022\026\n"
-          + "\testimated\030\003 \001(\010B\003\340A\001\022j\n"
-          + "\024cardio_fitness_level\030\004 \001(\0162G.google.devicesandservices.health.v4"
-          + "beta.DailyVO2Max.CardioFitnessLevelB\003\340A\001\022$\n"
-          + "\022vo2_max_covariance\030\005 \001(\001B\003\340A\001H\001\210\001\001\"\203\001\n"
+          + "$_relative_nightly_stddev_30d_celsius\"\246\003\n"
+          + "\013DailyVO2Max\022%\n"
+          + "\004date\030\001 \001(\0132\021.google.type.DateB\004\342A\001\002\022\032\n"
+          + "\007vo2_max\030\002 \001(\001B\004\342A\001\002H\000\210\001\001\022\027\n"
+          + "\testimated\030\003 \001(\010B\004\342A\001\001\022k\n"
+          + "\024cardio_fitness_level\030\004 \001(\0162G.google.devicesandservices"
+          + ".health.v4beta.DailyVO2Max.CardioFitnessLevelB\004\342A\001\001\022%\n"
+          + "\022vo2_max_covariance\030\005"
+          + " \001(\001B\004\342A\001\001H\001\210\001\001\"\203\001\n"
           + "\022CardioFitnessLevel\022$\n"
           + " CARDIO_FITNESS_LEVEL_UNSPECIFIED\020\000\022\010\n"
           + "\004POOR\020\001\022\010\n"
@@ -745,28 +704,29 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\tVERY_GOOD\020\005\022\r\n"
           + "\tEXCELLENT\020\006B\n\n"
           + "\010_vo2_maxB\025\n"
-          + "\023_vo2_max_covariance\"\222\001\n"
-          + "\010Distance\022W\n"
-          + "\010interval\030\002 \001(\0132@"
-          + ".google.devicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\035\n"
-          + "\013millimeters\030\003 \001(\003B\003\340A\002H\000\210\001\001B\016\n"
+          + "\023_vo2_max_covariance\"\224\001\n"
+          + "\010Distance\022X\n"
+          + "\010interval\030\002 \001(\0132@.google.devicesandservices.h"
+          + "ealth.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\036\n"
+          + "\013millimeters\030\003 \001(\003B\004\342A\001\002H\000\210\001\001B\016\n"
           + "\014_millimeters\"G\n"
           + "\023DistanceRollupValue\022\034\n"
           + "\017millimeters_sum\030\001 \001(\003H\000\210\001\001B\022\n"
-          + "\020_millimeters_sum\"\307\006\n"
-          + "\021Electrocardiogram\022S\n"
-          + "\010interval\030\001 \001(\0132<.google.d"
-          + "evicesandservices.health.v4beta.SessionTimeIntervalB\003\340A\002\022&\n"
-          + "\024beats_per_minute_avg\030\002 \001(\003B\003\340A\001H\000\210\001\001\022s\n"
-          + "\025result_classification\030\003 \001(\0162O.google.devicesandservices.heal"
-          + "th.v4beta.Electrocardiogram.ResultClassificationB\003\340A\001\022\035\n"
-          + "\020waveform_samples\030\004 \003(\021B\003\340A\001\022*\n"
-          + "\030sampling_frequency_hertz\030\005 \001(\005B\003\340A\001H\001\210\001\001\022+\n"
+          + "\020_millimeters_sum\"\317\006\n"
+          + "\021Electrocardiogram\022T\n"
+          + "\010interval\030\001 "
+          + "\001(\0132<.google.devicesandservices.health.v4beta.SessionTimeIntervalB\004\342A\001\002\022\'\n"
+          + "\024beats_per_minute_avg\030\002 \001(\003B\004\342A\001\001H\000\210\001\001\022t\n"
+          + "\025result_classification\030\003 \001(\0162O.google.devices"
+          + "andservices.health.v4beta.Electrocardiogram.ResultClassificationB\004\342A\001\001\022\036\n"
+          + "\020waveform_samples\030\004 \003(\021B\004\342A\001\001\022+\n"
+          + "\030sampling_frequency_hertz\030\005"
+          + " \001(\005B\004\342A\001\001H\001\210\001\001\022,\n"
           + "\031millivolts_scaling_factor\030\006"
-          + " \001(\005B\003\340A\001H\002\210\001\001\022\035\n"
-          + "\013lead_number\030\007 \001(\005B\003\340A\001H\003\210\001\001\022\\\n"
-          + "\023medical_device_info\030\010 \001(\0132:.goog"
-          + "le.devicesandservices.health.v4beta.MedicalDeviceInfoB\003\340A\003\"\346\001\n"
+          + " \001(\005B\004\342A\001\001H\002\210\001\001\022\036\n"
+          + "\013lead_number\030\007 \001(\005B\004\342A\001\001H\003\210\001\001\022]\n"
+          + "\023medical_device_info\030\010 \001(\0132:.google.devicesandservic"
+          + "es.health.v4beta.MedicalDeviceInfoB\004\342A\001\003\"\346\001\n"
           + "\024ResultClassification\022%\n"
           + "!RESULT_CLASSIFICATION_UNSPECIFIED\020\000\022\027\n"
           + "\023NORMAL_SINUS_RHYTHM\020\001\022\027\n"
@@ -779,55 +739,57 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\025_beats_per_minute_avgB\033\n"
           + "\031_sampling_frequency_hertzB\034\n"
           + "\032_millivolts_scaling_factorB\016\n"
-          + "\014_lead_number\"\252\'\n"
-          + "\010Exercise\022S\n"
-          + "\010interval\030\002 \001(\0132<.google.devicesa"
-          + "ndservices.health.v4beta.SessionTimeIntervalB\003\340A\002\022Z\n\r"
-          + "exercise_type\030\006 \001(\0162>.googl"
-          + "e.devicesandservices.health.v4beta.Exercise.ExerciseTypeB\003\340A\002\022S\n"
-          + "\006splits\030\010 \003(\0132>."
-          + "google.devicesandservices.health.v4beta.Exercise.SplitSummaryB\003\340A\001\022]\n"
-          + "\017exercise_events\030\017 \003(\0132?.google.devicesandservices."
-          + "health.v4beta.Exercise.ExerciseEventB\003\340A\001\022\\\n"
-          + "\017split_summaries\030\t \003(\0132>.google.devi"
-          + "cesandservices.health.v4beta.Exercise.SplitSummaryB\003\340A\001\022U\n"
+          + "\014_lead_number\"\302\'\n"
+          + "\010Exercise\022T\n"
+          + "\010interval\030\002"
+          + " \001(\0132<.google.devicesandservices.health.v4beta.SessionTimeIntervalB\004\342A\001\002\022[\n\r"
+          + "exercise_type\030\006 \001(\0162>.google.devicesandservi"
+          + "ces.health.v4beta.Exercise.ExerciseTypeB\004\342A\001\002\022T\n"
+          + "\006splits\030\010 \003(\0132>.google.devicesan"
+          + "dservices.health.v4beta.Exercise.SplitSummaryB\004\342A\001\001\022^\n"
+          + "\017exercise_events\030\017 \003(\0132?.g"
+          + "oogle.devicesandservices.health.v4beta.Exercise.ExerciseEventB\004\342A\001\001\022]\n"
+          + "\017split_summaries\030\t \003(\0132>.google.devicesandservices"
+          + ".health.v4beta.Exercise.SplitSummaryB\004\342A\001\001\022V\n"
           + "\017metrics_summary\030\n"
-          + " \001(\013"
-          + "27.google.devicesandservices.health.v4beta.MetricsSummaryB\003\340A\002\022b\n"
-          + "\021exercise_metadata\030\013 \001(\0132B.google.devicesandservices.he"
-          + "alth.v4beta.Exercise.ExerciseMetadataB\003\340A\001\022\031\n"
-          + "\014display_name\030\014 \001(\tB\003\340A\002\0227\n"
+          + " \001(\01327.google.dev"
+          + "icesandservices.health.v4beta.MetricsSummaryB\004\342A\001\002\022c\n"
+          + "\021exercise_metadata\030\013 \001(\0132B."
+          + "google.devicesandservices.health.v4beta.Exercise.ExerciseMetadataB\004\342A\001\001\022\032\n"
+          + "\014display_name\030\014 \001(\tB\004\342A\001\002\0228\n"
           + "\017active_duration\030\r"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\022\022\n"
-          + "\005notes\030\016 \001(\tB\003\340A\001\0224\n"
-          + "\013update_time\030\020 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022\023\n"
+          + "\005notes\030\016 \001(\tB\004\342A\001\001\0225\n"
+          + "\013update_time\030\020"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013create_time\030\021"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032\272\004\n"
-          + "\014SplitSummary\0223\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0228\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\032\301\004\n"
+          + "\014SplitSummary\0224\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0229\n"
           + "\020start_utc_offset\030\002"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\0221\n"
-          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0226\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\0222\n"
+          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0227\n"
           + "\016end_utc_offset\030\004"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\0227\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\0228\n"
           + "\017active_duration\030\005"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\003\022U\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\003\022V\n"
           + "\017metrics_summary\030\006"
-          + " \001(\01327.google.devicesandservices.health.v4beta.MetricsSummaryB\003\340A\002\022a\n\n"
+          + " \001(\01327.google.devicesandservices.health.v4beta.MetricsSummaryB\004\342A\001\002\022b\n\n"
           + "split_type\030\007 \001(\0162H.google.devicesandservice"
-          + "s.health.v4beta.Exercise.SplitSummary.SplitTypeB\003\340A\002\"]\n"
+          + "s.health.v4beta.Exercise.SplitSummary.SplitTypeB\004\342A\001\002\"]\n"
           + "\tSplitType\022\032\n"
           + "\026SPLIT_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006MANUAL\020\001\022\014\n"
           + "\010DURATION\020\002\022\014\n"
           + "\010DISTANCE\020\003\022\014\n"
-          + "\010CALORIES\020\004\032\373\002\n\r"
-          + "ExerciseEvent\0223\n\n"
-          + "event_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0228\n"
+          + "\010CALORIES\020\004\032\376\002\n\r"
+          + "ExerciseEvent\0224\n\n"
+          + "event_time\030\001 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0229\n"
           + "\020event_utc_offset\030\002"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\022s\n"
-          + "\023exercise_event_type\030\003 \001(\0162Q.google.devic"
-          + "esandservices.health.v4beta.Exercise.ExerciseEvent.ExerciseEventTypeB\003\340A\002\"\205\001\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022t\n"
+          + "\023exercise_event_type\030\003 \001(\0162Q.google.de"
+          + "vicesandservices.health.v4beta.Exercise."
+          + "ExerciseEvent.ExerciseEventTypeB\004\342A\001\002\"\205\001\n"
           + "\021ExerciseEventType\022#\n"
           + "\037EXERCISE_EVENT_TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005START\020\001\022\010\n"
@@ -835,10 +797,11 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\005PAUSE\020\003\022\n\n"
           + "\006RESUME\020\004\022\016\n\n"
           + "AUTO_PAUSE\020\005\022\017\n"
-          + "\013AUTO_RESUME\020\006\032o\n"
-          + "\020ExerciseMetadata\022)\n"
-          + "\027pool_length_millimeters\030\001 \001(\003B\003\340A\001H\000\210\001\001\022\024\n"
-          + "\007has_gps\030\002 \001(\010B\003\340A\001B\032\n"
+          + "\013AUTO_RESUME\020\006\032q\n"
+          + "\020ExerciseMetadata\022*\n"
+          + "\027pool_length_millimeters\030\001"
+          + " \001(\003B\004\342A\001\001H\000\210\001\001\022\025\n"
+          + "\007has_gps\030\002 \001(\010B\004\342A\001\001B\032\n"
           + "\030_pool_length_millimeters\"\237\030\n"
           + "\014ExerciseType\022\035\n"
           + "\031EXERCISE_TYPE_UNSPECIFIED\020\000\022\023\n"
@@ -868,8 +831,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\014CHEERLEADING\020\245\001\022\024\n"
           + "\020CIRCUIT_TRAINING\020\020\022\014\n"
           + "\010CLEANING\020i\022\014\n"
-          + "\010CLIMBING\0207\022\021\n"
-          + "\r"
+          + "\010CLIMBING\0207\022\021\n\r"
           + "CORE_TRAINING\020\021\022\013\n"
           + "\007CRICKET\0208\022\013\n"
           + "\007CROQUET\020o\022\025\n"
@@ -915,7 +877,8 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\tJIU_JITSU\020\240\001\022\020\n"
           + "\014JUMPING_ROPE\020J\022\013\n"
           + "\006KARATE\020\237\001\022\014\n"
-          + "\010KAYAKING\020\031\022\016\n\n"
+          + "\010KAYAKING\020\031\022\016\n"
+          + "\n"
           + "KICKBOXING\020\032\022\020\n"
           + "\013KITESURFING\020\254\001\022\014\n"
           + "\010LACROSSE\020K\022\020\n"
@@ -961,15 +924,15 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\010SHOOTING\020h\022\016\n"
           + "\tSHOVELING\020\253\001\022\021\n\r"
           + "SKATEBOARDING\020u\022\013\n"
-          + "\007SKATING\020#\022\n"
-          + "\n"
+          + "\007SKATING\020#\022\n\n"
           + "\006SKIING\020$\022\016\n"
           + "\tSKYDIVING\020\266\001\022\016\n\n"
           + "SNORKELING\020%\022\020\n"
           + "\014SNOWBOARDING\020&\022\021\n"
           + "\014SNOWMOBILING\020\263\001\022\017\n"
           + "\013SNOWSHOEING\020U\022\016\n\n"
-          + "SNOW_SPORT\020V\022\n\n"
+          + "SNOW_SPORT\020V\022\n"
+          + "\n"
           + "\006SOCCER\020W\022\014\n"
           + "\010SOFTBALL\020X\022\022\n\r"
           + "SPEED_SKATING\020\262\001\022\014\n"
@@ -979,8 +942,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\014STAIRCLIMBER\020)\022\024\n"
           + "\017STATIONARY_BIKE\020\213\001\022\021\n\r"
           + "STEP_TRAINING\020Z\022\025\n"
-          + "\021STRENGTH_TRAINING\020\013\022\016\n"
-          + "\n"
+          + "\021STRENGTH_TRAINING\020\013\022\016\n\n"
           + "STRETCHING\020*\022\021\n\r"
           + "STROLLER_WALK\020z\022\013\n"
           + "\007SURFING\020+\022\014\n"
@@ -1027,31 +989,31 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "YOGA_HATHA\020\205\001\022\017\n\n"
           + "YOGA_POWER\020\206\001\022\021\n"
           + "\014YOGA_VINYASA\020\207\001\022\n\n"
-          + "\005ZUMBA\020\210\001\"\204\001\n"
-          + "\006Floors\022W\n"
-          + "\010interval\030\002 \001(\0132@.google.devicesandser"
-          + "vices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\027\n"
-          + "\005count\030\004 \001(\003B\003\340A\002H\000\210\001\001B\010\n"
+          + "\005ZUMBA\020\210\001\"\206\001\n"
+          + "\006Floors\022X\n"
+          + "\010interval\030\002 \001(\0132@.google.devices"
+          + "andservices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\030\n"
+          + "\005count\030\004 \001(\003B\004\342A\001\002H\000\210\001\001B\010\n"
           + "\006_count\"9\n"
           + "\021FloorsRollupValue\022\026\n"
           + "\tcount_sum\030\001 \001(\003H\000\210\001\001B\014\n\n"
           + "_count_sum\"Q\n"
           + "\023AltitudeRollupValue\022!\n"
           + "\024gain_millimeters_sum\030\001 \001(\003H\000\210\001\001B\027\n"
-          + "\025_gain_millimeters_sum\"\270\005\n"
-          + "\tHeartRate\022X\n"
-          + "\013sample_time\030\002 \001(\0132>.google.devicesand"
-          + "services.health.v4beta.ObservationSampleTimeB\003\340A\002\022\"\n"
-          + "\020beats_per_minute\030\004 \001(\003B\003\340A\002H\000\210\001\001\022[\n"
-          + "\010metadata\030\006 \001(\0132D.google.devices"
-          + "andservices.health.v4beta.HeartRate.HeartRateMetadataB\003\340A\001\032\272\003\n"
-          + "\021HeartRateMetadata\022o\n"
-          + "\016motion_context\030\001 \001(\0162R.google.device"
-          + "sandservices.health.v4beta.HeartRate.HeartRateMetadata.MotionContextB\003\340A\001\022q\n"
-          + "\017sensor_location\030\002 \001(\0162S.google.devicesandse"
-          + "rvices.health.v4beta.HeartRate.HeartRateMetadata.SensorLocationB\003\340A\001\"J\n\r"
-          + "MotionCo",
-      "ntext\022\036\n"
+          + "\025_gain_millimeters_sum\"\275\005\n"
+          + "\tHeartRate\022Y\n"
+          + "\013sample_time\030\002 \001(\0132>.google.de"
+          + "vicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022#\n"
+          + "\020beats_per_minute\030\004 \001(\003B\004\342A\001\002H\000\210\001\001\022\\\n"
+          + "\010metadata\030\006 \001(\0132D.goog"
+          + "le.devicesandservices.health.v4beta.HeartRate.HeartRateMetadataB\004\342A\001\001\032\274\003\n"
+          + "\021HeartRateMetadata\022p\n"
+          + "\016motion_context\030\001 \001(\0162R.google.devicesandservices.health.v4beta.He"
+          + "artRate.HeartRateMetadata.MotionContextB\004\342A\001\001\022r\n"
+          + "\017sensor_location\030\002 \001(\0162S.google."
+          + "devicesandservices.health.v4beta.HeartRa"
+          + "te.HeartRateMetadata.SensorLocationB\004\342A\001\001\"J\n\r"
+          + "MotionContext\022\036\n"
           + "\032MOTION_CONTEXT_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\r\n"
           + "\tSEDENTARY\020\002\"u\n"
@@ -1077,11 +1039,11 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\010rate_avg\030\003 \001(\001H\002\210\001\001B\013\n"
           + "\t_rate_minB\013\n"
           + "\t_rate_maxB\013\n"
-          + "\t_rate_avg\"\224\001\n"
-          + "\tRunVO2Max\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google.devicesandser"
-          + "vices.health.v4beta.ObservationSampleTimeB\003\340A\002\022\035\n"
-          + "\013run_vo2_max\030\002 \001(\001B\003\340A\002H\000\210\001\001B\016\n"
+          + "\t_rate_avg\"\226\001\n"
+          + "\tRunVO2Max\022Y\n"
+          + "\013sample_time\030\001 \001(\0132>.google."
+          + "devicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022\036\n"
+          + "\013run_vo2_max\030\002 \001(\001B\004\342A\001\002H\000\210\001\001B\016\n"
           + "\014_run_vo2_max\"\222\002\n"
           + ",HeartRateVariabilityPersonalRangeRollupValue\022<\n"
           + "/average_heart_rate_variability_milliseconds_min\030\001"
@@ -1089,109 +1051,113 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "/average_heart_rate_variability_milliseconds_max\030\002"
           + " \001(\001H\001\210\001\001B2\n"
           + "0_average_heart_rate_variability_milliseconds_minB2\n"
-          + "0_average_heart_rate_variability_milliseconds_max\"\237\001\n"
-          + "\006Height\022X\n"
-          + "\013sample_time\030\001 \001"
-          + "(\0132>.google.devicesandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022$\n"
-          + "\022height_millimeters\030\002 \001(\003B\003\340A\002H\000\210\001\001B\025\n"
-          + "\023_height_millimeters\"\246\004\n"
-          + "\024HeartRateVariability\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google.devicesandse"
-          + "rvices.health.v4beta.ObservationSampleTimeB\003\340A\002\022I\n"
+          + "0_average_heart_rate_variability_milliseconds_max\"\241\001\n"
+          + "\006Height\022Y\n"
+          + "\013",
+      "sample_time\030\001 \001(\0132>.google.devicesandser"
+          + "vices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022%\n"
+          + "\022height_millimeters\030\002 \001(\003B\004\342A\001\002H\000\210\001\001B\025\n"
+          + "\023_height_millimeters\"\254\004\n"
+          + "\024HeartRateVariability\022Y\n"
+          + "\013sample_time\030\001 \001(\0132>.go"
+          + "ogle.devicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022J\n"
           + "7root_mean_square_of_successive_differences_milliseconds\030\002"
-          + " \001(\001B\003\340A\001H\000\210\001\001\0221\n"
+          + " \001(\001B\004\342A\001\001H\000\210\001\001\0222\n"
           + "\037standard_deviation_milliseconds\030\003"
-          + " \001(\001B\003\340A\001H\001\210\001\001\022q\n"
-          + "\010metadata\030\004 \001(\0132Z.google.devicesandservices.health.v4beta.HeartR"
-          + "ateVariability.HeartRateVariabilityMetadataB\003\340A\001\032c\n"
-          + "\034HeartRateVariabilityMetadata\022!\n"
-          + "\024high_frequency_power\030\002 \001(\001B\003\340A\001\022 \n"
-          + "\023low_frequency_power\030\003 \001(\001B\003\340A\001B:\n"
+          + " \001(\001B\004\342A\001\001H\001\210\001\001\022r\n"
+          + "\010metadata\030\004 \001(\0132Z.google.devicesandservices."
+          + "health.v4beta.HeartRateVariability.HeartRateVariabilityMetadataB\004\342A\001\001\032e\n"
+          + "\034HeartRateVariabilityMetadata\022\"\n"
+          + "\024high_frequency_power\030\002 \001(\001B\004\342A\001\001\022!\n"
+          + "\023low_frequency_power\030\003 \001(\001B\004\342A\001\001B:\n"
           + "8_root_mean_square_of_successive_differences_millisecondsB\"\n"
-          + " _standard_deviation_milliseconds\"\225\001\n"
-          + "\016VolumeQuantity\022\035\n"
-          + "\013milliliters\030\001 \001(\001B\003\340A\002H\000\210\001\001\022T\n"
-          + "\022user_provided_unit\030\002 "
-          + "\001(\01623.google.devicesandservices.health.v4beta.VolumeUnitB\003\340A\001B\016\n"
-          + "\014_milliliters\"\272\001\n"
-          + "\014HydrationLog\022S\n"
-          + "\010interval\030\001 \001(\0132<.googl"
-          + "e.devicesandservices.health.v4beta.SessionTimeIntervalB\003\340A\002\022U\n"
-          + "\017amount_consumed\030\002"
-          + " \001(\01327.google.devicesandservices.health.v4beta.VolumeQuantityB\003\340A\002\"\264\002\n"
+          + " _standard_deviation_milliseconds\"\227\001\n"
+          + "\016VolumeQuantity\022\036\n"
+          + "\013milliliters\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022U\n"
+          + "\022user_provided_unit\030\002 \001(\01623.google.dev"
+          + "icesandservices.health.v4beta.VolumeUnitB\004\342A\001\001B\016\n"
+          + "\014_milliliters\"\274\001\n"
+          + "\014HydrationLog\022T\n"
+          + "\010interval\030\001 \001(\0132<.google.devicesandser"
+          + "vices.health.v4beta.SessionTimeIntervalB\004\342A\001\002\022V\n"
+          + "\017amount_consumed\030\002 \001(\01327.google."
+          + "devicesandservices.health.v4beta.VolumeQuantityB\004\342A\001\002\"\266\002\n"
           + "\027HydrationLogRollupValue\022n\n"
-          + "\017amount_consumed\030\001 \001(\0132U.google.devicesandservices.health.v4bet"
-          + "a.HydrationLogRollupValue.VolumeQuantityRollup\032\250\001\n"
-          + "\024VolumeQuantityRollup\022!\n"
-          + "\017milliliters_sum\030\001 \001(\001B\003\340A\002H\000\210\001\001\022Y\n"
+          + "\017amount_consumed\030\001 \001(\0132U.google.devi"
+          + "cesandservices.health.v4beta.HydrationLogRollupValue.VolumeQuantityRollup\032\252\001\n"
+          + "\024VolumeQuantityRollup\022\"\n"
+          + "\017milliliters_sum\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022Z\n"
           + "\027user_provided_unit_last\030\002"
-          + " \001(\01623.google.devicesandservices.health.v4beta.VolumeUnitB\003\340A\001B\022\n"
-          + "\020_milliliters_sum\"\331\010\n"
-          + "\033IrregularRhythmNotification\022S\n"
-          + "\010interval\030\001 \001(\0132<.google.dev"
-          + "icesandservices.health.v4beta.SessionTimeIntervalB\003\340A\002\022l\n\r"
-          + "alert_windows\030\005 \003(\0132P.google.devicesandservices.health.v4beta."
-          + "IrregularRhythmNotification.AlertWindowB\003\340A\001\022\\\n"
-          + "\023medical_device_info\030\006 \001(\0132:.goog"
-          + "le.devicesandservices.health.v4beta.MedicalDeviceInfoB\003\340A\003\032\201\002\n"
-          + "\tHeartBeat\0226\n\r"
-          + "physical_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0222\n\n"
-          + "utc_offset\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\002\022O\n\n"
-          + "civil_time\030\003 \001(\013"
-          + "26.google.devicesandservices.health.v4beta.CivilDateTimeB\003\340A\003\022\"\n"
-          + "\020beats_per_minute\030\004 \001(\005B\003\340A\002H\000\210\001\001B\023\n"
-          + "\021_beats_per_minute\032\224\004\n"
-          + "\013AlertWindow\0223\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0228\n"
+          + " \001(\01623.google.devicesandservices.health.v4beta.VolumeUnitB\004\342A\001\001B\022\n"
+          + "\020_milliliters_sum\"\350\010\n"
+          + "\033IrregularRhythmNotification\022T\n"
+          + "\010interval\030\001 \001(\0132<.google.devicesandserv"
+          + "ices.health.v4beta.SessionTimeIntervalB\004\342A\001\002\022m\n\r"
+          + "alert_windows\030\005 \003(\0132P.google.dev"
+          + "icesandservices.health.v4beta.IrregularRhythmNotification.AlertWindowB\004\342A\001\001\022]\n"
+          + "\023medical_device_info\030\006 \001(\0132:.google.device"
+          + "sandservices.health.v4beta.MedicalDeviceInfoB\004\342A\001\003\032\205\002\n"
+          + "\tHeartBeat\0227\n\r"
+          + "physical_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0223\n\n"
+          + "utc_offset\030\002 \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022P\n\n"
+          + "civil_time\030\003 \001(\01326.goo"
+          + "gle.devicesandservices.health.v4beta.CivilDateTimeB\004\342A\001\003\022#\n"
+          + "\020beats_per_minute\030\004 \001(\005B\004\342A\001\002H\000\210\001\001B\023\n"
+          + "\021_beats_per_minute\032\234\004\n"
+          + "\013AlertWindow\0224\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0229\n"
           + "\020start_utc_offset\030\002"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\0221\n"
-          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0226\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\0222\n"
+          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0227\n"
           + "\016end_utc_offset\030\004"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\022U\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022V\n"
           + "\020civil_start_time\030\005 \001(\01326.google.devicesandse"
-          + "rvices.health.v4beta.CivilDateTimeB\003\340A\003\022S\n"
-          + "\016civil_end_time\030\006 \001(\01326.google.devices"
-          + "andservices.health.v4beta.CivilDateTimeB\003\340A\003\022\025\n"
-          + "\010positive\030\007 \001(\010B\003\340A\001\022h\n"
-          + "\013heart_beats\030\010 \003(\0132N.google.devicesandservices.hea"
-          + "lth.v4beta.IrregularRhythmNotification.HeartBeatB\003\340A\001\"\240\014\n"
-          + "\016MetricsSummary\022\037\n\r"
-          + "calories_kcal\030\001 \001(\001B\003\340A\001H\000\210\001\001\022&\n"
-          + "\024distance_millimeters\030\002 \001(\001B\003\340A\001H\001\210\001\001\022\027\n"
-          + "\005steps\030\003 \001(\003B\003\340A\001H\002\210\001\001\0226\n"
+          + "rvices.health.v4beta.CivilDateTimeB\004\342A\001\003\022T\n"
+          + "\016civil_end_time\030\006 \001(\01326.google.device"
+          + "sandservices.health.v4beta.CivilDateTimeB\004\342A\001\003\022\026\n"
+          + "\010positive\030\007 \001(\010B\004\342A\001\001\022i\n"
+          + "\013heart_beats\030\010 \003(\0132N.google.devicesandservices."
+          + "health.v4beta.IrregularRhythmNotification.HeartBeatB\004\342A\001\001\"\265\014\n"
+          + "\016MetricsSummary\022 \n\r"
+          + "calories_kcal\030\001 \001(\001B\004\342A\001\001H\000\210\001\001\022\'\n"
+          + "\024distance_millimeters\030\002"
+          + " \001(\001B\004\342A\001\001H\001\210\001\001\022\030\n"
+          + "\005steps\030\003 \001(\003B\004\342A\001\001H\002\210\001\001\0227\n"
           + "$average_speed_millimeters_per_second\030\004"
-          + " \001(\001B\003\340A\001H\003\210\001\001\0220\n"
+          + " \001(\001B\004\342A\001\001H\003\210\001\001\0221\n"
           + "\036average_pace_seconds_per_meter\030\005"
-          + " \001(\001B\003\340A\001H\004\210\001\001\0225\n"
+          + " \001(\001B\004\342A\001\001H\004\210\001\001\0226\n"
           + "#average_heart_rate_beats_per_minute\030\006"
-          + " \001(\003B\003\340A\001H\005\210\001\001\022,\n"
-          + "\032elevation_gain_millimeters\030\007 \001(\001B\003\340A\001H\006\210\001\001\022%\n"
-          + "\023active_zone_minutes\030\t \001(\003B\003\340A\001H\007\210\001\001\022\035\n"
+          + " \001(\003B\004\342A\001\001H\005\210\001\001\022-\n"
+          + "\032elevation_gain_millimeters\030\007"
+          + " \001(\001B\004\342A\001\001H\006\210\001\001\022&\n"
+          + "\023active_zone_minutes\030\t \001(\003B\004\342A\001\001H\007\210\001\001\022\036\n"
           + "\013run_vo2_max\030\n"
-          + " \001(\001B\003\340A\001H\010\210\001\001\022$\n"
-          + "\022total_swim_lengths\030\013 \001(\001B\003\340A\001H\t\210\001\001\022t\n"
-          + "\031heart_rate_zone_durations\030\014 \001(\013"
-          + "2L.google.devicesandservices.health.v4be"
-          + "ta.MetricsSummary.TimeInHeartRateZonesB\003\340A\001\022f\n"
+          + " \001(\001B\004\342A\001\001H\010\210\001\001\022%\n"
+          + "\022total_swim_lengths\030\013 \001(\001B\004\342A\001\001H\t\210\001\001\022u\n"
+          + "\031heart_rate_zone_durations\030\014 \001(\0132L.google.devicesandservic"
+          + "es.health.v4beta.MetricsSummary.TimeInHeartRateZonesB\004\342A\001\001\022g\n"
           + "\020mobility_metrics\030\r"
-          + " \001(\0132G.google.d"
-          + "evicesandservices.health.v4beta.MetricsSummary.MobilityMetricsB\003\340A\001\032\353\001\n"
-          + "\024TimeInHeartRateZones\0222\n\n"
-          + "light_time\030\001 \001(\0132\031.google.protobuf.DurationB\003\340A\001\0225\n\r"
-          + "moderate_time\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\001\0225\n\r"
-          + "vigorous_time\030\003 \001(\0132\031.google.protobuf.DurationB\003\340A\001\0221\n"
+          + " \001(\0132G.google.devicesandservices.health."
+          + "v4beta.MetricsSummary.MobilityMetricsB\004\342A\001\001\032\357\001\n"
+          + "\024TimeInHeartRateZones\0223\n\n"
+          + "light_time\030\001 \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\0226\n\r"
+          + "moderate_time\030\002"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\0226\n\r"
+          + "vigorous_time\030\003 \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\0222\n"
           + "\tpeak_time\030\004"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001\032\235\003\n"
-          + "\017MobilityMetrics\022.\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\032\242\003\n"
+          + "\017MobilityMetrics\022/\n"
           + "\034avg_cadence_steps_per_minute\030\001"
-          + " \001(\001B\003\340A\001H\000\210\001\001\022/\n"
+          + " \001(\001B\004\342A\001\001H\000\210\001\001\0220\n"
           + "\035avg_stride_length_millimeters\030\002"
-          + " \001(\003B\003\340A\001H\001\210\001\001\0226\n"
+          + " \001(\003B\004\342A\001\001H\001\210\001\001\0227\n"
           + "$avg_vertical_oscillation_millimeters\030\003"
-          + " \001(\003B\003\340A\001H\002\210\001\001\022$\n"
-          + "\022avg_vertical_ratio\030\004 \001(\001B\003\340A\001H\003\210\001\001\022H\n"
+          + " \001(\003B\004\342A\001\001H\002\210\001\001\022%\n"
+          + "\022avg_vertical_ratio\030\004 \001(\001B\004\342A\001\001H\003\210\001\001\022I\n"
           + " avg_ground_contact_time_duration\030\005"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001B\037\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001B\037\n"
           + "\035_avg_cadence_steps_per_minuteB \n"
           + "\036_avg_stride_length_millimetersB\'\n"
           + "%_avg_vertical_oscillation_millimetersB\025\n"
@@ -1205,190 +1171,193 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\033_elevation_gain_millimetersB\026\n"
           + "\024_active_zone_minutesB\016\n"
           + "\014_run_vo2_maxB\025\n"
-          + "\023_total_swim_lengths\"\211\001\n"
-          + "\016WeightQuantity\022\027\n"
-          + "\005grams\030\001 \001(\001B\003\340A\002H\000\210\001\001\022T\n"
-          + "\022user_provided_unit\030\002"
-          + " \001(\01623.google.devicesandservices.health.v4beta.WeightUnitB\003\340A\001B\010\n"
-          + "\006_grams\"\207\001\n"
-          + "\016EnergyQuantity\022\026\n"
-          + "\004kcal\030\001 \001(\001B\003\340A\002H\000\210\001\001\022T\n"
-          + "\022user_provided_unit\030\002 \001(\01623.go"
-          + "ogle.devicesandservices.health.v4beta.EnergyUnitB\003\340A\001B\007\n"
-          + "\005_kcal\"\254\001\n"
-          + "\020NutrientQuantity\022N\n"
-          + "\010quantity\030\001 \001(\01327.google.devicesan"
-          + "dservices.health.v4beta.WeightQuantityB\003\340A\002\022H\n"
-          + "\010nutrient\030\002 \001(\01621.google.devicesan"
-          + "dservices.health.v4beta.NutrientB\003\340A\002\"\242\007\n"
-          + "\014NutritionLog\022S\n"
-          + "\010interval\030\002 \001(\0132<.googl"
-          + "e.devicesandservices.health.v4beta.SessionTimeIntervalB\003\340A\002\022Q\n"
-          + "\tnutrients\030\003 \003(\01329"
-          + ".google.devicesandservices.health.v4beta.NutrientQuantityB\003\340A\001\022L\n"
-          + "\006energy\030\004 \001(\01327"
-          + ".google.devicesandservices.health.v4beta.EnergyQuantityB\003\340A\001\022U\n"
-          + "\017energy_from_fat\030\005"
-          + " \001(\01327.google.devicesandservices.health.v4beta.EnergyQuantityB\003\340A\001\022X\n"
-          + "\022total_carbohydrate\030\007"
-          + " \001(\01327.google.devicesandservices.health.v4beta.WeightQuantityB\003\340A\001\022O\n"
-          + "\ttotal_fat\030\010 \001(\01327.google.devicesandserv"
-          + "ices.health.v4beta.WeightQuantityB\003\340A\001\022I\n"
-          + "\tmeal_type\030\r"
-          + " \001(\01621.google.devicesandservices.health.v4beta.MealTypeB\003\340A\001\022S\n"
-          + "\007serving\030\016 \001(\0132=.google.devicesandservices.h"
-          + "ealth.v4beta.NutritionLog.ServingB\003\340A\001\0225\n"
-          + "\004food\030\017 \001(\tB\'\340A\001\372A!\n"
-          + "\037health.googleapis.com/DataPoint\022\031\n"
-          + "\021food_display_name\030\020 \001(\t\032\247\001\n"
-          + "\007Serving\022\030\n"
-          + "\006amount\030\001 \001(\001B\003\340A\001H\000\210\001\001\022F\n"
-          + "\025food_measurement_unit\030\002 \001(\tB\'\340A\002\372A!\n"
-          + "\037health.googleapis.com/DataPoint\022/\n"
-          + "\"food_measurement_unit_display_name\030\003 \001(\tB\003\340A\003B\t\n"
-          + "\007_amount\"\200\n\n"
-          + "\004Food\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\002\022\022\n"
-          + "\005brand\030\003 \001(\tB\003\340A\001\022S\n"
-          + "\014access_level\030\004"
-          + " \001(\01628.google.devicesandservices.health.v4beta.FoodAccessLevelB\003\340A\002\022\030\n"
-          + "\013description\030\005 \001(\tB\003\340A\001\022\032\n\r"
-          + "language_code\030\006 \001(\tB\003\340A\001\022I\n"
-          + "\tmeal_type\030\n"
-          + " \001(\01621.google.devicesandservices.health.v4beta.MealTypeB\003\340A\001\022Q\n"
-          + "\tnutrients\030\014 \003(\01329.google.devicesands"
-          + "ervices.health.v4beta.NutrientQuantityB\003\340A\001\022U\n"
-          + "\017energy_from_fat\030\r"
-          + " \001(\01327.google.de"
-          + "vicesandservices.health.v4beta.EnergyQuantityB\003\340A\001\022X\n"
-          + "\022total_carbohydrate\030\016 \001(\01327"
-          + ".google.devicesandservices.health.v4beta.WeightQuantityB\003\340A\001\022O\n"
-          + "\ttotal_fat\030\017 \001(\0132"
-          + "7.google.devicesandservices.health.v4beta.WeightQuantityB\003\340A\001\022P\n\n"
-          + "energy_min\030\020 \001("
-          + "\01327.google.devicesandservices.health.v4beta.EnergyQuantityB\003\340A\001\022P\n\n"
-          + "energy_avg\030\021 "
-          + "\001(\01327.google.devicesandservices.health.v4beta.EnergyQuantityB\003\340A\001\022P\n\n"
-          + "energy_max\030\022"
-          + " \001(\01327.google.devicesandservices.health.v4beta.EnergyQuantityB\003\340A\001\022W\n"
-          + "\017default_serving\030\023"
-          + " \001(\01329.google.devicesandservices.health.v4beta.Food.FoodServingB\003\340A\002\022P\n"
-          + "\010servings\030\024 \003(\01329.google.devicesandservic"
-          + "es.health.v4beta.Food.FoodServingB\003\340A\001\032\374\001\n"
-          + "\013FoodServing\022\030\n"
-          + "\006amount\030\001 \001(\001B\003\340A\001H\000\210\001\001\022F\n"
-          + "\025food_measurement_unit\030\002 \001(\tB\'\340A\002\372A!\n"
-          + "\037health.googleapis.com/DataPoint\022/\n"
-          + "\"food_measurement_unit_display_name\030\003 \001(\tB\003\340A\003\0226\n"
-          + ")food_measurement_unit_display_name_plural\030\004 \001(\tB\003\340A\003\022\027\n\n"
-          + "multiplier\030\005 \001(\001B\003\340A\001B\t\n"
-          + "\007_amount\"\310\010\n"
-          + "\027NutritionLogRollupValue\022j\n"
-          + "\tnutrients\030\001 \003(\0132W.google.devicesand"
-          + "services.health.v4beta.NutritionLogRollupValue.NutrientQuantityRollup\022e\n"
-          + "\006energy\030\002 \001(\0132U.google.devicesandservices.health"
-          + ".v4beta.NutritionLogRollupValue.EnergyQuantityRollup\022n\n"
-          + "\017energy_from_fat\030\003 \001(\0132U.google.devicesandservices.health.v4beta."
-          + "NutritionLogRollupValue.EnergyQuantityRollup\022q\n"
-          + "\022total_carbohydrate\030\004 \001(\0132U.googl"
-          + "e.devicesandservices.health.v4beta.NutritionLogRollupValue.WeightQuantityRollup\022h\n"
-          + "\ttotal_fat\030\005 \001(\0132U.google.devicesandse"
-          + "rvices.health.v4beta.NutritionLogRollupValue.WeightQuantityRollup\032\234\001\n"
-          + "\024WeightQuantityRollup\022\033\n"
-          + "\tgrams_sum\030\001 \001(\001B\003\340A\002H\000\210\001\001\022Y\n"
-          + "\027user_provided_unit_last\030\002 \001(\01623.googl"
-          + "e.devicesandservices.health.v4beta.WeightUnitB\003\340A\001B\014\n\n"
-          + "_grams_sum\032\232\001\n"
-          + "\024EnergyQuantityRollup\022\032\n"
-          + "\010kcal_sum\030\001 \001(\001B\003\340A\002H\000\210\001\001\022Y\n"
-          + "\027user_provided_unit_last\030\002 \001(\01623.google."
-          + "devicesandservices.health.v4beta.EnergyUnitB\003\340A\001B\013\n"
-          + "\t_kcal_sum\032\320\001\n"
-          + "\026NutrientQuantityRollup\022l\n"
-          + "\010quantity\030\001 \001(\0132U.google.devicesandservices.health.v4beta.NutritionLo"
-          + "gRollupValue.WeightQuantityRollupB\003\340A\002\022H\n"
+          + "\023_total_swim_lengths\"\213\001\n"
+          + "\016WeightQuantity\022\030\n"
+          + "\005grams\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022U\n"
+          + "\022user_provided_unit\030\002 \001"
+          + "(\01623.google.devicesandservices.health.v4beta.WeightUnitB\004\342A\001\001B\010\n"
+          + "\006_grams\"\211\001\n"
+          + "\016EnergyQuantity\022\027\n"
+          + "\004kcal\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022U\n"
+          + "\022user_provided_unit\030\002 \001(\01623.google.devices"
+          + "andservices.health.v4beta.EnergyUnitB\004\342A\001\001B\007\n"
+          + "\005_kcal\"\256\001\n"
+          + "\020NutrientQuantity\022O\n"
+          + "\010quantity\030\001"
+          + " \001(\01327.google.devicesandservices.health.v4beta.WeightQuantityB\004\342A\001\002\022I\n"
           + "\010nutrient\030\002"
-          + " \001(\01621.google.devicesandservices.health.v4beta.NutrientB\003\340A\002\"\231\001\n"
-          + "\020OxygenSaturation\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.goo"
-          + "gle.devicesandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022\034\n\n"
-          + "percentage\030\002 \001(\001B\003\340A\002H\000\210\001\001B\r\n"
+          + " \001(\01621.google.devicesandservices.health.v4beta.NutrientB\004\342A\001\002\"\256\007\n"
+          + "\014NutritionLog\022T\n"
+          + "\010interval\030\002 \001(\0132<.google.devices"
+          + "andservices.health.v4beta.SessionTimeIntervalB\004\342A\001\002\022R\n"
+          + "\tnutrients\030\003 \003(\01329.google."
+          + "devicesandservices.health.v4beta.NutrientQuantityB\004\342A\001\001\022M\n"
+          + "\006energy\030\004 \001(\01327.google"
+          + ".devicesandservices.health.v4beta.EnergyQuantityB\004\342A\001\001\022V\n"
+          + "\017energy_from_fat\030\005 \001(\0132"
+          + "7.google.devicesandservices.health.v4beta.EnergyQuantityB\004\342A\001\001\022Y\n"
+          + "\022total_carbohydrate\030\007"
+          + " \001(\01327.google.devicesandservices.health.v4beta.WeightQuantityB\004\342A\001\001\022P\n"
+          + "\ttotal_fat\030\010"
+          + " \001(\01327.google.devicesandservices.health.v4beta.WeightQuantityB\004\342A\001\001\022J\n"
+          + "\tmeal_type\030\r"
+          + " \001(\01621.google.devicesandservices.health.v4beta.MealTypeB\004\342A\001\001\022T\n"
+          + "\007serving\030\016"
+          + " \001(\0132=.google.devicesandservices.health.v4beta.NutritionLog.ServingB\004\342A\001\001\0226\n"
+          + "\004food\030\017 \001(\tB(\342A\001\001\372A!\n"
+          + "\037health.googleapis.com/DataPoint\022\031\n"
+          + "\021food_display_name\030\020 \001(\t\032\252\001\n"
+          + "\007Serving\022\031\n"
+          + "\006amount\030\001 \001(\001B\004\342A\001\001H\000\210\001\001\022G\n"
+          + "\025food_measurement_unit\030\002 \001(\tB(\342A\001\002\372A!\n"
+          + "\037health.googleapis.com/DataPoint\0220\n"
+          + "\"food_measurement_unit_display_name\030\003 \001(\tB\004\342A\001\003B\t\n"
+          + "\007_amount\"\224\n\n"
+          + "\004Food\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\023\n"
+          + "\005brand\030\003 \001(\tB\004\342A\001\001\022T\n"
+          + "\014access_level\030\004"
+          + " \001(\01628.google.devicesandservices.health.v4beta.FoodAccessLevelB\004\342A\001\002\022\031\n"
+          + "\013description\030\005 \001(\tB\004\342A\001\001\022\033\n\r"
+          + "language_code\030\006 \001(\tB\004\342A\001\001\022J\n"
+          + "\tmeal_type\030\n"
+          + " \001(\01621.google.devicesandservices.health.v4beta.MealTypeB\004\342A\001\001\022R\n"
+          + "\tnutrients\030\014 \003(\01329.google.de"
+          + "vicesandservices.health.v4beta.NutrientQuantityB\004\342A\001\001\022V\n"
+          + "\017energy_from_fat\030\r"
+          + " \001(\01327"
+          + ".google.devicesandservices.health.v4beta.EnergyQuantityB\004\342A\001\001\022Y\n"
+          + "\022total_carbohydrate\030\016"
+          + " \001(\01327.google.devicesandservices.health.v4beta.WeightQuantityB\004\342A\001\001\022P\n"
+          + "\ttotal_fat\030\017"
+          + " \001(\01327.google.devicesandservices.health.v4beta.WeightQuantityB\004\342A\001\001\022Q\n\n"
+          + "energy_min\030\020"
+          + " \001(\01327.google.devicesandservices.health.v4beta.EnergyQuantityB\004\342A\001\001\022Q\n"
+          + "\n"
+          + "energy_avg\030\021 \001(\01327.google.devicesandser"
+          + "vices.health.v4beta.EnergyQuantityB\004\342A\001\001\022Q\n\n"
+          + "energy_max\030\022 \001(\01327.google.devicesand"
+          + "services.health.v4beta.EnergyQuantityB\004\342A\001\001\022X\n"
+          + "\017default_serving\030\023 \001(\01329.google.de"
+          + "vicesandservices.health.v4beta.Food.FoodServingB\004\342A\001\002\022Q\n"
+          + "\010servings\030\024 \003(\01329.google"
+          + ".devicesandservices.health.v4beta.Food.FoodServingB\004\342A\001\001\032\201\002\n"
+          + "\013FoodServing\022\031\n"
+          + "\006amount\030\001 \001(\001B\004\342A\001\001H\000\210\001\001\022G\n"
+          + "\025food_measurement_unit\030\002 \001(\tB(\342A\001\002\372A!\n"
+          + "\037health.googleapis.com/DataPoint\0220\n"
+          + "\"food_measurement_unit_display_name\030\003 \001(\tB\004\342A\001\003\0227\n"
+          + ")food_measurement_unit_display_name_plural\030\004 \001("
+          + "\tB\004\342A\001\003\022\030\n\n"
+          + "multiplier\030\005 \001(\001B\004\342A\001\001B\t\n"
+          + "\007_amount\"\316\010\n"
+          + "\027NutritionLogRollupValue\022j\n"
+          + "\tnutrients\030\001 \003(\0132W.google.devicesandservices.health.v"
+          + "4beta.NutritionLogRollupValue.NutrientQuantityRollup\022e\n"
+          + "\006energy\030\002 \001(\0132U.google.de"
+          + "vicesandservices.health.v4beta.NutritionLogRollupValue.EnergyQuantityRollup\022n\n"
+          + "\017energy_from_fat\030\003 \001(\0132U.google.devicesand"
+          + "services.health.v4beta.NutritionLogRollupValue.EnergyQuantityRollup\022q\n"
+          + "\022total_carbohydrate\030\004 \001(\0132U.google.devicesandservi"
+          + "ces.health.v4beta.NutritionLogRollupValue.WeightQuantityRollup\022h\n"
+          + "\ttotal_fat\030\005 \001(\0132U.google.devicesandservices.health.v4b"
+          + "eta.NutritionLogRollupValue.WeightQuantityRollup\032\236\001\n"
+          + "\024WeightQuantityRollup\022\034\n"
+          + "\tgrams_sum\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022Z\n"
+          + "\027user_provided_unit_last\030\002"
+          + " \001(\01623.google.devicesandservices.health.v4beta.WeightUnitB\004\342A\001\001B\014\n\n"
+          + "_grams_sum\032\234\001\n"
+          + "\024EnergyQuantityRollup\022\033\n"
+          + "\010kcal_sum\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022Z\n"
+          + "\027user_provided_unit_last\030\002"
+          + " \001(\01623.google.devicesandservices.health.v4beta.EnergyUnitB\004\342A\001\001B\013\n"
+          + "\t_kcal_sum\032\322\001\n"
+          + "\026NutrientQuantityRollup\022m\n"
+          + "\010quantity\030\001 \001(\0132U.google.devicesandservice"
+          + "s.health.v4beta.NutritionLogRollupValue.WeightQuantityRollupB\004\342A\001\002\022I\n"
+          + "\010nutrient\030\002"
+          + " \001(\01621.google.devicesandservices.health.v4beta.NutrientB\004\342A\001\002\"\233\001\n"
+          + "\020OxygenSaturation\022Y\n"
+          + "\013sample_time\030\001 \001(\0132>.google.devices"
+          + "andservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022\035\n\n"
+          + "percentage\030\002 \001(\001B\004\342A\001\002H\000\210\001\001B\r\n"
           + "\013_percentage\"\242\001\n"
           + "(RestingHeartRatePersonalRangeRollupValue\022!\n"
           + "\024beats_per_minute_min\030\001 \001(\001H\000\210\001\001\022!\n"
           + "\024beats_per_minute_max\030\002 \001(\001H\001\210\001\001B\027\n"
           + "\025_beats_per_minute_minB\027\n"
-          + "\025_beats_per_minute_max\"R\n"
-          + "\023FoodMeasurementUnit\022\031\n"
-          + "\014display_name\030\001 \001(\tB\003\340A\002\022 \n"
-          + "\023plural_display_name\030\002 \001(\tB\003\340A\001\"\202\007\n"
-          + "\033RespiratoryRateSleepSummary\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google.devicesandservices.h"
-          + "ealth.v4beta.ObservationSampleTimeB\003\340A\002\022\211\001\n"
-          + "\020deep_sleep_stats\030\002 \001(\0132j.google.devi"
-          + "cesandservices.health.v4beta.Respiratory"
-          + "RateSleepSummary.RespiratoryRateSleepSummaryStatisticsB\003\340A\001\022\212\001\n"
-          + "\021light_sleep_stats\030\003 \001(\0132j.google.devicesandservices.heal"
-          + "th.v4beta.RespiratoryRateSleepSummary.Re"
-          + "spiratoryRateSleepSummaryStatisticsB\003\340A\001\022\210\001\n"
-          + "\017rem_sleep_stats\030\004 \001(\0132j.google.devi"
-          + "cesandservices.health.v4beta.Respiratory"
-          + "RateSleepSummary.RespiratoryRateSleepSummaryStatisticsB\003\340A\001\022\211\001\n"
-          + "\020full_sleep_stats\030\005 \001(\0132j.google.devicesandservices.healt"
-          + "h.v4beta.RespiratoryRateSleepSummary.Res"
-          + "piratoryRateSleepSummaryStatisticsB\003\340A\002\032\330\001\n"
-          + "%RespiratoryRateSleepSummaryStatistics\022$\n"
-          + "\022breaths_per_minute\030\001 \001(\001B\003\340A\002H\000\210\001\001\022$\n"
-          + "\022standard_deviation\030\002 \001(\001B\003\340A\001H\001\210\001\001\022!\n"
-          + "\017signal_to_noise\030\003 \001(\001B\003\340A\001H\002\210\001\001B\025\n"
+          + "\025_beats_per_minute_max\"T\n"
+          + "\023FoodMeasurementUnit\022\032\n"
+          + "\014display_name\030\001 \001(\tB\004\342A\001\002\022!\n"
+          + "\023plural_display_name\030\002 \001(\tB\004\342A\001\001\"\212\007\n"
+          + "\033RespiratoryRateSleepSummary\022Y\n"
+          + "\013sample_time\030\001 "
+          + "\001(\0132>.google.devicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022\212\001\n"
+          + "\020deep_sleep_stats\030\002 \001(\0132j.google.devicesand"
+          + "services.health.v4beta.RespiratoryRateSl"
+          + "eepSummary.RespiratoryRateSleepSummaryStatisticsB\004\342A\001\001\022\213\001\n"
+          + "\021light_sleep_stats\030\003 \001(\0132j.google.devicesandservices.health.v4"
+          + "beta.RespiratoryRateSleepSummary.RespiratoryRateSleepSummaryStatisticsB\004\342A\001\001\022\211\001\n"
+          + "\017rem_sleep_stats\030\004 \001(\0132j.google.devicesa"
+          + "ndservices.health.v4beta.RespiratoryRate"
+          + "SleepSummary.RespiratoryRateSleepSummaryStatisticsB\004\342A\001\001\022\212\001\n"
+          + "\020full_sleep_stats\030\005 \001(\0132j.google.devicesandservices.health.v"
+          + "4beta.RespiratoryRateSleepSummary.Respir"
+          + "atoryRateSleepSummaryStatisticsB\004\342A\001\002\032\333\001\n"
+          + "%RespiratoryRateSleepSummaryStatistics\022%\n"
+          + "\022breaths_per_minute\030\001 \001(\001B\004\342A\001\002H\000\210\001\001\022%\n"
+          + "\022standard_deviation\030\002 \001(\001B\004\342A\001\001H\001\210\001\001\022\"\n"
+          + "\017signal_to_noise\030\003 \001(\001B\004\342A\001\001H\002\210\001\001B\025\n"
           + "\023_breaths_per_minuteB\025\n"
           + "\023_standard_deviationB\022\n"
-          + "\020_signal_to_noise\"\321\024\n"
-          + "\005Sleep\022S\n"
+          + "\020_signal_to_noise\"\364\024\n"
+          + "\005Sleep\022T\n"
           + "\010interval\030\003"
-          + " \001(\0132<.google.devicesandservices.health.v4beta.SessionTimeIntervalB\003\340A\002\022K\n"
+          + " \001(\0132<.google.devicesandservices.health.v4beta.SessionTimeIntervalB\004\342A\001\002\022L\n"
           + "\004type\030\004"
-          + " \001(\01628.google.devicesandservices.health.v4beta.Sleep.SleepTypeB\003\340A\001\022N\n"
+          + " \001(\01628.google.devicesandservices.health.v4beta.Sleep.SleepTypeB\004\342A\001\001\022O\n"
           + "\006stages\030\005"
-          + " \003(\01329.google.devicesandservices.health.v4beta.Sleep.SleepStageB\003\340A\001\022`\n"
-          + "\023out_of_bed_segments\030\006 \003(\0132>.google.devicesands"
-          + "ervices.health.v4beta.Sleep.OutOfBedSegmentB\003\340A\001\022S\n"
-          + "\010metadata\030\010 \001(\0132<.google.devi"
-          + "cesandservices.health.v4beta.Sleep.SleepMetadataB\003\340A\001\022Q\n"
-          + "\007summary\030\t \001(\0132;.google."
-          + "devicesandservices.health.v4beta.Sleep.SleepSummaryB\003\340A\003\0224\n"
+          + " \003(\01329.google.devicesandservices.health.v4beta.Sleep.SleepStageB\004\342A\001\001\022a\n"
+          + "\023out_of_bed_segments\030\006 \003(\0132>.google.devices"
+          + "andservices.health.v4beta.Sleep.OutOfBedSegmentB\004\342A\001\001\022T\n"
+          + "\010metadata\030\010 \001(\0132<.google"
+          + ".devicesandservices.health.v4beta.Sleep.SleepMetadataB\004\342A\001\001\022R\n"
+          + "\007summary\030\t \001(\0132;.g"
+          + "oogle.devicesandservices.health.v4beta.Sleep.SleepSummaryB\004\342A\001\003\0225\n"
           + "\013create_time\030\n"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\013 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022X\n"
-          + "\020short_awakenings\030\014 \003(\01329.google."
-          + "devicesandservices.health.v4beta.Sleep.SleepStageB\003\340A\003\032\244\003\n\n"
-          + "SleepStage\0223\n\n"
-          + "start_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0228\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\013"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022Y\n"
+          + "\020short_awakenings\030\014 \003(\0132"
+          + "9.google.devicesandservices.health.v4beta.Sleep.SleepStageB\004\342A\001\003\032\253\003\n\n"
+          + "SleepStage\0224\n\n"
+          + "start_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0229\n"
           + "\020start_utc_offset\030\004"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\0221\n"
-          + "\010end_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0226\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\0222\n"
+          + "\010end_time\030\005 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0227\n"
           + "\016end_utc_offset\030\006"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\022P\n"
-          + "\004type\030\007 \001(\0162=.google.devicesan"
-          + "dservices.health.v4beta.Sleep.SleepStageTypeB\003\340A\002\0224\n"
-          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022Q\n"
+          + "\004type\030\007 \001(\0162=.go"
+          + "ogle.devicesandservices.health.v4beta.Sleep.SleepStageTypeB\004\342A\001\002\0225\n"
+          + "\013create_time\030\010"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\t"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032\353\001\n"
-          + "\017OutOfBedSegment\0223\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0228\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\032\357\001\n"
+          + "\017OutOfBedSegment\0224\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0229\n"
           + "\020start_utc_offset\030\002"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\0221\n"
-          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\002\0226\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\0222\n"
+          + "\010end_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0227\n"
           + "\016end_utc_offset\030\004"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\002\032\333\003\n\r"
-          + "SleepMetadata\022d\n\r"
-          + "stages_status\030\001 \001(\0162H.g"
-          + "oogle.devicesandservices.health.v4beta.Sleep.SleepMetadata.StagesStateB\003\340A\003\022\026\n"
-          + "\tprocessed\030\002 \001(\010B\003\340A\003\022\020\n"
-          + "\003nap\030\005 \001(\010B\003\340A\003\022\034\n"
-          + "\017manually_edited\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013external_id\030\007 \001(\tB\003\340A\001\022\027\n\n"
-          + "main_sleep\030\t \001(\010B\003\340A\003\"\350\001\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\032\341\003\n\r"
+          + "SleepMetadata\022e\n\r"
+          + "stages_status\030\001 \001(\0162H.google.devicesandser"
+          + "vices.health.v4beta.Sleep.SleepMetadata.StagesStateB\004\342A\001\003\022\027\n"
+          + "\tprocessed\030\002 \001(\010B\004\342A\001\003\022\021\n"
+          + "\003nap\030\005 \001(\010B\004\342A\001\003\022\035\n"
+          + "\017manually_edited\030\006 \001(\010B\004\342A\001\003\022\031\n"
+          + "\013external_id\030\007 \001(\tB\004\342A\001\001\022\030\n\n"
+          + "main_sleep\030\t \001(\010B\004\342A\001\003\"\350\001\n"
           + "\013StagesState\022\034\n"
           + "\030STAGES_STATE_UNSPECIFIED\020\000\022\025\n"
           + "\021REJECTED_COVERAGE\020\001\022\024\n"
@@ -1399,20 +1368,21 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\017REJECTED_SERVER\020\006\022\013\n"
           + "\007TIMEOUT\020\007\022\r\n"
           + "\tSUCCEEDED\020\010\022\035\n"
-          + "\031PROCESSING_INTERNAL_ERROR\020\t\032\331\004\n"
-          + "\014SleepSummary\022)\n"
-          + "\027minutes_in_sleep_period\030\001 \001(\003B\003\340A\003H\000\210\001\001\022\'\n"
-          + "\025minutes_after_wake_up\030\002 \001(\003B\003\340A\003H\001\210\001\001\022(\n"
-          + "\026minutes_to_fall_asleep\030\003 \001(\003B\003\340A\003H\002\210\001\001\022 \n"
-          + "\016minutes_asleep\030\004 \001(\003B\003\340A\003H\003\210\001\001\022\037\n\r"
-          + "minutes_awake\030\005 \001(\003B\003\340A\003H\004\210\001\001\022e\n"
-          + "\016stages_summary\030\006 \003(\0132H.google.dev"
-          + "icesandservices.health.v4beta.Sleep.SleepSummary.StageSummaryB\003\340A\003\032\252\001\n"
-          + "\014StageSummary\022P\n"
-          + "\004type\030\001 \001(\0162=.google.devicesandser"
-          + "vices.health.v4beta.Sleep.SleepStageTypeB\003\340A\003\022\031\n"
-          + "\007minutes\030\002 \001(\003B\003\340A\003H\000\210\001\001\022\027\n"
-          + "\005count\030\003 \001(\003B\003\340A\003H\001\210\001\001B\n\n"
+          + "\031PROCESSING_INTERNAL_ERROR\020\t\032\342\004\n"
+          + "\014SleepSummary\022*\n"
+          + "\027minutes_in_sleep_period\030\001"
+          + " \001(\003B\004\342A\001\003H\000\210\001\001\022(\n"
+          + "\025minutes_after_wake_up\030\002 \001(\003B\004\342A\001\003H\001\210\001\001\022)\n"
+          + "\026minutes_to_fall_asleep\030\003 \001(\003B\004\342A\001\003H\002\210\001\001\022!\n"
+          + "\016minutes_asleep\030\004 \001(\003B\004\342A\001\003H\003\210\001\001\022 \n\r"
+          + "minutes_awake\030\005 \001(\003B\004\342A\001\003H\004\210\001\001\022f\n"
+          + "\016stages_summary\030\006 \003(\0132H.google.devicesands"
+          + "ervices.health.v4beta.Sleep.SleepSummary.StageSummaryB\004\342A\001\003\032\255\001\n"
+          + "\014StageSummary\022Q\n"
+          + "\004type\030\001 \001(\0162=.google.devicesandservices.h"
+          + "ealth.v4beta.Sleep.SleepStageTypeB\004\342A\001\003\022\032\n"
+          + "\007minutes\030\002 \001(\003B\004\342A\001\003H\000\210\001\001\022\030\n"
+          + "\005count\030\003 \001(\003B\004\342A\001\003H\001\210\001\001B\n\n"
           + "\010_minutesB\010\n"
           + "\006_countB\032\n"
           + "\030_minutes_in_sleep_periodB\030\n"
@@ -1431,21 +1401,21 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\004DEEP\020\003\022\007\n"
           + "\003REM\020\004\022\n\n"
           + "\006ASLEEP\020\005\022\014\n"
-          + "\010RESTLESS\020\006\"\203\001\n"
-          + "\005Steps\022W\n"
-          + "\010interval\030\002 \001(\0132@.google.devicesandservices.h"
-          + "ealth.v4beta.ObservationTimeIntervalB\003\340A\002\022\027\n"
-          + "\005count\030\004 \001(\003B\003\340A\002H\000\210\001\001B\010\n"
+          + "\010RESTLESS\020\006\"\205\001\n"
+          + "\005Steps\022X\n"
+          + "\010interval\030\002 \001(\0132@.google.devicesandservices.healt"
+          + "h.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\030\n"
+          + "\005count\030\004 \001(\003B\004\342A\001\002H\000\210\001\001B\010\n"
           + "\006_count\"8\n"
           + "\020StepsRollupValue\022\026\n"
           + "\tcount_sum\030\001 \001(\003H\000\210\001\001B\014\n\n"
-          + "_count_sum\"\367\002\n"
-          + "\017SwimLengthsData\022W\n"
-          + "\010interval\030\001 \001(\0132@.google.devicesandservices"
-          + ".health.v4beta.ObservationTimeIntervalB\003\340A\002\022f\n"
-          + "\020swim_stroke_type\030\002 \001(\0162G.google.d"
-          + "evicesandservices.health.v4beta.SwimLengthsData.SwimStrokeTypeB\003\340A\002\022\036\n"
-          + "\014stroke_count\030\003 \001(\003B\003\340A\002H\000\210\001\001\"r\n"
+          + "_count_sum\"\372\002\n"
+          + "\017SwimLengthsData\022X\n"
+          + "\010interval\030\001 \001(\0132@.google.devicesandservices.h"
+          + "ealth.v4beta.ObservationTimeIntervalB\004\342A\001\002\022g\n"
+          + "\020swim_stroke_type\030\002 \001(\0162G.google.de"
+          + "vicesandservices.health.v4beta.SwimLengthsData.SwimStrokeTypeB\004\342A\001\002\022\037\n"
+          + "\014stroke_count\030\003 \001(\003B\004\342A\001\002H\000\210\001\001\"r\n"
           + "\016SwimStrokeType\022 \n"
           + "\034SWIM_STROKE_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tFREESTYLE\020\001\022\016\n\n"
@@ -1455,29 +1425,29 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "_stroke_count\"P\n"
           + "\032SwimLengthsDataRollupValue\022\035\n"
           + "\020stroke_count_sum\030\001 \001(\003H\000\210\001\001B\023\n"
-          + "\021_stroke_count_sum\"\315\001\n"
-          + "\023TimeInHeartRateZone\022W\n"
-          + "\010interval\030\001 \001(\0132@.g"
-          + "oogle.devicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022]\n"
-          + "\024heart_rate_zone_type\030\002 \001(\0162:.google.devicesandser"
-          + "vices.health.v4beta.HeartRateZoneTypeB\003\340A\002\"\304\002\n"
+          + "\021_stroke_count_sum\"\317\001\n"
+          + "\023TimeInHeartRateZone\022X\n"
+          + "\010interval\030\001 \001(\0132@."
+          + "google.devicesandservices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022^\n"
+          + "\024heart_rate_zone_type\030\002 \001(\0162:.google.devicesands"
+          + "ervices.health.v4beta.HeartRateZoneTypeB\004\342A\001\002\"\304\002\n"
           + "\036TimeInHeartRateZoneRollupValue\022\202\001\n"
-          + "\030time_in_heart_rate_zones\030\001 \003(\0132`.googl"
-          + "e.devicesandservices.health.v4beta.TimeI"
-          + "nHeartRateZoneRollupValue.TimeInHeartRateZoneValue\032\234\001\n"
+          + "\030time_in_heart_rate_zones\030\001 \003(\0132`.go"
+          + "ogle.devicesandservices.health.v4beta.Ti"
+          + "meInHeartRateZoneRollupValue.TimeInHeartRateZoneValue\032\234\001\n"
           + "\030TimeInHeartRateZoneValue\022S\n"
-          + "\017heart_rate_zone\030\001 \001(\0162:.google.device"
-          + "sandservices.health.v4beta.HeartRateZoneType\022+\n"
+          + "\017heart_rate_zone\030\001 \001(\0162:.google.dev"
+          + "icesandservices.health.v4beta.HeartRateZoneType\022+\n"
           + "\010duration\030\002 \001(\0132\031.google.protobuf.Duration\">\n"
           + "\030TotalCaloriesRollupValue\022\025\n"
           + "\010kcal_sum\030\001 \001(\001H\000\210\001\001B\013\n"
-          + "\t_kcal_sum\"\235\004\n"
-          + "\006VO2Max\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google.devic"
-          + "esandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022\031\n"
-          + "\007vo2_max\030\002 \001(\001B\003\340A\002H\000\210\001\001\022b\n"
-          + "\022measurement_method\030\004 \001(\0162A.google.d"
-          + "evicesandservices.health.v4beta.VO2Max.MeasurementMethodB\003\340A\001\"\255\002\n"
+          + "\t_kcal_sum\"\240\004\n"
+          + "\006VO2Max\022Y\n"
+          + "\013sample_time\030\001 \001(\0132>.google.de"
+          + "vicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022\032\n"
+          + "\007vo2_max\030\002 \001(\001B\004\342A\001\002H\000\210\001\001\022c\n"
+          + "\022measurement_method\030\004 \001(\0162A.goo"
+          + "gle.devicesandservices.health.v4beta.VO2Max.MeasurementMethodB\004\342A\001\001\"\255\002\n"
           + "\021MeasurementMethod\022\"\n"
           + "\036MEASUREMENT_METHOD_UNSPECIFIED\020\000\022\016\n\n"
           + "FITBIT_RUN\020\001\022\026\n"
@@ -1492,30 +1462,30 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\027PREDICTION_NON_EXERCISE\020\n"
           + "\022\t\n"
           + "\005OTHER\020\013B\n\n"
-          + "\010_vo2_max\"\247\001\n"
-          + "\006Weight\022X\n"
-          + "\013sample_time\030\002 \001(\0132>.google.devicesandservices.he"
-          + "alth.v4beta.ObservationSampleTimeB\003\340A\002\022\036\n"
-          + "\014weight_grams\030\003 \001(\001B\003\340A\002H\000\210\001\001\022\022\n"
-          + "\005notes\030\004 \001(\tB\003\340A\001B\017\n\r"
+          + "\010_vo2_max\"\252\001\n"
+          + "\006Weight\022Y\n"
+          + "\013sample_time\030\002 \001(\0132>.google.devicesandservi"
+          + "ces.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022\037\n"
+          + "\014weight_grams\030\003 \001(\001B\004\342A\001\002H\000\210\001\001\022\023\n"
+          + "\005notes\030\004 \001(\tB\004\342A\001\001B\017\n\r"
           + "_weight_grams\"G\n"
           + "\021WeightRollupValue\022\035\n"
           + "\020weight_grams_avg\030\001 \001(\001H\000\210\001\001B\023\n"
-          + "\021_weight_grams_avg\"\346\010\n"
-          + "\014BloodGlucose\022X\n"
-          + "\013sample_time\030\001 \001(\0132>.google.devicesandse"
-          + "rvices.health.v4beta.ObservationSampleTimeB\003\340A\002\0228\n"
+          + "\021_weight_grams_avg\"\355\010\n"
+          + "\014BloodGlucose\022Y\n"
+          + "\013sample_time\030\001 \001(\0132>.google.dev"
+          + "icesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\0229\n"
           + "&blood_glucose_milligrams_per_deciliter\030\002"
-          + " \001(\001B\003\340A\002H\000\210\001\001\022h\n"
-          + "\022measurement_source\030\003 \001(\0162G.google.devicesandservice"
-          + "s.health.v4beta.BloodGlucose.MeasurementSourceB\003\340A\001\022V\n"
-          + "\tmeal_type\030\004 \001(\0162>.google."
-          + "devicesandservices.health.v4beta.BloodGlucose.MealTypeB\003\340A\001\022h\n"
-          + "\022measurement_timing\030\005 \001(\0162G.google.devicesandservices.heal"
-          + "th.v4beta.BloodGlucose.MeasurementTimingB\003\340A\001\022U\n"
-          + "\010specimen\030\006 \001(\0162>.google.devices"
-          + "andservices.health.v4beta.BloodGlucose.SpecimenB\003\340A\001\022\022\n"
-          + "\005notes\030\010 \001(\tB\003\340A\001\"\213\001\n"
+          + " \001(\001B\004\342A\001\002H\000\210\001\001\022i\n"
+          + "\022measurement_source\030\003 \001(\0162G.google.device"
+          + "sandservices.health.v4beta.BloodGlucose.MeasurementSourceB\004\342A\001\001\022W\n"
+          + "\tmeal_type\030\004 \001"
+          + "(\0162>.google.devicesandservices.health.v4beta.BloodGlucose.MealTypeB\004\342A\001\001\022i\n"
+          + "\022measurement_timing\030\005 \001(\0162G.google.devicesand"
+          + "services.health.v4beta.BloodGlucose.MeasurementTimingB\004\342A\001\001\022V\n"
+          + "\010specimen\030\006 \001(\0162>."
+          + "google.devicesandservices.health.v4beta.BloodGlucose.SpecimenB\004\342A\001\001\022\023\n"
+          + "\005notes\030\010 \001(\tB\004\342A\001\001\"\213\001\n"
           + "\021MeasurementSource\022\"\n"
           + "\036MEASUREMENT_SOURCE_UNSPECIFIED\020\000\022!\n"
           + "\035SELF_MONITORING_BLOOD_GLUCOSE\020\001\022!\n"
@@ -1546,35 +1516,34 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\'_blood_glucose_milligrams_per_deciliter\"\201\001\n"
           + "\027BloodGlucoseRollupValue\0227\n"
           + "*blood_glucose_milligrams_per_deciliter_avg\030\001 \001(\001H\000\210\001\001B-\n"
-          + "+_b",
-      "lood_glucose_milligrams_per_deciliter_avg\"j\n"
-          + "\017SedentaryPeriod\022W\n"
-          + "\010interval\030\001 \001(\0132@"
-          + ".google.devicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\"M\n"
+          + "+_blood_glucose_milligrams_per_deciliter_avg\"k\n"
+          + "\017SedentaryPeriod\022X\n"
+          + "\010interval\030\001 \001(\0132@.google.devicesandservic"
+          + "es.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\"M\n"
           + "\032SedentaryPeriodRollupValue\022/\n"
-          + "\014duration_sum\030\001 \001(\0132\031.google.protobuf.Duration\"\216\001\n"
-          + "\022ActiveEnergyBurned\022W\n"
-          + "\010interval\030\001 \001(\0132@.google.d"
-          + "evicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\026\n"
-          + "\004kcal\030\002 \001(\001B\003\340A\002H\000\210\001\001B\007\n"
-          + "\005_kcal\"H\n"
-          + "\035ActiveEnergyBurnedRollupValue\022\032\n"
-          + "\010kcal_sum\030\001 \001(\001B\003\340A\003H\000\210\001\001B\013\n"
-          + "\t_kcal_sum\"~\n"
-          + "\017MenstrualPeriod\022W\n"
-          + "\010interval\030\002"
-          + " \001(\0132@.google.devicesandservices.health.v4beta.ObservationTimeIntervalB\003\340A\002\022\022\n"
-          + "\005notes\030\004 \001(\tB\003\340A\001\"\274\001\n\r"
-          + "OvulationTest\022X\n"
-          + "\013sample_time\030\002 \001(\0132>.google.devicesandservic"
-          + "es.health.v4beta.ObservationSampleTimeB\003\340A\002\022Q\n"
-          + "\006result\030\003 \001(\0162<.google.devicesands"
-          + "ervices.health.v4beta.OvulationTestResultB\003\340A\002\"\257\n\n"
-          + "\010Symptoms\022X\n"
-          + "\013sample_time\030\001 \001(\013"
-          + "2>.google.devicesandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022U\n"
-          + "\010symptoms\030\002"
-          + " \003(\0162>.google.devicesandservices.health.v4beta.Symptoms.SymptomValueB\003\340A\002\"\361\010\n"
+          + "\014duration_sum\030\001 \001(\0132\031.google.protobuf.Duration\"\220\001\n"
+          + "\022ActiveEnergyBurned\022X\n"
+          + "\010interval\030\001 \001(\0132@.google.devicesandservices.healt"
+          + "h.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\027\n"
+          + "\004kcal\030\002 \001(\001B\004\342A\001\002H\000\210\001\001B\007\n"
+          + "\005_kcal\"I\n"
+          + "\035ActiveEnergyBurnedRollupValue\022\033\n"
+          + "\010kcal_sum\030\001 \001(\001B\004\342A\001\003H\000\210\001\001B\013\n"
+          + "\t_kcal_sum\"\200\001\n"
+          + "\017MenstrualPeriod\022X\n"
+          + "\010interval\030\002 \001(\0132@.google.devic"
+          + "esandservices.health.v4beta.ObservationTimeIntervalB\004\342A\001\002\022\023\n"
+          + "\005notes\030\004 \001(\tB\004\342A\001\001\"\276\001\n\r"
+          + "OvulationTest\022Y\n"
+          + "\013sample_time\030\002 \001(\0132>."
+          + "google.devicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022R\n"
+          + "\006result\030\003 "
+          + "\001(\0162<.google.devicesandservices.health.v4beta.OvulationTestResultB\004\342A\001\002\"\261\n\n"
+          + "\010Symptoms\022Y\n"
+          + "\013sample_time\030\001 \001(\0132>.google.devic",
+      "esandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022V\n"
+          + "\010symptoms\030\002 \003(\0162>.goog"
+          + "le.devicesandservices.health.v4beta.Symptoms.SymptomValueB\004\342A\001\002\"\361\010\n"
           + "\014SymptomValue\022\035\n"
           + "\031SYMPTOM_VALUE_UNSPECIFIED\020\000\022\n\n"
           + "\006CRAMPS\020\001\022\014\n"
@@ -1609,7 +1578,8 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\tCONFUSION\020\034\022\r\n"
           + "\tDIZZINESS\020\035\022\022\n"
           + "\016ABDOMINAL_PAIN\020\036\022\021\n\r"
-          + "BLADDER_LEAKS\020\037\022\021\n\r"
+          + "BLADDER_LEAKS\020\037\022\021\n"
+          + "\r"
           + "BLEEDING_GUMS\020 \022\r\n"
           + "\tBRAIN_FOG\020!\022\021\n\r"
           + "BURNING_MOUTH\020\"\022\020\n"
@@ -1643,14 +1613,14 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\010SWELLING\020>\022\023\n"
           + "\017VAGINAL_DRYNESS\020?\022\023\n"
           + "\017VAGINAL_ITCHING\020@\022\014\n"
-          + "\010VOMITING\020A\"\234\n\n"
-          + "\005Moods\022X\n"
-          + "\013sample_time\030\002"
-          + " \001(\0132>.google.devicesandservices.health.v4beta.ObservationSampleTimeB\003\340A\002\022G\n"
-          + "\005moods\030\003"
-          + " \003(\01623.google.devicesandservices.health.v4beta.Moods.MoodB\003\340A\002\022M\n"
-          + "\010valences\030\005"
-          + " \003(\01626.google.devicesandservices.health.v4beta.Moods.ValenceB\003\340A\001\"\320\007\n"
+          + "\010VOMITING\020A\"\237\n\n"
+          + "\005Moods\022Y\n"
+          + "\013sample_time\030\002 \001(\0132>.goo"
+          + "gle.devicesandservices.health.v4beta.ObservationSampleTimeB\004\342A\001\002\022H\n"
+          + "\005moods\030\003 \003(\0162"
+          + "3.google.devicesandservices.health.v4beta.Moods.MoodB\004\342A\001\002\022N\n"
+          + "\010valences\030\005 \003(\01626.g"
+          + "oogle.devicesandservices.health.v4beta.Moods.ValenceB\004\342A\001\001\"\320\007\n"
           + "\004Mood\022\024\n"
           + "\020MOOD_UNSPECIFIED\020\000\022\n\n"
           + "\006AMAZED\020\001\022\n\n"
@@ -1680,13 +1650,14 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\006GUILTY\020\027\022\013\n"
           + "\007HOPEFUL\020\030\022\014\n"
           + "\010HOPELESS\020\031\022\017\n"
-          + "\013INDIFFERENT\020\032\022\r\n"
+          + "\013INDIFFERENT\020\032\022\r"
+          + "\n"
           + "\tIRRITATED\020\033\022\013\n"
           + "\007JEALOUS\020\034\022\n\n"
-          + "\006JOYFUL\020\035\022\n\n"
-          + "\006LONELY\020\036\022\017\n"
-          + "\013OVERWHELMED\020\037\022\016\n"
+          + "\006JOYFUL\020\035\022\n"
           + "\n"
+          + "\006LONELY\020\036\022\017\n"
+          + "\013OVERWHELMED\020\037\022\016\n\n"
           + "PASSIONATE\020 \022\014\n"
           + "\010PEACEFUL\020!\022\t\n"
           + "\005PROUD\020\"\022\014\n"
@@ -1709,8 +1680,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\tAWESTRUCK\0203\022\014\n"
           + "\010INSPIRED\0204\022\013\n"
           + "\007LONGING\0205\022\020\n"
-          + "\014ACCOMPLISHED\0206\022\n"
-          + "\n"
+          + "\014ACCOMPLISHED\0206\022\n\n"
           + "\006LOVING\0207\022\021\n\r"
           + "COMPASSIONATE\0208\022\r\n"
           + "\tDEPRESSED\0209\022\010\n"
@@ -1721,8 +1691,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\007PLAYFUL\020>\022\013\n"
           + "\007PLEASED\020?\022\r\n"
           + "\tSENSITIVE\020@\022\n\n"
-          + "\006SLEEPY\020A\022\n"
-          + "\n"
+          + "\006SLEEPY\020A\022\n\n"
           + "\006SWINGS\020B\022\013\n"
           + "\007UNHAPPY\020C\022\026\n"
           + "\022VERY_SELF_CRITICAL\020D\"N\n"
@@ -1829,11 +1798,12 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
           + "\016ESTROGEN_SURGE\020\003\022\014\n"
           + "\010POSITIVE\020\004\022\021\n\r"
           + "INDETERMINATE\020\005B\224\002\n"
-          + "+com.google.devicesandservices.health.v4betaB\016DataModelProtoP\001ZRgoog"
-          + "le.golang.org/genproto/googleapis/devicesandservices/health/apiv4beta;healthpb\252\002"
-          + "\'Google.DevicesAndServices.Health.V4Beta"
-          + "\312\002\'Google\\DevicesAndServices\\Health\\V4be"
-          + "ta\352\002*Google::DevicesAndServices::Health::V4betab\006proto3"
+          + "+com.google.devicesandservices.health.v4betaB\016DataModelProtoP\001ZRgoogle.golang."
+          + "org/genproto/googleapis/devicesandservic"
+          + "es/health/apiv4beta;healthpb\252\002\'Google.De"
+          + "vicesAndServices.Health.V4Beta\312\002\'Google\\"
+          + "DevicesAndServices\\Health\\V4beta\352\002*Googl"
+          + "e::DevicesAndServices::Health::V4betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1954,33 +1924,8 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "BodyFatPercentageAvg",
             });
-    internal_static_google_devicesandservices_health_v4beta_SkinTemperature_descriptor =
-        getDescriptor().getMessageType(10);
-    internal_static_google_devicesandservices_health_v4beta_SkinTemperature_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_devicesandservices_health_v4beta_SkinTemperature_descriptor,
-            new java.lang.String[] {
-              "SampleTime", "TemperatureCelsius", "BaselineTemperatureCelsius", "Metadata",
-            });
-    internal_static_google_devicesandservices_health_v4beta_SkinTemperature_SkinTemperatureMetadata_descriptor =
-        internal_static_google_devicesandservices_health_v4beta_SkinTemperature_descriptor
-            .getNestedType(0);
-    internal_static_google_devicesandservices_health_v4beta_SkinTemperature_SkinTemperatureMetadata_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_devicesandservices_health_v4beta_SkinTemperature_SkinTemperatureMetadata_descriptor,
-            new java.lang.String[] {
-              "MeasurementLocation", "MeasurementState",
-            });
-    internal_static_google_devicesandservices_health_v4beta_SkinTemperatureRollupValue_descriptor =
-        getDescriptor().getMessageType(11);
-    internal_static_google_devicesandservices_health_v4beta_SkinTemperatureRollupValue_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_devicesandservices_health_v4beta_SkinTemperatureRollupValue_descriptor,
-            new java.lang.String[] {
-              "TemperatureCelsiusAvg", "TemperatureCelsiusMax", "TemperatureCelsiusMin",
-            });
     internal_static_google_devicesandservices_health_v4beta_SkinTemperatureSensors_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(10);
     internal_static_google_devicesandservices_health_v4beta_SkinTemperatureSensors_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_SkinTemperatureSensors_descriptor,
@@ -2006,7 +1951,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "TemperatureCelsius", "Metadata",
             });
     internal_static_google_devicesandservices_health_v4beta_CoreBodyTemperature_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(11);
     internal_static_google_devicesandservices_health_v4beta_CoreBodyTemperature_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_CoreBodyTemperature_descriptor,
@@ -2014,7 +1959,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "TemperatureCelsius", "MeasurementLocation", "Id",
             });
     internal_static_google_devicesandservices_health_v4beta_CoreBodyTemperatureRollupValue_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(12);
     internal_static_google_devicesandservices_health_v4beta_CoreBodyTemperatureRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_CoreBodyTemperatureRollupValue_descriptor,
@@ -2022,7 +1967,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "TemperatureCelsiusAvg", "TemperatureCelsiusMax", "TemperatureCelsiusMin",
             });
     internal_static_google_devicesandservices_health_v4beta_CaloriesInHeartRateZoneRollupValue_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(13);
     internal_static_google_devicesandservices_health_v4beta_CaloriesInHeartRateZoneRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_CaloriesInHeartRateZoneRollupValue_descriptor,
@@ -2039,7 +1984,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "HeartRateZone", "Kcal",
             });
     internal_static_google_devicesandservices_health_v4beta_DailyHeartRateZones_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(14);
     internal_static_google_devicesandservices_health_v4beta_DailyHeartRateZones_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailyHeartRateZones_descriptor,
@@ -2056,7 +2001,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "HeartRateZoneType", "MinBeatsPerMinute", "MaxBeatsPerMinute",
             });
     internal_static_google_devicesandservices_health_v4beta_DailyHeartRateVariability_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(15);
     internal_static_google_devicesandservices_health_v4beta_DailyHeartRateVariability_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailyHeartRateVariability_descriptor,
@@ -2068,7 +2013,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "DeepSleepRootMeanSquareOfSuccessiveDifferencesMilliseconds",
             });
     internal_static_google_devicesandservices_health_v4beta_DailyRespiratoryRate_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(16);
     internal_static_google_devicesandservices_health_v4beta_DailyRespiratoryRate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailyRespiratoryRate_descriptor,
@@ -2076,7 +2021,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Date", "BreathsPerMinute",
             });
     internal_static_google_devicesandservices_health_v4beta_DailyOxygenSaturation_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(17);
     internal_static_google_devicesandservices_health_v4beta_DailyOxygenSaturation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailyOxygenSaturation_descriptor,
@@ -2088,7 +2033,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "StandardDeviationPercentage",
             });
     internal_static_google_devicesandservices_health_v4beta_DailyRestingHeartRate_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(18);
     internal_static_google_devicesandservices_health_v4beta_DailyRestingHeartRate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailyRestingHeartRate_descriptor,
@@ -2105,7 +2050,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "CalculationMethod",
             });
     internal_static_google_devicesandservices_health_v4beta_DailySleepTemperatureDerivations_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(19);
     internal_static_google_devicesandservices_health_v4beta_DailySleepTemperatureDerivations_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailySleepTemperatureDerivations_descriptor,
@@ -2116,7 +2061,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "RelativeNightlyStddev30DCelsius",
             });
     internal_static_google_devicesandservices_health_v4beta_DailyVO2Max_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(20);
     internal_static_google_devicesandservices_health_v4beta_DailyVO2Max_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DailyVO2Max_descriptor,
@@ -2124,7 +2069,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Date", "Vo2Max", "Estimated", "CardioFitnessLevel", "Vo2MaxCovariance",
             });
     internal_static_google_devicesandservices_health_v4beta_Distance_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(21);
     internal_static_google_devicesandservices_health_v4beta_Distance_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Distance_descriptor,
@@ -2132,7 +2077,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "Millimeters",
             });
     internal_static_google_devicesandservices_health_v4beta_DistanceRollupValue_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(22);
     internal_static_google_devicesandservices_health_v4beta_DistanceRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_DistanceRollupValue_descriptor,
@@ -2140,7 +2085,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "MillimetersSum",
             });
     internal_static_google_devicesandservices_health_v4beta_Electrocardiogram_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(23);
     internal_static_google_devicesandservices_health_v4beta_Electrocardiogram_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Electrocardiogram_descriptor,
@@ -2155,7 +2100,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "MedicalDeviceInfo",
             });
     internal_static_google_devicesandservices_health_v4beta_Exercise_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(24);
     internal_static_google_devicesandservices_health_v4beta_Exercise_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Exercise_descriptor,
@@ -2207,7 +2152,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "PoolLengthMillimeters", "HasGps",
             });
     internal_static_google_devicesandservices_health_v4beta_Floors_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(25);
     internal_static_google_devicesandservices_health_v4beta_Floors_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Floors_descriptor,
@@ -2215,7 +2160,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "Count",
             });
     internal_static_google_devicesandservices_health_v4beta_FloorsRollupValue_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(26);
     internal_static_google_devicesandservices_health_v4beta_FloorsRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_FloorsRollupValue_descriptor,
@@ -2223,7 +2168,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "CountSum",
             });
     internal_static_google_devicesandservices_health_v4beta_AltitudeRollupValue_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(27);
     internal_static_google_devicesandservices_health_v4beta_AltitudeRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_AltitudeRollupValue_descriptor,
@@ -2231,7 +2176,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "GainMillimetersSum",
             });
     internal_static_google_devicesandservices_health_v4beta_HeartRate_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(28);
     internal_static_google_devicesandservices_health_v4beta_HeartRate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_HeartRate_descriptor,
@@ -2248,7 +2193,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "MotionContext", "SensorLocation",
             });
     internal_static_google_devicesandservices_health_v4beta_HeartRateRollupValue_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(29);
     internal_static_google_devicesandservices_health_v4beta_HeartRateRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_HeartRateRollupValue_descriptor,
@@ -2256,7 +2201,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "BeatsPerMinuteAvg", "BeatsPerMinuteMax", "BeatsPerMinuteMin",
             });
     internal_static_google_devicesandservices_health_v4beta_RunVO2MaxRollupValue_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(30);
     internal_static_google_devicesandservices_health_v4beta_RunVO2MaxRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_RunVO2MaxRollupValue_descriptor,
@@ -2264,7 +2209,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "RateMin", "RateMax", "RateAvg",
             });
     internal_static_google_devicesandservices_health_v4beta_RunVO2Max_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(31);
     internal_static_google_devicesandservices_health_v4beta_RunVO2Max_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_RunVO2Max_descriptor,
@@ -2272,7 +2217,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "RunVo2Max",
             });
     internal_static_google_devicesandservices_health_v4beta_HeartRateVariabilityPersonalRangeRollupValue_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(32);
     internal_static_google_devicesandservices_health_v4beta_HeartRateVariabilityPersonalRangeRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_HeartRateVariabilityPersonalRangeRollupValue_descriptor,
@@ -2281,7 +2226,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "AverageHeartRateVariabilityMillisecondsMax",
             });
     internal_static_google_devicesandservices_health_v4beta_Height_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(33);
     internal_static_google_devicesandservices_health_v4beta_Height_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Height_descriptor,
@@ -2289,7 +2234,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "HeightMillimeters",
             });
     internal_static_google_devicesandservices_health_v4beta_HeartRateVariability_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(34);
     internal_static_google_devicesandservices_health_v4beta_HeartRateVariability_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_HeartRateVariability_descriptor,
@@ -2309,7 +2254,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "HighFrequencyPower", "LowFrequencyPower",
             });
     internal_static_google_devicesandservices_health_v4beta_VolumeQuantity_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(35);
     internal_static_google_devicesandservices_health_v4beta_VolumeQuantity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_VolumeQuantity_descriptor,
@@ -2317,7 +2262,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Milliliters", "UserProvidedUnit",
             });
     internal_static_google_devicesandservices_health_v4beta_HydrationLog_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(36);
     internal_static_google_devicesandservices_health_v4beta_HydrationLog_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_HydrationLog_descriptor,
@@ -2325,7 +2270,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "AmountConsumed",
             });
     internal_static_google_devicesandservices_health_v4beta_HydrationLogRollupValue_descriptor =
-        getDescriptor().getMessageType(39);
+        getDescriptor().getMessageType(37);
     internal_static_google_devicesandservices_health_v4beta_HydrationLogRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_HydrationLogRollupValue_descriptor,
@@ -2342,7 +2287,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "MillilitersSum", "UserProvidedUnitLast",
             });
     internal_static_google_devicesandservices_health_v4beta_IrregularRhythmNotification_descriptor =
-        getDescriptor().getMessageType(40);
+        getDescriptor().getMessageType(38);
     internal_static_google_devicesandservices_health_v4beta_IrregularRhythmNotification_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_IrregularRhythmNotification_descriptor,
@@ -2375,7 +2320,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "HeartBeats",
             });
     internal_static_google_devicesandservices_health_v4beta_MetricsSummary_descriptor =
-        getDescriptor().getMessageType(41);
+        getDescriptor().getMessageType(39);
     internal_static_google_devicesandservices_health_v4beta_MetricsSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_MetricsSummary_descriptor,
@@ -2416,7 +2361,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "AvgGroundContactTimeDuration",
             });
     internal_static_google_devicesandservices_health_v4beta_WeightQuantity_descriptor =
-        getDescriptor().getMessageType(42);
+        getDescriptor().getMessageType(40);
     internal_static_google_devicesandservices_health_v4beta_WeightQuantity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_WeightQuantity_descriptor,
@@ -2424,7 +2369,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Grams", "UserProvidedUnit",
             });
     internal_static_google_devicesandservices_health_v4beta_EnergyQuantity_descriptor =
-        getDescriptor().getMessageType(43);
+        getDescriptor().getMessageType(41);
     internal_static_google_devicesandservices_health_v4beta_EnergyQuantity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_EnergyQuantity_descriptor,
@@ -2432,7 +2377,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Kcal", "UserProvidedUnit",
             });
     internal_static_google_devicesandservices_health_v4beta_NutrientQuantity_descriptor =
-        getDescriptor().getMessageType(44);
+        getDescriptor().getMessageType(42);
     internal_static_google_devicesandservices_health_v4beta_NutrientQuantity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_NutrientQuantity_descriptor,
@@ -2440,7 +2385,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Quantity", "Nutrient",
             });
     internal_static_google_devicesandservices_health_v4beta_NutritionLog_descriptor =
-        getDescriptor().getMessageType(45);
+        getDescriptor().getMessageType(43);
     internal_static_google_devicesandservices_health_v4beta_NutritionLog_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_NutritionLog_descriptor,
@@ -2466,7 +2411,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Amount", "FoodMeasurementUnit", "FoodMeasurementUnitDisplayName",
             });
     internal_static_google_devicesandservices_health_v4beta_Food_descriptor =
-        getDescriptor().getMessageType(46);
+        getDescriptor().getMessageType(44);
     internal_static_google_devicesandservices_health_v4beta_Food_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Food_descriptor,
@@ -2500,7 +2445,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Multiplier",
             });
     internal_static_google_devicesandservices_health_v4beta_NutritionLogRollupValue_descriptor =
-        getDescriptor().getMessageType(47);
+        getDescriptor().getMessageType(45);
     internal_static_google_devicesandservices_health_v4beta_NutritionLogRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_NutritionLogRollupValue_descriptor,
@@ -2535,7 +2480,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Quantity", "Nutrient",
             });
     internal_static_google_devicesandservices_health_v4beta_OxygenSaturation_descriptor =
-        getDescriptor().getMessageType(48);
+        getDescriptor().getMessageType(46);
     internal_static_google_devicesandservices_health_v4beta_OxygenSaturation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_OxygenSaturation_descriptor,
@@ -2543,7 +2488,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "Percentage",
             });
     internal_static_google_devicesandservices_health_v4beta_RestingHeartRatePersonalRangeRollupValue_descriptor =
-        getDescriptor().getMessageType(49);
+        getDescriptor().getMessageType(47);
     internal_static_google_devicesandservices_health_v4beta_RestingHeartRatePersonalRangeRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_RestingHeartRatePersonalRangeRollupValue_descriptor,
@@ -2551,7 +2496,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "BeatsPerMinuteMin", "BeatsPerMinuteMax",
             });
     internal_static_google_devicesandservices_health_v4beta_FoodMeasurementUnit_descriptor =
-        getDescriptor().getMessageType(50);
+        getDescriptor().getMessageType(48);
     internal_static_google_devicesandservices_health_v4beta_FoodMeasurementUnit_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_FoodMeasurementUnit_descriptor,
@@ -2559,7 +2504,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "DisplayName", "PluralDisplayName",
             });
     internal_static_google_devicesandservices_health_v4beta_RespiratoryRateSleepSummary_descriptor =
-        getDescriptor().getMessageType(51);
+        getDescriptor().getMessageType(49);
     internal_static_google_devicesandservices_health_v4beta_RespiratoryRateSleepSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_RespiratoryRateSleepSummary_descriptor,
@@ -2576,7 +2521,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "BreathsPerMinute", "StandardDeviation", "SignalToNoise",
             });
     internal_static_google_devicesandservices_health_v4beta_Sleep_descriptor =
-        getDescriptor().getMessageType(52);
+        getDescriptor().getMessageType(50);
     internal_static_google_devicesandservices_health_v4beta_Sleep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Sleep_descriptor,
@@ -2644,7 +2589,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Type", "Minutes", "Count",
             });
     internal_static_google_devicesandservices_health_v4beta_Steps_descriptor =
-        getDescriptor().getMessageType(53);
+        getDescriptor().getMessageType(51);
     internal_static_google_devicesandservices_health_v4beta_Steps_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Steps_descriptor,
@@ -2652,7 +2597,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "Count",
             });
     internal_static_google_devicesandservices_health_v4beta_StepsRollupValue_descriptor =
-        getDescriptor().getMessageType(54);
+        getDescriptor().getMessageType(52);
     internal_static_google_devicesandservices_health_v4beta_StepsRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_StepsRollupValue_descriptor,
@@ -2660,7 +2605,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "CountSum",
             });
     internal_static_google_devicesandservices_health_v4beta_SwimLengthsData_descriptor =
-        getDescriptor().getMessageType(55);
+        getDescriptor().getMessageType(53);
     internal_static_google_devicesandservices_health_v4beta_SwimLengthsData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_SwimLengthsData_descriptor,
@@ -2668,7 +2613,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "SwimStrokeType", "StrokeCount",
             });
     internal_static_google_devicesandservices_health_v4beta_SwimLengthsDataRollupValue_descriptor =
-        getDescriptor().getMessageType(56);
+        getDescriptor().getMessageType(54);
     internal_static_google_devicesandservices_health_v4beta_SwimLengthsDataRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_SwimLengthsDataRollupValue_descriptor,
@@ -2676,7 +2621,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "StrokeCountSum",
             });
     internal_static_google_devicesandservices_health_v4beta_TimeInHeartRateZone_descriptor =
-        getDescriptor().getMessageType(57);
+        getDescriptor().getMessageType(55);
     internal_static_google_devicesandservices_health_v4beta_TimeInHeartRateZone_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_TimeInHeartRateZone_descriptor,
@@ -2684,7 +2629,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "HeartRateZoneType",
             });
     internal_static_google_devicesandservices_health_v4beta_TimeInHeartRateZoneRollupValue_descriptor =
-        getDescriptor().getMessageType(58);
+        getDescriptor().getMessageType(56);
     internal_static_google_devicesandservices_health_v4beta_TimeInHeartRateZoneRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_TimeInHeartRateZoneRollupValue_descriptor,
@@ -2701,7 +2646,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "HeartRateZone", "Duration",
             });
     internal_static_google_devicesandservices_health_v4beta_TotalCaloriesRollupValue_descriptor =
-        getDescriptor().getMessageType(59);
+        getDescriptor().getMessageType(57);
     internal_static_google_devicesandservices_health_v4beta_TotalCaloriesRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_TotalCaloriesRollupValue_descriptor,
@@ -2709,7 +2654,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "KcalSum",
             });
     internal_static_google_devicesandservices_health_v4beta_VO2Max_descriptor =
-        getDescriptor().getMessageType(60);
+        getDescriptor().getMessageType(58);
     internal_static_google_devicesandservices_health_v4beta_VO2Max_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_VO2Max_descriptor,
@@ -2717,7 +2662,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "Vo2Max", "MeasurementMethod",
             });
     internal_static_google_devicesandservices_health_v4beta_Weight_descriptor =
-        getDescriptor().getMessageType(61);
+        getDescriptor().getMessageType(59);
     internal_static_google_devicesandservices_health_v4beta_Weight_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Weight_descriptor,
@@ -2725,7 +2670,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "WeightGrams", "Notes",
             });
     internal_static_google_devicesandservices_health_v4beta_WeightRollupValue_descriptor =
-        getDescriptor().getMessageType(62);
+        getDescriptor().getMessageType(60);
     internal_static_google_devicesandservices_health_v4beta_WeightRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_WeightRollupValue_descriptor,
@@ -2733,7 +2678,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "WeightGramsAvg",
             });
     internal_static_google_devicesandservices_health_v4beta_BloodGlucose_descriptor =
-        getDescriptor().getMessageType(63);
+        getDescriptor().getMessageType(61);
     internal_static_google_devicesandservices_health_v4beta_BloodGlucose_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_BloodGlucose_descriptor,
@@ -2747,7 +2692,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Notes",
             });
     internal_static_google_devicesandservices_health_v4beta_BloodGlucoseRollupValue_descriptor =
-        getDescriptor().getMessageType(64);
+        getDescriptor().getMessageType(62);
     internal_static_google_devicesandservices_health_v4beta_BloodGlucoseRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_BloodGlucoseRollupValue_descriptor,
@@ -2755,7 +2700,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "BloodGlucoseMilligramsPerDeciliterAvg",
             });
     internal_static_google_devicesandservices_health_v4beta_SedentaryPeriod_descriptor =
-        getDescriptor().getMessageType(65);
+        getDescriptor().getMessageType(63);
     internal_static_google_devicesandservices_health_v4beta_SedentaryPeriod_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_SedentaryPeriod_descriptor,
@@ -2763,7 +2708,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval",
             });
     internal_static_google_devicesandservices_health_v4beta_SedentaryPeriodRollupValue_descriptor =
-        getDescriptor().getMessageType(66);
+        getDescriptor().getMessageType(64);
     internal_static_google_devicesandservices_health_v4beta_SedentaryPeriodRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_SedentaryPeriodRollupValue_descriptor,
@@ -2771,7 +2716,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "DurationSum",
             });
     internal_static_google_devicesandservices_health_v4beta_ActiveEnergyBurned_descriptor =
-        getDescriptor().getMessageType(67);
+        getDescriptor().getMessageType(65);
     internal_static_google_devicesandservices_health_v4beta_ActiveEnergyBurned_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_ActiveEnergyBurned_descriptor,
@@ -2779,7 +2724,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "Kcal",
             });
     internal_static_google_devicesandservices_health_v4beta_ActiveEnergyBurnedRollupValue_descriptor =
-        getDescriptor().getMessageType(68);
+        getDescriptor().getMessageType(66);
     internal_static_google_devicesandservices_health_v4beta_ActiveEnergyBurnedRollupValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_ActiveEnergyBurnedRollupValue_descriptor,
@@ -2787,7 +2732,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "KcalSum",
             });
     internal_static_google_devicesandservices_health_v4beta_MenstrualPeriod_descriptor =
-        getDescriptor().getMessageType(69);
+        getDescriptor().getMessageType(67);
     internal_static_google_devicesandservices_health_v4beta_MenstrualPeriod_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_MenstrualPeriod_descriptor,
@@ -2795,7 +2740,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "Interval", "Notes",
             });
     internal_static_google_devicesandservices_health_v4beta_OvulationTest_descriptor =
-        getDescriptor().getMessageType(70);
+        getDescriptor().getMessageType(68);
     internal_static_google_devicesandservices_health_v4beta_OvulationTest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_OvulationTest_descriptor,
@@ -2803,7 +2748,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "Result",
             });
     internal_static_google_devicesandservices_health_v4beta_Symptoms_descriptor =
-        getDescriptor().getMessageType(71);
+        getDescriptor().getMessageType(69);
     internal_static_google_devicesandservices_health_v4beta_Symptoms_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Symptoms_descriptor,
@@ -2811,7 +2756,7 @@ public final class DataModelProto extends com.google.protobuf.GeneratedFile {
               "SampleTime", "Symptoms",
             });
     internal_static_google_devicesandservices_health_v4beta_Moods_descriptor =
-        getDescriptor().getMessageType(72);
+        getDescriptor().getMessageType(70);
     internal_static_google_devicesandservices_health_v4beta_Moods_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_devicesandservices_health_v4beta_Moods_descriptor,

@@ -55,17 +55,17 @@ public final class ActorProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "\'google/cloud/support/v2beta/actor.prot"
-          + "o\022\033google.cloud.support.v2beta\032\037google/api/field_behavior.proto\"d\n"
+          + "o\022\033google.cloud.support.v2beta\032\037google/api/field_behavior.proto\"f\n"
           + "\005Actor\022\024\n"
           + "\014display_name\030\001 \001(\t\022\021\n"
-          + "\005email\030\002 \001(\tB\002\030\001\022\033\n"
-          + "\016google_support\030\004 \001(\010B\003\340A\003\022\025\n"
-          + "\010username\030\005 \001(\tB\003\340A\003B\307\001\n"
+          + "\005email\030\002 \001(\tB\002\030\001\022\034\n"
+          + "\016google_support\030\004 \001(\010B\004\342A\001\003\022\026\n"
+          + "\010username\030\005 \001(\tB\004\342A\001\003B\307\001\n"
           + "\037com.google.cloud.support.v2betaB\n"
-          + "ActorProtoP\001Z9cloud.google.com/go/sup"
-          + "port/apiv2beta/supportpb;supportpb\252\002\033Goo"
-          + "gle.Cloud.Support.V2Beta\312\002\033Google\\Cloud\\"
-          + "Support\\V2beta\352\002\036Google::Cloud::Support::V2betab\006proto3"
+          + "ActorProtoP\001Z9cloud.google.com/go/s"
+          + "upport/apiv2beta/supportpb;supportpb\252\002\033G"
+          + "oogle.Cloud.Support.V2Beta\312\002\033Google\\Clou"
+          + "d\\Support\\V2beta\352\002\036Google::Cloud::Support::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

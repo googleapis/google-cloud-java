@@ -53,20 +53,24 @@ public final class OperationMetadataProto extends com.google.protobuf.GeneratedF
 
   static {
     java.lang.String[] descriptorData = {
-      "\n*google/iam/v3beta/operation_metadata.p"
+      "\n"
+          + "*google/iam/v3beta/operation_metadata.p"
           + "roto\022\021google.iam.v3beta\032\037google/api/fiel"
-          + "d_behavior.proto\032\037google/protobuf/timest"
-          + "amp.proto\"\200\002\n\021OperationMetadata\0224\n\013creat"
-          + "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.protobu"
-          + "f.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n"
-          + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001(\t"
-          + "B\003\340A\003\022#\n\026requested_cancellation\030\006 \001(\010B\003\340"
-          + "A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003B\224\001\n\025com.goo"
-          + "gle.iam.v3betaB\026OperationMetadataProtoP\001"
-          + "Z-cloud.google.com/go/iam/apiv3beta/iamp"
-          + "b;iampb\252\002\027Google.Cloud.Iam.V3Beta\312\002\027Goog"
-          + "le\\Cloud\\Iam\\V3betab\006proto3"
+          + "d_behavior.proto\032\037google/protobuf/timestamp.proto\"\207\002\n"
+          + "\021OperationMetadata\0225\n"
+          + "\013create_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n"
+          + "\010end_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\024\n"
+          + "\006target\030\003 \001(\tB\004\342A\001\003\022\022\n"
+          + "\004verb\030\004 \001(\tB\004\342A\001\003\022\034\n"
+          + "\016status_message\030\005 \001(\tB\004\342A\001\003\022$\n"
+          + "\026requested_cancellation\030\006 \001(\010B\004\342A\001\003\022\031\n"
+          + "\013api_version\030\007 \001(\tB\004\342A\001\003B\224\001\n"
+          + "\025com.google.iam.v3betaB\026OperationMetadata"
+          + "ProtoP\001Z-cloud.google.com/go/iam/apiv3be"
+          + "ta/iampb;iampb\252\002\027Google.Cloud.Iam.V3Beta"
+          + "\312\002\027Google\\Cloud\\Iam\\V3betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

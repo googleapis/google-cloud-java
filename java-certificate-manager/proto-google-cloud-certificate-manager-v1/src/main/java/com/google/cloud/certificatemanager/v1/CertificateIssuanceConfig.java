@@ -69,6 +69,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 10:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1969,12 +1971,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A user-defined name of the certificate issuance config.
+   * Identifier. A user-defined name of the certificate issuance config.
    * CertificateIssuanceConfig names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1995,12 +1997,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A user-defined name of the certificate issuance config.
+   * Identifier. A user-defined name of the certificate issuance config.
    * CertificateIssuanceConfig names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -2152,10 +2154,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Set of labels associated with a CertificateIssuanceConfig.
+   * Optional. Set of labels associated with a CertificateIssuanceConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -2176,10 +2178,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Set of labels associated with a CertificateIssuanceConfig.
+   * Optional. Set of labels associated with a CertificateIssuanceConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2190,10 +2192,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Set of labels associated with a CertificateIssuanceConfig.
+   * Optional. Set of labels associated with a CertificateIssuanceConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2211,10 +2213,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Set of labels associated with a CertificateIssuanceConfig.
+   * Optional. Set of labels associated with a CertificateIssuanceConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2237,10 +2239,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a CertificateIssuanceConfig.
+   * Optional. One or more paragraphs of text description of a
+   * CertificateIssuanceConfig.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -2261,10 +2264,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a CertificateIssuanceConfig.
+   * Optional. One or more paragraphs of text description of a
+   * CertificateIssuanceConfig.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -2465,6 +2469,133 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
         : result;
   }
 
+  public static final int TAGS_FIELD_NUMBER = 10;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.certificatemanager.v1.CertificateIssuanceConfigProto
+                .internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2508,6 +2639,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
             .getNumber()) {
       output.writeEnum(9, keyAlgorithm_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 10);
     getUnknownFields().writeTo(output);
   }
 
@@ -2556,6 +2689,16 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, keyAlgorithm_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, tags__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2594,6 +2737,7 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     }
     if (getRotationWindowPercentage() != other.getRotationWindowPercentage()) return false;
     if (keyAlgorithm_ != other.keyAlgorithm_) return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2633,6 +2777,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
     hash = (53 * hash) + getRotationWindowPercentage();
     hash = (37 * hash) + KEY_ALGORITHM_FIELD_NUMBER;
     hash = (53 * hash) + keyAlgorithm_;
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2759,6 +2907,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 10:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2770,6 +2920,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 10:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -2833,6 +2985,7 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       }
       rotationWindowPercentage_ = 0;
       keyAlgorithm_ = 0;
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -2907,6 +3060,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.keyAlgorithm_ = keyAlgorithm_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2955,6 +3112,8 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       if (other.keyAlgorithm_ != 0) {
         setKeyAlgorithmValue(other.getKeyAlgorithmValue());
       }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000200;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3046,6 +3205,15 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
+            case 82:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3071,12 +3239,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A user-defined name of the certificate issuance config.
+     * Identifier. A user-defined name of the certificate issuance config.
      * CertificateIssuanceConfig names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3096,12 +3264,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A user-defined name of the certificate issuance config.
+     * Identifier. A user-defined name of the certificate issuance config.
      * CertificateIssuanceConfig names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3121,12 +3289,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A user-defined name of the certificate issuance config.
+     * Identifier. A user-defined name of the certificate issuance config.
      * CertificateIssuanceConfig names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3145,12 +3313,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A user-defined name of the certificate issuance config.
+     * Identifier. A user-defined name of the certificate issuance config.
      * CertificateIssuanceConfig names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3165,12 +3333,12 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * A user-defined name of the certificate issuance config.
+     * Identifier. A user-defined name of the certificate issuance config.
      * CertificateIssuanceConfig names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateIssuanceConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -3640,10 +3808,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3664,10 +3832,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3678,10 +3846,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -3699,10 +3867,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3726,10 +3894,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3750,10 +3918,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3771,10 +3939,10 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Set of labels associated with a CertificateIssuanceConfig.
+     * Optional. Set of labels associated with a CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3788,10 +3956,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a CertificateIssuanceConfig.
+     * Optional. One or more paragraphs of text description of a
+     * CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -3811,10 +3980,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a CertificateIssuanceConfig.
+     * Optional. One or more paragraphs of text description of a
+     * CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -3834,10 +4004,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a CertificateIssuanceConfig.
+     * Optional. One or more paragraphs of text description of a
+     * CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3856,10 +4027,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a CertificateIssuanceConfig.
+     * Optional. One or more paragraphs of text description of a
+     * CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3874,10 +4046,11 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a CertificateIssuanceConfig.
+     * Optional. One or more paragraphs of text description of a
+     * CertificateIssuanceConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -4511,6 +4684,213 @@ public final class CertificateIssuanceConfig extends com.google.protobuf.Generat
       bitField0_ = (bitField0_ & ~0x00000100);
       keyAlgorithm_ = 0;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
       return this;
     }
 

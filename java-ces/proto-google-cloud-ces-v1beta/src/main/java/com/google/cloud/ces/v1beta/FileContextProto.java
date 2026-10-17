@@ -59,17 +59,17 @@ public final class FileContextProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "*google/cloud/ces/v1beta/file_context.p"
-          + "roto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\"\260\001\n"
-          + "\013FileContext\022I\n\n"
+          + "roto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\"\264\001\n"
+          + "\013FileContext\022J\n\n"
           + "file_bytes\030\001"
-          + " \001(\0132..google.cloud.ces.v1beta.FileContext.FileBytesB\003\340A\001H\000\032N\n"
-          + "\tFileBytes\022\026\n"
-          + "\tfile_name\030\001 \001(\tB\003\340A\002\022\026\n"
-          + "\tmime_type\030\002 \001(\tB\003\340A\002\022\021\n"
-          + "\004data\030\003 \001(\014B\003\340A\002B\006\n"
+          + " \001(\0132..google.cloud.ces.v1beta.FileContext.FileBytesB\004\342A\001\001H\000\032Q\n"
+          + "\tFileBytes\022\027\n"
+          + "\tfile_name\030\001 \001(\tB\004\342A\001\002\022\027\n"
+          + "\tmime_type\030\002 \001(\tB\004\342A\001\002\022\022\n"
+          + "\004data\030\003 \001(\014B\004\342A\001\002B\006\n"
           + "\004fileB`\n"
-          + "\033com.google.cloud.ces.v1betaB\020FileContextProtoP\001Z-cloud.google.com/go/ces/ap"
-          + "iv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\020FileContextProtoP\001Z-cloud.google.com/go/ce"
+          + "s/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

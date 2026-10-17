@@ -30,12 +30,12 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the trust config. TrustConfig names must be
-   * unique globally and match pattern
+   * Identifier. A user-defined name of the trust config. TrustConfig names must
+   * be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the trust config. TrustConfig names must be
-   * unique globally and match pattern
+   * Identifier. A user-defined name of the trust config. TrustConfig names must
+   * be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -140,10 +140,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
 
@@ -151,10 +151,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
 
@@ -166,10 +166,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
 
@@ -177,10 +177,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -192,10 +192,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -203,10 +203,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a TrustConfig.
+   * Optional. One or more paragraphs of text description of a TrustConfig.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -216,10 +216,10 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a TrustConfig.
+   * Optional. One or more paragraphs of text description of a TrustConfig.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -259,7 +259,88 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSpiffeTrustStoresCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsSpiffeTrustStores(java.lang.String key);
+
+  /** Use {@link #getSpiffeTrustStoresMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+      getSpiffeTrustStores();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+      getSpiffeTrustStoresMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getSpiffeTrustStoresOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getSpiffeTrustStoresOrThrow(
+      java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -267,7 +348,8 @@ public interface TrustConfigOrBuilder
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
@@ -277,7 +359,7 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -285,7 +367,8 @@ public interface TrustConfigOrBuilder
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getTrustStores(int index);
@@ -294,7 +377,7 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -302,7 +385,8 @@ public interface TrustConfigOrBuilder
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   int getTrustStoresCount();
@@ -311,7 +395,7 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -319,7 +403,8 @@ public interface TrustConfigOrBuilder
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   java.util.List<? extends com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder>
@@ -329,7 +414,7 @@ public interface TrustConfigOrBuilder
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -337,9 +422,184 @@ public interface TrustConfigOrBuilder
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder getTrustStoresOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>
+      getAllowlistedCertificatesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+      getAllowlistedCertificates(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAllowlistedCertificatesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder>
+      getAllowlistedCertificatesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder
+      getAllowlistedCertificatesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }

@@ -56,12 +56,12 @@ public final class CodeBlockProto extends com.google.protobuf.GeneratedFile {
       "\n3google/cloud/dialogflow/cx/v3beta1/cod"
           + "e_block.proto\022\"google.cloud.dialogflow.c"
           + "x.v3beta1\032\037google/api/field_behavior.pro"
-          + "to\"\036\n\tCodeBlock\022\021\n\004code\030\001 \001(\tB\003\340A\001B\234\001\n&c"
-          + "om.google.cloud.dialogflow.cx.v3beta1B\016C"
-          + "odeBlockProtoP\001Z6cloud.google.com/go/dia"
-          + "logflow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\"G"
-          + "oogle.Cloud.Dialogflow.Cx.V3Beta1b\006proto"
-          + "3"
+          + "to\"\037\n\tCodeBlock\022\022\n\004code\030\001 \001(\tB\004\342A\001\001B\234\001\n&"
+          + "com.google.cloud.dialogflow.cx.v3beta1B\016"
+          + "CodeBlockProtoP\001Z6cloud.google.com/go/di"
+          + "alogflow/cx/apiv3beta1/cxpb;cxpb\242\002\002DF\252\002\""
+          + "Google.Cloud.Dialogflow.Cx.V3Beta1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

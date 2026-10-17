@@ -92,6 +92,7 @@ import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
 import com.google.cloud.certificatemanager.v1.TrustConfig;
+import com.google.cloud.certificatemanager.v1.UpdateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
@@ -286,6 +287,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
   private final OperationCallSettings<
           CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
       createCertificateIssuanceConfigOperationSettings;
+  private final UnaryCallSettings<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigSettings;
+  private final OperationCallSettings<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationSettings;
   private final UnaryCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigSettings;
   private final OperationCallSettings<
@@ -971,6 +977,19 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     return createCertificateIssuanceConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateCertificateIssuanceConfig. */
+  public UnaryCallSettings<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigSettings() {
+    return updateCertificateIssuanceConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCertificateIssuanceConfig. */
+  public OperationCallSettings<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationSettings() {
+    return updateCertificateIssuanceConfigOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteCertificateIssuanceConfig. */
   public UnaryCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigSettings() {
@@ -1202,6 +1221,10 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
         settingsBuilder.createCertificateIssuanceConfigSettings().build();
     createCertificateIssuanceConfigOperationSettings =
         settingsBuilder.createCertificateIssuanceConfigOperationSettings().build();
+    updateCertificateIssuanceConfigSettings =
+        settingsBuilder.updateCertificateIssuanceConfigSettings().build();
+    updateCertificateIssuanceConfigOperationSettings =
+        settingsBuilder.updateCertificateIssuanceConfigOperationSettings().build();
     deleteCertificateIssuanceConfigSettings =
         settingsBuilder.deleteCertificateIssuanceConfigSettings().build();
     deleteCertificateIssuanceConfigOperationSettings =
@@ -1332,6 +1355,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
     private final OperationCallSettings.Builder<
             CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
         createCertificateIssuanceConfigOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateCertificateIssuanceConfigRequest, Operation>
+        updateCertificateIssuanceConfigSettings;
+    private final OperationCallSettings.Builder<
+            UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+        updateCertificateIssuanceConfigOperationSettings;
     private final UnaryCallSettings.Builder<DeleteCertificateIssuanceConfigRequest, Operation>
         deleteCertificateIssuanceConfigSettings;
     private final OperationCallSettings.Builder<
@@ -1441,6 +1469,8 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
       getCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
+      updateCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
       deleteCertificateIssuanceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCertificateIssuanceConfigOperationSettings = OperationCallSettings.newBuilder();
       listTrustConfigsSettings = PagedCallSettings.newBuilder(LIST_TRUST_CONFIGS_PAGE_STR_FACT);
@@ -1479,6 +1509,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               listCertificateIssuanceConfigsSettings,
               getCertificateIssuanceConfigSettings,
               createCertificateIssuanceConfigSettings,
+              updateCertificateIssuanceConfigSettings,
               deleteCertificateIssuanceConfigSettings,
               listTrustConfigsSettings,
               getTrustConfigSettings,
@@ -1542,6 +1573,10 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           settings.createCertificateIssuanceConfigSettings.toBuilder();
       createCertificateIssuanceConfigOperationSettings =
           settings.createCertificateIssuanceConfigOperationSettings.toBuilder();
+      updateCertificateIssuanceConfigSettings =
+          settings.updateCertificateIssuanceConfigSettings.toBuilder();
+      updateCertificateIssuanceConfigOperationSettings =
+          settings.updateCertificateIssuanceConfigOperationSettings.toBuilder();
       deleteCertificateIssuanceConfigSettings =
           settings.deleteCertificateIssuanceConfigSettings.toBuilder();
       deleteCertificateIssuanceConfigOperationSettings =
@@ -1582,6 +1617,7 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
               listCertificateIssuanceConfigsSettings,
               getCertificateIssuanceConfigSettings,
               createCertificateIssuanceConfigSettings,
+              updateCertificateIssuanceConfigSettings,
               deleteCertificateIssuanceConfigSettings,
               listTrustConfigsSettings,
               getTrustConfigSettings,
@@ -1731,6 +1767,11 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
           .createCertificateIssuanceConfigSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateCertificateIssuanceConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteCertificateIssuanceConfigSettings()
@@ -2071,6 +2112,32 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CertificateIssuanceConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateCertificateIssuanceConfigOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateCertificateIssuanceConfigRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(
@@ -2437,6 +2504,19 @@ public class CertificateManagerStubSettings extends StubSettings<CertificateMana
             CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
         createCertificateIssuanceConfigOperationSettings() {
       return createCertificateIssuanceConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<UpdateCertificateIssuanceConfigRequest, Operation>
+        updateCertificateIssuanceConfigSettings() {
+      return updateCertificateIssuanceConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCertificateIssuanceConfig. */
+    public OperationCallSettings.Builder<
+            UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+        updateCertificateIssuanceConfigOperationSettings() {
+      return updateCertificateIssuanceConfigOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */

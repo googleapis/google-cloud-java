@@ -56,12 +56,12 @@ public final class AgentToolProto extends com.google.protobuf.GeneratedFile {
       "\n$google/cloud/ces/v1/agent_tool.proto\022\023"
           + "google.cloud.ces.v1\032\037google/api/field_be"
           + "havior.proto\032\031google/api/resource.proto\""
-          + "n\n\tAgentTool\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013descr"
-          + "iption\030\002 \001(\tB\003\340A\001\0224\n\nroot_agent\030\003 \001(\tB \340"
-          + "A\001\372A\032\n\030ces.googleapis.com/AgentBV\n\027com.g"
-          + "oogle.cloud.ces.v1B\016AgentToolProtoP\001Z)cl"
-          + "oud.google.com/go/ces/apiv1/cespb;cespbb"
-          + "\006proto3"
+          + "q\n\tAgentTool\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\031\n\013desc"
+          + "ription\030\002 \001(\tB\004\342A\001\001\0225\n\nroot_agent\030\003 \001(\tB"
+          + "!\342A\001\001\372A\032\n\030ces.googleapis.com/AgentBV\n\027co"
+          + "m.google.cloud.ces.v1B\016AgentToolProtoP\001Z"
+          + ")cloud.google.com/go/ces/apiv1/cespb;ces"
+          + "pbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
