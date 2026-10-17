@@ -140,8 +140,9 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
       }
       closed = true;
     }
-    listener.onDone(iterator.isWithBeginTransaction());
+    boolean withBeginTransaction = iterator.isWithBeginTransaction();
     iterator.close("ResultSet closed");
+    listener.onDone(withBeginTransaction);
   }
 
   @Override
