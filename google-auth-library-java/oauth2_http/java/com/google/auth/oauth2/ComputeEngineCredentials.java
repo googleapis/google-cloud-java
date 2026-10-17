@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  * <p>Fetches access tokens from the Google Compute Engine metadata server. When a workload
  * certificate for an agent identity is available, requests certificate-bound access tokens and ID
  * tokens by default (see {@code IdTokenProvider.Option.DISABLE_BOUND_ID_TOKEN} and the <a
- * href="https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library">Google
+ * href="https://cloud.google.com/java/getting-started/getting-started-with-google-auth-library#certificate-bound-tokens-for-agent-identities">Google
  * Auth Library guide</a>).
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
