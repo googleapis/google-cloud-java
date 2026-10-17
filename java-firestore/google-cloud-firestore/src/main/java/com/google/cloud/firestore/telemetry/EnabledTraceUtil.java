@@ -23,6 +23,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.common.base.Throwables;
+import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
@@ -34,6 +35,9 @@ import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.instrumentation.grpc.v1_6.GrpcTelemetry;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Map;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -44,6 +48,13 @@ import javax.annotation.Nullable;
  */
 @InternalApi
 public class EnabledTraceUtil implements TraceUtil {
+  // opentelemetry-instrumentation-grpc-1.6 2.25.0-alpha renamed newClientInterceptor() to
+  // createClientInterceptor(). See https://github.com/googleapis/google-cloud-java/issues/13095
+  private static final String[] CLIENT_INTERCEPTOR_METHOD_NAMES = {
+    "createClientInterceptor", "newClientInterceptor"
+  };
+  private static final Method CLIENT_INTERCEPTOR_METHOD = resolveClientInterceptorMethod();
+
   private final Tracer tracer;
   private final OpenTelemetry openTelemetry;
   private final FirestoreOptions firestoreOptions;
@@ -73,13 +84,40 @@ public class EnabledTraceUtil implements TraceUtil {
     return openTelemetry;
   }
 
+  @SuppressWarnings("JavaReflectionMemberAccess")
+  private static Method resolveClientInterceptorMethod() {
+    for (String methodName : CLIENT_INTERCEPTOR_METHOD_NAMES) {
+      try {
+        return GrpcTelemetry.class.getMethod(methodName);
+      } catch (NoSuchMethodException ignored) {
+        // Try the next known name.
+      }
+    }
+    throw new IllegalStateException(
+        "GrpcTelemetry declares none of "
+            + Arrays.toString(CLIENT_INTERCEPTOR_METHOD_NAMES)
+            + ". An incompatible opentelemetry-instrumentation-grpc-1.6 version is on the"
+            + " classpath.");
+  }
+
+  private static ClientInterceptor createClientInterceptor(GrpcTelemetry grpcTelemetry) {
+    try {
+      return (ClientInterceptor) CLIENT_INTERCEPTOR_METHOD.invoke(grpcTelemetry);
+    } catch (IllegalAccessException e) {
+      throw new IllegalStateException(e);
+    } catch (InvocationTargetException e) {
+      Throwables.throwIfUnchecked(e.getCause());
+      throw new IllegalStateException(e.getCause());
+    }
+  }
+
   // The gRPC channel configurator that intercepts gRPC calls for tracing purposes.
   public class OpenTelemetryGrpcChannelConfigurator
       implements ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> {
     @Override
     public ManagedChannelBuilder apply(ManagedChannelBuilder managedChannelBuilder) {
       GrpcTelemetry grpcTelemetry = GrpcTelemetry.create(getOpenTelemetry());
-      return managedChannelBuilder.intercept(grpcTelemetry.newClientInterceptor());
+      return managedChannelBuilder.intercept(createClientInterceptor(grpcTelemetry));
     }
   }
 
