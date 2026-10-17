@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doThrow;
@@ -29,7 +30,9 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
@@ -193,6 +196,129 @@ public class TransactionRunnerImplTest {
     assertEquals(RequestOptions.Priority.PRIORITY_HIGH, capturedOptions.priority());
     assertEquals("tag", capturedOptions.tag());
     assertEquals(clientContext, capturedOptions.clientContext());
+  }
+
+  @Test
+  public void commitCancelsInFlightRpcWhenCallingThreadInterrupted() {
+    when(session.getName()).thenReturn("projects/p/instances/i/databases/d/sessions/s");
+    TransactionContextImpl transaction =
+        TransactionContextImpl.newBuilder()
+            .setSession(session)
+            .setTransactionId(ByteString.copyFromUtf8("test-txn"))
+            .setOptions(Options.fromTransactionOptions())
+            .setRpc(rpc)
+            .setTracer(tracer)
+            .setSpan(span)
+            .build();
+    SettableApiFuture<CommitResponse> inFlightCommit = SettableApiFuture.create();
+    when(rpc.commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap()))
+        .thenAnswer(
+            invocation -> {
+              Thread.currentThread().interrupt();
+              return inFlightCommit;
+            });
+
+    try {
+      SpannerException e = assertThrows(SpannerException.class, transaction::commit);
+      assertEquals(ErrorCode.CANCELLED, e.getErrorCode());
+      assertTrue("in-flight Commit RPC was not cancelled", inFlightCommit.isCancelled());
+    } finally {
+      // Clear the interrupt flag so it cannot leak into other tests.
+      Thread.interrupted();
+    }
+  }
+
+  @Test
+  public void commitAsyncCancelsInFlightRpcWhenReturnedFutureIsCancelled() {
+    when(session.getName()).thenReturn("projects/p/instances/i/databases/d/sessions/s");
+    TransactionContextImpl transaction =
+        TransactionContextImpl.newBuilder()
+            .setSession(session)
+            .setTransactionId(ByteString.copyFromUtf8("test-txn"))
+            .setOptions(Options.fromTransactionOptions())
+            .setRpc(rpc)
+            .setTracer(tracer)
+            .setSpan(span)
+            .build();
+    SettableApiFuture<CommitResponse> inFlightCommit = SettableApiFuture.create();
+    when(rpc.commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap()))
+        .thenReturn(inFlightCommit);
+
+    ApiFuture<com.google.cloud.spanner.CommitResponse> commitFuture = transaction.commitAsync();
+    assertTrue(commitFuture.cancel(true));
+
+    assertTrue("in-flight Commit RPC was not cancelled", inFlightCommit.isCancelled());
+  }
+
+  @Test
+  public void commitAsyncSkipsCommitRpcWhenCancelledBeforeItIsSent() {
+    SettableApiFuture<Transaction> beginTransaction = SettableApiFuture.create();
+    setUpTransactionThatCommitsAfterBeginTransaction(beginTransaction);
+    TransactionContextImpl transaction = newTransactionWithoutTransactionId();
+
+    ApiFuture<com.google.cloud.spanner.CommitResponse> commitFuture = transaction.commitAsync();
+    // The Commit RPC is only sent once BeginTransaction has finished, so cancelling here means
+    // that the commit is abandoned before there is any RPC to cancel.
+    assertTrue(commitFuture.cancel(true));
+    verify(rpc, never()).commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap());
+
+    beginTransaction.set(
+        Transaction.newBuilder().setId(ByteString.copyFromUtf8("test-txn")).build());
+
+    // The commit was already abandoned, so the Commit RPC should not be sent at all.
+    verify(rpc, never()).commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap());
+  }
+
+  @Test
+  public void commitSkipsCommitRpcWhenCallingThreadInterruptedBeforeItIsSent() {
+    SettableApiFuture<Transaction> beginTransaction = SettableApiFuture.create();
+    setUpTransactionThatCommitsAfterBeginTransaction(beginTransaction);
+    TransactionContextImpl transaction = newTransactionWithoutTransactionId();
+
+    try {
+      // Interrupting before commit() waits for the result means that it gives up while
+      // BeginTransaction is still pending, and therefore before the Commit RPC has been sent.
+      Thread.currentThread().interrupt();
+      SpannerException e = assertThrows(SpannerException.class, transaction::commit);
+      assertEquals(ErrorCode.CANCELLED, e.getErrorCode());
+      verify(rpc, never()).commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap());
+
+      // commit() restores the interrupt flag, and BeginTransaction finishes on a gax thread that
+      // does not have that flag. Clear it so the listeners below are not interrupted either.
+      Thread.interrupted();
+      beginTransaction.set(
+          Transaction.newBuilder().setId(ByteString.copyFromUtf8("test-txn")).build());
+
+      // The commit was already abandoned, so the Commit RPC should not be sent at all.
+      verify(rpc, never()).commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap());
+    } finally {
+      // Clear the interrupt flag so it cannot leak into other tests.
+      Thread.interrupted();
+    }
+  }
+
+  private void setUpTransactionThatCommitsAfterBeginTransaction(
+      SettableApiFuture<Transaction> beginTransaction) {
+    when(session.getName()).thenReturn("projects/p/instances/i/databases/d/sessions/s");
+    when(session.beginTransactionAsync(
+            Mockito.any(Options.class),
+            Mockito.anyBoolean(),
+            Mockito.anyMap(),
+            Mockito.any(),
+            Mockito.any()))
+        .thenReturn(beginTransaction);
+    when(rpc.commitAsync(Mockito.any(CommitRequest.class), Mockito.anyMap()))
+        .thenReturn(SettableApiFuture.create());
+  }
+
+  private TransactionContextImpl newTransactionWithoutTransactionId() {
+    return TransactionContextImpl.newBuilder()
+        .setSession(session)
+        .setOptions(Options.fromTransactionOptions())
+        .setRpc(rpc)
+        .setTracer(tracer)
+        .setSpan(span)
+        .build();
   }
 
   @SuppressWarnings("unchecked")
