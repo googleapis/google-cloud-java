@@ -16,15 +16,18 @@
 
 package com.google.cloud.firestore.spi.v1;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
+import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -41,6 +44,9 @@ import com.google.cloud.firestore.v1.stub.FirestoreStubSettings;
 import com.google.cloud.firestore.v1.stub.GrpcFirestoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.BatchWriteRequest;
@@ -70,6 +76,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
 
 /**
  * GRPC client implementation of the Firestore RPC methods. Exposes FirestoreOptions on top of the
@@ -77,12 +84,28 @@ import java.util.concurrent.TimeUnit;
  */
 public class GrpcFirestoreRpc implements FirestoreRpc {
 
+  private static final ApiCallContext TRANSACTION_CALL_CONTEXT =
+      GrpcCallContext.createDefault()
+          .withExtraHeaders(ImmutableMap.of("x-goog-is-transaction", ImmutableList.of("true")));
+
+  private static final ApiCallContext NON_TRANSACTION_CALL_CONTEXT =
+      GrpcCallContext.createDefault()
+          .withExtraHeaders(ImmutableMap.of("x-goog-is-transaction", ImmutableList.of("false")));
+
   private final FirestoreStub firestoreStub;
   private final ScheduledExecutorService executor;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
   private final ClientContext clientContext;
 
   private boolean closed;
+
+  @VisibleForTesting
+  GrpcFirestoreRpc(FirestoreStub firestoreStub) {
+    this.firestoreStub = firestoreStub;
+    this.executor = null;
+    this.executorFactory = null;
+    this.clientContext = null;
+  }
 
   public GrpcFirestoreRpc(final FirestoreOptions options) throws IOException {
     GrpcTransportOptions transportOptions = (GrpcTransportOptions) options.getTransportOptions();
@@ -221,69 +244,114 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   @Override
   public UnaryCallable<CommitRequest, CommitResponse> commitCallable() {
-    return firestoreStub.commitCallable();
+    return withRoutingHeaders(
+        firestoreStub.commitCallable(), req -> !req.getTransaction().isEmpty());
   }
 
   @Override
   public UnaryCallable<BatchWriteRequest, BatchWriteResponse> batchWriteCallable() {
-    return firestoreStub.batchWriteCallable();
+    return firestoreStub.batchWriteCallable().withDefaultCallContext(NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public ServerStreamingCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable() {
-    return firestoreStub.batchGetDocumentsCallable();
+    return withRoutingHeaders(
+        firestoreStub.batchGetDocumentsCallable(),
+        req -> !req.getTransaction().isEmpty() || req.hasNewTransaction());
   }
 
   @Override
   public ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
-    return firestoreStub.runQueryCallable();
+    return withRoutingHeaders(
+        firestoreStub.runQueryCallable(),
+        req -> !req.getTransaction().isEmpty() || req.hasNewTransaction());
   }
 
   @Override
   public ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
       executePipelineCallable() {
-    return firestoreStub.executePipelineCallable();
+    return withRoutingHeaders(
+        firestoreStub.executePipelineCallable(),
+        req -> !req.getTransaction().isEmpty() || req.hasNewTransaction());
   }
 
   @Override
   public ServerStreamingCallable<RunAggregationQueryRequest, RunAggregationQueryResponse>
       runAggregationQueryCallable() {
-    return firestoreStub.runAggregationQueryCallable();
+    return withRoutingHeaders(
+        firestoreStub.runAggregationQueryCallable(),
+        req -> !req.getTransaction().isEmpty() || req.hasNewTransaction());
   }
 
   @Override
   public UnaryCallable<BeginTransactionRequest, BeginTransactionResponse>
       beginTransactionCallable() {
-    return firestoreStub.beginTransactionCallable();
+    return firestoreStub
+        .beginTransactionCallable()
+        .withDefaultCallContext(TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public UnaryCallable<RollbackRequest, Empty> rollbackCallable() {
-    return firestoreStub.rollbackCallable();
+    return firestoreStub.rollbackCallable().withDefaultCallContext(TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public UnaryCallable<ListCollectionIdsRequest, ListCollectionIdsPagedResponse>
       listCollectionIdsPagedCallable() {
-    return firestoreStub.listCollectionIdsPagedCallable();
+    return firestoreStub
+        .listCollectionIdsPagedCallable()
+        .withDefaultCallContext(NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public UnaryCallable<PartitionQueryRequest, FirestoreClient.PartitionQueryPagedResponse>
       partitionQueryPagedCallable() {
-    return firestoreStub.partitionQueryPagedCallable();
+    return firestoreStub
+        .partitionQueryPagedCallable()
+        .withDefaultCallContext(NON_TRANSACTION_CALL_CONTEXT);
   }
 
   @Override
   public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
       listDocumentsPagedCallable() {
-    return firestoreStub.listDocumentsPagedCallable();
+    return withRoutingHeaders(
+        firestoreStub.listDocumentsPagedCallable(), req -> !req.getTransaction().isEmpty());
   }
 
   @Override
   public BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable() {
-    return firestoreStub.listenCallable();
+    return firestoreStub.listenCallable().withDefaultCallContext(NON_TRANSACTION_CALL_CONTEXT);
+  }
+
+  private static <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> withRoutingHeaders(
+      UnaryCallable<RequestT, ResponseT> callable, Predicate<RequestT> isTransaction) {
+    return new UnaryCallable<RequestT, ResponseT>() {
+      @Override
+      public ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext thisCallContext) {
+        ApiCallContext defaultContext =
+            isTransaction.test(request) ? TRANSACTION_CALL_CONTEXT : NON_TRANSACTION_CALL_CONTEXT;
+        return callable.futureCall(request, defaultContext.merge(thisCallContext));
+      }
+    };
+  }
+
+  private static <RequestT, ResponseT>
+      ServerStreamingCallable<RequestT, ResponseT> withRoutingHeaders(
+          ServerStreamingCallable<RequestT, ResponseT> callable,
+          Predicate<RequestT> isTransaction) {
+    return new ServerStreamingCallable<RequestT, ResponseT>() {
+      @Override
+      public void call(
+          RequestT request,
+          ResponseObserver<ResponseT> responseObserver,
+          ApiCallContext thisCallContext) {
+        ApiCallContext defaultContext =
+            isTransaction.test(request) ? TRANSACTION_CALL_CONTEXT : NON_TRANSACTION_CALL_CONTEXT;
+        callable.call(request, responseObserver, defaultContext.merge(thisCallContext));
+      }
+    };
   }
 
   // This class is needed solely to get access to protected method setInternalHeaderProvider()
