@@ -186,7 +186,7 @@ public final class CredentialAccessBoundary implements Serializable {
     private final String availableResource;
     private final List<String> availablePermissions;
 
-    @Nullable private final AvailabilityCondition availabilityCondition;
+    private final @Nullable AvailabilityCondition availabilityCondition;
 
     AccessBoundaryRule(
         String availableResource,
@@ -217,8 +217,7 @@ public final class CredentialAccessBoundary implements Serializable {
       return availablePermissions;
     }
 
-    @Nullable
-    public AvailabilityCondition getAvailabilityCondition() {
+    public @Nullable AvailabilityCondition getAvailabilityCondition() {
       return availabilityCondition;
     }
 
@@ -246,7 +245,7 @@ public final class CredentialAccessBoundary implements Serializable {
       private String availableResource;
       private List<String> availablePermissions;
 
-      @Nullable private AvailabilityCondition availabilityCondition;
+      private @Nullable AvailabilityCondition availabilityCondition;
 
       private Builder() {}
 
@@ -305,7 +304,8 @@ public final class CredentialAccessBoundary implements Serializable {
        * @return this {@code Builder} object
        */
       @CanIgnoreReturnValue
-      public Builder setAvailabilityCondition(AvailabilityCondition availabilityCondition) {
+      public Builder setAvailabilityCondition(
+          @Nullable AvailabilityCondition availabilityCondition) {
         this.availabilityCondition = availabilityCondition;
         return this;
       }
@@ -335,8 +335,8 @@ public final class CredentialAccessBoundary implements Serializable {
 
       private final String expression;
 
-      @Nullable private final String title;
-      @Nullable private final String description;
+      private final @Nullable String title;
+      private final @Nullable String description;
 
       AvailabilityCondition(
           String expression, @Nullable String title, @Nullable String description) {
@@ -351,13 +351,11 @@ public final class CredentialAccessBoundary implements Serializable {
         return expression;
       }
 
-      @Nullable
-      public String getTitle() {
+      public @Nullable String getTitle() {
         return title;
       }
 
-      @Nullable
-      public String getDescription() {
+      public @Nullable String getDescription() {
         return description;
       }
 
@@ -384,8 +382,8 @@ public final class CredentialAccessBoundary implements Serializable {
       public static final class Builder {
         private String expression;
 
-        @Nullable private String title;
-        @Nullable private String description;
+        private @Nullable String title;
+        private @Nullable String description;
 
         private Builder() {}
 
@@ -413,7 +411,7 @@ public final class CredentialAccessBoundary implements Serializable {
          * @return this {@code Builder} object
          */
         @CanIgnoreReturnValue
-        public Builder setTitle(String title) {
+        public Builder setTitle(@Nullable String title) {
           this.title = title;
           return this;
         }
@@ -425,7 +423,7 @@ public final class CredentialAccessBoundary implements Serializable {
          * @return this {@code Builder} object
          */
         @CanIgnoreReturnValue
-        public Builder setDescription(String description) {
+        public Builder setDescription(@Nullable String description) {
           this.description = description;
           return this;
         }

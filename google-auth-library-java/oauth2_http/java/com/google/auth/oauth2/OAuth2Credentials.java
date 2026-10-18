@@ -83,7 +83,7 @@ public class OAuth2Credentials extends Credentials {
   // byte[] is serializable, so the lock variable can be final
   @VisibleForTesting final Object lock = new byte[0];
   private volatile @Nullable OAuthValue value = null;
-  @Nullable @VisibleForTesting transient RefreshTask refreshTask;
+  @VisibleForTesting transient @Nullable RefreshTask refreshTask;
 
   // Change listeners are not serialized
   private transient @Nullable List<CredentialsChangedListener> changeListeners;

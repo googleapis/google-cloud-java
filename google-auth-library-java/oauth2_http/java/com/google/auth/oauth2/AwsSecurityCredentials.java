@@ -44,7 +44,7 @@ public class AwsSecurityCredentials {
   private final String accessKeyId;
   private final String secretAccessKey;
 
-  @Nullable private final String sessionToken;
+  private final @Nullable String sessionToken;
 
   /**
    * Constructor for AWSSecurityCredentials.
@@ -83,8 +83,7 @@ public class AwsSecurityCredentials {
    *
    * @return the AWS session token.
    */
-  @Nullable
-  public String getSessionToken() {
+  public @Nullable String getSessionToken() {
     return sessionToken;
   }
 }

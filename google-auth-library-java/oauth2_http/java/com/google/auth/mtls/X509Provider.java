@@ -54,7 +54,7 @@ import org.jspecify.annotations.Nullable;
 public class X509Provider implements MtlsProvider {
   private final EnvironmentProvider envProvider;
   private final PropertyProvider propProvider;
-  private final String certConfigPathOverride;
+  private final @Nullable String certConfigPathOverride;
 
   /**
    * Creates an X509 provider with an override path for the certificate configuration, bypassing the
@@ -69,7 +69,7 @@ public class X509Provider implements MtlsProvider {
   public X509Provider(
       EnvironmentProvider envProvider,
       PropertyProvider propProvider,
-      String certConfigPathOverride) {
+      @Nullable String certConfigPathOverride) {
     this.envProvider = envProvider;
     this.propProvider = propProvider;
     this.certConfigPathOverride = certConfigPathOverride;
