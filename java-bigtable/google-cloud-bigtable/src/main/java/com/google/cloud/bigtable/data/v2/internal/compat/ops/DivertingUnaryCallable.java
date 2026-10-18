@@ -116,12 +116,12 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   private boolean useExperimental(ReqT req) {
-    if (!experimental.supports(req)) {
+    float ratio = resolveSessionLoad();
+    if (ratio == 0) {
       return false;
     }
 
-    float ratio = resolveSessionLoad();
-    if (ratio == 0) {
+    if (!experimental.supports(req)) {
       return false;
     }
 
