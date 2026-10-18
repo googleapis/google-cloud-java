@@ -62,12 +62,12 @@ public interface DeleteTrustConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The current etag of the TrustConfig.
+   * Optional. The current etag of the TrustConfig.
    * If an etag is provided and does not match the current etag of the resource,
    * deletion will be blocked and an ABORTED error will be returned.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -77,12 +77,12 @@ public interface DeleteTrustConfigRequestOrBuilder
    *
    *
    * <pre>
-   * The current etag of the TrustConfig.
+   * Optional. The current etag of the TrustConfig.
    * If an etag is provided and does not match the current etag of the resource,
    * deletion will be blocked and an ABORTED error will be returned.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */

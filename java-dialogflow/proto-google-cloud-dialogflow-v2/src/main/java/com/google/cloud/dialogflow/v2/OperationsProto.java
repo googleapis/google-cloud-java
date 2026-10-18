@@ -56,13 +56,13 @@ public final class OperationsProto extends com.google.protobuf.GeneratedFile {
       "\n+google/cloud/dialogflow/v2/operations."
           + "proto\022\032google.cloud.dialogflow.v2\032\037googl"
           + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\"I\n$GeneratorEvaluationOper"
-          + "ationMetadata\022!\n\024generator_evaluation\030\001 "
-          + "\001(\tB\003\340A\003B\225\001\n\036com.google.cloud.dialogflow"
-          + ".v2B\017OperationsProtoP\001Z>cloud.google.com"
-          + "/go/dialogflow/apiv2/dialogflowpb;dialog"
-          + "flowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2"
-          + "b\006proto3"
+          + "esource.proto\"J\n$GeneratorEvaluationOper"
+          + "ationMetadata\022\"\n\024generator_evaluation\030\001 "
+          + "\001(\tB\004\342A\001\003B\225\001\n\036com.google.cloud.dialogflo"
+          + "w.v2B\017OperationsProtoP\001Z>cloud.google.co"
+          + "m/go/dialogflow/apiv2/dialogflowpb;dialo"
+          + "gflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V"
+          + "2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

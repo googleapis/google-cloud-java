@@ -56,13 +56,13 @@ public final class OperationsProto extends com.google.protobuf.GeneratedFile {
       "\n0google/cloud/dialogflow/v2beta1/operat"
           + "ions.proto\022\037google.cloud.dialogflow.v2be"
           + "ta1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\"I\n$GeneratorEval"
-          + "uationOperationMetadata\022!\n\024generator_eva"
-          + "luation\030\001 \001(\tB\003\340A\003B\244\001\n#com.google.cloud."
-          + "dialogflow.v2beta1B\017OperationsProtoP\001ZCc"
-          + "loud.google.com/go/dialogflow/apiv2beta1"
-          + "/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Google"
-          + ".Cloud.Dialogflow.V2Beta1b\006proto3"
+          + "ogle/api/resource.proto\"J\n$GeneratorEval"
+          + "uationOperationMetadata\022\"\n\024generator_eva"
+          + "luation\030\001 \001(\tB\004\342A\001\003B\244\001\n#com.google.cloud"
+          + ".dialogflow.v2beta1B\017OperationsProtoP\001ZC"
+          + "cloud.google.com/go/dialogflow/apiv2beta"
+          + "1/dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Googl"
+          + "e.Cloud.Dialogflow.V2Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -81,9 +81,21 @@ public final class TrustConifgProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_certificatemanager_v1_TrustConfig_TrustStore_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_certificatemanager_v1_TrustConfig_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_certificatemanager_v1_TrustConfig_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_certificatemanager_v1_TrustConfig_SpiffeTrustStoresEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_certificatemanager_v1_TrustConfig_SpiffeTrustStoresEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_certificatemanager_v1_TrustConfig_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_certificatemanager_v1_TrustConfig_TagsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -96,67 +108,86 @@ public final class TrustConifgProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "5google/cloud/certificatemanager/v1/trust_config.proto\022\"google.cloud.certificat"
           + "emanager.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\235\001\n"
-          + "\027ListTrustConfigsRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!locations.googleapis.com/Location\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\n"
-          + "page_token\030\003 \001(\t\022\016\n"
-          + "\006filter\030\004 \001(\t\022\020\n"
-          + "\010order_by\030\005 \001(\t\"\220\001\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\266\001\n"
+          + "\027ListTrustConfigsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\220\001\n"
           + "\030ListTrustConfigsResponse\022F\n\r"
-          + "trust_configs\030\001 \003(\0132/.google."
-          + "cloud.certificatemanager.v1.TrustConfig\022\027\n"
+          + "trust_configs\030\001"
+          + " \003(\0132/.google.cloud.certificatemanager.v1.TrustConfig\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\\\n"
-          + "\025GetTrustConfigRequest\022C\n"
-          + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
-          + "-certificatemanager.googleapis.com/TrustConfig\"\277\001\n"
-          + "\030CreateTrustConfigRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!locations.googleapis.com/Location\022\034\n"
-          + "\017trust_config_id\030\002 \001(\tB\003\340A\002\022J\n"
-          + "\014trust_config\030\003 \001(\0132"
-          + "/.google.cloud.certificatemanager.v1.TrustConfigB\003\340A\002\"\234\001\n"
-          + "\030UpdateTrustConfigRequest\022J\n"
-          + "\014trust_config\030\001 \001(\0132/.google.cloud."
-          + "certificatemanager.v1.TrustConfigB\003\340A\002\0224\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"m\n"
-          + "\030DeleteTrustConfigRequest\022C\n"
-          + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
-          + "-certificatemanager.googleapis.com/TrustConfig\022\014\n"
-          + "\004etag\030\002 \001(\t\"\225\006\n"
-          + "\013TrustConfig\022\014\n"
-          + "\004name\030\001 \001(\t\0224\n"
-          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022K\n"
-          + "\006labels\030\004 \003(\0132;."
-          + "google.cloud.certificatemanager.v1.TrustConfig.LabelsEntry\022\023\n"
-          + "\013description\030\005 \001(\t\022\014\n"
-          + "\004etag\030\006 \001(\t\022P\n"
-          + "\014trust_stores\030\010 \003(\0132:.go"
-          + "ogle.cloud.certificatemanager.v1.TrustConfig.TrustStore\0320\n"
+          + "\013unreachable\030\003 \003(\t\"]\n"
+          + "\025GetTrustConfigRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\342A\001\002\372A/\n"
+          + "-certificatemanager.googleapis.com/TrustConfig\"\302\001\n"
+          + "\030CreateTrustConfigRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\035\n"
+          + "\017trust_config_id\030\002 \001(\tB\004\342A\001\002\022K\n"
+          + "\014trust_config\030\003 \001(\0132/.google.clo"
+          + "ud.certificatemanager.v1.TrustConfigB\004\342A\001\002\"\236\001\n"
+          + "\030UpdateTrustConfigRequest\022K\n"
+          + "\014trust_config\030\001"
+          + " \001(\0132/.google.cloud.certificatemanager.v1.TrustConfigB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"t\n"
+          + "\030DeleteTrustConfigRequest\022D\n"
+          + "\004name\030\001 \001(\tB6\342A\001\002\372A/\n"
+          + "-certificatemanager.googleapis.com/TrustConfig\022\022\n"
+          + "\004etag\030\002 \001(\tB\004\342A\001\001\"\340\n\n"
+          + "\013TrustConfig\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\0225\n"
+          + "\013create_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022Q\n"
+          + "\006labels\030\004 "
+          + "\003(\0132;.google.cloud.certificatemanager.v1.TrustConfig.LabelsEntryB\004\342A\001\001\022\031\n"
+          + "\013description\030\005 \001(\tB\004\342A\001\001\022\014\n"
+          + "\004etag\030\006 \001(\t\022i\n"
+          + "\023spiffe_trust_stores\030\007 \003(\0132F.google.cloud.cert"
+          + "ificatemanager.v1.TrustConfig.SpiffeTrustStoresEntryB\004\342A\001\001\022V\n"
+          + "\014trust_stores\030\010 \003(\013"
+          + "2:.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreB\004\342A\001\001\022n\n"
+          + "\030allowlisted_certificates\030\t \003(\0132F.google.cloud.cert"
+          + "ificatemanager.v1.TrustConfig.AllowlistedCertificateB\004\342A\001\001\022O\n"
+          + "\004tags\030\n"
+          + " \003(\01329.googl"
+          + "e.cloud.certificatemanager.v1.TrustConfig.TagsEntryB\006\342A\003\004\005\001\0320\n"
           + "\013TrustAnchor\022\031\n"
           + "\017pem_certificate\030\001 \001(\tH\000B\006\n"
           + "\004kind\0323\n"
           + "\016IntermediateCA\022\031\n"
           + "\017pem_certificate\030\001 \001(\tH\000B\006\n"
-          + "\004kind\032\272\001\n\n"
-          + "TrustStore\022R\n\r"
-          + "trust_anchors\030\001 \003(\0132;.g"
-          + "oogle.cloud.certificatemanager.v1.TrustConfig.TrustAnchor\022X\n"
-          + "\020intermediate_cas\030\002 "
-          + "\003(\0132>.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA\032-\n"
+          + "\004kind\032\306\001\n\n"
+          + "TrustStore\022X\n\r"
+          + "trust_anchors\030\001 \003(\013"
+          + "2;.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchorB\004\342A\001\001\022^\n"
+          + "\020intermediate_cas\030\002 \003(\0132>.google.cloud.certificate"
+          + "manager.v1.TrustConfig.IntermediateCAB\004\342A\001\001\0327\n"
+          + "\026AllowlistedCertificate\022\035\n"
+          + "\017pem_certificate\030\001 \001(\tB\004\342A\001\002\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001:w\352At\n"
-          + "-certificatemanager.googleapis.com/Trust"
-          + "Config\022Cprojects/{project}/locations/{location}/trustConfigs/{trust_config}B\206\002\n"
-          + "&com.google.cloud.certificatemanager.v1B\020"
-          + "TrustConifgProtoP\001ZVcloud.google.com/go/certificatemanager/apiv1/certificatemana"
-          + "gerpb;certificatemanagerpb\252\002\"Google.Clou"
-          + "d.CertificateManager.V1\312\002\"Google\\Cloud\\C"
-          + "ertificateManager\\V1\352\002%Google::Cloud::CertificateManager::V1b\006proto3"
+          + "\005value\030\002 \001(\t:\0028\001\032t\n"
+          + "\026SpiffeTrustStoresEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022I\n"
+          + "\005value\030\002 \001("
+          + "\0132:.google.cloud.certificatemanager.v1.TrustConfig.TrustStore:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001:\223\001\352A\217\001\n"
+          + "-certificatemanager.googleapis.com/TrustConfig\022Cprojects/{project}/locations/{loca"
+          + "tion}/trustConfigs/{trust_config}*\014trustConfigs2\013trustConfigB\206\002\n"
+          + "&com.google.cloud.certificatemanager.v1B\020TrustConifgProt"
+          + "oP\001ZVcloud.google.com/go/certificatemanager/apiv1/certificatemanagerpb;certifica"
+          + "temanagerpb\252\002\"Google.Cloud.CertificateMa"
+          + "nager.V1\312\002\"Google\\Cloud\\CertificateManag"
+          + "er\\V1\352\002%Google::Cloud::CertificateManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -221,7 +252,16 @@ public final class TrustConifgProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_certificatemanager_v1_TrustConfig_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "UpdateTime", "Labels", "Description", "Etag", "TrustStores",
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "Description",
+              "Etag",
+              "SpiffeTrustStores",
+              "TrustStores",
+              "AllowlistedCertificates",
+              "Tags",
             });
     internal_static_google_cloud_certificatemanager_v1_TrustConfig_TrustAnchor_descriptor =
         internal_static_google_cloud_certificatemanager_v1_TrustConfig_descriptor.getNestedType(0);
@@ -247,11 +287,35 @@ public final class TrustConifgProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "TrustAnchors", "IntermediateCas",
             });
-    internal_static_google_cloud_certificatemanager_v1_TrustConfig_LabelsEntry_descriptor =
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_descriptor =
         internal_static_google_cloud_certificatemanager_v1_TrustConfig_descriptor.getNestedType(3);
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_descriptor,
+            new java.lang.String[] {
+              "PemCertificate",
+            });
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_LabelsEntry_descriptor =
+        internal_static_google_cloud_certificatemanager_v1_TrustConfig_descriptor.getNestedType(4);
     internal_static_google_cloud_certificatemanager_v1_TrustConfig_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_certificatemanager_v1_TrustConfig_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_SpiffeTrustStoresEntry_descriptor =
+        internal_static_google_cloud_certificatemanager_v1_TrustConfig_descriptor.getNestedType(5);
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_SpiffeTrustStoresEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_certificatemanager_v1_TrustConfig_SpiffeTrustStoresEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_TagsEntry_descriptor =
+        internal_static_google_cloud_certificatemanager_v1_TrustConfig_descriptor.getNestedType(6);
+    internal_static_google_cloud_certificatemanager_v1_TrustConfig_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_certificatemanager_v1_TrustConfig_TagsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

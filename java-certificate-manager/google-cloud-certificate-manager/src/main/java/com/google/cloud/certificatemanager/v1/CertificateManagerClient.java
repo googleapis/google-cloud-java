@@ -551,6 +551,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateCertificateIssuanceConfig</td>
+ *      <td><p> Updates a CertificateIssuanceConfig.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCertificateIssuanceConfigAsync(UpdateCertificateIssuanceConfigRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateCertificateIssuanceConfigAsync(CertificateIssuanceConfig certificateIssuanceConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCertificateIssuanceConfigOperationCallable()
+ *           <li><p> updateCertificateIssuanceConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteCertificateIssuanceConfig</td>
  *      <td><p> Deletes a single CertificateIssuanceConfig.</td>
  *      <td>
@@ -670,7 +689,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -4349,6 +4370,141 @@ public class CertificateManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates a CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   CertificateIssuanceConfig certificateIssuanceConfig =
+   *       CertificateIssuanceConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient
+   *           .updateCertificateIssuanceConfigAsync(certificateIssuanceConfig, updateMask)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param certificateIssuanceConfig Required. A definition of the certificate issuance config to
+   *     update.
+   * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
+   *     definition, see
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigAsync(
+          CertificateIssuanceConfig certificateIssuanceConfig, FieldMask updateMask) {
+    UpdateCertificateIssuanceConfigRequest request =
+        UpdateCertificateIssuanceConfigRequest.newBuilder()
+            .setCertificateIssuanceConfig(certificateIssuanceConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCertificateIssuanceConfigAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   UpdateCertificateIssuanceConfigRequest request =
+   *       UpdateCertificateIssuanceConfigRequest.newBuilder()
+   *           .setCertificateIssuanceConfig(CertificateIssuanceConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CertificateIssuanceConfig response =
+   *       certificateManagerClient.updateCertificateIssuanceConfigAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigAsync(UpdateCertificateIssuanceConfigRequest request) {
+    return updateCertificateIssuanceConfigOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   UpdateCertificateIssuanceConfigRequest request =
+   *       UpdateCertificateIssuanceConfigRequest.newBuilder()
+   *           .setCertificateIssuanceConfig(CertificateIssuanceConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CertificateIssuanceConfig, OperationMetadata> future =
+   *       certificateManagerClient
+   *           .updateCertificateIssuanceConfigOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CertificateIssuanceConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationCallable() {
+    return stub.updateCertificateIssuanceConfigOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a CertificateIssuanceConfig.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CertificateManagerClient certificateManagerClient = CertificateManagerClient.create()) {
+   *   UpdateCertificateIssuanceConfigRequest request =
+   *       UpdateCertificateIssuanceConfigRequest.newBuilder()
+   *           .setCertificateIssuanceConfig(CertificateIssuanceConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       certificateManagerClient.updateCertificateIssuanceConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigCallable() {
+    return stub.updateCertificateIssuanceConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single CertificateIssuanceConfig.
    *
    * <p>Sample code:
@@ -5240,6 +5396,18 @@ public class CertificateManagerClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -5272,6 +5440,18 @@ public class CertificateManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -5306,6 +5486,18 @@ public class CertificateManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

@@ -57,14 +57,14 @@ public final class ConnectorToolsetProto extends com.google.protobuf.GeneratedFi
           + "proto\022\023google.cloud.ces.v1\032\037google/api/f"
           + "ield_behavior.proto\032\036google/cloud/ces/v1"
           + "/auth.proto\032(google/cloud/ces/v1/connect"
-          + "or_tool.proto\"\252\001\n\020ConnectorToolset\022\027\n\nco"
-          + "nnection\030\001 \001(\tB\003\340A\002\022@\n\013auth_config\030\002 \001(\013"
-          + "2&.google.cloud.ces.v1.EndUserAuthConfig"
-          + "B\003\340A\001\022;\n\021connector_actions\030\003 \003(\0132\033.googl"
-          + "e.cloud.ces.v1.ActionB\003\340A\002B]\n\027com.google"
-          + ".cloud.ces.v1B\025ConnectorToolsetProtoP\001Z)"
-          + "cloud.google.com/go/ces/apiv1/cespb;cesp"
-          + "bb\006proto3"
+          + "or_tool.proto\"\255\001\n\020ConnectorToolset\022\030\n\nco"
+          + "nnection\030\001 \001(\tB\004\342A\001\002\022A\n\013auth_config\030\002 \001("
+          + "\0132&.google.cloud.ces.v1.EndUserAuthConfi"
+          + "gB\004\342A\001\001\022<\n\021connector_actions\030\003 \003(\0132\033.goo"
+          + "gle.cloud.ces.v1.ActionB\004\342A\001\002B]\n\027com.goo"
+          + "gle.cloud.ces.v1B\025ConnectorToolsetProtoP"
+          + "\001Z)cloud.google.com/go/ces/apiv1/cespb;c"
+          + "espbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

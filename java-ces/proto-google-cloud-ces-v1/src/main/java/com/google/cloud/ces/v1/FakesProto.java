@@ -57,15 +57,19 @@ public final class FakesProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n\037google/cloud/ces/v1/fakes.proto\022\023googl"
-          + "e.cloud.ces.v1\032\037google/api/field_behavio"
-          + "r.proto\"%\n\tCodeBlock\022\030\n\013python_code\030\001 \001("
-          + "\tB\003\340A\002\"{\n\016ToolFakeConfig\0229\n\ncode_block\030\001"
-          + " \001(\0132\036.google.cloud.ces.v1.CodeBlockB\003\340A"
-          + "\001H\000\022\035\n\020enable_fake_mode\030\002 \001(\010B\003\340A\001B\017\n\rto"
-          + "ol_responseBR\n\027com.google.cloud.ces.v1B\n"
-          + "FakesProtoP\001Z)cloud.google.com/go/ces/ap"
-          + "iv1/cespb;cespbb\006proto3"
+      "\n"
+          + "\037google/cloud/ces/v1/fakes.proto\022\023googl"
+          + "e.cloud.ces.v1\032\037google/api/field_behavior.proto\"&\n"
+          + "\tCodeBlock\022\031\n"
+          + "\013python_code\030\001 \001(\tB\004\342A\001\002\"}\n"
+          + "\016ToolFakeConfig\022:\n\n"
+          + "code_block\030\001"
+          + " \001(\0132\036.google.cloud.ces.v1.CodeBlockB\004\342A\001\001H\000\022\036\n"
+          + "\020enable_fake_mode\030\002 \001(\010B\004\342A\001\001B\017\n"
+          + "\r"
+          + "tool_responseBR\n"
+          + "\027com.google.cloud.ces.v1B\n"
+          + "FakesProtoP\001Z)cloud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

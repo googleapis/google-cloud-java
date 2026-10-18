@@ -56,14 +56,15 @@ public final class ClientFunctionProto extends com.google.protobuf.GeneratedFile
       "\n"
           + ")google/cloud/ces/v1/client_function.pr"
           + "oto\022\023google.cloud.ces.v1\032\037google/api/field_behavior.proto\032"
-          + " google/cloud/ces/v1/schema.proto\"\247\001\n"
-          + "\016ClientFunction\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
-          + "\013description\030\002 \001(\tB\003\340A\001\0224\n\n"
-          + "parameters\030\003 \001(\0132\033.google.cloud.ces.v1.SchemaB\003\340A\001\0222\n"
-          + "\010response\030\004 \001(\0132\033.google.cloud.ces.v1.SchemaB\003\340A\001B[\n"
-          + "\027com.google.cloud.ces.v1B\023ClientFunctionProtoP\001Z)cloud.g"
-          + "oogle.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + " google/cloud/ces/v1/schema.proto\"\253\001\n"
+          + "\016ClientFunction\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013description\030\002 \001(\tB\004\342A\001\001\0225\n"
+          + "\n"
+          + "parameters\030\003 \001(\0132\033.google.cloud.ces.v1.SchemaB\004\342A\001\001\0223\n"
+          + "\010response\030\004 \001(\0132\033.google.cloud.ces.v1.SchemaB\004\342A\001\001B[\n"
+          + "\027com.google.cloud.ces.v1B\023ClientFunctionProtoP\001Z)clo"
+          + "ud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

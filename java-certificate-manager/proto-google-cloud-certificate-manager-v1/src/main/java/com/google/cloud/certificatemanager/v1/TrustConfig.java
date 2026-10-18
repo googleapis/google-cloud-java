@@ -56,6 +56,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     description_ = "";
     etag_ = "";
     trustStores_ = java.util.Collections.emptyList();
+    allowlistedCertificates_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +71,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 4:
         return internalGetLabels();
+      case 7:
+        return internalGetSpiffeTrustStores();
+      case 10:
+        return internalGetTags();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -1686,11 +1691,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor>
@@ -1700,11 +1706,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor getTrustAnchors(int index);
@@ -1713,11 +1720,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     int getTrustAnchorsCount();
@@ -1726,11 +1734,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<
@@ -1741,11 +1750,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchorOrBuilder
@@ -1755,7 +1765,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -1763,7 +1773,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA>
@@ -1773,7 +1783,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -1781,7 +1791,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA getIntermediateCas(int index);
@@ -1790,7 +1800,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -1798,7 +1808,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     int getIntermediateCasCount();
@@ -1807,7 +1817,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -1815,7 +1825,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     java.util.List<
@@ -1826,7 +1836,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -1834,7 +1844,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCAOrBuilder
@@ -1901,11 +1911,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1918,11 +1929,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1936,11 +1948,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1952,11 +1965,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1969,11 +1983,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of Trust Anchors to be used while performing validation
+     * Optional. List of Trust Anchors to be used while performing validation
      * against a given TrustStore.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -1992,7 +2007,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -2000,7 +2015,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -2013,7 +2028,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -2021,7 +2036,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -2035,7 +2050,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -2043,7 +2058,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -2055,7 +2070,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -2063,7 +2078,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -2076,7 +2091,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of intermediate CA certificates used for the path building
+     * Optional. Set of intermediate CA certificates used for the path building
      * phase of chain validation.
      *
      * The field is currently not supported if TrustConfig is used for the
@@ -2084,7 +2099,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -2549,12 +2564,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor>
@@ -2570,12 +2585,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public int getTrustAnchorsCount() {
@@ -2590,12 +2605,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor getTrustAnchors(
@@ -2611,12 +2626,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setTrustAnchors(
@@ -2638,12 +2653,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setTrustAnchors(
@@ -2663,12 +2678,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTrustAnchors(
@@ -2690,12 +2705,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTrustAnchors(
@@ -2717,12 +2732,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTrustAnchors(
@@ -2741,12 +2756,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addTrustAnchors(
@@ -2766,12 +2781,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addAllTrustAnchors(
@@ -2792,12 +2807,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearTrustAnchors() {
@@ -2815,12 +2830,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder removeTrustAnchors(int index) {
@@ -2838,12 +2853,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor.Builder
@@ -2855,12 +2870,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchorOrBuilder
@@ -2876,12 +2891,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -2898,12 +2913,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor.Builder
@@ -2918,12 +2933,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor.Builder
@@ -2939,12 +2954,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * List of Trust Anchors to be used while performing validation
+       * Optional. List of Trust Anchors to be used while performing validation
        * against a given TrustStore.
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor trust_anchors = 1 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustAnchor.Builder>
@@ -2995,7 +3010,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3003,7 +3018,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA>
@@ -3019,7 +3034,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3027,7 +3042,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public int getIntermediateCasCount() {
@@ -3042,7 +3057,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3050,7 +3065,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA getIntermediateCas(
@@ -3066,7 +3081,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3074,7 +3089,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setIntermediateCas(
@@ -3096,7 +3111,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3104,7 +3119,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder setIntermediateCas(
@@ -3125,7 +3140,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3133,7 +3148,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addIntermediateCas(
@@ -3155,7 +3170,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3163,7 +3178,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addIntermediateCas(
@@ -3185,7 +3200,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3193,7 +3208,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addIntermediateCas(
@@ -3213,7 +3228,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3221,7 +3236,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addIntermediateCas(
@@ -3242,7 +3257,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3250,7 +3265,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder addAllIntermediateCas(
@@ -3271,7 +3286,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3279,7 +3294,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder clearIntermediateCas() {
@@ -3297,7 +3312,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3305,7 +3320,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public Builder removeIntermediateCas(int index) {
@@ -3323,7 +3338,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3331,7 +3346,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA.Builder
@@ -3343,7 +3358,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3351,7 +3366,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCAOrBuilder
@@ -3367,7 +3382,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3375,7 +3390,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -3392,7 +3407,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3400,7 +3415,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA.Builder
@@ -3415,7 +3430,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3423,7 +3438,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public com.google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA.Builder
@@ -3439,7 +3454,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Set of intermediate CA certificates used for the path building
+       * Optional. Set of intermediate CA certificates used for the path building
        * phase of chain validation.
        *
        * The field is currently not supported if TrustConfig is used for the
@@ -3447,7 +3462,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
        * </pre>
        *
        * <code>
-       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2;
+       * repeated .google.cloud.certificatemanager.v1.TrustConfig.IntermediateCA intermediate_cas = 2 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       public java.util.List<
@@ -3531,6 +3546,646 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface AllowlistedCertificateOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. PEM certificate that is allowlisted. The certificate can be up
+     * to 5k bytes, and must be a parseable X.509 certificate.
+     * </pre>
+     *
+     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The pemCertificate.
+     */
+    java.lang.String getPemCertificate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. PEM certificate that is allowlisted. The certificate can be up
+     * to 5k bytes, and must be a parseable X.509 certificate.
+     * </pre>
+     *
+     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for pemCertificate.
+     */
+    com.google.protobuf.ByteString getPemCertificateBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines an allowlisted certificate.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate}
+   */
+  public static final class AllowlistedCertificate extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate)
+      AllowlistedCertificateOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AllowlistedCertificate");
+    }
+
+    // Use AllowlistedCertificate.newBuilder() to construct.
+    private AllowlistedCertificate(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AllowlistedCertificate() {
+      pemCertificate_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.certificatemanager.v1.TrustConifgProto
+          .internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.certificatemanager.v1.TrustConifgProto
+          .internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.class,
+              com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+                  .class);
+    }
+
+    public static final int PEM_CERTIFICATE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pemCertificate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. PEM certificate that is allowlisted. The certificate can be up
+     * to 5k bytes, and must be a parseable X.509 certificate.
+     * </pre>
+     *
+     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The pemCertificate.
+     */
+    @java.lang.Override
+    public java.lang.String getPemCertificate() {
+      java.lang.Object ref = pemCertificate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pemCertificate_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. PEM certificate that is allowlisted. The certificate can be up
+     * to 5k bytes, and must be a parseable X.509 certificate.
+     * </pre>
+     *
+     * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for pemCertificate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPemCertificateBytes() {
+      java.lang.Object ref = pemCertificate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pemCertificate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pemCertificate_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, pemCertificate_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pemCertificate_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, pemCertificate_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate other =
+          (com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate) obj;
+
+      if (!getPemCertificate().equals(other.getPemCertificate())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PEM_CERTIFICATE_FIELD_NUMBER;
+      hash = (53 * hash) + getPemCertificate().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines an allowlisted certificate.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate)
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.certificatemanager.v1.TrustConifgProto
+            .internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.certificatemanager.v1.TrustConifgProto
+            .internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.class,
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        pemCertificate_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.certificatemanager.v1.TrustConifgProto
+            .internal_static_google_cloud_certificatemanager_v1_TrustConfig_AllowlistedCertificate_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+          getDefaultInstanceForType() {
+        return com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate build() {
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+          buildPartial() {
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate result =
+            new com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pemCertificate_ = pemCertificate_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate) {
+          return mergeFrom(
+              (com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate other) {
+        if (other
+            == com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+                .getDefaultInstance()) return this;
+        if (!other.getPemCertificate().isEmpty()) {
+          pemCertificate_ = other.pemCertificate_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  pemCertificate_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object pemCertificate_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. PEM certificate that is allowlisted. The certificate can be up
+       * to 5k bytes, and must be a parseable X.509 certificate.
+       * </pre>
+       *
+       * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The pemCertificate.
+       */
+      public java.lang.String getPemCertificate() {
+        java.lang.Object ref = pemCertificate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pemCertificate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. PEM certificate that is allowlisted. The certificate can be up
+       * to 5k bytes, and must be a parseable X.509 certificate.
+       * </pre>
+       *
+       * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for pemCertificate.
+       */
+      public com.google.protobuf.ByteString getPemCertificateBytes() {
+        java.lang.Object ref = pemCertificate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pemCertificate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. PEM certificate that is allowlisted. The certificate can be up
+       * to 5k bytes, and must be a parseable X.509 certificate.
+       * </pre>
+       *
+       * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The pemCertificate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPemCertificate(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pemCertificate_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. PEM certificate that is allowlisted. The certificate can be up
+       * to 5k bytes, and must be a parseable X.509 certificate.
+       * </pre>
+       *
+       * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPemCertificate() {
+        pemCertificate_ = getDefaultInstance().getPemCertificate();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. PEM certificate that is allowlisted. The certificate can be up
+       * to 5k bytes, and must be a parseable X.509 certificate.
+       * </pre>
+       *
+       * <code>string pem_certificate = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for pemCertificate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPemCertificateBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        pemCertificate_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate)
+    private static final com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate();
+    }
+
+    public static com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AllowlistedCertificate> PARSER =
+        new com.google.protobuf.AbstractParser<AllowlistedCertificate>() {
+          @java.lang.Override
+          public AllowlistedCertificate parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AllowlistedCertificate> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AllowlistedCertificate> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -3541,12 +4196,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A user-defined name of the trust config. TrustConfig names must be
-   * unique globally and match pattern
+   * Identifier. A user-defined name of the trust config. TrustConfig names must
+   * be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -3567,12 +4222,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A user-defined name of the trust config. TrustConfig names must be
-   * unique globally and match pattern
+   * Identifier. A user-defined name of the trust config. TrustConfig names must
+   * be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -3724,10 +4379,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -3748,10 +4403,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3762,10 +4417,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -3783,10 +4438,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of labels associated with a TrustConfig.
+   * Optional. Set of labels associated with a TrustConfig.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3809,10 +4464,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a TrustConfig.
+   * Optional. One or more paragraphs of text description of a TrustConfig.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -3833,10 +4488,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a TrustConfig.
+   * Optional. One or more paragraphs of text description of a TrustConfig.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -3910,6 +4565,143 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SPIFFE_TRUST_STORES_FIELD_NUMBER = 7;
+
+  private static final class SpiffeTrustStoresDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+                    newDefaultInstance(
+                        com.google.cloud.certificatemanager.v1.TrustConifgProto
+                            .internal_static_google_cloud_certificatemanager_v1_TrustConfig_SpiffeTrustStoresEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore
+                            .getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+      spiffeTrustStores_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+      internalGetSpiffeTrustStores() {
+    if (spiffeTrustStores_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SpiffeTrustStoresDefaultEntryHolder.defaultEntry);
+    }
+    return spiffeTrustStores_;
+  }
+
+  public int getSpiffeTrustStoresCount() {
+    return internalGetSpiffeTrustStores().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsSpiffeTrustStores(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSpiffeTrustStores().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getSpiffeTrustStoresMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<
+          java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+      getSpiffeTrustStores() {
+    return getSpiffeTrustStoresMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<
+          java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+      getSpiffeTrustStoresMap() {
+    return internalGetSpiffeTrustStores().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore
+      getSpiffeTrustStoresOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        map = internalGetSpiffeTrustStores().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+   * used for SPIFFE certificate validation.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getSpiffeTrustStoresOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        map = internalGetSpiffeTrustStores().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int TRUST_STORES_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -3920,7 +4712,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -3928,7 +4720,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3941,7 +4734,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -3949,7 +4742,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3963,7 +4757,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -3971,7 +4765,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -3983,7 +4778,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -3991,7 +4786,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -4003,7 +4799,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Set of trust stores to perform validation against.
+   * Optional. Set of trust stores to perform validation against.
    *
    * This field is supported when TrustConfig is configured with Load Balancers,
    * currently not supported for SPIFFE certificate validation.
@@ -4011,13 +4807,248 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
    * Only one TrustStore specified is currently allowed.
    * </pre>
    *
-   * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
   public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder
       getTrustStoresOrBuilder(int index) {
     return trustStores_.get(index);
+  }
+
+  public static final int ALLOWLISTED_CERTIFICATES_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>
+      allowlistedCertificates_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>
+      getAllowlistedCertificatesList() {
+    return allowlistedCertificates_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder>
+      getAllowlistedCertificatesOrBuilderList() {
+    return allowlistedCertificates_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAllowlistedCertificatesCount() {
+    return allowlistedCertificates_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+      getAllowlistedCertificates(int index) {
+    return allowlistedCertificates_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A certificate matching an allowlisted certificate is always
+   * considered valid as long as the certificate is parseable, proof of private
+   * key possession is established, and constraints on the certificate's SAN
+   * field are met.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder
+      getAllowlistedCertificatesOrBuilder(int index) {
+    return allowlistedCertificates_.get(index);
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 10;
+
+  private static final class TagsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.certificatemanager.v1.TrustConifgProto
+                .internal_static_google_cloud_certificatemanager_v1_TrustConfig_TagsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+    if (tags_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+    }
+    return tags_;
+  }
+
+  public int getTagsCount() {
+    return internalGetTags().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsTags(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetTags().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getTags() {
+    return getTagsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+    return internalGetTags().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getTagsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4051,9 +5082,19 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, etag_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetSpiffeTrustStores(),
+        SpiffeTrustStoresDefaultEntryHolder.defaultEntry,
+        7);
     for (int i = 0; i < trustStores_.size(); i++) {
       output.writeMessage(8, trustStores_.get(i));
     }
+    for (int i = 0; i < allowlistedCertificates_.size(); i++) {
+      output.writeMessage(9, allowlistedCertificates_.get(i));
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 10);
     getUnknownFields().writeTo(output);
   }
 
@@ -4088,8 +5129,36 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, etag_);
     }
+    for (java.util.Map.Entry<
+            java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        entry : internalGetSpiffeTrustStores().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+          spiffeTrustStores__ =
+              SpiffeTrustStoresDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, spiffeTrustStores__);
+    }
     for (int i = 0; i < trustStores_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, trustStores_.get(i));
+    }
+    for (int i = 0; i < allowlistedCertificates_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, allowlistedCertificates_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetTags().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+          TagsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, tags__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4119,7 +5188,11 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (!internalGetSpiffeTrustStores().equals(other.internalGetSpiffeTrustStores())) return false;
     if (!getTrustStoresList().equals(other.getTrustStoresList())) return false;
+    if (!getAllowlistedCertificatesList().equals(other.getAllowlistedCertificatesList()))
+      return false;
+    if (!internalGetTags().equals(other.internalGetTags())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4149,9 +5222,21 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (!internalGetSpiffeTrustStores().getMap().isEmpty()) {
+      hash = (37 * hash) + SPIFFE_TRUST_STORES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSpiffeTrustStores().hashCode();
+    }
     if (getTrustStoresCount() > 0) {
       hash = (37 * hash) + TRUST_STORES_FIELD_NUMBER;
       hash = (53 * hash) + getTrustStoresList().hashCode();
+    }
+    if (getAllowlistedCertificatesCount() > 0) {
+      hash = (37 * hash) + ALLOWLISTED_CERTIFICATES_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowlistedCertificatesList().hashCode();
+    }
+    if (!internalGetTags().getMap().isEmpty()) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4278,6 +5363,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetLabels();
+        case 7:
+          return internalGetSpiffeTrustStores();
+        case 10:
+          return internalGetTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -4289,6 +5378,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 4:
           return internalGetMutableLabels();
+        case 7:
+          return internalGetMutableSpiffeTrustStores();
+        case 10:
+          return internalGetMutableTags();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -4319,6 +5412,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetTrustStoresFieldBuilder();
+        internalGetAllowlistedCertificatesFieldBuilder();
       }
     }
 
@@ -4340,13 +5434,22 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
       internalGetMutableLabels().clear();
       description_ = "";
       etag_ = "";
+      internalGetMutableSpiffeTrustStores().clear();
       if (trustStoresBuilder_ == null) {
         trustStores_ = java.util.Collections.emptyList();
       } else {
         trustStores_ = null;
         trustStoresBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
+      if (allowlistedCertificatesBuilder_ == null) {
+        allowlistedCertificates_ = java.util.Collections.emptyList();
+      } else {
+        allowlistedCertificates_ = null;
+        allowlistedCertificatesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableTags().clear();
       return this;
     }
 
@@ -4385,13 +5488,23 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.certificatemanager.v1.TrustConfig result) {
       if (trustStoresBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           trustStores_ = java.util.Collections.unmodifiableList(trustStores_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.trustStores_ = trustStores_;
       } else {
         result.trustStores_ = trustStoresBuilder_.build();
+      }
+      if (allowlistedCertificatesBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          allowlistedCertificates_ =
+              java.util.Collections.unmodifiableList(allowlistedCertificates_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.allowlistedCertificates_ = allowlistedCertificates_;
+      } else {
+        result.allowlistedCertificates_ = allowlistedCertificatesBuilder_.build();
       }
     }
 
@@ -4418,6 +5531,14 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.spiffeTrustStores_ =
+            internalGetSpiffeTrustStores().build(SpiffeTrustStoresDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.tags_ = internalGetTags();
+        result.tags_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4458,11 +5579,13 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      internalGetMutableSpiffeTrustStores().mergeFrom(other.internalGetSpiffeTrustStores());
+      bitField0_ |= 0x00000040;
       if (trustStoresBuilder_ == null) {
         if (!other.trustStores_.isEmpty()) {
           if (trustStores_.isEmpty()) {
             trustStores_ = other.trustStores_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureTrustStoresIsMutable();
             trustStores_.addAll(other.trustStores_);
@@ -4475,7 +5598,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
             trustStoresBuilder_.dispose();
             trustStoresBuilder_ = null;
             trustStores_ = other.trustStores_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             trustStoresBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetTrustStoresFieldBuilder()
@@ -4485,6 +5608,35 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (allowlistedCertificatesBuilder_ == null) {
+        if (!other.allowlistedCertificates_.isEmpty()) {
+          if (allowlistedCertificates_.isEmpty()) {
+            allowlistedCertificates_ = other.allowlistedCertificates_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureAllowlistedCertificatesIsMutable();
+            allowlistedCertificates_.addAll(other.allowlistedCertificates_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.allowlistedCertificates_.isEmpty()) {
+          if (allowlistedCertificatesBuilder_.isEmpty()) {
+            allowlistedCertificatesBuilder_.dispose();
+            allowlistedCertificatesBuilder_ = null;
+            allowlistedCertificates_ = other.allowlistedCertificates_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            allowlistedCertificatesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAllowlistedCertificatesFieldBuilder()
+                    : null;
+          } else {
+            allowlistedCertificatesBuilder_.addAllMessages(other.allowlistedCertificates_);
+          }
+        }
+      }
+      internalGetMutableTags().mergeFrom(other.internalGetTags());
+      bitField0_ |= 0x00000200;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4555,6 +5707,21 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String,
+                        com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+                    spiffeTrustStores__ =
+                        input.readMessage(
+                            SpiffeTrustStoresDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSpiffeTrustStores()
+                    .ensureBuilderMap()
+                    .put(spiffeTrustStores__.getKey(), spiffeTrustStores__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             case 66:
               {
                 com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore m =
@@ -4569,6 +5736,30 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 66
+            case 74:
+              {
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate m =
+                    input.readMessage(
+                        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+                            .parser(),
+                        extensionRegistry);
+                if (allowlistedCertificatesBuilder_ == null) {
+                  ensureAllowlistedCertificatesIsMutable();
+                  allowlistedCertificates_.add(m);
+                } else {
+                  allowlistedCertificatesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 82:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> tags__ =
+                    input.readMessage(
+                        TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4594,12 +5785,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the trust config. TrustConfig names must be
-     * unique globally and match pattern
+     * Identifier. A user-defined name of the trust config. TrustConfig names must
+     * be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -4619,12 +5810,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the trust config. TrustConfig names must be
-     * unique globally and match pattern
+     * Identifier. A user-defined name of the trust config. TrustConfig names must
+     * be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -4644,12 +5835,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the trust config. TrustConfig names must be
-     * unique globally and match pattern
+     * Identifier. A user-defined name of the trust config. TrustConfig names must
+     * be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4668,12 +5859,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the trust config. TrustConfig names must be
-     * unique globally and match pattern
+     * Identifier. A user-defined name of the trust config. TrustConfig names must
+     * be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -4688,12 +5879,12 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A user-defined name of the trust config. TrustConfig names must be
-     * unique globally and match pattern
+     * Identifier. A user-defined name of the trust config. TrustConfig names must
+     * be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;trustConfigs/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -5163,10 +6354,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -5187,10 +6378,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -5201,10 +6392,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -5222,10 +6413,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -5249,10 +6440,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -5273,10 +6464,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -5294,10 +6485,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of labels associated with a TrustConfig.
+     * Optional. Set of labels associated with a TrustConfig.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -5311,10 +6502,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a TrustConfig.
+     * Optional. One or more paragraphs of text description of a TrustConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -5334,10 +6525,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a TrustConfig.
+     * Optional. One or more paragraphs of text description of a TrustConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -5357,10 +6548,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a TrustConfig.
+     * Optional. One or more paragraphs of text description of a TrustConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -5379,10 +6570,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a TrustConfig.
+     * Optional. One or more paragraphs of text description of a TrustConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5397,10 +6588,10 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a TrustConfig.
+     * Optional. One or more paragraphs of text description of a TrustConfig.
      * </pre>
      *
-     * <code>string description = 5;</code>
+     * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -5537,15 +6728,302 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private static final class SpiffeTrustStoresConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore> {
+      @java.lang.Override
+      public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore build(
+          com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder val) {
+        if (val instanceof com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore) {
+          return (com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore) val;
+        }
+        return ((com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder) val)
+            .build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+          defaultEntry() {
+        return SpiffeTrustStoresDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final SpiffeTrustStoresConverter spiffeTrustStoresConverter =
+        new SpiffeTrustStoresConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder>
+        spiffeTrustStores_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder>
+        internalGetSpiffeTrustStores() {
+      if (spiffeTrustStores_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(spiffeTrustStoresConverter);
+      }
+      return spiffeTrustStores_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore,
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder>
+        internalGetMutableSpiffeTrustStores() {
+      if (spiffeTrustStores_ == null) {
+        spiffeTrustStores_ = new com.google.protobuf.MapFieldBuilder<>(spiffeTrustStoresConverter);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return spiffeTrustStores_;
+    }
+
+    public int getSpiffeTrustStoresCount() {
+      return internalGetSpiffeTrustStores().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsSpiffeTrustStores(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSpiffeTrustStores().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getSpiffeTrustStoresMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        getSpiffeTrustStores() {
+      return getSpiffeTrustStoresMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<
+            java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        getSpiffeTrustStoresMap() {
+      return internalGetSpiffeTrustStores().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore
+        getSpiffeTrustStoresOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder>
+          map = internalGetMutableSpiffeTrustStores().ensureBuilderMap();
+      return map.containsKey(key) ? spiffeTrustStoresConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore
+        getSpiffeTrustStoresOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder>
+          map = internalGetMutableSpiffeTrustStores().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return spiffeTrustStoresConverter.build(map.get(key));
+    }
+
+    public Builder clearSpiffeTrustStores() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableSpiffeTrustStores().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSpiffeTrustStores(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSpiffeTrustStores().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<
+            java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+        getMutableSpiffeTrustStores() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableSpiffeTrustStores().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putSpiffeTrustStores(
+        java.lang.String key, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSpiffeTrustStores().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllSpiffeTrustStores(
+        java.util.Map<
+                java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+            values) {
+      for (java.util.Map.Entry<
+              java.lang.String, com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
+          e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableSpiffeTrustStores().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines a mapping from a trust domain to a TrustStore. This is
+     * used for SPIFFE certificate validation.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.certificatemanager.v1.TrustConfig.TrustStore&gt; spiffe_trust_stores = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder
+        putSpiffeTrustStoresBuilderIfAbsent(java.lang.String key) {
+      java.util.Map<
+              java.lang.String,
+              com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder>
+          builderMap = internalGetMutableSpiffeTrustStores().ensureBuilderMap();
+      com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder entry =
+          builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore) {
+        entry = ((com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder) entry;
+    }
+
     private java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
         trustStores_ = java.util.Collections.emptyList();
 
     private void ensureTrustStoresIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         trustStores_ =
             new java.util.ArrayList<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>(
                 trustStores_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -5559,7 +7037,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5567,7 +7045,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore>
@@ -5583,7 +7062,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5591,7 +7070,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getTrustStoresCount() {
@@ -5606,7 +7086,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5614,7 +7094,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore getTrustStores(int index) {
@@ -5629,7 +7110,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5637,7 +7118,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTrustStores(
@@ -5659,7 +7141,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5667,7 +7149,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setTrustStores(
@@ -5687,7 +7170,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5695,7 +7178,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrustStores(
@@ -5717,7 +7201,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5725,7 +7209,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrustStores(
@@ -5747,7 +7232,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5755,7 +7240,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrustStores(
@@ -5774,7 +7260,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5782,7 +7268,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addTrustStores(
@@ -5802,7 +7289,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5810,7 +7297,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllTrustStores(
@@ -5830,7 +7318,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5838,13 +7326,14 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearTrustStores() {
       if (trustStoresBuilder_ == null) {
         trustStores_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         trustStoresBuilder_.clear();
@@ -5856,7 +7345,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5864,7 +7353,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeTrustStores(int index) {
@@ -5882,7 +7372,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5890,7 +7380,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder
@@ -5902,7 +7393,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5910,7 +7401,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder
@@ -5926,7 +7418,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5934,7 +7426,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -5951,7 +7444,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5959,7 +7452,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder
@@ -5973,7 +7467,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -5981,7 +7475,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder
@@ -5996,7 +7491,7 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Set of trust stores to perform validation against.
+     * Optional. Set of trust stores to perform validation against.
      *
      * This field is supported when TrustConfig is configured with Load Balancers,
      * currently not supported for SPIFFE certificate validation.
@@ -6004,7 +7499,8 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
      * Only one TrustStore specified is currently allowed.
      * </pre>
      *
-     * <code>repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8;
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.TrustStore trust_stores = 8 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder>
@@ -6023,10 +7519,707 @@ public final class TrustConfig extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore,
                 com.google.cloud.certificatemanager.v1.TrustConfig.TrustStore.Builder,
                 com.google.cloud.certificatemanager.v1.TrustConfig.TrustStoreOrBuilder>(
-                trustStores_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                trustStores_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         trustStores_ = null;
       }
       return trustStoresBuilder_;
+    }
+
+    private java.util.List<
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>
+        allowlistedCertificates_ = java.util.Collections.emptyList();
+
+    private void ensureAllowlistedCertificatesIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        allowlistedCertificates_ =
+            new java.util.ArrayList<
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>(
+                allowlistedCertificates_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate,
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder,
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder>
+        allowlistedCertificatesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>
+        getAllowlistedCertificatesList() {
+      if (allowlistedCertificatesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(allowlistedCertificates_);
+      } else {
+        return allowlistedCertificatesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAllowlistedCertificatesCount() {
+      if (allowlistedCertificatesBuilder_ == null) {
+        return allowlistedCertificates_.size();
+      } else {
+        return allowlistedCertificatesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+        getAllowlistedCertificates(int index) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        return allowlistedCertificates_.get(index);
+      } else {
+        return allowlistedCertificatesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAllowlistedCertificates(
+        int index,
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate value) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.set(index, value);
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAllowlistedCertificates(
+        int index,
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+            builderForValue) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllowlistedCertificates(
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate value) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.add(value);
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllowlistedCertificates(
+        int index,
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate value) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.add(index, value);
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllowlistedCertificates(
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+            builderForValue) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.add(builderForValue.build());
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllowlistedCertificates(
+        int index,
+        com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+            builderForValue) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAllowlistedCertificates(
+        java.lang.Iterable<
+                ? extends com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate>
+            values) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        ensureAllowlistedCertificatesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowlistedCertificates_);
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAllowlistedCertificates() {
+      if (allowlistedCertificatesBuilder_ == null) {
+        allowlistedCertificates_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAllowlistedCertificates(int index) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        ensureAllowlistedCertificatesIsMutable();
+        allowlistedCertificates_.remove(index);
+        onChanged();
+      } else {
+        allowlistedCertificatesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+        getAllowlistedCertificatesBuilder(int index) {
+      return internalGetAllowlistedCertificatesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder
+        getAllowlistedCertificatesOrBuilder(int index) {
+      if (allowlistedCertificatesBuilder_ == null) {
+        return allowlistedCertificates_.get(index);
+      } else {
+        return allowlistedCertificatesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder>
+        getAllowlistedCertificatesOrBuilderList() {
+      if (allowlistedCertificatesBuilder_ != null) {
+        return allowlistedCertificatesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(allowlistedCertificates_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+        addAllowlistedCertificatesBuilder() {
+      return internalGetAllowlistedCertificatesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder
+        addAllowlistedCertificatesBuilder(int index) {
+      return internalGetAllowlistedCertificatesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A certificate matching an allowlisted certificate is always
+     * considered valid as long as the certificate is parseable, proof of private
+     * key possession is established, and constraints on the certificate's SAN
+     * field are met.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate allowlisted_certificates = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder>
+        getAllowlistedCertificatesBuilderList() {
+      return internalGetAllowlistedCertificatesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate,
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder,
+            com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder>
+        internalGetAllowlistedCertificatesFieldBuilder() {
+      if (allowlistedCertificatesBuilder_ == null) {
+        allowlistedCertificatesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate,
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificate.Builder,
+                com.google.cloud.certificatemanager.v1.TrustConfig.AllowlistedCertificateOrBuilder>(
+                allowlistedCertificates_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        allowlistedCertificates_ = null;
+      }
+      return allowlistedCertificatesBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> tags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetTags() {
+      if (tags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      return tags_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableTags() {
+      if (tags_ == null) {
+        tags_ = com.google.protobuf.MapField.newMapField(TagsDefaultEntryHolder.defaultEntry);
+      }
+      if (!tags_.isMutable()) {
+        tags_ = tags_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return tags_;
+    }
+
+    public int getTagsCount() {
+      return internalGetTags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetTags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getTagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getTags() {
+      return getTagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
+      return internalGetTags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getTagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getTagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearTags() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableTags().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeTags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableTags().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableTags().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putTags(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableTags().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Immutable. Tag keys/values directly bound to this
+     * resource. For example:
+     * "123/environment": "production",
+     * "123/costCenter": "marketing"
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; tags = 10 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableTags().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.certificatemanager.v1.TrustConfig)
