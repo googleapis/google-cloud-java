@@ -27,4 +27,11 @@ final class StreamingUtil {
     }
     return false;
   }
+
+  static boolean isDataAvailable(ResultSet resultSet) {
+    if (resultSet instanceof StreamingResultSet) {
+      return ((StreamingResultSet) resultSet).isDataAvailable();
+    }
+    return true;
+  }
 }

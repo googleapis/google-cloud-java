@@ -53,8 +53,10 @@ import java.util.concurrent.Executors;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -63,6 +65,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ITAsyncExamplesTest {
   @ClassRule public static IntegrationTestEnv env = new IntegrationTestEnv();
+  @Rule public Timeout globalTimeout = Timeout.seconds(120);
   private static final String TABLE_NAME = "TestTable";
   private static final String INDEX_NAME = "TestTableByValue";
   private static final List<String> ALL_COLUMNS = Arrays.asList("Key", "StringValue");
@@ -396,12 +399,16 @@ public class ITAsyncExamplesTest {
                   switch (resultSet.tryNext()) {
                     case DONE:
                       evenFinished.set(true);
+                      synchronized (lock) {
+                        lock.notifyAll();
+                      }
                       return CallbackResponse.DONE;
                     case NOT_READY:
                       return CallbackResponse.CONTINUE;
                     case OK:
                       synchronized (lock) {
                         allValues.add(resultSet.getString("StringValue"));
+                        lock.notifyAll();
                       }
                       evenReturnedFirstRow.countDown();
                       return CallbackResponse.PAUSE;
@@ -409,6 +416,9 @@ public class ITAsyncExamplesTest {
                 }
               } catch (Throwable t) {
                 evenFinished.setException(t);
+                synchronized (lock) {
+                  lock.notifyAll();
+                }
                 return CallbackResponse.DONE;
               }
             });
@@ -424,24 +434,35 @@ public class ITAsyncExamplesTest {
                   switch (resultSet.tryNext()) {
                     case DONE:
                       unevenFinished.set(true);
+                      synchronized (lock) {
+                        lock.notifyAll();
+                      }
                       return CallbackResponse.DONE;
                     case NOT_READY:
                       return CallbackResponse.CONTINUE;
                     case OK:
                       synchronized (lock) {
                         allValues.add(resultSet.getString("StringValue"));
+                        lock.notifyAll();
                       }
                       return CallbackResponse.PAUSE;
                   }
                 }
               } catch (Throwable t) {
                 unevenFinished.setException(t);
+                synchronized (lock) {
+                  lock.notifyAll();
+                }
                 return CallbackResponse.DONE;
               }
             });
         while (!(evenFinished.isDone() && unevenFinished.isDone())) {
           synchronized (lock) {
-            if (allValues.peekLast() != null) {
+            if (unevenFinished.isDone()) {
+              evenRs.resume();
+            } else if (evenFinished.isDone()) {
+              unevenRs.resume();
+            } else if (allValues.peekLast() != null) {
               if (Integer.parseInt(allValues.peekLast().substring(1)) % 2 == 1) {
                 evenRs.resume();
               } else {
@@ -451,6 +472,9 @@ public class ITAsyncExamplesTest {
             if (allValues.size() == 15) {
               unevenRs.resume();
               evenRs.resume();
+            }
+            if (!(evenFinished.isDone() && unevenFinished.isDone())) {
+              lock.wait(100);
             }
           }
         }

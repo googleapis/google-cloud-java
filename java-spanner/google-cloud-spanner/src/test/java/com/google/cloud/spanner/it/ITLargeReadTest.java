@@ -17,8 +17,13 @@
 package com.google.cloud.spanner.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import com.google.api.core.ApiFuture;
 import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.AsyncResultSet;
+import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Dialect;
@@ -38,6 +43,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -216,5 +225,88 @@ public class ITLargeReadTest {
       assertThat(++i).isAtMost(numRows);
     }
     assertThat(i).isEqualTo(numRows);
+  }
+
+  @Test
+  public void readAsync() throws Exception {
+    try (AsyncResultSet resultSet =
+        getClient(dialect.dialect)
+            .singleUse()
+            .readAsync(
+                TABLE_NAME, KeySet.all(), Arrays.asList("Key", "Data", "Fingerprint", "Size"))) {
+      validateAsync(resultSet);
+    }
+  }
+
+  @Test
+  public void readAsyncWithSmallPrefetchChunks() throws Exception {
+    try (AsyncResultSet resultSet =
+        getClient(dialect.dialect)
+            .singleUse()
+            .readAsync(
+                TABLE_NAME,
+                KeySet.all(),
+                Arrays.asList("Key", "Data", "Fingerprint", "Size"),
+                Options.prefetchChunks(1))) {
+      validateAsync(resultSet);
+    }
+  }
+
+  @Test
+  public void queryAsync() throws Exception {
+    try (AsyncResultSet resultSet =
+        getClient(dialect.dialect)
+            .singleUse()
+            .executeQueryAsync(
+                Statement.of(
+                    "SELECT Key, Data, Fingerprint, Size FROM " + TABLE_NAME + " ORDER BY Key"))) {
+      validateAsync(resultSet);
+    }
+  }
+
+  @Test
+  public void queryAsyncWithSmallPrefetchChunks() throws Exception {
+    try (AsyncResultSet resultSet =
+        getClient(dialect.dialect)
+            .singleUse()
+            .executeQueryAsync(
+                Statement.of(
+                    "SELECT Key, Data, Fingerprint, Size FROM " + TABLE_NAME + " ORDER BY Key"),
+                Options.prefetchChunks(1))) {
+      validateAsync(resultSet);
+    }
+  }
+
+  private void validateAsync(AsyncResultSet resultSet) throws Exception {
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      AtomicInteger rowCount = new AtomicInteger();
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              executor,
+              ready -> {
+                while (true) {
+                  switch (ready.tryNext()) {
+                    case OK:
+                      int index = rowCount.getAndIncrement();
+                      assertEquals(index, ready.getLong(0));
+                      ByteArray data = ready.getBytes(1);
+                      assertEquals(ready.getLong(3), data.length());
+                      assertEquals(ready.getLong(2), hasher.hashBytes(data.toByteArray()).asLong());
+                      assertTrue(rowCount.get() <= numRows);
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+      future.get(120, TimeUnit.SECONDS);
+      assertEquals(numRows, rowCount.get());
+    } finally {
+      executor.shutdown();
+      assertTrue(executor.awaitTermination(60, TimeUnit.SECONDS));
+    }
   }
 }

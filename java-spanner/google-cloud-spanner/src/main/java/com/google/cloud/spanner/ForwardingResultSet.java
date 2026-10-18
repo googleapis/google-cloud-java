@@ -110,4 +110,9 @@ public class ForwardingResultSet extends ForwardingStructReader
   public boolean initiateStreaming(AsyncResultSet.StreamMessageListener streamMessageListener) {
     return StreamingUtil.initiateStreaming(delegate.get(), streamMessageListener);
   }
+
+  @Override
+  public boolean isDataAvailable() {
+    return StreamingUtil.isDataAvailable(delegate.get());
+  }
 }
