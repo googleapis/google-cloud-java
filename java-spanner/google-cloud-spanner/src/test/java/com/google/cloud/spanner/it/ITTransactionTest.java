@@ -639,6 +639,9 @@ public class ITTransactionTest {
 
   @Test
   public void testTxWithLargeMessageSize() {
+    org.junit.Assume.assumeFalse(
+        "Skipping testTxWithLargeMessageSize on cloud-staging due to upstream staging regression",
+        System.getenv("JOB_TYPE") != null && System.getenv("JOB_TYPE").contains("cloud-staging"));
     int bytesPerColumn = 10000000; // 10MB
     String key = uniqueKey();
     Random random = new Random();
