@@ -21,6 +21,7 @@ import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.ClientConfiguration.PollingCase;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
+import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessOnly;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
@@ -446,8 +447,11 @@ public class ClientConfigurationManager implements AutoCloseable {
 
     // When sessions are disabled make sure to clear out the config. Read from the builder, not
     // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
-    // the server-returned config has session_load=0.
-    if (builder.getSessionConfiguration().getSessionLoad() == 0) {
+    // the server-returned config has session_load=0. Preserve the config if a diversion
+    // configuration is present even when session_load is 0, since diversion config encodes its own
+    // per-scope session loads.
+    if (builder.getSessionConfiguration().getSessionLoad() == 0
+        && !builder.getSessionConfiguration().hasSessionDiversionConfiguration()) {
       builder.clearSessionConfiguration();
       return builder.build();
     }
@@ -456,7 +460,13 @@ public class ClientConfigurationManager implements AutoCloseable {
   }
 
   public boolean areSessionsRequired() {
-    return overrideConfig.map(c -> c.getSessionConfiguration().getSessionLoad() > 0).orElse(false);
+    return overrideConfig
+        .map(
+            c -> {
+              SessionClientConfiguration session = c.getSessionConfiguration();
+              return session.getSessionLoad() > 0 || session.hasSessionDiversionConfiguration();
+            })
+        .orElse(false);
   }
 
   private long getRetryDelay(int attempt) {

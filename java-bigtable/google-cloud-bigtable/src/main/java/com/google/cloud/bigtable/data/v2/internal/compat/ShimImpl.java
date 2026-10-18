@@ -376,14 +376,20 @@ public class ShimImpl implements Shim {
         classic,
         new RowBuilderShim<>(readRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
-        debugTagTracer);
+        debugTagTracer,
+        "method:Bigtable.ReadRow");
   }
 
   @Override
   public UnaryCallable<RowMutation, Void> decorateMutateRow(
       UnaryCallable<RowMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, mutateRowShim, Util.extractTimeout(settings), debugTagTracer);
+        configManager,
+        classic,
+        mutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        "method:Bigtable.MutateRow");
   }
 
   @Override
@@ -397,7 +403,8 @@ public class ShimImpl implements Shim {
         classic,
         checkAndMutateRowShim,
         Util.extractTimeout(settings),
-        debugTagTracer);
+        debugTagTracer,
+        "method:Bigtable.CheckAndMutateRow");
   }
 
   @Override
@@ -414,6 +421,7 @@ public class ShimImpl implements Shim {
         new RowBuilderShim<>(
             readModifyWriteRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
-        debugTagTracer);
+        debugTagTracer,
+        "method:Bigtable.ReadModifyWriteRow");
   }
 }

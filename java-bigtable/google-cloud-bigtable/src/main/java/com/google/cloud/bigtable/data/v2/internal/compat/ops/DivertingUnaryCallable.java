@@ -22,6 +22,9 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.SessionClientConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration;
+import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.compat.FutureAdapter;
 import com.google.cloud.bigtable.data.v2.internal.compat.Util;
@@ -49,18 +52,22 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
 
   private final Duration defaultTimeout;
   private final DebugTagTracer debugTagTracer;
+  // Scope key for per-method diversion lookup, e.g. "method:Bigtable.ReadRow".
+  private final String methodScopeKey;
 
   public DivertingUnaryCallable(
       ClientConfigurationManager configurationManager,
       UnaryCallable<ReqT, RespT> classic,
       UnaryShim<ReqT, RespT> experimental,
       Duration defaultTimeout,
-      DebugTagTracer debugTagTracer) {
+      DebugTagTracer debugTagTracer,
+      String methodScopeKey) {
     this.configurationManager = configurationManager;
     this.classic = classic;
     this.experimental = experimental;
     this.defaultTimeout = defaultTimeout;
     this.debugTagTracer = debugTagTracer;
+    this.methodScopeKey = methodScopeKey;
   }
 
   @Override
@@ -109,13 +116,12 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   private boolean useExperimental(ReqT req) {
-    float ratio =
-        configurationManager.getClientConfiguration().getSessionConfiguration().getSessionLoad();
-    if (ratio == 0) {
+    if (!experimental.supports(req)) {
       return false;
     }
 
-    if (!experimental.supports(req)) {
+    float ratio = resolveSessionLoad();
+    if (ratio == 0) {
       return false;
     }
 
@@ -123,6 +129,27 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       return false;
     }
     return true;
+  }
+
+  private float resolveSessionLoad() {
+    SessionClientConfiguration sessionConfig =
+        configurationManager.getClientConfiguration().getSessionConfiguration();
+
+    if (sessionConfig.hasSessionDiversionConfiguration()) {
+      SessionDiversionConfiguration diversionConfig = sessionConfig.getSessionDiversionConfiguration();
+      switch (diversionConfig.getDiversionStrategyCase()) {
+        case GLOBAL_DIVERSION:
+          return diversionConfig.getGlobalDiversion().getSessionLoad();
+        case PER_SCOPE_DIVERSION:
+          SessionScopeDiversionConfiguration scopeConfig =
+              diversionConfig.getPerScopeDiversion().getScopeDiversionsMap().get(methodScopeKey);
+          return scopeConfig != null ? scopeConfig.getSessionLoad() : 0f;
+        default:
+          return 0f;
+      }
+    }
+
+    return sessionConfig.getSessionLoad();
   }
 
   ApiException translateException(Throwable e) {
