@@ -1409,44 +1409,6 @@ public interface ReconciledDataPointOrBuilder
    *
    *
    * <pre>
-   * Data for points in the `skin-temperature` sample data type collection.
-   * </pre>
-   *
-   * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-   *
-   * @return Whether the skinTemperature field is set.
-   */
-  boolean hasSkinTemperature();
-
-  /**
-   *
-   *
-   * <pre>
-   * Data for points in the `skin-temperature` sample data type collection.
-   * </pre>
-   *
-   * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-   *
-   * @return The skinTemperature.
-   */
-  com.google.devicesandservices.health.v4beta.SkinTemperature getSkinTemperature();
-
-  /**
-   *
-   *
-   * <pre>
-   * Data for points in the `skin-temperature` sample data type collection.
-   * </pre>
-   *
-   * <code>.google.devicesandservices.health.v4beta.SkinTemperature skin_temperature = 54;</code>
-   */
-  com.google.devicesandservices.health.v4beta.SkinTemperatureOrBuilder
-      getSkinTemperatureOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
    * Data for points in the `skin-temperature-sensors` sample data type
    * collection.
    * </pre>
@@ -1500,11 +1462,18 @@ public interface ReconciledDataPointOrBuilder
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
@@ -1532,11 +1501,18 @@ public interface ReconciledDataPointOrBuilder
    *
    * Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
    *
-   * Example:
-   * `users/abcd1234/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   * ## Examples:
    *
-   * The `{user}` ID is a system-generated identifier, as described in
-   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id].
+   * ##
+   * `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * `users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, which can be retrieved by calling
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (see
+   * [Identity.health_user_id][google.devicesandservices.health.v4beta.Identity.health_user_id]).
    *
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint

@@ -59,16 +59,16 @@ public final class FakesProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n#google/cloud/ces/v1beta/fakes.proto\022\027g"
           + "oogle.cloud.ces.v1beta\032\037google/api/field"
-          + "_behavior.proto\"%\n\tCodeBlock\022\030\n\013python_c"
-          + "ode\030\001 \001(\tB\003\340A\002\"\177\n\016ToolFakeConfig\022=\n\ncode"
-          + "_block\030\001 \001(\0132\".google.cloud.ces.v1beta.C"
-          + "odeBlockB\003\340A\001H\000\022\035\n\020enable_fake_mode\030\002 \001("
-          + "\010B\003\340A\001B\017\n\rtool_response*a\n\033EvaluationToo"
-          + "lCallBehaviour\022.\n*EVALUATION_TOOL_CALL_B"
-          + "EHAVIOUR_UNSPECIFIED\020\000\022\010\n\004REAL\020\001\022\010\n\004FAKE"
-          + "\020\002BZ\n\033com.google.cloud.ces.v1betaB\nFakes"
-          + "ProtoP\001Z-cloud.google.com/go/ces/apiv1be"
-          + "ta/cespb;cespbb\006proto3"
+          + "_behavior.proto\"&\n\tCodeBlock\022\031\n\013python_c"
+          + "ode\030\001 \001(\tB\004\342A\001\002\"\201\001\n\016ToolFakeConfig\022>\n\nco"
+          + "de_block\030\001 \001(\0132\".google.cloud.ces.v1beta"
+          + ".CodeBlockB\004\342A\001\001H\000\022\036\n\020enable_fake_mode\030\002"
+          + " \001(\010B\004\342A\001\001B\017\n\rtool_response*a\n\033Evaluatio"
+          + "nToolCallBehaviour\022.\n*EVALUATION_TOOL_CA"
+          + "LL_BEHAVIOUR_UNSPECIFIED\020\000\022\010\n\004REAL\020\001\022\010\n\004"
+          + "FAKE\020\002BZ\n\033com.google.cloud.ces.v1betaB\nF"
+          + "akesProtoP\001Z-cloud.google.com/go/ces/api"
+          + "v1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

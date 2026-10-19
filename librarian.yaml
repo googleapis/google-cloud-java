@@ -16,8 +16,8 @@ version: v0.48.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: b6efa15f5537f053786e5d8875d75bc3a6246455
-    sha256: d432e85ea4bb83e7b0ed83415d24fae57a52e7c51afc7a96c6147a27da85eb02
+    commit: e7513c828b8db536fa12fc5493d541f323aedf90
+    sha256: 2ef69787d1b7c2a60fdc8dae745435d115b95e45cc3262c050f4eccfd1889c27
   showcase:
     commit: 5158967e8a41c751b15776142d190428ddb7e99f
     sha256: a31271ff2cdeb7cce91e93a4d58a66dcaaac574c51cc14bd74577ab1eafd3ccd
@@ -374,7 +374,6 @@ libraries:
       - google-cloud-asset/src/test/java/com/google/cloud/asset/it/ITSystemTest.java
       - proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java
     java:
-      api_reference: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
       api_description_override: provides inventory services based on a time series database. This database keeps a five week history of Google Cloud asset metadata. The Cloud Asset Inventory export service allows you to export all asset metadata at a certain timestamp or export event change history during a timeframe.
       issue_tracker_override: https://issuetracker.google.com/issues/new?component=187210
       released_version: 3.103.0
@@ -872,7 +871,6 @@ libraries:
       codeowner_team: '@googleapis/bigtable-team'
       excluded_poms:
         - google-cloud-bigtable-bom
-      extra_versioned_modules: google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559777
       released_version: 2.85.0
       library_type_override: GAPIC_COMBO
@@ -1479,7 +1477,6 @@ libraries:
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-datastore/latest/history
       excluded_poms:
         - grpc-google-cloud-datastore-v1
-      extra_versioned_modules: datastore-v1-proto-client
       released_version: 3.7.0
       library_type_override: GAPIC_COMBO
       name_pretty_override: Cloud Datastore
@@ -5007,7 +5004,6 @@ libraries:
               }
     java:
       api_id_override: pubsub.googleapis.com
-      api_reference: https://cloud.google.com/pubsub/
       api_description_override: is designed to provide reliable, many-to-many, asynchronous messaging between applications. Publisher applications can send messages to a topic and other applications can subscribe to that topic to receive the messages. By decoupling senders and receivers, Google Cloud Pub/Sub allows developers to communicate between independently written applications.
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-pubsub/latest/history
       codeowner_team: '@googleapis/pubsub-team'
@@ -5703,7 +5699,6 @@ libraries:
       excluded_poms:
         - google-cloud-storage-bom
         - google-cloud-storage
-      extra_versioned_modules: gapic-google-cloud-storage-v2
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559782
       released_version: 2.75.0
       library_type_override: GAPIC_COMBO

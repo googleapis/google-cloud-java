@@ -206,6 +206,8 @@ public class CertificateManagerClientHttpJsonTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -257,6 +259,8 @@ public class CertificateManagerClientHttpJsonTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -308,6 +312,8 @@ public class CertificateManagerClientHttpJsonTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -369,6 +375,8 @@ public class CertificateManagerClientHttpJsonTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -430,6 +438,8 @@ public class CertificateManagerClientHttpJsonTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -449,6 +459,8 @@ public class CertificateManagerClientHttpJsonTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -488,6 +500,8 @@ public class CertificateManagerClientHttpJsonTest {
               .addAllSanDnsnames(new ArrayList<String>())
               .setPemCertificate("pemCertificate153491807")
               .setExpireTime(Timestamp.newBuilder().build())
+              .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCertificateAsync(certificate, updateMask).get();
@@ -697,6 +711,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -748,6 +763,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -799,6 +815,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -859,6 +876,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -919,6 +937,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -937,6 +956,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -976,6 +996,7 @@ public class CertificateManagerClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCertificateMapAsync(certificateMap, updateMask).get();
@@ -1726,6 +1747,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1780,6 +1802,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1834,6 +1857,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1896,6 +1920,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1958,6 +1983,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1978,6 +2004,7 @@ public class CertificateManagerClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2019,6 +2046,7 @@ public class CertificateManagerClientHttpJsonTest {
               .setDescription("description-1724546052")
               .setDomain("domain-1326197564")
               .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDnsAuthorizationAsync(dnsAuthorization, updateMask).get();
@@ -2241,6 +2269,7 @@ public class CertificateManagerClientHttpJsonTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2300,6 +2329,7 @@ public class CertificateManagerClientHttpJsonTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2357,6 +2387,7 @@ public class CertificateManagerClientHttpJsonTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2430,6 +2461,7 @@ public class CertificateManagerClientHttpJsonTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2482,6 +2514,100 @@ public class CertificateManagerClientHttpJsonTest {
           .createCertificateIssuanceConfigAsync(
               parent, certificateIssuanceConfig, certificateIssuanceConfigId)
           .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateCertificateIssuanceConfigTest() throws Exception {
+    CertificateIssuanceConfig expectedResponse =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateCertificateIssuanceConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CertificateIssuanceConfig certificateIssuanceConfig =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CertificateIssuanceConfig actualResponse =
+        client.updateCertificateIssuanceConfigAsync(certificateIssuanceConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateCertificateIssuanceConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CertificateIssuanceConfig certificateIssuanceConfig =
+          CertificateIssuanceConfig.newBuilder()
+              .setName(
+                  CertificateIssuanceConfigName.of(
+                          "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                      .toString())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllLabels(new HashMap<String, String>())
+              .setDescription("description-1724546052")
+              .setCertificateAuthorityConfig(
+                  CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+              .setLifetime(Duration.newBuilder().build())
+              .setRotationWindowPercentage(873917384)
+              .putAllTags(new HashMap<String, String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCertificateIssuanceConfigAsync(certificateIssuanceConfig, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -2693,7 +2819,10 @@ public class CertificateManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2743,7 +2872,10 @@ public class CertificateManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2793,7 +2925,10 @@ public class CertificateManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2853,7 +2988,10 @@ public class CertificateManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2913,7 +3051,10 @@ public class CertificateManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2931,7 +3072,10 @@ public class CertificateManagerClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2969,7 +3113,10 @@ public class CertificateManagerClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setDescription("description-1724546052")
               .setEtag("etag3123477")
+              .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
               .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+              .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+              .putAllTags(new HashMap<String, String>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTrustConfigAsync(trustConfig, updateMask).get();

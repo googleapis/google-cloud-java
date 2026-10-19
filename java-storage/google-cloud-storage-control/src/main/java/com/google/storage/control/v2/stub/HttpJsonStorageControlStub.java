@@ -1094,6 +1094,14 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                   builder.add(request.getParent(), "bucket", LIST_FOLDERS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  ListFoldersRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RenameFolderRequest, Operation> renameFolderTransportSettings =
@@ -1186,6 +1194,15 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                           String.valueOf(request.getIntelligenceConfig().getName()));
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      UpdateProjectIntelligenceConfigRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetFolderIntelligenceConfigRequest, IntelligenceConfig>
         getFolderIntelligenceConfigTransportSettings =
@@ -1215,6 +1232,15 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                           String.valueOf(request.getIntelligenceConfig().getName()));
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      UpdateFolderIntelligenceConfigRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
                 .build();
     HttpJsonCallSettings<GetOrganizationIntelligenceConfigRequest, IntelligenceConfig>
         getOrganizationIntelligenceConfigTransportSettings =
@@ -1243,6 +1269,15 @@ public class HttpJsonStorageControlStub extends StorageControlStub {
                           "intelligence_config.name",
                           String.valueOf(request.getIntelligenceConfig().getName()));
                       return builder.build();
+                    })
+                .setRequestMutator(
+                    request -> {
+                      UpdateOrganizationIntelligenceConfigRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
                     })
                 .build();
     HttpJsonCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>

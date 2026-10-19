@@ -55,14 +55,14 @@ public final class ExperimentalFieldProto extends com.google.protobuf.GeneratedF
     java.lang.String[] descriptorData = {
       "\n2google/ads/datamanager/v1/experimental"
           + "_field.proto\022\031google.ads.datamanager.v1\032"
-          + "\037google/api/field_behavior.proto\";\n\021Expe"
-          + "rimentalField\022\022\n\005field\030\001 \001(\tB\003\340A\001\022\022\n\005val"
-          + "ue\030\002 \001(\tB\003\340A\001B\323\001\n\035com.google.ads.dataman"
-          + "ager.v1B\026ExperimentalFieldProtoP\001ZAcloud"
-          + ".google.com/go/datamanager/apiv1/dataman"
-          + "agerpb;datamanagerpb\252\002\031Google.Ads.DataMa"
-          + "nager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034G"
-          + "oogle::Ads::DataManager::V1b\006proto3"
+          + "\037google/api/field_behavior.proto\"=\n\021Expe"
+          + "rimentalField\022\023\n\005field\030\001 \001(\tB\004\342A\001\001\022\023\n\005va"
+          + "lue\030\002 \001(\tB\004\342A\001\001B\323\001\n\035com.google.ads.datam"
+          + "anager.v1B\026ExperimentalFieldProtoP\001ZAclo"
+          + "ud.google.com/go/datamanager/apiv1/datam"
+          + "anagerpb;datamanagerpb\252\002\031Google.Ads.Data"
+          + "Manager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002"
+          + "\034Google::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

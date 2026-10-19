@@ -16,6 +16,7 @@
 
 package com.google.devicesandservices.health.v4beta.stub;
 
+import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.DailyRollUpDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ListDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ReconcileDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.RollUpDataPointsPagedResponse;
@@ -131,6 +132,12 @@ public abstract class DataPointsServiceStub implements BackgroundResource {
   public UnaryCallable<RollUpDataPointsRequest, RollUpDataPointsResponse>
       rollUpDataPointsCallable() {
     throw new UnsupportedOperationException("Not implemented: rollUpDataPointsCallable()");
+  }
+
+  public UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsPagedResponse>
+      dailyRollUpDataPointsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: dailyRollUpDataPointsPagedCallable()");
   }
 
   public UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>

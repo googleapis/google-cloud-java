@@ -85,7 +85,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Identifier. The resource name of the data type.
    *
-   * Format: `users/{user}/dataTypes/{data_type}`
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *
+   * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *
    * See
    * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -115,7 +122,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Identifier. The resource name of the data type.
    *
-   * Format: `users/{user}/dataTypes/{data_type}`
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *
+   * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *
    * See
    * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -461,7 +475,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. The resource name of the data type.
      *
-     * Format: `users/{user}/dataTypes/{data_type}`
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -490,7 +511,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. The resource name of the data type.
      *
-     * Format: `users/{user}/dataTypes/{data_type}`
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -519,7 +547,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. The resource name of the data type.
      *
-     * Format: `users/{user}/dataTypes/{data_type}`
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -547,7 +582,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. The resource name of the data type.
      *
-     * Format: `users/{user}/dataTypes/{data_type}`
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]
@@ -571,7 +613,14 @@ public final class DataType extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Identifier. The resource name of the data type.
      *
-     * Format: `users/{user}/dataTypes/{data_type}`
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * See
      * [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name]

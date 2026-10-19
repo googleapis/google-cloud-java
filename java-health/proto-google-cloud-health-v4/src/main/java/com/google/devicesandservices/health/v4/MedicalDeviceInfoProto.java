@@ -53,20 +53,21 @@ public final class MedicalDeviceInfoProto extends com.google.protobuf.GeneratedF
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "=google/devicesandservices/health/v4/medical_device_info.proto\022#google.devicesa"
-          + "ndservices.health.v4\032\037google/api/field_behavior.proto\"\251\001\n"
-          + "\021MedicalDeviceInfo\022\036\n"
-          + "\021algorithm_version\030\001 \001(\tB\003\340A\003\022\034\n"
-          + "\017service_version\030\002 \001(\tB\003\340A\003\022\035\n"
-          + "\020firmware_version\030\003 \001(\tB\003\340A\003\022\034\n"
-          + "\017feature_version\030\004 \001(\tB\003\340A\003\022\031\n"
-          + "\014device_model\030\005 \001(\tB\003\340A\003B\210\002\n"
-          + "\'com.google.devicesandservices.health.v4B\026MedicalDe"
-          + "viceInfoProtoP\001ZNgoogle.golang.org/genproto/googleapis/devicesandservices/health"
-          + "/apiv4;healthpb\252\002#Google.DevicesAndServi"
-          + "ces.Health.V4\312\002#Google\\DevicesAndService"
-          + "s\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
+      "\n=google/devicesandservices/health/v4/me"
+          + "dical_device_info.proto\022#google.devicesa"
+          + "ndservices.health.v4\032\037google/api/field_b"
+          + "ehavior.proto\"\256\001\n\021MedicalDeviceInfo\022\037\n\021a"
+          + "lgorithm_version\030\001 \001(\tB\004\342A\001\003\022\035\n\017service_"
+          + "version\030\002 \001(\tB\004\342A\001\003\022\036\n\020firmware_version\030"
+          + "\003 \001(\tB\004\342A\001\003\022\035\n\017feature_version\030\004 \001(\tB\004\342A"
+          + "\001\003\022\032\n\014device_model\030\005 \001(\tB\004\342A\001\003B\210\002\n\'com.g"
+          + "oogle.devicesandservices.health.v4B\026Medi"
+          + "calDeviceInfoProtoP\001ZNgoogle.golang.org/"
+          + "genproto/googleapis/devicesandservices/h"
+          + "ealth/apiv4;healthpb\252\002#Google.DevicesAnd"
+          + "Services.Health.V4\312\002#Google\\DevicesAndSe"
+          + "rvices\\Health\\V4\352\002&Google::DevicesAndSer"
+          + "vices::Health::V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

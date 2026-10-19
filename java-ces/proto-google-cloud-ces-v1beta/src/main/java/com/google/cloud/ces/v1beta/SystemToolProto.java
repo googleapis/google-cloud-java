@@ -55,12 +55,12 @@ public final class SystemToolProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + ")google/cloud/ces/v1beta/system_tool.pr"
-          + "oto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\"9\n\n"
-          + "SystemTool\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
-          + "\013description\030\002 \001(\tB\003\340A\003B_\n"
-          + "\033com.google.cloud.ces.v1betaB\017SystemToolProtoP\001Z-cloud.google.com/go/ces/apiv"
-          + "1beta/cespb;cespbb\006proto3"
+          + "oto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\";\n\n"
+          + "SystemTool\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013description\030\002 \001(\tB\004\342A\001\003B_\n"
+          + "\033com.google.cloud.ces.v1betaB\017SystemToolProtoP\001Z-cloud.google.com/go/ces/ap"
+          + "iv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

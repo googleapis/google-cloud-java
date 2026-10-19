@@ -30,16 +30,68 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingContext;
+import com.google.api.gax.retrying.TimedAttemptSettings;
+import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /* Package-private for internal use. */
 @NullMarked
 class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<ResponseT> {
 
-  /** Returns true if previousThrowable is an {@link ApiException} that is retryable. */
   @Override
-  public boolean shouldRetry(Throwable previousThrowable, ResponseT previousResponse) {
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
+      TimedAttemptSettings previousSettings) {
+    return createNextAttempt(null, previousThrowable, previousResponse, previousSettings);
+  }
+
+  @Override
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
+      TimedAttemptSettings previousSettings) {
+    if (isChannelRefreshed(previousThrowable)
+        && previousSettings.getOverallAttemptCount() == previousSettings.getAttemptCount()) {
+      RetrySettings globalSettings = previousSettings.getGlobalSettings();
+      if (globalSettings.getMaxAttempts() == 0
+          && globalSettings.getTotalTimeoutDuration().isZero()) {
+        globalSettings = globalSettings.toBuilder().setMaxAttempts(1).build();
+      }
+      return previousSettings.toBuilder()
+          .setGlobalSettings(globalSettings)
+          .setRetryDelayDuration(Duration.ZERO)
+          .setRandomizedRetryDelayDuration(Duration.ZERO)
+          .setAttemptCount(previousSettings.getAttemptCount())
+          .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
+          .build();
+    }
+    if (isChannelRefreshed(previousThrowable)) {
+      // The single rotation retry has already been used. Return exhausted settings so the retry
+      // framework stops, rather than returning null and falling back to exponential backoff.
+      int exhaustedAttemptCount = previousSettings.getAttemptCount() + 1;
+      return previousSettings.toBuilder()
+          .setGlobalSettings(
+              previousSettings.getGlobalSettings().toBuilder()
+                  .setMaxAttempts(exhaustedAttemptCount)
+                  .build())
+          .setAttemptCount(exhaustedAttemptCount)
+          .setOverallAttemptCount(previousSettings.getOverallAttemptCount() + 1)
+          .build();
+    }
+    return null;
+  }
+
+  @Override
+  public boolean shouldRetry(
+      @Nullable Throwable previousThrowable, @Nullable ResponseT previousResponse) {
+    if (isChannelRefreshed(previousThrowable)) {
+      return true;
+    }
     return (previousThrowable instanceof ApiException)
         && ((ApiException) previousThrowable).isRetryable();
   }
@@ -52,7 +104,15 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
    */
   @Override
   public boolean shouldRetry(
-      RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
+      RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse) {
+    // A failure on a channel that has since been refreshed (e.g. after an mTLS certificate
+    // rotation) is eligible for a retry regardless of the configured retryable codes;
+    // createNextAttempt limits it to a single retry.
+    if (isChannelRefreshed(previousThrowable)) {
+      return true;
+    }
     if (context.getRetryableCodes() != null) {
       // Ignore the isRetryable() value of the throwable if the RetryingContext has a specific list
       // of codes that should be retried.
@@ -62,5 +122,10 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
               .contains(((ApiException) previousThrowable).getStatusCode().getCode());
     }
     return shouldRetry(previousThrowable, previousResponse);
+  }
+
+  private static boolean isChannelRefreshed(@Nullable Throwable throwable) {
+    return throwable instanceof UnauthenticatedException
+        && ((UnauthenticatedException) throwable).isChannelRefreshed();
   }
 }

@@ -18,10 +18,12 @@ package com.google.cloud.redis.cluster.v1beta1;
 
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -2560,6 +2562,1054 @@ public class CloudRedisClusterClientHttpJsonTest {
     try {
       String name = "projects/project-6537/locations/location-6537/clusters/cluster-6537";
       client.backupClusterAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listTokenAuthUsersTest() throws Exception {
+    TokenAuthUser responsesElement = TokenAuthUser.newBuilder().build();
+    ListTokenAuthUsersResponse expectedResponse =
+        ListTokenAuthUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTokenAuthUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    ListTokenAuthUsersPagedResponse pagedListResponse = client.listTokenAuthUsers(parent);
+
+    List<TokenAuthUser> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTokenAuthUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTokenAuthUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.listTokenAuthUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTokenAuthUsersTest2() throws Exception {
+    TokenAuthUser responsesElement = TokenAuthUser.newBuilder().build();
+    ListTokenAuthUsersResponse expectedResponse =
+        ListTokenAuthUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTokenAuthUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+
+    ListTokenAuthUsersPagedResponse pagedListResponse = client.listTokenAuthUsers(parent);
+
+    List<TokenAuthUser> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTokenAuthUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTokenAuthUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      client.listTokenAuthUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTokenAuthUserTest() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TokenAuthUserName name =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+
+    TokenAuthUser actualResponse = client.getTokenAuthUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTokenAuthUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName name =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+      client.getTokenAuthUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTokenAuthUserTest2() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2728/locations/location-2728/clusters/cluster-2728/tokenAuthUsers/tokenAuthUser-2728";
+
+    TokenAuthUser actualResponse = client.getTokenAuthUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTokenAuthUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2728/locations/location-2728/clusters/cluster-2728/tokenAuthUsers/tokenAuthUser-2728";
+      client.getTokenAuthUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthTokensTest() throws Exception {
+    AuthToken responsesElement = AuthToken.newBuilder().build();
+    ListAuthTokensResponse expectedResponse =
+        ListAuthTokensResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthTokens(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TokenAuthUserName parent =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+
+    ListAuthTokensPagedResponse pagedListResponse = client.listAuthTokens(parent);
+
+    List<AuthToken> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthTokensList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuthTokensExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName parent =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+      client.listAuthTokens(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthTokensTest2() throws Exception {
+    AuthToken responsesElement = AuthToken.newBuilder().build();
+    ListAuthTokensResponse expectedResponse =
+        ListAuthTokensResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthTokens(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9289/locations/location-9289/clusters/cluster-9289/tokenAuthUsers/tokenAuthUser-9289";
+
+    ListAuthTokensPagedResponse pagedListResponse = client.listAuthTokens(parent);
+
+    List<AuthToken> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthTokensList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuthTokensExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9289/locations/location-9289/clusters/cluster-9289/tokenAuthUsers/tokenAuthUser-9289";
+      client.listAuthTokens(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthTokenTest() throws Exception {
+    AuthToken expectedResponse =
+        AuthToken.newBuilder()
+            .setName(
+                AuthTokenName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]")
+                    .toString())
+            .setToken("token110541305")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AuthTokenName name =
+        AuthTokenName.of(
+            "[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+
+    AuthToken actualResponse = client.getAuthToken(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuthTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthTokenName name =
+          AuthTokenName.of(
+              "[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+      client.getAuthToken(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthTokenTest2() throws Exception {
+    AuthToken expectedResponse =
+        AuthToken.newBuilder()
+            .setName(
+                AuthTokenName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]")
+                    .toString())
+            .setToken("token110541305")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-316/locations/location-316/clusters/cluster-316/tokenAuthUsers/tokenAuthUser-316/authTokens/authToken-316";
+
+    AuthToken actualResponse = client.getAuthToken(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuthTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-316/locations/location-316/clusters/cluster-316/tokenAuthUsers/tokenAuthUser-316/authTokens/authToken-316";
+      client.getAuthToken(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setAuthorizationMode(AuthorizationMode.forNumber(0))
+            .setTransitEncryptionMode(TransitEncryptionMode.forNumber(0))
+            .setSizeGb(2105542105)
+            .setShardCount(-495377042)
+            .addAllPscConfigs(new ArrayList<PscConfig>())
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .addAllPscConnections(new ArrayList<PscConnection>())
+            .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setCrossClusterReplicationConfig(CrossClusterReplicationConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setMaintenancePolicy(ClusterMaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(ClusterMaintenanceSchedule.newBuilder().build())
+            .addAllPscServiceAttachments(new ArrayList<PscServiceAttachment>())
+            .addAllClusterEndpoints(new ArrayList<ClusterEndpoint>())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setKmsKey("kmsKey-1127483058")
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setAsyncClusterEndpointsDeletionEnabled(true)
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName cluster = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    TokenAuthUserName tokenAuthUser =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+
+    Cluster actualResponse = client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName cluster = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      TokenAuthUserName tokenAuthUser =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+      client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest2() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setAuthorizationMode(AuthorizationMode.forNumber(0))
+            .setTransitEncryptionMode(TransitEncryptionMode.forNumber(0))
+            .setSizeGb(2105542105)
+            .setShardCount(-495377042)
+            .addAllPscConfigs(new ArrayList<PscConfig>())
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .addAllPscConnections(new ArrayList<PscConnection>())
+            .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setCrossClusterReplicationConfig(CrossClusterReplicationConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setMaintenancePolicy(ClusterMaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(ClusterMaintenanceSchedule.newBuilder().build())
+            .addAllPscServiceAttachments(new ArrayList<PscServiceAttachment>())
+            .addAllClusterEndpoints(new ArrayList<ClusterEndpoint>())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setKmsKey("kmsKey-1127483058")
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setAsyncClusterEndpointsDeletionEnabled(true)
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ClusterName cluster = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+    String tokenAuthUser = "tokenAuthUser345456300";
+
+    Cluster actualResponse = client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName cluster = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      String tokenAuthUser = "tokenAuthUser345456300";
+      client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest3() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setAuthorizationMode(AuthorizationMode.forNumber(0))
+            .setTransitEncryptionMode(TransitEncryptionMode.forNumber(0))
+            .setSizeGb(2105542105)
+            .setShardCount(-495377042)
+            .addAllPscConfigs(new ArrayList<PscConfig>())
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .addAllPscConnections(new ArrayList<PscConnection>())
+            .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setCrossClusterReplicationConfig(CrossClusterReplicationConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setMaintenancePolicy(ClusterMaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(ClusterMaintenanceSchedule.newBuilder().build())
+            .addAllPscServiceAttachments(new ArrayList<PscServiceAttachment>())
+            .addAllClusterEndpoints(new ArrayList<ClusterEndpoint>())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setKmsKey("kmsKey-1127483058")
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setAsyncClusterEndpointsDeletionEnabled(true)
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String cluster = "projects/project-7126/locations/location-7126/clusters/cluster-7126";
+    TokenAuthUserName tokenAuthUser =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+
+    Cluster actualResponse = client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String cluster = "projects/project-7126/locations/location-7126/clusters/cluster-7126";
+      TokenAuthUserName tokenAuthUser =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+      client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest4() throws Exception {
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setName(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setAuthorizationMode(AuthorizationMode.forNumber(0))
+            .setTransitEncryptionMode(TransitEncryptionMode.forNumber(0))
+            .setSizeGb(2105542105)
+            .setShardCount(-495377042)
+            .addAllPscConfigs(new ArrayList<PscConfig>())
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .addAllPscConnections(new ArrayList<PscConnection>())
+            .setStateInfo(Cluster.StateInfo.newBuilder().build())
+            .setNodeType(NodeType.forNumber(0))
+            .setPersistenceConfig(ClusterPersistenceConfig.newBuilder().build())
+            .putAllRedisConfigs(new HashMap<String, String>())
+            .setPreciseSizeGb(1342268405)
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setCrossClusterReplicationConfig(CrossClusterReplicationConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .setMaintenancePolicy(ClusterMaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(ClusterMaintenanceSchedule.newBuilder().build())
+            .addAllPscServiceAttachments(new ArrayList<PscServiceAttachment>())
+            .addAllClusterEndpoints(new ArrayList<ClusterEndpoint>())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setKmsKey("kmsKey-1127483058")
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setAsyncClusterEndpointsDeletionEnabled(true)
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String cluster = "projects/project-7126/locations/location-7126/clusters/cluster-7126";
+    String tokenAuthUser = "tokenAuthUser345456300";
+
+    Cluster actualResponse = client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String cluster = "projects/project-7126/locations/location-7126/clusters/cluster-7126";
+      String tokenAuthUser = "tokenAuthUser345456300";
+      client.addTokenAuthUserAsync(cluster, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTokenAuthUserTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TokenAuthUserName name =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+
+    client.deleteTokenAuthUserAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTokenAuthUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName name =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+      client.deleteTokenAuthUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTokenAuthUserTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-2728/locations/location-2728/clusters/cluster-2728/tokenAuthUsers/tokenAuthUser-2728";
+
+    client.deleteTokenAuthUserAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTokenAuthUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2728/locations/location-2728/clusters/cluster-2728/tokenAuthUsers/tokenAuthUser-2728";
+      client.deleteTokenAuthUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addAuthTokenTest() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TokenAuthUserName tokenAuthUser =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+    AuthToken authToken = AuthToken.newBuilder().build();
+
+    TokenAuthUser actualResponse = client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addAuthTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName tokenAuthUser =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]");
+      AuthToken authToken = AuthToken.newBuilder().build();
+      client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addAuthTokenTest2() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String tokenAuthUser =
+        "projects/project-8649/locations/location-8649/clusters/cluster-8649/tokenAuthUsers/tokenAuthUser-8649";
+    AuthToken authToken = AuthToken.newBuilder().build();
+
+    TokenAuthUser actualResponse = client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addAuthTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String tokenAuthUser =
+          "projects/project-8649/locations/location-8649/clusters/cluster-8649/tokenAuthUsers/tokenAuthUser-8649";
+      AuthToken authToken = AuthToken.newBuilder().build();
+      client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAuthTokenTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AuthTokenName name =
+        AuthTokenName.of(
+            "[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+
+    client.deleteAuthTokenAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAuthTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthTokenName name =
+          AuthTokenName.of(
+              "[PROJECT]", "[LOCATION]", "[CLUSTER]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+      client.deleteAuthTokenAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAuthTokenTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-316/locations/location-316/clusters/cluster-316/tokenAuthUsers/tokenAuthUser-316/authTokens/authToken-316";
+
+    client.deleteAuthTokenAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAuthTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-316/locations/location-316/clusters/cluster-316/tokenAuthUsers/tokenAuthUser-316/authTokens/authToken-316";
+      client.deleteAuthTokenAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
