@@ -250,15 +250,15 @@ public final class TranslationConfigProto extends com.google.protobuf.GeneratedF
           + "\010database\030\001 \001(\t\022\016\n"
           + "\006schema\030\002 \001(\t\022\020\n"
           + "\010relation\030\003 \001(\t\022\021\n"
-          + "\tattribute\030\004 \001(\t\"f\n"
+          + "\tattribute\030\004 \001(\t\"g\n"
           + "\tSourceEnv\022\030\n"
           + "\020default_database\030\001 \001(\t\022\032\n"
-          + "\022schema_search_path\030\002 \003(\t\022#\n"
-          + "\026metadata_store_dataset\030\003 \001(\tB\003\340A\001B\322\001\n"
-          + "&com.google.cloud.bigquery.migration.v2B\026T"
-          + "ranslationConfigProtoP\001ZDcloud.google.com/go/bigquery/migration/apiv2/migrationp"
-          + "b;migrationpb\252\002\"Google.Cloud.BigQuery.Mi"
-          + "gration.V2\312\002\"Google\\Cloud\\BigQuery\\Migration\\V2b\006proto3"
+          + "\022schema_search_path\030\002 \003(\t\022$\n"
+          + "\026metadata_store_dataset\030\003 \001(\tB\004\342A\001\001B\322\001\n"
+          + "&com.google.cloud.bigquery.migration.v2B\026"
+          + "TranslationConfigProtoP\001ZDcloud.google.com/go/bigquery/migration/apiv2/migration"
+          + "pb;migrationpb\252\002\"Google.Cloud.BigQuery.M"
+          + "igration.V2\312\002\"Google\\Cloud\\BigQuery\\Migration\\V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

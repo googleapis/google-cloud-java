@@ -55,14 +55,14 @@ public final class LineItemDealInfoProto extends com.google.protobuf.GeneratedFi
     java.lang.String[] descriptorData = {
       "\n1google/ads/admanager/v1/line_item_deal"
           + "_info.proto\022\027google.ads.admanager.v1\032\037go"
-          + "ogle/api/field_behavior.proto\"K\n\020LineIte"
-          + "mDealInfo\022\"\n\020external_deal_id\030\002 \001(\003B\003\340A\001"
-          + "H\000\210\001\001B\023\n\021_external_deal_idB\311\001\n\033com.googl"
-          + "e.ads.admanager.v1B\025LineItemDealInfoProt"
-          + "oP\001Z@google.golang.org/genproto/googleap"
-          + "is/ads/admanager/v1;admanager\252\002\027Google.A"
-          + "ds.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V"
-          + "1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "ogle/api/field_behavior.proto\"L\n\020LineIte"
+          + "mDealInfo\022#\n\020external_deal_id\030\002 \001(\003B\004\342A\001"
+          + "\001H\000\210\001\001B\023\n\021_external_deal_idB\311\001\n\033com.goog"
+          + "le.ads.admanager.v1B\025LineItemDealInfoPro"
+          + "toP\001Z@google.golang.org/genproto/googlea"
+          + "pis/ads/admanager/v1;admanager\252\002\027Google."
+          + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
+          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

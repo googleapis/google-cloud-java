@@ -91,6 +91,9 @@
             "UpdateCertificate": {
               "methods": ["updateCertificateAsync", "updateCertificateAsync", "updateCertificateOperationCallable", "updateCertificateCallable"]
             },
+            "UpdateCertificateIssuanceConfig": {
+              "methods": ["updateCertificateIssuanceConfigAsync", "updateCertificateIssuanceConfigAsync", "updateCertificateIssuanceConfigOperationCallable", "updateCertificateIssuanceConfigCallable"]
+            },
             "UpdateCertificateMap": {
               "methods": ["updateCertificateMapAsync", "updateCertificateMapAsync", "updateCertificateMapOperationCallable", "updateCertificateMapCallable"]
             },

@@ -53,21 +53,22 @@ public final class BrowserLanguageMessagesProto extends com.google.protobuf.Gene
 
   static {
     java.lang.String[] descriptorData = {
-      "\n7google/ads/admanager/v1/browser_langua"
-          + "ge_messages.proto\022\027google.ads.admanager."
-          + "v1\032\037google/api/field_behavior.proto\032\031goo"
-          + "gle/api/resource.proto\"\346\001\n\017BrowserLangua"
-          + "ge\022\021\n\004name\030\001 \001(\tB\003\340A\010\022\036\n\014display_name\030\002 "
-          + "\001(\tB\003\340A\003H\000\210\001\001:\216\001\352A\212\001\n(admanager.googleap"
-          + "is.com/BrowserLanguage\022;networks/{networ"
-          + "k_code}/browserLanguages/{browser_langua"
-          + "ge}*\020browserLanguages2\017browserLanguageB\017"
-          + "\n\r_display_nameB\320\001\n\033com.google.ads.adman"
-          + "ager.v1B\034BrowserLanguageMessagesProtoP\001Z"
-          + "@google.golang.org/genproto/googleapis/a"
-          + "ds/admanager/v1;admanager\252\002\027Google.Ads.A"
-          + "dManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032"
-          + "Google::Ads::AdManager::V1b\006proto3"
+      "\n"
+          + "7google/ads/admanager/v1/browser_language_messages.proto\022\027google.ads.admanager."
+          + "v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\350\001\n"
+          + "\017BrowserLanguage\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\037\n"
+          + "\014display_name\030\002 \001("
+          + "\tB\004\342A\001\003H\000\210\001\001:\216\001\352A\212\001\n"
+          + "(admanager.googleapis.com/BrowserLanguage\022;networks/{netw"
+          + "ork_code}/browserLanguages/{browser_lang"
+          + "uage}*\020browserLanguages2\017browserLanguageB\017\n\r"
+          + "_display_nameB\320\001\n"
+          + "\033com.google.ads.admanager.v1B\034BrowserLanguageMessagesProtoP"
+          + "\001Z@google.golang.org/genproto/googleapis"
+          + "/ads/admanager/v1;admanager\252\002\027Google.Ads"
+          + ".AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352"
+          + "\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

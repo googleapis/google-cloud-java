@@ -55,13 +55,13 @@ public final class ResourcePolicyMemberProto extends com.google.protobuf.Generat
     java.lang.String[] descriptorData = {
       "\n*google/iam/v1/resource_policy_member.p"
           + "roto\022\rgoogle.iam.v1\032\037google/api/field_be"
-          + "havior.proto\"e\n\024ResourcePolicyMember\022&\n\031"
-          + "iam_policy_name_principal\030\001 \001(\tB\003\340A\003\022%\n\030"
-          + "iam_policy_uid_principal\030\002 \001(\tB\003\340A\003B\207\001\n\021"
-          + "com.google.iam.v1B\031ResourcePolicyMemberP"
-          + "rotoP\001Z)cloud.google.com/go/iam/apiv1/ia"
-          + "mpb;iampb\252\002\023Google.Cloud.Iam.V1\312\002\023Google"
-          + "\\Cloud\\Iam\\V1b\006proto3"
+          + "havior.proto\"g\n\024ResourcePolicyMember\022\'\n\031"
+          + "iam_policy_name_principal\030\001 \001(\tB\004\342A\001\003\022&\n"
+          + "\030iam_policy_uid_principal\030\002 \001(\tB\004\342A\001\003B\207\001"
+          + "\n\021com.google.iam.v1B\031ResourcePolicyMembe"
+          + "rProtoP\001Z)cloud.google.com/go/iam/apiv1/"
+          + "iampb;iampb\252\002\023Google.Cloud.Iam.V1\312\002\023Goog"
+          + "le\\Cloud\\Iam\\V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

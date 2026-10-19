@@ -30,11 +30,12 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the certificate. Certificate names must be unique
-   * globally and match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
+   * Identifier. A user-defined name of the certificate. Certificate names must
+   * be unique globally and match pattern
+   * `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,11 +45,12 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the certificate. Certificate names must be unique
-   * globally and match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
+   * Identifier. A user-defined name of the certificate. Certificate names must
+   * be unique globally and match pattern
+   * `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -58,10 +60,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate.
+   * Optional. One or more paragraphs of text description of a certificate.
    * </pre>
    *
-   * <code>string description = 8;</code>
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -71,10 +73,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate.
+   * Optional. One or more paragraphs of text description of a certificate.
    * </pre>
    *
-   * <code>string description = 8;</code>
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -164,10 +166,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate.
+   * Optional. Set of labels associated with a Certificate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
 
@@ -175,10 +177,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate.
+   * Optional. Set of labels associated with a Certificate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
 
@@ -190,10 +192,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate.
+   * Optional. Set of labels associated with a Certificate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
 
@@ -201,10 +203,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate.
+   * Optional. Set of labels associated with a Certificate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -216,10 +218,10 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate.
+   * Optional. Set of labels associated with a Certificate.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -301,6 +303,54 @@ public interface CertificateOrBuilder
    */
   com.google.cloud.certificatemanager.v1.Certificate.ManagedCertificateOrBuilder
       getManagedOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, contains configuration and state of a managed identity
+   * certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.Certificate.ManagedIdentityCertificate managed_identity = 18;
+   * </code>
+   *
+   * @return Whether the managedIdentity field is set.
+   */
+  boolean hasManagedIdentity();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, contains configuration and state of a managed identity
+   * certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.Certificate.ManagedIdentityCertificate managed_identity = 18;
+   * </code>
+   *
+   * @return The managedIdentity.
+   */
+  com.google.cloud.certificatemanager.v1.Certificate.ManagedIdentityCertificate
+      getManagedIdentity();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, contains configuration and state of a managed identity
+   * certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.certificatemanager.v1.Certificate.ManagedIdentityCertificate managed_identity = 18;
+   * </code>
+   */
+  com.google.cloud.certificatemanager.v1.Certificate.ManagedIdentityCertificateOrBuilder
+      getManagedIdentityOrBuilder();
 
   /**
    *
@@ -438,11 +488,11 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. The scope of the certificate.
+   * Optional. Immutable. The scope of the certificate.
    * </pre>
    *
    * <code>
-   * .google.cloud.certificatemanager.v1.Certificate.Scope scope = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.certificatemanager.v1.Certificate.Scope scope = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for scope.
@@ -453,16 +503,170 @@ public interface CertificateOrBuilder
    *
    *
    * <pre>
-   * Immutable. The scope of the certificate.
+   * Optional. Immutable. The scope of the certificate.
    * </pre>
    *
    * <code>
-   * .google.cloud.certificatemanager.v1.Certificate.Scope scope = 12 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.certificatemanager.v1.Certificate.Scope scope = 12 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The scope.
    */
   com.google.cloud.certificatemanager.v1.Certificate.Scope getScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of resources that use this Certificate.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.Certificate.UsedBy used_by = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.certificatemanager.v1.Certificate.UsedBy> getUsedByList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of resources that use this Certificate.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.Certificate.UsedBy used_by = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.certificatemanager.v1.Certificate.UsedBy getUsedBy(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of resources that use this Certificate.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.Certificate.UsedBy used_by = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getUsedByCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of resources that use this Certificate.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.Certificate.UsedBy used_by = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.certificatemanager.v1.Certificate.UsedByOrBuilder>
+      getUsedByOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of resources that use this Certificate.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.certificatemanager.v1.Certificate.UsedBy used_by = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.certificatemanager.v1.Certificate.UsedByOrBuilder getUsedByOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 17 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 17 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 17 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 17 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 17 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 
   com.google.cloud.certificatemanager.v1.Certificate.TypeCase getTypeCase();
 }

@@ -104,7 +104,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     CORE_BODY_TEMPERATURE(26),
     ACTIVE_ENERGY_BURNED(27),
     BLOOD_GLUCOSE(28),
-    SKIN_TEMPERATURE(29),
     VALUE_NOT_SET(0);
     private final int value;
 
@@ -170,8 +169,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
           return ACTIVE_ENERGY_BURNED;
         case 28:
           return BLOOD_GLUCOSE;
-        case 29:
-          return SKIN_TEMPERATURE;
         case 0:
           return VALUE_NOT_SET;
         default:
@@ -1705,73 +1702,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     return com.google.devicesandservices.health.v4beta.BloodGlucoseRollupValue.getDefaultInstance();
   }
 
-  public static final int SKIN_TEMPERATURE_FIELD_NUMBER = 29;
-
-  /**
-   *
-   *
-   * <pre>
-   * Returned by default when rolling up data points from the
-   * `skin-temperature` data type.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-   * </code>
-   *
-   * @return Whether the skinTemperature field is set.
-   */
-  @java.lang.Override
-  public boolean hasSkinTemperature() {
-    return valueCase_ == 29;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Returned by default when rolling up data points from the
-   * `skin-temperature` data type.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-   * </code>
-   *
-   * @return The skinTemperature.
-   */
-  @java.lang.Override
-  public com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-      getSkinTemperature() {
-    if (valueCase_ == 29) {
-      return (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_;
-    }
-    return com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-        .getDefaultInstance();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Returned by default when rolling up data points from the
-   * `skin-temperature` data type.
-   * </pre>
-   *
-   * <code>
-   * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValueOrBuilder
-      getSkinTemperatureOrBuilder() {
-    if (valueCase_ == 29) {
-      return (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_;
-    }
-    return com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-        .getDefaultInstance();
-  }
-
   public static final int CIVIL_START_TIME_FIELD_NUMBER = 1;
   private com.google.devicesandservices.health.v4beta.CivilDateTime civilStartTime_;
 
@@ -1996,10 +1926,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       output.writeMessage(
           28, (com.google.devicesandservices.health.v4beta.BloodGlucoseRollupValue) value_);
     }
-    if (valueCase_ == 29) {
-      output.writeMessage(
-          29, (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2141,11 +2067,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.devicesandservices.health.v4beta.BloodGlucoseRollupValue) value_);
     }
-    if (valueCase_ == 29) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              29, (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2242,9 +2163,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         break;
       case 28:
         if (!getBloodGlucose().equals(other.getBloodGlucose())) return false;
-        break;
-      case 29:
-        if (!getSkinTemperature().equals(other.getSkinTemperature())) return false;
         break;
       case 0:
       default:
@@ -2360,10 +2278,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       case 28:
         hash = (37 * hash) + BLOOD_GLUCOSE_FIELD_NUMBER;
         hash = (53 * hash) + getBloodGlucose().hashCode();
-        break;
-      case 29:
-        hash = (37 * hash) + SKIN_TEMPERATURE_FIELD_NUMBER;
-        hash = (53 * hash) + getSkinTemperature().hashCode();
         break;
       case 0:
       default:
@@ -2591,9 +2505,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       if (bloodGlucoseBuilder_ != null) {
         bloodGlucoseBuilder_.clear();
       }
-      if (skinTemperatureBuilder_ != null) {
-        skinTemperatureBuilder_.clear();
-      }
       civilStartTime_ = null;
       if (civilStartTimeBuilder_ != null) {
         civilStartTimeBuilder_.dispose();
@@ -2646,12 +2557,12 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         com.google.devicesandservices.health.v4beta.DailyRollupDataPoint result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.civilStartTime_ =
             civilStartTimeBuilder_ == null ? civilStartTime_ : civilStartTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.civilEndTime_ =
             civilEndTimeBuilder_ == null ? civilEndTime_ : civilEndTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -2731,9 +2642,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       }
       if (valueCase_ == 28 && bloodGlucoseBuilder_ != null) {
         result.value_ = bloodGlucoseBuilder_.build();
-      }
-      if (valueCase_ == 29 && skinTemperatureBuilder_ != null) {
-        result.value_ = skinTemperatureBuilder_.build();
       }
     }
 
@@ -2874,11 +2782,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
             mergeBloodGlucose(other.getBloodGlucose());
             break;
           }
-        case SKIN_TEMPERATURE:
-          {
-            mergeSkinTemperature(other.getSkinTemperature());
-            break;
-          }
         case VALUE_NOT_SET:
           {
             break;
@@ -2914,14 +2817,14 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
               {
                 input.readMessage(
                     internalGetCivilStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(
                     internalGetCivilEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 18
             case 42:
@@ -3084,13 +2987,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
                 valueCase_ = 28;
                 break;
               } // case 226
-            case 234:
-              {
-                input.readMessage(
-                    internalGetSkinTemperatureFieldBuilder().getBuilder(), extensionRegistry);
-                valueCase_ = 29;
-                break;
-              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9077,265 +8973,6 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       return bloodGlucoseBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue.Builder,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValueOrBuilder>
-        skinTemperatureBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     *
-     * @return Whether the skinTemperature field is set.
-     */
-    @java.lang.Override
-    public boolean hasSkinTemperature() {
-      return valueCase_ == 29;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     *
-     * @return The skinTemperature.
-     */
-    @java.lang.Override
-    public com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-        getSkinTemperature() {
-      if (skinTemperatureBuilder_ == null) {
-        if (valueCase_ == 29) {
-          return (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_;
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-            .getDefaultInstance();
-      } else {
-        if (valueCase_ == 29) {
-          return skinTemperatureBuilder_.getMessage();
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-            .getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    public Builder setSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue value) {
-      if (skinTemperatureBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        value_ = value;
-        onChanged();
-      } else {
-        skinTemperatureBuilder_.setMessage(value);
-      }
-      valueCase_ = 29;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    public Builder setSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue.Builder
-            builderForValue) {
-      if (skinTemperatureBuilder_ == null) {
-        value_ = builderForValue.build();
-        onChanged();
-      } else {
-        skinTemperatureBuilder_.setMessage(builderForValue.build());
-      }
-      valueCase_ = 29;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    public Builder mergeSkinTemperature(
-        com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue value) {
-      if (skinTemperatureBuilder_ == null) {
-        if (valueCase_ == 29
-            && value_
-                != com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-                    .getDefaultInstance()) {
-          value_ =
-              com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue.newBuilder(
-                      (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue)
-                          value_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          value_ = value;
-        }
-        onChanged();
-      } else {
-        if (valueCase_ == 29) {
-          skinTemperatureBuilder_.mergeFrom(value);
-        } else {
-          skinTemperatureBuilder_.setMessage(value);
-        }
-      }
-      valueCase_ = 29;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    public Builder clearSkinTemperature() {
-      if (skinTemperatureBuilder_ == null) {
-        if (valueCase_ == 29) {
-          valueCase_ = 0;
-          value_ = null;
-          onChanged();
-        }
-      } else {
-        if (valueCase_ == 29) {
-          valueCase_ = 0;
-          value_ = null;
-        }
-        skinTemperatureBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    public com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue.Builder
-        getSkinTemperatureBuilder() {
-      return internalGetSkinTemperatureFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValueOrBuilder
-        getSkinTemperatureOrBuilder() {
-      if ((valueCase_ == 29) && (skinTemperatureBuilder_ != null)) {
-        return skinTemperatureBuilder_.getMessageOrBuilder();
-      } else {
-        if (valueCase_ == 29) {
-          return (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_;
-        }
-        return com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-            .getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Returned by default when rolling up data points from the
-     * `skin-temperature` data type.
-     * </pre>
-     *
-     * <code>
-     * .google.devicesandservices.health.v4beta.SkinTemperatureRollupValue skin_temperature = 29;
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-            com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue.Builder,
-            com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValueOrBuilder>
-        internalGetSkinTemperatureFieldBuilder() {
-      if (skinTemperatureBuilder_ == null) {
-        if (!(valueCase_ == 29)) {
-          value_ =
-              com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue
-                  .getDefaultInstance();
-        }
-        skinTemperatureBuilder_ =
-            new com.google.protobuf.SingleFieldBuilder<
-                com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue,
-                com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue.Builder,
-                com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValueOrBuilder>(
-                (com.google.devicesandservices.health.v4beta.SkinTemperatureRollupValue) value_,
-                getParentForChildren(),
-                isClean());
-        value_ = null;
-      }
-      valueCase_ = 29;
-      onChanged();
-      return skinTemperatureBuilder_;
-    }
-
     private com.google.devicesandservices.health.v4beta.CivilDateTime civilStartTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.devicesandservices.health.v4beta.CivilDateTime,
@@ -9355,7 +8992,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * @return Whether the civilStartTime field is set.
      */
     public boolean hasCivilStartTime() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -9398,7 +9035,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilStartTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9419,7 +9056,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilStartTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -9436,7 +9073,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     public Builder mergeCivilStartTime(
         com.google.devicesandservices.health.v4beta.CivilDateTime value) {
       if (civilStartTimeBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && civilStartTime_ != null
             && civilStartTime_
                 != com.google.devicesandservices.health.v4beta.CivilDateTime.getDefaultInstance()) {
@@ -9448,7 +9085,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         civilStartTimeBuilder_.mergeFrom(value);
       }
       if (civilStartTime_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -9464,7 +9101,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * <code>.google.devicesandservices.health.v4beta.CivilDateTime civil_start_time = 1;</code>
      */
     public Builder clearCivilStartTime() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       civilStartTime_ = null;
       if (civilStartTimeBuilder_ != null) {
         civilStartTimeBuilder_.dispose();
@@ -9485,7 +9122,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      */
     public com.google.devicesandservices.health.v4beta.CivilDateTime.Builder
         getCivilStartTimeBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetCivilStartTimeFieldBuilder().getBuilder();
     }
@@ -9555,7 +9192,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * @return Whether the civilEndTime field is set.
      */
     public boolean hasCivilEndTime() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -9598,7 +9235,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilEndTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9619,7 +9256,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
       } else {
         civilEndTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -9636,7 +9273,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
     public Builder mergeCivilEndTime(
         com.google.devicesandservices.health.v4beta.CivilDateTime value) {
       if (civilEndTimeBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && civilEndTime_ != null
             && civilEndTime_
                 != com.google.devicesandservices.health.v4beta.CivilDateTime.getDefaultInstance()) {
@@ -9648,7 +9285,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
         civilEndTimeBuilder_.mergeFrom(value);
       }
       if (civilEndTime_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -9664,7 +9301,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      * <code>.google.devicesandservices.health.v4beta.CivilDateTime civil_end_time = 2;</code>
      */
     public Builder clearCivilEndTime() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       civilEndTime_ = null;
       if (civilEndTimeBuilder_ != null) {
         civilEndTimeBuilder_.dispose();
@@ -9685,7 +9322,7 @@ public final class DailyRollupDataPoint extends com.google.protobuf.GeneratedMes
      */
     public com.google.devicesandservices.health.v4beta.CivilDateTime.Builder
         getCivilEndTimeBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return internalGetCivilEndTimeFieldBuilder().getBuilder();
     }

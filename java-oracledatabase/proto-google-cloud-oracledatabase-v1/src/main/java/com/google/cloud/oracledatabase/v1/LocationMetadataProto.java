@@ -56,14 +56,14 @@ public final class LocationMetadataProto extends com.google.protobuf.GeneratedFi
       "\n6google/cloud/oracledatabase/v1/locatio"
           + "n_metadata.proto\022\036google.cloud.oracledat"
           + "abase.v1\032\037google/api/field_behavior.prot"
-          + "o\"1\n\020LocationMetadata\022\035\n\020gcp_oracle_zone"
-          + "s\030\002 \003(\tB\003\340A\003B\357\001\n\"com.google.cloud.oracle"
-          + "database.v1B\025LocationMetadataProtoP\001ZJcl"
-          + "oud.google.com/go/oracledatabase/apiv1/o"
-          + "racledatabasepb;oracledatabasepb\252\002\036Googl"
-          + "e.Cloud.OracleDatabase.V1\312\002\036Google\\Cloud"
-          + "\\OracleDatabase\\V1\352\002!Google::Cloud::Orac"
-          + "leDatabase::V1b\006proto3"
+          + "o\"2\n\020LocationMetadata\022\036\n\020gcp_oracle_zone"
+          + "s\030\002 \003(\tB\004\342A\001\003B\357\001\n\"com.google.cloud.oracl"
+          + "edatabase.v1B\025LocationMetadataProtoP\001ZJc"
+          + "loud.google.com/go/oracledatabase/apiv1/"
+          + "oracledatabasepb;oracledatabasepb\252\002\036Goog"
+          + "le.Cloud.OracleDatabase.V1\312\002\036Google\\Clou"
+          + "d\\OracleDatabase\\V1\352\002!Google::Cloud::Ora"
+          + "cleDatabase::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

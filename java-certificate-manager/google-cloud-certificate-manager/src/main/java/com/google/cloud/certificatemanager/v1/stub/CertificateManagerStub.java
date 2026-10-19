@@ -64,6 +64,7 @@ import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
 import com.google.cloud.certificatemanager.v1.TrustConfig;
+import com.google.cloud.certificatemanager.v1.UpdateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
@@ -312,6 +313,19 @@ public abstract class CertificateManagerStub implements BackgroundResource {
       createCertificateIssuanceConfigCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: createCertificateIssuanceConfigCallable()");
+  }
+
+  public OperationCallable<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCertificateIssuanceConfigOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateCertificateIssuanceConfigCallable()");
   }
 
   public OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
