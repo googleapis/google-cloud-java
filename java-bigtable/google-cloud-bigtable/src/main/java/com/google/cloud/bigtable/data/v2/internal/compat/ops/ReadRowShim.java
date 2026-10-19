@@ -15,76 +15,74 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
-import com.google.bigtable.v2.Cell;
-import com.google.bigtable.v2.Column;
-import com.google.bigtable.v2.Family;
+import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
-import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
+import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
+import com.google.cloud.bigtable.data.v2.models.AuthorizedViewId;
+import com.google.cloud.bigtable.data.v2.models.MaterializedViewId;
 import com.google.cloud.bigtable.data.v2.models.Query;
-import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowAdapter;
-import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
+import com.google.cloud.bigtable.data.v2.models.TableId;
+import com.google.cloud.bigtable.data.v2.models.TargetId;
 import io.grpc.Deadline;
-import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
-/**
- * Stateless wrapper around {@link ReadRowShimInner}. It primary purpose is to pair a {@link
- * RowAdapter} with a stateful {@link ReadRowShimInner}.
- */
-public class ReadRowShim<RowT> implements UnaryShim<Query, RowT> {
-  private static final RowAdapter<Row> DEFAULT_ADAPTER = new DefaultRowAdapter();
+public class ReadRowShim implements UnaryShim<Query, SessionReadRowResponse> {
 
-  private final ReadRowShimInner inner;
-  private final RowAdapter<RowT> adapter;
+  private final SessionPoolMap sessionMap;
 
-  public static ReadRowShim<Row> createDefault(ReadRowShimInner inner) {
-    return new ReadRowShim<>(inner, DEFAULT_ADAPTER);
+  public ReadRowShim(SessionPoolMap sessionMap) {
+    this.sessionMap = sessionMap;
   }
 
-  public ReadRowShim(ReadRowShimInner inner, RowAdapter<RowT> adapter) {
-    this.inner = inner;
-    this.adapter = adapter;
-  }
+  @Override
+  public void close() {}
 
   @Override
   public boolean supports(Query request) {
-    return inner.supports(request);
+    TargetId targetId = request.getTargetId();
+    SessionPool<?> pool;
+    if (targetId instanceof TableId) {
+      pool = sessionMap.get((TableId) targetId, SessionKey.Permission.READ).getSessionPool();
+    } else if (targetId instanceof AuthorizedViewId) {
+      pool =
+          sessionMap.get((AuthorizedViewId) targetId, SessionKey.Permission.READ).getSessionPool();
+    } else if (targetId instanceof MaterializedViewId) {
+      pool =
+          sessionMap
+              .get((MaterializedViewId) targetId, SessionKey.Permission.READ)
+              .getSessionPool();
+    } else {
+      return false;
+    }
+    return UnaryShim.shouldRouteToSession(pool);
   }
 
   @Override
-  public CompletableFuture<RowT> call(Query request, Deadline deadline) {
-    CompletableFuture<SessionReadRowResponse> f = inner.call(request, deadline);
-    return f.thenApply(r -> buildRow(adapter.createRowBuilder(), r));
-  }
+  public CompletableFuture<SessionReadRowResponse> call(Query query, Deadline deadline) {
+    TargetId targetId = query.getTargetId();
 
-  @Override
-  public void close() throws IOException {
-    inner.close();
-  }
+    SessionReadRowRequest innerReq = query.toSessionPointProto();
 
-  private static <T> T buildRow(RowBuilder<T> adapter, SessionReadRowResponse input) {
-    if (!input.hasRow()) {
-      return null;
+    if (targetId instanceof TableId) {
+      return sessionMap.apply(
+          (TableId) targetId, SessionKey.Permission.READ, t -> t.readRow(innerReq, deadline));
     }
-    com.google.bigtable.v2.Row protoRow = input.getRow();
-
-    adapter.startRow(protoRow.getKey());
-
-    for (Family family : protoRow.getFamiliesList()) {
-      for (Column column : family.getColumnsList()) {
-        for (Cell cell : column.getCellsList()) {
-          adapter.startCell(
-              family.getName(),
-              column.getQualifier(),
-              cell.getTimestampMicros(),
-              cell.getLabelsList(),
-              0);
-          adapter.cellValue(cell.getValue());
-          adapter.finishCell();
-        }
-      }
+    if (targetId instanceof AuthorizedViewId) {
+      return sessionMap.apply(
+          (AuthorizedViewId) targetId,
+          SessionKey.Permission.READ,
+          v -> v.readRow(innerReq, deadline));
     }
-    return adapter.finishRow();
+    if (targetId instanceof MaterializedViewId) {
+      return sessionMap.apply(
+          (MaterializedViewId) targetId,
+          SessionKey.Permission.READ,
+          v -> v.readRow(innerReq, deadline));
+    }
+
+    CompletableFuture<SessionReadRowResponse> f = new CompletableFuture<>();
+    f.completeExceptionally(
+        new UnsupportedOperationException("Unsupported targetId type: " + targetId));
+    return f;
   }
 }

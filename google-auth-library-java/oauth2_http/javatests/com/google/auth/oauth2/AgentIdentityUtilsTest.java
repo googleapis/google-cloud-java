@@ -95,6 +95,7 @@ class AgentIdentityUtilsTest {
       "spiffe://agents.global.org-INVALID.system.id.goog/path";
 
   private TestEnvironmentProvider envProvider;
+  private TestPropertyProvider propertyProvider;
   @TempDir private Path tempDir;
 
   @BeforeEach
@@ -102,6 +103,12 @@ class AgentIdentityUtilsTest {
     envProvider = new TestEnvironmentProvider();
     AgentIdentityUtils.setEnvironmentProvider(envProvider);
     AgentIdentityUtils.setTimeService(new FakeTimeService());
+    // Resolve the well-known gcloud certificate_config.json under a temp home, so a real config on
+    // the machine running the tests cannot affect GKE credential bundle discovery.
+    propertyProvider = new TestPropertyProvider();
+    propertyProvider.setProperty("os.name", "Linux");
+    propertyProvider.setProperty("user.home", tempDir.resolve("home").toString());
+    AgentIdentityUtils.setPropertyProvider(propertyProvider);
   }
 
   @AfterEach
@@ -582,7 +589,7 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void
-      getAgentIdentityCertInfo_wellKnownDirExistsNoFiles_explicitlyEnabled_retriesAndThrowsIOException()
+      getAgentIdentityCertInfo_wellKnownDirExistsNoFiles_explicitlyEnabled_returnsNullWithoutPolling()
           throws IOException {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     FakeTimeService fakeTime = new FakeTimeService();
@@ -590,8 +597,23 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
 
-    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertTrue(fakeTime.getSleepCount() > 0);
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_wellKnownDirMissing_explicitlyEnabled_returnsNullWithoutPolling()
+          throws IOException {
+    AgentIdentityUtils.setWellKnownDir(
+        tempDir.resolve("non_existent_well_known").toAbsolutePath().toString() + "/");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
   }
 
   @Test
@@ -996,25 +1018,6 @@ class AgentIdentityUtilsTest {
 
   @Test
   public void
-      getAgentIdentityCertInfo_startupPollTimeout_subsequentRefreshDoesNotPollAndThrowsIOException()
-          throws Exception {
-    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
-    FakeTimeService fakeTime = new FakeTimeService();
-    AgentIdentityUtils.setTimeService(fakeTime);
-    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
-    envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
-
-    // Initial call polls for all 100 cycles (99 sleeps) and fails closed with IOException
-    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertEquals(99, fakeTime.getSleepCount());
-
-    // Subsequent token refresh fails closed immediately without sleeping
-    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertEquals(99, fakeTime.getSleepCount());
-  }
-
-  @Test
-  public void
       getAgentIdentityCertInfo_configInWellKnownDirTimeout_subsequentRefreshDoesNotPollAndThrowsIOException()
           throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
@@ -1032,6 +1035,89 @@ class AgentIdentityUtilsTest {
     // Subsequent token refresh fails closed immediately without sleeping
     assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(99, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_zeroByteFilesDuringStartupPoll_waitsUntilNonEmpty()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    Path targetCertPath = tempDir.resolve("certificates.pem");
+    Path targetKeyPath = tempDir.resolve("private_key.pem");
+    // Create 0-byte files simulating CSI driver creating file entries before writing content
+    Files.createFile(targetCertPath);
+    Files.createFile(targetKeyPath);
+
+    Path configFile = tempDir.resolve("credentials.json");
+    writeWorkloadConfig(configFile, targetCertPath, targetKeyPath);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toString());
+
+    // Populate after sleep 4 and 5 so loadAndVerifyCredentials's 3 attempts (2 sleeps) cannot
+    // mask a broken 0-byte startup poll check.
+    FakeTimeService fakeTime = new FakeTimeService();
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (fakeTime.getSleepCount() == 4) {
+            try {
+              // First populate only cert; key is still 0 bytes
+              copyResource("agent/agent_spiffe_cert.pem", targetCertPath);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+          } else if (fakeTime.getSleepCount() == 5) {
+            try {
+              // Then populate key
+              copyResource("agent/agent_spiffe_key.pem", targetKeyPath);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertEquals(5, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_symlinkedWellKnownDir_pollsForStartupFiles()
+      throws Exception {
+    Path realWellKnown = Files.createDirectory(tempDir.resolve("real_run_secrets"));
+    Path symlinkWellKnown = tempDir.resolve("var_run_secrets");
+    try {
+      Files.createSymbolicLink(symlinkWellKnown, realWellKnown);
+    } catch (UnsupportedOperationException | IOException e) {
+      Assumptions.assumeTrue(false, "Symbolic links not supported: " + e.getMessage());
+    }
+
+    // Configure wellKnownDir via symlink path (/var/run/...) while GOOGLE_API_CERTIFICATE_CONFIG
+    // uses the real path (/run/...) for a file that does not exist yet at startup.
+    AgentIdentityUtils.setWellKnownDir(symlinkWellKnown.toAbsolutePath().toString() + "/");
+    Path configViaRealPath = realWellKnown.resolve("credentials.json");
+    Path certViaRealPath = realWellKnown.resolve("certificates.pem");
+    Path keyViaRealPath = realWellKnown.resolve("private_key.pem");
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
+        configViaRealPath.toAbsolutePath().toString());
+
+    FakeTimeService fakeTime = new FakeTimeService();
+    fakeTime.setOnSleepCallback(
+        () -> {
+          if (fakeTime.getSleepCount() == 1) {
+            try {
+              copyResource("agent/agent_spiffe_cert.pem", certViaRealPath);
+              copyResource("agent/agent_spiffe_key.pem", keyViaRealPath);
+              writeWorkloadConfig(configViaRealPath, certViaRealPath, keyViaRealPath);
+            } catch (Exception e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertEquals(1, fakeTime.getSleepCount());
   }
 
   @Test
@@ -1132,8 +1218,9 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertInfo_explicitMtlsEnabled_missingPrivateKey_throwsIOException()
-      throws Exception {
+  public void
+      getAgentIdentityCertInfo_explicitMtlsEnabled_missingPrivateKey_returnsNullWithoutPolling()
+          throws Exception {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
     assertNotNull(certUrl);
@@ -1145,10 +1232,8 @@ class AgentIdentityUtilsTest {
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
 
-    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertTrue(
-        e.getMessage().contains("Unable to find well-known Agent Identity certificate file"));
-    assertEquals(99, fakeTime.getSleepCount());
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
   }
 
   @Test
@@ -1806,6 +1891,212 @@ class AgentIdentityUtilsTest {
             () ->
                 AgentIdentityCertificateValidationUtils.verifyKeyPair(cert, keyPair.getPrivate()));
     assertTrue(e.getMessage().contains("Unsupported key algorithm: DSA"));
+  }
+
+  // --- GKE credential bundle (x509.credential-bundle.private-key.pem) ---
+
+  private Path writeGkeBundleInWellKnownDir(String certResource, String keyResource)
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    String certPem =
+        new String(
+            Files.readAllBytes(Paths.get(resourcePath(certResource))), StandardCharsets.UTF_8);
+    String keyPem =
+        new String(
+            Files.readAllBytes(Paths.get(resourcePath(keyResource))), StandardCharsets.UTF_8);
+    Path bundle = tempDir.resolve(AgentIdentityUtils.GKE_CREDENTIAL_BUNDLE_FILE);
+    Files.write(bundle, (certPem + "\n" + keyPem).getBytes(StandardCharsets.UTF_8));
+    return bundle;
+  }
+
+  private Path writeAgentGkeBundle() throws Exception {
+    return writeGkeBundleInWellKnownDir(
+        "agent/agent_spiffe_cert.pem", "agent/agent_spiffe_key.pem");
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_implicit_returnsCertWithoutPolling()
+      throws Exception {
+    writeAgentGkeBundle();
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+
+    assertNotNull(info);
+    assertTrue(
+        AgentIdentityCertificateValidationUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(info.getCertContent().contains("BEGIN CERTIFICATE"));
+    assertFalse(info.getCertContent().contains("PRIVATE KEY"));
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_secondCallUsesCacheAndStaysBound()
+      throws Exception {
+    writeAgentGkeBundle();
+
+    AgentIdentityUtils.CertInfo first = AgentIdentityUtils.getAgentIdentityCertInfo();
+    AgentIdentityUtils.CertInfo second = AgentIdentityUtils.getAgentIdentityCertInfo();
+
+    assertNotNull(first);
+    assertSame(first, second);
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_useClientCertFalse_returnsNull() throws Exception {
+    writeAgentGkeBundle();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "false");
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_enableRuntimeBoundTokenFalse_returnsNull()
+      throws Exception {
+    writeAgentGkeBundle();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_defaultGcloudConfigExists_returnsNull()
+      throws Exception {
+    writeAgentGkeBundle();
+    Path gcloudDir = tempDir.resolve("home").resolve(".config").resolve("gcloud");
+    Files.createDirectories(gcloudDir);
+    Files.write(gcloudDir.resolve("certificate_config.json"), "{}".getBytes());
+
+    // The gcloud config is the transport's mTLS certificate source, so tokens must not be bound to
+    // the GKE certificate.
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_nonAgentCertificate_returnsNull()
+      throws Exception {
+    writeGkeBundleInWellKnownDir("mtls/test_cert.pem", "mtls/test_key.pem");
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundleAbsent_returnsNullWithoutPolling()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_useClientCertTrue_isDiscovered() throws Exception {
+    writeAgentGkeBundle();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundleEmpty_returnsNullWithoutPolling() throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    Files.createFile(tempDir.resolve(AgentIdentityUtils.GKE_CREDENTIAL_BUNDLE_FILE));
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_useClientCertTrue_isNotPolledFor()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    // Without GOOGLE_API_CERTIFICATE_CONFIG, no startup polling occurs when the bundle is absent.
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+
+    // Once the bundle is written, it is found by the single up-front check.
+    writeAgentGkeBundle();
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundle_takesPrecedenceOverCloudRunFilesWhenExplicit()
+      throws Exception {
+    // The transport presents the GKE bundle when no certificate config exists, so the token must be
+    // bound to it even if other well-known files are present.
+    writeAgentGkeBundle();
+    copyResource("mtls/test_cert.pem", tempDir.resolve("certificates.pem"));
+    copyResource("mtls/test_key.pem", tempDir.resolve("private_key.pem"));
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
+
+    // The GKE bundle (agent cert) wins over certificates.pem/private_key.pem (non-agent cert).
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundleRemovedAfterCaching_fallsBackToCachedCredential()
+      throws Exception {
+    Path bundle = writeAgentGkeBundle();
+    AgentIdentityUtils.CertInfo first = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(first);
+
+    // Simulate a transient gap during rotation.
+    Files.delete(bundle);
+
+    assertSame(first, AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  private void writeDefaultGcloudCertificateConfig() throws Exception {
+    Path gcloudDir = tempDir.resolve("home").resolve(".config").resolve("gcloud");
+    Files.createDirectories(gcloudDir);
+    Files.write(gcloudDir.resolve("certificate_config.json"), "{}".getBytes());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_gkeBundleRemovedAfterCaching_configAppears_doesNotUseCache()
+      throws Exception {
+    Path bundle = writeAgentGkeBundle();
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    // The bundle is transiently missing and a certificate config now exists, so the transport
+    // presents the config's certificate; the cached GKE credential must not be reused.
+    Files.delete(bundle);
+    writeDefaultGcloudCertificateConfig();
+
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_gkeBundleRemovedAfterCaching_configAppears_explicit_doesNotUseCache()
+          throws Exception {
+    Path bundle = writeAgentGkeBundle();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "true");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+
+    Files.delete(bundle);
+    writeDefaultGcloudCertificateConfig();
+
+    // No other well-known files exist and the cached GKE credential is not allowed anymore.
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
   }
 
   private String resourcePath(String resource) throws Exception {

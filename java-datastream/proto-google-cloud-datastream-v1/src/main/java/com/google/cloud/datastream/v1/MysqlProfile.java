@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * MySQL database profile.
+ * Profile for connecting to a MySQL source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.MysqlProfile}
@@ -584,7 +584,7 @@ public final class MysqlProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * MySQL database profile.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.MysqlProfile}

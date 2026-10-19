@@ -68,6 +68,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
@@ -1706,6 +1707,173 @@ public class InlineBeginTransactionTest {
             assertThat(countRequests(ExecuteSqlRequest.class)).isEqualTo(1);
             assertThat(countRequests(CommitRequest.class)).isEqualTo(0);
           });
+    }
+
+    @Test
+    public void testQueryWithInlineBeginClosedBeforeTransactionIdReturned() {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      ExecutorService executor = Executors.newFixedThreadPool(2);
+      try {
+        SpannerException e =
+            assertThrows(
+                SpannerException.class,
+                () ->
+                    client
+                        .readWriteTransaction()
+                        .run(
+                            transaction -> {
+                              mockSpanner.freeze();
+                              ResultSet resultSet = transaction.executeQuery(SELECT1);
+                              Future<?> nextFuture = executor.submit(resultSet::next);
+                              try {
+                                mockSpanner.waitForRequestsToContain(ExecuteSqlRequest.class, 5000);
+                              } catch (Exception ex) {
+                                throw new RuntimeException(ex);
+                              }
+                              resultSet.close();
+                              mockSpanner.unfreeze();
+                              try {
+                                nextFuture.get(5, TimeUnit.SECONDS);
+                              } catch (Exception ignored) {
+                              }
+                              return transaction.executeUpdate(UPDATE_STATEMENT);
+                            }));
+        assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
+        assertTrue(
+            e.getMessage().contains("ResultSet was closed before a transaction id was returned"));
+      } finally {
+        mockSpanner.unfreeze();
+        executor.shutdownNow();
+      }
+    }
+
+    @Test
+    public void testQueryWithInlineBeginClosedBeforeTransactionIdReturnedUnblocksWaitingThread()
+        throws Exception {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      ExecutorService executor = Executors.newFixedThreadPool(2);
+      try {
+        client
+            .readWriteTransaction()
+            .run(
+                transaction -> {
+                  mockSpanner.freeze();
+                  ResultSet resultSet = transaction.executeQuery(SELECT1);
+                  Future<?> nextFuture = executor.submit(resultSet::next);
+                  try {
+                    mockSpanner.waitForRequestsToContain(ExecuteSqlRequest.class, 5000);
+                  } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                  }
+                  // Start a concurrent statement that waits for the transaction id to be returned.
+                  Future<Long> updateFuture =
+                      executor.submit(() -> transaction.executeUpdate(UPDATE_STATEMENT));
+
+                  // Give the update statement thread a moment to reach getTransactionSelector().
+                  // Even if resultSet.close() happens first, updateFuture will immediately see the
+                  // exception.
+                  resultSet.close();
+                  mockSpanner.unfreeze();
+
+                  // The waiting thread must be unblocked immediately (within 5 seconds, not 60s
+                  // timeout).
+                  ExecutionException updateException =
+                      assertThrows(
+                          ExecutionException.class, () -> updateFuture.get(5, TimeUnit.SECONDS));
+                  assertTrue(updateException.getCause() instanceof SpannerException);
+                  SpannerException spannerException = (SpannerException) updateException.getCause();
+                  assertEquals(ErrorCode.FAILED_PRECONDITION, spannerException.getErrorCode());
+                  assertTrue(
+                      spannerException
+                          .getMessage()
+                          .contains("ResultSet was closed before a transaction id was returned"));
+
+                  try {
+                    nextFuture.get(5, TimeUnit.SECONDS);
+                  } catch (Exception ignored) {
+                  }
+                  throw spannerException;
+                });
+      } catch (SpannerException e) {
+        assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
+        assertTrue(
+            e.getMessage().contains("ResultSet was closed before a transaction id was returned"));
+      } finally {
+        mockSpanner.unfreeze();
+        executor.shutdownNow();
+      }
+    }
+
+    @Test
+    public void testQueryWithInlineBeginClosedImmediatelyWithoutNextFollowedByUpdate() {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      Long updateCount =
+          client
+              .readWriteTransaction()
+              .run(
+                  transaction -> {
+                    ResultSet resultSet = transaction.executeQuery(SELECT1);
+                    resultSet.close();
+                    return transaction.executeUpdate(UPDATE_STATEMENT);
+                  });
+      assertEquals(Long.valueOf(UPDATE_COUNT), updateCount);
+      assertEquals(0, countRequests(BeginTransactionRequest.class));
+      assertEquals(1, countRequests(ExecuteSqlRequest.class));
+      ExecuteSqlRequest executeSqlRequest =
+          (ExecuteSqlRequest) mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(0);
+      assertTrue(executeSqlRequest.getTransaction().hasBegin());
+      assertEquals(1, countRequests(CommitRequest.class));
+    }
+
+    @Test
+    public void testQueryWithInlineBeginClosedImmediatelyWithoutNextFollowedByCommit() {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      client
+          .readWriteTransaction()
+          .run(
+              transaction -> {
+                ResultSet resultSet = transaction.executeQuery(SELECT1);
+                resultSet.close();
+                return null;
+              });
+      assertEquals(1, countRequests(BeginTransactionRequest.class));
+      assertEquals(0, countRequests(ExecuteSqlRequest.class));
+      assertEquals(1, countRequests(CommitRequest.class));
+    }
+
+    @Test
+    public void testQueryWithInlineBeginClosedImmediatelyWithoutNextConcurrentUpdate()
+        throws Exception {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      ExecutorService executor = Executors.newFixedThreadPool(2);
+      try {
+        Long updateCount =
+            client
+                .readWriteTransaction()
+                .run(
+                    transaction -> {
+                      ResultSet resultSet = transaction.executeQuery(SELECT1);
+                      Future<Long> updateFuture =
+                          executor.submit(() -> transaction.executeUpdate(UPDATE_STATEMENT));
+                      resultSet.close();
+                      try {
+                        return updateFuture.get(5, TimeUnit.SECONDS);
+                      } catch (Exception e) {
+                        throw SpannerExceptionFactory.asSpannerException(e);
+                      }
+                    });
+        assertEquals(Long.valueOf(UPDATE_COUNT), updateCount);
+        assertEquals(0, countRequests(BeginTransactionRequest.class));
+        assertEquals(1, countRequests(ExecuteSqlRequest.class));
+        assertEquals(1, countRequests(CommitRequest.class));
+      } finally {
+        executor.shutdownNow();
+      }
     }
 
     @Test

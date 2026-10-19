@@ -37,8 +37,10 @@ import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
-import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.RowBuilderShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.SessionPoolMap;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
@@ -47,6 +49,7 @@ import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
@@ -77,18 +80,18 @@ import javax.annotation.Nullable;
 public class ShimImpl implements Shim {
   private static final Logger logger = Logger.getLogger(ShimImpl.class.getName());
 
-  // TODO: this should be a client config
-  public static final int MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES = 30;
   private static final Duration DA_CHECK_TIMEOUT = Duration.ofSeconds(5);
 
   private final ClientConfigurationManager configManager;
   private final Resource<ClientConfigurationManager> configManagerResource;
   private final Client client;
   private final DebugTagTracer debugTagTracer;
+  private final SessionPoolMap sessionMap;
 
-  private final ReadRowShimInner readRowShimInner;
+  private final ReadRowShim readRowShim;
   private final MutateRowShim mutateRowShim;
   private final CheckAndMutateRowShim checkAndMutateRowShim;
+  private final ReadModifyWriteRowShim readModifyWriteRowShim;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -201,10 +204,12 @@ public class ShimImpl implements Shim {
     this.configManager = configManagerResource.get();
     this.client = client;
     this.debugTagTracer = debugTagTracer;
+    this.sessionMap = new SessionPoolMap(client);
 
-    this.readRowShimInner = new ReadRowShimInner(client);
-    this.mutateRowShim = new MutateRowShim(client);
-    this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
+    this.readRowShim = new ReadRowShim(sessionMap);
+    this.mutateRowShim = new MutateRowShim(sessionMap);
+    this.checkAndMutateRowShim = new CheckAndMutateRowShim(sessionMap);
+    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(sessionMap);
   }
 
   /**
@@ -356,6 +361,7 @@ public class ShimImpl implements Shim {
 
   @Override
   public void close() {
+    sessionMap.invalidateAll();
     client.close();
     configManagerResource.close();
   }
@@ -368,7 +374,7 @@ public class ShimImpl implements Shim {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        new ReadRowShim<>(readRowShimInner, rowAdapter),
+        new RowBuilderShim<>(readRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
         debugTagTracer);
   }
@@ -383,10 +389,30 @@ public class ShimImpl implements Shim {
   @Override
   public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
+    if (!WipFeatures.CHECK_AND_MUTATE_ROW_ENABLED) {
+      return classic;
+    }
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
         checkAndMutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer);
+  }
+
+  @Override
+  public <RowT> UnaryCallable<ReadModifyWriteRow, RowT> decorateReadModifyWriteRow(
+      UnaryCallable<ReadModifyWriteRow, RowT> classic,
+      RowAdapter<RowT> rowAdapter,
+      UnaryCallSettings<?, ?> settings) {
+    if (!WipFeatures.READ_MODIFY_WRITE_ROW_ENABLED) {
+      return classic;
+    }
+    return new DivertingUnaryCallable<>(
+        configManager,
+        classic,
+        new RowBuilderShim<>(
+            readModifyWriteRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
         debugTagTracer);
   }

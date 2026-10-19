@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
@@ -531,9 +532,8 @@ class BigQueryJdbcOpenTelemetry {
       }
       if (ex instanceof InterruptedException) {
         Thread.currentThread().interrupt();
-        throw new BigQueryJdbcRuntimeException("Operation interrupted", ex);
       }
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcException(ex);
     } finally {
       span.end();
     }

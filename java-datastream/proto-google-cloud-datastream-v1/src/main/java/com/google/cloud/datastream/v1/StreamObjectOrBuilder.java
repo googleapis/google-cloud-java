@@ -300,4 +300,82 @@ public interface StreamObjectOrBuilder
    * <code>.google.cloud.datastream.v1.SourceObjectIdentifier source_object = 8;</code>
    */
   com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder getSourceObjectOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule>
+      getCustomizationRulesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule getCustomizationRules(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getCustomizationRulesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder>
+      getCustomizationRulesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The customization rules for the object. These rules are
+   * derived from the parent Stream's `rule_sets` and represent the intended
+   * configuration for the object.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.datastream.v1.Stream.RuleSet.CustomizationRule customization_rules = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.Stream.RuleSet.CustomizationRuleOrBuilder
+      getCustomizationRulesOrBuilder(int index);
 }

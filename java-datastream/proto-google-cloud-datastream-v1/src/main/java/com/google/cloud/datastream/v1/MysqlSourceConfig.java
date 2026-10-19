@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * MySQL source configuration
+ * Configuration for syncing data from a MySQL source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.MysqlSourceConfig}
@@ -898,7 +898,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL objects to retrieve from the source.
+   * The MySQL objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -914,7 +914,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL objects to retrieve from the source.
+   * The MySQL objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -932,7 +932,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL objects to retrieve from the source.
+   * The MySQL objects to retrieve from the source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -951,7 +951,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL objects to exclude from the stream.
+   * The MySQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -967,7 +967,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL objects to exclude from the stream.
+   * The MySQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -985,7 +985,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL objects to exclude from the stream.
+   * The MySQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -1395,7 +1395,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * MySQL source configuration
+   * Configuration for syncing data from a MySQL source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.MysqlSourceConfig}
@@ -1678,7 +1678,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1693,7 +1693,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1714,7 +1714,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1737,7 +1737,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1758,7 +1758,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1786,7 +1786,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1806,7 +1806,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1821,7 +1821,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1840,7 +1840,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to retrieve from the source.
+     * The MySQL objects to retrieve from the source.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms include_objects = 1;</code>
@@ -1873,7 +1873,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -1888,7 +1888,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -1909,7 +1909,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -1932,7 +1932,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -1953,7 +1953,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -1981,7 +1981,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -2001,7 +2001,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -2016,7 +2016,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>
@@ -2035,7 +2035,7 @@ public final class MysqlSourceConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * MySQL objects to exclude from the stream.
+     * The MySQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.MysqlRdbms exclude_objects = 2;</code>

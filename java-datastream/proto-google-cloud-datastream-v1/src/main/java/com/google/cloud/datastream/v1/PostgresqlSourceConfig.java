@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * PostgreSQL data source configuration
+ * Configuration for syncing data from a PostgreSQL source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.PostgresqlSourceConfig}
@@ -79,7 +79,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL objects to include in the stream.
+   * The PostgreSQL objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -95,7 +95,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL objects to include in the stream.
+   * The PostgreSQL objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -113,7 +113,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL objects to include in the stream.
+   * The PostgreSQL objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -132,7 +132,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL objects to exclude from the stream.
+   * The PostgreSQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -148,7 +148,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL objects to exclude from the stream.
+   * The PostgreSQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -166,7 +166,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL objects to exclude from the stream.
+   * The PostgreSQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -525,7 +525,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * PostgreSQL data source configuration
+   * Configuration for syncing data from a PostgreSQL source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.PostgresqlSourceConfig}
@@ -762,7 +762,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -777,7 +777,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -798,7 +798,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -821,7 +821,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -842,7 +842,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -871,7 +871,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -891,7 +891,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -906,7 +906,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -925,7 +925,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to include in the stream.
+     * The PostgreSQL objects to include in the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -958,7 +958,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -973,7 +973,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -994,7 +994,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -1017,7 +1017,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -1038,7 +1038,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -1067,7 +1067,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -1087,7 +1087,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -1102,7 +1102,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -1121,7 +1121,7 @@ public final class PostgresqlSourceConfig extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * PostgreSQL objects to exclude from the stream.
+     * The PostgreSQL objects to exclude from the stream.
      * </pre>
      *
      * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>

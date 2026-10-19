@@ -101,13 +101,13 @@ public abstract class IndexUnusedReason implements Serializable {
     com.google.api.services.bigquery.model.IndexUnusedReason indexUnusedReason =
         new com.google.api.services.bigquery.model.IndexUnusedReason();
     if (getIndexName() != null) {
-      indexUnusedReason.setIndexName(indexUnusedReason.getIndexName());
+      indexUnusedReason.setIndexName(getIndexName());
     }
     if (getCode() != null) {
-      indexUnusedReason.setCode(indexUnusedReason.getCode());
+      indexUnusedReason.setCode(getCode());
     }
     if (getMessage() != null) {
-      indexUnusedReason.setMessage(indexUnusedReason.getMessage());
+      indexUnusedReason.setMessage(getMessage());
     }
     if (getBaseTableId() != null) {
       indexUnusedReason.setBaseTable(getBaseTableId().toPb());

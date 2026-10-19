@@ -62,10 +62,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * An ad-hoc connection profile configuration.
+   * Optional. An ad-hoc connection profile configuration.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.ConnectionProfile connection_profile = 200;</code>
+   * <code>
+   * .google.cloud.datastream.v1.ConnectionProfile connection_profile = 200 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the connectionProfile field is set.
    */
@@ -75,10 +77,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * An ad-hoc connection profile configuration.
+   * Optional. An ad-hoc connection profile configuration.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.ConnectionProfile connection_profile = 200;</code>
+   * <code>
+   * .google.cloud.datastream.v1.ConnectionProfile connection_profile = 200 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The connectionProfile.
    */
@@ -88,10 +92,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * An ad-hoc connection profile configuration.
+   * Optional. An ad-hoc connection profile configuration.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.ConnectionProfile connection_profile = 200;</code>
+   * <code>
+   * .google.cloud.datastream.v1.ConnectionProfile connection_profile = 200 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.ConnectionProfileOrBuilder getConnectionProfileOrBuilder();
 
@@ -99,10 +105,10 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * A reference to an existing connection profile.
+   * Optional. A reference to an existing connection profile.
    * </pre>
    *
-   * <code>string connection_profile_name = 201;</code>
+   * <code>string connection_profile_name = 201 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the connectionProfileName field is set.
    */
@@ -112,10 +118,10 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * A reference to an existing connection profile.
+   * Optional. A reference to an existing connection profile.
    * </pre>
    *
-   * <code>string connection_profile_name = 201;</code>
+   * <code>string connection_profile_name = 201 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The connectionProfileName.
    */
@@ -125,10 +131,10 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * A reference to an existing connection profile.
+   * Optional. A reference to an existing connection profile.
    * </pre>
    *
-   * <code>string connection_profile_name = 201;</code>
+   * <code>string connection_profile_name = 201 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for connectionProfileName.
    */
@@ -138,11 +144,11 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Whether to retrieve the full hierarchy of data objects (TRUE) or only the
-   * current level (FALSE).
+   * Optional. Whether to retrieve the full hierarchy of data objects (TRUE)
+   * or only the current level (FALSE).
    * </pre>
    *
-   * <code>bool full_hierarchy = 3;</code>
+   * <code>bool full_hierarchy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the fullHierarchy field is set.
    */
@@ -152,11 +158,11 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Whether to retrieve the full hierarchy of data objects (TRUE) or only the
-   * current level (FALSE).
+   * Optional. Whether to retrieve the full hierarchy of data objects (TRUE)
+   * or only the current level (FALSE).
    * </pre>
    *
-   * <code>bool full_hierarchy = 3;</code>
+   * <code>bool full_hierarchy = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The fullHierarchy.
    */
@@ -166,10 +172,11 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The number of hierarchy levels below the current level to be retrieved.
+   * Optional. The number of hierarchy levels below the current level to be
+   * retrieved.
    * </pre>
    *
-   * <code>int32 hierarchy_depth = 4;</code>
+   * <code>int32 hierarchy_depth = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the hierarchyDepth field is set.
    */
@@ -179,10 +186,11 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * The number of hierarchy levels below the current level to be retrieved.
+   * Optional. The number of hierarchy levels below the current level to be
+   * retrieved.
    * </pre>
    *
-   * <code>int32 hierarchy_depth = 4;</code>
+   * <code>int32 hierarchy_depth = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The hierarchyDepth.
    */
@@ -192,10 +200,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Oracle RDBMS to enrich with child data objects and metadata.
+   * Optional. Oracle RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.OracleRdbms oracle_rdbms = 100;</code>
+   * <code>
+   * .google.cloud.datastream.v1.OracleRdbms oracle_rdbms = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the oracleRdbms field is set.
    */
@@ -205,10 +215,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Oracle RDBMS to enrich with child data objects and metadata.
+   * Optional. Oracle RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.OracleRdbms oracle_rdbms = 100;</code>
+   * <code>
+   * .google.cloud.datastream.v1.OracleRdbms oracle_rdbms = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The oracleRdbms.
    */
@@ -218,10 +230,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Oracle RDBMS to enrich with child data objects and metadata.
+   * Optional. Oracle RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.OracleRdbms oracle_rdbms = 100;</code>
+   * <code>
+   * .google.cloud.datastream.v1.OracleRdbms oracle_rdbms = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.OracleRdbmsOrBuilder getOracleRdbmsOrBuilder();
 
@@ -229,10 +243,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * MySQL RDBMS to enrich with child data objects and metadata.
+   * Optional. MySQL RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.MysqlRdbms mysql_rdbms = 101;</code>
+   * <code>
+   * .google.cloud.datastream.v1.MysqlRdbms mysql_rdbms = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the mysqlRdbms field is set.
    */
@@ -242,10 +258,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * MySQL RDBMS to enrich with child data objects and metadata.
+   * Optional. MySQL RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.MysqlRdbms mysql_rdbms = 101;</code>
+   * <code>
+   * .google.cloud.datastream.v1.MysqlRdbms mysql_rdbms = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The mysqlRdbms.
    */
@@ -255,10 +273,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * MySQL RDBMS to enrich with child data objects and metadata.
+   * Optional. MySQL RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.MysqlRdbms mysql_rdbms = 101;</code>
+   * <code>
+   * .google.cloud.datastream.v1.MysqlRdbms mysql_rdbms = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.MysqlRdbmsOrBuilder getMysqlRdbmsOrBuilder();
 
@@ -266,10 +286,13 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL RDBMS to enrich with child data objects and metadata.
+   * Optional. PostgreSQL RDBMS to enrich with child data objects and
+   * metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+   * <code>
+   * .google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the postgresqlRdbms field is set.
    */
@@ -279,10 +302,13 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL RDBMS to enrich with child data objects and metadata.
+   * Optional. PostgreSQL RDBMS to enrich with child data objects and
+   * metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+   * <code>
+   * .google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The postgresqlRdbms.
    */
@@ -292,10 +318,13 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL RDBMS to enrich with child data objects and metadata.
+   * Optional. PostgreSQL RDBMS to enrich with child data objects and
+   * metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102;</code>
+   * <code>
+   * .google.cloud.datastream.v1.PostgresqlRdbms postgresql_rdbms = 102 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.PostgresqlRdbmsOrBuilder getPostgresqlRdbmsOrBuilder();
 
@@ -303,10 +332,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * SQLServer RDBMS to enrich with child data objects and metadata.
+   * Optional. SQLServer RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the sqlServerRdbms field is set.
    */
@@ -316,10 +347,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * SQLServer RDBMS to enrich with child data objects and metadata.
+   * Optional. SQLServer RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The sqlServerRdbms.
    */
@@ -329,10 +362,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * SQLServer RDBMS to enrich with child data objects and metadata.
+   * Optional. SQLServer RDBMS to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103;</code>
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerRdbms sql_server_rdbms = 103 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder();
 
@@ -340,10 +375,13 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Salesforce organization to enrich with child data objects and metadata.
+   * Optional. Salesforce organization to enrich with child data objects and
+   * metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the salesforceOrg field is set.
    */
@@ -353,10 +391,13 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Salesforce organization to enrich with child data objects and metadata.
+   * Optional. Salesforce organization to enrich with child data objects and
+   * metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The salesforceOrg.
    */
@@ -366,10 +407,13 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Salesforce organization to enrich with child data objects and metadata.
+   * Optional. Salesforce organization to enrich with child data objects and
+   * metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceOrgOrBuilder();
 
@@ -377,10 +421,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * MongoDB cluster to enrich with child data objects and metadata.
+   * Optional. MongoDB cluster to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   * <code>
+   * .google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the mongodbCluster field is set.
    */
@@ -390,10 +436,12 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * MongoDB cluster to enrich with child data objects and metadata.
+   * Optional. MongoDB cluster to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   * <code>
+   * .google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The mongodbCluster.
    */
@@ -403,12 +451,106 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    *
    *
    * <pre>
-   * MongoDB cluster to enrich with child data objects and metadata.
+   * Optional. MongoDB cluster to enrich with child data objects and metadata.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   * <code>
+   * .google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbClusterOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spanner database to enrich with child data objects and
+   * metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SpannerDatabase spanner_database = 106 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the spannerDatabase field is set.
+   */
+  boolean hasSpannerDatabase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spanner database to enrich with child data objects and
+   * metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SpannerDatabase spanner_database = 106 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The spannerDatabase.
+   */
+  com.google.cloud.datastream.v1.SpannerDatabase getSpannerDatabase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spanner database to enrich with child data objects and
+   * metadata.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SpannerDatabase spanner_database = 106 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SpannerDatabaseOrBuilder getSpannerDatabaseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Source catalog to enrich with child data objects and metadata.
+   * This is mainly used to represent SaaS sources databases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceCatalog source_catalog = 108 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sourceCatalog field is set.
+   */
+  boolean hasSourceCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Source catalog to enrich with child data objects and metadata.
+   * This is mainly used to represent SaaS sources databases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceCatalog source_catalog = 108 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceCatalog.
+   */
+  com.google.cloud.datastream.v1.SourceCatalog getSourceCatalog();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Source catalog to enrich with child data objects and metadata.
+   * This is mainly used to represent SaaS sources databases.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceCatalog source_catalog = 108 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SourceCatalogOrBuilder getSourceCatalogOrBuilder();
 
   com.google.cloud.datastream.v1.DiscoverConnectionProfileRequest.TargetCase getTargetCase();
 

@@ -79,7 +79,8 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
         if (i > 0) {
           sb.append(",");
         }
-        String fieldName = schema.get(i).getName();
+        Field field = schema.get(i);
+        String fieldName = field.getName();
         Object value = attributes[i];
 
         sb.append("\"").append(fieldName.replace("\"", "\\\"")).append("\":");
@@ -89,6 +90,11 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
         } else if (value instanceof String || value instanceof org.apache.arrow.vector.util.Text) {
           String stringValue = value.toString().replace("\"", "\\\"");
           sb.append("\"").append(stringValue).append("\"");
+        } else if (value instanceof Timestamp
+            && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
+          sb.append("\"")
+              .append(BigQueryTemporalUtility.formatTimestampToUtcString((Timestamp) value))
+              .append("\"");
         } else if (value instanceof Timestamp || value instanceof Date || value instanceof Time) {
           sb.append("\"").append(value.toString()).append("\"");
         } else if (value instanceof byte[]) {

@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * PostgreSQL database profile.
+ * Profile for connecting to a PostgreSQL source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.PostgresqlProfile}
@@ -660,7 +660,7 @@ public final class PostgresqlProfile extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * PostgreSQL database profile.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.PostgresqlProfile}

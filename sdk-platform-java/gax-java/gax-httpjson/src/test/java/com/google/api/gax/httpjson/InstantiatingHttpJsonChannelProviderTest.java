@@ -41,6 +41,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.mtls.AbstractMtlsTransportChannelTest;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.api.gax.rpc.testing.FakeMtlsProvider;
+import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -477,6 +478,50 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
     IllegalStateException thrown =
         assertThrows(IllegalStateException.class, finalProvider::getTransportChannel);
     assertThat(thrown).isSameInstanceAs(failure);
+  }
+
+  @Test
+  void getTransportChannel_whenDefaultMtlsProviderThrowsIOException_propagatesIOException()
+      throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    IOException expected = new IOException("Corrupt PEM file");
+    Mockito.when(certificateBasedAccess.createDefaultMtlsProvider()).thenThrow(expected);
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    IOException thrown = assertThrows(IOException.class, finalProvider::getTransportChannel);
+    assertThat(thrown).isSameInstanceAs(expected);
+  }
+
+  @Test
+  void
+      getTransportChannel_whenDefaultMtlsProviderThrowsCertificateSourceUnavailable_fallsBackWithoutMtls()
+          throws Exception {
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(certificateBasedAccess.createDefaultMtlsProvider())
+        .thenThrow(new CertificateSourceUnavailableException("No certificates on disk"));
+
+    InstantiatingHttpJsonChannelProvider provider =
+        InstantiatingHttpJsonChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+    InstantiatingHttpJsonChannelProvider finalProvider =
+        (InstantiatingHttpJsonChannelProvider) provider.withHeaders(DEFAULT_HEADER_MAP);
+
+    HttpTransport transport = finalProvider.createHttpTransport();
+    assertThat(transport).isInstanceOf(NetHttpTransport.class);
+    assertThat(((NetHttpTransport) transport).isMtls()).isFalse();
+
+    HttpJsonTransportChannel channel = finalProvider.getTransportChannel();
+    assertThat(channel).isNotNull();
+    channel.shutdownNow();
   }
 
   @Test

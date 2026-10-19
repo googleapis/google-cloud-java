@@ -14,6 +14,5 @@
   "library_type": "GAPIC_COMBO",
   "codeowner_team": "@googleapis/bigtable-team",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559777",
-  "extra_versioned_modules": "google-cloud-bigtable-emulator,google-cloud-bigtable-emulator-core",
   "recommended_package": "com.google.cloud.bigtable"
 }
