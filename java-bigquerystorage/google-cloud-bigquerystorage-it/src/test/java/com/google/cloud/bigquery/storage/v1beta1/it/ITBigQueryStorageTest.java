@@ -93,6 +93,7 @@ import org.apache.avro.generic.GenericRecordBuilder;
 import org.apache.avro.util.Utf8;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Storage API. */
@@ -1084,6 +1085,7 @@ class ITBigQueryStorageTest {
     localClient.close();
   }
 
+  @Disabled("Flaky test: b/575538723")
   @Test
   void testUniverseDomainWithMatchingDomain() throws IOException {
     // Test a valid domain using the default credentials and Google default universe domain.
