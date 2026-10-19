@@ -408,20 +408,32 @@ final class OpenTelemetryBootstrappingUtils {
         shouldSuppressExceptions
             ? new PermissionDeniedSingleReportMetricsExporter(cloudMonitoringExporter)
             : cloudMonitoringExporter;
-    AttributesBuilder attributesBuilder =
-        Attributes.builder()
-            .put("project_id", projectIdToUse)
-            .put("instance_id", instanceId != null ? instanceId : UUID.randomUUID().toString())
-            .put("api", api);
+    AttributesBuilder attributesBuilder = Attributes.builder();
+    if (detectedAttributes != null) {
+      attributesBuilder.putAll(detectedAttributes);
+    }
+    attributesBuilder
+        .put("project_id", projectIdToUse)
+        .put("instance_id", instanceId != null ? instanceId : UUID.randomUUID().toString())
+        .put("api", api);
     if (customResourceType != null) {
       attributesBuilder.put("gcp.resource_type", customResourceType);
     }
-    String detectedLocation = detectedAttributes.get(AttributeKey.stringKey("cloud.region"));
+    String detectedLocation =
+        detectedAttributes != null
+            ? detectedAttributes.get(AttributeKey.stringKey("cloud.region"))
+            : null;
     attributesBuilder.put("location", detectedLocation != null ? detectedLocation : "global");
-    String detectedCloudPlatform = detectedAttributes.get(AttributeKey.stringKey("cloud.platform"));
+    String detectedCloudPlatform =
+        detectedAttributes != null
+            ? detectedAttributes.get(AttributeKey.stringKey("cloud.platform"))
+            : null;
     attributesBuilder.put(
         "cloud_platform", detectedCloudPlatform != null ? detectedCloudPlatform : "unknown");
-    String detectedHostId = detectedAttributes.get(AttributeKey.stringKey("host.id"));
+    String detectedHostId =
+        detectedAttributes != null
+            ? detectedAttributes.get(AttributeKey.stringKey("host.id"))
+            : null;
     attributesBuilder.put("host_id", detectedHostId != null ? detectedHostId : "unknown");
 
     providerBuilder

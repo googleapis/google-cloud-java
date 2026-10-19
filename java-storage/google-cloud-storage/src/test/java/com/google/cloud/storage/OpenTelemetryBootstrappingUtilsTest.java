@@ -191,4 +191,28 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       assertThat(provider.toString()).contains("instance_id=\"" + customInstanceId + "\"");
     }
   }
+
+  @Test
+  public void createClientMeterProvider_preservesDetectedAttributes() {
+    Attributes detectedAttributes =
+        Attributes.builder()
+            .put("cloud.platform", "gcp_kubernetes_engine")
+            .put("cloud.availability_zone", "us-central1-a")
+            .put("host.id", "test-host-123")
+            .build();
+
+    try (SdkMeterProvider provider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            "test-instance",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "grpc")) {
+      assertThat(provider.toString()).contains("cloud.platform=\"gcp_kubernetes_engine\"");
+      assertThat(provider.toString()).contains("cloud.availability_zone=\"us-central1-a\"");
+      assertThat(provider.toString()).contains("host.id=\"test-host-123\"");
+    }
+  }
 }
