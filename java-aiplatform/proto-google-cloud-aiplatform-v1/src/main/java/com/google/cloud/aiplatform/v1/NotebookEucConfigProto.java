@@ -55,15 +55,15 @@ public final class NotebookEucConfigProto extends com.google.protobuf.GeneratedF
     java.lang.String[] descriptorData = {
       "\n4google/cloud/aiplatform/v1/notebook_eu"
           + "c_config.proto\022\032google.cloud.aiplatform."
-          + "v1\032\037google/api/field_behavior.proto\"O\n\021N"
-          + "otebookEucConfig\022\031\n\014euc_disabled\030\001 \001(\010B\003"
-          + "\340A\004\022\037\n\022bypass_actas_check\030\002 \001(\010B\003\340A\003B\324\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\026Noteboo"
-          + "kEucConfigProtoP\001Z>cloud.google.com/go/a"
-          + "iplatform/apiv1/aiplatformpb;aiplatformp"
-          + "b\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google\\"
-          + "Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIP"
-          + "latform::V1b\006proto3"
+          + "v1\032\037google/api/field_behavior.proto\"Q\n\021N"
+          + "otebookEucConfig\022\032\n\014euc_disabled\030\001 \001(\010B\004"
+          + "\342A\001\004\022 \n\022bypass_actas_check\030\002 \001(\010B\004\342A\001\003B\324"
+          + "\001\n\036com.google.cloud.aiplatform.v1B\026Noteb"
+          + "ookEucConfigProtoP\001Z>cloud.google.com/go"
+          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

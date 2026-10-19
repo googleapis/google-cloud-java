@@ -141,6 +141,46 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_redis_cluster_v1beta1_BackupClusterRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_GetTokenAuthUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_GetTokenAuthUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_GetAuthTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_GetAuthTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_AddTokenAuthUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_AddTokenAuthUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_DeleteTokenAuthUserRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_DeleteTokenAuthUserRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_AddAuthTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_AddAuthTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_DeleteAuthTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_DeleteAuthTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_redis_cluster_v1beta1_Cluster_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_redis_cluster_v1beta1_Cluster_fieldAccessorTable;
@@ -281,6 +321,14 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_redis_cluster_v1beta1_OperationMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_TokenAuthUser_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_TokenAuthUser_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_redis_cluster_v1beta1_AuthToken_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_redis_cluster_v1beta1_AuthToken_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_redis_cluster_v1beta1_CertificateAuthority_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_redis_cluster_v1beta1_CertificateAuthority_fieldAccessorTable;
@@ -335,202 +383,253 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + "\031google/protobuf/any.proto\032\036google/proto"
           + "buf/duration.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\032\033goog"
-          + "le/type/dayofweek.proto\032\033google/type/timeofday.proto\"\301\001\n"
-          + "\024CreateClusterRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!locations.googleapis.com/Location\022\027\n\n"
-          + "cluster_id\030\002 \001(\tB\003\340A\002\022A\n"
+          + "le/type/dayofweek.proto\032\033google/type/timeofday.proto\"\304\001\n"
+          + "\024CreateClusterRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\030\n\n"
+          + "cluster_id\030\002 \001(\tB\004\342A\001\002\022B\n"
           + "\007cluster\030\003"
-          + " \001(\0132+.google.cloud.redis.cluster.v1beta1.ClusterB\003\340A\002\022\022\n\n"
-          + "request_id\030\004 \001(\t\"\325\001\n"
-          + "\026CreateAclPolicyRequest\0226\n"
-          + "\006parent\030\001 \001(\tB&\340A\002\372A"
-          + " \022\036redis.googleapis.com/AclPolicy\022\032\n\r"
-          + "acl_policy_id\030\002 \001(\tB\003\340A\002\022F\n\n"
+          + " \001(\0132+.google.cloud.redis.cluster.v1beta1.ClusterB\004\342A\001\002\022\022\n\n"
+          + "request_id\030\004 \001(\t\"\331\001\n"
+          + "\026CreateAclPolicyRequest\0227\n"
+          + "\006parent\030\001 \001(\tB\'\342A\001\002\372A"
+          + " \022\036redis.googleapis.com/AclPolicy\022\033\n\r"
+          + "acl_policy_id\030\002 \001(\tB\004\342A\001\002\022G\n\n"
           + "acl_policy\030\003"
-          + " \001(\0132-.google.cloud.redis.cluster.v1beta1.AclPolicyB\003\340A\002\022\037\n\n"
-          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"w\n"
-          + "\023ListClustersRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + " \001(\0132-.google.cloud.redis.cluster.v1beta1.AclPolicyB\004\342A\001\002\022 \n"
+          + "\n"
+          + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"x\n"
+          + "\023ListClustersRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
           + "!locations.googleapis.com/Location\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"\203\001\n"
           + "\024ListClustersResponse\022=\n"
           + "\010clusters\030\001 \003(\0132+.google.cloud.redis.cluster.v1beta1.Cluster\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"\201\001\n"
-          + "\026ListAclPoliciesRequest\0226\n"
-          + "\006parent\030\001 \001(\tB&\340A\002\372A"
-          + " \022\036redis.googleapis.com/AclPolicy\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\221\001\n"
+          + "\013unreachable\030\003 \003(\t\"\204\001\n"
+          + "\026ListAclPoliciesRequest\0227\n"
+          + "\006parent\030\001 \001(\tB\'\342A\001\002\372A"
+          + " \022\036redis.googleapis.com/AclPolicy\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\222\001\n"
           + "\027ListAclPoliciesResponse\022C\n"
-          + "\014acl_policies\030\001"
-          + " \003(\0132-.google.cloud.redis.cluster.v1beta1.AclPolicy\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\022\030\n"
-          + "\013unreachable\030\003 \003(\tB\003\340A\006\"\220\001\n"
-          + "\035ListAclPolicyRevisionsRequest\022>\n"
+          + "\014acl_policies\030\001 \003(\0132-.googl"
+          + "e.cloud.redis.cluster.v1beta1.AclPolicy\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006\"\223\001\n"
+          + "\035ListAclPolicyRevisionsRequest\022?\n"
           + "\006parent\030\001 \001("
-          + "\tB.\340A\002\372A(\022&redis.googleapis.com/AclPolicyRevision\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\250\001\n"
+          + "\tB/\342A\001\002\372A(\022&redis.googleapis.com/AclPolicyRevision\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\251\001\n"
           + "\036ListAclPolicyRevisionsResponse\022S\n"
-          + "\024acl_policy_revisions\030\001"
-          + " \003(\01325.google.cloud.redis.cluster.v1beta1.AclPolicyRevision\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\022\030\n"
-          + "\013unreachable\030\003 \003(\tB\003\340A\006\"\243\001\n"
-          + "\024UpdateClusterRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022A\n"
-          + "\007cluster\030\002"
-          + " \001(\0132+.google.cloud.redis.cluster.v1beta1.ClusterB\003\340A\002\022\022\n\n"
-          + "request_id\030\003 \001(\t\"\267\001\n"
-          + "\026UpdateAclPolicyRequest\022F\n\n"
-          + "acl_policy\030\001"
-          + " \001(\0132-.google.cloud.redis.cluster.v1beta1.AclPolicyB\003\340A\002\0224\n"
-          + "\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\037\n\n"
-          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"G\n"
-          + "\021GetClusterRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\"K\n"
-          + "\023GetAclPolicyRequest\0224\n"
-          + "\004name\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036redis.googleapis.com/AclPolicy\"[\n"
-          + "\033GetAclPolicyRevisionRequest\022<\n"
-          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&redis.googleapis.com/AclPolicyRevision\"^\n"
-          + "\024DeleteClusterRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\024acl_policy_revisions\030\001 \003(\01325.google.clou"
+          + "d.redis.cluster.v1beta1.AclPolicyRevision\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006\"\245\001\n"
+          + "\024UpdateClusterRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\022B\n"
+          + "\007cluster\030\002 \001(\0132+.google."
+          + "cloud.redis.cluster.v1beta1.ClusterB\004\342A\001\002\022\022\n\n"
+          + "request_id\030\003 \001(\t\"\272\001\n"
+          + "\026UpdateAclPolicyRequest\022G\n\n"
+          + "acl_policy\030\001 \001(\0132-.google.cl"
+          + "oud.redis.cluster.v1beta1.AclPolicyB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022"
+          + " \n\n"
+          + "request_id\030\003 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"H\n"
+          + "\021GetClusterRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\"L\n"
+          + "\023GetAclPolicyRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
+          + "\036redis.googleapis.com/AclPolicy\"\\\n"
+          + "\033GetAclPolicyRevisionRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
+          + "&redis.googleapis.com/AclPolicyRevision\"_\n"
+          + "\024DeleteClusterRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
           + "\034redis.googleapis.com/Cluster\022\022\n\n"
-          + "request_id\030\002 \001(\t\"\202\001\n"
-          + "\026DeleteAclPolicyRequest\0224\n"
-          + "\004name\030\001 \001(\tB&\340A\002\372A \n"
-          + "\036redis.googleapis.com/AclPolicy\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\021\n"
-          + "\004etag\030\003 \001(\tB\003\340A\001\"h\n"
-          + "%GetClusterCertificateAuthorityRequest\022?\n"
-          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
-          + ")redis.googleapis.com/CertificateAuthority\"\216\001\n"
-          + "\034ListBackupCollectionsRequest\022=\n"
+          + "request_id\030\002 \001(\t\"\205\001\n"
+          + "\026DeleteAclPolicyRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
+          + "\036redis.googleapis.com/AclPolicy\022 \n\n"
+          + "request_id\030\002 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\022\022\n"
+          + "\004etag\030\003 \001(\tB\004\342A\001\001\"i\n"
+          + "%GetClusterCertificateAuthorityRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\342A\001\002\372A+\n"
+          + ")redis.googleapis.com/CertificateAuthority\"\221\001\n"
+          + "\034ListBackupCollectionsRequest\022>\n"
           + "\006parent\030\001 \001("
-          + "\tB-\340A\002\372A\'\022%redis.googleapis.com/BackupCollection\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\237\001\n"
+          + "\tB.\342A\001\002\372A\'\022%redis.googleapis.com/BackupCollection\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\237\001\n"
           + "\035ListBackupCollectionsResponse\022P\n"
           + "\022backup_collections\030\001"
           + " \003(\01324.google.cloud.redis.cluster.v1beta1.BackupCollection\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"Y\n"
-          + "\032GetBackupCollectionRequest\022;\n"
-          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
-          + "%redis.googleapis.com/BackupCollection\"z\n"
-          + "\022ListBackupsRequest\0223\n"
+          + "\013unreachable\030\003 \003(\t\"Z\n"
+          + "\032GetBackupCollectionRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\342A\001\002\372A\'\n"
+          + "%redis.googleapis.com/BackupCollection\"}\n"
+          + "\022ListBackupsRequest\0224\n"
           + "\006parent\030\001 \001("
-          + "\tB#\340A\002\372A\035\022\033redis.googleapis.com/Backup\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\200\001\n"
+          + "\tB$\342A\001\002\372A\035\022\033redis.googleapis.com/Backup\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\200\001\n"
           + "\023ListBackupsResponse\022;\n"
           + "\007backups\030\001 \003(\0132*.google.cloud.redis.cluster.v1beta1.Backup\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"E\n"
-          + "\020GetBackupRequest\0221\n"
-          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
-          + "\033redis.googleapis.com/Backup\"i\n"
-          + "\023DeleteBackupRequest\0221\n"
-          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
-          + "\033redis.googleapis.com/Backup\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"m\n"
+          + "\013unreachable\030\003 \003(\t\"F\n"
+          + "\020GetBackupRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
+          + "\033redis.googleapis.com/Backup\"k\n"
+          + "\023DeleteBackupRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
+          + "\033redis.googleapis.com/Backup\022 \n\n"
+          + "request_id\030\002 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"n\n"
           + "\023ExportBackupRequest\022\024\n\n"
-          + "gcs_bucket\030\003 \001(\tH\000\0221\n"
-          + "\004name\030\001 \001(\tB#\340A\002\372A\035\n"
+          + "gcs_bucket\030\003 \001(\tH\000\0222\n"
+          + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
           + "\033redis.googleapis.com/BackupB\r\n"
-          + "\013destination\"\242\001\n"
-          + "\024BackupClusterRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\022+\n"
-          + "\003ttl\030\002 \001(\0132\031.google.protobuf.DurationB\003\340A\001\022\033\n"
-          + "\tbackup_id\030\003 \001(\tB\003\340A\001H\000\210\001\001B\014\n\n"
-          + "_backup_id\"\275\033\n"
-          + "\007Cluster\022V\n\n"
-          + "gcs_source\030\" \001(\0132;.google.clou"
-          + "d.redis.cluster.v1beta1.Cluster.GcsBackupSourceB\003\340A\001H\000\022e\n"
-          + "\025managed_backup_source\030#"
-          + " \001(\0132?.google.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceB\003\340A\001H\000\022\024\n"
-          + "\004name\030\001 \001(\tB\006\340A\002\340A\010\0224\n"
-          + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022E\n"
-          + "\005state\030\004"
-          + " \001(\01621.google.cloud.redis.cluster.v1beta1.Cluster.StateB\003\340A\003\022\020\n"
-          + "\003uid\030\005 \001(\tB\003\340A\003\022\037\n\r"
-          + "replica_count\030\010 \001(\005B\003\340A\001H\001\210\001\001\022V\n"
-          + "\022authorization_mode\030\013 \001(\01625.google.cloud.r"
-          + "edis.cluster.v1beta1.AuthorizationModeB\003\340A\001\022_\n"
-          + "\027transit_encryption_mode\030\014 \001(\01629.g"
-          + "oogle.cloud.redis.cluster.v1beta1.TransitEncryptionModeB\003\340A\001\022\031\n"
+          + "\013destination\"\245\001\n"
+          + "\024BackupClusterRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\022,\n"
+          + "\003ttl\030\002 \001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022\034\n"
+          + "\tbackup_id\030\003 \001(\tB\004\342A\001\001H\000\210\001\001B\014\n\n"
+          + "_backup_id\"\271\001\n"
+          + "\031ListTokenAuthUsersRequest\022;\n"
+          + "\006parent\030\001 \001("
+          + "\tB+\342A\001\002\372A$\022\"redis.googleapis.com/TokenAuthUser\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\235\001\n"
+          + "\032ListTokenAuthUsersResponse\022K\n"
+          + "\020token_auth_users\030\001 \003"
+          + "(\01321.google.cloud.redis.cluster.v1beta1.TokenAuthUser\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006\"T\n"
+          + "\027GetTokenAuthUserRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"redis.googleapis.com/TokenAuthUser\"\261\001\n"
+          + "\025ListAuthTokensRequest\0227\n"
+          + "\006parent\030\001 \001(\tB\'\342A\001\002\372A"
+          + " \022\036redis.googleapis.com/AuthToken\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\220\001\n"
+          + "\026ListAuthTokensResponse\022B\n"
+          + "\013auth_tokens\030\001"
+          + " \003(\0132-.google.cloud.redis.cluster.v1beta1.AuthToken\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006\"L\n"
+          + "\023GetAuthTokenRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
+          + "\036redis.googleapis.com/AuthToken\"\227\001\n"
+          + "\027AddTokenAuthUserRequest\0226\n"
+          + "\007cluster\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\022D\n"
+          + "\017token_auth_user\030\002 \001(\tB+\342A\001\002\372A$\n"
+          + "\"redis.googleapis.com/TokenAuthUser\"\216\001\n"
+          + "\032DeleteTokenAuthUserRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"redis.googleapis.com/TokenAuthUser\022 \n\n"
+          + "request_id\030\002 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\022\023\n"
+          + "\005force\030\003 \001(\010B\004\342A\001\001\"\244\001\n"
+          + "\023AddAuthTokenRequest\022D\n"
+          + "\017token_auth_user\030\001 \001(\tB+\342A\001\002\372A$\n"
+          + "\"redis.googleapis.com/TokenAuthUser\022G\n\n"
+          + "auth_token\030\002"
+          + " \001(\0132-.google.cloud.redis.cluster.v1beta1.AuthTokenB\004\342A\001\002\"O\n"
+          + "\026DeleteAuthTokenRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
+          + "\036redis.googleapis.com/AuthToken\"\335\033\n"
+          + "\007Cluster\022W\n\n"
+          + "gcs_source\030\" \001(\0132;.google.cloud.redis.clu"
+          + "ster.v1beta1.Cluster.GcsBackupSourceB\004\342A\001\001H\000\022f\n"
+          + "\025managed_backup_source\030# \001(\0132?.go"
+          + "ogle.cloud.redis.cluster.v1beta1.Cluster.ManagedBackupSourceB\004\342A\001\001H\000\022\023\n"
+          + "\004name\030\001 \001(\tB\005\342A\002\002\010\0225\n"
+          + "\013create_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022F\n"
+          + "\005state\030\004 \001(\0162"
+          + "1.google.cloud.redis.cluster.v1beta1.Cluster.StateB\004\342A\001\003\022\021\n"
+          + "\003uid\030\005 \001(\tB\004\342A\001\003\022 \n\r"
+          + "replica_count\030\010 \001(\005B\004\342A\001\001H\001\210\001\001\022W\n"
+          + "\022authorization_mode\030\013 \001(\01625.google.cloud.redis.c"
+          + "luster.v1beta1.AuthorizationModeB\004\342A\001\001\022`\n"
+          + "\027transit_encryption_mode\030\014 \001(\01629.google"
+          + ".cloud.redis.cluster.v1beta1.TransitEncryptionModeB\004\342A\001\001\022\032\n"
           + "\007size_gb\030\r"
-          + " \001(\005B\003\340A\003H\002\210\001\001\022\035\n"
-          + "\013shard_count\030\016 \001(\005B\003\340A\001H\003\210\001\001\022G\n"
+          + " \001(\005B\004\342A\001\003H\002\210\001\001\022\036\n"
+          + "\013shard_count\030\016 \001(\005B\004\342A\001\001H\003\210\001\001\022H\n"
           + "\013psc_configs\030\017"
-          + " \003(\0132-.google.cloud.redis.cluster.v1beta1.PscConfigB\003\340A\001\022W\n"
-          + "\023discovery_endpoints\030\020 \003(\01325.google.cloud.redi"
-          + "s.cluster.v1beta1.DiscoveryEndpointB\003\340A\003\022O\n"
+          + " \003(\0132-.google.cloud.redis.cluster.v1beta1.PscConfigB\004\342A\001\001\022X\n"
+          + "\023discovery_endpoints\030\020 \003(\01325.google.cloud.redis"
+          + ".cluster.v1beta1.DiscoveryEndpointB\004\342A\001\003\022P\n"
           + "\017psc_connections\030\021 \003(\01321.google.cloud"
-          + ".redis.cluster.v1beta1.PscConnectionB\003\340A\003\022N\n\n"
-          + "state_info\030\022 \001(\01325.google.cloud.red"
-          + "is.cluster.v1beta1.Cluster.StateInfoB\003\340A\003\022D\n"
+          + ".redis.cluster.v1beta1.PscConnectionB\004\342A\001\003\022O\n\n"
+          + "state_info\030\022 \001(\01325.google.cloud.re"
+          + "dis.cluster.v1beta1.Cluster.StateInfoB\004\342A\001\003\022E\n"
           + "\tnode_type\030\023"
-          + " \001(\0162,.google.cloud.redis.cluster.v1beta1.NodeTypeB\003\340A\001\022]\n"
-          + "\022persistence_config\030\024 \001(\0132<.google.cloud.redis"
-          + ".cluster.v1beta1.ClusterPersistenceConfigB\003\340A\001\022Y\n\r"
-          + "redis_configs\030\025 \003(\0132=.google.c"
-          + "loud.redis.cluster.v1beta1.Cluster.RedisConfigsEntryB\003\340A\001\022!\n"
-          + "\017precise_size_gb\030\026 \001(\001B\003\340A\003H\004\210\001\001\022a\n"
-          + "\030zone_distribution_config\030\027"
-          + " \001(\0132:.google.cloud.redis.cluster.v1beta1.ZoneDistributionConfigB\003\340A\001\022p\n"
-          + " cross_cluster_replication_config\030\030 \001(\0132A.goog"
-          + "le.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigB\003\340A\001\022-\n"
+          + " \001(\0162,.google.cloud.redis.cluster.v1beta1.NodeTypeB\004\342A\001\001\022^\n"
+          + "\022persistence_config\030\024 \001(\0132<.google.cloud.re"
+          + "dis.cluster.v1beta1.ClusterPersistenceConfigB\004\342A\001\001\022Z\n\r"
+          + "redis_configs\030\025 \003(\0132=.goog"
+          + "le.cloud.redis.cluster.v1beta1.Cluster.RedisConfigsEntryB\004\342A\001\001\022\"\n"
+          + "\017precise_size_gb\030\026 \001(\001B\004\342A\001\003H\004\210\001\001\022b\n"
+          + "\030zone_distribution_config\030\027 \001(\0132:.google.cloud.redis.cluste"
+          + "r.v1beta1.ZoneDistributionConfigB\004\342A\001\001\022q\n"
+          + " cross_cluster_replication_config\030\030 \001(\013"
+          + "2A.google.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfigB\004\342A\001\001\022.\n"
           + "\033deletion_protection_enabled\030\031"
-          + " \001(\010B\003\340A\001H\005\210\001\001\022b\n"
-          + "\022maintenance_policy\030\032 \001(\0132<.google.cloud.redi"
-          + "s.cluster.v1beta1.ClusterMaintenancePolicyB\003\340A\001H\006\210\001\001\022f\n"
-          + "\024maintenance_schedule\030\033 \001"
-          + "(\0132>.google.cloud.redis.cluster.v1beta1.ClusterMaintenanceScheduleB\003\340A\003H\007\210\001\001\022^\n"
-          + "\027psc_service_attachments\030\036 \003(\01328.google.c"
-          + "loud.redis.cluster.v1beta1.PscServiceAttachmentB\003\340A\003\022S\n"
-          + "\021cluster_endpoints\030$ \003(\0132"
-          + "3.google.cloud.redis.cluster.v1beta1.ClusterEndpointB\003\340A\001\022P\n"
-          + "\021backup_collection\030\' \001(\tB0\340A\001\340A\003\372A\'\n"
-          + "%redis.googleapis.com/BackupCollectionH\010\210\001\001\022?\n"
-          + "\007kms_key\030( \001(\tB)\340A\001\372A#\n"
-          + "!cloudkms.googleapis.com/CryptoKeyH\t\210\001\001\022_\n"
-          + "\027automated_backup_config\030* \001(\01329."
-          + "google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigB\003\340A\001\022P\n"
-          + "\017encryption_info\030+"
-          + " \001(\01322.google.cloud.redis.cluster.v1beta1.EncryptionInfoB\003\340A\003\022:\n"
-          + "(async_cluster_endpoints_deletion_enabled\030, \001(\010B\003\340A\001H\n"
-          + "\210\001\001\022R\n"
-          + "\016server_ca_mode\0305 \001(\01620.google.clo"
-          + "ud.redis.cluster.v1beta1.ServerCaModeB\003\340A\001H\013\210\001\001\022D\n"
-          + "\016server_ca_pool\0306 \001(\tB\'\340A\001\372A!\n"
-          + "\037privateca.googleapis.com/CaPoolH\014\210\001\001\022.\n"
-          + "\031rotate_server_certificate\0307 \001(\010B\006\340A\001\340A\004H\r"
-          + "\210\001\001\022:\n\n"
-          + "acl_policy\0308 \001(\tB&\340A\001\372A \n"
-          + "\036redis.googleapis.com/AclPolicy\022O\n"
-          + "\017acl_policy_info\030:"
-          + " \001(\01321.google.cloud.redis.cluster.v1beta1.AclPolicyInfoB\003\340A\003\032\357\001\n"
+          + " \001(\010B\004\342A\001\001H\005\210\001\001\022c\n"
+          + "\022maintenance_policy\030\032 \001(\0132<.google.c"
+          + "loud.redis.cluster.v1beta1.ClusterMaintenancePolicyB\004\342A\001\001H\006\210\001\001\022g\n"
+          + "\024maintenance_schedule\030\033 \001(\0132>.google.cloud.redis.cluste"
+          + "r.v1beta1.ClusterMaintenanceScheduleB\004\342A\001\003H\007\210\001\001\022_\n"
+          + "\027psc_service_attachments\030\036 \003(\013"
+          + "28.google.cloud.redis.cluster.v1beta1.PscServiceAttachmentB\004\342A\001\003\022T\n"
+          + "\021cluster_endpoints\030$"
+          + " \003(\01323.google.cloud.redis.cluster.v1beta1.ClusterEndpointB\004\342A\001\001\022O\n"
+          + "\021backup_collection\030\' \001(\tB/\342A\002\001\003\372A\'\n"
+          + "%redis.googleapis.com/BackupCollectionH\010\210\001\001\022@\n"
+          + "\007kms_key\030( \001(\tB*\342A\001\001\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKeyH\t\210\001\001\022`\n"
+          + "\027automated_backup_config\030*"
+          + " \001(\01329.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfigB\004\342A\001\001\022Q\n"
+          + "\017encryption_info\030+ \001(\01322.google.cloud.redi"
+          + "s.cluster.v1beta1.EncryptionInfoB\004\342A\001\003\022;\n"
+          + "(async_cluster_endpoints_deletion_enabled\030, \001(\010B\004\342A\001\001H\n"
+          + "\210\001\001\022S\n"
+          + "\016server_ca_mode\0305 "
+          + "\001(\01620.google.cloud.redis.cluster.v1beta1.ServerCaModeB\004\342A\001\001H\013\210\001\001\022E\n"
+          + "\016server_ca_pool\0306 \001(\tB(\342A\001\001\372A!\n"
+          + "\037privateca.googleapis.com/CaPoolH\014\210\001\001\022-\n"
+          + "\031rotate_server_certificate\0307 \001(\010B\005\342A\002\001\004H\r"
+          + "\210\001\001\022;\n\n"
+          + "acl_policy\0308 \001(\tB\'\342A\001\001\372A \n"
+          + "\036redis.googleapis.com/AclPolicy\022P\n"
+          + "\017acl_policy_info\030: \001(\01321.google.cl"
+          + "oud.redis.cluster.v1beta1.AclPolicyInfoB\004\342A\001\003\032\357\001\n"
           + "\tStateInfo\022W\n"
-          + "\013update_info\030\001 \001(\0132@.google.cloud.red"
-          + "is.cluster.v1beta1.Cluster.StateInfo.UpdateInfoH\000\032\200\001\n\n"
+          + "\013update_info\030\001 \001(\013"
+          + "2@.google.cloud.redis.cluster.v1beta1.Cluster.StateInfo.UpdateInfoH\000\032\200\001\n\n"
           + "UpdateInfo\022\037\n"
           + "\022target_shard_count\030\001 \001(\005H\000\210\001\001\022!\n"
           + "\024target_replica_count\030\002 \001(\005H\001\210\001\001B\025\n"
           + "\023_target_shard_countB\027\n"
           + "\025_target_replica_countB\006\n"
-          + "\004info\032$\n"
-          + "\017GcsBackupSource\022\021\n"
-          + "\004uris\030\001 \003(\tB\003\340A\001\032*\n"
-          + "\023ManagedBackupSource\022\023\n"
-          + "\006backup\030\001 \001(\tB\003\340A\001\0323\n"
+          + "\004info\032%\n"
+          + "\017GcsBackupSource\022\022\n"
+          + "\004uris\030\001 \003(\tB\004\342A\001\001\032+\n"
+          + "\023ManagedBackupSource\022\024\n"
+          + "\006backup\030\001 \001(\tB\004\342A\001\001\0323\n"
           + "\021RedisConfigsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"T\n"
@@ -540,8 +639,8 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + "\006ACTIVE\020\002\022\014\n"
           + "\010UPDATING\020\003\022\014\n"
           + "\010DELETING\020\004:p\352Am\n"
-          + "\034redis.googleapis.com/Cluster\022:projects/{project}/locations/{loca"
-          + "tion}/clusters/{cluster}*\010clusters2\007clusterB\020\n"
+          + "\034redis.googleapis.com/Cluster\022:projects/{pro"
+          + "ject}/locations/{location}/clusters/{cluster}*\010clusters2\007clusterB\020\n"
           + "\016import_sourcesB\020\n"
           + "\016_replica_countB\n\n"
           + "\010_size_gbB\016\n"
@@ -555,120 +654,125 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + ")_async_cluster_endpoints_deletion_enabledB\021\n"
           + "\017_server_ca_modeB\021\n"
           + "\017_server_ca_poolB\034\n"
-          + "\032_rotate_server_certificate\"\301\002\n\r"
-          + "AclPolicyInfo\022B\n"
-          + "\022applied_acl_policy\030\001 \001(\tB&\340A\003\372A \n"
-          + "\036redis.googleapis.com/AclPolicy\022S\n"
-          + "\033applied_acl_policy_revision\030\002 \001(\tB.\340A\003\372A(\n"
-          + "&redis.googleapis.com/AclPolicyRevision\022/\n"
-          + "\"applied_acl_policy_revision_number\030\003 \001(\003B\003\340A\003\022f\n"
-          + "\034acl_policy_revision_statuses\030\004 \003(\0132;.google.cloud.redis.cluste"
-          + "r.v1beta1.AclPolicyRevisionStatusB\003\340A\003\"\351\004\n"
-          + "\tAclPolicy\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022?\n"
-          + "\005rules\030\002"
-          + " \003(\0132+.google.cloud.redis.cluster.v1beta1.AclRuleB\003\340A\002\022G\n"
-          + "\005state\030\003 \001(\01623.google"
-          + ".cloud.redis.cluster.v1beta1.AclPolicy.StateB\003\340A\003\022\026\n"
-          + "\004etag\030\005 \001(\tB\003\340A\003H\000\210\001\001\022k\n"
-          + "\036cluster_acl_policy_attachments\030\006 \003(\0132>.goog"
-          + "le.cloud.redis.cluster.v1beta1.ClusterAclPolicyAttachmentB\003\340A\003\0224\n"
-          + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"F\n"
+          + "\032_rotate_server_certificate\"\305\002\n\r"
+          + "AclPolicyInfo\022C\n"
+          + "\022applied_acl_policy\030\001 \001(\tB\'\342A\001\003\372A \n"
+          + "\036redis.googleapis.com/AclPolicy\022T\n"
+          + "\033applied_acl_policy_revision\030\002 \001(\tB/\342A\001\003\372A(\n"
+          + "&redis.googleapis.com/AclPolicyRevision\0220\n"
+          + "\"applied_acl_policy_revision_number\030\003 \001(\003B\004\342A\001\003\022g\n"
+          + "\034acl_policy_revision_statuses\030\004 \003(\0132;.g"
+          + "oogle.cloud.redis.cluster.v1beta1.AclPolicyRevisionStatusB\004\342A\001\003\"\360\004\n"
+          + "\tAclPolicy\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022@\n"
+          + "\005rules\030\002 \003(\0132+.googl"
+          + "e.cloud.redis.cluster.v1beta1.AclRuleB\004\342A\001\002\022H\n"
+          + "\005state\030\003"
+          + " \001(\01623.google.cloud.redis.cluster.v1beta1.AclPolicy.StateB\004\342A\001\003\022\027\n"
+          + "\004etag\030\005 \001(\tB\004\342A\001\003H\000\210\001\001\022l\n"
+          + "\036cluster_acl_policy_attachments\030\006 \003(\0132>.google.cloud.re"
+          + "dis.cluster.v1beta1.ClusterAclPolicyAttachmentB\004\342A\001\003\0225\n"
+          + "\013create_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\010"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"F\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006ACTIVE\020\001\022\014\n"
           + "\010UPDATING\020\002\022\014\n"
           + "\010DELETING\020\003:}\352Az\n"
-          + "\036redis.googleapis.com/AclPolicy\022"
-          + "@projects/{project}/locations/{location}/aclPolicies/{acl_policy}*\013aclPolicies2"
+          + "\036redis.googleapis.com/AclPolicy\022@project"
+          + "s/{project}/locations/{location}/aclPolicies/{acl_policy}*\013aclPolicies2"
           + "\taclPolicyB\007\n"
-          + "\005_etag\"\311\002\n"
-          + "\027AclPolicyRevisionStatus\022K\n"
-          + "\023acl_policy_revision\030\001 \001(\tB.\340A\003\372A(\n"
-          + "&redis.googleapis.com/AclPolicyRevision\022\'\n"
-          + "\032acl_policy_revision_number\030\002 \001(\003B\003\340A\003\022U\n"
-          + "\005state\030\003 \001(\0162A.google.cloud.redis"
-          + ".cluster.v1beta1.AclPolicyRevisionStatus.StateB\003\340A\003\022\032\n\r"
-          + "error_message\030\004 \001(\tB\003\340A\003\"E\n"
+          + "\005_etag\"\315\002\n"
+          + "\027AclPolicyRevisionStatus\022L\n"
+          + "\023acl_policy_revision\030\001 \001(\tB/\342A\001\003\372A(\n"
+          + "&redis.googleapis.com/AclPolicyRevision\022(\n"
+          + "\032acl_policy_revision_number\030\002 \001(\003B\004\342A\001\003\022V\n"
+          + "\005state\030\003 \001(\0162A.google.cloud.redis.clust"
+          + "er.v1beta1.AclPolicyRevisionStatus.StateB\004\342A\001\003\022\033\n\r"
+          + "error_message\030\004 \001(\tB\004\342A\001\003\"E\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010APPLYING\020\001\022\013\n"
           + "\007APPLIED\020\002\022\n\n"
-          + "\006FAILED\020\003\"\273\001\n"
-          + "\032ClusterAclPolicyAttachment\0225\n"
-          + "\007cluster\030\001 \001(\tB$\340A\003\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\022f\n"
-          + "\034acl_policy_revision_statuses\030\002 \003(\0132;.goo"
-          + "gle.cloud.redis.cluster.v1beta1.AclPolicyRevisionStatusB\003\340A\003\"\256\003\n"
-          + "\021AclPolicyRevision\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\034\n"
-          + "\017revision_number\030\002 \001(\003B\003\340A\003\022D\n"
+          + "\006FAILED\020\003\"\275\001\n"
+          + "\032ClusterAclPolicyAttachment\0226\n"
+          + "\007cluster\030\001 \001(\tB%\342A\001\003\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\022g\n"
+          + "\034acl_policy_revision_statuses\030\002 \003(\0132;.google"
+          + ".cloud.redis.cluster.v1beta1.AclPolicyRevisionStatusB\004\342A\001\003\"\263\003\n"
+          + "\021AclPolicyRevision\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\035\n"
+          + "\017revision_number\030\002 \001(\003B\004\342A\001\003\022E\n"
           + "\010snapshot\030\003 \001(\0132-.google.c"
-          + "loud.redis.cluster.v1beta1.AclPolicyB\003\340A\003\0224\n"
-          + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
-          + "\021attached_clusters\030\005 \003(\tB$\340A\003\372A\036\n"
+          + "loud.redis.cluster.v1beta1.AclPolicyB\004\342A\001\003\0225\n"
+          + "\013create_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022@\n"
+          + "\021attached_clusters\030\005 \003(\tB%\342A\001\003\372A\036\n"
           + "\034redis.googleapis.com/Cluster:\252\001\352A\246\001\n"
-          + "&redis.googleapis.com/AclPolicyRevision\022Uprojects/{project}/locations/{l"
-          + "ocation}/aclPolicies/{acl_policy}/revisi"
-          + "ons/{revision}*\022aclPolicyRevisions2\021aclPolicyRevision\"3\n"
-          + "\007AclRule\022\025\n"
-          + "\010username\030\001 \001(\tB\003\340A\002\022\021\n"
-          + "\004rule\030\002 \001(\tB\003\340A\002\"\217\004\n"
-          + "\025AutomatedBackupConfig\022y\n"
-          + "\030fixed_frequency_schedule\030\002 \001(\0132P.google.cloud.redis.cluster.v1be"
-          + "ta1.AutomatedBackupConfig.FixedFrequencyScheduleB\003\340A\001H\000\022q\n"
-          + "\025automated_backup_mode\030\001 \001(\0162M.google.cloud.redis.cluster.v1be"
-          + "ta1.AutomatedBackupConfig.AutomatedBackupModeB\003\340A\001\0226\n"
+          + "&redis.googleapis.com/AclPolicyRevision\022Uprojects/{project}/locations"
+          + "/{location}/aclPolicies/{acl_policy}/rev"
+          + "isions/{revision}*\022aclPolicyRevisions2\021aclPolicyRevision\"5\n"
+          + "\007AclRule\022\026\n"
+          + "\010username\030\001 \001(\tB\004\342A\001\002\022\022\n"
+          + "\004rule\030\002 \001(\tB\004\342A\001\002\"\223\004\n"
+          + "\025AutomatedBackupConfig\022z\n"
+          + "\030fixed_frequency_schedule\030\002 \001(\0132P.google.cloud.redis.cluster"
+          + ".v1beta1.AutomatedBackupConfig.FixedFrequencyScheduleB\004\342A\001\001H\000\022r\n"
+          + "\025automated_backup_mode\030\001 \001(\0162M.google.cloud.redis.cluste"
+          + "r.v1beta1.AutomatedBackupConfig.AutomatedBackupModeB\004\342A\001\001\0227\n"
           + "\tretention\030\003"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H\001\210\001\001\032]\n"
-          + "\026FixedFrequencySchedule\0224\n\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001H\001\210\001\001\032^\n"
+          + "\026FixedFrequencySchedule\0225\n\n"
           + "start_time\030\002"
-          + " \001(\0132\026.google.type.TimeOfDayB\003\340A\002H\000\210\001\001B\r\n"
+          + " \001(\0132\026.google.type.TimeOfDayB\004\342A\001\002H\000\210\001\001B\r\n"
           + "\013_start_time\"W\n"
           + "\023AutomatedBackupMode\022%\n"
           + "!AUTOMATED_BACKUP_MODE_UNSPECIFIED\020\000\022\014\n"
           + "\010DISABLED\020\001\022\013\n"
           + "\007ENABLED\020\002B\n\n"
           + "\010scheduleB\014\n\n"
-          + "_retention\"\366\002\n"
-          + "\020BackupCollection\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022 \n"
-          + "\013cluster_uid\030\003 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\0225\n"
-          + "\007cluster\030\004 \001(\tB$\340A\003\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\022:\n"
-          + "\007kms_key\030\005 \001(\tB)\340A\003\372A#\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022\030\n"
+          + "_retention\"\373\002\n"
+          + "\020BackupCollection\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022!\n"
+          + "\013cluster_uid\030\003 \001("
+          + "\tB\014\342A\001\003\342\214\317\327\010\002\010\001\0226\n"
+          + "\007cluster\030\004 \001(\tB%\342A\001\003\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\022;\n"
+          + "\007kms_key\030\005 \001(\tB*\342A\001\003\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022\031\n"
           + "\003uid\030\006 \001("
-          + "\tB\013\340A\003\342\214\317\327\010\002\010\001:\237\001\352A\233\001\n"
-          + "%redis.googleapis.com/BackupCollection\022Mprojects/{project}/lo"
-          + "cations/{location}/backupCollections/{ba"
-          + "ckup_collection}*\021backupCollections2\020backupCollection\"\233\010\n"
-          + "\006Backup\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
-          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
-          + "\007cluster\030\003 \001(\tB$\340A\003\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\022 \n"
+          + "\tB\014\342A\001\003\342\214\317\327\010\002\010\001:\237\001\352A\233\001\n"
+          + "%redis.googleapis.com/BackupCollection\022Mproject"
+          + "s/{project}/locations/{location}/backupC"
+          + "ollections/{backup_collection}*\021backupCollections2\020backupCollection\"\252\010\n"
+          + "\006Backup\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\0225\n"
+          + "\013create_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0226\n"
+          + "\007cluster\030\003 \001(\tB%\342A\001\003\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\022!\n"
           + "\013cluster_uid\030\004 \001("
-          + "\tB\013\340A\003\342\214\317\327\010\002\010\001\022\035\n"
-          + "\020total_size_bytes\030\005 \001(\003B\003\340A\003\0224\n"
+          + "\tB\014\342A\001\003\342\214\317\327\010\002\010\001\022\036\n"
+          + "\020total_size_bytes\030\005 \001(\003B\004\342A\001\003\0225\n"
           + "\013expire_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\033\n"
-          + "\016engine_version\030\007 \001(\tB\003\340A\003\022I\n"
-          + "\014backup_files\030\010 \003"
-          + "(\0132..google.cloud.redis.cluster.v1beta1.BackupFileB\003\340A\003\022D\n"
-          + "\tnode_type\030\t \001(\0162,.goo"
-          + "gle.cloud.redis.cluster.v1beta1.NodeTypeB\003\340A\003\022\032\n\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\034\n"
+          + "\016engine_version\030\007 \001(\tB\004\342A\001\003\022J\n"
+          + "\014backup_files\030\010"
+          + " \003(\0132..google.cloud.redis.cluster.v1beta1.BackupFileB\004\342A\001\003\022E\n"
+          + "\tnode_type\030\t"
+          + " \001(\0162,.google.cloud.redis.cluster.v1beta1.NodeTypeB\004\342A\001\003\022\033\n\r"
           + "replica_count\030\n"
-          + " \001(\005B\003\340A\003\022\030\n"
-          + "\013shard_count\030\013 \001(\005B\003\340A\003\022O\n"
-          + "\013backup_type\030\014 \001(\016"
-          + "25.google.cloud.redis.cluster.v1beta1.Backup.BackupTypeB\003\340A\003\022D\n"
+          + " \001(\005B\004\342A\001\003\022\031\n"
+          + "\013shard_count\030\013 \001(\005B\004\342A\001\003\022P\n"
+          + "\013backup_type\030\014 \001(\01625.google.cloud"
+          + ".redis.cluster.v1beta1.Backup.BackupTypeB\004\342A\001\003\022E\n"
           + "\005state\030\r"
-          + " \001(\01620.google.cloud.redis.cluster.v1beta1.Backup.StateB\003\340A\003\022P\n"
-          + "\017encryption_info\030\016 \001(\01322.go"
-          + "ogle.cloud.redis.cluster.v1beta1.EncryptionInfoB\003\340A\003\022\030\n"
-          + "\003uid\030\017 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\"G\n\n"
+          + " \001(\01620.google.cloud.redis.cluster.v1beta1.Backup.StateB\004\342A\001\003\022Q\n"
+          + "\017encryption_info\030\016 \001(\01322.google.cloud.re"
+          + "dis.cluster.v1beta1.EncryptionInfoB\004\342A\001\003\022\031\n"
+          + "\003uid\030\017 \001(\tB\014\342A\001\003\342\214\317\327\010\002\010\001\"G\n\n"
           + "BackupType\022\033\n"
           + "\027BACKUP_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tON_DEMAND\020\001\022\r\n"
@@ -679,156 +783,191 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\r\n"
           + "\tSUSPENDED\020\004:\222\001\352A\216\001\n"
-          + "\033redis.googleapis.com/Backup\022^projects/{project}/locations/{location}/back"
-          + "upCollections/{backup_collection}/backups/{backup}*\007backups2\006backup\"s\n\n"
-          + "BackupFile\022\026\n"
-          + "\tfile_name\030\001 \001(\tB\003\340A\003\022\027\n\n"
-          + "size_bytes\030\002 \001(\003B\003\340A\003\0224\n"
+          + "\033redis.googleapis.com/Backup\022^projects/{proje"
+          + "ct}/locations/{location}/backupCollectio"
+          + "ns/{backup_collection}/backups/{backup}*\007backups2\006backup\"v\n\n"
+          + "BackupFile\022\027\n"
+          + "\tfile_name\030\001 \001(\tB\004\342A\001\003\022\030\n\n"
+          + "size_bytes\030\002 \001(\003B\004\342A\001\003\0225\n"
           + "\013create_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\211\001\n"
-          + "\024PscServiceAttachment\022\037\n"
-          + "\022service_attachment\030\001 \001(\tB\003\340A\003\022P\n"
-          + "\017connection_type\030\003 \001(\01622.google.clo"
-          + "ud.redis.cluster.v1beta1.ConnectionTypeB\003\340A\003\"\222\007\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"\213\001\n"
+          + "\024PscServiceAttachment\022 \n"
+          + "\022service_attachment\030\001 \001(\tB\004\342A\001\003\022Q\n"
+          + "\017connection_type\030\003 \001(\01622.google.cloud.redi"
+          + "s.cluster.v1beta1.ConnectionTypeB\004\342A\001\003\"\227\007\n"
           + "\035CrossClusterReplicationConfig\022c\n"
-          + "\014cluster_role\030\001 \001(\0162M.google.cloud.redi"
-          + "s.cluster.v1beta1.CrossClusterReplicationConfig.ClusterRole\022h\n"
-          + "\017primary_cluster\030\002 \001(\0132O.google.cloud.redis.cluster.v1beta"
-          + "1.CrossClusterReplicationConfig.RemoteCluster\022k\n"
-          + "\022secondary_clusters\030\003 \003(\0132O.goog"
-          + "le.cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster\0224\n"
+          + "\014cluster_role\030\001 \001(\0162M.google.cloud.redis.clus"
+          + "ter.v1beta1.CrossClusterReplicationConfig.ClusterRole\022h\n"
+          + "\017primary_cluster\030\002 \001(\0132O.google.cloud.redis.cluster.v1beta1.Cros"
+          + "sClusterReplicationConfig.RemoteCluster\022k\n"
+          + "\022secondary_clusters\030\003 \003(\0132O.google.clo"
+          + "ud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteCluster\0225\n"
           + "\013update_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022e\n\n"
-          + "membership\030\005 \001(\0132L.google.cl"
-          + "oud.redis.cluster.v1beta1.CrossClusterReplicationConfig.MembershipB\003\340A\003\032U\n\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022f\n\n"
+          + "membership\030\005 \001(\0132L.google.cloud.r"
+          + "edis.cluster.v1beta1.CrossClusterReplicationConfig.MembershipB\004\342A\001\003\032V\n\r"
           + "RemoteCluster\0222\n"
           + "\007cluster\030\001 \001(\tB!\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\022\020\n"
-          + "\003uid\030\002 \001(\tB\003\340A\003\032\355\001\n\n"
-          + "Membership\022m\n"
-          + "\017primary_cluster\030\001 \001(\0132O.google.cloud.redis.cluster.v1beta1.Cros"
-          + "sClusterReplicationConfig.RemoteClusterB\003\340A\003\022p\n"
-          + "\022secondary_clusters\030\002 \003(\0132O.googl"
-          + "e.cloud.redis.cluster.v1beta1.CrossClust"
-          + "erReplicationConfig.RemoteClusterB\003\340A\003\"Q\n"
+          + "\034redis.googleapis.com/Cluster\022\021\n"
+          + "\003uid\030\002 \001(\tB\004\342A\001\003\032\357\001\n\n"
+          + "Membership\022n\n"
+          + "\017primary_cluster\030\001 \001(\0132O.google.cloud.redis.cluster.v1beta1.CrossCl"
+          + "usterReplicationConfig.RemoteClusterB\004\342A\001\003\022q\n"
+          + "\022secondary_clusters\030\002 \003(\0132O.google."
+          + "cloud.redis.cluster.v1beta1.CrossClusterReplicationConfig.RemoteClusterB\004\342A\001\003\"Q\n"
           + "\013ClusterRole\022\034\n"
           + "\030CLUSTER_ROLE_UNSPECIFIED\020\000\022\010\n"
           + "\004NONE\020\001\022\013\n"
           + "\007PRIMARY\020\002\022\r\n"
-          + "\tSECONDARY\020\003\"\355\001\n"
-          + "\030ClusterMaintenancePolicy\0224\n"
-          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022e\n"
-          + "\031weekly_maintenance_window\030\003 \003(\0132B.google.cloud.redis.clust"
-          + "er.v1beta1.ClusterWeeklyMaintenanceWindow\"q\n"
+          + "\tSECONDARY\020\003\"\357\001\n"
+          + "\030ClusterMaintenancePolicy\0225\n"
+          + "\013create_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022e\n"
+          + "\031weekly_maintenance_window\030\003 \003(\0132B.google.cloud.redis.clus"
+          + "ter.v1beta1.ClusterWeeklyMaintenanceWindow\"q\n"
           + "\036ClusterWeeklyMaintenanceWindow\022#\n"
           + "\003day\030\001 \001(\0162\026.google.type.DayOfWeek\022*\n\n"
-          + "start_time\030\002 \001(\0132\026.google.type.TimeOfDay\"\204\001\n"
-          + "\032ClusterMaintenanceSchedule\0223\n\n"
-          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"!\n"
-          + "\tPscConfig\022\024\n"
-          + "\007network\030\002 \001(\tB\003\340A\002\"\204\001\n"
-          + "\021DiscoveryEndpoint\022\024\n"
-          + "\007address\030\001 \001(\tB\003\340A\003\022\021\n"
-          + "\004port\030\002 \001(\005B\003\340A\003\022F\n\n"
+          + "start_time\030\002 \001(\0132\026.google.type.TimeOfDay\"\206\001\n"
+          + "\032ClusterMaintenanceSchedule\0224\n\n"
+          + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"\"\n"
+          + "\tPscConfig\022\025\n"
+          + "\007network\030\002 \001(\tB\004\342A\001\002\"\207\001\n"
+          + "\021DiscoveryEndpoint\022\025\n"
+          + "\007address\030\001 \001(\tB\004\342A\001\003\022\022\n"
+          + "\004port\030\002 \001(\005B\004\342A\001\003\022G\n\n"
           + "psc_config\030\003"
-          + " \001(\0132-.google.cloud.redis.cluster.v1beta1.PscConfigB\003\340A\003\"\344\003\n\r"
-          + "PscConnection\022\036\n"
-          + "\021psc_connection_id\030\001 \001(\tB\003\340A\002\022\034\n"
-          + "\007address\030\002 \001(\tB\013\340A\002\342\214\317\327\010\002\010\002\022F\n"
-          + "\017forwarding_rule\030\003 \001(\tB-\340A\002\372A\'\n"
-          + "%compute.googleapis.com/ForwardingRule\022\027\n\n"
-          + "project_id\030\004 \001(\tB\003\340A\001\0227\n"
-          + "\007network\030\005 \001(\tB&\340A\002\372A \n"
-          + "\036compute.googleapis.com/Network\022L\n"
-          + "\022service_attachment\030\006 \001(\tB0\340A\002\372A*\n"
-          + "(compute.googleapis.com/ServiceAttachment\022[\n"
-          + "\025psc_connection_status\030\010"
-          + " \001(\01627.google.cloud.redis.cluster.v1beta1.PscConnectionStatusB\003\340A\003\022P\n"
+          + " \001(\0132-.google.cloud.redis.cluster.v1beta1.PscConfigB\004\342A\001\003\"\354\003\n\r"
+          + "PscConnection\022\037\n"
+          + "\021psc_connection_id\030\001 \001(\tB\004\342A\001\002\022\035\n"
+          + "\007address\030\002 \001(\tB\014\342A\001\002\342\214\317\327\010\002\010\002\022G\n"
+          + "\017forwarding_rule\030\003 \001(\tB.\342A\001\002\372A\'\n"
+          + "%compute.googleapis.com/ForwardingRule\022\030\n\n"
+          + "project_id\030\004 \001(\tB\004\342A\001\001\0228\n"
+          + "\007network\030\005 \001(\tB\'\342A\001\002\372A \n"
+          + "\036compute.googleapis.com/Network\022M\n"
+          + "\022service_attachment\030\006 \001(\tB1\342A\001\002\372A*\n"
+          + "(compute.googleapis.com/ServiceAttachment\022\\\n"
+          + "\025psc_connection_status\030\010 \001(\01627.google.cloud.redis.c"
+          + "luster.v1beta1.PscConnectionStatusB\004\342A\001\003\022Q\n"
           + "\017connection_type\030\n"
-          + " \001(\01622.google.cloud.redis.cluster.v1beta1.ConnectionTypeB\003\340A\003\"\\\n"
+          + " \001(\01622.google.cloud.redis.cluster.v1beta1.ConnectionTypeB\004\342A\001\003\"\\\n"
           + "\017ClusterEndpoint\022I\n"
-          + "\013connections\030\001 \003(\01324.google.cl"
-          + "oud.redis.cluster.v1beta1.ConnectionDetail\"\303\001\n"
+          + "\013connections\030\001 "
+          + "\003(\01324.google.cloud.redis.cluster.v1beta1.ConnectionDetail\"\303\001\n"
           + "\020ConnectionDetail\022T\n"
-          + "\023psc_auto_connection\030\001"
-          + " \001(\01325.google.cloud.redis.cluster.v1beta1.PscAutoConnectionH\000\022K\n"
-          + "\016psc_connection\030\002"
-          + " \001(\01321.google.cloud.redis.cluster.v1beta1.PscConnectionH\000B\014\n\n"
-          + "connection\"\350\003\n"
-          + "\021PscAutoConnection\022\036\n"
-          + "\021psc_connection_id\030\001 \001(\tB\003\340A\003\022\034\n"
-          + "\007address\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\002\022F\n"
-          + "\017forwarding_rule\030\003 \001(\tB-\340A\003\372A\'\n"
-          + "%compute.googleapis.com/ForwardingRule\022\027\n\n"
-          + "project_id\030\004 \001(\tB\003\340A\002\0227\n"
-          + "\007network\030\005 \001(\tB&\340A\002\372A \n"
-          + "\036compute.googleapis.com/Network\022L\n"
-          + "\022service_attachment\030\006 \001(\tB0\340A\003\372A*\n"
-          + "(compute.googleapis.com/ServiceAttachment\022[\n"
-          + "\025psc_connection_status\030\010 \001(\01627.google.clo"
-          + "ud.redis.cluster.v1beta1.PscConnectionStatusB\003\340A\003\022P\n"
-          + "\017connection_type\030\t \001(\01622.goo"
-          + "gle.cloud.redis.cluster.v1beta1.ConnectionTypeB\003\340A\003\"\210\005\n"
+          + "\023psc_auto_connection\030\001 \001(\01325.google.clo"
+          + "ud.redis.cluster.v1beta1.PscAutoConnectionH\000\022K\n"
+          + "\016psc_connection\030\002 \001(\01321.google.cl"
+          + "oud.redis.cluster.v1beta1.PscConnectionH\000B\014\n\n"
+          + "connection\"\360\003\n"
+          + "\021PscAutoConnection\022\037\n"
+          + "\021psc_connection_id\030\001 \001(\tB\004\342A\001\003\022\035\n"
+          + "\007address\030\002 \001(\tB\014\342A\001\003\342\214\317\327\010\002\010\002\022G\n"
+          + "\017forwarding_rule\030\003 \001(\tB.\342A\001\003\372A\'\n"
+          + "%compute.googleapis.com/ForwardingRule\022\030\n\n"
+          + "project_id\030\004 \001(\tB\004\342A\001\002\0228\n"
+          + "\007network\030\005 \001(\tB\'\342A\001\002\372A \n"
+          + "\036compute.googleapis.com/Network\022M\n"
+          + "\022service_attachment\030\006 \001(\tB1\342A\001\003\372A*\n"
+          + "(compute.googleapis.com/ServiceAttachment\022\\\n"
+          + "\025psc_connection_status\030\010"
+          + " \001(\01627.google.cloud.redis.cluster.v1beta1.PscConnectionStatusB\004\342A\001\003\022Q\n"
+          + "\017connection_type\030\t"
+          + " \001(\01622.google.cloud.redis.cluster.v1beta1.ConnectionTypeB\004\342A\001\003\"\211\005\n"
           + "\"SharedRegionalCertificateAuthority\022\207\001\n"
-          + "\021managed_server_ca\030\002 \001(\0132j.google.cloud.redis.cluster.v1beta1.Shar"
-          + "edRegionalCertificateAuthority.RegionalManagedCertificateAuthorityH\000\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\032\341\001\n"
+          + "\021managed_server_ca\030\002 \001(\0132j.google.cloud.red"
+          + "is.cluster.v1beta1.SharedRegionalCertifi",
+      "cateAuthority.RegionalManagedCertificateAuthorityH\000\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\032\341\001\n"
           + "#RegionalManagedCertificateAuthority\022\216\001\n"
-          + "\010ca_certs\030\001 \003(\0132|.google.cloud.redis.cluster.v1beta1.SharedRegionalCe"
-          + "rtificateAuthority.RegionalManagedCertificateAuthority.RegionalCertChain\032)\n"
+          + "\010ca_certs\030\001 \003(\0132|.google.cloud.redis.cluster."
+          + "v1beta1.SharedRegionalCertificateAuthori"
+          + "ty.RegionalManagedCertificateAuthority.RegionalCertChain\032)\n"
           + "\021RegionalCertChain\022\024\n"
           + "\014certificates\030\001 \003(\t:\323\001\352A\317\001\n"
-          + "7redis.googleapis.com/SharedRegionalCertificateAuthority\022Jprojects/{project}/"
-          + "locations/{location}/sharedRegionalCertificateAuthority*$sharedRegionalCertifica"
-          + "teAuthorities2\"sharedRegionalCertificateAuthorityB\013\n"
-          + "\tserver_ca\"}\n"
-          + ",GetSharedRegionalCertificateAuthorityRequest\022M\n"
-          + "\004name\030\001 \001(\tB?\340A\002\372A9\n"
-          + "7redis.googleapis.com/SharedRegionalCertificateAuthority\"\200\002\n"
-          + "\021OperationMetadata\0224\n"
-          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
-          + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
-          + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
-          + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
-          + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\003\"\217\004\n"
+          + "7redis.googleapis.com/SharedRegionalCertificateAuthor"
+          + "ity\022Jprojects/{project}/locations/{location}/sharedRegionalCertificateAuthority*"
+          + "$sharedRegionalCertificateAuthorities2\"sharedRegionalCertificateAuthorityB\013\n"
+          + "\tserver_ca\"~\n"
+          + ",GetSharedRegionalCertificateAuthorityRequest\022N\n"
+          + "\004name\030\001 \001(\tB@\342A\001\002\372A9\n"
+          + "7redis.googleapis.com/SharedRegionalCertificateAuthority\"\207\002\n"
+          + "\021OperationMetadata\0225\n"
+          + "\013create_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n"
+          + "\010end_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\024\n"
+          + "\006target\030\003 \001(\tB\004\342A\001\003\022\022\n"
+          + "\004verb\030\004 \001(\tB\004\342A\001\003\022\034\n"
+          + "\016status_message\030\005 \001(\tB\004\342A\001\003\022$\n"
+          + "\026requested_cancellation\030\006 \001(\010B\004\342A\001\003\022\031\n"
+          + "\013api_version\030\007 \001(\tB\004\342A\001\003\"\356\002\n\r"
+          + "TokenAuthUser\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022L\n"
+          + "\005state\030\002"
+          + " \001(\01627.google.cloud.redis.cluster.v1beta1.TokenAuthUser.StateB\004\342A\001\003\"T\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010CREATING\020\002\022\014\n"
+          + "\010UPDATING\020\003\022\014\n"
+          + "\010DELETING\020\004:\244\001\352A\240\001\n"
+          + "\"redis.googleapis.com/TokenAuthUser\022[projects/{project}/locations/{loc"
+          + "ation}/clusters/{cluster}/tokenAuthUsers/{token_auth_user}*\016tokenAuthUsers2\r"
+          + "tokenAuthUser\"\260\003\n"
+          + "\tAuthToken\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\023\n"
+          + "\005token\030\002 \001(\tB\004\342A\001\003\0225\n"
+          + "\013create_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022H\n"
+          + "\005state\030\004"
+          + " \001(\01623.google.cloud.redis.cluster.v1beta1.AuthToken.StateB\004\342A\001\003\"F\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ACTIVE\020\001\022\014\n"
+          + "\010CREATING\020\002\022\014\n"
+          + "\010DELETING\020\003:\260\001\352A\254\001\n"
+          + "\036redis.googleapis.com/AuthToken\022sprojects/{proj"
+          + "ect}/locations/{location}/clusters/{clus"
+          + "ter}/tokenAuthUsers/{token_auth_user}/authTokens/{auth_token}*\n"
+          + "authTokens2\tauthToken\"\220\004\n"
           + "\024CertificateAuthority\022q\n"
-          + "\021managed_server_ca\030\001 \001(\0132T.google.cloud.redi"
-          + "s.cluster.v1beta1.CertificateAuthority.ManagedCertificateAuthorityH\000\022\021\n"
-          + "\004name\030\002 \001(\tB\003\340A\010\032\262\001\n"
+          + "\021managed_server_ca\030\001 \001(\0132T.google.cloud.redis.cl"
+          + "uster.v1beta1.CertificateAuthority.ManagedCertificateAuthorityH\000\022\022\n"
+          + "\004name\030\002 \001(\tB\004\342A\001\010\032\262\001\n"
           + "\033ManagedCertificateAuthority\022p\n"
-          + "\010ca_certs\030\001 \003(\0132^.google.cloud.redis.c"
-          + "luster.v1beta1.CertificateAuthority.ManagedCertificateAuthority.CertChain\032!\n"
+          + "\010ca_certs\030\001 \003(\0132^.google.cloud.redis.clus"
+          + "ter.v1beta1.CertificateAuthority.ManagedCertificateAuthority.CertChain\032!\n"
           + "\tCertChain\022\024\n"
           + "\014certificates\030\001 \003(\t:\256\001\352A\252\001\n"
-          + ")redis.googleapis.com/CertificateAuthority\022O"
-          + "projects/{project}/locations/{location}/clusters/{cluster}/certificateAuthority*"
-          + "\026certificateAuthorities2\024certificateAuthorityB\013\n"
-          + "\tserver_ca\"\240\007\n"
-          + "\030ClusterPersistenceConfig\022_\n"
-          + "\004mode\030\001 \001(\0162L.google.cloud.redis.cluster.v1beta1.ClusterPersistenceCon",
-      "fig.PersistenceModeB\003\340A\001\022_\n\n"
-          + "rdb_config\030\002 \001(\0132F.google.cloud.redis.cluster.v1beta"
-          + "1.ClusterPersistenceConfig.RDBConfigB\003\340A\001\022_\n\n"
-          + "aof_config\030\003 \001(\0132F.google.cloud.red"
-          + "is.cluster.v1beta1.ClusterPersistenceConfig.AOFConfigB\003\340A\001\032\277\002\n"
-          + "\tRDBConfig\022w\n"
+          + ")redis.googleapis.com/CertificateAuthority\022Opro"
+          + "jects/{project}/locations/{location}/clusters/{cluster}/certificateAuthority*\026ce"
+          + "rtificateAuthorities2\024certificateAuthorityB\013\n"
+          + "\tserver_ca\"\246\007\n"
+          + "\030ClusterPersistenceConfig\022`\n"
+          + "\004mode\030\001 \001(\0162L.google.cloud.redis."
+          + "cluster.v1beta1.ClusterPersistenceConfig.PersistenceModeB\004\342A\001\001\022`\n\n"
+          + "rdb_config\030\002 \001(\0132F.google.cloud.redis.cluster.v1beta1."
+          + "ClusterPersistenceConfig.RDBConfigB\004\342A\001\001\022`\n\n"
+          + "aof_config\030\003 \001(\0132F.google.cloud.redi"
+          + "s.cluster.v1beta1.ClusterPersistenceConfig.AOFConfigB\004\342A\001\001\032\301\002\n"
+          + "\tRDBConfig\022x\n"
           + "\023rdb_snapshot_period\030\001 \001(\0162U.google.cloud.red"
-          + "is.cluster.v1beta1.ClusterPersistenceConfig.RDBConfig.SnapshotPeriodB\003\340A\001\022@\n"
+          + "is.cluster.v1beta1.ClusterPersistenceConfig.RDBConfig.SnapshotPeriodB\004\342A\001\001\022A\n"
           + "\027rdb_snapshot_start_time\030\002"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"w\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\"w\n"
           + "\016SnapshotPeriod\022\037\n"
           + "\033SNAPSHOT_PERIOD_UNSPECIFIED\020\000\022\014\n"
           + "\010ONE_HOUR\020\001\022\r\n"
           + "\tSIX_HOURS\020\002\022\020\n"
           + "\014TWELVE_HOURS\020\003\022\025\n"
-          + "\021TWENTY_FOUR_HOURS\020\004\032\311\001\n"
-          + "\tAOFConfig\022m\n"
-          + "\014append_fsync\030\001 \001(\0162R.google.cloud.redis.cl"
-          + "uster.v1beta1.ClusterPersistenceConfig.AOFConfig.AppendFsyncB\003\340A\001\"M\n"
+          + "\021TWENTY_FOUR_HOURS\020\004\032\312\001\n"
+          + "\tAOFConfig\022n\n"
+          + "\014append_fsync\030\001 \001(\0162R.google.cloud.redis."
+          + "cluster.v1beta1.ClusterPersistenceConfig.AOFConfig.AppendFsyncB\004\342A\001\001\"M\n"
           + "\013AppendFsync\022\034\n"
           + "\030APPEND_FSYNC_UNSPECIFIED\020\000\022\006\n"
           + "\002NO\020\001\022\014\n"
@@ -838,35 +977,34 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + "\034PERSISTENCE_MODE_UNSPECIFIED\020\000\022\014\n"
           + "\010DISABLED\020\001\022\007\n"
           + "\003RDB\020\002\022\007\n"
-          + "\003AOF\020\003\"\360\001\n"
-          + "\026ZoneDistributionConfig\022b\n"
-          + "\004mode\030\001 \001(\0162O.google."
-          + "cloud.redis.cluster.v1beta1.ZoneDistributionConfig.ZoneDistributionModeB\003\340A\001\022\021\n"
-          + "\004zone\030\002 \001(\tB\003\340A\001\"_\n"
+          + "\003AOF\020\003\"\362\001\n"
+          + "\026ZoneDistributionConfig\022c\n"
+          + "\004mode\030\001 \001(\0162O.google.cloud.redis.cluster.v1beta1.ZoneDistr"
+          + "ibutionConfig.ZoneDistributionModeB\004\342A\001\001\022\022\n"
+          + "\004zone\030\002 \001(\tB\004\342A\001\001\"_\n"
           + "\024ZoneDistributionMode\022&\n"
           + "\"ZONE_DISTRIBUTION_MODE_UNSPECIFIED\020\000\022\016\n\n"
           + "MULTI_ZONE\020\001\022\017\n"
-          + "\013SINGLE_ZONE\020\002\"\334\002\n"
-          + "#RescheduleClusterMaintenanceRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034redis.googleapis.com/Cluster\022t\n"
-          + "\017reschedule_type\030\002 \001(\0162V.google.c"
-          + "loud.redis.cluster.v1beta1.RescheduleClu"
-          + "sterMaintenanceRequest.RescheduleTypeB\003\340A\002\0226\n\r"
-          + "schedule_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\"S\n"
+          + "\013SINGLE_ZONE\020\002\"\337\002\n"
+          + "#RescheduleClusterMaintenanceRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034redis.googleapis.com/Cluster\022u\n"
+          + "\017reschedule_type\030\002 \001(\0162V.google.cloud.redis.cluster.v1beta1.Resched"
+          + "uleClusterMaintenanceRequest.RescheduleTypeB\004\342A\001\002\0227\n\r"
+          + "schedule_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\"S\n"
           + "\016RescheduleType\022\037\n"
           + "\033RESCHEDULE_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tIMMEDIATE\020\001\022\021\n\r"
-          + "SPECIFIC_TIME\020\003\"\204\005\n"
-          + "\016EncryptionInfo\022U\n"
-          + "\017encryption_type\030\001 \001(\01627.google.clo"
-          + "ud.redis.cluster.v1beta1.EncryptionInfo.TypeB\003\340A\003\022J\n"
-          + "\020kms_key_versions\030\002 \003(\tB0\340A\003\372A*\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022b\n"
-          + "\025kms_key_primary_state\030\003 \001(\0162>.g"
-          + "oogle.cloud.redis.cluster.v1beta1.EncryptionInfo.KmsKeyStateB\003\340A\003\0229\n"
+          + "SPECIFIC_TIME\020\003\"\210\005\n"
+          + "\016EncryptionInfo\022V\n"
+          + "\017encryption_type\030\001 \001(\01627.go"
+          + "ogle.cloud.redis.cluster.v1beta1.EncryptionInfo.TypeB\004\342A\001\003\022K\n"
+          + "\020kms_key_versions\030\002 \003(\tB1\342A\001\003\372A*\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022c\n"
+          + "\025kms_key_primary_state\030\003"
+          + " \001(\0162>.google.cloud.redis.cluster.v1beta1.EncryptionInfo.KmsKeyStateB\004\342A\001\003\022:\n"
           + "\020last_update_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\\\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\"\\\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\035\n"
           + "\031GOOGLE_DEFAULT_ENCRYPTION\020\001\022\037\n"
@@ -884,11 +1022,12 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + "\023PscConnectionStatus\022%\n"
           + "!PSC_CONNECTION_STATUS_UNSPECIFIED\020\000\022 \n"
           + "\034PSC_CONNECTION_STATUS_ACTIVE\020\001\022#\n"
-          + "\037PSC_CONNECTION_STATUS_NOT_FOUND\020\002*^\n"
+          + "\037PSC_CONNECTION_STATUS_NOT_FOUND\020\002*x\n"
           + "\021AuthorizationMode\022\031\n"
           + "\025AUTH_MODE_UNSPECIFIED\020\000\022\026\n"
           + "\022AUTH_MODE_IAM_AUTH\020\001\022\026\n"
-          + "\022AUTH_MODE_DISABLED\020\002*\336\001\n"
+          + "\022AUTH_MODE_DISABLED\020\002\022\030\n"
+          + "\024AUTH_MODE_TOKEN_AUTH\020\003*\336\001\n"
           + "\010NodeType\022\031\n"
           + "\025NODE_TYPE_UNSPECIFIED\020\000\022\032\n"
           + "\026REDIS_SHARED_CORE_NANO\020\001\022\030\n"
@@ -911,123 +1050,162 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
           + "\033CONNECTION_TYPE_UNSPECIFIED\020\000\022\035\n"
           + "\031CONNECTION_TYPE_DISCOVERY\020\001\022\033\n"
           + "\027CONNECTION_TYPE_PRIMARY\020\002\022\032\n"
-          + "\026CONNECTION_TYPE_READER\020\0032\226(\n"
+          + "\026CONNECTION_TYPE_READER\020\0032\2427\n"
           + "\021CloudRedisCluster\022\305\001\n"
-          + "\014ListClusters\0227.google.cloud.redis.cluster.v"
-          + "1beta1.ListClustersRequest\0328.google.cloud.redis.cluster.v1beta1.ListClustersResp"
-          + "onse\"B\332A\006parent\202\323\344\223\0023\0221/v1beta1/{parent=projects/*/locations/*}/clusters\022\321\001\n"
-          + "\017ListAclPolicies\022:.google.cloud.redis.cluste"
-          + "r.v1beta1.ListAclPoliciesRequest\032;.google.cloud.redis.cluster.v1beta1.ListAclPol"
-          + "iciesResponse\"E\332A\006parent\202\323\344\223\0026\0224/v1beta1"
-          + "/{parent=projects/*/locations/*}/aclPolicies\022\262\001\n\n"
-          + "GetCluster\0225.google.cloud.redis.cluster.v1beta1.GetClusterRequest\032+.goo"
-          + "gle.cloud.redis.cluster.v1beta1.Cluster\""
-          + "@\332A\004name\202\323\344\223\0023\0221/v1beta1/{name=projects/*/locations/*/clusters/*}\022\273\001\n"
-          + "\014GetAclPolicy\0227.google.cloud.redis.cluster.v1beta1."
-          + "GetAclPolicyRequest\032-.google.cloud.redis"
-          + ".cluster.v1beta1.AclPolicy\"C\332A\004name\202\323\344\223\002"
-          + "6\0224/v1beta1/{name=projects/*/locations/*/aclPolicies/*}\022\354\001\n\r"
-          + "UpdateCluster\0228.google.cloud.redis.cluster.v1beta1.UpdateClu"
-          + "sterRequest\032\035.google.longrunning.Operation\"\201\001\312A\036\n"
-          + "\007Cluster\022\023google.protobuf.Any\332A"
-          + "\023cluster,update_mask\202\323\344\223\002D29/v1beta1/{cl"
-          + "uster.name=projects/*/locations/*/clusters/*}:\007cluster\022\374\001\n"
-          + "\017UpdateAclPolicy\022:.google.cloud.redis.cluster.v1beta1.UpdateAc"
-          + "lPolicyRequest\032\035.google.longrunning.Operation\"\215\001\312A\036\n"
-          + "\tAclPolicy\022\021OperationMetadat"
-          + "a\332A\026acl_policy,update_mask\202\323\344\223\002M2?/v1bet"
-          + "a1/{acl_policy.name=projects/*/locations/*/aclPolicies/*}:\n"
+          + "\014ListClusters\0227.google.cloud.redis.cluster.v1b"
+          + "eta1.ListClustersRequest\0328.google.cloud.redis.cluster.v1beta1.ListClustersRespon"
+          + "se\"B\332A\006parent\202\323\344\223\0023\0221/v1beta1/{parent=projects/*/locations/*}/clusters\022\321\001\n"
+          + "\017ListAclPolicies\022:.google.cloud.redis.cluster."
+          + "v1beta1.ListAclPoliciesRequest\032;.google.cloud.redis.cluster.v1beta1.ListAclPolic"
+          + "iesResponse\"E\332A\006parent\202\323\344\223\0026\0224/v1beta1/{"
+          + "parent=projects/*/locations/*}/aclPolicies\022\262\001\n\n"
+          + "GetCluster\0225.google.cloud.redis.cluster.v1beta1.GetClusterRequest\032+.googl"
+          + "e.cloud.redis.cluster.v1beta1.Cluster\"@\332"
+          + "A\004name\202\323\344\223\0023\0221/v1beta1/{name=projects/*/locations/*/clusters/*}\022\273\001\n"
+          + "\014GetAclPolicy\0227.google.cloud.redis.cluster.v1beta1.Ge"
+          + "tAclPolicyRequest\032-.google.cloud.redis.c"
+          + "luster.v1beta1.AclPolicy\"C\332A\004name\202\323\344\223\0026\022"
+          + "4/v1beta1/{name=projects/*/locations/*/aclPolicies/*}\022\354\001\n\r"
+          + "UpdateCluster\0228.google.cloud.redis.cluster.v1beta1.UpdateClust"
+          + "erRequest\032\035.google.longrunning.Operation\"\201\001\312A\036\n"
+          + "\007Cluster\022\023google.protobuf.Any\332A\023c"
+          + "luster,update_mask\202\323\344\223\002D29/v1beta1/{clus"
+          + "ter.name=projects/*/locations/*/clusters/*}:\007cluster\022\374\001\n"
+          + "\017UpdateAclPolicy\022:.google.cloud.redis.cluster.v1beta1.UpdateAclP"
+          + "olicyRequest\032\035.google.longrunning.Operation\"\215\001\312A\036\n"
+          + "\tAclPolicy\022\021OperationMetadata\332"
+          + "A\026acl_policy,update_mask\202\323\344\223\002M2?/v1beta1"
+          + "/{acl_policy.name=projects/*/locations/*/aclPolicies/*}:\n"
           + "acl_policy\022\331\001\n\r"
-          + "DeleteCluster\0228.google.cloud.redis.cluster.v1b"
-          + "eta1.DeleteClusterRequest\032\035.google.longrunning.Operation\"o\312A,\n"
-          + "\025google.protobuf.E"
-          + "mpty\022\023google.protobuf.Any\332A\004name\202\323\344\223\0023*1"
-          + "/v1beta1/{name=projects/*/locations/*/clusters/*}\022\336\001\n"
-          + "\017DeleteAclPolicy\022:.google.cloud.redis.cluster.v1beta1.DeleteAclPoli"
-          + "cyRequest\032\035.google.longrunning.Operation\"p\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationM"
-          + "etadata\332A\004name\202\323\344\223\0026*4/v1beta1/{name=projects/*/locations/*/aclPolicies/*}\022\337\001\n"
-          + "\024GetAclPolicyRevision\022?.google.cloud.redis"
-          + ".cluster.v1beta1.GetAclPolicyRevisionRequest\0325.google.cloud.redis.cluster.v1beta"
-          + "1.AclPolicyRevision\"O\332A\004name\202\323\344\223\002B\022@/v1b"
-          + "eta1/{name=projects/*/locations/*/aclPolicies/*/revisions/*}\022\362\001\n"
-          + "\026ListAclPolicyRevisions\022A.google.cloud.redis.cluster.v1b"
-          + "eta1.ListAclPolicyRevisionsRequest\032B.google.cloud.redis.cluster.v1beta1.ListAclP"
-          + "olicyRevisionsResponse\"Q\332A\006parent\202\323\344\223\002B\022"
-          + "@/v1beta1/{parent=projects/*/locations/*/aclPolicies/*}/revisions\022\351\001\n\r"
-          + "CreateCluster\0228.google.cloud.redis.cluster.v1beta1"
-          + ".CreateClusterRequest\032\035.google.longrunning.Operation\"\177\312A\036\n"
-          + "\007Cluster\022\023google.proto"
-          + "buf.Any\332A\031parent,cluster,cluster_id\202\323\344\223\002"
-          + "<\"1/v1beta1/{parent=projects/*/locations/*}/clusters:\007cluster\022\350\001\n"
-          + "\017CreateAclPolicy\022:.google.cloud.redis.cluster.v1beta1.C"
-          + "reateAclPolicyRequest\032-.google.cloud.red"
-          + "is.cluster.v1beta1.AclPolicy\"j\332A\037parent,"
-          + "acl_policy,acl_policy_id\202\323\344\223\002B\"4/v1beta1"
-          + "/{parent=projects/*/locations/*}/aclPolicies:\n"
+          + "DeleteCluster\0228.google.cloud.redis.cluster.v1bet"
+          + "a1.DeleteClusterRequest\032\035.google.longrunning.Operation\"o\312A,\n"
+          + "\025google.protobuf.Emp"
+          + "ty\022\023google.protobuf.Any\332A\004name\202\323\344\223\0023*1/v"
+          + "1beta1/{name=projects/*/locations/*/clusters/*}\022\336\001\n"
+          + "\017DeleteAclPolicy\022:.google.cloud.redis.cluster.v1beta1.DeleteAclPolicy"
+          + "Request\032\035.google.longrunning.Operation\"p\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMet"
+          + "adata\332A\004name\202\323\344\223\0026*4/v1beta1/{name=projects/*/locations/*/aclPolicies/*}\022\337\001\n"
+          + "\024GetAclPolicyRevision\022?.google.cloud.redis.c"
+          + "luster.v1beta1.GetAclPolicyRevisionRequest\0325.google.cloud.redis.cluster.v1beta1."
+          + "AclPolicyRevision\"O\332A\004name\202\323\344\223\002B\022@/v1bet"
+          + "a1/{name=projects/*/locations/*/aclPolicies/*/revisions/*}\022\362\001\n"
+          + "\026ListAclPolicyRevisions\022A.google.cloud.redis.cluster.v1bet"
+          + "a1.ListAclPolicyRevisionsRequest\032B.google.cloud.redis.cluster.v1beta1.ListAclPol"
+          + "icyRevisionsResponse\"Q\332A\006parent\202\323\344\223\002B\022@/"
+          + "v1beta1/{parent=projects/*/locations/*/aclPolicies/*}/revisions\022\351\001\n\r"
+          + "CreateCluster\0228.google.cloud.redis.cluster.v1beta1.C"
+          + "reateClusterRequest\032\035.google.longrunning.Operation\"\177\312A\036\n"
+          + "\007Cluster\022\023google.protobu"
+          + "f.Any\332A\031parent,cluster,cluster_id\202\323\344\223\002<\""
+          + "1/v1beta1/{parent=projects/*/locations/*}/clusters:\007cluster\022\350\001\n"
+          + "\017CreateAclPolicy\022:.google.cloud.redis.cluster.v1beta1.Cre"
+          + "ateAclPolicyRequest\032-.google.cloud.redis"
+          + ".cluster.v1beta1.AclPolicy\"j\332A\037parent,ac"
+          + "l_policy,acl_policy_id\202\323\344\223\002B\"4/v1beta1/{"
+          + "parent=projects/*/locations/*}/aclPolicies:\n"
           + "acl_policy\022\374\001\n"
-          + "\036GetClusterCertificateAuthority\022I.google.cloud.redis.cluster"
-          + ".v1beta1.GetClusterCertificateAuthorityRequest\0328.google.cloud.redis.cluster.v1be"
-          + "ta1.CertificateAuthority\"U\332A\004name\202\323\344\223\002H\022"
-          + "F/v1beta1/{name=projects/*/locations/*/clusters/*/certificateAuthority}\022\233\002\n"
-          + "%GetSharedRegionalCertificateAuthority\022P.goog"
-          + "le.cloud.redis.cluster.v1beta1.GetSharedRegionalCertificateAuthorityRequest\032F.go"
-          + "ogle.cloud.redis.cluster.v1beta1.SharedR"
-          + "egionalCertificateAuthority\"X\332A\004name\202\323\344\223"
-          + "\002K\022I/v1beta1/{name=projects/*/locations/"
-          + "*/sharedRegionalCertificateAuthority}\022\250\002\n"
-          + "\034RescheduleClusterMaintenance\022G.google.cloud.redis.cluster.v1beta1.RescheduleCl"
-          + "usterMaintenanceRequest\032\035.google.longrunning.Operation\"\237\001\312A\036\n"
-          + "\007Cluster\022\023google.protobuf.Any\332A\"name,reschedule_type,schedu"
-          + "le_time\202\323\344\223\002S\"N/v1beta1/{name=projects/*"
-          + "/locations/*/clusters/*}:rescheduleClusterMaintenance:\001*\022\351\001\n"
-          + "\025ListBackupCollections\022@.google.cloud.redis.cluster.v1beta1."
-          + "ListBackupCollectionsRequest\032A.google.cloud.redis.cluster.v1beta1.ListBackupColl"
-          + "ectionsResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1bet"
-          + "a1/{parent=projects/*/locations/*}/backupCollections\022\326\001\n"
-          + "\023GetBackupCollection\022>.google.cloud.redis.cluster.v1beta1.GetBac"
-          + "kupCollectionRequest\0324.google.cloud.redi"
-          + "s.cluster.v1beta1.BackupCollection\"I\332A\004n"
-          + "ame\202\323\344\223\002<\022:/v1beta1/{name=projects/*/locations/*/backupCollections/*}\022\325\001\n"
-          + "\013ListBackups\0226.google.cloud.redis.cluster.v1bet"
-          + "a1.ListBackupsRequest\0327.google.cloud.redis.cluster.v1beta1.ListBackupsResponse\"U"
-          + "\332A\006parent\202\323\344\223\002F\022D/v1beta1/{parent=projec"
-          + "ts/*/locations/*/backupCollections/*}/backups\022\302\001\n"
-          + "\tGetBackup\0224.google.cloud.redis.cluster.v1beta1.GetBackupRequest\032*.goog"
-          + "le.cloud.redis.cluster.v1beta1.Backup\"S\332"
-          + "A\004name\202\323\344\223\002F\022D/v1beta1/{name=projects/*/"
-          + "locations/*/backupCollections/*/backups/*}\022\353\001\n"
-          + "\014DeleteBackup\0227.google.cloud.redis"
-          + ".cluster.v1beta1.DeleteBackupRequest\032\035.google.longrunning.Operation\"\202\001\312A,\n"
-          + "\025google.protobuf.Empty\022\023google.protobuf.Any\332A\004"
-          + "name\202\323\344\223\002F*D/v1beta1/{name=projects/*/lo"
-          + "cations/*/backupCollections/*/backups/*}\022\336\001\n"
-          + "\014ExportBackup\0227.google.cloud.redis.c"
-          + "luster.v1beta1.ExportBackupRequest\032\035.google.longrunning.Operation\"v\312A\035\n"
-          + "\006Backup\022\023google.protobuf.Any\202\323\344\223\002P\"K/v1beta1/{nam"
-          + "e=projects/*/locations/*/backupCollections/*/backups/*}:export:\001*\022\325\001\n\r"
-          + "BackupCluster\0228.google.cloud.redis.cluster.v1beta1"
-          + ".BackupClusterRequest\032\035.google.longrunning.Operation\"k\312A\036\n"
-          + "\007Cluster\022\023google.proto"
-          + "buf.Any\332A\004name\202\323\344\223\002=\"8/v1beta1/{name=pro"
-          + "jects/*/locations/*/clusters/*}:backup:\001"
-          + "*\032H\312A\024redis.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\006\n"
-          + "&com.google.cloud.redis.cluster.v1beta1B\026"
-          + "CloudRedisClusterProtoP\001Z@cloud.google.com/go/redis/cluster/apiv1beta1/clusterpb"
-          + ";clusterpb\352\002&Google::Cloud::Redis::Cluster::V1beta1\352An\n"
-          + "%compute.googleapis.com/ForwardingRule\022Eprojects/{project}/region"
-          + "s/{region}/forwardingRules/{forwarding_rule}\352AN\n"
-          + "\036compute.googleapis.com/Network\022"
-          + ",projects/{project}/global/networks/{network}\352Aw\n"
-          + "(compute.googleapis.com/ServiceAttachment\022Kprojects/{project}/regions/{"
-          + "region}/serviceAttachments/{service_attachment}\352Ax\n"
-          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/locations/{loc"
-          + "ation}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352A\246\001\n"
-          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{project}/loc"
-          + "ations/{location}/keyRings/{key_ring}/cr"
-          + "yptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\352A\\\n"
-          + "\037privateca.googleapis.com/CaPool\0229projects/{project}/loc"
-          + "ations/{location}/caPools/{ca_pool}b\006proto3"
+          + "\036GetClusterCertificateAuthority\022I.google.cloud.redis.cluster.v"
+          + "1beta1.GetClusterCertificateAuthorityRequest\0328.google.cloud.redis.cluster.v1beta"
+          + "1.CertificateAuthority\"U\332A\004name\202\323\344\223\002H\022F/"
+          + "v1beta1/{name=projects/*/locations/*/clusters/*/certificateAuthority}\022\233\002\n"
+          + "%GetSharedRegionalCertificateAuthority\022P.google"
+          + ".cloud.redis.cluster.v1beta1.GetSharedRegionalCertificateAuthorityRequest\032F.goog"
+          + "le.cloud.redis.cluster.v1beta1.SharedReg"
+          + "ionalCertificateAuthority\"X\332A\004name\202\323\344\223\002K"
+          + "\022I/v1beta1/{name=projects/*/locations/*/sharedRegionalCertificateAuthority}\022\250\002\n"
+          + "\034RescheduleClusterMaintenance\022G.google.cl"
+          + "oud.redis.cluster.v1beta1.RescheduleClus"
+          + "terMaintenanceRequest\032\035.google.longrunning.Operation\"\237\001\312A\036\n"
+          + "\007Cluster\022\023google.protobuf.Any\332A\"name,reschedule_type,schedule"
+          + "_time\202\323\344\223\002S\"N/v1beta1/{name=projects/*/l"
+          + "ocations/*/clusters/*}:rescheduleClusterMaintenance:\001*\022\351\001\n"
+          + "\025ListBackupCollections\022@.google.cloud.redis.cluster.v1beta1.Li"
+          + "stBackupCollectionsRequest\032A.google.cloud.redis.cluster.v1beta1.ListBackupCollec"
+          + "tionsResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1beta1"
+          + "/{parent=projects/*/locations/*}/backupCollections\022\326\001\n"
+          + "\023GetBackupCollection\022>.google.cloud.redis.cluster.v1beta1.GetBacku"
+          + "pCollectionRequest\0324.google.cloud.redis."
+          + "cluster.v1beta1.BackupCollection\"I\332A\004nam"
+          + "e\202\323\344\223\002<\022:/v1beta1/{name=projects/*/locations/*/backupCollections/*}\022\325\001\n"
+          + "\013ListBackups\0226.google.cloud.redis.cluster.v1beta1"
+          + ".ListBackupsRequest\0327.google.cloud.redis"
+          + ".cluster.v1beta1.ListBackupsResponse\"U\332A"
+          + "\006parent\202\323\344\223\002F\022D/v1beta1/{parent=projects"
+          + "/*/locations/*/backupCollections/*}/backups\022\302\001\n"
+          + "\tGetBackup\0224.google.cloud.redis.cluster.v1beta1.GetBackupRequest\032*.google"
+          + ".cloud.redis.cluster.v1beta1.Backup\"S\332A\004"
+          + "name\202\323\344\223\002F\022D/v1beta1/{name=projects/*/lo"
+          + "cations/*/backupCollections/*/backups/*}\022\353\001\n"
+          + "\014DeleteBackup\0227.google.cloud.redis.c"
+          + "luster.v1beta1.DeleteBackupRequest\032\035.google.longrunning.Operation\"\202\001\312A,\n"
+          + "\025google.protobuf.Empty\022\023google.protobuf.Any\332A\004na"
+          + "me\202\323\344\223\002F*D/v1beta1/{name=projects/*/loca"
+          + "tions/*/backupCollections/*/backups/*}\022\336\001\n"
+          + "\014ExportBackup\0227.google.cloud.redis.clu"
+          + "ster.v1beta1.ExportBackupRequest\032\035.google.longrunning.Operation\"v\312A\035\n"
+          + "\006Backup\022\023google.protobuf.Any\202\323\344\223\002P\"K/v1beta1/{name="
+          + "projects/*/locations/*/backupCollections/*/backups/*}:export:\001*\022\325\001\n\r"
+          + "BackupCluster\0228.google.cloud.redis.cluster.v1beta1.B"
+          + "ackupClusterRequest\032\035.google.longrunning.Operation\"k\312A\036\n"
+          + "\007Cluster\022\023google.protobu"
+          + "f.Any\332A\004name\202\323\344\223\002=\"8/v1beta1/{name=proje"
+          + "cts/*/locations/*/clusters/*}:backup:\001*\022\350\001\n"
+          + "\022ListTokenAuthUsers\022=.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRe"
+          + "quest\032>.google.cloud.redis.cluster.v1bet"
+          + "a1.ListTokenAuthUsersResponse\"S\332A\006parent"
+          + "\202\323\344\223\002D\022B/v1beta1/{parent=projects/*/locations/*/clusters/*}/tokenAuthUsers\022\325\001\n"
+          + "\020GetTokenAuthUser\022;.google.cloud.redis.clu"
+          + "ster.v1beta1.GetTokenAuthUserRequest\0321.google.cloud.redis.cluster.v1beta1.TokenA"
+          + "uthUser\"Q\332A\004name\202\323\344\223\002D\022B/v1beta1/{name=p"
+          + "rojects/*/locations/*/clusters/*/tokenAuthUsers/*}\022\351\001\n"
+          + "\016ListAuthTokens\0229.google.cloud.redis.cluster.v1beta1.ListAuthToken"
+          + "sRequest\032:.google.cloud.redis.cluster.v1"
+          + "beta1.ListAuthTokensResponse\"`\332A\006parent\202"
+          + "\323\344\223\002Q\022O/v1beta1/{parent=projects/*/locat"
+          + "ions/*/clusters/*/tokenAuthUsers/*}/authTokens\022\326\001\n"
+          + "\014GetAuthToken\0227.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest"
+          + "\032-.google.cloud.redis.cluster.v1beta1.Au"
+          + "thToken\"^\332A\004name\202\323\344\223\002Q\022O/v1beta1/{name=p"
+          + "rojects/*/locations/*/clusters/*/tokenAuthUsers/*/authTokens/*}\022\372\001\n"
+          + "\020AddTokenAuthUser\022;.google.cloud.redis.cluster.v1beta"
+          + "1.AddTokenAuthUserRequest\032\035.google.longrunning.Operation\"\211\001\312A\034\n"
+          + "\007Cluster\022\021OperationMetadata\332A\027cluster,token_auth_user\202\323\344\223"
+          + "\002J\"E/v1beta1/{cluster=projects/*/locations/*/clusters/*}:addTokenAuthUser:\001*\022\364\001\n"
+          + "\023DeleteTokenAuthUser\022>.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserReq"
+          + "uest\032\035.google.longrunning.Operation\"~\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetada"
+          + "ta\332A\004name\202\323\344\223\002D*B/v1beta1/{name=projects"
+          + "/*/locations/*/clusters/*/tokenAuthUsers/*}\022\220\002\n"
+          + "\014AddAuthToken\0227.google.cloud.redi"
+          + "s.cluster.v1beta1.AddAuthTokenRequest\032\035.google.longrunning.Operation\"\247\001\312A\"\n\r"
+          + "TokenAuthUser\022\021OperationMetadata\332A\032token_aut"
+          + "h_user,auth_token\202\323\344\223\002_\"Z/v1beta1/{token"
+          + "_auth_user=projects/*/locations/*/cluste"
+          + "rs/*/tokenAuthUsers/*}:addAuthToken:\001*\022\372\001\n"
+          + "\017DeleteAuthToken\022:.google.cloud.redis."
+          + "cluster.v1beta1.DeleteAuthTokenRequest\032\035.google.longrunning.Operation\"\213\001\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004"
+          + "name\202\323\344\223\002Q*O/v1beta1/{name=projects/*/lo"
+          + "cations/*/clusters/*/tokenAuthUsers/*/au"
+          + "thTokens/*}\032H\312A\024redis.googleapis.com\322A.h"
+          + "ttps://www.googleapis.com/auth/cloud-platformB\355\006\n"
+          + "&com.google.cloud.redis.cluster.v1beta1B\026CloudRedisClusterProtoP\001Z@clou"
+          + "d.google.com/go/redis/cluster/apiv1beta1"
+          + "/clusterpb;clusterpb\352\002&Google::Cloud::Redis::Cluster::V1beta1\352An\n"
+          + "%compute.googleapis.com/ForwardingRule\022Eprojects/{proje"
+          + "ct}/regions/{region}/forwardingRules/{forwarding_rule}\352AN\n"
+          + "\036compute.googleapis.co"
+          + "m/Network\022,projects/{project}/global/networks/{network}\352Aw\n"
+          + "(compute.googleapis.com/ServiceAttachment\022Kprojects/{project}"
+          + "/regions/{region}/serviceAttachments/{service_attachment}\352Ax\n"
+          + "!cloudkms.googleapis.com/CryptoKey\022Sprojects/{project}/loca"
+          + "tions/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}\352A\246\001\n"
+          + "(cloudkms.googleapis.com/CryptoKeyVersion\022zprojects/{pr"
+          + "oject}/locations/{location}/keyRings/{ke"
+          + "y_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}\352A\\\n"
+          + "\037privateca.googleapis.com/CaPool\0229projects/{pr"
+          + "oject}/locations/{location}/caPools/{ca_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1247,8 +1425,88 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
             new java.lang.String[] {
               "Name", "Ttl", "BackupId",
             });
-    internal_static_google_cloud_redis_cluster_v1beta1_Cluster_descriptor =
+    internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersRequest_descriptor =
         getDescriptor().getMessageType(25);
+    internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersResponse_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_ListTokenAuthUsersResponse_descriptor,
+            new java.lang.String[] {
+              "TokenAuthUsers", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_GetTokenAuthUserRequest_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_cloud_redis_cluster_v1beta1_GetTokenAuthUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_GetTokenAuthUserRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensRequest_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensResponse_descriptor =
+        getDescriptor().getMessageType(29);
+    internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_ListAuthTokensResponse_descriptor,
+            new java.lang.String[] {
+              "AuthTokens", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_GetAuthTokenRequest_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_cloud_redis_cluster_v1beta1_GetAuthTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_GetAuthTokenRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_AddTokenAuthUserRequest_descriptor =
+        getDescriptor().getMessageType(31);
+    internal_static_google_cloud_redis_cluster_v1beta1_AddTokenAuthUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_AddTokenAuthUserRequest_descriptor,
+            new java.lang.String[] {
+              "Cluster", "TokenAuthUser",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_DeleteTokenAuthUserRequest_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_cloud_redis_cluster_v1beta1_DeleteTokenAuthUserRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_DeleteTokenAuthUserRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId", "Force",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_AddAuthTokenRequest_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_cloud_redis_cluster_v1beta1_AddAuthTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_AddAuthTokenRequest_descriptor,
+            new java.lang.String[] {
+              "TokenAuthUser", "AuthToken",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_DeleteAuthTokenRequest_descriptor =
+        getDescriptor().getMessageType(34);
+    internal_static_google_cloud_redis_cluster_v1beta1_DeleteAuthTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_DeleteAuthTokenRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_Cluster_descriptor =
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_redis_cluster_v1beta1_Cluster_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_Cluster_descriptor,
@@ -1333,7 +1591,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Key", "Value",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyInfo_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyInfo_descriptor,
@@ -1344,7 +1602,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "AclPolicyRevisionStatuses",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicy_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_AclPolicy_descriptor,
@@ -1358,7 +1616,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "UpdateTime",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyRevisionStatus_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(38);
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyRevisionStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyRevisionStatus_descriptor,
@@ -1366,7 +1624,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "AclPolicyRevision", "AclPolicyRevisionNumber", "State", "ErrorMessage",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterAclPolicyAttachment_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(39);
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterAclPolicyAttachment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ClusterAclPolicyAttachment_descriptor,
@@ -1374,7 +1632,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Cluster", "AclPolicyRevisionStatuses",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyRevision_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(40);
     internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyRevision_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_AclPolicyRevision_descriptor,
@@ -1382,7 +1640,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Name", "RevisionNumber", "Snapshot", "CreateTime", "AttachedClusters",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_AclRule_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(41);
     internal_static_google_cloud_redis_cluster_v1beta1_AclRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_AclRule_descriptor,
@@ -1390,7 +1648,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Username", "Rule",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_AutomatedBackupConfig_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(42);
     internal_static_google_cloud_redis_cluster_v1beta1_AutomatedBackupConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_AutomatedBackupConfig_descriptor,
@@ -1407,7 +1665,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "StartTime",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_BackupCollection_descriptor =
-        getDescriptor().getMessageType(33);
+        getDescriptor().getMessageType(43);
     internal_static_google_cloud_redis_cluster_v1beta1_BackupCollection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_BackupCollection_descriptor,
@@ -1415,7 +1673,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Name", "ClusterUid", "Cluster", "KmsKey", "Uid",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_Backup_descriptor =
-        getDescriptor().getMessageType(34);
+        getDescriptor().getMessageType(44);
     internal_static_google_cloud_redis_cluster_v1beta1_Backup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_Backup_descriptor,
@@ -1437,7 +1695,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Uid",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_BackupFile_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(45);
     internal_static_google_cloud_redis_cluster_v1beta1_BackupFile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_BackupFile_descriptor,
@@ -1445,7 +1703,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "FileName", "SizeBytes", "CreateTime",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_PscServiceAttachment_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(46);
     internal_static_google_cloud_redis_cluster_v1beta1_PscServiceAttachment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_PscServiceAttachment_descriptor,
@@ -1453,7 +1711,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "ServiceAttachment", "ConnectionType",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_CrossClusterReplicationConfig_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(47);
     internal_static_google_cloud_redis_cluster_v1beta1_CrossClusterReplicationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_CrossClusterReplicationConfig_descriptor,
@@ -1479,7 +1737,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "PrimaryCluster", "SecondaryClusters",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterMaintenancePolicy_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(48);
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterMaintenancePolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ClusterMaintenancePolicy_descriptor,
@@ -1487,7 +1745,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "CreateTime", "UpdateTime", "WeeklyMaintenanceWindow",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterWeeklyMaintenanceWindow_descriptor =
-        getDescriptor().getMessageType(39);
+        getDescriptor().getMessageType(49);
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterWeeklyMaintenanceWindow_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ClusterWeeklyMaintenanceWindow_descriptor,
@@ -1495,7 +1753,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Day", "StartTime",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterMaintenanceSchedule_descriptor =
-        getDescriptor().getMessageType(40);
+        getDescriptor().getMessageType(50);
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterMaintenanceSchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ClusterMaintenanceSchedule_descriptor,
@@ -1503,7 +1761,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "StartTime", "EndTime",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_PscConfig_descriptor =
-        getDescriptor().getMessageType(41);
+        getDescriptor().getMessageType(51);
     internal_static_google_cloud_redis_cluster_v1beta1_PscConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_PscConfig_descriptor,
@@ -1511,7 +1769,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Network",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_DiscoveryEndpoint_descriptor =
-        getDescriptor().getMessageType(42);
+        getDescriptor().getMessageType(52);
     internal_static_google_cloud_redis_cluster_v1beta1_DiscoveryEndpoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_DiscoveryEndpoint_descriptor,
@@ -1519,7 +1777,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Address", "Port", "PscConfig",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_PscConnection_descriptor =
-        getDescriptor().getMessageType(43);
+        getDescriptor().getMessageType(53);
     internal_static_google_cloud_redis_cluster_v1beta1_PscConnection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_PscConnection_descriptor,
@@ -1534,7 +1792,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "ConnectionType",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterEndpoint_descriptor =
-        getDescriptor().getMessageType(44);
+        getDescriptor().getMessageType(54);
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterEndpoint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ClusterEndpoint_descriptor,
@@ -1542,7 +1800,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Connections",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ConnectionDetail_descriptor =
-        getDescriptor().getMessageType(45);
+        getDescriptor().getMessageType(55);
     internal_static_google_cloud_redis_cluster_v1beta1_ConnectionDetail_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ConnectionDetail_descriptor,
@@ -1550,7 +1808,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "PscAutoConnection", "PscConnection", "Connection",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_PscAutoConnection_descriptor =
-        getDescriptor().getMessageType(46);
+        getDescriptor().getMessageType(56);
     internal_static_google_cloud_redis_cluster_v1beta1_PscAutoConnection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_PscAutoConnection_descriptor,
@@ -1565,7 +1823,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "ConnectionType",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_SharedRegionalCertificateAuthority_descriptor =
-        getDescriptor().getMessageType(47);
+        getDescriptor().getMessageType(57);
     internal_static_google_cloud_redis_cluster_v1beta1_SharedRegionalCertificateAuthority_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_SharedRegionalCertificateAuthority_descriptor,
@@ -1591,7 +1849,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Certificates",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_GetSharedRegionalCertificateAuthorityRequest_descriptor =
-        getDescriptor().getMessageType(48);
+        getDescriptor().getMessageType(58);
     internal_static_google_cloud_redis_cluster_v1beta1_GetSharedRegionalCertificateAuthorityRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_GetSharedRegionalCertificateAuthorityRequest_descriptor,
@@ -1599,7 +1857,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Name",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(49);
+        getDescriptor().getMessageType(59);
     internal_static_google_cloud_redis_cluster_v1beta1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_OperationMetadata_descriptor,
@@ -1612,8 +1870,24 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "RequestedCancellation",
               "ApiVersion",
             });
+    internal_static_google_cloud_redis_cluster_v1beta1_TokenAuthUser_descriptor =
+        getDescriptor().getMessageType(60);
+    internal_static_google_cloud_redis_cluster_v1beta1_TokenAuthUser_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_TokenAuthUser_descriptor,
+            new java.lang.String[] {
+              "Name", "State",
+            });
+    internal_static_google_cloud_redis_cluster_v1beta1_AuthToken_descriptor =
+        getDescriptor().getMessageType(61);
+    internal_static_google_cloud_redis_cluster_v1beta1_AuthToken_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_redis_cluster_v1beta1_AuthToken_descriptor,
+            new java.lang.String[] {
+              "Name", "Token", "CreateTime", "State",
+            });
     internal_static_google_cloud_redis_cluster_v1beta1_CertificateAuthority_descriptor =
-        getDescriptor().getMessageType(50);
+        getDescriptor().getMessageType(62);
     internal_static_google_cloud_redis_cluster_v1beta1_CertificateAuthority_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_CertificateAuthority_descriptor,
@@ -1639,7 +1913,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Certificates",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterPersistenceConfig_descriptor =
-        getDescriptor().getMessageType(51);
+        getDescriptor().getMessageType(63);
     internal_static_google_cloud_redis_cluster_v1beta1_ClusterPersistenceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ClusterPersistenceConfig_descriptor,
@@ -1665,7 +1939,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "AppendFsync",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_ZoneDistributionConfig_descriptor =
-        getDescriptor().getMessageType(52);
+        getDescriptor().getMessageType(64);
     internal_static_google_cloud_redis_cluster_v1beta1_ZoneDistributionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_ZoneDistributionConfig_descriptor,
@@ -1673,7 +1947,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Mode", "Zone",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_RescheduleClusterMaintenanceRequest_descriptor =
-        getDescriptor().getMessageType(53);
+        getDescriptor().getMessageType(65);
     internal_static_google_cloud_redis_cluster_v1beta1_RescheduleClusterMaintenanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_RescheduleClusterMaintenanceRequest_descriptor,
@@ -1681,7 +1955,7 @@ public final class CloudRedisClusterProto extends com.google.protobuf.GeneratedF
               "Name", "RescheduleType", "ScheduleTime",
             });
     internal_static_google_cloud_redis_cluster_v1beta1_EncryptionInfo_descriptor =
-        getDescriptor().getMessageType(54);
+        getDescriptor().getMessageType(66);
     internal_static_google_cloud_redis_cluster_v1beta1_EncryptionInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_redis_cluster_v1beta1_EncryptionInfo_descriptor,

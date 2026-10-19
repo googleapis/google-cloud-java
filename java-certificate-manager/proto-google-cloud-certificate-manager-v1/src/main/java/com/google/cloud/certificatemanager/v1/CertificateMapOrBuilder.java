@@ -30,12 +30,12 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Certificate Map. Certificate Map names must be
-   * unique globally and match pattern
+   * Identifier. A user-defined name of the Certificate Map. Certificate Map
+   * names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Certificate Map. Certificate Map names must be
-   * unique globally and match pattern
+   * Identifier. A user-defined name of the Certificate Map. Certificate Map
+   * names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -60,10 +60,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate map.
+   * Optional. One or more paragraphs of text description of a certificate map.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -73,10 +73,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate map.
+   * Optional. One or more paragraphs of text description of a certificate map.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -166,10 +166,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map.
+   * Optional. Set of labels associated with a Certificate Map.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
 
@@ -177,10 +177,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map.
+   * Optional. Set of labels associated with a Certificate Map.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
 
@@ -192,10 +192,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map.
+   * Optional. Set of labels associated with a Certificate Map.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
 
@@ -203,10 +203,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map.
+   * Optional. Set of labels associated with a Certificate Map.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -218,10 +218,10 @@ public interface CertificateMapOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map.
+   * Optional. Set of labels associated with a Certificate Map.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 3;</code>
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -303,4 +303,92 @@ public interface CertificateMapOrBuilder
    */
   com.google.cloud.certificatemanager.v1.CertificateMap.GclbTargetOrBuilder getGclbTargetsOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 7 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }
